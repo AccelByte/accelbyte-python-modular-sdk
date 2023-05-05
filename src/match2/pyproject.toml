@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "accelbyte-py-sdk-match2"
+version = "2.2.1"
+description = "AccelByte Python SDK - Justice Matchmaking Service"
+requires-python = ">=3.9"
+dependencies = [
+    "accelbyte-py-sdk-core",
+]
+

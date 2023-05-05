@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "accelbyte-py-sdk-all"
+version = "0.1.0"
+description = "AccelByte Python SDK - All"
+requires-python = ">=3.9"
+dependencies = [
+    "accelbyte-py-sdk-core",
+    # AGS Services
+    "accelbyte-py-sdk-achievement",
+    "accelbyte-py-sdk-basic",
+    "accelbyte-py-sdk-cloudsave",
+    "accelbyte-py-sdk-dslogmanager",
+    "accelbyte-py-sdk-dsmc",
+    "accelbyte-py-sdk-eventlog",
+    "accelbyte-py-sdk-gametelemetry",
+    "accelbyte-py-sdk-gdpr",
+    "accelbyte-py-sdk-group",
+    "accelbyte-py-sdk-iam",
+    "accelbyte-py-sdk-leaderboard",
+    "accelbyte-py-sdk-legal",
+    "accelbyte-py-sdk-lobby",
+    "accelbyte-py-sdk-match2",
+    "accelbyte-py-sdk-matchmaking",
+    "accelbyte-py-sdk-platform",
+    "accelbyte-py-sdk-qosm",
+    "accelbyte-py-sdk-reporting",
+    "accelbyte-py-sdk-seasonpass",
+    "accelbyte-py-sdk-session",
+    "accelbyte-py-sdk-sessionbrowser",
+    "accelbyte-py-sdk-social",
+    "accelbyte-py-sdk-ugc",
+    # Services
+    "accelbyte-py-sdk-service-auth",
+    # Features
+    "accelbyte-py-sdk-token-validation",
+]

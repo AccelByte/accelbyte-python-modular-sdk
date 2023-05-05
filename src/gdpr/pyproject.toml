@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "accelbyte-py-sdk-gdpr"
+version = "1.20.0"
+description = "AccelByte Python SDK - Justice GDPR Service"
+requires-python = ">=3.9"
+dependencies = [
+    "accelbyte-py-sdk-core",
+]
+

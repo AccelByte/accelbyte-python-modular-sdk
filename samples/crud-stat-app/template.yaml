@@ -1,0 +1,48 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  CRUD Stat App
+
+  Sample SAM Template for CRUD Stat App (Python)
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 20
+    Environment:
+      Variables:
+        APP_BASE_URL: 'https://demo.accelbyte.io'
+        APP_CLIENT_ID: xxxxxxxxxxxxxxxxxx
+        APP_CLIENT_SECRET: xxxxxxxxxxxxxxxxxx
+
+Resources:
+  UserStatsFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: crud_stat
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Architectures:
+        - x86_64
+      MemorySize: 512
+      FunctionUrlConfig: # https://docs.aws.amazon.com/lambda/latest/dg/urls-tutorial.html
+        AuthType: NONE # Change to "AWS_IAM" based on your needs https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html
+        Cors:
+          AllowOrigins:
+            - "*"
+          AllowHeaders:
+            - "*"
+          AllowMethods:
+            - "*"
+
+Outputs:
+  UserStatsFunction:
+    Description: "Hello World Lambda Function ARN"
+    Value: !GetAtt UserStatsFunction.Arn
+  UserStatsFunctionIamRole:
+    Description: "Implicit IAM Role created for Hello World function"
+    Value: !GetAtt UserStatsFunctionRole.Arn
+  UserStatsFunctionUrlEndpoint:
+    Description: "Python Simple App Lambda Function URL Endpoint"
+    Value:
+      Fn::GetAtt: UserStatsFunctionUrl.FunctionUrl # {Function Name}Url.FunctionUrl

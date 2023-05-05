@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "accelbyte-py-sdk-dsmc"
+version = "6.2.3"
+description = "AccelByte Python SDK - Justice DSM Controller Service"
+requires-python = ">=3.9"
+dependencies = [
+    "accelbyte-py-sdk-core",
+]
+

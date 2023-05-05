@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "accelbyte-py-sdk-gametelemetry"
+version = "1.17.1"
+description = "AccelByte Python SDK - This is analytics game telemetry to standardize avengers and justice telemetry"
+requires-python = ">=3.9"
+dependencies = [
+    "accelbyte-py-sdk-core",
+]
+

@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "accelbyte-py-sdk-core"
+version = "0.37.0"
+description = "AccelByte Python SDK - Core"
+requires-python = ">=3.9"
+dependencies = [
+    "httpx",
+    "requests",
+    "PyYAML",
+    "websockets",
+]

@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "accelbyte-py-sdk-session"
+version = "2.7.3"
+description = "AccelByte Python SDK - Justice Session Service"
+requires-python = ">=3.9"
+dependencies = [
+    "accelbyte-py-sdk-core",
+]
+

@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "accelbyte-py-sdk-service-auth"
+version = "0.37.0"
+description = "AccelByte Python SDK - Service - Auth"
+requires-python = ">=3.9"
+dependencies = [
+    "PyJWT[crypto]",
+    "accelbyte-py-sdk-core",
+    "accelbyte-py-sdk-iam",
+]
+
