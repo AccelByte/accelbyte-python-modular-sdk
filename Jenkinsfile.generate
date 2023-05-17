@@ -12,7 +12,7 @@ bitbucketCredentialsHttps = "bitbucket-build-extend-https"
 bitbucketCredentialsSsh = "bitbucket-build-extend-ssh"
 bitbucketCommitHref = null
 
-sdkRepoName="justice-codegen-python-sdk"
+sdkRepoName="justice-codegen-python-modular-sdk"
 sdkNewBranchName = "rc-nightly"
 
 sdkSpecCommitHash = null
@@ -71,7 +71,7 @@ pipeline {
         // regenerate extend sdk code
         sh script: """
           cd ${sdkGenPath};
-          make -f Makefile.sdk-python sdk_all SDK_PATH=${sdkPath};
+          make -f Makefile.sdk-python-mod sdk_all SDK_PATH=${sdkPath};
           """, label: "Generate Extend SDK"
 
         // test if there's code breaking changes, by running sample cli againts newly generated sdk code
@@ -87,12 +87,11 @@ pipeline {
 
         sh script: """
           cd ${sdkGenPath};
-          make -f Makefile.sdk-python cli_all cli_test_all beautify SDK_PATH=${sdkPath};
+          make -f Makefile.sdk-python-mod cli_all cli_test_all beautify SDK_PATH=${sdkPath};
           """, label: "Generate CLI"
 
         dir(sdkRepoName) {
-          sh "make version"
-
+          //sh "make version"
           sh "git add --all"
           sh "git commit -m 'chore(sdk): generate python extend sdk (${timeStamp()})' -m '- generated from source sdk spec commit: ${sdkSpecCommitHash}'"
           sshagent(credentials: [bitbucketCredentialsSsh]) {
