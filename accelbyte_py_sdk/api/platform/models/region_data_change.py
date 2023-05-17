@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -49,17 +49,15 @@ class RegionDataChange(Model):
 
     # region fields
 
-    item_identity_type: Union[str, ItemIdentityTypeEnum]  # REQUIRED
-    item_identities: List[str]  # OPTIONAL
-    region_data: Dict[str, List[RegionDataItem]]  # OPTIONAL
+    item_identity_type: Union[str, ItemIdentityTypeEnum]                                           # REQUIRED
+    item_identities: List[str]                                                                     # OPTIONAL
+    region_data: Dict[str, List[RegionDataItem]]                                                   # OPTIONAL
 
     # endregion fields
 
     # region with_x methods
 
-    def with_item_identity_type(
-        self, value: Union[str, ItemIdentityTypeEnum]
-    ) -> RegionDataChange:
+    def with_item_identity_type(self, value: Union[str, ItemIdentityTypeEnum]) -> RegionDataChange:
         self.item_identity_type = value
         return self
 
@@ -67,9 +65,7 @@ class RegionDataChange(Model):
         self.item_identities = value
         return self
 
-    def with_region_data(
-        self, value: Dict[str, List[RegionDataItem]]
-    ) -> RegionDataChange:
+    def with_region_data(self, value: Dict[str, List[RegionDataItem]]) -> RegionDataChange:
         self.region_data = value
         return self
 
@@ -88,10 +84,7 @@ class RegionDataChange(Model):
         elif include_empty:
             result["itemIdentities"] = []
         if hasattr(self, "region_data"):
-            result["regionData"] = {
-                str(k0): [i1.to_dict(include_empty=include_empty) for i1 in v0]
-                for k0, v0 in self.region_data.items()
-            }
+            result["regionData"] = {str(k0): [i1.to_dict(include_empty=include_empty) for i1 in v0] for k0, v0 in self.region_data.items()}
         elif include_empty:
             result["regionData"] = {}
         return result
@@ -106,7 +99,7 @@ class RegionDataChange(Model):
         item_identity_type: Union[str, ItemIdentityTypeEnum],
         item_identities: Optional[List[str]] = None,
         region_data: Optional[Dict[str, List[RegionDataItem]]] = None,
-        **kwargs,
+    **kwargs
     ) -> RegionDataChange:
         instance = cls()
         instance.item_identity_type = item_identity_type
@@ -117,9 +110,7 @@ class RegionDataChange(Model):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> RegionDataChange:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> RegionDataChange:
         instance = cls()
         if not dict_:
             return instance
@@ -132,41 +123,21 @@ class RegionDataChange(Model):
         elif include_empty:
             instance.item_identities = []
         if "regionData" in dict_ and dict_["regionData"] is not None:
-            instance.region_data = {
-                str(k0): [
-                    RegionDataItem.create_from_dict(i1, include_empty=include_empty)
-                    for i1 in v0
-                ]
-                for k0, v0 in dict_["regionData"].items()
-            }
+            instance.region_data = {str(k0): [RegionDataItem.create_from_dict(i1, include_empty=include_empty) for i1 in v0] for k0, v0 in dict_["regionData"].items()}
         elif include_empty:
             instance.region_data = {}
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, RegionDataChange]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, RegionDataChange]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[RegionDataChange]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[RegionDataChange]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[RegionDataChange, List[RegionDataChange], Dict[Any, RegionDataChange]]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[RegionDataChange, List[RegionDataChange], Dict[Any, RegionDataChange]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

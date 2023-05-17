@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -38,14 +38,7 @@ from ..models import PaymentAccountTypeEnum
 
 
 @same_doc_as(PublicDeletePaymentAccount)
-def public_delete_payment_account(
-    id_: str,
-    type_: Union[str, PublicDeletePaymentAccountTypeEnum],
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def public_delete_payment_account(id_: str, type_: Union[str, PublicDeletePaymentAccountTypeEnum], user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete payment account (publicDeletePaymentAccount)
 
     Delete payment account.
@@ -95,14 +88,7 @@ def public_delete_payment_account(
 
 
 @same_doc_as(PublicDeletePaymentAccount)
-async def public_delete_payment_account_async(
-    id_: str,
-    type_: Union[str, PublicDeletePaymentAccountTypeEnum],
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def public_delete_payment_account_async(id_: str, type_: Union[str, PublicDeletePaymentAccountTypeEnum], user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete payment account (publicDeletePaymentAccount)
 
     Delete payment account.
@@ -148,18 +134,11 @@ async def public_delete_payment_account_async(
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(PublicGetPaymentAccounts)
-def public_get_payment_accounts(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def public_get_payment_accounts(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get payment accounts (publicGetPaymentAccounts)
 
     Get payment accounts.
@@ -203,12 +182,7 @@ def public_get_payment_accounts(
 
 
 @same_doc_as(PublicGetPaymentAccounts)
-async def public_get_payment_accounts_async(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def public_get_payment_accounts_async(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get payment accounts (publicGetPaymentAccounts)
 
     Get payment accounts.
@@ -248,6 +222,4 @@ async def public_get_payment_accounts_async(
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)

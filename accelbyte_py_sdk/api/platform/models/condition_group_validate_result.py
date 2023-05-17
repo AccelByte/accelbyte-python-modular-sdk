@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -39,15 +39,13 @@ class ConditionGroupValidateResult(Model):
 
     # region fields
 
-    predicate_validate_results: List[PredicateValidateResult]  # OPTIONAL
+    predicate_validate_results: List[PredicateValidateResult]                                      # OPTIONAL
 
     # endregion fields
 
     # region with_x methods
 
-    def with_predicate_validate_results(
-        self, value: List[PredicateValidateResult]
-    ) -> ConditionGroupValidateResult:
+    def with_predicate_validate_results(self, value: List[PredicateValidateResult]) -> ConditionGroupValidateResult:
         self.predicate_validate_results = value
         return self
 
@@ -58,10 +56,7 @@ class ConditionGroupValidateResult(Model):
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
         if hasattr(self, "predicate_validate_results"):
-            result["predicateValidateResults"] = [
-                i0.to_dict(include_empty=include_empty)
-                for i0 in self.predicate_validate_results
-            ]
+            result["predicateValidateResults"] = [i0.to_dict(include_empty=include_empty) for i0 in self.predicate_validate_results]
         elif include_empty:
             result["predicateValidateResults"] = []
         return result
@@ -74,7 +69,7 @@ class ConditionGroupValidateResult(Model):
     def create(
         cls,
         predicate_validate_results: Optional[List[PredicateValidateResult]] = None,
-        **kwargs,
+    **kwargs
     ) -> ConditionGroupValidateResult:
         instance = cls()
         if predicate_validate_results is not None:
@@ -82,54 +77,26 @@ class ConditionGroupValidateResult(Model):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> ConditionGroupValidateResult:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> ConditionGroupValidateResult:
         instance = cls()
         if not dict_:
             return instance
-        if (
-            "predicateValidateResults" in dict_
-            and dict_["predicateValidateResults"] is not None
-        ):
-            instance.predicate_validate_results = [
-                PredicateValidateResult.create_from_dict(
-                    i0, include_empty=include_empty
-                )
-                for i0 in dict_["predicateValidateResults"]
-            ]
+        if "predicateValidateResults" in dict_ and dict_["predicateValidateResults"] is not None:
+            instance.predicate_validate_results = [PredicateValidateResult.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["predicateValidateResults"]]
         elif include_empty:
             instance.predicate_validate_results = []
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, ConditionGroupValidateResult]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, ConditionGroupValidateResult]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[ConditionGroupValidateResult]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[ConditionGroupValidateResult]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[
-        ConditionGroupValidateResult,
-        List[ConditionGroupValidateResult],
-        Dict[Any, ConditionGroupValidateResult],
-    ]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[ConditionGroupValidateResult, List[ConditionGroupValidateResult], Dict[Any, ConditionGroupValidateResult]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

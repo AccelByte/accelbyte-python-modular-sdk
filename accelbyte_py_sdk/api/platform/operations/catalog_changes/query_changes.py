@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -128,7 +128,7 @@ class QueryChanges(Operation):
         updated_at_start: (updatedAtStart) OPTIONAL str in query
 
     Responses:
-        200: OK - List[CatalogChangePagingSlicedResult] (successful operation)
+        200: OK - CatalogChangePagingSlicedResult (successful operation)
     """
 
     # region fields
@@ -140,19 +140,19 @@ class QueryChanges(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
 
-    namespace: str  # REQUIRED in [path]
-    store_id: str  # REQUIRED in [path]
-    action: Union[str, ActionEnum]  # OPTIONAL in [query]
-    item_sku: str  # OPTIONAL in [query]
-    item_type: Union[str, ItemTypeEnum]  # OPTIONAL in [query]
-    limit: int  # OPTIONAL in [query]
-    offset: int  # OPTIONAL in [query]
-    selected: bool  # OPTIONAL in [query]
-    sort_by: List[Union[str, SortByEnum]]  # OPTIONAL in [query]
-    status: Union[str, StatusEnum]  # OPTIONAL in [query]
-    type_: Union[str, TypeEnum]  # OPTIONAL in [query]
-    updated_at_end: str  # OPTIONAL in [query]
-    updated_at_start: str  # OPTIONAL in [query]
+    namespace: str                                                                                 # REQUIRED in [path]
+    store_id: str                                                                                  # REQUIRED in [path]
+    action: Union[str, ActionEnum]                                                                 # OPTIONAL in [query]
+    item_sku: str                                                                                  # OPTIONAL in [query]
+    item_type: Union[str, ItemTypeEnum]                                                            # OPTIONAL in [query]
+    limit: int                                                                                     # OPTIONAL in [query]
+    offset: int                                                                                    # OPTIONAL in [query]
+    selected: bool                                                                                 # OPTIONAL in [query]
+    sort_by: List[Union[str, SortByEnum]]                                                          # OPTIONAL in [query]
+    status: Union[str, StatusEnum]                                                                 # OPTIONAL in [query]
+    type_: Union[str, TypeEnum]                                                                    # OPTIONAL in [query]
+    updated_at_end: str                                                                            # OPTIONAL in [query]
+    updated_at_start: str                                                                          # OPTIONAL in [query]
 
     # endregion fields
 
@@ -355,14 +355,10 @@ class QueryChanges(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(
-        self, code: int, content_type: str, content: Any
-    ) -> Tuple[
-        Union[None, List[CatalogChangePagingSlicedResult]], Union[None, HttpResponse]
-    ]:
+    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, CatalogChangePagingSlicedResult], Union[None, HttpResponse]]:
         """Parse the given response.
 
-        200: OK - List[CatalogChangePagingSlicedResult] (successful operation)
+        200: OK - CatalogChangePagingSlicedResult (successful operation)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -370,21 +366,15 @@ class QueryChanges(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(
-            code=code, content_type=content_type, content=content
-        )
+        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return [
-                CatalogChangePagingSlicedResult.create_from_dict(i) for i in content
-            ], None
+            return CatalogChangePagingSlicedResult.create_from_dict(content), None
 
-        return self.handle_undocumented_response(
-            code=code, content_type=content_type, content=content
-        )
+        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
 
     # endregion response methods
 
@@ -406,7 +396,7 @@ class QueryChanges(Operation):
         type_: Optional[Union[str, TypeEnum]] = None,
         updated_at_end: Optional[str] = None,
         updated_at_start: Optional[str] = None,
-        **kwargs,
+    **kwargs
     ) -> QueryChanges:
         instance = cls()
         instance.namespace = namespace
@@ -531,36 +521,17 @@ class QueryChanges(Operation):
     @staticmethod
     def get_collection_format_map() -> Dict[str, Union[None, str]]:
         return {
-            "sortBy": "csv",  # in query
+            "sortBy": "csv",                                                                       # in query
         }
 
     @staticmethod
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
-            "action": ["CREATE", "DELETE", "UPDATE"],  # in query
-            "itemType": [
-                "APP",
-                "BUNDLE",
-                "CODE",
-                "COINS",
-                "EXTENSION",
-                "INGAMEITEM",
-                "LOOTBOX",
-                "MEDIA",
-                "OPTIONBOX",
-                "SEASON",
-                "SUBSCRIPTION",
-            ],  # in query
-            "sortBy": [
-                "createdAt",
-                "createdAt:asc",
-                "createdAt:desc",
-                "updatedAt",
-                "updatedAt:asc",
-                "updatedAt:desc",
-            ],  # in query
-            "status": ["PUBLISHED", "UNPUBLISHED"],  # in query
-            "type": ["CATEGORY", "ITEM", "SECTION", "STORE", "VIEW"],  # in query
+            "action": ["CREATE", "DELETE", "UPDATE"],                                              # in query
+            "itemType": ["APP", "BUNDLE", "CODE", "COINS", "EXTENSION", "INGAMEITEM", "LOOTBOX", "MEDIA", "OPTIONBOX", "SEASON", "SUBSCRIPTION"],# in query
+            "sortBy": ["createdAt", "createdAt:asc", "createdAt:desc", "updatedAt", "updatedAt:asc", "updatedAt:desc"],# in query
+            "status": ["PUBLISHED", "UNPUBLISHED"],                                                # in query
+            "type": ["CATEGORY", "ITEM", "SECTION", "STORE", "VIEW"],                              # in query
         }
 
     # endregion static methods

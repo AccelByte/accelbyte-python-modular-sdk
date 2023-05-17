@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -118,23 +118,23 @@ class AppInfo(Model):
 
     # region fields
 
-    item_id: str  # REQUIRED
-    namespace: str  # REQUIRED
-    announcement: str  # OPTIONAL
-    carousel: List[Slide]  # OPTIONAL
-    developer: str  # OPTIONAL
-    forum_url: str  # OPTIONAL
-    genres: List[Union[str, GenresEnum]]  # OPTIONAL
-    language: str  # OPTIONAL
-    platform_requirements: Dict[str, List[Requirement]]  # OPTIONAL
-    platforms: List[Union[str, PlatformsEnum]]  # OPTIONAL
-    players: List[Union[str, PlayersEnum]]  # OPTIONAL
-    primary_genre: Union[str, PrimaryGenreEnum]  # OPTIONAL
-    publisher: str  # OPTIONAL
-    region: str  # OPTIONAL
-    release_date: str  # OPTIONAL
-    slogan: str  # OPTIONAL
-    website_url: str  # OPTIONAL
+    item_id: str                                                                                   # REQUIRED
+    namespace: str                                                                                 # REQUIRED
+    announcement: str                                                                              # OPTIONAL
+    carousel: List[Slide]                                                                          # OPTIONAL
+    developer: str                                                                                 # OPTIONAL
+    forum_url: str                                                                                 # OPTIONAL
+    genres: List[Union[str, GenresEnum]]                                                           # OPTIONAL
+    language: str                                                                                  # OPTIONAL
+    platform_requirements: Dict[str, List[Requirement]]                                            # OPTIONAL
+    platforms: List[Union[str, PlatformsEnum]]                                                     # OPTIONAL
+    players: List[Union[str, PlayersEnum]]                                                         # OPTIONAL
+    primary_genre: Union[str, PrimaryGenreEnum]                                                    # OPTIONAL
+    publisher: str                                                                                 # OPTIONAL
+    region: str                                                                                    # OPTIONAL
+    release_date: str                                                                              # OPTIONAL
+    slogan: str                                                                                    # OPTIONAL
+    website_url: str                                                                               # OPTIONAL
 
     # endregion fields
 
@@ -172,9 +172,7 @@ class AppInfo(Model):
         self.language = value
         return self
 
-    def with_platform_requirements(
-        self, value: Dict[str, List[Requirement]]
-    ) -> AppInfo:
+    def with_platform_requirements(self, value: Dict[str, List[Requirement]]) -> AppInfo:
         self.platform_requirements = value
         return self
 
@@ -229,9 +227,7 @@ class AppInfo(Model):
         elif include_empty:
             result["announcement"] = ""
         if hasattr(self, "carousel"):
-            result["carousel"] = [
-                i0.to_dict(include_empty=include_empty) for i0 in self.carousel
-            ]
+            result["carousel"] = [i0.to_dict(include_empty=include_empty) for i0 in self.carousel]
         elif include_empty:
             result["carousel"] = []
         if hasattr(self, "developer"):
@@ -251,10 +247,7 @@ class AppInfo(Model):
         elif include_empty:
             result["language"] = ""
         if hasattr(self, "platform_requirements"):
-            result["platformRequirements"] = {
-                str(k0): [i1.to_dict(include_empty=include_empty) for i1 in v0]
-                for k0, v0 in self.platform_requirements.items()
-            }
+            result["platformRequirements"] = {str(k0): [i1.to_dict(include_empty=include_empty) for i1 in v0] for k0, v0 in self.platform_requirements.items()}
         elif include_empty:
             result["platformRequirements"] = {}
         if hasattr(self, "platforms"):
@@ -315,7 +308,7 @@ class AppInfo(Model):
         release_date: Optional[str] = None,
         slogan: Optional[str] = None,
         website_url: Optional[str] = None,
-        **kwargs,
+    **kwargs
     ) -> AppInfo:
         instance = cls()
         instance.item_id = item_id
@@ -370,10 +363,7 @@ class AppInfo(Model):
         elif include_empty:
             instance.announcement = ""
         if "carousel" in dict_ and dict_["carousel"] is not None:
-            instance.carousel = [
-                Slide.create_from_dict(i0, include_empty=include_empty)
-                for i0 in dict_["carousel"]
-            ]
+            instance.carousel = [Slide.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["carousel"]]
         elif include_empty:
             instance.carousel = []
         if "developer" in dict_ and dict_["developer"] is not None:
@@ -392,17 +382,8 @@ class AppInfo(Model):
             instance.language = str(dict_["language"])
         elif include_empty:
             instance.language = ""
-        if (
-            "platformRequirements" in dict_
-            and dict_["platformRequirements"] is not None
-        ):
-            instance.platform_requirements = {
-                str(k0): [
-                    Requirement.create_from_dict(i1, include_empty=include_empty)
-                    for i1 in v0
-                ]
-                for k0, v0 in dict_["platformRequirements"].items()
-            }
+        if "platformRequirements" in dict_ and dict_["platformRequirements"] is not None:
+            instance.platform_requirements = {str(k0): [Requirement.create_from_dict(i1, include_empty=include_empty) for i1 in v0] for k0, v0 in dict_["platformRequirements"].items()}
         elif include_empty:
             instance.platform_requirements = {}
         if "platforms" in dict_ and dict_["platforms"] is not None:
@@ -440,29 +421,15 @@ class AppInfo(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, AppInfo]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, AppInfo]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[AppInfo]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[AppInfo]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[AppInfo, List[AppInfo], Dict[Any, AppInfo]]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[AppInfo, List[AppInfo], Dict[Any, AppInfo]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -520,41 +487,10 @@ class AppInfo(Model):
     @staticmethod
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
-            "genres": [
-                "Action",
-                "Adventure",
-                "Casual",
-                "FreeToPlay",
-                "Indie",
-                "MassivelyMultiplayer",
-                "RPG",
-                "Racing",
-                "Simulation",
-                "Sports",
-                "Strategy",
-            ],
+            "genres": ["Action", "Adventure", "Casual", "FreeToPlay", "Indie", "MassivelyMultiplayer", "RPG", "Racing", "Simulation", "Sports", "Strategy"],
             "platforms": ["Android", "IOS", "Linux", "MacOS", "Windows"],
-            "players": [
-                "Coop",
-                "CrossPlatformMulti",
-                "LocalCoop",
-                "MMO",
-                "Multi",
-                "Single",
-            ],
-            "primaryGenre": [
-                "Action",
-                "Adventure",
-                "Casual",
-                "FreeToPlay",
-                "Indie",
-                "MassivelyMultiplayer",
-                "RPG",
-                "Racing",
-                "Simulation",
-                "Sports",
-                "Strategy",
-            ],
+            "players": ["Coop", "CrossPlatformMulti", "LocalCoop", "MMO", "Multi", "Single"],
+            "primaryGenre": ["Action", "Adventure", "Casual", "FreeToPlay", "Indie", "MassivelyMultiplayer", "RPG", "Racing", "Simulation", "Sports", "Strategy"],
         }
 
     # endregion static methods

@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -55,12 +55,7 @@ from ..models import KeyGroupUpdateStatusEnum
 
 
 @same_doc_as(CreateKeyGroup)
-def create_key_group(
-    body: Optional[KeyGroupCreate] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def create_key_group(body: Optional[KeyGroupCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Create key group (createKeyGroup)
 
     Create key group.
@@ -108,12 +103,7 @@ def create_key_group(
 
 
 @same_doc_as(CreateKeyGroup)
-async def create_key_group_async(
-    body: Optional[KeyGroupCreate] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def create_key_group_async(body: Optional[KeyGroupCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Create key group (createKeyGroup)
 
     Create key group.
@@ -157,18 +147,11 @@ async def create_key_group_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetKeyGroup)
-def get_key_group(
-    key_group_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_key_group(key_group_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get key group (getKeyGroup)
 
     Get key group.
@@ -214,12 +197,7 @@ def get_key_group(
 
 
 @same_doc_as(GetKeyGroup)
-async def get_key_group_async(
-    key_group_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_key_group_async(key_group_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get key group (getKeyGroup)
 
     Get key group.
@@ -261,19 +239,12 @@ async def get_key_group_async(
         key_group_id=key_group_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @deprecated
 @same_doc_as(GetKeyGroupByBoothName)
-def get_key_group_by_booth_name(
-    booth_name: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_key_group_by_booth_name(booth_name: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get key group by booth name (getKeyGroupByBoothName)
 
     Get key group.
@@ -320,12 +291,7 @@ def get_key_group_by_booth_name(
 
 @deprecated
 @same_doc_as(GetKeyGroupByBoothName)
-async def get_key_group_by_booth_name_async(
-    booth_name: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_key_group_by_booth_name_async(booth_name: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get key group by booth name (getKeyGroupByBoothName)
 
     Get key group.
@@ -367,18 +333,11 @@ async def get_key_group_by_booth_name_async(
         booth_name=booth_name,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetKeyGroupDynamic)
-def get_key_group_dynamic(
-    key_group_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_key_group_dynamic(key_group_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get key group dynamic (getKeyGroupDynamic)
 
     Get key group dynamic.
@@ -424,12 +383,7 @@ def get_key_group_dynamic(
 
 
 @same_doc_as(GetKeyGroupDynamic)
-async def get_key_group_dynamic_async(
-    key_group_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_key_group_dynamic_async(key_group_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get key group dynamic (getKeyGroupDynamic)
 
     Get key group dynamic.
@@ -471,21 +425,11 @@ async def get_key_group_dynamic_async(
         key_group_id=key_group_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(ListKeys)
-def list_keys(
-    key_group_id: str,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    status: Optional[Union[str, ListKeysStatusEnum]] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def list_keys(key_group_id: str, limit: Optional[int] = None, offset: Optional[int] = None, status: Optional[Union[str, ListKeysStatusEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """List keys of a key group (listKeys)
 
     This API is used to list keys of a key group.
@@ -538,15 +482,7 @@ def list_keys(
 
 
 @same_doc_as(ListKeys)
-async def list_keys_async(
-    key_group_id: str,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    status: Optional[Union[str, ListKeysStatusEnum]] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def list_keys_async(key_group_id: str, limit: Optional[int] = None, offset: Optional[int] = None, status: Optional[Union[str, ListKeysStatusEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """List keys of a key group (listKeys)
 
     This API is used to list keys of a key group.
@@ -595,21 +531,11 @@ async def list_keys_async(
         status=status,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(QueryKeyGroups)
-def query_key_groups(
-    limit: Optional[int] = None,
-    name: Optional[str] = None,
-    offset: Optional[int] = None,
-    tag: Optional[str] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def query_key_groups(limit: Optional[int] = None, name: Optional[str] = None, offset: Optional[int] = None, tag: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query key groups (queryKeyGroups)
 
     Query key groups, if name is presented, it's fuzzy match.
@@ -662,15 +588,7 @@ def query_key_groups(
 
 
 @same_doc_as(QueryKeyGroups)
-async def query_key_groups_async(
-    limit: Optional[int] = None,
-    name: Optional[str] = None,
-    offset: Optional[int] = None,
-    tag: Optional[str] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def query_key_groups_async(limit: Optional[int] = None, name: Optional[str] = None, offset: Optional[int] = None, tag: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query key groups (queryKeyGroups)
 
     Query key groups, if name is presented, it's fuzzy match.
@@ -719,19 +637,11 @@ async def query_key_groups_async(
         tag=tag,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateKeyGroup)
-def update_key_group(
-    key_group_id: str,
-    body: Optional[KeyGroupUpdate] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_key_group(key_group_id: str, body: Optional[KeyGroupUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update key group (updateKeyGroup)
 
     Update key group.
@@ -784,13 +694,7 @@ def update_key_group(
 
 
 @same_doc_as(UpdateKeyGroup)
-async def update_key_group_async(
-    key_group_id: str,
-    body: Optional[KeyGroupUpdate] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_key_group_async(key_group_id: str, body: Optional[KeyGroupUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update key group (updateKeyGroup)
 
     Update key group.
@@ -839,19 +743,11 @@ async def update_key_group_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UploadKeys)
-def upload_keys(
-    key_group_id: str,
-    file: Optional[Any] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def upload_keys(key_group_id: str, file: Optional[Any] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Upload keys to key group (uploadKeys)
 
     This API is used to upload keys with csv format to a key group.
@@ -903,13 +799,7 @@ def upload_keys(
 
 
 @same_doc_as(UploadKeys)
-async def upload_keys_async(
-    key_group_id: str,
-    file: Optional[Any] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def upload_keys_async(key_group_id: str, file: Optional[Any] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Upload keys to key group (uploadKeys)
 
     This API is used to upload keys with csv format to a key group.
@@ -957,6 +847,4 @@ async def upload_keys_async(
         file=file,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)

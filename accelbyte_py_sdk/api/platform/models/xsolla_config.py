@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -45,11 +45,11 @@ class XsollaConfig(Model):
 
     # region fields
 
-    api_key: str  # OPTIONAL
-    flow_completion_url: str  # OPTIONAL
-    merchant_id: int  # OPTIONAL
-    project_id: int  # OPTIONAL
-    project_secret_key: str  # OPTIONAL
+    api_key: str                                                                                   # OPTIONAL
+    flow_completion_url: str                                                                       # OPTIONAL
+    merchant_id: int                                                                               # OPTIONAL
+    project_id: int                                                                                # OPTIONAL
+    project_secret_key: str                                                                        # OPTIONAL
 
     # endregion fields
 
@@ -115,7 +115,7 @@ class XsollaConfig(Model):
         merchant_id: Optional[int] = None,
         project_id: Optional[int] = None,
         project_secret_key: Optional[str] = None,
-        **kwargs,
+    **kwargs
     ) -> XsollaConfig:
         instance = cls()
         if api_key is not None:
@@ -158,29 +158,15 @@ class XsollaConfig(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, XsollaConfig]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, XsollaConfig]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[XsollaConfig]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[XsollaConfig]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[XsollaConfig, List[XsollaConfig], Dict[Any, XsollaConfig]]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[XsollaConfig, List[XsollaConfig], Dict[Any, XsollaConfig]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

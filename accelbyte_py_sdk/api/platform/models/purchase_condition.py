@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -39,7 +39,7 @@ class PurchaseCondition(Model):
 
     # region fields
 
-    condition_groups: List[ConditionGroup]  # OPTIONAL
+    condition_groups: List[ConditionGroup]                                                         # OPTIONAL
 
     # endregion fields
 
@@ -56,9 +56,7 @@ class PurchaseCondition(Model):
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
         if hasattr(self, "condition_groups"):
-            result["conditionGroups"] = [
-                i0.to_dict(include_empty=include_empty) for i0 in self.condition_groups
-            ]
+            result["conditionGroups"] = [i0.to_dict(include_empty=include_empty) for i0 in self.condition_groups]
         elif include_empty:
             result["conditionGroups"] = []
         return result
@@ -69,7 +67,9 @@ class PurchaseCondition(Model):
 
     @classmethod
     def create(
-        cls, condition_groups: Optional[List[ConditionGroup]] = None, **kwargs
+        cls,
+        condition_groups: Optional[List[ConditionGroup]] = None,
+    **kwargs
     ) -> PurchaseCondition:
         instance = cls()
         if condition_groups is not None:
@@ -77,47 +77,26 @@ class PurchaseCondition(Model):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> PurchaseCondition:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> PurchaseCondition:
         instance = cls()
         if not dict_:
             return instance
         if "conditionGroups" in dict_ and dict_["conditionGroups"] is not None:
-            instance.condition_groups = [
-                ConditionGroup.create_from_dict(i0, include_empty=include_empty)
-                for i0 in dict_["conditionGroups"]
-            ]
+            instance.condition_groups = [ConditionGroup.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["conditionGroups"]]
         elif include_empty:
             instance.condition_groups = []
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, PurchaseCondition]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, PurchaseCondition]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[PurchaseCondition]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[PurchaseCondition]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[
-        PurchaseCondition, List[PurchaseCondition], Dict[Any, PurchaseCondition]
-    ]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[PurchaseCondition, List[PurchaseCondition], Dict[Any, PurchaseCondition]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

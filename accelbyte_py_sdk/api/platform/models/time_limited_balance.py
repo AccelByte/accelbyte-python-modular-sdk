@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -41,9 +41,9 @@ class TimeLimitedBalance(Model):
 
     # region fields
 
-    balance: int  # OPTIONAL
-    balance_source: str  # OPTIONAL
-    expire_at: str  # OPTIONAL
+    balance: int                                                                                   # OPTIONAL
+    balance_source: str                                                                            # OPTIONAL
+    expire_at: str                                                                                 # OPTIONAL
 
     # endregion fields
 
@@ -91,7 +91,7 @@ class TimeLimitedBalance(Model):
         balance: Optional[int] = None,
         balance_source: Optional[str] = None,
         expire_at: Optional[str] = None,
-        **kwargs,
+    **kwargs
     ) -> TimeLimitedBalance:
         instance = cls()
         if balance is not None:
@@ -103,9 +103,7 @@ class TimeLimitedBalance(Model):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> TimeLimitedBalance:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> TimeLimitedBalance:
         instance = cls()
         if not dict_:
             return instance
@@ -124,31 +122,15 @@ class TimeLimitedBalance(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, TimeLimitedBalance]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, TimeLimitedBalance]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[TimeLimitedBalance]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[TimeLimitedBalance]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[
-        TimeLimitedBalance, List[TimeLimitedBalance], Dict[Any, TimeLimitedBalance]
-    ]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[TimeLimitedBalance, List[TimeLimitedBalance], Dict[Any, TimeLimitedBalance]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

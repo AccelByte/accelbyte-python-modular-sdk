@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -39,7 +39,7 @@ class IAPItemMappingInfo(Model):
 
     # region fields
 
-    data: List[IAPItemFlatEntry]  # OPTIONAL
+    data: List[IAPItemFlatEntry]                                                                   # OPTIONAL
 
     # endregion fields
 
@@ -56,9 +56,7 @@ class IAPItemMappingInfo(Model):
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
         if hasattr(self, "data"):
-            result["data"] = [
-                i0.to_dict(include_empty=include_empty) for i0 in self.data
-            ]
+            result["data"] = [i0.to_dict(include_empty=include_empty) for i0 in self.data]
         elif include_empty:
             result["data"] = []
         return result
@@ -69,7 +67,9 @@ class IAPItemMappingInfo(Model):
 
     @classmethod
     def create(
-        cls, data: Optional[List[IAPItemFlatEntry]] = None, **kwargs
+        cls,
+        data: Optional[List[IAPItemFlatEntry]] = None,
+    **kwargs
     ) -> IAPItemMappingInfo:
         instance = cls()
         if data is not None:
@@ -77,47 +77,26 @@ class IAPItemMappingInfo(Model):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> IAPItemMappingInfo:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> IAPItemMappingInfo:
         instance = cls()
         if not dict_:
             return instance
         if "data" in dict_ and dict_["data"] is not None:
-            instance.data = [
-                IAPItemFlatEntry.create_from_dict(i0, include_empty=include_empty)
-                for i0 in dict_["data"]
-            ]
+            instance.data = [IAPItemFlatEntry.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["data"]]
         elif include_empty:
             instance.data = []
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, IAPItemMappingInfo]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, IAPItemMappingInfo]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[IAPItemMappingInfo]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[IAPItemMappingInfo]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[
-        IAPItemMappingInfo, List[IAPItemMappingInfo], Dict[Any, IAPItemMappingInfo]
-    ]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[IAPItemMappingInfo, List[IAPItemMappingInfo], Dict[Any, IAPItemMappingInfo]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

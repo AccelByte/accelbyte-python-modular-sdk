@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -58,43 +58,19 @@ from ..operations.subscription import PublicCheckUserSubscriptionSubscribableByI
 from ..operations.subscription import PublicGetUserSubscription
 from ..operations.subscription import PublicGetUserSubscriptionBillingHistories
 from ..operations.subscription import PublicQueryUserSubscriptions
-from ..operations.subscription import (
-    PublicQueryUserSubscriptionsChargeStatusEnum,
-    PublicQueryUserSubscriptionsStatusEnum,
-    PublicQueryUserSubscriptionsSubscribedByEnum,
-)
+from ..operations.subscription import PublicQueryUserSubscriptionsChargeStatusEnum, PublicQueryUserSubscriptionsStatusEnum, PublicQueryUserSubscriptionsSubscribedByEnum
 from ..operations.subscription import PublicSubscribeSubscription
 from ..operations.subscription import QuerySubscriptions
-from ..operations.subscription import (
-    QuerySubscriptionsChargeStatusEnum,
-    QuerySubscriptionsStatusEnum,
-    QuerySubscriptionsSubscribedByEnum,
-)
+from ..operations.subscription import QuerySubscriptionsChargeStatusEnum, QuerySubscriptionsStatusEnum, QuerySubscriptionsSubscribedByEnum
 from ..operations.subscription import QueryUserSubscriptions
-from ..operations.subscription import (
-    QueryUserSubscriptionsChargeStatusEnum,
-    QueryUserSubscriptionsStatusEnum,
-    QueryUserSubscriptionsSubscribedByEnum,
-)
+from ..operations.subscription import QueryUserSubscriptionsChargeStatusEnum, QueryUserSubscriptionsStatusEnum, QueryUserSubscriptionsSubscribedByEnum
 from ..operations.subscription import RecurringChargeSubscription
-from ..models import (
-    SubscriptionInfoChargeStatusEnum,
-    SubscriptionInfoStatusEnum,
-    SubscriptionInfoSubscribedByEnum,
-)
+from ..models import SubscriptionInfoChargeStatusEnum, SubscriptionInfoStatusEnum, SubscriptionInfoSubscribedByEnum
 from ..models import TradeNotificationPaymentProviderEnum, TradeNotificationStatusEnum
 
 
 @same_doc_as(CancelSubscription)
-def cancel_subscription(
-    subscription_id: str,
-    user_id: str,
-    body: Optional[CancelRequest] = None,
-    force: Optional[bool] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def cancel_subscription(subscription_id: str, user_id: str, body: Optional[CancelRequest] = None, force: Optional[bool] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Cancel a subscription (cancelSubscription)
 
     Cancel a subscription, only ACTIVE subscription can be cancelled. Ensure successfully cancel, recommend at least 1 day before current period ends, otherwise it may be charging or charged.
@@ -153,15 +129,7 @@ def cancel_subscription(
 
 
 @same_doc_as(CancelSubscription)
-async def cancel_subscription_async(
-    subscription_id: str,
-    user_id: str,
-    body: Optional[CancelRequest] = None,
-    force: Optional[bool] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def cancel_subscription_async(subscription_id: str, user_id: str, body: Optional[CancelRequest] = None, force: Optional[bool] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Cancel a subscription (cancelSubscription)
 
     Cancel a subscription, only ACTIVE subscription can be cancelled. Ensure successfully cancel, recommend at least 1 day before current period ends, otherwise it may be charging or charged.
@@ -216,19 +184,11 @@ async def cancel_subscription_async(
         force=force,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(CheckUserSubscriptionSubscribableByItemId)
-def check_user_subscription_subscribable_by_item_id(
-    item_id: str,
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def check_user_subscription_subscribable_by_item_id(item_id: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Check user subscription subscribable (checkUserSubscriptionSubscribableByItemId)
 
     Check user subscription subscribable by itemId, ACTIVE USER subscription can't do subscribe again.
@@ -276,13 +236,7 @@ def check_user_subscription_subscribable_by_item_id(
 
 
 @same_doc_as(CheckUserSubscriptionSubscribableByItemId)
-async def check_user_subscription_subscribable_by_item_id_async(
-    item_id: str,
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def check_user_subscription_subscribable_by_item_id_async(item_id: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Check user subscription subscribable (checkUserSubscriptionSubscribableByItemId)
 
     Check user subscription subscribable by itemId, ACTIVE USER subscription can't do subscribe again.
@@ -326,19 +280,11 @@ async def check_user_subscription_subscribable_by_item_id_async(
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(DeleteUserSubscription)
-def delete_user_subscription(
-    subscription_id: str,
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def delete_user_subscription(subscription_id: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete user subscription (deleteUserSubscription)
 
     [TEST FACILITY ONLY] Forbidden in live environment. Delete user subscription.
@@ -384,13 +330,7 @@ def delete_user_subscription(
 
 
 @same_doc_as(DeleteUserSubscription)
-async def delete_user_subscription_async(
-    subscription_id: str,
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def delete_user_subscription_async(subscription_id: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete user subscription (deleteUserSubscription)
 
     [TEST FACILITY ONLY] Forbidden in live environment. Delete user subscription.
@@ -432,19 +372,11 @@ async def delete_user_subscription_async(
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetUserSubscription)
-def get_user_subscription(
-    subscription_id: str,
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_user_subscription(subscription_id: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get user subscription (getUserSubscription)
 
     Get user subscription.
@@ -493,13 +425,7 @@ def get_user_subscription(
 
 
 @same_doc_as(GetUserSubscription)
-async def get_user_subscription_async(
-    subscription_id: str,
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_user_subscription_async(subscription_id: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get user subscription (getUserSubscription)
 
     Get user subscription.
@@ -544,22 +470,11 @@ async def get_user_subscription_async(
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetUserSubscriptionActivities)
-def get_user_subscription_activities(
-    user_id: str,
-    exclude_system: Optional[bool] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    subscription_id: Optional[str] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_user_subscription_activities(user_id: str, exclude_system: Optional[bool] = None, limit: Optional[int] = None, offset: Optional[int] = None, subscription_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get user subscription activity (getUserSubscriptionActivities)
 
     Get user subscription activity.
@@ -615,16 +530,7 @@ def get_user_subscription_activities(
 
 
 @same_doc_as(GetUserSubscriptionActivities)
-async def get_user_subscription_activities_async(
-    user_id: str,
-    exclude_system: Optional[bool] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    subscription_id: Optional[str] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_user_subscription_activities_async(user_id: str, exclude_system: Optional[bool] = None, limit: Optional[int] = None, offset: Optional[int] = None, subscription_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get user subscription activity (getUserSubscriptionActivities)
 
     Get user subscription activity.
@@ -676,22 +582,11 @@ async def get_user_subscription_activities_async(
         subscription_id=subscription_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetUserSubscriptionBillingHistories)
-def get_user_subscription_billing_histories(
-    subscription_id: str,
-    user_id: str,
-    exclude_free: Optional[bool] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_user_subscription_billing_histories(subscription_id: str, user_id: str, exclude_free: Optional[bool] = None, limit: Optional[int] = None, offset: Optional[int] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get user subscription billing histories (getUserSubscriptionBillingHistories)
 
     Get user subscription billing histories.
@@ -747,16 +642,7 @@ def get_user_subscription_billing_histories(
 
 
 @same_doc_as(GetUserSubscriptionBillingHistories)
-async def get_user_subscription_billing_histories_async(
-    subscription_id: str,
-    user_id: str,
-    exclude_free: Optional[bool] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_user_subscription_billing_histories_async(subscription_id: str, user_id: str, exclude_free: Optional[bool] = None, limit: Optional[int] = None, offset: Optional[int] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get user subscription billing histories (getUserSubscriptionBillingHistories)
 
     Get user subscription billing histories.
@@ -808,20 +694,11 @@ async def get_user_subscription_billing_histories_async(
         offset=offset,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GrantDaysToSubscription)
-def grant_days_to_subscription(
-    subscription_id: str,
-    user_id: str,
-    body: Optional[GrantSubscriptionDaysRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def grant_days_to_subscription(subscription_id: str, user_id: str, body: Optional[GrantSubscriptionDaysRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Grant days to a subscription (grantDaysToSubscription)
 
     Grant days to a subscription, if grantDays is positive, it will add free days and push the next billing date by the amount of day.
@@ -874,14 +751,7 @@ def grant_days_to_subscription(
 
 
 @same_doc_as(GrantDaysToSubscription)
-async def grant_days_to_subscription_async(
-    subscription_id: str,
-    user_id: str,
-    body: Optional[GrantSubscriptionDaysRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def grant_days_to_subscription_async(subscription_id: str, user_id: str, body: Optional[GrantSubscriptionDaysRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Grant days to a subscription (grantDaysToSubscription)
 
     Grant days to a subscription, if grantDays is positive, it will add free days and push the next billing date by the amount of day.
@@ -930,19 +800,11 @@ async def grant_days_to_subscription_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(PlatformSubscribeSubscription)
-def platform_subscribe_subscription(
-    user_id: str,
-    body: Optional[PlatformSubscribeRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def platform_subscribe_subscription(user_id: str, body: Optional[PlatformSubscribeRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Free subscribe by platform (platformSubscribeSubscription)
 
     Free subscribe by platform, can used by other justice service to redeem/reward the subscription.
@@ -997,13 +859,7 @@ def platform_subscribe_subscription(
 
 
 @same_doc_as(PlatformSubscribeSubscription)
-async def platform_subscribe_subscription_async(
-    user_id: str,
-    body: Optional[PlatformSubscribeRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def platform_subscribe_subscription_async(user_id: str, body: Optional[PlatformSubscribeRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Free subscribe by platform (platformSubscribeSubscription)
 
     Free subscribe by platform, can used by other justice service to redeem/reward the subscription.
@@ -1054,20 +910,11 @@ async def platform_subscribe_subscription_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(ProcessUserSubscriptionNotification)
-def process_user_subscription_notification(
-    subscription_id: str,
-    user_id: str,
-    body: Optional[TradeNotification] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def process_user_subscription_notification(subscription_id: str, user_id: str, body: Optional[TradeNotification] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Web hook for payment notification (processUserSubscriptionNotification)
 
     [SERVICE COMMUNICATION ONLY] This API is used as a web hook for payment notification from justice payment service.
@@ -1119,14 +966,7 @@ def process_user_subscription_notification(
 
 
 @same_doc_as(ProcessUserSubscriptionNotification)
-async def process_user_subscription_notification_async(
-    subscription_id: str,
-    user_id: str,
-    body: Optional[TradeNotification] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def process_user_subscription_notification_async(subscription_id: str, user_id: str, body: Optional[TradeNotification] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Web hook for payment notification (processUserSubscriptionNotification)
 
     [SERVICE COMMUNICATION ONLY] This API is used as a web hook for payment notification from justice payment service.
@@ -1174,20 +1014,11 @@ async def process_user_subscription_notification_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(PublicCancelSubscription)
-def public_cancel_subscription(
-    subscription_id: str,
-    user_id: str,
-    body: Optional[CancelRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def public_cancel_subscription(subscription_id: str, user_id: str, body: Optional[CancelRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Cancel a subscription (publicCancelSubscription)
 
     Cancel a subscription, only ACTIVE subscription can be cancelled. Ensure successfully cancel, recommend at least 1 day before current period ends, otherwise it may be charging or charged.
@@ -1242,14 +1073,7 @@ def public_cancel_subscription(
 
 
 @same_doc_as(PublicCancelSubscription)
-async def public_cancel_subscription_async(
-    subscription_id: str,
-    user_id: str,
-    body: Optional[CancelRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def public_cancel_subscription_async(subscription_id: str, user_id: str, body: Optional[CancelRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Cancel a subscription (publicCancelSubscription)
 
     Cancel a subscription, only ACTIVE subscription can be cancelled. Ensure successfully cancel, recommend at least 1 day before current period ends, otherwise it may be charging or charged.
@@ -1300,19 +1124,11 @@ async def public_cancel_subscription_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(PublicChangeSubscriptionBillingAccount)
-def public_change_subscription_billing_account(
-    subscription_id: str,
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def public_change_subscription_billing_account(subscription_id: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Request to change a subscription billing account (publicChangeSubscriptionBillingAccount)
 
     Request to change a subscription billing account, this will guide user to payment station. The actual change will happen at the 0 payment notification successfully handled.
@@ -1366,13 +1182,7 @@ def public_change_subscription_billing_account(
 
 
 @same_doc_as(PublicChangeSubscriptionBillingAccount)
-async def public_change_subscription_billing_account_async(
-    subscription_id: str,
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def public_change_subscription_billing_account_async(subscription_id: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Request to change a subscription billing account (publicChangeSubscriptionBillingAccount)
 
     Request to change a subscription billing account, this will guide user to payment station. The actual change will happen at the 0 payment notification successfully handled.
@@ -1422,19 +1232,11 @@ async def public_change_subscription_billing_account_async(
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(PublicCheckUserSubscriptionSubscribableByItemId)
-def public_check_user_subscription_subscribable_by_item_id(
-    item_id: str,
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def public_check_user_subscription_subscribable_by_item_id(item_id: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Check user subscription subscribable (publicCheckUserSubscriptionSubscribableByItemId)
 
     Check user subscription subscribable by itemId, ACTIVE USER subscription can't do subscribe again.
@@ -1482,13 +1284,7 @@ def public_check_user_subscription_subscribable_by_item_id(
 
 
 @same_doc_as(PublicCheckUserSubscriptionSubscribableByItemId)
-async def public_check_user_subscription_subscribable_by_item_id_async(
-    item_id: str,
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def public_check_user_subscription_subscribable_by_item_id_async(item_id: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Check user subscription subscribable (publicCheckUserSubscriptionSubscribableByItemId)
 
     Check user subscription subscribable by itemId, ACTIVE USER subscription can't do subscribe again.
@@ -1532,19 +1328,11 @@ async def public_check_user_subscription_subscribable_by_item_id_async(
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(PublicGetUserSubscription)
-def public_get_user_subscription(
-    subscription_id: str,
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def public_get_user_subscription(subscription_id: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get user subscription (publicGetUserSubscription)
 
     Get user subscription.
@@ -1593,13 +1381,7 @@ def public_get_user_subscription(
 
 
 @same_doc_as(PublicGetUserSubscription)
-async def public_get_user_subscription_async(
-    subscription_id: str,
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def public_get_user_subscription_async(subscription_id: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get user subscription (publicGetUserSubscription)
 
     Get user subscription.
@@ -1644,22 +1426,11 @@ async def public_get_user_subscription_async(
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(PublicGetUserSubscriptionBillingHistories)
-def public_get_user_subscription_billing_histories(
-    subscription_id: str,
-    user_id: str,
-    exclude_free: Optional[bool] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def public_get_user_subscription_billing_histories(subscription_id: str, user_id: str, exclude_free: Optional[bool] = None, limit: Optional[int] = None, offset: Optional[int] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get user subscription billing histories (publicGetUserSubscriptionBillingHistories)
 
     Get user subscription billing histories.
@@ -1715,16 +1486,7 @@ def public_get_user_subscription_billing_histories(
 
 
 @same_doc_as(PublicGetUserSubscriptionBillingHistories)
-async def public_get_user_subscription_billing_histories_async(
-    subscription_id: str,
-    user_id: str,
-    exclude_free: Optional[bool] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def public_get_user_subscription_billing_histories_async(subscription_id: str, user_id: str, exclude_free: Optional[bool] = None, limit: Optional[int] = None, offset: Optional[int] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get user subscription billing histories (publicGetUserSubscriptionBillingHistories)
 
     Get user subscription billing histories.
@@ -1776,29 +1538,11 @@ async def public_get_user_subscription_billing_histories_async(
         offset=offset,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(PublicQueryUserSubscriptions)
-def public_query_user_subscriptions(
-    user_id: str,
-    charge_status: Optional[
-        Union[str, PublicQueryUserSubscriptionsChargeStatusEnum]
-    ] = None,
-    item_id: Optional[str] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    sku: Optional[str] = None,
-    status: Optional[Union[str, PublicQueryUserSubscriptionsStatusEnum]] = None,
-    subscribed_by: Optional[
-        Union[str, PublicQueryUserSubscriptionsSubscribedByEnum]
-    ] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def public_query_user_subscriptions(user_id: str, charge_status: Optional[Union[str, PublicQueryUserSubscriptionsChargeStatusEnum]] = None, item_id: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, sku: Optional[str] = None, status: Optional[Union[str, PublicQueryUserSubscriptionsStatusEnum]] = None, subscribed_by: Optional[Union[str, PublicQueryUserSubscriptionsSubscribedByEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query user subscriptions (publicQueryUserSubscriptions)
 
     Query user subscriptions.
@@ -1863,23 +1607,7 @@ def public_query_user_subscriptions(
 
 
 @same_doc_as(PublicQueryUserSubscriptions)
-async def public_query_user_subscriptions_async(
-    user_id: str,
-    charge_status: Optional[
-        Union[str, PublicQueryUserSubscriptionsChargeStatusEnum]
-    ] = None,
-    item_id: Optional[str] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    sku: Optional[str] = None,
-    status: Optional[Union[str, PublicQueryUserSubscriptionsStatusEnum]] = None,
-    subscribed_by: Optional[
-        Union[str, PublicQueryUserSubscriptionsSubscribedByEnum]
-    ] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def public_query_user_subscriptions_async(user_id: str, charge_status: Optional[Union[str, PublicQueryUserSubscriptionsChargeStatusEnum]] = None, item_id: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, sku: Optional[str] = None, status: Optional[Union[str, PublicQueryUserSubscriptionsStatusEnum]] = None, subscribed_by: Optional[Union[str, PublicQueryUserSubscriptionsSubscribedByEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query user subscriptions (publicQueryUserSubscriptions)
 
     Query user subscriptions.
@@ -1940,19 +1668,11 @@ async def public_query_user_subscriptions_async(
         subscribed_by=subscribed_by,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(PublicSubscribeSubscription)
-def public_subscribe_subscription(
-    user_id: str,
-    body: Optional[SubscribeRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def public_subscribe_subscription(user_id: str, body: Optional[SubscribeRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Subscribe a subscription (publicSubscribeSubscription)
 
     Subscribe a subscription. Support both real and virtual payment. Need go through payment flow using the paymentOrderNo if paymentFlowRequired true.
@@ -2014,13 +1734,7 @@ def public_subscribe_subscription(
 
 
 @same_doc_as(PublicSubscribeSubscription)
-async def public_subscribe_subscription_async(
-    user_id: str,
-    body: Optional[SubscribeRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def public_subscribe_subscription_async(user_id: str, body: Optional[SubscribeRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Subscribe a subscription (publicSubscribeSubscription)
 
     Subscribe a subscription. Support both real and virtual payment. Need go through payment flow using the paymentOrderNo if paymentFlowRequired true.
@@ -2078,25 +1792,11 @@ async def public_subscribe_subscription_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(QuerySubscriptions)
-def query_subscriptions(
-    charge_status: Optional[Union[str, QuerySubscriptionsChargeStatusEnum]] = None,
-    item_id: Optional[str] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    sku: Optional[str] = None,
-    status: Optional[Union[str, QuerySubscriptionsStatusEnum]] = None,
-    subscribed_by: Optional[Union[str, QuerySubscriptionsSubscribedByEnum]] = None,
-    user_id: Optional[str] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def query_subscriptions(charge_status: Optional[Union[str, QuerySubscriptionsChargeStatusEnum]] = None, item_id: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, sku: Optional[str] = None, status: Optional[Union[str, QuerySubscriptionsStatusEnum]] = None, subscribed_by: Optional[Union[str, QuerySubscriptionsSubscribedByEnum]] = None, user_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query subscriptions (querySubscriptions)
 
     Query subscriptions.
@@ -2161,19 +1861,7 @@ def query_subscriptions(
 
 
 @same_doc_as(QuerySubscriptions)
-async def query_subscriptions_async(
-    charge_status: Optional[Union[str, QuerySubscriptionsChargeStatusEnum]] = None,
-    item_id: Optional[str] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    sku: Optional[str] = None,
-    status: Optional[Union[str, QuerySubscriptionsStatusEnum]] = None,
-    subscribed_by: Optional[Union[str, QuerySubscriptionsSubscribedByEnum]] = None,
-    user_id: Optional[str] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def query_subscriptions_async(charge_status: Optional[Union[str, QuerySubscriptionsChargeStatusEnum]] = None, item_id: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, sku: Optional[str] = None, status: Optional[Union[str, QuerySubscriptionsStatusEnum]] = None, subscribed_by: Optional[Union[str, QuerySubscriptionsSubscribedByEnum]] = None, user_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query subscriptions (querySubscriptions)
 
     Query subscriptions.
@@ -2234,25 +1922,11 @@ async def query_subscriptions_async(
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(QueryUserSubscriptions)
-def query_user_subscriptions(
-    user_id: str,
-    charge_status: Optional[Union[str, QueryUserSubscriptionsChargeStatusEnum]] = None,
-    item_id: Optional[str] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    sku: Optional[str] = None,
-    status: Optional[Union[str, QueryUserSubscriptionsStatusEnum]] = None,
-    subscribed_by: Optional[Union[str, QueryUserSubscriptionsSubscribedByEnum]] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def query_user_subscriptions(user_id: str, charge_status: Optional[Union[str, QueryUserSubscriptionsChargeStatusEnum]] = None, item_id: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, sku: Optional[str] = None, status: Optional[Union[str, QueryUserSubscriptionsStatusEnum]] = None, subscribed_by: Optional[Union[str, QueryUserSubscriptionsSubscribedByEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query user subscriptions (queryUserSubscriptions)
 
     Query user subscriptions.
@@ -2317,19 +1991,7 @@ def query_user_subscriptions(
 
 
 @same_doc_as(QueryUserSubscriptions)
-async def query_user_subscriptions_async(
-    user_id: str,
-    charge_status: Optional[Union[str, QueryUserSubscriptionsChargeStatusEnum]] = None,
-    item_id: Optional[str] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    sku: Optional[str] = None,
-    status: Optional[Union[str, QueryUserSubscriptionsStatusEnum]] = None,
-    subscribed_by: Optional[Union[str, QueryUserSubscriptionsSubscribedByEnum]] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def query_user_subscriptions_async(user_id: str, charge_status: Optional[Union[str, QueryUserSubscriptionsChargeStatusEnum]] = None, item_id: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, sku: Optional[str] = None, status: Optional[Union[str, QueryUserSubscriptionsStatusEnum]] = None, subscribed_by: Optional[Union[str, QueryUserSubscriptionsSubscribedByEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query user subscriptions (queryUserSubscriptions)
 
     Query user subscriptions.
@@ -2390,18 +2052,11 @@ async def query_user_subscriptions_async(
         subscribed_by=subscribed_by,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(RecurringChargeSubscription)
-def recurring_charge_subscription(
-    subscription_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def recurring_charge_subscription(subscription_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Recurring charge subscription (recurringChargeSubscription)
 
     [TEST FACILITY ONLY] Forbidden in live environment. Recurring charge subscription, it will trigger recurring charge if the USER subscription status is ACTIVE, nextBillingDate is before now and no fail recurring charge within X(default 12) hours.
@@ -2445,12 +2100,7 @@ def recurring_charge_subscription(
 
 
 @same_doc_as(RecurringChargeSubscription)
-async def recurring_charge_subscription_async(
-    subscription_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def recurring_charge_subscription_async(subscription_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Recurring charge subscription (recurringChargeSubscription)
 
     [TEST FACILITY ONLY] Forbidden in live environment. Recurring charge subscription, it will trigger recurring charge if the USER subscription status is ACTIVE, nextBillingDate is before now and no fail recurring charge within X(default 12) hours.
@@ -2490,6 +2140,4 @@ async def recurring_charge_subscription_async(
         subscription_id=subscription_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)

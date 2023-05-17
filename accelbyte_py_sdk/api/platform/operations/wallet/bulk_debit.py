@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -29,50 +29,57 @@ from .....core import Operation
 from .....core import HeaderStr
 from .....core import HttpResponse
 
-from ...models import ErrorEntity
-from ...models import RevocationConfigInfo
+from ...models import BulkDebitRequest
+from ...models import BulkDebitResult
+from ...models import ValidationErrorEntity
 
 
-class GetPaymentCallbackConfig1(Operation):
-    """Get revocation configuration (getPaymentCallbackConfig_1)
+class BulkDebit(Operation):
+    """Debit different users' wallets (bulkDebit)
 
-    Get revocation configuration.
+    Debit different users' wallets.
     Other detail info:
 
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:REVOCATION, action=2 (READ)
-      *  Returns : Revocation config
+      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET", action=4 (UPDATE)
+      *  Returns : bulk credit result
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:WALLET [UPDATE]
 
     Properties:
-        url: /platform/admin/namespaces/{namespace}/revocation/config
+        url: /platform/admin/namespaces/{namespace}/wallets/debit
 
-        method: GET
+        method: POST
 
-        tags: ["Revocation"]
+        tags: ["Wallet"]
 
-        consumes: []
+        consumes: ["application/json"]
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        body: (body) OPTIONAL List[BulkDebitRequest] in body
 
         namespace: (namespace) REQUIRED str in path
 
     Responses:
-        200: OK - RevocationConfigInfo (successful operation)
+        200: OK - BulkDebitResult (successful operation)
 
-        404: Not Found - ErrorEntity (33243: Payment callback config for [{namespace}] does not exist)
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
 
     # region fields
 
-    _url: str = "/platform/admin/namespaces/{namespace}/revocation/config"
-    _method: str = "GET"
-    _consumes: List[str] = []
+    _url: str = "/platform/admin/namespaces/{namespace}/wallets/debit"
+    _method: str = "POST"
+    _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
 
-    namespace: str  # REQUIRED in [path]
+    body: List[BulkDebitRequest]                                                                   # OPTIONAL in [body]
+    namespace: str                                                                                 # REQUIRED in [path]
 
     # endregion fields
 
@@ -112,8 +119,14 @@ class GetPaymentCallbackConfig1(Operation):
 
     def get_all_params(self) -> dict:
         return {
+            "body": self.get_body_params(),
             "path": self.get_path_params(),
         }
+
+    def get_body_params(self) -> Any:
+        if not hasattr(self, "body") or self.body is None:
+            return None
+        return [i.to_dict() for i in self.body]
 
     def get_path_params(self) -> dict:
         result = {}
@@ -129,7 +142,11 @@ class GetPaymentCallbackConfig1(Operation):
 
     # region with_x methods
 
-    def with_namespace(self, value: str) -> GetPaymentCallbackConfig1:
+    def with_body(self, value: List[BulkDebitRequest]) -> BulkDebit:
+        self.body = value
+        return self
+
+    def with_namespace(self, value: str) -> BulkDebit:
         self.namespace = value
         return self
 
@@ -139,6 +156,10 @@ class GetPaymentCallbackConfig1(Operation):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
+        if hasattr(self, "body") and self.body:
+            result["body"] = [i0.to_dict(include_empty=include_empty) for i0 in self.body]
+        elif include_empty:
+            result["body"] = []
         if hasattr(self, "namespace") and self.namespace:
             result["namespace"] = str(self.namespace)
         elif include_empty:
@@ -150,16 +171,12 @@ class GetPaymentCallbackConfig1(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(
-        self, code: int, content_type: str, content: Any
-    ) -> Tuple[
-        Union[None, RevocationConfigInfo], Union[None, ErrorEntity, HttpResponse]
-    ]:
+    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, BulkDebitResult], Union[None, HttpResponse, ValidationErrorEntity]]:
         """Parse the given response.
 
-        200: OK - RevocationConfigInfo (successful operation)
+        200: OK - BulkDebitResult (successful operation)
 
-        404: Not Found - ErrorEntity (33243: Payment callback config for [{namespace}] does not exist)
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -167,37 +184,42 @@ class GetPaymentCallbackConfig1(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(
-            code=code, content_type=content_type, content=content
-        )
+        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return RevocationConfigInfo.create_from_dict(content), None
-        if code == 404:
-            return None, ErrorEntity.create_from_dict(content)
+            return BulkDebitResult.create_from_dict(content), None
+        if code == 422:
+            return None, ValidationErrorEntity.create_from_dict(content)
 
-        return self.handle_undocumented_response(
-            code=code, content_type=content_type, content=content
-        )
+        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
 
     # endregion response methods
 
     # region static methods
 
     @classmethod
-    def create(cls, namespace: str, **kwargs) -> GetPaymentCallbackConfig1:
+    def create(
+        cls,
+        namespace: str,
+        body: Optional[List[BulkDebitRequest]] = None,
+    **kwargs
+    ) -> BulkDebit:
         instance = cls()
         instance.namespace = namespace
+        if body is not None:
+            instance.body = body
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> GetPaymentCallbackConfig1:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> BulkDebit:
         instance = cls()
+        if "body" in dict_ and dict_["body"] is not None:
+            instance.body = [BulkDebitRequest.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["body"]]
+        elif include_empty:
+            instance.body = []
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
@@ -207,12 +229,14 @@ class GetPaymentCallbackConfig1(Operation):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
+            "body": "body",
             "namespace": "namespace",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
+            "body": False,
             "namespace": True,
         }
 

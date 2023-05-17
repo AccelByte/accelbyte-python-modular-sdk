@@ -6,7 +6,7 @@
 
 # template_file: python-cli-command.j2
 
-# AGS Platform Service (4.27.0)
+# AGS Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -49,6 +49,7 @@ from accelbyte_py_sdk.api.platform.models import ValidationErrorEntity
 @click.option("--limit", "limit", type=int)
 @click.option("--offset", "offset", type=int)
 @click.option("--region", "region", type=str)
+@click.option("--section_exclusive", "section_exclusive", type=bool)
 @click.option("--sort_by", "sort_by", type=str)
 @click.option("--store_id", "store_id", type=str)
 @click.option("--tags", "tags", type=str)
@@ -58,33 +59,36 @@ from accelbyte_py_sdk.api.platform.models import ValidationErrorEntity
 @click.option("--login_with_auth", type=str)
 @click.option("--doc", type=bool)
 def query_items_1(
-    app_type: Optional[str] = None,
-    available_date: Optional[str] = None,
-    base_app_id: Optional[str] = None,
-    category_path: Optional[str] = None,
-    features: Optional[str] = None,
-    include_sub_category_item: Optional[bool] = None,
-    item_name: Optional[str] = None,
-    item_status: Optional[str] = None,
-    item_type: Optional[str] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    region: Optional[str] = None,
-    sort_by: Optional[str] = None,
-    store_id: Optional[str] = None,
-    tags: Optional[str] = None,
-    target_namespace: Optional[str] = None,
-    namespace: Optional[str] = None,
-    login_as: Optional[str] = None,
-    login_with_auth: Optional[str] = None,
-    doc: Optional[bool] = None,
+        app_type: Optional[str] = None,
+        available_date: Optional[str] = None,
+        base_app_id: Optional[str] = None,
+        category_path: Optional[str] = None,
+        features: Optional[str] = None,
+        include_sub_category_item: Optional[bool] = None,
+        item_name: Optional[str] = None,
+        item_status: Optional[str] = None,
+        item_type: Optional[str] = None,
+        limit: Optional[int] = None,
+        offset: Optional[int] = None,
+        region: Optional[str] = None,
+        section_exclusive: Optional[bool] = None,
+        sort_by: Optional[str] = None,
+        store_id: Optional[str] = None,
+        tags: Optional[str] = None,
+        target_namespace: Optional[str] = None,
+        namespace: Optional[str] = None,
+        login_as: Optional[str] = None,
+        login_with_auth: Optional[str] = None,
+        doc: Optional[bool] = None,
 ):
     if doc:
         click.echo(query_items_1_internal.__doc__)
         return
     x_additional_headers = None
     if login_with_auth:
-        x_additional_headers = {"Authorization": login_with_auth}
+        x_additional_headers = {
+            "Authorization": login_with_auth
+        }
     else:
         login_as_internal(login_as)
     if sort_by is not None:
@@ -106,6 +110,7 @@ def query_items_1(
         limit=limit,
         offset=offset,
         region=region,
+        section_exclusive=section_exclusive,
         sort_by=sort_by,
         store_id=store_id,
         tags=tags,

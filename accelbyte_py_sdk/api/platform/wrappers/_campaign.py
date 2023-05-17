@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -60,28 +60,14 @@ from ..operations.campaign import QueryCampaigns
 from ..operations.campaign import QueryCodes
 from ..operations.campaign import QueryRedeemHistory
 from ..operations.campaign import UpdateCampaign
-from ..models import (
-    CampaignCreateRedeemTypeEnum,
-    CampaignCreateStatusEnum,
-    CampaignCreateTypeEnum,
-)
-from ..models import (
-    CampaignInfoRedeemTypeEnum,
-    CampaignInfoStatusEnum,
-    CampaignInfoTypeEnum,
-)
+from ..models import CampaignCreateRedeemTypeEnum, CampaignCreateStatusEnum, CampaignCreateTypeEnum
+from ..models import CampaignInfoRedeemTypeEnum, CampaignInfoStatusEnum, CampaignInfoTypeEnum
 from ..models import CampaignUpdateRedeemTypeEnum, CampaignUpdateStatusEnum
 from ..models import CodeInfoRedeemTypeEnum, CodeInfoStatusEnum, CodeInfoTypeEnum
 
 
 @same_doc_as(ApplyUserRedemption)
-def apply_user_redemption(
-    user_id: str,
-    body: Optional[RedeemRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def apply_user_redemption(user_id: str, body: Optional[RedeemRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Redeem code (applyUserRedemption)
 
     [SERVICE COMMUNICATION ONLY] Redeem code. If the campaign which the code belongs to is INACTIVE, the code couldn't be redeemed even if its status is ACTIVE.
@@ -134,13 +120,7 @@ def apply_user_redemption(
 
 
 @same_doc_as(ApplyUserRedemption)
-async def apply_user_redemption_async(
-    user_id: str,
-    body: Optional[RedeemRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def apply_user_redemption_async(user_id: str, body: Optional[RedeemRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Redeem code (applyUserRedemption)
 
     [SERVICE COMMUNICATION ONLY] Redeem code. If the campaign which the code belongs to is INACTIVE, the code couldn't be redeemed even if its status is ACTIVE.
@@ -189,19 +169,11 @@ async def apply_user_redemption_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(BulkDisableCodes)
-def bulk_disable_codes(
-    campaign_id: str,
-    batch_no: Optional[int] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def bulk_disable_codes(campaign_id: str, batch_no: Optional[int] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Bulk disable codes (bulkDisableCodes)
 
     Bulk disable codes.
@@ -250,13 +222,7 @@ def bulk_disable_codes(
 
 
 @same_doc_as(BulkDisableCodes)
-async def bulk_disable_codes_async(
-    campaign_id: str,
-    batch_no: Optional[int] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def bulk_disable_codes_async(campaign_id: str, batch_no: Optional[int] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Bulk disable codes (bulkDisableCodes)
 
     Bulk disable codes.
@@ -301,19 +267,11 @@ async def bulk_disable_codes_async(
         batch_no=batch_no,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(BulkEnableCodes)
-def bulk_enable_codes(
-    campaign_id: str,
-    batch_no: Optional[int] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def bulk_enable_codes(campaign_id: str, batch_no: Optional[int] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Bulk enable codes (bulkEnableCodes)
 
     Bulk enable campaign codes.
@@ -360,13 +318,7 @@ def bulk_enable_codes(
 
 
 @same_doc_as(BulkEnableCodes)
-async def bulk_enable_codes_async(
-    campaign_id: str,
-    batch_no: Optional[int] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def bulk_enable_codes_async(campaign_id: str, batch_no: Optional[int] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Bulk enable codes (bulkEnableCodes)
 
     Bulk enable campaign codes.
@@ -409,18 +361,11 @@ async def bulk_enable_codes_async(
         batch_no=batch_no,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(CreateCampaign)
-def create_campaign(
-    body: Optional[CampaignCreate] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def create_campaign(body: Optional[CampaignCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Create campaign (createCampaign)
 
     Create campaign.
@@ -468,12 +413,7 @@ def create_campaign(
 
 
 @same_doc_as(CreateCampaign)
-async def create_campaign_async(
-    body: Optional[CampaignCreate] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def create_campaign_async(body: Optional[CampaignCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Create campaign (createCampaign)
 
     Create campaign.
@@ -517,19 +457,11 @@ async def create_campaign_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(CreateCodes)
-def create_codes(
-    campaign_id: str,
-    body: Optional[CodeCreate] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def create_codes(campaign_id: str, body: Optional[CodeCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Create campaign codes (createCodes)
 
     This API is used to create campaign codes, it will increase the batch No. based on last creation.
@@ -580,13 +512,7 @@ def create_codes(
 
 
 @same_doc_as(CreateCodes)
-async def create_codes_async(
-    campaign_id: str,
-    body: Optional[CodeCreate] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def create_codes_async(campaign_id: str, body: Optional[CodeCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Create campaign codes (createCodes)
 
     This API is used to create campaign codes, it will increase the batch No. based on last creation.
@@ -633,18 +559,11 @@ async def create_codes_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(DisableCode)
-def disable_code(
-    code: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def disable_code(code: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Disable code (disableCode)
 
     Disable code.
@@ -692,12 +611,7 @@ def disable_code(
 
 
 @same_doc_as(DisableCode)
-async def disable_code_async(
-    code: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def disable_code_async(code: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Disable code (disableCode)
 
     Disable code.
@@ -741,19 +655,11 @@ async def disable_code_async(
         code=code,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(Download)
-def download(
-    campaign_id: str,
-    batch_no: Optional[int] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def download(campaign_id: str, batch_no: Optional[int] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Download codes (download)
 
     Download all or a batch of campaign's codes as a csv file.
@@ -800,13 +706,7 @@ def download(
 
 
 @same_doc_as(Download)
-async def download_async(
-    campaign_id: str,
-    batch_no: Optional[int] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def download_async(campaign_id: str, batch_no: Optional[int] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Download codes (download)
 
     Download all or a batch of campaign's codes as a csv file.
@@ -849,18 +749,11 @@ async def download_async(
         batch_no=batch_no,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(EnableCode)
-def enable_code(
-    code: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def enable_code(code: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Enable code (enableCode)
 
     Enable code.
@@ -906,12 +799,7 @@ def enable_code(
 
 
 @same_doc_as(EnableCode)
-async def enable_code_async(
-    code: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def enable_code_async(code: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Enable code (enableCode)
 
     Enable code.
@@ -953,18 +841,11 @@ async def enable_code_async(
         code=code,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetCampaign)
-def get_campaign(
-    campaign_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_campaign(campaign_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get campaign (getCampaign)
 
     Get campaign info.
@@ -1010,12 +891,7 @@ def get_campaign(
 
 
 @same_doc_as(GetCampaign)
-async def get_campaign_async(
-    campaign_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_campaign_async(campaign_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get campaign (getCampaign)
 
     Get campaign info.
@@ -1057,18 +933,11 @@ async def get_campaign_async(
         campaign_id=campaign_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetCampaignDynamic)
-def get_campaign_dynamic(
-    campaign_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_campaign_dynamic(campaign_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get campaign dynamic (getCampaignDynamic)
 
     Get campaign dynamic.
@@ -1114,12 +983,7 @@ def get_campaign_dynamic(
 
 
 @same_doc_as(GetCampaignDynamic)
-async def get_campaign_dynamic_async(
-    campaign_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_campaign_dynamic_async(campaign_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get campaign dynamic (getCampaignDynamic)
 
     Get campaign dynamic.
@@ -1161,19 +1025,11 @@ async def get_campaign_dynamic_async(
         campaign_id=campaign_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetCode)
-def get_code(
-    code: str,
-    redeemable: Optional[bool] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_code(code: str, redeemable: Optional[bool] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get code info (getCode)
 
     Get campaign code, it will check code whether available to redeem if redeemable true.
@@ -1224,13 +1080,7 @@ def get_code(
 
 
 @same_doc_as(GetCode)
-async def get_code_async(
-    code: str,
-    redeemable: Optional[bool] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_code_async(code: str, redeemable: Optional[bool] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get code info (getCode)
 
     Get campaign code, it will check code whether available to redeem if redeemable true.
@@ -1277,21 +1127,11 @@ async def get_code_async(
         redeemable=redeemable,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(QueryCampaigns)
-def query_campaigns(
-    limit: Optional[int] = None,
-    name: Optional[str] = None,
-    offset: Optional[int] = None,
-    tag: Optional[str] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def query_campaigns(limit: Optional[int] = None, name: Optional[str] = None, offset: Optional[int] = None, tag: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query campaigns (queryCampaigns)
 
     Query campaigns, if name is presented, it's fuzzy match.
@@ -1344,15 +1184,7 @@ def query_campaigns(
 
 
 @same_doc_as(QueryCampaigns)
-async def query_campaigns_async(
-    limit: Optional[int] = None,
-    name: Optional[str] = None,
-    offset: Optional[int] = None,
-    tag: Optional[str] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def query_campaigns_async(limit: Optional[int] = None, name: Optional[str] = None, offset: Optional[int] = None, tag: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query campaigns (queryCampaigns)
 
     Query campaigns, if name is presented, it's fuzzy match.
@@ -1401,23 +1233,11 @@ async def query_campaigns_async(
         tag=tag,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(QueryCodes)
-def query_codes(
-    campaign_id: str,
-    active_only: Optional[bool] = None,
-    batch_no: Optional[int] = None,
-    code: Optional[str] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def query_codes(campaign_id: str, active_only: Optional[bool] = None, batch_no: Optional[int] = None, code: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query codes (queryCodes)
 
     Query campaign codes.
@@ -1476,17 +1296,7 @@ def query_codes(
 
 
 @same_doc_as(QueryCodes)
-async def query_codes_async(
-    campaign_id: str,
-    active_only: Optional[bool] = None,
-    batch_no: Optional[int] = None,
-    code: Optional[str] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def query_codes_async(campaign_id: str, active_only: Optional[bool] = None, batch_no: Optional[int] = None, code: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query codes (queryCodes)
 
     Query campaign codes.
@@ -1541,22 +1351,11 @@ async def query_codes_async(
         offset=offset,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(QueryRedeemHistory)
-def query_redeem_history(
-    campaign_id: str,
-    code: Optional[str] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    user_id: Optional[str] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def query_redeem_history(campaign_id: str, code: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, user_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query redeem history (queryRedeemHistory)
 
     Query redeem history.
@@ -1612,16 +1411,7 @@ def query_redeem_history(
 
 
 @same_doc_as(QueryRedeemHistory)
-async def query_redeem_history_async(
-    campaign_id: str,
-    code: Optional[str] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    user_id: Optional[str] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def query_redeem_history_async(campaign_id: str, code: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, user_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query redeem history (queryRedeemHistory)
 
     Query redeem history.
@@ -1673,19 +1463,11 @@ async def query_redeem_history_async(
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateCampaign)
-def update_campaign(
-    campaign_id: str,
-    body: Optional[CampaignUpdate] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_campaign(campaign_id: str, body: Optional[CampaignUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update campaign (updateCampaign)
 
     Update campaign.
@@ -1738,13 +1520,7 @@ def update_campaign(
 
 
 @same_doc_as(UpdateCampaign)
-async def update_campaign_async(
-    campaign_id: str,
-    body: Optional[CampaignUpdate] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_campaign_async(campaign_id: str, body: Optional[CampaignUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update campaign (updateCampaign)
 
     Update campaign.
@@ -1793,6 +1569,4 @@ async def update_campaign_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)

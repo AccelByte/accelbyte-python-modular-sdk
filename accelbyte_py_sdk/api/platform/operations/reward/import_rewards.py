@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -78,9 +78,9 @@ class ImportRewards(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
 
-    file: Any  # OPTIONAL in [form_data]
-    namespace: str  # REQUIRED in [path]
-    replace_existing: bool  # REQUIRED in [query]
+    file: Any                                                                                      # OPTIONAL in [form_data]
+    namespace: str                                                                                 # REQUIRED in [path]
+    replace_existing: bool                                                                         # REQUIRED in [query]
 
     # endregion fields
 
@@ -188,9 +188,7 @@ class ImportRewards(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(
-        self, code: int, content_type: str, content: Any
-    ) -> Tuple[Union[None, HttpResponse], Union[None, ErrorEntity, HttpResponse]]:
+    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, HttpResponse], Union[None, ErrorEntity, HttpResponse]]:
         """Parse the given response.
 
         200: OK - (successful import of reward configs)
@@ -203,9 +201,7 @@ class ImportRewards(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(
-            code=code, content_type=content_type, content=content
-        )
+        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
@@ -215,9 +211,7 @@ class ImportRewards(Operation):
         if code == 400:
             return None, ErrorEntity.create_from_dict(content)
 
-        return self.handle_undocumented_response(
-            code=code, content_type=content_type, content=content
-        )
+        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
 
     # endregion response methods
 
@@ -229,7 +223,7 @@ class ImportRewards(Operation):
         namespace: str,
         replace_existing: bool,
         file: Optional[Any] = None,
-        **kwargs,
+    **kwargs
     ) -> ImportRewards:
         instance = cls()
         instance.namespace = namespace
@@ -239,9 +233,7 @@ class ImportRewards(Operation):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> ImportRewards:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> ImportRewards:
         instance = cls()
         if "file" in dict_ and dict_["file"] is not None:
             instance.file = Any(dict_["file"])

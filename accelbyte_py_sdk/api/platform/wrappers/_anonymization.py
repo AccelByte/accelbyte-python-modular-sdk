@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -42,12 +42,7 @@ from ..operations.anonymization import AnonymizeWallet
 
 
 @same_doc_as(AnonymizeCampaign)
-def anonymize_campaign(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def anonymize_campaign(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Anonymize campaign (anonymizeCampaign)
 
     Anonymize campaign. At current it will only anonymize redeem history.
@@ -90,12 +85,7 @@ def anonymize_campaign(
 
 
 @same_doc_as(AnonymizeCampaign)
-async def anonymize_campaign_async(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def anonymize_campaign_async(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Anonymize campaign (anonymizeCampaign)
 
     Anonymize campaign. At current it will only anonymize redeem history.
@@ -134,18 +124,11 @@ async def anonymize_campaign_async(
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(AnonymizeEntitlement)
-def anonymize_entitlement(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def anonymize_entitlement(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """anonymize entitlement (anonymizeEntitlement)
 
     Anonymize entitlement. At current it will only anonymize entitlement, entitlement history.
@@ -188,12 +171,7 @@ def anonymize_entitlement(
 
 
 @same_doc_as(AnonymizeEntitlement)
-async def anonymize_entitlement_async(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def anonymize_entitlement_async(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """anonymize entitlement (anonymizeEntitlement)
 
     Anonymize entitlement. At current it will only anonymize entitlement, entitlement history.
@@ -232,18 +210,11 @@ async def anonymize_entitlement_async(
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(AnonymizeFulfillment)
-def anonymize_fulfillment(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def anonymize_fulfillment(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """anonymize fulfillment (anonymizeFulfillment)
 
     Anonymize fulfillment. At current it will only anonymize fulfillment history.
@@ -286,12 +257,7 @@ def anonymize_fulfillment(
 
 
 @same_doc_as(AnonymizeFulfillment)
-async def anonymize_fulfillment_async(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def anonymize_fulfillment_async(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """anonymize fulfillment (anonymizeFulfillment)
 
     Anonymize fulfillment. At current it will only anonymize fulfillment history.
@@ -330,18 +296,11 @@ async def anonymize_fulfillment_async(
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(AnonymizeIntegration)
-def anonymize_integration(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def anonymize_integration(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """anonymize integrations (anonymizeIntegration)
 
     Anonymize integrations. At current it will only anonymize iap histories.
@@ -384,12 +343,7 @@ def anonymize_integration(
 
 
 @same_doc_as(AnonymizeIntegration)
-async def anonymize_integration_async(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def anonymize_integration_async(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """anonymize integrations (anonymizeIntegration)
 
     Anonymize integrations. At current it will only anonymize iap histories.
@@ -428,18 +382,11 @@ async def anonymize_integration_async(
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(AnonymizeOrder)
-def anonymize_order(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def anonymize_order(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """anonymize order (anonymizeOrder)
 
     Anonymize order. At current it will only anonymize order, order history.
@@ -482,12 +429,7 @@ def anonymize_order(
 
 
 @same_doc_as(AnonymizeOrder)
-async def anonymize_order_async(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def anonymize_order_async(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """anonymize order (anonymizeOrder)
 
     Anonymize order. At current it will only anonymize order, order history.
@@ -526,18 +468,11 @@ async def anonymize_order_async(
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(AnonymizePayment)
-def anonymize_payment(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def anonymize_payment(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """anonymize payment (anonymizePayment)
 
     Anonymize payment. At current it will only anonymize payment order, payment order history.
@@ -580,12 +515,7 @@ def anonymize_payment(
 
 
 @same_doc_as(AnonymizePayment)
-async def anonymize_payment_async(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def anonymize_payment_async(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """anonymize payment (anonymizePayment)
 
     Anonymize payment. At current it will only anonymize payment order, payment order history.
@@ -624,18 +554,11 @@ async def anonymize_payment_async(
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(AnonymizeRevocation)
-def anonymize_revocation(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def anonymize_revocation(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """anonymize revocation (anonymizeRevocation)
 
     Anonymize revocation. At current it will only anonymize revocation history.
@@ -675,12 +598,7 @@ def anonymize_revocation(
 
 
 @same_doc_as(AnonymizeRevocation)
-async def anonymize_revocation_async(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def anonymize_revocation_async(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """anonymize revocation (anonymizeRevocation)
 
     Anonymize revocation. At current it will only anonymize revocation history.
@@ -716,18 +634,11 @@ async def anonymize_revocation_async(
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(AnonymizeSubscription)
-def anonymize_subscription(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def anonymize_subscription(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """anonymize subscription (anonymizeSubscription)
 
     Anonymize subscription. At current it will anonymize subscription, billing history and subscription activity.
@@ -770,12 +681,7 @@ def anonymize_subscription(
 
 
 @same_doc_as(AnonymizeSubscription)
-async def anonymize_subscription_async(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def anonymize_subscription_async(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """anonymize subscription (anonymizeSubscription)
 
     Anonymize subscription. At current it will anonymize subscription, billing history and subscription activity.
@@ -814,18 +720,11 @@ async def anonymize_subscription_async(
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(AnonymizeWallet)
-def anonymize_wallet(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def anonymize_wallet(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """anonymize wallet (anonymizeWallet)
 
     Anonymize wallet. At current it will only anonymize wallet, wallet transaction.
@@ -868,12 +767,7 @@ def anonymize_wallet(
 
 
 @same_doc_as(AnonymizeWallet)
-async def anonymize_wallet_async(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def anonymize_wallet_async(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """anonymize wallet (anonymizeWallet)
 
     Anonymize wallet. At current it will only anonymize wallet, wallet transaction.
@@ -912,6 +806,4 @@ async def anonymize_wallet_async(
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)

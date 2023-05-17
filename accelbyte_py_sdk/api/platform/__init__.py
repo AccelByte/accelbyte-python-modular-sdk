@@ -1,14 +1,14 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.27.0"
+__version__ = "4.28.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -147,6 +147,8 @@ from .wrappers import get_platform_dlc_config
 from .wrappers import get_platform_dlc_config_async
 from .wrappers import get_user_dlc
 from .wrappers import get_user_dlc_async
+from .wrappers import get_user_dlc_by_platform
+from .wrappers import get_user_dlc_by_platform_async
 from .wrappers import public_sync_psn_dlc_inventory
 from .wrappers import public_sync_psn_dlc_inventory_async
 from .wrappers import public_sync_psn_dlc_inventory_with_multiple_service_labels
@@ -195,6 +197,8 @@ from .wrappers import get_user_entitlement_ownership_by_item_ids
 from .wrappers import get_user_entitlement_ownership_by_item_ids_async
 from .wrappers import get_user_entitlement_ownership_by_sku
 from .wrappers import get_user_entitlement_ownership_by_sku_async
+from .wrappers import grant_entitlements
+from .wrappers import grant_entitlements_async
 from .wrappers import grant_user_entitlement
 from .wrappers import grant_user_entitlement_async
 from .wrappers import public_consume_user_entitlement
@@ -235,10 +239,18 @@ from .wrappers import public_sell_user_entitlement
 from .wrappers import public_sell_user_entitlement_async
 from .wrappers import query_entitlements
 from .wrappers import query_entitlements_async
+from .wrappers import query_entitlements_1
+from .wrappers import query_entitlements_1_async
 from .wrappers import query_user_entitlements
 from .wrappers import query_user_entitlements_async
 from .wrappers import query_user_entitlements_by_app_type
 from .wrappers import query_user_entitlements_by_app_type_async
+from .wrappers import revoke_all_entitlements
+from .wrappers import revoke_all_entitlements_async
+from .wrappers import revoke_entitlements
+from .wrappers import revoke_entitlements_async
+from .wrappers import revoke_use_count
+from .wrappers import revoke_use_count_async
 from .wrappers import revoke_user_entitlement
 from .wrappers import revoke_user_entitlement_async
 from .wrappers import revoke_user_entitlements
@@ -318,9 +330,7 @@ from .wrappers import public_fulfill_google_iap_item_async
 from .wrappers import public_reconcile_play_station_store
 from .wrappers import public_reconcile_play_station_store_async
 from .wrappers import public_reconcile_play_station_store_with_multiple_service_labels
-from .wrappers import (
-    public_reconcile_play_station_store_with_multiple_service_labels_async,
-)
+from .wrappers import public_reconcile_play_station_store_with_multiple_service_labels_async
 from .wrappers import query_all_user_iap_orders
 from .wrappers import query_all_user_iap_orders_async
 from .wrappers import query_user_iap_consume_history
@@ -657,8 +667,8 @@ from .wrappers import delete_revocation_config
 from .wrappers import delete_revocation_config_async
 from .wrappers import do_revocation
 from .wrappers import do_revocation_async
-from .wrappers import get_payment_callback_config_1
-from .wrappers import get_payment_callback_config_1_async
+from .wrappers import get_revocation_config
+from .wrappers import get_revocation_config_async
 from .wrappers import query_revocation_histories
 from .wrappers import query_revocation_histories_async
 from .wrappers import update_revocation_config
@@ -813,6 +823,10 @@ from .wrappers import update_view
 from .wrappers import update_view_async
 
 # wallet
+from .wrappers import bulk_credit
+from .wrappers import bulk_credit_async
+from .wrappers import bulk_debit
+from .wrappers import bulk_debit_async
 from .wrappers import check_wallet
 from .wrappers import check_wallet_async
 from .wrappers import credit_user_wallet

@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -71,23 +71,23 @@ class SectionInfo(Model):
 
     # region fields
 
-    active: bool  # REQUIRED
-    created_at: str  # REQUIRED
-    end_date: str  # REQUIRED
-    name: str  # REQUIRED
-    namespace: str  # REQUIRED
-    section_id: str  # REQUIRED
-    start_date: str  # REQUIRED
-    title: str  # REQUIRED
-    updated_at: str  # REQUIRED
-    view_id: str  # REQUIRED
-    current_rotation_expire_at: str  # OPTIONAL
-    current_rotation_items: List[ItemInfo]  # OPTIONAL
-    description: str  # OPTIONAL
-    display_order: int  # OPTIONAL
-    ext: Dict[str, Any]  # OPTIONAL
-    local_ext: Dict[str, Any]  # OPTIONAL
-    long_description: str  # OPTIONAL
+    active: bool                                                                                   # REQUIRED
+    created_at: str                                                                                # REQUIRED
+    end_date: str                                                                                  # REQUIRED
+    name: str                                                                                      # REQUIRED
+    namespace: str                                                                                 # REQUIRED
+    section_id: str                                                                                # REQUIRED
+    start_date: str                                                                                # REQUIRED
+    title: str                                                                                     # REQUIRED
+    updated_at: str                                                                                # REQUIRED
+    view_id: str                                                                                   # REQUIRED
+    current_rotation_expire_at: str                                                                # OPTIONAL
+    current_rotation_items: List[ItemInfo]                                                         # OPTIONAL
+    description: str                                                                               # OPTIONAL
+    display_order: int                                                                             # OPTIONAL
+    ext: Dict[str, Any]                                                                            # OPTIONAL
+    local_ext: Dict[str, Any]                                                                      # OPTIONAL
+    long_description: str                                                                          # OPTIONAL
 
     # endregion fields
 
@@ -212,10 +212,7 @@ class SectionInfo(Model):
         elif include_empty:
             result["currentRotationExpireAt"] = ""
         if hasattr(self, "current_rotation_items"):
-            result["currentRotationItems"] = [
-                i0.to_dict(include_empty=include_empty)
-                for i0 in self.current_rotation_items
-            ]
+            result["currentRotationItems"] = [i0.to_dict(include_empty=include_empty) for i0 in self.current_rotation_items]
         elif include_empty:
             result["currentRotationItems"] = []
         if hasattr(self, "description"):
@@ -264,7 +261,7 @@ class SectionInfo(Model):
         ext: Optional[Dict[str, Any]] = None,
         local_ext: Optional[Dict[str, Any]] = None,
         long_description: Optional[str] = None,
-        **kwargs,
+    **kwargs
     ) -> SectionInfo:
         instance = cls()
         instance.active = active
@@ -338,21 +335,12 @@ class SectionInfo(Model):
             instance.view_id = str(dict_["viewId"])
         elif include_empty:
             instance.view_id = ""
-        if (
-            "currentRotationExpireAt" in dict_
-            and dict_["currentRotationExpireAt"] is not None
-        ):
+        if "currentRotationExpireAt" in dict_ and dict_["currentRotationExpireAt"] is not None:
             instance.current_rotation_expire_at = str(dict_["currentRotationExpireAt"])
         elif include_empty:
             instance.current_rotation_expire_at = ""
-        if (
-            "currentRotationItems" in dict_
-            and dict_["currentRotationItems"] is not None
-        ):
-            instance.current_rotation_items = [
-                ItemInfo.create_from_dict(i0, include_empty=include_empty)
-                for i0 in dict_["currentRotationItems"]
-            ]
+        if "currentRotationItems" in dict_ and dict_["currentRotationItems"] is not None:
+            instance.current_rotation_items = [ItemInfo.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["currentRotationItems"]]
         elif include_empty:
             instance.current_rotation_items = []
         if "description" in dict_ and dict_["description"] is not None:
@@ -378,29 +366,15 @@ class SectionInfo(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, SectionInfo]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, SectionInfo]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[SectionInfo]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[SectionInfo]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[SectionInfo, List[SectionInfo], Dict[Any, SectionInfo]]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[SectionInfo, List[SectionInfo], Dict[Any, SectionInfo]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

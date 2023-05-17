@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -77,9 +77,9 @@ class ListBasicItemsByFeatures(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
 
-    namespace: str  # REQUIRED in [path]
-    active_only: bool  # OPTIONAL in [query]
-    features: List[str]  # OPTIONAL in [query]
+    namespace: str                                                                                 # REQUIRED in [path]
+    active_only: bool                                                                              # OPTIONAL in [query]
+    features: List[str]                                                                            # OPTIONAL in [query]
 
     # endregion fields
 
@@ -182,9 +182,7 @@ class ListBasicItemsByFeatures(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(
-        self, code: int, content_type: str, content: Any
-    ) -> Tuple[Union[None, List[BasicItem]], Union[None, HttpResponse]]:
+    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, List[BasicItem]], Union[None, HttpResponse]]:
         """Parse the given response.
 
         200: OK - List[BasicItem] (successful operation)
@@ -195,9 +193,7 @@ class ListBasicItemsByFeatures(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(
-            code=code, content_type=content_type, content=content
-        )
+        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
@@ -205,9 +201,7 @@ class ListBasicItemsByFeatures(Operation):
         if code == 200:
             return [BasicItem.create_from_dict(i) for i in content], None
 
-        return self.handle_undocumented_response(
-            code=code, content_type=content_type, content=content
-        )
+        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
 
     # endregion response methods
 
@@ -219,7 +213,7 @@ class ListBasicItemsByFeatures(Operation):
         namespace: str,
         active_only: Optional[bool] = None,
         features: Optional[List[str]] = None,
-        **kwargs,
+    **kwargs
     ) -> ListBasicItemsByFeatures:
         instance = cls()
         instance.namespace = namespace
@@ -230,9 +224,7 @@ class ListBasicItemsByFeatures(Operation):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> ListBasicItemsByFeatures:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> ListBasicItemsByFeatures:
         instance = cls()
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
@@ -267,7 +259,7 @@ class ListBasicItemsByFeatures(Operation):
     @staticmethod
     def get_collection_format_map() -> Dict[str, Union[None, str]]:
         return {
-            "features": "multi",  # in query
+            "features": "multi",                                                                   # in query
         }
 
     # endregion static methods

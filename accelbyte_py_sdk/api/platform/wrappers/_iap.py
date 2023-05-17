@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -91,10 +91,7 @@ from ..operations.iap import PublicReconcilePlayStationStore
 from ..operations.iap import PublicReconcilePlayStationStoreWithMultipleServiceLabels
 from ..operations.iap import QueryAllUserIAPOrders
 from ..operations.iap import QueryUserIAPConsumeHistory
-from ..operations.iap import (
-    QueryUserIAPConsumeHistoryStatusEnum,
-    QueryUserIAPConsumeHistoryTypeEnum,
-)
+from ..operations.iap import QueryUserIAPConsumeHistoryStatusEnum, QueryUserIAPConsumeHistoryTypeEnum
 from ..operations.iap import QueryUserIAPOrders
 from ..operations.iap import QueryUserIAPOrdersStatusEnum, QueryUserIAPOrdersTypeEnum
 from ..operations.iap import SyncEpicGamesInventory
@@ -120,11 +117,7 @@ from ..models import XblReconcileResultIapOrderStatusEnum
 
 
 @same_doc_as(DeleteAppleIAPConfig)
-def delete_apple_iap_config(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def delete_apple_iap_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete apple iap config (deleteAppleIAPConfig)
 
     Delete apple iap config.
@@ -164,11 +157,7 @@ def delete_apple_iap_config(
 
 
 @same_doc_as(DeleteAppleIAPConfig)
-async def delete_apple_iap_config_async(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def delete_apple_iap_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete apple iap config (deleteAppleIAPConfig)
 
     Delete apple iap config.
@@ -204,17 +193,11 @@ async def delete_apple_iap_config_async(
     request = DeleteAppleIAPConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(DeleteEpicGamesIAPConfig)
-def delete_epic_games_iap_config(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def delete_epic_games_iap_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete epic games iap config (deleteEpicGamesIAPConfig)
 
     Delete epic games iap config.
@@ -254,11 +237,7 @@ def delete_epic_games_iap_config(
 
 
 @same_doc_as(DeleteEpicGamesIAPConfig)
-async def delete_epic_games_iap_config_async(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def delete_epic_games_iap_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete epic games iap config (deleteEpicGamesIAPConfig)
 
     Delete epic games iap config.
@@ -294,17 +273,11 @@ async def delete_epic_games_iap_config_async(
     request = DeleteEpicGamesIAPConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(DeleteGoogleIAPConfig)
-def delete_google_iap_config(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def delete_google_iap_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete google iap config (deleteGoogleIAPConfig)
 
     Delete google iap config.
@@ -344,11 +317,7 @@ def delete_google_iap_config(
 
 
 @same_doc_as(DeleteGoogleIAPConfig)
-async def delete_google_iap_config_async(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def delete_google_iap_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete google iap config (deleteGoogleIAPConfig)
 
     Delete google iap config.
@@ -384,17 +353,11 @@ async def delete_google_iap_config_async(
     request = DeleteGoogleIAPConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(DeleteIAPItemConfig)
-def delete_iap_item_config(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def delete_iap_item_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """delete a iap item config (deleteIAPItemConfig)
 
     delete a iap item config.
@@ -434,11 +397,7 @@ def delete_iap_item_config(
 
 
 @same_doc_as(DeleteIAPItemConfig)
-async def delete_iap_item_config_async(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def delete_iap_item_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """delete a iap item config (deleteIAPItemConfig)
 
     delete a iap item config.
@@ -474,17 +433,11 @@ async def delete_iap_item_config_async(
     request = DeleteIAPItemConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(DeletePlaystationIAPConfig)
-def delete_playstation_iap_config(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def delete_playstation_iap_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete playstation iap config (deletePlaystationIAPConfig)
 
     Delete playstation iap config.
@@ -524,11 +477,7 @@ def delete_playstation_iap_config(
 
 
 @same_doc_as(DeletePlaystationIAPConfig)
-async def delete_playstation_iap_config_async(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def delete_playstation_iap_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete playstation iap config (deletePlaystationIAPConfig)
 
     Delete playstation iap config.
@@ -564,17 +513,11 @@ async def delete_playstation_iap_config_async(
     request = DeletePlaystationIAPConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(DeleteSteamIAPConfig)
-def delete_steam_iap_config(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def delete_steam_iap_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete steam iap config (deleteSteamIAPConfig)
 
     Delete steam iap config.
@@ -614,11 +557,7 @@ def delete_steam_iap_config(
 
 
 @same_doc_as(DeleteSteamIAPConfig)
-async def delete_steam_iap_config_async(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def delete_steam_iap_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete steam iap config (deleteSteamIAPConfig)
 
     Delete steam iap config.
@@ -654,17 +593,11 @@ async def delete_steam_iap_config_async(
     request = DeleteSteamIAPConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(DeleteTwitchIAPConfig)
-def delete_twitch_iap_config(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def delete_twitch_iap_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete twitch iap config (deleteTwitchIAPConfig)
 
     Delete twitch iap config.
@@ -704,11 +637,7 @@ def delete_twitch_iap_config(
 
 
 @same_doc_as(DeleteTwitchIAPConfig)
-async def delete_twitch_iap_config_async(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def delete_twitch_iap_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete twitch iap config (deleteTwitchIAPConfig)
 
     Delete twitch iap config.
@@ -744,17 +673,11 @@ async def delete_twitch_iap_config_async(
     request = DeleteTwitchIAPConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(DeleteXblAPConfig)
-def delete_xbl_ap_config(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def delete_xbl_ap_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete xbl iap config (deleteXblAPConfig)
 
     Delete xbl iap config.
@@ -794,11 +717,7 @@ def delete_xbl_ap_config(
 
 
 @same_doc_as(DeleteXblAPConfig)
-async def delete_xbl_ap_config_async(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def delete_xbl_ap_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete xbl iap config (deleteXblAPConfig)
 
     Delete xbl iap config.
@@ -834,17 +753,11 @@ async def delete_xbl_ap_config_async(
     request = DeleteXblAPConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetAppleIAPConfig)
-def get_apple_iap_config(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_apple_iap_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get apple iap config (getAppleIAPConfig)
 
     Get apple iap config.
@@ -885,11 +798,7 @@ def get_apple_iap_config(
 
 
 @same_doc_as(GetAppleIAPConfig)
-async def get_apple_iap_config_async(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_apple_iap_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get apple iap config (getAppleIAPConfig)
 
     Get apple iap config.
@@ -926,17 +835,11 @@ async def get_apple_iap_config_async(
     request = GetAppleIAPConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetEpicGamesIAPConfig)
-def get_epic_games_iap_config(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_epic_games_iap_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get epicgames iap config (getEpicGamesIAPConfig)
 
     Get epic games iap config.
@@ -977,11 +880,7 @@ def get_epic_games_iap_config(
 
 
 @same_doc_as(GetEpicGamesIAPConfig)
-async def get_epic_games_iap_config_async(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_epic_games_iap_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get epicgames iap config (getEpicGamesIAPConfig)
 
     Get epic games iap config.
@@ -1018,17 +917,11 @@ async def get_epic_games_iap_config_async(
     request = GetEpicGamesIAPConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetGoogleIAPConfig)
-def get_google_iap_config(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_google_iap_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get google iap config (getGoogleIAPConfig)
 
     Get google iap config.
@@ -1069,11 +962,7 @@ def get_google_iap_config(
 
 
 @same_doc_as(GetGoogleIAPConfig)
-async def get_google_iap_config_async(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_google_iap_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get google iap config (getGoogleIAPConfig)
 
     Get google iap config.
@@ -1110,17 +999,11 @@ async def get_google_iap_config_async(
     request = GetGoogleIAPConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetIAPItemConfig)
-def get_iap_item_config(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_iap_item_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get iap item config (getIAPItemConfig)
 
     Get iap item config.
@@ -1162,11 +1045,7 @@ def get_iap_item_config(
 
 
 @same_doc_as(GetIAPItemConfig)
-async def get_iap_item_config_async(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_iap_item_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get iap item config (getIAPItemConfig)
 
     Get iap item config.
@@ -1204,18 +1083,11 @@ async def get_iap_item_config_async(
     request = GetIAPItemConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetIAPItemMapping)
-def get_iap_item_mapping(
-    platform: Optional[Union[str, GetIAPItemMappingPlatformEnum]] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_iap_item_mapping(platform: Optional[Union[str, GetIAPItemMappingPlatformEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get iap item mapping (getIAPItemMapping)
 
     Get iap item mapping.
@@ -1255,12 +1127,7 @@ def get_iap_item_mapping(
 
 
 @same_doc_as(GetIAPItemMapping)
-async def get_iap_item_mapping_async(
-    platform: Optional[Union[str, GetIAPItemMappingPlatformEnum]] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_iap_item_mapping_async(platform: Optional[Union[str, GetIAPItemMappingPlatformEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get iap item mapping (getIAPItemMapping)
 
     Get iap item mapping.
@@ -1296,17 +1163,11 @@ async def get_iap_item_mapping_async(
         platform=platform,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetPlayStationIAPConfig)
-def get_play_station_iap_config(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_play_station_iap_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get playstation iap config (getPlayStationIAPConfig)
 
     Get playstation iap config.
@@ -1347,11 +1208,7 @@ def get_play_station_iap_config(
 
 
 @same_doc_as(GetPlayStationIAPConfig)
-async def get_play_station_iap_config_async(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_play_station_iap_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get playstation iap config (getPlayStationIAPConfig)
 
     Get playstation iap config.
@@ -1388,17 +1245,11 @@ async def get_play_station_iap_config_async(
     request = GetPlayStationIAPConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetSteamIAPConfig)
-def get_steam_iap_config(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_steam_iap_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get steam iap config (getSteamIAPConfig)
 
     Get steam iap config.
@@ -1439,11 +1290,7 @@ def get_steam_iap_config(
 
 
 @same_doc_as(GetSteamIAPConfig)
-async def get_steam_iap_config_async(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_steam_iap_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get steam iap config (getSteamIAPConfig)
 
     Get steam iap config.
@@ -1480,17 +1327,11 @@ async def get_steam_iap_config_async(
     request = GetSteamIAPConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetTwitchIAPConfig)
-def get_twitch_iap_config(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_twitch_iap_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get twitch iap config (getTwitchIAPConfig)
 
     Get twitch iap config.
@@ -1531,11 +1372,7 @@ def get_twitch_iap_config(
 
 
 @same_doc_as(GetTwitchIAPConfig)
-async def get_twitch_iap_config_async(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_twitch_iap_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get twitch iap config (getTwitchIAPConfig)
 
     Get twitch iap config.
@@ -1572,17 +1409,11 @@ async def get_twitch_iap_config_async(
     request = GetTwitchIAPConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetXblIAPConfig)
-def get_xbl_iap_config(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_xbl_iap_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get xbox iap config (getXblIAPConfig)
 
     Get xbox iap config.
@@ -1623,11 +1454,7 @@ def get_xbl_iap_config(
 
 
 @same_doc_as(GetXblIAPConfig)
-async def get_xbl_iap_config_async(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_xbl_iap_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get xbox iap config (getXblIAPConfig)
 
     Get xbox iap config.
@@ -1664,19 +1491,11 @@ async def get_xbl_iap_config_async(
     request = GetXblIAPConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(MockFulfillIAPItem)
-def mock_fulfill_iap_item(
-    user_id: str,
-    body: Optional[MockIAPReceipt] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def mock_fulfill_iap_item(user_id: str, body: Optional[MockIAPReceipt] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Mock fulfill iap item. (mockFulfillIAPItem)
 
     [TEST FACILITY ONLY] Forbidden in live environment. Mock fulfill iap item without validate receipt.
@@ -1730,13 +1549,7 @@ def mock_fulfill_iap_item(
 
 
 @same_doc_as(MockFulfillIAPItem)
-async def mock_fulfill_iap_item_async(
-    user_id: str,
-    body: Optional[MockIAPReceipt] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def mock_fulfill_iap_item_async(user_id: str, body: Optional[MockIAPReceipt] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Mock fulfill iap item. (mockFulfillIAPItem)
 
     [TEST FACILITY ONLY] Forbidden in live environment. Mock fulfill iap item without validate receipt.
@@ -1786,19 +1599,11 @@ async def mock_fulfill_iap_item_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(PublicFulfillAppleIAPItem)
-def public_fulfill_apple_iap_item(
-    user_id: str,
-    body: Optional[AppleIAPReceipt] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def public_fulfill_apple_iap_item(user_id: str, body: Optional[AppleIAPReceipt] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Fulfill apple iap item. (publicFulfillAppleIAPItem)
 
     Verify apple iap receipt and fulfill item.
@@ -1852,13 +1657,7 @@ def public_fulfill_apple_iap_item(
 
 
 @same_doc_as(PublicFulfillAppleIAPItem)
-async def public_fulfill_apple_iap_item_async(
-    user_id: str,
-    body: Optional[AppleIAPReceipt] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def public_fulfill_apple_iap_item_async(user_id: str, body: Optional[AppleIAPReceipt] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Fulfill apple iap item. (publicFulfillAppleIAPItem)
 
     Verify apple iap receipt and fulfill item.
@@ -1908,19 +1707,11 @@ async def public_fulfill_apple_iap_item_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(PublicFulfillGoogleIAPItem)
-def public_fulfill_google_iap_item(
-    user_id: str,
-    body: Optional[GoogleIAPReceipt] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def public_fulfill_google_iap_item(user_id: str, body: Optional[GoogleIAPReceipt] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Fulfill google iap item. (publicFulfillGoogleIAPItem)
 
     Verify google iap receipt and fulfill item.
@@ -1974,13 +1765,7 @@ def public_fulfill_google_iap_item(
 
 
 @same_doc_as(PublicFulfillGoogleIAPItem)
-async def public_fulfill_google_iap_item_async(
-    user_id: str,
-    body: Optional[GoogleIAPReceipt] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def public_fulfill_google_iap_item_async(user_id: str, body: Optional[GoogleIAPReceipt] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Fulfill google iap item. (publicFulfillGoogleIAPItem)
 
     Verify google iap receipt and fulfill item.
@@ -2030,19 +1815,11 @@ async def public_fulfill_google_iap_item_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(PublicReconcilePlayStationStore)
-def public_reconcile_play_station_store(
-    user_id: str,
-    body: Optional[PlayStationReconcileRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def public_reconcile_play_station_store(user_id: str, body: Optional[PlayStationReconcileRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Synchronize with entitlements in PSN Store. (publicReconcilePlayStationStore)
 
     Synchronize with entitlements in PSN Store.
@@ -2092,13 +1869,7 @@ def public_reconcile_play_station_store(
 
 
 @same_doc_as(PublicReconcilePlayStationStore)
-async def public_reconcile_play_station_store_async(
-    user_id: str,
-    body: Optional[PlayStationReconcileRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def public_reconcile_play_station_store_async(user_id: str, body: Optional[PlayStationReconcileRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Synchronize with entitlements in PSN Store. (publicReconcilePlayStationStore)
 
     Synchronize with entitlements in PSN Store.
@@ -2144,19 +1915,11 @@ async def public_reconcile_play_station_store_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(PublicReconcilePlayStationStoreWithMultipleServiceLabels)
-def public_reconcile_play_station_store_with_multiple_service_labels(
-    user_id: str,
-    body: Optional[PlayStationMultiServiceLabelsReconcileRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def public_reconcile_play_station_store_with_multiple_service_labels(user_id: str, body: Optional[PlayStationMultiServiceLabelsReconcileRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Synchronize with entitlements in PSN Store with multiple service labels. (publicReconcilePlayStationStoreWithMultipleServiceLabels)
 
     Synchronize with entitlements in PSN Store with multiple service labels.
@@ -2206,13 +1969,7 @@ def public_reconcile_play_station_store_with_multiple_service_labels(
 
 
 @same_doc_as(PublicReconcilePlayStationStoreWithMultipleServiceLabels)
-async def public_reconcile_play_station_store_with_multiple_service_labels_async(
-    user_id: str,
-    body: Optional[PlayStationMultiServiceLabelsReconcileRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def public_reconcile_play_station_store_with_multiple_service_labels_async(user_id: str, body: Optional[PlayStationMultiServiceLabelsReconcileRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Synchronize with entitlements in PSN Store with multiple service labels. (publicReconcilePlayStationStoreWithMultipleServiceLabels)
 
     Synchronize with entitlements in PSN Store with multiple service labels.
@@ -2258,18 +2015,11 @@ async def public_reconcile_play_station_store_with_multiple_service_labels_async
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(QueryAllUserIAPOrders)
-def query_all_user_iap_orders(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def query_all_user_iap_orders(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query all user IAP orders (queryAllUserIAPOrders)
 
     Query all user IAP orders.
@@ -2313,12 +2063,7 @@ def query_all_user_iap_orders(
 
 
 @same_doc_as(QueryAllUserIAPOrders)
-async def query_all_user_iap_orders_async(
-    user_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def query_all_user_iap_orders_async(user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query all user IAP orders (queryAllUserIAPOrders)
 
     Query all user IAP orders.
@@ -2358,24 +2103,11 @@ async def query_all_user_iap_orders_async(
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(QueryUserIAPConsumeHistory)
-def query_user_iap_consume_history(
-    user_id: str,
-    end_time: Optional[str] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    start_time: Optional[str] = None,
-    status: Optional[Union[str, QueryUserIAPConsumeHistoryStatusEnum]] = None,
-    type_: Optional[Union[str, QueryUserIAPConsumeHistoryTypeEnum]] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def query_user_iap_consume_history(user_id: str, end_time: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, start_time: Optional[str] = None, status: Optional[Union[str, QueryUserIAPConsumeHistoryStatusEnum]] = None, type_: Optional[Union[str, QueryUserIAPConsumeHistoryTypeEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query IAP consume history (queryUserIAPConsumeHistory)
 
     Query IAP consume history.
@@ -2437,18 +2169,7 @@ def query_user_iap_consume_history(
 
 
 @same_doc_as(QueryUserIAPConsumeHistory)
-async def query_user_iap_consume_history_async(
-    user_id: str,
-    end_time: Optional[str] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    start_time: Optional[str] = None,
-    status: Optional[Union[str, QueryUserIAPConsumeHistoryStatusEnum]] = None,
-    type_: Optional[Union[str, QueryUserIAPConsumeHistoryTypeEnum]] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def query_user_iap_consume_history_async(user_id: str, end_time: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, start_time: Optional[str] = None, status: Optional[Union[str, QueryUserIAPConsumeHistoryStatusEnum]] = None, type_: Optional[Union[str, QueryUserIAPConsumeHistoryTypeEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query IAP consume history (queryUserIAPConsumeHistory)
 
     Query IAP consume history.
@@ -2506,25 +2227,11 @@ async def query_user_iap_consume_history_async(
         type_=type_,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(QueryUserIAPOrders)
-def query_user_iap_orders(
-    user_id: str,
-    end_time: Optional[str] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    product_id: Optional[str] = None,
-    start_time: Optional[str] = None,
-    status: Optional[Union[str, QueryUserIAPOrdersStatusEnum]] = None,
-    type_: Optional[Union[str, QueryUserIAPOrdersTypeEnum]] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def query_user_iap_orders(user_id: str, end_time: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, product_id: Optional[str] = None, start_time: Optional[str] = None, status: Optional[Union[str, QueryUserIAPOrdersStatusEnum]] = None, type_: Optional[Union[str, QueryUserIAPOrdersTypeEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query IAP orders (queryUserIAPOrders)
 
     Query IAP orders.
@@ -2589,19 +2296,7 @@ def query_user_iap_orders(
 
 
 @same_doc_as(QueryUserIAPOrders)
-async def query_user_iap_orders_async(
-    user_id: str,
-    end_time: Optional[str] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    product_id: Optional[str] = None,
-    start_time: Optional[str] = None,
-    status: Optional[Union[str, QueryUserIAPOrdersStatusEnum]] = None,
-    type_: Optional[Union[str, QueryUserIAPOrdersTypeEnum]] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def query_user_iap_orders_async(user_id: str, end_time: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, product_id: Optional[str] = None, start_time: Optional[str] = None, status: Optional[Union[str, QueryUserIAPOrdersStatusEnum]] = None, type_: Optional[Union[str, QueryUserIAPOrdersTypeEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query IAP orders (queryUserIAPOrders)
 
     Query IAP orders.
@@ -2662,19 +2357,11 @@ async def query_user_iap_orders_async(
         type_=type_,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(SyncEpicGamesInventory)
-def sync_epic_games_inventory(
-    user_id: str,
-    body: Optional[EpicGamesReconcileRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def sync_epic_games_inventory(user_id: str, body: Optional[EpicGamesReconcileRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Sync epic games inventory. (syncEpicGamesInventory)
 
     Sync epic games inventory's items.
@@ -2724,13 +2411,7 @@ def sync_epic_games_inventory(
 
 
 @same_doc_as(SyncEpicGamesInventory)
-async def sync_epic_games_inventory_async(
-    user_id: str,
-    body: Optional[EpicGamesReconcileRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def sync_epic_games_inventory_async(user_id: str, body: Optional[EpicGamesReconcileRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Sync epic games inventory. (syncEpicGamesInventory)
 
     Sync epic games inventory's items.
@@ -2776,19 +2457,11 @@ async def sync_epic_games_inventory_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(SyncSteamInventory)
-def sync_steam_inventory(
-    user_id: str,
-    body: Optional[SteamSyncRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def sync_steam_inventory(user_id: str, body: Optional[SteamSyncRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Sync steam inventory. (syncSteamInventory)
 
     Sync steam inventory's items.
@@ -2838,13 +2511,7 @@ def sync_steam_inventory(
 
 
 @same_doc_as(SyncSteamInventory)
-async def sync_steam_inventory_async(
-    user_id: str,
-    body: Optional[SteamSyncRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def sync_steam_inventory_async(user_id: str, body: Optional[SteamSyncRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Sync steam inventory. (syncSteamInventory)
 
     Sync steam inventory's items.
@@ -2890,18 +2557,11 @@ async def sync_steam_inventory_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(SyncTwitchDropsEntitlement)
-def sync_twitch_drops_entitlement(
-    body: Optional[TwitchSyncRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def sync_twitch_drops_entitlement(body: Optional[TwitchSyncRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Sync my game twitch drops entitlements. (syncTwitchDropsEntitlement)
 
     Sync my game twitch drops entitlements.
@@ -2945,12 +2605,7 @@ def sync_twitch_drops_entitlement(
 
 
 @same_doc_as(SyncTwitchDropsEntitlement)
-async def sync_twitch_drops_entitlement_async(
-    body: Optional[TwitchSyncRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def sync_twitch_drops_entitlement_async(body: Optional[TwitchSyncRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Sync my game twitch drops entitlements. (syncTwitchDropsEntitlement)
 
     Sync my game twitch drops entitlements.
@@ -2990,19 +2645,11 @@ async def sync_twitch_drops_entitlement_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(SyncTwitchDropsEntitlement1)
-def sync_twitch_drops_entitlement_1(
-    user_id: str,
-    body: Optional[TwitchSyncRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def sync_twitch_drops_entitlement_1(user_id: str, body: Optional[TwitchSyncRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Sync twitch drops entitlements. (syncTwitchDropsEntitlement_1)
 
     Sync twitch drops entitlements.
@@ -3052,13 +2699,7 @@ def sync_twitch_drops_entitlement_1(
 
 
 @same_doc_as(SyncTwitchDropsEntitlement1)
-async def sync_twitch_drops_entitlement_1_async(
-    user_id: str,
-    body: Optional[TwitchSyncRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def sync_twitch_drops_entitlement_1_async(user_id: str, body: Optional[TwitchSyncRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Sync twitch drops entitlements. (syncTwitchDropsEntitlement_1)
 
     Sync twitch drops entitlements.
@@ -3104,19 +2745,11 @@ async def sync_twitch_drops_entitlement_1_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(SyncXboxInventory)
-def sync_xbox_inventory(
-    user_id: str,
-    body: Optional[XblReconcileRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def sync_xbox_inventory(user_id: str, body: Optional[XblReconcileRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Sync Xbox inventory. (syncXboxInventory)
 
     Sync Xbox inventory's items.
@@ -3166,13 +2799,7 @@ def sync_xbox_inventory(
 
 
 @same_doc_as(SyncXboxInventory)
-async def sync_xbox_inventory_async(
-    user_id: str,
-    body: Optional[XblReconcileRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def sync_xbox_inventory_async(user_id: str, body: Optional[XblReconcileRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Sync Xbox inventory. (syncXboxInventory)
 
     Sync Xbox inventory's items.
@@ -3218,18 +2845,11 @@ async def sync_xbox_inventory_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateAppleIAPConfig)
-def update_apple_iap_config(
-    body: Optional[AppleIAPConfigRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_apple_iap_config(body: Optional[AppleIAPConfigRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update apple iap config (updateAppleIAPConfig)
 
     Update apple iap config. Other detail info:
@@ -3272,12 +2892,7 @@ def update_apple_iap_config(
 
 
 @same_doc_as(UpdateAppleIAPConfig)
-async def update_apple_iap_config_async(
-    body: Optional[AppleIAPConfigRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_apple_iap_config_async(body: Optional[AppleIAPConfigRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update apple iap config (updateAppleIAPConfig)
 
     Update apple iap config. Other detail info:
@@ -3316,18 +2931,11 @@ async def update_apple_iap_config_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateEpicGamesIAPConfig)
-def update_epic_games_iap_config(
-    body: Optional[EpicGamesIAPConfigRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_epic_games_iap_config(body: Optional[EpicGamesIAPConfigRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update epic games iap config (updateEpicGamesIAPConfig)
 
     Update epic games iap config. Other detail info:
@@ -3370,12 +2978,7 @@ def update_epic_games_iap_config(
 
 
 @same_doc_as(UpdateEpicGamesIAPConfig)
-async def update_epic_games_iap_config_async(
-    body: Optional[EpicGamesIAPConfigRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_epic_games_iap_config_async(body: Optional[EpicGamesIAPConfigRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update epic games iap config (updateEpicGamesIAPConfig)
 
     Update epic games iap config. Other detail info:
@@ -3414,18 +3017,11 @@ async def update_epic_games_iap_config_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateGoogleIAPConfig)
-def update_google_iap_config(
-    body: Optional[GoogleIAPConfigRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_google_iap_config(body: Optional[GoogleIAPConfigRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update google iap config (updateGoogleIAPConfig)
 
     Update google iap config. Other detail info:
@@ -3468,12 +3064,7 @@ def update_google_iap_config(
 
 
 @same_doc_as(UpdateGoogleIAPConfig)
-async def update_google_iap_config_async(
-    body: Optional[GoogleIAPConfigRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_google_iap_config_async(body: Optional[GoogleIAPConfigRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update google iap config (updateGoogleIAPConfig)
 
     Update google iap config. Other detail info:
@@ -3512,18 +3103,11 @@ async def update_google_iap_config_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateGoogleP12File)
-def update_google_p12_file(
-    file: Optional[Any] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_google_p12_file(file: Optional[Any] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Upload google play p12 file (updateGoogleP12File)
 
     Upload google play p12 file.
@@ -3567,12 +3151,7 @@ def update_google_p12_file(
 
 
 @same_doc_as(UpdateGoogleP12File)
-async def update_google_p12_file_async(
-    file: Optional[Any] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_google_p12_file_async(file: Optional[Any] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Upload google play p12 file (updateGoogleP12File)
 
     Upload google play p12 file.
@@ -3612,18 +3191,11 @@ async def update_google_p12_file_async(
         file=file,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateIAPItemConfig)
-def update_iap_item_config(
-    body: Optional[IAPItemConfigUpdate] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_iap_item_config(body: Optional[IAPItemConfigUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update iap item config (updateIAPItemConfig)
 
     Update iap item config. Other detail info:
@@ -3670,12 +3242,7 @@ def update_iap_item_config(
 
 
 @same_doc_as(UpdateIAPItemConfig)
-async def update_iap_item_config_async(
-    body: Optional[IAPItemConfigUpdate] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_iap_item_config_async(body: Optional[IAPItemConfigUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update iap item config (updateIAPItemConfig)
 
     Update iap item config. Other detail info:
@@ -3718,18 +3285,11 @@ async def update_iap_item_config_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdatePlaystationIAPConfig)
-def update_playstation_iap_config(
-    body: Optional[PlaystationIAPConfigRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_playstation_iap_config(body: Optional[PlaystationIAPConfigRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update playstation iap config (updatePlaystationIAPConfig)
 
     Update playstation iap config. Other detail info:
@@ -3772,12 +3332,7 @@ def update_playstation_iap_config(
 
 
 @same_doc_as(UpdatePlaystationIAPConfig)
-async def update_playstation_iap_config_async(
-    body: Optional[PlaystationIAPConfigRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_playstation_iap_config_async(body: Optional[PlaystationIAPConfigRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update playstation iap config (updatePlaystationIAPConfig)
 
     Update playstation iap config. Other detail info:
@@ -3816,18 +3371,11 @@ async def update_playstation_iap_config_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateSteamIAPConfig)
-def update_steam_iap_config(
-    body: Optional[SteamIAPConfigRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_steam_iap_config(body: Optional[SteamIAPConfigRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update steam iap config (updateSteamIAPConfig)
 
     Update steam iap config. Other detail info:
@@ -3870,12 +3418,7 @@ def update_steam_iap_config(
 
 
 @same_doc_as(UpdateSteamIAPConfig)
-async def update_steam_iap_config_async(
-    body: Optional[SteamIAPConfigRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_steam_iap_config_async(body: Optional[SteamIAPConfigRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update steam iap config (updateSteamIAPConfig)
 
     Update steam iap config. Other detail info:
@@ -3914,18 +3457,11 @@ async def update_steam_iap_config_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateTwitchIAPConfig)
-def update_twitch_iap_config(
-    body: Optional[TwitchIAPConfigRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_twitch_iap_config(body: Optional[TwitchIAPConfigRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update twitch iap config (updateTwitchIAPConfig)
 
     Update twitch iap config. Other detail info:
@@ -3968,12 +3504,7 @@ def update_twitch_iap_config(
 
 
 @same_doc_as(UpdateTwitchIAPConfig)
-async def update_twitch_iap_config_async(
-    body: Optional[TwitchIAPConfigRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_twitch_iap_config_async(body: Optional[TwitchIAPConfigRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update twitch iap config (updateTwitchIAPConfig)
 
     Update twitch iap config. Other detail info:
@@ -4012,19 +3543,11 @@ async def update_twitch_iap_config_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateXblBPCertFile)
-def update_xbl_bp_cert_file(
-    file: Optional[Any] = None,
-    password: Optional[str] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_xbl_bp_cert_file(file: Optional[Any] = None, password: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Upload xbl business partner cert file (updateXblBPCertFile)
 
     Upload xbl business partner cert file.
@@ -4071,13 +3594,7 @@ def update_xbl_bp_cert_file(
 
 
 @same_doc_as(UpdateXblBPCertFile)
-async def update_xbl_bp_cert_file_async(
-    file: Optional[Any] = None,
-    password: Optional[str] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_xbl_bp_cert_file_async(file: Optional[Any] = None, password: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Upload xbl business partner cert file (updateXblBPCertFile)
 
     Upload xbl business partner cert file.
@@ -4120,18 +3637,11 @@ async def update_xbl_bp_cert_file_async(
         password=password,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateXblIAPConfig)
-def update_xbl_iap_config(
-    body: Optional[XblIAPConfigRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_xbl_iap_config(body: Optional[XblIAPConfigRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update xbl iap config (updateXblIAPConfig)
 
     Update xbl iap config. Other detail info:
@@ -4174,12 +3684,7 @@ def update_xbl_iap_config(
 
 
 @same_doc_as(UpdateXblIAPConfig)
-async def update_xbl_iap_config_async(
-    body: Optional[XblIAPConfigRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_xbl_iap_config_async(body: Optional[XblIAPConfigRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update xbl iap config (updateXblIAPConfig)
 
     Update xbl iap config. Other detail info:
@@ -4218,6 +3723,4 @@ async def update_xbl_iap_config_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)

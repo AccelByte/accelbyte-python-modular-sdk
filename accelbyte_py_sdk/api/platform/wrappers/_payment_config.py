@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -81,27 +81,13 @@ from ..operations.payment_config import UpdateWxPayConfig
 from ..operations.payment_config import UpdateWxPayConfigCert
 from ..operations.payment_config import UpdateXsollaConfig
 from ..operations.payment_config import UpdateXsollaUIConfig
-from ..models import (
-    PaymentProviderConfigEditAggregateEnum,
-    PaymentProviderConfigEditSpecialsEnum,
-)
-from ..models import (
-    PaymentProviderConfigInfoAggregateEnum,
-    PaymentProviderConfigInfoSpecialsEnum,
-)
-from ..models import (
-    XsollaPaywallConfigRequestDeviceEnum,
-    XsollaPaywallConfigRequestSizeEnum,
-    XsollaPaywallConfigRequestThemeEnum,
-)
+from ..models import PaymentProviderConfigEditAggregateEnum, PaymentProviderConfigEditSpecialsEnum
+from ..models import PaymentProviderConfigInfoAggregateEnum, PaymentProviderConfigInfoSpecialsEnum
+from ..models import XsollaPaywallConfigRequestDeviceEnum, XsollaPaywallConfigRequestSizeEnum, XsollaPaywallConfigRequestThemeEnum
 
 
 @same_doc_as(CreatePaymentProviderConfig)
-def create_payment_provider_config(
-    body: Optional[PaymentProviderConfigEdit] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def create_payment_provider_config(body: Optional[PaymentProviderConfigEdit] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Create payment provider config (createPaymentProviderConfig)
 
     Create payment provider config.
@@ -165,11 +151,7 @@ def create_payment_provider_config(
 
 
 @same_doc_as(CreatePaymentProviderConfig)
-async def create_payment_provider_config_async(
-    body: Optional[PaymentProviderConfigEdit] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def create_payment_provider_config_async(body: Optional[PaymentProviderConfigEdit] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Create payment provider config (createPaymentProviderConfig)
 
     Create payment provider config.
@@ -229,18 +211,11 @@ async def create_payment_provider_config_async(
     request = CreatePaymentProviderConfig.create(
         body=body,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(DebugMatchedPaymentMerchantConfig)
-def debug_matched_payment_merchant_config(
-    namespace: Optional[str] = None,
-    region: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def debug_matched_payment_merchant_config(namespace: Optional[str] = None, region: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Debug matched payment merchant config(internal) (debugMatchedPaymentMerchantConfig)
 
     Debug matched payment merchant config.
@@ -282,12 +257,7 @@ def debug_matched_payment_merchant_config(
 
 
 @same_doc_as(DebugMatchedPaymentMerchantConfig)
-async def debug_matched_payment_merchant_config_async(
-    namespace: Optional[str] = None,
-    region: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def debug_matched_payment_merchant_config_async(namespace: Optional[str] = None, region: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Debug matched payment merchant config(internal) (debugMatchedPaymentMerchantConfig)
 
     Debug matched payment merchant config.
@@ -325,18 +295,11 @@ async def debug_matched_payment_merchant_config_async(
         namespace=namespace,
         region=region,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(DebugMatchedPaymentProviderConfig)
-def debug_matched_payment_provider_config(
-    namespace: Optional[str] = None,
-    region: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def debug_matched_payment_provider_config(namespace: Optional[str] = None, region: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Debug matched payment provider config(internal) (debugMatchedPaymentProviderConfig)
 
     Debug matched payment provider config.
@@ -378,12 +341,7 @@ def debug_matched_payment_provider_config(
 
 
 @same_doc_as(DebugMatchedPaymentProviderConfig)
-async def debug_matched_payment_provider_config_async(
-    namespace: Optional[str] = None,
-    region: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def debug_matched_payment_provider_config_async(namespace: Optional[str] = None, region: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Debug matched payment provider config(internal) (debugMatchedPaymentProviderConfig)
 
     Debug matched payment provider config.
@@ -421,15 +379,11 @@ async def debug_matched_payment_provider_config_async(
         namespace=namespace,
         region=region,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(DeletePaymentProviderConfig)
-def delete_payment_provider_config(
-    id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
+def delete_payment_provider_config(id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete payment provider config (deletePaymentProviderConfig)
 
     Delete payment provider config.
@@ -468,9 +422,7 @@ def delete_payment_provider_config(
 
 
 @same_doc_as(DeletePaymentProviderConfig)
-async def delete_payment_provider_config_async(
-    id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
+async def delete_payment_provider_config_async(id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete payment provider config (deletePaymentProviderConfig)
 
     Delete payment provider config.
@@ -505,15 +457,11 @@ async def delete_payment_provider_config_async(
     request = DeletePaymentProviderConfig.create(
         id_=id_,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetAggregatePaymentProviders)
-def get_aggregate_payment_providers(
-    x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
+def get_aggregate_payment_providers(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get aggregate payment providers (getAggregatePaymentProviders)
 
     Get aggregate payment providers, such as XSOLLA, ADYEN.
@@ -546,9 +494,7 @@ def get_aggregate_payment_providers(
 
 
 @same_doc_as(GetAggregatePaymentProviders)
-async def get_aggregate_payment_providers_async(
-    x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
+async def get_aggregate_payment_providers_async(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get aggregate payment providers (getAggregatePaymentProviders)
 
     Get aggregate payment providers, such as XSOLLA, ADYEN.
@@ -577,15 +523,11 @@ async def get_aggregate_payment_providers_async(
         200: OK - List[Union[str, ResponseEnum]] (successful operation)
     """
     request = GetAggregatePaymentProviders.create()
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetPaymentMerchantConfig)
-def get_payment_merchant_config(
-    id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
+def get_payment_merchant_config(id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get payment merchant config (getPaymentMerchantConfig)
 
     Get payment merchant config by id.
@@ -624,9 +566,7 @@ def get_payment_merchant_config(
 
 
 @same_doc_as(GetPaymentMerchantConfig)
-async def get_payment_merchant_config_async(
-    id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
+async def get_payment_merchant_config_async(id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get payment merchant config (getPaymentMerchantConfig)
 
     Get payment merchant config by id.
@@ -661,15 +601,11 @@ async def get_payment_merchant_config_async(
     request = GetPaymentMerchantConfig.create(
         id_=id_,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetPaymentTaxConfig)
-def get_payment_tax_config(
-    x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
+def get_payment_tax_config(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get payment global tax config (getPaymentTaxConfig)
 
     Get payment global tax config.
@@ -702,9 +638,7 @@ def get_payment_tax_config(
 
 
 @same_doc_as(GetPaymentTaxConfig)
-async def get_payment_tax_config_async(
-    x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
+async def get_payment_tax_config_async(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get payment global tax config (getPaymentTaxConfig)
 
     Get payment global tax config.
@@ -733,15 +667,11 @@ async def get_payment_tax_config_async(
         200: OK - PaymentTaxConfigInfo (successful operation)
     """
     request = GetPaymentTaxConfig.create()
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetSpecialPaymentProviders)
-def get_special_payment_providers(
-    x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
+def get_special_payment_providers(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get special payment providers (getSpecialPaymentProviders)
 
     Get special payment providers, such as ALIPAY, WXPAY.
@@ -774,9 +704,7 @@ def get_special_payment_providers(
 
 
 @same_doc_as(GetSpecialPaymentProviders)
-async def get_special_payment_providers_async(
-    x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
+async def get_special_payment_providers_async(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get special payment providers (getSpecialPaymentProviders)
 
     Get special payment providers, such as ALIPAY, WXPAY.
@@ -805,20 +733,11 @@ async def get_special_payment_providers_async(
         200: OK - List[Union[str, ResponseEnum]] (successful operation)
     """
     request = GetSpecialPaymentProviders.create()
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(QueryPaymentProviderConfig)
-def query_payment_provider_config(
-    limit: Optional[int] = None,
-    namespace: Optional[str] = None,
-    offset: Optional[int] = None,
-    region: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def query_payment_provider_config(limit: Optional[int] = None, namespace: Optional[str] = None, offset: Optional[int] = None, region: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query payment provider config (queryPaymentProviderConfig)
 
     Query payment provider config.
@@ -864,14 +783,7 @@ def query_payment_provider_config(
 
 
 @same_doc_as(QueryPaymentProviderConfig)
-async def query_payment_provider_config_async(
-    limit: Optional[int] = None,
-    namespace: Optional[str] = None,
-    offset: Optional[int] = None,
-    region: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def query_payment_provider_config_async(limit: Optional[int] = None, namespace: Optional[str] = None, offset: Optional[int] = None, region: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query payment provider config (queryPaymentProviderConfig)
 
     Query payment provider config.
@@ -913,18 +825,11 @@ async def query_payment_provider_config_async(
         offset=offset,
         region=region,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(TestAdyenConfig)
-def test_adyen_config(
-    body: Optional[AdyenConfig] = None,
-    sandbox: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def test_adyen_config(body: Optional[AdyenConfig] = None, sandbox: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test adyen configuration (testAdyenConfig)
 
     Test adyen configuration.
@@ -981,12 +886,7 @@ def test_adyen_config(
 
 
 @same_doc_as(TestAdyenConfig)
-async def test_adyen_config_async(
-    body: Optional[AdyenConfig] = None,
-    sandbox: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def test_adyen_config_async(body: Optional[AdyenConfig] = None, sandbox: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test adyen configuration (testAdyenConfig)
 
     Test adyen configuration.
@@ -1039,18 +939,11 @@ async def test_adyen_config_async(
         body=body,
         sandbox=sandbox,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(TestAdyenConfigById)
-def test_adyen_config_by_id(
-    id_: str,
-    sandbox: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def test_adyen_config_by_id(id_: str, sandbox: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test adyen configuration by id (testAdyenConfigById)
 
     Test adyen configuration in payment merchant config. Other detail info:
@@ -1091,12 +984,7 @@ def test_adyen_config_by_id(
 
 
 @same_doc_as(TestAdyenConfigById)
-async def test_adyen_config_by_id_async(
-    id_: str,
-    sandbox: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def test_adyen_config_by_id_async(id_: str, sandbox: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test adyen configuration by id (testAdyenConfigById)
 
     Test adyen configuration in payment merchant config. Other detail info:
@@ -1133,18 +1021,11 @@ async def test_adyen_config_by_id_async(
         id_=id_,
         sandbox=sandbox,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(TestAliPayConfig)
-def test_ali_pay_config(
-    body: Optional[AliPayConfig] = None,
-    sandbox: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def test_ali_pay_config(body: Optional[AliPayConfig] = None, sandbox: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test Alipay configuration (testAliPayConfig)
 
     Test AliPay configuration.Reference: [Alipay Document](https://docs.open.alipay.com/270/alipay.trade.page.pay).
@@ -1184,12 +1065,7 @@ def test_ali_pay_config(
 
 
 @same_doc_as(TestAliPayConfig)
-async def test_ali_pay_config_async(
-    body: Optional[AliPayConfig] = None,
-    sandbox: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def test_ali_pay_config_async(body: Optional[AliPayConfig] = None, sandbox: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test Alipay configuration (testAliPayConfig)
 
     Test AliPay configuration.Reference: [Alipay Document](https://docs.open.alipay.com/270/alipay.trade.page.pay).
@@ -1225,18 +1101,11 @@ async def test_ali_pay_config_async(
         body=body,
         sandbox=sandbox,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(TestAliPayConfigById)
-def test_ali_pay_config_by_id(
-    id_: str,
-    sandbox: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def test_ali_pay_config_by_id(id_: str, sandbox: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test Alipay configuration by id (testAliPayConfigById)
 
     Test AliPay configuration in payment merchant config. Reference: [Alipay Document](https://docs.open.alipay.com/270/alipay.trade.page.pay).
@@ -1278,12 +1147,7 @@ def test_ali_pay_config_by_id(
 
 
 @same_doc_as(TestAliPayConfigById)
-async def test_ali_pay_config_by_id_async(
-    id_: str,
-    sandbox: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def test_ali_pay_config_by_id_async(id_: str, sandbox: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test Alipay configuration by id (testAliPayConfigById)
 
     Test AliPay configuration in payment merchant config. Reference: [Alipay Document](https://docs.open.alipay.com/270/alipay.trade.page.pay).
@@ -1321,18 +1185,11 @@ async def test_ali_pay_config_by_id_async(
         id_=id_,
         sandbox=sandbox,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(TestCheckoutConfig)
-def test_checkout_config(
-    body: Optional[CheckoutConfig] = None,
-    sandbox: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def test_checkout_config(body: Optional[CheckoutConfig] = None, sandbox: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test checkout.com configuration (testCheckoutConfig)
 
     Test checkout.com configuration.
@@ -1377,12 +1234,7 @@ def test_checkout_config(
 
 
 @same_doc_as(TestCheckoutConfig)
-async def test_checkout_config_async(
-    body: Optional[CheckoutConfig] = None,
-    sandbox: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def test_checkout_config_async(body: Optional[CheckoutConfig] = None, sandbox: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test checkout.com configuration (testCheckoutConfig)
 
     Test checkout.com configuration.
@@ -1423,18 +1275,11 @@ async def test_checkout_config_async(
         body=body,
         sandbox=sandbox,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(TestCheckoutConfigById)
-def test_checkout_config_by_id(
-    id_: str,
-    sandbox: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def test_checkout_config_by_id(id_: str, sandbox: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test checkout.com configuration by id (testCheckoutConfigById)
 
     Test checkout.com configuration in payment merchant config. Other detail info:
@@ -1475,12 +1320,7 @@ def test_checkout_config_by_id(
 
 
 @same_doc_as(TestCheckoutConfigById)
-async def test_checkout_config_by_id_async(
-    id_: str,
-    sandbox: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def test_checkout_config_by_id_async(id_: str, sandbox: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test checkout.com configuration by id (testCheckoutConfigById)
 
     Test checkout.com configuration in payment merchant config. Other detail info:
@@ -1517,18 +1357,11 @@ async def test_checkout_config_by_id_async(
         id_=id_,
         sandbox=sandbox,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(TestPayPalConfig)
-def test_pay_pal_config(
-    body: Optional[PayPalConfig] = None,
-    sandbox: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def test_pay_pal_config(body: Optional[PayPalConfig] = None, sandbox: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test PayPal configuration (testPayPalConfig)
 
     Test PayPal configuration.
@@ -1579,12 +1412,7 @@ def test_pay_pal_config(
 
 
 @same_doc_as(TestPayPalConfig)
-async def test_pay_pal_config_async(
-    body: Optional[PayPalConfig] = None,
-    sandbox: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def test_pay_pal_config_async(body: Optional[PayPalConfig] = None, sandbox: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test PayPal configuration (testPayPalConfig)
 
     Test PayPal configuration.
@@ -1631,18 +1459,11 @@ async def test_pay_pal_config_async(
         body=body,
         sandbox=sandbox,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(TestPayPalConfigById)
-def test_pay_pal_config_by_id(
-    id_: str,
-    sandbox: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def test_pay_pal_config_by_id(id_: str, sandbox: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test PayPal configuration by id (testPayPalConfigById)
 
     Test PayPal configuration in payment merchant config. Other detail info:
@@ -1683,12 +1504,7 @@ def test_pay_pal_config_by_id(
 
 
 @same_doc_as(TestPayPalConfigById)
-async def test_pay_pal_config_by_id_async(
-    id_: str,
-    sandbox: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def test_pay_pal_config_by_id_async(id_: str, sandbox: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test PayPal configuration by id (testPayPalConfigById)
 
     Test PayPal configuration in payment merchant config. Other detail info:
@@ -1725,18 +1541,11 @@ async def test_pay_pal_config_by_id_async(
         id_=id_,
         sandbox=sandbox,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(TestStripeConfig)
-def test_stripe_config(
-    body: Optional[StripeConfig] = None,
-    sandbox: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def test_stripe_config(body: Optional[StripeConfig] = None, sandbox: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test stripe configuration (testStripeConfig)
 
     Test stripe configuration.
@@ -1788,12 +1597,7 @@ def test_stripe_config(
 
 
 @same_doc_as(TestStripeConfig)
-async def test_stripe_config_async(
-    body: Optional[StripeConfig] = None,
-    sandbox: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def test_stripe_config_async(body: Optional[StripeConfig] = None, sandbox: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test stripe configuration (testStripeConfig)
 
     Test stripe configuration.
@@ -1841,18 +1645,11 @@ async def test_stripe_config_async(
         body=body,
         sandbox=sandbox,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(TestStripeConfigById)
-def test_stripe_config_by_id(
-    id_: str,
-    sandbox: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def test_stripe_config_by_id(id_: str, sandbox: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test stripe configuration by id (testStripeConfigById)
 
     Test stripe configuration in payment merchant config. Other detail info:
@@ -1893,12 +1690,7 @@ def test_stripe_config_by_id(
 
 
 @same_doc_as(TestStripeConfigById)
-async def test_stripe_config_by_id_async(
-    id_: str,
-    sandbox: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def test_stripe_config_by_id_async(id_: str, sandbox: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test stripe configuration by id (testStripeConfigById)
 
     Test stripe configuration in payment merchant config. Other detail info:
@@ -1935,17 +1727,11 @@ async def test_stripe_config_by_id_async(
         id_=id_,
         sandbox=sandbox,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(TestWxPayConfig)
-def test_wx_pay_config(
-    body: Optional[WxPayConfigRequest] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def test_wx_pay_config(body: Optional[WxPayConfigRequest] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test wxPay configuration (testWxPayConfig)
 
     Test WxPay configuration. Reference: [WxPay Document](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1).
@@ -1982,11 +1768,7 @@ def test_wx_pay_config(
 
 
 @same_doc_as(TestWxPayConfig)
-async def test_wx_pay_config_async(
-    body: Optional[WxPayConfigRequest] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def test_wx_pay_config_async(body: Optional[WxPayConfigRequest] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test wxPay configuration (testWxPayConfig)
 
     Test WxPay configuration. Reference: [WxPay Document](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1).
@@ -2019,15 +1801,11 @@ async def test_wx_pay_config_async(
     request = TestWxPayConfig.create(
         body=body,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(TestWxPayConfigById)
-def test_wx_pay_config_by_id(
-    id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
+def test_wx_pay_config_by_id(id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test wxPay configuration by id (testWxPayConfigById)
 
     Test WxPay configuration in payment merchant config. Reference: [WxPay Document](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1).
@@ -2066,9 +1844,7 @@ def test_wx_pay_config_by_id(
 
 
 @same_doc_as(TestWxPayConfigById)
-async def test_wx_pay_config_by_id_async(
-    id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
+async def test_wx_pay_config_by_id_async(id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test wxPay configuration by id (testWxPayConfigById)
 
     Test WxPay configuration in payment merchant config. Reference: [WxPay Document](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1).
@@ -2103,17 +1879,11 @@ async def test_wx_pay_config_by_id_async(
     request = TestWxPayConfigById.create(
         id_=id_,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(TestXsollaConfig)
-def test_xsolla_config(
-    body: Optional[XsollaConfig] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def test_xsolla_config(body: Optional[XsollaConfig] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test xsolla configuration (testXsollaConfig)
 
     Check xsolla configuration, Reference: [Xsolla Document](https://developers.xsolla.com/?#simple-checkout).
@@ -2162,11 +1932,7 @@ def test_xsolla_config(
 
 
 @same_doc_as(TestXsollaConfig)
-async def test_xsolla_config_async(
-    body: Optional[XsollaConfig] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def test_xsolla_config_async(body: Optional[XsollaConfig] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test xsolla configuration (testXsollaConfig)
 
     Check xsolla configuration, Reference: [Xsolla Document](https://developers.xsolla.com/?#simple-checkout).
@@ -2211,15 +1977,11 @@ async def test_xsolla_config_async(
     request = TestXsollaConfig.create(
         body=body,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(TestXsollaConfigById)
-def test_xsolla_config_by_id(
-    id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
+def test_xsolla_config_by_id(id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test xsolla configuration by id (testXsollaConfigById)
 
     Test xsolla configuration in payment merchant config. Reference: [Xsolla Document](https://developers.xsolla.com/?#simple-checkout).
@@ -2258,9 +2020,7 @@ def test_xsolla_config_by_id(
 
 
 @same_doc_as(TestXsollaConfigById)
-async def test_xsolla_config_by_id_async(
-    id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
+async def test_xsolla_config_by_id_async(id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Test xsolla configuration by id (testXsollaConfigById)
 
     Test xsolla configuration in payment merchant config. Reference: [Xsolla Document](https://developers.xsolla.com/?#simple-checkout).
@@ -2295,20 +2055,11 @@ async def test_xsolla_config_by_id_async(
     request = TestXsollaConfigById.create(
         id_=id_,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateAdyenConfig)
-def update_adyen_config(
-    id_: str,
-    body: Optional[AdyenConfig] = None,
-    sandbox: Optional[bool] = None,
-    validate: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_adyen_config(id_: str, body: Optional[AdyenConfig] = None, sandbox: Optional[bool] = None, validate: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update adyen config (updateAdyenConfig)
 
     Update adyen config.
@@ -2356,14 +2107,7 @@ def update_adyen_config(
 
 
 @same_doc_as(UpdateAdyenConfig)
-async def update_adyen_config_async(
-    id_: str,
-    body: Optional[AdyenConfig] = None,
-    sandbox: Optional[bool] = None,
-    validate: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_adyen_config_async(id_: str, body: Optional[AdyenConfig] = None, sandbox: Optional[bool] = None, validate: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update adyen config (updateAdyenConfig)
 
     Update adyen config.
@@ -2407,20 +2151,11 @@ async def update_adyen_config_async(
         sandbox=sandbox,
         validate=validate,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateAliPayConfig)
-def update_ali_pay_config(
-    id_: str,
-    body: Optional[AliPayConfig] = None,
-    sandbox: Optional[bool] = None,
-    validate: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_ali_pay_config(id_: str, body: Optional[AliPayConfig] = None, sandbox: Optional[bool] = None, validate: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update alipay configuration (updateAliPayConfig)
 
     Update alipay configuration.
@@ -2468,14 +2203,7 @@ def update_ali_pay_config(
 
 
 @same_doc_as(UpdateAliPayConfig)
-async def update_ali_pay_config_async(
-    id_: str,
-    body: Optional[AliPayConfig] = None,
-    sandbox: Optional[bool] = None,
-    validate: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_ali_pay_config_async(id_: str, body: Optional[AliPayConfig] = None, sandbox: Optional[bool] = None, validate: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update alipay configuration (updateAliPayConfig)
 
     Update alipay configuration.
@@ -2519,20 +2247,11 @@ async def update_ali_pay_config_async(
         sandbox=sandbox,
         validate=validate,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateCheckoutConfig)
-def update_checkout_config(
-    id_: str,
-    body: Optional[CheckoutConfig] = None,
-    sandbox: Optional[bool] = None,
-    validate: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_checkout_config(id_: str, body: Optional[CheckoutConfig] = None, sandbox: Optional[bool] = None, validate: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update checkout.com config (updateCheckoutConfig)
 
     Update checkout.com config.
@@ -2580,14 +2299,7 @@ def update_checkout_config(
 
 
 @same_doc_as(UpdateCheckoutConfig)
-async def update_checkout_config_async(
-    id_: str,
-    body: Optional[CheckoutConfig] = None,
-    sandbox: Optional[bool] = None,
-    validate: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_checkout_config_async(id_: str, body: Optional[CheckoutConfig] = None, sandbox: Optional[bool] = None, validate: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update checkout.com config (updateCheckoutConfig)
 
     Update checkout.com config.
@@ -2631,20 +2343,11 @@ async def update_checkout_config_async(
         sandbox=sandbox,
         validate=validate,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdatePayPalConfig)
-def update_pay_pal_config(
-    id_: str,
-    body: Optional[PayPalConfig] = None,
-    sandbox: Optional[bool] = None,
-    validate: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_pay_pal_config(id_: str, body: Optional[PayPalConfig] = None, sandbox: Optional[bool] = None, validate: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update PayPal config (updatePayPalConfig)
 
     Update PayPal config.
@@ -2692,14 +2395,7 @@ def update_pay_pal_config(
 
 
 @same_doc_as(UpdatePayPalConfig)
-async def update_pay_pal_config_async(
-    id_: str,
-    body: Optional[PayPalConfig] = None,
-    sandbox: Optional[bool] = None,
-    validate: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_pay_pal_config_async(id_: str, body: Optional[PayPalConfig] = None, sandbox: Optional[bool] = None, validate: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update PayPal config (updatePayPalConfig)
 
     Update PayPal config.
@@ -2743,18 +2439,11 @@ async def update_pay_pal_config_async(
         sandbox=sandbox,
         validate=validate,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdatePaymentProviderConfig)
-def update_payment_provider_config(
-    id_: str,
-    body: Optional[PaymentProviderConfigEdit] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_payment_provider_config(id_: str, body: Optional[PaymentProviderConfigEdit] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update payment provider config (updatePaymentProviderConfig)
 
     Update payment provider config.
@@ -2823,12 +2512,7 @@ def update_payment_provider_config(
 
 
 @same_doc_as(UpdatePaymentProviderConfig)
-async def update_payment_provider_config_async(
-    id_: str,
-    body: Optional[PaymentProviderConfigEdit] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_payment_provider_config_async(id_: str, body: Optional[PaymentProviderConfigEdit] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update payment provider config (updatePaymentProviderConfig)
 
     Update payment provider config.
@@ -2893,17 +2577,11 @@ async def update_payment_provider_config_async(
         id_=id_,
         body=body,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdatePaymentTaxConfig)
-def update_payment_tax_config(
-    body: Optional[PaymentTaxConfigEdit] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_payment_tax_config(body: Optional[PaymentTaxConfigEdit] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update payment global tax config (updatePaymentTaxConfig)
 
     Update payment tax config.
@@ -2958,11 +2636,7 @@ def update_payment_tax_config(
 
 
 @same_doc_as(UpdatePaymentTaxConfig)
-async def update_payment_tax_config_async(
-    body: Optional[PaymentTaxConfigEdit] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_payment_tax_config_async(body: Optional[PaymentTaxConfigEdit] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update payment global tax config (updatePaymentTaxConfig)
 
     Update payment tax config.
@@ -3013,20 +2687,11 @@ async def update_payment_tax_config_async(
     request = UpdatePaymentTaxConfig.create(
         body=body,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateStripeConfig)
-def update_stripe_config(
-    id_: str,
-    body: Optional[StripeConfig] = None,
-    sandbox: Optional[bool] = None,
-    validate: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_stripe_config(id_: str, body: Optional[StripeConfig] = None, sandbox: Optional[bool] = None, validate: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update stripe config (updateStripeConfig)
 
     Update stripe config.
@@ -3074,14 +2739,7 @@ def update_stripe_config(
 
 
 @same_doc_as(UpdateStripeConfig)
-async def update_stripe_config_async(
-    id_: str,
-    body: Optional[StripeConfig] = None,
-    sandbox: Optional[bool] = None,
-    validate: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_stripe_config_async(id_: str, body: Optional[StripeConfig] = None, sandbox: Optional[bool] = None, validate: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update stripe config (updateStripeConfig)
 
     Update stripe config.
@@ -3125,19 +2783,11 @@ async def update_stripe_config_async(
         sandbox=sandbox,
         validate=validate,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateWxPayConfig)
-def update_wx_pay_config(
-    id_: str,
-    body: Optional[WxPayConfigRequest] = None,
-    validate: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_wx_pay_config(id_: str, body: Optional[WxPayConfigRequest] = None, validate: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update wxpay configuration (updateWxPayConfig)
 
     Update wxpay configuration.
@@ -3182,13 +2832,7 @@ def update_wx_pay_config(
 
 
 @same_doc_as(UpdateWxPayConfig)
-async def update_wx_pay_config_async(
-    id_: str,
-    body: Optional[WxPayConfigRequest] = None,
-    validate: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_wx_pay_config_async(id_: str, body: Optional[WxPayConfigRequest] = None, validate: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update wxpay configuration (updateWxPayConfig)
 
     Update wxpay configuration.
@@ -3229,18 +2873,11 @@ async def update_wx_pay_config_async(
         body=body,
         validate=validate,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateWxPayConfigCert)
-def update_wx_pay_config_cert(
-    id_: str,
-    file: Optional[Any] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_wx_pay_config_cert(id_: str, file: Optional[Any] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Upload wxpay cert file (updateWxPayConfigCert)
 
     Upload wxpay cert file.
@@ -3282,12 +2919,7 @@ def update_wx_pay_config_cert(
 
 
 @same_doc_as(UpdateWxPayConfigCert)
-async def update_wx_pay_config_cert_async(
-    id_: str,
-    file: Optional[Any] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_wx_pay_config_cert_async(id_: str, file: Optional[Any] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Upload wxpay cert file (updateWxPayConfigCert)
 
     Upload wxpay cert file.
@@ -3325,19 +2957,11 @@ async def update_wx_pay_config_cert_async(
         id_=id_,
         file=file,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateXsollaConfig)
-def update_xsolla_config(
-    id_: str,
-    body: Optional[XsollaConfig] = None,
-    validate: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_xsolla_config(id_: str, body: Optional[XsollaConfig] = None, validate: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update xsolla configuration (updateXsollaConfig)
 
     Update xsolla configuration. Reference: [Xsolla Document](https://developers.xsolla.com/?#simple-checkout).
@@ -3382,13 +3006,7 @@ def update_xsolla_config(
 
 
 @same_doc_as(UpdateXsollaConfig)
-async def update_xsolla_config_async(
-    id_: str,
-    body: Optional[XsollaConfig] = None,
-    validate: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_xsolla_config_async(id_: str, body: Optional[XsollaConfig] = None, validate: Optional[bool] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update xsolla configuration (updateXsollaConfig)
 
     Update xsolla configuration. Reference: [Xsolla Document](https://developers.xsolla.com/?#simple-checkout).
@@ -3429,18 +3047,11 @@ async def update_xsolla_config_async(
         body=body,
         validate=validate,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateXsollaUIConfig)
-def update_xsolla_ui_config(
-    id_: str,
-    body: Optional[XsollaPaywallConfigRequest] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_xsolla_ui_config(id_: str, body: Optional[XsollaPaywallConfigRequest] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update xsolla UI configuration (updateXsollaUIConfig)
 
     Update xsolla UI configuration.Reference: [Xsolla Document](https://developers.xsolla.com/api.html#ui-integrations).
@@ -3482,12 +3093,7 @@ def update_xsolla_ui_config(
 
 
 @same_doc_as(UpdateXsollaUIConfig)
-async def update_xsolla_ui_config_async(
-    id_: str,
-    body: Optional[XsollaPaywallConfigRequest] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_xsolla_ui_config_async(id_: str, body: Optional[XsollaPaywallConfigRequest] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update xsolla UI configuration (updateXsollaUIConfig)
 
     Update xsolla UI configuration.Reference: [Xsolla Document](https://developers.xsolla.com/api.html#ui-integrations).
@@ -3525,6 +3131,4 @@ async def update_xsolla_ui_config_async(
         id_=id_,
         body=body,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)

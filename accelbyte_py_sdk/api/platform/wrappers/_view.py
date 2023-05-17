@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -46,13 +46,7 @@ from ..operations.view import UpdateView
 
 
 @same_doc_as(CreateView)
-def create_view(
-    store_id: str,
-    body: Optional[ViewCreate] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def create_view(store_id: str, body: Optional[ViewCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Create a view (createView)
 
     This API is used to create a view.
@@ -108,13 +102,7 @@ def create_view(
 
 
 @same_doc_as(CreateView)
-async def create_view_async(
-    store_id: str,
-    body: Optional[ViewCreate] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def create_view_async(store_id: str, body: Optional[ViewCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Create a view (createView)
 
     This API is used to create a view.
@@ -166,19 +154,11 @@ async def create_view_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(DeleteView)
-def delete_view(
-    store_id: str,
-    view_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def delete_view(store_id: str, view_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete a view (deleteView)
 
     This API is used to delete a view.It will also delete all the related sections
@@ -229,13 +209,7 @@ def delete_view(
 
 
 @same_doc_as(DeleteView)
-async def delete_view_async(
-    store_id: str,
-    view_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def delete_view_async(store_id: str, view_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Delete a view (deleteView)
 
     This API is used to delete a view.It will also delete all the related sections
@@ -282,19 +256,11 @@ async def delete_view_async(
         view_id=view_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetView)
-def get_view(
-    view_id: str,
-    store_id: Optional[str] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_view(view_id: str, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get a view (getView)
 
     This API is used to get a view.
@@ -344,13 +310,7 @@ def get_view(
 
 
 @same_doc_as(GetView)
-async def get_view_async(
-    view_id: str,
-    store_id: Optional[str] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_view_async(view_id: str, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get a view (getView)
 
     This API is used to get a view.
@@ -396,18 +356,11 @@ async def get_view_async(
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(ListViews)
-def list_views(
-    store_id: Optional[str] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def list_views(store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """List all views (listViews)
 
     This API is used to list all views.
@@ -456,12 +409,7 @@ def list_views(
 
 
 @same_doc_as(ListViews)
-async def list_views_async(
-    store_id: Optional[str] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def list_views_async(store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """List all views (listViews)
 
     This API is used to list all views.
@@ -506,20 +454,11 @@ async def list_views_async(
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(PublicListViews)
-def public_list_views(
-    user_id: str,
-    language: Optional[str] = None,
-    store_id: Optional[str] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def public_list_views(user_id: str, language: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get all views (publicListViews)
 
     This API is used to get all views.
@@ -569,14 +508,7 @@ def public_list_views(
 
 
 @same_doc_as(PublicListViews)
-async def public_list_views_async(
-    user_id: str,
-    language: Optional[str] = None,
-    store_id: Optional[str] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def public_list_views_async(user_id: str, language: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get all views (publicListViews)
 
     This API is used to get all views.
@@ -622,20 +554,11 @@ async def public_list_views_async(
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateView)
-def update_view(
-    store_id: str,
-    view_id: str,
-    body: Optional[ViewUpdate] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def update_view(store_id: str, view_id: str, body: Optional[ViewUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update a view (updateView)
 
     This API is used to update a view.
@@ -694,14 +617,7 @@ def update_view(
 
 
 @same_doc_as(UpdateView)
-async def update_view_async(
-    store_id: str,
-    view_id: str,
-    body: Optional[ViewUpdate] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def update_view_async(store_id: str, view_id: str, body: Optional[ViewUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Update a view (updateView)
 
     This API is used to update a view.
@@ -756,6 +672,4 @@ async def update_view_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)

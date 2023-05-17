@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -47,8 +47,8 @@ class ConditionGroup(Model):
 
     # region fields
 
-    operator: Union[str, OperatorEnum]  # OPTIONAL
-    predicates: List[Predicate]  # OPTIONAL
+    operator: Union[str, OperatorEnum]                                                             # OPTIONAL
+    predicates: List[Predicate]                                                                    # OPTIONAL
 
     # endregion fields
 
@@ -73,9 +73,7 @@ class ConditionGroup(Model):
         elif include_empty:
             result["operator"] = Union[str, OperatorEnum]()
         if hasattr(self, "predicates"):
-            result["predicates"] = [
-                i0.to_dict(include_empty=include_empty) for i0 in self.predicates
-            ]
+            result["predicates"] = [i0.to_dict(include_empty=include_empty) for i0 in self.predicates]
         elif include_empty:
             result["predicates"] = []
         return result
@@ -89,7 +87,7 @@ class ConditionGroup(Model):
         cls,
         operator: Optional[Union[str, OperatorEnum]] = None,
         predicates: Optional[List[Predicate]] = None,
-        **kwargs,
+    **kwargs
     ) -> ConditionGroup:
         instance = cls()
         if operator is not None:
@@ -99,9 +97,7 @@ class ConditionGroup(Model):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> ConditionGroup:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> ConditionGroup:
         instance = cls()
         if not dict_:
             return instance
@@ -110,38 +106,21 @@ class ConditionGroup(Model):
         elif include_empty:
             instance.operator = Union[str, OperatorEnum]()
         if "predicates" in dict_ and dict_["predicates"] is not None:
-            instance.predicates = [
-                Predicate.create_from_dict(i0, include_empty=include_empty)
-                for i0 in dict_["predicates"]
-            ]
+            instance.predicates = [Predicate.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["predicates"]]
         elif include_empty:
             instance.predicates = []
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, ConditionGroup]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, ConditionGroup]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[ConditionGroup]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[ConditionGroup]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[ConditionGroup, List[ConditionGroup], Dict[Any, ConditionGroup]]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[ConditionGroup, List[ConditionGroup], Dict[Any, ConditionGroup]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

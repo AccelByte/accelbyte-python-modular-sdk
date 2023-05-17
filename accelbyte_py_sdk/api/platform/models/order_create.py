@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -50,19 +50,22 @@ class OrderCreate(Model):
         region: (region) OPTIONAL str
 
         return_url: (returnUrl) OPTIONAL str
+
+        section_id: (sectionId) OPTIONAL str
     """
 
     # region fields
 
-    currency_code: str  # REQUIRED
-    discounted_price: int  # REQUIRED
-    item_id: str  # REQUIRED
-    price: int  # REQUIRED
-    quantity: int  # REQUIRED
-    ext: Dict[str, Any]  # OPTIONAL
-    language: str  # OPTIONAL
-    region: str  # OPTIONAL
-    return_url: str  # OPTIONAL
+    currency_code: str                                                                             # REQUIRED
+    discounted_price: int                                                                          # REQUIRED
+    item_id: str                                                                                   # REQUIRED
+    price: int                                                                                     # REQUIRED
+    quantity: int                                                                                  # REQUIRED
+    ext: Dict[str, Any]                                                                            # OPTIONAL
+    language: str                                                                                  # OPTIONAL
+    region: str                                                                                    # OPTIONAL
+    return_url: str                                                                                # OPTIONAL
+    section_id: str                                                                                # OPTIONAL
 
     # endregion fields
 
@@ -102,6 +105,10 @@ class OrderCreate(Model):
 
     def with_return_url(self, value: str) -> OrderCreate:
         self.return_url = value
+        return self
+
+    def with_section_id(self, value: str) -> OrderCreate:
+        self.section_id = value
         return self
 
     # endregion with_x methods
@@ -146,6 +153,10 @@ class OrderCreate(Model):
             result["returnUrl"] = str(self.return_url)
         elif include_empty:
             result["returnUrl"] = ""
+        if hasattr(self, "section_id"):
+            result["sectionId"] = str(self.section_id)
+        elif include_empty:
+            result["sectionId"] = ""
         return result
 
     # endregion to methods
@@ -164,7 +175,8 @@ class OrderCreate(Model):
         language: Optional[str] = None,
         region: Optional[str] = None,
         return_url: Optional[str] = None,
-        **kwargs,
+        section_id: Optional[str] = None,
+    **kwargs
     ) -> OrderCreate:
         instance = cls()
         instance.currency_code = currency_code
@@ -180,6 +192,8 @@ class OrderCreate(Model):
             instance.region = region
         if return_url is not None:
             instance.return_url = return_url
+        if section_id is not None:
+            instance.section_id = section_id
         return instance
 
     @classmethod
@@ -223,32 +237,22 @@ class OrderCreate(Model):
             instance.return_url = str(dict_["returnUrl"])
         elif include_empty:
             instance.return_url = ""
+        if "sectionId" in dict_ and dict_["sectionId"] is not None:
+            instance.section_id = str(dict_["sectionId"])
+        elif include_empty:
+            instance.section_id = ""
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, OrderCreate]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, OrderCreate]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[OrderCreate]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[OrderCreate]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[OrderCreate, List[OrderCreate], Dict[Any, OrderCreate]]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[OrderCreate, List[OrderCreate], Dict[Any, OrderCreate]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -271,6 +275,7 @@ class OrderCreate(Model):
             "language": "language",
             "region": "region",
             "returnUrl": "return_url",
+            "sectionId": "section_id",
         }
 
     @staticmethod
@@ -285,14 +290,13 @@ class OrderCreate(Model):
             "language": False,
             "region": False,
             "returnUrl": False,
+            "sectionId": False,
         }
 
     @staticmethod
     def get_pattern_map() -> Dict[str, re.Pattern]:
         return {
-            "language": re.compile(
-                r"^[A-Za-z]{2,4}([_-][A-Za-z]{4})?([_-]([A-Za-z]{2}|[0-9]{3}))?$"
-            ),
+            "language": re.compile(r"^[A-Za-z]{2,4}([_-][A-Za-z]{4})?([_-]([A-Za-z]{2}|[0-9]{3}))?$"),
         }
 
     # endregion static methods

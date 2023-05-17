@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -132,6 +132,8 @@ class QueryItems1(Operation):
 
         region: (region) OPTIONAL str in query
 
+        section_exclusive: (sectionExclusive) OPTIONAL bool in query
+
         sort_by: (sortBy) OPTIONAL List[Union[str, SortByEnum]] in query
 
         store_id: (storeId) OPTIONAL str in query
@@ -157,23 +159,24 @@ class QueryItems1(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
 
-    namespace: str  # REQUIRED in [path]
-    app_type: Union[str, AppTypeEnum]  # OPTIONAL in [query]
-    available_date: str  # OPTIONAL in [query]
-    base_app_id: str  # OPTIONAL in [query]
-    category_path: str  # OPTIONAL in [query]
-    features: str  # OPTIONAL in [query]
-    include_sub_category_item: bool  # OPTIONAL in [query]
-    item_name: str  # OPTIONAL in [query]
-    item_status: Union[str, ItemStatusEnum]  # OPTIONAL in [query]
-    item_type: Union[str, ItemTypeEnum]  # OPTIONAL in [query]
-    limit: int  # OPTIONAL in [query]
-    offset: int  # OPTIONAL in [query]
-    region: str  # OPTIONAL in [query]
-    sort_by: List[Union[str, SortByEnum]]  # OPTIONAL in [query]
-    store_id: str  # OPTIONAL in [query]
-    tags: str  # OPTIONAL in [query]
-    target_namespace: str  # OPTIONAL in [query]
+    namespace: str                                                                                 # REQUIRED in [path]
+    app_type: Union[str, AppTypeEnum]                                                              # OPTIONAL in [query]
+    available_date: str                                                                            # OPTIONAL in [query]
+    base_app_id: str                                                                               # OPTIONAL in [query]
+    category_path: str                                                                             # OPTIONAL in [query]
+    features: str                                                                                  # OPTIONAL in [query]
+    include_sub_category_item: bool                                                                # OPTIONAL in [query]
+    item_name: str                                                                                 # OPTIONAL in [query]
+    item_status: Union[str, ItemStatusEnum]                                                        # OPTIONAL in [query]
+    item_type: Union[str, ItemTypeEnum]                                                            # OPTIONAL in [query]
+    limit: int                                                                                     # OPTIONAL in [query]
+    offset: int                                                                                    # OPTIONAL in [query]
+    region: str                                                                                    # OPTIONAL in [query]
+    section_exclusive: bool                                                                        # OPTIONAL in [query]
+    sort_by: List[Union[str, SortByEnum]]                                                          # OPTIONAL in [query]
+    store_id: str                                                                                  # OPTIONAL in [query]
+    tags: str                                                                                      # OPTIONAL in [query]
+    target_namespace: str                                                                          # OPTIONAL in [query]
 
     # endregion fields
 
@@ -249,6 +252,8 @@ class QueryItems1(Operation):
             result["offset"] = self.offset
         if hasattr(self, "region"):
             result["region"] = self.region
+        if hasattr(self, "section_exclusive"):
+            result["sectionExclusive"] = self.section_exclusive
         if hasattr(self, "sort_by"):
             result["sortBy"] = self.sort_by
         if hasattr(self, "store_id"):
@@ -319,6 +324,10 @@ class QueryItems1(Operation):
         self.region = value
         return self
 
+    def with_section_exclusive(self, value: bool) -> QueryItems1:
+        self.section_exclusive = value
+        return self
+
     def with_sort_by(self, value: List[Union[str, SortByEnum]]) -> QueryItems1:
         self.sort_by = value
         return self
@@ -365,10 +374,7 @@ class QueryItems1(Operation):
             result["features"] = str(self.features)
         elif include_empty:
             result["features"] = ""
-        if (
-            hasattr(self, "include_sub_category_item")
-            and self.include_sub_category_item
-        ):
+        if hasattr(self, "include_sub_category_item") and self.include_sub_category_item:
             result["includeSubCategoryItem"] = bool(self.include_sub_category_item)
         elif include_empty:
             result["includeSubCategoryItem"] = False
@@ -396,6 +402,10 @@ class QueryItems1(Operation):
             result["region"] = str(self.region)
         elif include_empty:
             result["region"] = ""
+        if hasattr(self, "section_exclusive") and self.section_exclusive:
+            result["sectionExclusive"] = bool(self.section_exclusive)
+        elif include_empty:
+            result["sectionExclusive"] = False
         if hasattr(self, "sort_by") and self.sort_by:
             result["sortBy"] = [str(i0) for i0 in self.sort_by]
         elif include_empty:
@@ -419,12 +429,7 @@ class QueryItems1(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(
-        self, code: int, content_type: str, content: Any
-    ) -> Tuple[
-        Union[None, FullItemPagingSlicedResult],
-        Union[None, ErrorEntity, HttpResponse, ValidationErrorEntity],
-    ]:
+    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, FullItemPagingSlicedResult], Union[None, ErrorEntity, HttpResponse, ValidationErrorEntity]]:
         """Parse the given response.
 
         200: OK - FullItemPagingSlicedResult (successful operation)
@@ -439,9 +444,7 @@ class QueryItems1(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(
-            code=code, content_type=content_type, content=content
-        )
+        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
@@ -453,9 +456,7 @@ class QueryItems1(Operation):
         if code == 422:
             return None, ValidationErrorEntity.create_from_dict(content)
 
-        return self.handle_undocumented_response(
-            code=code, content_type=content_type, content=content
-        )
+        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
 
     # endregion response methods
 
@@ -477,11 +478,12 @@ class QueryItems1(Operation):
         limit: Optional[int] = None,
         offset: Optional[int] = None,
         region: Optional[str] = None,
+        section_exclusive: Optional[bool] = None,
         sort_by: Optional[List[Union[str, SortByEnum]]] = None,
         store_id: Optional[str] = None,
         tags: Optional[str] = None,
         target_namespace: Optional[str] = None,
-        **kwargs,
+    **kwargs
     ) -> QueryItems1:
         instance = cls()
         instance.namespace = namespace
@@ -509,6 +511,8 @@ class QueryItems1(Operation):
             instance.offset = offset
         if region is not None:
             instance.region = region
+        if section_exclusive is not None:
+            instance.section_exclusive = section_exclusive
         if sort_by is not None:
             instance.sort_by = sort_by
         if store_id is not None:
@@ -546,10 +550,7 @@ class QueryItems1(Operation):
             instance.features = str(dict_["features"])
         elif include_empty:
             instance.features = ""
-        if (
-            "includeSubCategoryItem" in dict_
-            and dict_["includeSubCategoryItem"] is not None
-        ):
+        if "includeSubCategoryItem" in dict_ and dict_["includeSubCategoryItem"] is not None:
             instance.include_sub_category_item = bool(dict_["includeSubCategoryItem"])
         elif include_empty:
             instance.include_sub_category_item = False
@@ -577,6 +578,10 @@ class QueryItems1(Operation):
             instance.region = str(dict_["region"])
         elif include_empty:
             instance.region = ""
+        if "sectionExclusive" in dict_ and dict_["sectionExclusive"] is not None:
+            instance.section_exclusive = bool(dict_["sectionExclusive"])
+        elif include_empty:
+            instance.section_exclusive = False
         if "sortBy" in dict_ and dict_["sortBy"] is not None:
             instance.sort_by = [str(i0) for i0 in dict_["sortBy"]]
         elif include_empty:
@@ -611,6 +616,7 @@ class QueryItems1(Operation):
             "limit": "limit",
             "offset": "offset",
             "region": "region",
+            "sectionExclusive": "section_exclusive",
             "sortBy": "sort_by",
             "storeId": "store_id",
             "tags": "tags",
@@ -633,6 +639,7 @@ class QueryItems1(Operation):
             "limit": False,
             "offset": False,
             "region": False,
+            "sectionExclusive": False,
             "sortBy": False,
             "storeId": False,
             "tags": False,
@@ -642,41 +649,16 @@ class QueryItems1(Operation):
     @staticmethod
     def get_collection_format_map() -> Dict[str, Union[None, str]]:
         return {
-            "sortBy": "csv",  # in query
+            "sortBy": "csv",                                                                       # in query
         }
 
     @staticmethod
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
-            "appType": ["DEMO", "DLC", "GAME", "SOFTWARE"],  # in query
-            "itemStatus": ["ACTIVE", "INACTIVE"],  # in query
-            "itemType": [
-                "APP",
-                "BUNDLE",
-                "CODE",
-                "COINS",
-                "EXTENSION",
-                "INGAMEITEM",
-                "LOOTBOX",
-                "MEDIA",
-                "OPTIONBOX",
-                "SEASON",
-                "SUBSCRIPTION",
-            ],  # in query
-            "sortBy": [
-                "name",
-                "name:asc",
-                "name:desc",
-                "createdAt",
-                "createdAt:asc",
-                "createdAt:desc",
-                "updatedAt",
-                "updatedAt:asc",
-                "updatedAt:desc",
-                "displayOrder",
-                "displayOrder:asc",
-                "displayOrder:desc",
-            ],  # in query
+            "appType": ["DEMO", "DLC", "GAME", "SOFTWARE"],                                        # in query
+            "itemStatus": ["ACTIVE", "INACTIVE"],                                                  # in query
+            "itemType": ["APP", "BUNDLE", "CODE", "COINS", "EXTENSION", "INGAMEITEM", "LOOTBOX", "MEDIA", "OPTIONBOX", "SEASON", "SUBSCRIPTION"],# in query
+            "sortBy": ["name", "name:asc", "name:desc", "createdAt", "createdAt:asc", "createdAt:desc", "updatedAt", "updatedAt:asc", "updatedAt:desc", "displayOrder", "displayOrder:asc", "displayOrder:desc"],# in query
         }
 
     # endregion static methods

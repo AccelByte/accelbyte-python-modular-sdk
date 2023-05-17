@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -291,7 +291,7 @@ class UpdateItem(Operation):
 
         404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30341: Item [{itemId}] does not exist in namespace [{namespace}] | 30241: Category [{categoryPath}] does not exist in namespace [{namespace}] | 36141: Currency [{currencyCode}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (30173: Published store can't modify content | 30371: Item maxCount not allow reduce | 30372: ItemType is not updatable | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}])
+        409: Conflict - ErrorEntity (30371: Item maxCount not allow reduce | 30372: ItemType is not updatable | 30173: Published store can't modify content | 30374: Item sku [{sku}] already exists in namespace [{namespace}] | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}] | 30379: Item sku is not updatable)
 
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
@@ -305,10 +305,10 @@ class UpdateItem(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
 
-    body: ItemUpdate  # OPTIONAL in [body]
-    item_id: str  # REQUIRED in [path]
-    namespace: str  # REQUIRED in [path]
-    store_id: str  # REQUIRED in [query]
+    body: ItemUpdate                                                                               # OPTIONAL in [body]
+    item_id: str                                                                                   # REQUIRED in [path]
+    namespace: str                                                                                 # REQUIRED in [path]
+    store_id: str                                                                                  # REQUIRED in [query]
 
     # endregion fields
 
@@ -425,12 +425,7 @@ class UpdateItem(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(
-        self, code: int, content_type: str, content: Any
-    ) -> Tuple[
-        Union[None, FullItemInfo],
-        Union[None, ErrorEntity, HttpResponse, ValidationErrorEntity],
-    ]:
+    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, FullItemInfo], Union[None, ErrorEntity, HttpResponse, ValidationErrorEntity]]:
         """Parse the given response.
 
         200: OK - FullItemInfo (successful operation)
@@ -439,7 +434,7 @@ class UpdateItem(Operation):
 
         404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30341: Item [{itemId}] does not exist in namespace [{namespace}] | 30241: Category [{categoryPath}] does not exist in namespace [{namespace}] | 36141: Currency [{currencyCode}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (30173: Published store can't modify content | 30371: Item maxCount not allow reduce | 30372: ItemType is not updatable | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}])
+        409: Conflict - ErrorEntity (30371: Item maxCount not allow reduce | 30372: ItemType is not updatable | 30173: Published store can't modify content | 30374: Item sku [{sku}] already exists in namespace [{namespace}] | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}] | 30379: Item sku is not updatable)
 
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
 
@@ -449,9 +444,7 @@ class UpdateItem(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(
-            code=code, content_type=content_type, content=content
-        )
+        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
@@ -467,9 +460,7 @@ class UpdateItem(Operation):
         if code == 422:
             return None, ValidationErrorEntity.create_from_dict(content)
 
-        return self.handle_undocumented_response(
-            code=code, content_type=content_type, content=content
-        )
+        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
 
     # endregion response methods
 
@@ -482,7 +473,7 @@ class UpdateItem(Operation):
         namespace: str,
         store_id: str,
         body: Optional[ItemUpdate] = None,
-        **kwargs,
+    **kwargs
     ) -> UpdateItem:
         instance = cls()
         instance.item_id = item_id
@@ -496,9 +487,7 @@ class UpdateItem(Operation):
     def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> UpdateItem:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = ItemUpdate.create_from_dict(
-                dict_["body"], include_empty=include_empty
-            )
+            instance.body = ItemUpdate.create_from_dict(dict_["body"], include_empty=include_empty)
         elif include_empty:
             instance.body = ItemUpdate()
         if "itemId" in dict_ and dict_["itemId"] is not None:

@@ -6,7 +6,7 @@
 
 # template_file: python-cli-command.j2
 
-# AGS Platform Service (4.27.0)
+# AGS Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -30,9 +30,7 @@ import click
 
 from .._utils import login_as as login_as_internal
 from .._utils import to_dict
-from accelbyte_py_sdk.api.platform import (
-    public_query_items as public_query_items_internal,
-)
+from accelbyte_py_sdk.api.platform import public_query_items as public_query_items_internal
 from accelbyte_py_sdk.api.platform.models import ErrorEntity
 from accelbyte_py_sdk.api.platform.models import ItemPagingSlicedResult
 from accelbyte_py_sdk.api.platform.models import ValidationErrorEntity
@@ -57,30 +55,32 @@ from accelbyte_py_sdk.api.platform.models import ValidationErrorEntity
 @click.option("--login_with_auth", type=str)
 @click.option("--doc", type=bool)
 def public_query_items(
-    app_type: Optional[str] = None,
-    base_app_id: Optional[str] = None,
-    category_path: Optional[str] = None,
-    features: Optional[str] = None,
-    include_sub_category_item: Optional[bool] = None,
-    item_type: Optional[str] = None,
-    language: Optional[str] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    region: Optional[str] = None,
-    sort_by: Optional[str] = None,
-    store_id: Optional[str] = None,
-    tags: Optional[str] = None,
-    namespace: Optional[str] = None,
-    login_as: Optional[str] = None,
-    login_with_auth: Optional[str] = None,
-    doc: Optional[bool] = None,
+        app_type: Optional[str] = None,
+        base_app_id: Optional[str] = None,
+        category_path: Optional[str] = None,
+        features: Optional[str] = None,
+        include_sub_category_item: Optional[bool] = None,
+        item_type: Optional[str] = None,
+        language: Optional[str] = None,
+        limit: Optional[int] = None,
+        offset: Optional[int] = None,
+        region: Optional[str] = None,
+        sort_by: Optional[str] = None,
+        store_id: Optional[str] = None,
+        tags: Optional[str] = None,
+        namespace: Optional[str] = None,
+        login_as: Optional[str] = None,
+        login_with_auth: Optional[str] = None,
+        doc: Optional[bool] = None,
 ):
     if doc:
         click.echo(public_query_items_internal.__doc__)
         return
     x_additional_headers = None
     if login_with_auth:
-        x_additional_headers = {"Authorization": login_with_auth}
+        x_additional_headers = {
+            "Authorization": login_with_auth
+        }
     else:
         login_as_internal(login_as)
     if sort_by is not None:

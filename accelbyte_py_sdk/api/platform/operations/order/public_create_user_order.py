@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -71,7 +71,7 @@ class PublicCreateUserOrder(Operation):
     Responses:
         201: Created - OrderInfo (successful operation)
 
-        400: Bad Request - ErrorEntity (32121: Order price mismatch | 32122: Item type [{itemType}] does not support | 32123: Item is not purchasable | 32125: The user does not meet the purchase conditions | 35123: Wallet [{walletId}] is inactive | 35124: Wallet [{currencyCode}] has insufficient balance | 38121: Duplicate permanent item exists)
+        400: Bad Request - ErrorEntity (32121: Order price mismatch | 32122: Item type [{itemType}] does not support | 32123: Item is not purchasable | 32125: The user does not meet the purchase conditions | 32126: Section ID is required for placing this order | 35123: Wallet [{walletId}] is inactive | 35124: Wallet [{currencyCode}] has insufficient balance | 38121: Duplicate permanent item exists)
 
         403: Forbidden - ErrorEntity (20016: action is banned)
 
@@ -91,9 +91,9 @@ class PublicCreateUserOrder(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
 
-    body: OrderCreate  # OPTIONAL in [body]
-    namespace: str  # REQUIRED in [path]
-    user_id: str  # REQUIRED in [path]
+    body: OrderCreate                                                                              # OPTIONAL in [body]
+    namespace: str                                                                                 # REQUIRED in [path]
+    user_id: str                                                                                   # REQUIRED in [path]
 
     # endregion fields
 
@@ -195,17 +195,12 @@ class PublicCreateUserOrder(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(
-        self, code: int, content_type: str, content: Any
-    ) -> Tuple[
-        Union[None, OrderInfo],
-        Union[None, ErrorEntity, HttpResponse, ValidationErrorEntity],
-    ]:
+    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, OrderInfo], Union[None, ErrorEntity, HttpResponse, ValidationErrorEntity]]:
         """Parse the given response.
 
         201: Created - OrderInfo (successful operation)
 
-        400: Bad Request - ErrorEntity (32121: Order price mismatch | 32122: Item type [{itemType}] does not support | 32123: Item is not purchasable | 32125: The user does not meet the purchase conditions | 35123: Wallet [{walletId}] is inactive | 35124: Wallet [{currencyCode}] has insufficient balance | 38121: Duplicate permanent item exists)
+        400: Bad Request - ErrorEntity (32121: Order price mismatch | 32122: Item type [{itemType}] does not support | 32123: Item is not purchasable | 32125: The user does not meet the purchase conditions | 32126: Section ID is required for placing this order | 35123: Wallet [{walletId}] is inactive | 35124: Wallet [{currencyCode}] has insufficient balance | 38121: Duplicate permanent item exists)
 
         403: Forbidden - ErrorEntity (20016: action is banned)
 
@@ -221,9 +216,7 @@ class PublicCreateUserOrder(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(
-            code=code, content_type=content_type, content=content
-        )
+        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
@@ -241,9 +234,7 @@ class PublicCreateUserOrder(Operation):
         if code == 422:
             return None, ValidationErrorEntity.create_from_dict(content)
 
-        return self.handle_undocumented_response(
-            code=code, content_type=content_type, content=content
-        )
+        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
 
     # endregion response methods
 
@@ -251,7 +242,11 @@ class PublicCreateUserOrder(Operation):
 
     @classmethod
     def create(
-        cls, namespace: str, user_id: str, body: Optional[OrderCreate] = None, **kwargs
+        cls,
+        namespace: str,
+        user_id: str,
+        body: Optional[OrderCreate] = None,
+    **kwargs
     ) -> PublicCreateUserOrder:
         instance = cls()
         instance.namespace = namespace
@@ -261,14 +256,10 @@ class PublicCreateUserOrder(Operation):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> PublicCreateUserOrder:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> PublicCreateUserOrder:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = OrderCreate.create_from_dict(
-                dict_["body"], include_empty=include_empty
-            )
+            instance.body = OrderCreate.create_from_dict(dict_["body"], include_empty=include_empty)
         elif include_empty:
             instance.body = OrderCreate()
         if "namespace" in dict_ and dict_["namespace"] is not None:

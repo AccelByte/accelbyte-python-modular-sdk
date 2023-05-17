@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -39,16 +39,7 @@ from ..operations.invoice import GenerateInvoiceSummaryItemTypeEnum
 
 
 @same_doc_as(DownloadInvoiceDetails)
-def download_invoice_details(
-    end_time: str,
-    start_time: str,
-    feature: Optional[str] = None,
-    item_id: Optional[str] = None,
-    item_type: Optional[Union[str, DownloadInvoiceDetailsItemTypeEnum]] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def download_invoice_details(end_time: str, start_time: str, feature: Optional[str] = None, item_id: Optional[str] = None, item_type: Optional[Union[str, DownloadInvoiceDetailsItemTypeEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Download invoice details (downloadInvoiceDetails)
 
     Download invoice details as a csv file.
@@ -104,16 +95,7 @@ def download_invoice_details(
 
 
 @same_doc_as(DownloadInvoiceDetails)
-async def download_invoice_details_async(
-    end_time: str,
-    start_time: str,
-    feature: Optional[str] = None,
-    item_id: Optional[str] = None,
-    item_type: Optional[Union[str, DownloadInvoiceDetailsItemTypeEnum]] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def download_invoice_details_async(end_time: str, start_time: str, feature: Optional[str] = None, item_id: Optional[str] = None, item_type: Optional[Union[str, DownloadInvoiceDetailsItemTypeEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Download invoice details (downloadInvoiceDetails)
 
     Download invoice details as a csv file.
@@ -165,22 +147,11 @@ async def download_invoice_details_async(
         item_type=item_type,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GenerateInvoiceSummary)
-def generate_invoice_summary(
-    end_time: str,
-    start_time: str,
-    feature: Optional[str] = None,
-    item_id: Optional[str] = None,
-    item_type: Optional[Union[str, GenerateInvoiceSummaryItemTypeEnum]] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def generate_invoice_summary(end_time: str, start_time: str, feature: Optional[str] = None, item_id: Optional[str] = None, item_type: Optional[Union[str, GenerateInvoiceSummaryItemTypeEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Generate invoice summary (generateInvoiceSummary)
 
     Generate invoice summary.
@@ -238,16 +209,7 @@ def generate_invoice_summary(
 
 
 @same_doc_as(GenerateInvoiceSummary)
-async def generate_invoice_summary_async(
-    end_time: str,
-    start_time: str,
-    feature: Optional[str] = None,
-    item_id: Optional[str] = None,
-    item_type: Optional[Union[str, GenerateInvoiceSummaryItemTypeEnum]] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def generate_invoice_summary_async(end_time: str, start_time: str, feature: Optional[str] = None, item_id: Optional[str] = None, item_type: Optional[Union[str, GenerateInvoiceSummaryItemTypeEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Generate invoice summary (generateInvoiceSummary)
 
     Generate invoice summary.
@@ -301,6 +263,4 @@ async def generate_invoice_summary_async(
         item_type=item_type,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)

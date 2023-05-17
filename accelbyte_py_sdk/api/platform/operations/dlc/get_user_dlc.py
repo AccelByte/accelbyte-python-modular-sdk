@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -30,7 +30,7 @@ from .....core import HeaderStr
 from .....core import HttpResponse
 from .....core import StrEnum
 
-from ...models import UserDLC
+from ...models import UserDLCRecord
 
 
 class TypeEnum(StrEnum):
@@ -41,9 +41,9 @@ class TypeEnum(StrEnum):
 
 
 class GetUserDLC(Operation):
-    """Get user dlc by platform (getUserDLC)
+    """Get user dlc records (getUserDLC)
 
-    Get user dlc by platform.
+    Get user dlc records.
     Other detail info:
 
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:IAP", action=2 (READ)
@@ -53,7 +53,7 @@ class GetUserDLC(Operation):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:IAP [READ]
 
     Properties:
-        url: /platform/admin/namespaces/{namespace}/users/{userId}/dlc
+        url: /platform/admin/namespaces/{namespace}/users/{userId}/dlc/records
 
         method: GET
 
@@ -69,24 +69,24 @@ class GetUserDLC(Operation):
 
         user_id: (userId) REQUIRED str in path
 
-        type_: (type) REQUIRED Union[str, TypeEnum] in query
+        type_: (type) OPTIONAL Union[str, TypeEnum] in query
 
     Responses:
-        200: OK - UserDLC (successful operation)
+        200: OK - List[UserDLCRecord] (successful operation)
     """
 
     # region fields
 
-    _url: str = "/platform/admin/namespaces/{namespace}/users/{userId}/dlc"
+    _url: str = "/platform/admin/namespaces/{namespace}/users/{userId}/dlc/records"
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
 
-    namespace: str  # REQUIRED in [path]
-    user_id: str  # REQUIRED in [path]
-    type_: Union[str, TypeEnum]  # REQUIRED in [query]
+    namespace: str                                                                                 # REQUIRED in [path]
+    user_id: str                                                                                   # REQUIRED in [path]
+    type_: Union[str, TypeEnum]                                                                    # OPTIONAL in [query]
 
     # endregion fields
 
@@ -189,12 +189,10 @@ class GetUserDLC(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(
-        self, code: int, content_type: str, content: Any
-    ) -> Tuple[Union[None, UserDLC], Union[None, HttpResponse]]:
+    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, List[UserDLCRecord]], Union[None, HttpResponse]]:
         """Parse the given response.
 
-        200: OK - UserDLC (successful operation)
+        200: OK - List[UserDLCRecord] (successful operation)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -202,19 +200,15 @@ class GetUserDLC(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(
-            code=code, content_type=content_type, content=content
-        )
+        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return UserDLC.create_from_dict(content), None
+            return [UserDLCRecord.create_from_dict(i) for i in content], None
 
-        return self.handle_undocumented_response(
-            code=code, content_type=content_type, content=content
-        )
+        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
 
     # endregion response methods
 
@@ -222,12 +216,17 @@ class GetUserDLC(Operation):
 
     @classmethod
     def create(
-        cls, namespace: str, user_id: str, type_: Union[str, TypeEnum], **kwargs
+        cls,
+        namespace: str,
+        user_id: str,
+        type_: Optional[Union[str, TypeEnum]] = None,
+    **kwargs
     ) -> GetUserDLC:
         instance = cls()
         instance.namespace = namespace
         instance.user_id = user_id
-        instance.type_ = type_
+        if type_ is not None:
+            instance.type_ = type_
         return instance
 
     @classmethod
@@ -260,13 +259,13 @@ class GetUserDLC(Operation):
         return {
             "namespace": True,
             "userId": True,
-            "type": True,
+            "type": False,
         }
 
     @staticmethod
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
-            "type": ["EPICGAMES", "PSN", "STEAM", "XBOX"],  # in query
+            "type": ["EPICGAMES", "PSN", "STEAM", "XBOX"],                                         # in query
         }
 
     # endregion static methods

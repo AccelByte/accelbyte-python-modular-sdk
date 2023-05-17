@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -35,17 +35,6 @@ from ..models.transaction import Transaction
 class ChannelEnum(StrEnum):
     EXTERNAL = "EXTERNAL"
     INTERNAL = "INTERNAL"
-
-
-class PaymentProviderEnum(StrEnum):
-    ADYEN = "ADYEN"
-    ALIPAY = "ALIPAY"
-    CHECKOUT = "CHECKOUT"
-    PAYPAL = "PAYPAL"
-    STRIPE = "STRIPE"
-    WALLET = "WALLET"
-    WXPAY = "WXPAY"
-    XSOLLA = "XSOLLA"
 
 
 class StatusEnum(StrEnum):
@@ -78,6 +67,17 @@ class ItemTypeEnum(StrEnum):
     SUBSCRIPTION = "SUBSCRIPTION"
 
 
+class PaymentProviderEnum(StrEnum):
+    ADYEN = "ADYEN"
+    ALIPAY = "ALIPAY"
+    CHECKOUT = "CHECKOUT"
+    PAYPAL = "PAYPAL"
+    STRIPE = "STRIPE"
+    WALLET = "WALLET"
+    WXPAY = "WXPAY"
+    XSOLLA = "XSOLLA"
+
+
 class PaymentOrderInfo(Model):
     """Payment order info (PaymentOrderInfo)
 
@@ -93,8 +93,6 @@ class PaymentOrderInfo(Model):
         namespace: (namespace) REQUIRED str
 
         payment_order_no: (paymentOrderNo) REQUIRED str
-
-        payment_provider: (paymentProvider) REQUIRED Union[str, PaymentProviderEnum]
 
         price: (price) REQUIRED int
 
@@ -140,6 +138,8 @@ class PaymentOrderInfo(Model):
 
         payment_method_fee: (paymentMethodFee) OPTIONAL int
 
+        payment_provider: (paymentProvider) OPTIONAL Union[str, PaymentProviderEnum]
+
         payment_provider_fee: (paymentProviderFee) OPTIONAL int
 
         payment_station_url: (paymentStationUrl) OPTIONAL str
@@ -179,53 +179,53 @@ class PaymentOrderInfo(Model):
 
     # region fields
 
-    channel: Union[str, ChannelEnum]  # REQUIRED
-    created_at: str  # REQUIRED
-    currency: CurrencySummary  # REQUIRED
-    ext_order_no: str  # REQUIRED
-    namespace: str  # REQUIRED
-    payment_order_no: str  # REQUIRED
-    payment_provider: Union[str, PaymentProviderEnum]  # REQUIRED
-    price: int  # REQUIRED
-    sandbox: bool  # REQUIRED
-    status: Union[str, StatusEnum]  # REQUIRED
-    title: str  # REQUIRED
-    updated_at: str  # REQUIRED
-    user_id: str  # REQUIRED
-    authorised_time: str  # OPTIONAL
-    chargeback_reversed_time: str  # OPTIONAL
-    chargeback_time: str  # OPTIONAL
-    charged_time: str  # OPTIONAL
-    charging: bool  # OPTIONAL
-    created_time: str  # OPTIONAL
-    custom_parameters: Dict[str, Any]  # OPTIONAL
-    description: str  # OPTIONAL
-    ext_user_id: str  # OPTIONAL
-    item_type: Union[str, ItemTypeEnum]  # OPTIONAL
-    language: str  # OPTIONAL
-    metadata: Dict[str, str]  # OPTIONAL
-    notify_url: str  # OPTIONAL
-    omit_notification: bool  # OPTIONAL
-    payment_method: str  # OPTIONAL
-    payment_method_fee: int  # OPTIONAL
-    payment_provider_fee: int  # OPTIONAL
-    payment_station_url: str  # OPTIONAL
-    recurring_payment_order_no: str  # OPTIONAL
-    refunded_time: str  # OPTIONAL
-    region: str  # OPTIONAL
-    return_url: str  # OPTIONAL
-    sales_tax: int  # OPTIONAL
-    sku: str  # OPTIONAL
-    status_reason: str  # OPTIONAL
-    subscription_id: str  # OPTIONAL
-    subtotal_price: int  # OPTIONAL
-    target_namespace: str  # OPTIONAL
-    target_user_id: str  # OPTIONAL
-    tax: int  # OPTIONAL
-    total_price: int  # OPTIONAL
-    total_tax: int  # OPTIONAL
-    transactions: List[Transaction]  # OPTIONAL
-    vat: int  # OPTIONAL
+    channel: Union[str, ChannelEnum]                                                               # REQUIRED
+    created_at: str                                                                                # REQUIRED
+    currency: CurrencySummary                                                                      # REQUIRED
+    ext_order_no: str                                                                              # REQUIRED
+    namespace: str                                                                                 # REQUIRED
+    payment_order_no: str                                                                          # REQUIRED
+    price: int                                                                                     # REQUIRED
+    sandbox: bool                                                                                  # REQUIRED
+    status: Union[str, StatusEnum]                                                                 # REQUIRED
+    title: str                                                                                     # REQUIRED
+    updated_at: str                                                                                # REQUIRED
+    user_id: str                                                                                   # REQUIRED
+    authorised_time: str                                                                           # OPTIONAL
+    chargeback_reversed_time: str                                                                  # OPTIONAL
+    chargeback_time: str                                                                           # OPTIONAL
+    charged_time: str                                                                              # OPTIONAL
+    charging: bool                                                                                 # OPTIONAL
+    created_time: str                                                                              # OPTIONAL
+    custom_parameters: Dict[str, Any]                                                              # OPTIONAL
+    description: str                                                                               # OPTIONAL
+    ext_user_id: str                                                                               # OPTIONAL
+    item_type: Union[str, ItemTypeEnum]                                                            # OPTIONAL
+    language: str                                                                                  # OPTIONAL
+    metadata: Dict[str, str]                                                                       # OPTIONAL
+    notify_url: str                                                                                # OPTIONAL
+    omit_notification: bool                                                                        # OPTIONAL
+    payment_method: str                                                                            # OPTIONAL
+    payment_method_fee: int                                                                        # OPTIONAL
+    payment_provider: Union[str, PaymentProviderEnum]                                              # OPTIONAL
+    payment_provider_fee: int                                                                      # OPTIONAL
+    payment_station_url: str                                                                       # OPTIONAL
+    recurring_payment_order_no: str                                                                # OPTIONAL
+    refunded_time: str                                                                             # OPTIONAL
+    region: str                                                                                    # OPTIONAL
+    return_url: str                                                                                # OPTIONAL
+    sales_tax: int                                                                                 # OPTIONAL
+    sku: str                                                                                       # OPTIONAL
+    status_reason: str                                                                             # OPTIONAL
+    subscription_id: str                                                                           # OPTIONAL
+    subtotal_price: int                                                                            # OPTIONAL
+    target_namespace: str                                                                          # OPTIONAL
+    target_user_id: str                                                                            # OPTIONAL
+    tax: int                                                                                       # OPTIONAL
+    total_price: int                                                                               # OPTIONAL
+    total_tax: int                                                                                 # OPTIONAL
+    transactions: List[Transaction]                                                                # OPTIONAL
+    vat: int                                                                                       # OPTIONAL
 
     # endregion fields
 
@@ -253,12 +253,6 @@ class PaymentOrderInfo(Model):
 
     def with_payment_order_no(self, value: str) -> PaymentOrderInfo:
         self.payment_order_no = value
-        return self
-
-    def with_payment_provider(
-        self, value: Union[str, PaymentProviderEnum]
-    ) -> PaymentOrderInfo:
-        self.payment_provider = value
         return self
 
     def with_price(self, value: int) -> PaymentOrderInfo:
@@ -347,6 +341,10 @@ class PaymentOrderInfo(Model):
 
     def with_payment_method_fee(self, value: int) -> PaymentOrderInfo:
         self.payment_method_fee = value
+        return self
+
+    def with_payment_provider(self, value: Union[str, PaymentProviderEnum]) -> PaymentOrderInfo:
+        self.payment_provider = value
         return self
 
     def with_payment_provider_fee(self, value: int) -> PaymentOrderInfo:
@@ -451,10 +449,6 @@ class PaymentOrderInfo(Model):
             result["paymentOrderNo"] = str(self.payment_order_no)
         elif include_empty:
             result["paymentOrderNo"] = ""
-        if hasattr(self, "payment_provider"):
-            result["paymentProvider"] = str(self.payment_provider)
-        elif include_empty:
-            result["paymentProvider"] = Union[str, PaymentProviderEnum]()
         if hasattr(self, "price"):
             result["price"] = int(self.price)
         elif include_empty:
@@ -504,9 +498,7 @@ class PaymentOrderInfo(Model):
         elif include_empty:
             result["createdTime"] = ""
         if hasattr(self, "custom_parameters"):
-            result["customParameters"] = {
-                str(k0): v0 for k0, v0 in self.custom_parameters.items()
-            }
+            result["customParameters"] = {str(k0): v0 for k0, v0 in self.custom_parameters.items()}
         elif include_empty:
             result["customParameters"] = {}
         if hasattr(self, "description"):
@@ -545,6 +537,10 @@ class PaymentOrderInfo(Model):
             result["paymentMethodFee"] = int(self.payment_method_fee)
         elif include_empty:
             result["paymentMethodFee"] = 0
+        if hasattr(self, "payment_provider"):
+            result["paymentProvider"] = str(self.payment_provider)
+        elif include_empty:
+            result["paymentProvider"] = Union[str, PaymentProviderEnum]()
         if hasattr(self, "payment_provider_fee"):
             result["paymentProviderFee"] = int(self.payment_provider_fee)
         elif include_empty:
@@ -610,9 +606,7 @@ class PaymentOrderInfo(Model):
         elif include_empty:
             result["totalTax"] = 0
         if hasattr(self, "transactions"):
-            result["transactions"] = [
-                i0.to_dict(include_empty=include_empty) for i0 in self.transactions
-            ]
+            result["transactions"] = [i0.to_dict(include_empty=include_empty) for i0 in self.transactions]
         elif include_empty:
             result["transactions"] = []
         if hasattr(self, "vat"):
@@ -634,7 +628,6 @@ class PaymentOrderInfo(Model):
         ext_order_no: str,
         namespace: str,
         payment_order_no: str,
-        payment_provider: Union[str, PaymentProviderEnum],
         price: int,
         sandbox: bool,
         status: Union[str, StatusEnum],
@@ -657,6 +650,7 @@ class PaymentOrderInfo(Model):
         omit_notification: Optional[bool] = None,
         payment_method: Optional[str] = None,
         payment_method_fee: Optional[int] = None,
+        payment_provider: Optional[Union[str, PaymentProviderEnum]] = None,
         payment_provider_fee: Optional[int] = None,
         payment_station_url: Optional[str] = None,
         recurring_payment_order_no: Optional[str] = None,
@@ -675,7 +669,7 @@ class PaymentOrderInfo(Model):
         total_tax: Optional[int] = None,
         transactions: Optional[List[Transaction]] = None,
         vat: Optional[int] = None,
-        **kwargs,
+    **kwargs
     ) -> PaymentOrderInfo:
         instance = cls()
         instance.channel = channel
@@ -684,7 +678,6 @@ class PaymentOrderInfo(Model):
         instance.ext_order_no = ext_order_no
         instance.namespace = namespace
         instance.payment_order_no = payment_order_no
-        instance.payment_provider = payment_provider
         instance.price = price
         instance.sandbox = sandbox
         instance.status = status
@@ -723,6 +716,8 @@ class PaymentOrderInfo(Model):
             instance.payment_method = payment_method
         if payment_method_fee is not None:
             instance.payment_method_fee = payment_method_fee
+        if payment_provider is not None:
+            instance.payment_provider = payment_provider
         if payment_provider_fee is not None:
             instance.payment_provider_fee = payment_provider_fee
         if payment_station_url is not None:
@@ -762,9 +757,7 @@ class PaymentOrderInfo(Model):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> PaymentOrderInfo:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> PaymentOrderInfo:
         instance = cls()
         if not dict_:
             return instance
@@ -777,9 +770,7 @@ class PaymentOrderInfo(Model):
         elif include_empty:
             instance.created_at = ""
         if "currency" in dict_ and dict_["currency"] is not None:
-            instance.currency = CurrencySummary.create_from_dict(
-                dict_["currency"], include_empty=include_empty
-            )
+            instance.currency = CurrencySummary.create_from_dict(dict_["currency"], include_empty=include_empty)
         elif include_empty:
             instance.currency = CurrencySummary()
         if "extOrderNo" in dict_ and dict_["extOrderNo"] is not None:
@@ -794,10 +785,6 @@ class PaymentOrderInfo(Model):
             instance.payment_order_no = str(dict_["paymentOrderNo"])
         elif include_empty:
             instance.payment_order_no = ""
-        if "paymentProvider" in dict_ and dict_["paymentProvider"] is not None:
-            instance.payment_provider = str(dict_["paymentProvider"])
-        elif include_empty:
-            instance.payment_provider = Union[str, PaymentProviderEnum]()
         if "price" in dict_ and dict_["price"] is not None:
             instance.price = int(dict_["price"])
         elif include_empty:
@@ -826,10 +813,7 @@ class PaymentOrderInfo(Model):
             instance.authorised_time = str(dict_["authorisedTime"])
         elif include_empty:
             instance.authorised_time = ""
-        if (
-            "chargebackReversedTime" in dict_
-            and dict_["chargebackReversedTime"] is not None
-        ):
+        if "chargebackReversedTime" in dict_ and dict_["chargebackReversedTime"] is not None:
             instance.chargeback_reversed_time = str(dict_["chargebackReversedTime"])
         elif include_empty:
             instance.chargeback_reversed_time = ""
@@ -850,9 +834,7 @@ class PaymentOrderInfo(Model):
         elif include_empty:
             instance.created_time = ""
         if "customParameters" in dict_ and dict_["customParameters"] is not None:
-            instance.custom_parameters = {
-                str(k0): v0 for k0, v0 in dict_["customParameters"].items()
-            }
+            instance.custom_parameters = {str(k0): v0 for k0, v0 in dict_["customParameters"].items()}
         elif include_empty:
             instance.custom_parameters = {}
         if "description" in dict_ and dict_["description"] is not None:
@@ -872,9 +854,7 @@ class PaymentOrderInfo(Model):
         elif include_empty:
             instance.language = ""
         if "metadata" in dict_ and dict_["metadata"] is not None:
-            instance.metadata = {
-                str(k0): str(v0) for k0, v0 in dict_["metadata"].items()
-            }
+            instance.metadata = {str(k0): str(v0) for k0, v0 in dict_["metadata"].items()}
         elif include_empty:
             instance.metadata = {}
         if "notifyUrl" in dict_ and dict_["notifyUrl"] is not None:
@@ -893,6 +873,10 @@ class PaymentOrderInfo(Model):
             instance.payment_method_fee = int(dict_["paymentMethodFee"])
         elif include_empty:
             instance.payment_method_fee = 0
+        if "paymentProvider" in dict_ and dict_["paymentProvider"] is not None:
+            instance.payment_provider = str(dict_["paymentProvider"])
+        elif include_empty:
+            instance.payment_provider = Union[str, PaymentProviderEnum]()
         if "paymentProviderFee" in dict_ and dict_["paymentProviderFee"] is not None:
             instance.payment_provider_fee = int(dict_["paymentProviderFee"])
         elif include_empty:
@@ -901,10 +885,7 @@ class PaymentOrderInfo(Model):
             instance.payment_station_url = str(dict_["paymentStationUrl"])
         elif include_empty:
             instance.payment_station_url = ""
-        if (
-            "recurringPaymentOrderNo" in dict_
-            and dict_["recurringPaymentOrderNo"] is not None
-        ):
+        if "recurringPaymentOrderNo" in dict_ and dict_["recurringPaymentOrderNo"] is not None:
             instance.recurring_payment_order_no = str(dict_["recurringPaymentOrderNo"])
         elif include_empty:
             instance.recurring_payment_order_no = ""
@@ -961,10 +942,7 @@ class PaymentOrderInfo(Model):
         elif include_empty:
             instance.total_tax = 0
         if "transactions" in dict_ and dict_["transactions"] is not None:
-            instance.transactions = [
-                Transaction.create_from_dict(i0, include_empty=include_empty)
-                for i0 in dict_["transactions"]
-            ]
+            instance.transactions = [Transaction.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["transactions"]]
         elif include_empty:
             instance.transactions = []
         if "vat" in dict_ and dict_["vat"] is not None:
@@ -974,29 +952,15 @@ class PaymentOrderInfo(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, PaymentOrderInfo]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, PaymentOrderInfo]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[PaymentOrderInfo]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[PaymentOrderInfo]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[PaymentOrderInfo, List[PaymentOrderInfo], Dict[Any, PaymentOrderInfo]]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[PaymentOrderInfo, List[PaymentOrderInfo], Dict[Any, PaymentOrderInfo]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -1016,7 +980,6 @@ class PaymentOrderInfo(Model):
             "extOrderNo": "ext_order_no",
             "namespace": "namespace",
             "paymentOrderNo": "payment_order_no",
-            "paymentProvider": "payment_provider",
             "price": "price",
             "sandbox": "sandbox",
             "status": "status",
@@ -1039,6 +1002,7 @@ class PaymentOrderInfo(Model):
             "omitNotification": "omit_notification",
             "paymentMethod": "payment_method",
             "paymentMethodFee": "payment_method_fee",
+            "paymentProvider": "payment_provider",
             "paymentProviderFee": "payment_provider_fee",
             "paymentStationUrl": "payment_station_url",
             "recurringPaymentOrderNo": "recurring_payment_order_no",
@@ -1068,7 +1032,6 @@ class PaymentOrderInfo(Model):
             "extOrderNo": True,
             "namespace": True,
             "paymentOrderNo": True,
-            "paymentProvider": True,
             "price": True,
             "sandbox": True,
             "status": True,
@@ -1091,6 +1054,7 @@ class PaymentOrderInfo(Model):
             "omitNotification": False,
             "paymentMethod": False,
             "paymentMethodFee": False,
+            "paymentProvider": False,
             "paymentProviderFee": False,
             "paymentStationUrl": False,
             "recurringPaymentOrderNo": False,
@@ -1115,44 +1079,9 @@ class PaymentOrderInfo(Model):
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
             "channel": ["EXTERNAL", "INTERNAL"],
-            "paymentProvider": [
-                "ADYEN",
-                "ALIPAY",
-                "CHECKOUT",
-                "PAYPAL",
-                "STRIPE",
-                "WALLET",
-                "WXPAY",
-                "XSOLLA",
-            ],
-            "status": [
-                "AUTHORISED",
-                "AUTHORISE_FAILED",
-                "CHARGEBACK",
-                "CHARGEBACK_REVERSED",
-                "CHARGED",
-                "CHARGE_FAILED",
-                "DELETED",
-                "INIT",
-                "NOTIFICATION_OF_CHARGEBACK",
-                "REFUNDED",
-                "REFUNDING",
-                "REFUND_FAILED",
-                "REQUEST_FOR_INFORMATION",
-            ],
-            "itemType": [
-                "APP",
-                "BUNDLE",
-                "CODE",
-                "COINS",
-                "EXTENSION",
-                "INGAMEITEM",
-                "LOOTBOX",
-                "MEDIA",
-                "OPTIONBOX",
-                "SEASON",
-                "SUBSCRIPTION",
-            ],
+            "status": ["AUTHORISED", "AUTHORISE_FAILED", "CHARGEBACK", "CHARGEBACK_REVERSED", "CHARGED", "CHARGE_FAILED", "DELETED", "INIT", "NOTIFICATION_OF_CHARGEBACK", "REFUNDED", "REFUNDING", "REFUND_FAILED", "REQUEST_FOR_INFORMATION"],
+            "itemType": ["APP", "BUNDLE", "CODE", "COINS", "EXTENSION", "INGAMEITEM", "LOOTBOX", "MEDIA", "OPTIONBOX", "SEASON", "SUBSCRIPTION"],
+            "paymentProvider": ["ADYEN", "ALIPAY", "CHECKOUT", "PAYPAL", "STRIPE", "WALLET", "WXPAY", "XSOLLA"],
         }
 
     # endregion static methods

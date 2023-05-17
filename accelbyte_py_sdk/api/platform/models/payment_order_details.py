@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -53,15 +53,15 @@ class PaymentOrderDetails(Model):
 
     # region fields
 
-    charging: bool  # REQUIRED
-    currency_code: str  # REQUIRED
-    currency_symbol: str  # REQUIRED
-    price: str  # REQUIRED
-    sandbox: bool  # REQUIRED
-    title: str  # REQUIRED
-    description: str  # OPTIONAL
-    display_name: str  # OPTIONAL
-    region: str  # OPTIONAL
+    charging: bool                                                                                 # REQUIRED
+    currency_code: str                                                                             # REQUIRED
+    currency_symbol: str                                                                           # REQUIRED
+    price: str                                                                                     # REQUIRED
+    sandbox: bool                                                                                  # REQUIRED
+    title: str                                                                                     # REQUIRED
+    description: str                                                                               # OPTIONAL
+    display_name: str                                                                              # OPTIONAL
+    region: str                                                                                    # OPTIONAL
 
     # endregion fields
 
@@ -163,7 +163,7 @@ class PaymentOrderDetails(Model):
         description: Optional[str] = None,
         display_name: Optional[str] = None,
         region: Optional[str] = None,
-        **kwargs,
+    **kwargs
     ) -> PaymentOrderDetails:
         instance = cls()
         instance.charging = charging
@@ -181,9 +181,7 @@ class PaymentOrderDetails(Model):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> PaymentOrderDetails:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> PaymentOrderDetails:
         instance = cls()
         if not dict_:
             return instance
@@ -226,31 +224,15 @@ class PaymentOrderDetails(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, PaymentOrderDetails]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, PaymentOrderDetails]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[PaymentOrderDetails]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[PaymentOrderDetails]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[
-        PaymentOrderDetails, List[PaymentOrderDetails], Dict[Any, PaymentOrderDetails]
-    ]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[PaymentOrderDetails, List[PaymentOrderDetails], Dict[Any, PaymentOrderDetails]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

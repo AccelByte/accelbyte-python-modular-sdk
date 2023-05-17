@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -98,12 +98,12 @@ class QueryWallets(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
 
-    namespace: str  # REQUIRED in [path]
-    currency_code: str  # OPTIONAL in [query]
-    limit: int  # OPTIONAL in [query]
-    offset: int  # OPTIONAL in [query]
-    origin: Union[str, OriginEnum]  # OPTIONAL in [query]
-    user_id: str  # OPTIONAL in [query]
+    namespace: str                                                                                 # REQUIRED in [path]
+    currency_code: str                                                                             # OPTIONAL in [query]
+    limit: int                                                                                     # OPTIONAL in [query]
+    offset: int                                                                                    # OPTIONAL in [query]
+    origin: Union[str, OriginEnum]                                                                 # OPTIONAL in [query]
+    user_id: str                                                                                   # OPTIONAL in [query]
 
     # endregion fields
 
@@ -236,9 +236,7 @@ class QueryWallets(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(
-        self, code: int, content_type: str, content: Any
-    ) -> Tuple[Union[None, WalletPagingSlicedResult], Union[None, HttpResponse]]:
+    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, WalletPagingSlicedResult], Union[None, HttpResponse]]:
         """Parse the given response.
 
         200: OK - WalletPagingSlicedResult (successful operation)
@@ -249,9 +247,7 @@ class QueryWallets(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(
-            code=code, content_type=content_type, content=content
-        )
+        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
@@ -259,9 +255,7 @@ class QueryWallets(Operation):
         if code == 200:
             return WalletPagingSlicedResult.create_from_dict(content), None
 
-        return self.handle_undocumented_response(
-            code=code, content_type=content_type, content=content
-        )
+        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
 
     # endregion response methods
 
@@ -276,7 +270,7 @@ class QueryWallets(Operation):
         offset: Optional[int] = None,
         origin: Optional[Union[str, OriginEnum]] = None,
         user_id: Optional[str] = None,
-        **kwargs,
+    **kwargs
     ) -> QueryWallets:
         instance = cls()
         instance.namespace = namespace
@@ -346,18 +340,7 @@ class QueryWallets(Operation):
     @staticmethod
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
-            "origin": [
-                "Epic",
-                "GooglePlay",
-                "IOS",
-                "Nintendo",
-                "Other",
-                "Playstation",
-                "Steam",
-                "System",
-                "Twitch",
-                "Xbox",
-            ],  # in query
+            "origin": ["Epic", "GooglePlay", "IOS", "Nintendo", "Other", "Playstation", "Steam", "System", "Twitch", "Xbox"],# in query
         }
 
     # endregion static methods

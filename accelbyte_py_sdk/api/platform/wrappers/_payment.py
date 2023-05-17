@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -47,41 +47,21 @@ from ..operations.payment import GetPaymentOrder
 from ..operations.payment import GetPaymentOrderChargeStatus
 from ..operations.payment import ListExtOrderNoByExtTxId
 from ..operations.payment import QueryPaymentNotifications
-from ..operations.payment import (
-    QueryPaymentNotificationsNotificationSourceEnum,
-    QueryPaymentNotificationsStatusEnum,
-)
+from ..operations.payment import QueryPaymentNotificationsNotificationSourceEnum, QueryPaymentNotificationsStatusEnum
 from ..operations.payment import QueryPaymentOrders
-from ..operations.payment import (
-    QueryPaymentOrdersChannelEnum,
-    QueryPaymentOrdersStatusEnum,
-)
+from ..operations.payment import QueryPaymentOrdersChannelEnum, QueryPaymentOrdersStatusEnum
 from ..operations.payment import RefundUserPaymentOrder
 from ..operations.payment import SimulatePaymentOrderNotification
 from ..models import NotificationProcessResultStatusEnum
 from ..models import PaymentOrderChargeRequestPaymentProviderEnum
 from ..models import PaymentOrderChargeStatusStatusEnum
 from ..models import PaymentOrderCreateItemTypeEnum
-from ..models import (
-    PaymentOrderInfoChannelEnum,
-    PaymentOrderInfoItemTypeEnum,
-    PaymentOrderInfoPaymentProviderEnum,
-    PaymentOrderInfoStatusEnum,
-)
-from ..models import (
-    PaymentOrderNotifySimulationNotifyTypeEnum,
-    PaymentOrderNotifySimulationPaymentProviderEnum,
-)
+from ..models import PaymentOrderInfoChannelEnum, PaymentOrderInfoItemTypeEnum, PaymentOrderInfoPaymentProviderEnum, PaymentOrderInfoStatusEnum
+from ..models import PaymentOrderNotifySimulationNotifyTypeEnum, PaymentOrderNotifySimulationPaymentProviderEnum
 
 
 @same_doc_as(ChargePaymentOrder)
-def charge_payment_order(
-    payment_order_no: str,
-    body: Optional[PaymentOrderChargeRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def charge_payment_order(payment_order_no: str, body: Optional[PaymentOrderChargeRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Charge payment order without payment flow (chargePaymentOrder)
 
     [TEST FACILITY ONLY] Forbidden in live environment. Charge payment order without payment flow for unpaid payment order, usually for test usage to simulate real currency payment process.
@@ -134,13 +114,7 @@ def charge_payment_order(
 
 
 @same_doc_as(ChargePaymentOrder)
-async def charge_payment_order_async(
-    payment_order_no: str,
-    body: Optional[PaymentOrderChargeRequest] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def charge_payment_order_async(payment_order_no: str, body: Optional[PaymentOrderChargeRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Charge payment order without payment flow (chargePaymentOrder)
 
     [TEST FACILITY ONLY] Forbidden in live environment. Charge payment order without payment flow for unpaid payment order, usually for test usage to simulate real currency payment process.
@@ -189,19 +163,11 @@ async def charge_payment_order_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(CreateUserPaymentOrder)
-def create_user_payment_order(
-    user_id: str,
-    body: Optional[PaymentOrderCreate] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def create_user_payment_order(user_id: str, body: Optional[PaymentOrderCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Create payment order (createUserPaymentOrder)
 
     [SERVICE COMMUNICATION ONLY] This API is used to create payment order from justice service. The result contains the payment station url.
@@ -259,13 +225,7 @@ def create_user_payment_order(
 
 
 @same_doc_as(CreateUserPaymentOrder)
-async def create_user_payment_order_async(
-    user_id: str,
-    body: Optional[PaymentOrderCreate] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def create_user_payment_order_async(user_id: str, body: Optional[PaymentOrderCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Create payment order (createUserPaymentOrder)
 
     [SERVICE COMMUNICATION ONLY] This API is used to create payment order from justice service. The result contains the payment station url.
@@ -319,18 +279,11 @@ async def create_user_payment_order_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetPaymentOrder)
-def get_payment_order(
-    payment_order_no: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_payment_order(payment_order_no: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get payment order (getPaymentOrder)
 
     Get payment order by paymentOrderNo.
@@ -376,12 +329,7 @@ def get_payment_order(
 
 
 @same_doc_as(GetPaymentOrder)
-async def get_payment_order_async(
-    payment_order_no: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_payment_order_async(payment_order_no: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get payment order (getPaymentOrder)
 
     Get payment order by paymentOrderNo.
@@ -423,18 +371,11 @@ async def get_payment_order_async(
         payment_order_no=payment_order_no,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(GetPaymentOrderChargeStatus)
-def get_payment_order_charge_status(
-    payment_order_no: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def get_payment_order_charge_status(payment_order_no: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get payment order charge status (getPaymentOrderChargeStatus)
 
     Get payment order charge status.
@@ -480,12 +421,7 @@ def get_payment_order_charge_status(
 
 
 @same_doc_as(GetPaymentOrderChargeStatus)
-async def get_payment_order_charge_status_async(
-    payment_order_no: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def get_payment_order_charge_status_async(payment_order_no: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Get payment order charge status (getPaymentOrderChargeStatus)
 
     Get payment order charge status.
@@ -527,18 +463,11 @@ async def get_payment_order_charge_status_async(
         payment_order_no=payment_order_no,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(ListExtOrderNoByExtTxId)
-def list_ext_order_no_by_ext_tx_id(
-    ext_tx_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def list_ext_order_no_by_ext_tx_id(ext_tx_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """List external order No by external transaction id (listExtOrderNoByExtTxId)
 
     List external order No by external transaction id.
@@ -582,12 +511,7 @@ def list_ext_order_no_by_ext_tx_id(
 
 
 @same_doc_as(ListExtOrderNoByExtTxId)
-async def list_ext_order_no_by_ext_tx_id_async(
-    ext_tx_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def list_ext_order_no_by_ext_tx_id_async(ext_tx_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """List external order No by external transaction id (listExtOrderNoByExtTxId)
 
     List external order No by external transaction id.
@@ -627,28 +551,11 @@ async def list_ext_order_no_by_ext_tx_id_async(
         ext_tx_id=ext_tx_id,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(QueryPaymentNotifications)
-def query_payment_notifications(
-    end_date: Optional[str] = None,
-    external_id: Optional[str] = None,
-    limit: Optional[int] = None,
-    notification_source: Optional[
-        Union[str, QueryPaymentNotificationsNotificationSourceEnum]
-    ] = None,
-    notification_type: Optional[str] = None,
-    offset: Optional[int] = None,
-    payment_order_no: Optional[str] = None,
-    start_date: Optional[str] = None,
-    status: Optional[Union[str, QueryPaymentNotificationsStatusEnum]] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def query_payment_notifications(end_date: Optional[str] = None, external_id: Optional[str] = None, limit: Optional[int] = None, notification_source: Optional[Union[str, QueryPaymentNotificationsNotificationSourceEnum]] = None, notification_type: Optional[str] = None, offset: Optional[int] = None, payment_order_no: Optional[str] = None, start_date: Optional[str] = None, status: Optional[Union[str, QueryPaymentNotificationsStatusEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query payment notifications (queryPaymentNotifications)
 
     Query payment notifications.
@@ -716,22 +623,7 @@ def query_payment_notifications(
 
 
 @same_doc_as(QueryPaymentNotifications)
-async def query_payment_notifications_async(
-    end_date: Optional[str] = None,
-    external_id: Optional[str] = None,
-    limit: Optional[int] = None,
-    notification_source: Optional[
-        Union[str, QueryPaymentNotificationsNotificationSourceEnum]
-    ] = None,
-    notification_type: Optional[str] = None,
-    offset: Optional[int] = None,
-    payment_order_no: Optional[str] = None,
-    start_date: Optional[str] = None,
-    status: Optional[Union[str, QueryPaymentNotificationsStatusEnum]] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def query_payment_notifications_async(end_date: Optional[str] = None, external_id: Optional[str] = None, limit: Optional[int] = None, notification_source: Optional[Union[str, QueryPaymentNotificationsNotificationSourceEnum]] = None, notification_type: Optional[str] = None, offset: Optional[int] = None, payment_order_no: Optional[str] = None, start_date: Optional[str] = None, status: Optional[Union[str, QueryPaymentNotificationsStatusEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query payment notifications (queryPaymentNotifications)
 
     Query payment notifications.
@@ -795,22 +687,11 @@ async def query_payment_notifications_async(
         status=status,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(QueryPaymentOrders)
-def query_payment_orders(
-    channel: Optional[Union[str, QueryPaymentOrdersChannelEnum]] = None,
-    ext_tx_id: Optional[str] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    status: Optional[Union[str, QueryPaymentOrdersStatusEnum]] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def query_payment_orders(channel: Optional[Union[str, QueryPaymentOrdersChannelEnum]] = None, ext_tx_id: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, status: Optional[Union[str, QueryPaymentOrdersStatusEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query payment orders (queryPaymentOrders)
 
     Query payment orders.
@@ -866,16 +747,7 @@ def query_payment_orders(
 
 
 @same_doc_as(QueryPaymentOrders)
-async def query_payment_orders_async(
-    channel: Optional[Union[str, QueryPaymentOrdersChannelEnum]] = None,
-    ext_tx_id: Optional[str] = None,
-    limit: Optional[int] = None,
-    offset: Optional[int] = None,
-    status: Optional[Union[str, QueryPaymentOrdersStatusEnum]] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def query_payment_orders_async(channel: Optional[Union[str, QueryPaymentOrdersChannelEnum]] = None, ext_tx_id: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, status: Optional[Union[str, QueryPaymentOrdersStatusEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Query payment orders (queryPaymentOrders)
 
     Query payment orders.
@@ -927,20 +799,11 @@ async def query_payment_orders_async(
         status=status,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(RefundUserPaymentOrder)
-def refund_user_payment_order(
-    payment_order_no: str,
-    user_id: str,
-    body: Optional[PaymentOrderRefund] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def refund_user_payment_order(payment_order_no: str, user_id: str, body: Optional[PaymentOrderRefund] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Refund payment order (refundUserPaymentOrder)
 
     [SERVICE COMMUNICATION ONLY] This API is used to refund order by paymentOrderNo from justice service.
@@ -995,14 +858,7 @@ def refund_user_payment_order(
 
 
 @same_doc_as(RefundUserPaymentOrder)
-async def refund_user_payment_order_async(
-    payment_order_no: str,
-    user_id: str,
-    body: Optional[PaymentOrderRefund] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def refund_user_payment_order_async(payment_order_no: str, user_id: str, body: Optional[PaymentOrderRefund] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Refund payment order (refundUserPaymentOrder)
 
     [SERVICE COMMUNICATION ONLY] This API is used to refund order by paymentOrderNo from justice service.
@@ -1053,19 +909,11 @@ async def refund_user_payment_order_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(SimulatePaymentOrderNotification)
-def simulate_payment_order_notification(
-    payment_order_no: str,
-    body: Optional[PaymentOrderNotifySimulation] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+def simulate_payment_order_notification(payment_order_no: str, body: Optional[PaymentOrderNotifySimulation] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Simulate payment notification (simulatePaymentOrderNotification)
 
     [TEST FACILITY ONLY] Forbidden in live environment. Simulate payment notification on sandbox payment order, usually for test usage to simulate real currency payment notification.
@@ -1116,13 +964,7 @@ def simulate_payment_order_notification(
 
 
 @same_doc_as(SimulatePaymentOrderNotification)
-async def simulate_payment_order_notification_async(
-    payment_order_no: str,
-    body: Optional[PaymentOrderNotifySimulation] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
+async def simulate_payment_order_notification_async(payment_order_no: str, body: Optional[PaymentOrderNotifySimulation] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """Simulate payment notification (simulatePaymentOrderNotification)
 
     [TEST FACILITY ONLY] Forbidden in live environment. Simulate payment notification on sandbox payment order, usually for test usage to simulate real currency payment notification.
@@ -1169,6 +1011,4 @@ async def simulate_payment_order_notification_async(
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
+    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)

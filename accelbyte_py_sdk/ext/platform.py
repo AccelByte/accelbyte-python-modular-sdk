@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -46,6 +46,13 @@ from ..api.platform.models import BillingAccount
 from ..api.platform.models import BillingHistoryInfo
 from ..api.platform.models import BillingHistoryPagingSlicedResult
 from ..api.platform.models import BoxItem
+from ..api.platform.models import BulkCreditRequest
+from ..api.platform.models import BulkCreditResult
+from ..api.platform.models import BulkDebitRequest
+from ..api.platform.models import BulkDebitResult
+from ..api.platform.models import BulkEntitlementGrantRequest
+from ..api.platform.models import BulkEntitlementGrantResult
+from ..api.platform.models import BulkEntitlementRevokeResult
 from ..api.platform.models import BulkOperationResult
 from ..api.platform.models import BulkRegionDataChangeRequest
 from ..api.platform.models import BundledItemInfo
@@ -70,8 +77,10 @@ from ..api.platform.models import CodeInfoPagingSlicedResult
 from ..api.platform.models import ConditionGroup
 from ..api.platform.models import ConditionGroupValidateResult
 from ..api.platform.models import ConditionMatchResult
+from ..api.platform.models import ConsumableEntitlementRevocationConfig
 from ..api.platform.models import ConsumeItem
 from ..api.platform.models import CreditRequest
+from ..api.platform.models import CreditResult
 from ..api.platform.models import CreditRevocation
 from ..api.platform.models import CreditSummary
 from ..api.platform.models import CurrencyConfig
@@ -87,6 +96,7 @@ from ..api.platform.models import DLCItemConfigUpdate
 from ..api.platform.models import DLCRecord
 from ..api.platform.models import DebitByCurrencyCodeRequest
 from ..api.platform.models import DebitRequest
+from ..api.platform.models import DebitResult
 from ..api.platform.models import DeleteRewardConditionRequest
 from ..api.platform.models import DetailedWalletTransactionInfo
 from ..api.platform.models import DetailedWalletTransactionPagingSlicedResult
@@ -94,6 +104,7 @@ from ..api.platform.models import DurableEntitlementRevocationConfig
 from ..api.platform.models import EntitlementDecrement
 from ..api.platform.models import EntitlementDecrementResult
 from ..api.platform.models import EntitlementGrant
+from ..api.platform.models import EntitlementGrantResult
 from ..api.platform.models import EntitlementHistoryInfo
 from ..api.platform.models import EntitlementInfo
 from ..api.platform.models import EntitlementLootBoxReward
@@ -101,6 +112,7 @@ from ..api.platform.models import EntitlementOwnership
 from ..api.platform.models import EntitlementPagingSlicedResult
 from ..api.platform.models import EntitlementRevocation
 from ..api.platform.models import EntitlementRevocationConfig
+from ..api.platform.models import EntitlementRevokeResult
 from ..api.platform.models import EntitlementSoldRequest
 from ..api.platform.models import EntitlementSoldResult
 from ..api.platform.models import EntitlementSummary
@@ -269,10 +281,12 @@ from ..api.platform.models import RedeemResult
 from ..api.platform.models import RedeemableItem
 from ..api.platform.models import RegionDataChange
 from ..api.platform.models import RegionDataItem
+from ..api.platform.models import RegionDataItemDTO
 from ..api.platform.models import RequestHistory
 from ..api.platform.models import Requirement
 from ..api.platform.models import RevocationConfigInfo
 from ..api.platform.models import RevocationConfigUpdate
+from ..api.platform.models import RevocationError
 from ..api.platform.models import RevocationHistoryInfo
 from ..api.platform.models import RevocationHistoryPagingSlicedResult
 from ..api.platform.models import RevocationRequest
@@ -283,6 +297,7 @@ from ..api.platform.models import RevokeEntry
 from ..api.platform.models import RevokeItem
 from ..api.platform.models import RevokeItemSummary
 from ..api.platform.models import RevokeResult
+from ..api.platform.models import RevokeUseCountRequest
 from ..api.platform.models import RewardCondition
 from ..api.platform.models import RewardCreate
 from ..api.platform.models import RewardInfo
@@ -337,6 +352,7 @@ from ..api.platform.models import TwitchIAPConfigRequest
 from ..api.platform.models import TwitchSyncRequest
 from ..api.platform.models import TwitchSyncResult
 from ..api.platform.models import UserDLC
+from ..api.platform.models import UserDLCRecord
 from ..api.platform.models import ValidationErrorEntity
 from ..api.platform.models import ViewCreate
 from ..api.platform.models import ViewInfo
@@ -398,6 +414,7 @@ def create_admin_order_create_example() -> AdminOrderCreate:
     instance.platform = randomize()
     instance.return_url = randomize("url")
     instance.sandbox = randomize("bool")
+    instance.section_id = randomize()
     return instance
 
 
@@ -445,9 +462,7 @@ def create_app_entitlement_info_example() -> AppEntitlementInfo:
     return instance
 
 
-def create_app_entitlement_paging_sliced_result_example() -> (
-    AppEntitlementPagingSlicedResult
-):
+def create_app_entitlement_paging_sliced_result_example() -> AppEntitlementPagingSlicedResult:
     instance = AppEntitlementPagingSlicedResult()
     instance.data = [create_app_entitlement_info_example()]
     instance.paging = create_paging_example()
@@ -502,8 +517,8 @@ def create_app_update_example() -> AppUpdate:
 
 def create_apple_iap_config_info_example() -> AppleIAPConfigInfo:
     instance = AppleIAPConfigInfo()
-    instance.bundle_id = randomize()
     instance.namespace = randomize("slug")
+    instance.bundle_id = randomize()
     instance.password = randomize("password")
     return instance
 
@@ -611,9 +626,7 @@ def create_billing_history_info_example() -> BillingHistoryInfo:
     return instance
 
 
-def create_billing_history_paging_sliced_result_example() -> (
-    BillingHistoryPagingSlicedResult
-):
+def create_billing_history_paging_sliced_result_example() -> BillingHistoryPagingSlicedResult:
     instance = BillingHistoryPagingSlicedResult()
     instance.data = [create_billing_history_info_example()]
     instance.paging = create_paging_example()
@@ -626,6 +639,61 @@ def create_box_item_example() -> BoxItem:
     instance.item_id = randomize()
     instance.item_sku = randomize()
     instance.item_type = randomize()
+    return instance
+
+
+def create_bulk_credit_request_example() -> BulkCreditRequest:
+    instance = BulkCreditRequest()
+    instance.credit_request = create_credit_request_example()
+    instance.currency_code = randomize()
+    instance.user_ids = [randomize()]
+    return instance
+
+
+def create_bulk_credit_result_example() -> BulkCreditResult:
+    instance = BulkCreditResult()
+    instance.fail_list = [create_credit_result_example()]
+    instance.status = randomize()
+    instance.success_list = [create_credit_result_example()]
+    return instance
+
+
+def create_bulk_debit_request_example() -> BulkDebitRequest:
+    instance = BulkDebitRequest()
+    instance.currency_code = randomize()
+    instance.request = create_debit_by_currency_code_request_example()
+    instance.user_ids = [randomize()]
+    return instance
+
+
+def create_bulk_debit_result_example() -> BulkDebitResult:
+    instance = BulkDebitResult()
+    instance.fail_list = [create_debit_result_example()]
+    instance.status = randomize()
+    instance.success_list = [create_debit_result_example()]
+    return instance
+
+
+def create_bulk_entitlement_grant_request_example() -> BulkEntitlementGrantRequest:
+    instance = BulkEntitlementGrantRequest()
+    instance.entitlement_grant_list = [create_entitlement_grant_example()]
+    instance.user_ids = [randomize()]
+    return instance
+
+
+def create_bulk_entitlement_grant_result_example() -> BulkEntitlementGrantResult:
+    instance = BulkEntitlementGrantResult()
+    instance.fail_list = [create_entitlement_grant_result_example()]
+    instance.status = randomize()
+    instance.success_list = [create_entitlement_grant_result_example()]
+    return instance
+
+
+def create_bulk_entitlement_revoke_result_example() -> BulkEntitlementRevokeResult:
+    instance = BulkEntitlementRevokeResult()
+    instance.fail_list = [create_entitlement_revoke_result_example()]
+    instance.status = randomize()
+    instance.success_list = [create_entitlement_revoke_result_example()]
     return instance
 
 
@@ -683,6 +751,7 @@ def create_bundled_item_info_example() -> BundledItemInfo:
     instance.region_data = [create_region_data_item_example()]
     instance.sale_config = create_sale_config_example()
     instance.season_type = randomize()
+    instance.section_exclusive = randomize("bool")
     instance.sellable = randomize("bool")
     instance.sku = randomize("slug")
     instance.stackable = randomize("bool")
@@ -700,13 +769,9 @@ def create_campaign_create_example() -> CampaignCreate:
     instance.name = randomize()
     instance.description = randomize()
     instance.items = [create_redeemable_item_example()]
-    instance.max_redeem_count_per_campaign_per_user = randomize(
-        "int", min_val=1, max_val=1000
-    )
+    instance.max_redeem_count_per_campaign_per_user = randomize("int", min_val=1, max_val=1000)
     instance.max_redeem_count_per_code = randomize("int", min_val=1, max_val=1000)
-    instance.max_redeem_count_per_code_per_user = randomize(
-        "int", min_val=1, max_val=1000
-    )
+    instance.max_redeem_count_per_code_per_user = randomize("int", min_val=1, max_val=1000)
     instance.max_sale_count = randomize("int", min_val=1, max_val=1000)
     instance.redeem_end = randomize("date")
     instance.redeem_start = randomize("date")
@@ -732,13 +797,9 @@ def create_campaign_info_example() -> CampaignInfo:
     instance.booth_name = randomize()
     instance.created_at = randomize("date")
     instance.id_ = randomize()
-    instance.max_redeem_count_per_campaign_per_user = randomize(
-        "int", min_val=1, max_val=1000
-    )
+    instance.max_redeem_count_per_campaign_per_user = randomize("int", min_val=1, max_val=1000)
     instance.max_redeem_count_per_code = randomize("int", min_val=1, max_val=1000)
-    instance.max_redeem_count_per_code_per_user = randomize(
-        "int", min_val=1, max_val=1000
-    )
+    instance.max_redeem_count_per_code_per_user = randomize("int", min_val=1, max_val=1000)
     instance.max_sale_count = randomize("int", min_val=1, max_val=1000)
     instance.name = randomize()
     instance.namespace = randomize("slug")
@@ -766,13 +827,9 @@ def create_campaign_update_example() -> CampaignUpdate:
     instance.name = randomize()
     instance.description = randomize()
     instance.items = [create_redeemable_item_example()]
-    instance.max_redeem_count_per_campaign_per_user = randomize(
-        "int", min_val=1, max_val=1000
-    )
+    instance.max_redeem_count_per_campaign_per_user = randomize("int", min_val=1, max_val=1000)
     instance.max_redeem_count_per_code = randomize("int", min_val=1, max_val=1000)
-    instance.max_redeem_count_per_code_per_user = randomize(
-        "int", min_val=1, max_val=1000
-    )
+    instance.max_redeem_count_per_code_per_user = randomize("int", min_val=1, max_val=1000)
     instance.max_sale_count = randomize("int", min_val=1, max_val=1000)
     instance.redeem_end = randomize("date")
     instance.redeem_start = randomize("date")
@@ -812,9 +869,7 @@ def create_catalog_change_info_example() -> CatalogChangeInfo:
     return instance
 
 
-def create_catalog_change_paging_sliced_result_example() -> (
-    CatalogChangePagingSlicedResult
-):
+def create_catalog_change_paging_sliced_result_example() -> CatalogChangePagingSlicedResult:
     instance = CatalogChangePagingSlicedResult()
     instance.data = [create_catalog_change_info_example()]
     instance.paging = create_paging_example()
@@ -887,13 +942,9 @@ def create_code_info_example() -> CodeInfo:
     instance.campaign_id = randomize()
     instance.created_at = randomize("date")
     instance.id_ = randomize()
-    instance.max_redeem_count_per_campaign_per_user = randomize(
-        "int", min_val=1, max_val=1000
-    )
+    instance.max_redeem_count_per_campaign_per_user = randomize("int", min_val=1, max_val=1000)
     instance.max_redeem_count_per_code = randomize("int", min_val=1, max_val=1000)
-    instance.max_redeem_count_per_code_per_user = randomize(
-        "int", min_val=1, max_val=1000
-    )
+    instance.max_redeem_count_per_code_per_user = randomize("int", min_val=1, max_val=1000)
     instance.namespace = randomize("slug")
     instance.redeem_type = randomize()
     instance.redeemed_count = randomize("int", min_val=1, max_val=1000)
@@ -938,6 +989,13 @@ def create_condition_match_result_example() -> ConditionMatchResult:
     return instance
 
 
+def create_consumable_entitlement_revocation_config_example() -> ConsumableEntitlementRevocationConfig:
+    instance = ConsumableEntitlementRevocationConfig()
+    instance.enabled = randomize("bool")
+    instance.strategy = randomize()
+    return instance
+
+
 def create_consume_item_example() -> ConsumeItem:
     instance = ConsumeItem()
     instance.ext_item_id = randomize()
@@ -956,11 +1014,21 @@ def create_credit_request_example() -> CreditRequest:
     return instance
 
 
+def create_credit_result_example() -> CreditResult:
+    instance = CreditResult()
+    instance.credit_request = create_credit_request_example()
+    instance.currency_code = randomize()
+    instance.reason = randomize()
+    instance.user_id = randomize("uid")
+    return instance
+
+
 def create_credit_revocation_example() -> CreditRevocation:
     instance = CreditRevocation()
     instance.amount = randomize("int", min_val=1, max_val=1000)
     instance.balance_origin = randomize()
     instance.currency_code = randomize()
+    instance.custom_revocation = {randomize(): randomize()}
     instance.reason = randomize()
     instance.revocation_strategy = randomize()
     instance.skipped = randomize("bool")
@@ -1059,6 +1127,15 @@ def create_debit_request_example() -> DebitRequest:
     return instance
 
 
+def create_debit_result_example() -> DebitResult:
+    instance = DebitResult()
+    instance.currency_code = randomize()
+    instance.reason = randomize()
+    instance.request = create_debit_by_currency_code_request_example()
+    instance.user_id = randomize("uid")
+    return instance
+
+
 def create_delete_reward_condition_request_example() -> DeleteRewardConditionRequest:
     instance = DeleteRewardConditionRequest()
     instance.condition_name = randomize()
@@ -1082,9 +1159,7 @@ def create_detailed_wallet_transaction_info_example() -> DetailedWalletTransacti
     return instance
 
 
-def create_detailed_wallet_transaction_paging_sliced_result_example() -> (
-    DetailedWalletTransactionPagingSlicedResult
-):
+def create_detailed_wallet_transaction_paging_sliced_result_example() -> DetailedWalletTransactionPagingSlicedResult:
     instance = DetailedWalletTransactionPagingSlicedResult()
     instance.data = [create_detailed_wallet_transaction_info_example()]
     instance.paging = create_paging_example()
@@ -1125,9 +1200,7 @@ def create_dlc_record_example() -> DLCRecord:
     return instance
 
 
-def create_durable_entitlement_revocation_config_example() -> (
-    DurableEntitlementRevocationConfig
-):
+def create_durable_entitlement_revocation_config_example() -> DurableEntitlementRevocationConfig:
     instance = DurableEntitlementRevocationConfig()
     instance.enabled = randomize("bool")
     instance.strategy = randomize()
@@ -1189,6 +1262,14 @@ def create_entitlement_grant_example() -> EntitlementGrant:
     return instance
 
 
+def create_entitlement_grant_result_example() -> EntitlementGrantResult:
+    instance = EntitlementGrantResult()
+    instance.entitlement_grants = create_entitlement_grant_example()
+    instance.reason = randomize()
+    instance.user_id = randomize("uid")
+    return instance
+
+
 def create_entitlement_history_info_example() -> EntitlementHistoryInfo:
     instance = EntitlementHistoryInfo()
     instance.action = randomize()
@@ -1198,7 +1279,9 @@ def create_entitlement_history_info_example() -> EntitlementHistoryInfo:
     instance.operator = randomize()
     instance.updated_at = randomize("date")
     instance.user_id = randomize("uid")
+    instance.reason = randomize()
     instance.use_count = randomize("int", min_val=1, max_val=1000)
+    instance.use_count_change = randomize("int", min_val=1, max_val=1000)
     return instance
 
 
@@ -1255,6 +1338,7 @@ def create_entitlement_paging_sliced_result_example() -> EntitlementPagingSliced
 
 def create_entitlement_revocation_example() -> EntitlementRevocation:
     instance = EntitlementRevocation()
+    instance.custom_revocation = {randomize(): randomize()}
     instance.entitlement_id = randomize()
     instance.item_id = randomize()
     instance.item_sku = randomize()
@@ -1268,7 +1352,16 @@ def create_entitlement_revocation_example() -> EntitlementRevocation:
 
 def create_entitlement_revocation_config_example() -> EntitlementRevocationConfig:
     instance = EntitlementRevocationConfig()
+    instance.consumable = create_consumable_entitlement_revocation_config_example()
     instance.durable = create_durable_entitlement_revocation_config_example()
+    return instance
+
+
+def create_entitlement_revoke_result_example() -> EntitlementRevokeResult:
+    instance = EntitlementRevokeResult()
+    instance.entitlement_id = randomize()
+    instance.reason = randomize()
+    instance.user_id = randomize("uid")
     return instance
 
 
@@ -1461,9 +1554,7 @@ def create_fulfillment_history_info_example() -> FulfillmentHistoryInfo:
     instance.code = randomize()
     instance.credit_summaries = [create_credit_summary_example()]
     instance.entitlement_summaries = [create_entitlement_summary_example()]
-    instance.extension_fulfillment_summaries = [
-        create_extension_fulfillment_summary_example()
-    ]
+    instance.extension_fulfillment_summaries = [create_extension_fulfillment_summary_example()]
     instance.fulfill_items = [create_fulfillment_item_example()]
     instance.fulfillment_error = create_fulfillment_error_example()
     instance.granted_item_ids = [randomize()]
@@ -1471,9 +1562,7 @@ def create_fulfillment_history_info_example() -> FulfillmentHistoryInfo:
     return instance
 
 
-def create_fulfillment_history_paging_sliced_result_example() -> (
-    FulfillmentHistoryPagingSlicedResult
-):
+def create_fulfillment_history_paging_sliced_result_example() -> FulfillmentHistoryPagingSlicedResult:
     instance = FulfillmentHistoryPagingSlicedResult()
     instance.data = [create_fulfillment_history_info_example()]
     instance.paging = create_paging_example()
@@ -1535,9 +1624,7 @@ def create_fulfillment_script_create_example() -> FulfillmentScriptCreate:
     return instance
 
 
-def create_fulfillment_script_eval_test_request_example() -> (
-    FulfillmentScriptEvalTestRequest
-):
+def create_fulfillment_script_eval_test_request_example() -> FulfillmentScriptEvalTestRequest:
     instance = FulfillmentScriptEvalTestRequest()
     instance.context = create_fulfillment_script_context_example()
     instance.script = randomize()
@@ -1545,9 +1632,7 @@ def create_fulfillment_script_eval_test_request_example() -> (
     return instance
 
 
-def create_fulfillment_script_eval_test_result_example() -> (
-    FulfillmentScriptEvalTestResult
-):
+def create_fulfillment_script_eval_test_result_example() -> FulfillmentScriptEvalTestResult:
     instance = FulfillmentScriptEvalTestResult()
     instance.error_stack_trace = randomize()
     instance.result = {randomize(): randomize()}
@@ -1633,6 +1718,7 @@ def create_full_item_info_example() -> FullItemInfo:
     instance.recurring = create_recurring_example()
     instance.sale_config = create_sale_config_example()
     instance.season_type = randomize()
+    instance.section_exclusive = randomize("bool")
     instance.sellable = randomize("bool")
     instance.sku = randomize("slug")
     instance.stackable = randomize("bool")
@@ -1663,16 +1749,14 @@ def create_full_section_info_example() -> FullSectionInfo:
     instance.section_id = randomize()
     instance.start_date = randomize("date")
     instance.updated_at = randomize("date")
-    instance.view_id = randomize()
-    instance.view_name = randomize()
     instance.display_order = randomize("int", min_val=1, max_val=1000)
     instance.ext = {randomize(): randomize()}
-    instance.fixed_period_rotation_config = (
-        create_fixed_period_rotation_config_example()
-    )
+    instance.fixed_period_rotation_config = create_fixed_period_rotation_config_example()
     instance.item_namings = [create_item_naming_example()]
     instance.items = [create_section_item_example()]
     instance.rotation_type = randomize()
+    instance.view_id = randomize()
+    instance.view_name = randomize()
     return instance
 
 
@@ -1758,9 +1842,7 @@ def create_iap_consume_history_info_example() -> IAPConsumeHistoryInfo:
     return instance
 
 
-def create_iap_consume_history_paging_sliced_result_example() -> (
-    IAPConsumeHistoryPagingSlicedResult
-):
+def create_iap_consume_history_paging_sliced_result_example() -> IAPConsumeHistoryPagingSlicedResult:
     instance = IAPConsumeHistoryPagingSlicedResult()
     instance.data = [create_iap_consume_history_info_example()]
     instance.paging = create_paging_example()
@@ -1864,10 +1946,10 @@ def create_import_store_error_example() -> ImportStoreError:
 
 def create_import_store_item_info_example() -> ImportStoreItemInfo:
     instance = ImportStoreItemInfo()
-    instance.category_path = randomize()
-    instance.item_id = randomize()
     instance.item_type = randomize()
     instance.localizations = {}
+    instance.category_path = randomize()
+    instance.item_id = randomize()
     instance.name = randomize()
     instance.sku = randomize("slug")
     return instance
@@ -1949,6 +2031,7 @@ def create_item_create_example() -> ItemCreate:
     instance.recurring = create_recurring_example()
     instance.sale_config = create_sale_config_example()
     instance.season_type = randomize()
+    instance.section_exclusive = randomize("bool")
     instance.sellable = randomize("bool")
     instance.sku = randomize("slug")
     instance.stackable = randomize("bool")
@@ -2019,6 +2102,7 @@ def create_item_info_example() -> ItemInfo:
     instance.region_data = [create_region_data_item_example()]
     instance.sale_config = create_sale_config_example()
     instance.season_type = randomize()
+    instance.section_exclusive = randomize("bool")
     instance.sellable = randomize("bool")
     instance.sku = randomize("slug")
     instance.stackable = randomize("bool")
@@ -2051,17 +2135,13 @@ def create_item_paging_sliced_result_example() -> ItemPagingSlicedResult:
     return instance
 
 
-def create_item_purchase_condition_validate_request_example() -> (
-    ItemPurchaseConditionValidateRequest
-):
+def create_item_purchase_condition_validate_request_example() -> ItemPurchaseConditionValidateRequest:
     instance = ItemPurchaseConditionValidateRequest()
     instance.item_ids = [randomize()]
     return instance
 
 
-def create_item_purchase_condition_validate_result_example() -> (
-    ItemPurchaseConditionValidateResult
-):
+def create_item_purchase_condition_validate_result_example() -> ItemPurchaseConditionValidateResult:
     instance = ItemPurchaseConditionValidateResult()
     instance.item_id = randomize()
     instance.purchasable = randomize("bool")
@@ -2079,14 +2159,17 @@ def create_item_return_request_example() -> ItemReturnRequest:
 def create_item_revocation_example() -> ItemRevocation:
     instance = ItemRevocation()
     instance.credit_revocations = [create_credit_revocation_example()]
+    instance.custom_revocation = {randomize(): randomize()}
     instance.entitlement_revocations = [create_entitlement_revocation_example()]
     instance.item_id = randomize()
     instance.item_revocations = [create_item_revocation_example()]
     instance.item_sku = randomize()
     instance.item_type = randomize()
     instance.quantity = randomize("int", min_val=1, max_val=1000)
+    instance.reason = randomize()
     instance.skipped = randomize("bool")
     instance.status = randomize()
+    instance.strategy = randomize()
     return instance
 
 
@@ -2191,6 +2274,7 @@ def create_item_update_example() -> ItemUpdate:
     instance.region_data = {}
     instance.sale_config = create_sale_config_example()
     instance.season_type = randomize()
+    instance.section_exclusive = randomize("bool")
     instance.sellable = randomize("bool")
     instance.sku = randomize("slug")
     instance.stackable = randomize("bool")
@@ -2396,6 +2480,7 @@ def create_order_create_example() -> OrderCreate:
     instance.language = randomize()
     instance.region = randomize()
     instance.return_url = randomize("url")
+    instance.section_id = randomize()
     return instance
 
 
@@ -2430,7 +2515,6 @@ def create_order_info_example() -> OrderInfo:
     instance.created_at = randomize("date")
     instance.currency = create_currency_summary_example()
     instance.discounted_price = randomize("int", min_val=1, max_val=1000)
-    instance.expire_time = randomize("date")
     instance.item_id = randomize()
     instance.namespace = randomize("slug")
     instance.order_no = randomize()
@@ -2446,6 +2530,7 @@ def create_order_info_example() -> OrderInfo:
     instance.charged_time = randomize("date")
     instance.created_time = randomize("date")
     instance.creation_options = create_order_creation_options_example()
+    instance.expire_time = randomize("date")
     instance.ext = {randomize(): randomize()}
     instance.fulfilled_time = randomize("date")
     instance.item_snapshot = create_item_snapshot_example()
@@ -2615,9 +2700,7 @@ def create_payment_notification_info_example() -> PaymentNotificationInfo:
     return instance
 
 
-def create_payment_notification_paging_sliced_result_example() -> (
-    PaymentNotificationPagingSlicedResult
-):
+def create_payment_notification_paging_sliced_result_example() -> PaymentNotificationPagingSlicedResult:
     instance = PaymentNotificationPagingSlicedResult()
     instance.data = [create_payment_notification_info_example()]
     instance.paging = create_paging_example()
@@ -2754,7 +2837,6 @@ def create_payment_order_info_example() -> PaymentOrderInfo:
     instance.ext_order_no = randomize()
     instance.namespace = randomize("slug")
     instance.payment_order_no = randomize()
-    instance.payment_provider = randomize()
     instance.price = randomize("int", min_val=1, max_val=1000)
     instance.sandbox = randomize("bool")
     instance.status = randomize()
@@ -2777,6 +2859,7 @@ def create_payment_order_info_example() -> PaymentOrderInfo:
     instance.omit_notification = randomize("bool")
     instance.payment_method = randomize()
     instance.payment_method_fee = randomize("int", min_val=1, max_val=1000)
+    instance.payment_provider = randomize()
     instance.payment_provider_fee = randomize("int", min_val=1, max_val=1000)
     instance.payment_station_url = randomize("url")
     instance.recurring_payment_order_no = randomize()
@@ -2809,9 +2892,7 @@ def create_payment_order_notify_simulation_example() -> PaymentOrderNotifySimula
     return instance
 
 
-def create_payment_order_paging_sliced_result_example() -> (
-    PaymentOrderPagingSlicedResult
-):
+def create_payment_order_paging_sliced_result_example() -> PaymentOrderPagingSlicedResult:
     instance = PaymentOrderPagingSlicedResult()
     instance.data = [create_payment_order_info_example()]
     instance.paging = create_paging_example()
@@ -2876,9 +2957,9 @@ def create_payment_provider_config_info_example() -> PaymentProviderConfigInfo:
     instance = PaymentProviderConfigInfo()
     instance.id_ = randomize()
     instance.namespace = randomize("slug")
-    instance.payment_merchant_config_id = randomize()
     instance.region = randomize()
     instance.aggregate = randomize()
+    instance.payment_merchant_config_id = randomize()
     instance.sandbox_tax_jar_api_token = randomize()
     instance.specials = [randomize()]
     instance.tax_jar_api_token = randomize()
@@ -2887,9 +2968,7 @@ def create_payment_provider_config_info_example() -> PaymentProviderConfigInfo:
     return instance
 
 
-def create_payment_provider_config_paging_sliced_result_example() -> (
-    PaymentProviderConfigPagingSlicedResult
-):
+def create_payment_provider_config_paging_sliced_result_example() -> PaymentProviderConfigPagingSlicedResult:
     instance = PaymentProviderConfigPagingSlicedResult()
     instance.data = [create_payment_provider_config_info_example()]
     instance.paging = create_paging_example()
@@ -3033,9 +3112,7 @@ def create_platform_wallet_config_update_example() -> PlatformWalletConfigUpdate
     return instance
 
 
-def create_play_station_dlc_sync_multi_service_labels_request_example() -> (
-    PlayStationDLCSyncMultiServiceLabelsRequest
-):
+def create_play_station_dlc_sync_multi_service_labels_request_example() -> PlayStationDLCSyncMultiServiceLabelsRequest:
     instance = PlayStationDLCSyncMultiServiceLabelsRequest()
     instance.service_labels = [randomize("int", min_val=1, max_val=1000)]
     return instance
@@ -3049,14 +3126,12 @@ def create_play_station_dlc_sync_request_example() -> PlayStationDLCSyncRequest:
 
 def create_play_station_iap_config_info_example() -> PlayStationIAPConfigInfo:
     instance = PlayStationIAPConfigInfo()
-    instance.environment = randomize()
     instance.namespace = randomize("slug")
+    instance.environment = randomize()
     return instance
 
 
-def create_play_station_multi_service_labels_reconcile_request_example() -> (
-    PlayStationMultiServiceLabelsReconcileRequest
-):
+def create_play_station_multi_service_labels_reconcile_request_example() -> PlayStationMultiServiceLabelsReconcileRequest:
     instance = PlayStationMultiServiceLabelsReconcileRequest()
     instance.currency_code = randomize()
     instance.price = randomize("int", min_val=1, max_val=1000)
@@ -3132,6 +3207,7 @@ def create_populated_item_info_example() -> PopulatedItemInfo:
     instance.region_data = [create_region_data_item_example()]
     instance.sale_config = create_sale_config_example()
     instance.season_type = randomize()
+    instance.section_exclusive = randomize("bool")
     instance.sellable = randomize("bool")
     instance.sku = randomize("slug")
     instance.stackable = randomize("bool")
@@ -3213,9 +3289,7 @@ def create_redeem_history_info_example() -> RedeemHistoryInfo:
     return instance
 
 
-def create_redeem_history_paging_sliced_result_example() -> (
-    RedeemHistoryPagingSlicedResult
-):
+def create_redeem_history_paging_sliced_result_example() -> RedeemHistoryPagingSlicedResult:
     instance = RedeemHistoryPagingSlicedResult()
     instance.data = [create_redeem_history_info_example()]
     instance.paging = create_paging_example()
@@ -3269,6 +3343,22 @@ def create_region_data_item_example() -> RegionDataItem:
     return instance
 
 
+def create_region_data_item_dto_example() -> RegionDataItemDTO:
+    instance = RegionDataItemDTO()
+    instance.currency_code = randomize()
+    instance.currency_namespace = randomize("slug")
+    instance.currency_type = randomize()
+    instance.price = randomize("int", min_val=1, max_val=1000)
+    instance.discount_amount = randomize("int", min_val=1, max_val=1000)
+    instance.discount_expire_at = randomize("date")
+    instance.discount_percentage = randomize("int", min_val=1, max_val=1000)
+    instance.discount_purchase_at = randomize("date")
+    instance.expire_at = randomize("date")
+    instance.purchase_at = randomize("date")
+    instance.trial_price = randomize("int", min_val=1, max_val=1000)
+    return instance
+
+
 def create_request_history_example() -> RequestHistory:
     instance = RequestHistory()
     instance.request_time = randomize("date")
@@ -3308,6 +3398,14 @@ def create_revocation_config_update_example() -> RevocationConfigUpdate:
     return instance
 
 
+def create_revocation_error_example() -> RevocationError:
+    instance = RevocationError()
+    instance.code = randomize("int", min_val=1, max_val=1000)
+    instance.http_status = randomize("int", min_val=1, max_val=1000)
+    instance.message = randomize()
+    return instance
+
+
 def create_revocation_history_info_example() -> RevocationHistoryInfo:
     instance = RevocationHistoryInfo()
     instance.created_at = randomize("date")
@@ -3317,17 +3415,17 @@ def create_revocation_history_info_example() -> RevocationHistoryInfo:
     instance.item_revocations = [create_item_revocation_example()]
     instance.meta = {randomize(): randomize()}
     instance.namespace = randomize("slug")
+    instance.revocation_errors = [create_revocation_error_example()]
     instance.revoke_entries = [create_revoke_entry_example()]
     instance.source = randomize()
     instance.status = randomize()
+    instance.transaction_id = randomize("uid")
     instance.updated_at = randomize("date")
     instance.user_id = randomize("uid")
     return instance
 
 
-def create_revocation_history_paging_sliced_result_example() -> (
-    RevocationHistoryPagingSlicedResult
-):
+def create_revocation_history_paging_sliced_result_example() -> RevocationHistoryPagingSlicedResult:
     instance = RevocationHistoryPagingSlicedResult()
     instance.data = [create_revocation_history_info_example()]
     instance.paging = create_paging_example()
@@ -3399,6 +3497,13 @@ def create_revoke_result_example() -> RevokeResult:
     instance.revoke_item_summaries = [create_revoke_item_summary_example()]
     instance.reward = create_platform_reward_example()
     instance.status = randomize()
+    return instance
+
+
+def create_revoke_use_count_request_example() -> RevokeUseCountRequest:
+    instance = RevokeUseCountRequest()
+    instance.reason = randomize()
+    instance.use_count = randomize("int", min_val=1, max_val=1000)
     return instance
 
 
@@ -3493,9 +3598,7 @@ def create_section_create_example() -> SectionCreate:
     instance.active = randomize("bool")
     instance.display_order = randomize("int", min_val=1, max_val=1000)
     instance.ext = {randomize(): randomize()}
-    instance.fixed_period_rotation_config = (
-        create_fixed_period_rotation_config_example()
-    )
+    instance.fixed_period_rotation_config = create_fixed_period_rotation_config_example()
     instance.items = [create_section_item_example()]
     instance.rotation_type = randomize()
     instance.view_id = randomize()
@@ -3547,9 +3650,7 @@ def create_section_update_example() -> SectionUpdate:
     instance.active = randomize("bool")
     instance.display_order = randomize("int", min_val=1, max_val=1000)
     instance.ext = {randomize(): randomize()}
-    instance.fixed_period_rotation_config = (
-        create_fixed_period_rotation_config_example()
-    )
+    instance.fixed_period_rotation_config = create_fixed_period_rotation_config_example()
     instance.items = [create_section_item_example()]
     instance.rotation_type = randomize()
     instance.view_id = randomize()
@@ -3758,9 +3859,7 @@ def create_subscription_activity_info_example() -> SubscriptionActivityInfo:
     return instance
 
 
-def create_subscription_activity_paging_sliced_result_example() -> (
-    SubscriptionActivityPagingSlicedResult
-):
+def create_subscription_activity_paging_sliced_result_example() -> SubscriptionActivityPagingSlicedResult:
     instance = SubscriptionActivityPagingSlicedResult()
     instance.data = [create_subscription_activity_info_example()]
     instance.paging = create_paging_example()
@@ -3815,9 +3914,7 @@ def create_subscription_info_example() -> SubscriptionInfo:
     return instance
 
 
-def create_subscription_paging_sliced_result_example() -> (
-    SubscriptionPagingSlicedResult
-):
+def create_subscription_paging_sliced_result_example() -> SubscriptionPagingSlicedResult:
     instance = SubscriptionPagingSlicedResult()
     instance.data = [create_subscription_info_example()]
     instance.paging = create_paging_example()
@@ -4038,6 +4135,24 @@ def create_user_dlc_example() -> UserDLC:
     return instance
 
 
+def create_user_dlc_record_example() -> UserDLCRecord:
+    instance = UserDLCRecord()
+    instance.id_ = randomize()
+    instance.namespace = randomize("slug")
+    instance.obtained_at = randomize("date")
+    instance.platform = randomize()
+    instance.revocation_result = create_revocation_result_example()
+    instance.revoke_results = [create_revoke_result_example()]
+    instance.revoked_at = randomize("date")
+    instance.rewards = [create_platform_reward_example()]
+    instance.sources = [randomize()]
+    instance.status = randomize()
+    instance.transaction_id = randomize("uid")
+    instance.user_id = randomize("uid")
+    instance.version = randomize("int", min_val=1, max_val=1000)
+    return instance
+
+
 def create_validation_error_entity_example() -> ValidationErrorEntity:
     instance = ValidationErrorEntity()
     instance.error_code = randomize("int", min_val=1, max_val=1000)
@@ -4125,9 +4240,7 @@ def create_wallet_transaction_info_example() -> WalletTransactionInfo:
     return instance
 
 
-def create_wallet_transaction_paging_sliced_result_example() -> (
-    WalletTransactionPagingSlicedResult
-):
+def create_wallet_transaction_paging_sliced_result_example() -> WalletTransactionPagingSlicedResult:
     instance = WalletTransactionPagingSlicedResult()
     instance.data = [create_wallet_transaction_info_example()]
     instance.paging = create_paging_example()

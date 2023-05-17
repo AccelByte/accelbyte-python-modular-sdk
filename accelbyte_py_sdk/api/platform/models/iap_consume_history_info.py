@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -77,24 +77,22 @@ class IAPConsumeHistoryInfo(Model):
 
     # region fields
 
-    client_request_parameter: ClientRequestParameter  # OPTIONAL
-    consume_items: List[ConsumeItem]  # OPTIONAL
-    iap_type: Union[str, IapTypeEnum]  # OPTIONAL
-    id_: str  # OPTIONAL
-    namespace: str  # OPTIONAL
-    request_body: Dict[str, Any]  # OPTIONAL
-    request_histories: List[RequestHistory]  # OPTIONAL
-    request_url: str  # OPTIONAL
-    status: Union[str, StatusEnum]  # OPTIONAL
-    user_id: str  # OPTIONAL
+    client_request_parameter: ClientRequestParameter                                               # OPTIONAL
+    consume_items: List[ConsumeItem]                                                               # OPTIONAL
+    iap_type: Union[str, IapTypeEnum]                                                              # OPTIONAL
+    id_: str                                                                                       # OPTIONAL
+    namespace: str                                                                                 # OPTIONAL
+    request_body: Dict[str, Any]                                                                   # OPTIONAL
+    request_histories: List[RequestHistory]                                                        # OPTIONAL
+    request_url: str                                                                               # OPTIONAL
+    status: Union[str, StatusEnum]                                                                 # OPTIONAL
+    user_id: str                                                                                   # OPTIONAL
 
     # endregion fields
 
     # region with_x methods
 
-    def with_client_request_parameter(
-        self, value: ClientRequestParameter
-    ) -> IAPConsumeHistoryInfo:
+    def with_client_request_parameter(self, value: ClientRequestParameter) -> IAPConsumeHistoryInfo:
         self.client_request_parameter = value
         return self
 
@@ -118,9 +116,7 @@ class IAPConsumeHistoryInfo(Model):
         self.request_body = value
         return self
 
-    def with_request_histories(
-        self, value: List[RequestHistory]
-    ) -> IAPConsumeHistoryInfo:
+    def with_request_histories(self, value: List[RequestHistory]) -> IAPConsumeHistoryInfo:
         self.request_histories = value
         return self
 
@@ -143,15 +139,11 @@ class IAPConsumeHistoryInfo(Model):
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
         if hasattr(self, "client_request_parameter"):
-            result["clientRequestParameter"] = self.client_request_parameter.to_dict(
-                include_empty=include_empty
-            )
+            result["clientRequestParameter"] = self.client_request_parameter.to_dict(include_empty=include_empty)
         elif include_empty:
             result["clientRequestParameter"] = ClientRequestParameter()
         if hasattr(self, "consume_items"):
-            result["consumeItems"] = [
-                i0.to_dict(include_empty=include_empty) for i0 in self.consume_items
-            ]
+            result["consumeItems"] = [i0.to_dict(include_empty=include_empty) for i0 in self.consume_items]
         elif include_empty:
             result["consumeItems"] = []
         if hasattr(self, "iap_type"):
@@ -167,15 +159,11 @@ class IAPConsumeHistoryInfo(Model):
         elif include_empty:
             result["namespace"] = ""
         if hasattr(self, "request_body"):
-            result["requestBody"] = {
-                str(k0): v0 for k0, v0 in self.request_body.items()
-            }
+            result["requestBody"] = {str(k0): v0 for k0, v0 in self.request_body.items()}
         elif include_empty:
             result["requestBody"] = {}
         if hasattr(self, "request_histories"):
-            result["requestHistories"] = [
-                i0.to_dict(include_empty=include_empty) for i0 in self.request_histories
-            ]
+            result["requestHistories"] = [i0.to_dict(include_empty=include_empty) for i0 in self.request_histories]
         elif include_empty:
             result["requestHistories"] = []
         if hasattr(self, "request_url"):
@@ -209,7 +197,7 @@ class IAPConsumeHistoryInfo(Model):
         request_url: Optional[str] = None,
         status: Optional[Union[str, StatusEnum]] = None,
         user_id: Optional[str] = None,
-        **kwargs,
+    **kwargs
     ) -> IAPConsumeHistoryInfo:
         instance = cls()
         if client_request_parameter is not None:
@@ -235,26 +223,16 @@ class IAPConsumeHistoryInfo(Model):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> IAPConsumeHistoryInfo:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> IAPConsumeHistoryInfo:
         instance = cls()
         if not dict_:
             return instance
-        if (
-            "clientRequestParameter" in dict_
-            and dict_["clientRequestParameter"] is not None
-        ):
-            instance.client_request_parameter = ClientRequestParameter.create_from_dict(
-                dict_["clientRequestParameter"], include_empty=include_empty
-            )
+        if "clientRequestParameter" in dict_ and dict_["clientRequestParameter"] is not None:
+            instance.client_request_parameter = ClientRequestParameter.create_from_dict(dict_["clientRequestParameter"], include_empty=include_empty)
         elif include_empty:
             instance.client_request_parameter = ClientRequestParameter()
         if "consumeItems" in dict_ and dict_["consumeItems"] is not None:
-            instance.consume_items = [
-                ConsumeItem.create_from_dict(i0, include_empty=include_empty)
-                for i0 in dict_["consumeItems"]
-            ]
+            instance.consume_items = [ConsumeItem.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["consumeItems"]]
         elif include_empty:
             instance.consume_items = []
         if "iapType" in dict_ and dict_["iapType"] is not None:
@@ -270,16 +248,11 @@ class IAPConsumeHistoryInfo(Model):
         elif include_empty:
             instance.namespace = ""
         if "requestBody" in dict_ and dict_["requestBody"] is not None:
-            instance.request_body = {
-                str(k0): v0 for k0, v0 in dict_["requestBody"].items()
-            }
+            instance.request_body = {str(k0): v0 for k0, v0 in dict_["requestBody"].items()}
         elif include_empty:
             instance.request_body = {}
         if "requestHistories" in dict_ and dict_["requestHistories"] is not None:
-            instance.request_histories = [
-                RequestHistory.create_from_dict(i0, include_empty=include_empty)
-                for i0 in dict_["requestHistories"]
-            ]
+            instance.request_histories = [RequestHistory.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["requestHistories"]]
         elif include_empty:
             instance.request_histories = []
         if "requestUrl" in dict_ and dict_["requestUrl"] is not None:
@@ -297,33 +270,15 @@ class IAPConsumeHistoryInfo(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, IAPConsumeHistoryInfo]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, IAPConsumeHistoryInfo]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[IAPConsumeHistoryInfo]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[IAPConsumeHistoryInfo]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[
-        IAPConsumeHistoryInfo,
-        List[IAPConsumeHistoryInfo],
-        Dict[Any, IAPConsumeHistoryInfo],
-    ]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[IAPConsumeHistoryInfo, List[IAPConsumeHistoryInfo], Dict[Any, IAPConsumeHistoryInfo]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -367,16 +322,7 @@ class IAPConsumeHistoryInfo(Model):
     @staticmethod
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
-            "iapType": [
-                "APPLE",
-                "EPICGAMES",
-                "GOOGLE",
-                "PLAYSTATION",
-                "STADIA",
-                "STEAM",
-                "TWITCH",
-                "XBOX",
-            ],
+            "iapType": ["APPLE", "EPICGAMES", "GOOGLE", "PLAYSTATION", "STADIA", "STEAM", "TWITCH", "XBOX"],
             "status": ["FAIL", "PENDING", "SUCCESS"],
         }
 

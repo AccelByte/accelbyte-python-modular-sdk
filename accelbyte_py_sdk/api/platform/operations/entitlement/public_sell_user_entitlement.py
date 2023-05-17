@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -83,10 +83,10 @@ class PublicSellUserEntitlement(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
 
-    body: EntitlementSoldRequest  # OPTIONAL in [body]
-    entitlement_id: str  # REQUIRED in [path]
-    namespace: str  # REQUIRED in [path]
-    user_id: str  # REQUIRED in [path]
+    body: EntitlementSoldRequest                                                                   # OPTIONAL in [body]
+    entitlement_id: str                                                                            # REQUIRED in [path]
+    namespace: str                                                                                 # REQUIRED in [path]
+    user_id: str                                                                                   # REQUIRED in [path]
 
     # endregion fields
 
@@ -198,11 +198,7 @@ class PublicSellUserEntitlement(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(
-        self, code: int, content_type: str, content: Any
-    ) -> Tuple[
-        Union[None, EntitlementSoldResult], Union[None, ErrorEntity, HttpResponse]
-    ]:
+    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, EntitlementSoldResult], Union[None, ErrorEntity, HttpResponse]]:
         """Parse the given response.
 
         200: OK - EntitlementSoldResult (successful operation)
@@ -217,9 +213,7 @@ class PublicSellUserEntitlement(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(
-            code=code, content_type=content_type, content=content
-        )
+        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
@@ -231,9 +225,7 @@ class PublicSellUserEntitlement(Operation):
         if code == 409:
             return None, ErrorEntity.create_from_dict(content)
 
-        return self.handle_undocumented_response(
-            code=code, content_type=content_type, content=content
-        )
+        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
 
     # endregion response methods
 
@@ -246,7 +238,7 @@ class PublicSellUserEntitlement(Operation):
         namespace: str,
         user_id: str,
         body: Optional[EntitlementSoldRequest] = None,
-        **kwargs,
+    **kwargs
     ) -> PublicSellUserEntitlement:
         instance = cls()
         instance.entitlement_id = entitlement_id
@@ -257,14 +249,10 @@ class PublicSellUserEntitlement(Operation):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> PublicSellUserEntitlement:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> PublicSellUserEntitlement:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = EntitlementSoldRequest.create_from_dict(
-                dict_["body"], include_empty=include_empty
-            )
+            instance.body = EntitlementSoldRequest.create_from_dict(dict_["body"], include_empty=include_empty)
         elif include_empty:
             instance.body = EntitlementSoldRequest()
         if "entitlementId" in dict_ and dict_["entitlementId"] is not None:

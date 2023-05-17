@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -77,18 +77,18 @@ class AppEntitlementInfo(Model):
 
     # region fields
 
-    granted_at: str  # REQUIRED
-    namespace: str  # REQUIRED
-    status: Union[str, StatusEnum]  # REQUIRED
-    user_id: str  # REQUIRED
-    app_id: str  # OPTIONAL
-    app_type: Union[str, AppTypeEnum]  # OPTIONAL
-    end_date: str  # OPTIONAL
-    item_id: str  # OPTIONAL
-    item_snapshot: ItemSnapshot  # OPTIONAL
-    sku: str  # OPTIONAL
-    start_date: str  # OPTIONAL
-    store_id: str  # OPTIONAL
+    granted_at: str                                                                                # REQUIRED
+    namespace: str                                                                                 # REQUIRED
+    status: Union[str, StatusEnum]                                                                 # REQUIRED
+    user_id: str                                                                                   # REQUIRED
+    app_id: str                                                                                    # OPTIONAL
+    app_type: Union[str, AppTypeEnum]                                                              # OPTIONAL
+    end_date: str                                                                                  # OPTIONAL
+    item_id: str                                                                                   # OPTIONAL
+    item_snapshot: ItemSnapshot                                                                    # OPTIONAL
+    sku: str                                                                                       # OPTIONAL
+    start_date: str                                                                                # OPTIONAL
+    store_id: str                                                                                  # OPTIONAL
 
     # endregion fields
 
@@ -181,9 +181,7 @@ class AppEntitlementInfo(Model):
         elif include_empty:
             result["itemId"] = ""
         if hasattr(self, "item_snapshot"):
-            result["itemSnapshot"] = self.item_snapshot.to_dict(
-                include_empty=include_empty
-            )
+            result["itemSnapshot"] = self.item_snapshot.to_dict(include_empty=include_empty)
         elif include_empty:
             result["itemSnapshot"] = ItemSnapshot()
         if hasattr(self, "sku"):
@@ -219,7 +217,7 @@ class AppEntitlementInfo(Model):
         sku: Optional[str] = None,
         start_date: Optional[str] = None,
         store_id: Optional[str] = None,
-        **kwargs,
+    **kwargs
     ) -> AppEntitlementInfo:
         instance = cls()
         instance.granted_at = granted_at
@@ -245,9 +243,7 @@ class AppEntitlementInfo(Model):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> AppEntitlementInfo:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> AppEntitlementInfo:
         instance = cls()
         if not dict_:
             return instance
@@ -284,9 +280,7 @@ class AppEntitlementInfo(Model):
         elif include_empty:
             instance.item_id = ""
         if "itemSnapshot" in dict_ and dict_["itemSnapshot"] is not None:
-            instance.item_snapshot = ItemSnapshot.create_from_dict(
-                dict_["itemSnapshot"], include_empty=include_empty
-            )
+            instance.item_snapshot = ItemSnapshot.create_from_dict(dict_["itemSnapshot"], include_empty=include_empty)
         elif include_empty:
             instance.item_snapshot = ItemSnapshot()
         if "sku" in dict_ and dict_["sku"] is not None:
@@ -304,31 +298,15 @@ class AppEntitlementInfo(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, AppEntitlementInfo]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, AppEntitlementInfo]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[AppEntitlementInfo]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[AppEntitlementInfo]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[
-        AppEntitlementInfo, List[AppEntitlementInfo], Dict[Any, AppEntitlementInfo]
-    ]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[AppEntitlementInfo, List[AppEntitlementInfo], Dict[Any, AppEntitlementInfo]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

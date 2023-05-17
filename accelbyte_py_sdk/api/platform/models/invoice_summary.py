@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -41,16 +41,14 @@ class InvoiceSummary(Model):
 
     # region fields
 
-    invoice_currency_summary: List[InvoiceCurrencySummary]  # REQUIRED
-    total_sales_volume: int  # REQUIRED
+    invoice_currency_summary: List[InvoiceCurrencySummary]                                         # REQUIRED
+    total_sales_volume: int                                                                        # REQUIRED
 
     # endregion fields
 
     # region with_x methods
 
-    def with_invoice_currency_summary(
-        self, value: List[InvoiceCurrencySummary]
-    ) -> InvoiceSummary:
+    def with_invoice_currency_summary(self, value: List[InvoiceCurrencySummary]) -> InvoiceSummary:
         self.invoice_currency_summary = value
         return self
 
@@ -65,10 +63,7 @@ class InvoiceSummary(Model):
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
         if hasattr(self, "invoice_currency_summary"):
-            result["invoiceCurrencySummary"] = [
-                i0.to_dict(include_empty=include_empty)
-                for i0 in self.invoice_currency_summary
-            ]
+            result["invoiceCurrencySummary"] = [i0.to_dict(include_empty=include_empty) for i0 in self.invoice_currency_summary]
         elif include_empty:
             result["invoiceCurrencySummary"] = []
         if hasattr(self, "total_sales_volume"):
@@ -86,7 +81,7 @@ class InvoiceSummary(Model):
         cls,
         invoice_currency_summary: List[InvoiceCurrencySummary],
         total_sales_volume: int,
-        **kwargs,
+    **kwargs
     ) -> InvoiceSummary:
         instance = cls()
         instance.invoice_currency_summary = invoice_currency_summary
@@ -94,20 +89,12 @@ class InvoiceSummary(Model):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> InvoiceSummary:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> InvoiceSummary:
         instance = cls()
         if not dict_:
             return instance
-        if (
-            "invoiceCurrencySummary" in dict_
-            and dict_["invoiceCurrencySummary"] is not None
-        ):
-            instance.invoice_currency_summary = [
-                InvoiceCurrencySummary.create_from_dict(i0, include_empty=include_empty)
-                for i0 in dict_["invoiceCurrencySummary"]
-            ]
+        if "invoiceCurrencySummary" in dict_ and dict_["invoiceCurrencySummary"] is not None:
+            instance.invoice_currency_summary = [InvoiceCurrencySummary.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["invoiceCurrencySummary"]]
         elif include_empty:
             instance.invoice_currency_summary = []
         if "totalSalesVolume" in dict_ and dict_["totalSalesVolume"] is not None:
@@ -117,29 +104,15 @@ class InvoiceSummary(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, InvoiceSummary]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, InvoiceSummary]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[InvoiceSummary]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[InvoiceSummary]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[InvoiceSummary, List[InvoiceSummary], Dict[Any, InvoiceSummary]]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[InvoiceSummary, List[InvoiceSummary], Dict[Any, InvoiceSummary]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

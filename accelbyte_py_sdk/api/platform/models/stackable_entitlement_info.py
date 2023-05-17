@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -130,31 +130,31 @@ class StackableEntitlementInfo(Model):
 
     # region fields
 
-    clazz: Union[str, ClazzEnum]  # REQUIRED
-    created_at: str  # REQUIRED
-    granted_at: str  # REQUIRED
-    id_: str  # REQUIRED
-    item_id: str  # REQUIRED
-    item_namespace: str  # REQUIRED
-    name: str  # REQUIRED
-    namespace: str  # REQUIRED
-    source: Union[str, SourceEnum]  # REQUIRED
-    status: Union[str, StatusEnum]  # REQUIRED
-    type_: Union[str, TypeEnum]  # REQUIRED
-    updated_at: str  # REQUIRED
-    user_id: str  # REQUIRED
-    app_id: str  # OPTIONAL
-    app_type: Union[str, AppTypeEnum]  # OPTIONAL
-    end_date: str  # OPTIONAL
-    features: List[str]  # OPTIONAL
-    granted_code: str  # OPTIONAL
-    item_snapshot: ItemSnapshot  # OPTIONAL
-    sku: str  # OPTIONAL
-    stackable: bool  # OPTIONAL
-    stacked_use_count: int  # OPTIONAL
-    start_date: str  # OPTIONAL
-    store_id: str  # OPTIONAL
-    use_count: int  # OPTIONAL
+    clazz: Union[str, ClazzEnum]                                                                   # REQUIRED
+    created_at: str                                                                                # REQUIRED
+    granted_at: str                                                                                # REQUIRED
+    id_: str                                                                                       # REQUIRED
+    item_id: str                                                                                   # REQUIRED
+    item_namespace: str                                                                            # REQUIRED
+    name: str                                                                                      # REQUIRED
+    namespace: str                                                                                 # REQUIRED
+    source: Union[str, SourceEnum]                                                                 # REQUIRED
+    status: Union[str, StatusEnum]                                                                 # REQUIRED
+    type_: Union[str, TypeEnum]                                                                    # REQUIRED
+    updated_at: str                                                                                # REQUIRED
+    user_id: str                                                                                   # REQUIRED
+    app_id: str                                                                                    # OPTIONAL
+    app_type: Union[str, AppTypeEnum]                                                              # OPTIONAL
+    end_date: str                                                                                  # OPTIONAL
+    features: List[str]                                                                            # OPTIONAL
+    granted_code: str                                                                              # OPTIONAL
+    item_snapshot: ItemSnapshot                                                                    # OPTIONAL
+    sku: str                                                                                       # OPTIONAL
+    stackable: bool                                                                                # OPTIONAL
+    stacked_use_count: int                                                                         # OPTIONAL
+    start_date: str                                                                                # OPTIONAL
+    store_id: str                                                                                  # OPTIONAL
+    use_count: int                                                                                 # OPTIONAL
 
     # endregion fields
 
@@ -339,9 +339,7 @@ class StackableEntitlementInfo(Model):
         elif include_empty:
             result["grantedCode"] = ""
         if hasattr(self, "item_snapshot"):
-            result["itemSnapshot"] = self.item_snapshot.to_dict(
-                include_empty=include_empty
-            )
+            result["itemSnapshot"] = self.item_snapshot.to_dict(include_empty=include_empty)
         elif include_empty:
             result["itemSnapshot"] = ItemSnapshot()
         if hasattr(self, "sku"):
@@ -402,7 +400,7 @@ class StackableEntitlementInfo(Model):
         start_date: Optional[str] = None,
         store_id: Optional[str] = None,
         use_count: Optional[int] = None,
-        **kwargs,
+    **kwargs
     ) -> StackableEntitlementInfo:
         instance = cls()
         instance.clazz = clazz
@@ -445,9 +443,7 @@ class StackableEntitlementInfo(Model):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> StackableEntitlementInfo:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> StackableEntitlementInfo:
         instance = cls()
         if not dict_:
             return instance
@@ -524,9 +520,7 @@ class StackableEntitlementInfo(Model):
         elif include_empty:
             instance.granted_code = ""
         if "itemSnapshot" in dict_ and dict_["itemSnapshot"] is not None:
-            instance.item_snapshot = ItemSnapshot.create_from_dict(
-                dict_["itemSnapshot"], include_empty=include_empty
-            )
+            instance.item_snapshot = ItemSnapshot.create_from_dict(dict_["itemSnapshot"], include_empty=include_empty)
         elif include_empty:
             instance.item_snapshot = ItemSnapshot()
         if "sku" in dict_ and dict_["sku"] is not None:
@@ -556,33 +550,15 @@ class StackableEntitlementInfo(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, StackableEntitlementInfo]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, StackableEntitlementInfo]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[StackableEntitlementInfo]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[StackableEntitlementInfo]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[
-        StackableEntitlementInfo,
-        List[StackableEntitlementInfo],
-        Dict[Any, StackableEntitlementInfo],
-    ]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[StackableEntitlementInfo, List[StackableEntitlementInfo], Dict[Any, StackableEntitlementInfo]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -656,26 +632,8 @@ class StackableEntitlementInfo(Model):
     @staticmethod
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
-            "clazz": [
-                "APP",
-                "CODE",
-                "ENTITLEMENT",
-                "LOOTBOX",
-                "MEDIA",
-                "OPTIONBOX",
-                "SUBSCRIPTION",
-            ],
-            "source": [
-                "ACHIEVEMENT",
-                "GIFT",
-                "IAP",
-                "OTHER",
-                "PROMOTION",
-                "PURCHASE",
-                "REDEEM_CODE",
-                "REFERRAL_BONUS",
-                "REWARD",
-            ],
+            "clazz": ["APP", "CODE", "ENTITLEMENT", "LOOTBOX", "MEDIA", "OPTIONBOX", "SUBSCRIPTION"],
+            "source": ["ACHIEVEMENT", "GIFT", "IAP", "OTHER", "PROMOTION", "PURCHASE", "REDEEM_CODE", "REFERRAL_BONUS", "REWARD"],
             "status": ["ACTIVE", "CONSUMED", "INACTIVE", "REVOKED", "SOLD"],
             "type": ["CONSUMABLE", "DURABLE"],
             "appType": ["DEMO", "DLC", "GAME", "SOFTWARE"],

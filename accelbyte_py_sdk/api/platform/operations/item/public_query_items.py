@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -140,20 +140,20 @@ class PublicQueryItems(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
-    namespace: str  # REQUIRED in [path]
-    app_type: Union[str, AppTypeEnum]  # OPTIONAL in [query]
-    base_app_id: str  # OPTIONAL in [query]
-    category_path: str  # OPTIONAL in [query]
-    features: str  # OPTIONAL in [query]
-    include_sub_category_item: bool  # OPTIONAL in [query]
-    item_type: Union[str, ItemTypeEnum]  # OPTIONAL in [query]
-    language: str  # OPTIONAL in [query]
-    limit: int  # OPTIONAL in [query]
-    offset: int  # OPTIONAL in [query]
-    region: str  # OPTIONAL in [query]
-    sort_by: List[Union[str, SortByEnum]]  # OPTIONAL in [query]
-    store_id: str  # OPTIONAL in [query]
-    tags: str  # OPTIONAL in [query]
+    namespace: str                                                                                 # REQUIRED in [path]
+    app_type: Union[str, AppTypeEnum]                                                              # OPTIONAL in [query]
+    base_app_id: str                                                                               # OPTIONAL in [query]
+    category_path: str                                                                             # OPTIONAL in [query]
+    features: str                                                                                  # OPTIONAL in [query]
+    include_sub_category_item: bool                                                                # OPTIONAL in [query]
+    item_type: Union[str, ItemTypeEnum]                                                            # OPTIONAL in [query]
+    language: str                                                                                  # OPTIONAL in [query]
+    limit: int                                                                                     # OPTIONAL in [query]
+    offset: int                                                                                    # OPTIONAL in [query]
+    region: str                                                                                    # OPTIONAL in [query]
+    sort_by: List[Union[str, SortByEnum]]                                                          # OPTIONAL in [query]
+    store_id: str                                                                                  # OPTIONAL in [query]
+    tags: str                                                                                      # OPTIONAL in [query]
 
     # endregion fields
 
@@ -323,10 +323,7 @@ class PublicQueryItems(Operation):
             result["features"] = str(self.features)
         elif include_empty:
             result["features"] = ""
-        if (
-            hasattr(self, "include_sub_category_item")
-            and self.include_sub_category_item
-        ):
+        if hasattr(self, "include_sub_category_item") and self.include_sub_category_item:
             result["includeSubCategoryItem"] = bool(self.include_sub_category_item)
         elif include_empty:
             result["includeSubCategoryItem"] = False
@@ -369,12 +366,7 @@ class PublicQueryItems(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(
-        self, code: int, content_type: str, content: Any
-    ) -> Tuple[
-        Union[None, ItemPagingSlicedResult],
-        Union[None, ErrorEntity, HttpResponse, ValidationErrorEntity],
-    ]:
+    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, ItemPagingSlicedResult], Union[None, ErrorEntity, HttpResponse, ValidationErrorEntity]]:
         """Parse the given response.
 
         200: OK - ItemPagingSlicedResult (successful operation)
@@ -389,9 +381,7 @@ class PublicQueryItems(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(
-            code=code, content_type=content_type, content=content
-        )
+        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
@@ -403,9 +393,7 @@ class PublicQueryItems(Operation):
         if code == 422:
             return None, ValidationErrorEntity.create_from_dict(content)
 
-        return self.handle_undocumented_response(
-            code=code, content_type=content_type, content=content
-        )
+        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
 
     # endregion response methods
 
@@ -428,7 +416,7 @@ class PublicQueryItems(Operation):
         sort_by: Optional[List[Union[str, SortByEnum]]] = None,
         store_id: Optional[str] = None,
         tags: Optional[str] = None,
-        **kwargs,
+    **kwargs
     ) -> PublicQueryItems:
         instance = cls()
         instance.namespace = namespace
@@ -461,9 +449,7 @@ class PublicQueryItems(Operation):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> PublicQueryItems:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> PublicQueryItems:
         instance = cls()
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
@@ -485,10 +471,7 @@ class PublicQueryItems(Operation):
             instance.features = str(dict_["features"])
         elif include_empty:
             instance.features = ""
-        if (
-            "includeSubCategoryItem" in dict_
-            and dict_["includeSubCategoryItem"] is not None
-        ):
+        if "includeSubCategoryItem" in dict_ and dict_["includeSubCategoryItem"] is not None:
             instance.include_sub_category_item = bool(dict_["includeSubCategoryItem"])
         elif include_empty:
             instance.include_sub_category_item = False
@@ -567,40 +550,15 @@ class PublicQueryItems(Operation):
     @staticmethod
     def get_collection_format_map() -> Dict[str, Union[None, str]]:
         return {
-            "sortBy": "csv",  # in query
+            "sortBy": "csv",                                                                       # in query
         }
 
     @staticmethod
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
-            "appType": ["DEMO", "DLC", "GAME", "SOFTWARE"],  # in query
-            "itemType": [
-                "APP",
-                "BUNDLE",
-                "CODE",
-                "COINS",
-                "EXTENSION",
-                "INGAMEITEM",
-                "LOOTBOX",
-                "MEDIA",
-                "OPTIONBOX",
-                "SEASON",
-                "SUBSCRIPTION",
-            ],  # in query
-            "sortBy": [
-                "name",
-                "name:asc",
-                "name:desc",
-                "createdAt",
-                "createdAt:asc",
-                "createdAt:desc",
-                "updatedAt",
-                "updatedAt:asc",
-                "updatedAt:desc",
-                "displayOrder",
-                "displayOrder:asc",
-                "displayOrder:desc",
-            ],  # in query
+            "appType": ["DEMO", "DLC", "GAME", "SOFTWARE"],                                        # in query
+            "itemType": ["APP", "BUNDLE", "CODE", "COINS", "EXTENSION", "INGAMEITEM", "LOOTBOX", "MEDIA", "OPTIONBOX", "SEASON", "SUBSCRIPTION"],# in query
+            "sortBy": ["name", "name:asc", "name:desc", "createdAt", "createdAt:asc", "createdAt:desc", "updatedAt", "updatedAt:asc", "updatedAt:desc", "displayOrder", "displayOrder:asc", "displayOrder:desc"],# in query
         }
 
     # endregion static methods

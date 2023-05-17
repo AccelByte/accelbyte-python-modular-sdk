@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -62,10 +62,6 @@ class FullSectionInfo(Model):
 
         updated_at: (updatedAt) REQUIRED str
 
-        view_id: (viewId) REQUIRED str
-
-        view_name: (viewName) REQUIRED str
-
         display_order: (displayOrder) OPTIONAL int
 
         ext: (ext) OPTIONAL Dict[str, Any]
@@ -77,27 +73,31 @@ class FullSectionInfo(Model):
         items: (items) OPTIONAL List[SectionItem]
 
         rotation_type: (rotationType) OPTIONAL Union[str, RotationTypeEnum]
+
+        view_id: (viewId) OPTIONAL str
+
+        view_name: (viewName) OPTIONAL str
     """
 
     # region fields
 
-    active: bool  # REQUIRED
-    created_at: str  # REQUIRED
-    end_date: str  # REQUIRED
-    localizations: Dict[str, Localization]  # REQUIRED
-    name: str  # REQUIRED
-    namespace: str  # REQUIRED
-    section_id: str  # REQUIRED
-    start_date: str  # REQUIRED
-    updated_at: str  # REQUIRED
-    view_id: str  # REQUIRED
-    view_name: str  # REQUIRED
-    display_order: int  # OPTIONAL
-    ext: Dict[str, Any]  # OPTIONAL
-    fixed_period_rotation_config: FixedPeriodRotationConfig  # OPTIONAL
-    item_namings: List[ItemNaming]  # OPTIONAL
-    items: List[SectionItem]  # OPTIONAL
-    rotation_type: Union[str, RotationTypeEnum]  # OPTIONAL
+    active: bool                                                                                   # REQUIRED
+    created_at: str                                                                                # REQUIRED
+    end_date: str                                                                                  # REQUIRED
+    localizations: Dict[str, Localization]                                                         # REQUIRED
+    name: str                                                                                      # REQUIRED
+    namespace: str                                                                                 # REQUIRED
+    section_id: str                                                                                # REQUIRED
+    start_date: str                                                                                # REQUIRED
+    updated_at: str                                                                                # REQUIRED
+    display_order: int                                                                             # OPTIONAL
+    ext: Dict[str, Any]                                                                            # OPTIONAL
+    fixed_period_rotation_config: FixedPeriodRotationConfig                                        # OPTIONAL
+    item_namings: List[ItemNaming]                                                                 # OPTIONAL
+    items: List[SectionItem]                                                                       # OPTIONAL
+    rotation_type: Union[str, RotationTypeEnum]                                                    # OPTIONAL
+    view_id: str                                                                                   # OPTIONAL
+    view_name: str                                                                                 # OPTIONAL
 
     # endregion fields
 
@@ -139,14 +139,6 @@ class FullSectionInfo(Model):
         self.updated_at = value
         return self
 
-    def with_view_id(self, value: str) -> FullSectionInfo:
-        self.view_id = value
-        return self
-
-    def with_view_name(self, value: str) -> FullSectionInfo:
-        self.view_name = value
-        return self
-
     def with_display_order(self, value: int) -> FullSectionInfo:
         self.display_order = value
         return self
@@ -155,9 +147,7 @@ class FullSectionInfo(Model):
         self.ext = value
         return self
 
-    def with_fixed_period_rotation_config(
-        self, value: FixedPeriodRotationConfig
-    ) -> FullSectionInfo:
+    def with_fixed_period_rotation_config(self, value: FixedPeriodRotationConfig) -> FullSectionInfo:
         self.fixed_period_rotation_config = value
         return self
 
@@ -169,10 +159,16 @@ class FullSectionInfo(Model):
         self.items = value
         return self
 
-    def with_rotation_type(
-        self, value: Union[str, RotationTypeEnum]
-    ) -> FullSectionInfo:
+    def with_rotation_type(self, value: Union[str, RotationTypeEnum]) -> FullSectionInfo:
         self.rotation_type = value
+        return self
+
+    def with_view_id(self, value: str) -> FullSectionInfo:
+        self.view_id = value
+        return self
+
+    def with_view_name(self, value: str) -> FullSectionInfo:
+        self.view_name = value
         return self
 
     # endregion with_x methods
@@ -194,10 +190,7 @@ class FullSectionInfo(Model):
         elif include_empty:
             result["endDate"] = ""
         if hasattr(self, "localizations"):
-            result["localizations"] = {
-                str(k0): v0.to_dict(include_empty=include_empty)
-                for k0, v0 in self.localizations.items()
-            }
+            result["localizations"] = {str(k0): v0.to_dict(include_empty=include_empty) for k0, v0 in self.localizations.items()}
         elif include_empty:
             result["localizations"] = {}
         if hasattr(self, "name"):
@@ -220,14 +213,6 @@ class FullSectionInfo(Model):
             result["updatedAt"] = str(self.updated_at)
         elif include_empty:
             result["updatedAt"] = ""
-        if hasattr(self, "view_id"):
-            result["viewId"] = str(self.view_id)
-        elif include_empty:
-            result["viewId"] = ""
-        if hasattr(self, "view_name"):
-            result["viewName"] = str(self.view_name)
-        elif include_empty:
-            result["viewName"] = ""
         if hasattr(self, "display_order"):
             result["displayOrder"] = int(self.display_order)
         elif include_empty:
@@ -237,27 +222,29 @@ class FullSectionInfo(Model):
         elif include_empty:
             result["ext"] = {}
         if hasattr(self, "fixed_period_rotation_config"):
-            result[
-                "fixedPeriodRotationConfig"
-            ] = self.fixed_period_rotation_config.to_dict(include_empty=include_empty)
+            result["fixedPeriodRotationConfig"] = self.fixed_period_rotation_config.to_dict(include_empty=include_empty)
         elif include_empty:
             result["fixedPeriodRotationConfig"] = FixedPeriodRotationConfig()
         if hasattr(self, "item_namings"):
-            result["itemNamings"] = [
-                i0.to_dict(include_empty=include_empty) for i0 in self.item_namings
-            ]
+            result["itemNamings"] = [i0.to_dict(include_empty=include_empty) for i0 in self.item_namings]
         elif include_empty:
             result["itemNamings"] = []
         if hasattr(self, "items"):
-            result["items"] = [
-                i0.to_dict(include_empty=include_empty) for i0 in self.items
-            ]
+            result["items"] = [i0.to_dict(include_empty=include_empty) for i0 in self.items]
         elif include_empty:
             result["items"] = []
         if hasattr(self, "rotation_type"):
             result["rotationType"] = str(self.rotation_type)
         elif include_empty:
             result["rotationType"] = Union[str, RotationTypeEnum]()
+        if hasattr(self, "view_id"):
+            result["viewId"] = str(self.view_id)
+        elif include_empty:
+            result["viewId"] = ""
+        if hasattr(self, "view_name"):
+            result["viewName"] = str(self.view_name)
+        elif include_empty:
+            result["viewName"] = ""
         return result
 
     # endregion to methods
@@ -276,15 +263,15 @@ class FullSectionInfo(Model):
         section_id: str,
         start_date: str,
         updated_at: str,
-        view_id: str,
-        view_name: str,
         display_order: Optional[int] = None,
         ext: Optional[Dict[str, Any]] = None,
         fixed_period_rotation_config: Optional[FixedPeriodRotationConfig] = None,
         item_namings: Optional[List[ItemNaming]] = None,
         items: Optional[List[SectionItem]] = None,
         rotation_type: Optional[Union[str, RotationTypeEnum]] = None,
-        **kwargs,
+        view_id: Optional[str] = None,
+        view_name: Optional[str] = None,
+    **kwargs
     ) -> FullSectionInfo:
         instance = cls()
         instance.active = active
@@ -296,8 +283,6 @@ class FullSectionInfo(Model):
         instance.section_id = section_id
         instance.start_date = start_date
         instance.updated_at = updated_at
-        instance.view_id = view_id
-        instance.view_name = view_name
         if display_order is not None:
             instance.display_order = display_order
         if ext is not None:
@@ -310,12 +295,14 @@ class FullSectionInfo(Model):
             instance.items = items
         if rotation_type is not None:
             instance.rotation_type = rotation_type
+        if view_id is not None:
+            instance.view_id = view_id
+        if view_name is not None:
+            instance.view_name = view_name
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> FullSectionInfo:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> FullSectionInfo:
         instance = cls()
         if not dict_:
             return instance
@@ -332,10 +319,7 @@ class FullSectionInfo(Model):
         elif include_empty:
             instance.end_date = ""
         if "localizations" in dict_ and dict_["localizations"] is not None:
-            instance.localizations = {
-                str(k0): Localization.create_from_dict(v0, include_empty=include_empty)
-                for k0, v0 in dict_["localizations"].items()
-            }
+            instance.localizations = {str(k0): Localization.create_from_dict(v0, include_empty=include_empty) for k0, v0 in dict_["localizations"].items()}
         elif include_empty:
             instance.localizations = {}
         if "name" in dict_ and dict_["name"] is not None:
@@ -358,14 +342,6 @@ class FullSectionInfo(Model):
             instance.updated_at = str(dict_["updatedAt"])
         elif include_empty:
             instance.updated_at = ""
-        if "viewId" in dict_ and dict_["viewId"] is not None:
-            instance.view_id = str(dict_["viewId"])
-        elif include_empty:
-            instance.view_id = ""
-        if "viewName" in dict_ and dict_["viewName"] is not None:
-            instance.view_name = str(dict_["viewName"])
-        elif include_empty:
-            instance.view_name = ""
         if "displayOrder" in dict_ and dict_["displayOrder"] is not None:
             instance.display_order = int(dict_["displayOrder"])
         elif include_empty:
@@ -374,61 +350,42 @@ class FullSectionInfo(Model):
             instance.ext = {str(k0): v0 for k0, v0 in dict_["ext"].items()}
         elif include_empty:
             instance.ext = {}
-        if (
-            "fixedPeriodRotationConfig" in dict_
-            and dict_["fixedPeriodRotationConfig"] is not None
-        ):
-            instance.fixed_period_rotation_config = (
-                FixedPeriodRotationConfig.create_from_dict(
-                    dict_["fixedPeriodRotationConfig"], include_empty=include_empty
-                )
-            )
+        if "fixedPeriodRotationConfig" in dict_ and dict_["fixedPeriodRotationConfig"] is not None:
+            instance.fixed_period_rotation_config = FixedPeriodRotationConfig.create_from_dict(dict_["fixedPeriodRotationConfig"], include_empty=include_empty)
         elif include_empty:
             instance.fixed_period_rotation_config = FixedPeriodRotationConfig()
         if "itemNamings" in dict_ and dict_["itemNamings"] is not None:
-            instance.item_namings = [
-                ItemNaming.create_from_dict(i0, include_empty=include_empty)
-                for i0 in dict_["itemNamings"]
-            ]
+            instance.item_namings = [ItemNaming.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["itemNamings"]]
         elif include_empty:
             instance.item_namings = []
         if "items" in dict_ and dict_["items"] is not None:
-            instance.items = [
-                SectionItem.create_from_dict(i0, include_empty=include_empty)
-                for i0 in dict_["items"]
-            ]
+            instance.items = [SectionItem.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["items"]]
         elif include_empty:
             instance.items = []
         if "rotationType" in dict_ and dict_["rotationType"] is not None:
             instance.rotation_type = str(dict_["rotationType"])
         elif include_empty:
             instance.rotation_type = Union[str, RotationTypeEnum]()
+        if "viewId" in dict_ and dict_["viewId"] is not None:
+            instance.view_id = str(dict_["viewId"])
+        elif include_empty:
+            instance.view_id = ""
+        if "viewName" in dict_ and dict_["viewName"] is not None:
+            instance.view_name = str(dict_["viewName"])
+        elif include_empty:
+            instance.view_name = ""
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, FullSectionInfo]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, FullSectionInfo]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[FullSectionInfo]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[FullSectionInfo]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[FullSectionInfo, List[FullSectionInfo], Dict[Any, FullSectionInfo]]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[FullSectionInfo, List[FullSectionInfo], Dict[Any, FullSectionInfo]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -451,14 +408,14 @@ class FullSectionInfo(Model):
             "sectionId": "section_id",
             "startDate": "start_date",
             "updatedAt": "updated_at",
-            "viewId": "view_id",
-            "viewName": "view_name",
             "displayOrder": "display_order",
             "ext": "ext",
             "fixedPeriodRotationConfig": "fixed_period_rotation_config",
             "itemNamings": "item_namings",
             "items": "items",
             "rotationType": "rotation_type",
+            "viewId": "view_id",
+            "viewName": "view_name",
         }
 
     @staticmethod
@@ -473,14 +430,14 @@ class FullSectionInfo(Model):
             "sectionId": True,
             "startDate": True,
             "updatedAt": True,
-            "viewId": True,
-            "viewName": True,
             "displayOrder": False,
             "ext": False,
             "fixedPeriodRotationConfig": False,
             "itemNamings": False,
             "items": False,
             "rotationType": False,
+            "viewId": False,
+            "viewName": False,
         }
 
     @staticmethod

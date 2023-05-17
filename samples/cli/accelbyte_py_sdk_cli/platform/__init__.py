@@ -6,7 +6,7 @@
 
 # template_file: python-cli-init.j2
 
-# justice-platform-service (4.27.0)
+# justice-platform-service (4.28.0)
 
 from ._list_fulfillment_scripts import list_fulfillment_scripts
 from ._test_fulfillment_script_eval import test_fulfillment_script_eval
@@ -58,6 +58,9 @@ from ._get_platform_dlc_config import get_platform_dlc_config
 from ._update_platform_dlc_config import update_platform_dlc_config
 from ._delete_platform_dlc_config import delete_platform_dlc_config
 from ._query_entitlements import query_entitlements
+from ._query_entitlements_1 import query_entitlements_1
+from ._grant_entitlements import grant_entitlements
+from ._revoke_entitlements import revoke_entitlements
 from ._get_entitlement import get_entitlement
 from ._query_fulfillment_histories import query_fulfillment_histories
 from ._get_apple_iap_config import get_apple_iap_config
@@ -143,7 +146,7 @@ from ._get_payment_order_charge_status import get_payment_order_charge_status
 from ._get_platform_wallet_config import get_platform_wallet_config
 from ._update_platform_wallet_config import update_platform_wallet_config
 from ._reset_platform_wallet_config import reset_platform_wallet_config
-from ._get_payment_callback_config_1 import get_payment_callback_config_1
+from ._get_revocation_config import get_revocation_config
 from ._update_revocation_config import update_revocation_config
 from ._delete_revocation_config import delete_revocation_config
 from ._query_revocation_histories import query_revocation_histories
@@ -200,32 +203,22 @@ from ._anonymize_payment import anonymize_payment
 from ._anonymize_revocation import anonymize_revocation
 from ._anonymize_subscription import anonymize_subscription
 from ._anonymize_wallet import anonymize_wallet
+from ._get_user_dlc_by_platform import get_user_dlc_by_platform
 from ._get_user_dlc import get_user_dlc
 from ._query_user_entitlements import query_user_entitlements
 from ._grant_user_entitlement import grant_user_entitlement
 from ._get_user_app_entitlement_by_app_id import get_user_app_entitlement_by_app_id
 from ._query_user_entitlements_by_app_type import query_user_entitlements_by_app_type
 from ._get_user_entitlement_by_item_id import get_user_entitlement_by_item_id
-from ._get_user_active_entitlements_by_item_ids import (
-    get_user_active_entitlements_by_item_ids,
-)
+from ._get_user_active_entitlements_by_item_ids import get_user_active_entitlements_by_item_ids
 from ._get_user_entitlement_by_sku import get_user_entitlement_by_sku
 from ._exists_any_user_active_entitlement import exists_any_user_active_entitlement
-from ._exists_any_user_active_entitlement_by_item_ids import (
-    exists_any_user_active_entitlement_by_item_ids,
-)
-from ._get_user_app_entitlement_ownership_by_app_id import (
-    get_user_app_entitlement_ownership_by_app_id,
-)
-from ._get_user_entitlement_ownership_by_item_id import (
-    get_user_entitlement_ownership_by_item_id,
-)
-from ._get_user_entitlement_ownership_by_item_ids import (
-    get_user_entitlement_ownership_by_item_ids,
-)
-from ._get_user_entitlement_ownership_by_sku import (
-    get_user_entitlement_ownership_by_sku,
-)
+from ._exists_any_user_active_entitlement_by_item_ids import exists_any_user_active_entitlement_by_item_ids
+from ._get_user_app_entitlement_ownership_by_app_id import get_user_app_entitlement_ownership_by_app_id
+from ._get_user_entitlement_ownership_by_item_id import get_user_entitlement_ownership_by_item_id
+from ._get_user_entitlement_ownership_by_item_ids import get_user_entitlement_ownership_by_item_ids
+from ._get_user_entitlement_ownership_by_sku import get_user_entitlement_ownership_by_sku
+from ._revoke_all_entitlements import revoke_all_entitlements
 from ._revoke_user_entitlements import revoke_user_entitlements
 from ._get_user_entitlement import get_user_entitlement
 from ._update_user_entitlement import update_user_entitlement
@@ -234,6 +227,7 @@ from ._disable_user_entitlement import disable_user_entitlement
 from ._enable_user_entitlement import enable_user_entitlement
 from ._get_user_entitlement_histories import get_user_entitlement_histories
 from ._revoke_user_entitlement import revoke_user_entitlement
+from ._revoke_use_count import revoke_use_count
 from ._sell_user_entitlement import sell_user_entitlement
 from ._fulfill_item import fulfill_item
 from ._redeem_code import redeem_code
@@ -259,19 +253,13 @@ from ._do_revocation import do_revocation
 from ._query_user_subscriptions import query_user_subscriptions
 from ._get_user_subscription_activities import get_user_subscription_activities
 from ._platform_subscribe_subscription import platform_subscribe_subscription
-from ._check_user_subscription_subscribable_by_item_id import (
-    check_user_subscription_subscribable_by_item_id,
-)
+from ._check_user_subscription_subscribable_by_item_id import check_user_subscription_subscribable_by_item_id
 from ._get_user_subscription import get_user_subscription
 from ._delete_user_subscription import delete_user_subscription
 from ._cancel_subscription import cancel_subscription
 from ._grant_days_to_subscription import grant_days_to_subscription
-from ._get_user_subscription_billing_histories import (
-    get_user_subscription_billing_histories,
-)
-from ._process_user_subscription_notification import (
-    process_user_subscription_notification,
-)
+from ._get_user_subscription_billing_histories import get_user_subscription_billing_histories
+from ._process_user_subscription_notification import process_user_subscription_notification
 from ._acquire_user_ticket import acquire_user_ticket
 from ._query_user_currency_wallets import query_user_currency_wallets
 from ._debit_user_wallet_by_currency_code import debit_user_wallet_by_currency_code
@@ -290,14 +278,14 @@ from ._get_view import get_view
 from ._update_view import update_view
 from ._delete_view import delete_view
 from ._query_wallets import query_wallets
+from ._bulk_credit import bulk_credit
+from ._bulk_debit import bulk_debit
 from ._get_wallet import get_wallet
 from ._sync_orders import sync_orders
 from ._test_adyen_config import test_adyen_config
 from ._test_ali_pay_config import test_ali_pay_config
 from ._test_checkout_config import test_checkout_config
-from ._debug_matched_payment_merchant_config import (
-    debug_matched_payment_merchant_config,
-)
+from ._debug_matched_payment_merchant_config import debug_matched_payment_merchant_config
 from ._test_pay_pal_config import test_pay_pal_config
 from ._test_stripe_config import test_stripe_config
 from ._test_wx_pay_config import test_wx_pay_config
@@ -322,9 +310,7 @@ from ._update_xsolla_ui_config import update_xsolla_ui_config
 from ._query_payment_provider_config import query_payment_provider_config
 from ._create_payment_provider_config import create_payment_provider_config
 from ._get_aggregate_payment_providers import get_aggregate_payment_providers
-from ._debug_matched_payment_provider_config import (
-    debug_matched_payment_provider_config,
-)
+from ._debug_matched_payment_provider_config import debug_matched_payment_provider_config
 from ._get_special_payment_providers import get_special_payment_providers
 from ._update_payment_provider_config import update_payment_provider_config
 from ._delete_payment_provider_config import delete_payment_provider_config
@@ -342,9 +328,7 @@ from ._public_get_item_by_app_id import public_get_item_by_app_id
 from ._public_query_items import public_query_items
 from ._public_get_item_by_sku import public_get_item_by_sku
 from ._public_bulk_get_items import public_bulk_get_items
-from ._public_validate_item_purchase_condition import (
-    public_validate_item_purchase_condition,
-)
+from ._public_validate_item_purchase_condition import public_validate_item_purchase_condition
 from ._public_search_items import public_search_items
 from ._public_get_app import public_get_app
 from ._public_get_item_dynamic_data import public_get_item_dynamic_data
@@ -354,9 +338,7 @@ from ._public_get_payment_url import public_get_payment_url
 from ._public_get_payment_methods import public_get_payment_methods
 from ._public_get_unpaid_payment_order import public_get_unpaid_payment_order
 from ._pay import pay
-from ._public_check_payment_order_paid_status import (
-    public_check_payment_order_paid_status,
-)
+from ._public_check_payment_order_paid_status import public_check_payment_order_paid_status
 from ._get_payment_public_config import get_payment_public_config
 from ._public_get_qr_code import public_get_qr_code
 from ._public_normalize_payment_return_url import public_normalize_payment_return_url
@@ -365,56 +347,28 @@ from ._get_reward_by_code import get_reward_by_code
 from ._query_rewards_1 import query_rewards_1
 from ._get_reward_1 import get_reward_1
 from ._public_list_stores import public_list_stores
-from ._public_exists_any_my_active_entitlement import (
-    public_exists_any_my_active_entitlement,
-)
-from ._public_get_my_app_entitlement_ownership_by_app_id import (
-    public_get_my_app_entitlement_ownership_by_app_id,
-)
-from ._public_get_my_entitlement_ownership_by_item_id import (
-    public_get_my_entitlement_ownership_by_item_id,
-)
-from ._public_get_my_entitlement_ownership_by_sku import (
-    public_get_my_entitlement_ownership_by_sku,
-)
-from ._public_get_entitlement_ownership_token import (
-    public_get_entitlement_ownership_token,
-)
+from ._public_exists_any_my_active_entitlement import public_exists_any_my_active_entitlement
+from ._public_get_my_app_entitlement_ownership_by_app_id import public_get_my_app_entitlement_ownership_by_app_id
+from ._public_get_my_entitlement_ownership_by_item_id import public_get_my_entitlement_ownership_by_item_id
+from ._public_get_my_entitlement_ownership_by_sku import public_get_my_entitlement_ownership_by_sku
+from ._public_get_entitlement_ownership_token import public_get_entitlement_ownership_token
 from ._sync_twitch_drops_entitlement import sync_twitch_drops_entitlement
 from ._public_get_my_wallet import public_get_my_wallet
 from ._sync_epic_game_dlc import sync_epic_game_dlc
 from ._public_sync_psn_dlc_inventory import public_sync_psn_dlc_inventory
-from ._public_sync_psn_dlc_inventory_with_multiple_service_labels import (
-    public_sync_psn_dlc_inventory_with_multiple_service_labels,
-)
+from ._public_sync_psn_dlc_inventory_with_multiple_service_labels import public_sync_psn_dlc_inventory_with_multiple_service_labels
 from ._sync_steam_dlc import sync_steam_dlc
 from ._sync_xbox_dlc import sync_xbox_dlc
 from ._public_query_user_entitlements import public_query_user_entitlements
-from ._public_get_user_app_entitlement_by_app_id import (
-    public_get_user_app_entitlement_by_app_id,
-)
-from ._public_query_user_entitlements_by_app_type import (
-    public_query_user_entitlements_by_app_type,
-)
-from ._public_get_user_entitlement_by_item_id import (
-    public_get_user_entitlement_by_item_id,
-)
+from ._public_get_user_app_entitlement_by_app_id import public_get_user_app_entitlement_by_app_id
+from ._public_query_user_entitlements_by_app_type import public_query_user_entitlements_by_app_type
+from ._public_get_user_entitlement_by_item_id import public_get_user_entitlement_by_item_id
 from ._public_get_user_entitlement_by_sku import public_get_user_entitlement_by_sku
-from ._public_exists_any_user_active_entitlement import (
-    public_exists_any_user_active_entitlement,
-)
-from ._public_get_user_app_entitlement_ownership_by_app_id import (
-    public_get_user_app_entitlement_ownership_by_app_id,
-)
-from ._public_get_user_entitlement_ownership_by_item_id import (
-    public_get_user_entitlement_ownership_by_item_id,
-)
-from ._public_get_user_entitlement_ownership_by_item_ids import (
-    public_get_user_entitlement_ownership_by_item_ids,
-)
-from ._public_get_user_entitlement_ownership_by_sku import (
-    public_get_user_entitlement_ownership_by_sku,
-)
+from ._public_exists_any_user_active_entitlement import public_exists_any_user_active_entitlement
+from ._public_get_user_app_entitlement_ownership_by_app_id import public_get_user_app_entitlement_ownership_by_app_id
+from ._public_get_user_entitlement_ownership_by_item_id import public_get_user_entitlement_ownership_by_item_id
+from ._public_get_user_entitlement_ownership_by_item_ids import public_get_user_entitlement_ownership_by_item_ids
+from ._public_get_user_entitlement_ownership_by_sku import public_get_user_entitlement_ownership_by_sku
 from ._public_get_user_entitlement import public_get_user_entitlement
 from ._public_consume_user_entitlement import public_consume_user_entitlement
 from ._public_sell_user_entitlement import public_sell_user_entitlement
@@ -423,9 +377,7 @@ from ._public_fulfill_apple_iap_item import public_fulfill_apple_iap_item
 from ._sync_epic_games_inventory import sync_epic_games_inventory
 from ._public_fulfill_google_iap_item import public_fulfill_google_iap_item
 from ._public_reconcile_play_station_store import public_reconcile_play_station_store
-from ._public_reconcile_play_station_store_with_multiple_service_labels import (
-    public_reconcile_play_station_store_with_multiple_service_labels,
-)
+from ._public_reconcile_play_station_store_with_multiple_service_labels import public_reconcile_play_station_store_with_multiple_service_labels
 from ._sync_steam_inventory import sync_steam_inventory
 from ._sync_twitch_drops_entitlement_1 import sync_twitch_drops_entitlement_1
 from ._sync_xbox_inventory import sync_xbox_inventory
@@ -440,17 +392,11 @@ from ._public_delete_payment_account import public_delete_payment_account
 from ._public_list_active_sections import public_list_active_sections
 from ._public_query_user_subscriptions import public_query_user_subscriptions
 from ._public_subscribe_subscription import public_subscribe_subscription
-from ._public_check_user_subscription_subscribable_by_item_id import (
-    public_check_user_subscription_subscribable_by_item_id,
-)
+from ._public_check_user_subscription_subscribable_by_item_id import public_check_user_subscription_subscribable_by_item_id
 from ._public_get_user_subscription import public_get_user_subscription
-from ._public_change_subscription_billing_account import (
-    public_change_subscription_billing_account,
-)
+from ._public_change_subscription_billing_account import public_change_subscription_billing_account
 from ._public_cancel_subscription import public_cancel_subscription
-from ._public_get_user_subscription_billing_histories import (
-    public_get_user_subscription_billing_histories,
-)
+from ._public_get_user_subscription_billing_histories import public_get_user_subscription_billing_histories
 from ._public_list_views import public_list_views
 from ._public_get_wallet import public_get_wallet
 from ._public_list_user_wallet_transactions import public_list_user_wallet_transactions
@@ -510,6 +456,9 @@ commands = [
     update_platform_dlc_config,
     delete_platform_dlc_config,
     query_entitlements,
+    query_entitlements_1,
+    grant_entitlements,
+    revoke_entitlements,
     get_entitlement,
     query_fulfillment_histories,
     get_apple_iap_config,
@@ -595,7 +544,7 @@ commands = [
     get_platform_wallet_config,
     update_platform_wallet_config,
     reset_platform_wallet_config,
-    get_payment_callback_config_1,
+    get_revocation_config,
     update_revocation_config,
     delete_revocation_config,
     query_revocation_histories,
@@ -652,6 +601,7 @@ commands = [
     anonymize_revocation,
     anonymize_subscription,
     anonymize_wallet,
+    get_user_dlc_by_platform,
     get_user_dlc,
     query_user_entitlements,
     grant_user_entitlement,
@@ -666,6 +616,7 @@ commands = [
     get_user_entitlement_ownership_by_item_id,
     get_user_entitlement_ownership_by_item_ids,
     get_user_entitlement_ownership_by_sku,
+    revoke_all_entitlements,
     revoke_user_entitlements,
     get_user_entitlement,
     update_user_entitlement,
@@ -674,6 +625,7 @@ commands = [
     enable_user_entitlement,
     get_user_entitlement_histories,
     revoke_user_entitlement,
+    revoke_use_count,
     sell_user_entitlement,
     fulfill_item,
     redeem_code,
@@ -724,6 +676,8 @@ commands = [
     update_view,
     delete_view,
     query_wallets,
+    bulk_credit,
+    bulk_debit,
     get_wallet,
     sync_orders,
     test_adyen_config,

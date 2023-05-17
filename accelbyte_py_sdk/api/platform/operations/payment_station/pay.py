@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -89,20 +89,18 @@ class Pay(Operation):
 
     # region fields
 
-    _url: str = (
-        "/platform/public/namespaces/{namespace}/payment/orders/{paymentOrderNo}/pay"
-    )
+    _url: str = "/platform/public/namespaces/{namespace}/payment/orders/{paymentOrderNo}/pay"
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
-    body: PaymentToken  # OPTIONAL in [body]
-    namespace: str  # REQUIRED in [path]
-    payment_order_no: str  # REQUIRED in [path]
-    payment_provider: Union[str, PaymentProviderEnum]  # OPTIONAL in [query]
-    zip_code: str  # OPTIONAL in [query]
+    body: PaymentToken                                                                             # OPTIONAL in [body]
+    namespace: str                                                                                 # REQUIRED in [path]
+    payment_order_no: str                                                                          # REQUIRED in [path]
+    payment_provider: Union[str, PaymentProviderEnum]                                              # OPTIONAL in [query]
+    zip_code: str                                                                                  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -229,11 +227,7 @@ class Pay(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(
-        self, code: int, content_type: str, content: Any
-    ) -> Tuple[
-        Union[None, PaymentProcessResult], Union[None, ErrorEntity, HttpResponse]
-    ]:
+    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, PaymentProcessResult], Union[None, ErrorEntity, HttpResponse]]:
         """Parse the given response.
 
         200: OK - PaymentProcessResult (successful operation)
@@ -250,9 +244,7 @@ class Pay(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(
-            code=code, content_type=content_type, content=content
-        )
+        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
@@ -266,9 +258,7 @@ class Pay(Operation):
         if code == 409:
             return None, ErrorEntity.create_from_dict(content)
 
-        return self.handle_undocumented_response(
-            code=code, content_type=content_type, content=content
-        )
+        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
 
     # endregion response methods
 
@@ -282,7 +272,7 @@ class Pay(Operation):
         body: Optional[PaymentToken] = None,
         payment_provider: Optional[Union[str, PaymentProviderEnum]] = None,
         zip_code: Optional[str] = None,
-        **kwargs,
+    **kwargs
     ) -> Pay:
         instance = cls()
         instance.namespace = namespace
@@ -299,9 +289,7 @@ class Pay(Operation):
     def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> Pay:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = PaymentToken.create_from_dict(
-                dict_["body"], include_empty=include_empty
-            )
+            instance.body = PaymentToken.create_from_dict(dict_["body"], include_empty=include_empty)
         elif include_empty:
             instance.body = PaymentToken()
         if "namespace" in dict_ and dict_["namespace"] is not None:
@@ -345,16 +333,7 @@ class Pay(Operation):
     @staticmethod
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
-            "paymentProvider": [
-                "ADYEN",
-                "ALIPAY",
-                "CHECKOUT",
-                "PAYPAL",
-                "STRIPE",
-                "WALLET",
-                "WXPAY",
-                "XSOLLA",
-            ],  # in query
+            "paymentProvider": ["ADYEN", "ALIPAY", "CHECKOUT", "PAYPAL", "STRIPE", "WALLET", "WXPAY", "XSOLLA"],# in query
         }
 
     # endregion static methods

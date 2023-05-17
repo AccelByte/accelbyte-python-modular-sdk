@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -64,12 +64,12 @@ class PaymentOrderNotifySimulation(Model):
 
     # region fields
 
-    currency_code: str  # REQUIRED
-    notify_type: Union[str, NotifyTypeEnum]  # REQUIRED
-    payment_provider: Union[str, PaymentProviderEnum]  # REQUIRED
-    amount: int  # OPTIONAL
-    sales_tax: int  # OPTIONAL
-    vat: int  # OPTIONAL
+    currency_code: str                                                                             # REQUIRED
+    notify_type: Union[str, NotifyTypeEnum]                                                        # REQUIRED
+    payment_provider: Union[str, PaymentProviderEnum]                                              # REQUIRED
+    amount: int                                                                                    # OPTIONAL
+    sales_tax: int                                                                                 # OPTIONAL
+    vat: int                                                                                       # OPTIONAL
 
     # endregion fields
 
@@ -79,15 +79,11 @@ class PaymentOrderNotifySimulation(Model):
         self.currency_code = value
         return self
 
-    def with_notify_type(
-        self, value: Union[str, NotifyTypeEnum]
-    ) -> PaymentOrderNotifySimulation:
+    def with_notify_type(self, value: Union[str, NotifyTypeEnum]) -> PaymentOrderNotifySimulation:
         self.notify_type = value
         return self
 
-    def with_payment_provider(
-        self, value: Union[str, PaymentProviderEnum]
-    ) -> PaymentOrderNotifySimulation:
+    def with_payment_provider(self, value: Union[str, PaymentProviderEnum]) -> PaymentOrderNotifySimulation:
         self.payment_provider = value
         return self
 
@@ -148,7 +144,7 @@ class PaymentOrderNotifySimulation(Model):
         amount: Optional[int] = None,
         sales_tax: Optional[int] = None,
         vat: Optional[int] = None,
-        **kwargs,
+    **kwargs
     ) -> PaymentOrderNotifySimulation:
         instance = cls()
         instance.currency_code = currency_code
@@ -163,9 +159,7 @@ class PaymentOrderNotifySimulation(Model):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> PaymentOrderNotifySimulation:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> PaymentOrderNotifySimulation:
         instance = cls()
         if not dict_:
             return instance
@@ -196,33 +190,15 @@ class PaymentOrderNotifySimulation(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, PaymentOrderNotifySimulation]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, PaymentOrderNotifySimulation]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[PaymentOrderNotifySimulation]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[PaymentOrderNotifySimulation]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[
-        PaymentOrderNotifySimulation,
-        List[PaymentOrderNotifySimulation],
-        Dict[Any, PaymentOrderNotifySimulation],
-    ]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[PaymentOrderNotifySimulation, List[PaymentOrderNotifySimulation], Dict[Any, PaymentOrderNotifySimulation]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -259,16 +235,7 @@ class PaymentOrderNotifySimulation(Model):
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
             "notifyType": ["CHARGE", "REFUND"],
-            "paymentProvider": [
-                "ADYEN",
-                "ALIPAY",
-                "CHECKOUT",
-                "PAYPAL",
-                "STRIPE",
-                "WALLET",
-                "WXPAY",
-                "XSOLLA",
-            ],
+            "paymentProvider": ["ADYEN", "ALIPAY", "CHECKOUT", "PAYPAL", "STRIPE", "WALLET", "WXPAY", "XSOLLA"],
         }
 
     # endregion static methods

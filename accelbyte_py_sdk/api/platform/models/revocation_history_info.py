@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.28.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -31,6 +31,7 @@ from ....core import StrEnum
 from ..models.credit_revocation import CreditRevocation
 from ..models.entitlement_revocation import EntitlementRevocation
 from ..models.item_revocation import ItemRevocation
+from ..models.revocation_error import RevocationError
 from ..models.revoke_entry import RevokeEntry
 
 
@@ -57,11 +58,15 @@ class RevocationHistoryInfo(Model):
 
         namespace: (namespace) OPTIONAL str
 
+        revocation_errors: (revocationErrors) OPTIONAL List[RevocationError]
+
         revoke_entries: (revokeEntries) OPTIONAL List[RevokeEntry]
 
         source: (source) OPTIONAL str
 
         status: (status) OPTIONAL Union[str, StatusEnum]
+
+        transaction_id: (transactionId) OPTIONAL str
 
         updated_at: (updatedAt) OPTIONAL str
 
@@ -70,18 +75,20 @@ class RevocationHistoryInfo(Model):
 
     # region fields
 
-    created_at: str  # OPTIONAL
-    credit_revocations: List[CreditRevocation]  # OPTIONAL
-    entitlement_revocations: List[EntitlementRevocation]  # OPTIONAL
-    id_: str  # OPTIONAL
-    item_revocations: List[ItemRevocation]  # OPTIONAL
-    meta: Dict[str, Any]  # OPTIONAL
-    namespace: str  # OPTIONAL
-    revoke_entries: List[RevokeEntry]  # OPTIONAL
-    source: str  # OPTIONAL
-    status: Union[str, StatusEnum]  # OPTIONAL
-    updated_at: str  # OPTIONAL
-    user_id: str  # OPTIONAL
+    created_at: str                                                                                # OPTIONAL
+    credit_revocations: List[CreditRevocation]                                                     # OPTIONAL
+    entitlement_revocations: List[EntitlementRevocation]                                           # OPTIONAL
+    id_: str                                                                                       # OPTIONAL
+    item_revocations: List[ItemRevocation]                                                         # OPTIONAL
+    meta: Dict[str, Any]                                                                           # OPTIONAL
+    namespace: str                                                                                 # OPTIONAL
+    revocation_errors: List[RevocationError]                                                       # OPTIONAL
+    revoke_entries: List[RevokeEntry]                                                              # OPTIONAL
+    source: str                                                                                    # OPTIONAL
+    status: Union[str, StatusEnum]                                                                 # OPTIONAL
+    transaction_id: str                                                                            # OPTIONAL
+    updated_at: str                                                                                # OPTIONAL
+    user_id: str                                                                                   # OPTIONAL
 
     # endregion fields
 
@@ -91,15 +98,11 @@ class RevocationHistoryInfo(Model):
         self.created_at = value
         return self
 
-    def with_credit_revocations(
-        self, value: List[CreditRevocation]
-    ) -> RevocationHistoryInfo:
+    def with_credit_revocations(self, value: List[CreditRevocation]) -> RevocationHistoryInfo:
         self.credit_revocations = value
         return self
 
-    def with_entitlement_revocations(
-        self, value: List[EntitlementRevocation]
-    ) -> RevocationHistoryInfo:
+    def with_entitlement_revocations(self, value: List[EntitlementRevocation]) -> RevocationHistoryInfo:
         self.entitlement_revocations = value
         return self
 
@@ -107,9 +110,7 @@ class RevocationHistoryInfo(Model):
         self.id_ = value
         return self
 
-    def with_item_revocations(
-        self, value: List[ItemRevocation]
-    ) -> RevocationHistoryInfo:
+    def with_item_revocations(self, value: List[ItemRevocation]) -> RevocationHistoryInfo:
         self.item_revocations = value
         return self
 
@@ -119,6 +120,10 @@ class RevocationHistoryInfo(Model):
 
     def with_namespace(self, value: str) -> RevocationHistoryInfo:
         self.namespace = value
+        return self
+
+    def with_revocation_errors(self, value: List[RevocationError]) -> RevocationHistoryInfo:
+        self.revocation_errors = value
         return self
 
     def with_revoke_entries(self, value: List[RevokeEntry]) -> RevocationHistoryInfo:
@@ -131,6 +136,10 @@ class RevocationHistoryInfo(Model):
 
     def with_status(self, value: Union[str, StatusEnum]) -> RevocationHistoryInfo:
         self.status = value
+        return self
+
+    def with_transaction_id(self, value: str) -> RevocationHistoryInfo:
+        self.transaction_id = value
         return self
 
     def with_updated_at(self, value: str) -> RevocationHistoryInfo:
@@ -152,17 +161,11 @@ class RevocationHistoryInfo(Model):
         elif include_empty:
             result["createdAt"] = ""
         if hasattr(self, "credit_revocations"):
-            result["creditRevocations"] = [
-                i0.to_dict(include_empty=include_empty)
-                for i0 in self.credit_revocations
-            ]
+            result["creditRevocations"] = [i0.to_dict(include_empty=include_empty) for i0 in self.credit_revocations]
         elif include_empty:
             result["creditRevocations"] = []
         if hasattr(self, "entitlement_revocations"):
-            result["entitlementRevocations"] = [
-                i0.to_dict(include_empty=include_empty)
-                for i0 in self.entitlement_revocations
-            ]
+            result["entitlementRevocations"] = [i0.to_dict(include_empty=include_empty) for i0 in self.entitlement_revocations]
         elif include_empty:
             result["entitlementRevocations"] = []
         if hasattr(self, "id_"):
@@ -170,9 +173,7 @@ class RevocationHistoryInfo(Model):
         elif include_empty:
             result["id"] = ""
         if hasattr(self, "item_revocations"):
-            result["itemRevocations"] = [
-                i0.to_dict(include_empty=include_empty) for i0 in self.item_revocations
-            ]
+            result["itemRevocations"] = [i0.to_dict(include_empty=include_empty) for i0 in self.item_revocations]
         elif include_empty:
             result["itemRevocations"] = []
         if hasattr(self, "meta"):
@@ -183,10 +184,12 @@ class RevocationHistoryInfo(Model):
             result["namespace"] = str(self.namespace)
         elif include_empty:
             result["namespace"] = ""
+        if hasattr(self, "revocation_errors"):
+            result["revocationErrors"] = [i0.to_dict(include_empty=include_empty) for i0 in self.revocation_errors]
+        elif include_empty:
+            result["revocationErrors"] = []
         if hasattr(self, "revoke_entries"):
-            result["revokeEntries"] = [
-                i0.to_dict(include_empty=include_empty) for i0 in self.revoke_entries
-            ]
+            result["revokeEntries"] = [i0.to_dict(include_empty=include_empty) for i0 in self.revoke_entries]
         elif include_empty:
             result["revokeEntries"] = []
         if hasattr(self, "source"):
@@ -197,6 +200,10 @@ class RevocationHistoryInfo(Model):
             result["status"] = str(self.status)
         elif include_empty:
             result["status"] = Union[str, StatusEnum]()
+        if hasattr(self, "transaction_id"):
+            result["transactionId"] = str(self.transaction_id)
+        elif include_empty:
+            result["transactionId"] = ""
         if hasattr(self, "updated_at"):
             result["updatedAt"] = str(self.updated_at)
         elif include_empty:
@@ -221,12 +228,14 @@ class RevocationHistoryInfo(Model):
         item_revocations: Optional[List[ItemRevocation]] = None,
         meta: Optional[Dict[str, Any]] = None,
         namespace: Optional[str] = None,
+        revocation_errors: Optional[List[RevocationError]] = None,
         revoke_entries: Optional[List[RevokeEntry]] = None,
         source: Optional[str] = None,
         status: Optional[Union[str, StatusEnum]] = None,
+        transaction_id: Optional[str] = None,
         updated_at: Optional[str] = None,
         user_id: Optional[str] = None,
-        **kwargs,
+    **kwargs
     ) -> RevocationHistoryInfo:
         instance = cls()
         if created_at is not None:
@@ -243,12 +252,16 @@ class RevocationHistoryInfo(Model):
             instance.meta = meta
         if namespace is not None:
             instance.namespace = namespace
+        if revocation_errors is not None:
+            instance.revocation_errors = revocation_errors
         if revoke_entries is not None:
             instance.revoke_entries = revoke_entries
         if source is not None:
             instance.source = source
         if status is not None:
             instance.status = status
+        if transaction_id is not None:
+            instance.transaction_id = transaction_id
         if updated_at is not None:
             instance.updated_at = updated_at
         if user_id is not None:
@@ -256,9 +269,7 @@ class RevocationHistoryInfo(Model):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> RevocationHistoryInfo:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> RevocationHistoryInfo:
         instance = cls()
         if not dict_:
             return instance
@@ -267,20 +278,11 @@ class RevocationHistoryInfo(Model):
         elif include_empty:
             instance.created_at = ""
         if "creditRevocations" in dict_ and dict_["creditRevocations"] is not None:
-            instance.credit_revocations = [
-                CreditRevocation.create_from_dict(i0, include_empty=include_empty)
-                for i0 in dict_["creditRevocations"]
-            ]
+            instance.credit_revocations = [CreditRevocation.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["creditRevocations"]]
         elif include_empty:
             instance.credit_revocations = []
-        if (
-            "entitlementRevocations" in dict_
-            and dict_["entitlementRevocations"] is not None
-        ):
-            instance.entitlement_revocations = [
-                EntitlementRevocation.create_from_dict(i0, include_empty=include_empty)
-                for i0 in dict_["entitlementRevocations"]
-            ]
+        if "entitlementRevocations" in dict_ and dict_["entitlementRevocations"] is not None:
+            instance.entitlement_revocations = [EntitlementRevocation.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["entitlementRevocations"]]
         elif include_empty:
             instance.entitlement_revocations = []
         if "id" in dict_ and dict_["id"] is not None:
@@ -288,10 +290,7 @@ class RevocationHistoryInfo(Model):
         elif include_empty:
             instance.id_ = ""
         if "itemRevocations" in dict_ and dict_["itemRevocations"] is not None:
-            instance.item_revocations = [
-                ItemRevocation.create_from_dict(i0, include_empty=include_empty)
-                for i0 in dict_["itemRevocations"]
-            ]
+            instance.item_revocations = [ItemRevocation.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["itemRevocations"]]
         elif include_empty:
             instance.item_revocations = []
         if "meta" in dict_ and dict_["meta"] is not None:
@@ -302,11 +301,12 @@ class RevocationHistoryInfo(Model):
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
             instance.namespace = ""
+        if "revocationErrors" in dict_ and dict_["revocationErrors"] is not None:
+            instance.revocation_errors = [RevocationError.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["revocationErrors"]]
+        elif include_empty:
+            instance.revocation_errors = []
         if "revokeEntries" in dict_ and dict_["revokeEntries"] is not None:
-            instance.revoke_entries = [
-                RevokeEntry.create_from_dict(i0, include_empty=include_empty)
-                for i0 in dict_["revokeEntries"]
-            ]
+            instance.revoke_entries = [RevokeEntry.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["revokeEntries"]]
         elif include_empty:
             instance.revoke_entries = []
         if "source" in dict_ and dict_["source"] is not None:
@@ -317,6 +317,10 @@ class RevocationHistoryInfo(Model):
             instance.status = str(dict_["status"])
         elif include_empty:
             instance.status = Union[str, StatusEnum]()
+        if "transactionId" in dict_ and dict_["transactionId"] is not None:
+            instance.transaction_id = str(dict_["transactionId"])
+        elif include_empty:
+            instance.transaction_id = ""
         if "updatedAt" in dict_ and dict_["updatedAt"] is not None:
             instance.updated_at = str(dict_["updatedAt"])
         elif include_empty:
@@ -328,33 +332,15 @@ class RevocationHistoryInfo(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, RevocationHistoryInfo]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, RevocationHistoryInfo]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[RevocationHistoryInfo]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[RevocationHistoryInfo]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[
-        RevocationHistoryInfo,
-        List[RevocationHistoryInfo],
-        Dict[Any, RevocationHistoryInfo],
-    ]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[RevocationHistoryInfo, List[RevocationHistoryInfo], Dict[Any, RevocationHistoryInfo]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -375,9 +361,11 @@ class RevocationHistoryInfo(Model):
             "itemRevocations": "item_revocations",
             "meta": "meta",
             "namespace": "namespace",
+            "revocationErrors": "revocation_errors",
             "revokeEntries": "revoke_entries",
             "source": "source",
             "status": "status",
+            "transactionId": "transaction_id",
             "updatedAt": "updated_at",
             "userId": "user_id",
         }
@@ -392,9 +380,11 @@ class RevocationHistoryInfo(Model):
             "itemRevocations": False,
             "meta": False,
             "namespace": False,
+            "revocationErrors": False,
             "revokeEntries": False,
             "source": False,
             "status": False,
+            "transactionId": False,
             "updatedAt": False,
             "userId": False,
         }
