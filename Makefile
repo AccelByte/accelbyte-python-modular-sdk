@@ -26,7 +26,7 @@ test_core:
 	sed -i "s/\r//" "$(SDK_MOCK_SERVER_PATH)/mock-server.sh" && \
 			trap "docker stop --time 1 justice-codegen-sdk-mock-server && docker rm --force mylocal_httpbin" EXIT && \
 			echo "[info] running httpbin" && \
-			docker run -d -p 8070:80 --name mylocal_httpbin --network host --rm kennethreitz/httpbin && \
+			docker run -d -p 8070:80 --name mylocal_httpbin --rm kennethreitz/httpbin && \
 			echo "[info] httpbin ready" && \
 			echo "[info] running mock-server" && \
 			(bash "$(SDK_MOCK_SERVER_PATH)/mock-server.sh" -s /data/spec &) && \
