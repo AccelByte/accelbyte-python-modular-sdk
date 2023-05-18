@@ -24,7 +24,7 @@ test_core:
 	@test -n "$(SDK_MOCK_SERVER_PATH)" || (echo "SDK_MOCK_SERVER_PATH is not set" ; exit 1)
 	rm -f test_core.err
 	sed -i "s/\r//" "$(SDK_MOCK_SERVER_PATH)/mock-server.sh" && \
-			trap "docker stop --time 1 justice-codegen-sdk-mock-server && docker rm --force mylocal_httpbin" EXIT && \
+			trap "docker stop --time 1 justice-codegen-sdk-mock-server; docker rm --force mylocal_httpbin" EXIT && \
 			echo "[info] running httpbin" && \
 			docker run -d -p 8070:80 --name mylocal_httpbin --rm kennethreitz/httpbin && \
 			echo "[info] httpbin ready" && \
