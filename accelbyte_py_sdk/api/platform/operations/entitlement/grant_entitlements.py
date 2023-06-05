@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -40,11 +40,11 @@ class GrantEntitlements(Operation):
     Grant entitlements to multiple users, skipped granting will be treated as fail.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
+      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=4 (UPDATE)
       *  Returns : bulk grant entitlements result
 
     Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT [UPDATE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/entitlements/grant
@@ -78,8 +78,8 @@ class GrantEntitlements(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
 
-    body: BulkEntitlementGrantRequest                                                              # OPTIONAL in [body]
-    namespace: str                                                                                 # REQUIRED in [path]
+    body: BulkEntitlementGrantRequest  # OPTIONAL in [body]
+    namespace: str  # REQUIRED in [path]
 
     # endregion fields
 
@@ -171,7 +171,12 @@ class GrantEntitlements(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, BulkEntitlementGrantResult], Union[None, HttpResponse, ValidationErrorEntity]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, BulkEntitlementGrantResult],
+        Union[None, HttpResponse, ValidationErrorEntity],
+    ]:
         """Parse the given response.
 
         200: OK - BulkEntitlementGrantResult (successful operation)
@@ -184,7 +189,9 @@ class GrantEntitlements(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
@@ -194,7 +201,9 @@ class GrantEntitlements(Operation):
         if code == 422:
             return None, ValidationErrorEntity.create_from_dict(content)
 
-        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
+        return self.handle_undocumented_response(
+            code=code, content_type=content_type, content=content
+        )
 
     # endregion response methods
 
@@ -205,7 +214,7 @@ class GrantEntitlements(Operation):
         cls,
         namespace: str,
         body: Optional[BulkEntitlementGrantRequest] = None,
-    **kwargs
+        **kwargs,
     ) -> GrantEntitlements:
         instance = cls()
         instance.namespace = namespace
@@ -214,10 +223,14 @@ class GrantEntitlements(Operation):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> GrantEntitlements:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> GrantEntitlements:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = BulkEntitlementGrantRequest.create_from_dict(dict_["body"], include_empty=include_empty)
+            instance.body = BulkEntitlementGrantRequest.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
         elif include_empty:
             instance.body = BulkEntitlementGrantRequest()
         if "namespace" in dict_ and dict_["namespace"] is not None:

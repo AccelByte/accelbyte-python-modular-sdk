@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -37,7 +37,7 @@ class PlayStationDLCSyncRequest(Model):
 
     # region fields
 
-    service_label: int                                                                             # OPTIONAL
+    service_label: int  # OPTIONAL
 
     # endregion fields
 
@@ -65,9 +65,7 @@ class PlayStationDLCSyncRequest(Model):
 
     @classmethod
     def create(
-        cls,
-        service_label: Optional[int] = None,
-    **kwargs
+        cls, service_label: Optional[int] = None, **kwargs
     ) -> PlayStationDLCSyncRequest:
         instance = cls()
         if service_label is not None:
@@ -75,7 +73,9 @@ class PlayStationDLCSyncRequest(Model):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> PlayStationDLCSyncRequest:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> PlayStationDLCSyncRequest:
         instance = cls()
         if not dict_:
             return instance
@@ -86,15 +86,33 @@ class PlayStationDLCSyncRequest(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, PlayStationDLCSyncRequest]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, PlayStationDLCSyncRequest]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[PlayStationDLCSyncRequest]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[PlayStationDLCSyncRequest]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[PlayStationDLCSyncRequest, List[PlayStationDLCSyncRequest], Dict[Any, PlayStationDLCSyncRequest]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[
+        PlayStationDLCSyncRequest,
+        List[PlayStationDLCSyncRequest],
+        Dict[Any, PlayStationDLCSyncRequest],
+    ]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

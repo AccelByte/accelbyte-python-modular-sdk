@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -148,55 +148,57 @@ class SubscriptionInfo(Model):
 
     # region fields
 
-    charge_status: Union[str, ChargeStatusEnum]                                                    # REQUIRED
-    created_at: str                                                                                # REQUIRED
-    id_: str                                                                                       # REQUIRED
-    in_fixed_cycle_trial: bool                                                                     # REQUIRED
-    in_fixed_free_days: bool                                                                       # REQUIRED
-    item_id: str                                                                                   # REQUIRED
-    namespace: str                                                                                 # REQUIRED
-    payment_flow_required: bool                                                                    # REQUIRED
-    recurring: Recurring                                                                           # REQUIRED
-    status: Union[str, StatusEnum]                                                                 # REQUIRED
-    updated_at: str                                                                                # REQUIRED
-    user_id: str                                                                                   # REQUIRED
-    billing_account: BillingAccount                                                                # OPTIONAL
-    charged_cycles: int                                                                            # OPTIONAL
-    currency: CurrencySummary                                                                      # OPTIONAL
-    current_cycle: int                                                                             # OPTIONAL
-    current_period_end: str                                                                        # OPTIONAL
-    current_period_start: str                                                                      # OPTIONAL
-    description: str                                                                               # OPTIONAL
-    end: str                                                                                       # OPTIONAL
-    entitlements: List[EntitlementSummary]                                                         # OPTIONAL
-    first_subscribe: bool                                                                          # OPTIONAL
-    item_snapshot: ItemSnapshot                                                                    # OPTIONAL
-    language: str                                                                                  # OPTIONAL
-    next_billing_date: str                                                                         # OPTIONAL
-    paid: bool                                                                                     # OPTIONAL
-    payment_order_no: str                                                                          # OPTIONAL
-    payment_station_url: str                                                                       # OPTIONAL
-    price: int                                                                                     # OPTIONAL
-    region: str                                                                                    # OPTIONAL
-    retry_attempted: int                                                                           # OPTIONAL
-    return_url: str                                                                                # OPTIONAL
-    sandbox: bool                                                                                  # OPTIONAL
-    sku: str                                                                                       # OPTIONAL
-    source: str                                                                                    # OPTIONAL
-    start: str                                                                                     # OPTIONAL
-    subscribed_at: str                                                                             # OPTIONAL
-    subscribed_by: Union[str, SubscribedByEnum]                                                    # OPTIONAL
-    title: str                                                                                     # OPTIONAL
-    trial_price: int                                                                               # OPTIONAL
-    trialed_cycles: int                                                                            # OPTIONAL
-    unsubscribe_reason: str                                                                        # OPTIONAL
-    unsubscribed_at: str                                                                           # OPTIONAL
+    charge_status: Union[str, ChargeStatusEnum]  # REQUIRED
+    created_at: str  # REQUIRED
+    id_: str  # REQUIRED
+    in_fixed_cycle_trial: bool  # REQUIRED
+    in_fixed_free_days: bool  # REQUIRED
+    item_id: str  # REQUIRED
+    namespace: str  # REQUIRED
+    payment_flow_required: bool  # REQUIRED
+    recurring: Recurring  # REQUIRED
+    status: Union[str, StatusEnum]  # REQUIRED
+    updated_at: str  # REQUIRED
+    user_id: str  # REQUIRED
+    billing_account: BillingAccount  # OPTIONAL
+    charged_cycles: int  # OPTIONAL
+    currency: CurrencySummary  # OPTIONAL
+    current_cycle: int  # OPTIONAL
+    current_period_end: str  # OPTIONAL
+    current_period_start: str  # OPTIONAL
+    description: str  # OPTIONAL
+    end: str  # OPTIONAL
+    entitlements: List[EntitlementSummary]  # OPTIONAL
+    first_subscribe: bool  # OPTIONAL
+    item_snapshot: ItemSnapshot  # OPTIONAL
+    language: str  # OPTIONAL
+    next_billing_date: str  # OPTIONAL
+    paid: bool  # OPTIONAL
+    payment_order_no: str  # OPTIONAL
+    payment_station_url: str  # OPTIONAL
+    price: int  # OPTIONAL
+    region: str  # OPTIONAL
+    retry_attempted: int  # OPTIONAL
+    return_url: str  # OPTIONAL
+    sandbox: bool  # OPTIONAL
+    sku: str  # OPTIONAL
+    source: str  # OPTIONAL
+    start: str  # OPTIONAL
+    subscribed_at: str  # OPTIONAL
+    subscribed_by: Union[str, SubscribedByEnum]  # OPTIONAL
+    title: str  # OPTIONAL
+    trial_price: int  # OPTIONAL
+    trialed_cycles: int  # OPTIONAL
+    unsubscribe_reason: str  # OPTIONAL
+    unsubscribed_at: str  # OPTIONAL
 
     # endregion fields
 
     # region with_x methods
 
-    def with_charge_status(self, value: Union[str, ChargeStatusEnum]) -> SubscriptionInfo:
+    def with_charge_status(
+        self, value: Union[str, ChargeStatusEnum]
+    ) -> SubscriptionInfo:
         self.charge_status = value
         return self
 
@@ -344,7 +346,9 @@ class SubscriptionInfo(Model):
         self.subscribed_at = value
         return self
 
-    def with_subscribed_by(self, value: Union[str, SubscribedByEnum]) -> SubscriptionInfo:
+    def with_subscribed_by(
+        self, value: Union[str, SubscribedByEnum]
+    ) -> SubscriptionInfo:
         self.subscribed_by = value
         return self
 
@@ -423,7 +427,9 @@ class SubscriptionInfo(Model):
         elif include_empty:
             result["userId"] = ""
         if hasattr(self, "billing_account"):
-            result["billingAccount"] = self.billing_account.to_dict(include_empty=include_empty)
+            result["billingAccount"] = self.billing_account.to_dict(
+                include_empty=include_empty
+            )
         elif include_empty:
             result["billingAccount"] = BillingAccount()
         if hasattr(self, "charged_cycles"):
@@ -455,7 +461,9 @@ class SubscriptionInfo(Model):
         elif include_empty:
             result["end"] = ""
         if hasattr(self, "entitlements"):
-            result["entitlements"] = [i0.to_dict(include_empty=include_empty) for i0 in self.entitlements]
+            result["entitlements"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.entitlements
+            ]
         elif include_empty:
             result["entitlements"] = []
         if hasattr(self, "first_subscribe"):
@@ -463,7 +471,9 @@ class SubscriptionInfo(Model):
         elif include_empty:
             result["firstSubscribe"] = False
         if hasattr(self, "item_snapshot"):
-            result["itemSnapshot"] = self.item_snapshot.to_dict(include_empty=include_empty)
+            result["itemSnapshot"] = self.item_snapshot.to_dict(
+                include_empty=include_empty
+            )
         elif include_empty:
             result["itemSnapshot"] = ItemSnapshot()
         if hasattr(self, "language"):
@@ -598,7 +608,7 @@ class SubscriptionInfo(Model):
         trialed_cycles: Optional[int] = None,
         unsubscribe_reason: Optional[str] = None,
         unsubscribed_at: Optional[str] = None,
-    **kwargs
+        **kwargs,
     ) -> SubscriptionInfo:
         instance = cls()
         instance.charge_status = charge_status
@@ -678,7 +688,9 @@ class SubscriptionInfo(Model):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> SubscriptionInfo:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> SubscriptionInfo:
         instance = cls()
         if not dict_:
             return instance
@@ -715,7 +727,9 @@ class SubscriptionInfo(Model):
         elif include_empty:
             instance.payment_flow_required = False
         if "recurring" in dict_ and dict_["recurring"] is not None:
-            instance.recurring = Recurring.create_from_dict(dict_["recurring"], include_empty=include_empty)
+            instance.recurring = Recurring.create_from_dict(
+                dict_["recurring"], include_empty=include_empty
+            )
         elif include_empty:
             instance.recurring = Recurring()
         if "status" in dict_ and dict_["status"] is not None:
@@ -731,7 +745,9 @@ class SubscriptionInfo(Model):
         elif include_empty:
             instance.user_id = ""
         if "billingAccount" in dict_ and dict_["billingAccount"] is not None:
-            instance.billing_account = BillingAccount.create_from_dict(dict_["billingAccount"], include_empty=include_empty)
+            instance.billing_account = BillingAccount.create_from_dict(
+                dict_["billingAccount"], include_empty=include_empty
+            )
         elif include_empty:
             instance.billing_account = BillingAccount()
         if "chargedCycles" in dict_ and dict_["chargedCycles"] is not None:
@@ -739,7 +755,9 @@ class SubscriptionInfo(Model):
         elif include_empty:
             instance.charged_cycles = 0
         if "currency" in dict_ and dict_["currency"] is not None:
-            instance.currency = CurrencySummary.create_from_dict(dict_["currency"], include_empty=include_empty)
+            instance.currency = CurrencySummary.create_from_dict(
+                dict_["currency"], include_empty=include_empty
+            )
         elif include_empty:
             instance.currency = CurrencySummary()
         if "currentCycle" in dict_ and dict_["currentCycle"] is not None:
@@ -763,7 +781,10 @@ class SubscriptionInfo(Model):
         elif include_empty:
             instance.end = ""
         if "entitlements" in dict_ and dict_["entitlements"] is not None:
-            instance.entitlements = [EntitlementSummary.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["entitlements"]]
+            instance.entitlements = [
+                EntitlementSummary.create_from_dict(i0, include_empty=include_empty)
+                for i0 in dict_["entitlements"]
+            ]
         elif include_empty:
             instance.entitlements = []
         if "firstSubscribe" in dict_ and dict_["firstSubscribe"] is not None:
@@ -771,7 +792,9 @@ class SubscriptionInfo(Model):
         elif include_empty:
             instance.first_subscribe = False
         if "itemSnapshot" in dict_ and dict_["itemSnapshot"] is not None:
-            instance.item_snapshot = ItemSnapshot.create_from_dict(dict_["itemSnapshot"], include_empty=include_empty)
+            instance.item_snapshot = ItemSnapshot.create_from_dict(
+                dict_["itemSnapshot"], include_empty=include_empty
+            )
         elif include_empty:
             instance.item_snapshot = ItemSnapshot()
         if "language" in dict_ and dict_["language"] is not None:
@@ -857,15 +880,29 @@ class SubscriptionInfo(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, SubscriptionInfo]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, SubscriptionInfo]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[SubscriptionInfo]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[SubscriptionInfo]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[SubscriptionInfo, List[SubscriptionInfo], Dict[Any, SubscriptionInfo]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[SubscriptionInfo, List[SubscriptionInfo], Dict[Any, SubscriptionInfo]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -975,7 +1012,13 @@ class SubscriptionInfo(Model):
     @staticmethod
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
-            "chargeStatus": ["CHARGED", "CHARGE_FAILED", "NEVER", "RECURRING_CHARGING", "SETUP"],
+            "chargeStatus": [
+                "CHARGED",
+                "CHARGE_FAILED",
+                "NEVER",
+                "RECURRING_CHARGING",
+                "SETUP",
+            ],
             "status": ["ACTIVE", "CANCELLED", "EXPIRED", "INIT"],
             "subscribedBy": ["PLATFORM", "USER"],
         }

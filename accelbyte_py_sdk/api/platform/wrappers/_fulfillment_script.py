@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -46,7 +46,12 @@ from ..models import FulfillmentScriptEvalTestRequestTypeEnum
 
 
 @same_doc_as(CreateFulfillmentScript)
-def create_fulfillment_script(id_: str, body: Optional[FulfillmentScriptCreate] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def create_fulfillment_script(
+    id_: str,
+    body: Optional[FulfillmentScriptCreate] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Create fulfillment script (createFulfillmentScript)
 
     Create fulfillment script.
@@ -91,7 +96,12 @@ def create_fulfillment_script(id_: str, body: Optional[FulfillmentScriptCreate] 
 
 
 @same_doc_as(CreateFulfillmentScript)
-async def create_fulfillment_script_async(id_: str, body: Optional[FulfillmentScriptCreate] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def create_fulfillment_script_async(
+    id_: str,
+    body: Optional[FulfillmentScriptCreate] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Create fulfillment script (createFulfillmentScript)
 
     Create fulfillment script.
@@ -132,11 +142,15 @@ async def create_fulfillment_script_async(id_: str, body: Optional[FulfillmentSc
         id_=id_,
         body=body,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(DeleteFulfillmentScript)
-def delete_fulfillment_script(id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def delete_fulfillment_script(
+    id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
     """Delete fulfillment script (deleteFulfillmentScript)
 
     Delete fulfillment script.
@@ -172,7 +186,9 @@ def delete_fulfillment_script(id_: str, x_additional_headers: Optional[Dict[str,
 
 
 @same_doc_as(DeleteFulfillmentScript)
-async def delete_fulfillment_script_async(id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def delete_fulfillment_script_async(
+    id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
     """Delete fulfillment script (deleteFulfillmentScript)
 
     Delete fulfillment script.
@@ -204,11 +220,15 @@ async def delete_fulfillment_script_async(id_: str, x_additional_headers: Option
     request = DeleteFulfillmentScript.create(
         id_=id_,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetFulfillmentScript)
-def get_fulfillment_script(id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_fulfillment_script(
+    id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
     """Get fulfillment script by id (getFulfillmentScript)
 
     Get fulfillment script by id.
@@ -247,7 +267,9 @@ def get_fulfillment_script(id_: str, x_additional_headers: Optional[Dict[str, st
 
 
 @same_doc_as(GetFulfillmentScript)
-async def get_fulfillment_script_async(id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_fulfillment_script_async(
+    id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
     """Get fulfillment script by id (getFulfillmentScript)
 
     Get fulfillment script by id.
@@ -282,11 +304,15 @@ async def get_fulfillment_script_async(id_: str, x_additional_headers: Optional[
     request = GetFulfillmentScript.create(
         id_=id_,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(ListFulfillmentScripts)
-def list_fulfillment_scripts(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def list_fulfillment_scripts(
+    x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
     """List all fulfillment scripts (listFulfillmentScripts)
 
     List all fulfillment scripts.
@@ -318,7 +344,9 @@ def list_fulfillment_scripts(x_additional_headers: Optional[Dict[str, str]] = No
 
 
 @same_doc_as(ListFulfillmentScripts)
-async def list_fulfillment_scripts_async(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def list_fulfillment_scripts_async(
+    x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
     """List all fulfillment scripts (listFulfillmentScripts)
 
     List all fulfillment scripts.
@@ -346,11 +374,17 @@ async def list_fulfillment_scripts_async(x_additional_headers: Optional[Dict[str
         200: OK - List[FulfillmentScriptInfo] (successful operation)
     """
     request = ListFulfillmentScripts.create()
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(TestFulfillmentScriptEval)
-def test_fulfillment_script_eval(body: Optional[FulfillmentScriptEvalTestRequest] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def test_fulfillment_script_eval(
+    body: Optional[FulfillmentScriptEvalTestRequest] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Test eval fulfillment script (testFulfillmentScriptEval)
 
     [TEST FACILITY ONLY] Test eval fulfillment script.
@@ -386,7 +420,11 @@ def test_fulfillment_script_eval(body: Optional[FulfillmentScriptEvalTestRequest
 
 
 @same_doc_as(TestFulfillmentScriptEval)
-async def test_fulfillment_script_eval_async(body: Optional[FulfillmentScriptEvalTestRequest] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def test_fulfillment_script_eval_async(
+    body: Optional[FulfillmentScriptEvalTestRequest] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Test eval fulfillment script (testFulfillmentScriptEval)
 
     [TEST FACILITY ONLY] Test eval fulfillment script.
@@ -418,11 +456,18 @@ async def test_fulfillment_script_eval_async(body: Optional[FulfillmentScriptEva
     request = TestFulfillmentScriptEval.create(
         body=body,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(UpdateFulfillmentScript)
-def update_fulfillment_script(id_: str, body: Optional[FulfillmentScriptUpdate] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def update_fulfillment_script(
+    id_: str,
+    body: Optional[FulfillmentScriptUpdate] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update fulfillment script (updateFulfillmentScript)
 
     Update fulfillment script.
@@ -463,7 +508,12 @@ def update_fulfillment_script(id_: str, body: Optional[FulfillmentScriptUpdate] 
 
 
 @same_doc_as(UpdateFulfillmentScript)
-async def update_fulfillment_script_async(id_: str, body: Optional[FulfillmentScriptUpdate] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def update_fulfillment_script_async(
+    id_: str,
+    body: Optional[FulfillmentScriptUpdate] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update fulfillment script (updateFulfillmentScript)
 
     Update fulfillment script.
@@ -500,4 +550,6 @@ async def update_fulfillment_script_async(id_: str, body: Optional[FulfillmentSc
         id_=id_,
         body=body,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )

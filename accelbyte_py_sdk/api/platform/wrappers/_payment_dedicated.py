@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -46,7 +46,12 @@ from ..models import PaymentOrderRefundResultStatusEnum
 
 
 @same_doc_as(CreatePaymentOrderByDedicated)
-def create_payment_order_by_dedicated(body: Optional[ExternalPaymentOrderCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def create_payment_order_by_dedicated(
+    body: Optional[ExternalPaymentOrderCreate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Create payment order by dedicated server (createPaymentOrderByDedicated)
 
     This API is used to create payment order from non justice service. e.g. from dedicated server, the result contains the payment station url.
@@ -262,7 +267,12 @@ def create_payment_order_by_dedicated(body: Optional[ExternalPaymentOrderCreate]
 
 
 @same_doc_as(CreatePaymentOrderByDedicated)
-async def create_payment_order_by_dedicated_async(body: Optional[ExternalPaymentOrderCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def create_payment_order_by_dedicated_async(
+    body: Optional[ExternalPaymentOrderCreate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Create payment order by dedicated server (createPaymentOrderByDedicated)
 
     This API is used to create payment order from non justice service. e.g. from dedicated server, the result contains the payment station url.
@@ -474,11 +484,19 @@ async def create_payment_order_by_dedicated_async(body: Optional[ExternalPayment
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(RefundPaymentOrderByDedicated)
-def refund_payment_order_by_dedicated(payment_order_no: str, body: Optional[PaymentOrderRefund] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def refund_payment_order_by_dedicated(
+    payment_order_no: str,
+    body: Optional[PaymentOrderRefund] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Refund payment order by dedicated server (refundPaymentOrderByDedicated)
 
     This API is used to refund payment order by paymentOrderNo from non justice service. e.g. dedicated server.
@@ -671,7 +689,13 @@ def refund_payment_order_by_dedicated(payment_order_no: str, body: Optional[Paym
 
 
 @same_doc_as(RefundPaymentOrderByDedicated)
-async def refund_payment_order_by_dedicated_async(payment_order_no: str, body: Optional[PaymentOrderRefund] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def refund_payment_order_by_dedicated_async(
+    payment_order_no: str,
+    body: Optional[PaymentOrderRefund] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Refund payment order by dedicated server (refundPaymentOrderByDedicated)
 
     This API is used to refund payment order by paymentOrderNo from non justice service. e.g. dedicated server.
@@ -860,11 +884,19 @@ async def refund_payment_order_by_dedicated_async(payment_order_no: str, body: O
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(SyncPaymentOrders)
-def sync_payment_orders(end: str, start: str, next_evaluated_key: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def sync_payment_orders(
+    end: str,
+    start: str,
+    next_evaluated_key: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Sync payment orders (syncPaymentOrders)
 
     Sync payment orders. If response contains nextEvaluatedKey, please use it as query param in the next call to fetch the next batch, a batch has 1000 elements or less.
@@ -907,7 +939,13 @@ def sync_payment_orders(end: str, start: str, next_evaluated_key: Optional[str] 
 
 
 @same_doc_as(SyncPaymentOrders)
-async def sync_payment_orders_async(end: str, start: str, next_evaluated_key: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def sync_payment_orders_async(
+    end: str,
+    start: str,
+    next_evaluated_key: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Sync payment orders (syncPaymentOrders)
 
     Sync payment orders. If response contains nextEvaluatedKey, please use it as query param in the next call to fetch the next batch, a batch has 1000 elements or less.
@@ -946,4 +984,6 @@ async def sync_payment_orders_async(end: str, start: str, next_evaluated_key: Op
         start=start,
         next_evaluated_key=next_evaluated_key,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )

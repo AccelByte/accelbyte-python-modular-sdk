@@ -6,7 +6,7 @@
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Iam Service (5.31.0)
+# AccelByte Gaming Services Iam Service (6.0.1)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -66,6 +66,7 @@ from ..api.iam.models import AccountcommonPermissionV3
 from ..api.iam.models import AccountcommonPermissions
 from ..api.iam.models import AccountcommonPermissionsV3
 from ..api.iam.models import AccountcommonPlatformAccount
+from ..api.iam.models import AccountcommonPlatformLinkingHistory
 from ..api.iam.models import AccountcommonPlatformUserInformationV3
 from ..api.iam.models import AccountcommonRegisteredDomain
 from ..api.iam.models import AccountcommonRole
@@ -690,6 +691,16 @@ def create_accountcommon_platform_account_example() -> AccountcommonPlatformAcco
     instance.namespace = randomize("slug")
     instance.platform_user_id = randomize()
     instance.platform_id = randomize()
+    return instance
+
+
+def create_accountcommon_platform_linking_history_example() -> (
+    AccountcommonPlatformLinkingHistory
+):
+    instance = AccountcommonPlatformLinkingHistory()
+    instance.platform_display_name = randomize()
+    instance.platform_id = randomize()
+    instance.platform_user_id = randomize()
     return instance
 
 
@@ -1501,8 +1512,8 @@ def create_model_invite_user_request_v4_example() -> ModelInviteUserRequestV4:
     instance.assigned_namespaces = [randomize()]
     instance.email_addresses = [randomize()]
     instance.is_admin = randomize("bool")
-    instance.role_id = randomize("uid")
     instance.namespace = randomize("slug")
+    instance.role_id = randomize("uid")
     return instance
 
 
@@ -1559,6 +1570,7 @@ def create_model_link_request_example() -> ModelLinkRequest:
     instance.platform_id = randomize()
     instance.platform_user_id = randomize()
     instance.refresh_token = randomize()
+    instance.user_id = randomize("uid")
     return instance
 
 
@@ -2200,6 +2212,7 @@ def create_model_update_user_deletion_status_request_example() -> (
 ):
     instance = ModelUpdateUserDeletionStatusRequest()
     instance.enabled = randomize("bool")
+    instance.deletion_date = randomize("int", min_val=1, max_val=1000)
     return instance
 
 
@@ -2534,6 +2547,7 @@ def create_model_user_response_v3_example() -> ModelUserResponseV3:
     instance.user_id = randomize("uid")
     instance.avatar_url = randomize("url")
     instance.date_of_birth = randomize("adult_birthdate")
+    instance.deletion_date = randomize()
     instance.new_email_address = randomize()
     instance.old_email_address = randomize()
     instance.phone_number = randomize()
@@ -2790,6 +2804,7 @@ def create_oauthmodel_token_response_example() -> OauthmodelTokenResponse:
     instance.roles = [randomize()]
     instance.token_type = randomize()
     instance.user_id = randomize("uid")
+    instance.device_id = randomize()
     instance.is_comply = randomize("bool")
     instance.jflgs = randomize("int", min_val=1, max_val=1000)
     instance.platform_id = randomize()
@@ -2801,21 +2816,21 @@ def create_oauthmodel_token_response_example() -> OauthmodelTokenResponse:
 def create_oauthmodel_token_response_v3_example() -> OauthmodelTokenResponseV3:
     instance = OauthmodelTokenResponseV3()
     instance.access_token = randomize()
-    instance.bans = [create_accountcommon_jwt_ban_v3_example()]
     instance.expires_in = randomize("int", min_val=1, max_val=1000)
     instance.namespace = randomize("slug")
-    instance.namespace_roles = [create_accountcommon_namespace_role_example()]
     instance.permissions = [create_accountcommon_permission_v3_example()]
-    instance.roles = [randomize()]
     instance.scope = randomize()
     instance.token_type = randomize()
+    instance.bans = [create_accountcommon_jwt_ban_v3_example()]
     instance.display_name = randomize("slug")
     instance.is_comply = randomize("bool")
     instance.jflgs = randomize("int", min_val=1, max_val=1000)
+    instance.namespace_roles = [create_accountcommon_namespace_role_example()]
     instance.platform_id = randomize()
     instance.platform_user_id = randomize()
     instance.refresh_expires_in = randomize("int", min_val=1, max_val=1000)
     instance.refresh_token = randomize()
+    instance.roles = [randomize()]
     instance.user_id = randomize("uid")
     instance.xuid = randomize()
     return instance
@@ -2835,22 +2850,22 @@ def create_oauthmodel_token_with_device_cookie_response_v3_example() -> (
 ):
     instance = OauthmodelTokenWithDeviceCookieResponseV3()
     instance.access_token = randomize()
-    instance.bans = [create_accountcommon_jwt_ban_v3_example()]
     instance.expires_in = randomize("int", min_val=1, max_val=1000)
     instance.namespace = randomize("slug")
-    instance.namespace_roles = [create_accountcommon_namespace_role_example()]
     instance.permissions = [create_accountcommon_permission_v3_example()]
-    instance.roles = [randomize()]
     instance.scope = randomize()
     instance.token_type = randomize()
     instance.auth_trust_id = randomize()
+    instance.bans = [create_accountcommon_jwt_ban_v3_example()]
     instance.display_name = randomize("slug")
     instance.is_comply = randomize("bool")
     instance.jflgs = randomize("int", min_val=1, max_val=1000)
+    instance.namespace_roles = [create_accountcommon_namespace_role_example()]
     instance.platform_id = randomize()
     instance.platform_user_id = randomize()
     instance.refresh_expires_in = randomize("int", min_val=1, max_val=1000)
     instance.refresh_token = randomize()
+    instance.roles = [randomize()]
     instance.user_id = randomize("uid")
     instance.xuid = randomize()
     return instance
@@ -2880,6 +2895,9 @@ def create_rest_error_response_with_conflicted_user_platform_accounts_example() 
     instance.error_message = randomize()
     instance.message_variables = (
         create_accountcommon_conflicted_user_platform_accounts_example()
+    )
+    instance.previous_linked_platform_account = (
+        create_accountcommon_platform_linking_history_example()
     )
     return instance
 

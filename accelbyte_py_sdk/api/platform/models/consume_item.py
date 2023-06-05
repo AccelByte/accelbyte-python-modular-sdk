@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -47,9 +47,9 @@ class ConsumeItem(Model):
 
     # region fields
 
-    ext_item_id: str                                                                               # OPTIONAL
-    item_identity: str                                                                             # OPTIONAL
-    item_identity_type: Union[str, ItemIdentityTypeEnum]                                           # OPTIONAL
+    ext_item_id: str  # OPTIONAL
+    item_identity: str  # OPTIONAL
+    item_identity_type: Union[str, ItemIdentityTypeEnum]  # OPTIONAL
 
     # endregion fields
 
@@ -63,7 +63,9 @@ class ConsumeItem(Model):
         self.item_identity = value
         return self
 
-    def with_item_identity_type(self, value: Union[str, ItemIdentityTypeEnum]) -> ConsumeItem:
+    def with_item_identity_type(
+        self, value: Union[str, ItemIdentityTypeEnum]
+    ) -> ConsumeItem:
         self.item_identity_type = value
         return self
 
@@ -97,7 +99,7 @@ class ConsumeItem(Model):
         ext_item_id: Optional[str] = None,
         item_identity: Optional[str] = None,
         item_identity_type: Optional[Union[str, ItemIdentityTypeEnum]] = None,
-    **kwargs
+        **kwargs,
     ) -> ConsumeItem:
         instance = cls()
         if ext_item_id is not None:
@@ -128,15 +130,29 @@ class ConsumeItem(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, ConsumeItem]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, ConsumeItem]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[ConsumeItem]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[ConsumeItem]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[ConsumeItem, List[ConsumeItem], Dict[Any, ConsumeItem]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[ConsumeItem, List[ConsumeItem], Dict[Any, ConsumeItem]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

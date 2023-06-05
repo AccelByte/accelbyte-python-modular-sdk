@@ -237,7 +237,9 @@ def create_models_import_config_response_example() -> ModelsImportConfigResponse
     return instance
 
 
-def create_models_match_add_user_into_session_request_example() -> ModelsMatchAddUserIntoSessionRequest:
+def create_models_match_add_user_into_session_request_example() -> (
+    ModelsMatchAddUserIntoSessionRequest
+):
     instance = ModelsMatchAddUserIntoSessionRequest()
     instance.user_id = randomize("uid")
     instance.blocked_players = [randomize()]
@@ -433,7 +435,9 @@ def create_models_update_channel_request_example() -> ModelsUpdateChannelRequest
     return instance
 
 
-def create_models_update_play_time_weight_request_example() -> ModelsUpdatePlayTimeWeightRequest:
+def create_models_update_play_time_weight_request_example() -> (
+    ModelsUpdatePlayTimeWeightRequest
+):
     instance = ModelsUpdatePlayTimeWeightRequest()
     instance.playtime = randomize("int", min_val=1, max_val=1000)
     instance.user_id = randomize("uid")
@@ -441,7 +445,9 @@ def create_models_update_play_time_weight_request_example() -> ModelsUpdatePlayT
     return instance
 
 
-def create_models_update_player_playtime_weight_response_example() -> ModelsUpdatePlayerPlaytimeWeightResponse:
+def create_models_update_player_playtime_weight_response_example() -> (
+    ModelsUpdatePlayerPlaytimeWeightResponse
+):
     instance = ModelsUpdatePlayerPlaytimeWeightResponse()
     instance.playtime = randomize()
     instance.user_id = randomize("uid")
@@ -460,7 +466,9 @@ def create_models_update_ruleset_example() -> ModelsUpdateRuleset:
     return instance
 
 
-def create_models_update_ruleset_sub_game_modes_example() -> ModelsUpdateRulesetSubGameModes:
+def create_models_update_ruleset_sub_game_modes_example() -> (
+    ModelsUpdateRulesetSubGameModes
+):
     instance = ModelsUpdateRulesetSubGameModes()
     return instance
 
@@ -479,7 +487,9 @@ def create_response_error_v1_example() -> ResponseErrorV1:
     return instance
 
 
-def create_service_get_session_history_detailed_response_item_example() -> ServiceGetSessionHistoryDetailedResponseItem:
+def create_service_get_session_history_detailed_response_item_example() -> (
+    ServiceGetSessionHistoryDetailedResponseItem
+):
     instance = ServiceGetSessionHistoryDetailedResponseItem()
     instance.channel = randomize()
     instance.client_version = randomize()
@@ -499,14 +509,18 @@ def create_service_get_session_history_detailed_response_item_example() -> Servi
     return instance
 
 
-def create_service_get_session_history_search_response_example() -> ServiceGetSessionHistorySearchResponse:
+def create_service_get_session_history_search_response_example() -> (
+    ServiceGetSessionHistorySearchResponse
+):
     instance = ServiceGetSessionHistorySearchResponse()
     instance.data = [create_service_get_session_history_search_response_item_example()]
     instance.pagination = create_models_pagination_example()
     return instance
 
 
-def create_service_get_session_history_search_response_item_example() -> ServiceGetSessionHistorySearchResponseItem:
+def create_service_get_session_history_search_response_item_example() -> (
+    ServiceGetSessionHistorySearchResponseItem
+):
     instance = ServiceGetSessionHistorySearchResponseItem()
     instance.channel = randomize()
     instance.client_version = randomize()
@@ -526,7 +540,9 @@ def create_service_get_session_history_search_response_item_example() -> Service
     return instance
 
 
-def create_service_get_session_history_search_response_item_v2_example() -> ServiceGetSessionHistorySearchResponseItemV2:
+def create_service_get_session_history_search_response_item_v2_example() -> (
+    ServiceGetSessionHistorySearchResponseItemV2
+):
     instance = ServiceGetSessionHistorySearchResponseItemV2()
     instance.created_at = randomize("date")
     instance.game_mode = randomize()
@@ -539,7 +555,9 @@ def create_service_get_session_history_search_response_item_v2_example() -> Serv
     return instance
 
 
-def create_service_get_session_history_search_response_v2_example() -> ServiceGetSessionHistorySearchResponseV2:
+def create_service_get_session_history_search_response_v2_example() -> (
+    ServiceGetSessionHistorySearchResponseV2
+):
     instance = ServiceGetSessionHistorySearchResponseV2()
     instance.data = [
         create_service_get_session_history_search_response_item_v2_example()

@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -35,11 +35,21 @@ from ..models import ErrorEntity
 from ..models import StoreInfo
 
 from ..operations.catalog_changes import GetStatistic
-from ..operations.catalog_changes import GetStatisticActionEnum, GetStatisticItemTypeEnum, GetStatisticTypeEnum
+from ..operations.catalog_changes import (
+    GetStatisticActionEnum,
+    GetStatisticItemTypeEnum,
+    GetStatisticTypeEnum,
+)
 from ..operations.catalog_changes import PublishAll
 from ..operations.catalog_changes import PublishSelected
 from ..operations.catalog_changes import QueryChanges
-from ..operations.catalog_changes import QueryChangesActionEnum, QueryChangesItemTypeEnum, QueryChangesSortByEnum, QueryChangesStatusEnum, QueryChangesTypeEnum
+from ..operations.catalog_changes import (
+    QueryChangesActionEnum,
+    QueryChangesItemTypeEnum,
+    QueryChangesSortByEnum,
+    QueryChangesStatusEnum,
+    QueryChangesTypeEnum,
+)
 from ..operations.catalog_changes import SelectAllRecords
 from ..operations.catalog_changes import SelectRecord
 from ..operations.catalog_changes import UnselectAllRecords
@@ -47,7 +57,18 @@ from ..operations.catalog_changes import UnselectRecord
 
 
 @same_doc_as(GetStatistic)
-def get_statistic(store_id: str, action: Optional[Union[str, GetStatisticActionEnum]] = None, item_sku: Optional[str] = None, item_type: Optional[Union[str, GetStatisticItemTypeEnum]] = None, type_: Optional[Union[str, GetStatisticTypeEnum]] = None, updated_at_end: Optional[str] = None, updated_at_start: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_statistic(
+    store_id: str,
+    action: Optional[Union[str, GetStatisticActionEnum]] = None,
+    item_sku: Optional[str] = None,
+    item_type: Optional[Union[str, GetStatisticItemTypeEnum]] = None,
+    type_: Optional[Union[str, GetStatisticTypeEnum]] = None,
+    updated_at_end: Optional[str] = None,
+    updated_at_start: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get catalog changes statistics (getStatistic)
 
     This API is used to query catalog changes statistics .
@@ -110,7 +131,18 @@ def get_statistic(store_id: str, action: Optional[Union[str, GetStatisticActionE
 
 
 @same_doc_as(GetStatistic)
-async def get_statistic_async(store_id: str, action: Optional[Union[str, GetStatisticActionEnum]] = None, item_sku: Optional[str] = None, item_type: Optional[Union[str, GetStatisticItemTypeEnum]] = None, type_: Optional[Union[str, GetStatisticTypeEnum]] = None, updated_at_end: Optional[str] = None, updated_at_start: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_statistic_async(
+    store_id: str,
+    action: Optional[Union[str, GetStatisticActionEnum]] = None,
+    item_sku: Optional[str] = None,
+    item_type: Optional[Union[str, GetStatisticItemTypeEnum]] = None,
+    type_: Optional[Union[str, GetStatisticTypeEnum]] = None,
+    updated_at_end: Optional[str] = None,
+    updated_at_start: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get catalog changes statistics (getStatistic)
 
     This API is used to query catalog changes statistics .
@@ -169,11 +201,18 @@ async def get_statistic_async(store_id: str, action: Optional[Union[str, GetStat
         updated_at_start=updated_at_start,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublishAll)
-def publish_all(store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def publish_all(
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Publish all unpublished changes (publishAll)
 
     This API is used to publish all unpublished changes.
@@ -222,7 +261,12 @@ def publish_all(store_id: str, namespace: Optional[str] = None, x_additional_hea
 
 
 @same_doc_as(PublishAll)
-async def publish_all_async(store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def publish_all_async(
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Publish all unpublished changes (publishAll)
 
     This API is used to publish all unpublished changes.
@@ -267,11 +311,18 @@ async def publish_all_async(store_id: str, namespace: Optional[str] = None, x_ad
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublishSelected)
-def publish_selected(store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def publish_selected(
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Publish selected unpublished changes (publishSelected)
 
     This API is used to publish selected unpublished changes.
@@ -322,7 +373,12 @@ def publish_selected(store_id: str, namespace: Optional[str] = None, x_additiona
 
 
 @same_doc_as(PublishSelected)
-async def publish_selected_async(store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def publish_selected_async(
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Publish selected unpublished changes (publishSelected)
 
     This API is used to publish selected unpublished changes.
@@ -369,11 +425,29 @@ async def publish_selected_async(store_id: str, namespace: Optional[str] = None,
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(QueryChanges)
-def query_changes(store_id: str, action: Optional[Union[str, QueryChangesActionEnum]] = None, item_sku: Optional[str] = None, item_type: Optional[Union[str, QueryChangesItemTypeEnum]] = None, limit: Optional[int] = None, offset: Optional[int] = None, selected: Optional[bool] = None, sort_by: Optional[List[Union[str, QueryChangesSortByEnum]]] = None, status: Optional[Union[str, QueryChangesStatusEnum]] = None, type_: Optional[Union[str, QueryChangesTypeEnum]] = None, updated_at_end: Optional[str] = None, updated_at_start: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def query_changes(
+    store_id: str,
+    action: Optional[Union[str, QueryChangesActionEnum]] = None,
+    item_sku: Optional[str] = None,
+    item_type: Optional[Union[str, QueryChangesItemTypeEnum]] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    selected: Optional[bool] = None,
+    sort_by: Optional[List[Union[str, QueryChangesSortByEnum]]] = None,
+    status: Optional[Union[str, QueryChangesStatusEnum]] = None,
+    type_: Optional[Union[str, QueryChangesTypeEnum]] = None,
+    updated_at_end: Optional[str] = None,
+    updated_at_start: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Query catalog changes (queryChanges)
 
     This API is used to query changes .
@@ -451,7 +525,23 @@ def query_changes(store_id: str, action: Optional[Union[str, QueryChangesActionE
 
 
 @same_doc_as(QueryChanges)
-async def query_changes_async(store_id: str, action: Optional[Union[str, QueryChangesActionEnum]] = None, item_sku: Optional[str] = None, item_type: Optional[Union[str, QueryChangesItemTypeEnum]] = None, limit: Optional[int] = None, offset: Optional[int] = None, selected: Optional[bool] = None, sort_by: Optional[List[Union[str, QueryChangesSortByEnum]]] = None, status: Optional[Union[str, QueryChangesStatusEnum]] = None, type_: Optional[Union[str, QueryChangesTypeEnum]] = None, updated_at_end: Optional[str] = None, updated_at_start: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def query_changes_async(
+    store_id: str,
+    action: Optional[Union[str, QueryChangesActionEnum]] = None,
+    item_sku: Optional[str] = None,
+    item_type: Optional[Union[str, QueryChangesItemTypeEnum]] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    selected: Optional[bool] = None,
+    sort_by: Optional[List[Union[str, QueryChangesSortByEnum]]] = None,
+    status: Optional[Union[str, QueryChangesStatusEnum]] = None,
+    type_: Optional[Union[str, QueryChangesTypeEnum]] = None,
+    updated_at_end: Optional[str] = None,
+    updated_at_start: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Query catalog changes (queryChanges)
 
     This API is used to query changes .
@@ -525,11 +615,18 @@ async def query_changes_async(store_id: str, action: Optional[Union[str, QueryCh
         updated_at_start=updated_at_start,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(SelectAllRecords)
-def select_all_records(store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def select_all_records(
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Select all changes (selectAllRecords)
 
     Select all changes.
@@ -574,7 +671,12 @@ def select_all_records(store_id: str, namespace: Optional[str] = None, x_additio
 
 
 @same_doc_as(SelectAllRecords)
-async def select_all_records_async(store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def select_all_records_async(
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Select all changes (selectAllRecords)
 
     Select all changes.
@@ -615,11 +717,19 @@ async def select_all_records_async(store_id: str, namespace: Optional[str] = Non
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(SelectRecord)
-def select_record(change_id: str, store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def select_record(
+    change_id: str,
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Select a change (selectRecord)
 
     Select a change, it will be included when partial publish.
@@ -652,7 +762,7 @@ def select_record(change_id: str, store_id: str, namespace: Optional[str] = None
     Responses:
         204: No Content - (No Content)
 
-        404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30041: Changelog [{changelogId}] doest not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30041: Changelog [{changelogId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -667,7 +777,13 @@ def select_record(change_id: str, store_id: str, namespace: Optional[str] = None
 
 
 @same_doc_as(SelectRecord)
-async def select_record_async(change_id: str, store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def select_record_async(
+    change_id: str,
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Select a change (selectRecord)
 
     Select a change, it will be included when partial publish.
@@ -700,7 +816,7 @@ async def select_record_async(change_id: str, store_id: str, namespace: Optional
     Responses:
         204: No Content - (No Content)
 
-        404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30041: Changelog [{changelogId}] doest not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30041: Changelog [{changelogId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -711,11 +827,18 @@ async def select_record_async(change_id: str, store_id: str, namespace: Optional
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(UnselectAllRecords)
-def unselect_all_records(store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def unselect_all_records(
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Unselect all changes (unselectAllRecords)
 
     Unselect all change.
@@ -760,7 +883,12 @@ def unselect_all_records(store_id: str, namespace: Optional[str] = None, x_addit
 
 
 @same_doc_as(UnselectAllRecords)
-async def unselect_all_records_async(store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def unselect_all_records_async(
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Unselect all changes (unselectAllRecords)
 
     Unselect all change.
@@ -801,11 +929,19 @@ async def unselect_all_records_async(store_id: str, namespace: Optional[str] = N
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(UnselectRecord)
-def unselect_record(change_id: str, store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def unselect_record(
+    change_id: str,
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Unselect a change (unselectRecord)
 
     Unselect a change, it will not be included when partial publish.
@@ -838,7 +974,7 @@ def unselect_record(change_id: str, store_id: str, namespace: Optional[str] = No
     Responses:
         204: No Content - (No Content)
 
-        404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30041: Changelog [{changelogId}] doest not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30041: Changelog [{changelogId}] does not exist in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (30071: Can't unselect item [{itemId}] when the item which is bound to is already selected in namespace [{namespace}] | 30072: Can't unselect category [{categoryPath}] when item with this category is already selected in namespace [{namespace}] | 30073: Can't unselect store change | 30074: Can't unselect subscription's content [{itemId}] when subscription is already selected in namespace [{namespace}])
     """
@@ -855,7 +991,13 @@ def unselect_record(change_id: str, store_id: str, namespace: Optional[str] = No
 
 
 @same_doc_as(UnselectRecord)
-async def unselect_record_async(change_id: str, store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def unselect_record_async(
+    change_id: str,
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Unselect a change (unselectRecord)
 
     Unselect a change, it will not be included when partial publish.
@@ -888,7 +1030,7 @@ async def unselect_record_async(change_id: str, store_id: str, namespace: Option
     Responses:
         204: No Content - (No Content)
 
-        404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30041: Changelog [{changelogId}] doest not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30041: Changelog [{changelogId}] does not exist in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (30071: Can't unselect item [{itemId}] when the item which is bound to is already selected in namespace [{namespace}] | 30072: Can't unselect category [{categoryPath}] when item with this category is already selected in namespace [{namespace}] | 30073: Can't unselect store change | 30074: Can't unselect subscription's content [{itemId}] when subscription is already selected in namespace [{namespace}])
     """
@@ -901,4 +1043,6 @@ async def unselect_record_async(change_id: str, store_id: str, namespace: Option
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )

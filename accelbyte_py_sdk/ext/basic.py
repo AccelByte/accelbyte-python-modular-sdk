@@ -6,7 +6,7 @@
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Basic Service (2.8.0)
+# AccelByte Gaming Services Basic Service (2.9.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -208,10 +208,10 @@ def create_namespace_create_example() -> NamespaceCreate:
 
 def create_namespace_info_example() -> NamespaceInfo:
     instance = NamespaceInfo()
-    instance.client_id = randomize("uid")
-    instance.created_at = randomize("date")
     instance.display_name = randomize("slug")
     instance.namespace = randomize("slug")
+    instance.client_id = randomize("uid")
+    instance.created_at = randomize("date")
     instance.parent_namespace = randomize("slug")
     instance.status = randomize()
     instance.updated_at = randomize("date")

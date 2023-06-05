@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -48,7 +48,14 @@ from ..models import TicketBoothIDTypeEnum
 
 
 @same_doc_as(AcquireUserTicket)
-def acquire_user_ticket(booth_name: str, user_id: str, body: Optional[TicketAcquireRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def acquire_user_ticket(
+    booth_name: str,
+    user_id: str,
+    body: Optional[TicketAcquireRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Acquire ticket (acquireUserTicket)
 
     [SERVICE COMMUNICATION ONLY] Acquire ticket(code/key) based on booth name.
@@ -104,7 +111,14 @@ def acquire_user_ticket(booth_name: str, user_id: str, body: Optional[TicketAcqu
 
 
 @same_doc_as(AcquireUserTicket)
-async def acquire_user_ticket_async(booth_name: str, user_id: str, body: Optional[TicketAcquireRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def acquire_user_ticket_async(
+    booth_name: str,
+    user_id: str,
+    body: Optional[TicketAcquireRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Acquire ticket (acquireUserTicket)
 
     [SERVICE COMMUNICATION ONLY] Acquire ticket(code/key) based on booth name.
@@ -156,11 +170,19 @@ async def acquire_user_ticket_async(booth_name: str, user_id: str, body: Optiona
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(DecreaseTicketSale)
-def decrease_ticket_sale(booth_name: str, body: Optional[TicketSaleDecrementRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def decrease_ticket_sale(
+    booth_name: str,
+    body: Optional[TicketSaleDecrementRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Decrease ticket sale (decreaseTicketSale)
 
     [SERVICE COMMUNICATION ONLY] Decrease ticket(code/key) sale if requested orderNo is already increased.
@@ -210,7 +232,13 @@ def decrease_ticket_sale(booth_name: str, body: Optional[TicketSaleDecrementRequ
 
 
 @same_doc_as(DecreaseTicketSale)
-async def decrease_ticket_sale_async(booth_name: str, body: Optional[TicketSaleDecrementRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def decrease_ticket_sale_async(
+    booth_name: str,
+    body: Optional[TicketSaleDecrementRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Decrease ticket sale (decreaseTicketSale)
 
     [SERVICE COMMUNICATION ONLY] Decrease ticket(code/key) sale if requested orderNo is already increased.
@@ -256,11 +284,18 @@ async def decrease_ticket_sale_async(booth_name: str, body: Optional[TicketSaleD
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetTicketBoothID)
-def get_ticket_booth_id(booth_name: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_ticket_booth_id(
+    booth_name: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get ticket booth ID (getTicketBoothID)
 
     Get ticket(code/key) booth ID.
@@ -306,7 +341,12 @@ def get_ticket_booth_id(booth_name: str, namespace: Optional[str] = None, x_addi
 
 
 @same_doc_as(GetTicketBoothID)
-async def get_ticket_booth_id_async(booth_name: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_ticket_booth_id_async(
+    booth_name: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get ticket booth ID (getTicketBoothID)
 
     Get ticket(code/key) booth ID.
@@ -348,11 +388,18 @@ async def get_ticket_booth_id_async(booth_name: str, namespace: Optional[str] = 
         booth_name=booth_name,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetTicketDynamic)
-def get_ticket_dynamic(booth_name: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_ticket_dynamic(
+    booth_name: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get ticket dynamic (getTicketDynamic)
 
     [SERVICE COMMUNICATION ONLY] Get ticket(code/key) dynamic based on booth name.
@@ -398,7 +445,12 @@ def get_ticket_dynamic(booth_name: str, namespace: Optional[str] = None, x_addit
 
 
 @same_doc_as(GetTicketDynamic)
-async def get_ticket_dynamic_async(booth_name: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_ticket_dynamic_async(
+    booth_name: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get ticket dynamic (getTicketDynamic)
 
     [SERVICE COMMUNICATION ONLY] Get ticket(code/key) dynamic based on booth name.
@@ -440,11 +492,19 @@ async def get_ticket_dynamic_async(booth_name: str, namespace: Optional[str] = N
         booth_name=booth_name,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(IncreaseTicketSale)
-def increase_ticket_sale(booth_name: str, body: Optional[TicketSaleIncrementRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def increase_ticket_sale(
+    booth_name: str,
+    body: Optional[TicketSaleIncrementRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Increase ticket sale (increaseTicketSale)
 
     [SERVICE COMMUNICATION ONLY] increase ticket(code/key) sale.
@@ -495,7 +555,13 @@ def increase_ticket_sale(booth_name: str, body: Optional[TicketSaleIncrementRequ
 
 
 @same_doc_as(IncreaseTicketSale)
-async def increase_ticket_sale_async(booth_name: str, body: Optional[TicketSaleIncrementRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def increase_ticket_sale_async(
+    booth_name: str,
+    body: Optional[TicketSaleIncrementRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Increase ticket sale (increaseTicketSale)
 
     [SERVICE COMMUNICATION ONLY] increase ticket(code/key) sale.
@@ -542,4 +608,6 @@ async def increase_ticket_sale_async(booth_name: str, body: Optional[TicketSaleI
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )

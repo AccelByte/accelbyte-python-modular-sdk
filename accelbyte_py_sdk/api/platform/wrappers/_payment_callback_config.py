@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -38,7 +38,11 @@ from ..operations.payment_callback_config import UpdatePaymentCallbackConfig
 
 
 @same_doc_as(GetPaymentCallbackConfig)
-def get_payment_callback_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_payment_callback_config(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get payment callback configuration (getPaymentCallbackConfig)
 
     Get payment callback configuration.
@@ -81,7 +85,11 @@ def get_payment_callback_config(namespace: Optional[str] = None, x_additional_he
 
 
 @same_doc_as(GetPaymentCallbackConfig)
-async def get_payment_callback_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_payment_callback_config_async(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get payment callback configuration (getPaymentCallbackConfig)
 
     Get payment callback configuration.
@@ -120,11 +128,18 @@ async def get_payment_callback_config_async(namespace: Optional[str] = None, x_a
     request = GetPaymentCallbackConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(UpdatePaymentCallbackConfig)
-def update_payment_callback_config(body: Optional[PaymentCallbackConfigUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def update_payment_callback_config(
+    body: Optional[PaymentCallbackConfigUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update payment callback configuration (updatePaymentCallbackConfig)
 
     Update payment callback configuration.
@@ -168,7 +183,12 @@ def update_payment_callback_config(body: Optional[PaymentCallbackConfigUpdate] =
 
 
 @same_doc_as(UpdatePaymentCallbackConfig)
-async def update_payment_callback_config_async(body: Optional[PaymentCallbackConfigUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def update_payment_callback_config_async(
+    body: Optional[PaymentCallbackConfigUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update payment callback configuration (updatePaymentCallbackConfig)
 
     Update payment callback configuration.
@@ -208,4 +228,6 @@ async def update_payment_callback_config_async(body: Optional[PaymentCallbackCon
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )

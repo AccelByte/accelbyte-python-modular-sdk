@@ -1,14 +1,14 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.28.0"
+__version__ = "4.30.2"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -23,7 +23,9 @@ from .get_user_dlc import TypeEnum as GetUserDLCTypeEnum
 from .get_user_dlc_by_platform import GetUserDLCByPlatform
 from .get_user_dlc_by_platform import TypeEnum as GetUserDLCByPlatformTypeEnum
 from .public_sync_psn_dlc_inventory import PublicSyncPsnDlcInventory
-from .public_sync_psn_dlc_inv_429118 import PublicSyncPsnDlcInventoryWithMultipleServiceLabels
+from .public_sync_psn_dlc_inv_429118 import (
+    PublicSyncPsnDlcInventoryWithMultipleServiceLabels,
+)
 from .sync_epic_game_dlc import SyncEpicGameDLC
 from .sync_steam_dlc import SyncSteamDLC
 from .sync_xbox_dlc import SyncXboxDLC

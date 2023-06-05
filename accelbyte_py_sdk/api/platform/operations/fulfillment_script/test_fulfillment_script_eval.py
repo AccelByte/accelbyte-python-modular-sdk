@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -72,7 +72,7 @@ class TestFulfillmentScriptEval(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
 
-    body: FulfillmentScriptEvalTestRequest                                                         # OPTIONAL in [body]
+    body: FulfillmentScriptEvalTestRequest  # OPTIONAL in [body]
 
     # endregion fields
 
@@ -128,7 +128,9 @@ class TestFulfillmentScriptEval(Operation):
 
     # region with_x methods
 
-    def with_body(self, value: FulfillmentScriptEvalTestRequest) -> TestFulfillmentScriptEval:
+    def with_body(
+        self, value: FulfillmentScriptEvalTestRequest
+    ) -> TestFulfillmentScriptEval:
         self.body = value
         return self
 
@@ -149,7 +151,9 @@ class TestFulfillmentScriptEval(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, FulfillmentScriptEvalTestResult], Union[None, HttpResponse]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[Union[None, FulfillmentScriptEvalTestResult], Union[None, HttpResponse]]:
         """Parse the given response.
 
         200: OK - FulfillmentScriptEvalTestResult (successful operation)
@@ -160,7 +164,9 @@ class TestFulfillmentScriptEval(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
@@ -168,7 +174,9 @@ class TestFulfillmentScriptEval(Operation):
         if code == 200:
             return FulfillmentScriptEvalTestResult.create_from_dict(content), None
 
-        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
+        return self.handle_undocumented_response(
+            code=code, content_type=content_type, content=content
+        )
 
     # endregion response methods
 
@@ -176,9 +184,7 @@ class TestFulfillmentScriptEval(Operation):
 
     @classmethod
     def create(
-        cls,
-        body: Optional[FulfillmentScriptEvalTestRequest] = None,
-    **kwargs
+        cls, body: Optional[FulfillmentScriptEvalTestRequest] = None, **kwargs
     ) -> TestFulfillmentScriptEval:
         instance = cls()
         if body is not None:
@@ -186,10 +192,14 @@ class TestFulfillmentScriptEval(Operation):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> TestFulfillmentScriptEval:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> TestFulfillmentScriptEval:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = FulfillmentScriptEvalTestRequest.create_from_dict(dict_["body"], include_empty=include_empty)
+            instance.body = FulfillmentScriptEvalTestRequest.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
         elif include_empty:
             instance.body = FulfillmentScriptEvalTestRequest()
         return instance

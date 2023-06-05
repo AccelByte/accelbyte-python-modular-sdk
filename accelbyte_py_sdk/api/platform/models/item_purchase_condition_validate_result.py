@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -45,10 +45,10 @@ class ItemPurchaseConditionValidateResult(Model):
 
     # region fields
 
-    item_id: str                                                                                   # OPTIONAL
-    purchasable: bool                                                                              # OPTIONAL
-    sku: str                                                                                       # OPTIONAL
-    validate_details: List[ConditionGroupValidateResult]                                           # OPTIONAL
+    item_id: str  # OPTIONAL
+    purchasable: bool  # OPTIONAL
+    sku: str  # OPTIONAL
+    validate_details: List[ConditionGroupValidateResult]  # OPTIONAL
 
     # endregion fields
 
@@ -66,7 +66,9 @@ class ItemPurchaseConditionValidateResult(Model):
         self.sku = value
         return self
 
-    def with_validate_details(self, value: List[ConditionGroupValidateResult]) -> ItemPurchaseConditionValidateResult:
+    def with_validate_details(
+        self, value: List[ConditionGroupValidateResult]
+    ) -> ItemPurchaseConditionValidateResult:
         self.validate_details = value
         return self
 
@@ -89,7 +91,9 @@ class ItemPurchaseConditionValidateResult(Model):
         elif include_empty:
             result["sku"] = ""
         if hasattr(self, "validate_details"):
-            result["validateDetails"] = [i0.to_dict(include_empty=include_empty) for i0 in self.validate_details]
+            result["validateDetails"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.validate_details
+            ]
         elif include_empty:
             result["validateDetails"] = []
         return result
@@ -105,7 +109,7 @@ class ItemPurchaseConditionValidateResult(Model):
         purchasable: Optional[bool] = None,
         sku: Optional[str] = None,
         validate_details: Optional[List[ConditionGroupValidateResult]] = None,
-    **kwargs
+        **kwargs,
     ) -> ItemPurchaseConditionValidateResult:
         instance = cls()
         if item_id is not None:
@@ -119,7 +123,9 @@ class ItemPurchaseConditionValidateResult(Model):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> ItemPurchaseConditionValidateResult:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> ItemPurchaseConditionValidateResult:
         instance = cls()
         if not dict_:
             return instance
@@ -136,21 +142,44 @@ class ItemPurchaseConditionValidateResult(Model):
         elif include_empty:
             instance.sku = ""
         if "validateDetails" in dict_ and dict_["validateDetails"] is not None:
-            instance.validate_details = [ConditionGroupValidateResult.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["validateDetails"]]
+            instance.validate_details = [
+                ConditionGroupValidateResult.create_from_dict(
+                    i0, include_empty=include_empty
+                )
+                for i0 in dict_["validateDetails"]
+            ]
         elif include_empty:
             instance.validate_details = []
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, ItemPurchaseConditionValidateResult]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, ItemPurchaseConditionValidateResult]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[ItemPurchaseConditionValidateResult]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[ItemPurchaseConditionValidateResult]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[ItemPurchaseConditionValidateResult, List[ItemPurchaseConditionValidateResult], Dict[Any, ItemPurchaseConditionValidateResult]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[
+        ItemPurchaseConditionValidateResult,
+        List[ItemPurchaseConditionValidateResult],
+        Dict[Any, ItemPurchaseConditionValidateResult],
+    ]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

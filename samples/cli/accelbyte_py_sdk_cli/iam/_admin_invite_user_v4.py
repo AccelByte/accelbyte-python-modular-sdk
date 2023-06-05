@@ -6,7 +6,7 @@
 
 # template_file: python-cli-command.j2
 
-# AGS Iam Service (5.31.0)
+# AGS Iam Service (6.0.1)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -73,4 +73,4 @@ def admin_invite_user_v4(
 
 
 admin_invite_user_v4.operation_id = "AdminInviteUserV4"
-admin_invite_user_v4.is_deprecated = False
+admin_invite_user_v4.is_deprecated = True

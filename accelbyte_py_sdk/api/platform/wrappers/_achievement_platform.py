@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -41,7 +41,13 @@ from ..operations.achievement_platform import UpdateXblUserAchievement
 
 
 @same_doc_as(GetXblUserAchievements)
-def get_xbl_user_achievements(user_id: str, xbox_user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_xbl_user_achievements(
+    user_id: str,
+    xbox_user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get xbox live user achievements. (getXblUserAchievements)
 
     This API is used to get xbox live user achievements(Only for test).
@@ -87,7 +93,13 @@ def get_xbl_user_achievements(user_id: str, xbox_user_id: str, namespace: Option
 
 
 @same_doc_as(GetXblUserAchievements)
-async def get_xbl_user_achievements_async(user_id: str, xbox_user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_xbl_user_achievements_async(
+    user_id: str,
+    xbox_user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get xbox live user achievements. (getXblUserAchievements)
 
     This API is used to get xbox live user achievements(Only for test).
@@ -129,11 +141,19 @@ async def get_xbl_user_achievements_async(user_id: str, xbox_user_id: str, names
         xbox_user_id=xbox_user_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(UnlockSteamUserAchievement)
-def unlock_steam_user_achievement(user_id: str, body: Optional[SteamAchievementUpdateRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def unlock_steam_user_achievement(
+    user_id: str,
+    body: Optional[SteamAchievementUpdateRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Unlock steam achievement. (unlockSteamUserAchievement)
 
     This API is used to unlock steam achievement.
@@ -181,7 +201,13 @@ def unlock_steam_user_achievement(user_id: str, body: Optional[SteamAchievementU
 
 
 @same_doc_as(UnlockSteamUserAchievement)
-async def unlock_steam_user_achievement_async(user_id: str, body: Optional[SteamAchievementUpdateRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def unlock_steam_user_achievement_async(
+    user_id: str,
+    body: Optional[SteamAchievementUpdateRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Unlock steam achievement. (unlockSteamUserAchievement)
 
     This API is used to unlock steam achievement.
@@ -225,11 +251,19 @@ async def unlock_steam_user_achievement_async(user_id: str, body: Optional[Steam
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(UpdateXblUserAchievement)
-def update_xbl_user_achievement(user_id: str, body: Optional[XblAchievementUpdateRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def update_xbl_user_achievement(
+    user_id: str,
+    body: Optional[XblAchievementUpdateRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update xbox live achievements. (updateXblUserAchievement)
 
     This API is used to update xbox live achievements.
@@ -275,7 +309,13 @@ def update_xbl_user_achievement(user_id: str, body: Optional[XblAchievementUpdat
 
 
 @same_doc_as(UpdateXblUserAchievement)
-async def update_xbl_user_achievement_async(user_id: str, body: Optional[XblAchievementUpdateRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def update_xbl_user_achievement_async(
+    user_id: str,
+    body: Optional[XblAchievementUpdateRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update xbox live achievements. (updateXblUserAchievement)
 
     This API is used to update xbox live achievements.
@@ -317,4 +357,6 @@ async def update_xbl_user_achievement_async(user_id: str, body: Optional[XblAchi
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )

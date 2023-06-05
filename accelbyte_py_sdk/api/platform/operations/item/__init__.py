@@ -1,14 +1,14 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.28.0"
+__version__ = "4.30.2"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -45,14 +45,27 @@ from .public_get_item_by_app_id import PublicGetItemByAppId
 from .public_get_item_by_sku import PublicGetItemBySku
 from .public_get_item_dynamic_data import PublicGetItemDynamicData
 from .public_query_items import PublicQueryItems
-from .public_query_items import AppTypeEnum as PublicQueryItemsAppTypeEnum, ItemTypeEnum as PublicQueryItemsItemTypeEnum, SortByEnum as PublicQueryItemsSortByEnum
+from .public_query_items import (
+    AppTypeEnum as PublicQueryItemsAppTypeEnum,
+    ItemTypeEnum as PublicQueryItemsItemTypeEnum,
+    SortByEnum as PublicQueryItemsSortByEnum,
+)
 from .public_search_items import PublicSearchItems
 from .public_search_items import ItemTypeEnum as PublicSearchItemsItemTypeEnum
 from .public_validate_item_pu_bd546e import PublicValidateItemPurchaseCondition
 from .query_items import QueryItems
-from .query_items import AppTypeEnum as QueryItemsAppTypeEnum, ItemTypeEnum as QueryItemsItemTypeEnum, SortByEnum as QueryItemsSortByEnum
+from .query_items import (
+    AppTypeEnum as QueryItemsAppTypeEnum,
+    ItemTypeEnum as QueryItemsItemTypeEnum,
+    SortByEnum as QueryItemsSortByEnum,
+)
 from .query_items_1 import QueryItems1
-from .query_items_1 import AppTypeEnum as QueryItems1AppTypeEnum, ItemStatusEnum as QueryItems1ItemStatusEnum, ItemTypeEnum as QueryItems1ItemTypeEnum, SortByEnum as QueryItems1SortByEnum
+from .query_items_1 import (
+    AppTypeEnum as QueryItems1AppTypeEnum,
+    ItemStatusEnum as QueryItems1ItemStatusEnum,
+    ItemTypeEnum as QueryItems1ItemTypeEnum,
+    SortByEnum as QueryItems1SortByEnum,
+)
 from .query_uncategorized_items import QueryUncategorizedItems
 from .query_uncategorized_items import SortByEnum as QueryUncategorizedItemsSortByEnum
 from .return_item import ReturnItem

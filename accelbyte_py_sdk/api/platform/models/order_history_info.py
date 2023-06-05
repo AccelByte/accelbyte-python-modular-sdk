@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -67,14 +67,14 @@ class OrderHistoryInfo(Model):
 
     # region fields
 
-    action: Union[str, ActionEnum]                                                                 # REQUIRED
-    created_at: str                                                                                # REQUIRED
-    namespace: str                                                                                 # REQUIRED
-    operator: str                                                                                  # REQUIRED
-    order_no: str                                                                                  # REQUIRED
-    updated_at: str                                                                                # REQUIRED
-    user_id: str                                                                                   # REQUIRED
-    reason: str                                                                                    # OPTIONAL
+    action: Union[str, ActionEnum]  # REQUIRED
+    created_at: str  # REQUIRED
+    namespace: str  # REQUIRED
+    operator: str  # REQUIRED
+    order_no: str  # REQUIRED
+    updated_at: str  # REQUIRED
+    user_id: str  # REQUIRED
+    reason: str  # OPTIONAL
 
     # endregion fields
 
@@ -167,7 +167,7 @@ class OrderHistoryInfo(Model):
         updated_at: str,
         user_id: str,
         reason: Optional[str] = None,
-    **kwargs
+        **kwargs,
     ) -> OrderHistoryInfo:
         instance = cls()
         instance.action = action
@@ -182,7 +182,9 @@ class OrderHistoryInfo(Model):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> OrderHistoryInfo:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> OrderHistoryInfo:
         instance = cls()
         if not dict_:
             return instance
@@ -221,15 +223,29 @@ class OrderHistoryInfo(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, OrderHistoryInfo]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, OrderHistoryInfo]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[OrderHistoryInfo]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[OrderHistoryInfo]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[OrderHistoryInfo, List[OrderHistoryInfo], Dict[Any, OrderHistoryInfo]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[OrderHistoryInfo, List[OrderHistoryInfo], Dict[Any, OrderHistoryInfo]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -269,7 +285,20 @@ class OrderHistoryInfo(Model):
     @staticmethod
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
-            "action": ["CHARGEBACK", "CHARGEBACK_REVERSED", "CHARGED", "CLOSE", "DELETED", "FULFILLED", "FULFILL_FAILED", "INIT", "REFUNDED", "REFUNDING", "REFUND_FAILED", "SET_STATUS"],
+            "action": [
+                "CHARGEBACK",
+                "CHARGEBACK_REVERSED",
+                "CHARGED",
+                "CLOSE",
+                "DELETED",
+                "FULFILLED",
+                "FULFILL_FAILED",
+                "INIT",
+                "REFUNDED",
+                "REFUNDING",
+                "REFUND_FAILED",
+                "SET_STATUS",
+            ],
         }
 
     # endregion static methods

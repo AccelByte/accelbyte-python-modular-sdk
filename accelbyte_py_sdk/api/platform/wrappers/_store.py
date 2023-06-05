@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -57,7 +57,13 @@ from ..operations.store import UpdateStore
 
 
 @same_doc_as(CloneStore)
-def clone_store(store_id: str, target_store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def clone_store(
+    store_id: str,
+    target_store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Clone a store (cloneStore)
 
     This API is used to clone a store. Usually clone a draft store to published store because published store can't directly edit content.
@@ -109,7 +115,13 @@ def clone_store(store_id: str, target_store_id: Optional[str] = None, namespace:
 
 
 @same_doc_as(CloneStore)
-async def clone_store_async(store_id: str, target_store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def clone_store_async(
+    store_id: str,
+    target_store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Clone a store (cloneStore)
 
     This API is used to clone a store. Usually clone a draft store to published store because published store can't directly edit content.
@@ -157,11 +169,18 @@ async def clone_store_async(store_id: str, target_store_id: Optional[str] = None
         target_store_id=target_store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(CreateStore)
-def create_store(body: Optional[StoreCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def create_store(
+    body: Optional[StoreCreate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Create a store (createStore)
 
     This API is used to create a non published store in a namespace.
@@ -210,7 +229,12 @@ def create_store(body: Optional[StoreCreate] = None, namespace: Optional[str] = 
 
 
 @same_doc_as(CreateStore)
-async def create_store_async(body: Optional[StoreCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def create_store_async(
+    body: Optional[StoreCreate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Create a store (createStore)
 
     This API is used to create a non published store in a namespace.
@@ -255,11 +279,17 @@ async def create_store_async(body: Optional[StoreCreate] = None, namespace: Opti
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(DeletePublishedStore)
-def delete_published_store(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def delete_published_store(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Delete published store (deletePublishedStore)
 
     This API is used to delete published store including category and items before release to public.
@@ -304,7 +334,11 @@ def delete_published_store(namespace: Optional[str] = None, x_additional_headers
 
 
 @same_doc_as(DeletePublishedStore)
-async def delete_published_store_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def delete_published_store_async(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Delete published store (deletePublishedStore)
 
     This API is used to delete published store including category and items before release to public.
@@ -345,11 +379,18 @@ async def delete_published_store_async(namespace: Optional[str] = None, x_additi
     request = DeletePublishedStore.create(
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(DeleteStore)
-def delete_store(store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def delete_store(
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Delete a store (deleteStore)
 
     This API is used to delete a store. Only non published store can be deleted.
@@ -397,7 +438,12 @@ def delete_store(store_id: str, namespace: Optional[str] = None, x_additional_he
 
 
 @same_doc_as(DeleteStore)
-async def delete_store_async(store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def delete_store_async(
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Delete a store (deleteStore)
 
     This API is used to delete a store. Only non published store can be deleted.
@@ -441,12 +487,19 @@ async def delete_store_async(store_id: str, namespace: Optional[str] = None, x_a
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @deprecated
 @same_doc_as(ExportStore)
-def export_store(store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def export_store(
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Export a store (exportStore)
 
     This API is used to export a store.
@@ -494,7 +547,12 @@ def export_store(store_id: str, namespace: Optional[str] = None, x_additional_he
 
 @deprecated
 @same_doc_as(ExportStore)
-async def export_store_async(store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def export_store_async(
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Export a store (exportStore)
 
     This API is used to export a store.
@@ -537,11 +595,19 @@ async def export_store_async(store_id: str, namespace: Optional[str] = None, x_a
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(ExportStore1)
-def export_store_1(store_id: str, body: Optional[ExportStoreRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def export_store_1(
+    store_id: str,
+    body: Optional[ExportStoreRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Export a store (exportStore_1)
 
     This API is used to export a whole or partial store.
@@ -590,7 +656,13 @@ def export_store_1(store_id: str, body: Optional[ExportStoreRequest] = None, nam
 
 
 @same_doc_as(ExportStore1)
-async def export_store_1_async(store_id: str, body: Optional[ExportStoreRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def export_store_1_async(
+    store_id: str,
+    body: Optional[ExportStoreRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Export a store (exportStore_1)
 
     This API is used to export a whole or partial store.
@@ -635,11 +707,17 @@ async def export_store_1_async(store_id: str, body: Optional[ExportStoreRequest]
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetPublishedStore)
-def get_published_store(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_published_store(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get published store (getPublishedStore)
 
     This API is used to get a published store basic info, exclude category and item information.
@@ -683,7 +761,11 @@ def get_published_store(namespace: Optional[str] = None, x_additional_headers: O
 
 
 @same_doc_as(GetPublishedStore)
-async def get_published_store_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_published_store_async(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get published store (getPublishedStore)
 
     This API is used to get a published store basic info, exclude category and item information.
@@ -723,11 +805,17 @@ async def get_published_store_async(namespace: Optional[str] = None, x_additiona
     request = GetPublishedStore.create(
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetPublishedStoreBackup)
-def get_published_store_backup(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_published_store_backup(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get a published store's backup (getPublishedStoreBackup)
 
     This API is used to get a store's backup.
@@ -758,7 +846,7 @@ def get_published_store_backup(namespace: Optional[str] = None, x_additional_hea
     Responses:
         200: OK - StoreBackupInfo (successful operation)
 
-        404: Not Found - ErrorEntity (30142: Published store does not exist in namespace [{namespace}] | 30143: Published store [{storeId}] backup doest not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (30142: Published store does not exist in namespace [{namespace}] | 30143: Published store [{storeId}] backup does not exist in namespace [{namespace}])
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -771,7 +859,11 @@ def get_published_store_backup(namespace: Optional[str] = None, x_additional_hea
 
 
 @same_doc_as(GetPublishedStoreBackup)
-async def get_published_store_backup_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_published_store_backup_async(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get a published store's backup (getPublishedStoreBackup)
 
     This API is used to get a store's backup.
@@ -802,7 +894,7 @@ async def get_published_store_backup_async(namespace: Optional[str] = None, x_ad
     Responses:
         200: OK - StoreBackupInfo (successful operation)
 
-        404: Not Found - ErrorEntity (30142: Published store does not exist in namespace [{namespace}] | 30143: Published store [{storeId}] backup doest not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (30142: Published store does not exist in namespace [{namespace}] | 30143: Published store [{storeId}] backup does not exist in namespace [{namespace}])
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -811,11 +903,18 @@ async def get_published_store_backup_async(namespace: Optional[str] = None, x_ad
     request = GetPublishedStoreBackup.create(
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetStore)
-def get_store(store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_store(
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get a store (getStore)
 
     This API is used to get a store.
@@ -862,7 +961,12 @@ def get_store(store_id: str, namespace: Optional[str] = None, x_additional_heade
 
 
 @same_doc_as(GetStore)
-async def get_store_async(store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_store_async(
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get a store (getStore)
 
     This API is used to get a store.
@@ -905,12 +1009,20 @@ async def get_store_async(store_id: str, namespace: Optional[str] = None, x_addi
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @deprecated
 @same_doc_as(ImportStore)
-def import_store(file: Optional[Any] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def import_store(
+    file: Optional[Any] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Import a store (importStore)
 
     This API is used to import a store.
@@ -963,7 +1075,13 @@ def import_store(file: Optional[Any] = None, store_id: Optional[str] = None, nam
 
 @deprecated
 @same_doc_as(ImportStore)
-async def import_store_async(file: Optional[Any] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def import_store_async(
+    file: Optional[Any] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Import a store (importStore)
 
     This API is used to import a store.
@@ -1011,11 +1129,19 @@ async def import_store_async(file: Optional[Any] = None, store_id: Optional[str]
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(ImportStore1)
-def import_store_1(file: Optional[Any] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def import_store_1(
+    file: Optional[Any] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Import a store (importStore_1)
 
     This API is used to import a store.
@@ -1066,7 +1192,13 @@ def import_store_1(file: Optional[Any] = None, store_id: Optional[str] = None, n
 
 
 @same_doc_as(ImportStore1)
-async def import_store_1_async(file: Optional[Any] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def import_store_1_async(
+    file: Optional[Any] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Import a store (importStore_1)
 
     This API is used to import a store.
@@ -1113,11 +1245,17 @@ async def import_store_1_async(file: Optional[Any] = None, store_id: Optional[st
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(ListStores)
-def list_stores(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def list_stores(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """List stores (listStores)
 
     This API is used to list stores in a namespace.
@@ -1159,7 +1297,11 @@ def list_stores(namespace: Optional[str] = None, x_additional_headers: Optional[
 
 
 @same_doc_as(ListStores)
-async def list_stores_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def list_stores_async(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """List stores (listStores)
 
     This API is used to list stores in a namespace.
@@ -1197,11 +1339,17 @@ async def list_stores_async(namespace: Optional[str] = None, x_additional_header
     request = ListStores.create(
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicListStores)
-def public_list_stores(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_list_stores(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """List all stores (publicListStores)
 
     This API is used to list all stores in a namespace.
@@ -1241,7 +1389,11 @@ def public_list_stores(namespace: Optional[str] = None, x_additional_headers: Op
 
 
 @same_doc_as(PublicListStores)
-async def public_list_stores_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_list_stores_async(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """List all stores (publicListStores)
 
     This API is used to list all stores in a namespace.
@@ -1277,11 +1429,17 @@ async def public_list_stores_async(namespace: Optional[str] = None, x_additional
     request = PublicListStores.create(
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(RollbackPublishedStore)
-def rollback_published_store(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def rollback_published_store(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Rollback a published store (rollbackPublishedStore)
 
     This API is used to rollback a published store.
@@ -1312,7 +1470,7 @@ def rollback_published_store(namespace: Optional[str] = None, x_additional_heade
     Responses:
         200: OK - StoreInfo (successful operation)
 
-        404: Not Found - ErrorEntity (30142: Published store does not exist in namespace [{namespace}] | 30143: Published store [{storeId}] backup doest not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (30142: Published store does not exist in namespace [{namespace}] | 30143: Published store [{storeId}] backup does not exist in namespace [{namespace}])
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1325,7 +1483,11 @@ def rollback_published_store(namespace: Optional[str] = None, x_additional_heade
 
 
 @same_doc_as(RollbackPublishedStore)
-async def rollback_published_store_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def rollback_published_store_async(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Rollback a published store (rollbackPublishedStore)
 
     This API is used to rollback a published store.
@@ -1356,7 +1518,7 @@ async def rollback_published_store_async(namespace: Optional[str] = None, x_addi
     Responses:
         200: OK - StoreInfo (successful operation)
 
-        404: Not Found - ErrorEntity (30142: Published store does not exist in namespace [{namespace}] | 30143: Published store [{storeId}] backup doest not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (30142: Published store does not exist in namespace [{namespace}] | 30143: Published store [{storeId}] backup does not exist in namespace [{namespace}])
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1365,11 +1527,19 @@ async def rollback_published_store_async(namespace: Optional[str] = None, x_addi
     request = RollbackPublishedStore.create(
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(UpdateStore)
-def update_store(store_id: str, body: Optional[StoreUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def update_store(
+    store_id: str,
+    body: Optional[StoreUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update a store (updateStore)
 
     This API is used to Update a store basic info.
@@ -1423,7 +1593,13 @@ def update_store(store_id: str, body: Optional[StoreUpdate] = None, namespace: O
 
 
 @same_doc_as(UpdateStore)
-async def update_store_async(store_id: str, body: Optional[StoreUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def update_store_async(
+    store_id: str,
+    body: Optional[StoreUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update a store (updateStore)
 
     This API is used to Update a store basic info.
@@ -1473,4 +1649,6 @@ async def update_store_async(store_id: str, body: Optional[StoreUpdate] = None, 
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )

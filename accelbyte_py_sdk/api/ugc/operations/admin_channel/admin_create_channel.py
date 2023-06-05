@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Ugc Service (2.9.3)
+# AccelByte Gaming Services Ugc Service (2.11.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -65,6 +65,8 @@ class AdminCreateChannel(Operation):
         400: Bad Request - ResponseError (Bad Request)
 
         401: Unauthorized - ResponseError (Unauthorized)
+
+        409: Conflict - ResponseError (Conflict)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
@@ -184,6 +186,8 @@ class AdminCreateChannel(Operation):
 
         401: Unauthorized - ResponseError (Unauthorized)
 
+        409: Conflict - ResponseError (Conflict)
+
         500: Internal Server Error - ResponseError (Internal Server Error)
 
         ---: HttpResponse (Undocumented Response)
@@ -204,6 +208,8 @@ class AdminCreateChannel(Operation):
         if code == 400:
             return None, ResponseError.create_from_dict(content)
         if code == 401:
+            return None, ResponseError.create_from_dict(content)
+        if code == 409:
             return None, ResponseError.create_from_dict(content)
         if code == 500:
             return None, ResponseError.create_from_dict(content)

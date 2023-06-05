@@ -31,8 +31,8 @@ from ....core import deprecated
 from ....core import same_doc_as
 
 from ..models import ModelsAdminGetContentBulkRequest
+from ..models import ModelsAdminUpdateContentRequest
 from ..models import ModelsContentDownloadResponse
-from ..models import ModelsContentRequest
 from ..models import ModelsCreateContentRequest
 from ..models import ModelsCreateContentRequestS3
 from ..models import ModelsCreateContentResponse
@@ -1561,7 +1561,7 @@ async def admin_update_content_direct_async(
 
 @same_doc_as(AdminUpdateContentS3)
 def admin_update_content_s3(
-    body: ModelsContentRequest,
+    body: ModelsAdminUpdateContentRequest,
     channel_id: str,
     content_id: str,
     user_id: str,
@@ -1572,14 +1572,24 @@ def admin_update_content_s3(
     """Update content to S3 bucket (AdminUpdateContentS3)
 
     Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE].
-    All request body are required except payload, preview, tags, contentType, updateContentFile and customAttributes.
-    contentType values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.
-    If not specified, it will use fileExtension value.
-    To update content's file, set `updateContentFile` to `true` and upload the file using URL in `payloadURL.url` in response body.
+
+    All request body are required except `payload`, `preview`, `tags`,`contentType`, `updateContentFile`, `customAttributes` and `shareCode`.
+
+    `contentType` values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.
+
+    If not specified, it will use `fileExtension` value.
+
+    To update content file, set `updateContentFile` to `true` and upload the file using URL in `payloadURL.url` in response body.
+
+    `shareCode` format should follows:
+
+    Max length: 7
+    Available characters: abcdefhkpqrstuxyz
 
 
 
-    NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
+
+     NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]
@@ -1597,7 +1607,7 @@ def admin_update_content_s3(
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ModelsContentRequest in body
+        body: (body) REQUIRED ModelsAdminUpdateContentRequest in body
 
         channel_id: (channelId) REQUIRED str in path
 
@@ -1615,6 +1625,8 @@ def admin_update_content_s3(
         401: Unauthorized - ResponseError (Unauthorized)
 
         404: Not Found - ResponseError (Not Found)
+
+        409: Conflict - ResponseError (Conflict)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
@@ -1634,7 +1646,7 @@ def admin_update_content_s3(
 
 @same_doc_as(AdminUpdateContentS3)
 async def admin_update_content_s3_async(
-    body: ModelsContentRequest,
+    body: ModelsAdminUpdateContentRequest,
     channel_id: str,
     content_id: str,
     user_id: str,
@@ -1645,14 +1657,24 @@ async def admin_update_content_s3_async(
     """Update content to S3 bucket (AdminUpdateContentS3)
 
     Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE].
-    All request body are required except payload, preview, tags, contentType, updateContentFile and customAttributes.
-    contentType values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.
-    If not specified, it will use fileExtension value.
-    To update content's file, set `updateContentFile` to `true` and upload the file using URL in `payloadURL.url` in response body.
+
+    All request body are required except `payload`, `preview`, `tags`,`contentType`, `updateContentFile`, `customAttributes` and `shareCode`.
+
+    `contentType` values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.
+
+    If not specified, it will use `fileExtension` value.
+
+    To update content file, set `updateContentFile` to `true` and upload the file using URL in `payloadURL.url` in response body.
+
+    `shareCode` format should follows:
+
+    Max length: 7
+    Available characters: abcdefhkpqrstuxyz
 
 
 
-    NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
+
+     NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]
@@ -1670,7 +1692,7 @@ async def admin_update_content_s3_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ModelsContentRequest in body
+        body: (body) REQUIRED ModelsAdminUpdateContentRequest in body
 
         channel_id: (channelId) REQUIRED str in path
 
@@ -1688,6 +1710,8 @@ async def admin_update_content_s3_async(
         401: Unauthorized - ResponseError (Unauthorized)
 
         404: Not Found - ResponseError (Not Found)
+
+        409: Conflict - ResponseError (Conflict)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
@@ -1871,6 +1895,8 @@ def admin_upload_content_direct(
 
         401: Unauthorized - ResponseError (Unauthorized)
 
+        409: Conflict - ResponseError (Conflict)
+
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
@@ -1929,6 +1955,8 @@ async def admin_upload_content_direct_async(
 
         401: Unauthorized - ResponseError (Unauthorized)
 
+        409: Conflict - ResponseError (Conflict)
+
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
@@ -1957,13 +1985,19 @@ def admin_upload_content_s3(
 
     Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE].
 
-    All request body are required except preview, tags, contentType and customAttributes.
-    contentType values is used to enforce the Content-Type header needed by the client when uploading the content using the S3 presigned URL.
-    If not specified, it will use fileExtension value.
+    All request body are required except `preview`, `tags`, `contentType`, `customAttributes` and `shareCode`.
+
+    `contentType` values is used to enforce the Content-Type header needed by the client when uploading the content using the S3 presigned URL. If not specified, it will use fileExtension value.
+
+    `shareCode` format should follows:
+
+    Length: 7
+    Available characters: abcdefhkpqrstuxyz
 
 
 
-    NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
+
+     NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]
@@ -1993,6 +2027,8 @@ def admin_upload_content_s3(
         400: Bad Request - ResponseError (Bad Request)
 
         401: Unauthorized - ResponseError (Unauthorized)
+
+        409: Conflict - ResponseError (Conflict)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
@@ -2020,13 +2056,19 @@ async def admin_upload_content_s3_async(
 
     Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE].
 
-    All request body are required except preview, tags, contentType and customAttributes.
-    contentType values is used to enforce the Content-Type header needed by the client when uploading the content using the S3 presigned URL.
-    If not specified, it will use fileExtension value.
+    All request body are required except `preview`, `tags`, `contentType`, `customAttributes` and `shareCode`.
+
+    `contentType` values is used to enforce the Content-Type header needed by the client when uploading the content using the S3 presigned URL. If not specified, it will use fileExtension value.
+
+    `shareCode` format should follows:
+
+    Length: 7
+    Available characters: abcdefhkpqrstuxyz
 
 
 
-    NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
+
+     NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]
@@ -2056,6 +2098,8 @@ async def admin_upload_content_s3_async(
         400: Bad Request - ResponseError (Bad Request)
 
         401: Unauthorized - ResponseError (Unauthorized)
+
+        409: Conflict - ResponseError (Conflict)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
@@ -2559,7 +2603,7 @@ async def single_admin_update_content_direct_async(
 
 @same_doc_as(SingleAdminUpdateContentS3)
 def single_admin_update_content_s3(
-    body: ModelsContentRequest,
+    body: ModelsAdminUpdateContentRequest,
     channel_id: str,
     content_id: str,
     namespace: Optional[str] = None,
@@ -2569,14 +2613,24 @@ def single_admin_update_content_s3(
     """Update content to S3 bucket (SingleAdminUpdateContentS3)
 
     Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE].
-    All request body are required except payload, preview, tags, contentType, updateContentFile and customAttributes.
-    contentType values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.
-    If not specified, it will use fileExtension value.
-    To update content's file, set `updateContentFile` to `true` and upload the file using URL in `payloadURL.url` in response body.
+
+    All request body are required except `payload`, `preview`, `tags`,`contentType`, `updateContentFile`, `customAttributes` and `shareCode`.
+
+    `contentType` values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.
+
+    If not specified, it will use `fileExtension` value.
+
+    To update content file, set `updateContentFile` to `true` and upload the file using URL in `payloadURL.url` in response body.
+
+    `shareCode` format should follows:
+
+    Max length: 7
+    Available characters: abcdefhkpqrstuxyz
 
 
 
-    NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
+
+     NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]
@@ -2594,7 +2648,7 @@ def single_admin_update_content_s3(
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ModelsContentRequest in body
+        body: (body) REQUIRED ModelsAdminUpdateContentRequest in body
 
         channel_id: (channelId) REQUIRED str in path
 
@@ -2610,6 +2664,8 @@ def single_admin_update_content_s3(
         401: Unauthorized - ResponseError (Unauthorized)
 
         404: Not Found - ResponseError (Not Found)
+
+        409: Conflict - ResponseError (Conflict)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
@@ -2628,7 +2684,7 @@ def single_admin_update_content_s3(
 
 @same_doc_as(SingleAdminUpdateContentS3)
 async def single_admin_update_content_s3_async(
-    body: ModelsContentRequest,
+    body: ModelsAdminUpdateContentRequest,
     channel_id: str,
     content_id: str,
     namespace: Optional[str] = None,
@@ -2638,14 +2694,24 @@ async def single_admin_update_content_s3_async(
     """Update content to S3 bucket (SingleAdminUpdateContentS3)
 
     Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE].
-    All request body are required except payload, preview, tags, contentType, updateContentFile and customAttributes.
-    contentType values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.
-    If not specified, it will use fileExtension value.
-    To update content's file, set `updateContentFile` to `true` and upload the file using URL in `payloadURL.url` in response body.
+
+    All request body are required except `payload`, `preview`, `tags`,`contentType`, `updateContentFile`, `customAttributes` and `shareCode`.
+
+    `contentType` values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.
+
+    If not specified, it will use `fileExtension` value.
+
+    To update content file, set `updateContentFile` to `true` and upload the file using URL in `payloadURL.url` in response body.
+
+    `shareCode` format should follows:
+
+    Max length: 7
+    Available characters: abcdefhkpqrstuxyz
 
 
 
-    NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
+
+     NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]
@@ -2663,7 +2729,7 @@ async def single_admin_update_content_s3_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ModelsContentRequest in body
+        body: (body) REQUIRED ModelsAdminUpdateContentRequest in body
 
         channel_id: (channelId) REQUIRED str in path
 
@@ -2679,6 +2745,8 @@ async def single_admin_update_content_s3_async(
         401: Unauthorized - ResponseError (Unauthorized)
 
         404: Not Found - ResponseError (Not Found)
+
+        409: Conflict - ResponseError (Conflict)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
     """

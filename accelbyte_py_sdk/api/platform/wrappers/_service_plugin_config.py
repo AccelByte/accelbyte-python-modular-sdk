@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -39,7 +39,11 @@ from ..operations.service_plugin_config import UpdateServicePluginConfig
 
 
 @same_doc_as(DeleteServicePluginConfig)
-def delete_service_plugin_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def delete_service_plugin_config(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Delete service plugin config (deleteServicePluginConfig)
 
     Delete service plugin config.
@@ -76,7 +80,11 @@ def delete_service_plugin_config(namespace: Optional[str] = None, x_additional_h
 
 
 @same_doc_as(DeleteServicePluginConfig)
-async def delete_service_plugin_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def delete_service_plugin_config_async(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Delete service plugin config (deleteServicePluginConfig)
 
     Delete service plugin config.
@@ -109,11 +117,17 @@ async def delete_service_plugin_config_async(namespace: Optional[str] = None, x_
     request = DeleteServicePluginConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetServicePluginConfig)
-def get_service_plugin_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_service_plugin_config(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get service plugin config (getServicePluginConfig)
 
     Get service plugin config.
@@ -150,7 +164,11 @@ def get_service_plugin_config(namespace: Optional[str] = None, x_additional_head
 
 
 @same_doc_as(GetServicePluginConfig)
-async def get_service_plugin_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_service_plugin_config_async(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get service plugin config (getServicePluginConfig)
 
     Get service plugin config.
@@ -183,11 +201,18 @@ async def get_service_plugin_config_async(namespace: Optional[str] = None, x_add
     request = GetServicePluginConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(UpdateServicePluginConfig)
-def update_service_plugin_config(body: Optional[ServicePluginConfigUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def update_service_plugin_config(
+    body: Optional[ServicePluginConfigUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update service plugin config service (updateServicePluginConfig)
 
     Update catalog config. Other detail info:
@@ -229,7 +254,12 @@ def update_service_plugin_config(body: Optional[ServicePluginConfigUpdate] = Non
 
 
 @same_doc_as(UpdateServicePluginConfig)
-async def update_service_plugin_config_async(body: Optional[ServicePluginConfigUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def update_service_plugin_config_async(
+    body: Optional[ServicePluginConfigUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update service plugin config service (updateServicePluginConfig)
 
     Update catalog config. Other detail info:
@@ -267,4 +297,6 @@ async def update_service_plugin_config_async(body: Optional[ServicePluginConfigU
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )

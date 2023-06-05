@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -59,15 +59,15 @@ class CreditRevocation(Model):
 
     # region fields
 
-    amount: int                                                                                    # OPTIONAL
-    balance_origin: str                                                                            # OPTIONAL
-    currency_code: str                                                                             # OPTIONAL
-    custom_revocation: Dict[str, Any]                                                              # OPTIONAL
-    reason: str                                                                                    # OPTIONAL
-    revocation_strategy: str                                                                       # OPTIONAL
-    skipped: bool                                                                                  # OPTIONAL
-    status: Union[str, StatusEnum]                                                                 # OPTIONAL
-    wallet_id: str                                                                                 # OPTIONAL
+    amount: int  # OPTIONAL
+    balance_origin: str  # OPTIONAL
+    currency_code: str  # OPTIONAL
+    custom_revocation: Dict[str, Any]  # OPTIONAL
+    reason: str  # OPTIONAL
+    revocation_strategy: str  # OPTIONAL
+    skipped: bool  # OPTIONAL
+    status: Union[str, StatusEnum]  # OPTIONAL
+    wallet_id: str  # OPTIONAL
 
     # endregion fields
 
@@ -128,7 +128,9 @@ class CreditRevocation(Model):
         elif include_empty:
             result["currencyCode"] = ""
         if hasattr(self, "custom_revocation"):
-            result["customRevocation"] = {str(k0): v0 for k0, v0 in self.custom_revocation.items()}
+            result["customRevocation"] = {
+                str(k0): v0 for k0, v0 in self.custom_revocation.items()
+            }
         elif include_empty:
             result["customRevocation"] = {}
         if hasattr(self, "reason"):
@@ -169,7 +171,7 @@ class CreditRevocation(Model):
         skipped: Optional[bool] = None,
         status: Optional[Union[str, StatusEnum]] = None,
         wallet_id: Optional[str] = None,
-    **kwargs
+        **kwargs,
     ) -> CreditRevocation:
         instance = cls()
         if amount is not None:
@@ -193,7 +195,9 @@ class CreditRevocation(Model):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> CreditRevocation:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> CreditRevocation:
         instance = cls()
         if not dict_:
             return instance
@@ -210,7 +214,9 @@ class CreditRevocation(Model):
         elif include_empty:
             instance.currency_code = ""
         if "customRevocation" in dict_ and dict_["customRevocation"] is not None:
-            instance.custom_revocation = {str(k0): v0 for k0, v0 in dict_["customRevocation"].items()}
+            instance.custom_revocation = {
+                str(k0): v0 for k0, v0 in dict_["customRevocation"].items()
+            }
         elif include_empty:
             instance.custom_revocation = {}
         if "reason" in dict_ and dict_["reason"] is not None:
@@ -236,15 +242,29 @@ class CreditRevocation(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, CreditRevocation]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, CreditRevocation]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[CreditRevocation]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[CreditRevocation]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[CreditRevocation, List[CreditRevocation], Dict[Any, CreditRevocation]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[CreditRevocation, List[CreditRevocation], Dict[Any, CreditRevocation]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -44,6 +44,24 @@ class CreateView(Operation):
 
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=1 (CREATE)
       *  Returns : created a view
+
+
+
+    ## Restrictions for localization extension
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STORE [CREATE]
@@ -88,9 +106,9 @@ class CreateView(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
 
-    body: ViewCreate                                                                               # OPTIONAL in [body]
-    namespace: str                                                                                 # REQUIRED in [path]
-    store_id: str                                                                                  # REQUIRED in [query]
+    body: ViewCreate  # OPTIONAL in [body]
+    namespace: str  # REQUIRED in [path]
+    store_id: str  # REQUIRED in [query]
 
     # endregion fields
 
@@ -197,7 +215,12 @@ class CreateView(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, FullViewInfo], Union[None, ErrorEntity, HttpResponse, ValidationErrorEntity]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, FullViewInfo],
+        Union[None, ErrorEntity, HttpResponse, ValidationErrorEntity],
+    ]:
         """Parse the given response.
 
         201: Created - FullViewInfo (successful operation)
@@ -216,7 +239,9 @@ class CreateView(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
@@ -232,7 +257,9 @@ class CreateView(Operation):
         if code == 422:
             return None, ValidationErrorEntity.create_from_dict(content)
 
-        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
+        return self.handle_undocumented_response(
+            code=code, content_type=content_type, content=content
+        )
 
     # endregion response methods
 
@@ -240,11 +267,7 @@ class CreateView(Operation):
 
     @classmethod
     def create(
-        cls,
-        namespace: str,
-        store_id: str,
-        body: Optional[ViewCreate] = None,
-    **kwargs
+        cls, namespace: str, store_id: str, body: Optional[ViewCreate] = None, **kwargs
     ) -> CreateView:
         instance = cls()
         instance.namespace = namespace
@@ -257,7 +280,9 @@ class CreateView(Operation):
     def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> CreateView:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = ViewCreate.create_from_dict(dict_["body"], include_empty=include_empty)
+            instance.body = ViewCreate.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
         elif include_empty:
             instance.body = ViewCreate()
         if "namespace" in dict_ and dict_["namespace"] is not None:

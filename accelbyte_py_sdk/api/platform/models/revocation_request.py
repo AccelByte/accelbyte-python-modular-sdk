@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -52,10 +52,10 @@ class RevocationRequest(Model):
 
     # region fields
 
-    meta: Dict[str, Any]                                                                           # OPTIONAL
-    revoke_entries: List[RevokeEntry]                                                              # OPTIONAL
-    source: Union[str, SourceEnum]                                                                 # OPTIONAL
-    transaction_id: str                                                                            # OPTIONAL
+    meta: Dict[str, Any]  # OPTIONAL
+    revoke_entries: List[RevokeEntry]  # OPTIONAL
+    source: Union[str, SourceEnum]  # OPTIONAL
+    transaction_id: str  # OPTIONAL
 
     # endregion fields
 
@@ -88,7 +88,9 @@ class RevocationRequest(Model):
         elif include_empty:
             result["meta"] = {}
         if hasattr(self, "revoke_entries"):
-            result["revokeEntries"] = [i0.to_dict(include_empty=include_empty) for i0 in self.revoke_entries]
+            result["revokeEntries"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.revoke_entries
+            ]
         elif include_empty:
             result["revokeEntries"] = []
         if hasattr(self, "source"):
@@ -112,7 +114,7 @@ class RevocationRequest(Model):
         revoke_entries: Optional[List[RevokeEntry]] = None,
         source: Optional[Union[str, SourceEnum]] = None,
         transaction_id: Optional[str] = None,
-    **kwargs
+        **kwargs,
     ) -> RevocationRequest:
         instance = cls()
         if meta is not None:
@@ -126,7 +128,9 @@ class RevocationRequest(Model):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> RevocationRequest:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> RevocationRequest:
         instance = cls()
         if not dict_:
             return instance
@@ -135,7 +139,10 @@ class RevocationRequest(Model):
         elif include_empty:
             instance.meta = {}
         if "revokeEntries" in dict_ and dict_["revokeEntries"] is not None:
-            instance.revoke_entries = [RevokeEntry.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["revokeEntries"]]
+            instance.revoke_entries = [
+                RevokeEntry.create_from_dict(i0, include_empty=include_empty)
+                for i0 in dict_["revokeEntries"]
+            ]
         elif include_empty:
             instance.revoke_entries = []
         if "source" in dict_ and dict_["source"] is not None:
@@ -149,15 +156,31 @@ class RevocationRequest(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, RevocationRequest]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, RevocationRequest]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[RevocationRequest]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[RevocationRequest]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[RevocationRequest, List[RevocationRequest], Dict[Any, RevocationRequest]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[
+        RevocationRequest, List[RevocationRequest], Dict[Any, RevocationRequest]
+    ]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

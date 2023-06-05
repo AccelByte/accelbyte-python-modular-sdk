@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -100,10 +100,10 @@ class CheckWallet(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
 
-    currency_code: str                                                                             # REQUIRED in [path]
-    namespace: str                                                                                 # REQUIRED in [path]
-    user_id: str                                                                                   # REQUIRED in [path]
-    origin: Union[str, OriginEnum]                                                                 # REQUIRED in [query]
+    currency_code: str  # REQUIRED in [path]
+    namespace: str  # REQUIRED in [path]
+    user_id: str  # REQUIRED in [path]
+    origin: Union[str, OriginEnum]  # REQUIRED in [query]
 
     # endregion fields
 
@@ -216,7 +216,9 @@ class CheckWallet(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[None, Union[None, ErrorEntity, HttpResponse, ValidationErrorEntity]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[None, Union[None, ErrorEntity, HttpResponse, ValidationErrorEntity]]:
         """Parse the given response.
 
         204: No Content - (check successfully)
@@ -233,7 +235,9 @@ class CheckWallet(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
@@ -247,7 +251,9 @@ class CheckWallet(Operation):
         if code == 422:
             return None, ValidationErrorEntity.create_from_dict(content)
 
-        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
+        return self.handle_undocumented_response(
+            code=code, content_type=content_type, content=content
+        )
 
     # endregion response methods
 
@@ -260,7 +266,7 @@ class CheckWallet(Operation):
         namespace: str,
         user_id: str,
         origin: Union[str, OriginEnum],
-    **kwargs
+        **kwargs,
     ) -> CheckWallet:
         instance = cls()
         instance.currency_code = currency_code
@@ -311,7 +317,18 @@ class CheckWallet(Operation):
     @staticmethod
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
-            "origin": ["Epic", "GooglePlay", "IOS", "Nintendo", "Other", "Playstation", "Steam", "System", "Twitch", "Xbox"],# in query
+            "origin": [
+                "Epic",
+                "GooglePlay",
+                "IOS",
+                "Nintendo",
+                "Other",
+                "Playstation",
+                "Steam",
+                "System",
+                "Twitch",
+                "Xbox",
+            ],  # in query
         }
 
     # endregion static methods

@@ -1,14 +1,14 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.28.0"
+__version__ = "4.30.2"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -697,6 +697,9 @@ from ._service_plugin_config import get_service_plugin_config
 from ._service_plugin_config import get_service_plugin_config_async
 from ._service_plugin_config import update_service_plugin_config
 from ._service_plugin_config import update_service_plugin_config_async
+
+from ._session_platform import register_xbl_sessions
+from ._session_platform import register_xbl_sessions_async
 
 from ._store import clone_store
 from ._store import clone_store_async

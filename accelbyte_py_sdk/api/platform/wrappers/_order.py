@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -75,7 +75,13 @@ from ..models import TradeNotificationPaymentProviderEnum, TradeNotificationStat
 
 
 @same_doc_as(AdminCreateUserOrder)
-def admin_create_user_order(user_id: str, body: Optional[AdminOrderCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def admin_create_user_order(
+    user_id: str,
+    body: Optional[AdminOrderCreate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Admin Create an order (adminCreateUserOrder)
 
     Admin Create an order. The result contains the checkout link and payment token. User with permission SANDBOX will create sandbox order that not real paid for xsolla/alipay and not validate price for wxpay.
@@ -86,6 +92,24 @@ def admin_create_user_order(user_id: str, body: Optional[AdminOrderCreate] = Non
       * sandbox default value is false
       * platform default value is Other
       *  Returns : created order
+
+
+
+    ## Restrictions for ext field
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ORDER [CREATE]
@@ -135,7 +159,13 @@ def admin_create_user_order(user_id: str, body: Optional[AdminOrderCreate] = Non
 
 
 @same_doc_as(AdminCreateUserOrder)
-async def admin_create_user_order_async(user_id: str, body: Optional[AdminOrderCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def admin_create_user_order_async(
+    user_id: str,
+    body: Optional[AdminOrderCreate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Admin Create an order (adminCreateUserOrder)
 
     Admin Create an order. The result contains the checkout link and payment token. User with permission SANDBOX will create sandbox order that not real paid for xsolla/alipay and not validate price for wxpay.
@@ -146,6 +176,24 @@ async def admin_create_user_order_async(user_id: str, body: Optional[AdminOrderC
       * sandbox default value is false
       * platform default value is Other
       *  Returns : created order
+
+
+
+    ## Restrictions for ext field
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ORDER [CREATE]
@@ -191,11 +239,19 @@ async def admin_create_user_order_async(user_id: str, body: Optional[AdminOrderC
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(CountOfPurchasedItem)
-def count_of_purchased_item(item_id: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def count_of_purchased_item(
+    item_id: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get the count of purchased item (countOfPurchasedItem)
 
     This API is used to get the count of purchased item which is the order target.
@@ -242,7 +298,13 @@ def count_of_purchased_item(item_id: str, user_id: str, namespace: Optional[str]
 
 
 @same_doc_as(CountOfPurchasedItem)
-async def count_of_purchased_item_async(item_id: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def count_of_purchased_item_async(
+    item_id: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get the count of purchased item (countOfPurchasedItem)
 
     This API is used to get the count of purchased item which is the order target.
@@ -285,11 +347,19 @@ async def count_of_purchased_item_async(item_id: str, user_id: str, namespace: O
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(DownloadUserOrderReceipt)
-def download_user_order_receipt(order_no: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def download_user_order_receipt(
+    order_no: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Download user order receipt (downloadUserOrderReceipt)
 
     Download user order receipt by orderNo.
@@ -340,7 +410,13 @@ def download_user_order_receipt(order_no: str, user_id: str, namespace: Optional
 
 
 @same_doc_as(DownloadUserOrderReceipt)
-async def download_user_order_receipt_async(order_no: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def download_user_order_receipt_async(
+    order_no: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Download user order receipt (downloadUserOrderReceipt)
 
     Download user order receipt by orderNo.
@@ -387,11 +463,19 @@ async def download_user_order_receipt_async(order_no: str, user_id: str, namespa
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(FulfillUserOrder)
-def fulfill_user_order(order_no: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def fulfill_user_order(
+    order_no: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Fulfill an order (fulfillUserOrder)
 
     Fulfill an order if the order is charged but fulfill failed.
@@ -444,7 +528,13 @@ def fulfill_user_order(order_no: str, user_id: str, namespace: Optional[str] = N
 
 
 @same_doc_as(FulfillUserOrder)
-async def fulfill_user_order_async(order_no: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def fulfill_user_order_async(
+    order_no: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Fulfill an order (fulfillUserOrder)
 
     Fulfill an order if the order is charged but fulfill failed.
@@ -493,11 +583,18 @@ async def fulfill_user_order_async(order_no: str, user_id: str, namespace: Optio
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetOrder)
-def get_order(order_no: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_order(
+    order_no: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get order (getOrder)
 
     Get order by orderNo.
@@ -543,7 +640,12 @@ def get_order(order_no: str, namespace: Optional[str] = None, x_additional_heade
 
 
 @same_doc_as(GetOrder)
-async def get_order_async(order_no: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_order_async(
+    order_no: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get order (getOrder)
 
     Get order by orderNo.
@@ -585,11 +687,17 @@ async def get_order_async(order_no: str, namespace: Optional[str] = None, x_addi
         order_no=order_no,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetOrderStatistics)
-def get_order_statistics(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_order_statistics(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get Order Statistics (getOrderStatistics)
 
     Get Order Statistics.
@@ -630,7 +738,11 @@ def get_order_statistics(namespace: Optional[str] = None, x_additional_headers: 
 
 
 @same_doc_as(GetOrderStatistics)
-async def get_order_statistics_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_order_statistics_async(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get Order Statistics (getOrderStatistics)
 
     Get Order Statistics.
@@ -667,11 +779,19 @@ async def get_order_statistics_async(namespace: Optional[str] = None, x_addition
     request = GetOrderStatistics.create(
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetUserOrder)
-def get_user_order(order_no: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_user_order(
+    order_no: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get an order (getUserOrder)
 
     Get an order.
@@ -720,7 +840,13 @@ def get_user_order(order_no: str, user_id: str, namespace: Optional[str] = None,
 
 
 @same_doc_as(GetUserOrder)
-async def get_user_order_async(order_no: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_user_order_async(
+    order_no: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get an order (getUserOrder)
 
     Get an order.
@@ -765,11 +891,19 @@ async def get_user_order_async(order_no: str, user_id: str, namespace: Optional[
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetUserOrderGrant)
-def get_user_order_grant(order_no: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_user_order_grant(
+    order_no: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get user order grant (getUserOrderGrant)
 
     Get user order grant that fulfilled by this order.
@@ -816,7 +950,13 @@ def get_user_order_grant(order_no: str, user_id: str, namespace: Optional[str] =
 
 
 @same_doc_as(GetUserOrderGrant)
-async def get_user_order_grant_async(order_no: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_user_order_grant_async(
+    order_no: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get user order grant (getUserOrderGrant)
 
     Get user order grant that fulfilled by this order.
@@ -859,11 +999,19 @@ async def get_user_order_grant_async(order_no: str, user_id: str, namespace: Opt
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetUserOrderHistories)
-def get_user_order_histories(order_no: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_user_order_histories(
+    order_no: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get user order histories (getUserOrderHistories)
 
     Get user order history.
@@ -910,7 +1058,13 @@ def get_user_order_histories(order_no: str, user_id: str, namespace: Optional[st
 
 
 @same_doc_as(GetUserOrderHistories)
-async def get_user_order_histories_async(order_no: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_user_order_histories_async(
+    order_no: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get user order histories (getUserOrderHistories)
 
     Get user order history.
@@ -953,11 +1107,20 @@ async def get_user_order_histories_async(order_no: str, user_id: str, namespace:
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(ProcessUserOrderNotification)
-def process_user_order_notification(order_no: str, user_id: str, body: Optional[TradeNotification] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def process_user_order_notification(
+    order_no: str,
+    user_id: str,
+    body: Optional[TradeNotification] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Web hook for payment notification (processUserOrderNotification)
 
     [SERVICE COMMUNICATION ONLY] This API is used as a web hook for payment notification from justice payment service.
@@ -1009,7 +1172,14 @@ def process_user_order_notification(order_no: str, user_id: str, body: Optional[
 
 
 @same_doc_as(ProcessUserOrderNotification)
-async def process_user_order_notification_async(order_no: str, user_id: str, body: Optional[TradeNotification] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def process_user_order_notification_async(
+    order_no: str,
+    user_id: str,
+    body: Optional[TradeNotification] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Web hook for payment notification (processUserOrderNotification)
 
     [SERVICE COMMUNICATION ONLY] This API is used as a web hook for payment notification from justice payment service.
@@ -1057,11 +1227,19 @@ async def process_user_order_notification_async(order_no: str, user_id: str, bod
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicCancelUserOrder)
-def public_cancel_user_order(order_no: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_cancel_user_order(
+    order_no: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Cancel user order (publicCancelUserOrder)
 
     Cancel user order.
@@ -1112,7 +1290,13 @@ def public_cancel_user_order(order_no: str, user_id: str, namespace: Optional[st
 
 
 @same_doc_as(PublicCancelUserOrder)
-async def public_cancel_user_order_async(order_no: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_cancel_user_order_async(
+    order_no: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Cancel user order (publicCancelUserOrder)
 
     Cancel user order.
@@ -1159,11 +1343,19 @@ async def public_cancel_user_order_async(order_no: str, user_id: str, namespace:
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicCreateUserOrder)
-def public_create_user_order(user_id: str, body: Optional[OrderCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_create_user_order(
+    user_id: str,
+    body: Optional[OrderCreate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Create an order (publicCreateUserOrder)
 
     Create an order. The result contains the checkout link and payment token. User with permission SANDBOX will create sandbox order that not real paid for xsolla/alipay and not validate price for wxpay.
@@ -1173,6 +1365,24 @@ def public_create_user_order(user_id: str, body: Optional[OrderCreate] = None, n
       *  Optional permission(user with this permission will create sandbox order) : resource="SANDBOX", action=1 (CREATE)
       * It will be forbidden while the user is banned: ORDER_INITIATE or ORDER_AND_PAYMENT
       *  Returns : created order
+
+
+
+    ## Restrictions for ext field
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:ORDER [CREATE]
@@ -1222,7 +1432,13 @@ def public_create_user_order(user_id: str, body: Optional[OrderCreate] = None, n
 
 
 @same_doc_as(PublicCreateUserOrder)
-async def public_create_user_order_async(user_id: str, body: Optional[OrderCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_create_user_order_async(
+    user_id: str,
+    body: Optional[OrderCreate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Create an order (publicCreateUserOrder)
 
     Create an order. The result contains the checkout link and payment token. User with permission SANDBOX will create sandbox order that not real paid for xsolla/alipay and not validate price for wxpay.
@@ -1232,6 +1448,24 @@ async def public_create_user_order_async(user_id: str, body: Optional[OrderCreat
       *  Optional permission(user with this permission will create sandbox order) : resource="SANDBOX", action=1 (CREATE)
       * It will be forbidden while the user is banned: ORDER_INITIATE or ORDER_AND_PAYMENT
       *  Returns : created order
+
+
+
+    ## Restrictions for ext field
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:ORDER [CREATE]
@@ -1277,11 +1511,19 @@ async def public_create_user_order_async(user_id: str, body: Optional[OrderCreat
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicDownloadUserOrderReceipt)
-def public_download_user_order_receipt(order_no: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_download_user_order_receipt(
+    order_no: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Download user order receipt (publicDownloadUserOrderReceipt)
 
     Download user order receipt by orderNo.
@@ -1332,7 +1574,13 @@ def public_download_user_order_receipt(order_no: str, user_id: str, namespace: O
 
 
 @same_doc_as(PublicDownloadUserOrderReceipt)
-async def public_download_user_order_receipt_async(order_no: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_download_user_order_receipt_async(
+    order_no: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Download user order receipt (publicDownloadUserOrderReceipt)
 
     Download user order receipt by orderNo.
@@ -1379,11 +1627,19 @@ async def public_download_user_order_receipt_async(order_no: str, user_id: str, 
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicGetUserOrder)
-def public_get_user_order(order_no: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_get_user_order(
+    order_no: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get user order (publicGetUserOrder)
 
     Get user order.
@@ -1432,7 +1688,13 @@ def public_get_user_order(order_no: str, user_id: str, namespace: Optional[str] 
 
 
 @same_doc_as(PublicGetUserOrder)
-async def public_get_user_order_async(order_no: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_get_user_order_async(
+    order_no: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get user order (publicGetUserOrder)
 
     Get user order.
@@ -1477,11 +1739,19 @@ async def public_get_user_order_async(order_no: str, user_id: str, namespace: Op
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicGetUserOrderHistories)
-def public_get_user_order_histories(order_no: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_get_user_order_histories(
+    order_no: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get user order histories (publicGetUserOrderHistories)
 
     Get user order histories.
@@ -1528,7 +1798,13 @@ def public_get_user_order_histories(order_no: str, user_id: str, namespace: Opti
 
 
 @same_doc_as(PublicGetUserOrderHistories)
-async def public_get_user_order_histories_async(order_no: str, user_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_get_user_order_histories_async(
+    order_no: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get user order histories (publicGetUserOrderHistories)
 
     Get user order histories.
@@ -1571,11 +1847,22 @@ async def public_get_user_order_histories_async(order_no: str, user_id: str, nam
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicQueryUserOrders)
-def public_query_user_orders(user_id: str, item_id: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, status: Optional[Union[str, PublicQueryUserOrdersStatusEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_query_user_orders(
+    user_id: str,
+    item_id: Optional[str] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    status: Optional[Union[str, PublicQueryUserOrdersStatusEnum]] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Query user orders (publicQueryUserOrders)
 
     Query user orders.
@@ -1631,7 +1918,16 @@ def public_query_user_orders(user_id: str, item_id: Optional[str] = None, limit:
 
 
 @same_doc_as(PublicQueryUserOrders)
-async def public_query_user_orders_async(user_id: str, item_id: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, status: Optional[Union[str, PublicQueryUserOrdersStatusEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_query_user_orders_async(
+    user_id: str,
+    item_id: Optional[str] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    status: Optional[Union[str, PublicQueryUserOrdersStatusEnum]] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Query user orders (publicQueryUserOrders)
 
     Query user orders.
@@ -1683,11 +1979,25 @@ async def public_query_user_orders_async(user_id: str, item_id: Optional[str] = 
         status=status,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(QueryOrders)
-def query_orders(end_time: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, order_nos: Optional[List[str]] = None, sort_by: Optional[str] = None, start_time: Optional[str] = None, status: Optional[Union[str, QueryOrdersStatusEnum]] = None, with_total: Optional[bool] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def query_orders(
+    end_time: Optional[str] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    order_nos: Optional[List[str]] = None,
+    sort_by: Optional[str] = None,
+    start_time: Optional[str] = None,
+    status: Optional[Union[str, QueryOrdersStatusEnum]] = None,
+    with_total: Optional[bool] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Query orders (queryOrders)
 
     Query orders.
@@ -1754,7 +2064,19 @@ def query_orders(end_time: Optional[str] = None, limit: Optional[int] = None, of
 
 
 @same_doc_as(QueryOrders)
-async def query_orders_async(end_time: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, order_nos: Optional[List[str]] = None, sort_by: Optional[str] = None, start_time: Optional[str] = None, status: Optional[Union[str, QueryOrdersStatusEnum]] = None, with_total: Optional[bool] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def query_orders_async(
+    end_time: Optional[str] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    order_nos: Optional[List[str]] = None,
+    sort_by: Optional[str] = None,
+    start_time: Optional[str] = None,
+    status: Optional[Union[str, QueryOrdersStatusEnum]] = None,
+    with_total: Optional[bool] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Query orders (queryOrders)
 
     Query orders.
@@ -1817,11 +2139,22 @@ async def query_orders_async(end_time: Optional[str] = None, limit: Optional[int
         with_total=with_total,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(QueryUserOrders)
-def query_user_orders(user_id: str, item_id: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, status: Optional[Union[str, QueryUserOrdersStatusEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def query_user_orders(
+    user_id: str,
+    item_id: Optional[str] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    status: Optional[Union[str, QueryUserOrdersStatusEnum]] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Query user orders (queryUserOrders)
 
     Query user orders.
@@ -1877,7 +2210,16 @@ def query_user_orders(user_id: str, item_id: Optional[str] = None, limit: Option
 
 
 @same_doc_as(QueryUserOrders)
-async def query_user_orders_async(user_id: str, item_id: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, status: Optional[Union[str, QueryUserOrdersStatusEnum]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def query_user_orders_async(
+    user_id: str,
+    item_id: Optional[str] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    status: Optional[Union[str, QueryUserOrdersStatusEnum]] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Query user orders (queryUserOrders)
 
     Query user orders.
@@ -1929,11 +2271,19 @@ async def query_user_orders_async(user_id: str, item_id: Optional[str] = None, l
         status=status,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(RefundOrder)
-def refund_order(order_no: str, body: Optional[OrderRefundCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def refund_order(
+    order_no: str,
+    body: Optional[OrderRefundCreate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Refund order (refundOrder)
 
     Refund order by orderNo.
@@ -1985,7 +2335,13 @@ def refund_order(order_no: str, body: Optional[OrderRefundCreate] = None, namesp
 
 
 @same_doc_as(RefundOrder)
-async def refund_order_async(order_no: str, body: Optional[OrderRefundCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def refund_order_async(
+    order_no: str,
+    body: Optional[OrderRefundCreate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Refund order (refundOrder)
 
     Refund order by orderNo.
@@ -2033,11 +2389,20 @@ async def refund_order_async(order_no: str, body: Optional[OrderRefundCreate] = 
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(UpdateUserOrderStatus)
-def update_user_order_status(order_no: str, user_id: str, body: Optional[OrderUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def update_user_order_status(
+    order_no: str,
+    user_id: str,
+    body: Optional[OrderUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update order status (updateUserOrderStatus)
 
     Update order status.
@@ -2093,7 +2458,14 @@ def update_user_order_status(order_no: str, user_id: str, body: Optional[OrderUp
 
 
 @same_doc_as(UpdateUserOrderStatus)
-async def update_user_order_status_async(order_no: str, user_id: str, body: Optional[OrderUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def update_user_order_status_async(
+    order_no: str,
+    user_id: str,
+    body: Optional[OrderUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update order status (updateUserOrderStatus)
 
     Update order status.
@@ -2145,4 +2517,6 @@ async def update_user_order_status_async(order_no: str, user_id: str, body: Opti
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )

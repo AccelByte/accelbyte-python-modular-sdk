@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Social Service (2.3.0)
+# AccelByte Gaming Services Social Service (2.8.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -31,6 +31,7 @@ from .....core import HttpResponse
 
 from ...models import ErrorEntity
 from ...models import UserStatCycleItemPagingSlicedResult
+from ...models import ValidationErrorEntity
 
 
 class GetUserStatCycleItems(Operation):
@@ -64,6 +65,8 @@ class GetUserStatCycleItems(Operation):
 
         user_id: (userId) REQUIRED str in path
 
+        is_public: (isPublic) OPTIONAL bool in query
+
         limit: (limit) OPTIONAL int in query
 
         offset: (offset) OPTIONAL int in query
@@ -76,6 +79,8 @@ class GetUserStatCycleItems(Operation):
         200: OK - UserStatCycleItemPagingSlicedResult (successful operation)
 
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
 
     # region fields
@@ -90,6 +95,7 @@ class GetUserStatCycleItems(Operation):
     cycle_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
+    is_public: bool  # OPTIONAL in [query]
     limit: int  # OPTIONAL in [query]
     offset: int  # OPTIONAL in [query]
     sort_by: str  # OPTIONAL in [query]
@@ -149,6 +155,8 @@ class GetUserStatCycleItems(Operation):
 
     def get_query_params(self) -> dict:
         result = {}
+        if hasattr(self, "is_public"):
+            result["isPublic"] = self.is_public
         if hasattr(self, "limit"):
             result["limit"] = self.limit
         if hasattr(self, "offset"):
@@ -177,6 +185,10 @@ class GetUserStatCycleItems(Operation):
 
     def with_user_id(self, value: str) -> GetUserStatCycleItems:
         self.user_id = value
+        return self
+
+    def with_is_public(self, value: bool) -> GetUserStatCycleItems:
+        self.is_public = value
         return self
 
     def with_limit(self, value: int) -> GetUserStatCycleItems:
@@ -213,6 +225,10 @@ class GetUserStatCycleItems(Operation):
             result["userId"] = str(self.user_id)
         elif include_empty:
             result["userId"] = ""
+        if hasattr(self, "is_public") and self.is_public:
+            result["isPublic"] = bool(self.is_public)
+        elif include_empty:
+            result["isPublic"] = False
         if hasattr(self, "limit") and self.limit:
             result["limit"] = int(self.limit)
         elif include_empty:
@@ -240,13 +256,15 @@ class GetUserStatCycleItems(Operation):
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, UserStatCycleItemPagingSlicedResult],
-        Union[None, ErrorEntity, HttpResponse],
+        Union[None, ErrorEntity, HttpResponse, ValidationErrorEntity],
     ]:
         """Parse the given response.
 
         200: OK - UserStatCycleItemPagingSlicedResult (successful operation)
 
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -265,6 +283,8 @@ class GetUserStatCycleItems(Operation):
             return UserStatCycleItemPagingSlicedResult.create_from_dict(content), None
         if code == 404:
             return None, ErrorEntity.create_from_dict(content)
+        if code == 422:
+            return None, ValidationErrorEntity.create_from_dict(content)
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content
@@ -280,6 +300,7 @@ class GetUserStatCycleItems(Operation):
         cycle_id: str,
         namespace: str,
         user_id: str,
+        is_public: Optional[bool] = None,
         limit: Optional[int] = None,
         offset: Optional[int] = None,
         sort_by: Optional[str] = None,
@@ -290,6 +311,8 @@ class GetUserStatCycleItems(Operation):
         instance.cycle_id = cycle_id
         instance.namespace = namespace
         instance.user_id = user_id
+        if is_public is not None:
+            instance.is_public = is_public
         if limit is not None:
             instance.limit = limit
         if offset is not None:
@@ -317,6 +340,10 @@ class GetUserStatCycleItems(Operation):
             instance.user_id = str(dict_["userId"])
         elif include_empty:
             instance.user_id = ""
+        if "isPublic" in dict_ and dict_["isPublic"] is not None:
+            instance.is_public = bool(dict_["isPublic"])
+        elif include_empty:
+            instance.is_public = False
         if "limit" in dict_ and dict_["limit"] is not None:
             instance.limit = int(dict_["limit"])
         elif include_empty:
@@ -341,6 +368,7 @@ class GetUserStatCycleItems(Operation):
             "cycleId": "cycle_id",
             "namespace": "namespace",
             "userId": "user_id",
+            "isPublic": "is_public",
             "limit": "limit",
             "offset": "offset",
             "sortBy": "sort_by",
@@ -353,6 +381,7 @@ class GetUserStatCycleItems(Operation):
             "cycleId": True,
             "namespace": True,
             "userId": True,
+            "isPublic": False,
             "limit": False,
             "offset": False,
             "sortBy": False,

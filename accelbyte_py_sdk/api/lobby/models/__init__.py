@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Lobby Server."""
 
-__version__ = "staging"
+__version__ = "3.21.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -21,7 +21,6 @@ from .model_bulk_add_friends_request import ModelBulkAddFriendsRequest
 from .model_bulk_users_free_form_notification_request_v1 import (
     ModelBulkUsersFreeFormNotificationRequestV1,
 )
-from .model_chat_message_response import ModelChatMessageResponse
 from .model_create_template_request import ModelCreateTemplateRequest
 from .model_create_topic_request import ModelCreateTopicRequest
 from .model_create_topic_request_v1 import ModelCreateTopicRequestV1
@@ -42,6 +41,7 @@ from .model_get_user_outgoing_friends_response import (
     ModelGetUserOutgoingFriendsResponse,
 )
 from .model_incoming_friends_with_time_data import ModelIncomingFriendsWithTimeData
+from .model_list_bulk_user_platforms_response import ModelListBulkUserPlatformsResponse
 from .model_load_incoming_friends_with_time_response import (
     ModelLoadIncomingFriendsWithTimeResponse,
 )
@@ -72,9 +72,11 @@ from .model_user_cancel_friend_request import ModelUserCancelFriendRequest
 from .model_user_get_friendship_status_response import (
     ModelUserGetFriendshipStatusResponse,
 )
+from .model_user_platform_info import ModelUserPlatformInfo
 from .model_user_reject_friend_request import ModelUserRejectFriendRequest
 from .model_user_request_friend_request import ModelUserRequestFriendRequest
 from .model_user_unfriend_request import ModelUserUnfriendRequest
+from .model_user_with_platform_info import ModelUserWithPlatformInfo
 from .models_admin_add_profanity_filter_into_list_request import (
     ModelsAdminAddProfanityFilterIntoListRequest,
 )
@@ -122,6 +124,12 @@ from .models_get_all_player_blocked_users_response import (
 )
 from .models_get_all_player_session_attribute_response import (
     ModelsGetAllPlayerSessionAttributeResponse,
+)
+from .models_get_bulk_all_player_blocked_users_request import (
+    ModelsGetBulkAllPlayerBlockedUsersRequest,
+)
+from .models_get_bulk_all_player_blocked_users_response import (
+    ModelsGetBulkAllPlayerBlockedUsersResponse,
 )
 from .models_get_config_response import ModelsGetConfigResponse
 from .models_get_lobby_ccu_response import ModelsGetLobbyCcuResponse

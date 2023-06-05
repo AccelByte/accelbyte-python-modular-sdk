@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -56,11 +56,11 @@ class RevokeEntry(Model):
 
     # region fields
 
-    currency: RevokeCurrency                                                                       # OPTIONAL
-    entitlement: RevokeEntitlement                                                                 # OPTIONAL
-    item: RevokeItem                                                                               # OPTIONAL
-    quantity: int                                                                                  # OPTIONAL
-    type_: Union[str, TypeEnum]                                                                    # OPTIONAL
+    currency: RevokeCurrency  # OPTIONAL
+    entitlement: RevokeEntitlement  # OPTIONAL
+    item: RevokeItem  # OPTIONAL
+    quantity: int  # OPTIONAL
+    type_: Union[str, TypeEnum]  # OPTIONAL
 
     # endregion fields
 
@@ -97,7 +97,9 @@ class RevokeEntry(Model):
         elif include_empty:
             result["currency"] = RevokeCurrency()
         if hasattr(self, "entitlement"):
-            result["entitlement"] = self.entitlement.to_dict(include_empty=include_empty)
+            result["entitlement"] = self.entitlement.to_dict(
+                include_empty=include_empty
+            )
         elif include_empty:
             result["entitlement"] = RevokeEntitlement()
         if hasattr(self, "item"):
@@ -126,7 +128,7 @@ class RevokeEntry(Model):
         item: Optional[RevokeItem] = None,
         quantity: Optional[int] = None,
         type_: Optional[Union[str, TypeEnum]] = None,
-    **kwargs
+        **kwargs,
     ) -> RevokeEntry:
         instance = cls()
         if currency is not None:
@@ -147,15 +149,21 @@ class RevokeEntry(Model):
         if not dict_:
             return instance
         if "currency" in dict_ and dict_["currency"] is not None:
-            instance.currency = RevokeCurrency.create_from_dict(dict_["currency"], include_empty=include_empty)
+            instance.currency = RevokeCurrency.create_from_dict(
+                dict_["currency"], include_empty=include_empty
+            )
         elif include_empty:
             instance.currency = RevokeCurrency()
         if "entitlement" in dict_ and dict_["entitlement"] is not None:
-            instance.entitlement = RevokeEntitlement.create_from_dict(dict_["entitlement"], include_empty=include_empty)
+            instance.entitlement = RevokeEntitlement.create_from_dict(
+                dict_["entitlement"], include_empty=include_empty
+            )
         elif include_empty:
             instance.entitlement = RevokeEntitlement()
         if "item" in dict_ and dict_["item"] is not None:
-            instance.item = RevokeItem.create_from_dict(dict_["item"], include_empty=include_empty)
+            instance.item = RevokeItem.create_from_dict(
+                dict_["item"], include_empty=include_empty
+            )
         elif include_empty:
             instance.item = RevokeItem()
         if "quantity" in dict_ and dict_["quantity"] is not None:
@@ -169,15 +177,29 @@ class RevokeEntry(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, RevokeEntry]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, RevokeEntry]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[RevokeEntry]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[RevokeEntry]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[RevokeEntry, List[RevokeEntry], Dict[Any, RevokeEntry]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[RevokeEntry, List[RevokeEntry], Dict[Any, RevokeEntry]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

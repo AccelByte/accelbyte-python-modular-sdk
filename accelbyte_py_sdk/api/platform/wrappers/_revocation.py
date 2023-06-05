@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -40,14 +40,21 @@ from ..operations.revocation import DeleteRevocationConfig
 from ..operations.revocation import DoRevocation
 from ..operations.revocation import GetRevocationConfig
 from ..operations.revocation import QueryRevocationHistories
-from ..operations.revocation import QueryRevocationHistoriesSourceEnum, QueryRevocationHistoriesStatusEnum
+from ..operations.revocation import (
+    QueryRevocationHistoriesSourceEnum,
+    QueryRevocationHistoriesStatusEnum,
+)
 from ..operations.revocation import UpdateRevocationConfig
 from ..models import RevocationRequestSourceEnum
 from ..models import RevocationResultStatusEnum
 
 
 @same_doc_as(DeleteRevocationConfig)
-def delete_revocation_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def delete_revocation_config(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Delete revocation config (deleteRevocationConfig)
 
     Delete revocation config.
@@ -84,7 +91,11 @@ def delete_revocation_config(namespace: Optional[str] = None, x_additional_heade
 
 
 @same_doc_as(DeleteRevocationConfig)
-async def delete_revocation_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def delete_revocation_config_async(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Delete revocation config (deleteRevocationConfig)
 
     Delete revocation config.
@@ -117,11 +128,19 @@ async def delete_revocation_config_async(namespace: Optional[str] = None, x_addi
     request = DeleteRevocationConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(DoRevocation)
-def do_revocation(user_id: str, body: Optional[RevocationRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def do_revocation(
+    user_id: str,
+    body: Optional[RevocationRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Do revocation. (doRevocation)
 
     Do revocation.
@@ -165,7 +184,13 @@ def do_revocation(user_id: str, body: Optional[RevocationRequest] = None, namesp
 
 
 @same_doc_as(DoRevocation)
-async def do_revocation_async(user_id: str, body: Optional[RevocationRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def do_revocation_async(
+    user_id: str,
+    body: Optional[RevocationRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Do revocation. (doRevocation)
 
     Do revocation.
@@ -205,11 +230,17 @@ async def do_revocation_async(user_id: str, body: Optional[RevocationRequest] = 
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetRevocationConfig)
-def get_revocation_config(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_revocation_config(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get revocation configuration (getRevocationConfig)
 
     Get revocation configuration.
@@ -249,7 +280,11 @@ def get_revocation_config(namespace: Optional[str] = None, x_additional_headers:
 
 
 @same_doc_as(GetRevocationConfig)
-async def get_revocation_config_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_revocation_config_async(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get revocation configuration (getRevocationConfig)
 
     Get revocation configuration.
@@ -285,11 +320,25 @@ async def get_revocation_config_async(namespace: Optional[str] = None, x_additio
     request = GetRevocationConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(QueryRevocationHistories)
-def query_revocation_histories(end_time: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, source: Optional[Union[str, QueryRevocationHistoriesSourceEnum]] = None, start_time: Optional[str] = None, status: Optional[Union[str, QueryRevocationHistoriesStatusEnum]] = None, transaction_id: Optional[str] = None, user_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def query_revocation_histories(
+    end_time: Optional[str] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    source: Optional[Union[str, QueryRevocationHistoriesSourceEnum]] = None,
+    start_time: Optional[str] = None,
+    status: Optional[Union[str, QueryRevocationHistoriesStatusEnum]] = None,
+    transaction_id: Optional[str] = None,
+    user_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Query revocation histories (queryRevocationHistories)
 
     Query revocation histories in a namespace.
@@ -351,7 +400,19 @@ def query_revocation_histories(end_time: Optional[str] = None, limit: Optional[i
 
 
 @same_doc_as(QueryRevocationHistories)
-async def query_revocation_histories_async(end_time: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, source: Optional[Union[str, QueryRevocationHistoriesSourceEnum]] = None, start_time: Optional[str] = None, status: Optional[Union[str, QueryRevocationHistoriesStatusEnum]] = None, transaction_id: Optional[str] = None, user_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def query_revocation_histories_async(
+    end_time: Optional[str] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    source: Optional[Union[str, QueryRevocationHistoriesSourceEnum]] = None,
+    start_time: Optional[str] = None,
+    status: Optional[Union[str, QueryRevocationHistoriesStatusEnum]] = None,
+    transaction_id: Optional[str] = None,
+    user_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Query revocation histories (queryRevocationHistories)
 
     Query revocation histories in a namespace.
@@ -409,11 +470,18 @@ async def query_revocation_histories_async(end_time: Optional[str] = None, limit
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(UpdateRevocationConfig)
-def update_revocation_config(body: Optional[RevocationConfigUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def update_revocation_config(
+    body: Optional[RevocationConfigUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update revocation configuration (updateRevocationConfig)
 
     Update revocation configuration.
@@ -454,7 +522,12 @@ def update_revocation_config(body: Optional[RevocationConfigUpdate] = None, name
 
 
 @same_doc_as(UpdateRevocationConfig)
-async def update_revocation_config_async(body: Optional[RevocationConfigUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def update_revocation_config_async(
+    body: Optional[RevocationConfigUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update revocation configuration (updateRevocationConfig)
 
     Update revocation configuration.
@@ -491,4 +564,6 @@ async def update_revocation_config_async(body: Optional[RevocationConfigUpdate] 
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )

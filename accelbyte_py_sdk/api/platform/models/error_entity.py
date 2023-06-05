@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -43,10 +43,10 @@ class ErrorEntity(Model):
 
     # region fields
 
-    error_code: int                                                                                # REQUIRED
-    error_message: str                                                                             # REQUIRED
-    dev_stack_trace: str                                                                           # OPTIONAL
-    message_variables: Dict[str, str]                                                              # OPTIONAL
+    error_code: int  # REQUIRED
+    error_message: str  # REQUIRED
+    dev_stack_trace: str  # OPTIONAL
+    message_variables: Dict[str, str]  # OPTIONAL
 
     # endregion fields
 
@@ -87,7 +87,9 @@ class ErrorEntity(Model):
         elif include_empty:
             result["devStackTrace"] = ""
         if hasattr(self, "message_variables"):
-            result["messageVariables"] = {str(k0): str(v0) for k0, v0 in self.message_variables.items()}
+            result["messageVariables"] = {
+                str(k0): str(v0) for k0, v0 in self.message_variables.items()
+            }
         elif include_empty:
             result["messageVariables"] = {}
         return result
@@ -103,7 +105,7 @@ class ErrorEntity(Model):
         error_message: str,
         dev_stack_trace: Optional[str] = None,
         message_variables: Optional[Dict[str, str]] = None,
-    **kwargs
+        **kwargs,
     ) -> ErrorEntity:
         instance = cls()
         instance.error_code = error_code
@@ -132,21 +134,37 @@ class ErrorEntity(Model):
         elif include_empty:
             instance.dev_stack_trace = ""
         if "messageVariables" in dict_ and dict_["messageVariables"] is not None:
-            instance.message_variables = {str(k0): str(v0) for k0, v0 in dict_["messageVariables"].items()}
+            instance.message_variables = {
+                str(k0): str(v0) for k0, v0 in dict_["messageVariables"].items()
+            }
         elif include_empty:
             instance.message_variables = {}
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, ErrorEntity]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, ErrorEntity]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[ErrorEntity]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[ErrorEntity]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[ErrorEntity, List[ErrorEntity], Dict[Any, ErrorEntity]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[ErrorEntity, List[ErrorEntity], Dict[Any, ErrorEntity]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

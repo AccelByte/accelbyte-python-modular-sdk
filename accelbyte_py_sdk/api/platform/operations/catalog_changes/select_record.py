@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -65,7 +65,7 @@ class SelectRecord(Operation):
     Responses:
         204: No Content - (No Content)
 
-        404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30041: Changelog [{changelogId}] doest not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30041: Changelog [{changelogId}] does not exist in namespace [{namespace}])
     """
 
     # region fields
@@ -77,9 +77,9 @@ class SelectRecord(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
 
-    change_id: str                                                                                 # REQUIRED in [path]
-    namespace: str                                                                                 # REQUIRED in [path]
-    store_id: str                                                                                  # REQUIRED in [path]
+    change_id: str  # REQUIRED in [path]
+    namespace: str  # REQUIRED in [path]
+    store_id: str  # REQUIRED in [path]
 
     # endregion fields
 
@@ -177,12 +177,14 @@ class SelectRecord(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[None, Union[None, ErrorEntity, HttpResponse]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[None, Union[None, ErrorEntity, HttpResponse]]:
         """Parse the given response.
 
         204: No Content - (No Content)
 
-        404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30041: Changelog [{changelogId}] doest not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30041: Changelog [{changelogId}] does not exist in namespace [{namespace}])
 
         ---: HttpResponse (Undocumented Response)
 
@@ -190,7 +192,9 @@ class SelectRecord(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
@@ -200,7 +204,9 @@ class SelectRecord(Operation):
         if code == 404:
             return None, ErrorEntity.create_from_dict(content)
 
-        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
+        return self.handle_undocumented_response(
+            code=code, content_type=content_type, content=content
+        )
 
     # endregion response methods
 
@@ -208,11 +214,7 @@ class SelectRecord(Operation):
 
     @classmethod
     def create(
-        cls,
-        change_id: str,
-        namespace: str,
-        store_id: str,
-    **kwargs
+        cls, change_id: str, namespace: str, store_id: str, **kwargs
     ) -> SelectRecord:
         instance = cls()
         instance.change_id = change_id

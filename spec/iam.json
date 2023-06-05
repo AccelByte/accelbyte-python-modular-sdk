@@ -8,11 +8,15 @@
     },
     "description": "Justice IAM Service",
     "title": "justice-iam-service",
-    "version": "5.31.0"
+    "version": "6.0.1"
   },
   "schemes": [
     "https"
   ],
+  "externalDocs": {
+    "description": "API Docs",
+    "url": "https://stage.accelbyte.io/iam/apidocs"
+  },
   "securityDefinitions": {
     "HasPermission": {
       "authorizationUrl": "https://dummy.oauth.net/auth",
@@ -14689,7 +14693,7 @@
         "consumes": [
           "application/x-www-form-urlencoded"
         ],
-        "description": "\u0026lt;p\u0026gt;This endpoint is being used to generate user\u0026#39;s token by one time link code.\u0026lt;br\u0026gt;\n\t\tIt require publisher ClientID\u0026lt;br\u0026gt;\n\t\tIt required a code which can be generated from \u0026lt;strong\u0026gt;/iam/v3/link/code/request\u0026lt;/strong\u0026gt;.\u0026lt;br\u0026gt;\n\t\t\u0026lt;/p\u0026gt;",
+        "description": "\u0026lt;p\u0026gt;This endpoint is being used to generate user\u0026#39;s token by one time link code.\u0026lt;br\u0026gt;\n\t\tIt require publisher ClientID\u0026lt;br\u0026gt;\n\t\tIt required a code which can be generated from \u0026lt;strong\u0026gt;/iam/v3/link/code/request\u0026lt;/strong\u0026gt;.\u0026lt;br\u0026gt;\n\t\t\u0026lt;/p\u0026gt;\n\t\t\u0026lt;p\u0026gt;This endpoint support creating transient token by utilizing \u0026lt;strong\u0026gt;isTransient\u0026lt;/strong\u0026gt; param:\n\t\t\u0026lt;br\u0026gt;\u0026lt;strong\u0026gt;isTransient=true\u0026lt;/strong\u0026gt; will generate a transient token with a short Time Expiration and without a refresh token\n\t\t\u0026lt;br\u0026gt;\u0026lt;strong\u0026gt;isTransient=false\u0026lt;/strong\u0026gt; will consume the one-time code and generate the access token with a refresh token.\u0026lt;/p\u0026gt;",
         "operationId": "RequestTokenByOneTimeLinkCodeResponseV3",
         "parameters": [
           {
@@ -14705,6 +14709,14 @@
             "name": "oneTimeLinkCode",
             "required": true,
             "type": "string"
+          },
+          {
+            "default": false,
+            "description": "will produce transient token ",
+            "in": "formData",
+            "name": "isTransient",
+            "type": "boolean",
+            "x-omitempty": false
           }
         ],
         "produces": [
@@ -16195,6 +16207,14 @@
             "name": "platformId",
             "required": true,
             "type": "string"
+          },
+          {
+            "default": false,
+            "description": "if this is true, the platform user id in response will be raw id, if it is false, some platform user id will be encrypted, eg: xbox",
+            "in": "query",
+            "name": "rawPUID",
+            "type": "boolean",
+            "x-omitempty": false
           }
         ],
         "produces": [
@@ -16318,7 +16338,7 @@
     },
     "/iam/v3/public/namespaces/{namespace}/requests/{requestId}/async/status": {
       "get": {
-        "description": "This endpoint is used to get linking status.",
+        "description": "\n\t\tThis endpoint is used to get linking status.\u0026lt;/br\u0026gt;\n\t\tThis API need logged user and user can only request its own linking status.\u0026#39; \n\t\t",
         "operationId": "PublicGetAsyncStatus",
         "parameters": [
           {
@@ -25435,6 +25455,24 @@
         "platformUserId"
       ]
     },
+    "accountcommon.PlatformLinkingHistory": {
+      "properties": {
+        "platformDisplayName": {
+          "type": "string"
+        },
+        "platformID": {
+          "type": "string"
+        },
+        "platformUserID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "platformDisplayName",
+        "platformID",
+        "platformUserID"
+      ]
+    },
     "accountcommon.PlatformUserInformationV3": {
       "properties": {
         "displayName": {
@@ -27527,6 +27565,9 @@
         },
         "status": {
           "type": "string"
+        },
+        "userID": {
+          "type": "string"
         }
       },
       "required": [
@@ -29192,6 +29233,10 @@
     },
     "model.UpdateUserDeletionStatusRequest": {
       "properties": {
+        "deletionDate": {
+          "format": "int64",
+          "type": "integer"
+        },
         "enabled": {
           "type": "boolean",
           "x-omitempty": false
@@ -30084,6 +30129,9 @@
           "type": "string",
           "x-nullable": true
         },
+        "deletionDate": {
+          "type": "string"
+        },
         "deletionStatus": {
           "type": "boolean",
           "x-omitempty": false
@@ -30859,6 +30907,7 @@
           "type": "string"
         },
         "bans": {
+          "description": "present if it is user token",
           "items": {
             "$ref": "#/definitions/accountcommon.JWTBanV3"
           },
@@ -30883,6 +30932,7 @@
           "type": "string"
         },
         "namespace_roles": {
+          "description": "present if it is user token",
           "items": {
             "$ref": "#/definitions/accountcommon.NamespaceRole"
           },
@@ -30910,6 +30960,7 @@
           "type": "string"
         },
         "roles": {
+          "description": "present if it is user token",
           "items": {
             "type": "string"
           },
@@ -30931,12 +30982,9 @@
       },
       "required": [
         "access_token",
-        "bans",
         "expires_in",
         "namespace",
-        "namespace_roles",
         "permissions",
-        "roles",
         "scope",
         "token_type"
       ]
@@ -30964,6 +31012,7 @@
           "type": "string"
         },
         "bans": {
+          "description": "present if it is user token",
           "items": {
             "$ref": "#/definitions/accountcommon.JWTBanV3"
           },
@@ -30988,6 +31037,7 @@
           "type": "string"
         },
         "namespace_roles": {
+          "description": "present if it is user token",
           "items": {
             "$ref": "#/definitions/accountcommon.NamespaceRole"
           },
@@ -31015,6 +31065,7 @@
           "type": "string"
         },
         "roles": {
+          "description": "present if it is user token",
           "items": {
             "type": "string"
           },
@@ -31036,12 +31087,9 @@
       },
       "required": [
         "access_token",
-        "bans",
         "expires_in",
         "namespace",
-        "namespace_roles",
         "permissions",
-        "roles",
         "scope",
         "token_type"
       ]
@@ -31097,6 +31145,10 @@
         },
         "messageVariables": {
           "$ref": "#/definitions/accountcommon.ConflictedUserPlatformAccounts"
+        },
+        "previousLinkedPlatformAccount": {
+          "$ref": "#/definitions/accountcommon.PlatformLinkingHistory",
+          "description": "User link a platform's different account is not allowed. This field contains the previous linked account details. Will have value only when in this case. (errorCode is 10200)"
         }
       },
       "required": [
@@ -31105,12 +31157,17 @@
       ]
     }
   },
+  "x-docs": {
+    "alias": "iam",
+    "host": "https://stage.accelbyte.io",
+    "path": "/iam/apidocs/api.json"
+  },
   "x-version": {
-    "buildDate": "2023-03-28T04:51:30+00:00",
-    "gitHash": "45f3f3cfae62cacbd565dea16130ab27eca0f849",
+    "buildDate": "2023-06-05T01:07:35+00:00",
+    "gitHash": "d15259f9457d9a5b5188428f1f172ed8ba1f9366",
     "name": "justice-iam-service",
     "realm": "staging",
-    "version": "5.31.0",
+    "version": "6.0.1",
     "version-roles-seeding": "0.0.3"
   }
 }

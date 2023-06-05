@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -39,8 +39,8 @@ class PlatformRewardCurrency(Model):
 
     # region fields
 
-    currency_code: str                                                                             # REQUIRED
-    namespace: str                                                                                 # REQUIRED
+    currency_code: str  # REQUIRED
+    namespace: str  # REQUIRED
 
     # endregion fields
 
@@ -76,10 +76,7 @@ class PlatformRewardCurrency(Model):
 
     @classmethod
     def create(
-        cls,
-        currency_code: str,
-        namespace: str,
-    **kwargs
+        cls, currency_code: str, namespace: str, **kwargs
     ) -> PlatformRewardCurrency:
         instance = cls()
         instance.currency_code = currency_code
@@ -87,7 +84,9 @@ class PlatformRewardCurrency(Model):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> PlatformRewardCurrency:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> PlatformRewardCurrency:
         instance = cls()
         if not dict_:
             return instance
@@ -102,15 +101,33 @@ class PlatformRewardCurrency(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, PlatformRewardCurrency]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, PlatformRewardCurrency]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[PlatformRewardCurrency]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[PlatformRewardCurrency]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[PlatformRewardCurrency, List[PlatformRewardCurrency], Dict[Any, PlatformRewardCurrency]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[
+        PlatformRewardCurrency,
+        List[PlatformRewardCurrency],
+        Dict[Any, PlatformRewardCurrency],
+    ]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

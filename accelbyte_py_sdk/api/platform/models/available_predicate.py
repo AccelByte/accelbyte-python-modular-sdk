@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -58,20 +58,24 @@ class AvailablePredicate(Model):
 
     # region fields
 
-    available_comparisons: List[AvailableComparison]                                               # OPTIONAL
-    predicate_type: Union[str, PredicateTypeEnum]                                                  # OPTIONAL
-    show_any_of: bool                                                                              # OPTIONAL
-    value_type: Union[str, ValueTypeEnum]                                                          # OPTIONAL
+    available_comparisons: List[AvailableComparison]  # OPTIONAL
+    predicate_type: Union[str, PredicateTypeEnum]  # OPTIONAL
+    show_any_of: bool  # OPTIONAL
+    value_type: Union[str, ValueTypeEnum]  # OPTIONAL
 
     # endregion fields
 
     # region with_x methods
 
-    def with_available_comparisons(self, value: List[AvailableComparison]) -> AvailablePredicate:
+    def with_available_comparisons(
+        self, value: List[AvailableComparison]
+    ) -> AvailablePredicate:
         self.available_comparisons = value
         return self
 
-    def with_predicate_type(self, value: Union[str, PredicateTypeEnum]) -> AvailablePredicate:
+    def with_predicate_type(
+        self, value: Union[str, PredicateTypeEnum]
+    ) -> AvailablePredicate:
         self.predicate_type = value
         return self
 
@@ -90,7 +94,10 @@ class AvailablePredicate(Model):
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
         if hasattr(self, "available_comparisons"):
-            result["availableComparisons"] = [i0.to_dict(include_empty=include_empty) for i0 in self.available_comparisons]
+            result["availableComparisons"] = [
+                i0.to_dict(include_empty=include_empty)
+                for i0 in self.available_comparisons
+            ]
         elif include_empty:
             result["availableComparisons"] = []
         if hasattr(self, "predicate_type"):
@@ -118,7 +125,7 @@ class AvailablePredicate(Model):
         predicate_type: Optional[Union[str, PredicateTypeEnum]] = None,
         show_any_of: Optional[bool] = None,
         value_type: Optional[Union[str, ValueTypeEnum]] = None,
-    **kwargs
+        **kwargs,
     ) -> AvailablePredicate:
         instance = cls()
         if available_comparisons is not None:
@@ -132,12 +139,20 @@ class AvailablePredicate(Model):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> AvailablePredicate:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> AvailablePredicate:
         instance = cls()
         if not dict_:
             return instance
-        if "availableComparisons" in dict_ and dict_["availableComparisons"] is not None:
-            instance.available_comparisons = [AvailableComparison.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["availableComparisons"]]
+        if (
+            "availableComparisons" in dict_
+            and dict_["availableComparisons"] is not None
+        ):
+            instance.available_comparisons = [
+                AvailableComparison.create_from_dict(i0, include_empty=include_empty)
+                for i0 in dict_["availableComparisons"]
+            ]
         elif include_empty:
             instance.available_comparisons = []
         if "predicateType" in dict_ and dict_["predicateType"] is not None:
@@ -155,15 +170,31 @@ class AvailablePredicate(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, AvailablePredicate]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, AvailablePredicate]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[AvailablePredicate]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[AvailablePredicate]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[AvailablePredicate, List[AvailablePredicate], Dict[Any, AvailablePredicate]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[
+        AvailablePredicate, List[AvailablePredicate], Dict[Any, AvailablePredicate]
+    ]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -195,7 +226,11 @@ class AvailablePredicate(Model):
     @staticmethod
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
-            "predicateType": ["EntitlementPredicate", "SeasonPassPredicate", "SeasonTierPredicate"],
+            "predicateType": [
+                "EntitlementPredicate",
+                "SeasonPassPredicate",
+                "SeasonTierPredicate",
+            ],
             "valueType": ["List", "Number", "String"],
         }
 

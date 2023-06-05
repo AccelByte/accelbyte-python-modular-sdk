@@ -71,13 +71,17 @@ def create_a_dto_for_unban_user_api_call_example() -> ADTOForUnbanUserAPICall:
     return instance
 
 
-def create_a_dto_for_update_equ8_config_api_call_example() -> ADTOForUpdateEqu8ConfigAPICall:
+def create_a_dto_for_update_equ8_config_api_call_example() -> (
+    ADTOForUpdateEqu8ConfigAPICall
+):
     instance = ADTOForUpdateEqu8ConfigAPICall()
     instance.api_key = randomize()
     return instance
 
 
-def create_a_dto_object_for_equ8_user_ban_status_example() -> ADTOObjectForEqu8UserBanStatus:
+def create_a_dto_object_for_equ8_user_ban_status_example() -> (
+    ADTOObjectForEqu8UserBanStatus
+):
     instance = ADTOObjectForEqu8UserBanStatus()
     instance.expires = randomize("date")
     instance.user_id = randomize("uid")

@@ -6,7 +6,7 @@
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Social Service (2.3.0)
+# AccelByte Gaming Services Social Service (2.8.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -28,6 +28,8 @@ from ..api.social.models import ADTOObjectForResettingUserStatItems
 from ..api.social.models import ADTOObjectForUserStatItemValue
 from ..api.social.models import Attribute
 from ..api.social.models import BulkCycleStatsAdd
+from ..api.social.models import BulkStatCycleRequest
+from ..api.social.models import BulkStatCycleResult
 from ..api.social.models import BulkStatItemCreate
 from ..api.social.models import BulkStatItemInc
 from ..api.social.models import BulkStatItemReset
@@ -100,6 +102,18 @@ def create_attribute_example() -> Attribute:
 def create_bulk_cycle_stats_add_example() -> BulkCycleStatsAdd:
     instance = BulkCycleStatsAdd()
     instance.stat_codes = [randomize()]
+    return instance
+
+
+def create_bulk_stat_cycle_request_example() -> BulkStatCycleRequest:
+    instance = BulkStatCycleRequest()
+    instance.cycle_ids = [randomize()]
+    return instance
+
+
+def create_bulk_stat_cycle_result_example() -> BulkStatCycleResult:
+    instance = BulkStatCycleResult()
+    instance.data = [create_stat_cycle_info_example()]
     return instance
 
 
@@ -312,7 +326,9 @@ def create_stat_create_example() -> StatCreate:
     instance.stat_code = randomize()
     instance.cycle_ids = [randomize()]
     instance.description = randomize()
+    instance.ignore_additional_data_on_value_rejected = randomize("bool")
     instance.increment_only = randomize("bool")
+    instance.is_public = randomize("bool")
     instance.maximum = randomize("int", min_val=1, max_val=1000)
     instance.minimum = randomize("int", min_val=1, max_val=1000)
     instance.set_as_global = randomize("bool")
@@ -392,7 +408,9 @@ def create_stat_info_example() -> StatInfo:
     instance = StatInfo()
     instance.created_at = randomize("date")
     instance.default_value = randomize("int", min_val=1, max_val=1000)
+    instance.ignore_additional_data_on_value_rejected = randomize("bool")
     instance.increment_only = randomize("bool")
+    instance.is_public = randomize("bool")
     instance.name = randomize()
     instance.namespace = randomize("slug")
     instance.set_as_global = randomize("bool")
@@ -446,6 +464,8 @@ def create_stat_update_example() -> StatUpdate:
     instance.cycle_ids = [randomize()]
     instance.default_value = randomize("int", min_val=1, max_val=1000)
     instance.description = randomize()
+    instance.ignore_additional_data_on_value_rejected = randomize("bool")
+    instance.is_public = randomize("bool")
     instance.name = randomize()
     instance.tags = [randomize()]
     return instance
@@ -479,6 +499,7 @@ def create_user_stat_cycle_item_info_example() -> UserStatCycleItemInfo:
     instance.updated_at = randomize("date")
     instance.user_id = randomize("uid")
     instance.value = randomize("int", min_val=1, max_val=1000)
+    instance.additional_data = {randomize(): randomize()}
     instance.tags = [randomize()]
     return instance
 
@@ -501,6 +522,7 @@ def create_user_stat_item_info_example() -> UserStatItemInfo:
     instance.updated_at = randomize("date")
     instance.user_id = randomize("uid")
     instance.value = randomize("int", min_val=1, max_val=1000)
+    instance.additional_data = {randomize(): randomize()}
     instance.tags = [randomize()]
     return instance
 

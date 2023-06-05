@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -45,16 +45,18 @@ class XblAchievementUpdateRequest(Model):
 
     # region fields
 
-    achievements: List[Achievement]                                                                # OPTIONAL
-    service_config_id: str                                                                         # OPTIONAL
-    title_id: str                                                                                  # OPTIONAL
-    xbox_user_id: str                                                                              # OPTIONAL
+    achievements: List[Achievement]  # OPTIONAL
+    service_config_id: str  # OPTIONAL
+    title_id: str  # OPTIONAL
+    xbox_user_id: str  # OPTIONAL
 
     # endregion fields
 
     # region with_x methods
 
-    def with_achievements(self, value: List[Achievement]) -> XblAchievementUpdateRequest:
+    def with_achievements(
+        self, value: List[Achievement]
+    ) -> XblAchievementUpdateRequest:
         self.achievements = value
         return self
 
@@ -77,7 +79,9 @@ class XblAchievementUpdateRequest(Model):
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
         if hasattr(self, "achievements"):
-            result["achievements"] = [i0.to_dict(include_empty=include_empty) for i0 in self.achievements]
+            result["achievements"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.achievements
+            ]
         elif include_empty:
             result["achievements"] = []
         if hasattr(self, "service_config_id"):
@@ -105,7 +109,7 @@ class XblAchievementUpdateRequest(Model):
         service_config_id: Optional[str] = None,
         title_id: Optional[str] = None,
         xbox_user_id: Optional[str] = None,
-    **kwargs
+        **kwargs,
     ) -> XblAchievementUpdateRequest:
         instance = cls()
         if achievements is not None:
@@ -119,12 +123,17 @@ class XblAchievementUpdateRequest(Model):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> XblAchievementUpdateRequest:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> XblAchievementUpdateRequest:
         instance = cls()
         if not dict_:
             return instance
         if "achievements" in dict_ and dict_["achievements"] is not None:
-            instance.achievements = [Achievement.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["achievements"]]
+            instance.achievements = [
+                Achievement.create_from_dict(i0, include_empty=include_empty)
+                for i0 in dict_["achievements"]
+            ]
         elif include_empty:
             instance.achievements = []
         if "serviceConfigId" in dict_ and dict_["serviceConfigId"] is not None:
@@ -142,15 +151,33 @@ class XblAchievementUpdateRequest(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, XblAchievementUpdateRequest]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, XblAchievementUpdateRequest]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[XblAchievementUpdateRequest]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[XblAchievementUpdateRequest]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[XblAchievementUpdateRequest, List[XblAchievementUpdateRequest], Dict[Any, XblAchievementUpdateRequest]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[
+        XblAchievementUpdateRequest,
+        List[XblAchievementUpdateRequest],
+        Dict[Any, XblAchievementUpdateRequest],
+    ]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

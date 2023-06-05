@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Ugc Service."""
 
-__version__ = "2.9.3"
+__version__ = "2.11.1"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -16,12 +16,12 @@ __email__ = "dev@accelbyte.net"
 
 from .models_add_download_count_response import ModelsAddDownloadCountResponse
 from .models_admin_get_content_bulk_request import ModelsAdminGetContentBulkRequest
+from .models_admin_update_content_request import ModelsAdminUpdateContentRequest
 from .models_channel_request import ModelsChannelRequest
 from .models_channel_response import ModelsChannelResponse
 from .models_content_download_response import ModelsContentDownloadResponse
 from .models_content_like_request import ModelsContentLikeRequest
 from .models_content_like_response import ModelsContentLikeResponse
-from .models_content_request import ModelsContentRequest
 from .models_create_content_request import ModelsCreateContentRequest
 from .models_create_content_request_s3 import ModelsCreateContentRequestS3
 from .models_create_content_response import ModelsCreateContentResponse
@@ -57,8 +57,12 @@ from .models_paging_cursor import ModelsPagingCursor
 from .models_payload_url import ModelsPayloadURL
 from .models_preview_metadata import ModelsPreviewMetadata
 from .models_preview_url import ModelsPreviewURL
+from .models_public_channel_request import ModelsPublicChannelRequest
+from .models_public_create_content_request_s3 import ModelsPublicCreateContentRequestS3
 from .models_public_get_content_bulk_request import ModelsPublicGetContentBulkRequest
 from .models_screenshot_response import ModelsScreenshotResponse
+from .models_update_channel_request import ModelsUpdateChannelRequest
+from .models_update_content_request import ModelsUpdateContentRequest
 from .models_update_screenshot import ModelsUpdateScreenshot
 from .models_update_screenshot_request import ModelsUpdateScreenshotRequest
 from .models_update_screenshot_response import ModelsUpdateScreenshotResponse

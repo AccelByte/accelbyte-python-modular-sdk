@@ -6,7 +6,7 @@
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Session Service (2.7.3)
+# AccelByte Gaming Services Session Service (2.15.1)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -26,6 +26,8 @@ from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 from ....core import Model
+
+from ..models.models_native_session_setting import ModelsNativeSessionSetting
 
 
 class ApimodelsConfigurationTemplateResponse(Model):
@@ -62,6 +64,16 @@ class ApimodelsConfigurationTemplateResponse(Model):
 
         updated_at: (updatedAt) REQUIRED str
 
+        ds_source: (dsSource) OPTIONAL str
+
+        fallback_claim_keys: (fallbackClaimKeys) OPTIONAL List[str]
+
+        max_active_sessions: (maxActiveSessions) OPTIONAL int
+
+        native_session_setting: (nativeSessionSetting) OPTIONAL ModelsNativeSessionSetting
+
+        preferred_claim_keys: (preferredClaimKeys) OPTIONAL List[str]
+
         requested_regions: (requestedRegions) OPTIONAL List[str]
     """
 
@@ -82,6 +94,11 @@ class ApimodelsConfigurationTemplateResponse(Model):
     text_chat: bool  # REQUIRED
     type_: str  # REQUIRED
     updated_at: str  # REQUIRED
+    ds_source: str  # OPTIONAL
+    fallback_claim_keys: List[str]  # OPTIONAL
+    max_active_sessions: int  # OPTIONAL
+    native_session_setting: ModelsNativeSessionSetting  # OPTIONAL
+    preferred_claim_keys: List[str]  # OPTIONAL
     requested_regions: List[str]  # OPTIONAL
 
     # endregion fields
@@ -148,6 +165,34 @@ class ApimodelsConfigurationTemplateResponse(Model):
 
     def with_updated_at(self, value: str) -> ApimodelsConfigurationTemplateResponse:
         self.updated_at = value
+        return self
+
+    def with_ds_source(self, value: str) -> ApimodelsConfigurationTemplateResponse:
+        self.ds_source = value
+        return self
+
+    def with_fallback_claim_keys(
+        self, value: List[str]
+    ) -> ApimodelsConfigurationTemplateResponse:
+        self.fallback_claim_keys = value
+        return self
+
+    def with_max_active_sessions(
+        self, value: int
+    ) -> ApimodelsConfigurationTemplateResponse:
+        self.max_active_sessions = value
+        return self
+
+    def with_native_session_setting(
+        self, value: ModelsNativeSessionSetting
+    ) -> ApimodelsConfigurationTemplateResponse:
+        self.native_session_setting = value
+        return self
+
+    def with_preferred_claim_keys(
+        self, value: List[str]
+    ) -> ApimodelsConfigurationTemplateResponse:
+        self.preferred_claim_keys = value
         return self
 
     def with_requested_regions(
@@ -222,6 +267,28 @@ class ApimodelsConfigurationTemplateResponse(Model):
             result["updatedAt"] = str(self.updated_at)
         elif include_empty:
             result["updatedAt"] = ""
+        if hasattr(self, "ds_source"):
+            result["dsSource"] = str(self.ds_source)
+        elif include_empty:
+            result["dsSource"] = ""
+        if hasattr(self, "fallback_claim_keys"):
+            result["fallbackClaimKeys"] = [str(i0) for i0 in self.fallback_claim_keys]
+        elif include_empty:
+            result["fallbackClaimKeys"] = []
+        if hasattr(self, "max_active_sessions"):
+            result["maxActiveSessions"] = int(self.max_active_sessions)
+        elif include_empty:
+            result["maxActiveSessions"] = 0
+        if hasattr(self, "native_session_setting"):
+            result["nativeSessionSetting"] = self.native_session_setting.to_dict(
+                include_empty=include_empty
+            )
+        elif include_empty:
+            result["nativeSessionSetting"] = ModelsNativeSessionSetting()
+        if hasattr(self, "preferred_claim_keys"):
+            result["preferredClaimKeys"] = [str(i0) for i0 in self.preferred_claim_keys]
+        elif include_empty:
+            result["preferredClaimKeys"] = []
         if hasattr(self, "requested_regions"):
             result["requestedRegions"] = [str(i0) for i0 in self.requested_regions]
         elif include_empty:
@@ -250,6 +317,11 @@ class ApimodelsConfigurationTemplateResponse(Model):
         text_chat: bool,
         type_: str,
         updated_at: str,
+        ds_source: Optional[str] = None,
+        fallback_claim_keys: Optional[List[str]] = None,
+        max_active_sessions: Optional[int] = None,
+        native_session_setting: Optional[ModelsNativeSessionSetting] = None,
+        preferred_claim_keys: Optional[List[str]] = None,
         requested_regions: Optional[List[str]] = None,
         **kwargs,
     ) -> ApimodelsConfigurationTemplateResponse:
@@ -269,6 +341,16 @@ class ApimodelsConfigurationTemplateResponse(Model):
         instance.text_chat = text_chat
         instance.type_ = type_
         instance.updated_at = updated_at
+        if ds_source is not None:
+            instance.ds_source = ds_source
+        if fallback_claim_keys is not None:
+            instance.fallback_claim_keys = fallback_claim_keys
+        if max_active_sessions is not None:
+            instance.max_active_sessions = max_active_sessions
+        if native_session_setting is not None:
+            instance.native_session_setting = native_session_setting
+        if preferred_claim_keys is not None:
+            instance.preferred_claim_keys = preferred_claim_keys
         if requested_regions is not None:
             instance.requested_regions = requested_regions
         return instance
@@ -340,6 +422,37 @@ class ApimodelsConfigurationTemplateResponse(Model):
             instance.updated_at = str(dict_["updatedAt"])
         elif include_empty:
             instance.updated_at = ""
+        if "dsSource" in dict_ and dict_["dsSource"] is not None:
+            instance.ds_source = str(dict_["dsSource"])
+        elif include_empty:
+            instance.ds_source = ""
+        if "fallbackClaimKeys" in dict_ and dict_["fallbackClaimKeys"] is not None:
+            instance.fallback_claim_keys = [
+                str(i0) for i0 in dict_["fallbackClaimKeys"]
+            ]
+        elif include_empty:
+            instance.fallback_claim_keys = []
+        if "maxActiveSessions" in dict_ and dict_["maxActiveSessions"] is not None:
+            instance.max_active_sessions = int(dict_["maxActiveSessions"])
+        elif include_empty:
+            instance.max_active_sessions = 0
+        if (
+            "nativeSessionSetting" in dict_
+            and dict_["nativeSessionSetting"] is not None
+        ):
+            instance.native_session_setting = (
+                ModelsNativeSessionSetting.create_from_dict(
+                    dict_["nativeSessionSetting"], include_empty=include_empty
+                )
+            )
+        elif include_empty:
+            instance.native_session_setting = ModelsNativeSessionSetting()
+        if "preferredClaimKeys" in dict_ and dict_["preferredClaimKeys"] is not None:
+            instance.preferred_claim_keys = [
+                str(i0) for i0 in dict_["preferredClaimKeys"]
+            ]
+        elif include_empty:
+            instance.preferred_claim_keys = []
         if "requestedRegions" in dict_ and dict_["requestedRegions"] is not None:
             instance.requested_regions = [str(i0) for i0 in dict_["requestedRegions"]]
         elif include_empty:
@@ -402,6 +515,11 @@ class ApimodelsConfigurationTemplateResponse(Model):
             "textChat": "text_chat",
             "type": "type_",
             "updatedAt": "updated_at",
+            "dsSource": "ds_source",
+            "fallbackClaimKeys": "fallback_claim_keys",
+            "maxActiveSessions": "max_active_sessions",
+            "nativeSessionSetting": "native_session_setting",
+            "preferredClaimKeys": "preferred_claim_keys",
             "requestedRegions": "requested_regions",
         }
 
@@ -423,6 +541,11 @@ class ApimodelsConfigurationTemplateResponse(Model):
             "textChat": True,
             "type": True,
             "updatedAt": True,
+            "dsSource": False,
+            "fallbackClaimKeys": False,
+            "maxActiveSessions": False,
+            "nativeSessionSetting": False,
+            "preferredClaimKeys": False,
             "requestedRegions": False,
         }
 

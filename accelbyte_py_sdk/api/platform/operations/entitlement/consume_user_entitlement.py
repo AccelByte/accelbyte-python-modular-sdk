@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -70,9 +70,11 @@ class ConsumeUserEntitlement(Operation):
     Responses:
         200: OK - EntitlementDecrementResult (successful operation)
 
+        400: Bad Request - ErrorEntity (31123: Unable to acquire box item, box item [{itemId}] expired)
+
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31173: Entitlement [{entitlementId}] is not consumable | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31180: Duplicate request id: [{requestId}] | 20006: optimistic lock)
+        409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31173: Entitlement [{entitlementId}] is not consumable | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31178: Entitlement [{entitlementId}] out of time range | 31180: Duplicate request id: [{requestId}] | 20006: optimistic lock)
     """
 
     # region fields
@@ -84,10 +86,10 @@ class ConsumeUserEntitlement(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
 
-    body: EntitlementDecrement                                                                     # OPTIONAL in [body]
-    entitlement_id: str                                                                            # REQUIRED in [path]
-    namespace: str                                                                                 # REQUIRED in [path]
-    user_id: str                                                                                   # REQUIRED in [path]
+    body: EntitlementDecrement  # OPTIONAL in [body]
+    entitlement_id: str  # REQUIRED in [path]
+    namespace: str  # REQUIRED in [path]
+    user_id: str  # REQUIRED in [path]
 
     # endregion fields
 
@@ -199,14 +201,20 @@ class ConsumeUserEntitlement(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, EntitlementDecrementResult], Union[None, ErrorEntity, HttpResponse]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, EntitlementDecrementResult], Union[None, ErrorEntity, HttpResponse]
+    ]:
         """Parse the given response.
 
         200: OK - EntitlementDecrementResult (successful operation)
 
+        400: Bad Request - ErrorEntity (31123: Unable to acquire box item, box item [{itemId}] expired)
+
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31173: Entitlement [{entitlementId}] is not consumable | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31180: Duplicate request id: [{requestId}] | 20006: optimistic lock)
+        409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31173: Entitlement [{entitlementId}] is not consumable | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31178: Entitlement [{entitlementId}] out of time range | 31180: Duplicate request id: [{requestId}] | 20006: optimistic lock)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -214,19 +222,25 @@ class ConsumeUserEntitlement(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
         if code == 200:
             return EntitlementDecrementResult.create_from_dict(content), None
+        if code == 400:
+            return None, ErrorEntity.create_from_dict(content)
         if code == 404:
             return None, ErrorEntity.create_from_dict(content)
         if code == 409:
             return None, ErrorEntity.create_from_dict(content)
 
-        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
+        return self.handle_undocumented_response(
+            code=code, content_type=content_type, content=content
+        )
 
     # endregion response methods
 
@@ -239,7 +253,7 @@ class ConsumeUserEntitlement(Operation):
         namespace: str,
         user_id: str,
         body: Optional[EntitlementDecrement] = None,
-    **kwargs
+        **kwargs,
     ) -> ConsumeUserEntitlement:
         instance = cls()
         instance.entitlement_id = entitlement_id
@@ -250,10 +264,14 @@ class ConsumeUserEntitlement(Operation):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> ConsumeUserEntitlement:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> ConsumeUserEntitlement:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = EntitlementDecrement.create_from_dict(dict_["body"], include_empty=include_empty)
+            instance.body = EntitlementDecrement.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
         elif include_empty:
             instance.body = EntitlementDecrement()
         if "entitlementId" in dict_ and dict_["entitlementId"] is not None:

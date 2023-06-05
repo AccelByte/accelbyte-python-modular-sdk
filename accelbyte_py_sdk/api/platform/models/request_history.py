@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -52,11 +52,11 @@ class RequestHistory(Model):
 
     # region fields
 
-    request_time: str                                                                              # OPTIONAL
-    response_body: Dict[str, Any]                                                                  # OPTIONAL
-    response_time: str                                                                             # OPTIONAL
-    status: Union[str, StatusEnum]                                                                 # OPTIONAL
-    status_code: int                                                                               # OPTIONAL
+    request_time: str  # OPTIONAL
+    response_body: Dict[str, Any]  # OPTIONAL
+    response_time: str  # OPTIONAL
+    status: Union[str, StatusEnum]  # OPTIONAL
+    status_code: int  # OPTIONAL
 
     # endregion fields
 
@@ -93,7 +93,9 @@ class RequestHistory(Model):
         elif include_empty:
             result["requestTime"] = ""
         if hasattr(self, "response_body"):
-            result["responseBody"] = {str(k0): v0 for k0, v0 in self.response_body.items()}
+            result["responseBody"] = {
+                str(k0): v0 for k0, v0 in self.response_body.items()
+            }
         elif include_empty:
             result["responseBody"] = {}
         if hasattr(self, "response_time"):
@@ -122,7 +124,7 @@ class RequestHistory(Model):
         response_time: Optional[str] = None,
         status: Optional[Union[str, StatusEnum]] = None,
         status_code: Optional[int] = None,
-    **kwargs
+        **kwargs,
     ) -> RequestHistory:
         instance = cls()
         if request_time is not None:
@@ -138,7 +140,9 @@ class RequestHistory(Model):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> RequestHistory:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> RequestHistory:
         instance = cls()
         if not dict_:
             return instance
@@ -147,7 +151,9 @@ class RequestHistory(Model):
         elif include_empty:
             instance.request_time = ""
         if "responseBody" in dict_ and dict_["responseBody"] is not None:
-            instance.response_body = {str(k0): v0 for k0, v0 in dict_["responseBody"].items()}
+            instance.response_body = {
+                str(k0): v0 for k0, v0 in dict_["responseBody"].items()
+            }
         elif include_empty:
             instance.response_body = {}
         if "responseTime" in dict_ and dict_["responseTime"] is not None:
@@ -165,15 +171,29 @@ class RequestHistory(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, RequestHistory]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, RequestHistory]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[RequestHistory]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[RequestHistory]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[RequestHistory, List[RequestHistory], Dict[Any, RequestHistory]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[RequestHistory, List[RequestHistory], Dict[Any, RequestHistory]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

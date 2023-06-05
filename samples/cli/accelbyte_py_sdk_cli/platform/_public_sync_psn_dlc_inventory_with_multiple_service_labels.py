@@ -6,7 +6,7 @@
 
 # template_file: python-cli-command.j2
 
-# AGS Platform Service (4.28.0)
+# AGS Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -30,9 +30,13 @@ import click
 
 from .._utils import login_as as login_as_internal
 from .._utils import to_dict
-from accelbyte_py_sdk.api.platform import public_sync_psn_dlc_inventory_with_multiple_service_labels as public_sync_psn_dlc_inventory_with_multiple_service_labels_internal
+from accelbyte_py_sdk.api.platform import (
+    public_sync_psn_dlc_inventory_with_multiple_service_labels as public_sync_psn_dlc_inventory_with_multiple_service_labels_internal,
+)
 from accelbyte_py_sdk.api.platform.models import ErrorEntity
-from accelbyte_py_sdk.api.platform.models import PlayStationDLCSyncMultiServiceLabelsRequest
+from accelbyte_py_sdk.api.platform.models import (
+    PlayStationDLCSyncMultiServiceLabelsRequest,
+)
 
 
 @click.command()
@@ -43,27 +47,29 @@ from accelbyte_py_sdk.api.platform.models import PlayStationDLCSyncMultiServiceL
 @click.option("--login_with_auth", type=str)
 @click.option("--doc", type=bool)
 def public_sync_psn_dlc_inventory_with_multiple_service_labels(
-        user_id: str,
-        body: Optional[str] = None,
-        namespace: Optional[str] = None,
-        login_as: Optional[str] = None,
-        login_with_auth: Optional[str] = None,
-        doc: Optional[bool] = None,
+    user_id: str,
+    body: Optional[str] = None,
+    namespace: Optional[str] = None,
+    login_as: Optional[str] = None,
+    login_with_auth: Optional[str] = None,
+    doc: Optional[bool] = None,
 ):
     if doc:
-        click.echo(public_sync_psn_dlc_inventory_with_multiple_service_labels_internal.__doc__)
+        click.echo(
+            public_sync_psn_dlc_inventory_with_multiple_service_labels_internal.__doc__
+        )
         return
     x_additional_headers = None
     if login_with_auth:
-        x_additional_headers = {
-            "Authorization": login_with_auth
-        }
+        x_additional_headers = {"Authorization": login_with_auth}
     else:
         login_as_internal(login_as)
     if body is not None:
         try:
             body_json = json.loads(body)
-            body = PlayStationDLCSyncMultiServiceLabelsRequest.create_from_dict(body_json)
+            body = PlayStationDLCSyncMultiServiceLabelsRequest.create_from_dict(
+                body_json
+            )
         except ValueError as e:
             raise Exception(f"Invalid JSON for 'body'. {str(e)}") from e
     result, error = public_sync_psn_dlc_inventory_with_multiple_service_labels_internal(
@@ -73,9 +79,13 @@ def public_sync_psn_dlc_inventory_with_multiple_service_labels(
         x_additional_headers=x_additional_headers,
     )
     if error:
-        raise Exception(f"publicSyncPsnDlcInventoryWithMultipleServiceLabels failed: {str(error)}")
+        raise Exception(
+            f"publicSyncPsnDlcInventoryWithMultipleServiceLabels failed: {str(error)}"
+        )
     click.echo(yaml.safe_dump(to_dict(result), sort_keys=False))
 
 
-public_sync_psn_dlc_inventory_with_multiple_service_labels.operation_id = "publicSyncPsnDlcInventoryWithMultipleServiceLabels"
+public_sync_psn_dlc_inventory_with_multiple_service_labels.operation_id = (
+    "publicSyncPsnDlcInventoryWithMultipleServiceLabels"
+)
 public_sync_psn_dlc_inventory_with_multiple_service_labels.is_deprecated = False

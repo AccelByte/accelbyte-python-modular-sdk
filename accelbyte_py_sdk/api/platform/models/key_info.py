@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -61,16 +61,16 @@ class KeyInfo(Model):
 
     # region fields
 
-    created_at: str                                                                                # REQUIRED
-    id_: str                                                                                       # REQUIRED
-    key_file: str                                                                                  # REQUIRED
-    key_group_id: str                                                                              # REQUIRED
-    namespace: str                                                                                 # REQUIRED
-    status: Union[str, StatusEnum]                                                                 # REQUIRED
-    updated_at: str                                                                                # REQUIRED
-    value: str                                                                                     # REQUIRED
-    acquire_order_no: str                                                                          # OPTIONAL
-    acquire_user_id: str                                                                           # OPTIONAL
+    created_at: str  # REQUIRED
+    id_: str  # REQUIRED
+    key_file: str  # REQUIRED
+    key_group_id: str  # REQUIRED
+    namespace: str  # REQUIRED
+    status: Union[str, StatusEnum]  # REQUIRED
+    updated_at: str  # REQUIRED
+    value: str  # REQUIRED
+    acquire_order_no: str  # OPTIONAL
+    acquire_user_id: str  # OPTIONAL
 
     # endregion fields
 
@@ -181,7 +181,7 @@ class KeyInfo(Model):
         value: str,
         acquire_order_no: Optional[str] = None,
         acquire_user_id: Optional[str] = None,
-    **kwargs
+        **kwargs,
     ) -> KeyInfo:
         instance = cls()
         instance.created_at = created_at
@@ -246,15 +246,29 @@ class KeyInfo(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, KeyInfo]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, KeyInfo]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[KeyInfo]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[KeyInfo]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[KeyInfo, List[KeyInfo], Dict[Any, KeyInfo]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[KeyInfo, List[KeyInfo], Dict[Any, KeyInfo]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

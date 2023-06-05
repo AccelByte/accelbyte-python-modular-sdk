@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -105,24 +105,24 @@ class CatalogChangeInfo(Model):
 
     # region fields
 
-    action: Union[str, ActionEnum]                                                                 # REQUIRED
-    change_id: str                                                                                 # REQUIRED
-    created_at: str                                                                                # REQUIRED
-    namespace: str                                                                                 # REQUIRED
-    selected: bool                                                                                 # REQUIRED
-    status: Union[str, StatusEnum]                                                                 # REQUIRED
-    store_id: str                                                                                  # REQUIRED
-    updated_at: str                                                                                # REQUIRED
-    category_path: str                                                                             # OPTIONAL
-    description: str                                                                               # OPTIONAL
-    item_id: str                                                                                   # OPTIONAL
-    item_type: Union[str, ItemTypeEnum]                                                            # OPTIONAL
-    published_at: str                                                                              # OPTIONAL
-    section_id: str                                                                                # OPTIONAL
-    sku: str                                                                                       # OPTIONAL
-    title: str                                                                                     # OPTIONAL
-    type_: Union[str, TypeEnum]                                                                    # OPTIONAL
-    view_id: str                                                                                   # OPTIONAL
+    action: Union[str, ActionEnum]  # REQUIRED
+    change_id: str  # REQUIRED
+    created_at: str  # REQUIRED
+    namespace: str  # REQUIRED
+    selected: bool  # REQUIRED
+    status: Union[str, StatusEnum]  # REQUIRED
+    store_id: str  # REQUIRED
+    updated_at: str  # REQUIRED
+    category_path: str  # OPTIONAL
+    description: str  # OPTIONAL
+    item_id: str  # OPTIONAL
+    item_type: Union[str, ItemTypeEnum]  # OPTIONAL
+    published_at: str  # OPTIONAL
+    section_id: str  # OPTIONAL
+    sku: str  # OPTIONAL
+    title: str  # OPTIONAL
+    type_: Union[str, TypeEnum]  # OPTIONAL
+    view_id: str  # OPTIONAL
 
     # endregion fields
 
@@ -305,7 +305,7 @@ class CatalogChangeInfo(Model):
         title: Optional[str] = None,
         type_: Optional[Union[str, TypeEnum]] = None,
         view_id: Optional[str] = None,
-    **kwargs
+        **kwargs,
     ) -> CatalogChangeInfo:
         instance = cls()
         instance.action = action
@@ -339,7 +339,9 @@ class CatalogChangeInfo(Model):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> CatalogChangeInfo:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> CatalogChangeInfo:
         instance = cls()
         if not dict_:
             return instance
@@ -418,15 +420,31 @@ class CatalogChangeInfo(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, CatalogChangeInfo]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, CatalogChangeInfo]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[CatalogChangeInfo]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[CatalogChangeInfo]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[CatalogChangeInfo, List[CatalogChangeInfo], Dict[Any, CatalogChangeInfo]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[
+        CatalogChangeInfo, List[CatalogChangeInfo], Dict[Any, CatalogChangeInfo]
+    ]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -488,7 +506,19 @@ class CatalogChangeInfo(Model):
         return {
             "action": ["CREATE", "DELETE", "UPDATE"],
             "status": ["PUBLISHED", "UNPUBLISHED"],
-            "itemType": ["APP", "BUNDLE", "CODE", "COINS", "EXTENSION", "INGAMEITEM", "LOOTBOX", "MEDIA", "OPTIONBOX", "SEASON", "SUBSCRIPTION"],
+            "itemType": [
+                "APP",
+                "BUNDLE",
+                "CODE",
+                "COINS",
+                "EXTENSION",
+                "INGAMEITEM",
+                "LOOTBOX",
+                "MEDIA",
+                "OPTIONBOX",
+                "SEASON",
+                "SUBSCRIPTION",
+            ],
             "type": ["CATEGORY", "ITEM", "SECTION", "STORE", "VIEW"],
         }
 

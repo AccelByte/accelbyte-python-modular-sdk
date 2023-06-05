@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Ugc Service (2.9.3)
+# AccelByte Gaming Services Ugc Service (2.11.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -29,7 +29,7 @@ from .....core import Operation
 from .....core import HeaderStr
 from .....core import HttpResponse
 
-from ...models import ModelsContentRequest
+from ...models import ModelsAdminUpdateContentRequest
 from ...models import ModelsCreateContentResponse
 from ...models import ResponseError
 
@@ -38,14 +38,24 @@ class SingleAdminUpdateContentS3(Operation):
     """Update content to S3 bucket (SingleAdminUpdateContentS3)
 
     Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE].
-    All request body are required except payload, preview, tags, contentType, updateContentFile and customAttributes.
-    contentType values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.
-    If not specified, it will use fileExtension value.
-    To update content's file, set `updateContentFile` to `true` and upload the file using URL in `payloadURL.url` in response body.
+
+    All request body are required except `payload`, `preview`, `tags`,`contentType`, `updateContentFile`, `customAttributes` and `shareCode`.
+
+    `contentType` values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.
+
+    If not specified, it will use `fileExtension` value.
+
+    To update content file, set `updateContentFile` to `true` and upload the file using URL in `payloadURL.url` in response body.
+
+    `shareCode` format should follows:
+
+    Max length: 7
+    Available characters: abcdefhkpqrstuxyz
 
 
 
-    NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
+
+     NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]
@@ -63,7 +73,7 @@ class SingleAdminUpdateContentS3(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ModelsContentRequest in body
+        body: (body) REQUIRED ModelsAdminUpdateContentRequest in body
 
         channel_id: (channelId) REQUIRED str in path
 
@@ -80,6 +90,8 @@ class SingleAdminUpdateContentS3(Operation):
 
         404: Not Found - ResponseError (Not Found)
 
+        409: Conflict - ResponseError (Conflict)
+
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
 
@@ -92,7 +104,7 @@ class SingleAdminUpdateContentS3(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
-    body: ModelsContentRequest  # REQUIRED in [body]
+    body: ModelsAdminUpdateContentRequest  # REQUIRED in [body]
     channel_id: str  # REQUIRED in [path]
     content_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -162,7 +174,9 @@ class SingleAdminUpdateContentS3(Operation):
 
     # region with_x methods
 
-    def with_body(self, value: ModelsContentRequest) -> SingleAdminUpdateContentS3:
+    def with_body(
+        self, value: ModelsAdminUpdateContentRequest
+    ) -> SingleAdminUpdateContentS3:
         self.body = value
         return self
 
@@ -187,7 +201,7 @@ class SingleAdminUpdateContentS3(Operation):
         if hasattr(self, "body") and self.body:
             result["body"] = self.body.to_dict(include_empty=include_empty)
         elif include_empty:
-            result["body"] = ModelsContentRequest()
+            result["body"] = ModelsAdminUpdateContentRequest()
         if hasattr(self, "channel_id") and self.channel_id:
             result["channelId"] = str(self.channel_id)
         elif include_empty:
@@ -223,6 +237,8 @@ class SingleAdminUpdateContentS3(Operation):
 
         404: Not Found - ResponseError (Not Found)
 
+        409: Conflict - ResponseError (Conflict)
+
         500: Internal Server Error - ResponseError (Internal Server Error)
 
         ---: HttpResponse (Undocumented Response)
@@ -246,6 +262,8 @@ class SingleAdminUpdateContentS3(Operation):
             return None, ResponseError.create_from_dict(content)
         if code == 404:
             return None, ResponseError.create_from_dict(content)
+        if code == 409:
+            return None, ResponseError.create_from_dict(content)
         if code == 500:
             return None, ResponseError.create_from_dict(content)
 
@@ -260,7 +278,7 @@ class SingleAdminUpdateContentS3(Operation):
     @classmethod
     def create(
         cls,
-        body: ModelsContentRequest,
+        body: ModelsAdminUpdateContentRequest,
         channel_id: str,
         content_id: str,
         namespace: str,
@@ -279,11 +297,11 @@ class SingleAdminUpdateContentS3(Operation):
     ) -> SingleAdminUpdateContentS3:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = ModelsContentRequest.create_from_dict(
+            instance.body = ModelsAdminUpdateContentRequest.create_from_dict(
                 dict_["body"], include_empty=include_empty
             )
         elif include_empty:
-            instance.body = ModelsContentRequest()
+            instance.body = ModelsAdminUpdateContentRequest()
         if "channelId" in dict_ and dict_["channelId"] is not None:
             instance.channel_id = str(dict_["channelId"])
         elif include_empty:

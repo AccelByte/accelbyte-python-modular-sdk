@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -75,20 +75,20 @@ class FulfillmentHistoryInfo(Model):
 
     # region fields
 
-    created_at: str                                                                                # REQUIRED
-    id_: str                                                                                       # REQUIRED
-    namespace: str                                                                                 # REQUIRED
-    status: Union[str, StatusEnum]                                                                 # REQUIRED
-    updated_at: str                                                                                # REQUIRED
-    user_id: str                                                                                   # REQUIRED
-    code: str                                                                                      # OPTIONAL
-    credit_summaries: List[CreditSummary]                                                          # OPTIONAL
-    entitlement_summaries: List[EntitlementSummary]                                                # OPTIONAL
-    extension_fulfillment_summaries: List[ExtensionFulfillmentSummary]                             # OPTIONAL
-    fulfill_items: List[FulfillmentItem]                                                           # OPTIONAL
-    fulfillment_error: FulfillmentError                                                            # OPTIONAL
-    granted_item_ids: List[str]                                                                    # OPTIONAL
-    order_no: str                                                                                  # OPTIONAL
+    created_at: str  # REQUIRED
+    id_: str  # REQUIRED
+    namespace: str  # REQUIRED
+    status: Union[str, StatusEnum]  # REQUIRED
+    updated_at: str  # REQUIRED
+    user_id: str  # REQUIRED
+    code: str  # OPTIONAL
+    credit_summaries: List[CreditSummary]  # OPTIONAL
+    entitlement_summaries: List[EntitlementSummary]  # OPTIONAL
+    extension_fulfillment_summaries: List[ExtensionFulfillmentSummary]  # OPTIONAL
+    fulfill_items: List[FulfillmentItem]  # OPTIONAL
+    fulfillment_error: FulfillmentError  # OPTIONAL
+    granted_item_ids: List[str]  # OPTIONAL
+    order_no: str  # OPTIONAL
 
     # endregion fields
 
@@ -122,19 +122,27 @@ class FulfillmentHistoryInfo(Model):
         self.code = value
         return self
 
-    def with_credit_summaries(self, value: List[CreditSummary]) -> FulfillmentHistoryInfo:
+    def with_credit_summaries(
+        self, value: List[CreditSummary]
+    ) -> FulfillmentHistoryInfo:
         self.credit_summaries = value
         return self
 
-    def with_entitlement_summaries(self, value: List[EntitlementSummary]) -> FulfillmentHistoryInfo:
+    def with_entitlement_summaries(
+        self, value: List[EntitlementSummary]
+    ) -> FulfillmentHistoryInfo:
         self.entitlement_summaries = value
         return self
 
-    def with_extension_fulfillment_summaries(self, value: List[ExtensionFulfillmentSummary]) -> FulfillmentHistoryInfo:
+    def with_extension_fulfillment_summaries(
+        self, value: List[ExtensionFulfillmentSummary]
+    ) -> FulfillmentHistoryInfo:
         self.extension_fulfillment_summaries = value
         return self
 
-    def with_fulfill_items(self, value: List[FulfillmentItem]) -> FulfillmentHistoryInfo:
+    def with_fulfill_items(
+        self, value: List[FulfillmentItem]
+    ) -> FulfillmentHistoryInfo:
         self.fulfill_items = value
         return self
 
@@ -185,23 +193,35 @@ class FulfillmentHistoryInfo(Model):
         elif include_empty:
             result["code"] = ""
         if hasattr(self, "credit_summaries"):
-            result["creditSummaries"] = [i0.to_dict(include_empty=include_empty) for i0 in self.credit_summaries]
+            result["creditSummaries"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.credit_summaries
+            ]
         elif include_empty:
             result["creditSummaries"] = []
         if hasattr(self, "entitlement_summaries"):
-            result["entitlementSummaries"] = [i0.to_dict(include_empty=include_empty) for i0 in self.entitlement_summaries]
+            result["entitlementSummaries"] = [
+                i0.to_dict(include_empty=include_empty)
+                for i0 in self.entitlement_summaries
+            ]
         elif include_empty:
             result["entitlementSummaries"] = []
         if hasattr(self, "extension_fulfillment_summaries"):
-            result["extensionFulfillmentSummaries"] = [i0.to_dict(include_empty=include_empty) for i0 in self.extension_fulfillment_summaries]
+            result["extensionFulfillmentSummaries"] = [
+                i0.to_dict(include_empty=include_empty)
+                for i0 in self.extension_fulfillment_summaries
+            ]
         elif include_empty:
             result["extensionFulfillmentSummaries"] = []
         if hasattr(self, "fulfill_items"):
-            result["fulfillItems"] = [i0.to_dict(include_empty=include_empty) for i0 in self.fulfill_items]
+            result["fulfillItems"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.fulfill_items
+            ]
         elif include_empty:
             result["fulfillItems"] = []
         if hasattr(self, "fulfillment_error"):
-            result["fulfillmentError"] = self.fulfillment_error.to_dict(include_empty=include_empty)
+            result["fulfillmentError"] = self.fulfillment_error.to_dict(
+                include_empty=include_empty
+            )
         elif include_empty:
             result["fulfillmentError"] = FulfillmentError()
         if hasattr(self, "granted_item_ids"):
@@ -230,12 +250,14 @@ class FulfillmentHistoryInfo(Model):
         code: Optional[str] = None,
         credit_summaries: Optional[List[CreditSummary]] = None,
         entitlement_summaries: Optional[List[EntitlementSummary]] = None,
-        extension_fulfillment_summaries: Optional[List[ExtensionFulfillmentSummary]] = None,
+        extension_fulfillment_summaries: Optional[
+            List[ExtensionFulfillmentSummary]
+        ] = None,
         fulfill_items: Optional[List[FulfillmentItem]] = None,
         fulfillment_error: Optional[FulfillmentError] = None,
         granted_item_ids: Optional[List[str]] = None,
         order_no: Optional[str] = None,
-    **kwargs
+        **kwargs,
     ) -> FulfillmentHistoryInfo:
         instance = cls()
         instance.created_at = created_at
@@ -263,7 +285,9 @@ class FulfillmentHistoryInfo(Model):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> FulfillmentHistoryInfo:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> FulfillmentHistoryInfo:
         instance = cls()
         if not dict_:
             return instance
@@ -296,23 +320,45 @@ class FulfillmentHistoryInfo(Model):
         elif include_empty:
             instance.code = ""
         if "creditSummaries" in dict_ and dict_["creditSummaries"] is not None:
-            instance.credit_summaries = [CreditSummary.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["creditSummaries"]]
+            instance.credit_summaries = [
+                CreditSummary.create_from_dict(i0, include_empty=include_empty)
+                for i0 in dict_["creditSummaries"]
+            ]
         elif include_empty:
             instance.credit_summaries = []
-        if "entitlementSummaries" in dict_ and dict_["entitlementSummaries"] is not None:
-            instance.entitlement_summaries = [EntitlementSummary.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["entitlementSummaries"]]
+        if (
+            "entitlementSummaries" in dict_
+            and dict_["entitlementSummaries"] is not None
+        ):
+            instance.entitlement_summaries = [
+                EntitlementSummary.create_from_dict(i0, include_empty=include_empty)
+                for i0 in dict_["entitlementSummaries"]
+            ]
         elif include_empty:
             instance.entitlement_summaries = []
-        if "extensionFulfillmentSummaries" in dict_ and dict_["extensionFulfillmentSummaries"] is not None:
-            instance.extension_fulfillment_summaries = [ExtensionFulfillmentSummary.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["extensionFulfillmentSummaries"]]
+        if (
+            "extensionFulfillmentSummaries" in dict_
+            and dict_["extensionFulfillmentSummaries"] is not None
+        ):
+            instance.extension_fulfillment_summaries = [
+                ExtensionFulfillmentSummary.create_from_dict(
+                    i0, include_empty=include_empty
+                )
+                for i0 in dict_["extensionFulfillmentSummaries"]
+            ]
         elif include_empty:
             instance.extension_fulfillment_summaries = []
         if "fulfillItems" in dict_ and dict_["fulfillItems"] is not None:
-            instance.fulfill_items = [FulfillmentItem.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["fulfillItems"]]
+            instance.fulfill_items = [
+                FulfillmentItem.create_from_dict(i0, include_empty=include_empty)
+                for i0 in dict_["fulfillItems"]
+            ]
         elif include_empty:
             instance.fulfill_items = []
         if "fulfillmentError" in dict_ and dict_["fulfillmentError"] is not None:
-            instance.fulfillment_error = FulfillmentError.create_from_dict(dict_["fulfillmentError"], include_empty=include_empty)
+            instance.fulfillment_error = FulfillmentError.create_from_dict(
+                dict_["fulfillmentError"], include_empty=include_empty
+            )
         elif include_empty:
             instance.fulfillment_error = FulfillmentError()
         if "grantedItemIds" in dict_ and dict_["grantedItemIds"] is not None:
@@ -326,15 +372,33 @@ class FulfillmentHistoryInfo(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, FulfillmentHistoryInfo]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, FulfillmentHistoryInfo]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[FulfillmentHistoryInfo]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[FulfillmentHistoryInfo]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[FulfillmentHistoryInfo, List[FulfillmentHistoryInfo], Dict[Any, FulfillmentHistoryInfo]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[
+        FulfillmentHistoryInfo,
+        List[FulfillmentHistoryInfo],
+        Dict[Any, FulfillmentHistoryInfo],
+    ]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

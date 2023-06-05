@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -64,13 +64,13 @@ class FulfillmentItem(Model):
 
     # region fields
 
-    quantity: int                                                                                  # REQUIRED
-    extra_subscription_days: int                                                                   # OPTIONAL
-    item_id: str                                                                                   # OPTIONAL
-    item_name: str                                                                                 # OPTIONAL
-    item_sku: str                                                                                  # OPTIONAL
-    item_type: Union[str, ItemTypeEnum]                                                            # OPTIONAL
-    store_id: str                                                                                  # OPTIONAL
+    quantity: int  # REQUIRED
+    extra_subscription_days: int  # OPTIONAL
+    item_id: str  # OPTIONAL
+    item_name: str  # OPTIONAL
+    item_sku: str  # OPTIONAL
+    item_type: Union[str, ItemTypeEnum]  # OPTIONAL
+    store_id: str  # OPTIONAL
 
     # endregion fields
 
@@ -154,7 +154,7 @@ class FulfillmentItem(Model):
         item_sku: Optional[str] = None,
         item_type: Optional[Union[str, ItemTypeEnum]] = None,
         store_id: Optional[str] = None,
-    **kwargs
+        **kwargs,
     ) -> FulfillmentItem:
         instance = cls()
         instance.quantity = quantity
@@ -173,7 +173,9 @@ class FulfillmentItem(Model):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> FulfillmentItem:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> FulfillmentItem:
         instance = cls()
         if not dict_:
             return instance
@@ -181,7 +183,10 @@ class FulfillmentItem(Model):
             instance.quantity = int(dict_["quantity"])
         elif include_empty:
             instance.quantity = 0
-        if "extraSubscriptionDays" in dict_ and dict_["extraSubscriptionDays"] is not None:
+        if (
+            "extraSubscriptionDays" in dict_
+            and dict_["extraSubscriptionDays"] is not None
+        ):
             instance.extra_subscription_days = int(dict_["extraSubscriptionDays"])
         elif include_empty:
             instance.extra_subscription_days = 0
@@ -208,15 +213,29 @@ class FulfillmentItem(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, FulfillmentItem]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, FulfillmentItem]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[FulfillmentItem]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[FulfillmentItem]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[FulfillmentItem, List[FulfillmentItem], Dict[Any, FulfillmentItem]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[FulfillmentItem, List[FulfillmentItem], Dict[Any, FulfillmentItem]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -254,7 +273,19 @@ class FulfillmentItem(Model):
     @staticmethod
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
-            "itemType": ["APP", "BUNDLE", "CODE", "COINS", "EXTENSION", "INGAMEITEM", "LOOTBOX", "MEDIA", "OPTIONBOX", "SEASON", "SUBSCRIPTION"],
+            "itemType": [
+                "APP",
+                "BUNDLE",
+                "CODE",
+                "COINS",
+                "EXTENSION",
+                "INGAMEITEM",
+                "LOOTBOX",
+                "MEDIA",
+                "OPTIONBOX",
+                "SEASON",
+                "SUBSCRIPTION",
+            ],
         }
 
     # endregion static methods

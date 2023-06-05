@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -45,10 +45,10 @@ class RewardCondition(Model):
 
     # region fields
 
-    condition: str                                                                                 # OPTIONAL
-    condition_name: str                                                                            # OPTIONAL
-    event_name: str                                                                                # OPTIONAL
-    reward_items: List[RewardItem]                                                                 # OPTIONAL
+    condition: str  # OPTIONAL
+    condition_name: str  # OPTIONAL
+    event_name: str  # OPTIONAL
+    reward_items: List[RewardItem]  # OPTIONAL
 
     # endregion fields
 
@@ -89,7 +89,9 @@ class RewardCondition(Model):
         elif include_empty:
             result["eventName"] = ""
         if hasattr(self, "reward_items"):
-            result["rewardItems"] = [i0.to_dict(include_empty=include_empty) for i0 in self.reward_items]
+            result["rewardItems"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.reward_items
+            ]
         elif include_empty:
             result["rewardItems"] = []
         return result
@@ -105,7 +107,7 @@ class RewardCondition(Model):
         condition_name: Optional[str] = None,
         event_name: Optional[str] = None,
         reward_items: Optional[List[RewardItem]] = None,
-    **kwargs
+        **kwargs,
     ) -> RewardCondition:
         instance = cls()
         if condition is not None:
@@ -119,7 +121,9 @@ class RewardCondition(Model):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> RewardCondition:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> RewardCondition:
         instance = cls()
         if not dict_:
             return instance
@@ -136,21 +140,38 @@ class RewardCondition(Model):
         elif include_empty:
             instance.event_name = ""
         if "rewardItems" in dict_ and dict_["rewardItems"] is not None:
-            instance.reward_items = [RewardItem.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["rewardItems"]]
+            instance.reward_items = [
+                RewardItem.create_from_dict(i0, include_empty=include_empty)
+                for i0 in dict_["rewardItems"]
+            ]
         elif include_empty:
             instance.reward_items = []
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, RewardCondition]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, RewardCondition]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[RewardCondition]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[RewardCondition]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[RewardCondition, List[RewardCondition], Dict[Any, RewardCondition]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[RewardCondition, List[RewardCondition], Dict[Any, RewardCondition]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

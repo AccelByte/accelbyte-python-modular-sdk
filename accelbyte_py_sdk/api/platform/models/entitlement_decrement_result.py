@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -135,33 +135,33 @@ class EntitlementDecrementResult(Model):
 
     # region fields
 
-    clazz: Union[str, ClazzEnum]                                                                   # REQUIRED
-    created_at: str                                                                                # REQUIRED
-    granted_at: str                                                                                # REQUIRED
-    id_: str                                                                                       # REQUIRED
-    item_id: str                                                                                   # REQUIRED
-    item_namespace: str                                                                            # REQUIRED
-    name: str                                                                                      # REQUIRED
-    namespace: str                                                                                 # REQUIRED
-    source: Union[str, SourceEnum]                                                                 # REQUIRED
-    status: Union[str, StatusEnum]                                                                 # REQUIRED
-    type_: Union[str, TypeEnum]                                                                    # REQUIRED
-    updated_at: str                                                                                # REQUIRED
-    user_id: str                                                                                   # REQUIRED
-    app_id: str                                                                                    # OPTIONAL
-    app_type: Union[str, AppTypeEnum]                                                              # OPTIONAL
-    end_date: str                                                                                  # OPTIONAL
-    features: List[str]                                                                            # OPTIONAL
-    granted_code: str                                                                              # OPTIONAL
-    item_snapshot: ItemSnapshot                                                                    # OPTIONAL
-    replayed: bool                                                                                 # OPTIONAL
-    request_id: str                                                                                # OPTIONAL
-    rewards: List[EntitlementLootBoxReward]                                                        # OPTIONAL
-    sku: str                                                                                       # OPTIONAL
-    stackable: bool                                                                                # OPTIONAL
-    start_date: str                                                                                # OPTIONAL
-    store_id: str                                                                                  # OPTIONAL
-    use_count: int                                                                                 # OPTIONAL
+    clazz: Union[str, ClazzEnum]  # REQUIRED
+    created_at: str  # REQUIRED
+    granted_at: str  # REQUIRED
+    id_: str  # REQUIRED
+    item_id: str  # REQUIRED
+    item_namespace: str  # REQUIRED
+    name: str  # REQUIRED
+    namespace: str  # REQUIRED
+    source: Union[str, SourceEnum]  # REQUIRED
+    status: Union[str, StatusEnum]  # REQUIRED
+    type_: Union[str, TypeEnum]  # REQUIRED
+    updated_at: str  # REQUIRED
+    user_id: str  # REQUIRED
+    app_id: str  # OPTIONAL
+    app_type: Union[str, AppTypeEnum]  # OPTIONAL
+    end_date: str  # OPTIONAL
+    features: List[str]  # OPTIONAL
+    granted_code: str  # OPTIONAL
+    item_snapshot: ItemSnapshot  # OPTIONAL
+    replayed: bool  # OPTIONAL
+    request_id: str  # OPTIONAL
+    rewards: List[EntitlementLootBoxReward]  # OPTIONAL
+    sku: str  # OPTIONAL
+    stackable: bool  # OPTIONAL
+    start_date: str  # OPTIONAL
+    store_id: str  # OPTIONAL
+    use_count: int  # OPTIONAL
 
     # endregion fields
 
@@ -223,7 +223,9 @@ class EntitlementDecrementResult(Model):
         self.app_id = value
         return self
 
-    def with_app_type(self, value: Union[str, AppTypeEnum]) -> EntitlementDecrementResult:
+    def with_app_type(
+        self, value: Union[str, AppTypeEnum]
+    ) -> EntitlementDecrementResult:
         self.app_type = value
         return self
 
@@ -251,7 +253,9 @@ class EntitlementDecrementResult(Model):
         self.request_id = value
         return self
 
-    def with_rewards(self, value: List[EntitlementLootBoxReward]) -> EntitlementDecrementResult:
+    def with_rewards(
+        self, value: List[EntitlementLootBoxReward]
+    ) -> EntitlementDecrementResult:
         self.rewards = value
         return self
 
@@ -354,7 +358,9 @@ class EntitlementDecrementResult(Model):
         elif include_empty:
             result["grantedCode"] = ""
         if hasattr(self, "item_snapshot"):
-            result["itemSnapshot"] = self.item_snapshot.to_dict(include_empty=include_empty)
+            result["itemSnapshot"] = self.item_snapshot.to_dict(
+                include_empty=include_empty
+            )
         elif include_empty:
             result["itemSnapshot"] = ItemSnapshot()
         if hasattr(self, "replayed"):
@@ -366,7 +372,9 @@ class EntitlementDecrementResult(Model):
         elif include_empty:
             result["requestId"] = ""
         if hasattr(self, "rewards"):
-            result["rewards"] = [i0.to_dict(include_empty=include_empty) for i0 in self.rewards]
+            result["rewards"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.rewards
+            ]
         elif include_empty:
             result["rewards"] = []
         if hasattr(self, "sku"):
@@ -425,7 +433,7 @@ class EntitlementDecrementResult(Model):
         start_date: Optional[str] = None,
         store_id: Optional[str] = None,
         use_count: Optional[int] = None,
-    **kwargs
+        **kwargs,
     ) -> EntitlementDecrementResult:
         instance = cls()
         instance.clazz = clazz
@@ -472,7 +480,9 @@ class EntitlementDecrementResult(Model):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> EntitlementDecrementResult:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> EntitlementDecrementResult:
         instance = cls()
         if not dict_:
             return instance
@@ -549,7 +559,9 @@ class EntitlementDecrementResult(Model):
         elif include_empty:
             instance.granted_code = ""
         if "itemSnapshot" in dict_ and dict_["itemSnapshot"] is not None:
-            instance.item_snapshot = ItemSnapshot.create_from_dict(dict_["itemSnapshot"], include_empty=include_empty)
+            instance.item_snapshot = ItemSnapshot.create_from_dict(
+                dict_["itemSnapshot"], include_empty=include_empty
+            )
         elif include_empty:
             instance.item_snapshot = ItemSnapshot()
         if "replayed" in dict_ and dict_["replayed"] is not None:
@@ -561,7 +573,12 @@ class EntitlementDecrementResult(Model):
         elif include_empty:
             instance.request_id = ""
         if "rewards" in dict_ and dict_["rewards"] is not None:
-            instance.rewards = [EntitlementLootBoxReward.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["rewards"]]
+            instance.rewards = [
+                EntitlementLootBoxReward.create_from_dict(
+                    i0, include_empty=include_empty
+                )
+                for i0 in dict_["rewards"]
+            ]
         elif include_empty:
             instance.rewards = []
         if "sku" in dict_ and dict_["sku"] is not None:
@@ -587,15 +604,33 @@ class EntitlementDecrementResult(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, EntitlementDecrementResult]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, EntitlementDecrementResult]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[EntitlementDecrementResult]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[EntitlementDecrementResult]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[EntitlementDecrementResult, List[EntitlementDecrementResult], Dict[Any, EntitlementDecrementResult]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[
+        EntitlementDecrementResult,
+        List[EntitlementDecrementResult],
+        Dict[Any, EntitlementDecrementResult],
+    ]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -673,8 +708,26 @@ class EntitlementDecrementResult(Model):
     @staticmethod
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
-            "clazz": ["APP", "CODE", "ENTITLEMENT", "LOOTBOX", "MEDIA", "OPTIONBOX", "SUBSCRIPTION"],
-            "source": ["ACHIEVEMENT", "GIFT", "IAP", "OTHER", "PROMOTION", "PURCHASE", "REDEEM_CODE", "REFERRAL_BONUS", "REWARD"],
+            "clazz": [
+                "APP",
+                "CODE",
+                "ENTITLEMENT",
+                "LOOTBOX",
+                "MEDIA",
+                "OPTIONBOX",
+                "SUBSCRIPTION",
+            ],
+            "source": [
+                "ACHIEVEMENT",
+                "GIFT",
+                "IAP",
+                "OTHER",
+                "PROMOTION",
+                "PURCHASE",
+                "REDEEM_CODE",
+                "REFERRAL_BONUS",
+                "REWARD",
+            ],
             "status": ["ACTIVE", "CONSUMED", "INACTIVE", "REVOKED", "SOLD"],
             "type": ["CONSUMABLE", "DURABLE"],
             "appType": ["DEMO", "DLC", "GAME", "SOFTWARE"],

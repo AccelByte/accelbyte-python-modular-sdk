@@ -6,7 +6,7 @@
 
 # template_file: python-cli-command.j2
 
-# AGS Cloudsave Service (3.6.4)
+# AGS Cloudsave Service (3.7.1)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

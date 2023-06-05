@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Matchmaking Service."""
 
-__version__ = "2.22.0"
+__version__ = "2.24.1"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -38,10 +38,14 @@ from ._matchmaking import get_all_party_in_channel
 from ._matchmaking import get_all_party_in_channel_async
 from ._matchmaking import get_all_sessions_in_channel
 from ._matchmaking import get_all_sessions_in_channel_async
+from ._matchmaking import get_match_pool_metric
+from ._matchmaking import get_match_pool_metric_async
 from ._matchmaking import get_session_history_detailed
 from ._matchmaking import get_session_history_detailed_async
 from ._matchmaking import get_single_matchmaking_channel
 from ._matchmaking import get_single_matchmaking_channel_async
+from ._matchmaking import get_stat_data
+from ._matchmaking import get_stat_data_async
 from ._matchmaking import import_channels
 from ._matchmaking import import_channels_async
 from ._matchmaking import public_get_all_matchmaking_channel
@@ -71,6 +75,21 @@ from ._matchmaking_operations import public_get_messages
 from ._matchmaking_operations import public_get_messages_async
 from ._matchmaking_operations import version_check_handler
 from ._matchmaking_operations import version_check_handler_async
+
+from ._mock_matchmaking import bulk_create_mock_tickets
+from ._mock_matchmaking import bulk_create_mock_tickets_async
+from ._mock_matchmaking import clean_all_mocks
+from ._mock_matchmaking import clean_all_mocks_async
+from ._mock_matchmaking import create_mock_tickets
+from ._mock_matchmaking import create_mock_tickets_async
+from ._mock_matchmaking import get_all_mock_matches
+from ._mock_matchmaking import get_all_mock_matches_async
+from ._mock_matchmaking import get_all_mock_tickets
+from ._mock_matchmaking import get_all_mock_tickets_async
+from ._mock_matchmaking import get_mock_matches_by_timestamp
+from ._mock_matchmaking import get_mock_matches_by_timestamp_async
+from ._mock_matchmaking import get_mock_tickets_by_timestamp
+from ._mock_matchmaking import get_mock_tickets_by_timestamp_async
 
 from ._social_matchmaking import update_play_time_weight
 from ._social_matchmaking import update_play_time_weight_async

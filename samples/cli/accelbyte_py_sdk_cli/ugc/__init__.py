@@ -6,7 +6,7 @@
 
 # template_file: python-cli-init.j2
 
-# justice-ugc-service (2.9.3)
+# justice-ugc-service (2.11.1)
 
 from ._single_admin_get_channel import single_admin_get_channel
 from ._admin_create_channel import admin_create_channel
@@ -80,7 +80,7 @@ from ._public_search_creator import public_search_creator
 from ._get_followed_users import get_followed_users
 from ._public_get_creator import public_get_creator
 from ._get_channels import get_channels
-from ._create_channel import create_channel
+from ._public_create_channel import public_create_channel
 from ._delete_all_user_channel import delete_all_user_channel
 from ._update_channel import update_channel
 from ._delete_channel import delete_channel
@@ -174,7 +174,7 @@ commands = [
     get_followed_users,
     public_get_creator,
     get_channels,
-    create_channel,
+    public_create_channel,
     delete_all_user_channel,
     update_channel,
     delete_channel,

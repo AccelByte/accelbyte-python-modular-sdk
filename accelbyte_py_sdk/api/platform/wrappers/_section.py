@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -50,7 +50,13 @@ from ..models import SectionUpdateRotationTypeEnum
 
 
 @same_doc_as(CreateSection)
-def create_section(store_id: str, body: Optional[SectionCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def create_section(
+    store_id: str,
+    body: Optional[SectionCreate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Create a section (createSection)
 
     This API is used to create a section.
@@ -59,6 +65,24 @@ def create_section(store_id: str, body: Optional[SectionCreate] = None, namespac
 
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=1 (CREATE)
       *  Returns : created a section
+
+
+
+    ## Restrictions for section extension and localization extension
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STORE [CREATE]
@@ -106,7 +130,13 @@ def create_section(store_id: str, body: Optional[SectionCreate] = None, namespac
 
 
 @same_doc_as(CreateSection)
-async def create_section_async(store_id: str, body: Optional[SectionCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def create_section_async(
+    store_id: str,
+    body: Optional[SectionCreate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Create a section (createSection)
 
     This API is used to create a section.
@@ -115,6 +145,24 @@ async def create_section_async(store_id: str, body: Optional[SectionCreate] = No
 
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=1 (CREATE)
       *  Returns : created a section
+
+
+
+    ## Restrictions for section extension and localization extension
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STORE [CREATE]
@@ -158,11 +206,19 @@ async def create_section_async(store_id: str, body: Optional[SectionCreate] = No
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(DeleteSection)
-def delete_section(section_id: str, store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def delete_section(
+    section_id: str,
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Delete a section (deleteSection)
 
     This API is used to delete s section.
@@ -213,7 +269,13 @@ def delete_section(section_id: str, store_id: str, namespace: Optional[str] = No
 
 
 @same_doc_as(DeleteSection)
-async def delete_section_async(section_id: str, store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def delete_section_async(
+    section_id: str,
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Delete a section (deleteSection)
 
     This API is used to delete s section.
@@ -260,11 +322,19 @@ async def delete_section_async(section_id: str, store_id: str, namespace: Option
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetSection)
-def get_section(section_id: str, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_section(
+    section_id: str,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get a section (getSection)
 
     This API is used to get a section.
@@ -314,7 +384,13 @@ def get_section(section_id: str, store_id: Optional[str] = None, namespace: Opti
 
 
 @same_doc_as(GetSection)
-async def get_section_async(section_id: str, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_section_async(
+    section_id: str,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get a section (getSection)
 
     This API is used to get a section.
@@ -360,11 +436,22 @@ async def get_section_async(section_id: str, store_id: Optional[str] = None, nam
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicListActiveSections)
-def public_list_active_sections(user_id: str, language: Optional[str] = None, region: Optional[str] = None, store_id: Optional[str] = None, view_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_list_active_sections(
+    user_id: str,
+    language: Optional[str] = None,
+    region: Optional[str] = None,
+    store_id: Optional[str] = None,
+    view_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """List active section contents (publicListActiveSections)
 
     This API is used to list active section contents.
@@ -422,7 +509,16 @@ def public_list_active_sections(user_id: str, language: Optional[str] = None, re
 
 
 @same_doc_as(PublicListActiveSections)
-async def public_list_active_sections_async(user_id: str, language: Optional[str] = None, region: Optional[str] = None, store_id: Optional[str] = None, view_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_list_active_sections_async(
+    user_id: str,
+    language: Optional[str] = None,
+    region: Optional[str] = None,
+    store_id: Optional[str] = None,
+    view_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """List active section contents (publicListActiveSections)
 
     This API is used to list active section contents.
@@ -476,11 +572,18 @@ async def public_list_active_sections_async(user_id: str, language: Optional[str
         view_id=view_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PurgeExpiredSection)
-def purge_expired_section(store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def purge_expired_section(
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """purge expired section (purgeExpiredSection)
 
     This API is used to purge expired section.
@@ -526,7 +629,12 @@ def purge_expired_section(store_id: str, namespace: Optional[str] = None, x_addi
 
 
 @same_doc_as(PurgeExpiredSection)
-async def purge_expired_section_async(store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def purge_expired_section_async(
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """purge expired section (purgeExpiredSection)
 
     This API is used to purge expired section.
@@ -568,11 +676,23 @@ async def purge_expired_section_async(store_id: str, namespace: Optional[str] = 
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(QuerySections)
-def query_sections(end: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, start: Optional[str] = None, store_id: Optional[str] = None, view_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def query_sections(
+    end: Optional[str] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    start: Optional[str] = None,
+    store_id: Optional[str] = None,
+    view_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """List sections (querySections)
 
     This API is used to query sections.
@@ -636,7 +756,17 @@ def query_sections(end: Optional[str] = None, limit: Optional[int] = None, offse
 
 
 @same_doc_as(QuerySections)
-async def query_sections_async(end: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, start: Optional[str] = None, store_id: Optional[str] = None, view_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def query_sections_async(
+    end: Optional[str] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    start: Optional[str] = None,
+    store_id: Optional[str] = None,
+    view_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """List sections (querySections)
 
     This API is used to query sections.
@@ -696,11 +826,20 @@ async def query_sections_async(end: Optional[str] = None, limit: Optional[int] =
         view_id=view_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(UpdateSection)
-def update_section(section_id: str, store_id: str, body: Optional[SectionUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def update_section(
+    section_id: str,
+    store_id: str,
+    body: Optional[SectionUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update s section (updateSection)
 
     This API is used to update s section.
@@ -709,6 +848,24 @@ def update_section(section_id: str, store_id: str, body: Optional[SectionUpdate]
 
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
       *  Returns : updated section data
+
+
+
+    ## Restrictions for section extension and localization extension
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STORE [UPDATE]
@@ -759,7 +916,14 @@ def update_section(section_id: str, store_id: str, body: Optional[SectionUpdate]
 
 
 @same_doc_as(UpdateSection)
-async def update_section_async(section_id: str, store_id: str, body: Optional[SectionUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def update_section_async(
+    section_id: str,
+    store_id: str,
+    body: Optional[SectionUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update s section (updateSection)
 
     This API is used to update s section.
@@ -768,6 +932,24 @@ async def update_section_async(section_id: str, store_id: str, body: Optional[Se
 
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
       *  Returns : updated section data
+
+
+
+    ## Restrictions for section extension and localization extension
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STORE [UPDATE]
@@ -814,4 +996,6 @@ async def update_section_async(section_id: str, store_id: str, body: Optional[Se
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )

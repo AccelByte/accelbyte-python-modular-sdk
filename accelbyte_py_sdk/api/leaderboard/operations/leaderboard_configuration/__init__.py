@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Leaderboard Service."""
 
-__version__ = "2.19.5"
+__version__ = "2.23.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -22,4 +22,5 @@ from .get_leaderboard_configu_dfbf1e import GetLeaderboardConfigurationAdminV1
 from .get_leaderboard_configu_3c85d9 import GetLeaderboardConfigurationsAdminV1
 from .get_leaderboard_configu_e27832 import GetLeaderboardConfigurationsPublicV1
 from .get_leaderboard_configu_d8a38d import GetLeaderboardConfigurationsPublicV2
+from .hard_delete_leaderboard_e07e01 import HardDeleteLeaderboardAdminV1
 from .update_leaderboard_conf_ca626e import UpdateLeaderboardConfigurationAdminV1

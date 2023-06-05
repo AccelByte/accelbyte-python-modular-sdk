@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -47,12 +47,12 @@ class PlatformSubscribeRequest(Model):
 
     # region fields
 
-    grant_days: int                                                                                # REQUIRED
-    item_id: str                                                                                   # REQUIRED
-    language: str                                                                                  # OPTIONAL
-    reason: str                                                                                    # OPTIONAL
-    region: str                                                                                    # OPTIONAL
-    source: str                                                                                    # OPTIONAL
+    grant_days: int  # REQUIRED
+    item_id: str  # REQUIRED
+    language: str  # OPTIONAL
+    reason: str  # OPTIONAL
+    region: str  # OPTIONAL
+    source: str  # OPTIONAL
 
     # endregion fields
 
@@ -127,7 +127,7 @@ class PlatformSubscribeRequest(Model):
         reason: Optional[str] = None,
         region: Optional[str] = None,
         source: Optional[str] = None,
-    **kwargs
+        **kwargs,
     ) -> PlatformSubscribeRequest:
         instance = cls()
         instance.grant_days = grant_days
@@ -143,7 +143,9 @@ class PlatformSubscribeRequest(Model):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> PlatformSubscribeRequest:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> PlatformSubscribeRequest:
         instance = cls()
         if not dict_:
             return instance
@@ -174,15 +176,33 @@ class PlatformSubscribeRequest(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, PlatformSubscribeRequest]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, PlatformSubscribeRequest]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[PlatformSubscribeRequest]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[PlatformSubscribeRequest]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[PlatformSubscribeRequest, List[PlatformSubscribeRequest], Dict[Any, PlatformSubscribeRequest]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[
+        PlatformSubscribeRequest,
+        List[PlatformSubscribeRequest],
+        Dict[Any, PlatformSubscribeRequest],
+    ]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

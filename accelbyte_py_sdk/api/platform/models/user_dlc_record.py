@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -79,19 +79,19 @@ class UserDLCRecord(Model):
 
     # region fields
 
-    id_: str                                                                                       # OPTIONAL
-    namespace: str                                                                                 # OPTIONAL
-    obtained_at: str                                                                               # OPTIONAL
-    platform: Union[str, PlatformEnum]                                                             # OPTIONAL
-    revocation_result: RevocationResult                                                            # OPTIONAL
-    revoke_results: List[RevokeResult]                                                             # OPTIONAL
-    revoked_at: str                                                                                # OPTIONAL
-    rewards: List[PlatformReward]                                                                  # OPTIONAL
-    sources: List[str]                                                                             # OPTIONAL
-    status: Union[str, StatusEnum]                                                                 # OPTIONAL
-    transaction_id: str                                                                            # OPTIONAL
-    user_id: str                                                                                   # OPTIONAL
-    version: int                                                                                   # OPTIONAL
+    id_: str  # OPTIONAL
+    namespace: str  # OPTIONAL
+    obtained_at: str  # OPTIONAL
+    platform: Union[str, PlatformEnum]  # OPTIONAL
+    revocation_result: RevocationResult  # OPTIONAL
+    revoke_results: List[RevokeResult]  # OPTIONAL
+    revoked_at: str  # OPTIONAL
+    rewards: List[PlatformReward]  # OPTIONAL
+    sources: List[str]  # OPTIONAL
+    status: Union[str, StatusEnum]  # OPTIONAL
+    transaction_id: str  # OPTIONAL
+    user_id: str  # OPTIONAL
+    version: int  # OPTIONAL
 
     # endregion fields
 
@@ -172,11 +172,15 @@ class UserDLCRecord(Model):
         elif include_empty:
             result["platform"] = Union[str, PlatformEnum]()
         if hasattr(self, "revocation_result"):
-            result["revocationResult"] = self.revocation_result.to_dict(include_empty=include_empty)
+            result["revocationResult"] = self.revocation_result.to_dict(
+                include_empty=include_empty
+            )
         elif include_empty:
             result["revocationResult"] = RevocationResult()
         if hasattr(self, "revoke_results"):
-            result["revokeResults"] = [i0.to_dict(include_empty=include_empty) for i0 in self.revoke_results]
+            result["revokeResults"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.revoke_results
+            ]
         elif include_empty:
             result["revokeResults"] = []
         if hasattr(self, "revoked_at"):
@@ -184,7 +188,9 @@ class UserDLCRecord(Model):
         elif include_empty:
             result["revokedAt"] = ""
         if hasattr(self, "rewards"):
-            result["rewards"] = [i0.to_dict(include_empty=include_empty) for i0 in self.rewards]
+            result["rewards"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.rewards
+            ]
         elif include_empty:
             result["rewards"] = []
         if hasattr(self, "sources"):
@@ -229,7 +235,7 @@ class UserDLCRecord(Model):
         transaction_id: Optional[str] = None,
         user_id: Optional[str] = None,
         version: Optional[int] = None,
-    **kwargs
+        **kwargs,
     ) -> UserDLCRecord:
         instance = cls()
         if id_ is not None:
@@ -261,7 +267,9 @@ class UserDLCRecord(Model):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> UserDLCRecord:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> UserDLCRecord:
         instance = cls()
         if not dict_:
             return instance
@@ -282,11 +290,16 @@ class UserDLCRecord(Model):
         elif include_empty:
             instance.platform = Union[str, PlatformEnum]()
         if "revocationResult" in dict_ and dict_["revocationResult"] is not None:
-            instance.revocation_result = RevocationResult.create_from_dict(dict_["revocationResult"], include_empty=include_empty)
+            instance.revocation_result = RevocationResult.create_from_dict(
+                dict_["revocationResult"], include_empty=include_empty
+            )
         elif include_empty:
             instance.revocation_result = RevocationResult()
         if "revokeResults" in dict_ and dict_["revokeResults"] is not None:
-            instance.revoke_results = [RevokeResult.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["revokeResults"]]
+            instance.revoke_results = [
+                RevokeResult.create_from_dict(i0, include_empty=include_empty)
+                for i0 in dict_["revokeResults"]
+            ]
         elif include_empty:
             instance.revoke_results = []
         if "revokedAt" in dict_ and dict_["revokedAt"] is not None:
@@ -294,7 +307,10 @@ class UserDLCRecord(Model):
         elif include_empty:
             instance.revoked_at = ""
         if "rewards" in dict_ and dict_["rewards"] is not None:
-            instance.rewards = [PlatformReward.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["rewards"]]
+            instance.rewards = [
+                PlatformReward.create_from_dict(i0, include_empty=include_empty)
+                for i0 in dict_["rewards"]
+            ]
         elif include_empty:
             instance.rewards = []
         if "sources" in dict_ and dict_["sources"] is not None:
@@ -320,15 +336,29 @@ class UserDLCRecord(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, UserDLCRecord]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, UserDLCRecord]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[UserDLCRecord]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[UserDLCRecord]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[UserDLCRecord, List[UserDLCRecord], Dict[Any, UserDLCRecord]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[UserDLCRecord, List[UserDLCRecord], Dict[Any, UserDLCRecord]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

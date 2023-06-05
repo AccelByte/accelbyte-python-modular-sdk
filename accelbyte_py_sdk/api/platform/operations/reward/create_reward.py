@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -67,9 +67,11 @@ class CreateReward(Operation):
     Responses:
         200: OK - RewardInfo (successful operation)
 
+        400: Bad Request - ErrorEntity (34023: Reward Item [{itemId}] with item type [{itemType}] is not supported for duration or endDate)
+
         404: Not Found - ErrorEntity (34042: Reward item [{itemId}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (34071: Reward with code [{rewardCode}] already exists in namespace [{namespace}] | 34072: Duplicate reward condition [{rewardConditionName}] found in reward [{rewardCode}])
+        409: Conflict - ErrorEntity (34071: Reward with code [{rewardCode}] already exists in namespace [{namespace}] | 34072: Duplicate reward condition [{rewardConditionName}] found in reward [{rewardCode}] | 34074: Reward Item [{itemId}] duration and end date can’t be set at the same time)
 
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
@@ -83,8 +85,8 @@ class CreateReward(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
 
-    body: RewardCreate                                                                             # OPTIONAL in [body]
-    namespace: str                                                                                 # REQUIRED in [path]
+    body: RewardCreate  # OPTIONAL in [body]
+    namespace: str  # REQUIRED in [path]
 
     # endregion fields
 
@@ -176,14 +178,21 @@ class CreateReward(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, RewardInfo], Union[None, ErrorEntity, HttpResponse, ValidationErrorEntity]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, RewardInfo],
+        Union[None, ErrorEntity, HttpResponse, ValidationErrorEntity],
+    ]:
         """Parse the given response.
 
         200: OK - RewardInfo (successful operation)
 
+        400: Bad Request - ErrorEntity (34023: Reward Item [{itemId}] with item type [{itemType}] is not supported for duration or endDate)
+
         404: Not Found - ErrorEntity (34042: Reward item [{itemId}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (34071: Reward with code [{rewardCode}] already exists in namespace [{namespace}] | 34072: Duplicate reward condition [{rewardConditionName}] found in reward [{rewardCode}])
+        409: Conflict - ErrorEntity (34071: Reward with code [{rewardCode}] already exists in namespace [{namespace}] | 34072: Duplicate reward condition [{rewardConditionName}] found in reward [{rewardCode}] | 34074: Reward Item [{itemId}] duration and end date can’t be set at the same time)
 
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
 
@@ -193,13 +202,17 @@ class CreateReward(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
         if code == 200:
             return RewardInfo.create_from_dict(content), None
+        if code == 400:
+            return None, ErrorEntity.create_from_dict(content)
         if code == 404:
             return None, ErrorEntity.create_from_dict(content)
         if code == 409:
@@ -207,7 +220,9 @@ class CreateReward(Operation):
         if code == 422:
             return None, ValidationErrorEntity.create_from_dict(content)
 
-        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
+        return self.handle_undocumented_response(
+            code=code, content_type=content_type, content=content
+        )
 
     # endregion response methods
 
@@ -215,10 +230,7 @@ class CreateReward(Operation):
 
     @classmethod
     def create(
-        cls,
-        namespace: str,
-        body: Optional[RewardCreate] = None,
-    **kwargs
+        cls, namespace: str, body: Optional[RewardCreate] = None, **kwargs
     ) -> CreateReward:
         instance = cls()
         instance.namespace = namespace
@@ -230,7 +242,9 @@ class CreateReward(Operation):
     def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> CreateReward:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = RewardCreate.create_from_dict(dict_["body"], include_empty=include_empty)
+            instance.body = RewardCreate.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
         elif include_empty:
             instance.body = RewardCreate()
         if "namespace" in dict_ and dict_["namespace"] is not None:

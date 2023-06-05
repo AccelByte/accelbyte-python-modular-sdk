@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -50,9 +50,9 @@ class BulkDebitResult(Model):
 
     # region fields
 
-    fail_list: List[DebitResult]                                                                   # OPTIONAL
-    status: Union[str, StatusEnum]                                                                 # OPTIONAL
-    success_list: List[DebitResult]                                                                # OPTIONAL
+    fail_list: List[DebitResult]  # OPTIONAL
+    status: Union[str, StatusEnum]  # OPTIONAL
+    success_list: List[DebitResult]  # OPTIONAL
 
     # endregion fields
 
@@ -77,7 +77,9 @@ class BulkDebitResult(Model):
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
         if hasattr(self, "fail_list"):
-            result["failList"] = [i0.to_dict(include_empty=include_empty) for i0 in self.fail_list]
+            result["failList"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.fail_list
+            ]
         elif include_empty:
             result["failList"] = []
         if hasattr(self, "status"):
@@ -85,7 +87,9 @@ class BulkDebitResult(Model):
         elif include_empty:
             result["status"] = Union[str, StatusEnum]()
         if hasattr(self, "success_list"):
-            result["successList"] = [i0.to_dict(include_empty=include_empty) for i0 in self.success_list]
+            result["successList"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.success_list
+            ]
         elif include_empty:
             result["successList"] = []
         return result
@@ -100,7 +104,7 @@ class BulkDebitResult(Model):
         fail_list: Optional[List[DebitResult]] = None,
         status: Optional[Union[str, StatusEnum]] = None,
         success_list: Optional[List[DebitResult]] = None,
-    **kwargs
+        **kwargs,
     ) -> BulkDebitResult:
         instance = cls()
         if fail_list is not None:
@@ -112,12 +116,17 @@ class BulkDebitResult(Model):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> BulkDebitResult:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> BulkDebitResult:
         instance = cls()
         if not dict_:
             return instance
         if "failList" in dict_ and dict_["failList"] is not None:
-            instance.fail_list = [DebitResult.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["failList"]]
+            instance.fail_list = [
+                DebitResult.create_from_dict(i0, include_empty=include_empty)
+                for i0 in dict_["failList"]
+            ]
         elif include_empty:
             instance.fail_list = []
         if "status" in dict_ and dict_["status"] is not None:
@@ -125,21 +134,38 @@ class BulkDebitResult(Model):
         elif include_empty:
             instance.status = Union[str, StatusEnum]()
         if "successList" in dict_ and dict_["successList"] is not None:
-            instance.success_list = [DebitResult.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["successList"]]
+            instance.success_list = [
+                DebitResult.create_from_dict(i0, include_empty=include_empty)
+                for i0 in dict_["successList"]
+            ]
         elif include_empty:
             instance.success_list = []
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, BulkDebitResult]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, BulkDebitResult]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[BulkDebitResult]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[BulkDebitResult]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[BulkDebitResult, List[BulkDebitResult], Dict[Any, BulkDebitResult]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[BulkDebitResult, List[BulkDebitResult], Dict[Any, BulkDebitResult]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

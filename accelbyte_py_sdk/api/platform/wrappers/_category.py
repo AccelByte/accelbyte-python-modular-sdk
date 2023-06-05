@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -54,7 +54,13 @@ from ..operations.category import UpdateCategory
 
 
 @same_doc_as(CreateCategory)
-def create_category(store_id: str, body: Optional[CategoryCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def create_category(
+    store_id: str,
+    body: Optional[CategoryCreate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Create category (createCategory)
 
     This API is used to create category.
@@ -121,7 +127,13 @@ def create_category(store_id: str, body: Optional[CategoryCreate] = None, namesp
 
 
 @same_doc_as(CreateCategory)
-async def create_category_async(store_id: str, body: Optional[CategoryCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def create_category_async(
+    store_id: str,
+    body: Optional[CategoryCreate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Create category (createCategory)
 
     This API is used to create category.
@@ -184,11 +196,19 @@ async def create_category_async(store_id: str, body: Optional[CategoryCreate] = 
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(DeleteCategory)
-def delete_category(category_path: str, store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def delete_category(
+    category_path: str,
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Delete category (deleteCategory)
 
     This API is used to delete category by category path.
@@ -240,7 +260,13 @@ def delete_category(category_path: str, store_id: str, namespace: Optional[str] 
 
 
 @same_doc_as(DeleteCategory)
-async def delete_category_async(category_path: str, store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def delete_category_async(
+    category_path: str,
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Delete category (deleteCategory)
 
     This API is used to delete category by category path.
@@ -288,11 +314,19 @@ async def delete_category_async(category_path: str, store_id: str, namespace: Op
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(DownloadCategories)
-def download_categories(language: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def download_categories(
+    language: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Download store's structured categories (downloadCategories)
 
     This API is used to download store's structured categories.
@@ -340,7 +374,13 @@ def download_categories(language: Optional[str] = None, store_id: Optional[str] 
 
 
 @same_doc_as(DownloadCategories)
-async def download_categories_async(language: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def download_categories_async(
+    language: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Download store's structured categories (downloadCategories)
 
     This API is used to download store's structured categories.
@@ -384,11 +424,19 @@ async def download_categories_async(language: Optional[str] = None, store_id: Op
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetCategory)
-def get_category(category_path: str, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_category(
+    category_path: str,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get category (getCategory)
 
     This API is used to get category by category path.
@@ -438,7 +486,13 @@ def get_category(category_path: str, store_id: Optional[str] = None, namespace: 
 
 
 @same_doc_as(GetCategory)
-async def get_category_async(category_path: str, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_category_async(
+    category_path: str,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get category (getCategory)
 
     This API is used to get category by category path.
@@ -484,11 +538,19 @@ async def get_category_async(category_path: str, store_id: Optional[str] = None,
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetChildCategories)
-def get_child_categories(category_path: str, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_child_categories(
+    category_path: str,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get child categories (getChildCategories)
 
     This API is used to get child categories by category path.
@@ -536,7 +598,13 @@ def get_child_categories(category_path: str, store_id: Optional[str] = None, nam
 
 
 @same_doc_as(GetChildCategories)
-async def get_child_categories_async(category_path: str, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_child_categories_async(
+    category_path: str,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get child categories (getChildCategories)
 
     This API is used to get child categories by category path.
@@ -580,11 +648,19 @@ async def get_child_categories_async(category_path: str, store_id: Optional[str]
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetDescendantCategories)
-def get_descendant_categories(category_path: str, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_descendant_categories(
+    category_path: str,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get descendant categories (getDescendantCategories)
 
     This API is used to get descendant categories by category path.
@@ -632,7 +708,13 @@ def get_descendant_categories(category_path: str, store_id: Optional[str] = None
 
 
 @same_doc_as(GetDescendantCategories)
-async def get_descendant_categories_async(category_path: str, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_descendant_categories_async(
+    category_path: str,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get descendant categories (getDescendantCategories)
 
     This API is used to get descendant categories by category path.
@@ -676,11 +758,18 @@ async def get_descendant_categories_async(category_path: str, store_id: Optional
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetRootCategories)
-def get_root_categories(store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_root_categories(
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get root categories (getRootCategories)
 
     This API is used to get root categories.
@@ -725,7 +814,12 @@ def get_root_categories(store_id: Optional[str] = None, namespace: Optional[str]
 
 
 @same_doc_as(GetRootCategories)
-async def get_root_categories_async(store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_root_categories_async(
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get root categories (getRootCategories)
 
     This API is used to get root categories.
@@ -766,11 +860,18 @@ async def get_root_categories_async(store_id: Optional[str] = None, namespace: O
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(ListCategoriesBasic)
-def list_categories_basic(store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def list_categories_basic(
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """List categories' basic info (listCategoriesBasic)
 
     This API is used to list all categories' basic info of a store ordered by category path.
@@ -815,7 +916,12 @@ def list_categories_basic(store_id: Optional[str] = None, namespace: Optional[st
 
 
 @same_doc_as(ListCategoriesBasic)
-async def list_categories_basic_async(store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def list_categories_basic_async(
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """List categories' basic info (listCategoriesBasic)
 
     This API is used to list all categories' basic info of a store ordered by category path.
@@ -856,11 +962,20 @@ async def list_categories_basic_async(store_id: Optional[str] = None, namespace:
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicGetCategory)
-def public_get_category(category_path: str, language: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_get_category(
+    category_path: str,
+    language: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get Category (publicGetCategory)
 
     This API is used to get category by category path.
@@ -911,7 +1026,14 @@ def public_get_category(category_path: str, language: Optional[str] = None, stor
 
 
 @same_doc_as(PublicGetCategory)
-async def public_get_category_async(category_path: str, language: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_get_category_async(
+    category_path: str,
+    language: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get Category (publicGetCategory)
 
     This API is used to get category by category path.
@@ -958,11 +1080,20 @@ async def public_get_category_async(category_path: str, language: Optional[str] 
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicGetChildCategories)
-def public_get_child_categories(category_path: str, language: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_get_child_categories(
+    category_path: str,
+    language: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get Child Categories (publicGetChildCategories)
 
     This API is used to get child categories by category path.
@@ -1011,7 +1142,14 @@ def public_get_child_categories(category_path: str, language: Optional[str] = No
 
 
 @same_doc_as(PublicGetChildCategories)
-async def public_get_child_categories_async(category_path: str, language: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_get_child_categories_async(
+    category_path: str,
+    language: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get Child Categories (publicGetChildCategories)
 
     This API is used to get child categories by category path.
@@ -1056,11 +1194,20 @@ async def public_get_child_categories_async(category_path: str, language: Option
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicGetDescendantCategories)
-def public_get_descendant_categories(category_path: str, language: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_get_descendant_categories(
+    category_path: str,
+    language: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get Descendant Categories (publicGetDescendantCategories)
 
     This API is used to get descendant categories by category path.
@@ -1109,7 +1256,14 @@ def public_get_descendant_categories(category_path: str, language: Optional[str]
 
 
 @same_doc_as(PublicGetDescendantCategories)
-async def public_get_descendant_categories_async(category_path: str, language: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_get_descendant_categories_async(
+    category_path: str,
+    language: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get Descendant Categories (publicGetDescendantCategories)
 
     This API is used to get descendant categories by category path.
@@ -1154,11 +1308,19 @@ async def public_get_descendant_categories_async(category_path: str, language: O
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicGetRootCategories)
-def public_get_root_categories(language: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_get_root_categories(
+    language: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get Root Categories (publicGetRootCategories)
 
     This API is used to get root categories.
@@ -1204,7 +1366,13 @@ def public_get_root_categories(language: Optional[str] = None, store_id: Optiona
 
 
 @same_doc_as(PublicGetRootCategories)
-async def public_get_root_categories_async(language: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_get_root_categories_async(
+    language: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get Root Categories (publicGetRootCategories)
 
     This API is used to get root categories.
@@ -1246,11 +1414,20 @@ async def public_get_root_categories_async(language: Optional[str] = None, store
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(UpdateCategory)
-def update_category(category_path: str, store_id: str, body: Optional[CategoryUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def update_category(
+    category_path: str,
+    store_id: str,
+    body: Optional[CategoryUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update category (updateCategory)
 
     This API is used to update category.
@@ -1320,7 +1497,14 @@ def update_category(category_path: str, store_id: str, body: Optional[CategoryUp
 
 
 @same_doc_as(UpdateCategory)
-async def update_category_async(category_path: str, store_id: str, body: Optional[CategoryUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def update_category_async(
+    category_path: str,
+    store_id: str,
+    body: Optional[CategoryUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update category (updateCategory)
 
     This API is used to update category.
@@ -1386,4 +1570,6 @@ async def update_category_async(category_path: str, store_id: str, body: Optiona
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )

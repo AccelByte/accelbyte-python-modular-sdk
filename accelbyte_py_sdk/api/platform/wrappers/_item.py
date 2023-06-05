@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -88,14 +88,27 @@ from ..operations.item import PublicGetItemByAppId
 from ..operations.item import PublicGetItemBySku
 from ..operations.item import PublicGetItemDynamicData
 from ..operations.item import PublicQueryItems
-from ..operations.item import PublicQueryItemsAppTypeEnum, PublicQueryItemsItemTypeEnum, PublicQueryItemsSortByEnum
+from ..operations.item import (
+    PublicQueryItemsAppTypeEnum,
+    PublicQueryItemsItemTypeEnum,
+    PublicQueryItemsSortByEnum,
+)
 from ..operations.item import PublicSearchItems
 from ..operations.item import PublicSearchItemsItemTypeEnum
 from ..operations.item import PublicValidateItemPurchaseCondition
 from ..operations.item import QueryItems
-from ..operations.item import QueryItemsAppTypeEnum, QueryItemsItemTypeEnum, QueryItemsSortByEnum
+from ..operations.item import (
+    QueryItemsAppTypeEnum,
+    QueryItemsItemTypeEnum,
+    QueryItemsSortByEnum,
+)
 from ..operations.item import QueryItems1
-from ..operations.item import QueryItems1AppTypeEnum, QueryItems1ItemStatusEnum, QueryItems1ItemTypeEnum, QueryItems1SortByEnum
+from ..operations.item import (
+    QueryItems1AppTypeEnum,
+    QueryItems1ItemStatusEnum,
+    QueryItems1ItemTypeEnum,
+    QueryItems1SortByEnum,
+)
 from ..operations.item import QueryUncategorizedItems
 from ..operations.item import QueryUncategorizedItemsSortByEnum
 from ..operations.item import ReturnItem
@@ -109,23 +122,83 @@ from ..operations.item import UpdateItem
 from ..operations.item import UpdateItemPurchaseCondition
 from ..operations.item import UpdateItemTypeConfig
 from ..operations.item import ValidateItemPurchaseCondition
-from ..models import AppInfoGenresEnum, AppInfoPlatformsEnum, AppInfoPlayersEnum, AppInfoPrimaryGenreEnum
-from ..models import AppUpdateGenresEnum, AppUpdatePlatformsEnum, AppUpdatePlayersEnum, AppUpdatePrimaryGenreEnum
-from ..models import AvailablePredicatePredicateTypeEnum, AvailablePredicateValueTypeEnum
-from ..models import BasicItemAppTypeEnum, BasicItemEntitlementTypeEnum, BasicItemItemTypeEnum, BasicItemSeasonTypeEnum, BasicItemStatusEnum
-from ..models import FullAppInfoGenresEnum, FullAppInfoPlatformsEnum, FullAppInfoPlayersEnum, FullAppInfoPrimaryGenreEnum
-from ..models import FullItemInfoAppTypeEnum, FullItemInfoEntitlementTypeEnum, FullItemInfoItemTypeEnum, FullItemInfoSeasonTypeEnum, FullItemInfoStatusEnum
-from ..models import ItemCreateAppTypeEnum, ItemCreateEntitlementTypeEnum, ItemCreateItemTypeEnum, ItemCreateSeasonTypeEnum, ItemCreateStatusEnum
+from ..models import (
+    AppInfoGenresEnum,
+    AppInfoPlatformsEnum,
+    AppInfoPlayersEnum,
+    AppInfoPrimaryGenreEnum,
+)
+from ..models import (
+    AppUpdateGenresEnum,
+    AppUpdatePlatformsEnum,
+    AppUpdatePlayersEnum,
+    AppUpdatePrimaryGenreEnum,
+)
+from ..models import (
+    AvailablePredicatePredicateTypeEnum,
+    AvailablePredicateValueTypeEnum,
+)
+from ..models import (
+    BasicItemAppTypeEnum,
+    BasicItemEntitlementTypeEnum,
+    BasicItemItemTypeEnum,
+    BasicItemSeasonTypeEnum,
+    BasicItemStatusEnum,
+)
+from ..models import (
+    FullAppInfoGenresEnum,
+    FullAppInfoPlatformsEnum,
+    FullAppInfoPlayersEnum,
+    FullAppInfoPrimaryGenreEnum,
+)
+from ..models import (
+    FullItemInfoAppTypeEnum,
+    FullItemInfoEntitlementTypeEnum,
+    FullItemInfoItemTypeEnum,
+    FullItemInfoSeasonTypeEnum,
+    FullItemInfoStatusEnum,
+)
+from ..models import (
+    ItemCreateAppTypeEnum,
+    ItemCreateEntitlementTypeEnum,
+    ItemCreateItemTypeEnum,
+    ItemCreateSeasonTypeEnum,
+    ItemCreateStatusEnum,
+)
 from ..models import ItemIdStatusEnum
-from ..models import ItemInfoAppTypeEnum, ItemInfoEntitlementTypeEnum, ItemInfoItemTypeEnum, ItemInfoSeasonTypeEnum, ItemInfoStatusEnum
+from ..models import (
+    ItemInfoAppTypeEnum,
+    ItemInfoEntitlementTypeEnum,
+    ItemInfoItemTypeEnum,
+    ItemInfoSeasonTypeEnum,
+    ItemInfoStatusEnum,
+)
 from ..models import ItemTypeConfigCreateItemTypeEnum
 from ..models import ItemTypeConfigInfoItemTypeEnum
-from ..models import ItemUpdateAppTypeEnum, ItemUpdateEntitlementTypeEnum, ItemUpdateItemTypeEnum, ItemUpdateSeasonTypeEnum, ItemUpdateStatusEnum
-from ..models import PopulatedItemInfoAppTypeEnum, PopulatedItemInfoEntitlementTypeEnum, PopulatedItemInfoItemTypeEnum, PopulatedItemInfoSeasonTypeEnum, PopulatedItemInfoStatusEnum
+from ..models import (
+    ItemUpdateAppTypeEnum,
+    ItemUpdateEntitlementTypeEnum,
+    ItemUpdateItemTypeEnum,
+    ItemUpdateSeasonTypeEnum,
+    ItemUpdateStatusEnum,
+)
+from ..models import (
+    PopulatedItemInfoAppTypeEnum,
+    PopulatedItemInfoEntitlementTypeEnum,
+    PopulatedItemInfoItemTypeEnum,
+    PopulatedItemInfoSeasonTypeEnum,
+    PopulatedItemInfoStatusEnum,
+)
 
 
 @same_doc_as(AcquireItem)
-def acquire_item(item_id: str, body: Optional[ItemAcquireRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def acquire_item(
+    item_id: str,
+    body: Optional[ItemAcquireRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Acquire item (acquireItem)
 
     [SERVICE COMMUNICATION ONLY] This api is used for acquiring a published item while the item is maxCount limited, it will decrease the sale available count.
@@ -174,7 +247,13 @@ def acquire_item(item_id: str, body: Optional[ItemAcquireRequest] = None, namesp
 
 
 @same_doc_as(AcquireItem)
-async def acquire_item_async(item_id: str, body: Optional[ItemAcquireRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def acquire_item_async(
+    item_id: str,
+    body: Optional[ItemAcquireRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Acquire item (acquireItem)
 
     [SERVICE COMMUNICATION ONLY] This api is used for acquiring a published item while the item is maxCount limited, it will decrease the sale available count.
@@ -219,11 +298,22 @@ async def acquire_item_async(item_id: str, body: Optional[ItemAcquireRequest] = 
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(BulkGetLocaleItems)
-def bulk_get_locale_items(item_ids: str, active_only: Optional[bool] = None, language: Optional[str] = None, region: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def bulk_get_locale_items(
+    item_ids: str,
+    active_only: Optional[bool] = None,
+    language: Optional[str] = None,
+    region: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Bulk get locale items (bulkGetLocaleItems)
 
     This API is used to bulk get locale items. If item not exist in specific region, default region item will return.
@@ -282,7 +372,16 @@ def bulk_get_locale_items(item_ids: str, active_only: Optional[bool] = None, lan
 
 
 @same_doc_as(BulkGetLocaleItems)
-async def bulk_get_locale_items_async(item_ids: str, active_only: Optional[bool] = None, language: Optional[str] = None, region: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def bulk_get_locale_items_async(
+    item_ids: str,
+    active_only: Optional[bool] = None,
+    language: Optional[str] = None,
+    region: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Bulk get locale items (bulkGetLocaleItems)
 
     This API is used to bulk get locale items. If item not exist in specific region, default region item will return.
@@ -337,11 +436,19 @@ async def bulk_get_locale_items_async(item_ids: str, active_only: Optional[bool]
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(BulkUpdateRegionData)
-def bulk_update_region_data(store_id: str, body: Optional[BulkRegionDataChangeRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def bulk_update_region_data(
+    store_id: str,
+    body: Optional[BulkRegionDataChangeRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update item's region data in bulk (bulkUpdateRegionData)
 
     This API is used to update region data of items in bulk
@@ -395,7 +502,13 @@ def bulk_update_region_data(store_id: str, body: Optional[BulkRegionDataChangeRe
 
 
 @same_doc_as(BulkUpdateRegionData)
-async def bulk_update_region_data_async(store_id: str, body: Optional[BulkRegionDataChangeRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def bulk_update_region_data_async(
+    store_id: str,
+    body: Optional[BulkRegionDataChangeRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update item's region data in bulk (bulkUpdateRegionData)
 
     This API is used to update region data of items in bulk
@@ -445,11 +558,19 @@ async def bulk_update_region_data_async(store_id: str, body: Optional[BulkRegion
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(CreateItem)
-def create_item(store_id: str, body: Optional[ItemCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def create_item(
+    store_id: str,
+    body: Optional[ItemCreate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Create an Item (createItem)
 
     This API is used to create an item. APP item only can created in publisher namespace.
@@ -672,6 +793,24 @@ def create_item(store_id: str, body: Optional[ItemCreate] = None, namespace: Opt
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=1 (CREATE)
       *  Returns : created item data
 
+
+
+    ## Restrictions for item extension and localization extension
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
+
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:ITEM [CREATE]
 
@@ -697,11 +836,11 @@ def create_item(store_id: str, body: Optional[ItemCreate] = None, namespace: Opt
     Responses:
         201: Created - FullItemInfo (successful operation)
 
-        400: Bad Request - ErrorEntity (30322: Bundle item [{itemId}] can't be bundled | 30325: Code item [{itemId}] can't be bundled | 30326: Subscription item [{itemId}] can't be bundled | 30329: Invalid bundled item [{itemId}] quantity | 30021: Default language [{language}] required | 30321: Invalid item discount amount | 30022: Default region [{region}] is required | 30323: Target namespace is required | 30327: Invalid item trial price | 30330: Invalid item region price currency namespace [{namespace}] | 30332: Invalid option box item [{itemId}] quantity | 30333: Item [{itemId}] item type [{itemType}] can't be bundled into option box | 30334: Option box item [{itemId}] can't be bundled | 30337: Invalid loot box item [{itemId}] quantity | 30338: Item [{itemId}] item type [{itemType}] can't be bundled into loot box | 30339: Loot box item [{itemId}] can't be bundled)
+        400: Bad Request - ErrorEntity (20024: unsupported operation | 30301: Unsupported Item Type [{itemType}] for box item [{itemId}] with expiration | 30322: Bundle item [{itemId}] can't be bundled | 30325: Code item [{itemId}] can't be bundled | 30326: Subscription item [{itemId}] can't be bundled | 30329: Invalid bundled item [{itemId}] quantity | 30021: Default language [{language}] required | 30321: Invalid item discount amount | 30022: Default region [{region}] is required | 30323: Target namespace is required | 30327: Invalid item trial price | 30330: Invalid item region price currency namespace [{namespace}] | 30332: Invalid option box item [{itemId}] quantity | 30333: Item [{itemId}] item type [{itemType}] can't be bundled into option box | 30334: Option box item [{itemId}] can't be bundled | 30337: Invalid loot box item [{itemId}] quantity | 30338: Item [{itemId}] item type [{itemType}] can't be bundled into loot box | 30339: Loot box item [{itemId}] can't be bundled)
 
         404: Not Found - ErrorEntity (30241: Category [{categoryPath}] does not exist in namespace [{namespace}] | 36141: Currency [{currencyCode}] does not exist in namespace [{namespace}] | 30141: Store [{storeId}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (30173: Published store can't modify content | 30373: ItemType [{itemType}] is not allowed in namespace [{namespace}] | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}])
+        409: Conflict - ErrorEntity (30173: Published store can't modify content | 30373: ItemType [{itemType}] is not allowed in namespace [{namespace}] | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}] | 30380: Box item [{itemId}] duration and end date can’t be set at the same time)
 
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
@@ -718,7 +857,13 @@ def create_item(store_id: str, body: Optional[ItemCreate] = None, namespace: Opt
 
 
 @same_doc_as(CreateItem)
-async def create_item_async(store_id: str, body: Optional[ItemCreate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def create_item_async(
+    store_id: str,
+    body: Optional[ItemCreate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Create an Item (createItem)
 
     This API is used to create an item. APP item only can created in publisher namespace.
@@ -941,6 +1086,24 @@ async def create_item_async(store_id: str, body: Optional[ItemCreate] = None, na
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=1 (CREATE)
       *  Returns : created item data
 
+
+
+    ## Restrictions for item extension and localization extension
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
+
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:ITEM [CREATE]
 
@@ -966,11 +1129,11 @@ async def create_item_async(store_id: str, body: Optional[ItemCreate] = None, na
     Responses:
         201: Created - FullItemInfo (successful operation)
 
-        400: Bad Request - ErrorEntity (30322: Bundle item [{itemId}] can't be bundled | 30325: Code item [{itemId}] can't be bundled | 30326: Subscription item [{itemId}] can't be bundled | 30329: Invalid bundled item [{itemId}] quantity | 30021: Default language [{language}] required | 30321: Invalid item discount amount | 30022: Default region [{region}] is required | 30323: Target namespace is required | 30327: Invalid item trial price | 30330: Invalid item region price currency namespace [{namespace}] | 30332: Invalid option box item [{itemId}] quantity | 30333: Item [{itemId}] item type [{itemType}] can't be bundled into option box | 30334: Option box item [{itemId}] can't be bundled | 30337: Invalid loot box item [{itemId}] quantity | 30338: Item [{itemId}] item type [{itemType}] can't be bundled into loot box | 30339: Loot box item [{itemId}] can't be bundled)
+        400: Bad Request - ErrorEntity (20024: unsupported operation | 30301: Unsupported Item Type [{itemType}] for box item [{itemId}] with expiration | 30322: Bundle item [{itemId}] can't be bundled | 30325: Code item [{itemId}] can't be bundled | 30326: Subscription item [{itemId}] can't be bundled | 30329: Invalid bundled item [{itemId}] quantity | 30021: Default language [{language}] required | 30321: Invalid item discount amount | 30022: Default region [{region}] is required | 30323: Target namespace is required | 30327: Invalid item trial price | 30330: Invalid item region price currency namespace [{namespace}] | 30332: Invalid option box item [{itemId}] quantity | 30333: Item [{itemId}] item type [{itemType}] can't be bundled into option box | 30334: Option box item [{itemId}] can't be bundled | 30337: Invalid loot box item [{itemId}] quantity | 30338: Item [{itemId}] item type [{itemType}] can't be bundled into loot box | 30339: Loot box item [{itemId}] can't be bundled)
 
         404: Not Found - ErrorEntity (30241: Category [{categoryPath}] does not exist in namespace [{namespace}] | 36141: Currency [{currencyCode}] does not exist in namespace [{namespace}] | 30141: Store [{storeId}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (30173: Published store can't modify content | 30373: ItemType [{itemType}] is not allowed in namespace [{namespace}] | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}])
+        409: Conflict - ErrorEntity (30173: Published store can't modify content | 30373: ItemType [{itemType}] is not allowed in namespace [{namespace}] | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}] | 30380: Box item [{itemId}] duration and end date can’t be set at the same time)
 
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
@@ -983,11 +1146,17 @@ async def create_item_async(store_id: str, body: Optional[ItemCreate] = None, na
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(CreateItemTypeConfig)
-def create_item_type_config(body: Optional[ItemTypeConfigCreate] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def create_item_type_config(
+    body: Optional[ItemTypeConfigCreate] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Create an Item Type Config (createItemTypeConfig)
 
     This API is used to create an item type config.
@@ -1029,7 +1198,11 @@ def create_item_type_config(body: Optional[ItemTypeConfigCreate] = None, x_addit
 
 
 @same_doc_as(CreateItemTypeConfig)
-async def create_item_type_config_async(body: Optional[ItemTypeConfigCreate] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def create_item_type_config_async(
+    body: Optional[ItemTypeConfigCreate] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Create an Item Type Config (createItemTypeConfig)
 
     This API is used to create an item type config.
@@ -1067,11 +1240,20 @@ async def create_item_type_config_async(body: Optional[ItemTypeConfigCreate] = N
     request = CreateItemTypeConfig.create(
         body=body,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(DefeatureItem)
-def defeature_item(feature: str, item_id: str, store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def defeature_item(
+    feature: str,
+    item_id: str,
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Defeature an item (defeatureItem)
 
     Remove a feature from an item.
@@ -1125,7 +1307,14 @@ def defeature_item(feature: str, item_id: str, store_id: str, namespace: Optiona
 
 
 @same_doc_as(DefeatureItem)
-async def defeature_item_async(feature: str, item_id: str, store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def defeature_item_async(
+    feature: str,
+    item_id: str,
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Defeature an item (defeatureItem)
 
     Remove a feature from an item.
@@ -1175,11 +1364,20 @@ async def defeature_item_async(feature: str, item_id: str, store_id: str, namesp
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(DeleteItem)
-def delete_item(item_id: str, force: Optional[bool] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def delete_item(
+    item_id: str,
+    force: Optional[bool] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Delete an item (deleteItem)
 
     This API is used to delete an item permanently.
@@ -1234,7 +1432,14 @@ def delete_item(item_id: str, force: Optional[bool] = None, store_id: Optional[s
 
 
 @same_doc_as(DeleteItem)
-async def delete_item_async(item_id: str, force: Optional[bool] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def delete_item_async(
+    item_id: str,
+    force: Optional[bool] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Delete an item (deleteItem)
 
     This API is used to delete an item permanently.
@@ -1285,11 +1490,15 @@ async def delete_item_async(item_id: str, force: Optional[bool] = None, store_id
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(DeleteItemTypeConfig)
-def delete_item_type_config(id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def delete_item_type_config(
+    id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
     """Delete an item type config (deleteItemTypeConfig)
 
     This API is used to delete an item type config permanently.Other detail info:
@@ -1326,7 +1535,9 @@ def delete_item_type_config(id_: str, x_additional_headers: Optional[Dict[str, s
 
 
 @same_doc_as(DeleteItemTypeConfig)
-async def delete_item_type_config_async(id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def delete_item_type_config_async(
+    id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
     """Delete an item type config (deleteItemTypeConfig)
 
     This API is used to delete an item type config permanently.Other detail info:
@@ -1359,11 +1570,19 @@ async def delete_item_type_config_async(id_: str, x_additional_headers: Optional
     request = DeleteItemTypeConfig.create(
         id_=id_,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(DisableItem)
-def disable_item(item_id: str, store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def disable_item(
+    item_id: str,
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Disable an item (disableItem)
 
     Disable an item.
@@ -1414,7 +1633,13 @@ def disable_item(item_id: str, store_id: str, namespace: Optional[str] = None, x
 
 
 @same_doc_as(DisableItem)
-async def disable_item_async(item_id: str, store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def disable_item_async(
+    item_id: str,
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Disable an item (disableItem)
 
     Disable an item.
@@ -1461,11 +1686,19 @@ async def disable_item_async(item_id: str, store_id: str, namespace: Optional[st
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(EnableItem)
-def enable_item(item_id: str, store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def enable_item(
+    item_id: str,
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Enable an item (enableItem)
 
     Enable an item.
@@ -1516,7 +1749,13 @@ def enable_item(item_id: str, store_id: str, namespace: Optional[str] = None, x_
 
 
 @same_doc_as(EnableItem)
-async def enable_item_async(item_id: str, store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def enable_item_async(
+    item_id: str,
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Enable an item (enableItem)
 
     Enable an item.
@@ -1563,11 +1802,20 @@ async def enable_item_async(item_id: str, store_id: str, namespace: Optional[str
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(FeatureItem)
-def feature_item(feature: str, item_id: str, store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def feature_item(
+    feature: str,
+    item_id: str,
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Feature an item (featureItem)
 
     Add a feature to an item.
@@ -1621,7 +1869,14 @@ def feature_item(feature: str, item_id: str, store_id: str, namespace: Optional[
 
 
 @same_doc_as(FeatureItem)
-async def feature_item_async(feature: str, item_id: str, store_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def feature_item_async(
+    feature: str,
+    item_id: str,
+    store_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Feature an item (featureItem)
 
     Add a feature to an item.
@@ -1671,11 +1926,20 @@ async def feature_item_async(feature: str, item_id: str, store_id: str, namespac
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetApp)
-def get_app(item_id: str, active_only: Optional[bool] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_app(
+    item_id: str,
+    active_only: Optional[bool] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get an app info (getApp)
 
     This API is used to get an app info.
@@ -1726,7 +1990,14 @@ def get_app(item_id: str, active_only: Optional[bool] = None, store_id: Optional
 
 
 @same_doc_as(GetApp)
-async def get_app_async(item_id: str, active_only: Optional[bool] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_app_async(
+    item_id: str,
+    active_only: Optional[bool] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get an app info (getApp)
 
     This API is used to get an app info.
@@ -1773,11 +2044,17 @@ async def get_app_async(item_id: str, active_only: Optional[bool] = None, store_
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetAvailablePredicateTypes)
-def get_available_predicate_types(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_available_predicate_types(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get available predicate types (getAvailablePredicateTypes)
 
     Get available predicate types.
@@ -1817,7 +2094,11 @@ def get_available_predicate_types(namespace: Optional[str] = None, x_additional_
 
 
 @same_doc_as(GetAvailablePredicateTypes)
-async def get_available_predicate_types_async(namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_available_predicate_types_async(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get available predicate types (getAvailablePredicateTypes)
 
     Get available predicate types.
@@ -1853,11 +2134,19 @@ async def get_available_predicate_types_async(namespace: Optional[str] = None, x
     request = GetAvailablePredicateTypes.create(
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetBulkItemIdBySkus)
-def get_bulk_item_id_by_skus(sku: Optional[List[str]] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_bulk_item_id_by_skus(
+    sku: Optional[List[str]] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get multiple itemId by sku (getBulkItemIdBySkus)
 
     This API is used to get an list of itemId by list of sku.
@@ -1905,7 +2194,13 @@ def get_bulk_item_id_by_skus(sku: Optional[List[str]] = None, store_id: Optional
 
 
 @same_doc_as(GetBulkItemIdBySkus)
-async def get_bulk_item_id_by_skus_async(sku: Optional[List[str]] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_bulk_item_id_by_skus_async(
+    sku: Optional[List[str]] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get multiple itemId by sku (getBulkItemIdBySkus)
 
     This API is used to get an list of itemId by list of sku.
@@ -1949,11 +2244,20 @@ async def get_bulk_item_id_by_skus_async(sku: Optional[List[str]] = None, store_
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetItem)
-def get_item(item_id: str, active_only: Optional[bool] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_item(
+    item_id: str,
+    active_only: Optional[bool] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get an item (getItem)
 
     This API is used to get an item.
@@ -2006,7 +2310,14 @@ def get_item(item_id: str, active_only: Optional[bool] = None, store_id: Optiona
 
 
 @same_doc_as(GetItem)
-async def get_item_async(item_id: str, active_only: Optional[bool] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_item_async(
+    item_id: str,
+    active_only: Optional[bool] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get an item (getItem)
 
     This API is used to get an item.
@@ -2055,11 +2366,20 @@ async def get_item_async(item_id: str, active_only: Optional[bool] = None, store
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetItemByAppId)
-def get_item_by_app_id(app_id: str, active_only: Optional[bool] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_item_by_app_id(
+    app_id: str,
+    active_only: Optional[bool] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get item by appId (getItemByAppId)
 
     This API is used to get the item by appId.
@@ -2112,7 +2432,14 @@ def get_item_by_app_id(app_id: str, active_only: Optional[bool] = None, store_id
 
 
 @same_doc_as(GetItemByAppId)
-async def get_item_by_app_id_async(app_id: str, active_only: Optional[bool] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_item_by_app_id_async(
+    app_id: str,
+    active_only: Optional[bool] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get item by appId (getItemByAppId)
 
     This API is used to get the item by appId.
@@ -2161,11 +2488,20 @@ async def get_item_by_app_id_async(app_id: str, active_only: Optional[bool] = No
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetItemBySku)
-def get_item_by_sku(sku: str, active_only: Optional[bool] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_item_by_sku(
+    sku: str,
+    active_only: Optional[bool] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get item by sku (getItemBySku)
 
     This API is used to get the item by sku.
@@ -2218,7 +2554,14 @@ def get_item_by_sku(sku: str, active_only: Optional[bool] = None, store_id: Opti
 
 
 @same_doc_as(GetItemBySku)
-async def get_item_by_sku_async(sku: str, active_only: Optional[bool] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_item_by_sku_async(
+    sku: str,
+    active_only: Optional[bool] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get item by sku (getItemBySku)
 
     This API is used to get the item by sku.
@@ -2267,11 +2610,18 @@ async def get_item_by_sku_async(sku: str, active_only: Optional[bool] = None, st
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetItemDynamicData)
-def get_item_dynamic_data(item_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_item_dynamic_data(
+    item_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get item dynamic data (getItemDynamicData)
 
     Get item dynamic data for published item.
@@ -2317,7 +2667,12 @@ def get_item_dynamic_data(item_id: str, namespace: Optional[str] = None, x_addit
 
 
 @same_doc_as(GetItemDynamicData)
-async def get_item_dynamic_data_async(item_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_item_dynamic_data_async(
+    item_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get item dynamic data (getItemDynamicData)
 
     Get item dynamic data for published item.
@@ -2359,11 +2714,20 @@ async def get_item_dynamic_data_async(item_id: str, namespace: Optional[str] = N
         item_id=item_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetItemIdBySku)
-def get_item_id_by_sku(sku: str, active_only: Optional[bool] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_item_id_by_sku(
+    sku: str,
+    active_only: Optional[bool] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get itemId by sku (getItemIdBySku)
 
     [SERVICE COMMUNICATION ONLY] This API is used to get the itemId by sku.
@@ -2416,7 +2780,14 @@ def get_item_id_by_sku(sku: str, active_only: Optional[bool] = None, store_id: O
 
 
 @same_doc_as(GetItemIdBySku)
-async def get_item_id_by_sku_async(sku: str, active_only: Optional[bool] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_item_id_by_sku_async(
+    sku: str,
+    active_only: Optional[bool] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get itemId by sku (getItemIdBySku)
 
     [SERVICE COMMUNICATION ONLY] This API is used to get the itemId by sku.
@@ -2465,11 +2836,15 @@ async def get_item_id_by_sku_async(sku: str, active_only: Optional[bool] = None,
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetItemTypeConfig)
-def get_item_type_config(id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_item_type_config(
+    id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
     """Get an item type config (getItemTypeConfig)
 
     This API is used to get an item type config.
@@ -2509,7 +2884,9 @@ def get_item_type_config(id_: str, x_additional_headers: Optional[Dict[str, str]
 
 
 @same_doc_as(GetItemTypeConfig)
-async def get_item_type_config_async(id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_item_type_config_async(
+    id_: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
     """Get an item type config (getItemTypeConfig)
 
     This API is used to get an item type config.
@@ -2545,11 +2922,23 @@ async def get_item_type_config_async(id_: str, x_additional_headers: Optional[Di
     request = GetItemTypeConfig.create(
         id_=id_,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetLocaleItem)
-def get_locale_item(item_id: str, active_only: Optional[bool] = None, language: Optional[str] = None, populate_bundle: Optional[bool] = None, region: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_locale_item(
+    item_id: str,
+    active_only: Optional[bool] = None,
+    language: Optional[str] = None,
+    populate_bundle: Optional[bool] = None,
+    region: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get an item in locale (getLocaleItem)
 
     This API is used to get an item in specific locale. If item not exist in specific region, default region item will return.
@@ -2611,7 +3000,17 @@ def get_locale_item(item_id: str, active_only: Optional[bool] = None, language: 
 
 
 @same_doc_as(GetLocaleItem)
-async def get_locale_item_async(item_id: str, active_only: Optional[bool] = None, language: Optional[str] = None, populate_bundle: Optional[bool] = None, region: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_locale_item_async(
+    item_id: str,
+    active_only: Optional[bool] = None,
+    language: Optional[str] = None,
+    populate_bundle: Optional[bool] = None,
+    region: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get an item in locale (getLocaleItem)
 
     This API is used to get an item in specific locale. If item not exist in specific region, default region item will return.
@@ -2669,11 +3068,23 @@ async def get_locale_item_async(item_id: str, active_only: Optional[bool] = None
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(GetLocaleItemBySku)
-def get_locale_item_by_sku(sku: str, active_only: Optional[bool] = None, language: Optional[str] = None, populate_bundle: Optional[bool] = None, region: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def get_locale_item_by_sku(
+    sku: str,
+    active_only: Optional[bool] = None,
+    language: Optional[str] = None,
+    populate_bundle: Optional[bool] = None,
+    region: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get an item by sku in locale (getLocaleItemBySku)
 
     This API is used to get an item by sku in specific locale. If item not exist in specific region, default region item will return.
@@ -2735,7 +3146,17 @@ def get_locale_item_by_sku(sku: str, active_only: Optional[bool] = None, languag
 
 
 @same_doc_as(GetLocaleItemBySku)
-async def get_locale_item_by_sku_async(sku: str, active_only: Optional[bool] = None, language: Optional[str] = None, populate_bundle: Optional[bool] = None, region: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def get_locale_item_by_sku_async(
+    sku: str,
+    active_only: Optional[bool] = None,
+    language: Optional[str] = None,
+    populate_bundle: Optional[bool] = None,
+    region: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get an item by sku in locale (getLocaleItemBySku)
 
     This API is used to get an item by sku in specific locale. If item not exist in specific region, default region item will return.
@@ -2793,11 +3214,19 @@ async def get_locale_item_by_sku_async(sku: str, active_only: Optional[bool] = N
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(ListBasicItemsByFeatures)
-def list_basic_items_by_features(active_only: Optional[bool] = None, features: Optional[List[str]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def list_basic_items_by_features(
+    active_only: Optional[bool] = None,
+    features: Optional[List[str]] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """List basic items by features (listBasicItemsByFeatures)
 
     [SERVICE COMMUNICATION ONLY] This API is used to list basic items by features.
@@ -2845,7 +3274,13 @@ def list_basic_items_by_features(active_only: Optional[bool] = None, features: O
 
 
 @same_doc_as(ListBasicItemsByFeatures)
-async def list_basic_items_by_features_async(active_only: Optional[bool] = None, features: Optional[List[str]] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def list_basic_items_by_features_async(
+    active_only: Optional[bool] = None,
+    features: Optional[List[str]] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """List basic items by features (listBasicItemsByFeatures)
 
     [SERVICE COMMUNICATION ONLY] This API is used to list basic items by features.
@@ -2889,11 +3324,15 @@ async def list_basic_items_by_features_async(active_only: Optional[bool] = None,
         features=features,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(ListItemTypeConfigs)
-def list_item_type_configs(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def list_item_type_configs(
+    x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
     """Get all item type configs (listItemTypeConfigs)
 
     This API is used to get all item type configs.
@@ -2927,7 +3366,9 @@ def list_item_type_configs(x_additional_headers: Optional[Dict[str, str]] = None
 
 
 @same_doc_as(ListItemTypeConfigs)
-async def list_item_type_configs_async(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def list_item_type_configs_async(
+    x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
     """Get all item type configs (listItemTypeConfigs)
 
     This API is used to get all item type configs.
@@ -2957,11 +3398,21 @@ async def list_item_type_configs_async(x_additional_headers: Optional[Dict[str, 
         200: OK - List[ItemTypeConfigInfo] (successful operation)
     """
     request = ListItemTypeConfigs.create()
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicBulkGetItems)
-def public_bulk_get_items(item_ids: str, language: Optional[str] = None, region: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_bulk_get_items(
+    item_ids: str,
+    language: Optional[str] = None,
+    region: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Bulk get locale items (publicBulkGetItems)
 
     This API is used to bulk get locale items. If item not exist in specific region, default region item will return.
@@ -3015,7 +3466,15 @@ def public_bulk_get_items(item_ids: str, language: Optional[str] = None, region:
 
 
 @same_doc_as(PublicBulkGetItems)
-async def public_bulk_get_items_async(item_ids: str, language: Optional[str] = None, region: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_bulk_get_items_async(
+    item_ids: str,
+    language: Optional[str] = None,
+    region: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Bulk get locale items (publicBulkGetItems)
 
     This API is used to bulk get locale items. If item not exist in specific region, default region item will return.
@@ -3065,11 +3524,21 @@ async def public_bulk_get_items_async(item_ids: str, language: Optional[str] = N
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicGetApp)
-def public_get_app(item_id: str, language: Optional[str] = None, region: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_get_app(
+    item_id: str,
+    language: Optional[str] = None,
+    region: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get an app in locale (publicGetApp)
 
     This API is used to get an app in locale. If app not exist in specific region, default region app will return.
@@ -3123,7 +3592,15 @@ def public_get_app(item_id: str, language: Optional[str] = None, region: Optiona
 
 
 @same_doc_as(PublicGetApp)
-async def public_get_app_async(item_id: str, language: Optional[str] = None, region: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_get_app_async(
+    item_id: str,
+    language: Optional[str] = None,
+    region: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get an app in locale (publicGetApp)
 
     This API is used to get an app in locale. If app not exist in specific region, default region app will return.
@@ -3173,11 +3650,22 @@ async def public_get_app_async(item_id: str, language: Optional[str] = None, reg
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicGetItem)
-def public_get_item(item_id: str, language: Optional[str] = None, populate_bundle: Optional[bool] = None, region: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_get_item(
+    item_id: str,
+    language: Optional[str] = None,
+    populate_bundle: Optional[bool] = None,
+    region: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get an item in locale (publicGetItem)
 
     This API is used to get an item in locale. If item not exist in specific region, default region item will return.
@@ -3234,7 +3722,16 @@ def public_get_item(item_id: str, language: Optional[str] = None, populate_bundl
 
 
 @same_doc_as(PublicGetItem)
-async def public_get_item_async(item_id: str, language: Optional[str] = None, populate_bundle: Optional[bool] = None, region: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_get_item_async(
+    item_id: str,
+    language: Optional[str] = None,
+    populate_bundle: Optional[bool] = None,
+    region: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get an item in locale (publicGetItem)
 
     This API is used to get an item in locale. If item not exist in specific region, default region item will return.
@@ -3287,11 +3784,21 @@ async def public_get_item_async(item_id: str, language: Optional[str] = None, po
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicGetItemByAppId)
-def public_get_item_by_app_id(app_id: str, language: Optional[str] = None, region: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_get_item_by_app_id(
+    app_id: str,
+    language: Optional[str] = None,
+    region: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get item by appId (publicGetItemByAppId)
 
     This API is used to get item by appId.
@@ -3345,7 +3852,15 @@ def public_get_item_by_app_id(app_id: str, language: Optional[str] = None, regio
 
 
 @same_doc_as(PublicGetItemByAppId)
-async def public_get_item_by_app_id_async(app_id: str, language: Optional[str] = None, region: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_get_item_by_app_id_async(
+    app_id: str,
+    language: Optional[str] = None,
+    region: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get item by appId (publicGetItemByAppId)
 
     This API is used to get item by appId.
@@ -3395,11 +3910,21 @@ async def public_get_item_by_app_id_async(app_id: str, language: Optional[str] =
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicGetItemBySku)
-def public_get_item_by_sku(sku: str, language: Optional[str] = None, region: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_get_item_by_sku(
+    sku: str,
+    language: Optional[str] = None,
+    region: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get item by sku (publicGetItemBySku)
 
     This API is used to get the item by sku.
@@ -3453,7 +3978,15 @@ def public_get_item_by_sku(sku: str, language: Optional[str] = None, region: Opt
 
 
 @same_doc_as(PublicGetItemBySku)
-async def public_get_item_by_sku_async(sku: str, language: Optional[str] = None, region: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_get_item_by_sku_async(
+    sku: str,
+    language: Optional[str] = None,
+    region: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get item by sku (publicGetItemBySku)
 
     This API is used to get the item by sku.
@@ -3503,11 +4036,18 @@ async def public_get_item_by_sku_async(sku: str, language: Optional[str] = None,
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicGetItemDynamicData)
-def public_get_item_dynamic_data(item_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_get_item_dynamic_data(
+    item_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get item dynamic data (publicGetItemDynamicData)
 
     Get item dynamic data for a published item.
@@ -3549,7 +4089,12 @@ def public_get_item_dynamic_data(item_id: str, namespace: Optional[str] = None, 
 
 
 @same_doc_as(PublicGetItemDynamicData)
-async def public_get_item_dynamic_data_async(item_id: str, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_get_item_dynamic_data_async(
+    item_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get item dynamic data (publicGetItemDynamicData)
 
     Get item dynamic data for a published item.
@@ -3587,11 +4132,30 @@ async def public_get_item_dynamic_data_async(item_id: str, namespace: Optional[s
         item_id=item_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicQueryItems)
-def public_query_items(app_type: Optional[Union[str, PublicQueryItemsAppTypeEnum]] = None, base_app_id: Optional[str] = None, category_path: Optional[str] = None, features: Optional[str] = None, include_sub_category_item: Optional[bool] = None, item_type: Optional[Union[str, PublicQueryItemsItemTypeEnum]] = None, language: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, region: Optional[str] = None, sort_by: Optional[List[Union[str, PublicQueryItemsSortByEnum]]] = None, store_id: Optional[str] = None, tags: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_query_items(
+    app_type: Optional[Union[str, PublicQueryItemsAppTypeEnum]] = None,
+    base_app_id: Optional[str] = None,
+    category_path: Optional[str] = None,
+    features: Optional[str] = None,
+    include_sub_category_item: Optional[bool] = None,
+    item_type: Optional[Union[str, PublicQueryItemsItemTypeEnum]] = None,
+    language: Optional[str] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    region: Optional[str] = None,
+    sort_by: Optional[List[Union[str, PublicQueryItemsSortByEnum]]] = None,
+    store_id: Optional[str] = None,
+    tags: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Query items by criteria (publicQueryItems)
 
     This API is used to query items by criteria within a store. If item not exist in specific region, default region item will return.
@@ -3674,7 +4238,24 @@ def public_query_items(app_type: Optional[Union[str, PublicQueryItemsAppTypeEnum
 
 
 @same_doc_as(PublicQueryItems)
-async def public_query_items_async(app_type: Optional[Union[str, PublicQueryItemsAppTypeEnum]] = None, base_app_id: Optional[str] = None, category_path: Optional[str] = None, features: Optional[str] = None, include_sub_category_item: Optional[bool] = None, item_type: Optional[Union[str, PublicQueryItemsItemTypeEnum]] = None, language: Optional[str] = None, limit: Optional[int] = None, offset: Optional[int] = None, region: Optional[str] = None, sort_by: Optional[List[Union[str, PublicQueryItemsSortByEnum]]] = None, store_id: Optional[str] = None, tags: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_query_items_async(
+    app_type: Optional[Union[str, PublicQueryItemsAppTypeEnum]] = None,
+    base_app_id: Optional[str] = None,
+    category_path: Optional[str] = None,
+    features: Optional[str] = None,
+    include_sub_category_item: Optional[bool] = None,
+    item_type: Optional[Union[str, PublicQueryItemsItemTypeEnum]] = None,
+    language: Optional[str] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    region: Optional[str] = None,
+    sort_by: Optional[List[Union[str, PublicQueryItemsSortByEnum]]] = None,
+    store_id: Optional[str] = None,
+    tags: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Query items by criteria (publicQueryItems)
 
     This API is used to query items by criteria within a store. If item not exist in specific region, default region item will return.
@@ -3753,11 +4334,24 @@ async def public_query_items_async(app_type: Optional[Union[str, PublicQueryItem
         tags=tags,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicSearchItems)
-def public_search_items(keyword: str, language: str, item_type: Optional[Union[str, PublicSearchItemsItemTypeEnum]] = None, limit: Optional[int] = None, offset: Optional[int] = None, region: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_search_items(
+    keyword: str,
+    language: str,
+    item_type: Optional[Union[str, PublicSearchItemsItemTypeEnum]] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    region: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Search items by keyword (publicSearchItems)
 
     This API is used to search items by keyword in title, description and long description, It's language constrained, also if item not exist in specific region, default region item will return.
@@ -3820,7 +4414,18 @@ def public_search_items(keyword: str, language: str, item_type: Optional[Union[s
 
 
 @same_doc_as(PublicSearchItems)
-async def public_search_items_async(keyword: str, language: str, item_type: Optional[Union[str, PublicSearchItemsItemTypeEnum]] = None, limit: Optional[int] = None, offset: Optional[int] = None, region: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_search_items_async(
+    keyword: str,
+    language: str,
+    item_type: Optional[Union[str, PublicSearchItemsItemTypeEnum]] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    region: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Search items by keyword (publicSearchItems)
 
     This API is used to search items by keyword in title, description and long description, It's language constrained, also if item not exist in specific region, default region item will return.
@@ -3879,11 +4484,18 @@ async def public_search_items_async(keyword: str, language: str, item_type: Opti
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(PublicValidateItemPurchaseCondition)
-def public_validate_item_purchase_condition(body: Optional[ItemPurchaseConditionValidateRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def public_validate_item_purchase_condition(
+    body: Optional[ItemPurchaseConditionValidateRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Validate user item purchase condition (publicValidateItemPurchaseCondition)
 
     This API is used to validate user item purchase condition
@@ -3922,7 +4534,12 @@ def public_validate_item_purchase_condition(body: Optional[ItemPurchaseCondition
 
 
 @same_doc_as(PublicValidateItemPurchaseCondition)
-async def public_validate_item_purchase_condition_async(body: Optional[ItemPurchaseConditionValidateRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def public_validate_item_purchase_condition_async(
+    body: Optional[ItemPurchaseConditionValidateRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Validate user item purchase condition (publicValidateItemPurchaseCondition)
 
     This API is used to validate user item purchase condition
@@ -3957,11 +4574,32 @@ async def public_validate_item_purchase_condition_async(body: Optional[ItemPurch
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(QueryItems)
-def query_items(active_only: Optional[bool] = None, app_type: Optional[Union[str, QueryItemsAppTypeEnum]] = None, available_date: Optional[str] = None, base_app_id: Optional[str] = None, category_path: Optional[str] = None, features: Optional[str] = None, include_sub_category_item: Optional[bool] = None, item_type: Optional[Union[str, QueryItemsItemTypeEnum]] = None, limit: Optional[int] = None, offset: Optional[int] = None, region: Optional[str] = None, sort_by: Optional[List[Union[str, QueryItemsSortByEnum]]] = None, store_id: Optional[str] = None, tags: Optional[str] = None, target_namespace: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def query_items(
+    active_only: Optional[bool] = None,
+    app_type: Optional[Union[str, QueryItemsAppTypeEnum]] = None,
+    available_date: Optional[str] = None,
+    base_app_id: Optional[str] = None,
+    category_path: Optional[str] = None,
+    features: Optional[str] = None,
+    include_sub_category_item: Optional[bool] = None,
+    item_type: Optional[Union[str, QueryItemsItemTypeEnum]] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    region: Optional[str] = None,
+    sort_by: Optional[List[Union[str, QueryItemsSortByEnum]]] = None,
+    store_id: Optional[str] = None,
+    tags: Optional[str] = None,
+    target_namespace: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Query items by criteria (queryItems)
 
     This API is used to query items by criteria within a store.
@@ -4052,7 +4690,26 @@ def query_items(active_only: Optional[bool] = None, app_type: Optional[Union[str
 
 
 @same_doc_as(QueryItems)
-async def query_items_async(active_only: Optional[bool] = None, app_type: Optional[Union[str, QueryItemsAppTypeEnum]] = None, available_date: Optional[str] = None, base_app_id: Optional[str] = None, category_path: Optional[str] = None, features: Optional[str] = None, include_sub_category_item: Optional[bool] = None, item_type: Optional[Union[str, QueryItemsItemTypeEnum]] = None, limit: Optional[int] = None, offset: Optional[int] = None, region: Optional[str] = None, sort_by: Optional[List[Union[str, QueryItemsSortByEnum]]] = None, store_id: Optional[str] = None, tags: Optional[str] = None, target_namespace: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def query_items_async(
+    active_only: Optional[bool] = None,
+    app_type: Optional[Union[str, QueryItemsAppTypeEnum]] = None,
+    available_date: Optional[str] = None,
+    base_app_id: Optional[str] = None,
+    category_path: Optional[str] = None,
+    features: Optional[str] = None,
+    include_sub_category_item: Optional[bool] = None,
+    item_type: Optional[Union[str, QueryItemsItemTypeEnum]] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    region: Optional[str] = None,
+    sort_by: Optional[List[Union[str, QueryItemsSortByEnum]]] = None,
+    store_id: Optional[str] = None,
+    tags: Optional[str] = None,
+    target_namespace: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Query items by criteria (queryItems)
 
     This API is used to query items by criteria within a store.
@@ -4139,11 +4796,34 @@ async def query_items_async(active_only: Optional[bool] = None, app_type: Option
         target_namespace=target_namespace,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(QueryItems1)
-def query_items_1(app_type: Optional[Union[str, QueryItems1AppTypeEnum]] = None, available_date: Optional[str] = None, base_app_id: Optional[str] = None, category_path: Optional[str] = None, features: Optional[str] = None, include_sub_category_item: Optional[bool] = None, item_name: Optional[str] = None, item_status: Optional[Union[str, QueryItems1ItemStatusEnum]] = None, item_type: Optional[Union[str, QueryItems1ItemTypeEnum]] = None, limit: Optional[int] = None, offset: Optional[int] = None, region: Optional[str] = None, section_exclusive: Optional[bool] = None, sort_by: Optional[List[Union[str, QueryItems1SortByEnum]]] = None, store_id: Optional[str] = None, tags: Optional[str] = None, target_namespace: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def query_items_1(
+    app_type: Optional[Union[str, QueryItems1AppTypeEnum]] = None,
+    available_date: Optional[str] = None,
+    base_app_id: Optional[str] = None,
+    category_path: Optional[str] = None,
+    features: Optional[str] = None,
+    include_sub_category_item: Optional[bool] = None,
+    item_name: Optional[str] = None,
+    item_status: Optional[Union[str, QueryItems1ItemStatusEnum]] = None,
+    item_type: Optional[Union[str, QueryItems1ItemTypeEnum]] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    region: Optional[str] = None,
+    section_exclusive: Optional[bool] = None,
+    sort_by: Optional[List[Union[str, QueryItems1SortByEnum]]] = None,
+    store_id: Optional[str] = None,
+    tags: Optional[str] = None,
+    target_namespace: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Query items by criteria (queryItems_1)
 
     This API is used to query items by criteria within a store.
@@ -4244,7 +4924,28 @@ def query_items_1(app_type: Optional[Union[str, QueryItems1AppTypeEnum]] = None,
 
 
 @same_doc_as(QueryItems1)
-async def query_items_1_async(app_type: Optional[Union[str, QueryItems1AppTypeEnum]] = None, available_date: Optional[str] = None, base_app_id: Optional[str] = None, category_path: Optional[str] = None, features: Optional[str] = None, include_sub_category_item: Optional[bool] = None, item_name: Optional[str] = None, item_status: Optional[Union[str, QueryItems1ItemStatusEnum]] = None, item_type: Optional[Union[str, QueryItems1ItemTypeEnum]] = None, limit: Optional[int] = None, offset: Optional[int] = None, region: Optional[str] = None, section_exclusive: Optional[bool] = None, sort_by: Optional[List[Union[str, QueryItems1SortByEnum]]] = None, store_id: Optional[str] = None, tags: Optional[str] = None, target_namespace: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def query_items_1_async(
+    app_type: Optional[Union[str, QueryItems1AppTypeEnum]] = None,
+    available_date: Optional[str] = None,
+    base_app_id: Optional[str] = None,
+    category_path: Optional[str] = None,
+    features: Optional[str] = None,
+    include_sub_category_item: Optional[bool] = None,
+    item_name: Optional[str] = None,
+    item_status: Optional[Union[str, QueryItems1ItemStatusEnum]] = None,
+    item_type: Optional[Union[str, QueryItems1ItemTypeEnum]] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    region: Optional[str] = None,
+    section_exclusive: Optional[bool] = None,
+    sort_by: Optional[List[Union[str, QueryItems1SortByEnum]]] = None,
+    store_id: Optional[str] = None,
+    tags: Optional[str] = None,
+    target_namespace: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Query items by criteria (queryItems_1)
 
     This API is used to query items by criteria within a store.
@@ -4341,11 +5042,22 @@ async def query_items_1_async(app_type: Optional[Union[str, QueryItems1AppTypeEn
         target_namespace=target_namespace,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(QueryUncategorizedItems)
-def query_uncategorized_items(active_only: Optional[bool] = None, limit: Optional[int] = None, offset: Optional[int] = None, sort_by: Optional[List[Union[str, QueryUncategorizedItemsSortByEnum]]] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def query_uncategorized_items(
+    active_only: Optional[bool] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    sort_by: Optional[List[Union[str, QueryUncategorizedItemsSortByEnum]]] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Query uncategorized items (queryUncategorizedItems)
 
     This API is used to query uncategorized items within a store.
@@ -4406,7 +5118,16 @@ def query_uncategorized_items(active_only: Optional[bool] = None, limit: Optiona
 
 
 @same_doc_as(QueryUncategorizedItems)
-async def query_uncategorized_items_async(active_only: Optional[bool] = None, limit: Optional[int] = None, offset: Optional[int] = None, sort_by: Optional[List[Union[str, QueryUncategorizedItemsSortByEnum]]] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def query_uncategorized_items_async(
+    active_only: Optional[bool] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    sort_by: Optional[List[Union[str, QueryUncategorizedItemsSortByEnum]]] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Query uncategorized items (queryUncategorizedItems)
 
     This API is used to query uncategorized items within a store.
@@ -4463,11 +5184,19 @@ async def query_uncategorized_items_async(active_only: Optional[bool] = None, li
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(ReturnItem)
-def return_item(item_id: str, body: Optional[ItemReturnRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def return_item(
+    item_id: str,
+    body: Optional[ItemReturnRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Return item (returnItem)
 
     [SERVICE COMMUNICATION ONLY] This api is used for returning a published item while the item is maxCount limited, it will increase the sale available count if orderNo already acquired.
@@ -4517,7 +5246,13 @@ def return_item(item_id: str, body: Optional[ItemReturnRequest] = None, namespac
 
 
 @same_doc_as(ReturnItem)
-async def return_item_async(item_id: str, body: Optional[ItemReturnRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def return_item_async(
+    item_id: str,
+    body: Optional[ItemReturnRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Return item (returnItem)
 
     [SERVICE COMMUNICATION ONLY] This api is used for returning a published item while the item is maxCount limited, it will increase the sale available count if orderNo already acquired.
@@ -4563,11 +5298,18 @@ async def return_item_async(item_id: str, body: Optional[ItemReturnRequest] = No
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(SearchItemTypeConfig)
-def search_item_type_config(item_type: Union[str, SearchItemTypeConfigItemTypeEnum], clazz: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def search_item_type_config(
+    item_type: Union[str, SearchItemTypeConfigItemTypeEnum],
+    clazz: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get an item type config (searchItemTypeConfig)
 
     This API is used to get an item type config.
@@ -4610,7 +5352,12 @@ def search_item_type_config(item_type: Union[str, SearchItemTypeConfigItemTypeEn
 
 
 @same_doc_as(SearchItemTypeConfig)
-async def search_item_type_config_async(item_type: Union[str, SearchItemTypeConfigItemTypeEnum], clazz: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def search_item_type_config_async(
+    item_type: Union[str, SearchItemTypeConfigItemTypeEnum],
+    clazz: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Get an item type config (searchItemTypeConfig)
 
     This API is used to get an item type config.
@@ -4649,11 +5396,25 @@ async def search_item_type_config_async(item_type: Union[str, SearchItemTypeConf
         item_type=item_type,
         clazz=clazz,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(SearchItems)
-def search_items(keyword: str, language: str, active_only: Optional[bool] = None, item_type: Optional[Union[str, SearchItemsItemTypeEnum]] = None, limit: Optional[int] = None, offset: Optional[int] = None, sort_by: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def search_items(
+    keyword: str,
+    language: str,
+    active_only: Optional[bool] = None,
+    item_type: Optional[Union[str, SearchItemsItemTypeEnum]] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    sort_by: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Search items by keyword (searchItems)
 
     This API is used to search items by keyword in title, description and long description within a store.
@@ -4721,7 +5482,19 @@ def search_items(keyword: str, language: str, active_only: Optional[bool] = None
 
 
 @same_doc_as(SearchItems)
-async def search_items_async(keyword: str, language: str, active_only: Optional[bool] = None, item_type: Optional[Union[str, SearchItemsItemTypeEnum]] = None, limit: Optional[int] = None, offset: Optional[int] = None, sort_by: Optional[str] = None, store_id: Optional[str] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def search_items_async(
+    keyword: str,
+    language: str,
+    active_only: Optional[bool] = None,
+    item_type: Optional[Union[str, SearchItemsItemTypeEnum]] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    sort_by: Optional[str] = None,
+    store_id: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Search items by keyword (searchItems)
 
     This API is used to search items by keyword in title, description and long description within a store.
@@ -4785,11 +5558,19 @@ async def search_items_async(keyword: str, language: str, active_only: Optional[
         store_id=store_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(SyncInGameItem)
-def sync_in_game_item(store_id: str, body: Optional[InGameItemSync] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def sync_in_game_item(
+    store_id: str,
+    body: Optional[InGameItemSync] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Sync an in game item (syncInGameItem)
 
     This API is used to sync an in game item in game namespace to publisher namespace, at current BUNDLE can't be synced.
@@ -4847,7 +5628,13 @@ def sync_in_game_item(store_id: str, body: Optional[InGameItemSync] = None, name
 
 
 @same_doc_as(SyncInGameItem)
-async def sync_in_game_item_async(store_id: str, body: Optional[InGameItemSync] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def sync_in_game_item_async(
+    store_id: str,
+    body: Optional[InGameItemSync] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Sync an in game item (syncInGameItem)
 
     This API is used to sync an in game item in game namespace to publisher namespace, at current BUNDLE can't be synced.
@@ -4901,11 +5688,20 @@ async def sync_in_game_item_async(store_id: str, body: Optional[InGameItemSync] 
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(UpdateApp)
-def update_app(item_id: str, store_id: str, body: Optional[AppUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def update_app(
+    item_id: str,
+    store_id: str,
+    body: Optional[AppUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update an app (updateApp)
 
     This API is used to update an app.
@@ -5049,7 +5845,14 @@ def update_app(item_id: str, store_id: str, body: Optional[AppUpdate] = None, na
 
 
 @same_doc_as(UpdateApp)
-async def update_app_async(item_id: str, store_id: str, body: Optional[AppUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def update_app_async(
+    item_id: str,
+    store_id: str,
+    body: Optional[AppUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update an app (updateApp)
 
     This API is used to update an app.
@@ -5189,11 +5992,20 @@ async def update_app_async(item_id: str, store_id: str, body: Optional[AppUpdate
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(UpdateItem)
-def update_item(item_id: str, store_id: str, body: Optional[ItemUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def update_item(
+    item_id: str,
+    store_id: str,
+    body: Optional[ItemUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update an item (updateItem)
 
     This API is used to update an item.
@@ -5418,6 +6230,24 @@ def update_item(item_id: str, store_id: str, body: Optional[ItemUpdate] = None, 
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
       *  Returns : updated item data
 
+
+
+    ## Restrictions for item extension and localization extension
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
+
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
 
@@ -5445,11 +6275,11 @@ def update_item(item_id: str, store_id: str, body: Optional[ItemUpdate] = None, 
     Responses:
         200: OK - FullItemInfo (successful operation)
 
-        400: Bad Request - ErrorEntity (30322: Bundle item [{itemId}] can't be bundled | 30325: Code item [{itemId}] can't be bundled | 30326: Subscription item [{itemId}] can't be bundled | 30329: Invalid bundled item [{itemId}] quantity | 30021: Default language [{language}] required | 30321: Invalid item discount amount | 30022: Default region [{region}] is required | 30323: Target namespace is required | 30327: Invalid item trial price | 30330: Invalid item region price currency namespace [{namespace}] | 30332: Invalid option box item [{itemId}] quantity | 30333: Item [{itemId}] item type [{itemType}] can't be bundled into option box | 30334: Option box item [{itemId}] can't be bundled | 30337: Invalid loot box item [{itemId}] quantity | 30338: Item [{itemId}] item type [{itemType}] can't be bundled into loot box | 30339: Loot box item [{itemId}] can't be bundled)
+        400: Bad Request - ErrorEntity (20024: unsupported operation | 30301: Unsupported Item Type [{itemType}] for box item [{itemId}] with expiration | 30322: Bundle item [{itemId}] can't be bundled | 30325: Code item [{itemId}] can't be bundled | 30326: Subscription item [{itemId}] can't be bundled | 30329: Invalid bundled item [{itemId}] quantity | 30021: Default language [{language}] required | 30321: Invalid item discount amount | 30022: Default region [{region}] is required | 30323: Target namespace is required | 30327: Invalid item trial price | 30330: Invalid item region price currency namespace [{namespace}] | 30332: Invalid option box item [{itemId}] quantity | 30333: Item [{itemId}] item type [{itemType}] can't be bundled into option box | 30334: Option box item [{itemId}] can't be bundled | 30337: Invalid loot box item [{itemId}] quantity | 30338: Item [{itemId}] item type [{itemType}] can't be bundled into loot box | 30339: Loot box item [{itemId}] can't be bundled)
 
         404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30341: Item [{itemId}] does not exist in namespace [{namespace}] | 30241: Category [{categoryPath}] does not exist in namespace [{namespace}] | 36141: Currency [{currencyCode}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (30371: Item maxCount not allow reduce | 30372: ItemType is not updatable | 30173: Published store can't modify content | 30374: Item sku [{sku}] already exists in namespace [{namespace}] | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}] | 30379: Item sku is not updatable)
+        409: Conflict - ErrorEntity (30371: Item maxCount not allow reduce | 30372: ItemType is not updatable | 30173: Published store can't modify content | 30374: Item sku [{sku}] already exists in namespace [{namespace}] | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}] | 30379: Item sku is not updatable | 30380: Box item [{itemId}] duration and end date can’t be set at the same time)
 
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
@@ -5467,7 +6297,14 @@ def update_item(item_id: str, store_id: str, body: Optional[ItemUpdate] = None, 
 
 
 @same_doc_as(UpdateItem)
-async def update_item_async(item_id: str, store_id: str, body: Optional[ItemUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def update_item_async(
+    item_id: str,
+    store_id: str,
+    body: Optional[ItemUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update an item (updateItem)
 
     This API is used to update an item.
@@ -5692,6 +6529,24 @@ async def update_item_async(item_id: str, store_id: str, body: Optional[ItemUpda
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
       *  Returns : updated item data
 
+
+
+    ## Restrictions for item extension and localization extension
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
+
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
 
@@ -5719,11 +6574,11 @@ async def update_item_async(item_id: str, store_id: str, body: Optional[ItemUpda
     Responses:
         200: OK - FullItemInfo (successful operation)
 
-        400: Bad Request - ErrorEntity (30322: Bundle item [{itemId}] can't be bundled | 30325: Code item [{itemId}] can't be bundled | 30326: Subscription item [{itemId}] can't be bundled | 30329: Invalid bundled item [{itemId}] quantity | 30021: Default language [{language}] required | 30321: Invalid item discount amount | 30022: Default region [{region}] is required | 30323: Target namespace is required | 30327: Invalid item trial price | 30330: Invalid item region price currency namespace [{namespace}] | 30332: Invalid option box item [{itemId}] quantity | 30333: Item [{itemId}] item type [{itemType}] can't be bundled into option box | 30334: Option box item [{itemId}] can't be bundled | 30337: Invalid loot box item [{itemId}] quantity | 30338: Item [{itemId}] item type [{itemType}] can't be bundled into loot box | 30339: Loot box item [{itemId}] can't be bundled)
+        400: Bad Request - ErrorEntity (20024: unsupported operation | 30301: Unsupported Item Type [{itemType}] for box item [{itemId}] with expiration | 30322: Bundle item [{itemId}] can't be bundled | 30325: Code item [{itemId}] can't be bundled | 30326: Subscription item [{itemId}] can't be bundled | 30329: Invalid bundled item [{itemId}] quantity | 30021: Default language [{language}] required | 30321: Invalid item discount amount | 30022: Default region [{region}] is required | 30323: Target namespace is required | 30327: Invalid item trial price | 30330: Invalid item region price currency namespace [{namespace}] | 30332: Invalid option box item [{itemId}] quantity | 30333: Item [{itemId}] item type [{itemType}] can't be bundled into option box | 30334: Option box item [{itemId}] can't be bundled | 30337: Invalid loot box item [{itemId}] quantity | 30338: Item [{itemId}] item type [{itemType}] can't be bundled into loot box | 30339: Loot box item [{itemId}] can't be bundled)
 
         404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30341: Item [{itemId}] does not exist in namespace [{namespace}] | 30241: Category [{categoryPath}] does not exist in namespace [{namespace}] | 36141: Currency [{currencyCode}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (30371: Item maxCount not allow reduce | 30372: ItemType is not updatable | 30173: Published store can't modify content | 30374: Item sku [{sku}] already exists in namespace [{namespace}] | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}] | 30379: Item sku is not updatable)
+        409: Conflict - ErrorEntity (30371: Item maxCount not allow reduce | 30372: ItemType is not updatable | 30173: Published store can't modify content | 30374: Item sku [{sku}] already exists in namespace [{namespace}] | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}] | 30379: Item sku is not updatable | 30380: Box item [{itemId}] duration and end date can’t be set at the same time)
 
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
@@ -5737,11 +6592,20 @@ async def update_item_async(item_id: str, store_id: str, body: Optional[ItemUpda
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(UpdateItemPurchaseCondition)
-def update_item_purchase_condition(item_id: str, store_id: str, body: Optional[PurchaseConditionUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def update_item_purchase_condition(
+    item_id: str,
+    store_id: str,
+    body: Optional[PurchaseConditionUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update item purchase condition (updateItemPurchaseCondition)
 
     This API is used to update item purchase condition
@@ -5792,7 +6656,14 @@ def update_item_purchase_condition(item_id: str, store_id: str, body: Optional[P
 
 
 @same_doc_as(UpdateItemPurchaseCondition)
-async def update_item_purchase_condition_async(item_id: str, store_id: str, body: Optional[PurchaseConditionUpdate] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def update_item_purchase_condition_async(
+    item_id: str,
+    store_id: str,
+    body: Optional[PurchaseConditionUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update item purchase condition (updateItemPurchaseCondition)
 
     This API is used to update item purchase condition
@@ -5839,11 +6710,18 @@ async def update_item_purchase_condition_async(item_id: str, store_id: str, body
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(UpdateItemTypeConfig)
-def update_item_type_config(id_: str, body: Optional[ItemTypeConfigUpdate] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def update_item_type_config(
+    id_: str,
+    body: Optional[ItemTypeConfigUpdate] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update an Item Type Config (updateItemTypeConfig)
 
     This API is used to update an item type config.
@@ -5888,7 +6766,12 @@ def update_item_type_config(id_: str, body: Optional[ItemTypeConfigUpdate] = Non
 
 
 @same_doc_as(UpdateItemTypeConfig)
-async def update_item_type_config_async(id_: str, body: Optional[ItemTypeConfigUpdate] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def update_item_type_config_async(
+    id_: str,
+    body: Optional[ItemTypeConfigUpdate] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Update an Item Type Config (updateItemTypeConfig)
 
     This API is used to update an item type config.
@@ -5929,11 +6812,19 @@ async def update_item_type_config_async(id_: str, body: Optional[ItemTypeConfigU
         id_=id_,
         body=body,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(ValidateItemPurchaseCondition)
-def validate_item_purchase_condition(user_id: str, body: Optional[ItemPurchaseConditionValidateRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+def validate_item_purchase_condition(
+    user_id: str,
+    body: Optional[ItemPurchaseConditionValidateRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Validate user purchase condition (validateItemPurchaseCondition)
 
     This API is used to validate user purchase condition
@@ -5975,7 +6866,13 @@ def validate_item_purchase_condition(user_id: str, body: Optional[ItemPurchaseCo
 
 
 @same_doc_as(ValidateItemPurchaseCondition)
-async def validate_item_purchase_condition_async(user_id: str, body: Optional[ItemPurchaseConditionValidateRequest] = None, namespace: Optional[str] = None, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+async def validate_item_purchase_condition_async(
+    user_id: str,
+    body: Optional[ItemPurchaseConditionValidateRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     """Validate user purchase condition (validateItemPurchaseCondition)
 
     This API is used to validate user purchase condition
@@ -6013,4 +6910,6 @@ async def validate_item_purchase_condition_async(user_id: str, body: Optional[It
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )

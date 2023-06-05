@@ -8,13 +8,13 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Ugc Service."""
 
-__version__ = "2.9.3"
+__version__ = "2.11.1"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
 # pylint: disable=line-too-long
 
-from .create_channel import CreateChannel
 from .delete_channel import DeleteChannel
 from .get_channels import GetChannels
+from .public_create_channel import PublicCreateChannel
 from .update_channel import UpdateChannel

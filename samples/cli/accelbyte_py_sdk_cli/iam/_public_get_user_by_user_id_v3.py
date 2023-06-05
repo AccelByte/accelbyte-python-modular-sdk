@@ -6,7 +6,7 @@
 
 # template_file: python-cli-command.j2
 
-# AGS Iam Service (5.31.0)
+# AGS Iam Service (6.0.1)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -69,4 +69,4 @@ def public_get_user_by_user_id_v3(
 
 
 public_get_user_by_user_id_v3.operation_id = "PublicGetUserByUserIdV3"
-public_get_user_by_user_id_v3.is_deprecated = False
+public_get_user_by_user_id_v3.is_deprecated = True

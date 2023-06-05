@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -78,10 +78,10 @@ class PublicListViews(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
-    namespace: str                                                                                 # REQUIRED in [path]
-    user_id: str                                                                                   # REQUIRED in [path]
-    language: str                                                                                  # OPTIONAL in [query]
-    store_id: str                                                                                  # OPTIONAL in [query]
+    namespace: str  # REQUIRED in [path]
+    user_id: str  # REQUIRED in [path]
+    language: str  # OPTIONAL in [query]
+    store_id: str  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -194,7 +194,9 @@ class PublicListViews(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, List[ViewInfo]], Union[None, HttpResponse]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[Union[None, List[ViewInfo]], Union[None, HttpResponse]]:
         """Parse the given response.
 
         200: OK - List[ViewInfo] (successful operation)
@@ -205,7 +207,9 @@ class PublicListViews(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
@@ -213,7 +217,9 @@ class PublicListViews(Operation):
         if code == 200:
             return [ViewInfo.create_from_dict(i) for i in content], None
 
-        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
+        return self.handle_undocumented_response(
+            code=code, content_type=content_type, content=content
+        )
 
     # endregion response methods
 
@@ -226,7 +232,7 @@ class PublicListViews(Operation):
         user_id: str,
         language: Optional[str] = None,
         store_id: Optional[str] = None,
-    **kwargs
+        **kwargs,
     ) -> PublicListViews:
         instance = cls()
         instance.namespace = namespace
@@ -238,7 +244,9 @@ class PublicListViews(Operation):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> PublicListViews:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> PublicListViews:
         instance = cls()
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])

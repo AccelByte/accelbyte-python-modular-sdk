@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.28.0)
+# AccelByte Gaming Services Platform Service (4.30.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -49,9 +49,9 @@ class LootBoxConfig(Model):
 
     # region fields
 
-    reward_count: int                                                                              # OPTIONAL
-    rewards: List[LootBoxReward]                                                                   # OPTIONAL
-    roll_function: Union[str, RollFunctionEnum]                                                    # OPTIONAL
+    reward_count: int  # OPTIONAL
+    rewards: List[LootBoxReward]  # OPTIONAL
+    roll_function: Union[str, RollFunctionEnum]  # OPTIONAL
 
     # endregion fields
 
@@ -80,7 +80,9 @@ class LootBoxConfig(Model):
         elif include_empty:
             result["rewardCount"] = 0
         if hasattr(self, "rewards"):
-            result["rewards"] = [i0.to_dict(include_empty=include_empty) for i0 in self.rewards]
+            result["rewards"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.rewards
+            ]
         elif include_empty:
             result["rewards"] = []
         if hasattr(self, "roll_function"):
@@ -99,7 +101,7 @@ class LootBoxConfig(Model):
         reward_count: Optional[int] = None,
         rewards: Optional[List[LootBoxReward]] = None,
         roll_function: Optional[Union[str, RollFunctionEnum]] = None,
-    **kwargs
+        **kwargs,
     ) -> LootBoxConfig:
         instance = cls()
         if reward_count is not None:
@@ -111,7 +113,9 @@ class LootBoxConfig(Model):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> LootBoxConfig:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> LootBoxConfig:
         instance = cls()
         if not dict_:
             return instance
@@ -120,7 +124,10 @@ class LootBoxConfig(Model):
         elif include_empty:
             instance.reward_count = 0
         if "rewards" in dict_ and dict_["rewards"] is not None:
-            instance.rewards = [LootBoxReward.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["rewards"]]
+            instance.rewards = [
+                LootBoxReward.create_from_dict(i0, include_empty=include_empty)
+                for i0 in dict_["rewards"]
+            ]
         elif include_empty:
             instance.rewards = []
         if "rollFunction" in dict_ and dict_["rollFunction"] is not None:
@@ -130,15 +137,29 @@ class LootBoxConfig(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, LootBoxConfig]:
-        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
+    def create_many_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> Dict[str, LootBoxConfig]:
+        return (
+            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
+            if dict_
+            else {}
+        )
 
     @classmethod
-    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[LootBoxConfig]:
-        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
+    def create_many_from_list(
+        cls, list_: list, include_empty: bool = False
+    ) -> List[LootBoxConfig]:
+        return (
+            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
+            if list_
+            else []
+        )
 
     @classmethod
-    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[LootBoxConfig, List[LootBoxConfig], Dict[Any, LootBoxConfig]]:
+    def create_from_any(
+        cls, any_: any, include_empty: bool = False, many: bool = False
+    ) -> Union[LootBoxConfig, List[LootBoxConfig], Dict[Any, LootBoxConfig]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

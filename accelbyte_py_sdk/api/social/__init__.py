@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Social Service."""
 
-__version__ = "2.3.0"
+__version__ = "2.8.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -103,6 +103,10 @@ from .wrappers import update_stat_async
 # stat_cycle_configuration
 from .wrappers import bulk_add_stats
 from .wrappers import bulk_add_stats_async
+from .wrappers import bulk_get_stat_cycle
+from .wrappers import bulk_get_stat_cycle_async
+from .wrappers import bulk_get_stat_cycle_1
+from .wrappers import bulk_get_stat_cycle_1_async
 from .wrappers import create_stat_cycle
 from .wrappers import create_stat_cycle_async
 from .wrappers import delete_stat_cycle
@@ -185,6 +189,10 @@ from .wrappers import public_inc_user_stat_item
 from .wrappers import public_inc_user_stat_item_async
 from .wrappers import public_inc_user_stat_item_value
 from .wrappers import public_inc_user_stat_item_value_async
+from .wrappers import public_list_all_my_stat_items
+from .wrappers import public_list_all_my_stat_items_async
+from .wrappers import public_list_my_stat_items
+from .wrappers import public_list_my_stat_items_async
 from .wrappers import public_query_user_stat_items
 from .wrappers import public_query_user_stat_items_async
 from .wrappers import public_query_user_stat_items_1
@@ -205,3 +213,5 @@ from .wrappers import get_user_stat_cycle_items
 from .wrappers import get_user_stat_cycle_items_async
 from .wrappers import get_user_stat_cycle_items_1
 from .wrappers import get_user_stat_cycle_items_1_async
+from .wrappers import public_list_my_stat_cycle_items
+from .wrappers import public_list_my_stat_cycle_items_async

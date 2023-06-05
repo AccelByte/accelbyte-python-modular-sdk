@@ -1,14 +1,14 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.28.0"
+__version__ = "4.30.2"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -330,7 +330,9 @@ from .wrappers import public_fulfill_google_iap_item_async
 from .wrappers import public_reconcile_play_station_store
 from .wrappers import public_reconcile_play_station_store_async
 from .wrappers import public_reconcile_play_station_store_with_multiple_service_labels
-from .wrappers import public_reconcile_play_station_store_with_multiple_service_labels_async
+from .wrappers import (
+    public_reconcile_play_station_store_with_multiple_service_labels_async,
+)
 from .wrappers import query_all_user_iap_orders
 from .wrappers import query_all_user_iap_orders_async
 from .wrappers import query_user_iap_consume_history
@@ -723,6 +725,10 @@ from .wrappers import get_service_plugin_config
 from .wrappers import get_service_plugin_config_async
 from .wrappers import update_service_plugin_config
 from .wrappers import update_service_plugin_config_async
+
+# session_platform
+from .wrappers import register_xbl_sessions
+from .wrappers import register_xbl_sessions_async
 
 # store
 from .wrappers import clone_store
