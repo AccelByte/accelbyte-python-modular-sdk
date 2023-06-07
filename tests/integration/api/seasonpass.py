@@ -1,13 +1,12 @@
 import os
-from typing import List
 from uuid import uuid4
 from datetime import datetime, timedelta
 
 
 from accelbyte_py_sdk.api.platform.models.localization import Localization
-from accelbyte_py_sdk.api.platform.models.region_data_item import (
+from accelbyte_py_sdk.api.platform.models.region_data_item_dto import (
     CurrencyTypeEnum,
-    RegionDataItem,
+    RegionDataItemDTO,
 )
 
 from tests.integration.test_case import IntegrationTestCase
@@ -48,8 +47,12 @@ class SeasonPassTestCase(IntegrationTestCase):
             namespace=self.namespace,
         )
         self.assertIsNone(error, error)
+
         if len(result) > 0:
-            return result[0]
+            for store_info in result:
+                if not store_info.published:
+                    return store_info
+
         body = (
             StoreCreate()
             .with_default_language("en-US")
@@ -57,6 +60,7 @@ class SeasonPassTestCase(IntegrationTestCase):
             .with_title(self.storeTitle)
             .with_description(self.storeTitle)
         )
+
         result, error = create_store(namespace=self.namespace, body=body)
         return result
 
@@ -89,7 +93,7 @@ class SeasonPassTestCase(IntegrationTestCase):
             .with_region_data(
                 {
                     "US": [
-                        RegionDataItem()
+                        RegionDataItemDTO()
                         .with_currency_code(currencyCode)
                         .with_currency_namespace(self.namespace)
                         .with_currency_type(CurrencyTypeEnum.REAL)
@@ -111,9 +115,9 @@ class SeasonPassTestCase(IntegrationTestCase):
             namespace=self.namespace,
         )
         self.assertIsNone(error, error)
-        for storeInfo in result:
-            if not storeInfo.published:
-                _, error = delete_store(store_id=storeInfo.store_id)
+        for store_info in result:
+            if not store_info.published:
+                _, error = delete_store(store_id=store_info.store_id)
                 self.assertIsNone(error, error)
 
     # region test:season_crud
