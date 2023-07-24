@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Social Service (2.8.0)
+# AccelByte Gaming Services Social Service (2.9.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -28,6 +28,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from .....core import Operation
 from .....core import HeaderStr
 from .....core import HttpResponse
+from .....core import deprecated
 
 from ...models import UserSlotConfigInfo
 
@@ -35,7 +36,10 @@ from ...models import UserSlotConfigInfo
 class GetUserSlotConfig(Operation):
     """Returns a user slot configuration (getUserSlotConfig)
 
-    GetÂ a user slot configuration in given namespace. In case the user slot configuration is not set, the namespace configuration will be returned.
+    ## The endpoint is going to be deprecated
+
+
+    Get a user slot configuration in given namespace. In case the user slot configuration is not set, the namespace configuration will be returned.
     Other detail info:
 
       * Required permission: resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=2 (READ)

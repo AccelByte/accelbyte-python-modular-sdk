@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# Fleet Command (0.1.0)
+# AccelByte Gaming Services Platform Service (4.31.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -30,15 +30,20 @@ from .....core import HeaderStr
 from .....core import HttpResponse
 
 
-class Func1(Operation):
-    """Version info (func1)
+class DeleteLootBoxPluginConfig(Operation):
+    """Delete lootbox plugin config (deleteLootBoxPluginConfig)
+
+    Delete service plugin config.
+    Other detail info:
+
+      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG, action=8 (DELETE)
 
     Properties:
-        url: /ams/version
+        url: /platform/admin/namespaces/{namespace}/catalog/plugins/lootbox
 
-        method: GET
+        method: DELETE
 
-        tags: []
+        tags: ["ServicePluginConfig"]
 
         consumes: []
 
@@ -46,18 +51,22 @@ class Func1(Operation):
 
         securities: [BEARER_AUTH]
 
+        namespace: (namespace) REQUIRED str in path
+
     Responses:
-        200: OK - (OK)
+        204: No Content - (Delete successfully)
     """
 
     # region fields
 
-    _url: str = "/ams/version"
-    _method: str = "GET"
+    _url: str = "/platform/admin/namespaces/{namespace}/catalog/plugins/lootbox"
+    _method: str = "DELETE"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    namespace: str  # REQUIRED in [path]
 
     # endregion fields
 
@@ -96,7 +105,15 @@ class Func1(Operation):
     # region get_x_params methods
 
     def get_all_params(self) -> dict:
-        return {}
+        return {
+            "path": self.get_path_params(),
+        }
+
+    def get_path_params(self) -> dict:
+        result = {}
+        if hasattr(self, "namespace"):
+            result["namespace"] = self.namespace
+        return result
 
     # endregion get_x_params methods
 
@@ -106,12 +123,20 @@ class Func1(Operation):
 
     # region with_x methods
 
+    def with_namespace(self, value: str) -> DeleteLootBoxPluginConfig:
+        self.namespace = value
+        return self
+
     # endregion with_x methods
 
     # region to methods
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
+        if hasattr(self, "namespace") and self.namespace:
+            result["namespace"] = str(self.namespace)
+        elif include_empty:
+            result["namespace"] = ""
         return result
 
     # endregion to methods
@@ -121,10 +146,10 @@ class Func1(Operation):
     # noinspection PyMethodMayBeStatic
     def parse_response(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[Union[None, HttpResponse], Union[None, HttpResponse]]:
+    ) -> Tuple[None, Union[None, HttpResponse]]:
         """Parse the given response.
 
-        200: OK - (OK)
+        204: No Content - (Delete successfully)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -139,8 +164,8 @@ class Func1(Operation):
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
-        if code == 200:
-            return HttpResponse.create(code, "OK"), None
+        if code == 204:
+            return None, None
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content
@@ -151,21 +176,32 @@ class Func1(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, **kwargs) -> Func1:
+    def create(cls, namespace: str, **kwargs) -> DeleteLootBoxPluginConfig:
         instance = cls()
+        instance.namespace = namespace
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> Func1:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> DeleteLootBoxPluginConfig:
         instance = cls()
+        if "namespace" in dict_ and dict_["namespace"] is not None:
+            instance.namespace = str(dict_["namespace"])
+        elif include_empty:
+            instance.namespace = ""
         return instance
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
-        return {}
+        return {
+            "namespace": "namespace",
+        }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
-        return {}
+        return {
+            "namespace": True,
+        }
 
     # endregion static methods

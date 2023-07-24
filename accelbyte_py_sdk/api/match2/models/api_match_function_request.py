@@ -6,7 +6,7 @@
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Match Service V2 (2.5.2)
+# AccelByte Gaming Services Match Service V2 (2.7.1)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -35,12 +35,15 @@ class ApiMatchFunctionRequest(Model):
         match_function: (match_function) REQUIRED str
 
         url: (url) REQUIRED str
+
+        service_app_name: (serviceAppName) OPTIONAL str
     """
 
     # region fields
 
     match_function: str  # REQUIRED
     url: str  # REQUIRED
+    service_app_name: str  # OPTIONAL
 
     # endregion fields
 
@@ -52,6 +55,10 @@ class ApiMatchFunctionRequest(Model):
 
     def with_url(self, value: str) -> ApiMatchFunctionRequest:
         self.url = value
+        return self
+
+    def with_service_app_name(self, value: str) -> ApiMatchFunctionRequest:
+        self.service_app_name = value
         return self
 
     # endregion with_x methods
@@ -68,6 +75,10 @@ class ApiMatchFunctionRequest(Model):
             result["url"] = str(self.url)
         elif include_empty:
             result["url"] = ""
+        if hasattr(self, "service_app_name"):
+            result["serviceAppName"] = str(self.service_app_name)
+        elif include_empty:
+            result["serviceAppName"] = ""
         return result
 
     # endregion to methods
@@ -75,10 +86,18 @@ class ApiMatchFunctionRequest(Model):
     # region static methods
 
     @classmethod
-    def create(cls, match_function: str, url: str, **kwargs) -> ApiMatchFunctionRequest:
+    def create(
+        cls,
+        match_function: str,
+        url: str,
+        service_app_name: Optional[str] = None,
+        **kwargs,
+    ) -> ApiMatchFunctionRequest:
         instance = cls()
         instance.match_function = match_function
         instance.url = url
+        if service_app_name is not None:
+            instance.service_app_name = service_app_name
         return instance
 
     @classmethod
@@ -96,6 +115,10 @@ class ApiMatchFunctionRequest(Model):
             instance.url = str(dict_["url"])
         elif include_empty:
             instance.url = ""
+        if "serviceAppName" in dict_ and dict_["serviceAppName"] is not None:
+            instance.service_app_name = str(dict_["serviceAppName"])
+        elif include_empty:
+            instance.service_app_name = ""
         return instance
 
     @classmethod
@@ -141,6 +164,7 @@ class ApiMatchFunctionRequest(Model):
         return {
             "match_function": "match_function",
             "url": "url",
+            "serviceAppName": "service_app_name",
         }
 
     @staticmethod
@@ -148,6 +172,7 @@ class ApiMatchFunctionRequest(Model):
         return {
             "match_function": True,
             "url": True,
+            "serviceAppName": False,
         }
 
     # endregion static methods

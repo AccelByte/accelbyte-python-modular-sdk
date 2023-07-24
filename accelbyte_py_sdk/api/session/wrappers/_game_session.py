@@ -36,6 +36,7 @@ from ..models import ApimodelsDeleteBulkGameSessionsAPIResponse
 from ..models import ApimodelsGameSessionQueryResponse
 from ..models import ApimodelsGameSessionResponse
 from ..models import ApimodelsJoinByCodeRequest
+from ..models import ApimodelsPromoteLeaderRequest
 from ..models import ApimodelsSessionInviteRequest
 from ..models import ApimodelsUpdateGameSessionBackfillRequest
 from ..models import ApimodelsUpdateGameSessionMemberStatusResponse
@@ -56,6 +57,7 @@ from ..operations.game_session import LeaveGameSession
 from ..operations.game_session import PatchUpdateGameSession
 from ..operations.game_session import PublicGameSessionInvite
 from ..operations.game_session import PublicGameSessionReject
+from ..operations.game_session import PublicPromoteGameSessionLeader
 from ..operations.game_session import PublicQueryGameSessions
 from ..operations.game_session import PublicQueryMyGameSessions
 from ..operations.game_session import PublicRevokeGameSessionCode
@@ -647,11 +649,16 @@ def create_game_session(
     Session configuration name is mandatory, this API will refer following values from the session template if they're not provided in the request:
     - type
     - joinability
+    - autoJoin. If enabled (set to true), players provided in the request will automatically joined the initial game session creation. Game session will not send any invite and players dont need to act upon it.
     - minPlayers
     - maxPlayers
     - inviteTimeout
     - inactiveTimeout
     - dsSource
+    - tieTeamsSessionLifetime
+
+    When the tieTeamsSessionLifetime is true, the lifetime of any partyId inside teams attribute will be tied to the game session.
+    Only applies when the teams partyId is a game session.
 
     When the session type is a DS, a DS creation request will be sent if number of active players reaches session's minPlayers.
 
@@ -721,11 +728,16 @@ async def create_game_session_async(
     Session configuration name is mandatory, this API will refer following values from the session template if they're not provided in the request:
     - type
     - joinability
+    - autoJoin. If enabled (set to true), players provided in the request will automatically joined the initial game session creation. Game session will not send any invite and players dont need to act upon it.
     - minPlayers
     - maxPlayers
     - inviteTimeout
     - inactiveTimeout
     - dsSource
+    - tieTeamsSessionLifetime
+
+    When the tieTeamsSessionLifetime is true, the lifetime of any partyId inside teams attribute will be tied to the game session.
+    Only applies when the teams partyId is a game session.
 
     When the session type is a DS, a DS creation request will be sent if number of active players reaches session's minPlayers.
 
@@ -1776,6 +1788,150 @@ async def public_game_session_reject_async(
     )
 
 
+@same_doc_as(PublicPromoteGameSessionLeader)
+def public_promote_game_session_leader(
+    body: ApimodelsPromoteLeaderRequest,
+    session_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Promote new game session leader. Requires NAMESPACE:{namespace}:SESSION:GAME [UPDATE] (publicPromoteGameSessionLeader)
+
+    Promote game session member to become the new game session leader.
+
+    This API requires the NAMESPACE:{namespace}:SESSION:GAME [UPDATE] permission.
+
+    This API can be operated by:
+    - User (game session member) who is the current leader of the game session
+    - Game Client
+    - Dedicated Server (DS)
+
+    This API will promote game session leader candidate with the following criteria:
+    - Leader candidate is a member of the game session
+    - Leader candidate has a "CONNECTED" or "JOINED" status
+    - If the leader candidate is the current leader, then no promotion process is carried out
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:SESSION:GAME [UPDATE]
+
+    Properties:
+        url: /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/leader
+
+        method: POST
+
+        tags: ["Game Session"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED ApimodelsPromoteLeaderRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+        session_id: (sessionId) REQUIRED str in path
+
+    Responses:
+        200: OK - ApimodelsGameSessionResponse (OK)
+
+        400: Bad Request - ResponseError (Bad Request)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = PublicPromoteGameSessionLeader.create(
+        body=body,
+        session_id=session_id,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(PublicPromoteGameSessionLeader)
+async def public_promote_game_session_leader_async(
+    body: ApimodelsPromoteLeaderRequest,
+    session_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Promote new game session leader. Requires NAMESPACE:{namespace}:SESSION:GAME [UPDATE] (publicPromoteGameSessionLeader)
+
+    Promote game session member to become the new game session leader.
+
+    This API requires the NAMESPACE:{namespace}:SESSION:GAME [UPDATE] permission.
+
+    This API can be operated by:
+    - User (game session member) who is the current leader of the game session
+    - Game Client
+    - Dedicated Server (DS)
+
+    This API will promote game session leader candidate with the following criteria:
+    - Leader candidate is a member of the game session
+    - Leader candidate has a "CONNECTED" or "JOINED" status
+    - If the leader candidate is the current leader, then no promotion process is carried out
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:SESSION:GAME [UPDATE]
+
+    Properties:
+        url: /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/leader
+
+        method: POST
+
+        tags: ["Game Session"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED ApimodelsPromoteLeaderRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+        session_id: (sessionId) REQUIRED str in path
+
+    Responses:
+        200: OK - ApimodelsGameSessionResponse (OK)
+
+        400: Bad Request - ResponseError (Bad Request)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = PublicPromoteGameSessionLeader.create(
+        body=body,
+        session_id=session_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(PublicQueryGameSessions)
 def public_query_game_sessions(
     body: Dict[str, Any],
@@ -1793,6 +1949,11 @@ def public_query_game_sessions(
     - REQUESTED: DS is being requested to DSMC.
     - AVAILABLE: DS is ready to use. The DSMC status for this DS is either READY/BUSY.
     - FAILED_TO_REQUEST: DSMC fails to create the DS.
+
+    query parameter "availability" to filter sessions' availability:
+    all: return all sessions regardless it's full
+    full: only return active sessions
+    default behavior (unset or else): return only available sessions (not full)
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/gamesessions
@@ -1850,6 +2011,11 @@ async def public_query_game_sessions_async(
     - REQUESTED: DS is being requested to DSMC.
     - AVAILABLE: DS is ready to use. The DSMC status for this DS is either READY/BUSY.
     - FAILED_TO_REQUEST: DSMC fails to create the DS.
+
+    query parameter "availability" to filter sessions' availability:
+    all: return all sessions regardless it's full
+    full: only return active sessions
+    default behavior (unset or else): return only available sessions (not full)
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/gamesessions

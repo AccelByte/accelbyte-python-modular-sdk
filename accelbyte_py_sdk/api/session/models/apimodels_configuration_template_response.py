@@ -6,7 +6,7 @@
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Session Service (2.15.4)
+# AccelByte Gaming Services Session Service (2.20.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -64,6 +64,8 @@ class ApimodelsConfigurationTemplateResponse(Model):
 
         updated_at: (updatedAt) REQUIRED str
 
+        auto_join: (autoJoin) OPTIONAL bool
+
         ds_source: (dsSource) OPTIONAL str
 
         fallback_claim_keys: (fallbackClaimKeys) OPTIONAL List[str]
@@ -74,7 +76,11 @@ class ApimodelsConfigurationTemplateResponse(Model):
 
         preferred_claim_keys: (preferredClaimKeys) OPTIONAL List[str]
 
+        psn_base_url: (PSNBaseUrl) OPTIONAL str
+
         requested_regions: (requestedRegions) OPTIONAL List[str]
+
+        tie_teams_session_lifetime: (tieTeamsSessionLifetime) OPTIONAL bool
     """
 
     # region fields
@@ -94,12 +100,15 @@ class ApimodelsConfigurationTemplateResponse(Model):
     text_chat: bool  # REQUIRED
     type_: str  # REQUIRED
     updated_at: str  # REQUIRED
+    auto_join: bool  # OPTIONAL
     ds_source: str  # OPTIONAL
     fallback_claim_keys: List[str]  # OPTIONAL
     max_active_sessions: int  # OPTIONAL
     native_session_setting: ModelsNativeSessionSetting  # OPTIONAL
     preferred_claim_keys: List[str]  # OPTIONAL
+    psn_base_url: str  # OPTIONAL
     requested_regions: List[str]  # OPTIONAL
+    tie_teams_session_lifetime: bool  # OPTIONAL
 
     # endregion fields
 
@@ -167,6 +176,10 @@ class ApimodelsConfigurationTemplateResponse(Model):
         self.updated_at = value
         return self
 
+    def with_auto_join(self, value: bool) -> ApimodelsConfigurationTemplateResponse:
+        self.auto_join = value
+        return self
+
     def with_ds_source(self, value: str) -> ApimodelsConfigurationTemplateResponse:
         self.ds_source = value
         return self
@@ -195,10 +208,20 @@ class ApimodelsConfigurationTemplateResponse(Model):
         self.preferred_claim_keys = value
         return self
 
+    def with_psn_base_url(self, value: str) -> ApimodelsConfigurationTemplateResponse:
+        self.psn_base_url = value
+        return self
+
     def with_requested_regions(
         self, value: List[str]
     ) -> ApimodelsConfigurationTemplateResponse:
         self.requested_regions = value
+        return self
+
+    def with_tie_teams_session_lifetime(
+        self, value: bool
+    ) -> ApimodelsConfigurationTemplateResponse:
+        self.tie_teams_session_lifetime = value
         return self
 
     # endregion with_x methods
@@ -267,6 +290,10 @@ class ApimodelsConfigurationTemplateResponse(Model):
             result["updatedAt"] = str(self.updated_at)
         elif include_empty:
             result["updatedAt"] = ""
+        if hasattr(self, "auto_join"):
+            result["autoJoin"] = bool(self.auto_join)
+        elif include_empty:
+            result["autoJoin"] = False
         if hasattr(self, "ds_source"):
             result["dsSource"] = str(self.ds_source)
         elif include_empty:
@@ -289,10 +316,18 @@ class ApimodelsConfigurationTemplateResponse(Model):
             result["preferredClaimKeys"] = [str(i0) for i0 in self.preferred_claim_keys]
         elif include_empty:
             result["preferredClaimKeys"] = []
+        if hasattr(self, "psn_base_url"):
+            result["PSNBaseUrl"] = str(self.psn_base_url)
+        elif include_empty:
+            result["PSNBaseUrl"] = ""
         if hasattr(self, "requested_regions"):
             result["requestedRegions"] = [str(i0) for i0 in self.requested_regions]
         elif include_empty:
             result["requestedRegions"] = []
+        if hasattr(self, "tie_teams_session_lifetime"):
+            result["tieTeamsSessionLifetime"] = bool(self.tie_teams_session_lifetime)
+        elif include_empty:
+            result["tieTeamsSessionLifetime"] = False
         return result
 
     # endregion to methods
@@ -317,12 +352,15 @@ class ApimodelsConfigurationTemplateResponse(Model):
         text_chat: bool,
         type_: str,
         updated_at: str,
+        auto_join: Optional[bool] = None,
         ds_source: Optional[str] = None,
         fallback_claim_keys: Optional[List[str]] = None,
         max_active_sessions: Optional[int] = None,
         native_session_setting: Optional[ModelsNativeSessionSetting] = None,
         preferred_claim_keys: Optional[List[str]] = None,
+        psn_base_url: Optional[str] = None,
         requested_regions: Optional[List[str]] = None,
+        tie_teams_session_lifetime: Optional[bool] = None,
         **kwargs,
     ) -> ApimodelsConfigurationTemplateResponse:
         instance = cls()
@@ -341,6 +379,8 @@ class ApimodelsConfigurationTemplateResponse(Model):
         instance.text_chat = text_chat
         instance.type_ = type_
         instance.updated_at = updated_at
+        if auto_join is not None:
+            instance.auto_join = auto_join
         if ds_source is not None:
             instance.ds_source = ds_source
         if fallback_claim_keys is not None:
@@ -351,8 +391,12 @@ class ApimodelsConfigurationTemplateResponse(Model):
             instance.native_session_setting = native_session_setting
         if preferred_claim_keys is not None:
             instance.preferred_claim_keys = preferred_claim_keys
+        if psn_base_url is not None:
+            instance.psn_base_url = psn_base_url
         if requested_regions is not None:
             instance.requested_regions = requested_regions
+        if tie_teams_session_lifetime is not None:
+            instance.tie_teams_session_lifetime = tie_teams_session_lifetime
         return instance
 
     @classmethod
@@ -422,6 +466,10 @@ class ApimodelsConfigurationTemplateResponse(Model):
             instance.updated_at = str(dict_["updatedAt"])
         elif include_empty:
             instance.updated_at = ""
+        if "autoJoin" in dict_ and dict_["autoJoin"] is not None:
+            instance.auto_join = bool(dict_["autoJoin"])
+        elif include_empty:
+            instance.auto_join = False
         if "dsSource" in dict_ and dict_["dsSource"] is not None:
             instance.ds_source = str(dict_["dsSource"])
         elif include_empty:
@@ -453,10 +501,21 @@ class ApimodelsConfigurationTemplateResponse(Model):
             ]
         elif include_empty:
             instance.preferred_claim_keys = []
+        if "PSNBaseUrl" in dict_ and dict_["PSNBaseUrl"] is not None:
+            instance.psn_base_url = str(dict_["PSNBaseUrl"])
+        elif include_empty:
+            instance.psn_base_url = ""
         if "requestedRegions" in dict_ and dict_["requestedRegions"] is not None:
             instance.requested_regions = [str(i0) for i0 in dict_["requestedRegions"]]
         elif include_empty:
             instance.requested_regions = []
+        if (
+            "tieTeamsSessionLifetime" in dict_
+            and dict_["tieTeamsSessionLifetime"] is not None
+        ):
+            instance.tie_teams_session_lifetime = bool(dict_["tieTeamsSessionLifetime"])
+        elif include_empty:
+            instance.tie_teams_session_lifetime = False
         return instance
 
     @classmethod
@@ -515,12 +574,15 @@ class ApimodelsConfigurationTemplateResponse(Model):
             "textChat": "text_chat",
             "type": "type_",
             "updatedAt": "updated_at",
+            "autoJoin": "auto_join",
             "dsSource": "ds_source",
             "fallbackClaimKeys": "fallback_claim_keys",
             "maxActiveSessions": "max_active_sessions",
             "nativeSessionSetting": "native_session_setting",
             "preferredClaimKeys": "preferred_claim_keys",
+            "PSNBaseUrl": "psn_base_url",
             "requestedRegions": "requested_regions",
+            "tieTeamsSessionLifetime": "tie_teams_session_lifetime",
         }
 
     @staticmethod
@@ -541,12 +603,15 @@ class ApimodelsConfigurationTemplateResponse(Model):
             "textChat": True,
             "type": True,
             "updatedAt": True,
+            "autoJoin": False,
             "dsSource": False,
             "fallbackClaimKeys": False,
             "maxActiveSessions": False,
             "nativeSessionSetting": False,
             "preferredClaimKeys": False,
+            "PSNBaseUrl": False,
             "requestedRegions": False,
+            "tieTeamsSessionLifetime": False,
         }
 
     # endregion static methods

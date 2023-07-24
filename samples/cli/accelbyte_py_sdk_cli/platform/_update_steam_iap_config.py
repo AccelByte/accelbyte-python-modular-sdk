@@ -6,7 +6,7 @@
 
 # template_file: python-cli-command.j2
 
-# AGS Platform Service (4.30.2)
+# AGS Platform Service (4.31.1)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -33,6 +33,7 @@ from .._utils import to_dict
 from accelbyte_py_sdk.api.platform import (
     update_steam_iap_config as update_steam_iap_config_internal,
 )
+from accelbyte_py_sdk.api.platform.models import ErrorEntity
 from accelbyte_py_sdk.api.platform.models import SteamIAPConfigInfo
 from accelbyte_py_sdk.api.platform.models import SteamIAPConfigRequest
 

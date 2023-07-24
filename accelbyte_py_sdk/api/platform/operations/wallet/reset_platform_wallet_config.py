@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.30.2)
+# AccelByte Gaming Services Platform Service (4.31.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -38,6 +38,7 @@ class PlatformEnum(StrEnum):
     GOOGLEPLAY = "GooglePlay"
     IOS = "IOS"
     NINTENDO = "Nintendo"
+    OCULUS = "Oculus"
     OTHER = "Other"
     PLAYSTATION = "Playstation"
     STEAM = "Steam"
@@ -254,6 +255,7 @@ class ResetPlatformWalletConfig(Operation):
                 "GooglePlay",
                 "IOS",
                 "Nintendo",
+                "Oculus",
                 "Other",
                 "Playstation",
                 "Steam",

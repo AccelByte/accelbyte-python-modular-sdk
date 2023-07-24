@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Iam Service."""
 
-__version__ = "6.0.1"
+__version__ = "6.1.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -32,6 +32,7 @@ from .admin_disable_user_v2 import AdminDisableUserV2
 from .admin_enable_user_v2 import AdminEnableUserV2
 from .admin_get_age_restricti_48366c import AdminGetAgeRestrictionStatusV2
 from .admin_get_age_restricti_5a6b02 import AdminGetAgeRestrictionStatusV3
+from .admin_get_bulk_user_ban_v3 import AdminGetBulkUserBanV3
 from .admin_get_bulk_user_by__b42a39 import AdminGetBulkUserByEmailAddressV3
 from .admin_get_list_country__a160f3 import AdminGetListCountryAgeRestrictionV3
 from .admin_get_list_justice__0399f2 import AdminGetListJusticePlatformAccounts
@@ -47,6 +48,7 @@ from .admin_get_user_deletion_d1510f import AdminGetUserDeletionStatusV3
 from .admin_get_user_login_hi_f4b37e import AdminGetUserLoginHistoriesV3
 from .admin_get_user_mapping import AdminGetUserMapping
 from .admin_get_user_platform_6f9923 import AdminGetUserPlatformAccountsV3
+from .admin_get_user_single_p_15c89c import AdminGetUserSinglePlatformAccount
 from .admin_invite_user_v3 import AdminInviteUserV3
 from .admin_link_platform_account import AdminLinkPlatformAccount
 from .admin_list_user_id_by_u_d47f71 import AdminListUserIDByUserIDsV3

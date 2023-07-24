@@ -6,7 +6,7 @@
 
 # template_file: python-cli-command.j2
 
-# AGS Social Service (2.8.0)
+# AGS Social Service (2.9.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -68,4 +68,4 @@ def public_get_user_namespace_slots(
 
 
 public_get_user_namespace_slots.operation_id = "publicGetUserNamespaceSlots"
-public_get_user_namespace_slots.is_deprecated = False
+public_get_user_namespace_slots.is_deprecated = True

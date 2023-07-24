@@ -6,7 +6,7 @@
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.30.2)
+# AccelByte Gaming Services Platform Service (4.31.1)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -24,12 +24,12 @@
 
 from .utils import randomize
 
-from ..api.platform.models import Achievement
 from ..api.platform.models import AchievementInfo
 from ..api.platform.models import AdditionalData
 from ..api.platform.models import AdminOrderCreate
 from ..api.platform.models import AdyenConfig
 from ..api.platform.models import AliPayConfig
+from ..api.platform.models import AppConfig
 from ..api.platform.models import AppEntitlementInfo
 from ..api.platform.models import AppEntitlementPagingSlicedResult
 from ..api.platform.models import AppInfo
@@ -40,6 +40,8 @@ from ..api.platform.models import AppleIAPConfigRequest
 from ..api.platform.models import AppleIAPReceipt
 from ..api.platform.models import AvailableComparison
 from ..api.platform.models import AvailablePredicate
+from ..api.platform.models import BaseCustomConfig
+from ..api.platform.models import BaseTLSConfig
 from ..api.platform.models import BasicCategoryInfo
 from ..api.platform.models import BasicItem
 from ..api.platform.models import BillingAccount
@@ -153,6 +155,7 @@ from ..api.platform.models import GoogleIAPConfigRequest
 from ..api.platform.models import GoogleIAPReceipt
 from ..api.platform.models import GoogleReceiptResolveResult
 from ..api.platform.models import GrantSubscriptionDaysRequest
+from ..api.platform.models import GrpcServerInfo
 from ..api.platform.models import HierarchicalCategoryInfo
 from ..api.platform.models import IAPConsumeHistoryInfo
 from ..api.platform.models import IAPConsumeHistoryPagingSlicedResult
@@ -198,9 +201,14 @@ from ..api.platform.models import KeyPagingSliceResult
 from ..api.platform.models import ListViewInfo
 from ..api.platform.models import Localization
 from ..api.platform.models import LootBoxConfig
+from ..api.platform.models import LootBoxPluginConfigInfo
+from ..api.platform.models import LootBoxPluginConfigUpdate
 from ..api.platform.models import LootBoxReward
 from ..api.platform.models import MockIAPReceipt
 from ..api.platform.models import NotificationProcessResult
+from ..api.platform.models import OculusIAPConfigInfo
+from ..api.platform.models import OculusIAPConfigRequest
+from ..api.platform.models import OculusReconcileResult
 from ..api.platform.models import OptionBoxConfig
 from ..api.platform.models import Order
 from ..api.platform.models import OrderCreate
@@ -269,6 +277,7 @@ from ..api.platform.models import PlaystationIAPConfigRequest
 from ..api.platform.models import PopulatedItemInfo
 from ..api.platform.models import Predicate
 from ..api.platform.models import PredicateValidateResult
+from ..api.platform.models import PublicCustomConfigInfo
 from ..api.platform.models import PurchaseCondition
 from ..api.platform.models import PurchaseConditionUpdate
 from ..api.platform.models import PurchasedItemCount
@@ -289,6 +298,8 @@ from ..api.platform.models import RevocationConfigUpdate
 from ..api.platform.models import RevocationError
 from ..api.platform.models import RevocationHistoryInfo
 from ..api.platform.models import RevocationHistoryPagingSlicedResult
+from ..api.platform.models import RevocationPluginConfigInfo
+from ..api.platform.models import RevocationPluginConfigUpdate
 from ..api.platform.models import RevocationRequest
 from ..api.platform.models import RevocationResult
 from ..api.platform.models import RevokeCurrency
@@ -310,11 +321,14 @@ from ..api.platform.models import SectionCreate
 from ..api.platform.models import SectionInfo
 from ..api.platform.models import SectionItem
 from ..api.platform.models import SectionPagingSlicedResult
+from ..api.platform.models import SectionPluginConfigInfo
+from ..api.platform.models import SectionPluginConfigUpdate
 from ..api.platform.models import SectionUpdate
 from ..api.platform.models import ServicePluginConfigInfo
 from ..api.platform.models import ServicePluginConfigUpdate
 from ..api.platform.models import Slide
 from ..api.platform.models import StackableEntitlementInfo
+from ..api.platform.models import SteamAchievement
 from ..api.platform.models import SteamAchievementUpdateRequest
 from ..api.platform.models import SteamDLCSyncRequest
 from ..api.platform.models import SteamIAPConfig
@@ -333,6 +347,7 @@ from ..api.platform.models import SubscriptionActivityPagingSlicedResult
 from ..api.platform.models import SubscriptionInfo
 from ..api.platform.models import SubscriptionPagingSlicedResult
 from ..api.platform.models import SubscriptionSummary
+from ..api.platform.models import TLSConfig
 from ..api.platform.models import TaxResult
 from ..api.platform.models import TestResult
 from ..api.platform.models import TicketAcquireRequest
@@ -372,16 +387,10 @@ from ..api.platform.models import XblReconcileRequest
 from ..api.platform.models import XblReconcileResult
 from ..api.platform.models import XblUserAchievements
 from ..api.platform.models import XblUserSessionRequest
+from ..api.platform.models import XboxAchievement
 from ..api.platform.models import XsollaConfig
 from ..api.platform.models import XsollaPaywallConfig
 from ..api.platform.models import XsollaPaywallConfigRequest
-
-
-def create_achievement_example() -> Achievement:
-    instance = Achievement()
-    instance.id_ = randomize()
-    instance.value = randomize("int", min_val=1, max_val=1000)
-    return instance
 
 
 def create_achievement_info_example() -> AchievementInfo:
@@ -443,6 +452,12 @@ def create_ali_pay_config_example() -> AliPayConfig:
     instance.private_key = randomize()
     instance.public_key = randomize()
     instance.return_url = randomize("url")
+    return instance
+
+
+def create_app_config_example() -> AppConfig:
+    instance = AppConfig()
+    instance.app_name = randomize()
     return instance
 
 
@@ -560,6 +575,19 @@ def create_available_predicate_example() -> AvailablePredicate:
     return instance
 
 
+def create_base_custom_config_example() -> BaseCustomConfig:
+    instance = BaseCustomConfig()
+    instance.connection_type = randomize()
+    instance.grpc_server_address = randomize()
+    return instance
+
+
+def create_base_tls_config_example() -> BaseTLSConfig:
+    instance = BaseTLSConfig()
+    instance.root_cert_file_name = randomize()
+    return instance
+
+
 def create_basic_category_info_example() -> BasicCategoryInfo:
     instance = BasicCategoryInfo()
     instance.category_path = randomize()
@@ -607,7 +635,6 @@ def create_billing_history_info_example() -> BillingHistoryInfo:
     instance.currency = create_currency_summary_example()
     instance.item_id = randomize()
     instance.namespace = randomize("slug")
-    instance.payment_order_no = randomize()
     instance.recurring_order_no = randomize()
     instance.sandbox = randomize("bool")
     instance.status = randomize()
@@ -619,6 +646,7 @@ def create_billing_history_info_example() -> BillingHistoryInfo:
     instance.change_billing_account = randomize("bool")
     instance.description = randomize()
     instance.ext_tx_id = randomize()
+    instance.payment_order_no = randomize()
     instance.retry_attempted = randomize("int", min_val=1, max_val=1000)
     instance.sku = randomize("slug")
     instance.status_reason = randomize()
@@ -1724,7 +1752,6 @@ def create_full_category_info_example() -> FullCategoryInfo:
 
 def create_full_item_info_example() -> FullItemInfo:
     instance = FullItemInfo()
-    instance.category_path = randomize()
     instance.created_at = randomize("date")
     instance.entitlement_type = randomize()
     instance.item_id = randomize()
@@ -1740,6 +1767,7 @@ def create_full_item_info_example() -> FullItemInfo:
     instance.base_app_id = randomize()
     instance.booth_name = randomize()
     instance.bound_item_ids = [randomize()]
+    instance.category_path = randomize()
     instance.clazz = randomize()
     instance.display_order = randomize("int", min_val=1, max_val=1000)
     instance.ext = {randomize(): randomize()}
@@ -1852,6 +1880,15 @@ def create_grant_subscription_days_request_example() -> GrantSubscriptionDaysReq
     instance = GrantSubscriptionDaysRequest()
     instance.grant_days = randomize("int", min_val=1, max_val=1000)
     instance.reason = randomize()
+    return instance
+
+
+def create_grpc_server_info_example() -> GrpcServerInfo:
+    instance = GrpcServerInfo()
+    instance.address = randomize()
+    instance.connection_type_enum = randomize()
+    instance.status = randomize()
+    instance.tls_config = create_tls_config_example()
     return instance
 
 
@@ -2432,6 +2469,23 @@ def create_loot_box_config_example() -> LootBoxConfig:
     return instance
 
 
+def create_loot_box_plugin_config_info_example() -> LootBoxPluginConfigInfo:
+    instance = LootBoxPluginConfigInfo()
+    instance.namespace = randomize("slug")
+    instance.app_config = create_app_config_example()
+    instance.custom_config = create_public_custom_config_info_example()
+    instance.extend_type = randomize()
+    return instance
+
+
+def create_loot_box_plugin_config_update_example() -> LootBoxPluginConfigUpdate:
+    instance = LootBoxPluginConfigUpdate()
+    instance.extend_type = randomize()
+    instance.app_config = create_app_config_example()
+    instance.custom_config = create_base_custom_config_example()
+    return instance
+
+
 def create_loot_box_reward_example() -> LootBoxReward:
     instance = LootBoxReward()
     instance.loot_box_items = [create_box_item_example()]
@@ -2458,6 +2512,31 @@ def create_notification_process_result_example() -> NotificationProcessResult:
     instance.custom_param = {randomize(): randomize()}
     instance.severity = randomize("int", min_val=1, max_val=1000)
     instance.status = randomize()
+    return instance
+
+
+def create_oculus_iap_config_info_example() -> OculusIAPConfigInfo:
+    instance = OculusIAPConfigInfo()
+    instance.namespace = randomize("slug")
+    instance.app_id = randomize("uid")
+    instance.app_secret = randomize()
+    return instance
+
+
+def create_oculus_iap_config_request_example() -> OculusIAPConfigRequest:
+    instance = OculusIAPConfigRequest()
+    instance.app_id = randomize("uid")
+    instance.app_secret = randomize()
+    return instance
+
+
+def create_oculus_reconcile_result_example() -> OculusReconcileResult:
+    instance = OculusReconcileResult()
+    instance.iap_order_status = randomize()
+    instance.item_identity = randomize()
+    instance.item_identity_type = randomize()
+    instance.oculus_item_sku = randomize()
+    instance.transaction_id = randomize("uid")
     return instance
 
 
@@ -3298,6 +3377,14 @@ def create_predicate_validate_result_example() -> PredicateValidateResult:
     return instance
 
 
+def create_public_custom_config_info_example() -> PublicCustomConfigInfo:
+    instance = PublicCustomConfigInfo()
+    instance.connection_type = randomize()
+    instance.grpc_server_address = randomize()
+    instance.tls_config = create_base_tls_config_example()
+    return instance
+
+
 def create_purchase_condition_example() -> PurchaseCondition:
     instance = PurchaseCondition()
     instance.condition_groups = [create_condition_group_example()]
@@ -3491,6 +3578,23 @@ def create_revocation_history_paging_sliced_result_example() -> (
     instance = RevocationHistoryPagingSlicedResult()
     instance.data = [create_revocation_history_info_example()]
     instance.paging = create_paging_example()
+    return instance
+
+
+def create_revocation_plugin_config_info_example() -> RevocationPluginConfigInfo:
+    instance = RevocationPluginConfigInfo()
+    instance.namespace = randomize("slug")
+    instance.app_config = create_app_config_example()
+    instance.custom_config = create_public_custom_config_info_example()
+    instance.extend_type = randomize()
+    return instance
+
+
+def create_revocation_plugin_config_update_example() -> RevocationPluginConfigUpdate:
+    instance = RevocationPluginConfigUpdate()
+    instance.extend_type = randomize()
+    instance.app_config = create_app_config_example()
+    instance.custom_config = create_base_custom_config_example()
     return instance
 
 
@@ -3706,6 +3810,23 @@ def create_section_paging_sliced_result_example() -> SectionPagingSlicedResult:
     return instance
 
 
+def create_section_plugin_config_info_example() -> SectionPluginConfigInfo:
+    instance = SectionPluginConfigInfo()
+    instance.namespace = randomize("slug")
+    instance.app_config = create_app_config_example()
+    instance.custom_config = create_public_custom_config_info_example()
+    instance.extend_type = randomize()
+    return instance
+
+
+def create_section_plugin_config_update_example() -> SectionPluginConfigUpdate:
+    instance = SectionPluginConfigUpdate()
+    instance.extend_type = randomize()
+    instance.app_config = create_app_config_example()
+    instance.custom_config = create_base_custom_config_example()
+    return instance
+
+
 def create_section_update_example() -> SectionUpdate:
     instance = SectionUpdate()
     instance.end_date = randomize("date")
@@ -3778,9 +3899,16 @@ def create_stackable_entitlement_info_example() -> StackableEntitlementInfo:
     return instance
 
 
+def create_steam_achievement_example() -> SteamAchievement:
+    instance = SteamAchievement()
+    instance.id_ = randomize()
+    instance.value = randomize("int", min_val=1, max_val=1000)
+    return instance
+
+
 def create_steam_achievement_update_request_example() -> SteamAchievementUpdateRequest:
     instance = SteamAchievementUpdateRequest()
-    instance.achievements = [create_achievement_example()]
+    instance.achievements = [create_steam_achievement_example()]
     instance.steam_user_id = randomize()
     return instance
 
@@ -4083,6 +4211,13 @@ def create_timed_ownership_example() -> TimedOwnership:
     return instance
 
 
+def create_tls_config_example() -> TLSConfig:
+    instance = TLSConfig()
+    instance.root_cert_file_bytes = [randomize()]
+    instance.root_cert_file_name = randomize()
+    return instance
+
+
 def create_trade_notification_example() -> TradeNotification:
     instance = TradeNotification()
     instance.currency = create_currency_summary_example()
@@ -4341,7 +4476,7 @@ def create_wx_pay_config_request_example() -> WxPayConfigRequest:
 
 def create_xbl_achievement_update_request_example() -> XblAchievementUpdateRequest:
     instance = XblAchievementUpdateRequest()
-    instance.achievements = [create_achievement_example()]
+    instance.achievements = [create_xbox_achievement_example()]
     instance.service_config_id = randomize()
     instance.title_id = randomize()
     instance.xbox_user_id = randomize()
@@ -4400,6 +4535,13 @@ def create_xbl_user_session_request_example() -> XblUserSessionRequest:
     instance.payload = {randomize(): randomize()}
     instance.scid = randomize()
     instance.session_template_name = randomize()
+    return instance
+
+
+def create_xbox_achievement_example() -> XboxAchievement:
+    instance = XboxAchievement()
+    instance.id_ = randomize()
+    instance.percent_complete = randomize("int", min_val=1, max_val=1000)
     return instance
 
 

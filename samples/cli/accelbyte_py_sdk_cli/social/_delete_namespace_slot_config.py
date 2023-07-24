@@ -6,7 +6,7 @@
 
 # template_file: python-cli-command.j2
 
-# AGS Social Service (2.8.0)
+# AGS Social Service (2.9.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -64,4 +64,4 @@ def delete_namespace_slot_config(
 
 
 delete_namespace_slot_config.operation_id = "deleteNamespaceSlotConfig"
-delete_namespace_slot_config.is_deprecated = False
+delete_namespace_slot_config.is_deprecated = True

@@ -6,7 +6,7 @@
 
 # template_file: python-cli-init.j2
 
-# justice-platform-service (4.30.2)
+# justice-platform-service (4.31.1)
 
 from ._list_fulfillment_scripts import list_fulfillment_scripts
 from ._test_fulfillment_script_eval import test_fulfillment_script_eval
@@ -25,6 +25,15 @@ from ._create_campaign import create_campaign
 from ._get_campaign import get_campaign
 from ._update_campaign import update_campaign
 from ._get_campaign_dynamic import get_campaign_dynamic
+from ._get_loot_box_plugin_config import get_loot_box_plugin_config
+from ._update_loot_box_plugin_config import update_loot_box_plugin_config
+from ._delete_loot_box_plugin_config import delete_loot_box_plugin_config
+from ._uplod_loot_box_plugin_config_cert import uplod_loot_box_plugin_config_cert
+from ._get_loot_box_grpc_info import get_loot_box_grpc_info
+from ._get_section_plugin_config import get_section_plugin_config
+from ._update_section_plugin_config import update_section_plugin_config
+from ._delete_section_plugin_config import delete_section_plugin_config
+from ._upload_section_plugin_config_cert import upload_section_plugin_config_cert
 from ._get_root_categories import get_root_categories
 from ._create_category import create_category
 from ._list_categories_basic import list_categories_basic
@@ -76,6 +85,9 @@ from ._update_google_p12_file import update_google_p12_file
 from ._get_iap_item_config import get_iap_item_config
 from ._update_iap_item_config import update_iap_item_config
 from ._delete_iap_item_config import delete_iap_item_config
+from ._get_oculus_iap_config import get_oculus_iap_config
+from ._update_oculus_iap_config import update_oculus_iap_config
+from ._delete_oculus_iap_config import delete_oculus_iap_config
 from ._get_play_station_iap_config import get_play_station_iap_config
 from ._update_playstation_iap_config import update_playstation_iap_config
 from ._delete_playstation_iap_config import delete_playstation_iap_config
@@ -150,6 +162,10 @@ from ._get_revocation_config import get_revocation_config
 from ._update_revocation_config import update_revocation_config
 from ._delete_revocation_config import delete_revocation_config
 from ._query_revocation_histories import query_revocation_histories
+from ._get_loot_box_plugin_config_1 import get_loot_box_plugin_config_1
+from ._update_revocation_plugin_config import update_revocation_plugin_config
+from ._delete_loot_box_plugin_config_1 import delete_loot_box_plugin_config_1
+from ._upload_revocation_plugin_config_cert import upload_revocation_plugin_config_cert
 from ._create_reward import create_reward
 from ._query_rewards import query_rewards
 from ._export_rewards import export_rewards
@@ -392,6 +408,7 @@ from ._public_get_entitlement_ownership_token import (
 from ._sync_twitch_drops_entitlement import sync_twitch_drops_entitlement
 from ._public_get_my_wallet import public_get_my_wallet
 from ._sync_epic_game_dlc import sync_epic_game_dlc
+from ._sync_oculus_dlc import sync_oculus_dlc
 from ._public_sync_psn_dlc_inventory import public_sync_psn_dlc_inventory
 from ._public_sync_psn_dlc_inventory_with_multiple_service_labels import (
     public_sync_psn_dlc_inventory_with_multiple_service_labels,
@@ -431,6 +448,7 @@ from ._public_redeem_code import public_redeem_code
 from ._public_fulfill_apple_iap_item import public_fulfill_apple_iap_item
 from ._sync_epic_games_inventory import sync_epic_games_inventory
 from ._public_fulfill_google_iap_item import public_fulfill_google_iap_item
+from ._sync_oculus_consumable_entitlements import sync_oculus_consumable_entitlements
 from ._public_reconcile_play_station_store import public_reconcile_play_station_store
 from ._public_reconcile_play_station_store_with_multiple_service_labels import (
     public_reconcile_play_station_store_with_multiple_service_labels,
@@ -486,6 +504,15 @@ commands = [
     get_campaign,
     update_campaign,
     get_campaign_dynamic,
+    get_loot_box_plugin_config,
+    update_loot_box_plugin_config,
+    delete_loot_box_plugin_config,
+    uplod_loot_box_plugin_config_cert,
+    get_loot_box_grpc_info,
+    get_section_plugin_config,
+    update_section_plugin_config,
+    delete_section_plugin_config,
+    upload_section_plugin_config_cert,
     get_root_categories,
     create_category,
     list_categories_basic,
@@ -537,6 +564,9 @@ commands = [
     get_iap_item_config,
     update_iap_item_config,
     delete_iap_item_config,
+    get_oculus_iap_config,
+    update_oculus_iap_config,
+    delete_oculus_iap_config,
     get_play_station_iap_config,
     update_playstation_iap_config,
     delete_playstation_iap_config,
@@ -611,6 +641,10 @@ commands = [
     update_revocation_config,
     delete_revocation_config,
     query_revocation_histories,
+    get_loot_box_plugin_config_1,
+    update_revocation_plugin_config,
+    delete_loot_box_plugin_config_1,
+    upload_revocation_plugin_config_cert,
     create_reward,
     query_rewards,
     export_rewards,
@@ -817,6 +851,7 @@ commands = [
     sync_twitch_drops_entitlement,
     public_get_my_wallet,
     sync_epic_game_dlc,
+    sync_oculus_dlc,
     public_sync_psn_dlc_inventory,
     public_sync_psn_dlc_inventory_with_multiple_service_labels,
     sync_steam_dlc,
@@ -838,6 +873,7 @@ commands = [
     public_fulfill_apple_iap_item,
     sync_epic_games_inventory,
     public_fulfill_google_iap_item,
+    sync_oculus_consumable_entitlements,
     public_reconcile_play_station_store,
     public_reconcile_play_station_store_with_multiple_service_labels,
     sync_steam_inventory,

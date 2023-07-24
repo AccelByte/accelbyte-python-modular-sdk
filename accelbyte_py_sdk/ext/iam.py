@@ -6,7 +6,7 @@
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Iam Service (6.0.1)
+# AccelByte Gaming Services Iam Service (6.1.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -138,6 +138,7 @@ from ..api.iam.models import ModelEnabledFactorsResponseV4
 from ..api.iam.models import ModelFailedBanUnbanUserV3
 from ..api.iam.models import ModelForgotPasswordRequestV3
 from ..api.iam.models import ModelGetAdminUsersResponse
+from ..api.iam.models import ModelGetBulkUserBansRequest
 from ..api.iam.models import ModelGetLinkHeadlessAccountConflictResponse
 from ..api.iam.models import ModelGetPublisherUserResponse
 from ..api.iam.models import ModelGetPublisherUserV3Response
@@ -250,6 +251,7 @@ from ..api.iam.models import ModelUserLoginHistoryResponse
 from ..api.iam.models import ModelUserPasswordUpdateRequest
 from ..api.iam.models import ModelUserPasswordUpdateV3Request
 from ..api.iam.models import ModelUserPermissionsResponseV3
+from ..api.iam.models import ModelUserPlatformMetadata
 from ..api.iam.models import ModelUserResponse
 from ..api.iam.models import ModelUserResponseV3
 from ..api.iam.models import ModelUserRolesV4Response
@@ -1400,6 +1402,12 @@ def create_model_get_admin_users_response_example() -> ModelGetAdminUsersRespons
     return instance
 
 
+def create_model_get_bulk_user_bans_request_example() -> ModelGetBulkUserBansRequest:
+    instance = ModelGetBulkUserBansRequest()
+    instance.bulk_user_id = [randomize()]
+    return instance
+
+
 def create_model_get_link_headless_account_conflict_response_example() -> (
     ModelGetLinkHeadlessAccountConflictResponse
 ):
@@ -2221,6 +2229,8 @@ def create_model_token_third_party_link_status_response_example() -> (
 ):
     instance = ModelTokenThirdPartyLinkStatusResponse()
     instance.linked = randomize("bool")
+    instance.platform_token = randomize()
+    instance.sandbox_id = randomize()
     return instance
 
 
@@ -2526,6 +2536,15 @@ def create_model_user_permissions_response_v3_example() -> (
     instance.sched_action = randomize("int", min_val=1, max_val=1000)
     instance.sched_cron = randomize()
     instance.sched_range = [randomize()]
+    return instance
+
+
+def create_model_user_platform_metadata_example() -> ModelUserPlatformMetadata:
+    instance = ModelUserPlatformMetadata()
+    instance.metadata = {randomize(): randomize()}
+    instance.namespace = randomize("slug")
+    instance.platform_user_id = randomize()
+    instance.user_id = randomize("uid")
     return instance
 
 

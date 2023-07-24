@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Social Service (2.8.0)
+# AccelByte Gaming Services Social Service (2.9.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -28,6 +28,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from .....core import Operation
 from .....core import HeaderStr
 from .....core import HttpResponse
+from .....core import deprecated
 
 from ...models import ErrorEntity
 from ...models import SlotInfo
@@ -36,6 +37,9 @@ from ...models import SlotMetadataUpdate
 
 class PublicUpdateUserNamespaceSlotMetadata(Operation):
     """Updates the slot metadata (publicUpdateUserNamespaceSlotMetadata)
+
+    ## The endpoint is going to be deprecated
+
 
     Updates the slot metadata.
     Other detail info:

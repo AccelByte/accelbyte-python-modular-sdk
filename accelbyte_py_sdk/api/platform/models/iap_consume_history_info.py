@@ -6,7 +6,7 @@
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.30.2)
+# AccelByte Gaming Services Platform Service (4.31.1)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -37,6 +37,7 @@ class IapTypeEnum(StrEnum):
     APPLE = "APPLE"
     EPICGAMES = "EPICGAMES"
     GOOGLE = "GOOGLE"
+    OCULUS = "OCULUS"
     PLAYSTATION = "PLAYSTATION"
     STADIA = "STADIA"
     STEAM = "STEAM"
@@ -371,6 +372,7 @@ class IAPConsumeHistoryInfo(Model):
                 "APPLE",
                 "EPICGAMES",
                 "GOOGLE",
+                "OCULUS",
                 "PLAYSTATION",
                 "STADIA",
                 "STEAM",

@@ -6,7 +6,7 @@
 
 # template_file: python-cli-command.j2
 
-# AGS Social Service (2.8.0)
+# AGS Social Service (2.9.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -69,4 +69,4 @@ def get_slot_data(
 
 
 get_slot_data.operation_id = "getSlotData"
-get_slot_data.is_deprecated = False
+get_slot_data.is_deprecated = True

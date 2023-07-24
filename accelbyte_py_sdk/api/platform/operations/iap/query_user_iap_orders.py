@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.30.2)
+# AccelByte Gaming Services Platform Service (4.31.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -43,6 +43,7 @@ class TypeEnum(StrEnum):
     APPLE = "APPLE"
     EPICGAMES = "EPICGAMES"
     GOOGLE = "GOOGLE"
+    OCULUS = "OCULUS"
     PLAYSTATION = "PLAYSTATION"
     STADIA = "STADIA"
     STEAM = "STEAM"
@@ -420,6 +421,7 @@ class QueryUserIAPOrders(Operation):
                 "APPLE",
                 "EPICGAMES",
                 "GOOGLE",
+                "OCULUS",
                 "PLAYSTATION",
                 "STADIA",
                 "STEAM",

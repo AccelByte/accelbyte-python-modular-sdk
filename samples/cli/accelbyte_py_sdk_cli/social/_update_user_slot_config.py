@@ -6,7 +6,7 @@
 
 # template_file: python-cli-command.j2
 
-# AGS Social Service (2.8.0)
+# AGS Social Service (2.9.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -78,4 +78,4 @@ def update_user_slot_config(
 
 
 update_user_slot_config.operation_id = "updateUserSlotConfig"
-update_user_slot_config.is_deprecated = False
+update_user_slot_config.is_deprecated = True

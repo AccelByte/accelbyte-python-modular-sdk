@@ -6,7 +6,7 @@
 
 # template_file: python-cli-command.j2
 
-# AGS Social Service (2.8.0)
+# AGS Social Service (2.9.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -71,4 +71,4 @@ def public_delete_user_namespace_slot(
 
 
 public_delete_user_namespace_slot.operation_id = "publicDeleteUserNamespaceSlot"
-public_delete_user_namespace_slot.is_deprecated = False
+public_delete_user_namespace_slot.is_deprecated = True

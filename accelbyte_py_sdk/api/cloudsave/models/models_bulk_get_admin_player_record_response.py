@@ -6,7 +6,7 @@
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.30.2)
+# AccelByte Gaming Services Cloudsave Service (3.9.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -27,31 +27,28 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 
 from ....core import Model
 
+from ..models.models_admin_player_record_response import ModelsAdminPlayerRecordResponse
 
-class Achievement(Model):
-    """steam achievement request (Achievement)
+
+class ModelsBulkGetAdminPlayerRecordResponse(Model):
+    """Models bulk get admin player record response (models.BulkGetAdminPlayerRecordResponse)
 
     Properties:
-        id_: (id) OPTIONAL str
-
-        value: (value) OPTIONAL int
+        data: (data) REQUIRED List[ModelsAdminPlayerRecordResponse]
     """
 
     # region fields
 
-    id_: str  # OPTIONAL
-    value: int  # OPTIONAL
+    data: List[ModelsAdminPlayerRecordResponse]  # REQUIRED
 
     # endregion fields
 
     # region with_x methods
 
-    def with_id(self, value: str) -> Achievement:
-        self.id_ = value
-        return self
-
-    def with_value(self, value: int) -> Achievement:
-        self.value = value
+    def with_data(
+        self, value: List[ModelsAdminPlayerRecordResponse]
+    ) -> ModelsBulkGetAdminPlayerRecordResponse:
+        self.data = value
         return self
 
     # endregion with_x methods
@@ -60,14 +57,12 @@ class Achievement(Model):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "id_"):
-            result["id"] = str(self.id_)
+        if hasattr(self, "data"):
+            result["data"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.data
+            ]
         elif include_empty:
-            result["id"] = ""
-        if hasattr(self, "value"):
-            result["value"] = int(self.value)
-        elif include_empty:
-            result["value"] = 0
+            result["data"] = []
         return result
 
     # endregion to methods
@@ -76,34 +71,34 @@ class Achievement(Model):
 
     @classmethod
     def create(
-        cls, id_: Optional[str] = None, value: Optional[int] = None, **kwargs
-    ) -> Achievement:
+        cls, data: List[ModelsAdminPlayerRecordResponse], **kwargs
+    ) -> ModelsBulkGetAdminPlayerRecordResponse:
         instance = cls()
-        if id_ is not None:
-            instance.id_ = id_
-        if value is not None:
-            instance.value = value
+        instance.data = data
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> Achievement:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> ModelsBulkGetAdminPlayerRecordResponse:
         instance = cls()
         if not dict_:
             return instance
-        if "id" in dict_ and dict_["id"] is not None:
-            instance.id_ = str(dict_["id"])
+        if "data" in dict_ and dict_["data"] is not None:
+            instance.data = [
+                ModelsAdminPlayerRecordResponse.create_from_dict(
+                    i0, include_empty=include_empty
+                )
+                for i0 in dict_["data"]
+            ]
         elif include_empty:
-            instance.id_ = ""
-        if "value" in dict_ and dict_["value"] is not None:
-            instance.value = int(dict_["value"])
-        elif include_empty:
-            instance.value = 0
+            instance.data = []
         return instance
 
     @classmethod
     def create_many_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, Achievement]:
+    ) -> Dict[str, ModelsBulkGetAdminPlayerRecordResponse]:
         return (
             {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
             if dict_
@@ -113,7 +108,7 @@ class Achievement(Model):
     @classmethod
     def create_many_from_list(
         cls, list_: list, include_empty: bool = False
-    ) -> List[Achievement]:
+    ) -> List[ModelsBulkGetAdminPlayerRecordResponse]:
         return (
             [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
             if list_
@@ -123,7 +118,11 @@ class Achievement(Model):
     @classmethod
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[Achievement, List[Achievement], Dict[Any, Achievement]]:
+    ) -> Union[
+        ModelsBulkGetAdminPlayerRecordResponse,
+        List[ModelsBulkGetAdminPlayerRecordResponse],
+        Dict[Any, ModelsBulkGetAdminPlayerRecordResponse],
+    ]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -137,15 +136,13 @@ class Achievement(Model):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "id": "id_",
-            "value": "value",
+            "data": "data",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "id": False,
-            "value": False,
+            "data": True,
         }
 
     # endregion static methods

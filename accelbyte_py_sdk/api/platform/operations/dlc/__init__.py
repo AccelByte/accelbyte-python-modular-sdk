@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.30.2"
+__version__ = "4.31.1"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -27,6 +27,7 @@ from .public_sync_psn_dlc_inv_429118 import (
     PublicSyncPsnDlcInventoryWithMultipleServiceLabels,
 )
 from .sync_epic_game_dlc import SyncEpicGameDLC
+from .sync_oculus_dlc import SyncOculusDLC
 from .sync_steam_dlc import SyncSteamDLC
 from .sync_xbox_dlc import SyncXboxDLC
 from .update_dlc_item_config import UpdateDLCItemConfig

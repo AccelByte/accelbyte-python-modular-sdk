@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Cloudsave Service (3.8.1)
+# AccelByte Gaming Services Cloudsave Service (3.9.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -70,6 +70,8 @@ class GetGameRecordHandlerV1(Operation):
 
     Responses:
         200: OK - ModelsGameRecordResponse (Record retrieved)
+
+        400: Bad Request - ModelsResponseError (Bad Request)
 
         401: Unauthorized - ModelsResponseError (Unauthorized)
 
@@ -186,6 +188,8 @@ class GetGameRecordHandlerV1(Operation):
 
         200: OK - ModelsGameRecordResponse (Record retrieved)
 
+        400: Bad Request - ModelsResponseError (Bad Request)
+
         401: Unauthorized - ModelsResponseError (Unauthorized)
 
         404: Not Found - ModelsResponseError (Not Found)
@@ -207,6 +211,8 @@ class GetGameRecordHandlerV1(Operation):
 
         if code == 200:
             return ModelsGameRecordResponse.create_from_dict(content), None
+        if code == 400:
+            return None, ModelsResponseError.create_from_dict(content)
         if code == 401:
             return None, ModelsResponseError.create_from_dict(content)
         if code == 404:

@@ -6,7 +6,7 @@
 
 # template_file: python-cli-command.j2
 
-# AGS Social Service (2.8.0)
+# AGS Social Service (2.9.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -84,4 +84,4 @@ def public_update_user_namespace_slot_metadata(
 public_update_user_namespace_slot_metadata.operation_id = (
     "publicUpdateUserNamespaceSlotMetadata"
 )
-public_update_user_namespace_slot_metadata.is_deprecated = False
+public_update_user_namespace_slot_metadata.is_deprecated = True

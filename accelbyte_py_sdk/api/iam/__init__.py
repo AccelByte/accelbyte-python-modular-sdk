@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Iam Service."""
 
-__version__ = "6.0.1"
+__version__ = "6.1.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -373,6 +373,8 @@ from .wrappers import admin_get_age_restriction_status_v2
 from .wrappers import admin_get_age_restriction_status_v2_async
 from .wrappers import admin_get_age_restriction_status_v3
 from .wrappers import admin_get_age_restriction_status_v3_async
+from .wrappers import admin_get_bulk_user_ban_v3
+from .wrappers import admin_get_bulk_user_ban_v3_async
 from .wrappers import admin_get_bulk_user_by_email_address_v3
 from .wrappers import admin_get_bulk_user_by_email_address_v3_async
 from .wrappers import admin_get_list_country_age_restriction_v3
@@ -403,6 +405,8 @@ from .wrappers import admin_get_user_mapping
 from .wrappers import admin_get_user_mapping_async
 from .wrappers import admin_get_user_platform_accounts_v3
 from .wrappers import admin_get_user_platform_accounts_v3_async
+from .wrappers import admin_get_user_single_platform_account
+from .wrappers import admin_get_user_single_platform_account_async
 from .wrappers import admin_invite_user_v3
 from .wrappers import admin_invite_user_v3_async
 from .wrappers import admin_link_platform_account

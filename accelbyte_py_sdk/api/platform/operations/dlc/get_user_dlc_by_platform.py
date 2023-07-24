@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.30.2)
+# AccelByte Gaming Services Platform Service (4.31.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -35,6 +35,7 @@ from ...models import UserDLC
 
 class TypeEnum(StrEnum):
     EPICGAMES = "EPICGAMES"
+    OCULUS = "OCULUS"
     PSN = "PSN"
     STEAM = "STEAM"
     XBOX = "XBOX"
@@ -268,7 +269,7 @@ class GetUserDLCByPlatform(Operation):
     @staticmethod
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
-            "type": ["EPICGAMES", "PSN", "STEAM", "XBOX"],  # in query
+            "type": ["EPICGAMES", "OCULUS", "PSN", "STEAM", "XBOX"],  # in query
         }
 
     # endregion static methods

@@ -6,7 +6,7 @@
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Platform Service (4.30.2)
+# AccelByte Gaming Services Platform Service (4.31.1)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -39,6 +39,7 @@ class OriginEnum(StrEnum):
     GOOGLEPLAY = "GooglePlay"
     IOS = "IOS"
     NINTENDO = "Nintendo"
+    OCULUS = "Oculus"
     OTHER = "Other"
     PLAYSTATION = "Playstation"
     STEAM = "Steam"
@@ -201,6 +202,7 @@ class RevokeItem(Model):
                 "GooglePlay",
                 "IOS",
                 "Nintendo",
+                "Oculus",
                 "Other",
                 "Playstation",
                 "Steam",

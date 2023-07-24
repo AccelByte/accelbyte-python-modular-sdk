@@ -1,3 +1,15 @@
+<a name="v0.38.0"></a>
+## [v0.38.0]
+### feat
+- **:** update jenkingenerate for mock-server
+- **mock-server:** update mock server path
+### fix
+- **:** mock-server path
+### test
+- **integration:** fix dsmc test
+- **integration:** fix session browser test
+
+
 # Changelog
 
 ## v0.37.0

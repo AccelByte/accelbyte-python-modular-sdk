@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Social Service (2.8.0)
+# AccelByte Gaming Services Social Service (2.9.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -28,10 +28,14 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from .....core import Operation
 from .....core import HeaderStr
 from .....core import HttpResponse
+from .....core import deprecated
 
 
 class DeleteUserSlotConfig(Operation):
     """Deletes a user slot configuration (deleteUserSlotConfig)
+
+    ## The endpoint is going to be deprecated
+
 
     Deletes a user slot configuration in given namespace, the namespace slot configuration will be returned after delete.
     Other detail info:

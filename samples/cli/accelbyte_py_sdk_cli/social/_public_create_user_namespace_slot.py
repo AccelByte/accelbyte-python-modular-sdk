@@ -6,7 +6,7 @@
 
 # template_file: python-cli-command.j2
 
-# AGS Social Service (2.8.0)
+# AGS Social Service (2.9.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -89,4 +89,4 @@ def public_create_user_namespace_slot(
 
 
 public_create_user_namespace_slot.operation_id = "publicCreateUserNamespaceSlot"
-public_create_user_namespace_slot.is_deprecated = False
+public_create_user_namespace_slot.is_deprecated = True
