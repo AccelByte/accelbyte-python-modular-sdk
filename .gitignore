@@ -321,3 +321,6 @@ $RECYCLE.BIN/
 
 # TAP test results
 *.tap
+
+# Visual Studio Code
+.vscode
