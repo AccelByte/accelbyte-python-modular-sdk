@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# Fleet Command (0.1.0)
+# Fleet Commander (0.2.1)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -39,14 +39,20 @@ class ApiFleetRegionalServerCounts(Model):
         region: (region) REQUIRED str
 
         running_vm_count: (runningVmCount) REQUIRED int
+
+        target_ds_count: (targetDsCount) REQUIRED int
+
+        target_vm_count: (targetVmCount) REQUIRED int
     """
 
     # region fields
 
-    claimed_server_count: int  # REQUIRED
-    ready_server_count: int  # REQUIRED
-    region: str  # REQUIRED
-    running_vm_count: int  # REQUIRED
+    claimed_server_count: int                                                                      # REQUIRED
+    ready_server_count: int                                                                        # REQUIRED
+    region: str                                                                                    # REQUIRED
+    running_vm_count: int                                                                          # REQUIRED
+    target_ds_count: int                                                                           # REQUIRED
+    target_vm_count: int                                                                           # REQUIRED
 
     # endregion fields
 
@@ -66,6 +72,14 @@ class ApiFleetRegionalServerCounts(Model):
 
     def with_running_vm_count(self, value: int) -> ApiFleetRegionalServerCounts:
         self.running_vm_count = value
+        return self
+
+    def with_target_ds_count(self, value: int) -> ApiFleetRegionalServerCounts:
+        self.target_ds_count = value
+        return self
+
+    def with_target_vm_count(self, value: int) -> ApiFleetRegionalServerCounts:
+        self.target_vm_count = value
         return self
 
     # endregion with_x methods
@@ -90,6 +104,14 @@ class ApiFleetRegionalServerCounts(Model):
             result["runningVmCount"] = int(self.running_vm_count)
         elif include_empty:
             result["runningVmCount"] = 0
+        if hasattr(self, "target_ds_count"):
+            result["targetDsCount"] = int(self.target_ds_count)
+        elif include_empty:
+            result["targetDsCount"] = 0
+        if hasattr(self, "target_vm_count"):
+            result["targetVmCount"] = int(self.target_vm_count)
+        elif include_empty:
+            result["targetVmCount"] = 0
         return result
 
     # endregion to methods
@@ -103,19 +125,21 @@ class ApiFleetRegionalServerCounts(Model):
         ready_server_count: int,
         region: str,
         running_vm_count: int,
-        **kwargs,
+        target_ds_count: int,
+        target_vm_count: int,
+    **kwargs
     ) -> ApiFleetRegionalServerCounts:
         instance = cls()
         instance.claimed_server_count = claimed_server_count
         instance.ready_server_count = ready_server_count
         instance.region = region
         instance.running_vm_count = running_vm_count
+        instance.target_ds_count = target_ds_count
+        instance.target_vm_count = target_vm_count
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> ApiFleetRegionalServerCounts:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> ApiFleetRegionalServerCounts:
         instance = cls()
         if not dict_:
             return instance
@@ -135,36 +159,26 @@ class ApiFleetRegionalServerCounts(Model):
             instance.running_vm_count = int(dict_["runningVmCount"])
         elif include_empty:
             instance.running_vm_count = 0
+        if "targetDsCount" in dict_ and dict_["targetDsCount"] is not None:
+            instance.target_ds_count = int(dict_["targetDsCount"])
+        elif include_empty:
+            instance.target_ds_count = 0
+        if "targetVmCount" in dict_ and dict_["targetVmCount"] is not None:
+            instance.target_vm_count = int(dict_["targetVmCount"])
+        elif include_empty:
+            instance.target_vm_count = 0
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, ApiFleetRegionalServerCounts]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, ApiFleetRegionalServerCounts]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[ApiFleetRegionalServerCounts]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[ApiFleetRegionalServerCounts]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[
-        ApiFleetRegionalServerCounts,
-        List[ApiFleetRegionalServerCounts],
-        Dict[Any, ApiFleetRegionalServerCounts],
-    ]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[ApiFleetRegionalServerCounts, List[ApiFleetRegionalServerCounts], Dict[Any, ApiFleetRegionalServerCounts]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -182,6 +196,8 @@ class ApiFleetRegionalServerCounts(Model):
             "readyServerCount": "ready_server_count",
             "region": "region",
             "runningVmCount": "running_vm_count",
+            "targetDsCount": "target_ds_count",
+            "targetVmCount": "target_vm_count",
         }
 
     @staticmethod
@@ -191,6 +207,8 @@ class ApiFleetRegionalServerCounts(Model):
             "readyServerCount": True,
             "region": True,
             "runningVmCount": True,
+            "targetDsCount": True,
+            "targetVmCount": True,
         }
 
     # endregion static methods

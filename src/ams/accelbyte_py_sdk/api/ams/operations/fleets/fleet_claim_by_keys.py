@@ -1,7 +1,7 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# Fleet Command (0.1.0)
+# Fleet Commander (0.2.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -29,7 +29,7 @@ from .....core import Operation
 from .....core import HeaderStr
 from .....core import HttpResponse
 
-from ...models import ApiFleetClaimReq
+from ...models import ApiFleetClaimByKeysReq
 from ...models import ApiFleetClaimResponse
 from ...models import ResponseErrorResponse
 
@@ -37,10 +37,10 @@ from ...models import ResponseErrorResponse
 class FleetClaimByKeys(Operation):
     """claim a Dedicated Server from fleets with matching claim keys (FleetClaimByKeys)
 
-    Required Permission: NAMESPACE:{namespace}:ARMADA:FLEET [UPDATE]
+    Required Permission: NAMESPACE:{namespace}:AMS:SERVER:CLAIM [UPDATE]
 
     Required Permission(s):
-        - NAMESPACE:{namespace}:ARMADA:FLEET [UPDATE]
+        - NAMESPACE:{namespace}:AMS:SERVER:CLAIM [UPDATE]
 
     Properties:
         url: /ams/v1/namespaces/{namespace}/servers/claim
@@ -55,7 +55,7 @@ class FleetClaimByKeys(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ApiFleetClaimReq in body
+        body: (body) REQUIRED ApiFleetClaimByKeysReq in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -68,7 +68,7 @@ class FleetClaimByKeys(Operation):
 
         403: Forbidden - ResponseErrorResponse (insufficient permissions)
 
-        404: Not Found - ResponseErrorResponse (fleet not found)
+        404: Not Found - ResponseErrorResponse (no matching DS available)
 
         500: Internal Server Error - ResponseErrorResponse (internal server error)
     """
@@ -82,8 +82,8 @@ class FleetClaimByKeys(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
-    body: ApiFleetClaimReq  # REQUIRED in [body]
-    namespace: str  # REQUIRED in [path]
+    body: ApiFleetClaimByKeysReq                                                                   # REQUIRED in [body]
+    namespace: str                                                                                 # REQUIRED in [path]
 
     # endregion fields
 
@@ -146,7 +146,7 @@ class FleetClaimByKeys(Operation):
 
     # region with_x methods
 
-    def with_body(self, value: ApiFleetClaimReq) -> FleetClaimByKeys:
+    def with_body(self, value: ApiFleetClaimByKeysReq) -> FleetClaimByKeys:
         self.body = value
         return self
 
@@ -163,7 +163,7 @@ class FleetClaimByKeys(Operation):
         if hasattr(self, "body") and self.body:
             result["body"] = self.body.to_dict(include_empty=include_empty)
         elif include_empty:
-            result["body"] = ApiFleetClaimReq()
+            result["body"] = ApiFleetClaimByKeysReq()
         if hasattr(self, "namespace") and self.namespace:
             result["namespace"] = str(self.namespace)
         elif include_empty:
@@ -175,12 +175,7 @@ class FleetClaimByKeys(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(
-        self, code: int, content_type: str, content: Any
-    ) -> Tuple[
-        Union[None, ApiFleetClaimResponse],
-        Union[None, HttpResponse, ResponseErrorResponse],
-    ]:
+    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, ApiFleetClaimResponse], Union[None, HttpResponse, ResponseErrorResponse]]:
         """Parse the given response.
 
         200: OK - ApiFleetClaimResponse (success)
@@ -191,7 +186,7 @@ class FleetClaimByKeys(Operation):
 
         403: Forbidden - ResponseErrorResponse (insufficient permissions)
 
-        404: Not Found - ResponseErrorResponse (fleet not found)
+        404: Not Found - ResponseErrorResponse (no matching DS available)
 
         500: Internal Server Error - ResponseErrorResponse (internal server error)
 
@@ -201,9 +196,7 @@ class FleetClaimByKeys(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(
-            code=code, content_type=content_type, content=content
-        )
+        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
@@ -221,9 +214,7 @@ class FleetClaimByKeys(Operation):
         if code == 500:
             return None, ResponseErrorResponse.create_from_dict(content)
 
-        return self.handle_undocumented_response(
-            code=code, content_type=content_type, content=content
-        )
+        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
 
     # endregion response methods
 
@@ -231,7 +222,10 @@ class FleetClaimByKeys(Operation):
 
     @classmethod
     def create(
-        cls, body: ApiFleetClaimReq, namespace: str, **kwargs
+        cls,
+        body: ApiFleetClaimByKeysReq,
+        namespace: str,
+    **kwargs
     ) -> FleetClaimByKeys:
         instance = cls()
         instance.body = body
@@ -239,16 +233,12 @@ class FleetClaimByKeys(Operation):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> FleetClaimByKeys:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> FleetClaimByKeys:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = ApiFleetClaimReq.create_from_dict(
-                dict_["body"], include_empty=include_empty
-            )
+            instance.body = ApiFleetClaimByKeysReq.create_from_dict(dict_["body"], include_empty=include_empty)
         elif include_empty:
-            instance.body = ApiFleetClaimReq()
+            instance.body = ApiFleetClaimByKeysReq()
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
         elif include_empty:

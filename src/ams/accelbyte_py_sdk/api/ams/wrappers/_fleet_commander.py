@@ -30,20 +30,19 @@ from ....core import run_request_async
 from ....core import same_doc_as
 
 
-from ..operations.operations import Func2
-from ..operations.operations import PortalHealthCheck
+from ..operations.fleet_commander import Func3
 
 
-@same_doc_as(Func2)
-def func2(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
-    """health check (func2)
+@same_doc_as(Func3)
+def func3(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+    """Version info (func3)
 
     Properties:
-        url: /ams/healthz
+        url: /ams/version
 
         method: GET
 
-        tags: []
+        tags: ["Fleet Commander"]
 
         consumes: []
 
@@ -54,20 +53,20 @@ def func2(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     Responses:
         200: OK - (OK)
     """
-    request = Func2.create()
+    request = Func3.create()
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
-@same_doc_as(Func2)
-async def func2_async(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
-    """health check (func2)
+@same_doc_as(Func3)
+async def func3_async(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+    """Version info (func3)
 
     Properties:
-        url: /ams/healthz
+        url: /ams/version
 
         method: GET
 
-        tags: []
+        tags: ["Fleet Commander"]
 
         consumes: []
 
@@ -78,53 +77,5 @@ async def func2_async(x_additional_headers: Optional[Dict[str, str]] = None, **k
     Responses:
         200: OK - (OK)
     """
-    request = Func2.create()
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
-
-
-@same_doc_as(PortalHealthCheck)
-def portal_health_check(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
-    """health check (PortalHealthCheck)
-
-    Properties:
-        url: /healthz
-
-        method: GET
-
-        tags: []
-
-        consumes: []
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH]
-
-    Responses:
-        200: OK - (OK)
-    """
-    request = PortalHealthCheck.create()
-    return run_request(request, additional_headers=x_additional_headers, **kwargs)
-
-
-@same_doc_as(PortalHealthCheck)
-async def portal_health_check_async(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
-    """health check (PortalHealthCheck)
-
-    Properties:
-        url: /healthz
-
-        method: GET
-
-        tags: []
-
-        consumes: []
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH]
-
-    Responses:
-        200: OK - (OK)
-    """
-    request = PortalHealthCheck.create()
+    request = Func3.create()
     return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)

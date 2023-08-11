@@ -14,6 +14,4 @@ __email__ = "dev@accelbyte.net"
 
 # pylint: disable=line-too-long
 
-from .image_get import ImageGet
-from .image_list import ImageList
-from .image_patch import ImagePatch
+from .func3 import Func3

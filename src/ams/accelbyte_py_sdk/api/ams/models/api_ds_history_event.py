@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# Fleet Command (0.1.0)
+# Fleet Commander (0.2.1)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -27,8 +27,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 
 from ....core import Model
 
-from ..models.tid_id import TidID
-
 
 class ApiDSHistoryEvent(Model):
     """Api DS history event (api.DSHistoryEvent)
@@ -38,7 +36,7 @@ class ApiDSHistoryEvent(Model):
 
         exit_code: (exitCode) REQUIRED int
 
-        game_session: (gameSession) REQUIRED TidID
+        game_session: (gameSession) REQUIRED str
 
         ip_address: (ipAddress) REQUIRED str
 
@@ -46,21 +44,21 @@ class ApiDSHistoryEvent(Model):
 
         region: (region) REQUIRED str
 
-        server_id: (serverId) REQUIRED TidID
+        server_id: (serverId) REQUIRED str
 
         status: (status) REQUIRED str
     """
 
     # region fields
 
-    created_at: str  # REQUIRED
-    exit_code: int  # REQUIRED
-    game_session: TidID  # REQUIRED
-    ip_address: str  # REQUIRED
-    reason: str  # REQUIRED
-    region: str  # REQUIRED
-    server_id: TidID  # REQUIRED
-    status: str  # REQUIRED
+    created_at: str                                                                                # REQUIRED
+    exit_code: int                                                                                 # REQUIRED
+    game_session: str                                                                              # REQUIRED
+    ip_address: str                                                                                # REQUIRED
+    reason: str                                                                                    # REQUIRED
+    region: str                                                                                    # REQUIRED
+    server_id: str                                                                                 # REQUIRED
+    status: str                                                                                    # REQUIRED
 
     # endregion fields
 
@@ -74,7 +72,7 @@ class ApiDSHistoryEvent(Model):
         self.exit_code = value
         return self
 
-    def with_game_session(self, value: TidID) -> ApiDSHistoryEvent:
+    def with_game_session(self, value: str) -> ApiDSHistoryEvent:
         self.game_session = value
         return self
 
@@ -90,7 +88,7 @@ class ApiDSHistoryEvent(Model):
         self.region = value
         return self
 
-    def with_server_id(self, value: TidID) -> ApiDSHistoryEvent:
+    def with_server_id(self, value: str) -> ApiDSHistoryEvent:
         self.server_id = value
         return self
 
@@ -113,11 +111,9 @@ class ApiDSHistoryEvent(Model):
         elif include_empty:
             result["exitCode"] = 0
         if hasattr(self, "game_session"):
-            result["gameSession"] = self.game_session.to_dict(
-                include_empty=include_empty
-            )
+            result["gameSession"] = str(self.game_session)
         elif include_empty:
-            result["gameSession"] = TidID()
+            result["gameSession"] = ""
         if hasattr(self, "ip_address"):
             result["ipAddress"] = str(self.ip_address)
         elif include_empty:
@@ -131,9 +127,9 @@ class ApiDSHistoryEvent(Model):
         elif include_empty:
             result["region"] = ""
         if hasattr(self, "server_id"):
-            result["serverId"] = self.server_id.to_dict(include_empty=include_empty)
+            result["serverId"] = str(self.server_id)
         elif include_empty:
-            result["serverId"] = TidID()
+            result["serverId"] = ""
         if hasattr(self, "status"):
             result["status"] = str(self.status)
         elif include_empty:
@@ -149,13 +145,13 @@ class ApiDSHistoryEvent(Model):
         cls,
         created_at: str,
         exit_code: int,
-        game_session: TidID,
+        game_session: str,
         ip_address: str,
         reason: str,
         region: str,
-        server_id: TidID,
+        server_id: str,
         status: str,
-        **kwargs,
+    **kwargs
     ) -> ApiDSHistoryEvent:
         instance = cls()
         instance.created_at = created_at
@@ -169,9 +165,7 @@ class ApiDSHistoryEvent(Model):
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> ApiDSHistoryEvent:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> ApiDSHistoryEvent:
         instance = cls()
         if not dict_:
             return instance
@@ -184,11 +178,9 @@ class ApiDSHistoryEvent(Model):
         elif include_empty:
             instance.exit_code = 0
         if "gameSession" in dict_ and dict_["gameSession"] is not None:
-            instance.game_session = TidID.create_from_dict(
-                dict_["gameSession"], include_empty=include_empty
-            )
+            instance.game_session = str(dict_["gameSession"])
         elif include_empty:
-            instance.game_session = TidID()
+            instance.game_session = ""
         if "ipAddress" in dict_ and dict_["ipAddress"] is not None:
             instance.ip_address = str(dict_["ipAddress"])
         elif include_empty:
@@ -202,11 +194,9 @@ class ApiDSHistoryEvent(Model):
         elif include_empty:
             instance.region = ""
         if "serverId" in dict_ and dict_["serverId"] is not None:
-            instance.server_id = TidID.create_from_dict(
-                dict_["serverId"], include_empty=include_empty
-            )
+            instance.server_id = str(dict_["serverId"])
         elif include_empty:
-            instance.server_id = TidID()
+            instance.server_id = ""
         if "status" in dict_ and dict_["status"] is not None:
             instance.status = str(dict_["status"])
         elif include_empty:
@@ -214,31 +204,15 @@ class ApiDSHistoryEvent(Model):
         return instance
 
     @classmethod
-    def create_many_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, ApiDSHistoryEvent]:
-        return (
-            {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
-            if dict_
-            else {}
-        )
+    def create_many_from_dict(cls, dict_: dict, include_empty: bool = False) -> Dict[str, ApiDSHistoryEvent]:
+        return {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_} if dict_ else {}
 
     @classmethod
-    def create_many_from_list(
-        cls, list_: list, include_empty: bool = False
-    ) -> List[ApiDSHistoryEvent]:
-        return (
-            [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
-            if list_
-            else []
-        )
+    def create_many_from_list(cls, list_: list, include_empty: bool = False) -> List[ApiDSHistoryEvent]:
+        return [cls.create_from_dict(i, include_empty=include_empty) for i in list_] if list_ else []
 
     @classmethod
-    def create_from_any(
-        cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[
-        ApiDSHistoryEvent, List[ApiDSHistoryEvent], Dict[Any, ApiDSHistoryEvent]
-    ]:
+    def create_from_any(cls, any_: any, include_empty: bool = False, many: bool = False) -> Union[ApiDSHistoryEvent, List[ApiDSHistoryEvent], Dict[Any, ApiDSHistoryEvent]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

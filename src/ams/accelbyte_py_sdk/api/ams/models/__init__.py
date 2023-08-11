@@ -1,14 +1,14 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-"""Auto-generated package that contains models used by the Fleet Command."""
+"""Auto-generated package that contains models used by the Fleet Commander."""
 
-__version__ = "0.1.0"
+__version__ = "0.2.1"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -24,6 +24,7 @@ from .api_available_instance_types_response import ApiAvailableInstanceTypesResp
 from .api_ds_history_event import ApiDSHistoryEvent
 from .api_ds_history_list import ApiDSHistoryList
 from .api_ds_host_configuration import ApiDSHostConfiguration
+from .api_fleet_claim_by_keys_req import ApiFleetClaimByKeysReq
 from .api_fleet_claim_req import ApiFleetClaimReq
 from .api_fleet_claim_response import ApiFleetClaimResponse
 from .api_fleet_create_response import ApiFleetCreateResponse
@@ -42,10 +43,10 @@ from .api_image_list import ApiImageList
 from .api_image_list_item import ApiImageListItem
 from .api_image_update import ApiImageUpdate
 from .api_instance_type_description_response import ApiInstanceTypeDescriptionResponse
+from .api_paging_info import ApiPagingInfo
 from .api_port_configuration import ApiPortConfiguration
 from .api_referencing_fleet import ApiReferencingFleet
 from .api_region_config import ApiRegionConfig
 from .api_regions_response import ApiRegionsResponse
 from .api_timeout import ApiTimeout
 from .response_error_response import ResponseErrorResponse
-from .tid_id import TidID

@@ -1,12 +1,12 @@
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: ags_py_codegen
 
-# Fleet Command (0.1.0)
+# Fleet Commander (0.2.1)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -34,6 +34,7 @@ from ..api.ams.models import ApiAvailableInstanceTypesResponse
 from ..api.ams.models import ApiDSHistoryEvent
 from ..api.ams.models import ApiDSHistoryList
 from ..api.ams.models import ApiDSHostConfiguration
+from ..api.ams.models import ApiFleetClaimByKeysReq
 from ..api.ams.models import ApiFleetClaimReq
 from ..api.ams.models import ApiFleetClaimResponse
 from ..api.ams.models import ApiFleetCreateResponse
@@ -52,13 +53,13 @@ from ..api.ams.models import ApiImageList
 from ..api.ams.models import ApiImageListItem
 from ..api.ams.models import ApiImageUpdate
 from ..api.ams.models import ApiInstanceTypeDescriptionResponse
+from ..api.ams.models import ApiPagingInfo
 from ..api.ams.models import ApiPortConfiguration
 from ..api.ams.models import ApiReferencingFleet
 from ..api.ams.models import ApiRegionConfig
 from ..api.ams.models import ApiRegionsResponse
 from ..api.ams.models import ApiTimeout
 from ..api.ams.models import ResponseErrorResponse
-from ..api.ams.models import TidID
 
 
 def create_api_account_create_request_example() -> ApiAccountCreateRequest:
@@ -103,13 +104,9 @@ def create_api_account_response_example() -> ApiAccountResponse:
     return instance
 
 
-def create_api_available_instance_types_response_example() -> (
-    ApiAvailableInstanceTypesResponse
-):
+def create_api_available_instance_types_response_example() -> ApiAvailableInstanceTypesResponse:
     instance = ApiAvailableInstanceTypesResponse()
-    instance.available_instance_types = [
-        create_api_instance_type_description_response_example()
-    ]
+    instance.available_instance_types = [create_api_instance_type_description_response_example()]
     return instance
 
 
@@ -117,11 +114,11 @@ def create_api_ds_history_event_example() -> ApiDSHistoryEvent:
     instance = ApiDSHistoryEvent()
     instance.created_at = randomize("date")
     instance.exit_code = randomize("int", min_val=1, max_val=1000)
-    instance.game_session = create_tid_id_example()
+    instance.game_session = randomize()
     instance.ip_address = randomize()
     instance.reason = randomize()
     instance.region = randomize()
-    instance.server_id = create_tid_id_example()
+    instance.server_id = randomize()
     instance.status = randomize()
     return instance
 
@@ -129,6 +126,7 @@ def create_api_ds_history_event_example() -> ApiDSHistoryEvent:
 def create_api_ds_history_list_example() -> ApiDSHistoryList:
     instance = ApiDSHistoryList()
     instance.events = [create_api_ds_history_event_example()]
+    instance.paging = create_api_paging_info_example()
     return instance
 
 
@@ -137,6 +135,13 @@ def create_api_ds_host_configuration_example() -> ApiDSHostConfiguration:
     instance.instance_id = randomize()
     instance.instance_type = randomize()
     instance.servers_per_vm = randomize("int", min_val=1, max_val=1000)
+    return instance
+
+
+def create_api_fleet_claim_by_keys_req_example() -> ApiFleetClaimByKeysReq:
+    instance = ApiFleetClaimByKeysReq()
+    instance.claim_keys = [randomize()]
+    instance.regions = [randomize()]
     return instance
 
 
@@ -150,6 +155,7 @@ def create_api_fleet_claim_response_example() -> ApiFleetClaimResponse:
     instance = ApiFleetClaimResponse()
     instance.ip = randomize()
     instance.ports = {}
+    instance.region = randomize()
     instance.server_id = randomize()
     return instance
 
@@ -193,11 +199,11 @@ def create_api_fleet_list_response_example() -> ApiFleetListResponse:
 def create_api_fleet_parameters_example() -> ApiFleetParameters:
     instance = ApiFleetParameters()
     instance.active = randomize("bool")
-    instance.claim_keys = [randomize()]
     instance.ds_host_configuration = create_api_ds_host_configuration_example()
     instance.image_deployment_profile = create_api_image_deployment_profile_example()
     instance.name = randomize()
     instance.regions = [create_api_region_config_example()]
+    instance.claim_keys = [randomize()]
     return instance
 
 
@@ -207,20 +213,20 @@ def create_api_fleet_regional_server_counts_example() -> ApiFleetRegionalServerC
     instance.ready_server_count = randomize("int", min_val=1, max_val=1000)
     instance.region = randomize()
     instance.running_vm_count = randomize("int", min_val=1, max_val=1000)
+    instance.target_ds_count = randomize("int", min_val=1, max_val=1000)
+    instance.target_vm_count = randomize("int", min_val=1, max_val=1000)
     return instance
 
 
-def create_api_fleet_server_history_event_response_example() -> (
-    ApiFleetServerHistoryEventResponse
-):
+def create_api_fleet_server_history_event_response_example() -> ApiFleetServerHistoryEventResponse:
     instance = ApiFleetServerHistoryEventResponse()
     instance.created_at = randomize("date")
     instance.exit_code = randomize("int", min_val=1, max_val=1000)
-    instance.fleet_id = create_tid_id_example()
+    instance.fleet_id = randomize()
     instance.new_state = randomize()
     instance.old_state = randomize()
     instance.reason = randomize()
-    instance.server_id = create_tid_id_example()
+    instance.server_id = randomize()
     return instance
 
 
@@ -242,6 +248,7 @@ def create_api_fleet_server_info_response_example() -> ApiFleetServerInfoRespons
     instance.port_configuration = [create_api_port_configuration_example()]
     instance.region = randomize()
     instance.server_id = randomize()
+    instance.status = randomize()
     return instance
 
 
@@ -263,6 +270,7 @@ def create_api_image_deployment_profile_example() -> ApiImageDeploymentProfile:
 
 def create_api_image_details_example() -> ApiImageDetails:
     instance = ApiImageDetails()
+    instance.created_at = randomize("date")
     instance.id_ = randomize()
     instance.is_protected = randomize("bool")
     instance.name = randomize()
@@ -283,6 +291,7 @@ def create_api_image_list_example() -> ApiImageList:
 
 def create_api_image_list_item_example() -> ApiImageListItem:
     instance = ApiImageListItem()
+    instance.created_at = randomize("date")
     instance.id_ = randomize()
     instance.is_protected = randomize("bool")
     instance.name = randomize()
@@ -304,9 +313,7 @@ def create_api_image_update_example() -> ApiImageUpdate:
     return instance
 
 
-def create_api_instance_type_description_response_example() -> (
-    ApiInstanceTypeDescriptionResponse
-):
+def create_api_instance_type_description_response_example() -> ApiInstanceTypeDescriptionResponse:
     instance = ApiInstanceTypeDescriptionResponse()
     instance.description = randomize()
     instance.id_ = randomize()
@@ -314,6 +321,19 @@ def create_api_instance_type_description_response_example() -> (
     instance.min_speed = randomize()
     instance.name = randomize()
     instance.virtual_cpu = randomize("int", min_val=1, max_val=1000)
+    return instance
+
+
+def create_api_paging_info_example() -> ApiPagingInfo:
+    instance = ApiPagingInfo()
+    instance.current_page = randomize("int", min_val=1, max_val=1000)
+    instance.has_next = randomize("bool")
+    instance.has_pages = randomize("bool")
+    instance.has_prev = randomize("bool")
+    instance.next_ = randomize()
+    instance.page_nums = [randomize("int", min_val=1, max_val=1000)]
+    instance.previous = randomize()
+    instance.total = randomize("int", min_val=1, max_val=1000)
     return instance
 
 
@@ -360,11 +380,4 @@ def create_response_error_response_example() -> ResponseErrorResponse:
     instance = ResponseErrorResponse()
     instance.error_message = randomize()
     instance.trace_id = randomize()
-    return instance
-
-
-def create_tid_id_example() -> TidID:
-    instance = TidID()
-    instance.type_ = randomize()
-    instance.uuid = randomize()
     return instance
