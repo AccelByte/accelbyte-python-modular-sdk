@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# Fleet Commander (0.2.0)
+# AccelByte Gaming Services Match Service V2 (2.8.4)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -29,32 +29,51 @@ from .....core import Operation
 from .....core import HeaderStr
 from .....core import HttpResponse
 
+from ...models import ApiListEnvironmentVariablesResponse
+from ...models import ResponseError
 
-class BasicHealthCheck(Operation):
-    """health check (BasicHealthCheck)
+
+class EnvironmentVariableList(Operation):
+    """List environment variables (EnvironmentVariableList)
+
+    Required Permission: ADMIN:MATCHMAKING:CONFIGURATION:ENVIRONMENTVARIABLE [READ]
+
+    Required Scope: social
+
+    List environment variables.
+
+    Required Permission(s):
+        - ADMIN:MATCHMAKING:CONFIGURATION:ENVIRONMENTVARIABLE [READ]
+
+    Required Scope(s):
+        - social
 
     Properties:
-        url: /healthz
+        url: /match2/v1/environment-variables
 
         method: GET
 
-        tags: []
+        tags: ["Environment-Variables", "admin"]
 
-        consumes: []
+        consumes: ["application/json"]
 
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
 
     Responses:
-        200: OK - (OK)
+        200: OK - ApiListEnvironmentVariablesResponse (Created)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
     """
 
     # region fields
 
-    _url: str = "/healthz"
+    _url: str = "/match2/v1/environment-variables"
     _method: str = "GET"
-    _consumes: List[str] = []
+    _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
@@ -121,10 +140,17 @@ class BasicHealthCheck(Operation):
     # noinspection PyMethodMayBeStatic
     def parse_response(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[Union[None, HttpResponse], Union[None, HttpResponse]]:
+    ) -> Tuple[
+        Union[None, ApiListEnvironmentVariablesResponse],
+        Union[None, HttpResponse, ResponseError],
+    ]:
         """Parse the given response.
 
-        200: OK - (OK)
+        200: OK - ApiListEnvironmentVariablesResponse (Created)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -140,7 +166,11 @@ class BasicHealthCheck(Operation):
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return HttpResponse.create(code, "OK"), None
+            return ApiListEnvironmentVariablesResponse.create_from_dict(content), None
+        if code == 401:
+            return None, ResponseError.create_from_dict(content)
+        if code == 403:
+            return None, ResponseError.create_from_dict(content)
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content
@@ -151,14 +181,14 @@ class BasicHealthCheck(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, **kwargs) -> BasicHealthCheck:
+    def create(cls, **kwargs) -> EnvironmentVariableList:
         instance = cls()
         return instance
 
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> BasicHealthCheck:
+    ) -> EnvironmentVariableList:
         instance = cls()
         return instance
 

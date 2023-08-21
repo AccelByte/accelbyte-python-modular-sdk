@@ -6,7 +6,7 @@
 
 # template file: ags_py_codegen
 
-# Fleet Commander (0.2.0)
+# Fleet Commander (0.2.1)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -32,6 +32,8 @@ class ApiImageListItem(Model):
     """Api image list item (api.ImageListItem)
 
     Properties:
+        created_at: (createdAt) REQUIRED str
+
         id_: (id) REQUIRED str
 
         is_protected: (isProtected) REQUIRED bool
@@ -53,6 +55,7 @@ class ApiImageListItem(Model):
 
     # region fields
 
+    created_at: str  # REQUIRED
     id_: str  # REQUIRED
     is_protected: bool  # REQUIRED
     name: str  # REQUIRED
@@ -66,6 +69,10 @@ class ApiImageListItem(Model):
     # endregion fields
 
     # region with_x methods
+
+    def with_created_at(self, value: str) -> ApiImageListItem:
+        self.created_at = value
+        return self
 
     def with_id(self, value: str) -> ApiImageListItem:
         self.id_ = value
@@ -109,6 +116,10 @@ class ApiImageListItem(Model):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
+        if hasattr(self, "created_at"):
+            result["createdAt"] = str(self.created_at)
+        elif include_empty:
+            result["createdAt"] = ""
         if hasattr(self, "id_"):
             result["id"] = str(self.id_)
         elif include_empty:
@@ -154,6 +165,7 @@ class ApiImageListItem(Model):
     @classmethod
     def create(
         cls,
+        created_at: str,
         id_: str,
         is_protected: bool,
         name: str,
@@ -166,6 +178,7 @@ class ApiImageListItem(Model):
         **kwargs,
     ) -> ApiImageListItem:
         instance = cls()
+        instance.created_at = created_at
         instance.id_ = id_
         instance.is_protected = is_protected
         instance.name = name
@@ -184,6 +197,10 @@ class ApiImageListItem(Model):
         instance = cls()
         if not dict_:
             return instance
+        if "createdAt" in dict_ and dict_["createdAt"] is not None:
+            instance.created_at = str(dict_["createdAt"])
+        elif include_empty:
+            instance.created_at = ""
         if "id" in dict_ and dict_["id"] is not None:
             instance.id_ = str(dict_["id"])
         elif include_empty:
@@ -259,6 +276,7 @@ class ApiImageListItem(Model):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
+            "createdAt": "created_at",
             "id": "id_",
             "isProtected": "is_protected",
             "name": "name",
@@ -273,6 +291,7 @@ class ApiImageListItem(Model):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
+            "createdAt": True,
             "id": True,
             "isProtected": True,
             "name": True,

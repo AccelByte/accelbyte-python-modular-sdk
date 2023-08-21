@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.31.1)
+# AccelByte Gaming Services Iam Service (7.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -29,21 +29,23 @@ from .....core import Operation
 from .....core import HeaderStr
 from .....core import HttpResponse
 
+from ...models import ModelUserPublicInfoResponseV4
+from ...models import RestErrorResponse
 
-class DeleteLootBoxPluginConfig1(Operation):
-    """Delete revocation plugin config (deleteLootBoxPluginConfig_1)
 
-    Delete service plugin config.
-    Other detail info:
+class PublicGetUserPublicInfoByUserIdV4(Operation):
+    """Get User Public Info By User ID (PublicGetUserPublicInfoByUserIdV4)
 
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:REVOCATION, action=8 (DELETE)
+    This endpoint requires a valid user token and only returns user's public information.
+
+    action code: 10129
 
     Properties:
-        url: /platform/admin/namespaces/{namespace}/revocation/plugins/revocation
+        url: /iam/v4/public/namespaces/{namespace}/users/{userId}
 
-        method: DELETE
+        method: GET
 
-        tags: ["ServicePluginConfig"]
+        tags: ["Users V4"]
 
         consumes: []
 
@@ -53,20 +55,29 @@ class DeleteLootBoxPluginConfig1(Operation):
 
         namespace: (namespace) REQUIRED str in path
 
+        user_id: (userId) REQUIRED str in path
+
     Responses:
-        204: No Content - (Delete successfully)
+        200: OK - ModelUserPublicInfoResponseV4 (OK)
+
+        400: Bad Request - RestErrorResponse (20002: validation error)
+
+        404: Not Found - RestErrorResponse (20008: user not found | 10139: platform account not found)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
 
     # region fields
 
-    _url: str = "/platform/admin/namespaces/{namespace}/revocation/plugins/revocation"
-    _method: str = "DELETE"
+    _url: str = "/iam/v4/public/namespaces/{namespace}/users/{userId}"
+    _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     namespace: str  # REQUIRED in [path]
+    user_id: str  # REQUIRED in [path]
 
     # endregion fields
 
@@ -113,6 +124,8 @@ class DeleteLootBoxPluginConfig1(Operation):
         result = {}
         if hasattr(self, "namespace"):
             result["namespace"] = self.namespace
+        if hasattr(self, "user_id"):
+            result["userId"] = self.user_id
         return result
 
     # endregion get_x_params methods
@@ -123,8 +136,12 @@ class DeleteLootBoxPluginConfig1(Operation):
 
     # region with_x methods
 
-    def with_namespace(self, value: str) -> DeleteLootBoxPluginConfig1:
+    def with_namespace(self, value: str) -> PublicGetUserPublicInfoByUserIdV4:
         self.namespace = value
+        return self
+
+    def with_user_id(self, value: str) -> PublicGetUserPublicInfoByUserIdV4:
+        self.user_id = value
         return self
 
     # endregion with_x methods
@@ -137,6 +154,10 @@ class DeleteLootBoxPluginConfig1(Operation):
             result["namespace"] = str(self.namespace)
         elif include_empty:
             result["namespace"] = ""
+        if hasattr(self, "user_id") and self.user_id:
+            result["userId"] = str(self.user_id)
+        elif include_empty:
+            result["userId"] = ""
         return result
 
     # endregion to methods
@@ -146,10 +167,19 @@ class DeleteLootBoxPluginConfig1(Operation):
     # noinspection PyMethodMayBeStatic
     def parse_response(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[None, Union[None, HttpResponse]]:
+    ) -> Tuple[
+        Union[None, ModelUserPublicInfoResponseV4],
+        Union[None, HttpResponse, RestErrorResponse],
+    ]:
         """Parse the given response.
 
-        204: No Content - (Delete successfully)
+        200: OK - ModelUserPublicInfoResponseV4 (OK)
+
+        400: Bad Request - RestErrorResponse (20002: validation error)
+
+        404: Not Found - RestErrorResponse (20008: user not found | 10139: platform account not found)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -164,8 +194,14 @@ class DeleteLootBoxPluginConfig1(Operation):
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
-        if code == 204:
-            return None, None
+        if code == 200:
+            return ModelUserPublicInfoResponseV4.create_from_dict(content), None
+        if code == 400:
+            return None, RestErrorResponse.create_from_dict(content)
+        if code == 404:
+            return None, RestErrorResponse.create_from_dict(content)
+        if code == 500:
+            return None, RestErrorResponse.create_from_dict(content)
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content
@@ -176,32 +212,41 @@ class DeleteLootBoxPluginConfig1(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, namespace: str, **kwargs) -> DeleteLootBoxPluginConfig1:
+    def create(
+        cls, namespace: str, user_id: str, **kwargs
+    ) -> PublicGetUserPublicInfoByUserIdV4:
         instance = cls()
         instance.namespace = namespace
+        instance.user_id = user_id
         return instance
 
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> DeleteLootBoxPluginConfig1:
+    ) -> PublicGetUserPublicInfoByUserIdV4:
         instance = cls()
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
             instance.namespace = ""
+        if "userId" in dict_ and dict_["userId"] is not None:
+            instance.user_id = str(dict_["userId"])
+        elif include_empty:
+            instance.user_id = ""
         return instance
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
             "namespace": "namespace",
+            "userId": "user_id",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
             "namespace": True,
+            "userId": True,
         }
 
     # endregion static methods

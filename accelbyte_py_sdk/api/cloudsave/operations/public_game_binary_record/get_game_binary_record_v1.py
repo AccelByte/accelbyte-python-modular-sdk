@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.31.1)
+# AccelByte Gaming Services Cloudsave Service (3.11.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -29,45 +29,61 @@ from .....core import Operation
 from .....core import HeaderStr
 from .....core import HttpResponse
 
-from ...models import RevocationPluginConfigInfo
+from ...models import ModelsGameBinaryRecordResponse
+from ...models import ModelsResponseError
 
 
-class GetLootBoxPluginConfig1(Operation):
-    """Get revocation plugin config (getLootBoxPluginConfig_1)
+class GetGameBinaryRecordV1(Operation):
+    """Get game binary record (getGameBinaryRecordV1)
 
-    Get revocation plugin config.
-    Other detail info:
+    Required permission: `NAMESPACE:{namespace}:CLOUDSAVE:RECORD [READ]`
+    Required scope: `social`
 
-      * Required permission : resource= ADMIN:NAMESPACE:{namespace}:PLUGIN:REVOCATION , action=2 (READ)
+    Get a game binary record by its key.
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:CLOUDSAVE:RECORD [READ]
+
+    Required Scope(s):
+        - social
 
     Properties:
-        url: /platform/admin/namespaces/{namespace}/revocation/plugins/revocation
+        url: /cloudsave/v1/namespaces/{namespace}/binaries/{key}
 
         method: GET
 
-        tags: ["ServicePluginConfig"]
+        tags: ["PublicGameBinaryRecord"]
 
-        consumes: []
+        consumes: ["application/json"]
 
-        produces: []
+        produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
+        key: (key) REQUIRED str in path
 
         namespace: (namespace) REQUIRED str in path
 
     Responses:
-        200: OK - RevocationPluginConfigInfo (successful operation)
+        200: OK - ModelsGameBinaryRecordResponse (Record in namespace-level retrieved)
+
+        401: Unauthorized - ModelsResponseError (Unauthorized)
+
+        404: Not Found - ModelsResponseError (Not Found)
+
+        500: Internal Server Error - ModelsResponseError (Internal Server Error)
     """
 
     # region fields
 
-    _url: str = "/platform/admin/namespaces/{namespace}/revocation/plugins/revocation"
+    _url: str = "/cloudsave/v1/namespaces/{namespace}/binaries/{key}"
     _method: str = "GET"
-    _consumes: List[str] = []
-    _produces: List[str] = []
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
+    key: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
 
     # endregion fields
@@ -113,6 +129,8 @@ class GetLootBoxPluginConfig1(Operation):
 
     def get_path_params(self) -> dict:
         result = {}
+        if hasattr(self, "key"):
+            result["key"] = self.key
         if hasattr(self, "namespace"):
             result["namespace"] = self.namespace
         return result
@@ -125,7 +143,11 @@ class GetLootBoxPluginConfig1(Operation):
 
     # region with_x methods
 
-    def with_namespace(self, value: str) -> GetLootBoxPluginConfig1:
+    def with_key(self, value: str) -> GetGameBinaryRecordV1:
+        self.key = value
+        return self
+
+    def with_namespace(self, value: str) -> GetGameBinaryRecordV1:
         self.namespace = value
         return self
 
@@ -135,6 +157,10 @@ class GetLootBoxPluginConfig1(Operation):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
+        if hasattr(self, "key") and self.key:
+            result["key"] = str(self.key)
+        elif include_empty:
+            result["key"] = ""
         if hasattr(self, "namespace") and self.namespace:
             result["namespace"] = str(self.namespace)
         elif include_empty:
@@ -148,10 +174,19 @@ class GetLootBoxPluginConfig1(Operation):
     # noinspection PyMethodMayBeStatic
     def parse_response(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[Union[None, RevocationPluginConfigInfo], Union[None, HttpResponse]]:
+    ) -> Tuple[
+        Union[None, ModelsGameBinaryRecordResponse],
+        Union[None, HttpResponse, ModelsResponseError],
+    ]:
         """Parse the given response.
 
-        200: OK - RevocationPluginConfigInfo (successful operation)
+        200: OK - ModelsGameBinaryRecordResponse (Record in namespace-level retrieved)
+
+        401: Unauthorized - ModelsResponseError (Unauthorized)
+
+        404: Not Found - ModelsResponseError (Not Found)
+
+        500: Internal Server Error - ModelsResponseError (Internal Server Error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -167,7 +202,13 @@ class GetLootBoxPluginConfig1(Operation):
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return RevocationPluginConfigInfo.create_from_dict(content), None
+            return ModelsGameBinaryRecordResponse.create_from_dict(content), None
+        if code == 401:
+            return None, ModelsResponseError.create_from_dict(content)
+        if code == 404:
+            return None, ModelsResponseError.create_from_dict(content)
+        if code == 500:
+            return None, ModelsResponseError.create_from_dict(content)
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content
@@ -178,16 +219,21 @@ class GetLootBoxPluginConfig1(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, namespace: str, **kwargs) -> GetLootBoxPluginConfig1:
+    def create(cls, key: str, namespace: str, **kwargs) -> GetGameBinaryRecordV1:
         instance = cls()
+        instance.key = key
         instance.namespace = namespace
         return instance
 
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> GetLootBoxPluginConfig1:
+    ) -> GetGameBinaryRecordV1:
         instance = cls()
+        if "key" in dict_ and dict_["key"] is not None:
+            instance.key = str(dict_["key"])
+        elif include_empty:
+            instance.key = ""
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
@@ -197,12 +243,14 @@ class GetLootBoxPluginConfig1(Operation):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
+            "key": "key",
             "namespace": "namespace",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
+            "key": True,
             "namespace": True,
         }
 

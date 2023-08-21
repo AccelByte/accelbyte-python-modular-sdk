@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Iam Service."""
 
-__version__ = "6.1.0"
+__version__ = "7.0.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -177,6 +177,8 @@ from .wrappers import logout
 from .wrappers import logout_async
 from .wrappers import platform_authentication_v3
 from .wrappers import platform_authentication_v3_async
+from .wrappers import platform_token_refresh_v3
+from .wrappers import platform_token_refresh_v3_async
 from .wrappers import request_game_token_code_response_v3
 from .wrappers import request_game_token_code_response_v3_async
 from .wrappers import request_game_token_response_v3
@@ -593,6 +595,8 @@ from .wrappers import public_platform_unlink_all_v3
 from .wrappers import public_platform_unlink_all_v3_async
 from .wrappers import public_platform_unlink_v3
 from .wrappers import public_platform_unlink_v3_async
+from .wrappers import public_process_web_link_platform_v3
+from .wrappers import public_process_web_link_platform_v3_async
 from .wrappers import public_reset_password_v2
 from .wrappers import public_reset_password_v2_async
 from .wrappers import public_search_user_v3
@@ -731,6 +735,8 @@ from .wrappers import public_get_my_backup_codes_v4
 from .wrappers import public_get_my_backup_codes_v4_async
 from .wrappers import public_get_my_enabled_factors_v4
 from .wrappers import public_get_my_enabled_factors_v4_async
+from .wrappers import public_get_user_public_info_by_user_id_v4
+from .wrappers import public_get_user_public_info_by_user_id_v4_async
 from .wrappers import public_invite_user_v4
 from .wrappers import public_invite_user_v4_async
 from .wrappers import public_make_factor_my_default_v4

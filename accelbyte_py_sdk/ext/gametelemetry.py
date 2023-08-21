@@ -6,7 +6,7 @@
 
 # template file: ags_py_codegen
 
-# Analytics Game Telemetry (1.18.0)
+# Analytics Game Telemetry (1.19.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -40,6 +40,7 @@ def create_telemetry_body_example() -> TelemetryBody:
     instance.event_name = randomize()
     instance.event_namespace = randomize("slug")
     instance.payload = {randomize(): randomize()}
+    instance.client_timestamp = randomize("date")
     instance.event_id = randomize()
     instance.event_timestamp = randomize("date")
     return instance

@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# Analytics Game Telemetry (1.18.0)
+# Analytics Game Telemetry (1.19.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -82,6 +82,10 @@ class ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost(Operation):
 
 
     Default maximum payload size is 1MB
+
+
+
+    - **ClientTimestamp (optional)**: Timestamp of the event captured by the client SDK.
 
     Properties:
         url: /game-telemetry/v1/protected/events

@@ -30,12 +30,12 @@ from ....core import run_request_async
 from ....core import same_doc_as
 
 
-from ..operations.fleet_commander import Func1
+from ..operations.fleet_commander import Func3
 
 
-@same_doc_as(Func1)
-def func1(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
-    """Version info (func1)
+@same_doc_as(Func3)
+def func3(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+    """Version info (func3)
 
     Properties:
         url: /ams/version
@@ -53,13 +53,13 @@ def func1(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     Responses:
         200: OK - (OK)
     """
-    request = Func1.create()
+    request = Func3.create()
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
-@same_doc_as(Func1)
-async def func1_async(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
-    """Version info (func1)
+@same_doc_as(Func3)
+async def func3_async(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
+    """Version info (func3)
 
     Properties:
         url: /ams/version
@@ -77,7 +77,7 @@ async def func1_async(x_additional_headers: Optional[Dict[str, str]] = None, **k
     Responses:
         200: OK - (OK)
     """
-    request = Func1.create()
+    request = Func3.create()
     return await run_request_async(
         request, additional_headers=x_additional_headers, **kwargs
     )

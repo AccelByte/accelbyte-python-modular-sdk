@@ -252,6 +252,7 @@ from ..operations.users import PublicPlatformLinkV2
 from ..operations.users import PublicPlatformLinkV3
 from ..operations.users import PublicPlatformUnlinkAllV3
 from ..operations.users import PublicPlatformUnlinkV3
+from ..operations.users import PublicProcessWebLinkPlatformV3
 from ..operations.users import PublicResetPasswordV2
 from ..operations.users import PublicSearchUserV3
 from ..operations.users import PublicSendRegistrationCode
@@ -5690,6 +5691,7 @@ async def admin_invite_user_v3_async(
 def admin_link_platform_account(
     body: ModelLinkPlatformAccountRequest,
     user_id: str,
+    skip_conflict: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -5700,6 +5702,15 @@ def admin_link_platform_account(
 
 
     Force linking platform account to user User Account. This endpoint intended for admin to forcefully link account to user.
+    By default, these cases are not allowed
+
+
+
+
+      * The platform account current is linked by another account
+
+
+      * The target account ever linked this platform's another account
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]
@@ -5723,6 +5734,8 @@ def admin_link_platform_account(
 
         user_id: (userId) REQUIRED str in path
 
+        skip_conflict: (skipConflict) OPTIONAL bool in query
+
     Responses:
         204: No Content - (No Content)
 
@@ -5731,6 +5744,8 @@ def admin_link_platform_account(
         401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
 
         403: Forbidden - RestErrorResponse (20013: insufficient permissions)
+
+        409: Conflict - RestErrorResponse
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -5741,6 +5756,7 @@ def admin_link_platform_account(
     request = AdminLinkPlatformAccount.create(
         body=body,
         user_id=user_id,
+        skip_conflict=skip_conflict,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -5750,6 +5766,7 @@ def admin_link_platform_account(
 async def admin_link_platform_account_async(
     body: ModelLinkPlatformAccountRequest,
     user_id: str,
+    skip_conflict: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -5760,6 +5777,15 @@ async def admin_link_platform_account_async(
 
 
     Force linking platform account to user User Account. This endpoint intended for admin to forcefully link account to user.
+    By default, these cases are not allowed
+
+
+
+
+      * The platform account current is linked by another account
+
+
+      * The target account ever linked this platform's another account
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]
@@ -5783,6 +5809,8 @@ async def admin_link_platform_account_async(
 
         user_id: (userId) REQUIRED str in path
 
+        skip_conflict: (skipConflict) OPTIONAL bool in query
+
     Responses:
         204: No Content - (No Content)
 
@@ -5791,6 +5819,8 @@ async def admin_link_platform_account_async(
         401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
 
         403: Forbidden - RestErrorResponse (20013: insufficient permissions)
+
+        409: Conflict - RestErrorResponse
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -5801,6 +5831,7 @@ async def admin_link_platform_account_async(
     request = AdminLinkPlatformAccount.create(
         body=body,
         user_id=user_id,
+        skip_conflict=skip_conflict,
         namespace=namespace,
     )
     return await run_request_async(
@@ -17822,6 +17853,10 @@ def public_get_user_by_user_id_v3(
 
     This endpoint retrieve user attributes. action code: 10129
 
+
+
+    Substitute endpoint: /v4/public/namespaces/{namespace}/users/{userId} [READ]
+
     Properties:
         url: /iam/v3/public/namespaces/{namespace}/users/{userId}
 
@@ -17870,6 +17905,10 @@ async def public_get_user_by_user_id_v3_async(
     """Get User By User ID (PublicGetUserByUserIdV3)
 
     This endpoint retrieve user attributes. action code: 10129
+
+
+
+    Substitute endpoint: /v4/public/namespaces/{namespace}/users/{userId} [READ]
 
     Properties:
         url: /iam/v3/public/namespaces/{namespace}/users/{userId}
@@ -19935,6 +19974,116 @@ async def public_platform_unlink_v3_async(
     request = PublicPlatformUnlinkV3.create(
         body=body,
         platform_id=platform_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(PublicProcessWebLinkPlatformV3)
+def public_process_web_link_platform_v3(
+    platform_id: str,
+    state: str,
+    code: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Process Link Progress  (PublicProcessWebLinkPlatformV3)
+
+    This endpoint is used to process third party account link, this endpoint will return the link status directly instead of redirecting to the original page.
+
+    The param state comes from the response of /users/me/platforms/{platformId}/web/link
+
+    Properties:
+        url: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/process
+
+        method: POST
+
+        tags: ["Users"]
+
+        consumes: ["application/x-www-form-urlencoded"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        code: (code) OPTIONAL str in form_data
+
+        state: (state) REQUIRED str in form_data
+
+        namespace: (namespace) REQUIRED str in path
+
+        platform_id: (platformId) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelLinkRequest (OK)
+
+        400: Bad Request - RestErrorResponse (20000: internal server error | 20002: validation error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = PublicProcessWebLinkPlatformV3.create(
+        platform_id=platform_id,
+        state=state,
+        code=code,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(PublicProcessWebLinkPlatformV3)
+async def public_process_web_link_platform_v3_async(
+    platform_id: str,
+    state: str,
+    code: Optional[str] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Process Link Progress  (PublicProcessWebLinkPlatformV3)
+
+    This endpoint is used to process third party account link, this endpoint will return the link status directly instead of redirecting to the original page.
+
+    The param state comes from the response of /users/me/platforms/{platformId}/web/link
+
+    Properties:
+        url: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/process
+
+        method: POST
+
+        tags: ["Users"]
+
+        consumes: ["application/x-www-form-urlencoded"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        code: (code) OPTIONAL str in form_data
+
+        state: (state) REQUIRED str in form_data
+
+        namespace: (namespace) REQUIRED str in path
+
+        platform_id: (platformId) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelLinkRequest (OK)
+
+        400: Bad Request - RestErrorResponse (20000: internal server error | 20002: validation error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = PublicProcessWebLinkPlatformV3.create(
+        platform_id=platform_id,
+        state=state,
+        code=code,
         namespace=namespace,
     )
     return await run_request_async(

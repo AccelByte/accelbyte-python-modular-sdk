@@ -44,6 +44,11 @@ def fleet_server_history(
     fleet_id: str,
     count: Optional[int] = None,
     offset: Optional[int] = None,
+    reason: Optional[str] = None,
+    region: Optional[str] = None,
+    server_id: Optional[str] = None,
+    sort_direction: Optional[str] = None,
+    status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -76,6 +81,16 @@ def fleet_server_history(
 
         offset: (offset) OPTIONAL int in query
 
+        reason: (reason) OPTIONAL str in query
+
+        region: (region) OPTIONAL str in query
+
+        server_id: (serverId) OPTIONAL str in query
+
+        sort_direction: (sortDirection) OPTIONAL str in query
+
+        status: (status) OPTIONAL str in query
+
     Responses:
         200: OK - ApiDSHistoryList (success)
 
@@ -95,6 +110,11 @@ def fleet_server_history(
         fleet_id=fleet_id,
         count=count,
         offset=offset,
+        reason=reason,
+        region=region,
+        server_id=server_id,
+        sort_direction=sort_direction,
+        status=status,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -105,6 +125,11 @@ async def fleet_server_history_async(
     fleet_id: str,
     count: Optional[int] = None,
     offset: Optional[int] = None,
+    reason: Optional[str] = None,
+    region: Optional[str] = None,
+    server_id: Optional[str] = None,
+    sort_direction: Optional[str] = None,
+    status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -137,6 +162,16 @@ async def fleet_server_history_async(
 
         offset: (offset) OPTIONAL int in query
 
+        reason: (reason) OPTIONAL str in query
+
+        region: (region) OPTIONAL str in query
+
+        server_id: (serverId) OPTIONAL str in query
+
+        sort_direction: (sortDirection) OPTIONAL str in query
+
+        status: (status) OPTIONAL str in query
+
     Responses:
         200: OK - ApiDSHistoryList (success)
 
@@ -156,6 +191,11 @@ async def fleet_server_history_async(
         fleet_id=fleet_id,
         count=count,
         offset=offset,
+        reason=reason,
+        region=region,
+        server_id=server_id,
+        sort_direction=sort_direction,
+        status=status,
         namespace=namespace,
     )
     return await run_request_async(

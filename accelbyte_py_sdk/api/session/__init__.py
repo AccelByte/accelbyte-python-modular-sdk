@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Session Service."""
 
-__version__ = "2.20.0"
+__version__ = "3.0.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -41,6 +41,10 @@ from .wrappers import admin_update_configuration_template_v1_async
 # dsmc_default_configuration
 from .wrappers import admin_get_dsmc_configuration_default
 from .wrappers import admin_get_dsmc_configuration_default_async
+
+# environment_variable
+from .wrappers import admin_list_environment_variables
+from .wrappers import admin_list_environment_variables_async
 
 # game_session
 from .wrappers import admin_delete_bulk_game_sessions
@@ -145,3 +149,15 @@ from .wrappers import public_get_player_attributes
 from .wrappers import public_get_player_attributes_async
 from .wrappers import public_store_player_attributes
 from .wrappers import public_store_player_attributes_async
+
+# session_storage
+from .wrappers import admin_delete_user_session_storage
+from .wrappers import admin_delete_user_session_storage_async
+from .wrappers import admin_read_session_storage
+from .wrappers import admin_read_session_storage_async
+from .wrappers import admin_read_user_session_storage
+from .wrappers import admin_read_user_session_storage_async
+from .wrappers import public_update_insert_session_storage
+from .wrappers import public_update_insert_session_storage_async
+from .wrappers import public_update_insert_session_storage_leader
+from .wrappers import public_update_insert_session_storage_leader_async

@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: ags_py_codegen)
 
-# AccelByte Gaming Services Session Service Index (2.20.0)
+# AccelByte Gaming Services Session Service Index (3.0.0)
 
 
 ## Operations
@@ -26,6 +26,11 @@
 | Endpoint | Method | ID | Deprecated | Class | Wrapper | Example |
 |---|---|---|---|---|---|---|
 | /session/v1/admin/dsconfigs/default | GET | adminGetDSMCConfigurationDefault | `false` | [AdminGetDSMCConfigurationDefault](../../accelbyte_py_sdk/api/session/operations/dsmc_default_configuration/admin_get_dsmc_configur_e05bc8.py) | [admin_get_dsmc_configuration_default](../../accelbyte_py_sdk/api/session/wrappers/_dsmc_default_configuration.py) | [accelbyte_py_sdk_cli session-admin-get-dsmc-configuration-default](../../samples/cli/accelbyte_py_sdk_cli/session/_admin_get_dsmc_configuration_default.py) |
+
+### Environment Variable
+| Endpoint | Method | ID | Deprecated | Class | Wrapper | Example |
+|---|---|---|---|---|---|---|
+| /session/v1/admin/environment-variables | GET | adminListEnvironmentVariables | `false` | [AdminListEnvironmentVariables](../../accelbyte_py_sdk/api/session/operations/environment_variable/admin_list_environment__aed044.py) | [admin_list_environment_variables](../../accelbyte_py_sdk/api/session/wrappers/_environment_variable.py) | [accelbyte_py_sdk_cli session-admin-list-environment-variables](../../samples/cli/accelbyte_py_sdk_cli/session/_admin_list_environment_variables.py) |
 
 ### Game Session
 | Endpoint | Method | ID | Deprecated | Class | Wrapper | Example |
@@ -94,6 +99,15 @@
 | /session/v1/public/namespaces/{namespace}/users/me/attributes | GET | publicGetPlayerAttributes | `false` | [PublicGetPlayerAttributes](../../accelbyte_py_sdk/api/session/operations/player/public_get_player_attributes.py) | [public_get_player_attributes](../../accelbyte_py_sdk/api/session/wrappers/_player.py) | [accelbyte_py_sdk_cli session-public-get-player-attributes](../../samples/cli/accelbyte_py_sdk_cli/session/_public_get_player_attributes.py) |
 | /session/v1/public/namespaces/{namespace}/users/me/attributes | POST | publicStorePlayerAttributes | `false` | [PublicStorePlayerAttributes](../../accelbyte_py_sdk/api/session/operations/player/public_store_player_attributes.py) | [public_store_player_attributes](../../accelbyte_py_sdk/api/session/wrappers/_player.py) | [accelbyte_py_sdk_cli session-public-store-player-attributes](../../samples/cli/accelbyte_py_sdk_cli/session/_public_store_player_attributes.py) |
 
+### Session Storage
+| Endpoint | Method | ID | Deprecated | Class | Wrapper | Example |
+|---|---|---|---|---|---|---|
+| /session/v1/admin/namespaces/{namespace}/sessions/{sessionId}/storage | DELETE | adminDeleteUserSessionStorage | `false` | [AdminDeleteUserSessionStorage](../../accelbyte_py_sdk/api/session/operations/session_storage/admin_delete_user_sessi_e92b87.py) | [admin_delete_user_session_storage](../../accelbyte_py_sdk/api/session/wrappers/_session_storage.py) | [accelbyte_py_sdk_cli session-admin-delete-user-session-storage](../../samples/cli/accelbyte_py_sdk_cli/session/_admin_delete_user_session_storage.py) |
+| /session/v1/admin/namespaces/{namespace}/sessions/{sessionId}/storage | GET | adminReadSessionStorage | `false` | [AdminReadSessionStorage](../../accelbyte_py_sdk/api/session/operations/session_storage/admin_read_session_storage.py) | [admin_read_session_storage](../../accelbyte_py_sdk/api/session/wrappers/_session_storage.py) | [accelbyte_py_sdk_cli session-admin-read-session-storage](../../samples/cli/accelbyte_py_sdk_cli/session/_admin_read_session_storage.py) |
+| /session/v1/admin/namespaces/{namespace}/sessions/{sessionId}/storage/users/{userId} | GET | adminReadUserSessionStorage | `false` | [AdminReadUserSessionStorage](../../accelbyte_py_sdk/api/session/operations/session_storage/admin_read_user_session_f101bc.py) | [admin_read_user_session_storage](../../accelbyte_py_sdk/api/session/wrappers/_session_storage.py) | [accelbyte_py_sdk_cli session-admin-read-user-session-storage](../../samples/cli/accelbyte_py_sdk_cli/session/_admin_read_user_session_storage.py) |
+| /session/v1/public/namespaces/{namespace}/sessions/{sessionId}/storage/users/{userId} | PATCH | publicUpdateInsertSessionStorage | `false` | [PublicUpdateInsertSessionStorage](../../accelbyte_py_sdk/api/session/operations/session_storage/public_update_insert_se_f96597.py) | [public_update_insert_session_storage](../../accelbyte_py_sdk/api/session/wrappers/_session_storage.py) | [accelbyte_py_sdk_cli session-public-update-insert-session-storage](../../samples/cli/accelbyte_py_sdk_cli/session/_public_update_insert_session_storage.py) |
+| /session/v1/public/namespaces/{namespace}/sessions/{sessionId}/storage/leader | PATCH | publicUpdateInsertSessionStorageLeader | `false` | [PublicUpdateInsertSessionStorageLeader](../../accelbyte_py_sdk/api/session/operations/session_storage/public_update_insert_se_4c0538.py) | [public_update_insert_session_storage_leader](../../accelbyte_py_sdk/api/session/wrappers/_session_storage.py) | [accelbyte_py_sdk_cli session-public-update-insert-session-storage-leader](../../samples/cli/accelbyte_py_sdk_cli/session/_public_update_insert_session_storage_leader.py) |
+
 
 ## Models
 | Model | Class |
@@ -109,6 +123,8 @@
 | apimodels.DeleteBulkGameSessionRequest | [ApimodelsDeleteBulkGameSessionRequest](../../accelbyte_py_sdk/api/session/models/apimodels_delete_bulk_game_session_request.py) |
 | apimodels.DeleteBulkGameSessionsAPIResponse | [ApimodelsDeleteBulkGameSessionsAPIResponse](../../accelbyte_py_sdk/api/session/models/apimodels_delete_bulk_game_sessions_api_response.py) |
 | apimodels.DSInformationResponse | [ApimodelsDSInformationResponse](../../accelbyte_py_sdk/api/session/models/apimodels_ds_information_response.py) |
+| apimodels.EnvironmentVariableListResponse | [ApimodelsEnvironmentVariableListResponse](../../accelbyte_py_sdk/api/session/models/apimodels_environment_variable_list_response.py) |
+| apimodels.EnvironmentVariableResponse | [ApimodelsEnvironmentVariableResponse](../../accelbyte_py_sdk/api/session/models/apimodels_environment_variable_response.py) |
 | apimodels.GameSessionQueryResponse | [ApimodelsGameSessionQueryResponse](../../accelbyte_py_sdk/api/session/models/apimodels_game_session_query_response.py) |
 | apimodels.GameSessionResponse | [ApimodelsGameSessionResponse](../../accelbyte_py_sdk/api/session/models/apimodels_game_session_response.py) |
 | apimodels.JoinByCodeRequest | [ApimodelsJoinByCodeRequest](../../accelbyte_py_sdk/api/session/models/apimodels_join_by_code_request.py) |

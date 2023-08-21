@@ -6,7 +6,7 @@
 
 # template_file: python-cli-command.j2
 
-# AGS Legal Service (1.30.1)
+# AGS Legal Service (1.31.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

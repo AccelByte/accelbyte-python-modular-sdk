@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# Fleet Commander (0.2.0)
+# Fleet Commander (0.2.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -30,15 +30,15 @@ from .....core import HeaderStr
 from .....core import HttpResponse
 
 
-class Func1(Operation):
-    """Version info (func1)
+class Func2(Operation):
+    """health check (func2)
 
     Properties:
-        url: /ams/version
+        url: /ams/healthz
 
         method: GET
 
-        tags: ["Fleet Commander"]
+        tags: []
 
         consumes: []
 
@@ -52,7 +52,7 @@ class Func1(Operation):
 
     # region fields
 
-    _url: str = "/ams/version"
+    _url: str = "/ams/healthz"
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
@@ -151,12 +151,12 @@ class Func1(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, **kwargs) -> Func1:
+    def create(cls, **kwargs) -> Func2:
         instance = cls()
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> Func1:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> Func2:
         instance = cls()
         return instance
 

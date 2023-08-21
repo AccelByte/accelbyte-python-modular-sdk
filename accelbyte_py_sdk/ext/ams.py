@@ -6,7 +6,7 @@
 
 # template file: ags_py_codegen
 
-# Fleet Commander (0.2.0)
+# Fleet Commander (0.2.1)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -276,6 +276,7 @@ def create_api_image_deployment_profile_example() -> ApiImageDeploymentProfile:
 
 def create_api_image_details_example() -> ApiImageDetails:
     instance = ApiImageDetails()
+    instance.created_at = randomize("date")
     instance.id_ = randomize()
     instance.is_protected = randomize("bool")
     instance.name = randomize()
@@ -296,6 +297,7 @@ def create_api_image_list_example() -> ApiImageList:
 
 def create_api_image_list_item_example() -> ApiImageListItem:
     instance = ApiImageListItem()
+    instance.created_at = randomize("date")
     instance.id_ = randomize()
     instance.is_protected = randomize("bool")
     instance.name = randomize()

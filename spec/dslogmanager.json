@@ -1052,8 +1052,8 @@
     "path": "/dslogmanager/apidocs/api.json"
   },
   "x-version": {
-    "buildDate": "2023-06-27T09:16:17+00:00",
-    "gitHash": "5e454291e6fdd76451631c0300c4c2e3c96b3dcf",
+    "buildDate": "2023-08-16T06:34:25+00:00",
+    "gitHash": "f58f788776b559ef107daa5b73cd0974f08b4b84",
     "name": "justice-ds-log-manager-service",
     "revisionID": "3.3.1",
     "version": "3.3.1",

@@ -193,6 +193,7 @@ async def add_friends_without_confirmation_async(
 @same_doc_as(GetIncomingFriendRequests)
 def get_incoming_friend_requests(
     user_id: str,
+    friend_id: Optional[str] = None,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
@@ -228,6 +229,8 @@ def get_incoming_friend_requests(
 
         user_id: (userId) REQUIRED str in path
 
+        friend_id: (friendId) OPTIONAL str in query
+
         limit: (limit) OPTIONAL int in query
 
         offset: (offset) OPTIONAL int in query
@@ -249,6 +252,7 @@ def get_incoming_friend_requests(
             return None, error
     request = GetIncomingFriendRequests.create(
         user_id=user_id,
+        friend_id=friend_id,
         limit=limit,
         offset=offset,
         namespace=namespace,
@@ -259,6 +263,7 @@ def get_incoming_friend_requests(
 @same_doc_as(GetIncomingFriendRequests)
 async def get_incoming_friend_requests_async(
     user_id: str,
+    friend_id: Optional[str] = None,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
@@ -294,6 +299,8 @@ async def get_incoming_friend_requests_async(
 
         user_id: (userId) REQUIRED str in path
 
+        friend_id: (friendId) OPTIONAL str in query
+
         limit: (limit) OPTIONAL int in query
 
         offset: (offset) OPTIONAL int in query
@@ -315,6 +322,7 @@ async def get_incoming_friend_requests_async(
             return None, error
     request = GetIncomingFriendRequests.create(
         user_id=user_id,
+        friend_id=friend_id,
         limit=limit,
         offset=offset,
         namespace=namespace,
@@ -327,6 +335,7 @@ async def get_incoming_friend_requests_async(
 @same_doc_as(GetListOfFriends)
 def get_list_of_friends(
     user_id: str,
+    friend_id: Optional[str] = None,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
@@ -362,6 +371,8 @@ def get_list_of_friends(
 
         user_id: (userId) REQUIRED str in path
 
+        friend_id: (friendId) OPTIONAL str in query
+
         limit: (limit) OPTIONAL int in query
 
         offset: (offset) OPTIONAL int in query
@@ -383,6 +394,7 @@ def get_list_of_friends(
             return None, error
     request = GetListOfFriends.create(
         user_id=user_id,
+        friend_id=friend_id,
         limit=limit,
         offset=offset,
         namespace=namespace,
@@ -393,6 +405,7 @@ def get_list_of_friends(
 @same_doc_as(GetListOfFriends)
 async def get_list_of_friends_async(
     user_id: str,
+    friend_id: Optional[str] = None,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
@@ -428,6 +441,8 @@ async def get_list_of_friends_async(
 
         user_id: (userId) REQUIRED str in path
 
+        friend_id: (friendId) OPTIONAL str in query
+
         limit: (limit) OPTIONAL int in query
 
         offset: (offset) OPTIONAL int in query
@@ -449,6 +464,7 @@ async def get_list_of_friends_async(
             return None, error
     request = GetListOfFriends.create(
         user_id=user_id,
+        friend_id=friend_id,
         limit=limit,
         offset=offset,
         namespace=namespace,

@@ -6,7 +6,7 @@
 
 # template file: ags_py_codegen
 
-# AccelByte Gaming Services Iam Service (6.1.0)
+# AccelByte Gaming Services Iam Service (7.0.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -252,6 +252,7 @@ from ..api.iam.models import ModelUserPasswordUpdateRequest
 from ..api.iam.models import ModelUserPasswordUpdateV3Request
 from ..api.iam.models import ModelUserPermissionsResponseV3
 from ..api.iam.models import ModelUserPlatformMetadata
+from ..api.iam.models import ModelUserPublicInfoResponseV4
 from ..api.iam.models import ModelUserResponse
 from ..api.iam.models import ModelUserResponseV3
 from ..api.iam.models import ModelUserRolesV4Response
@@ -275,6 +276,7 @@ from ..api.iam.models import OauthmodelErrorResponse
 from ..api.iam.models import OauthmodelGameTokenCodeResponse
 from ..api.iam.models import OauthmodelOneTimeLinkingCodeResponse
 from ..api.iam.models import OauthmodelOneTimeLinkingCodeValidationResponse
+from ..api.iam.models import OauthmodelPlatformTokenRefreshResponseV3
 from ..api.iam.models import OauthmodelTokenIntrospectResponse
 from ..api.iam.models import OauthmodelTokenResponse
 from ..api.iam.models import OauthmodelTokenResponseV3
@@ -2548,6 +2550,15 @@ def create_model_user_platform_metadata_example() -> ModelUserPlatformMetadata:
     return instance
 
 
+def create_model_user_public_info_response_v4_example() -> (
+    ModelUserPublicInfoResponseV4
+):
+    instance = ModelUserPublicInfoResponseV4()
+    instance.display_name = randomize("slug")
+    instance.user_id = randomize("uid")
+    return instance
+
+
 def create_model_user_response_example() -> ModelUserResponse:
     instance = ModelUserResponse()
     instance.auth_type = randomize()
@@ -2741,6 +2752,7 @@ def create_model_verify_registration_code_example() -> ModelVerifyRegistrationCo
 
 def create_model_web_linking_response_example() -> ModelWebLinkingResponse:
     instance = ModelWebLinkingResponse()
+    instance.state = randomize()
     instance.third_party_url = randomize("url")
     return instance
 
@@ -2833,6 +2845,18 @@ def create_oauthmodel_one_time_linking_code_validation_response_example() -> (
     return instance
 
 
+def create_oauthmodel_platform_token_refresh_response_v3_example() -> (
+    OauthmodelPlatformTokenRefreshResponseV3
+):
+    instance = OauthmodelPlatformTokenRefreshResponseV3()
+    instance.avatar_url = randomize("url")
+    instance.country = randomize("country")
+    instance.display_name = randomize("slug")
+    instance.platform_token_expires_at = randomize("int", min_val=1, max_val=1000)
+    instance.platform_user_id = randomize()
+    return instance
+
+
 def create_oauthmodel_token_introspect_response_example() -> (
     OauthmodelTokenIntrospectResponse
 ):
@@ -2897,6 +2921,7 @@ def create_oauthmodel_token_third_party_response_example() -> (
 ):
     instance = OauthmodelTokenThirdPartyResponse()
     instance.platform_token = randomize()
+    instance.platform_token_expires_at = randomize("int", min_val=1, max_val=1000)
     instance.sand_box_id = randomize()
     return instance
 
