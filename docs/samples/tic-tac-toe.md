@@ -1,7 +1,7 @@
-# Tic-Tac-Toe with AccelByte's Python Extend SDK
+# Tic-Tac-Toe with AccelByte's Modular Python SDK
 
-As an alternative to [AccelByte Golang Extend SDK](https://github.com/AccelByte/accelbyte-go-sdk), you can use the [AccelByte Python Extend SDK](https://github.com/AccelByte/accelbyte-python-sdk) to easily shift logic implementation from your game client into the backend.
-For this guide we will use the [Tic-Tac-Toe Sample App](https://github.com/AccelByte/accelbyte-python-sdk/tree/main/samples/tic-tac-toe-app) included with our Python Extend SDK.
+As an alternative to [AccelByte Modular Golang Extend SDK](https://github.com/AccelByte/accelbyte-go-modular-sdk), you can use the [AccelByte Modular Python Extend SDK](https://github.com/AccelByte/accelbyte-python-modular-sdk) to easily shift logic implementation from your game client into the backend.
+For this guide we will use the [Tic-Tac-Toe Sample App](../../samples/tic-tac-toe-app) included with our Modular Python SDK.
 
 ## An Overview
 
@@ -223,7 +223,7 @@ Done! You should be able to find the API URL in AWS Console.
 
 ### Using the Client
 
-The client is available in this [directory](https://github.com/AccelByte/accelbyte-python-sdk/tree/main/samples/tic-tac-toe-app/tic_tac_toe_game) inside the sample app.
+The client is available in this [directory](../../samples/tic-tac-toe-app/tic_tac_toe_game) inside the sample app.
 Before running the client, you will need to set a few environment variables first.
 
 1. Open your preferred command-line terminal and set the following required environment variables.
@@ -301,6 +301,6 @@ Yes! Please reach out to us if you are interested to learn more about the Extend
 
 ## Learn More
 
-You can find our Python Extend SDK in our [public Github](https://github.com/AccelByte/accelbyte-python-sdk).
+You can find our Modular Python SDK in our [public Github](https://github.com/AccelByte/accelbyte-python-modular-sdk).
 Interested in learning more about our solutions?
 Get in touch [here](https://accelbyte.io/request-a-demo/?utm_source=website&utm_medium=blog).

@@ -1,14 +1,16 @@
-# AccelByte Gaming Services and 3rd Party OpenID Connect Login Integration Using AccelByte Python Extend SDK
+# AccelByte Gaming Services and 3rd Party OpenID Connect Login Integration Using AccelByte Modular Python SDK
 
 ## Overview
 
-AccelByte Gaming Services provides [integration with OpenID Connect providers](https://docs.accelbyte.io/guides/access/3rd-party-platform-integration.html#openid-connect) as one of the 3rd party login integration options. Any OpenID Connect providers should work. The following sample app will show you how to do this with the AccelByte Python Extend SDK and PhantAuth, an OpenID Connect provider to simplify testing.
+AccelByte Gaming Services provides [integration with OpenID Connect providers](https://docs.accelbyte.io/gaming-services/services/access/authentication/oidc-identity) as one of the 3rd party login integration options.
+Any OpenID Connect providers should work.
+The following sample app will show you how to do this with the AccelByte Python Extend SDK and PhantAuth, an OpenID Connect provider to simplify testing.
 
 ## Sample App
 
-1. Clone [AccelByte Python Extend SDK](https://github.com/AccelByte/accelbyte-python-sdk) 
-2. Go to the [samples/oidc/single-page-app](https://github.com/AccelByte/accelbyte-python-sdk/tree/main/samples/oidc/single-page-app) folder
-3. Follow the [README.md](https://github.com/AccelByte/accelbyte-python-sdk/blob/main/samples/oidc/single-page-app#readme) to setup and use the sample application
+1. Clone [AccelByte Modular Python Extend SDK](https://github.com/AccelByte/accelbyte-python-modular-sdk) 
+2. Go to the [samples/oidc/single-page-app](../../samples/oidc/single-page-app) folder
+3. Follow the [README.md](../../samples/oidc/single-page-app/README.md) to setup and use the sample application
 
 ## How It Works
 

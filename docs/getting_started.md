@@ -1,6 +1,6 @@
-# Getting Started Guide for AccelByte Python Extend SDK
+# Getting Started Guide for AccelByte Modular Python SDK
 
-This guide will show you how to create an application which uses Python Extend SDK from scratch.
+This guide will show you how to create an application which uses the Modular Python SDK from scratch.
 
 ## Prerequisites
 
@@ -52,7 +52,7 @@ Install the SDK.
 $ pip install accelbyte-py-sdk
 ```
 
-It is recommended to use the matching Python Extend SDK version for the given AccelByte Gaming Services version. For the list of available versions, see [releases](https://github.com/AccelByte/accelbyte-python-sdk/releases). 
+It is recommended to use the matching Modular Python SDK version for the given AccelByte Gaming Services version. For the list of available versions, see [releases](https://github.com/AccelByte/accelbyte-python-modular-sdk/releases). 
 
 ### 3. Use in Code
 
@@ -119,9 +119,9 @@ $ python app.py
 
 ## Follow Up Resources
 
-* Python Extend SDK [README.md](https://github.com/AccelByte/accelbyte-python-sdk/blob/main/README.md)
-* Reference documentation on AccelByte Gaming Services endpoints, their corresponding Python Extend SDK API, and short examples on how to use them is available in [docs](https://github.com/AccelByte/accelbyte-python-sdk/blob/main/docs)
-* Sample apps which show some practical usage of Python Extend SDK are available in [samples](https://github.com/AccelByte/accelbyte-python-sdk/blob/main/samples)
+* Modular Python SDK [README.md](../README.md)
+* Reference documentation on AccelByte Gaming Services endpoints, their corresponding Modular Python SDK API, and short examples on how to use them is available in [docs](../docs)
+* Sample apps which show some practical usage of the Modular Python SDK are available in [samples](../samples)
 
 ## FAQ
 
@@ -129,6 +129,6 @@ $ python app.py
 
 Yes. You just need to inherit from the base class.
 
-### 2. How can I use more advanced features of Python Extend SDK e.g. HTTP retry and automatic token refresh? 
+### 2. How can I use more advanced features of the Modular Python SDK e.g. HTTP retry and automatic token refresh? 
 
-See [here](https://github.com/AccelByte/accelbyte-python-sdk/blob/main/README.md).
+See [here](../README.md).
