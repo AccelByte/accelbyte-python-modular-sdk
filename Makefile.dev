@@ -1,0 +1,38 @@
+# Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+# This is licensed software from AccelByte Inc, for limitations
+# and restrictions contact your company contract manager.
+
+VENV_DIR := venv
+
+PYTHON := python3
+PYTHOND := bin
+PYTHONX := python
+
+ifeq ($(OS), Windows_NT)
+    PYTHOND := Scripts
+    PYTHONX := python.exe
+endif
+
+PYTHONE := $(PYTHOND)/$(PYTHONX)
+PYTHONV := $(VENV_DIR)/$(PYTHONE)
+
+# Targets
+
+setup:
+	$(PYTHON) -m venv $(VENV_DIR)
+	$(PYTHONV) -m pip install --upgrade pip
+
+install-core:
+	$(PYTHONV) -m pip install src/core
+
+install-feature-%:
+	$(PYTHONV) -m pip install src/features/$*
+
+install-service-%:
+	$(PYTHONV) -m pip install src/services/$*
+
+install-all-features:
+	find src/features -maxdepth 1 -mindepth 1 -type d -exec $(PYTHONV) -m pip install {} \;
+
+install-all-services:
+	find src/services -maxdepth 1 -mindepth 1 -type d -exec $(PYTHONV) -m pip install {} \;
