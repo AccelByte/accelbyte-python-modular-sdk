@@ -12,44 +12,52 @@ This SDK requires Python 3.9 to be installed.
 
 Install dependencies.
 
-```sh
-pip install requests httpx websockets PyYAML PyJWT[crypto] mmh3 bitarray
-```
-
-Install from PyPI
+Install the core package from PyPI
 
 ```sh
-pip install accelbyte-py-sdk
+pip install accelbyte-py-sdk-core
 ```
 
-or install from source.
+and then install the service you need
 
 ```sh
-pip install git+https://github.com/AccelByte/accelbyte-python-modular-sdk.git@{VERSION}#egg=accelbyte_py_sdk
+pip install accelbyte-py-sdk-service-achievement
+pip install accelbyte-py-sdk-service-ams
+pip install accelbyte-py-sdk-service-basic
+pip install accelbyte-py-sdk-service-cloudsave
+pip install accelbyte-py-sdk-service-dslogmanager
+pip install accelbyte-py-sdk-service-dsmc
+pip install accelbyte-py-sdk-service-eventlog
+pip install accelbyte-py-sdk-service-gametelemetry
+pip install accelbyte-py-sdk-service-gdpr
+pip install accelbyte-py-sdk-service-iam
+pip install accelbyte-py-sdk-service-leaderboard
+pip install accelbyte-py-sdk-service-legal
+pip install accelbyte-py-sdk-service-lobby
+pip install accelbyte-py-sdk-service-match2
+pip install accelbyte-py-sdk-service-matchmaking
+pip install accelbyte-py-sdk-service-platform
+pip install accelbyte-py-sdk-service-qosm
+pip install accelbyte-py-sdk-service-reporting
+pip install accelbyte-py-sdk-service-seasonpass
+pip install accelbyte-py-sdk-service-session
+pip install accelbyte-py-sdk-service-sessionbrowser
+pip install accelbyte-py-sdk-service-social
+pip install accelbyte-py-sdk-service-ugc
 ```
 
-Replace `{VERSION}` with a specific release version tag. When starting a new project, 
-using the latest release version is recommended. For the list of available versions, see [releases](https://github.com/AccelByte/accelbyte-python-modular-sdk/releases). 
+and then install any feature you want
 
-**Special note only for Windows environment**
+```sh
+pip install accelbyte-py-sdk-feat-auth
+pip install accelbyte-py-sdk-feat-token-validation
+```
 
-If you encounter error `path too long` when attempting to install the SDK. The steps to solve this are:
+or install everything
 
-1. [Enable long paths in registry.](https://docs.python.org/3/using/windows.html#removing-the-max-path-limitation)
-
-2. Enable long paths in git.
-
-   ```
-   git config --global core.longpaths true
-   ```
-
-3. Restart the powershell window you used to take effect.
-
-4. Try installing SDK again.
-
-   ```
-   pip install git+https://github.com/AccelByte/accelbyte-python-modular-sdk.git@{VERSION}#egg=accelbyte_py_sdk
-   ```
+```sh
+pip install accelbyte-py-sdk-all
+```
 
 ### Environment Variables
 
