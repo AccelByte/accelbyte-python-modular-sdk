@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import HTTPValidationError
 
@@ -50,6 +50,7 @@ def get_events_game_telemetry_v1_admin_namespaces_namespace_events_get(
     **kwargs
 ):
     """Get Events (get_events_game_telemetry_v1_admin_namespaces__namespace__events_get)
+
 
     Properties:
         url: /game-telemetry/v1/admin/namespaces/{namespace}/events
@@ -116,6 +117,7 @@ async def get_events_game_telemetry_v1_admin_namespaces_namespace_events_get_asy
     **kwargs
 ):
     """Get Events (get_events_game_telemetry_v1_admin_namespaces__namespace__events_get)
+
 
     Properties:
         url: /game-telemetry/v1/admin/namespaces/{namespace}/events

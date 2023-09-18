@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Session Service (2.7.3)
+# AccelByte Gaming Services Session Service (3.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import ApimodelsGameSessionQueryResponse
 from ...models import ResponseError
@@ -44,6 +44,11 @@ class PublicQueryGameSessions(Operation):
     - REQUESTED: DS is being requested to DSMC.
     - AVAILABLE: DS is ready to use. The DSMC status for this DS is either READY/BUSY.
     - FAILED_TO_REQUEST: DSMC fails to create the DS.
+
+    query parameter "availability" to filter sessions' availability:
+    all: return all sessions regardless it's full
+    full: only return active sessions
+    default behavior (unset or else): return only available sessions (not full)
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/gamesessions

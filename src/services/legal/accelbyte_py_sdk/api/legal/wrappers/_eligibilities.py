@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ErrorEntity
 from ..models import RetrieveUserEligibilitiesIndirectResponse
@@ -49,8 +49,7 @@ def retrieve_eligibilities_public(
     This process supports cross-namespace checking, that means if the active policy already accepted by the same user in other namespace, then it will be considered as eligible.
 
     Other detail info:
-
-      * Required permission : login user
+        * Required permission : login user
 
     Properties:
         url: /agreement/public/eligibilities/namespaces/{namespace}
@@ -96,8 +95,7 @@ async def retrieve_eligibilities_public_async(
     This process supports cross-namespace checking, that means if the active policy already accepted by the same user in other namespace, then it will be considered as eligible.
 
     Other detail info:
-
-      * Required permission : login user
+        * Required permission : login user
 
     Properties:
         url: /agreement/public/eligibilities/namespaces/{namespace}
@@ -144,11 +142,11 @@ def retrieve_eligibilities_public_indirect(
 ):
     """Check User Legal Eligibility (retrieveEligibilitiesPublicIndirect)
 
-    Retrieve the active policies and its conformance status by userThis process only supports cross-namespace checking between game namespace and publisher namespace , that means if the active policy already accepted by the same user in publisher namespace, then it will also be considered as eligible in non-publisher namespace.
+    Retrieve the active policies and its conformance status by user.
+    This process only supports cross-namespace checking between game namespace and publisher namespace , that means if the active policy already accepted by the same user in publisher namespace, then it will also be considered as eligible in non-publisher namespace.
 
     Other detail info:
-
-      * Required permission : login user
+        * Required permission : login user
 
     Properties:
         url: /agreement/public/eligibilities/namespaces/{namespace}/countries/{countryCode}/clients/{clientId}/users/{userId}
@@ -200,11 +198,11 @@ async def retrieve_eligibilities_public_indirect_async(
 ):
     """Check User Legal Eligibility (retrieveEligibilitiesPublicIndirect)
 
-    Retrieve the active policies and its conformance status by userThis process only supports cross-namespace checking between game namespace and publisher namespace , that means if the active policy already accepted by the same user in publisher namespace, then it will also be considered as eligible in non-publisher namespace.
+    Retrieve the active policies and its conformance status by user.
+    This process only supports cross-namespace checking between game namespace and publisher namespace , that means if the active policy already accepted by the same user in publisher namespace, then it will also be considered as eligible in non-publisher namespace.
 
     Other detail info:
-
-      * Required permission : login user
+        * Required permission : login user
 
     Properties:
         url: /agreement/public/eligibilities/namespaces/{namespace}/countries/{countryCode}/clients/{clientId}/users/{userId}

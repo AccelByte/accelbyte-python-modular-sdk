@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (5.31.0)
+# AccelByte Gaming Services Iam Service (7.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import OauthmodelOneTimeLinkingCodeResponse
 
@@ -50,69 +50,67 @@ class RequestOneTimeLinkingCodeV3(Operation):
 
 
 
+                    * steam
 
 
-      * steam
+                    * steamopenid
 
 
-      * steamopenid
+                    * facebook
 
 
-      * facebook
+                    * google
 
 
-      * google
+                    * oculus
 
 
-      * oculus
+                    * twitch
 
 
-      * twitch
+                    * discord
 
 
-      * discord
+                    * android
 
 
-      * android
+                    * ios
 
 
-      * ios
+                    * apple
 
 
-      * apple
+                    * device
 
 
-      * device
+                    * justice
 
 
-      * justice
+                    * epicgames
 
 
-      * epicgames
+                    * ps4
 
 
-      * ps4
+                    * ps5
 
 
-      * ps5
+                    * nintendo
 
 
-      * nintendo
+                    * awscognito
 
 
-      * awscognito
+                    * live
 
 
-      * live
+                    * xblweb
 
 
-      * xblweb
+                    * netflix
 
 
-      * netflix
-
-
-      * snapchat
+                    * snapchat
 
     Properties:
         url: /iam/v3/link/code/request

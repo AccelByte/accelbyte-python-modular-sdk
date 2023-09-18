@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import AcceptAgreementRequest
 from ..models import AcceptAgreementResponse
@@ -49,7 +49,6 @@ def indirect_bulk_accept_versioned_policy(
     """Admin bulk accept Policy Versions (indirectBulkAcceptVersionedPolicy)
 
     Accepts many legal policy versions all at once. Supply with localized version policy id and userId to accept an agreement. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:LEGAL", action=1 (CREATE)
 
     Required Permission(s):
@@ -112,7 +111,6 @@ async def indirect_bulk_accept_versioned_policy_async(
     """Admin bulk accept Policy Versions (indirectBulkAcceptVersionedPolicy)
 
     Accepts many legal policy versions all at once. Supply with localized version policy id and userId to accept an agreement. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:LEGAL", action=1 (CREATE)
 
     Required Permission(s):

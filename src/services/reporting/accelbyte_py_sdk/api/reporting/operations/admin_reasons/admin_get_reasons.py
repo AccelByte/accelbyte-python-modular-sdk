@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Reporting Service (0.1.25)
+# AccelByte Gaming Services Reporting Service (0.1.28)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import RestapiAdminReasonListResponse
 from ...models import RestapiErrorResponse
@@ -35,6 +35,7 @@ from ...models import RestapiErrorResponse
 
 class AdminGetReasons(Operation):
     """Get list of reasons (adminGetReasons)
+
 
     Properties:
         url: /reporting/v1/admin/namespaces/{namespace}/reasons

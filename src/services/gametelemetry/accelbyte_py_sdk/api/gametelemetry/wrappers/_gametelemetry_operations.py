@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import HTTPValidationError
 from ..models import TelemetryBody
@@ -195,6 +195,10 @@ def protected_save_events_game_telemetry_v1_protected_events_post(
 
     Default maximum payload size is 1MB
 
+
+
+    - **ClientTimestamp (optional)**: Timestamp of the event captured by the client SDK.
+
     Properties:
         url: /game-telemetry/v1/protected/events
 
@@ -279,6 +283,10 @@ async def protected_save_events_game_telemetry_v1_protected_events_post_async(
 
 
     Default maximum payload size is 1MB
+
+
+
+    - **ClientTimestamp (optional)**: Timestamp of the event captured by the client SDK.
 
     Properties:
         url: /game-telemetry/v1/protected/events

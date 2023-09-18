@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ErrorEntity
 
@@ -41,8 +41,7 @@ def anonymize_user_agreement(
     """Anonymize user's agreement record (anonymizeUserAgreement)
 
     This API will anonymize agreement record for specified user. Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=8 (DELETE)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=8 (DELETE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [DELETE]
@@ -80,8 +79,7 @@ async def anonymize_user_agreement_async(
     """Anonymize user's agreement record (anonymizeUserAgreement)
 
     This API will anonymize agreement record for specified user. Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=8 (DELETE)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=8 (DELETE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [DELETE]

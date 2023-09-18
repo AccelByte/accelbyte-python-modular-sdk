@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Reporting Service."""
 
-__version__ = "0.1.25"
+__version__ = "0.1.28"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -39,8 +39,10 @@ from .restapi_moderation_rule_actions_response import (
 from .restapi_moderation_rule_active_request import RestapiModerationRuleActiveRequest
 from .restapi_moderation_rule_request import RestapiModerationRuleRequest
 from .restapi_moderation_rule_request import (
-    ActionEnum as RestapiModerationRuleRequestActionEnum,
     CategoryEnum as RestapiModerationRuleRequestCategoryEnum,
+)
+from .restapi_moderation_rule_request import (
+    ActionEnum as RestapiModerationRuleRequestActionEnum,
 )
 from .restapi_moderation_rule_response import RestapiModerationRuleResponse
 from .restapi_moderation_rules_list import RestapiModerationRulesList
@@ -50,10 +52,10 @@ from .restapi_public_reason_list_response import RestapiPublicReasonListResponse
 from .restapi_public_reason_response import RestapiPublicReasonResponse
 from .restapi_reason_group_list_response import RestapiReasonGroupListResponse
 from .restapi_reason_group_response import RestapiReasonGroupResponse
+from .restapi_reporting_limit import RestapiReportingLimit
 from .restapi_report_list_response import RestapiReportListResponse
 from .restapi_report_response import RestapiReportResponse
 from .restapi_report_response import CategoryEnum as RestapiReportResponseCategoryEnum
-from .restapi_reporting_limit import RestapiReportingLimit
 from .restapi_submit_report_request import RestapiSubmitReportRequest
 from .restapi_submit_report_request import (
     CategoryEnum as RestapiSubmitReportRequestCategoryEnum,
@@ -61,14 +63,14 @@ from .restapi_submit_report_request import (
 from .restapi_submit_report_response import RestapiSubmitReportResponse
 from .restapi_submit_report_response import (
     CategoryEnum as RestapiSubmitReportResponseCategoryEnum,
+)
+from .restapi_submit_report_response import (
     StatusEnum as RestapiSubmitReportResponseStatusEnum,
 )
 from .restapi_ticket_list_response import RestapiTicketListResponse
 from .restapi_ticket_response import RestapiTicketResponse
-from .restapi_ticket_response import (
-    CategoryEnum as RestapiTicketResponseCategoryEnum,
-    StatusEnum as RestapiTicketResponseStatusEnum,
-)
+from .restapi_ticket_response import CategoryEnum as RestapiTicketResponseCategoryEnum
+from .restapi_ticket_response import StatusEnum as RestapiTicketResponseStatusEnum
 from .restapi_ticket_statistic_response import RestapiTicketStatisticResponse
 from .restapi_unused_reason_list_response import RestapiUnusedReasonListResponse
 from .restapi_update_reason_group_request import RestapiUpdateReasonGroupRequest

@@ -4,9 +4,9 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model.j2
 
-# AccelByte Gaming Services Matchmaking Service (2.22.0)
+# AccelByte Gaming Services Matchmaking Service (2.25.7)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -25,7 +25,7 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import Model
+from accelbyte_py_sdk.core import Model
 
 
 class ModelsUpdateRulesetSubGameModes(Model):
@@ -33,6 +33,14 @@ class ModelsUpdateRulesetSubGameModes(Model):
 
     Properties:
     """
+
+    # region fields
+
+    # endregion fields
+
+    # region with_x methods
+
+    # endregion with_x methods
 
     # region to methods
 

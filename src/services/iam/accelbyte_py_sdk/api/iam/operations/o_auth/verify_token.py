@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,15 +20,15 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (5.31.0)
+# AccelByte Gaming Services Iam Service (7.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
-from .....core import deprecated
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import OauthmodelTokenResponse
 
@@ -43,12 +43,10 @@ class VerifyToken(Operation):
     Endpoint migration guide
 
 
+              * Substitute endpoint: /iam/v3/oauth/verify [POST]
 
 
-      * Substitute endpoint: /iam/v3/oauth/verify [POST]
-
-
-      * Note: difference in V3 response:
+              * Note: difference in V3 response:
         1. format differenceï¼Pascal case => Camel case): permissions field from Action => action, Resource => resource
 
     Properties:

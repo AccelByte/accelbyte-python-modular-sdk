@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 
 from ..operations.sso_saml_2_0 import PlatformAuthenticateSAMLV3Handler
@@ -53,7 +53,7 @@ def platform_authenticate_samlv3_handler(
 
 
 
-      * azure
+                              * azure
     Microsoft login page will redirects to this endpoint after login success
     as previously defined on authentication request SAML
 
@@ -69,8 +69,8 @@ def platform_authenticate_samlv3_handler(
         produces: []
 
         securities: [BEARER_AUTH]
-
         location query: PLACEHOLDER
+
 
         platform_id: (platformId) REQUIRED str in path
 
@@ -112,7 +112,7 @@ async def platform_authenticate_samlv3_handler_async(
 
 
 
-      * azure
+                              * azure
     Microsoft login page will redirects to this endpoint after login success
     as previously defined on authentication request SAML
 
@@ -128,8 +128,8 @@ async def platform_authenticate_samlv3_handler_async(
         produces: []
 
         securities: [BEARER_AUTH]
-
         location query: PLACEHOLDER
+
 
         platform_id: (platformId) REQUIRED str in path
 

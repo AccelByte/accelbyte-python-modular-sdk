@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,15 +20,15 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (5.31.0)
+# AccelByte Gaming Services Iam Service (7.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
-from .....core import deprecated
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ModelUserResponse
 from ...models import ModelUserUpdateRequest
@@ -44,10 +44,7 @@ class AdminUpdateUserV2(Operation):
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId} [PATCH]
-
+              * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId} [PATCH]
 
 
 
@@ -76,14 +73,13 @@ class AdminUpdateUserV2(Operation):
     "
      Several case of updating email address "+
     "
-
-      * User want to update email address of which have been verified, NewEmailAddress response field will be filled with new email address.
+              * User want to update email address of which have been verified, NewEmailAddress response field will be filled with new email address.
     "+
     "
-      * User want to update email address of which have not been verified, {LoginId, OldEmailAddress, EmailAddress} response field will be filled with new email address.
+              * User want to update email address of which have not been verified, {LoginId, OldEmailAddress, EmailAddress} response field will be filled with new email address.
     "+
     "
-      * User want to update email address of which have been verified and updated before, {LoginId, OldEmailAddress, EmailAddress} response field will be filled with verified email before. NewEmailAddress response field will be filled with newest email address.
+              * User want to update email address of which have been verified and updated before, {LoginId, OldEmailAddress, EmailAddress} response field will be filled with verified email before. NewEmailAddress response field will be filled with newest email address.
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]

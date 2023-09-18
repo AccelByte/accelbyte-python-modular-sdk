@@ -8,7 +8,7 @@
 
 # Meta:
 # - random seed: 256
-# - template file: python-cli-unit-test.j2
+# - template file: cli.j2
 
 # Instructions:
 # - Run the Justice SDK Mock Server first before running this script.
@@ -29,12 +29,12 @@ touch "tmp.dat"
 if [ "$BATCH" = true ] ; then
 
 $PYTHON -m $MODULE 'start-interactive-session' --continue_on_error '--writer=tap' << END
-qosm-update-server-config '{"status": "EAxcVpFrttufHIRd"}' 'H9UzVRiXbqlAw7r6' --login_with_auth "Bearer foo"
-qosm-delete-server 'W2ktQG0h5JAav5kR' --login_with_auth "Bearer foo"
-qosm-set-server-alias '{"alias": "a62WopBJHPtcDs8b"}' 'BZLCXLx8bbgorQeF' --login_with_auth "Bearer foo"
+qosm-update-server-config '{"status": "ojTd5hza"}' 'rUFTtFeG' --login_with_auth "Bearer foo"
+qosm-delete-server '5Ej2pa54' --login_with_auth "Bearer foo"
+qosm-set-server-alias '{"alias": "S7spu26D"}' 'hYwtbJJl' --login_with_auth "Bearer foo"
 qosm-list-server-per-namespace --login_with_auth "Bearer foo"
 qosm-list-server --login_with_auth "Bearer foo"
-qosm-heartbeat '{"ip": "bQ1g7qbPngUNB1vR", "port": 29, "region": "xwElFHHdgs21Jub7"}' --login_with_auth "Bearer foo"
+qosm-heartbeat '{"ip": "A0SfI8l6", "port": 66, "region": "b97wcm9i"}' --login_with_auth "Bearer foo"
 exit()
 END
 
@@ -65,23 +65,23 @@ fi
 
 #- 2 UpdateServerConfig
 $PYTHON -m $MODULE 'qosm-update-server-config' \
-    '{"status": "4CUkNmKJfh5pUkHO"}' \
-    'DpoMF78NY4YkHs1c' \
+    '{"status": "tgscAA0n"}' \
+    'pemOTYtz' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 2 'UpdateServerConfig' test.out
 
 #- 3 DeleteServer
 $PYTHON -m $MODULE 'qosm-delete-server' \
-    'nz1JSDgY1TXp38zs' \
+    'BsAuQ8Fk' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 3 'DeleteServer' test.out
 
 #- 4 SetServerAlias
 $PYTHON -m $MODULE 'qosm-set-server-alias' \
-    '{"alias": "CTCrbCbPOyNQkT7N"}' \
-    'vyE3cwyALczNIicX' \
+    '{"alias": "5qpwU1aH"}' \
+    'Z1RkiaCA' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 4 'SetServerAlias' test.out
@@ -100,7 +100,7 @@ eval_tap $? 6 'ListServer' test.out
 
 #- 7 Heartbeat
 $PYTHON -m $MODULE 'qosm-heartbeat' \
-    '{"ip": "m7agSrjJW2OQNOs1", "port": 86, "region": "D6QVKNCWP75TB0i7"}' \
+    '{"ip": "CTIFuz72", "port": 21, "region": "eJYYbCtI"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 7 'Heartbeat' test.out

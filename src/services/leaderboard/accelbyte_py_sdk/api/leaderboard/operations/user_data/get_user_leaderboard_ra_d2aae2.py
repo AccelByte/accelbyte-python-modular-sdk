@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Leaderboard Service (2.19.5)
+# AccelByte Gaming Services Leaderboard Service (2.26.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import ModelsGetAllUserLeaderboardsResp
 from ...models import ResponseErrorResponse
@@ -67,6 +67,8 @@ class GetUserLeaderboardRankingsAdminV1(Operation):
 
         offset: (offset) OPTIONAL int in query
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsGetAllUserLeaderboardsResp (OK)
 
@@ -94,6 +96,7 @@ class GetUserLeaderboardRankingsAdminV1(Operation):
     user_id: str  # REQUIRED in [path]
     limit: int  # OPTIONAL in [query]
     offset: int  # OPTIONAL in [query]
+    previous_version: int  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -151,6 +154,8 @@ class GetUserLeaderboardRankingsAdminV1(Operation):
             result["limit"] = self.limit
         if hasattr(self, "offset"):
             result["offset"] = self.offset
+        if hasattr(self, "previous_version"):
+            result["previousVersion"] = self.previous_version
         return result
 
     # endregion get_x_params methods
@@ -177,6 +182,10 @@ class GetUserLeaderboardRankingsAdminV1(Operation):
         self.offset = value
         return self
 
+    def with_previous_version(self, value: int) -> GetUserLeaderboardRankingsAdminV1:
+        self.previous_version = value
+        return self
+
     # endregion with_x methods
 
     # region to methods
@@ -199,6 +208,10 @@ class GetUserLeaderboardRankingsAdminV1(Operation):
             result["offset"] = int(self.offset)
         elif include_empty:
             result["offset"] = 0
+        if hasattr(self, "previous_version") and self.previous_version:
+            result["previousVersion"] = int(self.previous_version)
+        elif include_empty:
+            result["previousVersion"] = 0
         return result
 
     # endregion to methods
@@ -263,6 +276,7 @@ class GetUserLeaderboardRankingsAdminV1(Operation):
         user_id: str,
         limit: Optional[int] = None,
         offset: Optional[int] = None,
+        previous_version: Optional[int] = None,
         **kwargs,
     ) -> GetUserLeaderboardRankingsAdminV1:
         instance = cls()
@@ -272,6 +286,8 @@ class GetUserLeaderboardRankingsAdminV1(Operation):
             instance.limit = limit
         if offset is not None:
             instance.offset = offset
+        if previous_version is not None:
+            instance.previous_version = previous_version
         return instance
 
     @classmethod
@@ -295,6 +311,10 @@ class GetUserLeaderboardRankingsAdminV1(Operation):
             instance.offset = int(dict_["offset"])
         elif include_empty:
             instance.offset = 0
+        if "previousVersion" in dict_ and dict_["previousVersion"] is not None:
+            instance.previous_version = int(dict_["previousVersion"])
+        elif include_empty:
+            instance.previous_version = 0
         return instance
 
     @staticmethod
@@ -304,6 +324,7 @@ class GetUserLeaderboardRankingsAdminV1(Operation):
             "userId": "user_id",
             "limit": "limit",
             "offset": "offset",
+            "previousVersion": "previous_version",
         }
 
     @staticmethod
@@ -313,6 +334,7 @@ class GetUserLeaderboardRankingsAdminV1(Operation):
             "userId": True,
             "limit": False,
             "offset": False,
+            "previousVersion": False,
         }
 
     # endregion static methods

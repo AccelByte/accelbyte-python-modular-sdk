@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (5.31.0)
+# AccelByte Gaming Services Iam Service (7.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import ModelLinkPlatformAccountRequest
 from ...models import RestErrorResponse
@@ -40,6 +40,13 @@ class AdminLinkPlatformAccount(Operation):
 
 
     Force linking platform account to user User Account. This endpoint intended for admin to forcefully link account to user.
+    By default, these cases are not allowed
+
+
+                    * The platform account current is linked by another account
+
+
+                    * The target account ever linked this platform's another account
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]
@@ -63,6 +70,8 @@ class AdminLinkPlatformAccount(Operation):
 
         user_id: (userId) REQUIRED str in path
 
+        skip_conflict: (skipConflict) OPTIONAL bool in query
+
     Responses:
         204: No Content - (No Content)
 
@@ -71,6 +80,8 @@ class AdminLinkPlatformAccount(Operation):
         401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
 
         403: Forbidden - RestErrorResponse (20013: insufficient permissions)
+
+        409: Conflict - RestErrorResponse
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -87,6 +98,7 @@ class AdminLinkPlatformAccount(Operation):
     body: ModelLinkPlatformAccountRequest  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
+    skip_conflict: bool  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -128,6 +140,7 @@ class AdminLinkPlatformAccount(Operation):
         return {
             "body": self.get_body_params(),
             "path": self.get_path_params(),
+            "query": self.get_query_params(),
         }
 
     def get_body_params(self) -> Any:
@@ -141,6 +154,12 @@ class AdminLinkPlatformAccount(Operation):
             result["namespace"] = self.namespace
         if hasattr(self, "user_id"):
             result["userId"] = self.user_id
+        return result
+
+    def get_query_params(self) -> dict:
+        result = {}
+        if hasattr(self, "skip_conflict"):
+            result["skipConflict"] = self.skip_conflict
         return result
 
     # endregion get_x_params methods
@@ -165,6 +184,10 @@ class AdminLinkPlatformAccount(Operation):
         self.user_id = value
         return self
 
+    def with_skip_conflict(self, value: bool) -> AdminLinkPlatformAccount:
+        self.skip_conflict = value
+        return self
+
     # endregion with_x methods
 
     # region to methods
@@ -183,6 +206,10 @@ class AdminLinkPlatformAccount(Operation):
             result["userId"] = str(self.user_id)
         elif include_empty:
             result["userId"] = ""
+        if hasattr(self, "skip_conflict") and self.skip_conflict:
+            result["skipConflict"] = bool(self.skip_conflict)
+        elif include_empty:
+            result["skipConflict"] = False
         return result
 
     # endregion to methods
@@ -202,6 +229,8 @@ class AdminLinkPlatformAccount(Operation):
         401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
 
         403: Forbidden - RestErrorResponse (20013: insufficient permissions)
+
+        409: Conflict - RestErrorResponse
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
 
@@ -226,6 +255,8 @@ class AdminLinkPlatformAccount(Operation):
             return None, RestErrorResponse.create_from_dict(content)
         if code == 403:
             return None, RestErrorResponse.create_from_dict(content)
+        if code == 409:
+            return None, RestErrorResponse.create_from_dict(content)
         if code == 500:
             return None, RestErrorResponse.create_from_dict(content)
 
@@ -243,12 +274,15 @@ class AdminLinkPlatformAccount(Operation):
         body: ModelLinkPlatformAccountRequest,
         namespace: str,
         user_id: str,
+        skip_conflict: Optional[bool] = None,
         **kwargs,
     ) -> AdminLinkPlatformAccount:
         instance = cls()
         instance.body = body
         instance.namespace = namespace
         instance.user_id = user_id
+        if skip_conflict is not None:
+            instance.skip_conflict = skip_conflict
         return instance
 
     @classmethod
@@ -270,6 +304,10 @@ class AdminLinkPlatformAccount(Operation):
             instance.user_id = str(dict_["userId"])
         elif include_empty:
             instance.user_id = ""
+        if "skipConflict" in dict_ and dict_["skipConflict"] is not None:
+            instance.skip_conflict = bool(dict_["skipConflict"])
+        elif include_empty:
+            instance.skip_conflict = False
         return instance
 
     @staticmethod
@@ -278,6 +316,7 @@ class AdminLinkPlatformAccount(Operation):
             "body": "body",
             "namespace": "namespace",
             "userId": "user_id",
+            "skipConflict": "skip_conflict",
         }
 
     @staticmethod
@@ -286,6 +325,7 @@ class AdminLinkPlatformAccount(Operation):
             "body": True,
             "namespace": True,
             "userId": True,
+            "skipConflict": False,
         }
 
     # endregion static methods

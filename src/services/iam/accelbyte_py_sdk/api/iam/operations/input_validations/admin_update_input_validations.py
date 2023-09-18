@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (5.31.0)
+# AccelByte Gaming Services Iam Service (7.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import ModelInputValidationUpdatePayload
 from ...models import RestErrorResponse
@@ -48,19 +48,19 @@ class AdminUpdateInputValidations(Operation):
 
 
 
+                * displayName
 
 
-      * displayName
+                * password
 
 
-      * password
+                * username
 
 
-      * username
+                * email
 
 
-      * email
-
+                * avatar
 
 
 
@@ -77,19 +77,16 @@ class AdminUpdateInputValidations(Operation):
 
 
 
+                * lowercase
 
 
-      * lowercase
+                * uppercase
 
 
-      * uppercase
+                * mixed: uppercase and lowercase
 
 
-      * mixed: uppercase and lowercase
-
-
-      * mixed: uppercase and/or lowercase
-
+                * mixed: uppercase and/or lowercase
 
 
     flexible special character non words with `allowAllSpecialCharacters`
@@ -103,13 +100,10 @@ class AdminUpdateInputValidations(Operation):
 
 
 
+                * anywhere
 
 
-      * anywhere
-
-
-      * middle
-
+                * middle
 
 
 
@@ -125,6 +119,11 @@ class AdminUpdateInputValidations(Operation):
 
 
     If `blockedWord` is set by admin, any input from user which contain kind of blocked word(s) will be blocked for create/upgrade/update account
+
+
+
+
+    If `avatarConfig` is set, will use this config and skip all the other validation conditions
 
     Required Permission(s):
         - ADMIN:CONFIGURATION [UPDATE]

@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,16 +20,17 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Match Service V2 (2.2.1)
+# AccelByte Gaming Services Match Service V2 (2.8.4)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import ApiBackFillAcceptRequest
+from ...models import ModelsGameSession
 from ...models import ResponseError
 
 
@@ -68,7 +69,7 @@ class AcceptBackfill(Operation):
         namespace: (namespace) REQUIRED str in path
 
     Responses:
-        200: OK - (OK)
+        200: OK - ModelsGameSession (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -198,10 +199,12 @@ class AcceptBackfill(Operation):
     # noinspection PyMethodMayBeStatic
     def parse_response(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[Union[None, HttpResponse], Union[None, HttpResponse, ResponseError]]:
+    ) -> Tuple[
+        Union[None, ModelsGameSession], Union[None, HttpResponse, ResponseError]
+    ]:
         """Parse the given response.
 
-        200: OK - (OK)
+        200: OK - ModelsGameSession (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -227,7 +230,7 @@ class AcceptBackfill(Operation):
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return HttpResponse.create(code, "OK"), None
+            return ModelsGameSession.create_from_dict(content), None
         if code == 400:
             return None, ResponseError.create_from_dict(content)
         if code == 401:

@@ -4,9 +4,9 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model.j2
 
-# AccelByte Gaming Services Session Browser Service (1.13.4)
+# AccelByte Gaming Services Session Browser Service (1.15.3)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -25,7 +25,7 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import Model
+from accelbyte_py_sdk.core import Model
 
 from ..models.models_get_session_history_search_response_item_v2 import (
     ModelsGetSessionHistorySearchResponseItemV2,

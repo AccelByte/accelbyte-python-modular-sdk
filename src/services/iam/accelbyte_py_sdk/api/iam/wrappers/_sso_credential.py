@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ModelSSOPlatformCredentialRequest
 from ..models import ModelSSOPlatformCredentialResponse
@@ -56,10 +56,10 @@ def add_sso_login_platform_credential(
 
 
 
-      * discourse
+                            * discourse
     the ssoUrl of the discourse is the discourse forum url. example: https://forum.example.com
 
-      * azure with SAML
+                            * azure with SAML
      appId is an application identifier in IdP, in azure it's called EntityID
     acsUrl is an endpoint on the service provider where the identity provider will redirect to with its authentication response. example: /iam/v3/sso/saml/azuresaml/authenticate
     federationMetadataUrl is an endpoint on the Identity Provider(IdP) to get IdP federation metadata for service provider to build trust relationship
@@ -125,10 +125,10 @@ async def add_sso_login_platform_credential_async(
 
 
 
-      * discourse
+                            * discourse
     the ssoUrl of the discourse is the discourse forum url. example: https://forum.example.com
 
-      * azure with SAML
+                            * azure with SAML
      appId is an application identifier in IdP, in azure it's called EntityID
     acsUrl is an endpoint on the service provider where the identity provider will redirect to with its authentication response. example: /iam/v3/sso/saml/azuresaml/authenticate
     federationMetadataUrl is an endpoint on the Identity Provider(IdP) to get IdP federation metadata for service provider to build trust relationship

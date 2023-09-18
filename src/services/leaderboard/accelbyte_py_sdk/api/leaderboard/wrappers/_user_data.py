@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ModelsGetAllUserLeaderboardsResp
 from ..models import ResponseErrorResponse
@@ -40,6 +40,7 @@ def get_user_leaderboard_rankings_admin_v1(
     user_id: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -77,6 +78,8 @@ def get_user_leaderboard_rankings_admin_v1(
 
         offset: (offset) OPTIONAL int in query
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsGetAllUserLeaderboardsResp (OK)
 
@@ -96,6 +99,7 @@ def get_user_leaderboard_rankings_admin_v1(
         user_id=user_id,
         limit=limit,
         offset=offset,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -106,6 +110,7 @@ async def get_user_leaderboard_rankings_admin_v1_async(
     user_id: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -143,6 +148,8 @@ async def get_user_leaderboard_rankings_admin_v1_async(
 
         offset: (offset) OPTIONAL int in query
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsGetAllUserLeaderboardsResp (OK)
 
@@ -162,6 +169,7 @@ async def get_user_leaderboard_rankings_admin_v1_async(
         user_id=user_id,
         limit=limit,
         offset=offset,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return await run_request_async(

@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Ds Log Manager Service."""
 
-__version__ = "3.2.0"
+__version__ = "3.3.1"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -25,9 +25,9 @@ from .models_notif_payload_server_status_change import (
     ModelsNotifPayloadServerStatusChange,
 )
 from .models_paging_cursor import ModelsPagingCursor
+from .models_request_matching_ally import ModelsRequestMatchingAlly
 from .models_request_match_member import ModelsRequestMatchMember
 from .models_request_match_party import ModelsRequestMatchParty
-from .models_request_matching_ally import ModelsRequestMatchingAlly
 from .models_server import ModelsServer
 from .models_server_logs import ModelsServerLogs
 from .models_status_history import ModelsStatusHistory

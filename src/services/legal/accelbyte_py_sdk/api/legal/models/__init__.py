@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Legal Service."""
 
-__version__ = "1.28.1"
+__version__ = "1.31.2"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 

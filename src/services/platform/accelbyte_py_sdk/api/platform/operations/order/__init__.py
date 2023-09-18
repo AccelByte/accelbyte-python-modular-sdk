@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.27.0"
+__version__ = "4.33.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -30,10 +30,16 @@ from .public_download_user_or_6ea3e8 import PublicDownloadUserOrderReceipt
 from .public_get_user_order import PublicGetUserOrder
 from .public_get_user_order_h_063753 import PublicGetUserOrderHistories
 from .public_query_user_orders import PublicQueryUserOrders
-from .public_query_user_orders import StatusEnum as PublicQueryUserOrdersStatusEnum
+from .public_query_user_orders import (
+    StatusEnum as PublicQueryUserOrdersStatusEnum,
+)
 from .query_orders import QueryOrders
-from .query_orders import StatusEnum as QueryOrdersStatusEnum
+from .query_orders import (
+    StatusEnum as QueryOrdersStatusEnum,
+)
 from .query_user_orders import QueryUserOrders
-from .query_user_orders import StatusEnum as QueryUserOrdersStatusEnum
+from .query_user_orders import (
+    StatusEnum as QueryUserOrdersStatusEnum,
+)
 from .refund_order import RefundOrder
 from .update_user_order_status import UpdateUserOrderStatus

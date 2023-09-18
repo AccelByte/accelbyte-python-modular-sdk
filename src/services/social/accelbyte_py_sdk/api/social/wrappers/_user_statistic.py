@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ADTOObjectForResettingUserStatItems
 from ..models import ADTOObjectForUserStatItemValue
@@ -48,6 +48,7 @@ from ..models import UserStatItemInfo
 from ..models import UserStatItemPagingSlicedResult
 from ..models import ValidationErrorEntity
 
+from ..operations.user_statistic import AdminListUsersStatItems
 from ..operations.user_statistic import BulkCreateUserStatItems
 from ..operations.user_statistic import BulkFetchOrDefaultStatItems
 from ..operations.user_statistic import BulkFetchOrDefaultStatItems1
@@ -80,6 +81,8 @@ from ..operations.user_statistic import PublicBulkIncUserStatItemValue
 from ..operations.user_statistic import PublicCreateUserStatItem
 from ..operations.user_statistic import PublicIncUserStatItem
 from ..operations.user_statistic import PublicIncUserStatItemValue
+from ..operations.user_statistic import PublicListAllMyStatItems
+from ..operations.user_statistic import PublicListMyStatItems
 from ..operations.user_statistic import PublicQueryUserStatItems
 from ..operations.user_statistic import PublicQueryUserStatItems1
 from ..operations.user_statistic import PublicQueryUserStatItems2
@@ -90,6 +93,140 @@ from ..operations.user_statistic import UpdateUserStatItemValue1
 from ..models import BulkStatItemUpdateUpdateStrategyEnum
 from ..models import BulkUserStatItemUpdateUpdateStrategyEnum
 from ..models import StatItemUpdateUpdateStrategyEnum
+
+
+@same_doc_as(AdminListUsersStatItems)
+def admin_list_users_stat_items(
+    user_id: str,
+    additional_key: Optional[str] = None,
+    stat_codes: Optional[List[str]] = None,
+    tags: Optional[List[str]] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Admin list user's statItems (AdminListUsersStatItems)
+
+    Admin list all statItems of user
+    NOTE:
+          * If stat code does not exist, will ignore this stat code.
+          * If stat item does not exist, will return default value
+    Other detail info:+ *Required permission*: resource=ADMIN:NAMESPACE:{namespace}:STATITEM, action=2 (READ)
+
+          *  Returns : stat items
+
+    Properties:
+        url: /social/v2/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk
+
+        method: GET
+
+        tags: ["UserStatistic"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+        additional_key: (additionalKey) OPTIONAL str in query
+
+        stat_codes: (statCodes) OPTIONAL List[str] in query
+
+        tags: (tags) OPTIONAL List[str] in query
+
+    Responses:
+        200: OK - List[ADTOObjectForUserStatItemValue] (successful operation)
+
+        400: Bad Request - ErrorEntity (12223: Invalid stat codes in namespace [{namespace}]: [{statCodes}])
+
+        404: Not Found - ErrorEntity (12243: Stats cannot be found in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = AdminListUsersStatItems.create(
+        user_id=user_id,
+        additional_key=additional_key,
+        stat_codes=stat_codes,
+        tags=tags,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(AdminListUsersStatItems)
+async def admin_list_users_stat_items_async(
+    user_id: str,
+    additional_key: Optional[str] = None,
+    stat_codes: Optional[List[str]] = None,
+    tags: Optional[List[str]] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Admin list user's statItems (AdminListUsersStatItems)
+
+    Admin list all statItems of user
+    NOTE:
+          * If stat code does not exist, will ignore this stat code.
+          * If stat item does not exist, will return default value
+    Other detail info:+ *Required permission*: resource=ADMIN:NAMESPACE:{namespace}:STATITEM, action=2 (READ)
+
+          *  Returns : stat items
+
+    Properties:
+        url: /social/v2/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk
+
+        method: GET
+
+        tags: ["UserStatistic"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+        additional_key: (additionalKey) OPTIONAL str in query
+
+        stat_codes: (statCodes) OPTIONAL List[str] in query
+
+        tags: (tags) OPTIONAL List[str] in query
+
+    Responses:
+        200: OK - List[ADTOObjectForUserStatItemValue] (successful operation)
+
+        400: Bad Request - ErrorEntity (12223: Invalid stat codes in namespace [{namespace}]: [{statCodes}])
+
+        404: Not Found - ErrorEntity (12243: Stats cannot be found in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = AdminListUsersStatItems.create(
+        user_id=user_id,
+        additional_key=additional_key,
+        stat_codes=stat_codes,
+        tags=tags,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(BulkCreateUserStatItems)
@@ -104,9 +241,8 @@ def bulk_create_user_stat_items(
 
     Bulk create user's statItems.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
-      *  Returns : bulk created result
+          *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
+          *  Returns : bulk created result
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [CREATE]
@@ -159,9 +295,8 @@ async def bulk_create_user_stat_items_async(
 
     Bulk create user's statItems.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
-      *  Returns : bulk created result
+          *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
+          *  Returns : bulk created result
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [CREATE]
@@ -659,9 +794,8 @@ def bulk_inc_user_stat_item(
 
     Bulk update multiple user's statitems value.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE)
-      *  Returns : bulk updated result
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE)
+            *  Returns : bulk updated result
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STATITEM [UPDATE]
@@ -710,9 +844,8 @@ async def bulk_inc_user_stat_item_async(
 
     Bulk update multiple user's statitems value.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE)
-      *  Returns : bulk updated result
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE)
+            *  Returns : bulk updated result
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STATITEM [UPDATE]
@@ -764,9 +897,8 @@ def bulk_inc_user_stat_item_1(
 
     Bulk update user's statitems value.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
-      *  Returns : bulk updated result
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
+            *  Returns : bulk updated result
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [UPDATE]
@@ -819,9 +951,8 @@ async def bulk_inc_user_stat_item_1_async(
 
     Bulk update user's statitems value.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
-      *  Returns : bulk updated result
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
+            *  Returns : bulk updated result
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [UPDATE]
@@ -875,9 +1006,8 @@ def bulk_inc_user_stat_item_value(
 
     Bulk update multiple user's statitems value.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE)
-      *  Returns : bulk updated result
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE)
+            *  Returns : bulk updated result
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STATITEM [UPDATE]
@@ -926,9 +1056,8 @@ async def bulk_inc_user_stat_item_value_async(
 
     Bulk update multiple user's statitems value.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE)
-      *  Returns : bulk updated result
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE)
+            *  Returns : bulk updated result
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STATITEM [UPDATE]
@@ -980,9 +1109,8 @@ def bulk_inc_user_stat_item_value_1(
 
     Bulk update user's statitems value.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
-      *  Returns : bulk updated result
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
+            *  Returns : bulk updated result
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [UPDATE]
@@ -1035,9 +1163,8 @@ async def bulk_inc_user_stat_item_value_1_async(
 
     Bulk update user's statitems value.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
-      *  Returns : bulk updated result
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
+            *  Returns : bulk updated result
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [UPDATE]
@@ -1092,9 +1219,8 @@ def bulk_inc_user_stat_item_value_2(
 
     Public bulk update user's statitems value.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
-      *  Returns : bulk updated result
+            *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
+            *  Returns : bulk updated result
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [UPDATE]
@@ -1147,9 +1273,8 @@ async def bulk_inc_user_stat_item_value_2_async(
 
     Public bulk update user's statitems value.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
-      *  Returns : bulk updated result
+            *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
+            *  Returns : bulk updated result
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [UPDATE]
@@ -2254,9 +2379,8 @@ def create_user_stat_item(
 
     Create statItem for a user.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
-      *  Returns : created user's statItem
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
+              *  Returns : created user's statItem
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [CREATE]
@@ -2286,6 +2410,8 @@ def create_user_stat_item(
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (12274: Stat item with code [{statCode}] of user [{profileId}] already exists in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2311,9 +2437,8 @@ async def create_user_stat_item_async(
 
     Create statItem for a user.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
-      *  Returns : created user's statItem
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
+              *  Returns : created user's statItem
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [CREATE]
@@ -2343,6 +2468,8 @@ async def create_user_stat_item_async(
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (12274: Stat item with code [{statCode}] of user [{profileId}] already exists in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2371,9 +2498,8 @@ def delete_user_stat_items(
     This endpoint is for testing purpose. Use this endpoint for cleaning up after testing.
     Delete user's statItems given stat code.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=8 (DELETE)
-      *  Returns : no content
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=8 (DELETE)
+              *  Returns : no content
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [DELETE]
@@ -2405,6 +2531,8 @@ def delete_user_stat_items(
         403: Forbidden - ErrorEntity (20013: insufficient permission)
 
         404: Not Found - ErrorEntity (12242: Stat item of [{statCode}] of user [{profileId}] cannot be found in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2431,9 +2559,8 @@ async def delete_user_stat_items_async(
     This endpoint is for testing purpose. Use this endpoint for cleaning up after testing.
     Delete user's statItems given stat code.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=8 (DELETE)
-      *  Returns : no content
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=8 (DELETE)
+              *  Returns : no content
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [DELETE]
@@ -2465,6 +2592,8 @@ async def delete_user_stat_items_async(
         403: Forbidden - ErrorEntity (20013: insufficient permission)
 
         404: Not Found - ErrorEntity (12242: Stat item of [{statCode}] of user [{profileId}] cannot be found in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2492,9 +2621,8 @@ def delete_user_stat_items_1(
 
     Delete user's statItems given stat code.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=8 (DELETE)
-      *  Returns : no content
+                *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=8 (DELETE)
+                *  Returns : no content
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [DELETE]
@@ -2526,6 +2654,8 @@ def delete_user_stat_items_1(
         403: Forbidden - ErrorEntity (20013: insufficient permission)
 
         404: Not Found - ErrorEntity (12242: Stat item of [{statCode}] of user [{profileId}] cannot be found in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2551,9 +2681,8 @@ async def delete_user_stat_items_1_async(
 
     Delete user's statItems given stat code.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=8 (DELETE)
-      *  Returns : no content
+                *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=8 (DELETE)
+                *  Returns : no content
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [DELETE]
@@ -2585,6 +2714,8 @@ async def delete_user_stat_items_1_async(
         403: Forbidden - ErrorEntity (20013: insufficient permission)
 
         404: Not Found - ErrorEntity (12242: Stat item of [{statCode}] of user [{profileId}] cannot be found in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2617,9 +2748,8 @@ def delete_user_stat_items_2(
 
     Delete user's statItems given stat code.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=8 (DELETE)
-      *  Returns : no content
+                  *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=8 (DELETE)
+                  *  Returns : no content
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [DELETE]
@@ -2653,6 +2783,8 @@ def delete_user_stat_items_2(
         403: Forbidden - ErrorEntity (20013: insufficient permission)
 
         404: Not Found - ErrorEntity (12242: Stat item of [{statCode}] of user [{profileId}] cannot be found in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2684,9 +2816,8 @@ async def delete_user_stat_items_2_async(
 
     Delete user's statItems given stat code.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=8 (DELETE)
-      *  Returns : no content
+                  *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=8 (DELETE)
+                  *  Returns : no content
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [DELETE]
@@ -2720,6 +2851,8 @@ async def delete_user_stat_items_2_async(
         403: Forbidden - ErrorEntity (20013: insufficient permission)
 
         404: Not Found - ErrorEntity (12242: Stat item of [{statCode}] of user [{profileId}] cannot be found in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2739,6 +2872,7 @@ async def delete_user_stat_items_2_async(
 @same_doc_as(GetUserStatItems)
 def get_user_stat_items(
     user_id: str,
+    is_public: Optional[bool] = None,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     sort_by: Optional[str] = None,
@@ -2752,9 +2886,8 @@ def get_user_stat_items(
 
     List user's statItems.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
-      *  Returns : stat items
+                    *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+                    *  Returns : stat items
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
@@ -2776,6 +2909,8 @@ def get_user_stat_items(
 
         user_id: (userId) REQUIRED str in path
 
+        is_public: (isPublic) OPTIONAL bool in query
+
         limit: (limit) OPTIONAL int in query
 
         offset: (offset) OPTIONAL int in query
@@ -2788,6 +2923,8 @@ def get_user_stat_items(
 
     Responses:
         200: OK - UserStatItemPagingSlicedResult (successful operation)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2795,6 +2932,7 @@ def get_user_stat_items(
             return None, error
     request = GetUserStatItems.create(
         user_id=user_id,
+        is_public=is_public,
         limit=limit,
         offset=offset,
         sort_by=sort_by,
@@ -2808,6 +2946,7 @@ def get_user_stat_items(
 @same_doc_as(GetUserStatItems)
 async def get_user_stat_items_async(
     user_id: str,
+    is_public: Optional[bool] = None,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     sort_by: Optional[str] = None,
@@ -2821,9 +2960,8 @@ async def get_user_stat_items_async(
 
     List user's statItems.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
-      *  Returns : stat items
+                    *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+                    *  Returns : stat items
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
@@ -2845,6 +2983,8 @@ async def get_user_stat_items_async(
 
         user_id: (userId) REQUIRED str in path
 
+        is_public: (isPublic) OPTIONAL bool in query
+
         limit: (limit) OPTIONAL int in query
 
         offset: (offset) OPTIONAL int in query
@@ -2857,6 +2997,8 @@ async def get_user_stat_items_async(
 
     Responses:
         200: OK - UserStatItemPagingSlicedResult (successful operation)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2864,6 +3006,7 @@ async def get_user_stat_items_async(
             return None, error
     request = GetUserStatItems.create(
         user_id=user_id,
+        is_public=is_public,
         limit=limit,
         offset=offset,
         sort_by=sort_by,
@@ -2889,9 +3032,8 @@ def inc_user_stat_item_value(
 
     Update user's statitem value.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
-      *  Returns : updated user's statItem
+                    *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
+                    *  Returns : updated user's statItem
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [UPDATE]
@@ -2925,6 +3067,8 @@ def inc_user_stat_item_value(
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}] | 12242: Stat item of [{statCode}] of user [{profileId}] cannot be found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (12273: Stat [{statCode}] is not decreasable | 12275: [{action}] value: [{value}] of stat [{statCode}]  is out of range while minimum [{minimum}] and maximum [{maximum}] in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2952,9 +3096,8 @@ async def inc_user_stat_item_value_async(
 
     Update user's statitem value.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
-      *  Returns : updated user's statItem
+                    *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
+                    *  Returns : updated user's statItem
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [UPDATE]
@@ -2988,6 +3131,8 @@ async def inc_user_stat_item_value_async(
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}] | 12242: Stat item of [{statCode}] of user [{profileId}] cannot be found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (12273: Stat [{statCode}] is not decreasable | 12275: [{action}] value: [{value}] of stat [{statCode}]  is out of range while minimum [{minimum}] and maximum [{maximum}] in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3016,9 +3161,8 @@ def public_bulk_create_user_stat_items(
 
     Bulk create statItems.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
-      *  Returns : bulk created result
+                    *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
+                    *  Returns : bulk created result
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [CREATE]
@@ -3071,9 +3215,8 @@ async def public_bulk_create_user_stat_items_async(
 
     Bulk create statItems.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
-      *  Returns : bulk created result
+                    *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
+                    *  Returns : bulk created result
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [CREATE]
@@ -3127,9 +3270,8 @@ def public_bulk_inc_user_stat_item(
 
     Public bulk update multiple user's statitems value.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE)
-      *  Returns : bulk updated result
+                    *  Required permission : resource="NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE)
+                    *  Returns : bulk updated result
 
     Required Permission(s):
         - NAMESPACE:{namespace}:STATITEM [UPDATE]
@@ -3178,9 +3320,8 @@ async def public_bulk_inc_user_stat_item_async(
 
     Public bulk update multiple user's statitems value.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE)
-      *  Returns : bulk updated result
+                    *  Required permission : resource="NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE)
+                    *  Returns : bulk updated result
 
     Required Permission(s):
         - NAMESPACE:{namespace}:STATITEM [UPDATE]
@@ -3232,9 +3373,8 @@ def public_bulk_inc_user_stat_item_1(
 
     Public bulk update user's statitems value.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
-      *  Returns : bulk updated result
+                    *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
+                    *  Returns : bulk updated result
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [UPDATE]
@@ -3287,9 +3427,8 @@ async def public_bulk_inc_user_stat_item_1_async(
 
     Public bulk update user's statitems value.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
-      *  Returns : bulk updated result
+                    *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
+                    *  Returns : bulk updated result
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [UPDATE]
@@ -3343,9 +3482,8 @@ def public_bulk_inc_user_stat_item_value(
 
     Public bulk update multiple user's statitems value.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE)
-      *  Returns : bulk updated result
+                    *  Required permission : resource="NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE)
+                    *  Returns : bulk updated result
 
     Required Permission(s):
         - NAMESPACE:{namespace}:STATITEM [UPDATE]
@@ -3394,9 +3532,8 @@ async def public_bulk_inc_user_stat_item_value_async(
 
     Public bulk update multiple user's statitems value.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE)
-      *  Returns : bulk updated result
+                    *  Required permission : resource="NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE)
+                    *  Returns : bulk updated result
 
     Required Permission(s):
         - NAMESPACE:{namespace}:STATITEM [UPDATE]
@@ -3448,9 +3585,8 @@ def public_create_user_stat_item(
 
     Create user's statItem.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
-      *  Returns : created user's statItem
+                    *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
+                    *  Returns : created user's statItem
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [CREATE]
@@ -3480,6 +3616,8 @@ def public_create_user_stat_item(
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (12274: Stat item with code [{statCode}] of user [{profileId}] already exists in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3505,9 +3643,8 @@ async def public_create_user_stat_item_async(
 
     Create user's statItem.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
-      *  Returns : created user's statItem
+                    *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
+                    *  Returns : created user's statItem
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [CREATE]
@@ -3537,6 +3674,8 @@ async def public_create_user_stat_item_async(
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (12274: Stat item with code [{statCode}] of user [{profileId}] already exists in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3565,9 +3704,8 @@ def public_inc_user_stat_item(
 
     Public update user's statitem value.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
-      *  Returns : updated user's statItem
+                    *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
+                    *  Returns : updated user's statItem
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [UPDATE]
@@ -3601,6 +3739,8 @@ def public_inc_user_stat_item(
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}] | 12242: Stat item of [{statCode}] of user [{profileId}] cannot be found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (12273: Stat [{statCode}] is not decreasable | 12275: [{action}] value: [{value}] of stat [{statCode}]  is out of range while minimum [{minimum}] and maximum [{maximum}] in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3628,9 +3768,8 @@ async def public_inc_user_stat_item_async(
 
     Public update user's statitem value.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
-      *  Returns : updated user's statItem
+                    *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
+                    *  Returns : updated user's statItem
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [UPDATE]
@@ -3664,6 +3803,8 @@ async def public_inc_user_stat_item_async(
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}] | 12242: Stat item of [{statCode}] of user [{profileId}] cannot be found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (12273: Stat [{statCode}] is not decreasable | 12275: [{action}] value: [{value}] of stat [{statCode}]  is out of range while minimum [{minimum}] and maximum [{maximum}] in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3693,9 +3834,8 @@ def public_inc_user_stat_item_value(
 
     Public update user's statitem value.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
-      *  Returns : updated user's statItem
+                    *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
+                    *  Returns : updated user's statItem
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [UPDATE]
@@ -3729,6 +3869,8 @@ def public_inc_user_stat_item_value(
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}] | 12242: Stat item of [{statCode}] of user [{profileId}] cannot be found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (12273: Stat [{statCode}] is not decreasable | 12275: [{action}] value: [{value}] of stat [{statCode}]  is out of range while minimum [{minimum}] and maximum [{maximum}] in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3756,9 +3898,8 @@ async def public_inc_user_stat_item_value_async(
 
     Public update user's statitem value.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
-      *  Returns : updated user's statItem
+                    *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
+                    *  Returns : updated user's statItem
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [UPDATE]
@@ -3792,6 +3933,8 @@ async def public_inc_user_stat_item_value_async(
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}] | 12242: Stat item of [{statCode}] of user [{profileId}] cannot be found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (12273: Stat [{statCode}] is not decreasable | 12275: [{action}] value: [{value}] of stat [{statCode}]  is out of range while minimum [{minimum}] and maximum [{maximum}] in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3801,6 +3944,272 @@ async def public_inc_user_stat_item_value_async(
         stat_code=stat_code,
         user_id=user_id,
         body=body,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(PublicListAllMyStatItems)
+def public_list_all_my_stat_items(
+    additional_key: Optional[str] = None,
+    stat_codes: Optional[List[str]] = None,
+    tags: Optional[List[str]] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Public list user's statItems (publicListAllMyStatItems)
+
+    Public list all statItems of user.
+    NOTE:
+                  * If stat code does not exist, will ignore this stat code.
+                  * If stat item does not exist, will return default value
+    Other detail info:
+                  *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+                  *  Returns : stat items
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
+
+    Properties:
+        url: /social/v1/public/namespaces/{namespace}/users/me/statitems/value/bulk
+
+        method: GET
+
+        tags: ["UserStatistic"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        additional_key: (additionalKey) OPTIONAL str in query
+
+        stat_codes: (statCodes) OPTIONAL List[str] in query
+
+        tags: (tags) OPTIONAL List[str] in query
+
+    Responses:
+        200: OK - List[ADTOObjectForUserStatItemValue] (successful operation)
+
+        400: Bad Request - ErrorEntity (12223: Invalid stat codes in namespace [{namespace}]: [{statCodes}])
+
+        404: Not Found - ErrorEntity (12243: Stats cannot be found in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = PublicListAllMyStatItems.create(
+        additional_key=additional_key,
+        stat_codes=stat_codes,
+        tags=tags,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(PublicListAllMyStatItems)
+async def public_list_all_my_stat_items_async(
+    additional_key: Optional[str] = None,
+    stat_codes: Optional[List[str]] = None,
+    tags: Optional[List[str]] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Public list user's statItems (publicListAllMyStatItems)
+
+    Public list all statItems of user.
+    NOTE:
+                  * If stat code does not exist, will ignore this stat code.
+                  * If stat item does not exist, will return default value
+    Other detail info:
+                  *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+                  *  Returns : stat items
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
+
+    Properties:
+        url: /social/v1/public/namespaces/{namespace}/users/me/statitems/value/bulk
+
+        method: GET
+
+        tags: ["UserStatistic"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        additional_key: (additionalKey) OPTIONAL str in query
+
+        stat_codes: (statCodes) OPTIONAL List[str] in query
+
+        tags: (tags) OPTIONAL List[str] in query
+
+    Responses:
+        200: OK - List[ADTOObjectForUserStatItemValue] (successful operation)
+
+        400: Bad Request - ErrorEntity (12223: Invalid stat codes in namespace [{namespace}]: [{statCodes}])
+
+        404: Not Found - ErrorEntity (12243: Stats cannot be found in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = PublicListAllMyStatItems.create(
+        additional_key=additional_key,
+        stat_codes=stat_codes,
+        tags=tags,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(PublicListMyStatItems)
+def public_list_my_stat_items(
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    sort_by: Optional[str] = None,
+    stat_codes: Optional[List[str]] = None,
+    tags: Optional[List[str]] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Public list user's statItems (publicListMyStatItems)
+
+    Public list all statItems by pagination.
+    Other detail info:
+                  *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+                  *  Returns : stat items
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
+
+    Properties:
+        url: /social/v1/public/namespaces/{namespace}/users/me/statitems
+
+        method: GET
+
+        tags: ["UserStatistic"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        limit: (limit) OPTIONAL int in query
+
+        offset: (offset) OPTIONAL int in query
+
+        sort_by: (sortBy) OPTIONAL str in query
+
+        stat_codes: (statCodes) OPTIONAL List[str] in query
+
+        tags: (tags) OPTIONAL List[str] in query
+
+    Responses:
+        200: OK - UserStatItemPagingSlicedResult (successful operation)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = PublicListMyStatItems.create(
+        limit=limit,
+        offset=offset,
+        sort_by=sort_by,
+        stat_codes=stat_codes,
+        tags=tags,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(PublicListMyStatItems)
+async def public_list_my_stat_items_async(
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    sort_by: Optional[str] = None,
+    stat_codes: Optional[List[str]] = None,
+    tags: Optional[List[str]] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Public list user's statItems (publicListMyStatItems)
+
+    Public list all statItems by pagination.
+    Other detail info:
+                  *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+                  *  Returns : stat items
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
+
+    Properties:
+        url: /social/v1/public/namespaces/{namespace}/users/me/statitems
+
+        method: GET
+
+        tags: ["UserStatistic"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        limit: (limit) OPTIONAL int in query
+
+        offset: (offset) OPTIONAL int in query
+
+        sort_by: (sortBy) OPTIONAL str in query
+
+        stat_codes: (statCodes) OPTIONAL List[str] in query
+
+        tags: (tags) OPTIONAL List[str] in query
+
+    Responses:
+        200: OK - UserStatItemPagingSlicedResult (successful operation)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = PublicListMyStatItems.create(
+        limit=limit,
+        offset=offset,
+        sort_by=sort_by,
+        stat_codes=stat_codes,
+        tags=tags,
         namespace=namespace,
     )
     return await run_request_async(
@@ -3824,9 +4233,8 @@ def public_query_user_stat_items(
 
     Public list all statItems by pagination.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
-      *  Returns : stat items
+                  *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+                  *  Returns : stat items
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
@@ -3860,6 +4268,8 @@ def public_query_user_stat_items(
 
     Responses:
         200: OK - UserStatItemPagingSlicedResult (successful operation)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3893,9 +4303,8 @@ async def public_query_user_stat_items_async(
 
     Public list all statItems by pagination.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
-      *  Returns : stat items
+                  *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+                  *  Returns : stat items
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
@@ -3929,6 +4338,8 @@ async def public_query_user_stat_items_async(
 
     Responses:
         200: OK - UserStatItemPagingSlicedResult (successful operation)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3951,6 +4362,7 @@ async def public_query_user_stat_items_async(
 @same_doc_as(PublicQueryUserStatItems1)
 def public_query_user_stat_items_1(
     user_id: str,
+    additional_key: Optional[str] = None,
     stat_codes: Optional[List[str]] = None,
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
@@ -3961,12 +4373,11 @@ def public_query_user_stat_items_1(
 
     Public list all statItems of user.
     NOTE:
-    * If stat code does not exist, will ignore this stat code.
-    * If stat item does not exist, will return default value
-
+                * If stat code does not exist, will ignore this stat code.
+                * If stat item does not exist, will return default value
     Other detail info:
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
-      *  Returns : stat items
+                *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+                *  Returns : stat items
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
@@ -3988,6 +4399,8 @@ def public_query_user_stat_items_1(
 
         user_id: (userId) REQUIRED str in path
 
+        additional_key: (additionalKey) OPTIONAL str in query
+
         stat_codes: (statCodes) OPTIONAL List[str] in query
 
         tags: (tags) OPTIONAL List[str] in query
@@ -4007,6 +4420,7 @@ def public_query_user_stat_items_1(
             return None, error
     request = PublicQueryUserStatItems1.create(
         user_id=user_id,
+        additional_key=additional_key,
         stat_codes=stat_codes,
         tags=tags,
         namespace=namespace,
@@ -4017,6 +4431,7 @@ def public_query_user_stat_items_1(
 @same_doc_as(PublicQueryUserStatItems1)
 async def public_query_user_stat_items_1_async(
     user_id: str,
+    additional_key: Optional[str] = None,
     stat_codes: Optional[List[str]] = None,
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
@@ -4027,12 +4442,11 @@ async def public_query_user_stat_items_1_async(
 
     Public list all statItems of user.
     NOTE:
-    * If stat code does not exist, will ignore this stat code.
-    * If stat item does not exist, will return default value
-
+                * If stat code does not exist, will ignore this stat code.
+                * If stat item does not exist, will return default value
     Other detail info:
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
-      *  Returns : stat items
+                *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+                *  Returns : stat items
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
@@ -4054,6 +4468,8 @@ async def public_query_user_stat_items_1_async(
 
         user_id: (userId) REQUIRED str in path
 
+        additional_key: (additionalKey) OPTIONAL str in query
+
         stat_codes: (statCodes) OPTIONAL List[str] in query
 
         tags: (tags) OPTIONAL List[str] in query
@@ -4073,6 +4489,7 @@ async def public_query_user_stat_items_1_async(
             return None, error
     request = PublicQueryUserStatItems1.create(
         user_id=user_id,
+        additional_key=additional_key,
         stat_codes=stat_codes,
         tags=tags,
         namespace=namespace,
@@ -4096,12 +4513,11 @@ def public_query_user_stat_items_2(
 
     Public list all statItems of user.
     NOTE:
-    * If stat code does not exist, will ignore this stat code.
-    * If stat item does not exist, will return default value
-
+              * If stat code does not exist, will ignore this stat code.
+              * If stat item does not exist, will return default value
     Other detail info:
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
-      *  Returns : stat items
+              *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+              *  Returns : stat items
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
@@ -4166,12 +4582,11 @@ async def public_query_user_stat_items_2_async(
 
     Public list all statItems of user.
     NOTE:
-    * If stat code does not exist, will ignore this stat code.
-    * If stat item does not exist, will return default value
-
+              * If stat code does not exist, will ignore this stat code.
+              * If stat item does not exist, will return default value
     Other detail info:
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
-      *  Returns : stat items
+              *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+              *  Returns : stat items
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
@@ -4275,6 +4690,8 @@ def reset_user_stat_item_value(
         400: Bad Request - ErrorEntity (12221: Invalid stat operator, expect [{expected}] but actual [{actual}])
 
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -4341,6 +4758,8 @@ async def reset_user_stat_item_value_async(
         400: Bad Request - ErrorEntity (12221: Invalid stat operator, expect [{expected}] but actual [{actual}])
 
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -4403,6 +4822,8 @@ def reset_user_stat_item_value_1(
         400: Bad Request - ErrorEntity (12221: Invalid stat operator, expect [{expected}] but actual [{actual}])
 
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -4461,6 +4882,8 @@ async def reset_user_stat_item_value_1_async(
         400: Bad Request - ErrorEntity (12221: Invalid stat operator, expect [{expected}] but actual [{actual}])
 
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()

@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template_file: python-cli-command.j2
+# template_file: command.j2
 
 # Justice Matchmaking Service (2.25.7)
 

@@ -4,9 +4,9 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model.j2
 
-# AccelByte Gaming Services Match Service V2 (2.2.1)
+# AccelByte Gaming Services Match Service V2 (2.8.4)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -25,7 +25,7 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import Model
+from accelbyte_py_sdk.core import Model
 
 from ..models.api_match_rule_set_name_data import ApiMatchRuleSetNameData
 from ..models.models_pagination import ModelsPagination
@@ -37,13 +37,13 @@ class ApiListRuleSetsResponse(Model):
     Properties:
         data: (data) REQUIRED List[ApiMatchRuleSetNameData]
 
-        pagination: (pagination) REQUIRED ModelsPagination
+        pagination: (pagination) OPTIONAL ModelsPagination
     """
 
     # region fields
 
     data: List[ApiMatchRuleSetNameData]  # REQUIRED
-    pagination: ModelsPagination  # REQUIRED
+    pagination: ModelsPagination  # OPTIONAL
 
     # endregion fields
 
@@ -83,11 +83,15 @@ class ApiListRuleSetsResponse(Model):
 
     @classmethod
     def create(
-        cls, data: List[ApiMatchRuleSetNameData], pagination: ModelsPagination, **kwargs
+        cls,
+        data: List[ApiMatchRuleSetNameData],
+        pagination: Optional[ModelsPagination] = None,
+        **kwargs,
     ) -> ApiListRuleSetsResponse:
         instance = cls()
         instance.data = data
-        instance.pagination = pagination
+        if pagination is not None:
+            instance.pagination = pagination
         return instance
 
     @classmethod
@@ -163,7 +167,7 @@ class ApiListRuleSetsResponse(Model):
     def get_required_map() -> Dict[str, bool]:
         return {
             "data": True,
-            "pagination": True,
+            "pagination": False,
         }
 
     # endregion static methods

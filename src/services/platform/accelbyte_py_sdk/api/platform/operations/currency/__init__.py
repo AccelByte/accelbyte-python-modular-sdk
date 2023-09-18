@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.27.0"
+__version__ = "4.33.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -19,7 +19,9 @@ from .delete_currency import DeleteCurrency
 from .get_currency_config import GetCurrencyConfig
 from .get_currency_summary import GetCurrencySummary
 from .list_currencies import ListCurrencies
-from .list_currencies import CurrencyTypeEnum as ListCurrenciesCurrencyTypeEnum
+from .list_currencies import (
+    CurrencyTypeEnum as ListCurrenciesCurrencyTypeEnum,
+)
 from .public_list_currencies import PublicListCurrencies
 from .public_list_currencies import (
     CurrencyTypeEnum as PublicListCurrenciesCurrencyTypeEnum,

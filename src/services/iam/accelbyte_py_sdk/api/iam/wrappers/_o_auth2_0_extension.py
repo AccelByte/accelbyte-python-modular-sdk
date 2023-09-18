@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,17 +23,18 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import OauthmodelCountryLocationResponse
 from ..models import OauthmodelErrorResponse
 from ..models import OauthmodelGameTokenCodeResponse
 from ..models import OauthmodelOneTimeLinkingCodeResponse
 from ..models import OauthmodelOneTimeLinkingCodeValidationResponse
+from ..models import OauthmodelPlatformTokenRefreshResponseV3
 from ..models import OauthmodelTokenResponseV3
 from ..models import RestErrorResponse
 
@@ -42,6 +43,7 @@ from ..operations.o_auth2_0_extension import GenerateTokenByNewHeadlessAccountV3
 from ..operations.o_auth2_0_extension import GetCountryLocationV3
 from ..operations.o_auth2_0_extension import Logout
 from ..operations.o_auth2_0_extension import PlatformAuthenticationV3
+from ..operations.o_auth2_0_extension import PlatformTokenRefreshV3
 from ..operations.o_auth2_0_extension import RequestGameTokenCodeResponseV3
 from ..operations.o_auth2_0_extension import RequestGameTokenResponseV3
 from ..operations.o_auth2_0_extension import RequestOneTimeLinkingCodeV3
@@ -189,6 +191,7 @@ async def authentication_with_platform_link_v3_async(
 @same_doc_as(GenerateTokenByNewHeadlessAccountV3)
 def generate_token_by_new_headless_account_v3(
     linking_token: str,
+    additional_data: Optional[str] = None,
     extend_exp: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -212,6 +215,8 @@ def generate_token_by_new_headless_account_v3(
 
         securities: [BEARER_AUTH]
 
+        additional_data: (additionalData) OPTIONAL str in form_data
+
         extend_exp: (extend_exp) OPTIONAL bool in form_data
 
         linking_token: (linkingToken) REQUIRED str in form_data
@@ -227,6 +232,7 @@ def generate_token_by_new_headless_account_v3(
     """
     request = GenerateTokenByNewHeadlessAccountV3.create(
         linking_token=linking_token,
+        additional_data=additional_data,
         extend_exp=extend_exp,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -235,6 +241,7 @@ def generate_token_by_new_headless_account_v3(
 @same_doc_as(GenerateTokenByNewHeadlessAccountV3)
 async def generate_token_by_new_headless_account_v3_async(
     linking_token: str,
+    additional_data: Optional[str] = None,
     extend_exp: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -258,6 +265,8 @@ async def generate_token_by_new_headless_account_v3_async(
 
         securities: [BEARER_AUTH]
 
+        additional_data: (additionalData) OPTIONAL str in form_data
+
         extend_exp: (extend_exp) OPTIONAL bool in form_data
 
         linking_token: (linkingToken) REQUIRED str in form_data
@@ -273,6 +282,7 @@ async def generate_token_by_new_headless_account_v3_async(
     """
     request = GenerateTokenByNewHeadlessAccountV3.create(
         linking_token=linking_token,
+        additional_data=additional_data,
         extend_exp=extend_exp,
     )
     return await run_request_async(
@@ -352,12 +362,10 @@ def logout(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
 
 
 
+                            * VerifyToken to verify token from header
 
 
-      * VerifyToken to verify token from header
-
-
-      * AddTokenToRevocationList to revoke token with TTL
+                            * AddTokenToRevocationList to revoke token with TTL
 
     Properties:
         url: /iam/v3/logout
@@ -393,12 +401,10 @@ async def logout_async(x_additional_headers: Optional[Dict[str, str]] = None, **
 
 
 
+                            * VerifyToken to verify token from header
 
 
-      * VerifyToken to verify token from header
-
-
-      * AddTokenToRevocationList to revoke token with TTL
+                            * AddTokenToRevocationList to revoke token with TTL
 
     Properties:
         url: /iam/v3/logout
@@ -462,44 +468,43 @@ def platform_authentication_v3(
 
 
 
-      * steamopenid
+                            * steamopenid
     Steam login page will redirects to this endpoint after login success
     as previously defined on openID request parameter `openid.return_to` when request login to steam
     https://openid.net/specs/openid-authentication-2_0.html#anchor27
 
-      * ps4web
+                            * ps4web
     PS4 login page will redirects to this endpoint after login success
     as previously defined on authorize request parameter `redirect_uri`
     https://ps4.siedev.net/resources/documents/WebAPI/1/Auth_WebAPI-Reference/0002.html#0GetAccessTokenUsingAuthorizationCode
 
-      * xblweb
+                            * xblweb
     XBL login page will redirects to this endpoint after login success
     as previously defined on authorize request parameter `redirect_uri`
 
-      * epicgames
+                            * epicgames
     Epicgames login page will redirects to this endpoint after login success
     or an error occurred. If error, it redirects to the login page.
 
-      * twitch
+                            * twitch
     Twitch login page will redirects to this endpoint after login success
     as previously defined on authorize request parameter `redirect_uri`
 
-      * facebook
+                            * facebook
     Facebook login page will redirects to this endpoint after login success
     as previously defined on authorize request parameter `redirect_uri`
 
-      * google
+                            * google
     Google login page will redirects to this endpoint after login success
     as previously defined on authorize request parameter `redirect_uri`
 
-      * snapchat
+                            * snapchat
     Snapchat login page will redirects to this endpoint after login success
     as previously defined on authorize request parameter `redirect_uri`
 
-      * discord
+                            * discord
     Discord login page will redirects to this endpoint after login success
     as previously defined on authorize request parameter `redirect_uri`
-
     action code : 10709
 
     Properties:
@@ -514,8 +519,8 @@ def platform_authentication_v3(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
-
         location query: PLACEHOLDER
+
 
         platform_id: (platformId) REQUIRED str in path
 
@@ -607,44 +612,43 @@ async def platform_authentication_v3_async(
 
 
 
-      * steamopenid
+                            * steamopenid
     Steam login page will redirects to this endpoint after login success
     as previously defined on openID request parameter `openid.return_to` when request login to steam
     https://openid.net/specs/openid-authentication-2_0.html#anchor27
 
-      * ps4web
+                            * ps4web
     PS4 login page will redirects to this endpoint after login success
     as previously defined on authorize request parameter `redirect_uri`
     https://ps4.siedev.net/resources/documents/WebAPI/1/Auth_WebAPI-Reference/0002.html#0GetAccessTokenUsingAuthorizationCode
 
-      * xblweb
+                            * xblweb
     XBL login page will redirects to this endpoint after login success
     as previously defined on authorize request parameter `redirect_uri`
 
-      * epicgames
+                            * epicgames
     Epicgames login page will redirects to this endpoint after login success
     or an error occurred. If error, it redirects to the login page.
 
-      * twitch
+                            * twitch
     Twitch login page will redirects to this endpoint after login success
     as previously defined on authorize request parameter `redirect_uri`
 
-      * facebook
+                            * facebook
     Facebook login page will redirects to this endpoint after login success
     as previously defined on authorize request parameter `redirect_uri`
 
-      * google
+                            * google
     Google login page will redirects to this endpoint after login success
     as previously defined on authorize request parameter `redirect_uri`
 
-      * snapchat
+                            * snapchat
     Snapchat login page will redirects to this endpoint after login success
     as previously defined on authorize request parameter `redirect_uri`
 
-      * discord
+                            * discord
     Discord login page will redirects to this endpoint after login success
     as previously defined on authorize request parameter `redirect_uri`
-
     action code : 10709
 
     Properties:
@@ -659,8 +663,8 @@ async def platform_authentication_v3_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
-
         location query: PLACEHOLDER
+
 
         platform_id: (platformId) REQUIRED str in path
 
@@ -708,6 +712,182 @@ async def platform_authentication_v3_async(
         openid_return_to=openid_return_to,
         openid_sig=openid_sig,
         openid_signed=openid_signed,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(PlatformTokenRefreshV3)
+def platform_token_refresh_v3(
+    platform_id: str,
+    platform_token: str,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Platform Token Validation (PlatformTokenRefreshV3)
+
+    This endpoint will validate the third party platform token, for some platforms will also refresh the token stored in IAM, it will not generate any event or AB access/refresh token.
+
+
+
+
+    This endpoint can be used by game client to refresh third party token if game client got platform token not found error, for example got 404
+    platform token not found from IAP/DLC.
+
+
+
+
+    ## Platforms will refresh stored token:
+
+
+
+
+                            * twitch : The platform_tokenâs value is the authorization code returned by Twitch OAuth.
+
+
+                            * epicgames : The platform_tokenâs value is an access-token or authorization code obtained from Epicgames EOS Account Service.
+
+
+                            * ps4 : The platform_tokenâs value is the authorization code returned by Sony OAuth.
+
+
+                            * ps5 : The platform_tokenâs value is the authorization code returned by Sony OAuth.
+
+
+                            * amazon : The platform_tokenâs value is authorization code.
+
+
+                            * awscognito : The platform_tokenâs value is the aws cognito access token or id token (JWT).
+
+
+                            * live : The platform_tokenâs value is xbox XSTS token
+
+
+                            * snapchat : The platform_tokenâs value is the authorization code returned by Snapchat OAuth.
+
+
+
+                            * for specific generic oauth (OIDC) : The platform_tokenâs value should be the same type as created OIDC auth type whether it is auth code, idToken or bearerToken.
+
+    Properties:
+        url: /iam/v3/v3/platforms/{platformId}/token/verify
+
+        method: POST
+
+        tags: ["OAuth2.0 - Extension"]
+
+        consumes: ["application/x-www-form-urlencoded"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        platform_token: (platform_token) REQUIRED str in form_data
+
+        platform_id: (platformId) REQUIRED str in path
+
+    Responses:
+        200: OK - OauthmodelPlatformTokenRefreshResponseV3 (Token returned)
+
+        400: Bad Request - OauthmodelErrorResponse (General request error)
+
+        401: Unauthorized - OauthmodelErrorResponse (Client authentication failed)
+
+        403: Forbidden - OauthmodelErrorResponse (Forbidden)
+
+        503: Service Unavailable - OauthmodelErrorResponse (Third Party Server timeout or unavailable)
+    """
+    request = PlatformTokenRefreshV3.create(
+        platform_id=platform_id,
+        platform_token=platform_token,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(PlatformTokenRefreshV3)
+async def platform_token_refresh_v3_async(
+    platform_id: str,
+    platform_token: str,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Platform Token Validation (PlatformTokenRefreshV3)
+
+    This endpoint will validate the third party platform token, for some platforms will also refresh the token stored in IAM, it will not generate any event or AB access/refresh token.
+
+
+
+
+    This endpoint can be used by game client to refresh third party token if game client got platform token not found error, for example got 404
+    platform token not found from IAP/DLC.
+
+
+
+
+    ## Platforms will refresh stored token:
+
+
+
+
+                            * twitch : The platform_tokenâs value is the authorization code returned by Twitch OAuth.
+
+
+                            * epicgames : The platform_tokenâs value is an access-token or authorization code obtained from Epicgames EOS Account Service.
+
+
+                            * ps4 : The platform_tokenâs value is the authorization code returned by Sony OAuth.
+
+
+                            * ps5 : The platform_tokenâs value is the authorization code returned by Sony OAuth.
+
+
+                            * amazon : The platform_tokenâs value is authorization code.
+
+
+                            * awscognito : The platform_tokenâs value is the aws cognito access token or id token (JWT).
+
+
+                            * live : The platform_tokenâs value is xbox XSTS token
+
+
+                            * snapchat : The platform_tokenâs value is the authorization code returned by Snapchat OAuth.
+
+
+
+                            * for specific generic oauth (OIDC) : The platform_tokenâs value should be the same type as created OIDC auth type whether it is auth code, idToken or bearerToken.
+
+    Properties:
+        url: /iam/v3/v3/platforms/{platformId}/token/verify
+
+        method: POST
+
+        tags: ["OAuth2.0 - Extension"]
+
+        consumes: ["application/x-www-form-urlencoded"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        platform_token: (platform_token) REQUIRED str in form_data
+
+        platform_id: (platformId) REQUIRED str in path
+
+    Responses:
+        200: OK - OauthmodelPlatformTokenRefreshResponseV3 (Token returned)
+
+        400: Bad Request - OauthmodelErrorResponse (General request error)
+
+        401: Unauthorized - OauthmodelErrorResponse (Client authentication failed)
+
+        403: Forbidden - OauthmodelErrorResponse (Forbidden)
+
+        503: Service Unavailable - OauthmodelErrorResponse (Third Party Server timeout or unavailable)
+    """
+    request = PlatformTokenRefreshV3.create(
+        platform_id=platform_id,
+        platform_token=platform_token,
     )
     return await run_request_async(
         request, additional_headers=x_additional_headers, **kwargs
@@ -816,7 +996,10 @@ async def request_game_token_code_response_v3_async(
 
 @same_doc_as(RequestGameTokenResponseV3)
 def request_game_token_response_v3(
-    code: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+    code: str,
+    additional_data: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
 ):
     """Generate game token by code (RequestGameTokenResponseV3)
 
@@ -839,6 +1022,8 @@ def request_game_token_response_v3(
 
         securities: [BEARER_AUTH]
 
+        additional_data: (additionalData) OPTIONAL str in form_data
+
         code: (code) REQUIRED str in form_data
 
     Responses:
@@ -846,13 +1031,17 @@ def request_game_token_response_v3(
     """
     request = RequestGameTokenResponseV3.create(
         code=code,
+        additional_data=additional_data,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(RequestGameTokenResponseV3)
 async def request_game_token_response_v3_async(
-    code: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+    code: str,
+    additional_data: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
 ):
     """Generate game token by code (RequestGameTokenResponseV3)
 
@@ -875,6 +1064,8 @@ async def request_game_token_response_v3_async(
 
         securities: [BEARER_AUTH]
 
+        additional_data: (additionalData) OPTIONAL str in form_data
+
         code: (code) REQUIRED str in form_data
 
     Responses:
@@ -882,6 +1073,7 @@ async def request_game_token_response_v3_async(
     """
     request = RequestGameTokenResponseV3.create(
         code=code,
+        additional_data=additional_data,
     )
     return await run_request_async(
         request, additional_headers=x_additional_headers, **kwargs
@@ -909,69 +1101,67 @@ def request_one_time_linking_code_v3(
 
 
 
+                            * steam
 
 
-      * steam
+                            * steamopenid
 
 
-      * steamopenid
+                            * facebook
 
 
-      * facebook
+                            * google
 
 
-      * google
+                            * oculus
 
 
-      * oculus
+                            * twitch
 
 
-      * twitch
+                            * discord
 
 
-      * discord
+                            * android
 
 
-      * android
+                            * ios
 
 
-      * ios
+                            * apple
 
 
-      * apple
+                            * device
 
 
-      * device
+                            * justice
 
 
-      * justice
+                            * epicgames
 
 
-      * epicgames
+                            * ps4
 
 
-      * ps4
+                            * ps5
 
 
-      * ps5
+                            * nintendo
 
 
-      * nintendo
+                            * awscognito
 
 
-      * awscognito
+                            * live
 
 
-      * live
+                            * xblweb
 
 
-      * xblweb
+                            * netflix
 
 
-      * netflix
-
-
-      * snapchat
+                            * snapchat
 
     Properties:
         url: /iam/v3/link/code/request
@@ -1018,69 +1208,67 @@ async def request_one_time_linking_code_v3_async(
 
 
 
+                            * steam
 
 
-      * steam
+                            * steamopenid
 
 
-      * steamopenid
+                            * facebook
 
 
-      * facebook
+                            * google
 
 
-      * google
+                            * oculus
 
 
-      * oculus
+                            * twitch
 
 
-      * twitch
+                            * discord
 
 
-      * discord
+                            * android
 
 
-      * android
+                            * ios
 
 
-      * ios
+                            * apple
 
 
-      * apple
+                            * device
 
 
-      * device
+                            * justice
 
 
-      * justice
+                            * epicgames
 
 
-      * epicgames
+                            * ps4
 
 
-      * ps4
+                            * ps5
 
 
-      * ps5
+                            * nintendo
 
 
-      * nintendo
+                            * awscognito
 
 
-      * awscognito
+                            * live
 
 
-      * live
+                            * xblweb
 
 
-      * xblweb
+                            * netflix
 
 
-      * netflix
-
-
-      * snapchat
+                            * snapchat
 
     Properties:
         url: /iam/v3/link/code/request
@@ -1112,6 +1300,8 @@ async def request_one_time_linking_code_v3_async(
 def request_token_by_one_time_link_code_response_v3(
     client_id: str,
     one_time_link_code: str,
+    additional_data: Optional[str] = None,
+    is_transient: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
@@ -1122,6 +1312,17 @@ def request_token_by_one_time_link_code_response_v3(
     It require publisher ClientID
 
     It required a code which can be generated from /iam/v3/link/code/request.
+
+
+
+
+
+
+    This endpoint support creating transient token by utilizing isTransient param:
+
+    isTransient=true will generate a transient token with a short Time Expiration and without a refresh token
+
+    isTransient=false will consume the one-time code and generate the access token with a refresh token.
 
     Properties:
         url: /iam/v3/link/token/exchange
@@ -1136,6 +1337,11 @@ def request_token_by_one_time_link_code_response_v3(
 
         securities: [BEARER_AUTH]
 
+
+        additional_data: (additionalData) OPTIONAL str in form_data
+
+        is_transient: (isTransient) OPTIONAL bool in form_data
+
         client_id: (client_id) REQUIRED str in form_data
 
         one_time_link_code: (oneTimeLinkCode) REQUIRED str in form_data
@@ -1146,6 +1352,8 @@ def request_token_by_one_time_link_code_response_v3(
     request = RequestTokenByOneTimeLinkCodeResponseV3.create(
         client_id=client_id,
         one_time_link_code=one_time_link_code,
+        additional_data=additional_data,
+        is_transient=is_transient,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
@@ -1154,6 +1362,8 @@ def request_token_by_one_time_link_code_response_v3(
 async def request_token_by_one_time_link_code_response_v3_async(
     client_id: str,
     one_time_link_code: str,
+    additional_data: Optional[str] = None,
+    is_transient: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
@@ -1164,6 +1374,17 @@ async def request_token_by_one_time_link_code_response_v3_async(
     It require publisher ClientID
 
     It required a code which can be generated from /iam/v3/link/code/request.
+
+
+
+
+
+
+    This endpoint support creating transient token by utilizing isTransient param:
+
+    isTransient=true will generate a transient token with a short Time Expiration and without a refresh token
+
+    isTransient=false will consume the one-time code and generate the access token with a refresh token.
 
     Properties:
         url: /iam/v3/link/token/exchange
@@ -1178,6 +1399,11 @@ async def request_token_by_one_time_link_code_response_v3_async(
 
         securities: [BEARER_AUTH]
 
+
+        additional_data: (additionalData) OPTIONAL str in form_data
+
+        is_transient: (isTransient) OPTIONAL bool in form_data
+
         client_id: (client_id) REQUIRED str in form_data
 
         one_time_link_code: (oneTimeLinkCode) REQUIRED str in form_data
@@ -1188,6 +1414,8 @@ async def request_token_by_one_time_link_code_response_v3_async(
     request = RequestTokenByOneTimeLinkCodeResponseV3.create(
         client_id=client_id,
         one_time_link_code=one_time_link_code,
+        additional_data=additional_data,
+        is_transient=is_transient,
     )
     return await run_request_async(
         request, additional_headers=x_additional_headers, **kwargs
@@ -1235,8 +1463,8 @@ def user_authentication_v3(
         produces: ["application/json"]
 
         securities: [BASIC_AUTH]
-
         location query: code
+
 
         client_id: (client_id) OPTIONAL str in form_data
 
@@ -1305,8 +1533,8 @@ async def user_authentication_v3_async(
         produces: ["application/json"]
 
         securities: [BASIC_AUTH]
-
         location query: code
+
 
         client_id: (client_id) OPTIONAL str in form_data
 
@@ -1359,6 +1587,7 @@ def validate_one_time_linking_code_v3(
 
         securities: [BEARER_AUTH]
 
+
         one_time_link_code: (oneTimeLinkCode) REQUIRED str in form_data
 
     Responses:
@@ -1392,6 +1621,7 @@ async def validate_one_time_linking_code_v3_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         one_time_link_code: (oneTimeLinkCode) REQUIRED str in form_data
 

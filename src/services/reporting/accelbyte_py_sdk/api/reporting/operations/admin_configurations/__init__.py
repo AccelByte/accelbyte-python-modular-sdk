@@ -4,16 +4,18 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Reporting Service."""
 
-__version__ = "0.1.25"
+__version__ = "0.1.28"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
 # pylint: disable=line-too-long
 
 from .get import Get
-from .get import CategoryEnum as GetCategoryEnum
+from .get import (
+    CategoryEnum as GetCategoryEnum,
+)
 from .upsert import Upsert

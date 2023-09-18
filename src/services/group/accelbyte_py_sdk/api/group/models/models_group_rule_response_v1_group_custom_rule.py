@@ -4,9 +4,9 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model.j2
 
-# AccelByte Gaming Services Group Service (2.15.3)
+# AccelByte Gaming Services Group Service (2.18.1)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -27,7 +27,7 @@ import copy
 from collections.abc import MutableMapping
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import Model
+from accelbyte_py_sdk.core import Model
 
 
 class ModelsGroupRuleResponseV1GroupCustomRule(Model, MutableMapping):

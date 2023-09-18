@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: service-init.j2
 
 """Auto-generated package that contains models used by the Fleet Commander."""
 

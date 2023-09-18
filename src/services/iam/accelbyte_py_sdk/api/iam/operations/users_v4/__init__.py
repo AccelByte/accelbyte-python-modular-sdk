@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Iam Service."""
 
-__version__ = "5.31.0"
+__version__ = "7.0.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -53,6 +53,7 @@ from .public_generate_my_auth_17372a import PublicGenerateMyAuthenticatorKeyV4
 from .public_generate_my_back_da569a import PublicGenerateMyBackupCodesV4
 from .public_get_my_backup_codes_v4 import PublicGetMyBackupCodesV4
 from .public_get_my_enabled_f_a93b10 import PublicGetMyEnabledFactorsV4
+from .public_get_user_public__2645c4 import PublicGetUserPublicInfoByUserIdV4
 from .public_invite_user_v4 import PublicInviteUserV4
 from .public_make_factor_my_d_4f4f01 import PublicMakeFactorMyDefaultV4
 from .public_remove_trusted_d_78cd8f import PublicRemoveTrustedDeviceV4

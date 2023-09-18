@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,12 +23,12 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import deprecated
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import deprecated
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import Customization
 from ..models import ErrorEntity
@@ -93,6 +93,7 @@ def get_payment_customization(
 
         securities: [BEARER_AUTH]
 
+
         namespace: (namespace) REQUIRED str in path
 
         sandbox: (sandbox) OPTIONAL bool in query
@@ -146,6 +147,7 @@ async def get_payment_customization_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         namespace: (namespace) REQUIRED str in path
 
@@ -202,6 +204,7 @@ def get_payment_public_config(
 
         securities: [BEARER_AUTH]
 
+
         namespace: (namespace) REQUIRED str in path
 
         sandbox: (sandbox) OPTIONAL bool in query
@@ -254,6 +257,7 @@ async def get_payment_public_config_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         namespace: (namespace) REQUIRED str in path
 
@@ -309,6 +313,7 @@ def get_payment_tax_value(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         namespace: (namespace) REQUIRED str in path
 
@@ -366,6 +371,7 @@ async def get_payment_tax_value_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         namespace: (namespace) REQUIRED str in path
 
@@ -426,6 +432,7 @@ def pay(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         body: (body) OPTIONAL PaymentToken in body
 
@@ -490,6 +497,7 @@ async def pay_async(
 
         securities: [BEARER_AUTH]
 
+
         body: (body) OPTIONAL PaymentToken in body
 
         namespace: (namespace) REQUIRED str in path
@@ -552,6 +560,7 @@ def public_check_payment_order_paid_status(
 
         securities: [BEARER_AUTH]
 
+
         namespace: (namespace) REQUIRED str in path
 
         payment_order_no: (paymentOrderNo) REQUIRED str in path
@@ -598,6 +607,7 @@ async def public_check_payment_order_paid_status_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         namespace: (namespace) REQUIRED str in path
 
@@ -648,6 +658,7 @@ def public_get_payment_methods(
 
         securities: [BEARER_AUTH]
 
+
         namespace: (namespace) REQUIRED str in path
 
         payment_order_no: (paymentOrderNo) REQUIRED str in query
@@ -694,6 +705,7 @@ async def public_get_payment_methods_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         namespace: (namespace) REQUIRED str in path
 
@@ -743,6 +755,7 @@ def public_get_payment_url(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         body: (body) OPTIONAL PaymentUrlCreate in body
 
@@ -794,6 +807,7 @@ async def public_get_payment_url_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         body: (body) OPTIONAL PaymentUrlCreate in body
 
@@ -848,6 +862,7 @@ def public_get_qr_code(
 
         securities: [BEARER_AUTH]
 
+
         namespace: (namespace) REQUIRED str in path
 
         code: (code) REQUIRED str in query
@@ -892,6 +907,7 @@ async def public_get_qr_code_async(
         produces: ["image/png"]
 
         securities: [BEARER_AUTH]
+
 
         namespace: (namespace) REQUIRED str in path
 
@@ -939,6 +955,7 @@ def public_get_unpaid_payment_order(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         namespace: (namespace) REQUIRED str in path
 
@@ -988,6 +1005,7 @@ async def public_get_unpaid_payment_order_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1071,6 +1089,7 @@ def public_normalize_payment_return_url(
         produces: []
 
         securities: [BEARER_AUTH]
+
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1192,6 +1211,7 @@ async def public_normalize_payment_return_url_async(
         produces: []
 
         securities: [BEARER_AUTH]
+
 
         namespace: (namespace) REQUIRED str in path
 

@@ -4,16 +4,18 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Cloudsave Service."""
 
-__version__ = "3.6.4"
+__version__ = "3.11.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
 # pylint: disable=line-too-long
 
+from .admin_put_admin_game_re_99ac43 import AdminPutAdminGameRecordConcurrentHandlerV1
+from .admin_put_admin_player__e84e5d import AdminPutAdminPlayerRecordConcurrentHandlerV1
 from .admin_put_game_record_c_886b02 import AdminPutGameRecordConcurrentHandlerV1
 from .admin_put_player_public_1624a9 import (
     AdminPutPlayerPublicRecordConcurrentHandlerV1,

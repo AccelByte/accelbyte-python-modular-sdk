@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import LegalReadinessStatusResponse
 
@@ -40,8 +40,7 @@ def check_readiness(x_additional_headers: Optional[Dict[str, str]] = None, **kwa
 
     Readiness status defined as at least one legal basePolicy is present and having active basePolicy.
     Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:LEGAL", action=2 (READ)
+        * Required permission : resource="NAMESPACE:{namespace}:LEGAL", action=2 (READ)
 
     Required Permission(s):
         - NAMESPACE:{namespace}:LEGAL [READ]
@@ -74,8 +73,7 @@ async def check_readiness_async(
 
     Readiness status defined as at least one legal basePolicy is present and having active basePolicy.
     Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:LEGAL", action=2 (READ)
+        * Required permission : resource="NAMESPACE:{namespace}:LEGAL", action=2 (READ)
 
     Required Permission(s):
         - NAMESPACE:{namespace}:LEGAL [READ]

@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,22 +20,21 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (5.31.0)
+# AccelByte Gaming Services Iam Service (7.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
-from .....core import StrEnum
-from .....core import deprecated
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import StrEnum
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import OauthmodelErrorResponse
 from ...models import OauthmodelTokenResponse
 
 
-@deprecated
 class GrantTypeEnum(StrEnum):
     AUTHORIZATION_CODE = "authorization_code"
     CLIENT_CREDENTIALS = "client_credentials"
@@ -52,14 +51,11 @@ class TokenGrant(Operation):
     Endpoint migration guide
 
 
+              * Substitute endpoint: /iam/v3/oauth/token [POST]
 
 
-      * Substitute endpoint: /iam/v3/oauth/token [POST]
-
-
-      * Note: difference in V3 response:
+              * Note: difference in V3 response:
         1. format differenceï¼Pascal case => Camel case): permissions field from Action => action, Resource => resource
-
 
 
 
@@ -76,29 +72,28 @@ class TokenGrant(Operation):
 
 
 
-      1. Grant Type == `client_credentials`:
+              1. Grant Type == `client_credentials`:
 
         This endpoint will check the client credentials provided through Authorization header.
 
 
-      2. Grant Type == `password`:
+              2. Grant Type == `password`:
 
         The grant type to use for authenticating a user, whether it's by email / username and password combination
     or through platform.
 
 
-      3. Grant Type == `refresh_token`:
+              3. Grant Type == `refresh_token`:
 
         Used to get a new access token for a valid refresh token.
 
 
-      4. Grant Type == `authorization_code`:
+              4. Grant Type == `authorization_code`:
 
         It generates the user token by given the authorization
     code which generated in "/authorize" API response. It should also pass
     in the redirect_uri, which should be the same as generating the
     authorization code request.
-
 
 
 
@@ -111,22 +106,20 @@ class TokenGrant(Operation):
 
 
 
-      * steam - use `platform:steam` as the username and use the authentication ticket obtained
+              * steam - use `platform:steam` as the username and use the authentication ticket obtained
     from Steam through the Steam SDK as the password.
 
 
-      * ps4 - use `platform:ps4` as the username and use the authorization code
+              * ps4 - use `platform:ps4` as the username and use the authorization code
     obtained from the PlayStation Network through a player PS4 unit as the password.
 
 
-      * live - use `platform:live` as the username and use token obtained from
+              * live - use `platform:live` as the username and use token obtained from
     Xbox Secure Token Service (XSTS) as the password.
 
 
-      * oculus - use `platform:oculus` as the username and use the `user_id:nonce`
+              * oculus - use `platform:oculus` as the username and use the `user_id:nonce`
     as password obtained from Oculus through the Oculus SDK.
-
-
 
 
 
@@ -149,9 +142,7 @@ class TokenGrant(Operation):
 
 
 
-
-
-      *
+              *
 
 
     namespace. It is the namespace the token was generated from.
@@ -160,7 +151,7 @@ class TokenGrant(Operation):
 
 
 
-      *
+              *
 
 
     display_name. The display name of the sub. It is empty if the token is generated from the client credential
@@ -169,7 +160,7 @@ class TokenGrant(Operation):
 
 
 
-      *
+              *
 
 
     roles. The subâs roles. It is empty if the token is generated from the client credential
@@ -178,7 +169,7 @@ class TokenGrant(Operation):
 
 
 
-      *
+              *
 
 
     namespace_roles. The subâs roles scoped to namespace. Improvement from roles, which make the role scoped to specific namespace instead of global to publisher namespace
@@ -187,7 +178,7 @@ class TokenGrant(Operation):
 
 
 
-      *
+              *
 
 
     permissions. The sub or audâ permissions
@@ -196,7 +187,7 @@ class TokenGrant(Operation):
 
 
 
-      *
+              *
 
 
     bans. The subâs list of bans. It is used by the IAM client for validating the token.
@@ -205,7 +196,7 @@ class TokenGrant(Operation):
 
 
 
-      *
+              *
 
 
     jflgs. It stands for Justice Flags. It is a special flag used for storing additional status information regarding the sub. It is implemented as a bit mask. Following explains what each bit represents:
@@ -213,22 +204,22 @@ class TokenGrant(Operation):
 
 
 
-        * 1: Email Address Verified
+                * 1: Email Address Verified
 
 
 
-        * 2: Phone Number Verified
+                * 2: Phone Number Verified
 
 
 
-        * 4: Anonymous
+                * 4: Anonymous
 
 
 
 
 
 
-      *
+              *
 
 
     aud. The aud is the client ID.
@@ -237,7 +228,7 @@ class TokenGrant(Operation):
 
 
 
-      *
+              *
 
 
     iat. The time the token issues at. It is in Epoch time format
@@ -246,7 +237,7 @@ class TokenGrant(Operation):
 
 
 
-      *
+              *
 
 
     exp. The time the token expires. It is in Epoch time format
@@ -255,11 +246,10 @@ class TokenGrant(Operation):
 
 
 
-      *
+              *
 
 
     sub. The UserID. The sub is omitted if the token is generated from client credential
-
 
 
 

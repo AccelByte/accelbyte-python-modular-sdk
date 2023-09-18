@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Session Service (2.7.3)
+# AccelByte Gaming Services Session Service (3.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import ApimodelsPartySessionResponse
 from ...models import ApimodelsUpdatePartyRequest
@@ -43,6 +43,11 @@ class PublicUpdateParty(Operation):
     To update only specified fields, please use following endpoint:
     method : PATCH
     API : /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}
+
+    Reserved attributes key:
+    1. preference: used to store preference of the leader and it is non-replaceable to keep the initial behavior of
+    the session regardless the leader changes.
+    2. NATIVESESSIONTITLE: used for session sync, to define name of session displayed on PlayStation system UI.
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/parties/{partyId}

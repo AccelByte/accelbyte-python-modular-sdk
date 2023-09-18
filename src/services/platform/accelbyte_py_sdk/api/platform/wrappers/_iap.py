@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import AppleIAPConfigInfo
 from ..models import AppleIAPConfigRequest
@@ -47,11 +47,14 @@ from ..models import IAPItemConfigUpdate
 from ..models import IAPItemMappingInfo
 from ..models import IAPOrderPagingSlicedResult
 from ..models import MockIAPReceipt
+from ..models import OculusIAPConfigInfo
+from ..models import OculusIAPConfigRequest
+from ..models import OculusReconcileResult
 from ..models import PlayStationIAPConfigInfo
+from ..models import PlaystationIAPConfigRequest
 from ..models import PlayStationMultiServiceLabelsReconcileRequest
 from ..models import PlayStationReconcileRequest
 from ..models import PlayStationReconcileResult
-from ..models import PlaystationIAPConfigRequest
 from ..models import SteamIAPConfig
 from ..models import SteamIAPConfigInfo
 from ..models import SteamIAPConfigRequest
@@ -70,6 +73,7 @@ from ..operations.iap import DeleteAppleIAPConfig
 from ..operations.iap import DeleteEpicGamesIAPConfig
 from ..operations.iap import DeleteGoogleIAPConfig
 from ..operations.iap import DeleteIAPItemConfig
+from ..operations.iap import DeleteOculusIAPConfig
 from ..operations.iap import DeletePlaystationIAPConfig
 from ..operations.iap import DeleteSteamIAPConfig
 from ..operations.iap import DeleteTwitchIAPConfig
@@ -80,6 +84,7 @@ from ..operations.iap import GetGoogleIAPConfig
 from ..operations.iap import GetIAPItemConfig
 from ..operations.iap import GetIAPItemMapping
 from ..operations.iap import GetIAPItemMappingPlatformEnum
+from ..operations.iap import GetOculusIAPConfig
 from ..operations.iap import GetPlayStationIAPConfig
 from ..operations.iap import GetSteamIAPConfig
 from ..operations.iap import GetTwitchIAPConfig
@@ -98,6 +103,7 @@ from ..operations.iap import (
 from ..operations.iap import QueryUserIAPOrders
 from ..operations.iap import QueryUserIAPOrdersStatusEnum, QueryUserIAPOrdersTypeEnum
 from ..operations.iap import SyncEpicGamesInventory
+from ..operations.iap import SyncOculusConsumableEntitlements
 from ..operations.iap import SyncSteamInventory
 from ..operations.iap import SyncTwitchDropsEntitlement
 from ..operations.iap import SyncTwitchDropsEntitlement1
@@ -107,6 +113,7 @@ from ..operations.iap import UpdateEpicGamesIAPConfig
 from ..operations.iap import UpdateGoogleIAPConfig
 from ..operations.iap import UpdateGoogleP12File
 from ..operations.iap import UpdateIAPItemConfig
+from ..operations.iap import UpdateOculusIAPConfig
 from ..operations.iap import UpdatePlaystationIAPConfig
 from ..operations.iap import UpdateSteamIAPConfig
 from ..operations.iap import UpdateTwitchIAPConfig
@@ -114,6 +121,10 @@ from ..operations.iap import UpdateXblBPCertFile
 from ..operations.iap import UpdateXblIAPConfig
 from ..models import EpicGamesReconcileResultStatusEnum
 from ..models import MockIAPReceiptItemIdentityTypeEnum, MockIAPReceiptTypeEnum
+from ..models import (
+    OculusReconcileResultIapOrderStatusEnum,
+    OculusReconcileResultItemIdentityTypeEnum,
+)
 from ..models import PlayStationReconcileResultStatusEnum
 from ..models import TwitchSyncResultIapOrderStatusEnum
 from ..models import XblReconcileResultIapOrderStatusEnum
@@ -472,6 +483,96 @@ async def delete_iap_item_config_async(
         if error:
             return None, error
     request = DeleteIAPItemConfig.create(
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(DeleteOculusIAPConfig)
+def delete_oculus_iap_config(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Delete oculus iap config (deleteOculusIAPConfig)
+
+    Delete oculus iap config.
+    Other detail info:
+
+      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=8 (DELETE)
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:IAP:CONFIG [DELETE]
+
+    Properties:
+        url: /platform/admin/namespaces/{namespace}/iap/config/oculus
+
+        method: DELETE
+
+        tags: ["IAP"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        204: No Content - (Delete successfully)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = DeleteOculusIAPConfig.create(
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(DeleteOculusIAPConfig)
+async def delete_oculus_iap_config_async(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Delete oculus iap config (deleteOculusIAPConfig)
+
+    Delete oculus iap config.
+    Other detail info:
+
+      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=8 (DELETE)
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:IAP:CONFIG [DELETE]
+
+    Properties:
+        url: /platform/admin/namespaces/{namespace}/iap/config/oculus
+
+        method: DELETE
+
+        tags: ["IAP"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        204: No Content - (Delete successfully)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = DeleteOculusIAPConfig.create(
         namespace=namespace,
     )
     return await run_request_async(
@@ -1294,6 +1395,98 @@ async def get_iap_item_mapping_async(
             return None, error
     request = GetIAPItemMapping.create(
         platform=platform,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(GetOculusIAPConfig)
+def get_oculus_iap_config(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get oculus iap config (getOculusIAPConfig)
+
+    Get oculus iap config.
+    Other detail info:
+
+      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=2 (READ)
+      *  Returns : steam iap config
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:IAP:CONFIG [READ]
+
+    Properties:
+        url: /platform/admin/namespaces/{namespace}/iap/config/oculus
+
+        method: GET
+
+        tags: ["IAP"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - OculusIAPConfigInfo (successful operation)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GetOculusIAPConfig.create(
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(GetOculusIAPConfig)
+async def get_oculus_iap_config_async(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get oculus iap config (getOculusIAPConfig)
+
+    Get oculus iap config.
+    Other detail info:
+
+      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=2 (READ)
+      *  Returns : steam iap config
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:IAP:CONFIG [READ]
+
+    Properties:
+        url: /platform/admin/namespaces/{namespace}/iap/config/oculus
+
+        method: GET
+
+        tags: ["IAP"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - OculusIAPConfigInfo (successful operation)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GetOculusIAPConfig.create(
         namespace=namespace,
     )
     return await run_request_async(
@@ -2781,6 +2974,112 @@ async def sync_epic_games_inventory_async(
     )
 
 
+@same_doc_as(SyncOculusConsumableEntitlements)
+def sync_oculus_consumable_entitlements(
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Sync Oculus entitlements. (syncOculusConsumableEntitlements)
+
+    Sync Oculus entitlements.
+
+    Other detail info:
+
+      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:IAP", action=4 (UPDATE)
+      *  Returns :
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:USER:{userId}:IAP [UPDATE]
+
+    Properties:
+        url: /platform/public/namespaces/{namespace}/users/{userId}/iap/oculus/sync
+
+        method: PUT
+
+        tags: ["IAP"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+    Responses:
+        200: OK - List[OculusReconcileResult] (successful operation)
+
+        400: Bad Request - ErrorEntity (39126: User id [{}] in namespace [{}] doesn't link platform [{}])
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = SyncOculusConsumableEntitlements.create(
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(SyncOculusConsumableEntitlements)
+async def sync_oculus_consumable_entitlements_async(
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Sync Oculus entitlements. (syncOculusConsumableEntitlements)
+
+    Sync Oculus entitlements.
+
+    Other detail info:
+
+      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:IAP", action=4 (UPDATE)
+      *  Returns :
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:USER:{userId}:IAP [UPDATE]
+
+    Properties:
+        url: /platform/public/namespaces/{namespace}/users/{userId}/iap/oculus/sync
+
+        method: PUT
+
+        tags: ["IAP"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+    Responses:
+        200: OK - List[OculusReconcileResult] (successful operation)
+
+        400: Bad Request - ErrorEntity (39126: User id [{}] in namespace [{}] doesn't link platform [{}])
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = SyncOculusConsumableEntitlements.create(
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(SyncSteamInventory)
 def sync_steam_inventory(
     user_id: str,
@@ -3233,7 +3532,6 @@ def update_apple_iap_config(
     """Update apple iap config (updateAppleIAPConfig)
 
     Update apple iap config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
       *  Returns : updated apple iap config
 
@@ -3281,7 +3579,6 @@ async def update_apple_iap_config_async(
     """Update apple iap config (updateAppleIAPConfig)
 
     Update apple iap config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
       *  Returns : updated apple iap config
 
@@ -3331,7 +3628,6 @@ def update_epic_games_iap_config(
     """Update epic games iap config (updateEpicGamesIAPConfig)
 
     Update epic games iap config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
       *  Returns : updated epic games iap config
 
@@ -3379,7 +3675,6 @@ async def update_epic_games_iap_config_async(
     """Update epic games iap config (updateEpicGamesIAPConfig)
 
     Update epic games iap config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
       *  Returns : updated epic games iap config
 
@@ -3429,7 +3724,6 @@ def update_google_iap_config(
     """Update google iap config (updateGoogleIAPConfig)
 
     Update google iap config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
       *  Returns : updated google iap config
 
@@ -3477,7 +3771,6 @@ async def update_google_iap_config_async(
     """Update google iap config (updateGoogleIAPConfig)
 
     Update google iap config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
       *  Returns : updated google iap config
 
@@ -3627,7 +3920,6 @@ def update_iap_item_config(
     """Update iap item config (updateIAPItemConfig)
 
     Update iap item config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
       *  Returns : updated iap item config
 
@@ -3679,7 +3971,6 @@ async def update_iap_item_config_async(
     """Update iap item config (updateIAPItemConfig)
 
     Update iap item config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
       *  Returns : updated iap item config
 
@@ -3723,6 +4014,102 @@ async def update_iap_item_config_async(
     )
 
 
+@same_doc_as(UpdateOculusIAPConfig)
+def update_oculus_iap_config(
+    body: Optional[OculusIAPConfigRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Update oculus iap config (updateOculusIAPConfig)
+
+    Update oculus iap config. Other detail info:
+      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
+      *  Returns : updated steam iap config
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:IAP:CONFIG [UPDATE]
+
+    Properties:
+        url: /platform/admin/namespaces/{namespace}/iap/config/oculus
+
+        method: PUT
+
+        tags: ["IAP"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        body: (body) OPTIONAL OculusIAPConfigRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - OculusIAPConfigInfo (successful operation)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = UpdateOculusIAPConfig.create(
+        body=body,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(UpdateOculusIAPConfig)
+async def update_oculus_iap_config_async(
+    body: Optional[OculusIAPConfigRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Update oculus iap config (updateOculusIAPConfig)
+
+    Update oculus iap config. Other detail info:
+      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
+      *  Returns : updated steam iap config
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:IAP:CONFIG [UPDATE]
+
+    Properties:
+        url: /platform/admin/namespaces/{namespace}/iap/config/oculus
+
+        method: PUT
+
+        tags: ["IAP"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        body: (body) OPTIONAL OculusIAPConfigRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - OculusIAPConfigInfo (successful operation)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = UpdateOculusIAPConfig.create(
+        body=body,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(UpdatePlaystationIAPConfig)
 def update_playstation_iap_config(
     body: Optional[PlaystationIAPConfigRequest] = None,
@@ -3733,7 +4120,6 @@ def update_playstation_iap_config(
     """Update playstation iap config (updatePlaystationIAPConfig)
 
     Update playstation iap config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
       *  Returns : updated playstation iap config
 
@@ -3781,7 +4167,6 @@ async def update_playstation_iap_config_async(
     """Update playstation iap config (updatePlaystationIAPConfig)
 
     Update playstation iap config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
       *  Returns : updated playstation iap config
 
@@ -3831,7 +4216,6 @@ def update_steam_iap_config(
     """Update steam iap config (updateSteamIAPConfig)
 
     Update steam iap config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
       *  Returns : updated steam iap config
 
@@ -3857,6 +4241,8 @@ def update_steam_iap_config(
 
     Responses:
         200: OK - SteamIAPConfigInfo (successful operation)
+
+        400: Bad Request - ErrorEntity (39128: Steam publisher key is invalid | 39129: Steam app id is invalid)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3879,7 +4265,6 @@ async def update_steam_iap_config_async(
     """Update steam iap config (updateSteamIAPConfig)
 
     Update steam iap config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
       *  Returns : updated steam iap config
 
@@ -3905,6 +4290,8 @@ async def update_steam_iap_config_async(
 
     Responses:
         200: OK - SteamIAPConfigInfo (successful operation)
+
+        400: Bad Request - ErrorEntity (39128: Steam publisher key is invalid | 39129: Steam app id is invalid)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3929,7 +4316,6 @@ def update_twitch_iap_config(
     """Update twitch iap config (updateTwitchIAPConfig)
 
     Update twitch iap config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
       *  Returns : updated twitch iap config
 
@@ -3977,7 +4363,6 @@ async def update_twitch_iap_config_async(
     """Update twitch iap config (updateTwitchIAPConfig)
 
     Update twitch iap config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
       *  Returns : updated twitch iap config
 
@@ -4135,7 +4520,6 @@ def update_xbl_iap_config(
     """Update xbl iap config (updateXblIAPConfig)
 
     Update xbl iap config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
       *  Returns : updated xbl iap config
 
@@ -4183,7 +4567,6 @@ async def update_xbl_iap_config_async(
     """Update xbl iap config (updateXblIAPConfig)
 
     Update xbl iap config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
       *  Returns : updated xbl iap config
 

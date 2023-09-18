@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,15 +20,15 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (5.31.0)
+# AccelByte Gaming Services Iam Service (7.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
-from .....core import StrEnum
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import StrEnum
 
 from ...models import OauthmodelErrorResponse
 from ...models import OauthmodelTokenWithDeviceCookieResponseV3
@@ -48,7 +48,7 @@ class TokenGrantV3(Operation):
 
 
 
-      1. Grant Type == `authorization_code`:
+                      1. Grant Type == `authorization_code`:
 
         It generates the user token by given the authorization
     code which generated in "/iam/v3/authenticate" API response. It should also pass
@@ -57,23 +57,22 @@ class TokenGrantV3(Operation):
 
 
 
-      2. Grant Type == `password`:
+                      2. Grant Type == `password`:
 
         The grant type to use for authenticating a user, whether it's by email / username and password combination
     or through platform.
 
 
 
-      3. Grant Type == `refresh_token`:
+                      3. Grant Type == `refresh_token`:
 
         Used to get a new access token for a valid refresh token.
 
 
 
-      4. Grant Type == `client_credentials`:
+                      4. Grant Type == `client_credentials`:
 
         It generates a token by checking the client credentials provided through Authorization header.
-
 
 
 
@@ -88,9 +87,7 @@ class TokenGrantV3(Operation):
 
 
 
-
-
-      *
+                      *
 
 
     namespace. It is the namespace the token was generated from.
@@ -99,7 +96,7 @@ class TokenGrantV3(Operation):
 
 
 
-      *
+                      *
 
 
     display_name. The display name of the sub. It is empty if the token is generated from the client credential
@@ -108,7 +105,7 @@ class TokenGrantV3(Operation):
 
 
 
-      *
+                      *
 
 
     roles. The subâs roles. It is empty if the token is generated from the client credential
@@ -117,7 +114,7 @@ class TokenGrantV3(Operation):
 
 
 
-      *
+                      *
 
 
     namespace_roles. The subâs roles scoped to namespace. Improvement from roles, which make the role scoped to specific namespace instead of global to publisher namespace
@@ -126,7 +123,7 @@ class TokenGrantV3(Operation):
 
 
 
-      *
+                      *
 
 
     permissions. The sub or audâ permissions
@@ -135,7 +132,7 @@ class TokenGrantV3(Operation):
 
 
 
-      *
+                      *
 
 
     bans. The subâs list of bans. It is used by the IAM client for validating the token.
@@ -144,7 +141,7 @@ class TokenGrantV3(Operation):
 
 
 
-      *
+                      *
 
 
     jflgs. It stands for Justice Flags. It is a special flag used for storing additional status information regarding the sub. It is implemented as a bit mask. Following explains what each bit represents:
@@ -152,26 +149,26 @@ class TokenGrantV3(Operation):
 
 
 
-        * 1: Email Address Verified
+                        * 1: Email Address Verified
 
 
 
-        * 2: Phone Number Verified
+                        * 2: Phone Number Verified
 
 
 
-        * 4: Anonymous
+                        * 4: Anonymous
 
 
 
-        * 8: Suspicious Login
+                        * 8: Suspicious Login
 
 
 
 
 
 
-      *
+                      *
 
 
     aud. The aud is the targeted resource server.
@@ -180,7 +177,7 @@ class TokenGrantV3(Operation):
 
 
 
-      *
+                      *
 
 
     iat. The time the token issues at. It is in Epoch time format
@@ -189,7 +186,7 @@ class TokenGrantV3(Operation):
 
 
 
-      *
+                      *
 
 
     exp. The time the token expires. It is in Epoch time format
@@ -198,7 +195,7 @@ class TokenGrantV3(Operation):
 
 
 
-      *
+                      *
 
 
     client_id. The UserID. The sub is omitted if the token is generated from client credential
@@ -207,11 +204,10 @@ class TokenGrantV3(Operation):
 
 
 
-      *
+                      *
 
 
     scope. The scope of the access request, expressed as a list of space-delimited, case-sensitive strings
-
 
 
 
@@ -274,6 +270,16 @@ class TokenGrantV3(Operation):
 
 
 
+    ## Response note
+
+
+
+
+    If it is a user token request and user hasn't accepted required legal policy, the field `is_comply` will be false in response and responsed token will have no permission.
+
+
+
+
     action code: 10703
 
     Properties:
@@ -292,6 +298,8 @@ class TokenGrantV3(Operation):
         auth_trust_id: (Auth-Trust-Id) OPTIONAL Union[str, HeaderStr] in header
 
         device_id: (device_id) OPTIONAL Union[str, HeaderStr] in header
+
+        additional_data: (additionalData) OPTIONAL str in form_data
 
         client_id: (client_id) OPTIONAL str in form_data
 
@@ -334,6 +342,7 @@ class TokenGrantV3(Operation):
 
     auth_trust_id: Union[str, HeaderStr]  # OPTIONAL in [header]
     device_id: Union[str, HeaderStr]  # OPTIONAL in [header]
+    additional_data: str  # OPTIONAL in [form_data]
     client_id: str  # OPTIONAL in [form_data]
     code: str  # OPTIONAL in [form_data]
     code_verifier: str  # OPTIONAL in [form_data]
@@ -396,6 +405,8 @@ class TokenGrantV3(Operation):
 
     def get_form_data_params(self) -> dict:
         result = {}
+        if hasattr(self, "additional_data"):
+            result["additionalData"] = self.additional_data
         if hasattr(self, "client_id"):
             result["client_id"] = self.client_id
         if hasattr(self, "code"):
@@ -430,6 +441,10 @@ class TokenGrantV3(Operation):
 
     def with_device_id(self, value: Union[str, HeaderStr]) -> TokenGrantV3:
         self.device_id = value
+        return self
+
+    def with_additional_data(self, value: str) -> TokenGrantV3:
+        self.additional_data = value
         return self
 
     def with_client_id(self, value: str) -> TokenGrantV3:
@@ -482,6 +497,10 @@ class TokenGrantV3(Operation):
             result["device_id"] = str(self.device_id)
         elif include_empty:
             result["device_id"] = ""
+        if hasattr(self, "additional_data") and self.additional_data:
+            result["additionalData"] = str(self.additional_data)
+        elif include_empty:
+            result["additionalData"] = ""
         if hasattr(self, "client_id") and self.client_id:
             result["client_id"] = str(self.client_id)
         elif include_empty:
@@ -584,6 +603,7 @@ class TokenGrantV3(Operation):
         grant_type: Union[str, GrantTypeEnum],
         auth_trust_id: Optional[Union[str, HeaderStr]] = None,
         device_id: Optional[Union[str, HeaderStr]] = None,
+        additional_data: Optional[str] = None,
         client_id: Optional[str] = None,
         code: Optional[str] = None,
         code_verifier: Optional[str] = None,
@@ -600,6 +620,8 @@ class TokenGrantV3(Operation):
             instance.auth_trust_id = auth_trust_id
         if device_id is not None:
             instance.device_id = device_id
+        if additional_data is not None:
+            instance.additional_data = additional_data
         if client_id is not None:
             instance.client_id = client_id
         if code is not None:
@@ -629,6 +651,10 @@ class TokenGrantV3(Operation):
             instance.device_id = str(dict_["device_id"])
         elif include_empty:
             instance.device_id = ""
+        if "additionalData" in dict_ and dict_["additionalData"] is not None:
+            instance.additional_data = str(dict_["additionalData"])
+        elif include_empty:
+            instance.additional_data = ""
         if "client_id" in dict_ and dict_["client_id"] is not None:
             instance.client_id = str(dict_["client_id"])
         elif include_empty:
@@ -672,6 +698,7 @@ class TokenGrantV3(Operation):
         return {
             "Auth-Trust-Id": "auth_trust_id",
             "device_id": "device_id",
+            "additionalData": "additional_data",
             "client_id": "client_id",
             "code": "code",
             "code_verifier": "code_verifier",
@@ -688,6 +715,7 @@ class TokenGrantV3(Operation):
         return {
             "Auth-Trust-Id": False,
             "device_id": False,
+            "additionalData": False,
             "client_id": False,
             "code": False,
             "code_verifier": False,

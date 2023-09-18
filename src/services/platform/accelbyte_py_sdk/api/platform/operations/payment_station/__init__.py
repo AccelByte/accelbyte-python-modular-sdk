@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.27.0"
+__version__ = "4.33.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -27,7 +27,9 @@ from .get_payment_tax_value import (
     PaymentProviderEnum as GetPaymentTaxValuePaymentProviderEnum,
 )
 from .pay import Pay
-from .pay import PaymentProviderEnum as PayPaymentProviderEnum
+from .pay import (
+    PaymentProviderEnum as PayPaymentProviderEnum,
+)
 from .public_check_payment_or_dec069 import PublicCheckPaymentOrderPaidStatus
 from .public_get_payment_methods import PublicGetPaymentMethods
 from .public_get_payment_url import PublicGetPaymentUrl

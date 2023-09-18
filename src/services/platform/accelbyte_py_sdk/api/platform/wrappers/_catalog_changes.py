@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import CatalogChangePagingSlicedResult
 from ..models import CatalogChangeStatistics
@@ -439,7 +439,7 @@ def query_changes(
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     selected: Optional[bool] = None,
-    sort_by: Optional[List[Union[str, QueryChangesSortByEnum]]] = None,
+    sort_by: Optional[Union[List[str], List[QueryChangesSortByEnum]]] = None,
     status: Optional[Union[str, QueryChangesStatusEnum]] = None,
     type_: Optional[Union[str, QueryChangesTypeEnum]] = None,
     updated_at_end: Optional[str] = None,
@@ -489,7 +489,7 @@ def query_changes(
 
         selected: (selected) OPTIONAL bool in query
 
-        sort_by: (sortBy) OPTIONAL List[Union[str, SortByEnum]] in query
+        sort_by: (sortBy) OPTIONAL Union[List[str], List[SortByEnum]] in query
 
         status: (status) OPTIONAL Union[str, StatusEnum] in query
 
@@ -533,7 +533,7 @@ async def query_changes_async(
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     selected: Optional[bool] = None,
-    sort_by: Optional[List[Union[str, QueryChangesSortByEnum]]] = None,
+    sort_by: Optional[Union[List[str], List[QueryChangesSortByEnum]]] = None,
     status: Optional[Union[str, QueryChangesStatusEnum]] = None,
     type_: Optional[Union[str, QueryChangesTypeEnum]] = None,
     updated_at_end: Optional[str] = None,
@@ -583,7 +583,7 @@ async def query_changes_async(
 
         selected: (selected) OPTIONAL bool in query
 
-        sort_by: (sortBy) OPTIONAL List[Union[str, SortByEnum]] in query
+        sort_by: (sortBy) OPTIONAL Union[List[str], List[SortByEnum]] in query
 
         status: (status) OPTIONAL Union[str, StatusEnum] in query
 
@@ -762,7 +762,7 @@ def select_record(
     Responses:
         204: No Content - (No Content)
 
-        404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30041: Changelog [{changelogId}] doest not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30041: Changelog [{changelogId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -816,7 +816,7 @@ async def select_record_async(
     Responses:
         204: No Content - (No Content)
 
-        404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30041: Changelog [{changelogId}] doest not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30041: Changelog [{changelogId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -974,7 +974,7 @@ def unselect_record(
     Responses:
         204: No Content - (No Content)
 
-        404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30041: Changelog [{changelogId}] doest not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30041: Changelog [{changelogId}] does not exist in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (30071: Can't unselect item [{itemId}] when the item which is bound to is already selected in namespace [{namespace}] | 30072: Can't unselect category [{categoryPath}] when item with this category is already selected in namespace [{namespace}] | 30073: Can't unselect store change | 30074: Can't unselect subscription's content [{itemId}] when subscription is already selected in namespace [{namespace}])
     """
@@ -1030,7 +1030,7 @@ async def unselect_record_async(
     Responses:
         204: No Content - (No Content)
 
-        404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30041: Changelog [{changelogId}] doest not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30041: Changelog [{changelogId}] does not exist in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (30071: Can't unselect item [{itemId}] when the item which is bound to is already selected in namespace [{namespace}] | 30072: Can't unselect category [{categoryPath}] when item with this category is already selected in namespace [{namespace}] | 30073: Can't unselect store change | 30074: Can't unselect subscription's content [{itemId}] when subscription is already selected in namespace [{namespace}])
     """

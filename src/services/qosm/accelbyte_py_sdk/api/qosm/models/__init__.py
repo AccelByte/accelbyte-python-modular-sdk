@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model-init.j2
 
-"""Auto-generated package that contains models used by the AccelByte Gaming Services Qo S Manager Service."""
+"""Auto-generated package that contains models used by the AccelByte Gaming Services Qos Manager Service."""
 
-__version__ = "1.18.0"
+__version__ = "1.18.3"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 

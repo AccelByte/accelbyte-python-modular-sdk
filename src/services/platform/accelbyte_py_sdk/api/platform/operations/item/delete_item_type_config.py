@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.33.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import ErrorEntity
 
@@ -36,7 +36,6 @@ class DeleteItemTypeConfig(Operation):
     """Delete an item type config (deleteItemTypeConfig)
 
     This API is used to delete an item type config permanently.Other detail info:
-
       * Required permission : resource="ADMIN:ITEM:CONFIG", action=8 (DELETE)
 
     Required Permission(s):

@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,12 +23,12 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import deprecated
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import deprecated
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ErrorEntity
 from ..models import ExportStoreRequest
@@ -846,7 +846,7 @@ def get_published_store_backup(
     Responses:
         200: OK - StoreBackupInfo (successful operation)
 
-        404: Not Found - ErrorEntity (30142: Published store does not exist in namespace [{namespace}] | 30143: Published store [{storeId}] backup doest not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (30142: Published store does not exist in namespace [{namespace}] | 30143: Published store [{storeId}] backup does not exist in namespace [{namespace}])
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -894,7 +894,7 @@ async def get_published_store_backup_async(
     Responses:
         200: OK - StoreBackupInfo (successful operation)
 
-        404: Not Found - ErrorEntity (30142: Published store does not exist in namespace [{namespace}] | 30143: Published store [{storeId}] backup doest not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (30142: Published store does not exist in namespace [{namespace}] | 30143: Published store [{storeId}] backup does not exist in namespace [{namespace}])
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1138,6 +1138,7 @@ async def import_store_async(
 def import_store_1(
     file: Optional[Any] = None,
     store_id: Optional[str] = None,
+    strict_mode: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1172,6 +1173,8 @@ def import_store_1(
 
         store_id: (storeId) OPTIONAL str in query
 
+        strict_mode: (strictMode) OPTIONAL bool in query
+
     Responses:
         200: OK - ImportStoreResult (successful operation)
 
@@ -1186,6 +1189,7 @@ def import_store_1(
     request = ImportStore1.create(
         file=file,
         store_id=store_id,
+        strict_mode=strict_mode,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -1195,6 +1199,7 @@ def import_store_1(
 async def import_store_1_async(
     file: Optional[Any] = None,
     store_id: Optional[str] = None,
+    strict_mode: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1229,6 +1234,8 @@ async def import_store_1_async(
 
         store_id: (storeId) OPTIONAL str in query
 
+        strict_mode: (strictMode) OPTIONAL bool in query
+
     Responses:
         200: OK - ImportStoreResult (successful operation)
 
@@ -1243,6 +1250,7 @@ async def import_store_1_async(
     request = ImportStore1.create(
         file=file,
         store_id=store_id,
+        strict_mode=strict_mode,
         namespace=namespace,
     )
     return await run_request_async(
@@ -1373,6 +1381,7 @@ def public_list_stores(
 
         securities: [BEARER_AUTH]
 
+
         namespace: (namespace) REQUIRED str in path
 
     Responses:
@@ -1416,6 +1425,7 @@ async def public_list_stores_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1470,7 +1480,7 @@ def rollback_published_store(
     Responses:
         200: OK - StoreInfo (successful operation)
 
-        404: Not Found - ErrorEntity (30142: Published store does not exist in namespace [{namespace}] | 30143: Published store [{storeId}] backup doest not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (30142: Published store does not exist in namespace [{namespace}] | 30143: Published store [{storeId}] backup does not exist in namespace [{namespace}])
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1518,7 +1528,7 @@ async def rollback_published_store_async(
     Responses:
         200: OK - StoreInfo (successful operation)
 
-        404: Not Found - ErrorEntity (30142: Published store does not exist in namespace [{namespace}] | 30143: Published store [{storeId}] backup doest not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (30142: Published store does not exist in namespace [{namespace}] | 30143: Published store [{storeId}] backup does not exist in namespace [{namespace}])
     """
     if namespace is None:
         namespace, error = get_services_namespace()

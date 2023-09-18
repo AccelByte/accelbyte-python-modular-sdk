@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ModelsArchiveLeaderboardReq
 from ..models import ModelsArchiveLeaderboardSignedURLResponse
@@ -705,8 +705,6 @@ def delete_user_rankings_admin_v1(
     Required permission: ADMIN:NAMESPACE:{namespace}:LEADERBOARD:USER [DELETE]
 
     Remove entry with provided userId from leaderboard.
-    If leaderboard with given leaderboard code not found, it will return http status not found (404).
-    If the leaderboard is found and no entry found in it, it will still return success (204)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:LEADERBOARD:USER [DELETE]
@@ -767,8 +765,6 @@ async def delete_user_rankings_admin_v1_async(
     Required permission: ADMIN:NAMESPACE:{namespace}:LEADERBOARD:USER [DELETE]
 
     Remove entry with provided userId from leaderboard.
-    If leaderboard with given leaderboard code not found, it will return http status not found (404).
-    If the leaderboard is found and no entry found in it, it will still return success (204)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:LEADERBOARD:USER [DELETE]
@@ -1318,6 +1314,7 @@ def get_current_month_leaderboard_ranking_admin_v1(
     leaderboard_code: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1355,6 +1352,8 @@ def get_current_month_leaderboard_ranking_admin_v1(
 
         offset: (offset) OPTIONAL int in query
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsGetLeaderboardRankingResp (OK)
 
@@ -1376,6 +1375,7 @@ def get_current_month_leaderboard_ranking_admin_v1(
         leaderboard_code=leaderboard_code,
         limit=limit,
         offset=offset,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -1386,6 +1386,7 @@ async def get_current_month_leaderboard_ranking_admin_v1_async(
     leaderboard_code: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1423,6 +1424,8 @@ async def get_current_month_leaderboard_ranking_admin_v1_async(
 
         offset: (offset) OPTIONAL int in query
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsGetLeaderboardRankingResp (OK)
 
@@ -1444,6 +1447,7 @@ async def get_current_month_leaderboard_ranking_admin_v1_async(
         leaderboard_code=leaderboard_code,
         limit=limit,
         offset=offset,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return await run_request_async(
@@ -1456,6 +1460,7 @@ def get_current_month_leaderboard_ranking_public_v1(
     leaderboard_code: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1485,6 +1490,8 @@ def get_current_month_leaderboard_ranking_public_v1(
 
         offset: (offset) OPTIONAL int in query
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsGetLeaderboardRankingResp (OK)
 
@@ -1502,6 +1509,7 @@ def get_current_month_leaderboard_ranking_public_v1(
         leaderboard_code=leaderboard_code,
         limit=limit,
         offset=offset,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -1512,6 +1520,7 @@ async def get_current_month_leaderboard_ranking_public_v1_async(
     leaderboard_code: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1541,6 +1550,8 @@ async def get_current_month_leaderboard_ranking_public_v1_async(
 
         offset: (offset) OPTIONAL int in query
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsGetLeaderboardRankingResp (OK)
 
@@ -1558,6 +1569,7 @@ async def get_current_month_leaderboard_ranking_public_v1_async(
         leaderboard_code=leaderboard_code,
         limit=limit,
         offset=offset,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return await run_request_async(
@@ -1570,6 +1582,7 @@ def get_current_season_leaderboard_ranking_admin_v1(
     leaderboard_code: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1607,6 +1620,8 @@ def get_current_season_leaderboard_ranking_admin_v1(
 
         offset: (offset) OPTIONAL int in query
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsGetLeaderboardRankingResp (OK)
 
@@ -1628,6 +1643,7 @@ def get_current_season_leaderboard_ranking_admin_v1(
         leaderboard_code=leaderboard_code,
         limit=limit,
         offset=offset,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -1638,6 +1654,7 @@ async def get_current_season_leaderboard_ranking_admin_v1_async(
     leaderboard_code: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1675,6 +1692,8 @@ async def get_current_season_leaderboard_ranking_admin_v1_async(
 
         offset: (offset) OPTIONAL int in query
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsGetLeaderboardRankingResp (OK)
 
@@ -1696,6 +1715,7 @@ async def get_current_season_leaderboard_ranking_admin_v1_async(
         leaderboard_code=leaderboard_code,
         limit=limit,
         offset=offset,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return await run_request_async(
@@ -1708,6 +1728,7 @@ def get_current_season_leaderboard_ranking_public_v1(
     leaderboard_code: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1737,6 +1758,8 @@ def get_current_season_leaderboard_ranking_public_v1(
 
         offset: (offset) OPTIONAL int in query
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsGetLeaderboardRankingResp (OK)
 
@@ -1754,6 +1777,7 @@ def get_current_season_leaderboard_ranking_public_v1(
         leaderboard_code=leaderboard_code,
         limit=limit,
         offset=offset,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -1764,6 +1788,7 @@ async def get_current_season_leaderboard_ranking_public_v1_async(
     leaderboard_code: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1793,6 +1818,8 @@ async def get_current_season_leaderboard_ranking_public_v1_async(
 
         offset: (offset) OPTIONAL int in query
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsGetLeaderboardRankingResp (OK)
 
@@ -1810,6 +1837,7 @@ async def get_current_season_leaderboard_ranking_public_v1_async(
         leaderboard_code=leaderboard_code,
         limit=limit,
         offset=offset,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return await run_request_async(
@@ -1822,6 +1850,7 @@ def get_current_week_leaderboard_ranking_admin_v1(
     leaderboard_code: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1859,6 +1888,8 @@ def get_current_week_leaderboard_ranking_admin_v1(
 
         offset: (offset) OPTIONAL int in query
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsGetLeaderboardRankingResp (OK)
 
@@ -1880,6 +1911,7 @@ def get_current_week_leaderboard_ranking_admin_v1(
         leaderboard_code=leaderboard_code,
         limit=limit,
         offset=offset,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -1890,6 +1922,7 @@ async def get_current_week_leaderboard_ranking_admin_v1_async(
     leaderboard_code: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1927,6 +1960,8 @@ async def get_current_week_leaderboard_ranking_admin_v1_async(
 
         offset: (offset) OPTIONAL int in query
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsGetLeaderboardRankingResp (OK)
 
@@ -1948,6 +1983,7 @@ async def get_current_week_leaderboard_ranking_admin_v1_async(
         leaderboard_code=leaderboard_code,
         limit=limit,
         offset=offset,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return await run_request_async(
@@ -1960,6 +1996,7 @@ def get_current_week_leaderboard_ranking_public_v1(
     leaderboard_code: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1989,6 +2026,8 @@ def get_current_week_leaderboard_ranking_public_v1(
 
         offset: (offset) OPTIONAL int in query
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsGetLeaderboardRankingResp (OK)
 
@@ -2006,6 +2045,7 @@ def get_current_week_leaderboard_ranking_public_v1(
         leaderboard_code=leaderboard_code,
         limit=limit,
         offset=offset,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -2016,6 +2056,7 @@ async def get_current_week_leaderboard_ranking_public_v1_async(
     leaderboard_code: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2045,6 +2086,8 @@ async def get_current_week_leaderboard_ranking_public_v1_async(
 
         offset: (offset) OPTIONAL int in query
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsGetLeaderboardRankingResp (OK)
 
@@ -2062,6 +2105,7 @@ async def get_current_week_leaderboard_ranking_public_v1_async(
         leaderboard_code=leaderboard_code,
         limit=limit,
         offset=offset,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return await run_request_async(
@@ -2074,6 +2118,7 @@ def get_today_leaderboard_ranking_admin_v1(
     leaderboard_code: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2111,6 +2156,8 @@ def get_today_leaderboard_ranking_admin_v1(
 
         offset: (offset) OPTIONAL int in query
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsGetLeaderboardRankingResp (OK)
 
@@ -2132,6 +2179,7 @@ def get_today_leaderboard_ranking_admin_v1(
         leaderboard_code=leaderboard_code,
         limit=limit,
         offset=offset,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -2142,6 +2190,7 @@ async def get_today_leaderboard_ranking_admin_v1_async(
     leaderboard_code: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2179,6 +2228,8 @@ async def get_today_leaderboard_ranking_admin_v1_async(
 
         offset: (offset) OPTIONAL int in query
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsGetLeaderboardRankingResp (OK)
 
@@ -2200,6 +2251,7 @@ async def get_today_leaderboard_ranking_admin_v1_async(
         leaderboard_code=leaderboard_code,
         limit=limit,
         offset=offset,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return await run_request_async(
@@ -2212,6 +2264,7 @@ def get_today_leaderboard_ranking_public_v1(
     leaderboard_code: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2241,6 +2294,8 @@ def get_today_leaderboard_ranking_public_v1(
 
         offset: (offset) OPTIONAL int in query
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsGetLeaderboardRankingResp (OK)
 
@@ -2258,6 +2313,7 @@ def get_today_leaderboard_ranking_public_v1(
         leaderboard_code=leaderboard_code,
         limit=limit,
         offset=offset,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -2268,6 +2324,7 @@ async def get_today_leaderboard_ranking_public_v1_async(
     leaderboard_code: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2297,6 +2354,8 @@ async def get_today_leaderboard_ranking_public_v1_async(
 
         offset: (offset) OPTIONAL int in query
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsGetLeaderboardRankingResp (OK)
 
@@ -2314,6 +2373,7 @@ async def get_today_leaderboard_ranking_public_v1_async(
         leaderboard_code=leaderboard_code,
         limit=limit,
         offset=offset,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return await run_request_async(
@@ -2325,6 +2385,7 @@ async def get_today_leaderboard_ranking_public_v1_async(
 def get_user_ranking_admin_v1(
     leaderboard_code: str,
     user_id: str,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2360,6 +2421,8 @@ def get_user_ranking_admin_v1(
 
         user_id: (userId) REQUIRED str in path
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsUserRankingResponse (OK)
 
@@ -2378,6 +2441,7 @@ def get_user_ranking_admin_v1(
     request = GetUserRankingAdminV1.create(
         leaderboard_code=leaderboard_code,
         user_id=user_id,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -2387,6 +2451,7 @@ def get_user_ranking_admin_v1(
 async def get_user_ranking_admin_v1_async(
     leaderboard_code: str,
     user_id: str,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2422,6 +2487,8 @@ async def get_user_ranking_admin_v1_async(
 
         user_id: (userId) REQUIRED str in path
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsUserRankingResponse (OK)
 
@@ -2440,6 +2507,7 @@ async def get_user_ranking_admin_v1_async(
     request = GetUserRankingAdminV1.create(
         leaderboard_code=leaderboard_code,
         user_id=user_id,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return await run_request_async(
@@ -2451,6 +2519,7 @@ async def get_user_ranking_admin_v1_async(
 def get_user_ranking_public_v1(
     leaderboard_code: str,
     user_id: str,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2478,6 +2547,8 @@ def get_user_ranking_public_v1(
 
         user_id: (userId) REQUIRED str in path
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsUserRankingResponse (OK)
 
@@ -2496,6 +2567,7 @@ def get_user_ranking_public_v1(
     request = GetUserRankingPublicV1.create(
         leaderboard_code=leaderboard_code,
         user_id=user_id,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -2505,6 +2577,7 @@ def get_user_ranking_public_v1(
 async def get_user_ranking_public_v1_async(
     leaderboard_code: str,
     user_id: str,
+    previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2532,6 +2605,8 @@ async def get_user_ranking_public_v1_async(
 
         user_id: (userId) REQUIRED str in path
 
+        previous_version: (previousVersion) OPTIONAL int in query
+
     Responses:
         200: OK - ModelsUserRankingResponse (OK)
 
@@ -2550,6 +2625,7 @@ async def get_user_ranking_public_v1_async(
     request = GetUserRankingPublicV1.create(
         leaderboard_code=leaderboard_code,
         user_id=user_id,
+        previous_version=previous_version,
         namespace=namespace,
     )
     return await run_request_async(

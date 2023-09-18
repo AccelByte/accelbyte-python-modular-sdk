@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Social Service (2.3.0)
+# AccelByte Gaming Services Social Service (2.9.3)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import ErrorEntity
 from ...models import StatCycleCreate
@@ -39,19 +39,17 @@ class CreateStatCycle(Operation):
 
     Create stat cycle.
     Fields:
-
-      * name: Cycle name, maximum length is 128 characters. (required).
-      * resetTime: Reset time must follow hours:minutes in 24 hours format e.g. 01:30, 23:15. (required)
-      * resetDay: Reset Day follows the ISO-8601 standard, from 1 (Monday) to 7 (Sunday). Required when cycleType is WEEKLY.
-      * resetDate: Reset Date must be a number 1 - 31. Required when cycleType is MONTHLY or ANNUALLY.
-      * resetMonth: Reset Month must be a number 1 - 12. Required when cycleType is ANNUALLY.
-      * seasonPeriod: Season period must be a number greater than or equal to 1 (days). Required when cycleType is SEASONAL.
-      * start: Start time must follow RFC3339 standard. e.g. 2023-02-24T05:10:24.865Z. (required)
-      * end: End time must follow RFC3339 standard. e.g. 2023-02-24T05:10:24.865Z.
-
+            * name: Cycle name, maximum length is 128 characters. (required).
+            * resetTime: Reset time must follow hours:minutes in 24 hours format e.g. 01:30, 23:15. (required)
+            * resetDay: Reset Day follows the ISO-8601 standard, from 1 (Monday) to 7 (Sunday). Required when cycleType is WEEKLY.
+            * resetDate: Reset Date must be a number 1 - 31. Required when cycleType is MONTHLY or ANNUALLY.
+            * resetMonth: Reset Month must be a number 1 - 12. Required when cycleType is ANNUALLY.
+            * seasonPeriod: Season period must be a number greater than or equal to 1 (days). Required when cycleType is SEASONAL.
+            * start: Start time must follow RFC3339 standard. e.g. 2023-02-24T05:10:24.865Z. (required)
+            * end: End time must follow RFC3339 standard. e.g. 2023-02-24T05:10:24.865Z.
     Other detail info:
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-      *  Returns : created stat cycle
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+            *  Returns : created stat cycle
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]

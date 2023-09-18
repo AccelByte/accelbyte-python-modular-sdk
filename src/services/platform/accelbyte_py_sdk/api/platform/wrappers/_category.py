@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import BasicCategoryInfo
 from ..models import CategoryCreate
@@ -350,6 +350,7 @@ def download_categories(
 
         securities: [BEARER_AUTH]
 
+
         namespace: (namespace) REQUIRED str in path
 
         language: (language) OPTIONAL str in query
@@ -403,6 +404,7 @@ async def download_categories_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         namespace: (namespace) REQUIRED str in path
 
@@ -999,6 +1001,7 @@ def public_get_category(
 
         securities: [BEARER_AUTH]
 
+
         category_path: (categoryPath) REQUIRED str in path
 
         namespace: (namespace) REQUIRED str in path
@@ -1056,6 +1059,7 @@ async def public_get_category_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         category_path: (categoryPath) REQUIRED str in path
 
@@ -1117,6 +1121,7 @@ def public_get_child_categories(
 
         securities: [BEARER_AUTH]
 
+
         category_path: (categoryPath) REQUIRED str in path
 
         namespace: (namespace) REQUIRED str in path
@@ -1172,6 +1177,7 @@ async def public_get_child_categories_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         category_path: (categoryPath) REQUIRED str in path
 
@@ -1231,6 +1237,7 @@ def public_get_descendant_categories(
 
         securities: [BEARER_AUTH]
 
+
         category_path: (categoryPath) REQUIRED str in path
 
         namespace: (namespace) REQUIRED str in path
@@ -1286,6 +1293,7 @@ async def public_get_descendant_categories_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         category_path: (categoryPath) REQUIRED str in path
 
@@ -1344,6 +1352,7 @@ def public_get_root_categories(
 
         securities: [BEARER_AUTH]
 
+
         namespace: (namespace) REQUIRED str in path
 
         language: (language) OPTIONAL str in query
@@ -1395,6 +1404,7 @@ async def public_get_root_categories_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         namespace: (namespace) REQUIRED str in path
 

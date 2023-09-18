@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Achievement Service."""
 
-__version__ = "2.17.0"
+__version__ = "2.21.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 

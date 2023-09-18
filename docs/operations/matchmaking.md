@@ -1,6 +1,6 @@
 [//]: # (<< Code generated. DO NOT EDIT!)
 
-[//]: # (<< template file: ags_py_codegen)
+[//]: # (<< template file: doc-index.j2)
 
 # AccelByte Gaming Services Matchmaking Service Index (2.25.7)
 
@@ -83,14 +83,14 @@
 | models.GetMockTicketsResponse | [ModelsGetMockTicketsResponse](../../accelbyte_py_sdk/api/matchmaking/models/models_get_mock_tickets_response.py) |
 | models.ImportConfigResponse | [ModelsImportConfigResponse](../../accelbyte_py_sdk/api/matchmaking/models/models_import_config_response.py) |
 | models.MatchAddUserIntoSessionRequest | [ModelsMatchAddUserIntoSessionRequest](../../accelbyte_py_sdk/api/matchmaking/models/models_match_add_user_into_session_request.py) |
-| models.MatchOption | [ModelsMatchOption](../../accelbyte_py_sdk/api/matchmaking/models/models_match_option.py) |
-| models.MatchOptionRule | [ModelsMatchOptionRule](../../accelbyte_py_sdk/api/matchmaking/models/models_match_option_rule.py) |
-| models.MatchResultRequest | [ModelsMatchResultRequest](../../accelbyte_py_sdk/api/matchmaking/models/models_match_result_request.py) |
-| models.MatchResultResponse | [ModelsMatchResultResponse](../../accelbyte_py_sdk/api/matchmaking/models/models_match_result_response.py) |
 | models.MatchingAlly | [ModelsMatchingAlly](../../accelbyte_py_sdk/api/matchmaking/models/models_matching_ally.py) |
 | models.MatchingParty | [ModelsMatchingParty](../../accelbyte_py_sdk/api/matchmaking/models/models_matching_party.py) |
 | models.MatchingRule | [ModelsMatchingRule](../../accelbyte_py_sdk/api/matchmaking/models/models_matching_rule.py) |
 | models.MatchmakingResult | [ModelsMatchmakingResult](../../accelbyte_py_sdk/api/matchmaking/models/models_matchmaking_result.py) |
+| models.MatchOption | [ModelsMatchOption](../../accelbyte_py_sdk/api/matchmaking/models/models_match_option.py) |
+| models.MatchOptionRule | [ModelsMatchOptionRule](../../accelbyte_py_sdk/api/matchmaking/models/models_match_option_rule.py) |
+| models.MatchResultRequest | [ModelsMatchResultRequest](../../accelbyte_py_sdk/api/matchmaking/models/models_match_result_request.py) |
+| models.MatchResultResponse | [ModelsMatchResultResponse](../../accelbyte_py_sdk/api/matchmaking/models/models_match_result_response.py) |
 | models.MockMatch | [ModelsMockMatch](../../accelbyte_py_sdk/api/matchmaking/models/models_mock_match.py) |
 | models.MockTicket | [ModelsMockTicket](../../accelbyte_py_sdk/api/matchmaking/models/models_mock_ticket.py) |
 | models.Pagination | [ModelsPagination](../../accelbyte_py_sdk/api/matchmaking/models/models_pagination.py) |
@@ -111,8 +111,8 @@
 | models.TicketMetricResultRecord | [ModelsTicketMetricResultRecord](../../accelbyte_py_sdk/api/matchmaking/models/models_ticket_metric_result_record.py) |
 | models.UpdateAllianceRule | [ModelsUpdateAllianceRule](../../accelbyte_py_sdk/api/matchmaking/models/models_update_alliance_rule.py) |
 | models.UpdateChannelRequest | [ModelsUpdateChannelRequest](../../accelbyte_py_sdk/api/matchmaking/models/models_update_channel_request.py) |
-| models.UpdatePlayTimeWeightRequest | [ModelsUpdatePlayTimeWeightRequest](../../accelbyte_py_sdk/api/matchmaking/models/models_update_play_time_weight_request.py) |
 | models.UpdatePlayerPlaytimeWeightResponse | [ModelsUpdatePlayerPlaytimeWeightResponse](../../accelbyte_py_sdk/api/matchmaking/models/models_update_player_playtime_weight_response.py) |
+| models.UpdatePlayTimeWeightRequest | [ModelsUpdatePlayTimeWeightRequest](../../accelbyte_py_sdk/api/matchmaking/models/models_update_play_time_weight_request.py) |
 | models.UpdateRuleset | [ModelsUpdateRuleset](../../accelbyte_py_sdk/api/matchmaking/models/models_update_ruleset.py) |
 | models.UpdateRuleset.sub_game_modes | [ModelsUpdateRulesetSubGameModes](../../accelbyte_py_sdk/api/matchmaking/models/models_update_ruleset_sub_game_modes.py) |
 | response.Error | [ResponseError](../../accelbyte_py_sdk/api/matchmaking/models/response_error.py) |

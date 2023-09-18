@@ -4,17 +4,21 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.27.0"
+__version__ = "4.33.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
 # pylint: disable=line-too-long
 
 from .download_invoice_details import DownloadInvoiceDetails
-from .download_invoice_details import ItemTypeEnum as DownloadInvoiceDetailsItemTypeEnum
+from .download_invoice_details import (
+    ItemTypeEnum as DownloadInvoiceDetailsItemTypeEnum,
+)
 from .generate_invoice_summary import GenerateInvoiceSummary
-from .generate_invoice_summary import ItemTypeEnum as GenerateInvoiceSummaryItemTypeEnum
+from .generate_invoice_summary import (
+    ItemTypeEnum as GenerateInvoiceSummaryItemTypeEnum,
+)

@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ErrorEntity
 from ..models import RetrievePolicyPublicResponse
@@ -77,6 +77,7 @@ def retrieve_latest_policies(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         country_code: (countryCode) REQUIRED str in path
 
@@ -128,6 +129,7 @@ async def retrieve_latest_policies_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         country_code: (countryCode) REQUIRED str in path
 
@@ -192,6 +194,7 @@ def retrieve_latest_policies_by_namespace_and_country_public(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         country_code: (countryCode) REQUIRED str in path
 
@@ -265,6 +268,7 @@ async def retrieve_latest_policies_by_namespace_and_country_public_async(
 
         securities: [BEARER_AUTH]
 
+
         country_code: (countryCode) REQUIRED str in path
 
         namespace: (namespace) REQUIRED str in path
@@ -313,18 +317,17 @@ def retrieve_latest_policies_public(
 
     Retrieve all active latest policies based on a namespace and country. The country will be read from user token.
     Other detail info:
-
-      * Leave the policyType empty if you want to be responded with all policy type
-      *  Fill the tags if you want to filter the responded policy by tags
-      *  Fill the defaultOnEmpty with true if you want to be responded with default country-specific policy if your requested country is not exist
-      *  Fill the alwaysIncludeDefault with true if you want to be responded with always include default policy. If there are duplicate policies (default policies and country specific policies with same base policy) it'll include policy with same country code, for example:
-        * Document 1 (default): Region US (default), UA
-        * Document 2 (default): Region US (default)
-        * Document 3 (default): Region US (default)
-        * User: Region UA
-        * Query: alwaysIncludeDefault: true
-        * Response: Document 1 (UA), Document 2 (US), Document 3 (US)
-      *  Required permission: login user
+        * Leave the policyType empty if you want to be responded with all policy type
+        *  Fill the tags if you want to filter the responded policy by tags
+        *  Fill the defaultOnEmpty with true if you want to be responded with default country-specific policy if your requested country is not exist
+        *  Fill the alwaysIncludeDefault with true if you want to be responded with always include default policy. If there are duplicate policies (default policies and country specific policies with same base policy) it'll include policy with same country code, for example:
+          * Document 1 (default): Region US (default), UA
+          * Document 2 (default): Region US (default)
+          * Document 3 (default): Region US (default)
+          * User: Region UA
+          * Query: alwaysIncludeDefault: true
+          * Response: Document 1 (UA), Document 2 (US), Document 3 (US)
+        *  Required permission: login user
 
     Properties:
         url: /agreement/public/policies/namespaces/{namespace}
@@ -384,18 +387,17 @@ async def retrieve_latest_policies_public_async(
 
     Retrieve all active latest policies based on a namespace and country. The country will be read from user token.
     Other detail info:
-
-      * Leave the policyType empty if you want to be responded with all policy type
-      *  Fill the tags if you want to filter the responded policy by tags
-      *  Fill the defaultOnEmpty with true if you want to be responded with default country-specific policy if your requested country is not exist
-      *  Fill the alwaysIncludeDefault with true if you want to be responded with always include default policy. If there are duplicate policies (default policies and country specific policies with same base policy) it'll include policy with same country code, for example:
-        * Document 1 (default): Region US (default), UA
-        * Document 2 (default): Region US (default)
-        * Document 3 (default): Region US (default)
-        * User: Region UA
-        * Query: alwaysIncludeDefault: true
-        * Response: Document 1 (UA), Document 2 (US), Document 3 (US)
-      *  Required permission: login user
+        * Leave the policyType empty if you want to be responded with all policy type
+        *  Fill the tags if you want to filter the responded policy by tags
+        *  Fill the defaultOnEmpty with true if you want to be responded with default country-specific policy if your requested country is not exist
+        *  Fill the alwaysIncludeDefault with true if you want to be responded with always include default policy. If there are duplicate policies (default policies and country specific policies with same base policy) it'll include policy with same country code, for example:
+          * Document 1 (default): Region US (default), UA
+          * Document 2 (default): Region US (default)
+          * Document 3 (default): Region US (default)
+          * User: Region UA
+          * Query: alwaysIncludeDefault: true
+          * Response: Document 1 (UA), Document 2 (US), Document 3 (US)
+        *  Required permission: login user
 
     Properties:
         url: /agreement/public/policies/namespaces/{namespace}
@@ -449,8 +451,7 @@ def retrieve_policies(
 
     Retrieve all active policies based on a country.
     Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [READ]
@@ -487,8 +488,7 @@ async def retrieve_policies_async(
 
     Retrieve all active policies based on a country.
     Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [READ]
@@ -527,8 +527,7 @@ def set_default_policy_2(
 
     Update a policy to be the default.
     Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [UPDATE]
@@ -567,8 +566,7 @@ async def set_default_policy_2_async(
 
     Update a policy to be the default.
     Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [UPDATE]
@@ -612,8 +610,7 @@ def update_policy(
 
     Update country-specific policy.
     Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [UPDATE]
@@ -658,8 +655,7 @@ async def update_policy_async(
 
     Update country-specific policy.
     Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [UPDATE]

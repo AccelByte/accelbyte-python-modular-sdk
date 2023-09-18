@@ -1,6 +1,6 @@
 [//]: # (<< Code generated. DO NOT EDIT!)
 
-[//]: # (<< template file: ags_py_codegen)
+[//]: # (<< template file: doc-index.j2)
 
 # AccelByte Gaming Services Dsm Controller Service Index (6.4.0)
 
@@ -172,9 +172,9 @@
 | models.RegisterLocalServerRequest | [ModelsRegisterLocalServerRequest](../../accelbyte_py_sdk/api/dsmc/models/models_register_local_server_request.py) |
 | models.RegisterServerRequest | [ModelsRegisterServerRequest](../../accelbyte_py_sdk/api/dsmc/models/models_register_server_request.py) |
 | models.RepositoryRecord | [ModelsRepositoryRecord](../../accelbyte_py_sdk/api/dsmc/models/models_repository_record.py) |
+| models.RequestMatchingAlly | [ModelsRequestMatchingAlly](../../accelbyte_py_sdk/api/dsmc/models/models_request_matching_ally.py) |
 | models.RequestMatchMember | [ModelsRequestMatchMember](../../accelbyte_py_sdk/api/dsmc/models/models_request_match_member.py) |
 | models.RequestMatchParty | [ModelsRequestMatchParty](../../accelbyte_py_sdk/api/dsmc/models/models_request_match_party.py) |
-| models.RequestMatchingAlly | [ModelsRequestMatchingAlly](../../accelbyte_py_sdk/api/dsmc/models/models_request_matching_ally.py) |
 | models.Server | [ModelsServer](../../accelbyte_py_sdk/api/dsmc/models/models_server.py) |
 | models.ServerDeploymentConfigSessionTimeoutResponse | [ModelsServerDeploymentConfigSessionTimeoutResponse](../../accelbyte_py_sdk/api/dsmc/models/models_server_deployment_config_session_timeout_response.py) |
 | models.ServerSessionResponse | [ModelsServerSessionResponse](../../accelbyte_py_sdk/api/dsmc/models/models_server_session_response.py) |

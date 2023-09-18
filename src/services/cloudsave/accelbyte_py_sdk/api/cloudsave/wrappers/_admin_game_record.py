@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ModelsGameRecordRequest
 from ..models import ModelsGameRecordResponse
@@ -431,6 +431,8 @@ def admin_post_game_record_handler_v1(
     Responses:
         201: Created - ModelsGameRecordResponse (Record in namespace-level saved)
 
+        400: Bad Request - ModelsResponseError (Bad Request)
+
         401: Unauthorized - ModelsResponseError (Unauthorized)
 
         500: Internal Server Error - ModelsResponseError (Internal Server Error)
@@ -604,6 +606,8 @@ async def admin_post_game_record_handler_v1_async(
 
     Responses:
         201: Created - ModelsGameRecordResponse (Record in namespace-level saved)
+
+        400: Bad Request - ModelsResponseError (Bad Request)
 
         401: Unauthorized - ModelsResponseError (Unauthorized)
 

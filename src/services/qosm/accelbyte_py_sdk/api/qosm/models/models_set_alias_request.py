@@ -4,9 +4,9 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model.j2
 
-# AccelByte Gaming Services Qo S Manager Service (1.18.0)
+# AccelByte Gaming Services Qos Manager Service (1.18.3)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -25,7 +25,7 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import Model
+from accelbyte_py_sdk.core import Model
 
 
 class ModelsSetAliasRequest(Model):

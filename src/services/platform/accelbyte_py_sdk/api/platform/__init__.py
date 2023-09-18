@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: service-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.27.0"
+__version__ = "4.33.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -147,12 +147,16 @@ from .wrappers import get_platform_dlc_config
 from .wrappers import get_platform_dlc_config_async
 from .wrappers import get_user_dlc
 from .wrappers import get_user_dlc_async
+from .wrappers import get_user_dlc_by_platform
+from .wrappers import get_user_dlc_by_platform_async
 from .wrappers import public_sync_psn_dlc_inventory
 from .wrappers import public_sync_psn_dlc_inventory_async
 from .wrappers import public_sync_psn_dlc_inventory_with_multiple_service_labels
 from .wrappers import public_sync_psn_dlc_inventory_with_multiple_service_labels_async
 from .wrappers import sync_epic_game_dlc
 from .wrappers import sync_epic_game_dlc_async
+from .wrappers import sync_oculus_dlc
+from .wrappers import sync_oculus_dlc_async
 from .wrappers import sync_steam_dlc
 from .wrappers import sync_steam_dlc_async
 from .wrappers import sync_xbox_dlc
@@ -195,6 +199,8 @@ from .wrappers import get_user_entitlement_ownership_by_item_ids
 from .wrappers import get_user_entitlement_ownership_by_item_ids_async
 from .wrappers import get_user_entitlement_ownership_by_sku
 from .wrappers import get_user_entitlement_ownership_by_sku_async
+from .wrappers import grant_entitlements
+from .wrappers import grant_entitlements_async
 from .wrappers import grant_user_entitlement
 from .wrappers import grant_user_entitlement_async
 from .wrappers import public_consume_user_entitlement
@@ -235,12 +241,16 @@ from .wrappers import public_sell_user_entitlement
 from .wrappers import public_sell_user_entitlement_async
 from .wrappers import query_entitlements
 from .wrappers import query_entitlements_async
+from .wrappers import query_entitlements_1
+from .wrappers import query_entitlements_1_async
 from .wrappers import query_user_entitlements
 from .wrappers import query_user_entitlements_async
 from .wrappers import query_user_entitlements_by_app_type
 from .wrappers import query_user_entitlements_by_app_type_async
 from .wrappers import revoke_all_entitlements
 from .wrappers import revoke_all_entitlements_async
+from .wrappers import revoke_entitlements
+from .wrappers import revoke_entitlements_async
 from .wrappers import revoke_use_count
 from .wrappers import revoke_use_count_async
 from .wrappers import revoke_user_entitlement
@@ -287,6 +297,8 @@ from .wrappers import delete_google_iap_config
 from .wrappers import delete_google_iap_config_async
 from .wrappers import delete_iap_item_config
 from .wrappers import delete_iap_item_config_async
+from .wrappers import delete_oculus_iap_config
+from .wrappers import delete_oculus_iap_config_async
 from .wrappers import delete_playstation_iap_config
 from .wrappers import delete_playstation_iap_config_async
 from .wrappers import delete_steam_iap_config
@@ -305,6 +317,8 @@ from .wrappers import get_iap_item_config
 from .wrappers import get_iap_item_config_async
 from .wrappers import get_iap_item_mapping
 from .wrappers import get_iap_item_mapping_async
+from .wrappers import get_oculus_iap_config
+from .wrappers import get_oculus_iap_config_async
 from .wrappers import get_play_station_iap_config
 from .wrappers import get_play_station_iap_config_async
 from .wrappers import get_steam_iap_config
@@ -333,6 +347,8 @@ from .wrappers import query_user_iap_orders
 from .wrappers import query_user_iap_orders_async
 from .wrappers import sync_epic_games_inventory
 from .wrappers import sync_epic_games_inventory_async
+from .wrappers import sync_oculus_consumable_entitlements
+from .wrappers import sync_oculus_consumable_entitlements_async
 from .wrappers import sync_steam_inventory
 from .wrappers import sync_steam_inventory_async
 from .wrappers import sync_twitch_drops_entitlement
@@ -351,6 +367,8 @@ from .wrappers import update_google_p12_file
 from .wrappers import update_google_p12_file_async
 from .wrappers import update_iap_item_config
 from .wrappers import update_iap_item_config_async
+from .wrappers import update_oculus_iap_config
+from .wrappers import update_oculus_iap_config_async
 from .wrappers import update_playstation_iap_config
 from .wrappers import update_playstation_iap_config_async
 from .wrappers import update_steam_iap_config
@@ -443,10 +461,10 @@ from .wrappers import query_uncategorized_items
 from .wrappers import query_uncategorized_items_async
 from .wrappers import return_item
 from .wrappers import return_item_async
-from .wrappers import search_item_type_config
-from .wrappers import search_item_type_config_async
 from .wrappers import search_items
 from .wrappers import search_items_async
+from .wrappers import search_item_type_config
+from .wrappers import search_item_type_config_async
 from .wrappers import sync_in_game_item
 from .wrappers import sync_in_game_item_async
 from .wrappers import update_app
@@ -544,6 +562,14 @@ from .wrappers import refund_user_payment_order_async
 from .wrappers import simulate_payment_order_notification
 from .wrappers import simulate_payment_order_notification_async
 
+# payment_dedicated
+from .wrappers import create_payment_order_by_dedicated
+from .wrappers import create_payment_order_by_dedicated_async
+from .wrappers import refund_payment_order_by_dedicated
+from .wrappers import refund_payment_order_by_dedicated_async
+from .wrappers import sync_payment_orders
+from .wrappers import sync_payment_orders_async
+
 # payment_account
 from .wrappers import public_delete_payment_account
 from .wrappers import public_delete_payment_account_async
@@ -609,12 +635,12 @@ from .wrappers import update_ali_pay_config
 from .wrappers import update_ali_pay_config_async
 from .wrappers import update_checkout_config
 from .wrappers import update_checkout_config_async
-from .wrappers import update_pay_pal_config
-from .wrappers import update_pay_pal_config_async
 from .wrappers import update_payment_provider_config
 from .wrappers import update_payment_provider_config_async
 from .wrappers import update_payment_tax_config
 from .wrappers import update_payment_tax_config_async
+from .wrappers import update_pay_pal_config
+from .wrappers import update_pay_pal_config_async
 from .wrappers import update_stripe_config
 from .wrappers import update_stripe_config_async
 from .wrappers import update_wx_pay_config
@@ -625,14 +651,6 @@ from .wrappers import update_xsolla_config
 from .wrappers import update_xsolla_config_async
 from .wrappers import update_xsolla_ui_config
 from .wrappers import update_xsolla_ui_config_async
-
-# payment_dedicated
-from .wrappers import create_payment_order_by_dedicated
-from .wrappers import create_payment_order_by_dedicated_async
-from .wrappers import refund_payment_order_by_dedicated
-from .wrappers import refund_payment_order_by_dedicated_async
-from .wrappers import sync_payment_orders
-from .wrappers import sync_payment_orders_async
 
 # payment_station
 from .wrappers import get_payment_customization
@@ -711,12 +729,42 @@ from .wrappers import update_section
 from .wrappers import update_section_async
 
 # service_plugin_config
+from .wrappers import delete_loot_box_plugin_config
+from .wrappers import delete_loot_box_plugin_config_async
+from .wrappers import delete_revocation_plugin_config
+from .wrappers import delete_revocation_plugin_config_async
+from .wrappers import delete_section_plugin_config
+from .wrappers import delete_section_plugin_config_async
 from .wrappers import delete_service_plugin_config
 from .wrappers import delete_service_plugin_config_async
+from .wrappers import get_loot_box_grpc_info
+from .wrappers import get_loot_box_grpc_info_async
+from .wrappers import get_loot_box_plugin_config
+from .wrappers import get_loot_box_plugin_config_async
+from .wrappers import get_revocation_plugin_config
+from .wrappers import get_revocation_plugin_config_async
+from .wrappers import get_section_plugin_config
+from .wrappers import get_section_plugin_config_async
 from .wrappers import get_service_plugin_config
 from .wrappers import get_service_plugin_config_async
+from .wrappers import update_loot_box_plugin_config
+from .wrappers import update_loot_box_plugin_config_async
+from .wrappers import update_revocation_plugin_config
+from .wrappers import update_revocation_plugin_config_async
+from .wrappers import update_section_plugin_config
+from .wrappers import update_section_plugin_config_async
 from .wrappers import update_service_plugin_config
 from .wrappers import update_service_plugin_config_async
+from .wrappers import upload_revocation_plugin_config_cert
+from .wrappers import upload_revocation_plugin_config_cert_async
+from .wrappers import upload_section_plugin_config_cert
+from .wrappers import upload_section_plugin_config_cert_async
+from .wrappers import uplod_loot_box_plugin_config_cert
+from .wrappers import uplod_loot_box_plugin_config_cert_async
+
+# session_platform
+from .wrappers import register_xbl_sessions
+from .wrappers import register_xbl_sessions_async
 
 # store
 from .wrappers import clone_store
@@ -817,6 +865,10 @@ from .wrappers import update_view
 from .wrappers import update_view_async
 
 # wallet
+from .wrappers import bulk_credit
+from .wrappers import bulk_credit_async
+from .wrappers import bulk_debit
+from .wrappers import bulk_debit_async
 from .wrappers import check_wallet
 from .wrappers import check_wallet_async
 from .wrappers import credit_user_wallet

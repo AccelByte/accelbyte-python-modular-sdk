@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,15 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Social Service (2.3.0)
+# AccelByte Gaming Services Social Service (2.9.3)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import SlotInfo
 
@@ -35,11 +36,13 @@ from ...models import SlotInfo
 class PublicGetUserNamespaceSlots(Operation):
     """Returns slots for given user (publicGetUserNamespaceSlots)
 
-    GetÂ list of slots for a given user in namespace.
-    Other detail info:
+    ## The endpoint is going to be deprecated
 
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SLOTDATA", action=2 (READ)
-      *  Returns : list of slots
+
+    Get list of slots for a given user in namespace.
+    Other detail info:
+            *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SLOTDATA", action=2 (READ)
+            *  Returns : list of slots
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:SLOTDATA [READ]

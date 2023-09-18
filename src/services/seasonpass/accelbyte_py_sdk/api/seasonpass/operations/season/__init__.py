@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Seasonpass Service."""
 
-__version__ = "1.18.2"
+__version__ = "1.19.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -31,7 +31,9 @@ from .public_get_current_user_season import PublicGetCurrentUserSeason
 from .public_get_user_season import PublicGetUserSeason
 from .publish_season import PublishSeason
 from .query_seasons import QuerySeasons
-from .query_seasons import StatusEnum as QuerySeasonsStatusEnum
+from .query_seasons import (
+    StatusEnum as QuerySeasonsStatusEnum,
+)
 from .query_user_exp_grant_history import QueryUserExpGrantHistory
 from .query_user_exp_grant_history import (
     SourceEnum as QueryUserExpGrantHistorySourceEnum,

@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: service-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Lobby Server."""
 
-__version__ = "3.17.0"
+__version__ = "3.25.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -36,14 +36,6 @@ from .wrappers import publish_template_async
 from .wrappers import update_localization_template
 from .wrappers import update_localization_template_async
 
-# chat
-from .wrappers import admin_chat_history
-from .wrappers import admin_chat_history_async
-from .wrappers import get_personal_chat_history_v1_public
-from .wrappers import get_personal_chat_history_v1_public_async
-from .wrappers import personal_chat_history
-from .wrappers import personal_chat_history_async
-
 # config
 from .wrappers import admin_export_config_v1
 from .wrappers import admin_export_config_v1_async
@@ -59,10 +51,16 @@ from .wrappers import admin_update_config_v1_async
 # friends
 from .wrappers import add_friends_without_confirmation
 from .wrappers import add_friends_without_confirmation_async
+from .wrappers import get_incoming_friend_requests
+from .wrappers import get_incoming_friend_requests_async
 from .wrappers import get_list_of_friends
 from .wrappers import get_list_of_friends_async
+from .wrappers import get_outgoing_friend_requests
+from .wrappers import get_outgoing_friend_requests_async
 from .wrappers import get_user_friends_updated
 from .wrappers import get_user_friends_updated_async
+from .wrappers import get_user_friends_with_platform
+from .wrappers import get_user_friends_with_platform_async
 from .wrappers import get_user_incoming_friends
 from .wrappers import get_user_incoming_friends_async
 from .wrappers import get_user_incoming_friends_with_time
@@ -165,6 +163,8 @@ from .wrappers import admin_bulk_block_players_v1
 from .wrappers import admin_bulk_block_players_v1_async
 from .wrappers import admin_get_all_player_session_attribute
 from .wrappers import admin_get_all_player_session_attribute_async
+from .wrappers import admin_get_bulk_player_blocked_players_v1
+from .wrappers import admin_get_bulk_player_blocked_players_v1_async
 from .wrappers import admin_get_lobby_ccu
 from .wrappers import admin_get_lobby_ccu_async
 from .wrappers import admin_get_player_blocked_by_players_v1

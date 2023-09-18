@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,14 +23,17 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import AppEntitlementInfo
 from ..models import AppEntitlementPagingSlicedResult
+from ..models import BulkEntitlementGrantRequest
+from ..models import BulkEntitlementGrantResult
+from ..models import BulkEntitlementRevokeResult
 from ..models import BulkOperationResult
 from ..models import EntitlementDecrement
 from ..models import EntitlementDecrementResult
@@ -74,6 +77,7 @@ from ..operations.entitlement import GetUserEntitlementOwnershipBySku
 from ..operations.entitlement import (
     GetUserEntitlementOwnershipBySkuEntitlementClazzEnum,
 )
+from ..operations.entitlement import GrantEntitlements
 from ..operations.entitlement import GrantUserEntitlement
 from ..operations.entitlement import PublicConsumeUserEntitlement
 from ..operations.entitlement import PublicExistsAnyMyActiveEntitlement
@@ -119,6 +123,7 @@ from ..operations.entitlement import (
     QueryEntitlementsAppTypeEnum,
     QueryEntitlementsEntitlementClazzEnum,
 )
+from ..operations.entitlement import QueryEntitlements1
 from ..operations.entitlement import QueryUserEntitlements
 from ..operations.entitlement import (
     QueryUserEntitlementsAppTypeEnum,
@@ -127,12 +132,15 @@ from ..operations.entitlement import (
 from ..operations.entitlement import QueryUserEntitlementsByAppType
 from ..operations.entitlement import QueryUserEntitlementsByAppTypeAppTypeEnum
 from ..operations.entitlement import RevokeAllEntitlements
+from ..operations.entitlement import RevokeEntitlements
 from ..operations.entitlement import RevokeUseCount
 from ..operations.entitlement import RevokeUserEntitlement
 from ..operations.entitlement import RevokeUserEntitlements
 from ..operations.entitlement import SellUserEntitlement
 from ..operations.entitlement import UpdateUserEntitlement
 from ..models import AppEntitlementInfoAppTypeEnum, AppEntitlementInfoStatusEnum
+from ..models import BulkEntitlementGrantResultStatusEnum
+from ..models import BulkEntitlementRevokeResultStatusEnum
 from ..models import (
     EntitlementDecrementResultAppTypeEnum,
     EntitlementDecrementResultClazzEnum,
@@ -203,9 +211,11 @@ def consume_user_entitlement(
     Responses:
         200: OK - EntitlementDecrementResult (successful operation)
 
+        400: Bad Request - ErrorEntity (31123: Unable to acquire box item, box item [{itemId}] expired)
+
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31173: Entitlement [{entitlementId}] is not consumable | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31180: Duplicate request id: [{requestId}] | 20006: optimistic lock)
+        409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31173: Entitlement [{entitlementId}] is not consumable | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31178: Entitlement [{entitlementId}] out of time range | 31180: Duplicate request id: [{requestId}] | 20006: optimistic lock)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -264,9 +274,11 @@ async def consume_user_entitlement_async(
     Responses:
         200: OK - EntitlementDecrementResult (successful operation)
 
+        400: Bad Request - ErrorEntity (31123: Unable to acquire box item, box item [{itemId}] expired)
+
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31173: Entitlement [{entitlementId}] is not consumable | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31180: Duplicate request id: [{requestId}] | 20006: optimistic lock)
+        409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31173: Entitlement [{entitlementId}] is not consumable | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31178: Entitlement [{entitlementId}] out of time range | 31180: Duplicate request id: [{requestId}] | 20006: optimistic lock)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2027,6 +2039,110 @@ async def get_user_entitlement_ownership_by_sku_async(
     )
 
 
+@same_doc_as(GrantEntitlements)
+def grant_entitlements(
+    body: Optional[BulkEntitlementGrantRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Grant entitlements to different users (grantEntitlements)
+
+    Grant entitlements to multiple users, skipped granting will be treated as fail.
+    Other detail info:
+
+      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=4 (UPDATE)
+      *  Returns : bulk grant entitlements result
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT [UPDATE]
+
+    Properties:
+        url: /platform/admin/namespaces/{namespace}/entitlements/grant
+
+        method: POST
+
+        tags: ["Entitlement"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        body: (body) OPTIONAL BulkEntitlementGrantRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - BulkEntitlementGrantResult (successful operation)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GrantEntitlements.create(
+        body=body,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(GrantEntitlements)
+async def grant_entitlements_async(
+    body: Optional[BulkEntitlementGrantRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Grant entitlements to different users (grantEntitlements)
+
+    Grant entitlements to multiple users, skipped granting will be treated as fail.
+    Other detail info:
+
+      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=4 (UPDATE)
+      *  Returns : bulk grant entitlements result
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT [UPDATE]
+
+    Properties:
+        url: /platform/admin/namespaces/{namespace}/entitlements/grant
+
+        method: POST
+
+        tags: ["Entitlement"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        body: (body) OPTIONAL BulkEntitlementGrantRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - BulkEntitlementGrantResult (successful operation)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GrantEntitlements.create(
+        body=body,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(GrantUserEntitlement)
 def grant_user_entitlement(
     user_id: str,
@@ -2187,7 +2303,7 @@ def public_consume_user_entitlement(
     Responses:
         200: OK - EntitlementDecrementResult (successful operation)
 
-        400: Bad Request - ErrorEntity (31121: OptionBox entitlement [{entitlementId}] use count is not 1 | 31122: OptionBox entitlement [{entitlementId}] options size is not 1)
+        400: Bad Request - ErrorEntity (31121: OptionBox entitlement [{entitlementId}] use count is not 1 | 31122: OptionBox entitlement [{entitlementId}] options size is not 1 | 31123: Unable to acquire box item, box item [{itemId}] expired)
 
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}] | 31145: Option [{option}] doesn't exist in OptionBox entitlement [{entitlementId}])
 
@@ -2250,7 +2366,7 @@ async def public_consume_user_entitlement_async(
     Responses:
         200: OK - EntitlementDecrementResult (successful operation)
 
-        400: Bad Request - ErrorEntity (31121: OptionBox entitlement [{entitlementId}] use count is not 1 | 31122: OptionBox entitlement [{entitlementId}] options size is not 1)
+        400: Bad Request - ErrorEntity (31121: OptionBox entitlement [{entitlementId}] use count is not 1 | 31122: OptionBox entitlement [{entitlementId}] options size is not 1 | 31123: Unable to acquire box item, box item [{itemId}] expired)
 
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}] | 31145: Option [{option}] doesn't exist in OptionBox entitlement [{entitlementId}])
 
@@ -4345,7 +4461,6 @@ def public_sell_user_entitlement(
     """Sell user entitlement (publicSellUserEntitlement)
 
     Sell user entitlement. If the entitlement is consumable, useCount is 0, the status will be CONSUMED. If the entitlement is durable, the status will be SOLD. Other detail info:
-
       * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
       *  Returns : entitlement
 
@@ -4405,7 +4520,6 @@ async def public_sell_user_entitlement_async(
     """Sell user entitlement (publicSellUserEntitlement)
 
     Sell user entitlement. If the entitlement is consumable, useCount is 0, the status will be CONSUMED. If the entitlement is durable, the status will be SOLD. Other detail info:
-
       * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
       *  Returns : entitlement
 
@@ -4610,6 +4724,132 @@ async def query_entitlements_async(
         limit=limit,
         offset=offset,
         user_id=user_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(QueryEntitlements1)
+def query_entitlements_1(
+    active_only: Optional[bool] = None,
+    item_ids: Optional[List[str]] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Query entitlements by Item Ids (queryEntitlements_1)
+
+    Query entitlements by Item Ids.
+
+    Other detail info:
+
+      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
+      *  Returns : entitlement list
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT [READ]
+
+    Properties:
+        url: /platform/admin/namespaces/{namespace}/entitlements/byItemIds
+
+        method: GET
+
+        tags: ["Entitlement"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        active_only: (activeOnly) OPTIONAL bool in query
+
+        item_ids: (itemIds) OPTIONAL List[str] in query
+
+        limit: (limit) OPTIONAL int in query
+
+        offset: (offset) OPTIONAL int in query
+
+    Responses:
+        200: OK - EntitlementPagingSlicedResult (successful operation)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = QueryEntitlements1.create(
+        active_only=active_only,
+        item_ids=item_ids,
+        limit=limit,
+        offset=offset,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(QueryEntitlements1)
+async def query_entitlements_1_async(
+    active_only: Optional[bool] = None,
+    item_ids: Optional[List[str]] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Query entitlements by Item Ids (queryEntitlements_1)
+
+    Query entitlements by Item Ids.
+
+    Other detail info:
+
+      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
+      *  Returns : entitlement list
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT [READ]
+
+    Properties:
+        url: /platform/admin/namespaces/{namespace}/entitlements/byItemIds
+
+        method: GET
+
+        tags: ["Entitlement"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        active_only: (activeOnly) OPTIONAL bool in query
+
+        item_ids: (itemIds) OPTIONAL List[str] in query
+
+        limit: (limit) OPTIONAL int in query
+
+        offset: (offset) OPTIONAL int in query
+
+    Responses:
+        200: OK - EntitlementPagingSlicedResult (successful operation)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = QueryEntitlements1.create(
+        active_only=active_only,
+        item_ids=item_ids,
+        limit=limit,
+        offset=offset,
         namespace=namespace,
     )
     return await run_request_async(
@@ -5021,6 +5261,110 @@ async def revoke_all_entitlements_async(
     )
 
 
+@same_doc_as(RevokeEntitlements)
+def revoke_entitlements(
+    body: Optional[List[str]] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Revoke entitlements by Ids (revokeEntitlements)
+
+    Revoke entitlements, skipped revocation will be treated as fail.
+    Other detail info:
+
+      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=4 (UPDATE)
+      *  Returns : bulk revoke entitlements result
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT [UPDATE]
+
+    Properties:
+        url: /platform/admin/namespaces/{namespace}/entitlements/revoke
+
+        method: POST
+
+        tags: ["Entitlement"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        body: (body) OPTIONAL List[str] in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - BulkEntitlementRevokeResult (successful operation)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = RevokeEntitlements.create(
+        body=body,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(RevokeEntitlements)
+async def revoke_entitlements_async(
+    body: Optional[List[str]] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Revoke entitlements by Ids (revokeEntitlements)
+
+    Revoke entitlements, skipped revocation will be treated as fail.
+    Other detail info:
+
+      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=4 (UPDATE)
+      *  Returns : bulk revoke entitlements result
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT [UPDATE]
+
+    Properties:
+        url: /platform/admin/namespaces/{namespace}/entitlements/revoke
+
+        method: POST
+
+        tags: ["Entitlement"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        body: (body) OPTIONAL List[str] in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - BulkEntitlementRevokeResult (successful operation)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = RevokeEntitlements.create(
+        body=body,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(RevokeUseCount)
 def revoke_use_count(
     entitlement_id: str,
@@ -5373,7 +5717,6 @@ def sell_user_entitlement(
     """Sell user entitlement (sellUserEntitlement)
 
     Sell user entitlement. If the entitlement is consumable, useCount is 0, the status will be CONSUMED. If the entitlement is durable, the status will be SOLD. Other detail info:
-
       * Required permission : resource=ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT, action=4 (UPDATE)
       *  Returns : entitlement
 
@@ -5430,7 +5773,6 @@ async def sell_user_entitlement_async(
     """Sell user entitlement (sellUserEntitlement)
 
     Sell user entitlement. If the entitlement is consumable, useCount is 0, the status will be CONSUMED. If the entitlement is durable, the status will be SOLD. Other detail info:
-
       * Required permission : resource=ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT, action=4 (UPDATE)
       *  Returns : entitlement
 

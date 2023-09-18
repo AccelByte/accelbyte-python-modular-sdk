@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Dsm Controller Service (6.2.3)
+# AccelByte Gaming Services Dsm Controller Service (6.4.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import ModelsDeploymentWithOverride
 from ...models import ModelsUpdateDeploymentRequest
@@ -76,6 +76,8 @@ class UpdateDeployment(Operation):
         401: Unauthorized - ResponseError (Unauthorized)
 
         404: Not Found - ResponseError (config not found)
+
+        422: Unprocessable Entity - ResponseError (invalid game version)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
@@ -211,6 +213,8 @@ class UpdateDeployment(Operation):
 
         404: Not Found - ResponseError (config not found)
 
+        422: Unprocessable Entity - ResponseError (invalid game version)
+
         500: Internal Server Error - ResponseError (Internal Server Error)
 
         ---: HttpResponse (Undocumented Response)
@@ -233,6 +237,8 @@ class UpdateDeployment(Operation):
         if code == 401:
             return None, ResponseError.create_from_dict(content)
         if code == 404:
+            return None, ResponseError.create_from_dict(content)
+        if code == 422:
             return None, ResponseError.create_from_dict(content)
         if code == 500:
             return None, ResponseError.create_from_dict(content)

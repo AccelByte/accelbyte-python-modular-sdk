@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ErrorEntity
 from ..models import StatCreate
@@ -61,11 +61,10 @@ def create_stat(
 
     Create stat.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-      *  Returns : created stat template
-      * default minimum value is 0
-      * default maximum value is 1.7976931348623157e+308
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+              *  Returns : created stat template
+              * default minimum value is 0
+              * default maximum value is 1.7976931348623157e+308
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
@@ -116,11 +115,10 @@ async def create_stat_async(
 
     Create stat.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-      *  Returns : created stat template
-      * default minimum value is 0
-      * default maximum value is 1.7976931348623157e+308
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+              *  Returns : created stat template
+              * default minimum value is 0
+              * default maximum value is 1.7976931348623157e+308
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
@@ -173,11 +171,10 @@ def create_stat_1(
 
     Create stat.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-      *  Returns : created stat template
-      * default minimum value is 0
-      * default maximum value is 1.7976931348623157e+308
+              *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+              *  Returns : created stat template
+              * default minimum value is 0
+              * default maximum value is 1.7976931348623157e+308
 
     Required Permission(s):
         - NAMESPACE:{namespace}:STAT [CREATE]
@@ -228,11 +225,10 @@ async def create_stat_1_async(
 
     Create stat.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-      *  Returns : created stat template
-      * default minimum value is 0
-      * default maximum value is 1.7976931348623157e+308
+              *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+              *  Returns : created stat template
+              * default minimum value is 0
+              * default maximum value is 1.7976931348623157e+308
 
     Required Permission(s):
         - NAMESPACE:{namespace}:STAT [CREATE]
@@ -285,8 +281,7 @@ def delete_stat(
 
     Deletes stat template.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [DELETE]
@@ -335,8 +330,7 @@ async def delete_stat_async(
 
     Deletes stat template.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [DELETE]
@@ -387,8 +381,7 @@ def delete_tied_stat(
 
     Deletes stat template.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [DELETE]
@@ -437,8 +430,7 @@ async def delete_tied_stat_async(
 
     Deletes stat template.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [DELETE]
@@ -489,8 +481,7 @@ def export_stats(
     Export all stat configurations for a given namespace into file At current, only JSON file is supported.
 
     Other detail info:
-
-      *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+              *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -534,8 +525,7 @@ async def export_stats_async(
     Export all stat configurations for a given namespace into file At current, only JSON file is supported.
 
     Other detail info:
-
-      *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+              *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -581,9 +571,8 @@ def get_stat(
 
     Get stat by statCode.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-      *  Returns : stat info
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+              *  Returns : stat info
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -632,9 +621,8 @@ async def get_stat_async(
 
     Get stat by statCode.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-      *  Returns : stat info
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+              *  Returns : stat info
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -678,6 +666,7 @@ async def get_stat_async(
 def get_stats(
     cycle_ids: Optional[str] = None,
     is_global: Optional[bool] = None,
+    is_public: Optional[bool] = None,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
@@ -688,9 +677,8 @@ def get_stats(
 
     List stats by pagination.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-      *  Returns : stats
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+              *  Returns : stats
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -714,6 +702,8 @@ def get_stats(
 
         is_global: (isGlobal) OPTIONAL bool in query
 
+        is_public: (isPublic) OPTIONAL bool in query
+
         limit: (limit) OPTIONAL int in query
 
         offset: (offset) OPTIONAL int in query
@@ -728,6 +718,7 @@ def get_stats(
     request = GetStats.create(
         cycle_ids=cycle_ids,
         is_global=is_global,
+        is_public=is_public,
         limit=limit,
         offset=offset,
         namespace=namespace,
@@ -739,6 +730,7 @@ def get_stats(
 async def get_stats_async(
     cycle_ids: Optional[str] = None,
     is_global: Optional[bool] = None,
+    is_public: Optional[bool] = None,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
@@ -749,9 +741,8 @@ async def get_stats_async(
 
     List stats by pagination.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-      *  Returns : stats
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+              *  Returns : stats
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -775,6 +766,8 @@ async def get_stats_async(
 
         is_global: (isGlobal) OPTIONAL bool in query
 
+        is_public: (isPublic) OPTIONAL bool in query
+
         limit: (limit) OPTIONAL int in query
 
         offset: (offset) OPTIONAL int in query
@@ -789,6 +782,7 @@ async def get_stats_async(
     request = GetStats.create(
         cycle_ids=cycle_ids,
         is_global=is_global,
+        is_public=is_public,
         limit=limit,
         offset=offset,
         namespace=namespace,
@@ -811,8 +805,7 @@ def import_stats(
     Import stat configurations for a given namespace from file. At current, only JSON file is supported.
 
     Other detail info:
-
-      *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+              *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
@@ -866,8 +859,7 @@ async def import_stats_async(
     Import stat configurations for a given namespace from file. At current, only JSON file is supported.
 
     Other detail info:
-
-      *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+              *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
@@ -914,6 +906,7 @@ async def import_stats_async(
 def query_stats(
     keyword: str,
     is_global: Optional[bool] = None,
+    is_public: Optional[bool] = None,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
@@ -924,9 +917,8 @@ def query_stats(
 
     Query stats by keyword.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-      *  Returns : stats
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+              *  Returns : stats
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -948,6 +940,8 @@ def query_stats(
 
         is_global: (isGlobal) OPTIONAL bool in query
 
+        is_public: (isPublic) OPTIONAL bool in query
+
         limit: (limit) OPTIONAL int in query
 
         offset: (offset) OPTIONAL int in query
@@ -964,6 +958,7 @@ def query_stats(
     request = QueryStats.create(
         keyword=keyword,
         is_global=is_global,
+        is_public=is_public,
         limit=limit,
         offset=offset,
         namespace=namespace,
@@ -975,6 +970,7 @@ def query_stats(
 async def query_stats_async(
     keyword: str,
     is_global: Optional[bool] = None,
+    is_public: Optional[bool] = None,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
@@ -985,9 +981,8 @@ async def query_stats_async(
 
     Query stats by keyword.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-      *  Returns : stats
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+              *  Returns : stats
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -1009,6 +1004,8 @@ async def query_stats_async(
 
         is_global: (isGlobal) OPTIONAL bool in query
 
+        is_public: (isPublic) OPTIONAL bool in query
+
         limit: (limit) OPTIONAL int in query
 
         offset: (offset) OPTIONAL int in query
@@ -1025,6 +1022,7 @@ async def query_stats_async(
     request = QueryStats.create(
         keyword=keyword,
         is_global=is_global,
+        is_public=is_public,
         limit=limit,
         offset=offset,
         namespace=namespace,
@@ -1046,9 +1044,8 @@ def update_stat(
 
     Update stat.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
-      *  Returns : updated stat
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
+              *  Returns : updated stat
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [UPDATE]
@@ -1101,9 +1098,8 @@ async def update_stat_async(
 
     Update stat.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
-      *  Returns : updated stat
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
+              *  Returns : updated stat
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [UPDATE]

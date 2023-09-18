@@ -9,8 +9,12 @@ description = "AccelByte Python SDK - All"
 requires-python = ">=3.9"
 dependencies = [
     "accelbyte-py-sdk-core",
-    # AGS Services
+    # Features
+    "accelbyte-py-sdk-feat-auth",
+    "accelbyte-py-sdk-feat-token-validation",
+    # Services
     "accelbyte-py-sdk-achievement",
+    "accelbyte-py-sdk-ams",
     "accelbyte-py-sdk-basic",
     "accelbyte-py-sdk-cloudsave",
     "accelbyte-py-sdk-dslogmanager",
@@ -33,8 +37,4 @@ dependencies = [
     "accelbyte-py-sdk-sessionbrowser",
     "accelbyte-py-sdk-social",
     "accelbyte-py-sdk-ugc",
-    # Services
-    "accelbyte-py-sdk-service-auth",
-    # Features
-    "accelbyte-py-sdk-token-validation",
 ]

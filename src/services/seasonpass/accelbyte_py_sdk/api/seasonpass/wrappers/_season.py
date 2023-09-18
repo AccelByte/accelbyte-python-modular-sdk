@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import BulkUserProgressionRequest
 from ..models import ClaimableUserSeasonInfo
@@ -1462,6 +1462,7 @@ def public_get_current_season(
 
         securities: [BEARER_AUTH]
 
+
         namespace: (namespace) REQUIRED str in path
 
         language: (language) OPTIONAL str in query
@@ -1511,6 +1512,7 @@ async def public_get_current_season_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1882,7 +1884,7 @@ async def publish_season_async(
 def query_seasons(
     limit: Optional[int] = None,
     offset: Optional[int] = None,
-    status: Optional[List[Union[str, QuerySeasonsStatusEnum]]] = None,
+    status: Optional[Union[List[str], List[QuerySeasonsStatusEnum]]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1918,7 +1920,7 @@ def query_seasons(
 
         offset: (offset) OPTIONAL int in query
 
-        status: (status) OPTIONAL List[Union[str, StatusEnum]] in query
+        status: (status) OPTIONAL Union[List[str], List[StatusEnum]] in query
 
     Responses:
         200: OK - ListSeasonInfoPagingSlicedResult (successful operation)
@@ -1942,7 +1944,7 @@ def query_seasons(
 async def query_seasons_async(
     limit: Optional[int] = None,
     offset: Optional[int] = None,
-    status: Optional[List[Union[str, QuerySeasonsStatusEnum]]] = None,
+    status: Optional[Union[List[str], List[QuerySeasonsStatusEnum]]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1978,7 +1980,7 @@ async def query_seasons_async(
 
         offset: (offset) OPTIONAL int in query
 
-        status: (status) OPTIONAL List[Union[str, StatusEnum]] in query
+        status: (status) OPTIONAL Union[List[str], List[StatusEnum]] in query
 
     Responses:
         200: OK - ListSeasonInfoPagingSlicedResult (successful operation)

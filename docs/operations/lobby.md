@@ -1,6 +1,6 @@
 [//]: # (<< Code generated. DO NOT EDIT!)
 
-[//]: # (<< template file: ags_py_codegen)
+[//]: # (<< template file: doc-index.j2)
 
 # AccelByte Gaming Services Lobby Server Index (3.25.0)
 

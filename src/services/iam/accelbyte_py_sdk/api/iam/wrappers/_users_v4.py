@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,12 +23,12 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import deprecated
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import deprecated
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import AccountCreateTestUserRequestV4
 from ..models import AccountCreateTestUsersRequestV4
@@ -51,6 +51,7 @@ from ..models import ModelListValidUserIDResponseV4
 from ..models import ModelPublicInviteUserRequestV4
 from ..models import ModelRemoveUserRoleV4Request
 from ..models import ModelUserCreateFromInvitationRequestV4
+from ..models import ModelUserPublicInfoResponseV4
 from ..models import ModelUserResponseV3
 from ..models import ModelUserUpdateRequestV3
 from ..models import RestErrorResponse
@@ -94,6 +95,7 @@ from ..operations.users_v4 import PublicGenerateMyAuthenticatorKeyV4
 from ..operations.users_v4 import PublicGenerateMyBackupCodesV4
 from ..operations.users_v4 import PublicGetMyBackupCodesV4
 from ..operations.users_v4 import PublicGetMyEnabledFactorsV4
+from ..operations.users_v4 import PublicGetUserPublicInfoByUserIdV4
 from ..operations.users_v4 import PublicInviteUserV4
 from ..operations.users_v4 import PublicMakeFactorMyDefaultV4
 from ..operations.users_v4 import PublicRemoveTrustedDeviceV4
@@ -2441,8 +2443,7 @@ def admin_update_user_email_address_v4(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
 
 
 
@@ -2511,8 +2512,7 @@ async def admin_update_user_email_address_v4_async(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
 
 
 
@@ -4525,6 +4525,108 @@ async def public_get_my_enabled_factors_v4_async(
     )
 
 
+@same_doc_as(PublicGetUserPublicInfoByUserIdV4)
+def public_get_user_public_info_by_user_id_v4(
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get User Public Info By User ID (PublicGetUserPublicInfoByUserIdV4)
+
+    This endpoint requires a valid user token and only returns user's public information.
+
+    action code: 10129
+
+    Properties:
+        url: /iam/v4/public/namespaces/{namespace}/users/{userId}
+
+        method: GET
+
+        tags: ["Users V4"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelUserPublicInfoResponseV4 (OK)
+
+        400: Bad Request - RestErrorResponse (20002: validation error)
+
+        404: Not Found - RestErrorResponse (20008: user not found | 10139: platform account not found)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = PublicGetUserPublicInfoByUserIdV4.create(
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(PublicGetUserPublicInfoByUserIdV4)
+async def public_get_user_public_info_by_user_id_v4_async(
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get User Public Info By User ID (PublicGetUserPublicInfoByUserIdV4)
+
+    This endpoint requires a valid user token and only returns user's public information.
+
+    action code: 10129
+
+    Properties:
+        url: /iam/v4/public/namespaces/{namespace}/users/{userId}
+
+        method: GET
+
+        tags: ["Users V4"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelUserPublicInfoResponseV4 (OK)
+
+        400: Bad Request - RestErrorResponse (20002: validation error)
+
+        404: Not Found - RestErrorResponse (20008: user not found | 10139: platform account not found)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = PublicGetUserPublicInfoByUserIdV4.create(
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(PublicInviteUserV4)
 def public_invite_user_v4(
     body: ModelPublicInviteUserRequestV4,
@@ -4999,8 +5101,7 @@ def public_update_user_email_address_v4(
 
     It requires a verification code from
 
-
-        /users/me/code/request
+                                                                                                    /users/me/code/request
 
     with UpdateEmailAddress context.
 
@@ -5061,8 +5162,7 @@ async def public_update_user_email_address_v4_async(
 
     It requires a verification code from
 
-
-        /users/me/code/request
+                                                                                                    /users/me/code/request
 
     with UpdateEmailAddress context.
 
@@ -5401,16 +5501,13 @@ def public_upgrade_headless_account_with_verification_code_v4(
     Supported user data fields:
 
 
+                              * displayName
 
 
-      * displayName
+                              * dateOfBirth : format YYYY-MM-DD, e.g. 2019-04-29
 
 
-      * dateOfBirth : format YYYY-MM-DD, e.g. 2019-04-29
-
-
-      * country : format ISO3166-1 alpha-2 two letter, e.g. US
-
+                              * country : format ISO3166-1 alpha-2 two letter, e.g. US
 
 
     action code : 10124
@@ -5480,16 +5577,13 @@ async def public_upgrade_headless_account_with_verification_code_v4_async(
     Supported user data fields:
 
 
+                              * displayName
 
 
-      * displayName
+                              * dateOfBirth : format YYYY-MM-DD, e.g. 2019-04-29
 
 
-      * dateOfBirth : format YYYY-MM-DD, e.g. 2019-04-29
-
-
-      * country : format ISO3166-1 alpha-2 two letter, e.g. US
-
+                              * country : format ISO3166-1 alpha-2 two letter, e.g. US
 
 
     action code : 10124

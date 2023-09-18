@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: service-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Seasonpass Service."""
 
-__version__ = "1.18.2"
+__version__ = "1.19.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 

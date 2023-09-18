@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,17 +23,18 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ModelBulkAddFriendsRequest
 from ..models import ModelGetFriendsResponse
 from ..models import ModelGetUserFriendsResponse
 from ..models import ModelGetUserIncomingFriendsResponse
 from ..models import ModelGetUserOutgoingFriendsResponse
+from ..models import ModelListBulkUserPlatformsResponse
 from ..models import ModelLoadIncomingFriendsWithTimeResponse
 from ..models import ModelLoadOutgoingFriendsWithTimeResponse
 from ..models import ModelUserAcceptFriendRequest
@@ -46,8 +47,11 @@ from ..models import RestapiErrorResponseBody
 from ..models import RestapiErrorResponseV1
 
 from ..operations.friends import AddFriendsWithoutConfirmation
+from ..operations.friends import GetIncomingFriendRequests
 from ..operations.friends import GetListOfFriends
+from ..operations.friends import GetOutgoingFriendRequests
 from ..operations.friends import GetUserFriendsUpdated
+from ..operations.friends import GetUserFriendsWithPlatform
 from ..operations.friends import GetUserIncomingFriends
 from ..operations.friends import GetUserIncomingFriendsWithTime
 from ..operations.friends import GetUserOutgoingFriends
@@ -186,9 +190,152 @@ async def add_friends_without_confirmation_async(
     )
 
 
+@same_doc_as(GetIncomingFriendRequests)
+def get_incoming_friend_requests(
+    user_id: str,
+    friend_id: Optional[str] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """get incoming friend requests (get incoming friend requests)
+
+    Required permission : `NAMESPACE:{namespace}:USER:{userId}:FRIENDS [READ]` with scope `social`
+
+    get list of incoming friend requests.
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:USER:{userId}:FRIENDS [READ]
+
+    Required Scope(s):
+        - social
+
+    Properties:
+        url: /lobby/v1/admin/friend/namespaces/{namespace}/users/{userId}/incoming
+
+        method: GET
+
+        tags: ["friends"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+        friend_id: (friendId) OPTIONAL str in query
+
+        limit: (limit) OPTIONAL int in query
+
+        offset: (offset) OPTIONAL int in query
+
+    Responses:
+        200: OK - ModelLoadIncomingFriendsWithTimeResponse
+
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
+
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
+
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GetIncomingFriendRequests.create(
+        user_id=user_id,
+        friend_id=friend_id,
+        limit=limit,
+        offset=offset,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(GetIncomingFriendRequests)
+async def get_incoming_friend_requests_async(
+    user_id: str,
+    friend_id: Optional[str] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """get incoming friend requests (get incoming friend requests)
+
+    Required permission : `NAMESPACE:{namespace}:USER:{userId}:FRIENDS [READ]` with scope `social`
+
+    get list of incoming friend requests.
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:USER:{userId}:FRIENDS [READ]
+
+    Required Scope(s):
+        - social
+
+    Properties:
+        url: /lobby/v1/admin/friend/namespaces/{namespace}/users/{userId}/incoming
+
+        method: GET
+
+        tags: ["friends"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+        friend_id: (friendId) OPTIONAL str in query
+
+        limit: (limit) OPTIONAL int in query
+
+        offset: (offset) OPTIONAL int in query
+
+    Responses:
+        200: OK - ModelLoadIncomingFriendsWithTimeResponse
+
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
+
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
+
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GetIncomingFriendRequests.create(
+        user_id=user_id,
+        friend_id=friend_id,
+        limit=limit,
+        offset=offset,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(GetListOfFriends)
 def get_list_of_friends(
     user_id: str,
+    friend_id: Optional[str] = None,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
@@ -223,6 +370,8 @@ def get_list_of_friends(
         namespace: (namespace) REQUIRED str in path
 
         user_id: (userId) REQUIRED str in path
+
+        friend_id: (friendId) OPTIONAL str in query
 
         limit: (limit) OPTIONAL int in query
 
@@ -245,6 +394,7 @@ def get_list_of_friends(
             return None, error
     request = GetListOfFriends.create(
         user_id=user_id,
+        friend_id=friend_id,
         limit=limit,
         offset=offset,
         namespace=namespace,
@@ -255,6 +405,7 @@ def get_list_of_friends(
 @same_doc_as(GetListOfFriends)
 async def get_list_of_friends_async(
     user_id: str,
+    friend_id: Optional[str] = None,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
@@ -290,6 +441,8 @@ async def get_list_of_friends_async(
 
         user_id: (userId) REQUIRED str in path
 
+        friend_id: (friendId) OPTIONAL str in query
+
         limit: (limit) OPTIONAL int in query
 
         offset: (offset) OPTIONAL int in query
@@ -310,6 +463,141 @@ async def get_list_of_friends_async(
         if error:
             return None, error
     request = GetListOfFriends.create(
+        user_id=user_id,
+        friend_id=friend_id,
+        limit=limit,
+        offset=offset,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(GetOutgoingFriendRequests)
+def get_outgoing_friend_requests(
+    user_id: str,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """get list of outgoing friend requests (get outgoing friend requests)
+
+    Required permission : `NAMESPACE:{namespace}:USER:{userId}:FRIENDS [READ]` with scope `social`
+
+    get list of outgoing friend requests in a namespace.
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:USER:{userId}:FRIENDS [READ]
+
+    Required Scope(s):
+        - social
+
+    Properties:
+        url: /lobby/v1/admin/friend/namespaces/{namespace}/users/{userId}/outgoing
+
+        method: GET
+
+        tags: ["friends"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+        limit: (limit) OPTIONAL int in query
+
+        offset: (offset) OPTIONAL int in query
+
+    Responses:
+        200: OK - ModelLoadOutgoingFriendsWithTimeResponse
+
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
+
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
+
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GetOutgoingFriendRequests.create(
+        user_id=user_id,
+        limit=limit,
+        offset=offset,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(GetOutgoingFriendRequests)
+async def get_outgoing_friend_requests_async(
+    user_id: str,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """get list of outgoing friend requests (get outgoing friend requests)
+
+    Required permission : `NAMESPACE:{namespace}:USER:{userId}:FRIENDS [READ]` with scope `social`
+
+    get list of outgoing friend requests in a namespace.
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:USER:{userId}:FRIENDS [READ]
+
+    Required Scope(s):
+        - social
+
+    Properties:
+        url: /lobby/v1/admin/friend/namespaces/{namespace}/users/{userId}/outgoing
+
+        method: GET
+
+        tags: ["friends"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+        limit: (limit) OPTIONAL int in query
+
+        offset: (offset) OPTIONAL int in query
+
+    Responses:
+        200: OK - ModelLoadOutgoingFriendsWithTimeResponse
+
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
+
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
+
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GetOutgoingFriendRequests.create(
         user_id=user_id,
         limit=limit,
         offset=offset,
@@ -329,6 +617,7 @@ def get_user_friends_updated(
     **kwargs
 ):
     """get list of friends (getUserFriendsUpdated)
+
 
     Properties:
         url: /friends/namespaces/{namespace}/me
@@ -384,6 +673,7 @@ async def get_user_friends_updated_async(
 ):
     """get list of friends (getUserFriendsUpdated)
 
+
     Properties:
         url: /friends/namespaces/{namespace}/me
 
@@ -430,6 +720,102 @@ async def get_user_friends_updated_async(
     )
 
 
+@same_doc_as(GetUserFriendsWithPlatform)
+def get_user_friends_with_platform(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """get list of friends with platform data (getUserFriendsWithPlatform)
+
+
+    Properties:
+        url: /friends/namespaces/{namespace}/me/platforms
+
+        method: GET
+
+        tags: ["friends", "public"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelListBulkUserPlatformsResponse (OK)
+
+        400: Bad Request - RestapiErrorResponseV1 (Bad Request)
+
+        401: Unauthorized - RestapiErrorResponseV1 (Unauthorized)
+
+        403: Forbidden - RestapiErrorResponseV1 (Forbidden)
+
+        404: Not Found - RestapiErrorResponseV1 (Not Found)
+
+        500: Internal Server Error - RestapiErrorResponseV1 (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GetUserFriendsWithPlatform.create(
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(GetUserFriendsWithPlatform)
+async def get_user_friends_with_platform_async(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """get list of friends with platform data (getUserFriendsWithPlatform)
+
+
+    Properties:
+        url: /friends/namespaces/{namespace}/me/platforms
+
+        method: GET
+
+        tags: ["friends", "public"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelListBulkUserPlatformsResponse (OK)
+
+        400: Bad Request - RestapiErrorResponseV1 (Bad Request)
+
+        401: Unauthorized - RestapiErrorResponseV1 (Unauthorized)
+
+        403: Forbidden - RestapiErrorResponseV1 (Forbidden)
+
+        404: Not Found - RestapiErrorResponseV1 (Not Found)
+
+        500: Internal Server Error - RestapiErrorResponseV1 (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GetUserFriendsWithPlatform.create(
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(GetUserIncomingFriends)
 def get_user_incoming_friends(
     namespace: Optional[str] = None,
@@ -437,6 +823,7 @@ def get_user_incoming_friends(
     **kwargs
 ):
     """get list of incoming friends (getUserIncomingFriends)
+
 
     Properties:
         url: /friends/namespaces/{namespace}/me/incoming
@@ -483,6 +870,7 @@ async def get_user_incoming_friends_async(
     **kwargs
 ):
     """get list of incoming friends (getUserIncomingFriends)
+
 
     Properties:
         url: /friends/namespaces/{namespace}/me/incoming
@@ -532,6 +920,7 @@ def get_user_incoming_friends_with_time(
 ):
     """get list of incoming friends with requested time info (getUserIncomingFriendsWithTime)
 
+
     Properties:
         url: /friends/namespaces/{namespace}/me/incoming-time
 
@@ -577,6 +966,7 @@ async def get_user_incoming_friends_with_time_async(
     **kwargs
 ):
     """get list of incoming friends with requested time info (getUserIncomingFriendsWithTime)
+
 
     Properties:
         url: /friends/namespaces/{namespace}/me/incoming-time
@@ -626,6 +1016,7 @@ def get_user_outgoing_friends(
 ):
     """get list of outgoing friends (getUserOutgoingFriends)
 
+
     Properties:
         url: /friends/namespaces/{namespace}/me/outgoing
 
@@ -671,6 +1062,7 @@ async def get_user_outgoing_friends_async(
     **kwargs
 ):
     """get list of outgoing friends (getUserOutgoingFriends)
+
 
     Properties:
         url: /friends/namespaces/{namespace}/me/outgoing
@@ -720,6 +1112,7 @@ def get_user_outgoing_friends_with_time(
 ):
     """get list of outgoing friends with requested time info (getUserOutgoingFriendsWithTime)
 
+
     Properties:
         url: /friends/namespaces/{namespace}/me/outgoing-time
 
@@ -765,6 +1158,7 @@ async def get_user_outgoing_friends_with_time_async(
     **kwargs
 ):
     """get list of outgoing friends with requested time info (getUserOutgoingFriendsWithTime)
+
 
     Properties:
         url: /friends/namespaces/{namespace}/me/outgoing-time
@@ -815,6 +1209,7 @@ def user_accept_friend_request(
 ):
     """user accept friend (userAcceptFriendRequest)
 
+
     Properties:
         url: /friends/namespaces/{namespace}/me/request/accept
 
@@ -864,6 +1259,7 @@ async def user_accept_friend_request_async(
     **kwargs
 ):
     """user accept friend (userAcceptFriendRequest)
+
 
     Properties:
         url: /friends/namespaces/{namespace}/me/request/accept
@@ -917,6 +1313,7 @@ def user_cancel_friend_request(
 ):
     """user cancel a friend request (userCancelFriendRequest)
 
+
     Properties:
         url: /friends/namespaces/{namespace}/me/request/cancel
 
@@ -966,6 +1363,7 @@ async def user_cancel_friend_request_async(
     **kwargs
 ):
     """user cancel a friend request (userCancelFriendRequest)
+
 
     Properties:
         url: /friends/namespaces/{namespace}/me/request/cancel
@@ -1019,6 +1417,7 @@ def user_get_friendship_status(
 ):
     """user get friendship status (userGetFriendshipStatus)
 
+
     Properties:
         url: /friends/namespaces/{namespace}/me/status/{friendId}
 
@@ -1066,6 +1465,7 @@ async def user_get_friendship_status_async(
     **kwargs
 ):
     """user get friendship status (userGetFriendshipStatus)
+
 
     Properties:
         url: /friends/namespaces/{namespace}/me/status/{friendId}
@@ -1117,6 +1517,7 @@ def user_reject_friend_request(
 ):
     """user reject a friend request (userRejectFriendRequest)
 
+
     Properties:
         url: /friends/namespaces/{namespace}/me/request/reject
 
@@ -1166,6 +1567,7 @@ async def user_reject_friend_request_async(
     **kwargs
 ):
     """user reject a friend request (userRejectFriendRequest)
+
 
     Properties:
         url: /friends/namespaces/{namespace}/me/request/reject
@@ -1329,6 +1731,7 @@ def user_unfriend_request(
 ):
     """user unfriend a friend (userUnfriendRequest)
 
+
     Properties:
         url: /friends/namespaces/{namespace}/me/unfriend
 
@@ -1378,6 +1781,7 @@ async def user_unfriend_request_async(
     **kwargs
 ):
     """user unfriend a friend (userUnfriendRequest)
+
 
     Properties:
         url: /friends/namespaces/{namespace}/me/unfriend

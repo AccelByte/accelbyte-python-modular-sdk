@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import CreatePolicyVersionRequest
 from ..models import CreatePolicyVersionResponse
@@ -53,8 +53,7 @@ def create_policy_version(
 
     Create a version of a particular country-specific policy.
     Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=1 (CREATE)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=1 (CREATE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [CREATE]
@@ -99,8 +98,7 @@ async def create_policy_version_async(
 
     Create a version of a particular country-specific policy.
     Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=1 (CREATE)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=1 (CREATE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [CREATE]
@@ -147,8 +145,7 @@ def publish_policy_version(
 
     Manually publish a version of a particular country-specific policy.
     Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [UPDATE]
@@ -195,8 +192,7 @@ async def publish_policy_version_async(
 
     Manually publish a version of a particular country-specific policy.
     Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [UPDATE]
@@ -245,8 +241,7 @@ def retrieve_single_policy_version(
 
     Retrieve a version of a particular country specific policy. If version is not provided, the Legal Service will assume caller requesting all versions from country-specific policy.
     Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [READ]
@@ -291,8 +286,7 @@ async def retrieve_single_policy_version_async(
 
     Retrieve a version of a particular country specific policy. If version is not provided, the Legal Service will assume caller requesting all versions from country-specific policy.
     Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [READ]
@@ -339,8 +333,7 @@ def update_policy_version(
 
     Update a particular policy version.
     Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [UPDATE]
@@ -387,8 +380,7 @@ async def update_policy_version_async(
 
     Update a particular policy version.
     Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [UPDATE]

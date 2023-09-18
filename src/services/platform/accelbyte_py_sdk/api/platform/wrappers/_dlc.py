@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import DLCItemConfigInfo
 from ..models import DLCItemConfigUpdate
@@ -39,6 +39,7 @@ from ..models import PlayStationDLCSyncMultiServiceLabelsRequest
 from ..models import PlayStationDLCSyncRequest
 from ..models import SteamDLCSyncRequest
 from ..models import UserDLC
+from ..models import UserDLCRecord
 from ..models import ValidationErrorEntity
 from ..models import XblDLCSyncRequest
 
@@ -48,14 +49,18 @@ from ..operations.dlc import GetDLCItemConfig
 from ..operations.dlc import GetPlatformDLCConfig
 from ..operations.dlc import GetUserDLC
 from ..operations.dlc import GetUserDLCTypeEnum
+from ..operations.dlc import GetUserDLCByPlatform
+from ..operations.dlc import GetUserDLCByPlatformTypeEnum
 from ..operations.dlc import PublicSyncPsnDlcInventory
 from ..operations.dlc import PublicSyncPsnDlcInventoryWithMultipleServiceLabels
 from ..operations.dlc import SyncEpicGameDLC
+from ..operations.dlc import SyncOculusDLC
 from ..operations.dlc import SyncSteamDLC
 from ..operations.dlc import SyncXboxDLC
 from ..operations.dlc import UpdateDLCItemConfig
 from ..operations.dlc import UpdatePlatformDLCConfig
 from ..models import UserDLCPlatformEnum
+from ..models import UserDLCRecordPlatformEnum, UserDLCRecordStatusEnum
 
 
 @same_doc_as(DeleteDLCItemConfig)
@@ -428,15 +433,15 @@ async def get_platform_dlc_config_async(
 
 @same_doc_as(GetUserDLC)
 def get_user_dlc(
-    type_: Union[str, GetUserDLCTypeEnum],
     user_id: str,
+    type_: Optional[Union[str, GetUserDLCTypeEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Get user dlc by platform (getUserDLC)
+    """Get user dlc records (getUserDLC)
 
-    Get user dlc by platform.
+    Get user dlc records.
     Other detail info:
 
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:IAP", action=2 (READ)
@@ -446,7 +451,7 @@ def get_user_dlc(
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:IAP [READ]
 
     Properties:
-        url: /platform/admin/namespaces/{namespace}/users/{userId}/dlc
+        url: /platform/admin/namespaces/{namespace}/users/{userId}/dlc/records
 
         method: GET
 
@@ -462,18 +467,18 @@ def get_user_dlc(
 
         user_id: (userId) REQUIRED str in path
 
-        type_: (type) REQUIRED Union[str, TypeEnum] in query
+        type_: (type) OPTIONAL Union[str, TypeEnum] in query
 
     Responses:
-        200: OK - UserDLC (successful operation)
+        200: OK - List[UserDLCRecord] (successful operation)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
         if error:
             return None, error
     request = GetUserDLC.create(
-        type_=type_,
         user_id=user_id,
+        type_=type_,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -481,13 +486,68 @@ def get_user_dlc(
 
 @same_doc_as(GetUserDLC)
 async def get_user_dlc_async(
-    type_: Union[str, GetUserDLCTypeEnum],
+    user_id: str,
+    type_: Optional[Union[str, GetUserDLCTypeEnum]] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get user dlc records (getUserDLC)
+
+    Get user dlc records.
+    Other detail info:
+
+      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:IAP", action=2 (READ)
+      *  Returns : user dlc
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:IAP [READ]
+
+    Properties:
+        url: /platform/admin/namespaces/{namespace}/users/{userId}/dlc/records
+
+        method: GET
+
+        tags: ["DLC"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+        type_: (type) OPTIONAL Union[str, TypeEnum] in query
+
+    Responses:
+        200: OK - List[UserDLCRecord] (successful operation)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GetUserDLC.create(
+        user_id=user_id,
+        type_=type_,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(GetUserDLCByPlatform)
+def get_user_dlc_by_platform(
+    type_: Union[str, GetUserDLCByPlatformTypeEnum],
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Get user dlc by platform (getUserDLC)
+    """Get user dlc by platform (getUserDLCByPlatform)
 
     Get user dlc by platform.
     Other detail info:
@@ -524,7 +584,60 @@ async def get_user_dlc_async(
         namespace, error = get_services_namespace()
         if error:
             return None, error
-    request = GetUserDLC.create(
+    request = GetUserDLCByPlatform.create(
+        type_=type_,
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(GetUserDLCByPlatform)
+async def get_user_dlc_by_platform_async(
+    type_: Union[str, GetUserDLCByPlatformTypeEnum],
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get user dlc by platform (getUserDLCByPlatform)
+
+    Get user dlc by platform.
+    Other detail info:
+
+      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:IAP", action=2 (READ)
+      *  Returns : user dlc
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:IAP [READ]
+
+    Properties:
+        url: /platform/admin/namespaces/{namespace}/users/{userId}/dlc
+
+        method: GET
+
+        tags: ["DLC"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+        type_: (type) REQUIRED Union[str, TypeEnum] in query
+
+    Responses:
+        200: OK - UserDLC (successful operation)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GetUserDLCByPlatform.create(
         type_=type_,
         user_id=user_id,
         namespace=namespace,
@@ -858,6 +971,106 @@ async def sync_epic_game_dlc_async(
     )
 
 
+@same_doc_as(SyncOculusDLC)
+def sync_oculus_dlc(
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Sync oculus dlc. (syncOculusDLC)
+
+    Sync oculus dlc.
+
+    Other detail info:
+
+      * Required permission : resource=NAMESPACE:{namespace}:USER:{userId}:DLC, action=4 (UPDATE)
+      *  Returns :
+
+    Properties:
+        url: /platform/public/namespaces/{namespace}/users/{userId}/dlc/oculus/sync
+
+        method: PUT
+
+        tags: ["DLC"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+    Responses:
+        204: No Content - (Successful operation)
+
+        400: Bad Request - ErrorEntity (39124: IAP request platform [{platformId}] user id is not linked with current user)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = SyncOculusDLC.create(
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(SyncOculusDLC)
+async def sync_oculus_dlc_async(
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Sync oculus dlc. (syncOculusDLC)
+
+    Sync oculus dlc.
+
+    Other detail info:
+
+      * Required permission : resource=NAMESPACE:{namespace}:USER:{userId}:DLC, action=4 (UPDATE)
+      *  Returns :
+
+    Properties:
+        url: /platform/public/namespaces/{namespace}/users/{userId}/dlc/oculus/sync
+
+        method: PUT
+
+        tags: ["DLC"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+    Responses:
+        204: No Content - (Successful operation)
+
+        400: Bad Request - ErrorEntity (39124: IAP request platform [{platformId}] user id is not linked with current user)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = SyncOculusDLC.create(
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(SyncSteamDLC)
 def sync_steam_dlc(
     user_id: str,
@@ -1084,7 +1297,6 @@ def update_dlc_item_config(
     """Update DLC item config (updateDLCItemConfig)
 
     Update DLC item config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:DLC:CONFIG", action=4 (UPDATE)
       *  Returns : updated DLC item config
 
@@ -1136,7 +1348,6 @@ async def update_dlc_item_config_async(
     """Update DLC item config (updateDLCItemConfig)
 
     Update DLC item config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:DLC:CONFIG", action=4 (UPDATE)
       *  Returns : updated DLC item config
 
@@ -1190,9 +1401,26 @@ def update_platform_dlc_config(
     """Update Platform DLC config (updatePlatformDLCConfig)
 
     Update Platform DLC config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:DLC:CONFIG", action=4 (UPDATE)
       *  Returns : updated Platform DLC config
+
+
+
+    ## Restrictions for platform dlc map
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DLC:CONFIG [UPDATE]
@@ -1240,9 +1468,26 @@ async def update_platform_dlc_config_async(
     """Update Platform DLC config (updatePlatformDLCConfig)
 
     Update Platform DLC config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:DLC:CONFIG", action=4 (UPDATE)
       *  Returns : updated Platform DLC config
+
+
+
+    ## Restrictions for platform dlc map
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DLC:CONFIG [UPDATE]

@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (5.31.0)
+# AccelByte Gaming Services Iam Service (7.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import ClientmodelClientCreationV3Request
 from ...models import ClientmodelClientV3Response
@@ -51,86 +51,87 @@ class AdminCreateClientV3(Operation):
     Fields Description:
 
 
+                * clientId : The client ID. e.g f815e5c44f364993961be3b3f26a7bf4
 
 
-      * clientId : The client ID. e.g f815e5c44f364993961be3b3f26a7bf4
+                * clientName : The client name. e.g E-commerce
 
 
-      * clientName : The client name. e.g E-commerce
+                * secret : The client's secret. It's empty if the client's type is a public client. Otherwise, the client secret is required
 
 
-      * secret : The client's secret. It's empty if the client's type is a public client. Otherwise, the client secret is required
+                * namespace : The namespace where the client lives. e.g sample-game
 
 
-      * namespace : The namespace where the client lives. e.g sample-game
+                * redirectUri : Contains the redirect URI used in OAuth callback. e.g https://example.net/platform
 
 
-      * redirectUri : Contains the redirect URI used in OAuth callback. e.g https://example.net/platform
-
-
-      * oauthClientType : The OAuth 2.0 client type. The client type determines whether the authorization needs Proof Of Key Exchange or not.
+                * oauthClientType : The OAuth 2.0 client type. The client type determines whether the authorization needs Proof Of Key Exchange or not.
     A public client type doesn't have a client secret and should use PKCE flow.
     A confidential client type has a client secret and don't use PKCE flow
     Supported oAuthClientType :
 
-        * Public
+                  * Public
 
 
-        * Confidential
+                  * Confidential
 
 
-      * audiences : List of target client IDs who is intended to receive the token. e.g ["eaaa65618fe24293b00a61454182b435", "40073ee9bc3446d3a051a71b48509a5d"]
+                * audiences : List of target client IDs who is intended to receive the token. e.g ["eaaa65618fe24293b00a61454182b435", "40073ee9bc3446d3a051a71b48509a5d"]
 
 
-      * baseUri : A base URI of the application. It is used for making sure the token is intended to be used by the client. e.g https://example.net/platform
+                * baseUri : A base URI of the application. It is used for making sure the token is intended to be used by the client. e.g https://example.net/platform
 
 
-      * clientPermissions : Contains the client's permissions
+                * clientPermissions : Contains the client's permissions
 
 
-      * deletable : The flag to identify whether client is deletable (optional). default value: true
+                * deletable : The flag to identify whether client is deletable (optional). default value: true
 
 
-      * clientPlatform : available client platform (optional). default value: ""
+                * clientPlatform : available client platform (optional). default value: ""
 
 
-        * Playstation
+                  * Playstation
 
 
-        * Xbox
+                  * Xbox
 
 
-        * Steam
+                  * Steam
 
 
-        * Epic
+                  * Epic
 
 
-        * IOS
+                  * IOS
 
 
-        * GooglePlay
+                  * GooglePlay
 
 
-        * Nintendo
+                  * Nintendo
+
+
+                  * Oculus
 
 
 
 
 
-      * twoFactorEnabled : The flag to indicate whether 2FA validation is enable for this client. default value: false
+                * twoFactorEnabled : The flag to indicate whether 2FA validation is enable for this client. default value: false
 
 
-      * oauthAccessTokenExpiration : a configurable expiration time for access_token , default value: 0 (mean fetch value from environment variable)
+                * oauthAccessTokenExpiration : a configurable expiration time for access_token , default value: 0 (mean fetch value from environment variable)
 
 
-      * oauthRefreshTokenExpiration : a configurable expiration time for refresh_token , default value: 0 (mean fetch value from environment variable)
+                * oauthRefreshTokenExpiration : a configurable expiration time for refresh_token , default value: 0 (mean fetch value from environment variable)
 
 
-      * oauthAccessTokenExpirationTimeUnit : a configurable expiration time unit for access_token , default value: SECONDS
+                * oauthAccessTokenExpirationTimeUnit : a configurable expiration time unit for access_token , default value: SECONDS
 
 
-      * oauthRefreshTokenExpirationTimeUnit : a configurable expiration time unit for refresh_token , default value: SECONDS
+                * oauthRefreshTokenExpirationTimeUnit : a configurable expiration time unit for refresh_token , default value: SECONDS
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:CLIENT [CREATE]

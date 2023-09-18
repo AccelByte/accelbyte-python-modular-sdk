@@ -4,9 +4,9 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model.j2
 
-# AccelByte Gaming Services Session Browser Service (1.13.4)
+# AccelByte Gaming Services Session Browser Service (1.15.3)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -27,7 +27,7 @@ import copy
 from collections.abc import MutableMapping
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import Model
+from accelbyte_py_sdk.core import Model
 
 
 class ModelsUpdateSettingsRequest(Model, MutableMapping):

@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,18 +23,19 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ApiBackFillAcceptRequest
 from ..models import ApiBackFillCreateRequest
-from ..models import ApiBackFillRejectRequest
 from ..models import ApiBackfillCreateResponse
 from ..models import ApiBackfillGetResponse
 from ..models import ApiBackfillProposalResponse
+from ..models import ApiBackFillRejectRequest
+from ..models import ModelsGameSession
 from ..models import ResponseError
 
 from ..operations.backfill import AcceptBackfill
@@ -87,7 +88,7 @@ def accept_backfill(
         namespace: (namespace) REQUIRED str in path
 
     Responses:
-        200: OK - (OK)
+        200: OK - ModelsGameSession (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -153,7 +154,7 @@ async def accept_backfill_async(
         namespace: (namespace) REQUIRED str in path
 
     Responses:
-        200: OK - (OK)
+        200: OK - ModelsGameSession (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 

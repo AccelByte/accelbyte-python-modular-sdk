@@ -4,9 +4,9 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model.j2
 
-# AccelByte Gaming Services Session Service (2.7.3)
+# AccelByte Gaming Services Session Service (3.0.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -25,7 +25,7 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import Model
+from accelbyte_py_sdk.core import Model
 
 from ..models.models_team import ModelsTeam
 
@@ -67,6 +67,16 @@ class ApimodelsCreateGameSessionRequest(Model):
         ticket_i_ds: (ticketIDs) REQUIRED List[str]
 
         type_: (type) REQUIRED str
+
+        auto_join: (autoJoin) OPTIONAL bool
+
+        ds_source: (dsSource) OPTIONAL str
+
+        fallback_claim_keys: (fallbackClaimKeys) OPTIONAL List[str]
+
+        preferred_claim_keys: (preferredClaimKeys) OPTIONAL List[str]
+
+        tie_teams_session_lifetime: (tieTeamsSessionLifetime) OPTIONAL bool
     """
 
     # region fields
@@ -88,6 +98,11 @@ class ApimodelsCreateGameSessionRequest(Model):
     text_chat: bool  # REQUIRED
     ticket_i_ds: List[str]  # REQUIRED
     type_: str  # REQUIRED
+    auto_join: bool  # OPTIONAL
+    ds_source: str  # OPTIONAL
+    fallback_claim_keys: List[str]  # OPTIONAL
+    preferred_claim_keys: List[str]  # OPTIONAL
+    tie_teams_session_lifetime: bool  # OPTIONAL
 
     # endregion fields
 
@@ -163,6 +178,32 @@ class ApimodelsCreateGameSessionRequest(Model):
 
     def with_type(self, value: str) -> ApimodelsCreateGameSessionRequest:
         self.type_ = value
+        return self
+
+    def with_auto_join(self, value: bool) -> ApimodelsCreateGameSessionRequest:
+        self.auto_join = value
+        return self
+
+    def with_ds_source(self, value: str) -> ApimodelsCreateGameSessionRequest:
+        self.ds_source = value
+        return self
+
+    def with_fallback_claim_keys(
+        self, value: List[str]
+    ) -> ApimodelsCreateGameSessionRequest:
+        self.fallback_claim_keys = value
+        return self
+
+    def with_preferred_claim_keys(
+        self, value: List[str]
+    ) -> ApimodelsCreateGameSessionRequest:
+        self.preferred_claim_keys = value
+        return self
+
+    def with_tie_teams_session_lifetime(
+        self, value: bool
+    ) -> ApimodelsCreateGameSessionRequest:
+        self.tie_teams_session_lifetime = value
         return self
 
     # endregion with_x methods
@@ -241,6 +282,26 @@ class ApimodelsCreateGameSessionRequest(Model):
             result["type"] = str(self.type_)
         elif include_empty:
             result["type"] = ""
+        if hasattr(self, "auto_join"):
+            result["autoJoin"] = bool(self.auto_join)
+        elif include_empty:
+            result["autoJoin"] = False
+        if hasattr(self, "ds_source"):
+            result["dsSource"] = str(self.ds_source)
+        elif include_empty:
+            result["dsSource"] = ""
+        if hasattr(self, "fallback_claim_keys"):
+            result["fallbackClaimKeys"] = [str(i0) for i0 in self.fallback_claim_keys]
+        elif include_empty:
+            result["fallbackClaimKeys"] = []
+        if hasattr(self, "preferred_claim_keys"):
+            result["preferredClaimKeys"] = [str(i0) for i0 in self.preferred_claim_keys]
+        elif include_empty:
+            result["preferredClaimKeys"] = []
+        if hasattr(self, "tie_teams_session_lifetime"):
+            result["tieTeamsSessionLifetime"] = bool(self.tie_teams_session_lifetime)
+        elif include_empty:
+            result["tieTeamsSessionLifetime"] = False
         return result
 
     # endregion to methods
@@ -267,6 +328,11 @@ class ApimodelsCreateGameSessionRequest(Model):
         text_chat: bool,
         ticket_i_ds: List[str],
         type_: str,
+        auto_join: Optional[bool] = None,
+        ds_source: Optional[str] = None,
+        fallback_claim_keys: Optional[List[str]] = None,
+        preferred_claim_keys: Optional[List[str]] = None,
+        tie_teams_session_lifetime: Optional[bool] = None,
         **kwargs,
     ) -> ApimodelsCreateGameSessionRequest:
         instance = cls()
@@ -287,6 +353,16 @@ class ApimodelsCreateGameSessionRequest(Model):
         instance.text_chat = text_chat
         instance.ticket_i_ds = ticket_i_ds
         instance.type_ = type_
+        if auto_join is not None:
+            instance.auto_join = auto_join
+        if ds_source is not None:
+            instance.ds_source = ds_source
+        if fallback_claim_keys is not None:
+            instance.fallback_claim_keys = fallback_claim_keys
+        if preferred_claim_keys is not None:
+            instance.preferred_claim_keys = preferred_claim_keys
+        if tie_teams_session_lifetime is not None:
+            instance.tie_teams_session_lifetime = tie_teams_session_lifetime
         return instance
 
     @classmethod
@@ -369,6 +445,33 @@ class ApimodelsCreateGameSessionRequest(Model):
             instance.type_ = str(dict_["type"])
         elif include_empty:
             instance.type_ = ""
+        if "autoJoin" in dict_ and dict_["autoJoin"] is not None:
+            instance.auto_join = bool(dict_["autoJoin"])
+        elif include_empty:
+            instance.auto_join = False
+        if "dsSource" in dict_ and dict_["dsSource"] is not None:
+            instance.ds_source = str(dict_["dsSource"])
+        elif include_empty:
+            instance.ds_source = ""
+        if "fallbackClaimKeys" in dict_ and dict_["fallbackClaimKeys"] is not None:
+            instance.fallback_claim_keys = [
+                str(i0) for i0 in dict_["fallbackClaimKeys"]
+            ]
+        elif include_empty:
+            instance.fallback_claim_keys = []
+        if "preferredClaimKeys" in dict_ and dict_["preferredClaimKeys"] is not None:
+            instance.preferred_claim_keys = [
+                str(i0) for i0 in dict_["preferredClaimKeys"]
+            ]
+        elif include_empty:
+            instance.preferred_claim_keys = []
+        if (
+            "tieTeamsSessionLifetime" in dict_
+            and dict_["tieTeamsSessionLifetime"] is not None
+        ):
+            instance.tie_teams_session_lifetime = bool(dict_["tieTeamsSessionLifetime"])
+        elif include_empty:
+            instance.tie_teams_session_lifetime = False
         return instance
 
     @classmethod
@@ -429,6 +532,11 @@ class ApimodelsCreateGameSessionRequest(Model):
             "textChat": "text_chat",
             "ticketIDs": "ticket_i_ds",
             "type": "type_",
+            "autoJoin": "auto_join",
+            "dsSource": "ds_source",
+            "fallbackClaimKeys": "fallback_claim_keys",
+            "preferredClaimKeys": "preferred_claim_keys",
+            "tieTeamsSessionLifetime": "tie_teams_session_lifetime",
         }
 
     @staticmethod
@@ -451,6 +559,11 @@ class ApimodelsCreateGameSessionRequest(Model):
             "textChat": True,
             "ticketIDs": True,
             "type": True,
+            "autoJoin": False,
+            "dsSource": False,
+            "fallbackClaimKeys": False,
+            "preferredClaimKeys": False,
+            "tieTeamsSessionLifetime": False,
         }
 
     # endregion static methods

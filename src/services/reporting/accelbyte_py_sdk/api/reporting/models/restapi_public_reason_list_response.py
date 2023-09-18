@@ -4,9 +4,9 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model.j2
 
-# AccelByte Gaming Services Reporting Service (0.1.25)
+# AccelByte Gaming Services Reporting Service (0.1.28)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -25,7 +25,7 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import Model
+from accelbyte_py_sdk.core import Model
 
 from ..models.restapi_pagination import RestapiPagination
 from ..models.restapi_public_reason_response import RestapiPublicReasonResponse

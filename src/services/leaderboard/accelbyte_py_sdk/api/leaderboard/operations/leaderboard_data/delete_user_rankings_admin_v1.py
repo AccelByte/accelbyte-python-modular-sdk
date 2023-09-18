@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Leaderboard Service (2.19.5)
+# AccelByte Gaming Services Leaderboard Service (2.26.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import ResponseErrorResponse
 
@@ -39,8 +39,6 @@ class DeleteUserRankingsAdminV1(Operation):
     Required permission: ADMIN:NAMESPACE:{namespace}:LEADERBOARD:USER [DELETE]
 
     Remove entry with provided userId from leaderboard.
-    If leaderboard with given leaderboard code not found, it will return http status not found (404).
-    If the leaderboard is found and no entry found in it, it will still return success (204)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:LEADERBOARD:USER [DELETE]

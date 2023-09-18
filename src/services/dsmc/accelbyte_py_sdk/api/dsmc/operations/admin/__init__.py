@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Dsm Controller Service."""
 
-__version__ = "6.2.3"
+__version__ = "6.4.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 

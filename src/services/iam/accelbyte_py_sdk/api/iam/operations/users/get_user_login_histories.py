@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,15 +20,15 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (5.31.0)
+# AccelByte Gaming Services Iam Service (7.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
-from .....core import deprecated
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ModelLoginHistoriesResponse
 from ...models import RestErrorResponse
@@ -43,12 +43,9 @@ class GetUserLoginHistories(Operation):
     Endpoint migration guide
 
 
+        * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/{userId}/logins/histories [GET]
 
-
-      * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/{userId}/logins/histories [GET]
-
-      * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId}/logins/histories [GET]
-
+        * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId}/logins/histories [GET]
 
 
 
@@ -60,17 +57,16 @@ class GetUserLoginHistories(Operation):
 
     "+
     "
-
-      * This endpoint retrieve the first page of the data if 'after' and 'before' parameters is empty.
+        * This endpoint retrieve the first page of the data if 'after' and 'before' parameters is empty.
     "+
     "
-      * The maximum value of the limit is 100 and the minimum value of the limit is 1.
+        * The maximum value of the limit is 100 and the minimum value of the limit is 1.
     "+
     "
-      * This endpoint retrieve the next page of the data if we provide 'after' parameters with valid Unix timestamp.
+        * This endpoint retrieve the next page of the data if we provide 'after' parameters with valid Unix timestamp.
     "+
     "
-      * This endpoint retrieve the previous page of the data if we provide 'before' parameter with valid data Unix timestamp.
+        * This endpoint retrieve the previous page of the data if we provide 'before' parameter with valid data Unix timestamp.
 
     Required Permission(s):
         - NAMESPACE:{namespace}:HISTORY:LOGIN:USER:{userId} [READ]

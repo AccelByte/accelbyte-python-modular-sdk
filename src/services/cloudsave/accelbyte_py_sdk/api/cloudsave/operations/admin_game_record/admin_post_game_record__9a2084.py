@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Cloudsave Service (3.6.4)
+# AccelByte Gaming Services Cloudsave Service (3.11.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import ModelsGameRecordRequest
 from ...models import ModelsGameRecordResponse
@@ -185,6 +185,8 @@ class AdminPostGameRecordHandlerV1(Operation):
     Responses:
         201: Created - ModelsGameRecordResponse (Record in namespace-level saved)
 
+        400: Bad Request - ModelsResponseError (Bad Request)
+
         401: Unauthorized - ModelsResponseError (Unauthorized)
 
         500: Internal Server Error - ModelsResponseError (Internal Server Error)
@@ -313,6 +315,8 @@ class AdminPostGameRecordHandlerV1(Operation):
 
         201: Created - ModelsGameRecordResponse (Record in namespace-level saved)
 
+        400: Bad Request - ModelsResponseError (Bad Request)
+
         401: Unauthorized - ModelsResponseError (Unauthorized)
 
         500: Internal Server Error - ModelsResponseError (Internal Server Error)
@@ -332,6 +336,8 @@ class AdminPostGameRecordHandlerV1(Operation):
 
         if code == 201:
             return ModelsGameRecordResponse.create_from_dict(content), None
+        if code == 400:
+            return None, ModelsResponseError.create_from_dict(content)
         if code == 401:
             return None, ModelsResponseError.create_from_dict(content)
         if code == 500:

@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Ugc Service."""
 
-__version__ = "2.9.3"
+__version__ = "2.12.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -16,6 +16,7 @@ __email__ = "dev@accelbyte.net"
 
 from .models_add_download_count_response import ModelsAddDownloadCountResponse
 from .models_admin_get_content_bulk_request import ModelsAdminGetContentBulkRequest
+from .models_admin_update_content_request import ModelsAdminUpdateContentRequest
 from .models_channel_request import ModelsChannelRequest
 from .models_channel_response import ModelsChannelResponse
 from .models_content_download_response import ModelsContentDownloadResponse

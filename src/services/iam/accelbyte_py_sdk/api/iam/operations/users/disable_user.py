@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,15 +20,15 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (5.31.0)
+# AccelByte Gaming Services Iam Service (7.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
-from .....core import deprecated
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ModelDisableUserRequest
 from ...models import RestErrorResponse
@@ -43,10 +43,7 @@ class DisableUser(Operation):
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId}/status [PATCH]
-
+        * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId}/status [PATCH]
 
 
 
@@ -62,12 +59,10 @@ class DisableUser(Operation):
 
 
 
+        * DeactivateAccount : if your deletion request comes from user
 
 
-      * DeactivateAccount : if your deletion request comes from user
-
-
-      * AdminDeactivateAccount : if your deletion request comes from admin
+        * AdminDeactivateAccount : if your deletion request comes from admin
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USERSTATUS:USER:{userId} [UPDATE]

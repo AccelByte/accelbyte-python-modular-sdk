@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,12 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import deprecated
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import NamespaceSlotConfigInfo
 from ..models import SlotConfigUpdate
@@ -41,6 +42,7 @@ from ..operations.slot_config import UpdateNamespaceSlotConfig
 from ..operations.slot_config import UpdateUserSlotConfig
 
 
+@deprecated
 @same_doc_as(DeleteNamespaceSlotConfig)
 def delete_namespace_slot_config(
     namespace: Optional[str] = None,
@@ -48,6 +50,9 @@ def delete_namespace_slot_config(
     **kwargs
 ):
     """Deletes a namespace slot configuration (deleteNamespaceSlotConfig)
+
+    ## The endpoint is going to be deprecated
+
 
     Deletes a namespace slot configuration, the configuration will be default after delete.
     Other detail info:
@@ -85,6 +90,7 @@ def delete_namespace_slot_config(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(DeleteNamespaceSlotConfig)
 async def delete_namespace_slot_config_async(
     namespace: Optional[str] = None,
@@ -92,6 +98,9 @@ async def delete_namespace_slot_config_async(
     **kwargs
 ):
     """Deletes a namespace slot configuration (deleteNamespaceSlotConfig)
+
+    ## The endpoint is going to be deprecated
+
 
     Deletes a namespace slot configuration, the configuration will be default after delete.
     Other detail info:
@@ -131,6 +140,7 @@ async def delete_namespace_slot_config_async(
     )
 
 
+@deprecated
 @same_doc_as(DeleteUserSlotConfig)
 def delete_user_slot_config(
     user_id: str,
@@ -140,6 +150,9 @@ def delete_user_slot_config(
 ):
     """Deletes a user slot configuration (deleteUserSlotConfig)
 
+    ## The endpoint is going to be deprecated
+
+
     Deletes a user slot configuration in given namespace, the namespace slot configuration will be returned after delete.
     Other detail info:
 
@@ -179,6 +192,7 @@ def delete_user_slot_config(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(DeleteUserSlotConfig)
 async def delete_user_slot_config_async(
     user_id: str,
@@ -188,6 +202,9 @@ async def delete_user_slot_config_async(
 ):
     """Deletes a user slot configuration (deleteUserSlotConfig)
 
+    ## The endpoint is going to be deprecated
+
+
     Deletes a user slot configuration in given namespace, the namespace slot configuration will be returned after delete.
     Other detail info:
 
@@ -229,6 +246,7 @@ async def delete_user_slot_config_async(
     )
 
 
+@deprecated
 @same_doc_as(GetNamespaceSlotConfig)
 def get_namespace_slot_config(
     namespace: Optional[str] = None,
@@ -237,11 +255,13 @@ def get_namespace_slot_config(
 ):
     """Returns a namespace slot configuration (getNamespaceSlotConfig)
 
+    ## The endpoint is going to be deprecated
+
+
     Get slot configuration for a given namespace. In case slot configuration is not set, the default will be returned.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:SLOTCONFIG", action=2 (READ)
-      *  Returns : namespace slot config info
+        *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:SLOTCONFIG", action=2 (READ)
+        *  Returns : namespace slot config info
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:SLOTCONFIG [READ]
@@ -274,6 +294,7 @@ def get_namespace_slot_config(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(GetNamespaceSlotConfig)
 async def get_namespace_slot_config_async(
     namespace: Optional[str] = None,
@@ -282,11 +303,13 @@ async def get_namespace_slot_config_async(
 ):
     """Returns a namespace slot configuration (getNamespaceSlotConfig)
 
+    ## The endpoint is going to be deprecated
+
+
     Get slot configuration for a given namespace. In case slot configuration is not set, the default will be returned.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:SLOTCONFIG", action=2 (READ)
-      *  Returns : namespace slot config info
+        *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:SLOTCONFIG", action=2 (READ)
+        *  Returns : namespace slot config info
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:SLOTCONFIG [READ]
@@ -321,6 +344,7 @@ async def get_namespace_slot_config_async(
     )
 
 
+@deprecated
 @same_doc_as(GetUserSlotConfig)
 def get_user_slot_config(
     user_id: str,
@@ -330,11 +354,13 @@ def get_user_slot_config(
 ):
     """Returns a user slot configuration (getUserSlotConfig)
 
-    GetÂ a user slot configuration in given namespace. In case the user slot configuration is not set, the namespace configuration will be returned.
-    Other detail info:
+    ## The endpoint is going to be deprecated
 
-      * Required permission: resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=2 (READ)
-      * Returns: slot config info
+
+    Get a user slot configuration in given namespace. In case the user slot configuration is not set, the namespace configuration will be returned.
+    Other detail info:
+        * Required permission: resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=2 (READ)
+        * Returns: slot config info
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG [READ]
@@ -370,6 +396,7 @@ def get_user_slot_config(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(GetUserSlotConfig)
 async def get_user_slot_config_async(
     user_id: str,
@@ -379,11 +406,13 @@ async def get_user_slot_config_async(
 ):
     """Returns a user slot configuration (getUserSlotConfig)
 
-    GetÂ a user slot configuration in given namespace. In case the user slot configuration is not set, the namespace configuration will be returned.
-    Other detail info:
+    ## The endpoint is going to be deprecated
 
-      * Required permission: resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=2 (READ)
-      * Returns: slot config info
+
+    Get a user slot configuration in given namespace. In case the user slot configuration is not set, the namespace configuration will be returned.
+    Other detail info:
+        * Required permission: resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=2 (READ)
+        * Returns: slot config info
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG [READ]
@@ -421,6 +450,7 @@ async def get_user_slot_config_async(
     )
 
 
+@deprecated
 @same_doc_as(UpdateNamespaceSlotConfig)
 def update_namespace_slot_config(
     body: Optional[SlotConfigUpdate] = None,
@@ -430,11 +460,13 @@ def update_namespace_slot_config(
 ):
     """Update a namespace slot configuration (updateNamespaceSlotConfig)
 
+    ## The endpoint is going to be deprecated
+
+
     Update a slot namespace configuration.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:SLOTCONFIG", action=4 (UPDATE)
-      *  Returns : updated namespace slot config
+          *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:SLOTCONFIG", action=4 (UPDATE)
+          *  Returns : updated namespace slot config
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:SLOTCONFIG [UPDATE]
@@ -470,6 +502,7 @@ def update_namespace_slot_config(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(UpdateNamespaceSlotConfig)
 async def update_namespace_slot_config_async(
     body: Optional[SlotConfigUpdate] = None,
@@ -479,11 +512,13 @@ async def update_namespace_slot_config_async(
 ):
     """Update a namespace slot configuration (updateNamespaceSlotConfig)
 
+    ## The endpoint is going to be deprecated
+
+
     Update a slot namespace configuration.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:SLOTCONFIG", action=4 (UPDATE)
-      *  Returns : updated namespace slot config
+          *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:SLOTCONFIG", action=4 (UPDATE)
+          *  Returns : updated namespace slot config
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:SLOTCONFIG [UPDATE]
@@ -521,6 +556,7 @@ async def update_namespace_slot_config_async(
     )
 
 
+@deprecated
 @same_doc_as(UpdateUserSlotConfig)
 def update_user_slot_config(
     user_id: str,
@@ -531,11 +567,13 @@ def update_user_slot_config(
 ):
     """Update a user slot configuration (updateUserSlotConfig)
 
+    ## The endpoint is going to be deprecated
+
+
     Update a user slot configuration in given namespace.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=4 (UPDATE)
-      *  Returns : updated slot config
+          *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=4 (UPDATE)
+          *  Returns : updated slot config
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG [UPDATE]
@@ -574,6 +612,7 @@ def update_user_slot_config(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(UpdateUserSlotConfig)
 async def update_user_slot_config_async(
     user_id: str,
@@ -584,11 +623,13 @@ async def update_user_slot_config_async(
 ):
     """Update a user slot configuration (updateUserSlotConfig)
 
+    ## The endpoint is going to be deprecated
+
+
     Update a user slot configuration in given namespace.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=4 (UPDATE)
-      *  Returns : updated slot config
+          *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=4 (UPDATE)
+          *  Returns : updated slot config
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG [UPDATE]

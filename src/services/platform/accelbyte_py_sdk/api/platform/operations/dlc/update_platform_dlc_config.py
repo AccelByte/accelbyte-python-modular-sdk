@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.33.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import PlatformDLCConfigInfo
 from ...models import PlatformDLCConfigUpdate
@@ -38,9 +38,26 @@ class UpdatePlatformDLCConfig(Operation):
     """Update Platform DLC config (updatePlatformDLCConfig)
 
     Update Platform DLC config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:DLC:CONFIG", action=4 (UPDATE)
       *  Returns : updated Platform DLC config
+
+
+
+    ## Restrictions for platform dlc map
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DLC:CONFIG [UPDATE]

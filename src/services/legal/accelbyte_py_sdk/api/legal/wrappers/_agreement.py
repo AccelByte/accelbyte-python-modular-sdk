@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,12 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import deprecated
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import AcceptAgreementRequest
 from ..models import AcceptAgreementResponse
@@ -217,7 +218,6 @@ def change_preference_consent(
     """Change Preference Consent (changePreferenceConsent)
 
     This API will Update Preference Consent. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:LEGAL", action=4 (UPDATE)
 
     Required Permission(s):
@@ -270,7 +270,6 @@ async def change_preference_consent_async(
     """Change Preference Consent (changePreferenceConsent)
 
     This API will Update Preference Consent. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:LEGAL", action=4 (UPDATE)
 
     Required Permission(s):
@@ -404,13 +403,8 @@ def indirect_bulk_accept_versioned_policy_1(
     """Bulk Accept Policy Versions (Indirect) (indirectBulkAcceptVersionedPolicy_1)
 
     Accepts many legal policy versions all at once. Supply with localized version policy id and userId to accept an agreement. This endpoint used by Authentication Service during new user registration.
-
-    Available Extra Information to return:
-
-
-      * userIds : List of userId mapping ( IMPORTANT: GOING TO DEPRECATE )
-
     Other detail info:
+
       * Required permission : login user
 
     Properties:
@@ -452,13 +446,8 @@ async def indirect_bulk_accept_versioned_policy_1_async(
     """Bulk Accept Policy Versions (Indirect) (indirectBulkAcceptVersionedPolicy_1)
 
     Accepts many legal policy versions all at once. Supply with localized version policy id and userId to accept an agreement. This endpoint used by Authentication Service during new user registration.
-
-    Available Extra Information to return:
-
-
-      * userIds : List of userId mapping ( IMPORTANT: GOING TO DEPRECATE )
-
     Other detail info:
+
       * Required permission : login user
 
     Properties:
@@ -492,6 +481,7 @@ async def indirect_bulk_accept_versioned_policy_1_async(
     )
 
 
+@deprecated
 @same_doc_as(IndirectBulkAcceptVersionedPolicyV2)
 def indirect_bulk_accept_versioned_policy_v2(
     client_id: str,
@@ -503,8 +493,6 @@ def indirect_bulk_accept_versioned_policy_v2(
     **kwargs
 ):
     """Bulk Accept Policy Versions (Indirect) (indirectBulkAcceptVersionedPolicyV2)
-
-    IMPORTANT: GOING TO DEPRECATE
 
     Accepts many legal policy versions all at once. Supply with localized version policy id, version policy id, policy id, userId, namespace, country code and client id to accept an agreement. This endpoint used by APIGateway during new user registration.
     Other detail info:
@@ -554,6 +542,7 @@ def indirect_bulk_accept_versioned_policy_v2(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(IndirectBulkAcceptVersionedPolicyV2)
 async def indirect_bulk_accept_versioned_policy_v2_async(
     client_id: str,
@@ -565,8 +554,6 @@ async def indirect_bulk_accept_versioned_policy_v2_async(
     **kwargs
 ):
     """Bulk Accept Policy Versions (Indirect) (indirectBulkAcceptVersionedPolicyV2)
-
-    IMPORTANT: GOING TO DEPRECATE
 
     Accepts many legal policy versions all at once. Supply with localized version policy id, version policy id, policy id, userId, namespace, country code and client id to accept an agreement. This endpoint used by APIGateway during new user registration.
     Other detail info:
@@ -625,7 +612,6 @@ def retrieve_accepted_agreements(
     """Retrieve Accepted Legal Agreements (retrieveAcceptedAgreements)
 
     This API will return all accepted Legal Agreements for specified user. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
 
     Required Permission(s):
@@ -662,7 +648,6 @@ async def retrieve_accepted_agreements_async(
     """Retrieve Accepted Legal Agreements (retrieveAcceptedAgreements)
 
     This API will return all accepted Legal Agreements for specified user. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
 
     Required Permission(s):
@@ -774,7 +759,6 @@ def retrieve_all_users_by_policy_version(
     """Retrieve All Users Accepting Legal Agreements (retrieveAllUsersByPolicyVersion)
 
     This API will return all users who has accepted a specific policy version.Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
 
     Required Permission(s):
@@ -827,7 +811,6 @@ async def retrieve_all_users_by_policy_version_async(
     """Retrieve All Users Accepting Legal Agreements (retrieveAllUsersByPolicyVersion)
 
     This API will return all users who has accepted a specific policy version.Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
 
     Required Permission(s):

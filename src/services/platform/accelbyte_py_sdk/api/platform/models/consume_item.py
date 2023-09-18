@@ -4,9 +4,9 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model.j2
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.33.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -25,8 +25,8 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import Model
-from ....core import StrEnum
+from accelbyte_py_sdk.core import Model
+from accelbyte_py_sdk.core import StrEnum
 
 
 class ItemIdentityTypeEnum(StrEnum):
@@ -38,6 +38,8 @@ class ConsumeItem(Model):
     """Consume item (ConsumeItem)
 
     Properties:
+        ext_item_def_id: (extItemDefId) OPTIONAL str
+
         ext_item_id: (extItemId) OPTIONAL str
 
         item_identity: (itemIdentity) OPTIONAL str
@@ -47,6 +49,7 @@ class ConsumeItem(Model):
 
     # region fields
 
+    ext_item_def_id: str  # OPTIONAL
     ext_item_id: str  # OPTIONAL
     item_identity: str  # OPTIONAL
     item_identity_type: Union[str, ItemIdentityTypeEnum]  # OPTIONAL
@@ -54,6 +57,10 @@ class ConsumeItem(Model):
     # endregion fields
 
     # region with_x methods
+
+    def with_ext_item_def_id(self, value: str) -> ConsumeItem:
+        self.ext_item_def_id = value
+        return self
 
     def with_ext_item_id(self, value: str) -> ConsumeItem:
         self.ext_item_id = value
@@ -75,6 +82,10 @@ class ConsumeItem(Model):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
+        if hasattr(self, "ext_item_def_id"):
+            result["extItemDefId"] = str(self.ext_item_def_id)
+        elif include_empty:
+            result["extItemDefId"] = ""
         if hasattr(self, "ext_item_id"):
             result["extItemId"] = str(self.ext_item_id)
         elif include_empty:
@@ -96,12 +107,15 @@ class ConsumeItem(Model):
     @classmethod
     def create(
         cls,
+        ext_item_def_id: Optional[str] = None,
         ext_item_id: Optional[str] = None,
         item_identity: Optional[str] = None,
         item_identity_type: Optional[Union[str, ItemIdentityTypeEnum]] = None,
         **kwargs,
     ) -> ConsumeItem:
         instance = cls()
+        if ext_item_def_id is not None:
+            instance.ext_item_def_id = ext_item_def_id
         if ext_item_id is not None:
             instance.ext_item_id = ext_item_id
         if item_identity is not None:
@@ -115,6 +129,10 @@ class ConsumeItem(Model):
         instance = cls()
         if not dict_:
             return instance
+        if "extItemDefId" in dict_ and dict_["extItemDefId"] is not None:
+            instance.ext_item_def_id = str(dict_["extItemDefId"])
+        elif include_empty:
+            instance.ext_item_def_id = ""
         if "extItemId" in dict_ and dict_["extItemId"] is not None:
             instance.ext_item_id = str(dict_["extItemId"])
         elif include_empty:
@@ -166,6 +184,7 @@ class ConsumeItem(Model):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
+            "extItemDefId": "ext_item_def_id",
             "extItemId": "ext_item_id",
             "itemIdentity": "item_identity",
             "itemIdentityType": "item_identity_type",
@@ -174,6 +193,7 @@ class ConsumeItem(Model):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
+            "extItemDefId": False,
             "extItemId": False,
             "itemIdentity": False,
             "itemIdentityType": False,

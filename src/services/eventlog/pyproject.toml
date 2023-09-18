@@ -3,11 +3,10 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "accelbyte-py-sdk-eventlog"
-version = "2.0.0"
-description = "AccelByte Python SDK - Justice Event Log Service"
+name = "accelbyte-py-sdk-service-eventlog"
+version = "2.1.0"
+description = "AccelByte Python SDK - AccelByte Gaming Services Event Log Service"
 requires-python = ">=3.9"
 dependencies = [
     "accelbyte-py-sdk-core",
 ]
-

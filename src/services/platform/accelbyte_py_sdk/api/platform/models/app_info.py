@@ -4,9 +4,9 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model.j2
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.33.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -25,8 +25,8 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import Model
-from ....core import StrEnum
+from accelbyte_py_sdk.core import Model
+from accelbyte_py_sdk.core import StrEnum
 
 from ..models.requirement import Requirement
 from ..models.slide import Slide
@@ -93,15 +93,15 @@ class AppInfo(Model):
 
         forum_url: (forumUrl) OPTIONAL str
 
-        genres: (genres) OPTIONAL List[Union[str, GenresEnum]]
+        genres: (genres) OPTIONAL Union[List[str], List[GenresEnum]]
 
         language: (language) OPTIONAL str
 
         platform_requirements: (platformRequirements) OPTIONAL Dict[str, List[Requirement]]
 
-        platforms: (platforms) OPTIONAL List[Union[str, PlatformsEnum]]
+        platforms: (platforms) OPTIONAL Union[List[str], List[PlatformsEnum]]
 
-        players: (players) OPTIONAL List[Union[str, PlayersEnum]]
+        players: (players) OPTIONAL Union[List[str], List[PlayersEnum]]
 
         primary_genre: (primaryGenre) OPTIONAL Union[str, PrimaryGenreEnum]
 
@@ -124,11 +124,11 @@ class AppInfo(Model):
     carousel: List[Slide]  # OPTIONAL
     developer: str  # OPTIONAL
     forum_url: str  # OPTIONAL
-    genres: List[Union[str, GenresEnum]]  # OPTIONAL
+    genres: Union[List[str], List[GenresEnum]]  # OPTIONAL
     language: str  # OPTIONAL
     platform_requirements: Dict[str, List[Requirement]]  # OPTIONAL
-    platforms: List[Union[str, PlatformsEnum]]  # OPTIONAL
-    players: List[Union[str, PlayersEnum]]  # OPTIONAL
+    platforms: Union[List[str], List[PlatformsEnum]]  # OPTIONAL
+    players: Union[List[str], List[PlayersEnum]]  # OPTIONAL
     primary_genre: Union[str, PrimaryGenreEnum]  # OPTIONAL
     publisher: str  # OPTIONAL
     region: str  # OPTIONAL
@@ -164,7 +164,7 @@ class AppInfo(Model):
         self.forum_url = value
         return self
 
-    def with_genres(self, value: List[Union[str, GenresEnum]]) -> AppInfo:
+    def with_genres(self, value: Union[List[str], List[GenresEnum]]) -> AppInfo:
         self.genres = value
         return self
 
@@ -178,11 +178,11 @@ class AppInfo(Model):
         self.platform_requirements = value
         return self
 
-    def with_platforms(self, value: List[Union[str, PlatformsEnum]]) -> AppInfo:
+    def with_platforms(self, value: Union[List[str], List[PlatformsEnum]]) -> AppInfo:
         self.platforms = value
         return self
 
-    def with_players(self, value: List[Union[str, PlayersEnum]]) -> AppInfo:
+    def with_players(self, value: Union[List[str], List[PlayersEnum]]) -> AppInfo:
         self.players = value
         return self
 
@@ -304,11 +304,11 @@ class AppInfo(Model):
         carousel: Optional[List[Slide]] = None,
         developer: Optional[str] = None,
         forum_url: Optional[str] = None,
-        genres: Optional[List[Union[str, GenresEnum]]] = None,
+        genres: Optional[Union[List[str], List[GenresEnum]]] = None,
         language: Optional[str] = None,
         platform_requirements: Optional[Dict[str, List[Requirement]]] = None,
-        platforms: Optional[List[Union[str, PlatformsEnum]]] = None,
-        players: Optional[List[Union[str, PlayersEnum]]] = None,
+        platforms: Optional[Union[List[str], List[PlatformsEnum]]] = None,
+        players: Optional[Union[List[str], List[PlayersEnum]]] = None,
         primary_genre: Optional[Union[str, PrimaryGenreEnum]] = None,
         publisher: Optional[str] = None,
         region: Optional[str] = None,

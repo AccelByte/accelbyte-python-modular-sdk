@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Ugc Service."""
 
-__version__ = "2.9.3"
+__version__ = "2.12.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 

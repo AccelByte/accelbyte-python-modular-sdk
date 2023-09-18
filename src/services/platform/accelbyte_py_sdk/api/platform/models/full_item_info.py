@@ -4,9 +4,9 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model.j2
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.33.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -25,8 +25,8 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import Model
-from ....core import StrEnum
+from accelbyte_py_sdk.core import Model
+from accelbyte_py_sdk.core import StrEnum
 
 from ..models.image import Image
 from ..models.localization import Localization
@@ -78,8 +78,6 @@ class FullItemInfo(Model):
     """Full item info (FullItemInfo)
 
     Properties:
-        category_path: (categoryPath) REQUIRED str
-
         created_at: (createdAt) REQUIRED str
 
         entitlement_type: (entitlementType) REQUIRED Union[str, EntitlementTypeEnum]
@@ -109,6 +107,8 @@ class FullItemInfo(Model):
         booth_name: (boothName) OPTIONAL str
 
         bound_item_ids: (boundItemIds) OPTIONAL List[str]
+
+        category_path: (categoryPath) OPTIONAL str
 
         clazz: (clazz) OPTIONAL str
 
@@ -144,6 +144,8 @@ class FullItemInfo(Model):
 
         season_type: (seasonType) OPTIONAL Union[str, SeasonTypeEnum]
 
+        section_exclusive: (sectionExclusive) OPTIONAL bool
+
         sellable: (sellable) OPTIONAL bool
 
         sku: (sku) OPTIONAL str
@@ -165,7 +167,6 @@ class FullItemInfo(Model):
 
     # region fields
 
-    category_path: str  # REQUIRED
     created_at: str  # REQUIRED
     entitlement_type: Union[str, EntitlementTypeEnum]  # REQUIRED
     item_id: str  # REQUIRED
@@ -181,6 +182,7 @@ class FullItemInfo(Model):
     base_app_id: str  # OPTIONAL
     booth_name: str  # OPTIONAL
     bound_item_ids: List[str]  # OPTIONAL
+    category_path: str  # OPTIONAL
     clazz: str  # OPTIONAL
     display_order: int  # OPTIONAL
     ext: Dict[str, Any]  # OPTIONAL
@@ -198,6 +200,7 @@ class FullItemInfo(Model):
     recurring: Recurring  # OPTIONAL
     sale_config: SaleConfig  # OPTIONAL
     season_type: Union[str, SeasonTypeEnum]  # OPTIONAL
+    section_exclusive: bool  # OPTIONAL
     sellable: bool  # OPTIONAL
     sku: str  # OPTIONAL
     stackable: bool  # OPTIONAL
@@ -211,10 +214,6 @@ class FullItemInfo(Model):
     # endregion fields
 
     # region with_x methods
-
-    def with_category_path(self, value: str) -> FullItemInfo:
-        self.category_path = value
-        return self
 
     def with_created_at(self, value: str) -> FullItemInfo:
         self.created_at = value
@@ -276,6 +275,10 @@ class FullItemInfo(Model):
 
     def with_bound_item_ids(self, value: List[str]) -> FullItemInfo:
         self.bound_item_ids = value
+        return self
+
+    def with_category_path(self, value: str) -> FullItemInfo:
+        self.category_path = value
         return self
 
     def with_clazz(self, value: str) -> FullItemInfo:
@@ -346,6 +349,10 @@ class FullItemInfo(Model):
         self.season_type = value
         return self
 
+    def with_section_exclusive(self, value: bool) -> FullItemInfo:
+        self.section_exclusive = value
+        return self
+
     def with_sellable(self, value: bool) -> FullItemInfo:
         self.sellable = value
         return self
@@ -388,10 +395,6 @@ class FullItemInfo(Model):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "category_path"):
-            result["categoryPath"] = str(self.category_path)
-        elif include_empty:
-            result["categoryPath"] = ""
         if hasattr(self, "created_at"):
             result["createdAt"] = str(self.created_at)
         elif include_empty:
@@ -458,6 +461,10 @@ class FullItemInfo(Model):
             result["boundItemIds"] = [str(i0) for i0 in self.bound_item_ids]
         elif include_empty:
             result["boundItemIds"] = []
+        if hasattr(self, "category_path"):
+            result["categoryPath"] = str(self.category_path)
+        elif include_empty:
+            result["categoryPath"] = ""
         if hasattr(self, "clazz"):
             result["clazz"] = str(self.clazz)
         elif include_empty:
@@ -534,6 +541,10 @@ class FullItemInfo(Model):
             result["seasonType"] = str(self.season_type)
         elif include_empty:
             result["seasonType"] = Union[str, SeasonTypeEnum]()
+        if hasattr(self, "section_exclusive"):
+            result["sectionExclusive"] = bool(self.section_exclusive)
+        elif include_empty:
+            result["sectionExclusive"] = False
         if hasattr(self, "sellable"):
             result["sellable"] = bool(self.sellable)
         elif include_empty:
@@ -579,7 +590,6 @@ class FullItemInfo(Model):
     @classmethod
     def create(
         cls,
-        category_path: str,
         created_at: str,
         entitlement_type: Union[str, EntitlementTypeEnum],
         item_id: str,
@@ -595,6 +605,7 @@ class FullItemInfo(Model):
         base_app_id: Optional[str] = None,
         booth_name: Optional[str] = None,
         bound_item_ids: Optional[List[str]] = None,
+        category_path: Optional[str] = None,
         clazz: Optional[str] = None,
         display_order: Optional[int] = None,
         ext: Optional[Dict[str, Any]] = None,
@@ -612,6 +623,7 @@ class FullItemInfo(Model):
         recurring: Optional[Recurring] = None,
         sale_config: Optional[SaleConfig] = None,
         season_type: Optional[Union[str, SeasonTypeEnum]] = None,
+        section_exclusive: Optional[bool] = None,
         sellable: Optional[bool] = None,
         sku: Optional[str] = None,
         stackable: Optional[bool] = None,
@@ -624,7 +636,6 @@ class FullItemInfo(Model):
         **kwargs,
     ) -> FullItemInfo:
         instance = cls()
-        instance.category_path = category_path
         instance.created_at = created_at
         instance.entitlement_type = entitlement_type
         instance.item_id = item_id
@@ -645,6 +656,8 @@ class FullItemInfo(Model):
             instance.booth_name = booth_name
         if bound_item_ids is not None:
             instance.bound_item_ids = bound_item_ids
+        if category_path is not None:
+            instance.category_path = category_path
         if clazz is not None:
             instance.clazz = clazz
         if display_order is not None:
@@ -679,6 +692,8 @@ class FullItemInfo(Model):
             instance.sale_config = sale_config
         if season_type is not None:
             instance.season_type = season_type
+        if section_exclusive is not None:
+            instance.section_exclusive = section_exclusive
         if sellable is not None:
             instance.sellable = sellable
         if sku is not None:
@@ -704,10 +719,6 @@ class FullItemInfo(Model):
         instance = cls()
         if not dict_:
             return instance
-        if "categoryPath" in dict_ and dict_["categoryPath"] is not None:
-            instance.category_path = str(dict_["categoryPath"])
-        elif include_empty:
-            instance.category_path = ""
         if "createdAt" in dict_ and dict_["createdAt"] is not None:
             instance.created_at = str(dict_["createdAt"])
         elif include_empty:
@@ -777,6 +788,10 @@ class FullItemInfo(Model):
             instance.bound_item_ids = [str(i0) for i0 in dict_["boundItemIds"]]
         elif include_empty:
             instance.bound_item_ids = []
+        if "categoryPath" in dict_ and dict_["categoryPath"] is not None:
+            instance.category_path = str(dict_["categoryPath"])
+        elif include_empty:
+            instance.category_path = ""
         if "clazz" in dict_ and dict_["clazz"] is not None:
             instance.clazz = str(dict_["clazz"])
         elif include_empty:
@@ -860,6 +875,10 @@ class FullItemInfo(Model):
             instance.season_type = str(dict_["seasonType"])
         elif include_empty:
             instance.season_type = Union[str, SeasonTypeEnum]()
+        if "sectionExclusive" in dict_ and dict_["sectionExclusive"] is not None:
+            instance.section_exclusive = bool(dict_["sectionExclusive"])
+        elif include_empty:
+            instance.section_exclusive = False
         if "sellable" in dict_ and dict_["sellable"] is not None:
             instance.sellable = bool(dict_["sellable"])
         elif include_empty:
@@ -935,7 +954,6 @@ class FullItemInfo(Model):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "categoryPath": "category_path",
             "createdAt": "created_at",
             "entitlementType": "entitlement_type",
             "itemId": "item_id",
@@ -951,6 +969,7 @@ class FullItemInfo(Model):
             "baseAppId": "base_app_id",
             "boothName": "booth_name",
             "boundItemIds": "bound_item_ids",
+            "categoryPath": "category_path",
             "clazz": "clazz",
             "displayOrder": "display_order",
             "ext": "ext",
@@ -968,6 +987,7 @@ class FullItemInfo(Model):
             "recurring": "recurring",
             "saleConfig": "sale_config",
             "seasonType": "season_type",
+            "sectionExclusive": "section_exclusive",
             "sellable": "sellable",
             "sku": "sku",
             "stackable": "stackable",
@@ -982,7 +1002,6 @@ class FullItemInfo(Model):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "categoryPath": True,
             "createdAt": True,
             "entitlementType": True,
             "itemId": True,
@@ -998,6 +1017,7 @@ class FullItemInfo(Model):
             "baseAppId": False,
             "boothName": False,
             "boundItemIds": False,
+            "categoryPath": False,
             "clazz": False,
             "displayOrder": False,
             "ext": False,
@@ -1015,6 +1035,7 @@ class FullItemInfo(Model):
             "recurring": False,
             "saleConfig": False,
             "seasonType": False,
+            "sectionExclusive": False,
             "sellable": False,
             "sku": False,
             "stackable": False,

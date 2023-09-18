@@ -4,9 +4,9 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template_file: python-cli-command.j2
+# template_file: command.j2
 
-# Justice Qo S Manager Service (1.18.3)
+# Justice Qo S Manager Service ()
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

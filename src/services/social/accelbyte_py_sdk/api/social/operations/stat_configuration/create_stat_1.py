@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Social Service (2.3.0)
+# AccelByte Gaming Services Social Service (2.9.3)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import ErrorEntity
 from ...models import StatCreate
@@ -39,11 +39,10 @@ class CreateStat1(Operation):
 
     Create stat.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-      *  Returns : created stat template
-      * default minimum value is 0
-      * default maximum value is 1.7976931348623157e+308
+                *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+                *  Returns : created stat template
+                * default minimum value is 0
+                * default maximum value is 1.7976931348623157e+308
 
     Required Permission(s):
         - NAMESPACE:{namespace}:STAT [CREATE]

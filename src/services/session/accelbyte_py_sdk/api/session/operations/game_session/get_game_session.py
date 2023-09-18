@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Session Service (2.7.3)
+# AccelByte Gaming Services Session Service (3.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import ApimodelsGameSessionResponse
 from ...models import ResponseError
@@ -37,6 +37,7 @@ class GetGameSession(Operation):
     """Get game session detail. Requires NAMESPACE:{namespace}:SESSION:GAME [READ] (getGameSession)
 
     Get game session detail.
+    Session will only be accessible from active players in the session, and client with the permission, except the joinability is set to OPEN.
     Session service has several DSInformation status to track DS request to DSMC:
     - NEED_TO_REQUEST: number of active players hasn't reached session's minPlayers therefore DS has not yet requested.
     - REQUESTED: DS is being requested to DSMC.

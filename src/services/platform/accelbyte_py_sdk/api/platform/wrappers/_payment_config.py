@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,23 +23,23 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import AdyenConfig
 from ..models import AliPayConfig
 from ..models import CheckoutConfig
 from ..models import ErrorEntity
-from ..models import PayPalConfig
 from ..models import PaymentMerchantConfigInfo
 from ..models import PaymentProviderConfigEdit
 from ..models import PaymentProviderConfigInfo
 from ..models import PaymentProviderConfigPagingSlicedResult
 from ..models import PaymentTaxConfigEdit
 from ..models import PaymentTaxConfigInfo
+from ..models import PayPalConfig
 from ..models import StripeConfig
 from ..models import TestResult
 from ..models import ValidationErrorEntity
@@ -73,9 +73,9 @@ from ..operations.payment_config import TestXsollaConfigById
 from ..operations.payment_config import UpdateAdyenConfig
 from ..operations.payment_config import UpdateAliPayConfig
 from ..operations.payment_config import UpdateCheckoutConfig
-from ..operations.payment_config import UpdatePayPalConfig
 from ..operations.payment_config import UpdatePaymentProviderConfig
 from ..operations.payment_config import UpdatePaymentTaxConfig
+from ..operations.payment_config import UpdatePayPalConfig
 from ..operations.payment_config import UpdateStripeConfig
 from ..operations.payment_config import UpdateWxPayConfig
 from ..operations.payment_config import UpdateWxPayConfigCert
@@ -539,7 +539,7 @@ def get_aggregate_payment_providers(
         securities: [BEARER_AUTH] or [BEARER_AUTH]
 
     Responses:
-        200: OK - List[Union[str, ResponseEnum]] (successful operation)
+        200: OK - List[str] (successful operation)
     """
     request = GetAggregatePaymentProviders.create()
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -574,7 +574,7 @@ async def get_aggregate_payment_providers_async(
         securities: [BEARER_AUTH] or [BEARER_AUTH]
 
     Responses:
-        200: OK - List[Union[str, ResponseEnum]] (successful operation)
+        200: OK - List[str] (successful operation)
     """
     request = GetAggregatePaymentProviders.create()
     return await run_request_async(
@@ -767,7 +767,7 @@ def get_special_payment_providers(
         securities: [BEARER_AUTH] or [BEARER_AUTH]
 
     Responses:
-        200: OK - List[Union[str, ResponseEnum]] (successful operation)
+        200: OK - List[str] (successful operation)
     """
     request = GetSpecialPaymentProviders.create()
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -802,7 +802,7 @@ async def get_special_payment_providers_async(
         securities: [BEARER_AUTH] or [BEARER_AUTH]
 
     Responses:
-        200: OK - List[Union[str, ResponseEnum]] (successful operation)
+        200: OK - List[str] (successful operation)
     """
     request = GetSpecialPaymentProviders.create()
     return await run_request_async(
@@ -1054,7 +1054,6 @@ def test_adyen_config_by_id(
     """Test adyen configuration by id (testAdyenConfigById)
 
     Test adyen configuration in payment merchant config. Other detail info:
-
       * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
       *  Returns : test adyen config
 
@@ -1100,7 +1099,6 @@ async def test_adyen_config_by_id_async(
     """Test adyen configuration by id (testAdyenConfigById)
 
     Test adyen configuration in payment merchant config. Other detail info:
-
       * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
       *  Returns : test adyen config
 
@@ -1438,7 +1436,6 @@ def test_checkout_config_by_id(
     """Test checkout.com configuration by id (testCheckoutConfigById)
 
     Test checkout.com configuration in payment merchant config. Other detail info:
-
       * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
       *  Returns : test result
 
@@ -1484,7 +1481,6 @@ async def test_checkout_config_by_id_async(
     """Test checkout.com configuration by id (testCheckoutConfigById)
 
     Test checkout.com configuration in payment merchant config. Other detail info:
-
       * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
       *  Returns : test result
 
@@ -1646,7 +1642,6 @@ def test_pay_pal_config_by_id(
     """Test PayPal configuration by id (testPayPalConfigById)
 
     Test PayPal configuration in payment merchant config. Other detail info:
-
       * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
       *  Returns : test result
 
@@ -1692,7 +1687,6 @@ async def test_pay_pal_config_by_id_async(
     """Test PayPal configuration by id (testPayPalConfigById)
 
     Test PayPal configuration in payment merchant config. Other detail info:
-
       * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
       *  Returns : test result
 
@@ -1856,7 +1850,6 @@ def test_stripe_config_by_id(
     """Test stripe configuration by id (testStripeConfigById)
 
     Test stripe configuration in payment merchant config. Other detail info:
-
       * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
       *  Returns : test adyen config
 
@@ -1902,7 +1895,6 @@ async def test_stripe_config_by_id_async(
     """Test stripe configuration by id (testStripeConfigById)
 
     Test stripe configuration in payment merchant config. Other detail info:
-
       * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
       *  Returns : test adyen config
 
@@ -2636,118 +2628,6 @@ async def update_checkout_config_async(
     )
 
 
-@same_doc_as(UpdatePayPalConfig)
-def update_pay_pal_config(
-    id_: str,
-    body: Optional[PayPalConfig] = None,
-    sandbox: Optional[bool] = None,
-    validate: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
-    """Update PayPal config (updatePayPalConfig)
-
-    Update PayPal config.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)
-      *  Returns : updated payment merchant config
-
-    Required Permission(s):
-        - ADMIN:PAYMENT:CONFIG [UPDATE]
-
-    Properties:
-        url: /platform/admin/payment/config/merchant/{id}/paypalconfig
-
-        method: PUT
-
-        tags: ["PaymentConfig"]
-
-        consumes: ["application/json"]
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
-
-        body: (body) OPTIONAL PayPalConfig in body
-
-        id_: (id) REQUIRED str in path
-
-        sandbox: (sandbox) OPTIONAL bool in query
-
-        validate: (validate) OPTIONAL bool in query
-
-    Responses:
-        200: OK - PaymentMerchantConfigInfo (successful operation)
-
-        404: Not Found - ErrorEntity (33242: Payment merchant config [{id}] does not exist | 33221: Update [{paymentProvider}] config in payment merchant config [{id}] failed with message [{errMsg}])
-    """
-    request = UpdatePayPalConfig.create(
-        id_=id_,
-        body=body,
-        sandbox=sandbox,
-        validate=validate,
-    )
-    return run_request(request, additional_headers=x_additional_headers, **kwargs)
-
-
-@same_doc_as(UpdatePayPalConfig)
-async def update_pay_pal_config_async(
-    id_: str,
-    body: Optional[PayPalConfig] = None,
-    sandbox: Optional[bool] = None,
-    validate: Optional[bool] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
-    """Update PayPal config (updatePayPalConfig)
-
-    Update PayPal config.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)
-      *  Returns : updated payment merchant config
-
-    Required Permission(s):
-        - ADMIN:PAYMENT:CONFIG [UPDATE]
-
-    Properties:
-        url: /platform/admin/payment/config/merchant/{id}/paypalconfig
-
-        method: PUT
-
-        tags: ["PaymentConfig"]
-
-        consumes: ["application/json"]
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
-
-        body: (body) OPTIONAL PayPalConfig in body
-
-        id_: (id) REQUIRED str in path
-
-        sandbox: (sandbox) OPTIONAL bool in query
-
-        validate: (validate) OPTIONAL bool in query
-
-    Responses:
-        200: OK - PaymentMerchantConfigInfo (successful operation)
-
-        404: Not Found - ErrorEntity (33242: Payment merchant config [{id}] does not exist | 33221: Update [{paymentProvider}] config in payment merchant config [{id}] failed with message [{errMsg}])
-    """
-    request = UpdatePayPalConfig.create(
-        id_=id_,
-        body=body,
-        sandbox=sandbox,
-        validate=validate,
-    )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
-
-
 @same_doc_as(UpdatePaymentProviderConfig)
 def update_payment_provider_config(
     id_: str,
@@ -3012,6 +2892,118 @@ async def update_payment_tax_config_async(
     """
     request = UpdatePaymentTaxConfig.create(
         body=body,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(UpdatePayPalConfig)
+def update_pay_pal_config(
+    id_: str,
+    body: Optional[PayPalConfig] = None,
+    sandbox: Optional[bool] = None,
+    validate: Optional[bool] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Update PayPal config (updatePayPalConfig)
+
+    Update PayPal config.
+    Other detail info:
+
+      * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)
+      *  Returns : updated payment merchant config
+
+    Required Permission(s):
+        - ADMIN:PAYMENT:CONFIG [UPDATE]
+
+    Properties:
+        url: /platform/admin/payment/config/merchant/{id}/paypalconfig
+
+        method: PUT
+
+        tags: ["PaymentConfig"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        body: (body) OPTIONAL PayPalConfig in body
+
+        id_: (id) REQUIRED str in path
+
+        sandbox: (sandbox) OPTIONAL bool in query
+
+        validate: (validate) OPTIONAL bool in query
+
+    Responses:
+        200: OK - PaymentMerchantConfigInfo (successful operation)
+
+        404: Not Found - ErrorEntity (33242: Payment merchant config [{id}] does not exist | 33221: Update [{paymentProvider}] config in payment merchant config [{id}] failed with message [{errMsg}])
+    """
+    request = UpdatePayPalConfig.create(
+        id_=id_,
+        body=body,
+        sandbox=sandbox,
+        validate=validate,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(UpdatePayPalConfig)
+async def update_pay_pal_config_async(
+    id_: str,
+    body: Optional[PayPalConfig] = None,
+    sandbox: Optional[bool] = None,
+    validate: Optional[bool] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Update PayPal config (updatePayPalConfig)
+
+    Update PayPal config.
+    Other detail info:
+
+      * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)
+      *  Returns : updated payment merchant config
+
+    Required Permission(s):
+        - ADMIN:PAYMENT:CONFIG [UPDATE]
+
+    Properties:
+        url: /platform/admin/payment/config/merchant/{id}/paypalconfig
+
+        method: PUT
+
+        tags: ["PaymentConfig"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        body: (body) OPTIONAL PayPalConfig in body
+
+        id_: (id) REQUIRED str in path
+
+        sandbox: (sandbox) OPTIONAL bool in query
+
+        validate: (validate) OPTIONAL bool in query
+
+    Responses:
+        200: OK - PaymentMerchantConfigInfo (successful operation)
+
+        404: Not Found - ErrorEntity (33242: Payment merchant config [{id}] does not exist | 33221: Update [{paymentProvider}] config in payment merchant config [{id}] failed with message [{errMsg}])
+    """
+    request = UpdatePayPalConfig.create(
+        id_=id_,
+        body=body,
+        sandbox=sandbox,
+        validate=validate,
     )
     return await run_request_async(
         request, additional_headers=x_additional_headers, **kwargs

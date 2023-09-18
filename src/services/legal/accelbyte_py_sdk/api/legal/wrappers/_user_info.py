@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,12 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import deprecated
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import RetrieveUserInfoCacheStatusResponse
 
@@ -48,8 +49,7 @@ def get_user_info_status(
     The query parameter namespaces can be a list of namespace separated by comma.
     If query parameter namespaces is empty, user info cache status for all available namespaces will be returned.
     Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [READ]
@@ -90,8 +90,7 @@ async def get_user_info_status_async(
     The query parameter namespaces can be a list of namespace separated by comma.
     If query parameter namespaces is empty, user info cache status for all available namespaces will be returned.
     Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [READ]
@@ -122,6 +121,7 @@ async def get_user_info_status_async(
     )
 
 
+@deprecated
 @same_doc_as(InvalidateUserInfoCache)
 def invalidate_user_info_cache(
     namespace: Optional[str] = None,
@@ -130,12 +130,9 @@ def invalidate_user_info_cache(
 ):
     """Invalidate user info cache (invalidateUserInfoCache)
 
-    Important: GOING TO DEPRECATE
-
     Invalidate user info cache in agreement service.
     Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=8 (DELETE)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=8 (DELETE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [DELETE]
@@ -164,6 +161,7 @@ def invalidate_user_info_cache(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(InvalidateUserInfoCache)
 async def invalidate_user_info_cache_async(
     namespace: Optional[str] = None,
@@ -172,12 +170,9 @@ async def invalidate_user_info_cache_async(
 ):
     """Invalidate user info cache (invalidateUserInfoCache)
 
-    Important: GOING TO DEPRECATE
-
     Invalidate user info cache in agreement service.
     Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=8 (DELETE)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=8 (DELETE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [DELETE]
@@ -208,6 +203,7 @@ async def invalidate_user_info_cache_async(
     )
 
 
+@deprecated
 @same_doc_as(SyncUserInfo)
 def sync_user_info(
     namespace: Optional[str] = None,
@@ -216,12 +212,9 @@ def sync_user_info(
 ):
     """Sync user info with iam service  (syncUserInfo)
 
-    Important: GOING TO DEPRECATE
-
     Sync user info cache in agreement service with iam service.
     Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [UPDATE]
@@ -254,6 +247,7 @@ def sync_user_info(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(SyncUserInfo)
 async def sync_user_info_async(
     namespace: Optional[str] = None,
@@ -262,12 +256,9 @@ async def sync_user_info_async(
 ):
     """Sync user info with iam service  (syncUserInfo)
 
-    Important: GOING TO DEPRECATE
-
     Sync user info cache in agreement service with iam service.
     Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
+        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:*:LEGAL [UPDATE]

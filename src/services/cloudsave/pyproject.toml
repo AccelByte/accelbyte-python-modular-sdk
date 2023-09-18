@@ -3,11 +3,10 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "accelbyte-py-sdk-cloudsave"
-version = "3.6.4"
-description = "AccelByte Python SDK - Justice Cloudsave Service"
+name = "accelbyte-py-sdk-service-cloudsave"
+version = "3.11.0"
+description = "AccelByte Python SDK - AccelByte Gaming Services Cloudsave Service"
 requires-python = ">=3.9"
 dependencies = [
     "accelbyte-py-sdk-core",
 ]
-

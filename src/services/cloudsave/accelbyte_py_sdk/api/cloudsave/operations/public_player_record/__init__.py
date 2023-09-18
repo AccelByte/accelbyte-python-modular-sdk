@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Cloudsave Service."""
 
-__version__ = "3.6.4"
+__version__ = "3.11.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -16,6 +16,8 @@ __email__ = "dev@accelbyte.net"
 
 from .bulk_get_player_public__28e43c import BulkGetPlayerPublicRecordHandlerV1
 from .delete_player_record_ha_3addde import DeletePlayerRecordHandlerV1
+from .get_other_player_public_17685a import GetOtherPlayerPublicRecordHandlerV1
+from .get_other_player_public_4438d8 import GetOtherPlayerPublicRecordKeyHandlerV1
 from .get_player_public_recor_5ea27d import GetPlayerPublicRecordHandlerV1
 from .get_player_record_handler_v1 import GetPlayerRecordHandlerV1
 from .get_player_records_bulk_b10df3 import GetPlayerRecordsBulkHandlerV1

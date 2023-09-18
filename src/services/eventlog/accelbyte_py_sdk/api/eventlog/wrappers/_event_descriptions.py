@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,12 +23,12 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import deprecated
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import deprecated
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ModelsMultipleAgentType
 from ..models import ModelsMultipleEventID
@@ -54,6 +54,7 @@ def agent_type_description_handler(
     x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
 ):
     """Get list of agent type and the descriptions (AgentTypeDescriptionHandler)
+
 
     Properties:
         url: /event/descriptions/agentType
@@ -81,6 +82,7 @@ async def agent_type_description_handler_async(
     x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
 ):
     """Get list of agent type and the descriptions (AgentTypeDescriptionHandler)
+
 
     Properties:
         url: /event/descriptions/agentType
@@ -111,6 +113,7 @@ def event_id_description_handler(
 ):
     """Get list of eventID and the descriptions (EventIDDescriptionHandler)
 
+
     Properties:
         url: /event/descriptions/eventId
 
@@ -137,6 +140,7 @@ async def event_id_description_handler_async(
     x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
 ):
     """Get list of eventID and the descriptions (EventIDDescriptionHandler)
+
 
     Properties:
         url: /event/descriptions/eventId
@@ -167,6 +171,7 @@ def event_level_description_handler(
 ):
     """Get list of event level and the descriptions (EventLevelDescriptionHandler)
 
+
     Properties:
         url: /event/descriptions/eventLevel
 
@@ -193,6 +198,7 @@ async def event_level_description_handler_async(
     x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
 ):
     """Get list of event level and the descriptions (EventLevelDescriptionHandler)
+
 
     Properties:
         url: /event/descriptions/eventLevel
@@ -223,6 +229,7 @@ def event_type_description_handler(
 ):
     """Get list of event type and the descriptions (EventTypeDescriptionHandler)
 
+
     Properties:
         url: /event/descriptions/eventType
 
@@ -249,6 +256,7 @@ async def event_type_description_handler_async(
     x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
 ):
     """Get list of event type and the descriptions (EventTypeDescriptionHandler)
+
 
     Properties:
         url: /event/descriptions/eventType
@@ -280,6 +288,7 @@ def specific_agent_type_description_handler(
     **kwargs
 ):
     """Get specific list of agent type and the descriptions by comma separated value of agent types (SpecificAgentTypeDescriptionHandler)
+
 
     Properties:
         url: /event/descriptions/agentType/listByAgentTypes
@@ -317,6 +326,7 @@ async def specific_agent_type_description_handler_async(
     **kwargs
 ):
     """Get specific list of agent type and the descriptions by comma separated value of agent types (SpecificAgentTypeDescriptionHandler)
+
 
     Properties:
         url: /event/descriptions/agentType/listByAgentTypes
@@ -357,6 +367,7 @@ def specific_event_id_description_handler(
 ):
     """Get specific list of eventID and the descriptions by comma separated value of eventIDs (SpecificEventIDDescriptionHandler)
 
+
     Properties:
         url: /event/descriptions/eventId/listByEventIds
 
@@ -393,6 +404,7 @@ async def specific_event_id_description_handler_async(
     **kwargs
 ):
     """Get specific list of eventID and the descriptions by comma separated value of eventIDs (SpecificEventIDDescriptionHandler)
+
 
     Properties:
         url: /event/descriptions/eventId/listByEventIds
@@ -433,6 +445,7 @@ def specific_event_level_description_handler(
 ):
     """Get specific list of event level and the descriptions by comma separated value of event levels (SpecificEventLevelDescriptionHandler)
 
+
     Properties:
         url: /event/descriptions/eventLevel/listByEventLevels
 
@@ -469,6 +482,7 @@ async def specific_event_level_description_handler_async(
     **kwargs
 ):
     """Get specific list of event level and the descriptions by comma separated value of event levels (SpecificEventLevelDescriptionHandler)
+
 
     Properties:
         url: /event/descriptions/eventLevel/listByEventLevels
@@ -509,6 +523,7 @@ def specific_event_type_description_handler(
 ):
     """Get specific list of event type and the descriptions by comma separated value of event types (SpecificEventTypeDescriptionHandler)
 
+
     Properties:
         url: /event/descriptions/eventType/listByEventTypes
 
@@ -545,6 +560,7 @@ async def specific_event_type_description_handler_async(
     **kwargs
 ):
     """Get specific list of event type and the descriptions by comma separated value of event types (SpecificEventTypeDescriptionHandler)
+
 
     Properties:
         url: /event/descriptions/eventType/listByEventTypes
@@ -585,6 +601,7 @@ def specific_ux_description_handler(
 ):
     """Get specific list of UX and the descriptions by comma separated value of UX (SpecificUXDescriptionHandler)
 
+
     Properties:
         url: /event/descriptions/ux/listByUx
 
@@ -621,6 +638,7 @@ async def specific_ux_description_handler_async(
     **kwargs
 ):
     """Get specific list of UX and the descriptions by comma separated value of UX (SpecificUXDescriptionHandler)
+
 
     Properties:
         url: /event/descriptions/ux/listByUx
@@ -659,6 +677,7 @@ def ux_name_description_handler(
 ):
     """Get list of ux name and the descriptions (UXNameDescriptionHandler)
 
+
     Properties:
         url: /event/descriptions/ux
 
@@ -685,6 +704,7 @@ async def ux_name_description_handler_async(
     x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
 ):
     """Get list of ux name and the descriptions (UXNameDescriptionHandler)
+
 
     Properties:
         url: /event/descriptions/ux

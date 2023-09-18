@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,15 +20,15 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (5.31.0)
+# AccelByte Gaming Services Iam Service (7.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
-from .....core import deprecated
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ModelUserResponse
 from ...models import ModelUserUpdateRequest
@@ -44,21 +44,18 @@ class PublicUpdateUserV2(Operation):
     Endpoint migration guide
 
 
+                * Substitute endpoint([PUT]): /iam/v3/public/namespaces/{namespace}/users/me [PUT]
 
+                * Substitute endpoint([PATCH]): /iam/v3/public/namespaces/{namespace}/users/me [PATCH]
 
-      * Substitute endpoint([PUT]): /iam/v3/public/namespaces/{namespace}/users/me [PUT]
-
-      * Substitute endpoint([PATCH]): /iam/v3/public/namespaces/{namespace}/users/me [PATCH]
-
-      * Substitute endpoint([PATCH]): /iam/v4/public/namespaces/{namespace}/users/me [PATCH]
+                * Substitute endpoint([PATCH]): /iam/v4/public/namespaces/{namespace}/users/me [PATCH]
 
 
 
-      * Note:
+                * Note:
         1. Prefer [PATCH] if client support PATCH method
 
         2. Difference in V3/v4 request body, format difference: Pascal case => Camel case
-
 
 
 

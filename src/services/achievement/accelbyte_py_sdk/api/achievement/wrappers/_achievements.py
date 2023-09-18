@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ModelsAchievementOrderUpdateRequest
 from ..models import ModelsAchievementRequest
@@ -834,7 +834,6 @@ def export_achievements(
 ):
     """Export achievements configuration into a json file (ExportAchievements)
 
-
     Required permission `ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [READ]`
 
     Required Scope: `social`
@@ -892,7 +891,6 @@ async def export_achievements_async(
     **kwargs
 ):
     """Export achievements configuration into a json file (ExportAchievements)
-
 
     Required permission `ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [READ]`
 
@@ -954,7 +952,6 @@ def import_achievements(
     **kwargs
 ):
     """Import achievements from file (ImportAchievements)
-
 
     Required permission ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [UPDATE]
 
@@ -1022,7 +1019,6 @@ async def import_achievements_async(
     **kwargs
 ):
     """Import achievements from file (ImportAchievements)
-
 
     Required permission ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [UPDATE]
 

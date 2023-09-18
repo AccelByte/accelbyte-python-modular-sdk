@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,19 +23,22 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ApimodelsPlayerAttributesRequestBody
 from ..models import ApimodelsPlayerAttributesResponseBody
+from ..models import ApimodelsPlayersCurrentPlatformRequest
+from ..models import ApimodelsPlayersCurrentPlatformResponse
 from ..models import ResponseError
 
 from ..operations.player import AdminGetPlayerAttributes
 from ..operations.player import AdminQueryPlayerAttributes
 from ..operations.player import PublicDeletePlayerAttributes
+from ..operations.player import PublicGetBulkPlayerCurrentPlatform
 from ..operations.player import PublicGetPlayerAttributes
 from ..operations.player import PublicStorePlayerAttributes
 
@@ -55,9 +58,11 @@ def admin_get_player_attributes(
     - userID : user who owns the attributes.
     - crossplayEnabled : set to true if the player wants to enable crossplay to their session (default: false).
     - platforms : list of the player's 3rd party platform account information.
-    - name : platform name. supported platforms: STEAM
+    - name : platform name. supported platforms: STEAM, XBOX, PSN
     - userID : platform userID
     - data : other data that the player wants to store.
+    - currentPlatform : latest user game platform.
+    - roles : user role for matchmaking role base support.
 
     Properties:
         url: /session/v1/admin/namespaces/{namespace}/users/{userId}/attributes
@@ -113,9 +118,11 @@ async def admin_get_player_attributes_async(
     - userID : user who owns the attributes.
     - crossplayEnabled : set to true if the player wants to enable crossplay to their session (default: false).
     - platforms : list of the player's 3rd party platform account information.
-    - name : platform name. supported platforms: STEAM
+    - name : platform name. supported platforms: STEAM, XBOX, PSN
     - userID : platform userID
     - data : other data that the player wants to store.
+    - currentPlatform : latest user game platform.
+    - roles : user role for matchmaking role base support.
 
     Properties:
         url: /session/v1/admin/namespaces/{namespace}/users/{userId}/attributes
@@ -173,9 +180,11 @@ def admin_query_player_attributes(
     - userID : user who owns the attributes.
     - crossplayEnabled : set to true if the player wants to enable crossplay to their session (default: false).
     - platforms : list of the player's 3rd party platform account information.
-    - name : platform name. supported platforms: STEAM
+    - name : platform name. supported platforms: STEAM, XBOX, PSN
     - userID : platform userID
     - data : other data that the player wants to store.
+    - currentPlatform : latest user game platform.
+    - roles : user role for matchmaking role base support.
 
     Properties:
         url: /session/v1/admin/namespaces/{namespace}/users/attributes
@@ -231,9 +240,11 @@ async def admin_query_player_attributes_async(
     - userID : user who owns the attributes.
     - crossplayEnabled : set to true if the player wants to enable crossplay to their session (default: false).
     - platforms : list of the player's 3rd party platform account information.
-    - name : platform name. supported platforms: STEAM
+    - name : platform name. supported platforms: STEAM, XBOX, PSN
     - userID : platform userID
     - data : other data that the player wants to store.
+    - currentPlatform : latest user game platform.
+    - roles : user role for matchmaking role base support.
 
     Properties:
         url: /session/v1/admin/namespaces/{namespace}/users/attributes
@@ -370,6 +381,108 @@ async def public_delete_player_attributes_async(
     )
 
 
+@same_doc_as(PublicGetBulkPlayerCurrentPlatform)
+def public_get_bulk_player_current_platform(
+    body: ApimodelsPlayersCurrentPlatformRequest,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get player current platform in bulk. Requires NAMESPACE:{namespace}:SESSION:PLAYER [READ] (publicGetBulkPlayerCurrentPlatform)
+
+    Get bulk players current platform.
+
+    Properties:
+        url: /session/v1/public/namespaces/{namespace}/users/bulk/platform
+
+        method: POST
+
+        tags: ["Player"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED ApimodelsPlayersCurrentPlatformRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - ApimodelsPlayersCurrentPlatformResponse (OK)
+
+        400: Bad Request - ResponseError (Bad Request)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = PublicGetBulkPlayerCurrentPlatform.create(
+        body=body,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(PublicGetBulkPlayerCurrentPlatform)
+async def public_get_bulk_player_current_platform_async(
+    body: ApimodelsPlayersCurrentPlatformRequest,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get player current platform in bulk. Requires NAMESPACE:{namespace}:SESSION:PLAYER [READ] (publicGetBulkPlayerCurrentPlatform)
+
+    Get bulk players current platform.
+
+    Properties:
+        url: /session/v1/public/namespaces/{namespace}/users/bulk/platform
+
+        method: POST
+
+        tags: ["Player"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED ApimodelsPlayersCurrentPlatformRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - ApimodelsPlayersCurrentPlatformResponse (OK)
+
+        400: Bad Request - ResponseError (Bad Request)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = PublicGetBulkPlayerCurrentPlatform.create(
+        body=body,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(PublicGetPlayerAttributes)
 def public_get_player_attributes(
     namespace: Optional[str] = None,
@@ -384,9 +497,11 @@ def public_get_player_attributes(
     - userID : user who owns the attributes.
     - crossplayEnabled : set to true if the player wants to enable crossplay to their session (default: false).
     - platforms : list of the player's 3rd party platform account information.
-    - name : platform name. supported platforms: STEAM
+    - name : platform name. supported platforms: STEAM, XBOX, PSN
     - userID : platform userID
     - data : other data that the player wants to store.
+    - currentPlatform : latest user game platform.
+    - roles : user role for matchmaking role base support.
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/users/me/attributes
@@ -438,9 +553,11 @@ async def public_get_player_attributes_async(
     - userID : user who owns the attributes.
     - crossplayEnabled : set to true if the player wants to enable crossplay to their session (default: false).
     - platforms : list of the player's 3rd party platform account information.
-    - name : platform name. supported platforms: STEAM
+    - name : platform name. supported platforms: STEAM, XBOX, PSN
     - userID : platform userID
     - data : other data that the player wants to store.
+    - currentPlatform : latest user game platform.
+    - roles : user role for matchmaking role base support.
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/users/me/attributes
@@ -495,9 +612,11 @@ def public_store_player_attributes(
     - userID : user who owns the attributes.
     - crossplayEnabled : set to true if the player wants to enable crossplay to their session (default: false).
     - platforms : list of the player's 3rd party platform account information.
-    - name : platform name. supported platforms: STEAM
+    - name : platform name. supported platforms: STEAM, XBOX, PSN
     - userID : platform userID
     - data : other data that the player wants to store.
+    - currentPlatform : latest user game platform.
+    - roles : user role for matchmaking role base support.
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/users/me/attributes
@@ -551,9 +670,11 @@ async def public_store_player_attributes_async(
     - userID : user who owns the attributes.
     - crossplayEnabled : set to true if the player wants to enable crossplay to their session (default: false).
     - platforms : list of the player's 3rd party platform account information.
-    - name : platform name. supported platforms: STEAM
+    - name : platform name. supported platforms: STEAM, XBOX, PSN
     - userID : platform userID
     - data : other data that the player wants to store.
+    - currentPlatform : latest user game platform.
+    - roles : user role for matchmaking role base support.
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/users/me/attributes

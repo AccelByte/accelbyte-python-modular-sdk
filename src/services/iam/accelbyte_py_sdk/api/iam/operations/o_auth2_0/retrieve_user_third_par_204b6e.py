@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (5.31.0)
+# AccelByte Gaming Services Iam Service (7.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import OauthmodelErrorResponse
 from ...models import OauthmodelTokenThirdPartyResponse
@@ -54,24 +54,22 @@ class RetrieveUserThirdPartyPlatformTokenV3(Operation):
 
 
 
+                    * (psn) ps4web
 
 
-      * (psn) ps4web
+                    * (psn) ps4
 
 
-      * (psn) ps4
+                    * (psn) ps5
 
 
-      * (psn) ps5
+                    * epicgames
 
 
-      * epicgames
+                    * twitch
 
 
-      * twitch
-
-
-      * awscognito
+                    * awscognito
 
     Properties:
         url: /iam/v3/oauth/namespaces/{namespace}/users/{userId}/platforms/{platformId}/platformToken

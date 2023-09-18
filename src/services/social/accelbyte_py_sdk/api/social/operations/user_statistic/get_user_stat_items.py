@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,16 +20,17 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Social Service (2.3.0)
+# AccelByte Gaming Services Social Service (2.9.3)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import UserStatItemPagingSlicedResult
+from ...models import ValidationErrorEntity
 
 
 class GetUserStatItems(Operation):
@@ -37,9 +38,8 @@ class GetUserStatItems(Operation):
 
     List user's statItems.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
-      *  Returns : stat items
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+            *  Returns : stat items
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
@@ -61,6 +61,8 @@ class GetUserStatItems(Operation):
 
         user_id: (userId) REQUIRED str in path
 
+        is_public: (isPublic) OPTIONAL bool in query
+
         limit: (limit) OPTIONAL int in query
 
         offset: (offset) OPTIONAL int in query
@@ -73,6 +75,8 @@ class GetUserStatItems(Operation):
 
     Responses:
         200: OK - UserStatItemPagingSlicedResult (successful operation)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
 
     # region fields
@@ -86,6 +90,7 @@ class GetUserStatItems(Operation):
 
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
+    is_public: bool  # OPTIONAL in [query]
     limit: int  # OPTIONAL in [query]
     offset: int  # OPTIONAL in [query]
     sort_by: str  # OPTIONAL in [query]
@@ -144,6 +149,8 @@ class GetUserStatItems(Operation):
 
     def get_query_params(self) -> dict:
         result = {}
+        if hasattr(self, "is_public"):
+            result["isPublic"] = self.is_public
         if hasattr(self, "limit"):
             result["limit"] = self.limit
         if hasattr(self, "offset"):
@@ -170,6 +177,10 @@ class GetUserStatItems(Operation):
 
     def with_user_id(self, value: str) -> GetUserStatItems:
         self.user_id = value
+        return self
+
+    def with_is_public(self, value: bool) -> GetUserStatItems:
+        self.is_public = value
         return self
 
     def with_limit(self, value: int) -> GetUserStatItems:
@@ -206,6 +217,10 @@ class GetUserStatItems(Operation):
             result["userId"] = str(self.user_id)
         elif include_empty:
             result["userId"] = ""
+        if hasattr(self, "is_public") and self.is_public:
+            result["isPublic"] = bool(self.is_public)
+        elif include_empty:
+            result["isPublic"] = False
         if hasattr(self, "limit") and self.limit:
             result["limit"] = int(self.limit)
         elif include_empty:
@@ -235,10 +250,15 @@ class GetUserStatItems(Operation):
     # noinspection PyMethodMayBeStatic
     def parse_response(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[Union[None, UserStatItemPagingSlicedResult], Union[None, HttpResponse]]:
+    ) -> Tuple[
+        Union[None, UserStatItemPagingSlicedResult],
+        Union[None, HttpResponse, ValidationErrorEntity],
+    ]:
         """Parse the given response.
 
         200: OK - UserStatItemPagingSlicedResult (successful operation)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -255,6 +275,8 @@ class GetUserStatItems(Operation):
 
         if code == 200:
             return UserStatItemPagingSlicedResult.create_from_dict(content), None
+        if code == 422:
+            return None, ValidationErrorEntity.create_from_dict(content)
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content
@@ -269,6 +291,7 @@ class GetUserStatItems(Operation):
         cls,
         namespace: str,
         user_id: str,
+        is_public: Optional[bool] = None,
         limit: Optional[int] = None,
         offset: Optional[int] = None,
         sort_by: Optional[str] = None,
@@ -279,6 +302,8 @@ class GetUserStatItems(Operation):
         instance = cls()
         instance.namespace = namespace
         instance.user_id = user_id
+        if is_public is not None:
+            instance.is_public = is_public
         if limit is not None:
             instance.limit = limit
         if offset is not None:
@@ -304,6 +329,10 @@ class GetUserStatItems(Operation):
             instance.user_id = str(dict_["userId"])
         elif include_empty:
             instance.user_id = ""
+        if "isPublic" in dict_ and dict_["isPublic"] is not None:
+            instance.is_public = bool(dict_["isPublic"])
+        elif include_empty:
+            instance.is_public = False
         if "limit" in dict_ and dict_["limit"] is not None:
             instance.limit = int(dict_["limit"])
         elif include_empty:
@@ -331,6 +360,7 @@ class GetUserStatItems(Operation):
         return {
             "namespace": "namespace",
             "userId": "user_id",
+            "isPublic": "is_public",
             "limit": "limit",
             "offset": "offset",
             "sortBy": "sort_by",
@@ -343,6 +373,7 @@ class GetUserStatItems(Operation):
         return {
             "namespace": True,
             "userId": True,
+            "isPublic": False,
             "limit": False,
             "offset": False,
             "sortBy": False,

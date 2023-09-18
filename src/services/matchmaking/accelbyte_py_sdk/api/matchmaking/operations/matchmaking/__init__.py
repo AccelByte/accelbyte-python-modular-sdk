@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Matchmaking Service."""
 
-__version__ = "2.22.0"
+__version__ = "2.25.7"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -26,8 +26,10 @@ from .get_all_channels_handler import GetAllChannelsHandler
 from .get_all_party_in_all_channel import GetAllPartyInAllChannel
 from .get_all_party_in_channel import GetAllPartyInChannel
 from .get_all_sessions_in_channel import GetAllSessionsInChannel
+from .get_match_pool_metric import GetMatchPoolMetric
 from .get_session_history_detailed import GetSessionHistoryDetailed
 from .get_single_matchmaking_channel import GetSingleMatchmakingChannel
+from .get_stat_data import GetStatData
 from .import_channels import ImportChannels
 from .public_get_all_matchmak_cd6d3e import PublicGetAllMatchmakingChannel
 from .public_get_single_match_188a61 import PublicGetSingleMatchmakingChannel

@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,15 +20,15 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (5.31.0)
+# AccelByte Gaming Services Iam Service (7.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
-from .....core import StrEnum
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import StrEnum
 
 
 class CodeChallengeMethodEnum(StrEnum):
@@ -60,19 +60,16 @@ class AuthorizeV3(Operation):
 
 
 
-
-
-      * Authorize success :
+                    * Authorize success :
     redirects to login page with the following information: ?request_id={authorization_request_id}
 
 
 
 
 
-      * Authorize failure :
+                    * Authorize failure :
     redirects to the given redirect uri with the following information:
     ?error={error_code}&error;_description={error description}
-
 
 
 
@@ -85,41 +82,38 @@ class AuthorizeV3(Operation):
 
 
 
-
-
-      * invalid_request: The request is missing a required parameter,
+                    * invalid_request: The request is missing a required parameter,
     includes an invalid parameter value, includes a parameter more than once, or is otherwise malformed.
 
 
 
 
 
-      * server_error:
+                    * server_error:
     The authorization server encountered an unexpected condition that prevented it from fulfilling the request.
 
 
 
 
 
-      * unauthorized_client: The client is not authorized to request a token using this method.
+                    * unauthorized_client: The client is not authorized to request a token using this method.
 
 
 
-      * access_denied: The resource owner or authorization server denied the request.
+                    * access_denied: The resource owner or authorization server denied the request.
 
 
 
-      * invalid_scope: The requested scope is invalid, unknown, or malformed.
+                    * invalid_scope: The requested scope is invalid, unknown, or malformed.
 
 
 
-      * unsupported_response_type: The authorization server does not support obtaining a token using this method.
+                    * unsupported_response_type: The authorization server does not support obtaining a token using this method.
 
 
 
-      * temporarily_unavailable: The authorization server is currently unable to handle the request
+                    * temporarily_unavailable: The authorization server is currently unable to handle the request
     due to a temporary overloading or maintenance of the server.
-
 
 
 
@@ -145,8 +139,8 @@ class AuthorizeV3(Operation):
         produces: ["application/json"]
 
         securities: [BASIC_AUTH]
-
         location query: request_id
+
 
         code_challenge: (code_challenge) OPTIONAL str in query
 

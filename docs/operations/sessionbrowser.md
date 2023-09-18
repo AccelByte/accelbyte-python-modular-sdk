@@ -1,6 +1,6 @@
 [//]: # (<< Code generated. DO NOT EDIT!)
 
-[//]: # (<< template file: ags_py_codegen)
+[//]: # (<< template file: doc-index.j2)
 
 # AccelByte Gaming Services Session Browser Service Index (1.15.3)
 
@@ -50,9 +50,9 @@
 | models.GetSessionHistorySearchResponseV2 | [ModelsGetSessionHistorySearchResponseV2](../../accelbyte_py_sdk/api/sessionbrowser/models/models_get_session_history_search_response_v2.py) |
 | models.JoinGameSessionRequest | [ModelsJoinGameSessionRequest](../../accelbyte_py_sdk/api/sessionbrowser/models/models_join_game_session_request.py) |
 | models.MatchAttributes | [ModelsMatchAttributes](../../accelbyte_py_sdk/api/sessionbrowser/models/models_match_attributes.py) |
-| models.MatchMaking | [ModelsMatchMaking](../../accelbyte_py_sdk/api/sessionbrowser/models/models_match_making.py) |
 | models.MatchingAlly | [ModelsMatchingAlly](../../accelbyte_py_sdk/api/sessionbrowser/models/models_matching_ally.py) |
 | models.MatchingParty | [ModelsMatchingParty](../../accelbyte_py_sdk/api/sessionbrowser/models/models_matching_party.py) |
+| models.MatchMaking | [ModelsMatchMaking](../../accelbyte_py_sdk/api/sessionbrowser/models/models_match_making.py) |
 | models.Pagination | [ModelsPagination](../../accelbyte_py_sdk/api/sessionbrowser/models/models_pagination.py) |
 | models.PagingCursor | [ModelsPagingCursor](../../accelbyte_py_sdk/api/sessionbrowser/models/models_paging_cursor.py) |
 | models.PartyMember | [ModelsPartyMember](../../accelbyte_py_sdk/api/sessionbrowser/models/models_party_member.py) |

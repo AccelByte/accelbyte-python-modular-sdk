@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,15 +20,15 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.33.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
-from .....core import StrEnum
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import StrEnum
 
 from ...models import RewardPagingSlicedResult
 from ...models import ValidationErrorEntity
@@ -77,7 +77,7 @@ class QueryRewards(Operation):
 
         offset: (offset) OPTIONAL int in query
 
-        sort_by: (sortBy) OPTIONAL List[Union[str, SortByEnum]] in query
+        sort_by: (sortBy) OPTIONAL Union[List[str], List[SortByEnum]] in query
 
     Responses:
         200: OK - RewardPagingSlicedResult (successful operation)
@@ -98,7 +98,7 @@ class QueryRewards(Operation):
     event_topic: str  # OPTIONAL in [query]
     limit: int  # OPTIONAL in [query]
     offset: int  # OPTIONAL in [query]
-    sort_by: List[Union[str, SortByEnum]]  # OPTIONAL in [query]
+    sort_by: Union[List[str], List[SortByEnum]]  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -184,7 +184,7 @@ class QueryRewards(Operation):
         self.offset = value
         return self
 
-    def with_sort_by(self, value: List[Union[str, SortByEnum]]) -> QueryRewards:
+    def with_sort_by(self, value: Union[List[str], List[SortByEnum]]) -> QueryRewards:
         self.sort_by = value
         return self
 
@@ -266,7 +266,7 @@ class QueryRewards(Operation):
         event_topic: Optional[str] = None,
         limit: Optional[int] = None,
         offset: Optional[int] = None,
-        sort_by: Optional[List[Union[str, SortByEnum]]] = None,
+        sort_by: Optional[Union[List[str], List[SortByEnum]]] = None,
         **kwargs,
     ) -> QueryRewards:
         instance = cls()

@@ -1,6 +1,6 @@
 [//]: # (<< Code generated. DO NOT EDIT!)
 
-[//]: # (<< template file: ags_py_codegen)
+[//]: # (<< template file: doc-index.j2)
 
 # AccelByte Gaming Services Ugc Service Index (2.12.0)
 

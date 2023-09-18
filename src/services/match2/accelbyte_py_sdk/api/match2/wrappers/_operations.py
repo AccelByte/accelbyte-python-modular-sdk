@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 
 from ..operations.operations import GetHealthcheckInfo
@@ -40,6 +40,7 @@ def get_healthcheck_info(
     x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
 ):
     """Get healthcheck info (GetHealthcheckInfo)
+
 
     Properties:
         url: /healthz
@@ -66,6 +67,7 @@ async def get_healthcheck_info_async(
     x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
 ):
     """Get healthcheck info (GetHealthcheckInfo)
+
 
     Properties:
         url: /healthz
@@ -95,6 +97,7 @@ def get_healthcheck_info_v1(
 ):
     """Get healthcheck info V1 (GetHealthcheckInfoV1)
 
+
     Properties:
         url: /match2/healthz
 
@@ -120,6 +123,7 @@ async def get_healthcheck_info_v1_async(
     x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
 ):
     """Get healthcheck info V1 (GetHealthcheckInfoV1)
+
 
     Properties:
         url: /match2/healthz
@@ -149,6 +153,7 @@ def version_check_handler(
 ):
     """Version check handler (versionCheckHandler)
 
+
     Properties:
         url: /match2/version
 
@@ -174,6 +179,7 @@ async def version_check_handler_async(
     x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
 ):
     """Version check handler (versionCheckHandler)
+
 
     Properties:
         url: /match2/version

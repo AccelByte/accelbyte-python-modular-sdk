@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,17 +20,18 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Social Service (2.3.0)
+# AccelByte Gaming Services Social Service (2.9.3)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import ErrorEntity
 from ...models import UserStatCycleItemPagingSlicedResult
+from ...models import ValidationErrorEntity
 
 
 class GetUserStatCycleItems1(Operation):
@@ -38,9 +39,8 @@ class GetUserStatCycleItems1(Operation):
 
     List user's statCycleItems by statCycle.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
-      *  Returns : stat cycle items
+              *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+              *  Returns : stat cycle items
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
@@ -76,6 +76,8 @@ class GetUserStatCycleItems1(Operation):
         200: OK - UserStatCycleItemPagingSlicedResult (successful operation)
 
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
 
     # region fields
@@ -240,13 +242,15 @@ class GetUserStatCycleItems1(Operation):
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, UserStatCycleItemPagingSlicedResult],
-        Union[None, ErrorEntity, HttpResponse],
+        Union[None, ErrorEntity, HttpResponse, ValidationErrorEntity],
     ]:
         """Parse the given response.
 
         200: OK - UserStatCycleItemPagingSlicedResult (successful operation)
 
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -265,6 +269,8 @@ class GetUserStatCycleItems1(Operation):
             return UserStatCycleItemPagingSlicedResult.create_from_dict(content), None
         if code == 404:
             return None, ErrorEntity.create_from_dict(content)
+        if code == 422:
+            return None, ValidationErrorEntity.create_from_dict(content)
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content

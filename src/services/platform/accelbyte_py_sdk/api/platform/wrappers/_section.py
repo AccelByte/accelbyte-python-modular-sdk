@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ErrorEntity
 from ..models import FullSectionInfo
@@ -65,6 +65,24 @@ def create_section(
 
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=1 (CREATE)
       *  Returns : created a section
+
+
+
+    ## Restrictions for section extension and localization extension
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STORE [CREATE]
@@ -127,6 +145,24 @@ async def create_section_async(
 
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=1 (CREATE)
       *  Returns : created a section
+
+
+
+    ## Restrictions for section extension and localization extension
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STORE [CREATE]
@@ -813,6 +849,24 @@ def update_section(
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
       *  Returns : updated section data
 
+
+
+    ## Restrictions for section extension and localization extension
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
+
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STORE [UPDATE]
 
@@ -878,6 +932,24 @@ async def update_section_async(
 
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
       *  Returns : updated section data
+
+
+
+    ## Restrictions for section extension and localization extension
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STORE [UPDATE]

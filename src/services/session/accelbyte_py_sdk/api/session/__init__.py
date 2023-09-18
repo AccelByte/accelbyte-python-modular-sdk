@@ -4,29 +4,37 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: service-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Session Service."""
 
-__version__ = "2.7.3"
+__version__ = "3.0.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
 # pylint: disable=line-too-long
 
 # configuration_template
+from .wrappers import admin_create_configuration_alert_v1
+from .wrappers import admin_create_configuration_alert_v1_async
 from .wrappers import admin_create_configuration_template_v1
 from .wrappers import admin_create_configuration_template_v1_async
+from .wrappers import admin_delete_configuration_alert_v1
+from .wrappers import admin_delete_configuration_alert_v1_async
 from .wrappers import admin_delete_configuration_template_v1
 from .wrappers import admin_delete_configuration_template_v1_async
 from .wrappers import admin_get_all_configuration_templates_v1
 from .wrappers import admin_get_all_configuration_templates_v1_async
+from .wrappers import admin_get_configuration_alert_v1
+from .wrappers import admin_get_configuration_alert_v1_async
 from .wrappers import admin_get_configuration_template_v1
 from .wrappers import admin_get_configuration_template_v1_async
 from .wrappers import admin_get_dsmc_configuration
 from .wrappers import admin_get_dsmc_configuration_async
 from .wrappers import admin_sync_dsmc_configuration
 from .wrappers import admin_sync_dsmc_configuration_async
+from .wrappers import admin_update_configuration_alert_v1
+from .wrappers import admin_update_configuration_alert_v1_async
 from .wrappers import admin_update_configuration_template_v1
 from .wrappers import admin_update_configuration_template_v1_async
 
@@ -34,7 +42,13 @@ from .wrappers import admin_update_configuration_template_v1_async
 from .wrappers import admin_get_dsmc_configuration_default
 from .wrappers import admin_get_dsmc_configuration_default_async
 
+# environment_variable
+from .wrappers import admin_list_environment_variables
+from .wrappers import admin_list_environment_variables_async
+
 # game_session
+from .wrappers import admin_delete_bulk_game_sessions
+from .wrappers import admin_delete_bulk_game_sessions_async
 from .wrappers import admin_query_game_sessions
 from .wrappers import admin_query_game_sessions_async
 from .wrappers import admin_update_game_session_member
@@ -45,6 +59,8 @@ from .wrappers import create_game_session
 from .wrappers import create_game_session_async
 from .wrappers import delete_game_session
 from .wrappers import delete_game_session_async
+from .wrappers import game_session_generate_code
+from .wrappers import game_session_generate_code_async
 from .wrappers import get_game_session
 from .wrappers import get_game_session_async
 from .wrappers import get_game_session_by_pod_name
@@ -59,10 +75,16 @@ from .wrappers import public_game_session_invite
 from .wrappers import public_game_session_invite_async
 from .wrappers import public_game_session_reject
 from .wrappers import public_game_session_reject_async
+from .wrappers import public_promote_game_session_leader
+from .wrappers import public_promote_game_session_leader_async
 from .wrappers import public_query_game_sessions
 from .wrappers import public_query_game_sessions_async
 from .wrappers import public_query_my_game_sessions
 from .wrappers import public_query_my_game_sessions_async
+from .wrappers import public_revoke_game_session_code
+from .wrappers import public_revoke_game_session_code_async
+from .wrappers import public_session_join_code
+from .wrappers import public_session_join_code_async
 from .wrappers import update_game_session
 from .wrappers import update_game_session_async
 from .wrappers import update_game_session_backfill_ticket_id
@@ -106,6 +128,14 @@ from .wrappers import public_revoke_party_code_async
 from .wrappers import public_update_party
 from .wrappers import public_update_party_async
 
+# platform_credential
+from .wrappers import admin_delete_platform_credentials
+from .wrappers import admin_delete_platform_credentials_async
+from .wrappers import admin_get_platform_credentials
+from .wrappers import admin_get_platform_credentials_async
+from .wrappers import admin_update_platform_credentials
+from .wrappers import admin_update_platform_credentials_async
+
 # player
 from .wrappers import admin_get_player_attributes
 from .wrappers import admin_get_player_attributes_async
@@ -113,7 +143,21 @@ from .wrappers import admin_query_player_attributes
 from .wrappers import admin_query_player_attributes_async
 from .wrappers import public_delete_player_attributes
 from .wrappers import public_delete_player_attributes_async
+from .wrappers import public_get_bulk_player_current_platform
+from .wrappers import public_get_bulk_player_current_platform_async
 from .wrappers import public_get_player_attributes
 from .wrappers import public_get_player_attributes_async
 from .wrappers import public_store_player_attributes
 from .wrappers import public_store_player_attributes_async
+
+# session_storage
+from .wrappers import admin_delete_user_session_storage
+from .wrappers import admin_delete_user_session_storage_async
+from .wrappers import admin_read_session_storage
+from .wrappers import admin_read_session_storage_async
+from .wrappers import admin_read_user_session_storage
+from .wrappers import admin_read_user_session_storage_async
+from .wrappers import public_update_insert_session_storage
+from .wrappers import public_update_insert_session_storage_async
+from .wrappers import public_update_insert_session_storage_leader
+from .wrappers import public_update_insert_session_storage_leader_async

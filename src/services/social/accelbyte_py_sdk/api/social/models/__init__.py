@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Social Service."""
 
-__version__ = "2.3.0"
+__version__ = "2.9.3"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -20,6 +20,9 @@ from .a_dto_object_for_resetting_user_stat_items import (
 from .a_dto_object_for_user_stat_item_value import ADTOObjectForUserStatItemValue
 from .attribute import Attribute
 from .bulk_cycle_stats_add import BulkCycleStatsAdd
+from .bulk_stat_cycle_operation_result import BulkStatCycleOperationResult
+from .bulk_stat_cycle_request import BulkStatCycleRequest
+from .bulk_stat_cycle_result import BulkStatCycleResult
 from .bulk_stat_item_create import BulkStatItemCreate
 from .bulk_stat_item_inc import BulkStatItemInc
 from .bulk_stat_item_reset import BulkStatItemReset
@@ -52,16 +55,15 @@ from .stat_create import SetByEnum as StatCreateSetByEnum
 from .stat_cycle_create import StatCycleCreate
 from .stat_cycle_create import CycleTypeEnum as StatCycleCreateCycleTypeEnum
 from .stat_cycle_info import StatCycleInfo
-from .stat_cycle_info import (
-    CycleTypeEnum as StatCycleInfoCycleTypeEnum,
-    StatusEnum as StatCycleInfoStatusEnum,
-)
+from .stat_cycle_info import CycleTypeEnum as StatCycleInfoCycleTypeEnum
+from .stat_cycle_info import StatusEnum as StatCycleInfoStatusEnum
 from .stat_cycle_paging_sliced_result import StatCyclePagingSlicedResult
 from .stat_cycle_update import StatCycleUpdate
 from .stat_cycle_update import CycleTypeEnum as StatCycleUpdateCycleTypeEnum
 from .stat_import_info import StatImportInfo
 from .stat_info import StatInfo
-from .stat_info import SetByEnum as StatInfoSetByEnum, StatusEnum as StatInfoStatusEnum
+from .stat_info import SetByEnum as StatInfoSetByEnum
+from .stat_info import StatusEnum as StatInfoStatusEnum
 from .stat_item_inc import StatItemInc
 from .stat_item_inc_result import StatItemIncResult
 from .stat_item_update import StatItemUpdate

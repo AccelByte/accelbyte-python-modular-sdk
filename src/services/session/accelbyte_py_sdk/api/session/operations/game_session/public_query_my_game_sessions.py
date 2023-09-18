@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,16 +20,16 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Session Service (2.7.3)
+# AccelByte Gaming Services Session Service (3.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
-from ...models import ApimodelsGameSessionResponse
+from ...models import ApimodelsGameSessionQueryResponse
 from ...models import ResponseError
 
 
@@ -67,7 +67,7 @@ class PublicQueryMyGameSessions(Operation):
         status: (status) OPTIONAL str in query
 
     Responses:
-        200: OK - List[ApimodelsGameSessionResponse] (OK)
+        200: OK - ApimodelsGameSessionQueryResponse (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -204,12 +204,12 @@ class PublicQueryMyGameSessions(Operation):
     def parse_response(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
-        Union[None, List[ApimodelsGameSessionResponse]],
+        Union[None, ApimodelsGameSessionQueryResponse],
         Union[None, HttpResponse, ResponseError],
     ]:
         """Parse the given response.
 
-        200: OK - List[ApimodelsGameSessionResponse] (OK)
+        200: OK - ApimodelsGameSessionQueryResponse (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -231,9 +231,7 @@ class PublicQueryMyGameSessions(Operation):
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return [
-                ApimodelsGameSessionResponse.create_from_dict(i) for i in content
-            ], None
+            return ApimodelsGameSessionQueryResponse.create_from_dict(content), None
         if code == 400:
             return None, ResponseError.create_from_dict(content)
         if code == 401:

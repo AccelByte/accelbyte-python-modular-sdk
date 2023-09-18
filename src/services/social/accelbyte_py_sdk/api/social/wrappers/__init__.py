@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Social Service."""
 
-__version__ = "2.3.0"
+__version__ = "2.9.3"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -97,6 +97,10 @@ from ._stat_configuration import update_stat_async
 
 from ._stat_cycle_configuration import bulk_add_stats
 from ._stat_cycle_configuration import bulk_add_stats_async
+from ._stat_cycle_configuration import bulk_get_stat_cycle
+from ._stat_cycle_configuration import bulk_get_stat_cycle_async
+from ._stat_cycle_configuration import bulk_get_stat_cycle_1
+from ._stat_cycle_configuration import bulk_get_stat_cycle_1_async
 from ._stat_cycle_configuration import create_stat_cycle
 from ._stat_cycle_configuration import create_stat_cycle_async
 from ._stat_cycle_configuration import delete_stat_cycle
@@ -114,6 +118,8 @@ from ._stat_cycle_configuration import stop_stat_cycle_async
 from ._stat_cycle_configuration import update_stat_cycle
 from ._stat_cycle_configuration import update_stat_cycle_async
 
+from ._user_statistic import admin_list_users_stat_items
+from ._user_statistic import admin_list_users_stat_items_async
 from ._user_statistic import bulk_create_user_stat_items
 from ._user_statistic import bulk_create_user_stat_items_async
 from ._user_statistic import bulk_fetch_or_default_stat_items
@@ -178,6 +184,10 @@ from ._user_statistic import public_inc_user_stat_item
 from ._user_statistic import public_inc_user_stat_item_async
 from ._user_statistic import public_inc_user_stat_item_value
 from ._user_statistic import public_inc_user_stat_item_value_async
+from ._user_statistic import public_list_all_my_stat_items
+from ._user_statistic import public_list_all_my_stat_items_async
+from ._user_statistic import public_list_my_stat_items
+from ._user_statistic import public_list_my_stat_items_async
 from ._user_statistic import public_query_user_stat_items
 from ._user_statistic import public_query_user_stat_items_async
 from ._user_statistic import public_query_user_stat_items_1
@@ -197,3 +207,5 @@ from ._user_statistic_cycle import get_user_stat_cycle_items
 from ._user_statistic_cycle import get_user_stat_cycle_items_async
 from ._user_statistic_cycle import get_user_stat_cycle_items_1
 from ._user_statistic_cycle import get_user_stat_cycle_items_1_async
+from ._user_statistic_cycle import public_list_my_stat_cycle_items
+from ._user_statistic_cycle import public_list_my_stat_cycle_items_async

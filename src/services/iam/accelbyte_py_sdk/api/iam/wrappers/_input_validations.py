@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,20 +23,22 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
-from ..models import ModelInputValidationUpdatePayload
+from ..models import ModelInputValidationConfigVersion
 from ..models import ModelInputValidationsPublicResponse
 from ..models import ModelInputValidationsResponse
+from ..models import ModelInputValidationUpdatePayload
 from ..models import RestErrorResponse
 
 from ..operations.input_validations import AdminGetInputValidations
 from ..operations.input_validations import AdminResetInputValidations
 from ..operations.input_validations import AdminUpdateInputValidations
+from ..operations.input_validations import PublicGetInputValidationByField
 from ..operations.input_validations import PublicGetInputValidations
 
 
@@ -240,19 +242,19 @@ def admin_update_input_validations(
 
 
 
+                            * displayName
 
 
-      * displayName
+                            * password
 
 
-      * password
+                            * username
 
 
-      * username
+                            * email
 
 
-      * email
-
+                            * avatar
 
 
 
@@ -269,19 +271,16 @@ def admin_update_input_validations(
 
 
 
+                            * lowercase
 
 
-      * lowercase
+                            * uppercase
 
 
-      * uppercase
+                            * mixed: uppercase and lowercase
 
 
-      * mixed: uppercase and lowercase
-
-
-      * mixed: uppercase and/or lowercase
-
+                            * mixed: uppercase and/or lowercase
 
 
     flexible special character non words with `allowAllSpecialCharacters`
@@ -295,13 +294,10 @@ def admin_update_input_validations(
 
 
 
+                            * anywhere
 
 
-      * anywhere
-
-
-      * middle
-
+                            * middle
 
 
 
@@ -317,6 +313,11 @@ def admin_update_input_validations(
 
 
     If `blockedWord` is set by admin, any input from user which contain kind of blocked word(s) will be blocked for create/upgrade/update account
+
+
+
+
+    If `avatarConfig` is set, will use this config and skip all the other validation conditions
 
     Required Permission(s):
         - ADMIN:CONFIGURATION [UPDATE]
@@ -371,19 +372,19 @@ async def admin_update_input_validations_async(
 
 
 
+                            * displayName
 
 
-      * displayName
+                            * password
 
 
-      * password
+                            * username
 
 
-      * username
+                            * email
 
 
-      * email
-
+                            * avatar
 
 
 
@@ -400,19 +401,16 @@ async def admin_update_input_validations_async(
 
 
 
+                            * lowercase
 
 
-      * lowercase
+                            * uppercase
 
 
-      * uppercase
+                            * mixed: uppercase and lowercase
 
 
-      * mixed: uppercase and lowercase
-
-
-      * mixed: uppercase and/or lowercase
-
+                            * mixed: uppercase and/or lowercase
 
 
     flexible special character non words with `allowAllSpecialCharacters`
@@ -426,13 +424,10 @@ async def admin_update_input_validations_async(
 
 
 
+                            * anywhere
 
 
-      * anywhere
-
-
-      * middle
-
+                            * middle
 
 
 
@@ -448,6 +443,11 @@ async def admin_update_input_validations_async(
 
 
     If `blockedWord` is set by admin, any input from user which contain kind of blocked word(s) will be blocked for create/upgrade/update account
+
+
+
+
+    If `avatarConfig` is set, will use this config and skip all the other validation conditions
 
     Required Permission(s):
         - ADMIN:CONFIGURATION [UPDATE]
@@ -478,6 +478,80 @@ async def admin_update_input_validations_async(
     """
     request = AdminUpdateInputValidations.create(
         body=body,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(PublicGetInputValidationByField)
+def public_get_input_validation_by_field(
+    field: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
+    """Public Get Input Validation by field (PublicGetInputValidationByField)
+
+    This endpoint is to get input validation configuration by field.
+
+    Properties:
+        url: /iam/v3/public/inputValidations/{field}
+
+        method: GET
+
+        tags: ["InputValidations"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        field: (field) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelInputValidationConfigVersion (OK)
+
+        404: Not Found - (Data not found)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+    """
+    request = PublicGetInputValidationByField.create(
+        field=field,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(PublicGetInputValidationByField)
+async def public_get_input_validation_by_field_async(
+    field: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
+    """Public Get Input Validation by field (PublicGetInputValidationByField)
+
+    This endpoint is to get input validation configuration by field.
+
+    Properties:
+        url: /iam/v3/public/inputValidations/{field}
+
+        method: GET
+
+        tags: ["InputValidations"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        field: (field) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelInputValidationConfigVersion (OK)
+
+        404: Not Found - (Data not found)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+    """
+    request = PublicGetInputValidationByField.create(
+        field=field,
     )
     return await run_request_async(
         request, additional_headers=x_additional_headers, **kwargs
@@ -517,6 +591,7 @@ def public_get_input_validations(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         default_on_empty: (defaultOnEmpty) OPTIONAL bool in query
 
@@ -569,6 +644,7 @@ async def public_get_input_validations_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         default_on_empty: (defaultOnEmpty) OPTIONAL bool in query
 

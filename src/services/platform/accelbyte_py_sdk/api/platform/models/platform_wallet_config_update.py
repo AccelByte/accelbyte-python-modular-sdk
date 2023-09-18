@@ -4,9 +4,9 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model.j2
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.33.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -25,8 +25,8 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import Model
-from ....core import StrEnum
+from accelbyte_py_sdk.core import Model
+from accelbyte_py_sdk.core import StrEnum
 
 
 class AllowedBalanceOriginsEnum(StrEnum):
@@ -34,6 +34,7 @@ class AllowedBalanceOriginsEnum(StrEnum):
     GOOGLEPLAY = "GooglePlay"
     IOS = "IOS"
     NINTENDO = "Nintendo"
+    OCULUS = "Oculus"
     OTHER = "Other"
     PLAYSTATION = "Playstation"
     STEAM = "Steam"
@@ -46,19 +47,21 @@ class PlatformWalletConfigUpdate(Model):
     """A DTO object for updating item API call. (PlatformWalletConfigUpdate)
 
     Properties:
-        allowed_balance_origins: (allowedBalanceOrigins) OPTIONAL List[Union[str, AllowedBalanceOriginsEnum]]
+        allowed_balance_origins: (allowedBalanceOrigins) OPTIONAL Union[List[str], List[AllowedBalanceOriginsEnum]]
     """
 
     # region fields
 
-    allowed_balance_origins: List[Union[str, AllowedBalanceOriginsEnum]]  # OPTIONAL
+    allowed_balance_origins: Union[
+        List[str], List[AllowedBalanceOriginsEnum]
+    ]  # OPTIONAL
 
     # endregion fields
 
     # region with_x methods
 
     def with_allowed_balance_origins(
-        self, value: List[Union[str, AllowedBalanceOriginsEnum]]
+        self, value: Union[List[str], List[AllowedBalanceOriginsEnum]]
     ) -> PlatformWalletConfigUpdate:
         self.allowed_balance_origins = value
         return self
@@ -85,7 +88,7 @@ class PlatformWalletConfigUpdate(Model):
     def create(
         cls,
         allowed_balance_origins: Optional[
-            List[Union[str, AllowedBalanceOriginsEnum]]
+            Union[List[str], List[AllowedBalanceOriginsEnum]]
         ] = None,
         **kwargs,
     ) -> PlatformWalletConfigUpdate:
@@ -170,6 +173,7 @@ class PlatformWalletConfigUpdate(Model):
                 "GooglePlay",
                 "IOS",
                 "Nintendo",
+                "Oculus",
                 "Other",
                 "Playstation",
                 "Steam",

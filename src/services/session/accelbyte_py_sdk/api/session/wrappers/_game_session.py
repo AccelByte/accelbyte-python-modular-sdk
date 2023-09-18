@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,27 +23,33 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ApimodelsAppendTeamGameSessionRequest
 from ..models import ApimodelsCreateGameSessionRequest
+from ..models import ApimodelsDeleteBulkGameSessionRequest
+from ..models import ApimodelsDeleteBulkGameSessionsAPIResponse
 from ..models import ApimodelsGameSessionQueryResponse
 from ..models import ApimodelsGameSessionResponse
+from ..models import ApimodelsJoinByCodeRequest
+from ..models import ApimodelsPromoteLeaderRequest
 from ..models import ApimodelsSessionInviteRequest
 from ..models import ApimodelsUpdateGameSessionBackfillRequest
 from ..models import ApimodelsUpdateGameSessionMemberStatusResponse
 from ..models import ApimodelsUpdateGameSessionRequest
 from ..models import ResponseError
 
+from ..operations.game_session import AdminDeleteBulkGameSessions
 from ..operations.game_session import AdminQueryGameSessions
 from ..operations.game_session import AdminUpdateGameSessionMember
 from ..operations.game_session import AppendTeamGameSession
 from ..operations.game_session import CreateGameSession
 from ..operations.game_session import DeleteGameSession
+from ..operations.game_session import GameSessionGenerateCode
 from ..operations.game_session import GetGameSession
 from ..operations.game_session import GetGameSessionByPodName
 from ..operations.game_session import JoinGameSession
@@ -51,10 +57,115 @@ from ..operations.game_session import LeaveGameSession
 from ..operations.game_session import PatchUpdateGameSession
 from ..operations.game_session import PublicGameSessionInvite
 from ..operations.game_session import PublicGameSessionReject
+from ..operations.game_session import PublicPromoteGameSessionLeader
 from ..operations.game_session import PublicQueryGameSessions
 from ..operations.game_session import PublicQueryMyGameSessions
+from ..operations.game_session import PublicRevokeGameSessionCode
+from ..operations.game_session import PublicSessionJoinCode
 from ..operations.game_session import UpdateGameSession
 from ..operations.game_session import UpdateGameSessionBackfillTicketID
+
+
+@same_doc_as(AdminDeleteBulkGameSessions)
+def admin_delete_bulk_game_sessions(
+    body: ApimodelsDeleteBulkGameSessionRequest,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Delete bulk game sessions. Requires ADMIN:NAMESPACE:{namespace}:SESSION:GAME [DELETE] (adminDeleteBulkGameSessions)
+
+    Delete bulk game sessions.
+
+    Properties:
+        url: /session/v1/admin/namespaces/{namespace}/gamesessions/bulk
+
+        method: DELETE
+
+        tags: ["Game Session"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED ApimodelsDeleteBulkGameSessionRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - ApimodelsDeleteBulkGameSessionsAPIResponse (OK)
+
+        400: Bad Request - ResponseError (Bad Request)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = AdminDeleteBulkGameSessions.create(
+        body=body,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(AdminDeleteBulkGameSessions)
+async def admin_delete_bulk_game_sessions_async(
+    body: ApimodelsDeleteBulkGameSessionRequest,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Delete bulk game sessions. Requires ADMIN:NAMESPACE:{namespace}:SESSION:GAME [DELETE] (adminDeleteBulkGameSessions)
+
+    Delete bulk game sessions.
+
+    Properties:
+        url: /session/v1/admin/namespaces/{namespace}/gamesessions/bulk
+
+        method: DELETE
+
+        tags: ["Game Session"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED ApimodelsDeleteBulkGameSessionRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - ApimodelsDeleteBulkGameSessionsAPIResponse (OK)
+
+        400: Bad Request - ResponseError (Bad Request)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = AdminDeleteBulkGameSessions.create(
+        body=body,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
 
 
 @same_doc_as(AdminQueryGameSessions)
@@ -538,12 +649,18 @@ def create_game_session(
     Session configuration name is mandatory, this API will refer following values from the session template if they're not provided in the request:
     - type
     - joinability
+    - autoJoin. If enabled (set to true), players provided in the request will automatically joined the initial game session creation. Game session will not send any invite and players dont need to act upon it.
     - minPlayers
     - maxPlayers
     - inviteTimeout
     - inactiveTimeout
+    - dsSource
+    - tieTeamsSessionLifetime
 
-    When the session type is a DS, a DS creation request will be sent to DSMC if number of active players reaches session's minPlayers.
+    When the tieTeamsSessionLifetime is true, the lifetime of any partyId inside teams attribute will be tied to the game session.
+    Only applies when the teams partyId is a game session.
+
+    When the session type is a DS, a DS creation request will be sent if number of active players reaches session's minPlayers.
 
     Active user is a user who present within the session, has status CONNECTED/JOINED.
 
@@ -552,6 +669,12 @@ def create_game_session(
     - REQUESTED: DS is being requested to DSMC.
     - AVAILABLE: DS is ready to use. The DSMC status for this DS is either READY/BUSY.
     - FAILED_TO_REQUEST: DSMC fails to create the DS.
+
+    By default, DS requests are sent to DSMC, but if dsSource is set to "AMS":
+    - A DS will be requested from AMS instead of DSMC.
+    - The server will be chosen based on a set of claim keys, in order of preference, to match with fleets.
+    - The claim key list is built build from the preferredClaimKeys, fallbackClaimKeys, and clientVersion as follows:
+    [preferredClaimKeys.., clientVersion, fallbackClaimKeys...]
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/gamesession
@@ -605,12 +728,18 @@ async def create_game_session_async(
     Session configuration name is mandatory, this API will refer following values from the session template if they're not provided in the request:
     - type
     - joinability
+    - autoJoin. If enabled (set to true), players provided in the request will automatically joined the initial game session creation. Game session will not send any invite and players dont need to act upon it.
     - minPlayers
     - maxPlayers
     - inviteTimeout
     - inactiveTimeout
+    - dsSource
+    - tieTeamsSessionLifetime
 
-    When the session type is a DS, a DS creation request will be sent to DSMC if number of active players reaches session's minPlayers.
+    When the tieTeamsSessionLifetime is true, the lifetime of any partyId inside teams attribute will be tied to the game session.
+    Only applies when the teams partyId is a game session.
+
+    When the session type is a DS, a DS creation request will be sent if number of active players reaches session's minPlayers.
 
     Active user is a user who present within the session, has status CONNECTED/JOINED.
 
@@ -619,6 +748,12 @@ async def create_game_session_async(
     - REQUESTED: DS is being requested to DSMC.
     - AVAILABLE: DS is ready to use. The DSMC status for this DS is either READY/BUSY.
     - FAILED_TO_REQUEST: DSMC fails to create the DS.
+
+    By default, DS requests are sent to DSMC, but if dsSource is set to "AMS":
+    - A DS will be requested from AMS instead of DSMC.
+    - The server will be chosen based on a set of claim keys, in order of preference, to match with fleets.
+    - The claim key list is built build from the preferredClaimKeys, fallbackClaimKeys, and clientVersion as follows:
+    [preferredClaimKeys.., clientVersion, fallbackClaimKeys...]
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/gamesession
@@ -759,6 +894,112 @@ async def delete_game_session_async(
     )
 
 
+@same_doc_as(GameSessionGenerateCode)
+def game_session_generate_code(
+    session_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Generate a game session code. Requires NAMESPACE:{namespace}:SESSION:GAME [UPDATE] (gameSessionGenerateCode)
+
+    Generate a new code for the game session. Only leader can generate a code.
+
+    Properties:
+        url: /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/code
+
+        method: POST
+
+        tags: ["Game Session"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        session_id: (sessionId) REQUIRED str in path
+
+    Responses:
+        200: OK - ApimodelsGameSessionResponse (OK)
+
+        400: Bad Request - ResponseError (Bad Request)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GameSessionGenerateCode.create(
+        session_id=session_id,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(GameSessionGenerateCode)
+async def game_session_generate_code_async(
+    session_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Generate a game session code. Requires NAMESPACE:{namespace}:SESSION:GAME [UPDATE] (gameSessionGenerateCode)
+
+    Generate a new code for the game session. Only leader can generate a code.
+
+    Properties:
+        url: /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/code
+
+        method: POST
+
+        tags: ["Game Session"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        session_id: (sessionId) REQUIRED str in path
+
+    Responses:
+        200: OK - ApimodelsGameSessionResponse (OK)
+
+        400: Bad Request - ResponseError (Bad Request)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GameSessionGenerateCode.create(
+        session_id=session_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(GetGameSession)
 def get_game_session(
     session_id: str,
@@ -769,6 +1010,7 @@ def get_game_session(
     """Get game session detail. Requires NAMESPACE:{namespace}:SESSION:GAME [READ] (getGameSession)
 
     Get game session detail.
+    Session will only be accessible from active players in the session, and client with the permission, except the joinability is set to OPEN.
     Session service has several DSInformation status to track DS request to DSMC:
     - NEED_TO_REQUEST: number of active players hasn't reached session's minPlayers therefore DS has not yet requested.
     - REQUESTED: DS is being requested to DSMC.
@@ -826,6 +1068,7 @@ async def get_game_session_async(
     """Get game session detail. Requires NAMESPACE:{namespace}:SESSION:GAME [READ] (getGameSession)
 
     Get game session detail.
+    Session will only be accessible from active players in the session, and client with the permission, except the joinability is set to OPEN.
     Session service has several DSInformation status to track DS request to DSMC:
     - NEED_TO_REQUEST: number of active players hasn't reached session's minPlayers therefore DS has not yet requested.
     - REQUESTED: DS is being requested to DSMC.
@@ -1328,6 +1571,11 @@ def public_game_session_invite(
     """Invite a user to a game session. Requires NAMESPACE:{namespace}:SESSION:GAME:PLAYER [CREATE] (publicGameSessionInvite)
 
     Invite a user to a game session.
+    platformID represents the native platform of the invitee. API will return the corresponding native platform's userID.
+    supported platforms:
+    - STEAM
+    - XBOX
+    - PSN
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/invite
@@ -1384,6 +1632,11 @@ async def public_game_session_invite_async(
     """Invite a user to a game session. Requires NAMESPACE:{namespace}:SESSION:GAME:PLAYER [CREATE] (publicGameSessionInvite)
 
     Invite a user to a game session.
+    platformID represents the native platform of the invitee. API will return the corresponding native platform's userID.
+    supported platforms:
+    - STEAM
+    - XBOX
+    - PSN
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/invite
@@ -1537,6 +1790,150 @@ async def public_game_session_reject_async(
     )
 
 
+@same_doc_as(PublicPromoteGameSessionLeader)
+def public_promote_game_session_leader(
+    body: ApimodelsPromoteLeaderRequest,
+    session_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Promote new game session leader. Requires NAMESPACE:{namespace}:SESSION:GAME [UPDATE] (publicPromoteGameSessionLeader)
+
+    Promote game session member to become the new game session leader.
+
+    This API requires the NAMESPACE:{namespace}:SESSION:GAME [UPDATE] permission.
+
+    This API can be operated by:
+    - User (game session member) who is the current leader of the game session
+    - Game Client
+    - Dedicated Server (DS)
+
+    This API will promote game session leader candidate with the following criteria:
+    - Leader candidate is a member of the game session
+    - Leader candidate has a "CONNECTED" or "JOINED" status
+    - If the leader candidate is the current leader, then no promotion process is carried out
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:SESSION:GAME [UPDATE]
+
+    Properties:
+        url: /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/leader
+
+        method: POST
+
+        tags: ["Game Session"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED ApimodelsPromoteLeaderRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+        session_id: (sessionId) REQUIRED str in path
+
+    Responses:
+        200: OK - ApimodelsGameSessionResponse (OK)
+
+        400: Bad Request - ResponseError (Bad Request)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = PublicPromoteGameSessionLeader.create(
+        body=body,
+        session_id=session_id,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(PublicPromoteGameSessionLeader)
+async def public_promote_game_session_leader_async(
+    body: ApimodelsPromoteLeaderRequest,
+    session_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Promote new game session leader. Requires NAMESPACE:{namespace}:SESSION:GAME [UPDATE] (publicPromoteGameSessionLeader)
+
+    Promote game session member to become the new game session leader.
+
+    This API requires the NAMESPACE:{namespace}:SESSION:GAME [UPDATE] permission.
+
+    This API can be operated by:
+    - User (game session member) who is the current leader of the game session
+    - Game Client
+    - Dedicated Server (DS)
+
+    This API will promote game session leader candidate with the following criteria:
+    - Leader candidate is a member of the game session
+    - Leader candidate has a "CONNECTED" or "JOINED" status
+    - If the leader candidate is the current leader, then no promotion process is carried out
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:SESSION:GAME [UPDATE]
+
+    Properties:
+        url: /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/leader
+
+        method: POST
+
+        tags: ["Game Session"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED ApimodelsPromoteLeaderRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+        session_id: (sessionId) REQUIRED str in path
+
+    Responses:
+        200: OK - ApimodelsGameSessionResponse (OK)
+
+        400: Bad Request - ResponseError (Bad Request)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = PublicPromoteGameSessionLeader.create(
+        body=body,
+        session_id=session_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(PublicQueryGameSessions)
 def public_query_game_sessions(
     body: Dict[str, Any],
@@ -1554,6 +1951,11 @@ def public_query_game_sessions(
     - REQUESTED: DS is being requested to DSMC.
     - AVAILABLE: DS is ready to use. The DSMC status for this DS is either READY/BUSY.
     - FAILED_TO_REQUEST: DSMC fails to create the DS.
+
+    query parameter "availability" to filter sessions' availability:
+    all: return all sessions regardless it's full
+    full: only return active sessions
+    default behavior (unset or else): return only available sessions (not full)
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/gamesessions
@@ -1611,6 +2013,11 @@ async def public_query_game_sessions_async(
     - REQUESTED: DS is being requested to DSMC.
     - AVAILABLE: DS is ready to use. The DSMC status for this DS is either READY/BUSY.
     - FAILED_TO_REQUEST: DSMC fails to create the DS.
+
+    query parameter "availability" to filter sessions' availability:
+    all: return all sessions regardless it's full
+    full: only return active sessions
+    default behavior (unset or else): return only available sessions (not full)
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/gamesessions
@@ -1695,7 +2102,7 @@ def public_query_my_game_sessions(
         status: (status) OPTIONAL str in query
 
     Responses:
-        200: OK - List[ApimodelsGameSessionResponse] (OK)
+        200: OK - ApimodelsGameSessionQueryResponse (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -1758,7 +2165,7 @@ async def public_query_my_game_sessions_async(
         status: (status) OPTIONAL str in query
 
     Responses:
-        200: OK - List[ApimodelsGameSessionResponse] (OK)
+        200: OK - ApimodelsGameSessionQueryResponse (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -1774,6 +2181,218 @@ async def public_query_my_game_sessions_async(
         order=order,
         order_by=order_by,
         status=status,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(PublicRevokeGameSessionCode)
+def public_revoke_game_session_code(
+    session_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Revoke game session code. Requires NAMESPACE:{namespace}:SESSION:GAME [UPDATE] (publicRevokeGameSessionCode)
+
+    Revoke code of the game session. Only leader can revoke a code.
+
+    Properties:
+        url: /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/code
+
+        method: DELETE
+
+        tags: ["Game Session"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        session_id: (sessionId) REQUIRED str in path
+
+    Responses:
+        200: OK - ApimodelsGameSessionResponse (OK)
+
+        400: Bad Request - ResponseError (Bad Request)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = PublicRevokeGameSessionCode.create(
+        session_id=session_id,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(PublicRevokeGameSessionCode)
+async def public_revoke_game_session_code_async(
+    session_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Revoke game session code. Requires NAMESPACE:{namespace}:SESSION:GAME [UPDATE] (publicRevokeGameSessionCode)
+
+    Revoke code of the game session. Only leader can revoke a code.
+
+    Properties:
+        url: /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/code
+
+        method: DELETE
+
+        tags: ["Game Session"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        session_id: (sessionId) REQUIRED str in path
+
+    Responses:
+        200: OK - ApimodelsGameSessionResponse (OK)
+
+        400: Bad Request - ResponseError (Bad Request)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = PublicRevokeGameSessionCode.create(
+        session_id=session_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(PublicSessionJoinCode)
+def public_session_join_code(
+    body: ApimodelsJoinByCodeRequest,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Join a session by code. Requires NAMESPACE:{namespace}:SESSION:GAME:PLAYER [CREATE] (publicSessionJoinCode)
+
+    Join a session by code. The user can join a session as long as the code is valid
+
+    Properties:
+        url: /session/v1/public/namespaces/{namespace}/gamesessions/join/code
+
+        method: POST
+
+        tags: ["Game Session"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED ApimodelsJoinByCodeRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - ApimodelsGameSessionResponse (OK)
+
+        400: Bad Request - ResponseError (Bad Request)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = PublicSessionJoinCode.create(
+        body=body,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(PublicSessionJoinCode)
+async def public_session_join_code_async(
+    body: ApimodelsJoinByCodeRequest,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Join a session by code. Requires NAMESPACE:{namespace}:SESSION:GAME:PLAYER [CREATE] (publicSessionJoinCode)
+
+    Join a session by code. The user can join a session as long as the code is valid
+
+    Properties:
+        url: /session/v1/public/namespaces/{namespace}/gamesessions/join/code
+
+        method: POST
+
+        tags: ["Game Session"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED ApimodelsJoinByCodeRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - ApimodelsGameSessionResponse (OK)
+
+        400: Bad Request - ResponseError (Bad Request)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = PublicSessionJoinCode.create(
+        body=body,
         namespace=namespace,
     )
     return await run_request_async(

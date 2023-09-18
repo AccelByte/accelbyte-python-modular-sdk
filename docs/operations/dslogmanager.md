@@ -1,6 +1,6 @@
 [//]: # (<< Code generated. DO NOT EDIT!)
 
-[//]: # (<< template file: ags_py_codegen)
+[//]: # (<< template file: doc-index.j2)
 
 # AccelByte Gaming Services Ds Log Manager Service Index (3.3.1)
 
@@ -43,9 +43,9 @@
 | models.MatchResult | [ModelsMatchResult](../../accelbyte_py_sdk/api/dslogmanager/models/models_match_result.py) |
 | models.NotifPayloadServerStatusChange | [ModelsNotifPayloadServerStatusChange](../../accelbyte_py_sdk/api/dslogmanager/models/models_notif_payload_server_status_change.py) |
 | models.PagingCursor | [ModelsPagingCursor](../../accelbyte_py_sdk/api/dslogmanager/models/models_paging_cursor.py) |
+| models.RequestMatchingAlly | [ModelsRequestMatchingAlly](../../accelbyte_py_sdk/api/dslogmanager/models/models_request_matching_ally.py) |
 | models.RequestMatchMember | [ModelsRequestMatchMember](../../accelbyte_py_sdk/api/dslogmanager/models/models_request_match_member.py) |
 | models.RequestMatchParty | [ModelsRequestMatchParty](../../accelbyte_py_sdk/api/dslogmanager/models/models_request_match_party.py) |
-| models.RequestMatchingAlly | [ModelsRequestMatchingAlly](../../accelbyte_py_sdk/api/dslogmanager/models/models_request_matching_ally.py) |
 | models.Server | [ModelsServer](../../accelbyte_py_sdk/api/dslogmanager/models/models_server.py) |
 | models.ServerLogs | [ModelsServerLogs](../../accelbyte_py_sdk/api/dslogmanager/models/models_server_logs.py) |
 | models.StatusHistory | [ModelsStatusHistory](../../accelbyte_py_sdk/api/dslogmanager/models/models_status_history.py) |

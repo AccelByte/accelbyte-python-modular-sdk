@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,12 +23,12 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import deprecated
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import deprecated
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import AccountcommonClientPermissions
 from ..models import AccountcommonClientPermissionsV3
@@ -36,11 +36,11 @@ from ..models import ClientmodelClientCreateRequest
 from ..models import ClientmodelClientCreationResponse
 from ..models import ClientmodelClientCreationV3Request
 from ..models import ClientmodelClientResponse
+from ..models import ClientmodelClientsV3Response
 from ..models import ClientmodelClientUpdateRequest
 from ..models import ClientmodelClientUpdateSecretRequest
 from ..models import ClientmodelClientUpdateV3Request
 from ..models import ClientmodelClientV3Response
-from ..models import ClientmodelClientsV3Response
 from ..models import ClientmodelV3ClientUpdateSecretRequest
 from ..models import RestErrorResponse
 
@@ -49,8 +49,8 @@ from ..operations.clients import AdminAddClientPermissionsV3
 from ..operations.clients import AdminCreateClientV3
 from ..operations.clients import AdminDeleteClientPermissionV3
 from ..operations.clients import AdminDeleteClientV3
-from ..operations.clients import AdminGetClientsByNamespaceV3
 from ..operations.clients import AdminGetClientsbyNamespacebyIDV3
+from ..operations.clients import AdminGetClientsByNamespaceV3
 from ..operations.clients import AdminUpdateClientPermissionV3
 from ..operations.clients import AdminUpdateClientSecretV3
 from ..operations.clients import AdminUpdateClientV3
@@ -412,6 +412,9 @@ def admin_create_client_v3(
         * Nintendo
 
 
+        * Oculus
+
+
 
 
 
@@ -556,6 +559,9 @@ async def admin_create_client_v3_async(
 
 
         * Nintendo
+
+
+        * Oculus
 
 
 
@@ -859,6 +865,116 @@ async def admin_delete_client_v3_async(
     )
 
 
+@same_doc_as(AdminGetClientsbyNamespacebyIDV3)
+def admin_get_clientsby_namespaceby_idv3(
+    client_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get clients by namespace and client id. Multi tenant mode allows admin portal client to be accessible regardless of namespace path. (AdminGetClientsbyNamespacebyIDV3)
+
+    Required permission 'ADMIN:NAMESPACE:{namespace}:CLIENT [READ]'
+    action code: 10309
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:CLIENT [READ]
+
+    Properties:
+        url: /iam/v3/admin/namespaces/{namespace}/clients/{clientId}
+
+        method: GET
+
+        tags: ["Clients"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        client_id: (clientId) REQUIRED str in path
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - ClientmodelClientV3Response (OK)
+
+        400: Bad Request - RestErrorResponse (20002: validation error)
+
+        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
+
+        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
+
+        404: Not Found - RestErrorResponse (10365: client not found)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = AdminGetClientsbyNamespacebyIDV3.create(
+        client_id=client_id,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(AdminGetClientsbyNamespacebyIDV3)
+async def admin_get_clientsby_namespaceby_idv3_async(
+    client_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get clients by namespace and client id. Multi tenant mode allows admin portal client to be accessible regardless of namespace path. (AdminGetClientsbyNamespacebyIDV3)
+
+    Required permission 'ADMIN:NAMESPACE:{namespace}:CLIENT [READ]'
+    action code: 10309
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:CLIENT [READ]
+
+    Properties:
+        url: /iam/v3/admin/namespaces/{namespace}/clients/{clientId}
+
+        method: GET
+
+        tags: ["Clients"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        client_id: (clientId) REQUIRED str in path
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - ClientmodelClientV3Response (OK)
+
+        400: Bad Request - RestErrorResponse (20002: validation error)
+
+        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
+
+        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
+
+        404: Not Found - RestErrorResponse (10365: client not found)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = AdminGetClientsbyNamespacebyIDV3.create(
+        client_id=client_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(AdminGetClientsByNamespaceV3)
 def admin_get_clients_by_namespace_v3(
     client_id: Optional[str] = None,
@@ -998,116 +1114,6 @@ async def admin_get_clients_by_namespace_v3_async(
         client_type=client_type,
         limit=limit,
         offset=offset,
-        namespace=namespace,
-    )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
-
-
-@same_doc_as(AdminGetClientsbyNamespacebyIDV3)
-def admin_get_clientsby_namespaceby_idv3(
-    client_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
-    """Get clients by namespace and client id. Multi tenant mode allows admin portal client to be accessible regardless of namespace path. (AdminGetClientsbyNamespacebyIDV3)
-
-    Required permission 'ADMIN:NAMESPACE:{namespace}:CLIENT [READ]'
-    action code: 10309
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CLIENT [READ]
-
-    Properties:
-        url: /iam/v3/admin/namespaces/{namespace}/clients/{clientId}
-
-        method: GET
-
-        tags: ["Clients"]
-
-        consumes: []
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH]
-
-        client_id: (clientId) REQUIRED str in path
-
-        namespace: (namespace) REQUIRED str in path
-
-    Responses:
-        200: OK - ClientmodelClientV3Response (OK)
-
-        400: Bad Request - RestErrorResponse (20002: validation error)
-
-        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
-
-        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
-
-        404: Not Found - RestErrorResponse (10365: client not found)
-    """
-    if namespace is None:
-        namespace, error = get_services_namespace()
-        if error:
-            return None, error
-    request = AdminGetClientsbyNamespacebyIDV3.create(
-        client_id=client_id,
-        namespace=namespace,
-    )
-    return run_request(request, additional_headers=x_additional_headers, **kwargs)
-
-
-@same_doc_as(AdminGetClientsbyNamespacebyIDV3)
-async def admin_get_clientsby_namespaceby_idv3_async(
-    client_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
-    """Get clients by namespace and client id. Multi tenant mode allows admin portal client to be accessible regardless of namespace path. (AdminGetClientsbyNamespacebyIDV3)
-
-    Required permission 'ADMIN:NAMESPACE:{namespace}:CLIENT [READ]'
-    action code: 10309
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CLIENT [READ]
-
-    Properties:
-        url: /iam/v3/admin/namespaces/{namespace}/clients/{clientId}
-
-        method: GET
-
-        tags: ["Clients"]
-
-        consumes: []
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH]
-
-        client_id: (clientId) REQUIRED str in path
-
-        namespace: (namespace) REQUIRED str in path
-
-    Responses:
-        200: OK - ClientmodelClientV3Response (OK)
-
-        400: Bad Request - RestErrorResponse (20002: validation error)
-
-        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
-
-        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
-
-        404: Not Found - RestErrorResponse (10365: client not found)
-    """
-    if namespace is None:
-        namespace, error = get_services_namespace()
-        if error:
-            return None, error
-    request = AdminGetClientsbyNamespacebyIDV3.create(
-        client_id=client_id,
         namespace=namespace,
     )
     return await run_request_async(
@@ -1424,6 +1430,9 @@ def admin_update_client_v3(
         * Nintendo
 
 
+        * Oculus
+
+
 
 
 
@@ -1551,6 +1560,9 @@ async def admin_update_client_v3_async(
 
 
         * Nintendo
+
+
+        * Oculus
 
 
 

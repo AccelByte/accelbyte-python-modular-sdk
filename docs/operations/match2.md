@@ -1,6 +1,6 @@
 [//]: # (<< Code generated. DO NOT EDIT!)
 
-[//]: # (<< template file: ags_py_codegen)
+[//]: # (<< template file: doc-index.j2)
 
 # AccelByte Gaming Services Match Service V2 Index (2.8.4)
 
@@ -71,10 +71,10 @@
 |---|---|
 | api.BackFillAcceptRequest | [ApiBackFillAcceptRequest](../../accelbyte_py_sdk/api/match2/models/api_back_fill_accept_request.py) |
 | api.BackFillCreateRequest | [ApiBackFillCreateRequest](../../accelbyte_py_sdk/api/match2/models/api_back_fill_create_request.py) |
-| api.backFillRejectRequest | [ApiBackFillRejectRequest](../../accelbyte_py_sdk/api/match2/models/api_back_fill_reject_request.py) |
 | api.BackfillCreateResponse | [ApiBackfillCreateResponse](../../accelbyte_py_sdk/api/match2/models/api_backfill_create_response.py) |
 | api.BackfillGetResponse | [ApiBackfillGetResponse](../../accelbyte_py_sdk/api/match2/models/api_backfill_get_response.py) |
 | api.BackfillProposalResponse | [ApiBackfillProposalResponse](../../accelbyte_py_sdk/api/match2/models/api_backfill_proposal_response.py) |
+| api.backFillRejectRequest | [ApiBackFillRejectRequest](../../accelbyte_py_sdk/api/match2/models/api_back_fill_reject_request.py) |
 | api.ListEnvironmentVariablesResponse | [ApiListEnvironmentVariablesResponse](../../accelbyte_py_sdk/api/match2/models/api_list_environment_variables_response.py) |
 | api.ListMatchFunctionsResponse | [ApiListMatchFunctionsResponse](../../accelbyte_py_sdk/api/match2/models/api_list_match_functions_response.py) |
 | api.ListMatchPoolsResponse | [ApiListMatchPoolsResponse](../../accelbyte_py_sdk/api/match2/models/api_list_match_pools_response.py) |

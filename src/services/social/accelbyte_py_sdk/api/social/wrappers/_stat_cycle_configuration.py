@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,14 +23,16 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import BulkCycleStatsAdd
-from ..models import BulkStatOperationResult
+from ..models import BulkStatCycleOperationResult
+from ..models import BulkStatCycleRequest
+from ..models import BulkStatCycleResult
 from ..models import ErrorEntity
 from ..models import StatCycleCreate
 from ..models import StatCycleInfo
@@ -38,6 +40,8 @@ from ..models import StatCyclePagingSlicedResult
 from ..models import StatCycleUpdate
 
 from ..operations.stat_cycle_configuration import BulkAddStats
+from ..operations.stat_cycle_configuration import BulkGetStatCycle
+from ..operations.stat_cycle_configuration import BulkGetStatCycle1
 from ..operations.stat_cycle_configuration import CreateStatCycle
 from ..operations.stat_cycle_configuration import DeleteStatCycle
 from ..operations.stat_cycle_configuration import GetStatCycle
@@ -71,8 +75,7 @@ def bulk_add_stats(
 
     Bulk add stat cycle to stats.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
@@ -97,7 +100,7 @@ def bulk_add_stats(
         namespace: (namespace) REQUIRED str in path
 
     Responses:
-        200: OK - List[BulkStatOperationResult] (successful operation)
+        200: OK - List[BulkStatCycleOperationResult] (successful operation)
 
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
     """
@@ -125,8 +128,7 @@ async def bulk_add_stats_async(
 
     Bulk add stat cycle to stats.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
@@ -151,7 +153,7 @@ async def bulk_add_stats_async(
         namespace: (namespace) REQUIRED str in path
 
     Responses:
-        200: OK - List[BulkStatOperationResult] (successful operation)
+        200: OK - List[BulkStatCycleOperationResult] (successful operation)
 
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
     """
@@ -161,6 +163,202 @@ async def bulk_add_stats_async(
             return None, error
     request = BulkAddStats.create(
         cycle_id=cycle_id,
+        body=body,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(BulkGetStatCycle)
+def bulk_get_stat_cycle(
+    body: Optional[BulkStatCycleRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Bulk get stat cycle (bulkGetStatCycle)
+
+    Bulk get stat cycle.
+    Other detail info:
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  Returns : list of stat cycles
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:STAT [READ]
+
+    Properties:
+        url: /social/v1/admin/namespaces/{namespace}/statCycles/bulk
+
+        method: POST
+
+        tags: ["StatCycleConfiguration"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        body: (body) OPTIONAL BulkStatCycleRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - BulkStatCycleResult (successful operation)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = BulkGetStatCycle.create(
+        body=body,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(BulkGetStatCycle)
+async def bulk_get_stat_cycle_async(
+    body: Optional[BulkStatCycleRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Bulk get stat cycle (bulkGetStatCycle)
+
+    Bulk get stat cycle.
+    Other detail info:
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  Returns : list of stat cycles
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:STAT [READ]
+
+    Properties:
+        url: /social/v1/admin/namespaces/{namespace}/statCycles/bulk
+
+        method: POST
+
+        tags: ["StatCycleConfiguration"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        body: (body) OPTIONAL BulkStatCycleRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - BulkStatCycleResult (successful operation)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = BulkGetStatCycle.create(
+        body=body,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(BulkGetStatCycle1)
+def bulk_get_stat_cycle_1(
+    body: Optional[BulkStatCycleRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Bulk get stat cycle (bulkGetStatCycle_1)
+
+    Bulk get stat cycle.
+    Other detail info:
+            *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  Returns : list of stat cycles
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:STAT [READ]
+
+    Properties:
+        url: /social/v1/public/namespaces/{namespace}/statCycles/bulk
+
+        method: POST
+
+        tags: ["StatCycleConfiguration"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        body: (body) OPTIONAL BulkStatCycleRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - BulkStatCycleResult (successful operation)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = BulkGetStatCycle1.create(
+        body=body,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(BulkGetStatCycle1)
+async def bulk_get_stat_cycle_1_async(
+    body: Optional[BulkStatCycleRequest] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Bulk get stat cycle (bulkGetStatCycle_1)
+
+    Bulk get stat cycle.
+    Other detail info:
+            *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  Returns : list of stat cycles
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:STAT [READ]
+
+    Properties:
+        url: /social/v1/public/namespaces/{namespace}/statCycles/bulk
+
+        method: POST
+
+        tags: ["StatCycleConfiguration"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        body: (body) OPTIONAL BulkStatCycleRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - BulkStatCycleResult (successful operation)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = BulkGetStatCycle1.create(
         body=body,
         namespace=namespace,
     )
@@ -180,19 +378,17 @@ def create_stat_cycle(
 
     Create stat cycle.
     Fields:
-
-      * name: Cycle name, maximum length is 128 characters. (required).
-      * resetTime: Reset time must follow hours:minutes in 24 hours format e.g. 01:30, 23:15. (required)
-      * resetDay: Reset Day follows the ISO-8601 standard, from 1 (Monday) to 7 (Sunday). Required when cycleType is WEEKLY.
-      * resetDate: Reset Date must be a number 1 - 31. Required when cycleType is MONTHLY or ANNUALLY.
-      * resetMonth: Reset Month must be a number 1 - 12. Required when cycleType is ANNUALLY.
-      * seasonPeriod: Season period must be a number greater than or equal to 1 (days). Required when cycleType is SEASONAL.
-      * start: Start time must follow RFC3339 standard. e.g. 2023-02-24T05:10:24.865Z. (required)
-      * end: End time must follow RFC3339 standard. e.g. 2023-02-24T05:10:24.865Z.
-
+            * name: Cycle name, maximum length is 128 characters. (required).
+            * resetTime: Reset time must follow hours:minutes in 24 hours format e.g. 01:30, 23:15. (required)
+            * resetDay: Reset Day follows the ISO-8601 standard, from 1 (Monday) to 7 (Sunday). Required when cycleType is WEEKLY.
+            * resetDate: Reset Date must be a number 1 - 31. Required when cycleType is MONTHLY or ANNUALLY.
+            * resetMonth: Reset Month must be a number 1 - 12. Required when cycleType is ANNUALLY.
+            * seasonPeriod: Season period must be a number greater than or equal to 1 (days). Required when cycleType is SEASONAL.
+            * start: Start time must follow RFC3339 standard. e.g. 2023-02-24T05:10:24.865Z. (required)
+            * end: End time must follow RFC3339 standard. e.g. 2023-02-24T05:10:24.865Z.
     Other detail info:
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-      *  Returns : created stat cycle
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+            *  Returns : created stat cycle
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
@@ -241,19 +437,17 @@ async def create_stat_cycle_async(
 
     Create stat cycle.
     Fields:
-
-      * name: Cycle name, maximum length is 128 characters. (required).
-      * resetTime: Reset time must follow hours:minutes in 24 hours format e.g. 01:30, 23:15. (required)
-      * resetDay: Reset Day follows the ISO-8601 standard, from 1 (Monday) to 7 (Sunday). Required when cycleType is WEEKLY.
-      * resetDate: Reset Date must be a number 1 - 31. Required when cycleType is MONTHLY or ANNUALLY.
-      * resetMonth: Reset Month must be a number 1 - 12. Required when cycleType is ANNUALLY.
-      * seasonPeriod: Season period must be a number greater than or equal to 1 (days). Required when cycleType is SEASONAL.
-      * start: Start time must follow RFC3339 standard. e.g. 2023-02-24T05:10:24.865Z. (required)
-      * end: End time must follow RFC3339 standard. e.g. 2023-02-24T05:10:24.865Z.
-
+            * name: Cycle name, maximum length is 128 characters. (required).
+            * resetTime: Reset time must follow hours:minutes in 24 hours format e.g. 01:30, 23:15. (required)
+            * resetDay: Reset Day follows the ISO-8601 standard, from 1 (Monday) to 7 (Sunday). Required when cycleType is WEEKLY.
+            * resetDate: Reset Date must be a number 1 - 31. Required when cycleType is MONTHLY or ANNUALLY.
+            * resetMonth: Reset Month must be a number 1 - 12. Required when cycleType is ANNUALLY.
+            * seasonPeriod: Season period must be a number greater than or equal to 1 (days). Required when cycleType is SEASONAL.
+            * start: Start time must follow RFC3339 standard. e.g. 2023-02-24T05:10:24.865Z. (required)
+            * end: End time must follow RFC3339 standard. e.g. 2023-02-24T05:10:24.865Z.
     Other detail info:
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-      *  Returns : created stat cycle
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+            *  Returns : created stat cycle
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
@@ -304,8 +498,7 @@ def delete_stat_cycle(
 
     Deletes stat cycle.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [DELETE]
@@ -354,8 +547,7 @@ async def delete_stat_cycle_async(
 
     Deletes stat cycle.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [DELETE]
@@ -406,9 +598,8 @@ def get_stat_cycle(
 
     Get stat cycle.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-      *  Returns : stat cycle info
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  Returns : stat cycle info
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -457,9 +648,8 @@ async def get_stat_cycle_async(
 
     Get stat cycle.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-      *  Returns : stat cycle info
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  Returns : stat cycle info
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -510,9 +700,8 @@ def get_stat_cycle_1(
 
     Get stat cycle.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=2 (READ)
-      *  Returns : stat cycle info
+            *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  Returns : stat cycle info
 
     Required Permission(s):
         - NAMESPACE:{namespace}:STAT [READ]
@@ -561,9 +750,8 @@ async def get_stat_cycle_1_async(
 
     Get stat cycle.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=2 (READ)
-      *  Returns : stat cycle info
+            *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  Returns : stat cycle info
 
     Required Permission(s):
         - NAMESPACE:{namespace}:STAT [READ]
@@ -619,9 +807,8 @@ def get_stat_cycles(
 
     List stat cycles by pagination.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-      *  Returns : stat cycles
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  Returns : stat cycles
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -688,9 +875,8 @@ async def get_stat_cycles_async(
 
     List stat cycles by pagination.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-      *  Returns : stat cycles
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  Returns : stat cycles
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -759,9 +945,8 @@ def get_stat_cycles_1(
 
     List stat cycles by pagination.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=2 (READ)
-      *  Returns : stat cycles
+            *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  Returns : stat cycles
 
     Required Permission(s):
         - NAMESPACE:{namespace}:STAT [READ]
@@ -828,9 +1013,8 @@ async def get_stat_cycles_1_async(
 
     List stat cycles by pagination.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=2 (READ)
-      *  Returns : stat cycles
+            *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  Returns : stat cycles
 
     Required Permission(s):
         - NAMESPACE:{namespace}:STAT [READ]
@@ -894,9 +1078,8 @@ def stop_stat_cycle(
 
     Stop stat cycle.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
-      *  Returns : updated stat cycle
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
+            *  Returns : updated stat cycle
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [UPDATE]
@@ -947,9 +1130,8 @@ async def stop_stat_cycle_async(
 
     Stop stat cycle.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
-      *  Returns : updated stat cycle
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
+            *  Returns : updated stat cycle
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [UPDATE]
@@ -1003,9 +1185,8 @@ def update_stat_cycle(
 
     Update stat cycle.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
-      *  Returns : updated stat cycle
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
+            *  Returns : updated stat cycle
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [UPDATE]
@@ -1062,9 +1243,8 @@ async def update_stat_cycle_async(
 
     Update stat cycle.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
-      *  Returns : updated stat cycle
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
+            *  Returns : updated stat cycle
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [UPDATE]

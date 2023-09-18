@@ -4,9 +4,9 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model.j2
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.33.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -25,8 +25,8 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import Model
-from ....core import StrEnum
+from accelbyte_py_sdk.core import Model
+from accelbyte_py_sdk.core import StrEnum
 
 
 class BalanceOriginEnum(StrEnum):
@@ -34,6 +34,7 @@ class BalanceOriginEnum(StrEnum):
     GOOGLEPLAY = "GooglePlay"
     IOS = "IOS"
     NINTENDO = "Nintendo"
+    OCULUS = "Oculus"
     OTHER = "Other"
     PLAYSTATION = "Playstation"
     STEAM = "Steam"
@@ -197,6 +198,7 @@ class RevokeCurrency(Model):
                 "GooglePlay",
                 "IOS",
                 "Nintendo",
+                "Oculus",
                 "Other",
                 "Playstation",
                 "Steam",

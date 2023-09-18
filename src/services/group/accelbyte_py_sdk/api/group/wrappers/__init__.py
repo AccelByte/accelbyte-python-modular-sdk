@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Group Service."""
 
-__version__ = "2.15.3"
+__version__ = "2.18.1"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -86,6 +86,8 @@ from ._group_member import accept_group_join_request_public_v1
 from ._group_member import accept_group_join_request_public_v1_async
 from ._group_member import accept_group_join_request_public_v2
 from ._group_member import accept_group_join_request_public_v2_async
+from ._group_member import admin_get_user_group_status_information_v2
+from ._group_member import admin_get_user_group_status_information_v2_async
 from ._group_member import cancel_group_join_request_v1
 from ._group_member import cancel_group_join_request_v1_async
 from ._group_member import cancel_invitation_group_member_v2

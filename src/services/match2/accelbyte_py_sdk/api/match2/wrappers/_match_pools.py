@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,20 +23,22 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ApiListMatchPoolsResponse
 from ..models import ApiMatchPool
 from ..models import ApiMatchPoolConfig
+from ..models import ApiPlayerMetricRecord
 from ..models import ApiTicketMetricResultRecord
 from ..models import ResponseError
 
 from ..operations.match_pools import CreateMatchPool
 from ..operations.match_pools import DeleteMatchPool
+from ..operations.match_pools import GetPlayerMetric
 from ..operations.match_pools import MatchPoolDetails
 from ..operations.match_pools import MatchPoolList
 from ..operations.match_pools import MatchPoolMetric
@@ -327,6 +329,128 @@ async def delete_match_pool_async(
     )
 
 
+@same_doc_as(GetPlayerMetric)
+def get_player_metric(
+    pool: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get metrics player for a specific match pool (GetPlayerMetric)
+
+    Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:POOL:METRICS [READ]
+
+    Required Scope: social
+
+    Get player metric for a specific match pool
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:MATCHMAKING:POOL:METRICS [READ]
+
+    Required Scope(s):
+        - social
+
+    Properties:
+        url: /match2/v1/namespaces/{namespace}/match-pools/{pool}/metrics/player
+
+        method: GET
+
+        tags: ["Match-Pools", "admin"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        pool: (pool) REQUIRED str in path
+
+    Responses:
+        200: OK - ApiPlayerMetricRecord (Created)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GetPlayerMetric.create(
+        pool=pool,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(GetPlayerMetric)
+async def get_player_metric_async(
+    pool: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get metrics player for a specific match pool (GetPlayerMetric)
+
+    Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:POOL:METRICS [READ]
+
+    Required Scope: social
+
+    Get player metric for a specific match pool
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:MATCHMAKING:POOL:METRICS [READ]
+
+    Required Scope(s):
+        - social
+
+    Properties:
+        url: /match2/v1/namespaces/{namespace}/match-pools/{pool}/metrics/player
+
+        method: GET
+
+        tags: ["Match-Pools", "admin"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        pool: (pool) REQUIRED str in path
+
+    Responses:
+        200: OK - ApiPlayerMetricRecord (Created)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GetPlayerMetric.create(
+        pool=pool,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(MatchPoolDetails)
 def match_pool_details(
     pool: str,
@@ -448,6 +572,7 @@ async def match_pool_details_async(
 @same_doc_as(MatchPoolList)
 def match_pool_list(
     limit: Optional[int] = None,
+    name: Optional[str] = None,
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
@@ -484,6 +609,8 @@ def match_pool_list(
 
         limit: (limit) OPTIONAL int in query
 
+        name: (name) OPTIONAL str in query
+
         offset: (offset) OPTIONAL int in query
 
     Responses:
@@ -501,6 +628,7 @@ def match_pool_list(
             return None, error
     request = MatchPoolList.create(
         limit=limit,
+        name=name,
         offset=offset,
         namespace=namespace,
     )
@@ -510,6 +638,7 @@ def match_pool_list(
 @same_doc_as(MatchPoolList)
 async def match_pool_list_async(
     limit: Optional[int] = None,
+    name: Optional[str] = None,
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
@@ -546,6 +675,8 @@ async def match_pool_list_async(
 
         limit: (limit) OPTIONAL int in query
 
+        name: (name) OPTIONAL str in query
+
         offset: (offset) OPTIONAL int in query
 
     Responses:
@@ -563,6 +694,7 @@ async def match_pool_list_async(
             return None, error
     request = MatchPoolList.create(
         limit=limit,
+        name=name,
         offset=offset,
         namespace=namespace,
     )

@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.33.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import EntitlementDecrement
 from ...models import EntitlementDecrementResult
@@ -70,7 +70,7 @@ class PublicConsumeUserEntitlement(Operation):
     Responses:
         200: OK - EntitlementDecrementResult (successful operation)
 
-        400: Bad Request - ErrorEntity (31121: OptionBox entitlement [{entitlementId}] use count is not 1 | 31122: OptionBox entitlement [{entitlementId}] options size is not 1)
+        400: Bad Request - ErrorEntity (31121: OptionBox entitlement [{entitlementId}] use count is not 1 | 31122: OptionBox entitlement [{entitlementId}] options size is not 1 | 31123: Unable to acquire box item, box item [{itemId}] expired)
 
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}] | 31145: Option [{option}] doesn't exist in OptionBox entitlement [{entitlementId}])
 
@@ -210,7 +210,7 @@ class PublicConsumeUserEntitlement(Operation):
 
         200: OK - EntitlementDecrementResult (successful operation)
 
-        400: Bad Request - ErrorEntity (31121: OptionBox entitlement [{entitlementId}] use count is not 1 | 31122: OptionBox entitlement [{entitlementId}] options size is not 1)
+        400: Bad Request - ErrorEntity (31121: OptionBox entitlement [{entitlementId}] use count is not 1 | 31122: OptionBox entitlement [{entitlementId}] options size is not 1 | 31123: Unable to acquire box item, box item [{itemId}] expired)
 
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}] | 31145: Option [{option}] doesn't exist in OptionBox entitlement [{entitlementId}])
 

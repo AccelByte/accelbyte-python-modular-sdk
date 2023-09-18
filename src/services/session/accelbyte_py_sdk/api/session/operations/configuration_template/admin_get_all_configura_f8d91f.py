@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Session Service (2.7.3)
+# AccelByte Gaming Services Session Service (3.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import ApimodelsConfigurationTemplatesResponse
 from ...models import ResponseError
@@ -55,7 +55,13 @@ class AdminGetAllConfigurationTemplatesV1(Operation):
 
         limit: (limit) OPTIONAL int in query
 
+        name: (name) OPTIONAL str in query
+
         offset: (offset) OPTIONAL int in query
+
+        order: (order) OPTIONAL str in query
+
+        order_by: (orderBy) OPTIONAL str in query
 
     Responses:
         200: OK - ApimodelsConfigurationTemplatesResponse (OK)
@@ -80,7 +86,10 @@ class AdminGetAllConfigurationTemplatesV1(Operation):
 
     namespace: str  # REQUIRED in [path]
     limit: int  # OPTIONAL in [query]
+    name: str  # OPTIONAL in [query]
     offset: int  # OPTIONAL in [query]
+    order: str  # OPTIONAL in [query]
+    order_by: str  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -134,8 +143,14 @@ class AdminGetAllConfigurationTemplatesV1(Operation):
         result = {}
         if hasattr(self, "limit"):
             result["limit"] = self.limit
+        if hasattr(self, "name"):
+            result["name"] = self.name
         if hasattr(self, "offset"):
             result["offset"] = self.offset
+        if hasattr(self, "order"):
+            result["order"] = self.order
+        if hasattr(self, "order_by"):
+            result["orderBy"] = self.order_by
         return result
 
     # endregion get_x_params methods
@@ -154,8 +169,20 @@ class AdminGetAllConfigurationTemplatesV1(Operation):
         self.limit = value
         return self
 
+    def with_name(self, value: str) -> AdminGetAllConfigurationTemplatesV1:
+        self.name = value
+        return self
+
     def with_offset(self, value: int) -> AdminGetAllConfigurationTemplatesV1:
         self.offset = value
+        return self
+
+    def with_order(self, value: str) -> AdminGetAllConfigurationTemplatesV1:
+        self.order = value
+        return self
+
+    def with_order_by(self, value: str) -> AdminGetAllConfigurationTemplatesV1:
+        self.order_by = value
         return self
 
     # endregion with_x methods
@@ -172,10 +199,22 @@ class AdminGetAllConfigurationTemplatesV1(Operation):
             result["limit"] = int(self.limit)
         elif include_empty:
             result["limit"] = 0
+        if hasattr(self, "name") and self.name:
+            result["name"] = str(self.name)
+        elif include_empty:
+            result["name"] = ""
         if hasattr(self, "offset") and self.offset:
             result["offset"] = int(self.offset)
         elif include_empty:
             result["offset"] = 0
+        if hasattr(self, "order") and self.order:
+            result["order"] = str(self.order)
+        elif include_empty:
+            result["order"] = ""
+        if hasattr(self, "order_by") and self.order_by:
+            result["orderBy"] = str(self.order_by)
+        elif include_empty:
+            result["orderBy"] = ""
         return result
 
     # endregion to methods
@@ -241,15 +280,24 @@ class AdminGetAllConfigurationTemplatesV1(Operation):
         cls,
         namespace: str,
         limit: Optional[int] = None,
+        name: Optional[str] = None,
         offset: Optional[int] = None,
+        order: Optional[str] = None,
+        order_by: Optional[str] = None,
         **kwargs,
     ) -> AdminGetAllConfigurationTemplatesV1:
         instance = cls()
         instance.namespace = namespace
         if limit is not None:
             instance.limit = limit
+        if name is not None:
+            instance.name = name
         if offset is not None:
             instance.offset = offset
+        if order is not None:
+            instance.order = order
+        if order_by is not None:
+            instance.order_by = order_by
         return instance
 
     @classmethod
@@ -265,10 +313,22 @@ class AdminGetAllConfigurationTemplatesV1(Operation):
             instance.limit = int(dict_["limit"])
         elif include_empty:
             instance.limit = 0
+        if "name" in dict_ and dict_["name"] is not None:
+            instance.name = str(dict_["name"])
+        elif include_empty:
+            instance.name = ""
         if "offset" in dict_ and dict_["offset"] is not None:
             instance.offset = int(dict_["offset"])
         elif include_empty:
             instance.offset = 0
+        if "order" in dict_ and dict_["order"] is not None:
+            instance.order = str(dict_["order"])
+        elif include_empty:
+            instance.order = ""
+        if "orderBy" in dict_ and dict_["orderBy"] is not None:
+            instance.order_by = str(dict_["orderBy"])
+        elif include_empty:
+            instance.order_by = ""
         return instance
 
     @staticmethod
@@ -276,7 +336,10 @@ class AdminGetAllConfigurationTemplatesV1(Operation):
         return {
             "namespace": "namespace",
             "limit": "limit",
+            "name": "name",
             "offset": "offset",
+            "order": "order",
+            "orderBy": "order_by",
         }
 
     @staticmethod
@@ -284,7 +347,10 @@ class AdminGetAllConfigurationTemplatesV1(Operation):
         return {
             "namespace": True,
             "limit": False,
+            "name": False,
             "offset": False,
+            "order": False,
+            "orderBy": False,
         }
 
     # endregion static methods

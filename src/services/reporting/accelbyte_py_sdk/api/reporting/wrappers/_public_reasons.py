@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import RestapiErrorResponse
 from ..models import RestapiPublicReasonListResponse
@@ -48,6 +48,7 @@ def public_get_reasons(
     **kwargs
 ):
     """Get list of reasons (publicGetReasons)
+
 
     Properties:
         url: /reporting/v1/public/namespaces/{namespace}/reasons
@@ -104,6 +105,7 @@ async def public_get_reasons_async(
     **kwargs
 ):
     """Get list of reasons (publicGetReasons)
+
 
     Properties:
         url: /reporting/v1/public/namespaces/{namespace}/reasons

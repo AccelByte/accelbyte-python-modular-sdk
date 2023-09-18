@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import AppInfo
 from ..models import AppUpdate
@@ -112,10 +112,10 @@ from ..operations.item import (
 from ..operations.item import QueryUncategorizedItems
 from ..operations.item import QueryUncategorizedItemsSortByEnum
 from ..operations.item import ReturnItem
-from ..operations.item import SearchItemTypeConfig
-from ..operations.item import SearchItemTypeConfigItemTypeEnum
 from ..operations.item import SearchItems
 from ..operations.item import SearchItemsItemTypeEnum
+from ..operations.item import SearchItemTypeConfig
+from ..operations.item import SearchItemTypeConfigItemTypeEnum
 from ..operations.item import SyncInGameItem
 from ..operations.item import UpdateApp
 from ..operations.item import UpdateItem
@@ -793,6 +793,24 @@ def create_item(
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=1 (CREATE)
       *  Returns : created item data
 
+
+
+    ## Restrictions for item extension and localization extension
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
+
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:ITEM [CREATE]
 
@@ -818,11 +836,11 @@ def create_item(
     Responses:
         201: Created - FullItemInfo (successful operation)
 
-        400: Bad Request - ErrorEntity (30322: Bundle item [{itemId}] can't be bundled | 30325: Code item [{itemId}] can't be bundled | 30326: Subscription item [{itemId}] can't be bundled | 30329: Invalid bundled item [{itemId}] quantity | 30021: Default language [{language}] required | 30321: Invalid item discount amount | 30022: Default region [{region}] is required | 30323: Target namespace is required | 30327: Invalid item trial price | 30330: Invalid item region price currency namespace [{namespace}] | 30332: Invalid option box item [{itemId}] quantity | 30333: Item [{itemId}] item type [{itemType}] can't be bundled into option box | 30334: Option box item [{itemId}] can't be bundled | 30337: Invalid loot box item [{itemId}] quantity | 30338: Item [{itemId}] item type [{itemType}] can't be bundled into loot box | 30339: Loot box item [{itemId}] can't be bundled)
+        400: Bad Request - ErrorEntity (20024: unsupported operation | 30301: Unsupported Item Type [{itemType}] for box item [{itemId}] with expiration | 30322: Bundle item [{itemId}] can't be bundled | 30325: Code item [{itemId}] can't be bundled | 30326: Subscription item [{itemId}] can't be bundled | 30329: Invalid bundled item [{itemId}] quantity | 30021: Default language [{language}] required | 30321: Invalid item discount amount | 30022: Default region [{region}] is required | 30323: Target namespace is required | 30327: Invalid item trial price | 30330: Invalid item region price currency namespace [{namespace}] | 30332: Invalid option box item [{itemId}] quantity | 30333: Item [{itemId}] item type [{itemType}] can't be bundled into option box | 30334: Option box item [{itemId}] can't be bundled | 30337: Invalid loot box item [{itemId}] quantity | 30338: Item [{itemId}] item type [{itemType}] can't be bundled into loot box | 30339: Loot box item [{itemId}] can't be bundled)
 
         404: Not Found - ErrorEntity (30241: Category [{categoryPath}] does not exist in namespace [{namespace}] | 36141: Currency [{currencyCode}] does not exist in namespace [{namespace}] | 30141: Store [{storeId}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (30173: Published store can't modify content | 30373: ItemType [{itemType}] is not allowed in namespace [{namespace}] | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}])
+        409: Conflict - ErrorEntity (30173: Published store can't modify content | 30373: ItemType [{itemType}] is not allowed in namespace [{namespace}] | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}] | 30380: Box item [{itemId}] duration and end date can’t be set at the same time)
 
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
@@ -1068,6 +1086,24 @@ async def create_item_async(
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=1 (CREATE)
       *  Returns : created item data
 
+
+
+    ## Restrictions for item extension and localization extension
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
+
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:ITEM [CREATE]
 
@@ -1093,11 +1129,11 @@ async def create_item_async(
     Responses:
         201: Created - FullItemInfo (successful operation)
 
-        400: Bad Request - ErrorEntity (30322: Bundle item [{itemId}] can't be bundled | 30325: Code item [{itemId}] can't be bundled | 30326: Subscription item [{itemId}] can't be bundled | 30329: Invalid bundled item [{itemId}] quantity | 30021: Default language [{language}] required | 30321: Invalid item discount amount | 30022: Default region [{region}] is required | 30323: Target namespace is required | 30327: Invalid item trial price | 30330: Invalid item region price currency namespace [{namespace}] | 30332: Invalid option box item [{itemId}] quantity | 30333: Item [{itemId}] item type [{itemType}] can't be bundled into option box | 30334: Option box item [{itemId}] can't be bundled | 30337: Invalid loot box item [{itemId}] quantity | 30338: Item [{itemId}] item type [{itemType}] can't be bundled into loot box | 30339: Loot box item [{itemId}] can't be bundled)
+        400: Bad Request - ErrorEntity (20024: unsupported operation | 30301: Unsupported Item Type [{itemType}] for box item [{itemId}] with expiration | 30322: Bundle item [{itemId}] can't be bundled | 30325: Code item [{itemId}] can't be bundled | 30326: Subscription item [{itemId}] can't be bundled | 30329: Invalid bundled item [{itemId}] quantity | 30021: Default language [{language}] required | 30321: Invalid item discount amount | 30022: Default region [{region}] is required | 30323: Target namespace is required | 30327: Invalid item trial price | 30330: Invalid item region price currency namespace [{namespace}] | 30332: Invalid option box item [{itemId}] quantity | 30333: Item [{itemId}] item type [{itemType}] can't be bundled into option box | 30334: Option box item [{itemId}] can't be bundled | 30337: Invalid loot box item [{itemId}] quantity | 30338: Item [{itemId}] item type [{itemType}] can't be bundled into loot box | 30339: Loot box item [{itemId}] can't be bundled)
 
         404: Not Found - ErrorEntity (30241: Category [{categoryPath}] does not exist in namespace [{namespace}] | 36141: Currency [{currencyCode}] does not exist in namespace [{namespace}] | 30141: Store [{storeId}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (30173: Published store can't modify content | 30373: ItemType [{itemType}] is not allowed in namespace [{namespace}] | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}])
+        409: Conflict - ErrorEntity (30173: Published store can't modify content | 30373: ItemType [{itemType}] is not allowed in namespace [{namespace}] | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}] | 30380: Box item [{itemId}] duration and end date can’t be set at the same time)
 
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
@@ -1466,7 +1502,6 @@ def delete_item_type_config(
     """Delete an item type config (deleteItemTypeConfig)
 
     This API is used to delete an item type config permanently.Other detail info:
-
       * Required permission : resource="ADMIN:ITEM:CONFIG", action=8 (DELETE)
 
     Required Permission(s):
@@ -1505,7 +1540,6 @@ async def delete_item_type_config_async(
     """Delete an item type config (deleteItemTypeConfig)
 
     This API is used to delete an item type config permanently.Other detail info:
-
       * Required permission : resource="ADMIN:ITEM:CONFIG", action=8 (DELETE)
 
     Required Permission(s):
@@ -3526,6 +3560,7 @@ def public_get_app(
 
         securities: [BEARER_AUTH]
 
+
         item_id: (itemId) REQUIRED str in path
 
         namespace: (namespace) REQUIRED str in path
@@ -3587,6 +3622,7 @@ async def public_get_app_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         item_id: (itemId) REQUIRED str in path
 
@@ -4113,7 +4149,7 @@ def public_query_items(
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     region: Optional[str] = None,
-    sort_by: Optional[List[Union[str, PublicQueryItemsSortByEnum]]] = None,
+    sort_by: Optional[Union[List[str], List[PublicQueryItemsSortByEnum]]] = None,
     store_id: Optional[str] = None,
     tags: Optional[str] = None,
     namespace: Optional[str] = None,
@@ -4165,7 +4201,7 @@ def public_query_items(
 
         region: (region) OPTIONAL str in query
 
-        sort_by: (sortBy) OPTIONAL List[Union[str, SortByEnum]] in query
+        sort_by: (sortBy) OPTIONAL Union[List[str], List[SortByEnum]] in query
 
         store_id: (storeId) OPTIONAL str in query
 
@@ -4213,7 +4249,7 @@ async def public_query_items_async(
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     region: Optional[str] = None,
-    sort_by: Optional[List[Union[str, PublicQueryItemsSortByEnum]]] = None,
+    sort_by: Optional[Union[List[str], List[PublicQueryItemsSortByEnum]]] = None,
     store_id: Optional[str] = None,
     tags: Optional[str] = None,
     namespace: Optional[str] = None,
@@ -4265,7 +4301,7 @@ async def public_query_items_async(
 
         region: (region) OPTIONAL str in query
 
-        sort_by: (sortBy) OPTIONAL List[Union[str, SortByEnum]] in query
+        sort_by: (sortBy) OPTIONAL Union[List[str], List[SortByEnum]] in query
 
         store_id: (storeId) OPTIONAL str in query
 
@@ -4556,7 +4592,7 @@ def query_items(
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     region: Optional[str] = None,
-    sort_by: Optional[List[Union[str, QueryItemsSortByEnum]]] = None,
+    sort_by: Optional[Union[List[str], List[QueryItemsSortByEnum]]] = None,
     store_id: Optional[str] = None,
     tags: Optional[str] = None,
     target_namespace: Optional[str] = None,
@@ -4613,7 +4649,7 @@ def query_items(
 
         region: (region) OPTIONAL str in query
 
-        sort_by: (sortBy) OPTIONAL List[Union[str, SortByEnum]] in query
+        sort_by: (sortBy) OPTIONAL Union[List[str], List[SortByEnum]] in query
 
         store_id: (storeId) OPTIONAL str in query
 
@@ -4666,7 +4702,7 @@ async def query_items_async(
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     region: Optional[str] = None,
-    sort_by: Optional[List[Union[str, QueryItemsSortByEnum]]] = None,
+    sort_by: Optional[Union[List[str], List[QueryItemsSortByEnum]]] = None,
     store_id: Optional[str] = None,
     tags: Optional[str] = None,
     target_namespace: Optional[str] = None,
@@ -4723,7 +4759,7 @@ async def query_items_async(
 
         region: (region) OPTIONAL str in query
 
-        sort_by: (sortBy) OPTIONAL List[Union[str, SortByEnum]] in query
+        sort_by: (sortBy) OPTIONAL Union[List[str], List[SortByEnum]] in query
 
         store_id: (storeId) OPTIONAL str in query
 
@@ -4779,7 +4815,8 @@ def query_items_1(
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     region: Optional[str] = None,
-    sort_by: Optional[List[Union[str, QueryItems1SortByEnum]]] = None,
+    section_exclusive: Optional[bool] = None,
+    sort_by: Optional[Union[List[str], List[QueryItems1SortByEnum]]] = None,
     store_id: Optional[str] = None,
     tags: Optional[str] = None,
     target_namespace: Optional[str] = None,
@@ -4842,7 +4879,9 @@ def query_items_1(
 
         region: (region) OPTIONAL str in query
 
-        sort_by: (sortBy) OPTIONAL List[Union[str, SortByEnum]] in query
+        section_exclusive: (sectionExclusive) OPTIONAL bool in query
+
+        sort_by: (sortBy) OPTIONAL Union[List[str], List[SortByEnum]] in query
 
         store_id: (storeId) OPTIONAL str in query
 
@@ -4874,6 +4913,7 @@ def query_items_1(
         limit=limit,
         offset=offset,
         region=region,
+        section_exclusive=section_exclusive,
         sort_by=sort_by,
         store_id=store_id,
         tags=tags,
@@ -4897,7 +4937,8 @@ async def query_items_1_async(
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     region: Optional[str] = None,
-    sort_by: Optional[List[Union[str, QueryItems1SortByEnum]]] = None,
+    section_exclusive: Optional[bool] = None,
+    sort_by: Optional[Union[List[str], List[QueryItems1SortByEnum]]] = None,
     store_id: Optional[str] = None,
     tags: Optional[str] = None,
     target_namespace: Optional[str] = None,
@@ -4960,7 +5001,9 @@ async def query_items_1_async(
 
         region: (region) OPTIONAL str in query
 
-        sort_by: (sortBy) OPTIONAL List[Union[str, SortByEnum]] in query
+        section_exclusive: (sectionExclusive) OPTIONAL bool in query
+
+        sort_by: (sortBy) OPTIONAL Union[List[str], List[SortByEnum]] in query
 
         store_id: (storeId) OPTIONAL str in query
 
@@ -4992,6 +5035,7 @@ async def query_items_1_async(
         limit=limit,
         offset=offset,
         region=region,
+        section_exclusive=section_exclusive,
         sort_by=sort_by,
         store_id=store_id,
         tags=tags,
@@ -5008,7 +5052,7 @@ def query_uncategorized_items(
     active_only: Optional[bool] = None,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
-    sort_by: Optional[List[Union[str, QueryUncategorizedItemsSortByEnum]]] = None,
+    sort_by: Optional[Union[List[str], List[QueryUncategorizedItemsSortByEnum]]] = None,
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
@@ -5047,7 +5091,7 @@ def query_uncategorized_items(
 
         offset: (offset) OPTIONAL int in query
 
-        sort_by: (sortBy) OPTIONAL List[Union[str, SortByEnum]] in query
+        sort_by: (sortBy) OPTIONAL Union[List[str], List[SortByEnum]] in query
 
         store_id: (storeId) OPTIONAL str in query
 
@@ -5078,7 +5122,7 @@ async def query_uncategorized_items_async(
     active_only: Optional[bool] = None,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
-    sort_by: Optional[List[Union[str, QueryUncategorizedItemsSortByEnum]]] = None,
+    sort_by: Optional[Union[List[str], List[QueryUncategorizedItemsSortByEnum]]] = None,
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
@@ -5117,7 +5161,7 @@ async def query_uncategorized_items_async(
 
         offset: (offset) OPTIONAL int in query
 
-        sort_by: (sortBy) OPTIONAL List[Union[str, SortByEnum]] in query
+        sort_by: (sortBy) OPTIONAL Union[List[str], List[SortByEnum]] in query
 
         store_id: (storeId) OPTIONAL str in query
 
@@ -5253,104 +5297,6 @@ async def return_item_async(
         item_id=item_id,
         body=body,
         namespace=namespace,
-    )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
-
-
-@same_doc_as(SearchItemTypeConfig)
-def search_item_type_config(
-    item_type: Union[str, SearchItemTypeConfigItemTypeEnum],
-    clazz: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
-    """Get an item type config (searchItemTypeConfig)
-
-    This API is used to get an item type config.
-
-    Other detail info:
-
-      * Required permission : resource="ADMIN:ITEM:CONFIG", action=2 (READ)
-      *  Returns : item type config data
-
-    Required Permission(s):
-        - ADMIN:ITEM:CONFIG [READ]
-
-    Properties:
-        url: /platform/admin/items/configs/search
-
-        method: GET
-
-        tags: ["Item"]
-
-        consumes: []
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
-
-        clazz: (clazz) OPTIONAL str in query
-
-        item_type: (itemType) REQUIRED Union[str, ItemTypeEnum] in query
-
-    Responses:
-        200: OK - ItemTypeConfigInfo (successful operation)
-
-        404: Not Found - ErrorEntity (30541: Item type config [{id}] doesn't exist)
-    """
-    request = SearchItemTypeConfig.create(
-        item_type=item_type,
-        clazz=clazz,
-    )
-    return run_request(request, additional_headers=x_additional_headers, **kwargs)
-
-
-@same_doc_as(SearchItemTypeConfig)
-async def search_item_type_config_async(
-    item_type: Union[str, SearchItemTypeConfigItemTypeEnum],
-    clazz: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
-    """Get an item type config (searchItemTypeConfig)
-
-    This API is used to get an item type config.
-
-    Other detail info:
-
-      * Required permission : resource="ADMIN:ITEM:CONFIG", action=2 (READ)
-      *  Returns : item type config data
-
-    Required Permission(s):
-        - ADMIN:ITEM:CONFIG [READ]
-
-    Properties:
-        url: /platform/admin/items/configs/search
-
-        method: GET
-
-        tags: ["Item"]
-
-        consumes: []
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
-
-        clazz: (clazz) OPTIONAL str in query
-
-        item_type: (itemType) REQUIRED Union[str, ItemTypeEnum] in query
-
-    Responses:
-        200: OK - ItemTypeConfigInfo (successful operation)
-
-        404: Not Found - ErrorEntity (30541: Item type config [{id}] doesn't exist)
-    """
-    request = SearchItemTypeConfig.create(
-        item_type=item_type,
-        clazz=clazz,
     )
     return await run_request_async(
         request, additional_headers=x_additional_headers, **kwargs
@@ -5519,6 +5465,104 @@ async def search_items_async(
     )
 
 
+@same_doc_as(SearchItemTypeConfig)
+def search_item_type_config(
+    item_type: Union[str, SearchItemTypeConfigItemTypeEnum],
+    clazz: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get an item type config (searchItemTypeConfig)
+
+    This API is used to get an item type config.
+
+    Other detail info:
+
+      * Required permission : resource="ADMIN:ITEM:CONFIG", action=2 (READ)
+      *  Returns : item type config data
+
+    Required Permission(s):
+        - ADMIN:ITEM:CONFIG [READ]
+
+    Properties:
+        url: /platform/admin/items/configs/search
+
+        method: GET
+
+        tags: ["Item"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        clazz: (clazz) OPTIONAL str in query
+
+        item_type: (itemType) REQUIRED Union[str, ItemTypeEnum] in query
+
+    Responses:
+        200: OK - ItemTypeConfigInfo (successful operation)
+
+        404: Not Found - ErrorEntity (30541: Item type config [{id}] doesn't exist)
+    """
+    request = SearchItemTypeConfig.create(
+        item_type=item_type,
+        clazz=clazz,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(SearchItemTypeConfig)
+async def search_item_type_config_async(
+    item_type: Union[str, SearchItemTypeConfigItemTypeEnum],
+    clazz: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get an item type config (searchItemTypeConfig)
+
+    This API is used to get an item type config.
+
+    Other detail info:
+
+      * Required permission : resource="ADMIN:ITEM:CONFIG", action=2 (READ)
+      *  Returns : item type config data
+
+    Required Permission(s):
+        - ADMIN:ITEM:CONFIG [READ]
+
+    Properties:
+        url: /platform/admin/items/configs/search
+
+        method: GET
+
+        tags: ["Item"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        clazz: (clazz) OPTIONAL str in query
+
+        item_type: (itemType) REQUIRED Union[str, ItemTypeEnum] in query
+
+    Responses:
+        200: OK - ItemTypeConfigInfo (successful operation)
+
+        404: Not Found - ErrorEntity (30541: Item type config [{id}] doesn't exist)
+    """
+    request = SearchItemTypeConfig.create(
+        item_type=item_type,
+        clazz=clazz,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(SyncInGameItem)
 def sync_in_game_item(
     store_id: str,
@@ -5529,7 +5573,7 @@ def sync_in_game_item(
 ):
     """Sync an in game item (syncInGameItem)
 
-    This API is used to sync an in game item in game namespace to publisher namespace, at current BUNDLE can't be synced.
+    This API is used to sync an in game item in game namespace to publisher namespace, only INGAMEITEM, CODE, COINS and SEASON are supported
 
     The synced item has an additional field targetItemId besides targetNamespace, mostly this item should not modified manually again.
 
@@ -5593,7 +5637,7 @@ async def sync_in_game_item_async(
 ):
     """Sync an in game item (syncInGameItem)
 
-    This API is used to sync an in game item in game namespace to publisher namespace, at current BUNDLE can't be synced.
+    This API is used to sync an in game item in game namespace to publisher namespace, only INGAMEITEM, CODE, COINS and SEASON are supported
 
     The synced item has an additional field targetItemId besides targetNamespace, mostly this item should not modified manually again.
 
@@ -6186,6 +6230,24 @@ def update_item(
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
       *  Returns : updated item data
 
+
+
+    ## Restrictions for item extension and localization extension
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
+
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
 
@@ -6213,11 +6275,11 @@ def update_item(
     Responses:
         200: OK - FullItemInfo (successful operation)
 
-        400: Bad Request - ErrorEntity (30322: Bundle item [{itemId}] can't be bundled | 30325: Code item [{itemId}] can't be bundled | 30326: Subscription item [{itemId}] can't be bundled | 30329: Invalid bundled item [{itemId}] quantity | 30021: Default language [{language}] required | 30321: Invalid item discount amount | 30022: Default region [{region}] is required | 30323: Target namespace is required | 30327: Invalid item trial price | 30330: Invalid item region price currency namespace [{namespace}] | 30332: Invalid option box item [{itemId}] quantity | 30333: Item [{itemId}] item type [{itemType}] can't be bundled into option box | 30334: Option box item [{itemId}] can't be bundled | 30337: Invalid loot box item [{itemId}] quantity | 30338: Item [{itemId}] item type [{itemType}] can't be bundled into loot box | 30339: Loot box item [{itemId}] can't be bundled)
+        400: Bad Request - ErrorEntity (20024: unsupported operation | 30301: Unsupported Item Type [{itemType}] for box item [{itemId}] with expiration | 30322: Bundle item [{itemId}] can't be bundled | 30325: Code item [{itemId}] can't be bundled | 30326: Subscription item [{itemId}] can't be bundled | 30329: Invalid bundled item [{itemId}] quantity | 30021: Default language [{language}] required | 30321: Invalid item discount amount | 30022: Default region [{region}] is required | 30323: Target namespace is required | 30327: Invalid item trial price | 30330: Invalid item region price currency namespace [{namespace}] | 30332: Invalid option box item [{itemId}] quantity | 30333: Item [{itemId}] item type [{itemType}] can't be bundled into option box | 30334: Option box item [{itemId}] can't be bundled | 30337: Invalid loot box item [{itemId}] quantity | 30338: Item [{itemId}] item type [{itemType}] can't be bundled into loot box | 30339: Loot box item [{itemId}] can't be bundled)
 
         404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30341: Item [{itemId}] does not exist in namespace [{namespace}] | 30241: Category [{categoryPath}] does not exist in namespace [{namespace}] | 36141: Currency [{currencyCode}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (30371: Item maxCount not allow reduce | 30372: ItemType is not updatable | 30173: Published store can't modify content | 30374: Item sku [{sku}] already exists in namespace [{namespace}] | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}] | 30379: Item sku is not updatable)
+        409: Conflict - ErrorEntity (30371: Item maxCount not allow reduce | 30372: ItemType is not updatable | 30173: Published store can't modify content | 30374: Item sku [{sku}] already exists in namespace [{namespace}] | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}] | 30379: Item sku is not updatable | 30380: Box item [{itemId}] duration and end date can’t be set at the same time)
 
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
@@ -6467,6 +6529,24 @@ async def update_item_async(
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
       *  Returns : updated item data
 
+
+
+    ## Restrictions for item extension and localization extension
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
+
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
 
@@ -6494,11 +6574,11 @@ async def update_item_async(
     Responses:
         200: OK - FullItemInfo (successful operation)
 
-        400: Bad Request - ErrorEntity (30322: Bundle item [{itemId}] can't be bundled | 30325: Code item [{itemId}] can't be bundled | 30326: Subscription item [{itemId}] can't be bundled | 30329: Invalid bundled item [{itemId}] quantity | 30021: Default language [{language}] required | 30321: Invalid item discount amount | 30022: Default region [{region}] is required | 30323: Target namespace is required | 30327: Invalid item trial price | 30330: Invalid item region price currency namespace [{namespace}] | 30332: Invalid option box item [{itemId}] quantity | 30333: Item [{itemId}] item type [{itemType}] can't be bundled into option box | 30334: Option box item [{itemId}] can't be bundled | 30337: Invalid loot box item [{itemId}] quantity | 30338: Item [{itemId}] item type [{itemType}] can't be bundled into loot box | 30339: Loot box item [{itemId}] can't be bundled)
+        400: Bad Request - ErrorEntity (20024: unsupported operation | 30301: Unsupported Item Type [{itemType}] for box item [{itemId}] with expiration | 30322: Bundle item [{itemId}] can't be bundled | 30325: Code item [{itemId}] can't be bundled | 30326: Subscription item [{itemId}] can't be bundled | 30329: Invalid bundled item [{itemId}] quantity | 30021: Default language [{language}] required | 30321: Invalid item discount amount | 30022: Default region [{region}] is required | 30323: Target namespace is required | 30327: Invalid item trial price | 30330: Invalid item region price currency namespace [{namespace}] | 30332: Invalid option box item [{itemId}] quantity | 30333: Item [{itemId}] item type [{itemType}] can't be bundled into option box | 30334: Option box item [{itemId}] can't be bundled | 30337: Invalid loot box item [{itemId}] quantity | 30338: Item [{itemId}] item type [{itemType}] can't be bundled into loot box | 30339: Loot box item [{itemId}] can't be bundled)
 
         404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30341: Item [{itemId}] does not exist in namespace [{namespace}] | 30241: Category [{categoryPath}] does not exist in namespace [{namespace}] | 36141: Currency [{currencyCode}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (30371: Item maxCount not allow reduce | 30372: ItemType is not updatable | 30173: Published store can't modify content | 30374: Item sku [{sku}] already exists in namespace [{namespace}] | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}] | 30379: Item sku is not updatable)
+        409: Conflict - ErrorEntity (30371: Item maxCount not allow reduce | 30372: ItemType is not updatable | 30173: Published store can't modify content | 30374: Item sku [{sku}] already exists in namespace [{namespace}] | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}] | 30379: Item sku is not updatable | 30380: Box item [{itemId}] duration and end date can’t be set at the same time)
 
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """

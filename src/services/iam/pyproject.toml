@@ -3,11 +3,10 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "accelbyte-py-sdk-iam"
-version = "5.31.0"
-description = "AccelByte Python SDK - Justice IAM Service"
+name = "accelbyte-py-sdk-service-iam"
+version = "7.0.0"
+description = "AccelByte Python SDK - AccelByte Gaming Services Iam Service"
 requires-python = ">=3.9"
 dependencies = [
     "accelbyte-py-sdk-core",
 ]
-

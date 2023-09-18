@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ErrorEntity
 from ..models import NotificationProcessResult
@@ -211,6 +211,24 @@ def create_user_payment_order(
       * It will be forbidden while the user is banned: PAYMENT_INITIATE or ORDER_AND_PAYMENT
       *  Returns : created order
 
+
+
+    ## Restrictions for custom parameters and meta data
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
+
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:PAYMENT [CREATE]
 
@@ -274,6 +292,24 @@ async def create_user_payment_order_async(
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:PAYMENT", action=1 (CREATE)
       * It will be forbidden while the user is banned: PAYMENT_INITIATE or ORDER_AND_PAYMENT
       *  Returns : created order
+
+
+
+    ## Restrictions for custom parameters and meta data
+
+
+    1. Cannot use "." as the key name
+    -
+
+
+        { "data.2": "value" }
+
+
+    2. Cannot use "$" as the prefix in key names
+    -
+
+
+        { "$data": "value" }
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:PAYMENT [CREATE]

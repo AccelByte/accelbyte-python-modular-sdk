@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ApiListRuleSetsResponse
 from ..models import ApiRuleSetPayload
@@ -419,6 +419,7 @@ async def rule_set_details_async(
 @same_doc_as(RuleSetList)
 def rule_set_list(
     limit: Optional[int] = None,
+    name: Optional[str] = None,
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
@@ -455,6 +456,8 @@ def rule_set_list(
 
         limit: (limit) OPTIONAL int in query
 
+        name: (name) OPTIONAL str in query
+
         offset: (offset) OPTIONAL int in query
 
     Responses:
@@ -472,6 +475,7 @@ def rule_set_list(
             return None, error
     request = RuleSetList.create(
         limit=limit,
+        name=name,
         offset=offset,
         namespace=namespace,
     )
@@ -481,6 +485,7 @@ def rule_set_list(
 @same_doc_as(RuleSetList)
 async def rule_set_list_async(
     limit: Optional[int] = None,
+    name: Optional[str] = None,
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
@@ -517,6 +522,8 @@ async def rule_set_list_async(
 
         limit: (limit) OPTIONAL int in query
 
+        name: (name) OPTIONAL str in query
+
         offset: (offset) OPTIONAL int in query
 
     Responses:
@@ -534,6 +541,7 @@ async def rule_set_list_async(
             return None, error
     request = RuleSetList.create(
         limit=limit,
+        name=name,
         offset=offset,
         namespace=namespace,
     )

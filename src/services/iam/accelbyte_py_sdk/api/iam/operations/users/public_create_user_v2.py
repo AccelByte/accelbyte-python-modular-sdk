@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,15 +20,15 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (5.31.0)
+# AccelByte Gaming Services Iam Service (7.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
-from .....core import deprecated
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ModelUserCreateRequest
 from ...models import ModelUserCreateResponse
@@ -44,19 +44,16 @@ class PublicCreateUserV2(Operation):
     Endpoint migration guide
 
 
+                *  Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users [POST]
 
-
-      *  Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users [POST]
-
-      *  Substitute endpoint: /iam/v4/public/namespaces/{namespace}/users [POST]
+                *  Substitute endpoint: /iam/v4/public/namespaces/{namespace}/users [POST]
 
 
 
-      *  Note:
+                *  Note:
          1. v3 & v4 introduce optional verification code
 
          2. format differenceï¼Pascal case => Camel case)
-
 
 
 
@@ -68,10 +65,7 @@ class PublicCreateUserV2(Operation):
 
 
 
-
-
-      1.  EMAILPASSWD : an authentication type used for new user registration through email.
-
+                1.  EMAILPASSWD : an authentication type used for new user registration through email.
 
 
 

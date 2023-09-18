@@ -3,11 +3,10 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "accelbyte-py-sdk-leaderboard"
-version = "2.19.5"
-description = "AccelByte Python SDK - Justice Leaderboard Service"
+name = "accelbyte-py-sdk-service-leaderboard"
+version = "2.26.1"
+description = "AccelByte Python SDK - AccelByte Gaming Services Leaderboard Service"
 requires-python = ">=3.9"
 dependencies = [
     "accelbyte-py-sdk-core",
 ]
-

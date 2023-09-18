@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,19 +23,19 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import deprecated
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import deprecated
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import AccountcommonPermissions
 from ..models import AccountcommonPermissionsV3
 from ..models import AccountcommonRole
 from ..models import AccountcommonRoleV3
-from ..models import ModelAssignUserV4Request
 from ..models import ModelAssignedUserV4Response
+from ..models import ModelAssignUserV4Request
 from ..models import ModelListAssignedUsersV4Response
 from ..models import ModelListRoleV4Response
 from ..models import ModelRevokeUserV4Request
@@ -73,18 +73,18 @@ from ..operations.roles import AdminAddRolePermissionsV4
 from ..operations.roles import AdminAssignUserToRoleV4
 from ..operations.roles import AdminCreateRoleV3
 from ..operations.roles import AdminCreateRoleV4
-from ..operations.roles import AdminDeleteRolePermissionV3
 from ..operations.roles import AdminDeleteRolePermissionsV3
 from ..operations.roles import AdminDeleteRolePermissionsV4
+from ..operations.roles import AdminDeleteRolePermissionV3
 from ..operations.roles import AdminDeleteRoleV3
 from ..operations.roles import AdminDeleteRoleV4
 from ..operations.roles import AdminGetRoleAdminStatusV3
 from ..operations.roles import AdminGetRoleManagersV3
 from ..operations.roles import AdminGetRoleMembersV3
-from ..operations.roles import AdminGetRoleV3
-from ..operations.roles import AdminGetRoleV4
 from ..operations.roles import AdminGetRolesV3
 from ..operations.roles import AdminGetRolesV4
+from ..operations.roles import AdminGetRoleV3
+from ..operations.roles import AdminGetRoleV4
 from ..operations.roles import AdminListAssignedUsersV4
 from ..operations.roles import AdminRemoveRoleAdminV3
 from ..operations.roles import AdminRemoveRoleManagersV3
@@ -103,8 +103,8 @@ from ..operations.roles import GetRoleAdminStatus
 from ..operations.roles import GetRoleManagers
 from ..operations.roles import GetRoleMembers
 from ..operations.roles import GetRoles
-from ..operations.roles import PublicGetRoleV3
 from ..operations.roles import PublicGetRolesV3
+from ..operations.roles import PublicGetRoleV3
 from ..operations.roles import RemoveRoleAdmin
 from ..operations.roles import RemoveRoleManagers
 from ..operations.roles import RemoveRoleMembers
@@ -135,9 +135,7 @@ def add_role_managers(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [POST]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -201,9 +199,7 @@ async def add_role_managers_async(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [POST]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -274,9 +270,7 @@ def add_role_members(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [POST]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -345,9 +339,7 @@ async def add_role_members_async(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [POST]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -448,28 +440,25 @@ def add_role_permission(
 
 
 
+                            1. Seconds: 0-59 * / , -
 
 
-      1. Seconds: 0-59 * / , -
+                            2. Minutes: 0-59 * / , -
 
 
-      2. Minutes: 0-59 * / , -
+                            3. Hours: 0-23 * / , -
 
 
-      3. Hours: 0-23 * / , -
+                            4. Day of month: 1-31 * / , - L W
 
 
-      4. Day of month: 1-31 * / , - L W
+                            5. Month: 1-12 JAN-DEC * / , -
 
 
-      5. Month: 1-12 JAN-DEC * / , -
+                            6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-      6. Day of week: 0-6 SUN-SAT * / , - L #
-
-
-      7. Year: 1970-2099 * / , -
-
+                            7. Year: 1970-2099 * / , -
 
 
 
@@ -479,39 +468,34 @@ def add_role_permission(
 
 
 
+                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-      1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
-
-
-      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
-
+                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
 
     Endpoint migration guide
 
 
+                            * Substitute endpoint(update): /iam/v3/admin/roles/{roleId}/permissions [PUT]
 
 
-      * Substitute endpoint(update): /iam/v3/admin/roles/{roleId}/permissions [PUT]
-
-
-      * Substitute endpoint(create): /iam/v3/admin/roles/{roleId}/permissions [POST]
+                            * Substitute endpoint(create): /iam/v3/admin/roles/{roleId}/permissions [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -616,28 +600,25 @@ async def add_role_permission_async(
 
 
 
+                            1. Seconds: 0-59 * / , -
 
 
-      1. Seconds: 0-59 * / , -
+                            2. Minutes: 0-59 * / , -
 
 
-      2. Minutes: 0-59 * / , -
+                            3. Hours: 0-23 * / , -
 
 
-      3. Hours: 0-23 * / , -
+                            4. Day of month: 1-31 * / , - L W
 
 
-      4. Day of month: 1-31 * / , - L W
+                            5. Month: 1-12 JAN-DEC * / , -
 
 
-      5. Month: 1-12 JAN-DEC * / , -
+                            6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-      6. Day of week: 0-6 SUN-SAT * / , - L #
-
-
-      7. Year: 1970-2099 * / , -
-
+                            7. Year: 1970-2099 * / , -
 
 
 
@@ -647,39 +628,34 @@ async def add_role_permission_async(
 
 
 
+                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-      1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
-
-
-      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
-
+                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
 
     Endpoint migration guide
 
 
+                            * Substitute endpoint(update): /iam/v3/admin/roles/{roleId}/permissions [PUT]
 
 
-      * Substitute endpoint(update): /iam/v3/admin/roles/{roleId}/permissions [PUT]
-
-
-      * Substitute endpoint(create): /iam/v3/admin/roles/{roleId}/permissions [POST]
+                            * Substitute endpoint(create): /iam/v3/admin/roles/{roleId}/permissions [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -1037,28 +1013,25 @@ def admin_add_role_permissions_v3(
 
 
 
+                            1. Seconds: 0-59 * / , -
 
 
-      1. Seconds: 0-59 * / , -
+                            2. Minutes: 0-59 * / , -
 
 
-      2. Minutes: 0-59 * / , -
+                            3. Hours: 0-23 * / , -
 
 
-      3. Hours: 0-23 * / , -
+                            4. Day of month: 1-31 * / , - L W
 
 
-      4. Day of month: 1-31 * / , - L W
+                            5. Month: 1-12 JAN-DEC * / , -
 
 
-      5. Month: 1-12 JAN-DEC * / , -
+                            6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-      6. Day of week: 0-6 SUN-SAT * / , - L #
-
-
-      7. Year: 1970-2099 * / , -
-
+                            7. Year: 1970-2099 * / , -
 
 
 
@@ -1068,27 +1041,25 @@ def admin_add_role_permissions_v3(
 
 
 
+                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-      1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
-
-
-      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -1182,28 +1153,25 @@ async def admin_add_role_permissions_v3_async(
 
 
 
+                            1. Seconds: 0-59 * / , -
 
 
-      1. Seconds: 0-59 * / , -
+                            2. Minutes: 0-59 * / , -
 
 
-      2. Minutes: 0-59 * / , -
+                            3. Hours: 0-23 * / , -
 
 
-      3. Hours: 0-23 * / , -
+                            4. Day of month: 1-31 * / , - L W
 
 
-      4. Day of month: 1-31 * / , - L W
+                            5. Month: 1-12 JAN-DEC * / , -
 
 
-      5. Month: 1-12 JAN-DEC * / , -
+                            6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-      6. Day of week: 0-6 SUN-SAT * / , - L #
-
-
-      7. Year: 1970-2099 * / , -
-
+                            7. Year: 1970-2099 * / , -
 
 
 
@@ -1213,27 +1181,25 @@ async def admin_add_role_permissions_v3_async(
 
 
 
+                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-      1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
-
-
-      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -1329,28 +1295,25 @@ def admin_add_role_permissions_v4(
 
 
 
+                            1. Seconds: 0-59 * / , -
 
 
-      1. Seconds: 0-59 * / , -
+                            2. Minutes: 0-59 * / , -
 
 
-      2. Minutes: 0-59 * / , -
+                            3. Hours: 0-23 * / , -
 
 
-      3. Hours: 0-23 * / , -
+                            4. Day of month: 1-31 * / , - L W
 
 
-      4. Day of month: 1-31 * / , - L W
+                            5. Month: 1-12 JAN-DEC * / , -
 
 
-      5. Month: 1-12 JAN-DEC * / , -
+                            6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-      6. Day of week: 0-6 SUN-SAT * / , - L #
-
-
-      7. Year: 1970-2099 * / , -
-
+                            7. Year: 1970-2099 * / , -
 
 
 
@@ -1360,27 +1323,25 @@ def admin_add_role_permissions_v4(
 
 
 
+                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-      1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
-
-
-      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -1472,28 +1433,25 @@ async def admin_add_role_permissions_v4_async(
 
 
 
+                            1. Seconds: 0-59 * / , -
 
 
-      1. Seconds: 0-59 * / , -
+                            2. Minutes: 0-59 * / , -
 
 
-      2. Minutes: 0-59 * / , -
+                            3. Hours: 0-23 * / , -
 
 
-      3. Hours: 0-23 * / , -
+                            4. Day of month: 1-31 * / , - L W
 
 
-      4. Day of month: 1-31 * / , - L W
+                            5. Month: 1-12 JAN-DEC * / , -
 
 
-      5. Month: 1-12 JAN-DEC * / , -
+                            6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-      6. Day of week: 0-6 SUN-SAT * / , - L #
-
-
-      7. Year: 1970-2099 * / , -
-
+                            7. Year: 1970-2099 * / , -
 
 
 
@@ -1503,27 +1461,25 @@ async def admin_add_role_permissions_v4_async(
 
 
 
+                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-      1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
-
-
-      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -1911,120 +1867,6 @@ async def admin_create_role_v4_async(
     )
 
 
-@same_doc_as(AdminDeleteRolePermissionV3)
-def admin_delete_role_permission_v3(
-    action: int,
-    resource: str,
-    role_id: str,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
-    """Delete Role Permission (AdminDeleteRolePermissionV3)
-
-    Required permission 'ADMIN:ROLE [UPDATE]'
-    action code: 10406
-
-    Required Permission(s):
-        - ADMIN:ROLE [UPDATE]
-
-    Properties:
-        url: /iam/v3/admin/roles/{roleId}/permissions/{resource}/{action}
-
-        method: DELETE
-
-        tags: ["Roles"]
-
-        consumes: ["application/json"]
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH]
-
-        action: (action) REQUIRED int in path
-
-        resource: (resource) REQUIRED str in path
-
-        role_id: (roleId) REQUIRED str in path
-
-    Responses:
-        204: No Content - (Operation succeeded)
-
-        400: Bad Request - RestErrorResponse (20002: validation error)
-
-        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
-
-        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
-
-        404: Not Found - RestErrorResponse (10456: role not found)
-
-        500: Internal Server Error - RestErrorResponse (20000: internal server error)
-    """
-    request = AdminDeleteRolePermissionV3.create(
-        action=action,
-        resource=resource,
-        role_id=role_id,
-    )
-    return run_request(request, additional_headers=x_additional_headers, **kwargs)
-
-
-@same_doc_as(AdminDeleteRolePermissionV3)
-async def admin_delete_role_permission_v3_async(
-    action: int,
-    resource: str,
-    role_id: str,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
-    """Delete Role Permission (AdminDeleteRolePermissionV3)
-
-    Required permission 'ADMIN:ROLE [UPDATE]'
-    action code: 10406
-
-    Required Permission(s):
-        - ADMIN:ROLE [UPDATE]
-
-    Properties:
-        url: /iam/v3/admin/roles/{roleId}/permissions/{resource}/{action}
-
-        method: DELETE
-
-        tags: ["Roles"]
-
-        consumes: ["application/json"]
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH]
-
-        action: (action) REQUIRED int in path
-
-        resource: (resource) REQUIRED str in path
-
-        role_id: (roleId) REQUIRED str in path
-
-    Responses:
-        204: No Content - (Operation succeeded)
-
-        400: Bad Request - RestErrorResponse (20002: validation error)
-
-        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
-
-        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
-
-        404: Not Found - RestErrorResponse (10456: role not found)
-
-        500: Internal Server Error - RestErrorResponse (20000: internal server error)
-    """
-    request = AdminDeleteRolePermissionV3.create(
-        action=action,
-        resource=resource,
-        role_id=role_id,
-    )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
-
-
 @same_doc_as(AdminDeleteRolePermissionsV3)
 def admin_delete_role_permissions_v3(
     body: List[str],
@@ -2210,6 +2052,120 @@ async def admin_delete_role_permissions_v4_async(
     """
     request = AdminDeleteRolePermissionsV4.create(
         body=body,
+        role_id=role_id,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(AdminDeleteRolePermissionV3)
+def admin_delete_role_permission_v3(
+    action: int,
+    resource: str,
+    role_id: str,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Delete Role Permission (AdminDeleteRolePermissionV3)
+
+    Required permission 'ADMIN:ROLE [UPDATE]'
+    action code: 10406
+
+    Required Permission(s):
+        - ADMIN:ROLE [UPDATE]
+
+    Properties:
+        url: /iam/v3/admin/roles/{roleId}/permissions/{resource}/{action}
+
+        method: DELETE
+
+        tags: ["Roles"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        action: (action) REQUIRED int in path
+
+        resource: (resource) REQUIRED str in path
+
+        role_id: (roleId) REQUIRED str in path
+
+    Responses:
+        204: No Content - (Operation succeeded)
+
+        400: Bad Request - RestErrorResponse (20002: validation error)
+
+        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
+
+        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
+
+        404: Not Found - RestErrorResponse (10456: role not found)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+    """
+    request = AdminDeleteRolePermissionV3.create(
+        action=action,
+        resource=resource,
+        role_id=role_id,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(AdminDeleteRolePermissionV3)
+async def admin_delete_role_permission_v3_async(
+    action: int,
+    resource: str,
+    role_id: str,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Delete Role Permission (AdminDeleteRolePermissionV3)
+
+    Required permission 'ADMIN:ROLE [UPDATE]'
+    action code: 10406
+
+    Required Permission(s):
+        - ADMIN:ROLE [UPDATE]
+
+    Properties:
+        url: /iam/v3/admin/roles/{roleId}/permissions/{resource}/{action}
+
+        method: DELETE
+
+        tags: ["Roles"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        action: (action) REQUIRED int in path
+
+        resource: (resource) REQUIRED str in path
+
+        role_id: (roleId) REQUIRED str in path
+
+    Responses:
+        204: No Content - (Operation succeeded)
+
+        400: Bad Request - RestErrorResponse (20002: validation error)
+
+        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
+
+        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
+
+        404: Not Found - RestErrorResponse (10456: role not found)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+    """
+    request = AdminDeleteRolePermissionV3.create(
+        action=action,
+        resource=resource,
         role_id=role_id,
     )
     return await run_request_async(
@@ -2805,200 +2761,6 @@ async def admin_get_role_members_v3_async(
     )
 
 
-@same_doc_as(AdminGetRoleV3)
-def admin_get_role_v3(
-    role_id: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
-    """Get Role (AdminGetRoleV3)
-
-    Required permission 'ADMIN:ROLE [READ]'
-
-
-    action code: 10419
-
-    Required Permission(s):
-        - ADMIN:ROLE [READ]
-
-    Properties:
-        url: /iam/v3/admin/roles/{roleId}
-
-        method: GET
-
-        tags: ["Roles"]
-
-        consumes: []
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH]
-
-        role_id: (roleId) REQUIRED str in path
-
-    Responses:
-        200: OK - ModelRoleResponseV3 (OK)
-
-        400: Bad Request - RestErrorResponse (20002: validation error)
-
-        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
-
-        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
-
-        404: Not Found - RestErrorResponse (10456: role not found)
-
-        500: Internal Server Error - RestErrorResponse (20000: internal server error)
-    """
-    request = AdminGetRoleV3.create(
-        role_id=role_id,
-    )
-    return run_request(request, additional_headers=x_additional_headers, **kwargs)
-
-
-@same_doc_as(AdminGetRoleV3)
-async def admin_get_role_v3_async(
-    role_id: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
-    """Get Role (AdminGetRoleV3)
-
-    Required permission 'ADMIN:ROLE [READ]'
-
-
-    action code: 10419
-
-    Required Permission(s):
-        - ADMIN:ROLE [READ]
-
-    Properties:
-        url: /iam/v3/admin/roles/{roleId}
-
-        method: GET
-
-        tags: ["Roles"]
-
-        consumes: []
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH]
-
-        role_id: (roleId) REQUIRED str in path
-
-    Responses:
-        200: OK - ModelRoleResponseV3 (OK)
-
-        400: Bad Request - RestErrorResponse (20002: validation error)
-
-        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
-
-        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
-
-        404: Not Found - RestErrorResponse (10456: role not found)
-
-        500: Internal Server Error - RestErrorResponse (20000: internal server error)
-    """
-    request = AdminGetRoleV3.create(
-        role_id=role_id,
-    )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
-
-
-@same_doc_as(AdminGetRoleV4)
-def admin_get_role_v4(
-    role_id: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
-    """Get Role (AdminGetRoleV4)
-
-    Required permission ADMIN:ROLE [READ]
-
-    action code: 10419
-
-    Required Permission(s):
-        - ADMIN:ROLE [READ]
-
-    Properties:
-        url: /iam/v4/admin/roles/{roleId}
-
-        method: GET
-
-        tags: ["Roles"]
-
-        consumes: []
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH]
-
-        role_id: (roleId) REQUIRED str in path
-
-    Responses:
-        200: OK - ModelRoleV4Response (OK)
-
-        400: Bad Request - RestErrorResponse (20002: validation error)
-
-        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
-
-        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
-
-        404: Not Found - RestErrorResponse (10456: role not found)
-
-        500: Internal Server Error - RestErrorResponse (20000: internal server error)
-    """
-    request = AdminGetRoleV4.create(
-        role_id=role_id,
-    )
-    return run_request(request, additional_headers=x_additional_headers, **kwargs)
-
-
-@same_doc_as(AdminGetRoleV4)
-async def admin_get_role_v4_async(
-    role_id: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
-    """Get Role (AdminGetRoleV4)
-
-    Required permission ADMIN:ROLE [READ]
-
-    action code: 10419
-
-    Required Permission(s):
-        - ADMIN:ROLE [READ]
-
-    Properties:
-        url: /iam/v4/admin/roles/{roleId}
-
-        method: GET
-
-        tags: ["Roles"]
-
-        consumes: []
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH]
-
-        role_id: (roleId) REQUIRED str in path
-
-    Responses:
-        200: OK - ModelRoleV4Response (OK)
-
-        400: Bad Request - RestErrorResponse (20002: validation error)
-
-        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
-
-        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
-
-        404: Not Found - RestErrorResponse (10456: role not found)
-
-        500: Internal Server Error - RestErrorResponse (20000: internal server error)
-    """
-    request = AdminGetRoleV4.create(
-        role_id=role_id,
-    )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
-
-
 @same_doc_as(AdminGetRolesV3)
 def admin_get_roles_v3(
     after: Optional[str] = None,
@@ -3235,6 +2997,200 @@ async def admin_get_roles_v4_async(
         is_wildcard=is_wildcard,
         limit=limit,
         offset=offset,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(AdminGetRoleV3)
+def admin_get_role_v3(
+    role_id: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
+    """Get Role (AdminGetRoleV3)
+
+    Required permission 'ADMIN:ROLE [READ]'
+
+
+    action code: 10419
+
+    Required Permission(s):
+        - ADMIN:ROLE [READ]
+
+    Properties:
+        url: /iam/v3/admin/roles/{roleId}
+
+        method: GET
+
+        tags: ["Roles"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        role_id: (roleId) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelRoleResponseV3 (OK)
+
+        400: Bad Request - RestErrorResponse (20002: validation error)
+
+        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
+
+        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
+
+        404: Not Found - RestErrorResponse (10456: role not found)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+    """
+    request = AdminGetRoleV3.create(
+        role_id=role_id,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(AdminGetRoleV3)
+async def admin_get_role_v3_async(
+    role_id: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
+    """Get Role (AdminGetRoleV3)
+
+    Required permission 'ADMIN:ROLE [READ]'
+
+
+    action code: 10419
+
+    Required Permission(s):
+        - ADMIN:ROLE [READ]
+
+    Properties:
+        url: /iam/v3/admin/roles/{roleId}
+
+        method: GET
+
+        tags: ["Roles"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        role_id: (roleId) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelRoleResponseV3 (OK)
+
+        400: Bad Request - RestErrorResponse (20002: validation error)
+
+        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
+
+        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
+
+        404: Not Found - RestErrorResponse (10456: role not found)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+    """
+    request = AdminGetRoleV3.create(
+        role_id=role_id,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(AdminGetRoleV4)
+def admin_get_role_v4(
+    role_id: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
+    """Get Role (AdminGetRoleV4)
+
+    Required permission ADMIN:ROLE [READ]
+
+    action code: 10419
+
+    Required Permission(s):
+        - ADMIN:ROLE [READ]
+
+    Properties:
+        url: /iam/v4/admin/roles/{roleId}
+
+        method: GET
+
+        tags: ["Roles"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        role_id: (roleId) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelRoleV4Response (OK)
+
+        400: Bad Request - RestErrorResponse (20002: validation error)
+
+        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
+
+        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
+
+        404: Not Found - RestErrorResponse (10456: role not found)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+    """
+    request = AdminGetRoleV4.create(
+        role_id=role_id,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(AdminGetRoleV4)
+async def admin_get_role_v4_async(
+    role_id: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
+    """Get Role (AdminGetRoleV4)
+
+    Required permission ADMIN:ROLE [READ]
+
+    action code: 10419
+
+    Required Permission(s):
+        - ADMIN:ROLE [READ]
+
+    Properties:
+        url: /iam/v4/admin/roles/{roleId}
+
+        method: GET
+
+        tags: ["Roles"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        role_id: (roleId) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelRoleV4Response (OK)
+
+        400: Bad Request - RestErrorResponse (20002: validation error)
+
+        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
+
+        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
+
+        404: Not Found - RestErrorResponse (10456: role not found)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+    """
+    request = AdminGetRoleV4.create(
+        role_id=role_id,
     )
     return await run_request_async(
         request, additional_headers=x_additional_headers, **kwargs
@@ -3995,28 +3951,25 @@ def admin_update_role_permissions_v3(
 
 
 
+                            1. Seconds: 0-59 * / , -
 
 
-      1. Seconds: 0-59 * / , -
+                            2. Minutes: 0-59 * / , -
 
 
-      2. Minutes: 0-59 * / , -
+                            3. Hours: 0-23 * / , -
 
 
-      3. Hours: 0-23 * / , -
+                            4. Day of month: 1-31 * / , - L W
 
 
-      4. Day of month: 1-31 * / , - L W
+                            5. Month: 1-12 JAN-DEC * / , -
 
 
-      5. Month: 1-12 JAN-DEC * / , -
+                            6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-      6. Day of week: 0-6 SUN-SAT * / , - L #
-
-
-      7. Year: 1970-2099 * / , -
-
+                            7. Year: 1970-2099 * / , -
 
 
 
@@ -4026,27 +3979,25 @@ def admin_update_role_permissions_v3(
 
 
 
+                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-      1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
-
-
-      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -4140,28 +4091,25 @@ async def admin_update_role_permissions_v3_async(
 
 
 
+                            1. Seconds: 0-59 * / , -
 
 
-      1. Seconds: 0-59 * / , -
+                            2. Minutes: 0-59 * / , -
 
 
-      2. Minutes: 0-59 * / , -
+                            3. Hours: 0-23 * / , -
 
 
-      3. Hours: 0-23 * / , -
+                            4. Day of month: 1-31 * / , - L W
 
 
-      4. Day of month: 1-31 * / , - L W
+                            5. Month: 1-12 JAN-DEC * / , -
 
 
-      5. Month: 1-12 JAN-DEC * / , -
+                            6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-      6. Day of week: 0-6 SUN-SAT * / , - L #
-
-
-      7. Year: 1970-2099 * / , -
-
+                            7. Year: 1970-2099 * / , -
 
 
 
@@ -4171,27 +4119,25 @@ async def admin_update_role_permissions_v3_async(
 
 
 
+                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-      1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
-
-
-      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -4287,28 +4233,25 @@ def admin_update_role_permissions_v4(
 
 
 
+                            1. Seconds: 0-59 * / , -
 
 
-      1. Seconds: 0-59 * / , -
+                            2. Minutes: 0-59 * / , -
 
 
-      2. Minutes: 0-59 * / , -
+                            3. Hours: 0-23 * / , -
 
 
-      3. Hours: 0-23 * / , -
+                            4. Day of month: 1-31 * / , - L W
 
 
-      4. Day of month: 1-31 * / , - L W
+                            5. Month: 1-12 JAN-DEC * / , -
 
 
-      5. Month: 1-12 JAN-DEC * / , -
+                            6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-      6. Day of week: 0-6 SUN-SAT * / , - L #
-
-
-      7. Year: 1970-2099 * / , -
-
+                            7. Year: 1970-2099 * / , -
 
 
 
@@ -4318,27 +4261,25 @@ def admin_update_role_permissions_v4(
 
 
 
+                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-      1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
-
-
-      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -4430,28 +4371,25 @@ async def admin_update_role_permissions_v4_async(
 
 
 
+                            1. Seconds: 0-59 * / , -
 
 
-      1. Seconds: 0-59 * / , -
+                            2. Minutes: 0-59 * / , -
 
 
-      2. Minutes: 0-59 * / , -
+                            3. Hours: 0-23 * / , -
 
 
-      3. Hours: 0-23 * / , -
+                            4. Day of month: 1-31 * / , - L W
 
 
-      4. Day of month: 1-31 * / , - L W
+                            5. Month: 1-12 JAN-DEC * / , -
 
 
-      5. Month: 1-12 JAN-DEC * / , -
+                            6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-      6. Day of week: 0-6 SUN-SAT * / , - L #
-
-
-      7. Year: 1970-2099 * / , -
-
+                            7. Year: 1970-2099 * / , -
 
 
 
@@ -4461,27 +4399,25 @@ async def admin_update_role_permissions_v4_async(
 
 
 
+                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-      1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
-
-
-      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -4790,9 +4726,7 @@ def create_role(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles [POST]
+                            * Substitute endpoint: /iam/v3/admin/roles [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [CREATE]
@@ -4860,9 +4794,7 @@ async def create_role_async(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles [POST]
+                            * Substitute endpoint: /iam/v3/admin/roles [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [CREATE]
@@ -4915,9 +4847,7 @@ def delete_role(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId} [DELETE]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId} [DELETE]
 
     Required Permission(s):
         - ADMIN:ROLE [DELETE]
@@ -4968,9 +4898,7 @@ async def delete_role_async(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId} [DELETE]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId} [DELETE]
 
     Required Permission(s):
         - ADMIN:ROLE [DELETE]
@@ -5027,12 +4955,10 @@ def delete_role_permission(
     Endpoint migration guide
 
 
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/permissions/{resource}/{action} [DELETE]
 
 
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/permissions/{resource}/{action} [DELETE]
-
-
-      * Substitute endpoint: /iam/v4/admin/roles/{roleId}/permissions [DELETE]
+                            * Substitute endpoint: /iam/v4/admin/roles/{roleId}/permissions [DELETE]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -5095,12 +5021,10 @@ async def delete_role_permission_async(
     Endpoint migration guide
 
 
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/permissions/{resource}/{action} [DELETE]
 
 
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/permissions/{resource}/{action} [DELETE]
-
-
-      * Substitute endpoint: /iam/v4/admin/roles/{roleId}/permissions [DELETE]
+                            * Substitute endpoint: /iam/v4/admin/roles/{roleId}/permissions [DELETE]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -5161,9 +5085,7 @@ def get_role(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId} [GET]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId} [GET]
 
     Required Permission(s):
         - ROLE [READ]
@@ -5212,9 +5134,7 @@ async def get_role_async(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId} [GET]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId} [GET]
 
     Required Permission(s):
         - ROLE [READ]
@@ -5270,9 +5190,7 @@ def get_role_admin_status(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [GET]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [GET]
 
     Required Permission(s):
         - ROLE [READ]
@@ -5328,9 +5246,7 @@ async def get_role_admin_status_async(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [GET]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [GET]
 
     Required Permission(s):
         - ROLE [READ]
@@ -5388,9 +5304,7 @@ def get_role_managers(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [GET]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [GET]
 
     Required Permission(s):
         - ROLE [READ]
@@ -5446,9 +5360,7 @@ async def get_role_managers_async(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [GET]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [GET]
 
     Required Permission(s):
         - ROLE [READ]
@@ -5501,9 +5413,7 @@ def get_role_members(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [GET]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [GET]
 
     Required Permission(s):
         - ROLE [READ]
@@ -5554,9 +5464,7 @@ async def get_role_members_async(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [GET]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [GET]
 
     Required Permission(s):
         - ROLE [READ]
@@ -5611,9 +5519,7 @@ def get_roles(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles [GET]
+                            * Substitute endpoint: /iam/v3/admin/roles [GET]
 
     Required Permission(s):
         - ROLE [READ]
@@ -5662,9 +5568,7 @@ async def get_roles_async(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles [GET]
+                            * Substitute endpoint: /iam/v3/admin/roles [GET]
 
     Required Permission(s):
         - ROLE [READ]
@@ -5699,84 +5603,6 @@ async def get_roles_async(
     )
 
 
-@same_doc_as(PublicGetRoleV3)
-def public_get_role_v3(
-    role_id: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
-    """Get Public Role (PublicGetRoleV3)
-
-
-    This endpoint is used to get non-admin role based on specify roleId.
-    action code : 10417
-
-    Properties:
-        url: /iam/v3/public/roles/{roleId}
-
-        method: GET
-
-        tags: ["Roles"]
-
-        consumes: ["application/json"]
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH]
-
-        role_id: (roleId) REQUIRED str in path
-
-    Responses:
-        200: OK - ModelRoleResponse (OK)
-
-        400: Bad Request - RestErrorResponse (20002: validation error)
-
-        404: Not Found - RestErrorResponse (10456: role not found)
-    """
-    request = PublicGetRoleV3.create(
-        role_id=role_id,
-    )
-    return run_request(request, additional_headers=x_additional_headers, **kwargs)
-
-
-@same_doc_as(PublicGetRoleV3)
-async def public_get_role_v3_async(
-    role_id: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
-    """Get Public Role (PublicGetRoleV3)
-
-
-    This endpoint is used to get non-admin role based on specify roleId.
-    action code : 10417
-
-    Properties:
-        url: /iam/v3/public/roles/{roleId}
-
-        method: GET
-
-        tags: ["Roles"]
-
-        consumes: ["application/json"]
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH]
-
-        role_id: (roleId) REQUIRED str in path
-
-    Responses:
-        200: OK - ModelRoleResponse (OK)
-
-        400: Bad Request - RestErrorResponse (20002: validation error)
-
-        404: Not Found - RestErrorResponse (10456: role not found)
-    """
-    request = PublicGetRoleV3.create(
-        role_id=role_id,
-    )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
-
-
 @same_doc_as(PublicGetRolesV3)
 def public_get_roles_v3(
     after: Optional[str] = None,
@@ -5787,7 +5613,6 @@ def public_get_roles_v3(
     **kwargs
 ):
     """Get Roles (PublicGetRolesV3)
-
 
     This endpoint is used to get all non-admin role.
 
@@ -5840,7 +5665,6 @@ async def public_get_roles_v3_async(
 ):
     """Get Roles (PublicGetRolesV3)
 
-
     This endpoint is used to get all non-admin role.
 
 
@@ -5883,6 +5707,82 @@ async def public_get_roles_v3_async(
     )
 
 
+@same_doc_as(PublicGetRoleV3)
+def public_get_role_v3(
+    role_id: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
+    """Get Public Role (PublicGetRoleV3)
+
+    This endpoint is used to get non-admin role based on specify roleId.
+    action code : 10417
+
+    Properties:
+        url: /iam/v3/public/roles/{roleId}
+
+        method: GET
+
+        tags: ["Roles"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        role_id: (roleId) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelRoleResponse (OK)
+
+        400: Bad Request - RestErrorResponse (20002: validation error)
+
+        404: Not Found - RestErrorResponse (10456: role not found)
+    """
+    request = PublicGetRoleV3.create(
+        role_id=role_id,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(PublicGetRoleV3)
+async def public_get_role_v3_async(
+    role_id: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
+    """Get Public Role (PublicGetRoleV3)
+
+    This endpoint is used to get non-admin role based on specify roleId.
+    action code : 10417
+
+    Properties:
+        url: /iam/v3/public/roles/{roleId}
+
+        method: GET
+
+        tags: ["Roles"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        role_id: (roleId) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelRoleResponse (OK)
+
+        400: Bad Request - RestErrorResponse (20002: validation error)
+
+        404: Not Found - RestErrorResponse (10456: role not found)
+    """
+    request = PublicGetRoleV3.create(
+        role_id=role_id,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @deprecated
 @same_doc_as(RemoveRoleAdmin)
 def remove_role_admin(
@@ -5897,9 +5797,7 @@ def remove_role_admin(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [DELETE]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [DELETE]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -5952,9 +5850,7 @@ async def remove_role_admin_async(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [DELETE]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [DELETE]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -6012,9 +5908,7 @@ def remove_role_managers(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [DELETE]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [DELETE]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -6073,9 +5967,7 @@ async def remove_role_managers_async(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [DELETE]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [DELETE]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -6136,9 +6028,7 @@ def remove_role_members(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [DELETE]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [DELETE]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -6197,9 +6087,7 @@ async def remove_role_members_async(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [DELETE]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [DELETE]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -6267,9 +6155,7 @@ def set_role_as_admin(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [POST]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -6332,9 +6218,7 @@ async def set_role_as_admin_async(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [POST]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -6392,9 +6276,7 @@ def update_role(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId} [PATCH]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId} [PATCH]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -6453,9 +6335,7 @@ async def update_role_async(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId} [PATCH]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId} [PATCH]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -6554,28 +6434,25 @@ def update_role_permissions(
 
 
 
+                            1. Seconds: 0-59 * / , -
 
 
-      1. Seconds: 0-59 * / , -
+                            2. Minutes: 0-59 * / , -
 
 
-      2. Minutes: 0-59 * / , -
+                            3. Hours: 0-23 * / , -
 
 
-      3. Hours: 0-23 * / , -
+                            4. Day of month: 1-31 * / , - L W
 
 
-      4. Day of month: 1-31 * / , - L W
+                            5. Month: 1-12 JAN-DEC * / , -
 
 
-      5. Month: 1-12 JAN-DEC * / , -
+                            6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-      6. Day of week: 0-6 SUN-SAT * / , - L #
-
-
-      7. Year: 1970-2099 * / , -
-
+                            7. Year: 1970-2099 * / , -
 
 
 
@@ -6585,36 +6462,31 @@ def update_role_permissions(
 
 
 
+                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-      1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
-
-
-      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
-
+                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
 
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/permissions [POST]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/permissions [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -6711,28 +6583,25 @@ async def update_role_permissions_async(
 
 
 
+                            1. Seconds: 0-59 * / , -
 
 
-      1. Seconds: 0-59 * / , -
+                            2. Minutes: 0-59 * / , -
 
 
-      2. Minutes: 0-59 * / , -
+                            3. Hours: 0-23 * / , -
 
 
-      3. Hours: 0-23 * / , -
+                            4. Day of month: 1-31 * / , - L W
 
 
-      4. Day of month: 1-31 * / , - L W
+                            5. Month: 1-12 JAN-DEC * / , -
 
 
-      5. Month: 1-12 JAN-DEC * / , -
+                            6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-      6. Day of week: 0-6 SUN-SAT * / , - L #
-
-
-      7. Year: 1970-2099 * / , -
-
+                            7. Year: 1970-2099 * / , -
 
 
 
@@ -6742,36 +6611,31 @@ async def update_role_permissions_async(
 
 
 
+                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-      1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
-
-
-      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
-
+                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
 
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/permissions [POST]
+                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/permissions [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]

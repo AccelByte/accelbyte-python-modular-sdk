@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Session Service (2.7.3)
+# AccelByte Gaming Services Session Service (3.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import ApimodelsCreateGameSessionRequest
 from ...models import ApimodelsGameSessionResponse
@@ -41,12 +41,18 @@ class CreateGameSession(Operation):
     Session configuration name is mandatory, this API will refer following values from the session template if they're not provided in the request:
     - type
     - joinability
+    - autoJoin. If enabled (set to true), players provided in the request will automatically joined the initial game session creation. Game session will not send any invite and players dont need to act upon it.
     - minPlayers
     - maxPlayers
     - inviteTimeout
     - inactiveTimeout
+    - dsSource
+    - tieTeamsSessionLifetime
 
-    When the session type is a DS, a DS creation request will be sent to DSMC if number of active players reaches session's minPlayers.
+    When the tieTeamsSessionLifetime is true, the lifetime of any partyId inside teams attribute will be tied to the game session.
+    Only applies when the teams partyId is a game session.
+
+    When the session type is a DS, a DS creation request will be sent if number of active players reaches session's minPlayers.
 
     Active user is a user who present within the session, has status CONNECTED/JOINED.
 
@@ -55,6 +61,12 @@ class CreateGameSession(Operation):
     - REQUESTED: DS is being requested to DSMC.
     - AVAILABLE: DS is ready to use. The DSMC status for this DS is either READY/BUSY.
     - FAILED_TO_REQUEST: DSMC fails to create the DS.
+
+    By default, DS requests are sent to DSMC, but if dsSource is set to "AMS":
+    - A DS will be requested from AMS instead of DSMC.
+    - The server will be chosen based on a set of claim keys, in order of preference, to match with fleets.
+    - The claim key list is built build from the preferredClaimKeys, fallbackClaimKeys, and clientVersion as follows:
+    [preferredClaimKeys.., clientVersion, fallbackClaimKeys...]
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/gamesession

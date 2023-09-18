@@ -4,9 +4,9 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model.j2
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.33.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -25,8 +25,8 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import Model
-from ....core import StrEnum
+from accelbyte_py_sdk.core import Model
+from accelbyte_py_sdk.core import StrEnum
 
 
 class WalletPlatformEnum(StrEnum):
@@ -34,6 +34,7 @@ class WalletPlatformEnum(StrEnum):
     GOOGLEPLAY = "GooglePlay"
     IOS = "IOS"
     NINTENDO = "Nintendo"
+    OCULUS = "Oculus"
     OTHER = "Other"
     PLAYSTATION = "Playstation"
     STEAM = "Steam"
@@ -46,12 +47,15 @@ class PaymentRequest(Model):
     Properties:
         amount: (amount) REQUIRED int
 
+        metadata: (metadata) OPTIONAL Dict[str, Any]
+
         wallet_platform: (walletPlatform) OPTIONAL Union[str, WalletPlatformEnum]
     """
 
     # region fields
 
     amount: int  # REQUIRED
+    metadata: Dict[str, Any]  # OPTIONAL
     wallet_platform: Union[str, WalletPlatformEnum]  # OPTIONAL
 
     # endregion fields
@@ -60,6 +64,10 @@ class PaymentRequest(Model):
 
     def with_amount(self, value: int) -> PaymentRequest:
         self.amount = value
+        return self
+
+    def with_metadata(self, value: Dict[str, Any]) -> PaymentRequest:
+        self.metadata = value
         return self
 
     def with_wallet_platform(
@@ -78,6 +86,10 @@ class PaymentRequest(Model):
             result["amount"] = int(self.amount)
         elif include_empty:
             result["amount"] = 0
+        if hasattr(self, "metadata"):
+            result["metadata"] = {str(k0): v0 for k0, v0 in self.metadata.items()}
+        elif include_empty:
+            result["metadata"] = {}
         if hasattr(self, "wallet_platform"):
             result["walletPlatform"] = str(self.wallet_platform)
         elif include_empty:
@@ -92,11 +104,14 @@ class PaymentRequest(Model):
     def create(
         cls,
         amount: int,
+        metadata: Optional[Dict[str, Any]] = None,
         wallet_platform: Optional[Union[str, WalletPlatformEnum]] = None,
         **kwargs,
     ) -> PaymentRequest:
         instance = cls()
         instance.amount = amount
+        if metadata is not None:
+            instance.metadata = metadata
         if wallet_platform is not None:
             instance.wallet_platform = wallet_platform
         return instance
@@ -112,6 +127,10 @@ class PaymentRequest(Model):
             instance.amount = int(dict_["amount"])
         elif include_empty:
             instance.amount = 0
+        if "metadata" in dict_ and dict_["metadata"] is not None:
+            instance.metadata = {str(k0): v0 for k0, v0 in dict_["metadata"].items()}
+        elif include_empty:
+            instance.metadata = {}
         if "walletPlatform" in dict_ and dict_["walletPlatform"] is not None:
             instance.wallet_platform = str(dict_["walletPlatform"])
         elif include_empty:
@@ -156,6 +175,7 @@ class PaymentRequest(Model):
     def get_field_info() -> Dict[str, str]:
         return {
             "amount": "amount",
+            "metadata": "metadata",
             "walletPlatform": "wallet_platform",
         }
 
@@ -163,6 +183,7 @@ class PaymentRequest(Model):
     def get_required_map() -> Dict[str, bool]:
         return {
             "amount": True,
+            "metadata": False,
             "walletPlatform": False,
         }
 
@@ -174,6 +195,7 @@ class PaymentRequest(Model):
                 "GooglePlay",
                 "IOS",
                 "Nintendo",
+                "Oculus",
                 "Other",
                 "Playstation",
                 "Steam",

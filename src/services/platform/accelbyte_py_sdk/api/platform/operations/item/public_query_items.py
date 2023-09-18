@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,15 +20,15 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.33.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
-from .....core import StrEnum
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import StrEnum
 
 from ...models import ErrorEntity
 from ...models import ItemPagingSlicedResult
@@ -117,7 +117,7 @@ class PublicQueryItems(Operation):
 
         region: (region) OPTIONAL str in query
 
-        sort_by: (sortBy) OPTIONAL List[Union[str, SortByEnum]] in query
+        sort_by: (sortBy) OPTIONAL Union[List[str], List[SortByEnum]] in query
 
         store_id: (storeId) OPTIONAL str in query
 
@@ -151,7 +151,7 @@ class PublicQueryItems(Operation):
     limit: int  # OPTIONAL in [query]
     offset: int  # OPTIONAL in [query]
     region: str  # OPTIONAL in [query]
-    sort_by: List[Union[str, SortByEnum]]  # OPTIONAL in [query]
+    sort_by: Union[List[str], List[SortByEnum]]  # OPTIONAL in [query]
     store_id: str  # OPTIONAL in [query]
     tags: str  # OPTIONAL in [query]
 
@@ -285,7 +285,9 @@ class PublicQueryItems(Operation):
         self.region = value
         return self
 
-    def with_sort_by(self, value: List[Union[str, SortByEnum]]) -> PublicQueryItems:
+    def with_sort_by(
+        self, value: Union[List[str], List[SortByEnum]]
+    ) -> PublicQueryItems:
         self.sort_by = value
         return self
 
@@ -425,7 +427,7 @@ class PublicQueryItems(Operation):
         limit: Optional[int] = None,
         offset: Optional[int] = None,
         region: Optional[str] = None,
-        sort_by: Optional[List[Union[str, SortByEnum]]] = None,
+        sort_by: Optional[Union[List[str], List[SortByEnum]]] = None,
         store_id: Optional[str] = None,
         tags: Optional[str] = None,
         **kwargs,

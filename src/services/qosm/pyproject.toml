@@ -3,11 +3,10 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "accelbyte-py-sdk-qosm"
-version = "1.18.0"
-description = "AccelByte Python SDK - Justice QoS Manager Service"
+name = "accelbyte-py-sdk-service-qosm"
+version = "1.18.3"
+description = "AccelByte Python SDK - AccelByte Gaming Services Qos Manager Service"
 requires-python = ">=3.9"
 dependencies = [
     "accelbyte-py-sdk-core",
 ]
-

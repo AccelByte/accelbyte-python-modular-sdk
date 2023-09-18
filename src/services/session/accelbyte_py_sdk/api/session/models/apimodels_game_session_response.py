@@ -4,9 +4,9 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model.j2
 
-# AccelByte Gaming Services Session Service (2.7.3)
+# AccelByte Gaming Services Session Service (3.0.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -25,7 +25,7 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import Model
+from accelbyte_py_sdk.core import Model
 
 from ..models.apimodels_ds_information_response import ApimodelsDSInformationResponse
 from ..models.apimodels_public_configuration import ApimodelsPublicConfiguration
@@ -67,7 +67,11 @@ class ApimodelsGameSessionResponse(Model):
 
         attributes: (attributes) OPTIONAL Dict[str, Any]
 
+        code: (code) OPTIONAL str
+
         expired_at: (expiredAt) OPTIONAL str
+
+        storage: (storage) OPTIONAL Dict[str, Any]
 
         teams: (teams) OPTIONAL List[ModelsTeam]
 
@@ -91,7 +95,9 @@ class ApimodelsGameSessionResponse(Model):
     updated_at: str  # REQUIRED
     version: int  # REQUIRED
     attributes: Dict[str, Any]  # OPTIONAL
+    code: str  # OPTIONAL
     expired_at: str  # OPTIONAL
+    storage: Dict[str, Any]  # OPTIONAL
     teams: List[ModelsTeam]  # OPTIONAL
     ticket_i_ds: List[str]  # OPTIONAL
 
@@ -165,8 +171,16 @@ class ApimodelsGameSessionResponse(Model):
         self.attributes = value
         return self
 
+    def with_code(self, value: str) -> ApimodelsGameSessionResponse:
+        self.code = value
+        return self
+
     def with_expired_at(self, value: str) -> ApimodelsGameSessionResponse:
         self.expired_at = value
+        return self
+
+    def with_storage(self, value: Dict[str, Any]) -> ApimodelsGameSessionResponse:
+        self.storage = value
         return self
 
     def with_teams(self, value: List[ModelsTeam]) -> ApimodelsGameSessionResponse:
@@ -249,10 +263,18 @@ class ApimodelsGameSessionResponse(Model):
             result["attributes"] = {str(k0): v0 for k0, v0 in self.attributes.items()}
         elif include_empty:
             result["attributes"] = {}
+        if hasattr(self, "code"):
+            result["code"] = str(self.code)
+        elif include_empty:
+            result["code"] = ""
         if hasattr(self, "expired_at"):
             result["expiredAt"] = str(self.expired_at)
         elif include_empty:
             result["expiredAt"] = ""
+        if hasattr(self, "storage"):
+            result["storage"] = {str(k0): v0 for k0, v0 in self.storage.items()}
+        elif include_empty:
+            result["storage"] = {}
         if hasattr(self, "teams"):
             result["teams"] = [
                 i0.to_dict(include_empty=include_empty) for i0 in self.teams
@@ -287,7 +309,9 @@ class ApimodelsGameSessionResponse(Model):
         updated_at: str,
         version: int,
         attributes: Optional[Dict[str, Any]] = None,
+        code: Optional[str] = None,
         expired_at: Optional[str] = None,
+        storage: Optional[Dict[str, Any]] = None,
         teams: Optional[List[ModelsTeam]] = None,
         ticket_i_ds: Optional[List[str]] = None,
         **kwargs,
@@ -309,8 +333,12 @@ class ApimodelsGameSessionResponse(Model):
         instance.version = version
         if attributes is not None:
             instance.attributes = attributes
+        if code is not None:
+            instance.code = code
         if expired_at is not None:
             instance.expired_at = expired_at
+        if storage is not None:
+            instance.storage = storage
         if teams is not None:
             instance.teams = teams
         if ticket_i_ds is not None:
@@ -393,10 +421,18 @@ class ApimodelsGameSessionResponse(Model):
             }
         elif include_empty:
             instance.attributes = {}
+        if "code" in dict_ and dict_["code"] is not None:
+            instance.code = str(dict_["code"])
+        elif include_empty:
+            instance.code = ""
         if "expiredAt" in dict_ and dict_["expiredAt"] is not None:
             instance.expired_at = str(dict_["expiredAt"])
         elif include_empty:
             instance.expired_at = ""
+        if "storage" in dict_ and dict_["storage"] is not None:
+            instance.storage = {str(k0): v0 for k0, v0 in dict_["storage"].items()}
+        elif include_empty:
+            instance.storage = {}
         if "teams" in dict_ and dict_["teams"] is not None:
             instance.teams = [
                 ModelsTeam.create_from_dict(i0, include_empty=include_empty)
@@ -466,7 +502,9 @@ class ApimodelsGameSessionResponse(Model):
             "updatedAt": "updated_at",
             "version": "version",
             "attributes": "attributes",
+            "code": "code",
             "expiredAt": "expired_at",
+            "storage": "storage",
             "teams": "teams",
             "ticketIDs": "ticket_i_ds",
         }
@@ -489,7 +527,9 @@ class ApimodelsGameSessionResponse(Model):
             "updatedAt": True,
             "version": True,
             "attributes": False,
+            "code": False,
             "expiredAt": False,
+            "storage": False,
             "teams": False,
             "ticketIDs": False,
         }

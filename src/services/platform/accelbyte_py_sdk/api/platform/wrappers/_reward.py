@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ConditionMatchResult
 from ..models import DeleteRewardConditionRequest
@@ -203,9 +203,11 @@ def create_reward(
     Responses:
         200: OK - RewardInfo (successful operation)
 
+        400: Bad Request - ErrorEntity (34023: Reward Item [{itemId}] with item type [{itemType}] is not supported for duration or endDate)
+
         404: Not Found - ErrorEntity (34042: Reward item [{itemId}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (34071: Reward with code [{rewardCode}] already exists in namespace [{namespace}] | 34072: Duplicate reward condition [{rewardConditionName}] found in reward [{rewardCode}])
+        409: Conflict - ErrorEntity (34071: Reward with code [{rewardCode}] already exists in namespace [{namespace}] | 34072: Duplicate reward condition [{rewardConditionName}] found in reward [{rewardCode}] | 34074: Reward Item [{itemId}] duration and end date can’t be set at the same time)
 
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
@@ -258,9 +260,11 @@ async def create_reward_async(
     Responses:
         200: OK - RewardInfo (successful operation)
 
+        400: Bad Request - ErrorEntity (34023: Reward Item [{itemId}] with item type [{itemType}] is not supported for duration or endDate)
+
         404: Not Found - ErrorEntity (34042: Reward item [{itemId}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (34071: Reward with code [{rewardCode}] already exists in namespace [{namespace}] | 34072: Duplicate reward condition [{rewardConditionName}] found in reward [{rewardCode}])
+        409: Conflict - ErrorEntity (34071: Reward with code [{rewardCode}] already exists in namespace [{namespace}] | 34072: Duplicate reward condition [{rewardConditionName}] found in reward [{rewardCode}] | 34074: Reward Item [{itemId}] duration and end date can’t be set at the same time)
 
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
@@ -938,7 +942,9 @@ def import_rewards(
     Responses:
         200: OK - (successful import of reward configs)
 
-        400: Bad Request - ErrorEntity (34021: Reward data for namespace [{namespace}] is invalid)
+        400: Bad Request - ErrorEntity (34021: Reward data for namespace [{namespace}] is invalid | 34023: Reward Item [{itemId}] with item type [{itemType}] is not supported for duration or endDate)
+
+        409: Conflict - ErrorEntity (34074: Reward Item [{itemId}] duration and end date can’t be set at the same time)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -993,7 +999,9 @@ async def import_rewards_async(
     Responses:
         200: OK - (successful import of reward configs)
 
-        400: Bad Request - ErrorEntity (34021: Reward data for namespace [{namespace}] is invalid)
+        400: Bad Request - ErrorEntity (34021: Reward data for namespace [{namespace}] is invalid | 34023: Reward Item [{itemId}] with item type [{itemType}] is not supported for duration or endDate)
+
+        409: Conflict - ErrorEntity (34074: Reward Item [{itemId}] duration and end date can’t be set at the same time)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1014,7 +1022,7 @@ def query_rewards(
     event_topic: Optional[str] = None,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
-    sort_by: Optional[List[Union[str, QueryRewardsSortByEnum]]] = None,
+    sort_by: Optional[Union[List[str], List[QueryRewardsSortByEnum]]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1052,7 +1060,7 @@ def query_rewards(
 
         offset: (offset) OPTIONAL int in query
 
-        sort_by: (sortBy) OPTIONAL List[Union[str, SortByEnum]] in query
+        sort_by: (sortBy) OPTIONAL Union[List[str], List[SortByEnum]] in query
 
     Responses:
         200: OK - RewardPagingSlicedResult (successful operation)
@@ -1078,7 +1086,7 @@ async def query_rewards_async(
     event_topic: Optional[str] = None,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
-    sort_by: Optional[List[Union[str, QueryRewardsSortByEnum]]] = None,
+    sort_by: Optional[Union[List[str], List[QueryRewardsSortByEnum]]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1116,7 +1124,7 @@ async def query_rewards_async(
 
         offset: (offset) OPTIONAL int in query
 
-        sort_by: (sortBy) OPTIONAL List[Union[str, SortByEnum]] in query
+        sort_by: (sortBy) OPTIONAL Union[List[str], List[SortByEnum]] in query
 
     Responses:
         200: OK - RewardPagingSlicedResult (successful operation)
@@ -1144,7 +1152,7 @@ def query_rewards_1(
     event_topic: Optional[str] = None,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
-    sort_by: Optional[List[Union[str, QueryRewards1SortByEnum]]] = None,
+    sort_by: Optional[Union[List[str], List[QueryRewards1SortByEnum]]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1182,7 +1190,7 @@ def query_rewards_1(
 
         offset: (offset) OPTIONAL int in query
 
-        sort_by: (sortBy) OPTIONAL List[Union[str, SortByEnum]] in query
+        sort_by: (sortBy) OPTIONAL Union[List[str], List[SortByEnum]] in query
 
     Responses:
         200: OK - RewardPagingSlicedResult (successful operation)
@@ -1208,7 +1216,7 @@ async def query_rewards_1_async(
     event_topic: Optional[str] = None,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
-    sort_by: Optional[List[Union[str, QueryRewards1SortByEnum]]] = None,
+    sort_by: Optional[Union[List[str], List[QueryRewards1SortByEnum]]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1246,7 +1254,7 @@ async def query_rewards_1_async(
 
         offset: (offset) OPTIONAL int in query
 
-        sort_by: (sortBy) OPTIONAL List[Union[str, SortByEnum]] in query
+        sort_by: (sortBy) OPTIONAL Union[List[str], List[SortByEnum]] in query
 
     Responses:
         200: OK - RewardPagingSlicedResult (successful operation)
@@ -1310,9 +1318,11 @@ def update_reward(
     Responses:
         200: OK - RewardInfo (successful operation)
 
+        400: Bad Request - ErrorEntity (34023: Reward Item [{itemId}] with item type [{itemType}] is not supported for duration or endDate)
+
         404: Not Found - ErrorEntity (34041: Reward [{rewardId}] does not exist in namespace [{namespace}] | 34042: Reward item [{itemId}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (34072: Duplicate reward condition [{rewardConditionName}] found in reward [{rewardCode}])
+        409: Conflict - ErrorEntity (34072: Duplicate reward condition [{rewardConditionName}] found in reward [{rewardCode}] | 34074: Reward Item [{itemId}] duration and end date can’t be set at the same time)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1367,9 +1377,11 @@ async def update_reward_async(
     Responses:
         200: OK - RewardInfo (successful operation)
 
+        400: Bad Request - ErrorEntity (34023: Reward Item [{itemId}] with item type [{itemType}] is not supported for duration or endDate)
+
         404: Not Found - ErrorEntity (34041: Reward [{rewardId}] does not exist in namespace [{namespace}] | 34042: Reward item [{itemId}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (34072: Duplicate reward condition [{rewardConditionName}] found in reward [{rewardCode}])
+        409: Conflict - ErrorEntity (34072: Duplicate reward condition [{rewardConditionName}] found in reward [{rewardCode}] | 34074: Reward Item [{itemId}] duration and end date can’t be set at the same time)
     """
     if namespace is None:
         namespace, error = get_services_namespace()

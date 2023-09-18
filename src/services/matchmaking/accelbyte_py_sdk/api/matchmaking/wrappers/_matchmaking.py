@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,12 +23,12 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import deprecated
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import deprecated
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ModelsChannelRequest
 from ..models import ModelsChannelV1
@@ -37,12 +37,14 @@ from ..models import ModelsDequeueRequest
 from ..models import ModelsGetChannelsResponse
 from ..models import ModelsImportConfigResponse
 from ..models import ModelsMatchAddUserIntoSessionRequest
-from ..models import ModelsMatchResultRequest
-from ..models import ModelsMatchResultResponse
 from ..models import ModelsMatchingParty
 from ..models import ModelsMatchmakingResult
+from ..models import ModelsMatchResultRequest
+from ..models import ModelsMatchResultResponse
 from ..models import ModelsRebalanceRequest
 from ..models import ModelsRebalanceResponse
+from ..models import ModelsStatResumeResponse
+from ..models import ModelsTicketMetricResultRecord
 from ..models import ModelsUpdateChannelRequest
 from ..models import ResponseError
 from ..models import ResponseErrorV1
@@ -62,8 +64,10 @@ from ..operations.matchmaking import GetAllChannelsHandler
 from ..operations.matchmaking import GetAllPartyInAllChannel
 from ..operations.matchmaking import GetAllPartyInChannel
 from ..operations.matchmaking import GetAllSessionsInChannel
+from ..operations.matchmaking import GetMatchPoolMetric
 from ..operations.matchmaking import GetSessionHistoryDetailed
 from ..operations.matchmaking import GetSingleMatchmakingChannel
+from ..operations.matchmaking import GetStatData
 from ..operations.matchmaking import ImportChannels
 from ..operations.matchmaking import PublicGetAllMatchmakingChannel
 from ..operations.matchmaking import PublicGetSingleMatchmakingChannel
@@ -1654,6 +1658,132 @@ async def get_all_sessions_in_channel_async(
     )
 
 
+@same_doc_as(GetMatchPoolMetric)
+def get_match_pool_metric(
+    channel_name: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get metrics for a specific channel (GetMatchPoolMetric)
+
+    Required Permission: NAMESPACE:{namespace}:MATCHMAKING:CHANNEL:METRICS [READ]
+
+    Required Scope: social
+
+    Get metric for a specific match pool
+
+    Result: queue_time in seconds
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:MATCHMAKING:CHANNEL:METRICS [READ]
+
+    Required Scope(s):
+        - social
+
+    Properties:
+        url: /matchmaking/namespaces/{namespace}/channels/{channelName}/metrics
+
+        method: GET
+
+        tags: ["Matchmaking", "public"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        channel_name: (channelName) REQUIRED str in path
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelsTicketMetricResultRecord (OK)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GetMatchPoolMetric.create(
+        channel_name=channel_name,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(GetMatchPoolMetric)
+async def get_match_pool_metric_async(
+    channel_name: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get metrics for a specific channel (GetMatchPoolMetric)
+
+    Required Permission: NAMESPACE:{namespace}:MATCHMAKING:CHANNEL:METRICS [READ]
+
+    Required Scope: social
+
+    Get metric for a specific match pool
+
+    Result: queue_time in seconds
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:MATCHMAKING:CHANNEL:METRICS [READ]
+
+    Required Scope(s):
+        - social
+
+    Properties:
+        url: /matchmaking/namespaces/{namespace}/channels/{channelName}/metrics
+
+        method: GET
+
+        tags: ["Matchmaking", "public"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        channel_name: (channelName) REQUIRED str in path
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelsTicketMetricResultRecord (OK)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GetMatchPoolMetric.create(
+        channel_name=channel_name,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @deprecated
 @same_doc_as(GetSessionHistoryDetailed)
 def get_session_history_detailed(
@@ -1663,12 +1793,6 @@ def get_session_history_detailed(
     **kwargs
 ):
     """Get session history detailed (GetSessionHistoryDetailed)
-
-
-
-
-
-
 
     ## The endpoint is going to be deprecated
 
@@ -1750,12 +1874,6 @@ async def get_session_history_detailed_async(
     **kwargs
 ):
     """Get session history detailed (GetSessionHistoryDetailed)
-
-
-
-
-
-
 
     ## The endpoint is going to be deprecated
 
@@ -1952,6 +2070,134 @@ async def get_single_matchmaking_channel_async(
         if error:
             return None, error
     request = GetSingleMatchmakingChannel.create(
+        channel_name=channel_name,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(GetStatData)
+def get_stat_data(
+    channel_name: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get stats (GetStatData)
+
+    Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
+
+    Required Scope: social
+
+    Get a channel's stat data (mean, stddev, min, max) according to the stats collected from statistics service.
+    '
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
+
+    Required Scope(s):
+        - social
+
+    Properties:
+        url: /matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/stats
+
+        method: GET
+
+        tags: ["Matchmaking"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        channel_name: (channelName) REQUIRED str in path
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelsStatResumeResponse (Stats queried)
+
+        400: Bad Request - ResponseErrorV1 (20002: validation error | 20019: unable to parse request body)
+
+        401: Unauthorized - ResponseErrorV1 (20001: unauthorized access)
+
+        403: Forbidden - ResponseErrorV1 (20013: insufficient permissions | 20014: invalid audience | 20015: insufficient scope)
+
+        404: Not Found - ResponseErrorV1 (510110: channel not found)
+
+        500: Internal Server Error - ResponseErrorV1 (20000: internal server error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GetStatData.create(
+        channel_name=channel_name,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(GetStatData)
+async def get_stat_data_async(
+    channel_name: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get stats (GetStatData)
+
+    Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
+
+    Required Scope: social
+
+    Get a channel's stat data (mean, stddev, min, max) according to the stats collected from statistics service.
+    '
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
+
+    Required Scope(s):
+        - social
+
+    Properties:
+        url: /matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/stats
+
+        method: GET
+
+        tags: ["Matchmaking"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        channel_name: (channelName) REQUIRED str in path
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelsStatResumeResponse (Stats queried)
+
+        400: Bad Request - ResponseErrorV1 (20002: validation error | 20019: unable to parse request body)
+
+        401: Unauthorized - ResponseErrorV1 (20001: unauthorized access)
+
+        403: Forbidden - ResponseErrorV1 (20013: insufficient permissions | 20014: invalid audience | 20015: insufficient scope)
+
+        404: Not Found - ResponseErrorV1 (510110: channel not found)
+
+        500: Internal Server Error - ResponseErrorV1 (20000: internal server error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GetStatData.create(
         channel_name=channel_name,
         namespace=namespace,
     )
@@ -2734,12 +2980,6 @@ def search_sessions(
 ):
     """Search sessions (SearchSessions)
 
-
-
-
-
-
-
     ## The endpoint is going to be deprecated
 
 
@@ -2842,12 +3082,6 @@ async def search_sessions_async(
     **kwargs
 ):
     """Search sessions (SearchSessions)
-
-
-
-
-
-
 
     ## The endpoint is going to be deprecated
 
@@ -2954,9 +3188,6 @@ def search_sessions_v2(
 ):
     """Search sessions (SearchSessionsV2)
 
-
-
-
     ## The endpoint is going to be deprecated
 
 
@@ -3060,9 +3291,6 @@ async def search_sessions_v2_async(
     **kwargs
 ):
     """Search sessions (SearchSessionsV2)
-
-
-
 
     ## The endpoint is going to be deprecated
 

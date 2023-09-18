@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import Attribute
 from ..models import ErrorEntity
@@ -61,9 +61,8 @@ def get_profile(
 
     Returns profile for a user.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
-      *  Returns : game profile info
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
+            *  Returns : game profile info
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE [READ]
@@ -116,9 +115,8 @@ async def get_profile_async(
 
     Returns profile for a user.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
-      *  Returns : game profile info
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
+            *  Returns : game profile info
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE [READ]
@@ -172,9 +170,8 @@ def get_user_profiles(
 
     Returns all profiles' header for a user.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
-      *  Returns : list of profiles
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
+            *  Returns : list of profiles
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE [READ]
@@ -221,9 +218,8 @@ async def get_user_profiles_async(
 
     Returns all profiles' header for a user.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
-      *  Returns : list of profiles
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
+            *  Returns : list of profiles
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE [READ]
@@ -273,10 +269,9 @@ def public_create_profile(
 
     Create new profile for user.
     Other detail info:
-
-      *  Required permission
+            *  Required permission
     : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=1 (CREATE)
-      *  Returns
+            *  Returns
     : created game profile
 
     Required Permission(s):
@@ -330,10 +325,9 @@ async def public_create_profile_async(
 
     Create new profile for user.
     Other detail info:
-
-      *  Required permission
+            *  Required permission
     : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=1 (CREATE)
-      *  Returns
+            *  Returns
     : created game profile
 
     Required Permission(s):
@@ -389,8 +383,7 @@ def public_delete_profile(
 
     Deletes game profile.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=8 (DELETE)
+            *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=8 (DELETE)
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE [DELETE]
@@ -443,8 +436,7 @@ async def public_delete_profile_async(
 
     Deletes game profile.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=8 (DELETE)
+            *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=8 (DELETE)
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE [DELETE]
@@ -499,9 +491,8 @@ def public_get_profile(
 
     Returns profile for a user.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
-      *  Returns : game profile info
+            *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
+            *  Returns : game profile info
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE [READ]
@@ -554,9 +545,8 @@ async def public_get_profile_async(
 
     Returns profile for a user.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
-      *  Returns : game profile info
+            *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
+            *  Returns : game profile info
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE [READ]
@@ -612,9 +602,8 @@ def public_get_profile_attribute(
 
     Returns game profile attribute.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
-      *  Returns : attribute info
+            *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
+            *  Returns : attribute info
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE [READ]
@@ -671,9 +660,8 @@ async def public_get_profile_attribute_async(
 
     Returns game profile attribute.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
-      *  Returns : attribute info
+            *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
+            *  Returns : attribute info
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE [READ]
@@ -730,10 +718,9 @@ def public_get_user_game_profiles(
 
     Returns all profiles for specified users.
     Other detail info:
+            *  Required permission : resource="NAMESPACE:{namespace}:GAMEPROFILE", action=2 (READ)
 
-      *  Required permission : resource="NAMESPACE:{namespace}:GAMEPROFILE", action=2 (READ)
-
-      *  Returns : list of profiles
+            *  Returns : list of profiles
 
     Required Permission(s):
         - NAMESPACE:{namespace}:GAMEPROFILE [READ]
@@ -782,10 +769,9 @@ async def public_get_user_game_profiles_async(
 
     Returns all profiles for specified users.
     Other detail info:
+            *  Required permission : resource="NAMESPACE:{namespace}:GAMEPROFILE", action=2 (READ)
 
-      *  Required permission : resource="NAMESPACE:{namespace}:GAMEPROFILE", action=2 (READ)
-
-      *  Returns : list of profiles
+            *  Returns : list of profiles
 
     Required Permission(s):
         - NAMESPACE:{namespace}:GAMEPROFILE [READ]
@@ -836,9 +822,8 @@ def public_get_user_profiles(
 
     Returns all profiles' header for a user.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
-      *  Returns : list of profiles
+            *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
+            *  Returns : list of profiles
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE [READ]
@@ -885,9 +870,8 @@ async def public_get_user_profiles_async(
 
     Returns all profiles' header for a user.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
-      *  Returns : list of profiles
+            *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
+            *  Returns : list of profiles
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE [READ]
@@ -939,9 +923,8 @@ def public_update_attribute(
 
     Updates game profile attribute, returns updated profile.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=4 (UPDATE)
-      *  Returns : updated attribute
+            *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=4 (UPDATE)
+            *  Returns : updated attribute
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE [UPDATE]
@@ -1004,9 +987,8 @@ async def public_update_attribute_async(
 
     Updates game profile attribute, returns updated profile.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=4 (UPDATE)
-      *  Returns : updated attribute
+            *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=4 (UPDATE)
+            *  Returns : updated attribute
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE [UPDATE]
@@ -1070,9 +1052,8 @@ def public_update_profile(
 
     Updates user game profile, returns updated profile.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=4 (UPDATE)
-      *  Returns : updated game profile
+            *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=4 (UPDATE)
+            *  Returns : updated game profile
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE [UPDATE]
@@ -1131,9 +1112,8 @@ async def public_update_profile_async(
 
     Updates user game profile, returns updated profile.
     Other detail info:
-
-      *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=4 (UPDATE)
-      *  Returns : updated game profile
+            *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=4 (UPDATE)
+            *  Returns : updated game profile
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE [UPDATE]

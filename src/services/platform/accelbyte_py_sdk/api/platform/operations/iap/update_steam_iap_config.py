@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,15 +20,16 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.33.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
+from ...models import ErrorEntity
 from ...models import SteamIAPConfigInfo
 from ...models import SteamIAPConfigRequest
 
@@ -37,7 +38,6 @@ class UpdateSteamIAPConfig(Operation):
     """Update steam iap config (updateSteamIAPConfig)
 
     Update steam iap config. Other detail info:
-
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
       *  Returns : updated steam iap config
 
@@ -63,6 +63,8 @@ class UpdateSteamIAPConfig(Operation):
 
     Responses:
         200: OK - SteamIAPConfigInfo (successful operation)
+
+        400: Bad Request - ErrorEntity (39128: Steam publisher key is invalid | 39129: Steam app id is invalid)
     """
 
     # region fields
@@ -169,10 +171,12 @@ class UpdateSteamIAPConfig(Operation):
     # noinspection PyMethodMayBeStatic
     def parse_response(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[Union[None, SteamIAPConfigInfo], Union[None, HttpResponse]]:
+    ) -> Tuple[Union[None, SteamIAPConfigInfo], Union[None, ErrorEntity, HttpResponse]]:
         """Parse the given response.
 
         200: OK - SteamIAPConfigInfo (successful operation)
+
+        400: Bad Request - ErrorEntity (39128: Steam publisher key is invalid | 39129: Steam app id is invalid)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -189,6 +193,8 @@ class UpdateSteamIAPConfig(Operation):
 
         if code == 200:
             return SteamIAPConfigInfo.create_from_dict(content), None
+        if code == 400:
+            return None, ErrorEntity.create_from_dict(content)
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content

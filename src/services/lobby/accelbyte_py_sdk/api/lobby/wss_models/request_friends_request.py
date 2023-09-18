@@ -1,3 +1,13 @@
+# Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+# This is licensed software from AccelByte Inc, for limitations
+# and restrictions contact your company contract manager.
+#
+# Code generated. DO NOT EDIT!
+
+# template file: ws-model.j2
+
+# AccelByte Gaming Services Lobby Ws Service (0.1.0)
+
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
 # pylint: disable=missing-function-docstring
@@ -16,12 +26,12 @@ from __future__ import annotations
 import json
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import WebSocketMessage
+from accelbyte_py_sdk.core import WebSocketMessage
 
-from ....core import WebSocketMessageParserError
+from accelbyte_py_sdk.core import WebSocketMessageParserError
 
-from ....core import WebSocketMessageParserException
-from ....core import generate_websocket_message_id
+from accelbyte_py_sdk.core import WebSocketMessageParserException
+from accelbyte_py_sdk.core import generate_websocket_message_id
 
 
 class RequestFriendsRequest(WebSocketMessage):

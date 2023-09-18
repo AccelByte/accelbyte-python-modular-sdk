@@ -1,6 +1,6 @@
 [//]: # (<< Code generated. DO NOT EDIT!)
 
-[//]: # (<< template file: ags_py_codegen)
+[//]: # (<< template file: doc-index.j2)
 
 # AccelByte Gaming Services Reporting Service Index (0.1.28)
 
@@ -106,9 +106,9 @@
 | restapi.publicReasonResponse | [RestapiPublicReasonResponse](../../accelbyte_py_sdk/api/reporting/models/restapi_public_reason_response.py) |
 | restapi.reasonGroupListResponse | [RestapiReasonGroupListResponse](../../accelbyte_py_sdk/api/reporting/models/restapi_reason_group_list_response.py) |
 | restapi.reasonGroupResponse | [RestapiReasonGroupResponse](../../accelbyte_py_sdk/api/reporting/models/restapi_reason_group_response.py) |
+| restapi.reportingLimit | [RestapiReportingLimit](../../accelbyte_py_sdk/api/reporting/models/restapi_reporting_limit.py) |
 | restapi.reportListResponse | [RestapiReportListResponse](../../accelbyte_py_sdk/api/reporting/models/restapi_report_list_response.py) |
 | restapi.reportResponse | [RestapiReportResponse](../../accelbyte_py_sdk/api/reporting/models/restapi_report_response.py) |
-| restapi.reportingLimit | [RestapiReportingLimit](../../accelbyte_py_sdk/api/reporting/models/restapi_reporting_limit.py) |
 | restapi.submitReportRequest | [RestapiSubmitReportRequest](../../accelbyte_py_sdk/api/reporting/models/restapi_submit_report_request.py) |
 | restapi.submitReportResponse | [RestapiSubmitReportResponse](../../accelbyte_py_sdk/api/reporting/models/restapi_submit_report_response.py) |
 | restapi.ticketListResponse | [RestapiTicketListResponse](../../accelbyte_py_sdk/api/reporting/models/restapi_ticket_list_response.py) |

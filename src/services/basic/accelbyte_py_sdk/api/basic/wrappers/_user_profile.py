@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ErrorEntity
 from ..models import UserProfileAdmin
@@ -1385,6 +1385,7 @@ def public_get_custom_attributes_info(
 
         securities: [BEARER_AUTH]
 
+
         namespace: (namespace) REQUIRED str in path
 
         user_id: (userId) REQUIRED str in path
@@ -1432,6 +1433,7 @@ async def public_get_custom_attributes_info_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1600,6 +1602,7 @@ def public_get_user_profile_info_by_public_id(
 
         securities: [BEARER_AUTH]
 
+
         namespace: (namespace) REQUIRED str in path
 
         public_id: (publicId) REQUIRED str in query
@@ -1648,6 +1651,7 @@ async def public_get_user_profile_info_by_public_id_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1701,6 +1705,7 @@ def public_get_user_profile_public_info(
 
         securities: [BEARER_AUTH]
 
+
         namespace: (namespace) REQUIRED str in path
 
         user_id: (userId) REQUIRED str in path
@@ -1750,6 +1755,7 @@ async def public_get_user_profile_public_info_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1803,6 +1809,7 @@ def public_get_user_profile_public_info_by_ids(
 
         securities: [BEARER_AUTH]
 
+
         namespace: (namespace) REQUIRED str in path
 
         user_ids: (userIds) REQUIRED str in query
@@ -1850,6 +1857,7 @@ async def public_get_user_profile_public_info_by_ids_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
+
 
         namespace: (namespace) REQUIRED str in path
 

@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Social Service (2.3.0)
+# AccelByte Gaming Services Social Service (2.9.3)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import StatPagingSlicedResult
 
@@ -37,9 +37,8 @@ class GetStats(Operation):
 
     List stats by pagination.
     Other detail info:
-
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-      *  Returns : stats
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  Returns : stats
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -63,6 +62,8 @@ class GetStats(Operation):
 
         is_global: (isGlobal) OPTIONAL bool in query
 
+        is_public: (isPublic) OPTIONAL bool in query
+
         limit: (limit) OPTIONAL int in query
 
         offset: (offset) OPTIONAL int in query
@@ -83,6 +84,7 @@ class GetStats(Operation):
     namespace: str  # REQUIRED in [path]
     cycle_ids: str  # OPTIONAL in [query]
     is_global: bool  # OPTIONAL in [query]
+    is_public: bool  # OPTIONAL in [query]
     limit: int  # OPTIONAL in [query]
     offset: int  # OPTIONAL in [query]
 
@@ -140,6 +142,8 @@ class GetStats(Operation):
             result["cycleIds"] = self.cycle_ids
         if hasattr(self, "is_global"):
             result["isGlobal"] = self.is_global
+        if hasattr(self, "is_public"):
+            result["isPublic"] = self.is_public
         if hasattr(self, "limit"):
             result["limit"] = self.limit
         if hasattr(self, "offset"):
@@ -164,6 +168,10 @@ class GetStats(Operation):
 
     def with_is_global(self, value: bool) -> GetStats:
         self.is_global = value
+        return self
+
+    def with_is_public(self, value: bool) -> GetStats:
+        self.is_public = value
         return self
 
     def with_limit(self, value: int) -> GetStats:
@@ -192,6 +200,10 @@ class GetStats(Operation):
             result["isGlobal"] = bool(self.is_global)
         elif include_empty:
             result["isGlobal"] = False
+        if hasattr(self, "is_public") and self.is_public:
+            result["isPublic"] = bool(self.is_public)
+        elif include_empty:
+            result["isPublic"] = False
         if hasattr(self, "limit") and self.limit:
             result["limit"] = int(self.limit)
         elif include_empty:
@@ -244,6 +256,7 @@ class GetStats(Operation):
         namespace: str,
         cycle_ids: Optional[str] = None,
         is_global: Optional[bool] = None,
+        is_public: Optional[bool] = None,
         limit: Optional[int] = None,
         offset: Optional[int] = None,
         **kwargs,
@@ -254,6 +267,8 @@ class GetStats(Operation):
             instance.cycle_ids = cycle_ids
         if is_global is not None:
             instance.is_global = is_global
+        if is_public is not None:
+            instance.is_public = is_public
         if limit is not None:
             instance.limit = limit
         if offset is not None:
@@ -275,6 +290,10 @@ class GetStats(Operation):
             instance.is_global = bool(dict_["isGlobal"])
         elif include_empty:
             instance.is_global = False
+        if "isPublic" in dict_ and dict_["isPublic"] is not None:
+            instance.is_public = bool(dict_["isPublic"])
+        elif include_empty:
+            instance.is_public = False
         if "limit" in dict_ and dict_["limit"] is not None:
             instance.limit = int(dict_["limit"])
         elif include_empty:
@@ -291,6 +310,7 @@ class GetStats(Operation):
             "namespace": "namespace",
             "cycleIds": "cycle_ids",
             "isGlobal": "is_global",
+            "isPublic": "is_public",
             "limit": "limit",
             "offset": "offset",
         }
@@ -301,6 +321,7 @@ class GetStats(Operation):
             "namespace": True,
             "cycleIds": False,
             "isGlobal": False,
+            "isPublic": False,
             "limit": False,
             "offset": False,
         }

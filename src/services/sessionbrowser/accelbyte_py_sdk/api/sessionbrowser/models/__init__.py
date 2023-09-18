@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Session Browser Service."""
 
-__version__ = "1.13.4"
+__version__ = "1.15.3"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -35,9 +35,9 @@ from .models_get_session_history_search_response_v2 import (
 )
 from .models_join_game_session_request import ModelsJoinGameSessionRequest
 from .models_match_attributes import ModelsMatchAttributes
-from .models_match_making import ModelsMatchMaking
 from .models_matching_ally import ModelsMatchingAlly
 from .models_matching_party import ModelsMatchingParty
+from .models_match_making import ModelsMatchMaking
 from .models_pagination import ModelsPagination
 from .models_paging_cursor import ModelsPagingCursor
 from .models_party_member import ModelsPartyMember

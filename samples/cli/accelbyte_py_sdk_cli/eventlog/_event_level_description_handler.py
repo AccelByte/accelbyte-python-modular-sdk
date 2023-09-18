@@ -4,9 +4,9 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template_file: python-cli-command.j2
+# template_file: command.j2
 
-# AGS Event Log Service (2.1.0)
+# AGS Event Log Service ()
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

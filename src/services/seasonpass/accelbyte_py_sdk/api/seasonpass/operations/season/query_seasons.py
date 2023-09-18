@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,15 +20,15 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Seasonpass Service (1.18.2)
+# AccelByte Gaming Services Seasonpass Service (1.19.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
-from .....core import StrEnum
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import StrEnum
 
 from ...models import ErrorEntity
 from ...models import ListSeasonInfoPagingSlicedResult
@@ -72,7 +72,7 @@ class QuerySeasons(Operation):
 
         offset: (offset) OPTIONAL int in query
 
-        status: (status) OPTIONAL List[Union[str, StatusEnum]] in query
+        status: (status) OPTIONAL Union[List[str], List[StatusEnum]] in query
 
     Responses:
         200: OK - ListSeasonInfoPagingSlicedResult (successful operation)
@@ -92,7 +92,7 @@ class QuerySeasons(Operation):
     namespace: str  # REQUIRED in [path]
     limit: int  # OPTIONAL in [query]
     offset: int  # OPTIONAL in [query]
-    status: List[Union[str, StatusEnum]]  # OPTIONAL in [query]
+    status: Union[List[str], List[StatusEnum]]  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -172,7 +172,7 @@ class QuerySeasons(Operation):
         self.offset = value
         return self
 
-    def with_status(self, value: List[Union[str, StatusEnum]]) -> QuerySeasons:
+    def with_status(self, value: Union[List[str], List[StatusEnum]]) -> QuerySeasons:
         self.status = value
         return self
 
@@ -249,7 +249,7 @@ class QuerySeasons(Operation):
         namespace: str,
         limit: Optional[int] = None,
         offset: Optional[int] = None,
-        status: Optional[List[Union[str, StatusEnum]]] = None,
+        status: Optional[Union[List[str], List[StatusEnum]]] = None,
         **kwargs,
     ) -> QuerySeasons:
         instance = cls()

@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (5.31.0)
+# AccelByte Gaming Services Iam Service (7.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import ModelThirdPartyLoginPlatformCredentialRequest
 from ...models import ModelThirdPartyLoginPlatformCredentialResponse
@@ -127,12 +127,10 @@ class AddThirdPartyLoginPlatformCredentialV3(Operation):
 
 
 
+                * Current supported value for TokenAuthenticationType are code, idToken and bearerToken
 
 
-      * Current supported value for TokenAuthenticationType are code, idToken and bearerToken
-
-
-      * `TokenClaimsMapping` is used to extract user info from idToken claims or user info endpoint response accessed using bearerToken.
+                * `TokenClaimsMapping` is used to extract user info from idToken claims or user info endpoint response accessed using bearerToken.
     Its a JSON format with key should be `name`, `email` and `avatarUrl`
     since IAM will look up for these key when extracting user info. default claims keys : userIdentity/sub, name, email and avatarUrl/picture
 

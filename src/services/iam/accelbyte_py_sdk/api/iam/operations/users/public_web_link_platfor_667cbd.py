@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (5.31.0)
+# AccelByte Gaming Services Iam Service (7.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 
 class PublicWebLinkPlatformEstablish(Operation):
@@ -47,12 +47,14 @@ class PublicWebLinkPlatformEstablish(Operation):
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
-
         location query: PLACEHOLDER
+
 
         namespace: (namespace) REQUIRED str in path
 
         platform_id: (platformId) REQUIRED str in path
+
+        code: (code) OPTIONAL str in query
 
         state: (state) REQUIRED str in query
 
@@ -71,6 +73,7 @@ class PublicWebLinkPlatformEstablish(Operation):
 
     namespace: str  # REQUIRED in [path]
     platform_id: str  # REQUIRED in [path]
+    code: str  # OPTIONAL in [query]
     state: str  # REQUIRED in [query]
 
     # endregion fields
@@ -125,6 +128,8 @@ class PublicWebLinkPlatformEstablish(Operation):
 
     def get_query_params(self) -> dict:
         result = {}
+        if hasattr(self, "code"):
+            result["code"] = self.code
         if hasattr(self, "state"):
             result["state"] = self.state
         return result
@@ -153,6 +158,10 @@ class PublicWebLinkPlatformEstablish(Operation):
         self.platform_id = value
         return self
 
+    def with_code(self, value: str) -> PublicWebLinkPlatformEstablish:
+        self.code = value
+        return self
+
     def with_state(self, value: str) -> PublicWebLinkPlatformEstablish:
         self.state = value
         return self
@@ -171,6 +180,10 @@ class PublicWebLinkPlatformEstablish(Operation):
             result["platformId"] = str(self.platform_id)
         elif include_empty:
             result["platformId"] = ""
+        if hasattr(self, "code") and self.code:
+            result["code"] = str(self.code)
+        elif include_empty:
+            result["code"] = ""
         if hasattr(self, "state") and self.state:
             result["state"] = str(self.state)
         elif include_empty:
@@ -215,12 +228,19 @@ class PublicWebLinkPlatformEstablish(Operation):
 
     @classmethod
     def create(
-        cls, namespace: str, platform_id: str, state: str, **kwargs
+        cls,
+        namespace: str,
+        platform_id: str,
+        state: str,
+        code: Optional[str] = None,
+        **kwargs,
     ) -> PublicWebLinkPlatformEstablish:
         instance = cls()
         instance.namespace = namespace
         instance.platform_id = platform_id
         instance.state = state
+        if code is not None:
+            instance.code = code
         return instance
 
     @classmethod
@@ -236,6 +256,10 @@ class PublicWebLinkPlatformEstablish(Operation):
             instance.platform_id = str(dict_["platformId"])
         elif include_empty:
             instance.platform_id = ""
+        if "code" in dict_ and dict_["code"] is not None:
+            instance.code = str(dict_["code"])
+        elif include_empty:
+            instance.code = ""
         if "state" in dict_ and dict_["state"] is not None:
             instance.state = str(dict_["state"])
         elif include_empty:
@@ -247,6 +271,7 @@ class PublicWebLinkPlatformEstablish(Operation):
         return {
             "namespace": "namespace",
             "platformId": "platform_id",
+            "code": "code",
             "state": "state",
         }
 
@@ -255,6 +280,7 @@ class PublicWebLinkPlatformEstablish(Operation):
         return {
             "namespace": True,
             "platformId": True,
+            "code": False,
             "state": True,
         }
 

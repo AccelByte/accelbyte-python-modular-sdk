@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Match Service V2."""
 
-__version__ = "2.2.1"
+__version__ = "2.8.4"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -27,6 +27,9 @@ from ._backfill import get_backfill_proposal_async
 from ._backfill import reject_backfill
 from ._backfill import reject_backfill_async
 
+from ._environment_variables import environment_variable_list
+from ._environment_variables import environment_variable_list_async
+
 from ._match_functions import create_match_function
 from ._match_functions import create_match_function_async
 from ._match_functions import delete_match_function
@@ -40,6 +43,8 @@ from ._match_pools import create_match_pool
 from ._match_pools import create_match_pool_async
 from ._match_pools import delete_match_pool
 from ._match_pools import delete_match_pool_async
+from ._match_pools import get_player_metric
+from ._match_pools import get_player_metric_async
 from ._match_pools import match_pool_details
 from ._match_pools import match_pool_details_async
 from ._match_pools import match_pool_list
@@ -53,6 +58,8 @@ from ._match_tickets import create_match_ticket
 from ._match_tickets import create_match_ticket_async
 from ._match_tickets import delete_match_ticket
 from ._match_tickets import delete_match_ticket_async
+from ._match_tickets import get_my_match_tickets
+from ._match_tickets import get_my_match_tickets_async
 from ._match_tickets import match_ticket_details
 from ._match_tickets import match_ticket_details_async
 

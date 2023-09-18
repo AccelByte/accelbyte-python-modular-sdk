@@ -4,9 +4,9 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model.j2
 
-# AccelByte Gaming Services Social Service (2.3.0)
+# AccelByte Gaming Services Social Service (2.9.3)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -25,7 +25,7 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import Model
+from accelbyte_py_sdk.core import Model
 
 
 class BulkStatOperationResult(Model):
@@ -37,6 +37,8 @@ class BulkStatOperationResult(Model):
         stat_code: (statCode) OPTIONAL str
 
         success: (success) OPTIONAL bool
+
+        user_id: (userId) OPTIONAL str
     """
 
     # region fields
@@ -44,6 +46,7 @@ class BulkStatOperationResult(Model):
     details: Dict[str, Any]  # OPTIONAL
     stat_code: str  # OPTIONAL
     success: bool  # OPTIONAL
+    user_id: str  # OPTIONAL
 
     # endregion fields
 
@@ -59,6 +62,10 @@ class BulkStatOperationResult(Model):
 
     def with_success(self, value: bool) -> BulkStatOperationResult:
         self.success = value
+        return self
+
+    def with_user_id(self, value: str) -> BulkStatOperationResult:
+        self.user_id = value
         return self
 
     # endregion with_x methods
@@ -79,6 +86,10 @@ class BulkStatOperationResult(Model):
             result["success"] = bool(self.success)
         elif include_empty:
             result["success"] = False
+        if hasattr(self, "user_id"):
+            result["userId"] = str(self.user_id)
+        elif include_empty:
+            result["userId"] = ""
         return result
 
     # endregion to methods
@@ -91,6 +102,7 @@ class BulkStatOperationResult(Model):
         details: Optional[Dict[str, Any]] = None,
         stat_code: Optional[str] = None,
         success: Optional[bool] = None,
+        user_id: Optional[str] = None,
         **kwargs,
     ) -> BulkStatOperationResult:
         instance = cls()
@@ -100,6 +112,8 @@ class BulkStatOperationResult(Model):
             instance.stat_code = stat_code
         if success is not None:
             instance.success = success
+        if user_id is not None:
+            instance.user_id = user_id
         return instance
 
     @classmethod
@@ -121,6 +135,10 @@ class BulkStatOperationResult(Model):
             instance.success = bool(dict_["success"])
         elif include_empty:
             instance.success = False
+        if "userId" in dict_ and dict_["userId"] is not None:
+            instance.user_id = str(dict_["userId"])
+        elif include_empty:
+            instance.user_id = ""
         return instance
 
     @classmethod
@@ -167,6 +185,7 @@ class BulkStatOperationResult(Model):
             "details": "details",
             "statCode": "stat_code",
             "success": "success",
+            "userId": "user_id",
         }
 
     @staticmethod
@@ -175,6 +194,7 @@ class BulkStatOperationResult(Model):
             "details": False,
             "statCode": False,
             "success": False,
+            "userId": False,
         }
 
     # endregion static methods

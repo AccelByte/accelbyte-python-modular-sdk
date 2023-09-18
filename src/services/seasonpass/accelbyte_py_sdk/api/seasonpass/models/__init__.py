@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Seasonpass Service."""
 
-__version__ = "1.18.2"
+__version__ = "1.19.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -47,10 +47,8 @@ from .reward_create import RewardCreate
 from .reward_create import TypeEnum as RewardCreateTypeEnum
 from .reward_currency import RewardCurrency
 from .reward_info import RewardInfo
-from .reward_info import (
-    ItemTypeEnum as RewardInfoItemTypeEnum,
-    TypeEnum as RewardInfoTypeEnum,
-)
+from .reward_info import TypeEnum as RewardInfoTypeEnum
+from .reward_info import ItemTypeEnum as RewardInfoItemTypeEnum
 from .reward_update import RewardUpdate
 from .reward_update import TypeEnum as RewardUpdateTypeEnum
 from .season_clone_request import SeasonCloneRequest

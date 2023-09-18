@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: service-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Iam Service."""
 
-__version__ = "5.31.0"
+__version__ = "7.0.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -43,10 +43,10 @@ from .wrappers import admin_delete_client_permission_v3
 from .wrappers import admin_delete_client_permission_v3_async
 from .wrappers import admin_delete_client_v3
 from .wrappers import admin_delete_client_v3_async
-from .wrappers import admin_get_clients_by_namespace_v3
-from .wrappers import admin_get_clients_by_namespace_v3_async
 from .wrappers import admin_get_clientsby_namespaceby_idv3
 from .wrappers import admin_get_clientsby_namespaceby_idv3_async
+from .wrappers import admin_get_clients_by_namespace_v3
+from .wrappers import admin_get_clients_by_namespace_v3_async
 from .wrappers import admin_update_client_permission_v3
 from .wrappers import admin_update_client_permission_v3_async
 from .wrappers import admin_update_client_secret_v3
@@ -85,14 +85,14 @@ from .wrappers import admin_generate_report_v4
 from .wrappers import admin_generate_report_v4_async
 from .wrappers import admin_get_banned_devices_v4
 from .wrappers import admin_get_banned_devices_v4_async
-from .wrappers import admin_get_device_ban_v4
-from .wrappers import admin_get_device_ban_v4_async
 from .wrappers import admin_get_device_bans_v4
 from .wrappers import admin_get_device_bans_v4_async
-from .wrappers import admin_get_device_types_v4
-from .wrappers import admin_get_device_types_v4_async
+from .wrappers import admin_get_device_ban_v4
+from .wrappers import admin_get_device_ban_v4_async
 from .wrappers import admin_get_devices_by_user_v4
 from .wrappers import admin_get_devices_by_user_v4_async
+from .wrappers import admin_get_device_types_v4
+from .wrappers import admin_get_device_types_v4_async
 from .wrappers import admin_get_user_device_bans_v4
 from .wrappers import admin_get_user_device_bans_v4_async
 from .wrappers import admin_get_users_by_device_v4
@@ -109,6 +109,8 @@ from .wrappers import admin_reset_input_validations
 from .wrappers import admin_reset_input_validations_async
 from .wrappers import admin_update_input_validations
 from .wrappers import admin_update_input_validations_async
+from .wrappers import public_get_input_validation_by_field
+from .wrappers import public_get_input_validation_by_field_async
 from .wrappers import public_get_input_validations
 from .wrappers import public_get_input_validations_async
 
@@ -175,6 +177,8 @@ from .wrappers import logout
 from .wrappers import logout_async
 from .wrappers import platform_authentication_v3
 from .wrappers import platform_authentication_v3_async
+from .wrappers import platform_token_refresh_v3
+from .wrappers import platform_token_refresh_v3_async
 from .wrappers import request_game_token_code_response_v3
 from .wrappers import request_game_token_code_response_v3_async
 from .wrappers import request_game_token_response_v3
@@ -209,12 +213,12 @@ from .wrappers import admin_create_role_v3
 from .wrappers import admin_create_role_v3_async
 from .wrappers import admin_create_role_v4
 from .wrappers import admin_create_role_v4_async
-from .wrappers import admin_delete_role_permission_v3
-from .wrappers import admin_delete_role_permission_v3_async
 from .wrappers import admin_delete_role_permissions_v3
 from .wrappers import admin_delete_role_permissions_v3_async
 from .wrappers import admin_delete_role_permissions_v4
 from .wrappers import admin_delete_role_permissions_v4_async
+from .wrappers import admin_delete_role_permission_v3
+from .wrappers import admin_delete_role_permission_v3_async
 from .wrappers import admin_delete_role_v3
 from .wrappers import admin_delete_role_v3_async
 from .wrappers import admin_delete_role_v4
@@ -225,14 +229,14 @@ from .wrappers import admin_get_role_managers_v3
 from .wrappers import admin_get_role_managers_v3_async
 from .wrappers import admin_get_role_members_v3
 from .wrappers import admin_get_role_members_v3_async
-from .wrappers import admin_get_role_v3
-from .wrappers import admin_get_role_v3_async
-from .wrappers import admin_get_role_v4
-from .wrappers import admin_get_role_v4_async
 from .wrappers import admin_get_roles_v3
 from .wrappers import admin_get_roles_v3_async
 from .wrappers import admin_get_roles_v4
 from .wrappers import admin_get_roles_v4_async
+from .wrappers import admin_get_role_v3
+from .wrappers import admin_get_role_v3_async
+from .wrappers import admin_get_role_v4
+from .wrappers import admin_get_role_v4_async
 from .wrappers import admin_list_assigned_users_v4
 from .wrappers import admin_list_assigned_users_v4_async
 from .wrappers import admin_remove_role_admin_v3
@@ -269,10 +273,10 @@ from .wrappers import get_role_members
 from .wrappers import get_role_members_async
 from .wrappers import get_roles
 from .wrappers import get_roles_async
-from .wrappers import public_get_role_v3
-from .wrappers import public_get_role_v3_async
 from .wrappers import public_get_roles_v3
 from .wrappers import public_get_roles_v3_async
+from .wrappers import public_get_role_v3
+from .wrappers import public_get_role_v3_async
 from .wrappers import remove_role_admin
 from .wrappers import remove_role_admin_async
 from .wrappers import remove_role_managers
@@ -359,10 +363,10 @@ from .wrappers import admin_delete_user_permission_bulk_v3
 from .wrappers import admin_delete_user_permission_bulk_v3_async
 from .wrappers import admin_delete_user_permission_v3
 from .wrappers import admin_delete_user_permission_v3_async
-from .wrappers import admin_delete_user_role_v3
-from .wrappers import admin_delete_user_role_v3_async
 from .wrappers import admin_delete_user_roles_v3
 from .wrappers import admin_delete_user_roles_v3_async
+from .wrappers import admin_delete_user_role_v3
+from .wrappers import admin_delete_user_role_v3_async
 from .wrappers import admin_disable_user_v2
 from .wrappers import admin_disable_user_v2_async
 from .wrappers import admin_enable_user_v2
@@ -371,6 +375,8 @@ from .wrappers import admin_get_age_restriction_status_v2
 from .wrappers import admin_get_age_restriction_status_v2_async
 from .wrappers import admin_get_age_restriction_status_v3
 from .wrappers import admin_get_age_restriction_status_v3_async
+from .wrappers import admin_get_bulk_user_ban_v3
+from .wrappers import admin_get_bulk_user_ban_v3_async
 from .wrappers import admin_get_bulk_user_by_email_address_v3
 from .wrappers import admin_get_bulk_user_by_email_address_v3_async
 from .wrappers import admin_get_list_country_age_restriction_v3
@@ -401,6 +407,8 @@ from .wrappers import admin_get_user_mapping
 from .wrappers import admin_get_user_mapping_async
 from .wrappers import admin_get_user_platform_accounts_v3
 from .wrappers import admin_get_user_platform_accounts_v3_async
+from .wrappers import admin_get_user_single_platform_account
+from .wrappers import admin_get_user_single_platform_account_async
 from .wrappers import admin_invite_user_v3
 from .wrappers import admin_invite_user_v3_async
 from .wrappers import admin_link_platform_account
@@ -423,10 +431,10 @@ from .wrappers import admin_reset_password_v3
 from .wrappers import admin_reset_password_v3_async
 from .wrappers import admin_save_user_role_v3
 from .wrappers import admin_save_user_role_v3_async
-from .wrappers import admin_search_user_v3
-from .wrappers import admin_search_user_v3_async
 from .wrappers import admin_search_users_v2
 from .wrappers import admin_search_users_v2_async
+from .wrappers import admin_search_user_v3
+from .wrappers import admin_search_user_v3_async
 from .wrappers import admin_send_verification_code_v3
 from .wrappers import admin_send_verification_code_v3_async
 from .wrappers import admin_update_age_restriction_config_v2
@@ -509,10 +517,10 @@ from .wrappers import get_user_mapping
 from .wrappers import get_user_mapping_async
 from .wrappers import get_user_platform_accounts
 from .wrappers import get_user_platform_accounts_async
-from .wrappers import get_user_verification_code
-from .wrappers import get_user_verification_code_async
 from .wrappers import get_users_by_login_ids
 from .wrappers import get_users_by_login_ids_async
+from .wrappers import get_user_verification_code
+from .wrappers import get_user_verification_code_async
 from .wrappers import link_headless_account_to_my_account_v3
 from .wrappers import link_headless_account_to_my_account_v3_async
 from .wrappers import list_admins_v3
@@ -559,10 +567,10 @@ from .wrappers import public_get_user_ban_history_v3
 from .wrappers import public_get_user_ban_history_v3_async
 from .wrappers import public_get_user_by_platform_user_idv3
 from .wrappers import public_get_user_by_platform_user_idv3_async
-from .wrappers import public_get_user_by_user_id_v3
-from .wrappers import public_get_user_by_user_id_v3_async
 from .wrappers import public_get_user_by_user_idv2
 from .wrappers import public_get_user_by_user_idv2_async
+from .wrappers import public_get_user_by_user_id_v3
+from .wrappers import public_get_user_by_user_id_v3_async
 from .wrappers import public_get_user_information_v3
 from .wrappers import public_get_user_information_v3_async
 from .wrappers import public_get_user_login_histories_v3
@@ -587,6 +595,8 @@ from .wrappers import public_platform_unlink_all_v3
 from .wrappers import public_platform_unlink_all_v3_async
 from .wrappers import public_platform_unlink_v3
 from .wrappers import public_platform_unlink_v3_async
+from .wrappers import public_process_web_link_platform_v3
+from .wrappers import public_process_web_link_platform_v3_async
 from .wrappers import public_reset_password_v2
 from .wrappers import public_reset_password_v2_async
 from .wrappers import public_search_user_v3
@@ -725,6 +735,8 @@ from .wrappers import public_get_my_backup_codes_v4
 from .wrappers import public_get_my_backup_codes_v4_async
 from .wrappers import public_get_my_enabled_factors_v4
 from .wrappers import public_get_my_enabled_factors_v4_async
+from .wrappers import public_get_user_public_info_by_user_id_v4
+from .wrappers import public_get_user_public_info_by_user_id_v4_async
 from .wrappers import public_invite_user_v4
 from .wrappers import public_invite_user_v4_async
 from .wrappers import public_make_factor_my_default_v4

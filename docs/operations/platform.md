@@ -1,13 +1,13 @@
 [//]: # (<< Code generated. DO NOT EDIT!)
 
-[//]: # (<< template file: ags_py_codegen)
+[//]: # (<< template file: doc-index.j2)
 
 # AccelByte Gaming Services Platform Service Index (4.33.0)
 
 
 ## Operations
 
-### AchievementPlatform
+### Achievement(Platform)
 | Endpoint | Method | ID | Deprecated | Class | Wrapper | Example |
 |---|---|---|---|---|---|---|
 | /platform/admin/namespaces/{namespace}/users/{userId}/achievement/xbl | GET | getXblUserAchievements | `false` | [GetXblUserAchievements](../../accelbyte_py_sdk/api/platform/operations/achievement_platform/get_xbl_user_achievements.py) | [get_xbl_user_achievements](../../accelbyte_py_sdk/api/platform/wrappers/_achievement_platform.py) | [accelbyte_py_sdk_cli platform-get-xbl-user-achievements](../../samples/cli/accelbyte_py_sdk_cli/platform/_get_xbl_user_achievements.py) |
@@ -268,8 +268,8 @@
 | /platform/v2/admin/namespaces/{namespace}/items/byCriteria | GET | queryItems_1 | `false` | [QueryItems1](../../accelbyte_py_sdk/api/platform/operations/item/query_items_1.py) | [query_items_1](../../accelbyte_py_sdk/api/platform/wrappers/_item.py) | [accelbyte_py_sdk_cli platform-query-items-1](../../samples/cli/accelbyte_py_sdk_cli/platform/_query_items_1.py) |
 | /platform/admin/namespaces/{namespace}/items/uncategorized | GET | queryUncategorizedItems | `false` | [QueryUncategorizedItems](../../accelbyte_py_sdk/api/platform/operations/item/query_uncategorized_items.py) | [query_uncategorized_items](../../accelbyte_py_sdk/api/platform/wrappers/_item.py) | [accelbyte_py_sdk_cli platform-query-uncategorized-items](../../samples/cli/accelbyte_py_sdk_cli/platform/_query_uncategorized_items.py) |
 | /platform/admin/namespaces/{namespace}/items/{itemId}/return | PUT | returnItem | `false` | [ReturnItem](../../accelbyte_py_sdk/api/platform/operations/item/return_item.py) | [return_item](../../accelbyte_py_sdk/api/platform/wrappers/_item.py) | [accelbyte_py_sdk_cli platform-return-item](../../samples/cli/accelbyte_py_sdk_cli/platform/_return_item.py) |
-| /platform/admin/items/configs/search | GET | searchItemTypeConfig | `false` | [SearchItemTypeConfig](../../accelbyte_py_sdk/api/platform/operations/item/search_item_type_config.py) | [search_item_type_config](../../accelbyte_py_sdk/api/platform/wrappers/_item.py) | [accelbyte_py_sdk_cli platform-search-item-type-config](../../samples/cli/accelbyte_py_sdk_cli/platform/_search_item_type_config.py) |
 | /platform/admin/namespaces/{namespace}/items/search | GET | searchItems | `false` | [SearchItems](../../accelbyte_py_sdk/api/platform/operations/item/search_items.py) | [search_items](../../accelbyte_py_sdk/api/platform/wrappers/_item.py) | [accelbyte_py_sdk_cli platform-search-items](../../samples/cli/accelbyte_py_sdk_cli/platform/_search_items.py) |
+| /platform/admin/items/configs/search | GET | searchItemTypeConfig | `false` | [SearchItemTypeConfig](../../accelbyte_py_sdk/api/platform/operations/item/search_item_type_config.py) | [search_item_type_config](../../accelbyte_py_sdk/api/platform/wrappers/_item.py) | [accelbyte_py_sdk_cli platform-search-item-type-config](../../samples/cli/accelbyte_py_sdk_cli/platform/_search_item_type_config.py) |
 | /platform/admin/namespaces/{namespace}/items | PUT | syncInGameItem | `false` | [SyncInGameItem](../../accelbyte_py_sdk/api/platform/operations/item/sync_in_game_item.py) | [sync_in_game_item](../../accelbyte_py_sdk/api/platform/wrappers/_item.py) | [accelbyte_py_sdk_cli platform-sync-in-game-item](../../samples/cli/accelbyte_py_sdk_cli/platform/_sync_in_game_item.py) |
 | /platform/admin/namespaces/{namespace}/items/{itemId}/app | PUT | updateApp | `false` | [UpdateApp](../../accelbyte_py_sdk/api/platform/operations/item/update_app.py) | [update_app](../../accelbyte_py_sdk/api/platform/wrappers/_item.py) | [accelbyte_py_sdk_cli platform-update-app](../../samples/cli/accelbyte_py_sdk_cli/platform/_update_app.py) |
 | /platform/admin/namespaces/{namespace}/items/{itemId} | PUT | updateItem | `false` | [UpdateItem](../../accelbyte_py_sdk/api/platform/operations/item/update_item.py) | [update_item](../../accelbyte_py_sdk/api/platform/wrappers/_item.py) | [accelbyte_py_sdk_cli platform-update-item](../../samples/cli/accelbyte_py_sdk_cli/platform/_update_item.py) |
@@ -313,7 +313,7 @@
 | /platform/admin/namespaces/{namespace}/orders/{orderNo}/refund | PUT | refundOrder | `false` | [RefundOrder](../../accelbyte_py_sdk/api/platform/operations/order/refund_order.py) | [refund_order](../../accelbyte_py_sdk/api/platform/wrappers/_order.py) | [accelbyte_py_sdk_cli platform-refund-order](../../samples/cli/accelbyte_py_sdk_cli/platform/_refund_order.py) |
 | /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo} | PUT | updateUserOrderStatus | `false` | [UpdateUserOrderStatus](../../accelbyte_py_sdk/api/platform/operations/order/update_user_order_status.py) | [update_user_order_status](../../accelbyte_py_sdk/api/platform/wrappers/_order.py) | [accelbyte_py_sdk_cli platform-update-user-order-status](../../samples/cli/accelbyte_py_sdk_cli/platform/_update_user_order_status.py) |
 
-### OrderDedicated
+### Order(Dedicated)
 | Endpoint | Method | ID | Deprecated | Class | Wrapper | Example |
 |---|---|---|---|---|---|---|
 | /platform/admin/orders | GET | syncOrders | `false` | [SyncOrders](../../accelbyte_py_sdk/api/platform/operations/order_dedicated/sync_orders.py) | [sync_orders](../../accelbyte_py_sdk/api/platform/wrappers/_order_dedicated.py) | [accelbyte_py_sdk_cli platform-sync-orders](../../samples/cli/accelbyte_py_sdk_cli/platform/_sync_orders.py) |
@@ -330,6 +330,13 @@
 | /platform/admin/namespaces/{namespace}/payment/orders | GET | queryPaymentOrders | `false` | [QueryPaymentOrders](../../accelbyte_py_sdk/api/platform/operations/payment/query_payment_orders.py) | [query_payment_orders](../../accelbyte_py_sdk/api/platform/wrappers/_payment.py) | [accelbyte_py_sdk_cli platform-query-payment-orders](../../samples/cli/accelbyte_py_sdk_cli/platform/_query_payment_orders.py) |
 | /platform/admin/namespaces/{namespace}/users/{userId}/payment/orders/{paymentOrderNo}/refund | PUT | refundUserPaymentOrder | `false` | [RefundUserPaymentOrder](../../accelbyte_py_sdk/api/platform/operations/payment/refund_user_payment_order.py) | [refund_user_payment_order](../../accelbyte_py_sdk/api/platform/wrappers/_payment.py) | [accelbyte_py_sdk_cli platform-refund-user-payment-order](../../samples/cli/accelbyte_py_sdk_cli/platform/_refund_user_payment_order.py) |
 | /platform/admin/namespaces/{namespace}/payment/orders/{paymentOrderNo}/simulate-notification | PUT | simulatePaymentOrderNotification | `false` | [SimulatePaymentOrderNotification](../../accelbyte_py_sdk/api/platform/operations/payment/simulate_payment_order__cf0fbc.py) | [simulate_payment_order_notification](../../accelbyte_py_sdk/api/platform/wrappers/_payment.py) | [accelbyte_py_sdk_cli platform-simulate-payment-order-notification](../../samples/cli/accelbyte_py_sdk_cli/platform/_simulate_payment_order_notification.py) |
+
+### Payment(Dedicated)
+| Endpoint | Method | ID | Deprecated | Class | Wrapper | Example |
+|---|---|---|---|---|---|---|
+| /platform/admin/namespaces/{namespace}/payment/orders | POST | createPaymentOrderByDedicated | `false` | [CreatePaymentOrderByDedicated](../../accelbyte_py_sdk/api/platform/operations/payment_dedicated/create_payment_order_by_79f85c.py) | [create_payment_order_by_dedicated](../../accelbyte_py_sdk/api/platform/wrappers/_payment_dedicated.py) | [accelbyte_py_sdk_cli platform-create-payment-order-by-dedicated](../../samples/cli/accelbyte_py_sdk_cli/platform/_create_payment_order_by_dedicated.py) |
+| /platform/admin/namespaces/{namespace}/payment/orders/{paymentOrderNo}/refund | PUT | refundPaymentOrderByDedicated | `false` | [RefundPaymentOrderByDedicated](../../accelbyte_py_sdk/api/platform/operations/payment_dedicated/refund_payment_order_by_309df5.py) | [refund_payment_order_by_dedicated](../../accelbyte_py_sdk/api/platform/wrappers/_payment_dedicated.py) | [accelbyte_py_sdk_cli platform-refund-payment-order-by-dedicated](../../samples/cli/accelbyte_py_sdk_cli/platform/_refund_payment_order_by_dedicated.py) |
+| /platform/admin/payment/orders | GET | syncPaymentOrders | `false` | [SyncPaymentOrders](../../accelbyte_py_sdk/api/platform/operations/payment_dedicated/sync_payment_orders.py) | [sync_payment_orders](../../accelbyte_py_sdk/api/platform/wrappers/_payment_dedicated.py) | [accelbyte_py_sdk_cli platform-sync-payment-orders](../../samples/cli/accelbyte_py_sdk_cli/platform/_sync_payment_orders.py) |
 
 ### PaymentAccount
 | Endpoint | Method | ID | Deprecated | Class | Wrapper | Example |
@@ -372,21 +379,14 @@
 | /platform/admin/payment/config/merchant/{id}/adyenconfig | PUT | updateAdyenConfig | `false` | [UpdateAdyenConfig](../../accelbyte_py_sdk/api/platform/operations/payment_config/update_adyen_config.py) | [update_adyen_config](../../accelbyte_py_sdk/api/platform/wrappers/_payment_config.py) | [accelbyte_py_sdk_cli platform-update-adyen-config](../../samples/cli/accelbyte_py_sdk_cli/platform/_update_adyen_config.py) |
 | /platform/admin/payment/config/merchant/{id}/alipayconfig | PUT | updateAliPayConfig | `false` | [UpdateAliPayConfig](../../accelbyte_py_sdk/api/platform/operations/payment_config/update_ali_pay_config.py) | [update_ali_pay_config](../../accelbyte_py_sdk/api/platform/wrappers/_payment_config.py) | [accelbyte_py_sdk_cli platform-update-ali-pay-config](../../samples/cli/accelbyte_py_sdk_cli/platform/_update_ali_pay_config.py) |
 | /platform/admin/payment/config/merchant/{id}/checkoutconfig | PUT | updateCheckoutConfig | `false` | [UpdateCheckoutConfig](../../accelbyte_py_sdk/api/platform/operations/payment_config/update_checkout_config.py) | [update_checkout_config](../../accelbyte_py_sdk/api/platform/wrappers/_payment_config.py) | [accelbyte_py_sdk_cli platform-update-checkout-config](../../samples/cli/accelbyte_py_sdk_cli/platform/_update_checkout_config.py) |
-| /platform/admin/payment/config/merchant/{id}/paypalconfig | PUT | updatePayPalConfig | `false` | [UpdatePayPalConfig](../../accelbyte_py_sdk/api/platform/operations/payment_config/update_pay_pal_config.py) | [update_pay_pal_config](../../accelbyte_py_sdk/api/platform/wrappers/_payment_config.py) | [accelbyte_py_sdk_cli platform-update-pay-pal-config](../../samples/cli/accelbyte_py_sdk_cli/platform/_update_pay_pal_config.py) |
 | /platform/admin/payment/config/provider/{id} | PUT | updatePaymentProviderConfig | `false` | [UpdatePaymentProviderConfig](../../accelbyte_py_sdk/api/platform/operations/payment_config/update_payment_provider_config.py) | [update_payment_provider_config](../../accelbyte_py_sdk/api/platform/wrappers/_payment_config.py) | [accelbyte_py_sdk_cli platform-update-payment-provider-config](../../samples/cli/accelbyte_py_sdk_cli/platform/_update_payment_provider_config.py) |
 | /platform/admin/payment/config/tax | PUT | updatePaymentTaxConfig | `false` | [UpdatePaymentTaxConfig](../../accelbyte_py_sdk/api/platform/operations/payment_config/update_payment_tax_config.py) | [update_payment_tax_config](../../accelbyte_py_sdk/api/platform/wrappers/_payment_config.py) | [accelbyte_py_sdk_cli platform-update-payment-tax-config](../../samples/cli/accelbyte_py_sdk_cli/platform/_update_payment_tax_config.py) |
+| /platform/admin/payment/config/merchant/{id}/paypalconfig | PUT | updatePayPalConfig | `false` | [UpdatePayPalConfig](../../accelbyte_py_sdk/api/platform/operations/payment_config/update_pay_pal_config.py) | [update_pay_pal_config](../../accelbyte_py_sdk/api/platform/wrappers/_payment_config.py) | [accelbyte_py_sdk_cli platform-update-pay-pal-config](../../samples/cli/accelbyte_py_sdk_cli/platform/_update_pay_pal_config.py) |
 | /platform/admin/payment/config/merchant/{id}/stripeconfig | PUT | updateStripeConfig | `false` | [UpdateStripeConfig](../../accelbyte_py_sdk/api/platform/operations/payment_config/update_stripe_config.py) | [update_stripe_config](../../accelbyte_py_sdk/api/platform/wrappers/_payment_config.py) | [accelbyte_py_sdk_cli platform-update-stripe-config](../../samples/cli/accelbyte_py_sdk_cli/platform/_update_stripe_config.py) |
 | /platform/admin/payment/config/merchant/{id}/wxpayconfig | PUT | updateWxPayConfig | `false` | [UpdateWxPayConfig](../../accelbyte_py_sdk/api/platform/operations/payment_config/update_wx_pay_config.py) | [update_wx_pay_config](../../accelbyte_py_sdk/api/platform/wrappers/_payment_config.py) | [accelbyte_py_sdk_cli platform-update-wx-pay-config](../../samples/cli/accelbyte_py_sdk_cli/platform/_update_wx_pay_config.py) |
 | /platform/admin/payment/config/merchant/{id}/wxpayconfig/cert | PUT | updateWxPayConfigCert | `false` | [UpdateWxPayConfigCert](../../accelbyte_py_sdk/api/platform/operations/payment_config/update_wx_pay_config_cert.py) | [update_wx_pay_config_cert](../../accelbyte_py_sdk/api/platform/wrappers/_payment_config.py) | [accelbyte_py_sdk_cli platform-update-wx-pay-config-cert](../../samples/cli/accelbyte_py_sdk_cli/platform/_update_wx_pay_config_cert.py) |
 | /platform/admin/payment/config/merchant/{id}/xsollaconfig | PUT | updateXsollaConfig | `false` | [UpdateXsollaConfig](../../accelbyte_py_sdk/api/platform/operations/payment_config/update_xsolla_config.py) | [update_xsolla_config](../../accelbyte_py_sdk/api/platform/wrappers/_payment_config.py) | [accelbyte_py_sdk_cli platform-update-xsolla-config](../../samples/cli/accelbyte_py_sdk_cli/platform/_update_xsolla_config.py) |
 | /platform/admin/payment/config/merchant/{id}/xsollauiconfig | PUT | updateXsollaUIConfig | `false` | [UpdateXsollaUIConfig](../../accelbyte_py_sdk/api/platform/operations/payment_config/update_xsolla_ui_config.py) | [update_xsolla_ui_config](../../accelbyte_py_sdk/api/platform/wrappers/_payment_config.py) | [accelbyte_py_sdk_cli platform-update-xsolla-ui-config](../../samples/cli/accelbyte_py_sdk_cli/platform/_update_xsolla_ui_config.py) |
-
-### PaymentDedicated
-| Endpoint | Method | ID | Deprecated | Class | Wrapper | Example |
-|---|---|---|---|---|---|---|
-| /platform/admin/namespaces/{namespace}/payment/orders | POST | createPaymentOrderByDedicated | `false` | [CreatePaymentOrderByDedicated](../../accelbyte_py_sdk/api/platform/operations/payment_dedicated/create_payment_order_by_79f85c.py) | [create_payment_order_by_dedicated](../../accelbyte_py_sdk/api/platform/wrappers/_payment_dedicated.py) | [accelbyte_py_sdk_cli platform-create-payment-order-by-dedicated](../../samples/cli/accelbyte_py_sdk_cli/platform/_create_payment_order_by_dedicated.py) |
-| /platform/admin/namespaces/{namespace}/payment/orders/{paymentOrderNo}/refund | PUT | refundPaymentOrderByDedicated | `false` | [RefundPaymentOrderByDedicated](../../accelbyte_py_sdk/api/platform/operations/payment_dedicated/refund_payment_order_by_309df5.py) | [refund_payment_order_by_dedicated](../../accelbyte_py_sdk/api/platform/wrappers/_payment_dedicated.py) | [accelbyte_py_sdk_cli platform-refund-payment-order-by-dedicated](../../samples/cli/accelbyte_py_sdk_cli/platform/_refund_payment_order_by_dedicated.py) |
-| /platform/admin/payment/orders | GET | syncPaymentOrders | `false` | [SyncPaymentOrders](../../accelbyte_py_sdk/api/platform/operations/payment_dedicated/sync_payment_orders.py) | [sync_payment_orders](../../accelbyte_py_sdk/api/platform/wrappers/_payment_dedicated.py) | [accelbyte_py_sdk_cli platform-sync-payment-orders](../../samples/cli/accelbyte_py_sdk_cli/platform/_sync_payment_orders.py) |
 
 ### PaymentStation
 | Endpoint | Method | ID | Deprecated | Class | Wrapper | Example |
@@ -458,7 +458,7 @@
 | /platform/admin/namespaces/{namespace}/catalog/plugins/section/customConfig/cert | PUT | uploadSectionPluginConfigCert | `false` | [UploadSectionPluginConfigCert](../../accelbyte_py_sdk/api/platform/operations/service_plugin_config/upload_section_plugin_c_780cdd.py) | [upload_section_plugin_config_cert](../../accelbyte_py_sdk/api/platform/wrappers/_service_plugin_config.py) | [accelbyte_py_sdk_cli platform-upload-section-plugin-config-cert](../../samples/cli/accelbyte_py_sdk_cli/platform/_upload_section_plugin_config_cert.py) |
 | /platform/admin/namespaces/{namespace}/catalog/plugins/lootbox/customConfig/cert | PUT | uplodLootBoxPluginConfigCert | `false` | [UplodLootBoxPluginConfigCert](../../accelbyte_py_sdk/api/platform/operations/service_plugin_config/uplod_loot_box_plugin_c_5c5812.py) | [uplod_loot_box_plugin_config_cert](../../accelbyte_py_sdk/api/platform/wrappers/_service_plugin_config.py) | [accelbyte_py_sdk_cli platform-uplod-loot-box-plugin-config-cert](../../samples/cli/accelbyte_py_sdk_cli/platform/_uplod_loot_box_plugin_config_cert.py) |
 
-### SessionPlatform
+### Session(Platform)
 | Endpoint | Method | ID | Deprecated | Class | Wrapper | Example |
 |---|---|---|---|---|---|---|
 | /platform/admin/namespaces/{namespace}/users/{userId}/session/xbl | PUT | registerXblSessions | `false` | [RegisterXblSessions](../../accelbyte_py_sdk/api/platform/operations/session_platform/register_xbl_sessions.py) | [register_xbl_sessions](../../accelbyte_py_sdk/api/platform/wrappers/_session_platform.py) | [accelbyte_py_sdk_cli platform-register-xbl-sessions](../../samples/cli/accelbyte_py_sdk_cli/platform/_register_xbl_sessions.py) |
@@ -562,11 +562,11 @@
 | AppEntitlementInfo | [AppEntitlementInfo](../../accelbyte_py_sdk/api/platform/models/app_entitlement_info.py) |
 | AppEntitlementPagingSlicedResult | [AppEntitlementPagingSlicedResult](../../accelbyte_py_sdk/api/platform/models/app_entitlement_paging_sliced_result.py) |
 | AppInfo | [AppInfo](../../accelbyte_py_sdk/api/platform/models/app_info.py) |
-| AppLocalization | [AppLocalization](../../accelbyte_py_sdk/api/platform/models/app_localization.py) |
-| AppUpdate | [AppUpdate](../../accelbyte_py_sdk/api/platform/models/app_update.py) |
 | AppleIAPConfigInfo | [AppleIAPConfigInfo](../../accelbyte_py_sdk/api/platform/models/apple_iap_config_info.py) |
 | AppleIAPConfigRequest | [AppleIAPConfigRequest](../../accelbyte_py_sdk/api/platform/models/apple_iap_config_request.py) |
 | AppleIAPReceipt | [AppleIAPReceipt](../../accelbyte_py_sdk/api/platform/models/apple_iap_receipt.py) |
+| AppLocalization | [AppLocalization](../../accelbyte_py_sdk/api/platform/models/app_localization.py) |
+| AppUpdate | [AppUpdate](../../accelbyte_py_sdk/api/platform/models/app_update.py) |
 | AvailableComparison | [AvailableComparison](../../accelbyte_py_sdk/api/platform/models/available_comparison.py) |
 | AvailablePredicate | [AvailablePredicate](../../accelbyte_py_sdk/api/platform/models/available_predicate.py) |
 | BaseCustomConfig | [BaseCustomConfig](../../accelbyte_py_sdk/api/platform/models/base_custom_config.py) |
@@ -755,7 +755,6 @@
 | Ownership | [Ownership](../../accelbyte_py_sdk/api/platform/models/ownership.py) |
 | OwnershipToken | [OwnershipToken](../../accelbyte_py_sdk/api/platform/models/ownership_token.py) |
 | Paging | [Paging](../../accelbyte_py_sdk/api/platform/models/paging.py) |
-| PayPalConfig | [PayPalConfig](../../accelbyte_py_sdk/api/platform/models/pay_pal_config.py) |
 | PaymentAccount | [PaymentAccount](../../accelbyte_py_sdk/api/platform/models/payment_account.py) |
 | PaymentCallbackConfigInfo | [PaymentCallbackConfigInfo](../../accelbyte_py_sdk/api/platform/models/payment_callback_config_info.py) |
 | PaymentCallbackConfigUpdate | [PaymentCallbackConfigUpdate](../../accelbyte_py_sdk/api/platform/models/payment_callback_config_update.py) |
@@ -786,6 +785,7 @@
 | PaymentToken | [PaymentToken](../../accelbyte_py_sdk/api/platform/models/payment_token.py) |
 | PaymentUrl | [PaymentUrl](../../accelbyte_py_sdk/api/platform/models/payment_url.py) |
 | PaymentUrlCreate | [PaymentUrlCreate](../../accelbyte_py_sdk/api/platform/models/payment_url_create.py) |
+| PayPalConfig | [PayPalConfig](../../accelbyte_py_sdk/api/platform/models/pay_pal_config.py) |
 | PlatformDLCConfigInfo | [PlatformDLCConfigInfo](../../accelbyte_py_sdk/api/platform/models/platform_dlc_config_info.py) |
 | PlatformDLCConfigUpdate | [PlatformDLCConfigUpdate](../../accelbyte_py_sdk/api/platform/models/platform_dlc_config_update.py) |
 | PlatformDlcEntry | [PlatformDlcEntry](../../accelbyte_py_sdk/api/platform/models/platform_dlc_entry.py) |
@@ -799,10 +799,10 @@
 | PlayStationDLCSyncMultiServiceLabelsRequest | [PlayStationDLCSyncMultiServiceLabelsRequest](../../accelbyte_py_sdk/api/platform/models/play_station_dlc_sync_multi_service_labels_request.py) |
 | PlayStationDLCSyncRequest | [PlayStationDLCSyncRequest](../../accelbyte_py_sdk/api/platform/models/play_station_dlc_sync_request.py) |
 | PlayStationIAPConfigInfo | [PlayStationIAPConfigInfo](../../accelbyte_py_sdk/api/platform/models/play_station_iap_config_info.py) |
+| PlaystationIAPConfigRequest | [PlaystationIAPConfigRequest](../../accelbyte_py_sdk/api/platform/models/playstation_iap_config_request.py) |
 | PlayStationMultiServiceLabelsReconcileRequest | [PlayStationMultiServiceLabelsReconcileRequest](../../accelbyte_py_sdk/api/platform/models/play_station_multi_service_labels_reconcile_request.py) |
 | PlayStationReconcileRequest | [PlayStationReconcileRequest](../../accelbyte_py_sdk/api/platform/models/play_station_reconcile_request.py) |
 | PlayStationReconcileResult | [PlayStationReconcileResult](../../accelbyte_py_sdk/api/platform/models/play_station_reconcile_result.py) |
-| PlaystationIAPConfigRequest | [PlaystationIAPConfigRequest](../../accelbyte_py_sdk/api/platform/models/playstation_iap_config_request.py) |
 | PopulatedItemInfo | [PopulatedItemInfo](../../accelbyte_py_sdk/api/platform/models/populated_item_info.py) |
 | Predicate | [Predicate](../../accelbyte_py_sdk/api/platform/models/predicate.py) |
 | PredicateValidateResult | [PredicateValidateResult](../../accelbyte_py_sdk/api/platform/models/predicate_validate_result.py) |
@@ -812,11 +812,11 @@
 | PurchasedItemCount | [PurchasedItemCount](../../accelbyte_py_sdk/api/platform/models/purchased_item_count.py) |
 | Recurring | [Recurring](../../accelbyte_py_sdk/api/platform/models/recurring.py) |
 | RecurringChargeResult | [RecurringChargeResult](../../accelbyte_py_sdk/api/platform/models/recurring_charge_result.py) |
+| RedeemableItem | [RedeemableItem](../../accelbyte_py_sdk/api/platform/models/redeemable_item.py) |
 | RedeemHistoryInfo | [RedeemHistoryInfo](../../accelbyte_py_sdk/api/platform/models/redeem_history_info.py) |
 | RedeemHistoryPagingSlicedResult | [RedeemHistoryPagingSlicedResult](../../accelbyte_py_sdk/api/platform/models/redeem_history_paging_sliced_result.py) |
 | RedeemRequest | [RedeemRequest](../../accelbyte_py_sdk/api/platform/models/redeem_request.py) |
 | RedeemResult | [RedeemResult](../../accelbyte_py_sdk/api/platform/models/redeem_result.py) |
-| RedeemableItem | [RedeemableItem](../../accelbyte_py_sdk/api/platform/models/redeemable_item.py) |
 | RegionDataChange | [RegionDataChange](../../accelbyte_py_sdk/api/platform/models/region_data_change.py) |
 | RegionDataItem | [RegionDataItem](../../accelbyte_py_sdk/api/platform/models/region_data_item.py) |
 | RegionDataItemDTO | [RegionDataItemDTO](../../accelbyte_py_sdk/api/platform/models/region_data_item_dto.py) |
@@ -843,8 +843,8 @@
 | RewardInfo | [RewardInfo](../../accelbyte_py_sdk/api/platform/models/reward_info.py) |
 | RewardItem | [RewardItem](../../accelbyte_py_sdk/api/platform/models/reward_item.py) |
 | RewardPagingSlicedResult | [RewardPagingSlicedResult](../../accelbyte_py_sdk/api/platform/models/reward_paging_sliced_result.py) |
-| RewardUpdate | [RewardUpdate](../../accelbyte_py_sdk/api/platform/models/reward_update.py) |
 | RewardsRequest | [RewardsRequest](../../accelbyte_py_sdk/api/platform/models/rewards_request.py) |
+| RewardUpdate | [RewardUpdate](../../accelbyte_py_sdk/api/platform/models/reward_update.py) |
 | SaleConfig | [SaleConfig](../../accelbyte_py_sdk/api/platform/models/sale_config.py) |
 | SectionCreate | [SectionCreate](../../accelbyte_py_sdk/api/platform/models/section_create.py) |
 | SectionInfo | [SectionInfo](../../accelbyte_py_sdk/api/platform/models/section_info.py) |

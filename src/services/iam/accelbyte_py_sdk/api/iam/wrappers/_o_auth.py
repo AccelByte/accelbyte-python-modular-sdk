@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,12 +23,12 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import deprecated
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import deprecated
+from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import OauthapiRevocationList
 from ..models import OauthcommonJWKSet
@@ -80,9 +80,7 @@ def authorization(
 
 
 
-
-
-      *
+                            *
 
 
     The basic header
@@ -96,7 +94,7 @@ def authorization(
 
 
 
-      *
+                            *
 
 
     The bearer header
@@ -112,20 +110,16 @@ def authorization(
 
 
 
-
     Following are the responses returned by the endpoint:
 
 
 
 
-
-
-      *  Authorize success : redirects to the given URL with the following information: ?code={authorization code}&state;={state}
+                            *  Authorize success : redirects to the given URL with the following information: ?code={authorization code}&state;={state}
 
 
 
-      *  Authorize failure : redirects to the given URL with the following information:?error=access_denied&error;_description=...
-
+                            *  Authorize failure : redirects to the given URL with the following information:?error=access_denied&error;_description=...
 
 
 
@@ -141,18 +135,16 @@ def authorization(
 
 
 
+                            *  Substitute endpoint (for: basic header style): /iam/v3/oauth/authorize [GET]
 
 
-      *  Substitute endpoint (for: basic header style): /iam/v3/oauth/authorize [GET]
-
-
-      *  Substitute endpoint (for: bearer header style):
+                            *  Substitute endpoint (for: bearer header style):
         step1: /iam/v3/namespace/{namespace}/token/request [POST] => get code
         step2: /iam/v3/token/exchange [POST] => get token by step1's code
 
 
 
-      *  Note:
+                            *  Note:
         1. V3 is standard OAuth2 flow and support PKCE
         2. Will not support implicit flow in v3.
 
@@ -168,8 +160,8 @@ def authorization(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
-
         location query: PLACEHOLDER
+
 
         login: (login) OPTIONAL str in form_data
 
@@ -232,9 +224,7 @@ async def authorization_async(
 
 
 
-
-
-      *
+                            *
 
 
     The basic header
@@ -248,7 +238,7 @@ async def authorization_async(
 
 
 
-      *
+                            *
 
 
     The bearer header
@@ -264,20 +254,16 @@ async def authorization_async(
 
 
 
-
     Following are the responses returned by the endpoint:
 
 
 
 
-
-
-      *  Authorize success : redirects to the given URL with the following information: ?code={authorization code}&state;={state}
+                            *  Authorize success : redirects to the given URL with the following information: ?code={authorization code}&state;={state}
 
 
 
-      *  Authorize failure : redirects to the given URL with the following information:?error=access_denied&error;_description=...
-
+                            *  Authorize failure : redirects to the given URL with the following information:?error=access_denied&error;_description=...
 
 
 
@@ -293,18 +279,16 @@ async def authorization_async(
 
 
 
+                            *  Substitute endpoint (for: basic header style): /iam/v3/oauth/authorize [GET]
 
 
-      *  Substitute endpoint (for: basic header style): /iam/v3/oauth/authorize [GET]
-
-
-      *  Substitute endpoint (for: bearer header style):
+                            *  Substitute endpoint (for: bearer header style):
         step1: /iam/v3/namespace/{namespace}/token/request [POST] => get code
         step2: /iam/v3/token/exchange [POST] => get token by step1's code
 
 
 
-      *  Note:
+                            *  Note:
         1. V3 is standard OAuth2 flow and support PKCE
         2. Will not support implicit flow in v3.
 
@@ -320,8 +304,8 @@ async def authorization_async(
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
-
         location query: PLACEHOLDER
+
 
         login: (login) OPTIONAL str in form_data
 
@@ -388,9 +372,7 @@ def get_jwks(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/oauth/jwks [GET]
+                            * Substitute endpoint: /iam/v3/oauth/jwks [GET]
 
     Properties:
         url: /iam/oauth/jwks
@@ -448,9 +430,7 @@ async def get_jwks_async(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/oauth/jwks [GET]
+                            * Substitute endpoint: /iam/v3/oauth/jwks [GET]
 
     Properties:
         url: /iam/oauth/jwks
@@ -497,9 +477,7 @@ def get_revocation_list(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/oauth/revocationlist [GET]
+                            * Substitute endpoint: /iam/v3/oauth/revocationlist [GET]
 
     Properties:
         url: /iam/oauth/revocationlist
@@ -546,9 +524,7 @@ async def get_revocation_list_async(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/oauth/revocationlist [GET]
+                            * Substitute endpoint: /iam/v3/oauth/revocationlist [GET]
 
     Properties:
         url: /iam/oauth/revocationlist
@@ -608,9 +584,7 @@ def platform_token_request_handler(
 
 
 
-
-      1. steamopenid : Steam's user authentication method using OpenID 2.0. The expected value of the platform token is the URL generated by Steam on web authentication
-
+                            1. steamopenid : Steam's user authentication method using OpenID 2.0. The expected value of the platform token is the URL generated by Steam on web authentication
 
 
 
@@ -620,9 +594,7 @@ def platform_token_request_handler(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/oauth/platforms/{platformId}/token [POST]
+                            * Substitute endpoint: /iam/v3/oauth/platforms/{platformId}/token [POST]
 
     Properties:
         url: /iam/oauth/namespaces/{namespace}/platforms/{platformId}/token
@@ -702,9 +674,7 @@ async def platform_token_request_handler_async(
 
 
 
-
-      1. steamopenid : Steam's user authentication method using OpenID 2.0. The expected value of the platform token is the URL generated by Steam on web authentication
-
+                            1. steamopenid : Steam's user authentication method using OpenID 2.0. The expected value of the platform token is the URL generated by Steam on web authentication
 
 
 
@@ -714,9 +684,7 @@ async def platform_token_request_handler_async(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/oauth/platforms/{platformId}/token [POST]
+                            * Substitute endpoint: /iam/v3/oauth/platforms/{platformId}/token [POST]
 
     Properties:
         url: /iam/oauth/namespaces/{namespace}/platforms/{platformId}/token
@@ -797,9 +765,7 @@ def revoke_a_user(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/oauth/admin/namespaces/{namespace}/users/{userId}/revoke [POST]
+                            * Substitute endpoint: /iam/v3/oauth/admin/namespaces/{namespace}/users/{userId}/revoke [POST]
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userID}:ADMIN [UPDATE]
@@ -865,9 +831,7 @@ async def revoke_a_user_async(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/oauth/admin/namespaces/{namespace}/users/{userId}/revoke [POST]
+                            * Substitute endpoint: /iam/v3/oauth/admin/namespaces/{namespace}/users/{userId}/revoke [POST]
 
     Required Permission(s):
         - NAMESPACE:{namespace}:USER:{userID}:ADMIN [UPDATE]
@@ -925,9 +889,7 @@ def revoke_token(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /v3/oauth/revoke [POST]
+                            * Substitute endpoint: /v3/oauth/revoke [POST]
 
     Properties:
         url: /iam/oauth/revoke/token
@@ -980,9 +942,7 @@ async def revoke_token_async(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /v3/oauth/revoke [POST]
+                            * Substitute endpoint: /v3/oauth/revoke [POST]
 
     Properties:
         url: /iam/oauth/revoke/token
@@ -1045,9 +1005,7 @@ def revoke_user(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/oauth/admin/namespaces/{namespace}/users/{userId}/revoke [POST]
+                            * Substitute endpoint: /iam/v3/oauth/admin/namespaces/{namespace}/users/{userId}/revoke [POST]
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]
@@ -1116,9 +1074,7 @@ async def revoke_user_async(
     Endpoint migration guide
 
 
-
-
-      * Substitute endpoint: /iam/v3/oauth/admin/namespaces/{namespace}/users/{userId}/revoke [POST]
+                            * Substitute endpoint: /iam/v3/oauth/admin/namespaces/{namespace}/users/{userId}/revoke [POST]
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]
@@ -1181,14 +1137,11 @@ def token_grant(
     Endpoint migration guide
 
 
+                            * Substitute endpoint: /iam/v3/oauth/token [POST]
 
 
-      * Substitute endpoint: /iam/v3/oauth/token [POST]
-
-
-      * Note: difference in V3 response:
+                            * Note: difference in V3 response:
         1. format differenceï¼Pascal case => Camel case): permissions field from Action => action, Resource => resource
-
 
 
 
@@ -1205,29 +1158,28 @@ def token_grant(
 
 
 
-      1. Grant Type == `client_credentials`:
+                            1. Grant Type == `client_credentials`:
 
         This endpoint will check the client credentials provided through Authorization header.
 
 
-      2. Grant Type == `password`:
+                            2. Grant Type == `password`:
 
         The grant type to use for authenticating a user, whether it's by email / username and password combination
     or through platform.
 
 
-      3. Grant Type == `refresh_token`:
+                            3. Grant Type == `refresh_token`:
 
         Used to get a new access token for a valid refresh token.
 
 
-      4. Grant Type == `authorization_code`:
+                            4. Grant Type == `authorization_code`:
 
         It generates the user token by given the authorization
     code which generated in "/authorize" API response. It should also pass
     in the redirect_uri, which should be the same as generating the
     authorization code request.
-
 
 
 
@@ -1240,22 +1192,20 @@ def token_grant(
 
 
 
-      * steam - use `platform:steam` as the username and use the authentication ticket obtained
+                            * steam - use `platform:steam` as the username and use the authentication ticket obtained
     from Steam through the Steam SDK as the password.
 
 
-      * ps4 - use `platform:ps4` as the username and use the authorization code
+                            * ps4 - use `platform:ps4` as the username and use the authorization code
     obtained from the PlayStation Network through a player PS4 unit as the password.
 
 
-      * live - use `platform:live` as the username and use token obtained from
+                            * live - use `platform:live` as the username and use token obtained from
     Xbox Secure Token Service (XSTS) as the password.
 
 
-      * oculus - use `platform:oculus` as the username and use the `user_id:nonce`
+                            * oculus - use `platform:oculus` as the username and use the `user_id:nonce`
     as password obtained from Oculus through the Oculus SDK.
-
-
 
 
 
@@ -1278,9 +1228,7 @@ def token_grant(
 
 
 
-
-
-      *
+                            *
 
 
     namespace. It is the namespace the token was generated from.
@@ -1289,7 +1237,7 @@ def token_grant(
 
 
 
-      *
+                            *
 
 
     display_name. The display name of the sub. It is empty if the token is generated from the client credential
@@ -1298,7 +1246,7 @@ def token_grant(
 
 
 
-      *
+                            *
 
 
     roles. The subâs roles. It is empty if the token is generated from the client credential
@@ -1307,7 +1255,7 @@ def token_grant(
 
 
 
-      *
+                            *
 
 
     namespace_roles. The subâs roles scoped to namespace. Improvement from roles, which make the role scoped to specific namespace instead of global to publisher namespace
@@ -1316,7 +1264,7 @@ def token_grant(
 
 
 
-      *
+                            *
 
 
     permissions. The sub or audâ permissions
@@ -1325,7 +1273,7 @@ def token_grant(
 
 
 
-      *
+                            *
 
 
     bans. The subâs list of bans. It is used by the IAM client for validating the token.
@@ -1334,7 +1282,7 @@ def token_grant(
 
 
 
-      *
+                            *
 
 
     jflgs. It stands for Justice Flags. It is a special flag used for storing additional status information regarding the sub. It is implemented as a bit mask. Following explains what each bit represents:
@@ -1342,22 +1290,22 @@ def token_grant(
 
 
 
-        * 1: Email Address Verified
+                              * 1: Email Address Verified
 
 
 
-        * 2: Phone Number Verified
+                              * 2: Phone Number Verified
 
 
 
-        * 4: Anonymous
+                              * 4: Anonymous
 
 
 
 
 
 
-      *
+                            *
 
 
     aud. The aud is the client ID.
@@ -1366,7 +1314,7 @@ def token_grant(
 
 
 
-      *
+                            *
 
 
     iat. The time the token issues at. It is in Epoch time format
@@ -1375,7 +1323,7 @@ def token_grant(
 
 
 
-      *
+                            *
 
 
     exp. The time the token expires. It is in Epoch time format
@@ -1384,11 +1332,10 @@ def token_grant(
 
 
 
-      *
+                            *
 
 
     sub. The UserID. The sub is omitted if the token is generated from client credential
-
 
 
 
@@ -1493,14 +1440,11 @@ async def token_grant_async(
     Endpoint migration guide
 
 
+                            * Substitute endpoint: /iam/v3/oauth/token [POST]
 
 
-      * Substitute endpoint: /iam/v3/oauth/token [POST]
-
-
-      * Note: difference in V3 response:
+                            * Note: difference in V3 response:
         1. format differenceï¼Pascal case => Camel case): permissions field from Action => action, Resource => resource
-
 
 
 
@@ -1517,29 +1461,28 @@ async def token_grant_async(
 
 
 
-      1. Grant Type == `client_credentials`:
+                            1. Grant Type == `client_credentials`:
 
         This endpoint will check the client credentials provided through Authorization header.
 
 
-      2. Grant Type == `password`:
+                            2. Grant Type == `password`:
 
         The grant type to use for authenticating a user, whether it's by email / username and password combination
     or through platform.
 
 
-      3. Grant Type == `refresh_token`:
+                            3. Grant Type == `refresh_token`:
 
         Used to get a new access token for a valid refresh token.
 
 
-      4. Grant Type == `authorization_code`:
+                            4. Grant Type == `authorization_code`:
 
         It generates the user token by given the authorization
     code which generated in "/authorize" API response. It should also pass
     in the redirect_uri, which should be the same as generating the
     authorization code request.
-
 
 
 
@@ -1552,22 +1495,20 @@ async def token_grant_async(
 
 
 
-      * steam - use `platform:steam` as the username and use the authentication ticket obtained
+                            * steam - use `platform:steam` as the username and use the authentication ticket obtained
     from Steam through the Steam SDK as the password.
 
 
-      * ps4 - use `platform:ps4` as the username and use the authorization code
+                            * ps4 - use `platform:ps4` as the username and use the authorization code
     obtained from the PlayStation Network through a player PS4 unit as the password.
 
 
-      * live - use `platform:live` as the username and use token obtained from
+                            * live - use `platform:live` as the username and use token obtained from
     Xbox Secure Token Service (XSTS) as the password.
 
 
-      * oculus - use `platform:oculus` as the username and use the `user_id:nonce`
+                            * oculus - use `platform:oculus` as the username and use the `user_id:nonce`
     as password obtained from Oculus through the Oculus SDK.
-
-
 
 
 
@@ -1590,9 +1531,7 @@ async def token_grant_async(
 
 
 
-
-
-      *
+                            *
 
 
     namespace. It is the namespace the token was generated from.
@@ -1601,7 +1540,7 @@ async def token_grant_async(
 
 
 
-      *
+                            *
 
 
     display_name. The display name of the sub. It is empty if the token is generated from the client credential
@@ -1610,7 +1549,7 @@ async def token_grant_async(
 
 
 
-      *
+                            *
 
 
     roles. The subâs roles. It is empty if the token is generated from the client credential
@@ -1619,7 +1558,7 @@ async def token_grant_async(
 
 
 
-      *
+                            *
 
 
     namespace_roles. The subâs roles scoped to namespace. Improvement from roles, which make the role scoped to specific namespace instead of global to publisher namespace
@@ -1628,7 +1567,7 @@ async def token_grant_async(
 
 
 
-      *
+                            *
 
 
     permissions. The sub or audâ permissions
@@ -1637,7 +1576,7 @@ async def token_grant_async(
 
 
 
-      *
+                            *
 
 
     bans. The subâs list of bans. It is used by the IAM client for validating the token.
@@ -1646,7 +1585,7 @@ async def token_grant_async(
 
 
 
-      *
+                            *
 
 
     jflgs. It stands for Justice Flags. It is a special flag used for storing additional status information regarding the sub. It is implemented as a bit mask. Following explains what each bit represents:
@@ -1654,22 +1593,22 @@ async def token_grant_async(
 
 
 
-        * 1: Email Address Verified
+                              * 1: Email Address Verified
 
 
 
-        * 2: Phone Number Verified
+                              * 2: Phone Number Verified
 
 
 
-        * 4: Anonymous
+                              * 4: Anonymous
 
 
 
 
 
 
-      *
+                            *
 
 
     aud. The aud is the client ID.
@@ -1678,7 +1617,7 @@ async def token_grant_async(
 
 
 
-      *
+                            *
 
 
     iat. The time the token issues at. It is in Epoch time format
@@ -1687,7 +1626,7 @@ async def token_grant_async(
 
 
 
-      *
+                            *
 
 
     exp. The time the token expires. It is in Epoch time format
@@ -1696,11 +1635,10 @@ async def token_grant_async(
 
 
 
-      *
+                            *
 
 
     sub. The UserID. The sub is omitted if the token is generated from client credential
-
 
 
 
@@ -1798,12 +1736,10 @@ def verify_token(
     Endpoint migration guide
 
 
+                            * Substitute endpoint: /iam/v3/oauth/verify [POST]
 
 
-      * Substitute endpoint: /iam/v3/oauth/verify [POST]
-
-
-      * Note: difference in V3 response:
+                            * Note: difference in V3 response:
         1. format differenceï¼Pascal case => Camel case): permissions field from Action => action, Resource => resource
 
     Properties:
@@ -1846,12 +1782,10 @@ async def verify_token_async(
     Endpoint migration guide
 
 
+                            * Substitute endpoint: /iam/v3/oauth/verify [POST]
 
 
-      * Substitute endpoint: /iam/v3/oauth/verify [POST]
-
-
-      * Note: difference in V3 response:
+                            * Note: difference in V3 response:
         1. format differenceï¼Pascal case => Camel case): permissions field from Action => action, Resource => resource
 
     Properties:

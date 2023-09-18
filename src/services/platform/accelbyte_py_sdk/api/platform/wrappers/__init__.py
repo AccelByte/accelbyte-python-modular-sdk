@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.27.0"
+__version__ = "4.33.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -140,12 +140,16 @@ from ._dlc import get_platform_dlc_config
 from ._dlc import get_platform_dlc_config_async
 from ._dlc import get_user_dlc
 from ._dlc import get_user_dlc_async
+from ._dlc import get_user_dlc_by_platform
+from ._dlc import get_user_dlc_by_platform_async
 from ._dlc import public_sync_psn_dlc_inventory
 from ._dlc import public_sync_psn_dlc_inventory_async
 from ._dlc import public_sync_psn_dlc_inventory_with_multiple_service_labels
 from ._dlc import public_sync_psn_dlc_inventory_with_multiple_service_labels_async
 from ._dlc import sync_epic_game_dlc
 from ._dlc import sync_epic_game_dlc_async
+from ._dlc import sync_oculus_dlc
+from ._dlc import sync_oculus_dlc_async
 from ._dlc import sync_steam_dlc
 from ._dlc import sync_steam_dlc_async
 from ._dlc import sync_xbox_dlc
@@ -187,6 +191,8 @@ from ._entitlement import get_user_entitlement_ownership_by_item_ids
 from ._entitlement import get_user_entitlement_ownership_by_item_ids_async
 from ._entitlement import get_user_entitlement_ownership_by_sku
 from ._entitlement import get_user_entitlement_ownership_by_sku_async
+from ._entitlement import grant_entitlements
+from ._entitlement import grant_entitlements_async
 from ._entitlement import grant_user_entitlement
 from ._entitlement import grant_user_entitlement_async
 from ._entitlement import public_consume_user_entitlement
@@ -227,12 +233,16 @@ from ._entitlement import public_sell_user_entitlement
 from ._entitlement import public_sell_user_entitlement_async
 from ._entitlement import query_entitlements
 from ._entitlement import query_entitlements_async
+from ._entitlement import query_entitlements_1
+from ._entitlement import query_entitlements_1_async
 from ._entitlement import query_user_entitlements
 from ._entitlement import query_user_entitlements_async
 from ._entitlement import query_user_entitlements_by_app_type
 from ._entitlement import query_user_entitlements_by_app_type_async
 from ._entitlement import revoke_all_entitlements
 from ._entitlement import revoke_all_entitlements_async
+from ._entitlement import revoke_entitlements
+from ._entitlement import revoke_entitlements_async
 from ._entitlement import revoke_use_count
 from ._entitlement import revoke_use_count_async
 from ._entitlement import revoke_user_entitlement
@@ -276,6 +286,8 @@ from ._iap import delete_google_iap_config
 from ._iap import delete_google_iap_config_async
 from ._iap import delete_iap_item_config
 from ._iap import delete_iap_item_config_async
+from ._iap import delete_oculus_iap_config
+from ._iap import delete_oculus_iap_config_async
 from ._iap import delete_playstation_iap_config
 from ._iap import delete_playstation_iap_config_async
 from ._iap import delete_steam_iap_config
@@ -294,6 +306,8 @@ from ._iap import get_iap_item_config
 from ._iap import get_iap_item_config_async
 from ._iap import get_iap_item_mapping
 from ._iap import get_iap_item_mapping_async
+from ._iap import get_oculus_iap_config
+from ._iap import get_oculus_iap_config_async
 from ._iap import get_play_station_iap_config
 from ._iap import get_play_station_iap_config_async
 from ._iap import get_steam_iap_config
@@ -320,6 +334,8 @@ from ._iap import query_user_iap_orders
 from ._iap import query_user_iap_orders_async
 from ._iap import sync_epic_games_inventory
 from ._iap import sync_epic_games_inventory_async
+from ._iap import sync_oculus_consumable_entitlements
+from ._iap import sync_oculus_consumable_entitlements_async
 from ._iap import sync_steam_inventory
 from ._iap import sync_steam_inventory_async
 from ._iap import sync_twitch_drops_entitlement
@@ -338,6 +354,8 @@ from ._iap import update_google_p12_file
 from ._iap import update_google_p12_file_async
 from ._iap import update_iap_item_config
 from ._iap import update_iap_item_config_async
+from ._iap import update_oculus_iap_config
+from ._iap import update_oculus_iap_config_async
 from ._iap import update_playstation_iap_config
 from ._iap import update_playstation_iap_config_async
 from ._iap import update_steam_iap_config
@@ -428,10 +446,10 @@ from ._item import query_uncategorized_items
 from ._item import query_uncategorized_items_async
 from ._item import return_item
 from ._item import return_item_async
-from ._item import search_item_type_config
-from ._item import search_item_type_config_async
 from ._item import search_items
 from ._item import search_items_async
+from ._item import search_item_type_config
+from ._item import search_item_type_config_async
 from ._item import sync_in_game_item
 from ._item import sync_in_game_item_async
 from ._item import update_app
@@ -525,6 +543,13 @@ from ._payment import refund_user_payment_order_async
 from ._payment import simulate_payment_order_notification
 from ._payment import simulate_payment_order_notification_async
 
+from ._payment_dedicated import create_payment_order_by_dedicated
+from ._payment_dedicated import create_payment_order_by_dedicated_async
+from ._payment_dedicated import refund_payment_order_by_dedicated
+from ._payment_dedicated import refund_payment_order_by_dedicated_async
+from ._payment_dedicated import sync_payment_orders
+from ._payment_dedicated import sync_payment_orders_async
+
 from ._payment_account import public_delete_payment_account
 from ._payment_account import public_delete_payment_account_async
 from ._payment_account import public_get_payment_accounts
@@ -587,12 +612,12 @@ from ._payment_config import update_ali_pay_config
 from ._payment_config import update_ali_pay_config_async
 from ._payment_config import update_checkout_config
 from ._payment_config import update_checkout_config_async
-from ._payment_config import update_pay_pal_config
-from ._payment_config import update_pay_pal_config_async
 from ._payment_config import update_payment_provider_config
 from ._payment_config import update_payment_provider_config_async
 from ._payment_config import update_payment_tax_config
 from ._payment_config import update_payment_tax_config_async
+from ._payment_config import update_pay_pal_config
+from ._payment_config import update_pay_pal_config_async
 from ._payment_config import update_stripe_config
 from ._payment_config import update_stripe_config_async
 from ._payment_config import update_wx_pay_config
@@ -603,13 +628,6 @@ from ._payment_config import update_xsolla_config
 from ._payment_config import update_xsolla_config_async
 from ._payment_config import update_xsolla_ui_config
 from ._payment_config import update_xsolla_ui_config_async
-
-from ._payment_dedicated import create_payment_order_by_dedicated
-from ._payment_dedicated import create_payment_order_by_dedicated_async
-from ._payment_dedicated import refund_payment_order_by_dedicated
-from ._payment_dedicated import refund_payment_order_by_dedicated_async
-from ._payment_dedicated import sync_payment_orders
-from ._payment_dedicated import sync_payment_orders_async
 
 from ._payment_station import get_payment_customization
 from ._payment_station import get_payment_customization_async
@@ -683,12 +701,41 @@ from ._section import query_sections_async
 from ._section import update_section
 from ._section import update_section_async
 
+from ._service_plugin_config import delete_loot_box_plugin_config
+from ._service_plugin_config import delete_loot_box_plugin_config_async
+from ._service_plugin_config import delete_revocation_plugin_config
+from ._service_plugin_config import delete_revocation_plugin_config_async
+from ._service_plugin_config import delete_section_plugin_config
+from ._service_plugin_config import delete_section_plugin_config_async
 from ._service_plugin_config import delete_service_plugin_config
 from ._service_plugin_config import delete_service_plugin_config_async
+from ._service_plugin_config import get_loot_box_grpc_info
+from ._service_plugin_config import get_loot_box_grpc_info_async
+from ._service_plugin_config import get_loot_box_plugin_config
+from ._service_plugin_config import get_loot_box_plugin_config_async
+from ._service_plugin_config import get_revocation_plugin_config
+from ._service_plugin_config import get_revocation_plugin_config_async
+from ._service_plugin_config import get_section_plugin_config
+from ._service_plugin_config import get_section_plugin_config_async
 from ._service_plugin_config import get_service_plugin_config
 from ._service_plugin_config import get_service_plugin_config_async
+from ._service_plugin_config import update_loot_box_plugin_config
+from ._service_plugin_config import update_loot_box_plugin_config_async
+from ._service_plugin_config import update_revocation_plugin_config
+from ._service_plugin_config import update_revocation_plugin_config_async
+from ._service_plugin_config import update_section_plugin_config
+from ._service_plugin_config import update_section_plugin_config_async
 from ._service_plugin_config import update_service_plugin_config
 from ._service_plugin_config import update_service_plugin_config_async
+from ._service_plugin_config import upload_revocation_plugin_config_cert
+from ._service_plugin_config import upload_revocation_plugin_config_cert_async
+from ._service_plugin_config import upload_section_plugin_config_cert
+from ._service_plugin_config import upload_section_plugin_config_cert_async
+from ._service_plugin_config import uplod_loot_box_plugin_config_cert
+from ._service_plugin_config import uplod_loot_box_plugin_config_cert_async
+
+from ._session_platform import register_xbl_sessions
+from ._session_platform import register_xbl_sessions_async
 
 from ._store import clone_store
 from ._store import clone_store_async
@@ -784,6 +831,10 @@ from ._view import public_list_views_async
 from ._view import update_view
 from ._view import update_view_async
 
+from ._wallet import bulk_credit
+from ._wallet import bulk_credit_async
+from ._wallet import bulk_debit
+from ._wallet import bulk_debit_async
 from ._wallet import check_wallet
 from ._wallet import check_wallet_async
 from ._wallet import credit_user_wallet

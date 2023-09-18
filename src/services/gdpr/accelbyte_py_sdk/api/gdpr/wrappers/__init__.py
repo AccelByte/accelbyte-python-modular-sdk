@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Gdpr Service."""
 
-__version__ = "1.20.0"
+__version__ = "2.2.1"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -22,10 +22,16 @@ from ._data_deletion import admin_get_user_account_deletion_request
 from ._data_deletion import admin_get_user_account_deletion_request_async
 from ._data_deletion import admin_submit_user_account_deletion_request
 from ._data_deletion import admin_submit_user_account_deletion_request_async
+from ._data_deletion import public_cancel_my_account_deletion_request
+from ._data_deletion import public_cancel_my_account_deletion_request_async
 from ._data_deletion import public_cancel_user_account_deletion_request
 from ._data_deletion import public_cancel_user_account_deletion_request_async
+from ._data_deletion import public_get_my_account_deletion_status
+from ._data_deletion import public_get_my_account_deletion_status_async
 from ._data_deletion import public_get_user_account_deletion_status
 from ._data_deletion import public_get_user_account_deletion_status_async
+from ._data_deletion import public_submit_my_account_deletion_request
+from ._data_deletion import public_submit_my_account_deletion_request_async
 from ._data_deletion import public_submit_user_account_deletion_request
 from ._data_deletion import public_submit_user_account_deletion_request_async
 

@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,31 +23,31 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
+from ..models import ModelDeviceBannedResponseV4
 from ..models import ModelDeviceBanRequestV4
 from ..models import ModelDeviceBanResponseV4
-from ..models import ModelDeviceBanUpdateRequestV4
-from ..models import ModelDeviceBannedResponseV4
 from ..models import ModelDeviceBansResponseV4
+from ..models import ModelDeviceBanUpdateRequestV4
 from ..models import ModelDeviceIDDecryptResponseV4
+from ..models import ModelDevicesResponseV4
 from ..models import ModelDeviceTypesResponseV4
 from ..models import ModelDeviceUsersResponseV4
-from ..models import ModelDevicesResponseV4
 from ..models import RestErrorResponse
 
 from ..operations.devices_v4 import AdminBanDeviceV4
 from ..operations.devices_v4 import AdminDecryptDeviceV4
 from ..operations.devices_v4 import AdminGenerateReportV4
 from ..operations.devices_v4 import AdminGetBannedDevicesV4
-from ..operations.devices_v4 import AdminGetDeviceBanV4
 from ..operations.devices_v4 import AdminGetDeviceBansV4
-from ..operations.devices_v4 import AdminGetDeviceTypesV4
+from ..operations.devices_v4 import AdminGetDeviceBanV4
 from ..operations.devices_v4 import AdminGetDevicesByUserV4
+from ..operations.devices_v4 import AdminGetDeviceTypesV4
 from ..operations.devices_v4 import AdminGetUserDeviceBansV4
 from ..operations.devices_v4 import AdminGetUsersByDeviceV4
 from ..operations.devices_v4 import AdminUnbanDeviceV4
@@ -69,8 +69,7 @@ def admin_ban_device_v4(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [CREATE]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [CREATE]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [CREATE]
@@ -131,8 +130,7 @@ async def admin_ban_device_v4_async(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [CREATE]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [CREATE]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [CREATE]
@@ -195,8 +193,7 @@ def admin_decrypt_device_v4(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -255,8 +252,7 @@ async def admin_decrypt_device_v4_async(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -319,8 +315,7 @@ def admin_generate_report_v4(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -389,8 +384,7 @@ async def admin_generate_report_v4_async(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -463,8 +457,7 @@ def admin_get_banned_devices_v4(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -537,8 +530,7 @@ async def admin_get_banned_devices_v4_async(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -594,6 +586,126 @@ async def admin_get_banned_devices_v4_async(
     )
 
 
+@same_doc_as(AdminGetDeviceBansV4)
+def admin_get_device_bans_v4(
+    device_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Admin get device ban list (AdminGetDeviceBansV4)
+
+    This is the endpoint for an admin to get device ban list.
+
+
+
+    Required permission
+
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
+
+    Properties:
+        url: /iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/bans
+
+        method: GET
+
+        tags: ["Devices V4"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        device_id: (deviceId) REQUIRED str in path
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelDeviceBansResponseV4 (Operation succeeded)
+
+        400: Bad Request - RestErrorResponse (20002: validation error)
+
+        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
+
+        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = AdminGetDeviceBansV4.create(
+        device_id=device_id,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(AdminGetDeviceBansV4)
+async def admin_get_device_bans_v4_async(
+    device_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Admin get device ban list (AdminGetDeviceBansV4)
+
+    This is the endpoint for an admin to get device ban list.
+
+
+
+    Required permission
+
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
+
+    Properties:
+        url: /iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/bans
+
+        method: GET
+
+        tags: ["Devices V4"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        device_id: (deviceId) REQUIRED str in path
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelDeviceBansResponseV4 (Operation succeeded)
+
+        400: Bad Request - RestErrorResponse (20002: validation error)
+
+        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
+
+        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = AdminGetDeviceBansV4.create(
+        device_id=device_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(AdminGetDeviceBanV4)
 def admin_get_device_ban_v4(
     ban_id: str,
@@ -609,8 +721,7 @@ def admin_get_device_ban_v4(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -671,8 +782,7 @@ async def admin_get_device_ban_v4_async(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -720,238 +830,6 @@ async def admin_get_device_ban_v4_async(
     )
 
 
-@same_doc_as(AdminGetDeviceBansV4)
-def admin_get_device_bans_v4(
-    device_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
-    """Admin get device ban list (AdminGetDeviceBansV4)
-
-    This is the endpoint for an admin to get device ban list.
-
-
-
-    Required permission
-
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
-
-    Properties:
-        url: /iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/bans
-
-        method: GET
-
-        tags: ["Devices V4"]
-
-        consumes: ["application/json"]
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH]
-
-        device_id: (deviceId) REQUIRED str in path
-
-        namespace: (namespace) REQUIRED str in path
-
-    Responses:
-        200: OK - ModelDeviceBansResponseV4 (Operation succeeded)
-
-        400: Bad Request - RestErrorResponse (20002: validation error)
-
-        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
-
-        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
-
-        500: Internal Server Error - RestErrorResponse (20000: internal server error)
-    """
-    if namespace is None:
-        namespace, error = get_services_namespace()
-        if error:
-            return None, error
-    request = AdminGetDeviceBansV4.create(
-        device_id=device_id,
-        namespace=namespace,
-    )
-    return run_request(request, additional_headers=x_additional_headers, **kwargs)
-
-
-@same_doc_as(AdminGetDeviceBansV4)
-async def admin_get_device_bans_v4_async(
-    device_id: str,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
-    """Admin get device ban list (AdminGetDeviceBansV4)
-
-    This is the endpoint for an admin to get device ban list.
-
-
-
-    Required permission
-
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
-
-    Properties:
-        url: /iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/bans
-
-        method: GET
-
-        tags: ["Devices V4"]
-
-        consumes: ["application/json"]
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH]
-
-        device_id: (deviceId) REQUIRED str in path
-
-        namespace: (namespace) REQUIRED str in path
-
-    Responses:
-        200: OK - ModelDeviceBansResponseV4 (Operation succeeded)
-
-        400: Bad Request - RestErrorResponse (20002: validation error)
-
-        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
-
-        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
-
-        500: Internal Server Error - RestErrorResponse (20000: internal server error)
-    """
-    if namespace is None:
-        namespace, error = get_services_namespace()
-        if error:
-            return None, error
-    request = AdminGetDeviceBansV4.create(
-        device_id=device_id,
-        namespace=namespace,
-    )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
-
-
-@same_doc_as(AdminGetDeviceTypesV4)
-def admin_get_device_types_v4(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
-    """Admin get device types (AdminGetDeviceTypesV4)
-
-    This is the endpoint for an admin to get device types.
-
-
-
-    Required permission
-
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
-
-    Properties:
-        url: /iam/v4/admin/namespaces/{namespace}/devices/types
-
-        method: GET
-
-        tags: ["Devices V4"]
-
-        consumes: ["application/json"]
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH]
-
-        namespace: (namespace) REQUIRED str in path
-
-    Responses:
-        200: OK - ModelDeviceTypesResponseV4 (Operation succeeded)
-
-        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
-
-        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
-
-        500: Internal Server Error - RestErrorResponse (20000: internal server error)
-    """
-    if namespace is None:
-        namespace, error = get_services_namespace()
-        if error:
-            return None, error
-    request = AdminGetDeviceTypesV4.create(
-        namespace=namespace,
-    )
-    return run_request(request, additional_headers=x_additional_headers, **kwargs)
-
-
-@same_doc_as(AdminGetDeviceTypesV4)
-async def admin_get_device_types_v4_async(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
-    """Admin get device types (AdminGetDeviceTypesV4)
-
-    This is the endpoint for an admin to get device types.
-
-
-
-    Required permission
-
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
-
-    Properties:
-        url: /iam/v4/admin/namespaces/{namespace}/devices/types
-
-        method: GET
-
-        tags: ["Devices V4"]
-
-        consumes: ["application/json"]
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH]
-
-        namespace: (namespace) REQUIRED str in path
-
-    Responses:
-        200: OK - ModelDeviceTypesResponseV4 (Operation succeeded)
-
-        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
-
-        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
-
-        500: Internal Server Error - RestErrorResponse (20000: internal server error)
-    """
-    if namespace is None:
-        namespace, error = get_services_namespace()
-        if error:
-            return None, error
-    request = AdminGetDeviceTypesV4.create(
-        namespace=namespace,
-    )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
-
-
 @same_doc_as(AdminGetDevicesByUserV4)
 def admin_get_devices_by_user_v4(
     user_id: Optional[str] = None,
@@ -967,8 +845,7 @@ def admin_get_devices_by_user_v4(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -1029,8 +906,7 @@ async def admin_get_devices_by_user_v4_async(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -1078,6 +954,114 @@ async def admin_get_devices_by_user_v4_async(
     )
 
 
+@same_doc_as(AdminGetDeviceTypesV4)
+def admin_get_device_types_v4(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Admin get device types (AdminGetDeviceTypesV4)
+
+    This is the endpoint for an admin to get device types.
+
+
+
+    Required permission
+
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
+
+    Properties:
+        url: /iam/v4/admin/namespaces/{namespace}/devices/types
+
+        method: GET
+
+        tags: ["Devices V4"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelDeviceTypesResponseV4 (Operation succeeded)
+
+        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
+
+        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = AdminGetDeviceTypesV4.create(
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(AdminGetDeviceTypesV4)
+async def admin_get_device_types_v4_async(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Admin get device types (AdminGetDeviceTypesV4)
+
+    This is the endpoint for an admin to get device types.
+
+
+
+    Required permission
+
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
+
+    Properties:
+        url: /iam/v4/admin/namespaces/{namespace}/devices/types
+
+        method: GET
+
+        tags: ["Devices V4"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelDeviceTypesResponseV4 (Operation succeeded)
+
+        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
+
+        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = AdminGetDeviceTypesV4.create(
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(AdminGetUserDeviceBansV4)
 def admin_get_user_device_bans_v4(
     user_id: str,
@@ -1093,8 +1077,7 @@ def admin_get_user_device_bans_v4(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -1153,8 +1136,7 @@ async def admin_get_user_device_bans_v4_async(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -1215,8 +1197,7 @@ def admin_get_users_by_device_v4(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:USER [READ]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:USER [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER [READ]
@@ -1275,8 +1256,7 @@ async def admin_get_users_by_device_v4_async(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:USER [READ]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:USER [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER [READ]
@@ -1337,8 +1317,7 @@ def admin_unban_device_v4(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]
@@ -1397,8 +1376,7 @@ async def admin_unban_device_v4_async(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]
@@ -1460,8 +1438,7 @@ def admin_update_device_ban_v4(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]
@@ -1528,8 +1505,7 @@ async def admin_update_device_ban_v4_async(
 
     Required permission
 
-
-        'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
+                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]

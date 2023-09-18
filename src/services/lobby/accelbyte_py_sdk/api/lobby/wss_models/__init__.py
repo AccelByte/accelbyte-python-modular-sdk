@@ -1,4 +1,16 @@
-"""Auto-generated package that contains websocket models used by the lobby."""
+# Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+# This is licensed software from AccelByte Inc, for limitations
+# and restrictions contact your company contract manager.
+#
+# Code generated. DO NOT EDIT!
+
+# template file: ws-model-init.j2
+
+"""Auto-generated package that contains websocket models used by the AccelByte Gaming Services Lobby Ws Service."""
+
+__version__ = "0.1.0"
+__author__ = "AccelByte"
+__email__ = "dev@accelbyte.net"
 
 # pylint: disable=line-too-long
 
@@ -94,7 +106,6 @@ from .shutdown_notif import ShutdownNotif
 from .signaling_p2p_notif import SignalingP2PNotif
 from .start_matchmaking_request import StartMatchmakingRequest
 from .start_matchmaking_response import StartMatchmakingResponse
-from .system_components_status import SystemComponentsStatus
 from .unblock_player_notif import UnblockPlayerNotif
 from .unblock_player_request import UnblockPlayerRequest
 from .unblock_player_response import UnblockPlayerResponse
@@ -106,7 +117,7 @@ from .user_metric_request import UserMetricRequest
 from .user_metric_response import UserMetricResponse
 from .user_status_notif import UserStatusNotif
 
-from ....core import parse_wsm as parse_wsm_internal
+from accelbyte_py_sdk.core import parse_wsm as parse_wsm_internal
 
 models = {
     AcceptFriendsNotif.get_type(): AcceptFriendsNotif,
@@ -201,7 +212,6 @@ models = {
     SignalingP2PNotif.get_type(): SignalingP2PNotif,
     StartMatchmakingRequest.get_type(): StartMatchmakingRequest,
     StartMatchmakingResponse.get_type(): StartMatchmakingResponse,
-    SystemComponentsStatus.get_type(): SystemComponentsStatus,
     UnblockPlayerNotif.get_type(): UnblockPlayerNotif,
     UnblockPlayerRequest.get_type(): UnblockPlayerRequest,
     UnblockPlayerResponse.get_type(): UnblockPlayerResponse,

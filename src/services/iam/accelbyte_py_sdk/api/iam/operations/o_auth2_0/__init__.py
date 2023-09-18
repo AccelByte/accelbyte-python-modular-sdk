@@ -4,11 +4,11 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation-init.j2
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Iam Service."""
 
-__version__ = "5.31.0"
+__version__ = "7.0.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -29,7 +29,9 @@ from .retrieve_user_third_par_204b6e import RetrieveUserThirdPartyPlatformTokenV
 from .revoke_user_v3 import RevokeUserV3
 from .send_mfa_authentication_code import SendMFAAuthenticationCode
 from .token_grant_v3 import TokenGrantV3
-from .token_grant_v3 import GrantTypeEnum as TokenGrantV3GrantTypeEnum
+from .token_grant_v3 import (
+    GrantTypeEnum as TokenGrantV3GrantTypeEnum,
+)
 from .token_introspection_v3 import TokenIntrospectionV3
 from .token_revocation_v3 import TokenRevocationV3
 from .verify2fa_code import Verify2faCode

@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,15 +20,15 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.33.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
-from .....core import StrEnum
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import StrEnum
 
 from ...models import ErrorEntity
 from ...models import FullItemPagingSlicedResult
@@ -132,7 +132,9 @@ class QueryItems1(Operation):
 
         region: (region) OPTIONAL str in query
 
-        sort_by: (sortBy) OPTIONAL List[Union[str, SortByEnum]] in query
+        section_exclusive: (sectionExclusive) OPTIONAL bool in query
+
+        sort_by: (sortBy) OPTIONAL Union[List[str], List[SortByEnum]] in query
 
         store_id: (storeId) OPTIONAL str in query
 
@@ -170,7 +172,8 @@ class QueryItems1(Operation):
     limit: int  # OPTIONAL in [query]
     offset: int  # OPTIONAL in [query]
     region: str  # OPTIONAL in [query]
-    sort_by: List[Union[str, SortByEnum]]  # OPTIONAL in [query]
+    section_exclusive: bool  # OPTIONAL in [query]
+    sort_by: Union[List[str], List[SortByEnum]]  # OPTIONAL in [query]
     store_id: str  # OPTIONAL in [query]
     tags: str  # OPTIONAL in [query]
     target_namespace: str  # OPTIONAL in [query]
@@ -249,6 +252,8 @@ class QueryItems1(Operation):
             result["offset"] = self.offset
         if hasattr(self, "region"):
             result["region"] = self.region
+        if hasattr(self, "section_exclusive"):
+            result["sectionExclusive"] = self.section_exclusive
         if hasattr(self, "sort_by"):
             result["sortBy"] = self.sort_by
         if hasattr(self, "store_id"):
@@ -319,7 +324,11 @@ class QueryItems1(Operation):
         self.region = value
         return self
 
-    def with_sort_by(self, value: List[Union[str, SortByEnum]]) -> QueryItems1:
+    def with_section_exclusive(self, value: bool) -> QueryItems1:
+        self.section_exclusive = value
+        return self
+
+    def with_sort_by(self, value: Union[List[str], List[SortByEnum]]) -> QueryItems1:
         self.sort_by = value
         return self
 
@@ -396,6 +405,10 @@ class QueryItems1(Operation):
             result["region"] = str(self.region)
         elif include_empty:
             result["region"] = ""
+        if hasattr(self, "section_exclusive") and self.section_exclusive:
+            result["sectionExclusive"] = bool(self.section_exclusive)
+        elif include_empty:
+            result["sectionExclusive"] = False
         if hasattr(self, "sort_by") and self.sort_by:
             result["sortBy"] = [str(i0) for i0 in self.sort_by]
         elif include_empty:
@@ -477,7 +490,8 @@ class QueryItems1(Operation):
         limit: Optional[int] = None,
         offset: Optional[int] = None,
         region: Optional[str] = None,
-        sort_by: Optional[List[Union[str, SortByEnum]]] = None,
+        section_exclusive: Optional[bool] = None,
+        sort_by: Optional[Union[List[str], List[SortByEnum]]] = None,
         store_id: Optional[str] = None,
         tags: Optional[str] = None,
         target_namespace: Optional[str] = None,
@@ -509,6 +523,8 @@ class QueryItems1(Operation):
             instance.offset = offset
         if region is not None:
             instance.region = region
+        if section_exclusive is not None:
+            instance.section_exclusive = section_exclusive
         if sort_by is not None:
             instance.sort_by = sort_by
         if store_id is not None:
@@ -577,6 +593,10 @@ class QueryItems1(Operation):
             instance.region = str(dict_["region"])
         elif include_empty:
             instance.region = ""
+        if "sectionExclusive" in dict_ and dict_["sectionExclusive"] is not None:
+            instance.section_exclusive = bool(dict_["sectionExclusive"])
+        elif include_empty:
+            instance.section_exclusive = False
         if "sortBy" in dict_ and dict_["sortBy"] is not None:
             instance.sort_by = [str(i0) for i0 in dict_["sortBy"]]
         elif include_empty:
@@ -611,6 +631,7 @@ class QueryItems1(Operation):
             "limit": "limit",
             "offset": "offset",
             "region": "region",
+            "sectionExclusive": "section_exclusive",
             "sortBy": "sort_by",
             "storeId": "store_id",
             "tags": "tags",
@@ -633,6 +654,7 @@ class QueryItems1(Operation):
             "limit": False,
             "offset": False,
             "region": False,
+            "sectionExclusive": False,
             "sortBy": False,
             "storeId": False,
             "tags": False,

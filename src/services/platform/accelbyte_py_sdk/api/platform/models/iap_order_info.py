@@ -4,9 +4,9 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model.j2
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.33.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -25,8 +25,8 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import Model
-from ....core import StrEnum
+from accelbyte_py_sdk.core import Model
+from accelbyte_py_sdk.core import StrEnum
 
 from ..models.credit_summary import CreditSummary
 from ..models.entitlement_summary import EntitlementSummary
@@ -42,6 +42,7 @@ class TypeEnum(StrEnum):
     APPLE = "APPLE"
     EPICGAMES = "EPICGAMES"
     GOOGLE = "GOOGLE"
+    OCULUS = "OCULUS"
     PLAYSTATION = "PLAYSTATION"
     STADIA = "STADIA"
     STEAM = "STEAM"
@@ -563,6 +564,7 @@ class IAPOrderInfo(Model):
                 "APPLE",
                 "EPICGAMES",
                 "GOOGLE",
+                "OCULUS",
                 "PLAYSTATION",
                 "STADIA",
                 "STEAM",

@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,14 +20,14 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (5.31.0)
+# AccelByte Gaming Services Iam Service (7.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 
 class AuthCodeRequestV3(Operation):
@@ -41,50 +41,52 @@ class AuthCodeRequestV3(Operation):
 
 
 
-      * steamopenid
+                    * steamopenid
     This endpoint redirects to steam login page, then redirect back to platform
     authenticate endpoint after successfully authenticating user steam.
 
-      * xblweb
+                    * xblweb
     This endpoint redirects to xbox login page, then redirect back to platform
     authenticate endpoint after successfully authenticating xbox user.
 
-      * ps4web
+                    * ps4web
     This endpoint redirects to psn login page, then redirect back to platform
     authenticate endpoint after successfully authenticating psn user.
 
-      * epicgames
+                    * epicgames
     This endpoint redirects to Epicgames OAuth login page. then redirect to platform
     authenticate endpoint after successfully authenticating an Epicgames credential
 
-      * twitch
+                    * twitch
     This endpoint redirects to twitch login page, then redirect back to platform
     authenticate endpoint after successfully authenticating twitch user.
 
-      * azure
+                    * azure
     This endpoint redirects to azure login page, then redirect back to platform
     authenticate(saml) endpoint after successfully authenticating azure user.
 
-      * facebook
+                    * facebook
     This endpoint redirects to facebook login page, then redirect back to platform
     authenticate endpoint after successfully authenticating facebook user.
 
-      * google
+                    * google
     This endpoint redirects to google login page, then redirect back to platform
     authenticate endpoint after successfully authenticating google user.
 
-      * snapchat
+                    * snapchat
     This endpoint redirects to snapchat login page, then redirect back to platform
     authenticate endpoint after successfully authenticating snapchat user.
 
-      * discord
+                    * discord
     This endpoint redirects to discord login page, then redirect back to platform
     authenticate endpoint after successfully authenticating discord user.
 
-      * amazon
+                    * amazon
     This endpoint redirects to amazon login page, then redirect back to platform
     authenticate endpoint after successfully authenticating amazon user.
 
+                    * oculusweb
+    This endpoint redirects to oculus login page, then redirect back to Login Website page after successfully authenticating oculus user.
     action code : 10702'
 
     Properties:
@@ -99,8 +101,8 @@ class AuthCodeRequestV3(Operation):
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
-
         location query: code
+
 
         platform_id: (platformId) REQUIRED str in path
 

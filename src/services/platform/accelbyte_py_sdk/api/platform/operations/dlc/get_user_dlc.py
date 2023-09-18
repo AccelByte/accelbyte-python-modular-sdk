@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,30 +20,31 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.33.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
-from .....core import StrEnum
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import StrEnum
 
-from ...models import UserDLC
+from ...models import UserDLCRecord
 
 
 class TypeEnum(StrEnum):
     EPICGAMES = "EPICGAMES"
+    OCULUS = "OCULUS"
     PSN = "PSN"
     STEAM = "STEAM"
     XBOX = "XBOX"
 
 
 class GetUserDLC(Operation):
-    """Get user dlc by platform (getUserDLC)
+    """Get user dlc records (getUserDLC)
 
-    Get user dlc by platform.
+    Get user dlc records.
     Other detail info:
 
       * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:IAP", action=2 (READ)
@@ -53,7 +54,7 @@ class GetUserDLC(Operation):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId}:IAP [READ]
 
     Properties:
-        url: /platform/admin/namespaces/{namespace}/users/{userId}/dlc
+        url: /platform/admin/namespaces/{namespace}/users/{userId}/dlc/records
 
         method: GET
 
@@ -69,15 +70,15 @@ class GetUserDLC(Operation):
 
         user_id: (userId) REQUIRED str in path
 
-        type_: (type) REQUIRED Union[str, TypeEnum] in query
+        type_: (type) OPTIONAL Union[str, TypeEnum] in query
 
     Responses:
-        200: OK - UserDLC (successful operation)
+        200: OK - List[UserDLCRecord] (successful operation)
     """
 
     # region fields
 
-    _url: str = "/platform/admin/namespaces/{namespace}/users/{userId}/dlc"
+    _url: str = "/platform/admin/namespaces/{namespace}/users/{userId}/dlc/records"
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
@@ -86,7 +87,7 @@ class GetUserDLC(Operation):
 
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
-    type_: Union[str, TypeEnum]  # REQUIRED in [query]
+    type_: Union[str, TypeEnum]  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -191,10 +192,10 @@ class GetUserDLC(Operation):
     # noinspection PyMethodMayBeStatic
     def parse_response(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[Union[None, UserDLC], Union[None, HttpResponse]]:
+    ) -> Tuple[Union[None, List[UserDLCRecord]], Union[None, HttpResponse]]:
         """Parse the given response.
 
-        200: OK - UserDLC (successful operation)
+        200: OK - List[UserDLCRecord] (successful operation)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -210,7 +211,7 @@ class GetUserDLC(Operation):
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return UserDLC.create_from_dict(content), None
+            return [UserDLCRecord.create_from_dict(i) for i in content], None
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content
@@ -222,12 +223,17 @@ class GetUserDLC(Operation):
 
     @classmethod
     def create(
-        cls, namespace: str, user_id: str, type_: Union[str, TypeEnum], **kwargs
+        cls,
+        namespace: str,
+        user_id: str,
+        type_: Optional[Union[str, TypeEnum]] = None,
+        **kwargs,
     ) -> GetUserDLC:
         instance = cls()
         instance.namespace = namespace
         instance.user_id = user_id
-        instance.type_ = type_
+        if type_ is not None:
+            instance.type_ = type_
         return instance
 
     @classmethod
@@ -260,13 +266,13 @@ class GetUserDLC(Operation):
         return {
             "namespace": True,
             "userId": True,
-            "type": True,
+            "type": False,
         }
 
     @staticmethod
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
-            "type": ["EPICGAMES", "PSN", "STEAM", "XBOX"],  # in query
+            "type": ["EPICGAMES", "OCULUS", "PSN", "STEAM", "XBOX"],  # in query
         }
 
     # endregion static methods

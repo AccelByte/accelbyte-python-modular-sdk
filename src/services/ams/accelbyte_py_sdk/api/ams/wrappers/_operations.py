@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: wrapper.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,11 +23,11 @@
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import HeaderStr
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import run_request_async
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import same_doc_as
 
 
 from ..operations.operations import Func2
@@ -37,6 +37,7 @@ from ..operations.operations import PortalHealthCheck
 @same_doc_as(Func2)
 def func2(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """health check (func2)
+
 
     Properties:
         url: /ams/healthz
@@ -61,6 +62,7 @@ def func2(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
 @same_doc_as(Func2)
 async def func2_async(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
     """health check (func2)
+
 
     Properties:
         url: /ams/healthz
@@ -90,6 +92,7 @@ def portal_health_check(
 ):
     """health check (PortalHealthCheck)
 
+
     Properties:
         url: /healthz
 
@@ -115,6 +118,7 @@ async def portal_health_check_async(
     x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
 ):
     """health check (PortalHealthCheck)
+
 
     Properties:
         url: /healthz

@@ -4,9 +4,9 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: model.j2
 
-# AccelByte Gaming Services Platform Service (4.27.0)
+# AccelByte Gaming Services Platform Service (4.33.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -25,12 +25,14 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import Model
-from ....core import StrEnum
+from accelbyte_py_sdk.core import Model
+from accelbyte_py_sdk.core import StrEnum
 
 
 class AggregateEnum(StrEnum):
     ADYEN = "ADYEN"
+    CHECKOUT = "CHECKOUT"
+    STRIPE = "STRIPE"
     XSOLLA = "XSOLLA"
 
 
@@ -61,7 +63,7 @@ class PaymentProviderConfigInfo(Model):
 
         sandbox_tax_jar_api_token: (sandboxTaxJarApiToken) OPTIONAL str
 
-        specials: (specials) OPTIONAL List[Union[str, SpecialsEnum]]
+        specials: (specials) OPTIONAL Union[List[str], List[SpecialsEnum]]
 
         tax_jar_api_token: (taxJarApiToken) OPTIONAL str
 
@@ -78,7 +80,7 @@ class PaymentProviderConfigInfo(Model):
     aggregate: Union[str, AggregateEnum]  # OPTIONAL
     payment_merchant_config_id: str  # OPTIONAL
     sandbox_tax_jar_api_token: str  # OPTIONAL
-    specials: List[Union[str, SpecialsEnum]]  # OPTIONAL
+    specials: Union[List[str], List[SpecialsEnum]]  # OPTIONAL
     tax_jar_api_token: str  # OPTIONAL
     tax_jar_enabled: bool  # OPTIONAL
     use_global_tax_jar_api_token: bool  # OPTIONAL
@@ -114,7 +116,7 @@ class PaymentProviderConfigInfo(Model):
         return self
 
     def with_specials(
-        self, value: List[Union[str, SpecialsEnum]]
+        self, value: Union[List[str], List[SpecialsEnum]]
     ) -> PaymentProviderConfigInfo:
         self.specials = value
         return self
@@ -194,7 +196,7 @@ class PaymentProviderConfigInfo(Model):
         aggregate: Optional[Union[str, AggregateEnum]] = None,
         payment_merchant_config_id: Optional[str] = None,
         sandbox_tax_jar_api_token: Optional[str] = None,
-        specials: Optional[List[Union[str, SpecialsEnum]]] = None,
+        specials: Optional[Union[List[str], List[SpecialsEnum]]] = None,
         tax_jar_api_token: Optional[str] = None,
         tax_jar_enabled: Optional[bool] = None,
         use_global_tax_jar_api_token: Optional[bool] = None,
@@ -351,7 +353,7 @@ class PaymentProviderConfigInfo(Model):
     @staticmethod
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
-            "aggregate": ["ADYEN", "XSOLLA"],
+            "aggregate": ["ADYEN", "CHECKOUT", "STRIPE", "XSOLLA"],
             "specials": [
                 "ADYEN",
                 "ALIPAY",

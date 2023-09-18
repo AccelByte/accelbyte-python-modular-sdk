@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template file: ags_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -20,19 +20,18 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (5.31.0)
+# AccelByte Gaming Services Iam Service (7.0.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
-from .....core import StrEnum
-from .....core import deprecated
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import StrEnum
+from accelbyte_py_sdk.core import deprecated
 
 
-@deprecated
 class ResponseTypeEnum(StrEnum):
     CODE = "code"
     TOKEN = "token"
@@ -58,9 +57,7 @@ class Authorization(Operation):
 
 
 
-
-
-      *
+              *
 
 
     The basic header
@@ -74,7 +71,7 @@ class Authorization(Operation):
 
 
 
-      *
+              *
 
 
     The bearer header
@@ -90,20 +87,16 @@ class Authorization(Operation):
 
 
 
-
     Following are the responses returned by the endpoint:
 
 
 
 
-
-
-      *  Authorize success : redirects to the given URL with the following information: ?code={authorization code}&state;={state}
+              *  Authorize success : redirects to the given URL with the following information: ?code={authorization code}&state;={state}
 
 
 
-      *  Authorize failure : redirects to the given URL with the following information:?error=access_denied&error;_description=...
-
+              *  Authorize failure : redirects to the given URL with the following information:?error=access_denied&error;_description=...
 
 
 
@@ -119,18 +112,16 @@ class Authorization(Operation):
 
 
 
+              *  Substitute endpoint (for: basic header style): /iam/v3/oauth/authorize [GET]
 
 
-      *  Substitute endpoint (for: basic header style): /iam/v3/oauth/authorize [GET]
-
-
-      *  Substitute endpoint (for: bearer header style):
+              *  Substitute endpoint (for: bearer header style):
         step1: /iam/v3/namespace/{namespace}/token/request [POST] => get code
         step2: /iam/v3/token/exchange [POST] => get token by step1's code
 
 
 
-      *  Note:
+              *  Note:
         1. V3 is standard OAuth2 flow and support PKCE
         2. Will not support implicit flow in v3.
 
@@ -146,8 +137,8 @@ class Authorization(Operation):
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
-
         location query: PLACEHOLDER
+
 
         login: (login) OPTIONAL str in form_data
 

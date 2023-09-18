@@ -4,7 +4,7 @@
 #
 # Code generated. DO NOT EDIT!
 
-# template_file: python-cli-init.j2
+# template_file: command-init.j2
 
 # Analytics Game Telemetry (1.19.0)
 
