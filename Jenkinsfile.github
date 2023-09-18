@@ -9,7 +9,7 @@ library(
 )
 
 githubOwner = 'AccelByte'
-githubRepo = 'accelbyte-python-sdk'
+githubRepo = 'accelbyte-python-modular-sdk'
 githubSsh = 'dhanarab-sdkbuild-ssh'
 githubPat = 'dhanarab-sdkbuild-pat-github'
 bitbucketSsh = 'bitbucket-build-extend-ssh'

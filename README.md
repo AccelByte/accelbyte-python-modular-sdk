@@ -1,4 +1,4 @@
-# AccelByte Python SDK
+# AccelByte Modular Python SDK
 
 A software development kit (SDK) for interacting with AccelByte services written in Python.
 
@@ -25,11 +25,11 @@ pip install accelbyte-py-sdk
 or install from source.
 
 ```sh
-pip install git+https://github.com/AccelByte/accelbyte-python-sdk.git@{VERSION}#egg=accelbyte_py_sdk
+pip install git+https://github.com/AccelByte/accelbyte-python-modular-sdk.git@{VERSION}#egg=accelbyte_py_sdk
 ```
 
 Replace `{VERSION}` with a specific release version tag. When starting a new project, 
-using the latest release version is recommended. For the list of available versions, see [releases](https://github.com/AccelByte/accelbyte-python-sdk/releases). 
+using the latest release version is recommended. For the list of available versions, see [releases](https://github.com/AccelByte/accelbyte-python-modular-sdk/releases). 
 
 **Special note only for Windows environment**
 
@@ -48,7 +48,7 @@ If you encounter error `path too long` when attempting to install the SDK. The s
 4. Try installing SDK again.
 
    ```
-   pip install git+https://github.com/AccelByte/accelbyte-python-sdk.git@{VERSION}#egg=accelbyte_py_sdk
+   pip install git+https://github.com/AccelByte/accelbyte-python-modular-sdk.git@{VERSION}#egg=accelbyte_py_sdk
    ```
 
 ### Environment Variables
@@ -211,7 +211,7 @@ assert error is None
 
 ## Using multiple SDK instances
 
-The examples above demonstrates using just one instance of the Python SDK (the default which is also global), but you could also instantiate multiple instances of the SDK and use them at the same time.
+The examples above demonstrates using just one instance of the Modular Python SDK (the default which is also global), but you could also instantiate multiple instances of the SDK and use them at the same time.
 
 ```python
 import accelbyte_py_sdk.services.auth as auth_service
