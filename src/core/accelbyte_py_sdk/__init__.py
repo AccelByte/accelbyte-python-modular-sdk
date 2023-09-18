@@ -2,10 +2,10 @@
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
 
-"""The top-level package for the AccelByte Python SDK."""
+"""The top-level package for the AccelByte Modular Python SDK."""
 
 __product__ = "AccelBytePythonSDK"
-__version__ = "0.37.0"
+__version__ = "0.1.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 

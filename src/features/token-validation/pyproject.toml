@@ -3,15 +3,15 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "accelbyte-py-sdk-token-validation"
-version = "0.37.0"
-description = "AccelByte Python SDK - Token Validation"
+name = "accelbyte-py-sdk-feat-token-validation"
+version = "0.1.0"
+description = "AccelByte Python SDK - Feature - Token Validation"
 requires-python = ">=3.9"
 dependencies = [
     "bitarray",
     "mmh3",
     "PyJWT[crypto]",
     "accelbyte-py-sdk-core",
-    "accelbyte-py-sdk-iam",
+    "accelbyte-py-sdk-service-iam",
 ]
 
