@@ -12,7 +12,12 @@ bitbucketCredentialsHttps = "bitbucket-build-extend-https"
 bitbucketCredentialsSsh = "bitbucket-build-extend-ssh"
 bitbucketCommitHref = null
 
-sdkRepoName="justice-codegen-python-modular-sdk"
+sdkSpecRepoName = "justice-codegen-sdk-spec"
+sdkCodegenRepoName = "justice-codegen-modular-sdk"
+mockServerRepoName = "justice-codegen-sdk-mock-server"
+sdkRepoName = "justice-codegen-python-modular-sdk"
+
+sdkCodegenGenerateBranchName = "master"
 sdkGenerateBranchName = "rc-nightly"
 
 sdkSpecCommitHash = null
@@ -22,6 +27,8 @@ sdkSpecPath = null
 sdkCodegenPath = null
 mockServerPath = null
 sdkPath = null
+
+sdkCodegenExe = "accelbyte-codegen-linux_amd64"
 
 breakingChangeCheckExitCode = 0
 outstandingDeprecationCount = 0
@@ -41,18 +48,19 @@ pipeline {
     stage("Prepare") {
       steps {
         script {
-          sdkCodegenPath = "${env.WORKSPACE}/justice-codegen-sdk"
-          mockServerPath = "${env.WORKSPACE}/justice-codegen-sdk-mock-server"
-          sdkSpecPath = "${env.WORKSPACE}/justice-codegen-sdk-spec"
+          sdkCodegenPath = "${env.WORKSPACE}/${sdkCodegenRepoName}"
+          mockServerPath = "${env.WORKSPACE}/${mockServerRepoName}"
+          sdkSpecPath = "${env.WORKSPACE}/${sdkSpecRepoName}"
           sdkPath = "${env.WORKSPACE}/${sdkRepoName}"
 
-          sh "rm -rf justice-codegen-sdk"
-          sh "rm -rf justice-codegen-sdk-mock-server"
-          sh "rm -rf justice-codegen-sdk-spec"
+          sh "rm -rf ${sdkCodegenRepoName}"
+          sh "rm -rf ${mockServerRepoName}"
+          sh "rm -rf ${sdkSpecRepoName}"
+
           sshagent(credentials: [bitbucketCredentialsSsh]) {
-            sh "git clone --depth 1 git@bitbucket.org:accelbyte/justice-codegen-sdk.git ${sdkCodegenPath}"
-            sh "git clone --depth 1 git@bitbucket.org:accelbyte/justice-codegen-sdk-mock-server.git ${mockServerPath}"
-            sh "git clone --depth 50 git@bitbucket.org:accelbyte/justice-codegen-sdk-spec.git ${sdkSpecPath}"
+            sh "git clone --branch ${sdkCodegenGenerateBranchName} --depth 1 git@bitbucket.org:accelbyte/${sdkCodegenRepoName}.git ${sdkCodegenPath}"
+            sh "git clone --depth 1 git@bitbucket.org:accelbyte/${mockServerRepoName}.git ${mockServerPath}"
+            sh "git clone --depth 50 git@bitbucket.org:accelbyte/${sdkSpecRepoName}.git ${sdkSpecPath}"
           }
 
           dir(sdkSpecPath) {
@@ -76,31 +84,38 @@ pipeline {
         sh "find ${sdkSpecPath}/spec/demo_extend-sdk/ -maxdepth 1 -type f -exec cp -v -t ${sdkPath}/spec/ {} \\;"
         sh "cp -v ${sdkSpecPath}/docs/openapi-2.0-vendor-extensions.md ${sdkPath}/spec/"
 
-        // Generate SDK only
+        // Build Linux Executable
         dir(sdkCodegenPath) {
-          sh script: "make -f Makefile.sdk-python-mod sdk_all SDK_PATH=${sdkPath}", label: "Generate SDK only"
+          sh script: "make build-linux", label: "Build Linux Executable"
         }
 
-        // Check code-level breaking changes (by executing test CLI with the SDK only generated code)
+        // Generate SDK (SDK only)
+        dir(sdkCodegenPath) {
+          sh script: "cd templates/python-modular-extend-sdk && make sdk_all CODEGEN_PATH=${sdkCodegenPath}/${sdkCodegenExe} SDK_PATH=${sdkPath} SPEC_PATH=${sdkPath}/spec", label: "Generate SDK (SDK only)"
+        }
+
+        // Run CLI tests against the Mock Server
         dir(sdkPath) {
           script {
-            breakingChangeCheckExitCode = sh script: "make test_cli SDK_MOCK_SERVER_PATH=${mockServerPath}", returnStatus: true, label: "Check code-level breaking changes"
+            breakingChangeCheckExitCode = sh script: "make test_cli SDK_MOCK_SERVER_PATH=${mockServerPath}", returnStatus: true, label: "Run CLI tests against the Mock Server"
           }
         }
 
-        // Generate the rest of the SDK
+        // Generate SDK (CLI, CLI tests, Docs, Style, Revision)
         dir(sdkCodegenPath) {
-          sh script: "make -f Makefile.sdk-python-mod cli_all cli_test_all beautify changelog SDK_PATH=${sdkPath}", label: "Generate the rest of SDK release"
+          sh script: "cd templates/python-modular-extend-sdk && make cli_cmd_all cli_test_all doc_index_all style revision CODEGEN_PATH=${sdkCodegenPath}/${sdkCodegenExe} SDK_PATH=${sdkPath} SPEC_PATH=${sdkPath}/spec", label: "Generate SDK (CLI, CLI tests, Docs, Style, Revision)"
         }
 
-        // Bump SDK version and commit the generated code to generate branch (overwrite existing)
-        dir(sdkRepoName) {
-          //sh "make version"
+        // Bump SDK version and Commit the generated code to branch, overwrite existing
+        dir(sdkPath) {
+          sh "make version"
           sh "git add --all"
           sh "git commit -m 'chore(sdk): generate python extend sdk (${getTimestampUtc()})' -m 'generated from openapi spec commit: ${sdkSpecCommitHash}'"
+
           sshagent(credentials: [bitbucketCredentialsSsh]) {
             sh "git push --set-upstream origin +${sdkGenerateBranchName}:${sdkGenerateBranchName}"
           }
+
           script {
             sdkCommitHash = git.getCommitHash()
             bitbucketCommitHref = "https://api.bitbucket.org/2.0/repositories/accelbyte/${sdkRepoName}/commit/${sdkCommitHash}"
@@ -110,17 +125,20 @@ pipeline {
 
         // Check outstanding deprecation
         script {
-          dir(sdkRepoName) {
-            sh script: "make outstanding_deprecation || true", label: "Check outstanding deprecation"   // Ignore exit code, just need the outstanding_deprecation.out file
+          dir(sdkPath) {
+            // Ignore exit code, just need the outstanding_deprecation.out file
+            sh script: "make outstanding_deprecation || true", label: "Check outstanding deprecation"
+
             if (!fileExists('outstanding_deprecation.out')) {
               error("File 'outstanding_deprecation.out' is not found")
             }
+
             outstandingDeprecationCount = sh(returnStdout: true, script: "grep -c '^not ok' outstanding_deprecation.out || true").trim() as Integer
           }
         }
       }
     }
-    
+
     // -------------------------------------- Tests --------------------------------------
     stage('Core Tests') {
       steps {
@@ -147,7 +165,7 @@ pipeline {
         }
       }
     }
-    
+
     stage('Integration Tests') {
       options {
         lock("justice-demo-serversdktest")
@@ -198,7 +216,7 @@ pipeline {
         sdkLink = "https://bitbucket.org/accelbyte/${sdkRepoName}/commits/${sdkCommitHash}"
         message = """
                   :white_check_mark: <${env.BUILD_URL}|${env.JOB_NAME}-${env.BUILD_NUMBER}> *Generate Python Extend SDK Successful :python:*
-                
+
                   |*OpenAPI Spec:* <${specLink}|${sdkSpecCommitHash}>
                   |*Generated SDK:* <${sdkLink}|${sdkCommitHash}>
 
