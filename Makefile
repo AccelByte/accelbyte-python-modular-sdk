@@ -36,7 +36,7 @@ test_core:
 					-c 'rm -f /data/test_core.tap && \
 							python -m venv /tmp/client && \
 							echo "[info] installing requirements-test.txt" && \
-							(cd /data && /tmp/client/bin/pip install -r requirements-test.txt) && \
+							(cd /data && /tmp/client/bin/pip install --upgrade pip && /tmp/client/bin/pip install -r requirements-test.txt) && \
 							echo "[info] running tests" && \
 							((PYTHONPATH=/data:$$PYTHONPATH /tmp/client/bin/python test.py --test_core Y --use_tap || touch /data/test_core.err) | tee "/data/test_core.tap")'
 	[ ! -f test_core.err ]
@@ -110,8 +110,8 @@ version:
 			VERSION_OLD=$$(cat version.txt | tr -d '\n') && \
 			VERSION_NEW=$$(awk -v part=$$VERSION_PART -F. "{OFS=\".\"; \$$part+=1; print \$$0}" version.txt) && \
 			echo $${VERSION_NEW} > version.txt && \
-			sed -i "s/VERSION = \"[0-9]\+\.[0-9]\+\.[0-9]\+\"/VERSION = \"$$VERSION_NEW\"/" setup.py && \
-			sed -i "s/__version__ = \"[0-9]\+\.[0-9]\+\.[0-9]\+\"/__version__ = \"$$VERSION_NEW\"/" accelbyte_py_sdk/__init__.py
+			sed -i "s/version = \"[0-9]\+\.[0-9]\+\.[0-9]\+\"/version = \"$$VERSION_NEW\"/" "src/core/pyproject.toml" && \
+			sed -i "s/version = \"[0-9]\+\.[0-9]\+\.[0-9]\+\"/version = \"$$VERSION_NEW\"/" "src/all/pyproject.toml"
 
 outstanding_deprecation:
 	find * -type f -iname '*.py' \
