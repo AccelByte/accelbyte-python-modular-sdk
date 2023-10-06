@@ -1,8 +1,12 @@
+# Code generated. DO NOT EDIT!
+
 click
 tap.py
 
+# Core
 src/core
 
+# Services
 src/services/achievement
 src/services/ams
 src/services/basic
@@ -28,5 +32,6 @@ src/services/sessionbrowser
 src/services/social
 src/services/ugc
 
+# Features
 src/features/auth
 src/features/token-validation
