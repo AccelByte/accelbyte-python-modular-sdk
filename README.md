@@ -171,6 +171,14 @@ if __name__ == "__main__":
 
 ```
 
+You can also specify the scope you want for `login_user(...)`. With the `scope` parameter typed as `Optional[Union[str, List[str]]]`. By default the scope used is `commerce account social publishing analytics` (a space seprated value string).
+
+```python
+login_user(username, password, scope="scopeA")
+# login_user(username, password, scope="scopeA scopeB")  # space separated values
+# login_user(username, password, scope=["scopeA", "scopeB"])
+```
+
 #### Refreshing Tokens
 
 :bulb: Using `login_x(..., auto_refresh=True)` automatically refreshes the token once the expiration draws near.
@@ -1313,4 +1321,3 @@ if __name__ == "__main__":
 
     print(f"Hello there {user_profile_info.first_name}!")
 ```
-
