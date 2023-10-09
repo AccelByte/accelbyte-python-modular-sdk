@@ -9,7 +9,6 @@ description = "AccelByte Python SDK - Core"
 requires-python = ">=3.9"
 dependencies = [
     "bitarray",
-    "httpcore[http2]",
     "httpx",
     "mmh3",
     "PyJWT[crypto]",
