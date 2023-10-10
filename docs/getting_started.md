@@ -40,16 +40,10 @@ C:\> python -c "import sys; print(sys.executable)"      # Check which Python exe
 
 ### 2. Add to Project Dependency
 
-Install SDK dependencies.
-
-```bash
-$ pip install requests httpx websockets pyyaml jwt
-```
-
 Install the SDK.
 
 ```bash
-$ pip install accelbyte-py-sdk
+$ pip install accelbyte-py-sdk-all
 ```
 
 It is recommended to use the matching Modular Python SDK version for the given AccelByte Gaming Services version. For the list of available versions, see [releases](https://github.com/AccelByte/accelbyte-python-modular-sdk/releases). 
@@ -105,6 +99,8 @@ if __name__ == "__main__":
     main()
 
 ```
+
+:bulb: The use of a Public OAuth Client is highly discouraged! Please ensure that you both set the Client ID and Client Secret.
 
 ### 4. Run the Code
 
