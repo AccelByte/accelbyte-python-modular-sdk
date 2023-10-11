@@ -68,31 +68,84 @@ test_cli:
 					done)'
 	[ ! -f test_cli.err ]
 
-clean_dist:
-	rm -rf *.egg-info
-	rm -rf build
-	rm -rf dist
+clean_package:
+	@test -n "$(PACKAGE_PATH)" || (echo "PACKAGE_PATH is not set" ; exit 1)
+	@echo "Cleaning $(PACKAGE_PATH).." && \
+		rm -rf $$(readlink -f $(PACKAGE_PATH))/build/ && \
+		rm -rf $$(readlink -f $(PACKAGE_PATH))/dist/ && \
+		rm -rf $$(readlink -f $(PACKAGE_PATH))/*.egg && \
+		rm -rf $$(readlink -f $(PACKAGE_PATH))/*.egg-info
 
-build_dist: clean_dist
-	@test -n "$(ENV_FILE_PATH)" || (echo "ENV_FILE_PATH is not set" ; exit 1)
-	docker run --rm --tty --user $$(id -u):$$(id -g) --env-file $(ENV_FILE_PATH) -v $$(pwd):/data -w /data --entrypoint /bin/sh python:3.9-slim \
-			-c 'python -m venv /tmp && \
-					/tmp/bin/pip install --upgrade pip build setuptools setuptools_scm wheel && \
-					/tmp/bin/python setup.py sdist bdist_wheel --universal'
+build_package:
+	@test -n "$(PACKAGE_PATH)" || (echo "PACKAGE_PATH is not set" ; exit 1)
+	@if [[ $(PACKAGE_PATH) == "src/core" ]] || [[ $(PACKAGE_PATH) == "src/all" ]]; then \
+			cp README.md $(PACKAGE_PATH); \
+		fi
+	@echo "Building $(PACKAGE_PATH).." && \
+		docker run --rm --tty --user $$(id -u):$$(id -g) \
+			--volume $$(readlink -f $(PACKAGE_PATH)):/data --workdir /data --entrypoint /bin/sh python:3.9-slim \
+				-c 'python -m venv /tmp && \
+					/tmp/bin/python -m pip install --upgrade pip build setuptools setuptools_scm wheel && \
+					/tmp/bin/python -m build'
+	@if [[ $(PACKAGE_PATH) == "src/core" ]] || [[ $(PACKAGE_PATH) == "src/all" ]]; then \
+			rm -f $(PACKAGE_PATH)/README.md; \
+		fi
 
-test_upload_dist: clean_dist build_dist
-	@test -n "$(ENV_FILE_PATH)" || (echo "ENV_FILE_PATH is not set" ; exit 1)
-	docker run --rm --tty --user $$(id -u):$$(id -g) --env-file $(ENV_FILE_PATH) -v $$(pwd):/data -w /data --entrypoint /bin/sh python:3.9-slim \
-			-c 'python -m venv /tmp && \
-					/tmp/bin/pip install --upgrade twine && \
-					/tmp/bin/python -m twine upload --repository testpypi --verbose dist/*'
+test_upload_package:
+	@test -n "$(PACKAGE_PATH)" || (echo "PACKAGE_PATH is not set" ; exit 1)
+	@test -n "$(PYPIRC_PATH)" || (echo "PYPIRC_PATH is not set" ; exit 1)
+		@echo "Uploading $(PACKAGE_PATH) to Test PyPI.." && \
+			docker run --rm --tty --user $$(id -u):$$(id -g) \
+				--volume $$(readlink -f $(PACKAGE_PATH)):/data \
+				--volume $(PYPIRC_PATH):/.pypirc \
+				--workdir /data --entrypoint /bin/sh python:3.9-slim \
+					-c 'python -m venv /tmp && \
+						/tmp/bin/python -m pip install --upgrade twine && \
+						/tmp/bin/python -m twine upload --repository testpypi --config-file /.pypirc --verbose dist/*'
 
-upload_dist: clean_dist build_dist
-	@test -n "$(ENV_FILE_PATH)" || (echo "ENV_FILE_PATH is not set" ; exit 1)
-	docker run --rm --tty --user $$(id -u):$$(id -g) --env-file $(ENV_FILE_PATH) -v $$(pwd):/data -w /data --entrypoint /bin/sh python:3.9-slim \
-			-c 'python -m venv /tmp && \
-					/tmp/bin/pip install --upgrade twine && \
-					/tmp/bin/python -m twine upload --verbose dist/*'
+upload_package:
+	@test -n "$(PACKAGE_PATH)" || (echo "PACKAGE_PATH is not set" ; exit 1)
+	@test -n "$(PYPIRC_PATH)" || (echo "PYPIRC_PATH is not set" ; exit 1)
+		@echo "Uploading $(PACKAGE_PATH) to Test PyPI.." && \
+			docker run --rm --tty --user $$(id -u):$$(id -g) \
+				--volume $$(readlink -f $(PACKAGE_PATH)):/data \
+				--volume $(PYPIRC_PATH):/.pypirc \
+				--workdir /data --entrypoint /bin/sh python:3.9-slim \
+					-c 'python -m venv /tmp && \
+						/tmp/bin/python -m pip install --upgrade twine && \
+						/tmp/bin/python -m twine upload --config-file /.pypirc --verbose dist/*'
+
+clean_all:
+	@sh -c 'make clean_package PACKAGE_PATH=src/core'
+	@find src/services -type d -maxdepth 1 | xargs -I {} \
+		sh -c 'make clean_package PACKAGE_PATH={} || exit 255'
+	@find src/features -type d -maxdepth 1 | xargs -I {} \
+		sh -c 'make clean_package PACKAGE_PATH={} || exit 255'
+	@sh -c 'make clean_package PACKAGE_PATH=src/all'
+
+build_all:
+	@sh -c 'make build_package PACKAGE_PATH=src/core'
+	@find src/services -type d -maxdepth 1 | xargs -I {} \
+		sh -c 'make build_package PACKAGE_PATH={} || exit 255'
+	@find src/features -type d -maxdepth 1 | xargs -I {} \
+		sh -c 'make build_package PACKAGE_PATH={} || exit 255'
+	@sh -c 'make build_package PACKAGE_PATH=src/all'
+
+test_upload_all:
+	@sh -c 'make test_upload_package PACKAGE_PATH=src/core PYPIRC_PATH=$(PYPIRC_PATH)'
+	@find src/services -type d -maxdepth 1 | xargs -I {} \
+		sh -c 'make test_upload_package PACKAGE_PATH={} PYPIRC_PATH=$(PYPIRC_PATH) || exit 255'
+	@find src/features -type d -maxdepth 1 | xargs -I {} \
+		sh -c 'make test_upload_package PACKAGE_PATH={} PYPIRC_PATH=$(PYPIRC_PATH) || exit 255'
+	@sh -c 'make test_upload_package PACKAGE_PATH=src/all PYPIRC_PATH=$(PYPIRC_PATH)'
+
+upload_all: clean_all build_all
+	@sh -c 'make upload_package PACKAGE_PATH=src/core PYPIRC_PATH=$(PYPIRC_PATH)'
+	@find src/services -type d -maxdepth 1 | xargs -I {} \
+		sh -c 'make upload_package PACKAGE_PATH={} PYPIRC_PATH=$(PYPIRC_PATH) || exit 255'
+	@find src/features -type d -maxdepth 1 | xargs -I {} \
+		sh -c 'make upload_package PACKAGE_PATH={} PYPIRC_PATH=$(PYPIRC_PATH) || exit 255'
+	@sh -c 'make upload_package PACKAGE_PATH=src/all PYPIRC_PATH=$(PYPIRC_PATH)'
 
 test_broken_link:
 	@test -n "$(SDK_MD_CRAWLER_PATH)" || (echo "SDK_MD_CRAWLER_PATH is not set" ; exit 1)
