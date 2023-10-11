@@ -10,8 +10,6 @@ This SDK requires Python 3.9 to be installed.
 
 ### Install with Pip
 
-Install dependencies.
-
 Install the core package from PyPI
 
 ```sh

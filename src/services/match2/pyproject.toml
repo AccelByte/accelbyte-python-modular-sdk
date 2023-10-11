@@ -4,6 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "accelbyte-py-sdk-service-match2"
+readme = "README.md"
 version = "2.8.4"
 description = "AccelByte Python SDK - AccelByte Gaming Services Match Service V2"
 requires-python = ">=3.9"
