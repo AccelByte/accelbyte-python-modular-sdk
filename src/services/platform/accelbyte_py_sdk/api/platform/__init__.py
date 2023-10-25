@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.33.0"
+__version__ = "4.38.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -120,6 +120,12 @@ from .wrappers import public_get_root_categories_async
 from .wrappers import update_category
 from .wrappers import update_category_async
 
+# clawback
+from .wrappers import mock_play_station_stream_event
+from .wrappers import mock_play_station_stream_event_async
+from .wrappers import query_iap_clawback_history
+from .wrappers import query_iap_clawback_history_async
+
 # currency
 from .wrappers import create_currency
 from .wrappers import create_currency_async
@@ -141,6 +147,8 @@ from .wrappers import delete_dlc_item_config
 from .wrappers import delete_dlc_item_config_async
 from .wrappers import delete_platform_dlc_config
 from .wrappers import delete_platform_dlc_config_async
+from .wrappers import ge_dlc_durable_reward_short_map
+from .wrappers import ge_dlc_durable_reward_short_map_async
 from .wrappers import get_dlc_item_config
 from .wrappers import get_dlc_item_config_async
 from .wrappers import get_platform_dlc_config
@@ -267,6 +275,8 @@ from .wrappers import fulfill_item
 from .wrappers import fulfill_item_async
 from .wrappers import fulfill_rewards
 from .wrappers import fulfill_rewards_async
+from .wrappers import fulfill_rewards_v2
+from .wrappers import fulfill_rewards_v2_async
 from .wrappers import public_redeem_code
 from .wrappers import public_redeem_code_async
 from .wrappers import query_fulfillment_histories
@@ -283,8 +293,6 @@ from .wrappers import get_fulfillment_script
 from .wrappers import get_fulfillment_script_async
 from .wrappers import list_fulfillment_scripts
 from .wrappers import list_fulfillment_scripts_async
-from .wrappers import test_fulfillment_script_eval
-from .wrappers import test_fulfillment_script_eval_async
 from .wrappers import update_fulfillment_script
 from .wrappers import update_fulfillment_script_async
 
@@ -379,6 +387,10 @@ from .wrappers import update_xbl_bp_cert_file
 from .wrappers import update_xbl_bp_cert_file_async
 from .wrappers import update_xbl_iap_config
 from .wrappers import update_xbl_iap_config_async
+from .wrappers import validate_existed_playstation_iap_config
+from .wrappers import validate_existed_playstation_iap_config_async
+from .wrappers import validate_playstation_iap_config
+from .wrappers import validate_playstation_iap_config_async
 
 # invoice
 from .wrappers import download_invoice_details
@@ -415,6 +427,8 @@ from .wrappers import get_available_predicate_types
 from .wrappers import get_available_predicate_types_async
 from .wrappers import get_bulk_item_id_by_skus
 from .wrappers import get_bulk_item_id_by_skus_async
+from .wrappers import get_estimated_price
+from .wrappers import get_estimated_price_async
 from .wrappers import get_item
 from .wrappers import get_item_async
 from .wrappers import get_item_by_app_id
@@ -425,6 +439,8 @@ from .wrappers import get_item_dynamic_data
 from .wrappers import get_item_dynamic_data_async
 from .wrappers import get_item_id_by_sku
 from .wrappers import get_item_id_by_sku_async
+from .wrappers import get_items
+from .wrappers import get_items_async
 from .wrappers import get_item_type_config
 from .wrappers import get_item_type_config_async
 from .wrappers import get_locale_item
@@ -439,6 +455,8 @@ from .wrappers import public_bulk_get_items
 from .wrappers import public_bulk_get_items_async
 from .wrappers import public_get_app
 from .wrappers import public_get_app_async
+from .wrappers import public_get_estimated_price
+from .wrappers import public_get_estimated_price_async
 from .wrappers import public_get_item
 from .wrappers import public_get_item_async
 from .wrappers import public_get_item_by_app_id

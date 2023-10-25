@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (7.0.0)
+# AccelByte Gaming Services Iam Service (7.4.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -54,22 +54,22 @@ class RetrieveUserThirdPartyPlatformTokenV3(Operation):
 
 
 
-                    * (psn) ps4web
+                  * (psn) ps4web
 
 
-                    * (psn) ps4
+                  * (psn) ps4
 
 
-                    * (psn) ps5
+                  * (psn) ps5
 
 
-                    * epicgames
+                  * epicgames
 
 
-                    * twitch
+                  * twitch
 
 
-                    * awscognito
+                  * awscognito
 
     Properties:
         url: /iam/v3/oauth/namespaces/{namespace}/users/{userId}/platforms/{platformId}/platformToken

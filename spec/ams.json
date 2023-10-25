@@ -3,7 +3,7 @@
   "info": {
     "description": "Manage AMS Fleets",
     "title": "fleet-commander",
-    "version": "0.2.1"
+    "version": "1.3.0"
   },
   "schemes": [
     "https"
@@ -25,6 +25,7 @@
         "ADMIN:NAMESPACE:{namespace}:ARMADA:FLEET [DELETE]": "ADMIN:NAMESPACE:{namespace}:ARMADA:FLEET [DELETE]",
         "ADMIN:NAMESPACE:{namespace}:ARMADA:FLEET [READ]": "ADMIN:NAMESPACE:{namespace}:ARMADA:FLEET [READ]",
         "ADMIN:NAMESPACE:{namespace}:ARMADA:FLEET [UPDATE]": "ADMIN:NAMESPACE:{namespace}:ARMADA:FLEET [UPDATE]",
+        "NAMESPACE:{namespace}:AMS:LOCALDS [CREATE]": "NAMESPACE:{namespace}:AMS:LOCALDS [CREATE]",
         "NAMESPACE:{namespace}:AMS:SERVER:CLAIM [UPDATE]": "NAMESPACE:{namespace}:AMS:SERVER:CLAIM [UPDATE]",
         "NAMESPACE:{namespace}:ARMADA:WATCHDOG [CREATE]": "NAMESPACE:{namespace}:ARMADA:WATCHDOG [CREATE]"
       },
@@ -46,9 +47,52 @@
   },
   "swagger": "2.0",
   "paths": {
+    "/ams/auth": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "operationId": "AuthCheck",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "401": {
+            "description": "unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "internal server error",
+            "schema": {
+              "$ref": "#/definitions/response.ErrorResponse"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "Check if fleet commander is authorized to talk to AMS with this IAM",
+        "tags": [
+          "Auth"
+        ]
+      }
+    },
     "/ams/healthz": {
       "get": {
-        "operationId": "func2",
+        "operationId": "PortalHealthCheck",
         "produces": [
           "application/json"
         ],
@@ -62,7 +106,10 @@
             "authorization": []
           }
         ],
-        "summary": "health check"
+        "summary": "Health check",
+        "tags": [
+          "Fleet Commander"
+        ]
       }
     },
     "/ams/v1/admin/namespaces/{namespace}/account": {
@@ -1412,6 +1459,48 @@
         ]
       }
     },
+    "/ams/v1/namespaces/{namespace}/local/{watchdogID}/connect": {
+      "get": {
+        "description": "Required Permission: NAMESPACE:{namespace}:AMS:LOCALDS [CREATE]",
+        "operationId": "LocalWatchdogConnect",
+        "parameters": [
+          {
+            "description": "namespace of the game",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the id of the watchdog",
+            "in": "path",
+            "name": "watchdogID",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "NAMESPACE:{namespace}:AMS:LOCALDS [CREATE]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "connect a (local) watchdog to support local ds development scenarios",
+        "tags": [
+          "Watchdogs"
+        ]
+      }
+    },
     "/ams/v1/namespaces/{namespace}/servers/claim": {
       "put": {
         "consumes": [
@@ -1535,7 +1624,7 @@
     },
     "/ams/version": {
       "get": {
-        "operationId": "func3",
+        "operationId": "func1",
         "produces": [
           "application/json"
         ],
@@ -1557,7 +1646,7 @@
     },
     "/healthz": {
       "get": {
-        "operationId": "PortalHealthCheck",
+        "operationId": "BasicHealthCheck",
         "produces": [
           "application/json"
         ],
@@ -1571,7 +1660,10 @@
             "authorization": []
           }
         ],
-        "summary": "health check"
+        "summary": "Health check",
+        "tags": [
+          "Fleet Commander"
+        ]
       }
     }
   },
@@ -1588,6 +1680,9 @@
     },
     "api.AccountCreateResponse": {
       "properties": {
+        "Limits": {
+          "$ref": "#/definitions/api.AccountLimits"
+        },
         "id": {
           "type": "string"
         },
@@ -1602,10 +1697,23 @@
         }
       },
       "required": [
+        "Limits",
         "id",
         "name",
         "namespaces"
       ]
+    },
+    "api.AccountLimits": {
+      "properties": {
+        "fleetCount": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "fleetVmCount": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
     },
     "api.AccountLinkRequest": {
       "properties": {
@@ -1619,6 +1727,9 @@
     },
     "api.AccountLinkResponse": {
       "properties": {
+        "Limits": {
+          "$ref": "#/definitions/api.AccountLimits"
+        },
         "id": {
           "type": "string"
         },
@@ -1633,6 +1744,7 @@
         }
       },
       "required": [
+        "Limits",
         "id",
         "name",
         "namespaces"
@@ -1650,6 +1762,9 @@
     },
     "api.AccountResponse": {
       "properties": {
+        "Limits": {
+          "$ref": "#/definitions/api.AccountLimits"
+        },
         "id": {
           "type": "string"
         },
@@ -1664,6 +1779,7 @@
         }
       },
       "required": [
+        "Limits",
         "id",
         "name",
         "namespaces"
@@ -1843,6 +1959,10 @@
         "imageDeploymentProfile": {
           "$ref": "#/definitions/api.ImageDeploymentProfile"
         },
+        "isLocal": {
+          "type": "boolean",
+          "x-omitempty": false
+        },
         "name": {
           "type": "string"
         },
@@ -1859,6 +1979,7 @@
         "dsHostConfiguration",
         "id",
         "imageDeploymentProfile",
+        "isLocal",
         "name",
         "regions"
       ]
@@ -1885,6 +2006,10 @@
         "image": {
           "type": "string"
         },
+        "isLocal": {
+          "type": "boolean",
+          "x-omitempty": false
+        },
         "name": {
           "type": "string"
         },
@@ -1901,6 +2026,7 @@
         "counts",
         "id",
         "image",
+        "isLocal",
         "name",
         "regions"
       ]
@@ -2066,6 +2192,12 @@
           },
           "type": "array"
         },
+        "ports": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "type": "object"
+        },
         "region": {
           "type": "string"
         },
@@ -2085,6 +2217,7 @@
         "instanceType",
         "ipAddress",
         "portConfiguration",
+        "ports",
         "region",
         "serverId",
         "status"
@@ -2376,6 +2509,25 @@
         "protocol"
       ]
     },
+    "api.QOSServer": {
+      "properties": {
+        "host": {
+          "type": "string"
+        },
+        "port": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "region": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "host",
+        "port",
+        "region"
+      ]
+    },
     "api.ReferencingFleet": {
       "properties": {
         "environment": {
@@ -2421,6 +2573,12 @@
     },
     "api.RegionsResponse": {
       "properties": {
+        "qosServers": {
+          "items": {
+            "$ref": "#/definitions/api.QOSServer"
+          },
+          "type": "array"
+        },
         "regions": {
           "items": {
             "type": "string"
@@ -2483,10 +2641,10 @@
     "path": "/ams/apidocs/api.json"
   },
   "x-version": {
-    "buildDate": "2023-07-31T20:02:11+00:00",
-    "gitHash": "4adc872830d0167fa81153519d07c75737383419",
+    "buildDate": "2023-10-11T02:38:17+00:00",
+    "gitHash": "5deeffd290d51bda05a2490bec39fcd303990f49",
     "name": "fleet-commander",
-    "version": "0.2.1",
-    "version-roles-seeding": "0.0.24"
+    "version": "1.3.0",
+    "version-roles-seeding": "0.0.45"
   }
 }

@@ -6,7 +6,7 @@
 
 # template_file: command.j2
 
-# Justice Matchmaking Service (2.25.7)
+# Justice Matchmaking Service (2.26.2)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

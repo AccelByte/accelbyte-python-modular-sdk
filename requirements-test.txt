@@ -18,6 +18,7 @@ src/services/gametelemetry
 src/services/gdpr
 src/services/group
 src/services/iam
+src/services/inventory
 src/services/leaderboard
 src/services/legal
 src/services/lobby

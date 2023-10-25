@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Dsm Controller Service (6.4.0)
+# AccelByte Gaming Services Dsm Controller Service (6.4.3)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -27,37 +27,44 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
 
+from ..models.models_image_replication import ModelsImageReplication
+
 
 class ModelsImageRecordUpdate(Model):
     """Models image record update (models.ImageRecordUpdate)
 
     Properties:
-        artifact_path: (artifactPath) REQUIRED str
-
         image: (image) REQUIRED str
 
         namespace: (namespace) REQUIRED str
 
+        patch_version: (patchVersion) REQUIRED str
+
         persistent: (persistent) REQUIRED bool
 
         version: (version) REQUIRED str
+
+        artifact_path: (artifactPath) OPTIONAL str
+
+        core_dump_enabled: (coreDumpEnabled) OPTIONAL bool
+
+        image_replications_map: (imageReplicationsMap) OPTIONAL Dict[str, ModelsImageReplication]
     """
 
     # region fields
 
-    artifact_path: str  # REQUIRED
     image: str  # REQUIRED
     namespace: str  # REQUIRED
+    patch_version: str  # REQUIRED
     persistent: bool  # REQUIRED
     version: str  # REQUIRED
+    artifact_path: str  # OPTIONAL
+    core_dump_enabled: bool  # OPTIONAL
+    image_replications_map: Dict[str, ModelsImageReplication]  # OPTIONAL
 
     # endregion fields
 
     # region with_x methods
-
-    def with_artifact_path(self, value: str) -> ModelsImageRecordUpdate:
-        self.artifact_path = value
-        return self
 
     def with_image(self, value: str) -> ModelsImageRecordUpdate:
         self.image = value
@@ -65,6 +72,10 @@ class ModelsImageRecordUpdate(Model):
 
     def with_namespace(self, value: str) -> ModelsImageRecordUpdate:
         self.namespace = value
+        return self
+
+    def with_patch_version(self, value: str) -> ModelsImageRecordUpdate:
+        self.patch_version = value
         return self
 
     def with_persistent(self, value: bool) -> ModelsImageRecordUpdate:
@@ -75,16 +86,26 @@ class ModelsImageRecordUpdate(Model):
         self.version = value
         return self
 
+    def with_artifact_path(self, value: str) -> ModelsImageRecordUpdate:
+        self.artifact_path = value
+        return self
+
+    def with_core_dump_enabled(self, value: bool) -> ModelsImageRecordUpdate:
+        self.core_dump_enabled = value
+        return self
+
+    def with_image_replications_map(
+        self, value: Dict[str, ModelsImageReplication]
+    ) -> ModelsImageRecordUpdate:
+        self.image_replications_map = value
+        return self
+
     # endregion with_x methods
 
     # region to methods
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "artifact_path"):
-            result["artifactPath"] = str(self.artifact_path)
-        elif include_empty:
-            result["artifactPath"] = ""
         if hasattr(self, "image"):
             result["image"] = str(self.image)
         elif include_empty:
@@ -93,6 +114,10 @@ class ModelsImageRecordUpdate(Model):
             result["namespace"] = str(self.namespace)
         elif include_empty:
             result["namespace"] = ""
+        if hasattr(self, "patch_version"):
+            result["patchVersion"] = str(self.patch_version)
+        elif include_empty:
+            result["patchVersion"] = ""
         if hasattr(self, "persistent"):
             result["persistent"] = bool(self.persistent)
         elif include_empty:
@@ -101,6 +126,21 @@ class ModelsImageRecordUpdate(Model):
             result["version"] = str(self.version)
         elif include_empty:
             result["version"] = ""
+        if hasattr(self, "artifact_path"):
+            result["artifactPath"] = str(self.artifact_path)
+        elif include_empty:
+            result["artifactPath"] = ""
+        if hasattr(self, "core_dump_enabled"):
+            result["coreDumpEnabled"] = bool(self.core_dump_enabled)
+        elif include_empty:
+            result["coreDumpEnabled"] = False
+        if hasattr(self, "image_replications_map"):
+            result["imageReplicationsMap"] = {
+                str(k0): v0.to_dict(include_empty=include_empty)
+                for k0, v0 in self.image_replications_map.items()
+            }
+        elif include_empty:
+            result["imageReplicationsMap"] = {}
         return result
 
     # endregion to methods
@@ -110,19 +150,28 @@ class ModelsImageRecordUpdate(Model):
     @classmethod
     def create(
         cls,
-        artifact_path: str,
         image: str,
         namespace: str,
+        patch_version: str,
         persistent: bool,
         version: str,
+        artifact_path: Optional[str] = None,
+        core_dump_enabled: Optional[bool] = None,
+        image_replications_map: Optional[Dict[str, ModelsImageReplication]] = None,
         **kwargs,
     ) -> ModelsImageRecordUpdate:
         instance = cls()
-        instance.artifact_path = artifact_path
         instance.image = image
         instance.namespace = namespace
+        instance.patch_version = patch_version
         instance.persistent = persistent
         instance.version = version
+        if artifact_path is not None:
+            instance.artifact_path = artifact_path
+        if core_dump_enabled is not None:
+            instance.core_dump_enabled = core_dump_enabled
+        if image_replications_map is not None:
+            instance.image_replications_map = image_replications_map
         return instance
 
     @classmethod
@@ -132,10 +181,6 @@ class ModelsImageRecordUpdate(Model):
         instance = cls()
         if not dict_:
             return instance
-        if "artifactPath" in dict_ and dict_["artifactPath"] is not None:
-            instance.artifact_path = str(dict_["artifactPath"])
-        elif include_empty:
-            instance.artifact_path = ""
         if "image" in dict_ and dict_["image"] is not None:
             instance.image = str(dict_["image"])
         elif include_empty:
@@ -144,6 +189,10 @@ class ModelsImageRecordUpdate(Model):
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
             instance.namespace = ""
+        if "patchVersion" in dict_ and dict_["patchVersion"] is not None:
+            instance.patch_version = str(dict_["patchVersion"])
+        elif include_empty:
+            instance.patch_version = ""
         if "persistent" in dict_ and dict_["persistent"] is not None:
             instance.persistent = bool(dict_["persistent"])
         elif include_empty:
@@ -152,6 +201,26 @@ class ModelsImageRecordUpdate(Model):
             instance.version = str(dict_["version"])
         elif include_empty:
             instance.version = ""
+        if "artifactPath" in dict_ and dict_["artifactPath"] is not None:
+            instance.artifact_path = str(dict_["artifactPath"])
+        elif include_empty:
+            instance.artifact_path = ""
+        if "coreDumpEnabled" in dict_ and dict_["coreDumpEnabled"] is not None:
+            instance.core_dump_enabled = bool(dict_["coreDumpEnabled"])
+        elif include_empty:
+            instance.core_dump_enabled = False
+        if (
+            "imageReplicationsMap" in dict_
+            and dict_["imageReplicationsMap"] is not None
+        ):
+            instance.image_replications_map = {
+                str(k0): ModelsImageReplication.create_from_dict(
+                    v0, include_empty=include_empty
+                )
+                for k0, v0 in dict_["imageReplicationsMap"].items()
+            }
+        elif include_empty:
+            instance.image_replications_map = {}
         return instance
 
     @classmethod
@@ -195,21 +264,27 @@ class ModelsImageRecordUpdate(Model):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "artifactPath": "artifact_path",
             "image": "image",
             "namespace": "namespace",
+            "patchVersion": "patch_version",
             "persistent": "persistent",
             "version": "version",
+            "artifactPath": "artifact_path",
+            "coreDumpEnabled": "core_dump_enabled",
+            "imageReplicationsMap": "image_replications_map",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "artifactPath": True,
             "image": True,
             "namespace": True,
+            "patchVersion": True,
             "persistent": True,
             "version": True,
+            "artifactPath": False,
+            "coreDumpEnabled": False,
+            "imageReplicationsMap": False,
         }
 
     # endregion static methods

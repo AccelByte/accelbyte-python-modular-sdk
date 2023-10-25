@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (7.0.0)
+# AccelByte Gaming Services Iam Service (7.4.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -60,13 +60,13 @@ class PublicUpgradeHeadlessAccountV3(Operation):
     Supported user data fields :
 
 
-                          * displayName
+                    * displayName
 
 
-                          * dateOfBirth : format YYYY-MM-DD, e.g. 2019-04-29
+                    * dateOfBirth : format YYYY-MM-DD, e.g. 2019-04-29
 
 
-                          * country : format ISO3166-1 alpha-2 two letter, e.g. US
+                    * country : format ISO3166-1 alpha-2 two letter, e.g. US
 
 
 

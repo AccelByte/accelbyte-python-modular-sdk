@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Seasonpass Service (1.19.0)
+# AccelByte Gaming Services Seasonpass Service (1.19.3)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

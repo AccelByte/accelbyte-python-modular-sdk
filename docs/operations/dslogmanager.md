@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Ds Log Manager Service Index (3.3.1)
+# AccelByte Gaming Services Ds Log Manager Service Index (3.4.1)
 
 
 ## Operations

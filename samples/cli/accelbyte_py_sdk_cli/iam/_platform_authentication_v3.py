@@ -6,7 +6,7 @@
 
 # template_file: command.j2
 
-# AGS Iam Service (7.0.0)
+# AGS Iam Service (7.4.1)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

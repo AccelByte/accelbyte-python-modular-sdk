@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "accelbyte-py-sdk-service-dslogmanager"
 readme = "README.md"
-version = "3.3.1"
+version = "3.4.1"
 description = "AccelByte Python SDK - AccelByte Gaming Services Ds Log Manager Service"
 requires-python = ">=3.9"
 dependencies = [

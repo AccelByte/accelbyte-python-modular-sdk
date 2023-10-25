@@ -2443,7 +2443,7 @@ def admin_update_user_email_address_v4(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
 
 
 
@@ -2512,7 +2512,7 @@ async def admin_update_user_email_address_v4_async(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
 
 
 
@@ -2734,7 +2734,17 @@ def admin_update_user_v4(
 
 
 
-     Several case of updating email address
+     Response body logic when user updating email address:
+
+                        * User want to update email address of which have been verified, newEmailAddress response field will be filled with new email address.
+
+
+                        * User want to update email address of which have not been verified, { oldEmailAddress, emailAddress} response field will be filled with new email address.
+
+
+                        * User want to update email address of which have been verified and updated before, { oldEmailAddress, emailAddress} response field will be filled with verified email before. newEmailAddress response field will be filled with newest email address.
+
+
 
 
     action code : 10103
@@ -2823,7 +2833,17 @@ async def admin_update_user_v4_async(
 
 
 
-     Several case of updating email address
+     Response body logic when user updating email address:
+
+                        * User want to update email address of which have been verified, newEmailAddress response field will be filled with new email address.
+
+
+                        * User want to update email address of which have not been verified, { oldEmailAddress, emailAddress} response field will be filled with new email address.
+
+
+                        * User want to update email address of which have been verified and updated before, { oldEmailAddress, emailAddress} response field will be filled with verified email before. newEmailAddress response field will be filled with newest email address.
+
+
 
 
     action code : 10103
@@ -2931,6 +2951,8 @@ def create_user_from_invitation_v4(
 
         400: Bad Request - RestErrorResponse (20002: validation error | 10130: user under age)
 
+        403: Forbidden - RestErrorResponse (20003: forbidden access)
+
         404: Not Found - RestErrorResponse (10180: admin invitation not found or expired | 10154: country not found)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
@@ -2998,6 +3020,8 @@ async def create_user_from_invitation_v4_async(
         201: Created - AccountCreateUserResponseV4 (Created)
 
         400: Bad Request - RestErrorResponse (20002: validation error | 10130: user under age)
+
+        403: Forbidden - RestErrorResponse (20003: forbidden access)
 
         404: Not Found - RestErrorResponse (10180: admin invitation not found or expired | 10154: country not found)
 
@@ -3214,6 +3238,8 @@ def public_create_user_v4(
 
         400: Bad Request - RestErrorResponse (20019: unable to parse request body | 20002: validation error | 10130: user under age)
 
+        403: Forbidden - RestErrorResponse (20003: forbidden access)
+
         404: Not Found - RestErrorResponse (10154: country not found)
 
         409: Conflict - RestErrorResponse (10133: email already used | 10177: username already used)
@@ -3283,6 +3309,8 @@ async def public_create_user_v4_async(
         201: Created - AccountCreateUserResponseV4 (Created)
 
         400: Bad Request - RestErrorResponse (20019: unable to parse request body | 20002: validation error | 10130: user under age)
+
+        403: Forbidden - RestErrorResponse (20003: forbidden access)
 
         404: Not Found - RestErrorResponse (10154: country not found)
 
@@ -5099,11 +5127,7 @@ def public_update_user_email_address_v4(
 
 
 
-    It requires a verification code from
-
-                                                                                                    /users/me/code/request
-
-    with UpdateEmailAddress context.
+    It requires a verification code from /users/me/code/request with UpdateEmailAddress context.
 
     Properties:
         url: /iam/v4/public/namespaces/{namespace}/users/me/email
@@ -5160,11 +5184,7 @@ async def public_update_user_email_address_v4_async(
 
 
 
-    It requires a verification code from
-
-                                                                                                    /users/me/code/request
-
-    with UpdateEmailAddress context.
+    It requires a verification code from /users/me/code/request with UpdateEmailAddress context.
 
     Properties:
         url: /iam/v4/public/namespaces/{namespace}/users/me/email
@@ -5243,7 +5263,17 @@ def public_update_user_v4(
 
 
 
-     Several case of updating email address
+     Response body logic when user updating email address:
+
+                        * User want to update email address of which have been verified, newEmailAddress response field will be filled with new email address.
+
+
+                        * User want to update email address of which have not been verified, { oldEmailAddress, emailAddress} response field will be filled with new email address.
+
+
+                        * User want to update email address of which have been verified and updated before, { oldEmailAddress, emailAddress} response field will be filled with verified email before. newEmailAddress response field will be filled with newest email address.
+
+
 
 
     action code : 10103
@@ -5271,6 +5301,8 @@ def public_update_user_v4(
         400: Bad Request - RestErrorResponse (20002: validation error | 20019: unable to parse request body | 10154: country not found | 10130: user under age)
 
         401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
+
+        403: Forbidden - RestErrorResponse (20003: forbidden access)
 
         409: Conflict - RestErrorResponse (10133: email already used)
 
@@ -5321,7 +5353,17 @@ async def public_update_user_v4_async(
 
 
 
-     Several case of updating email address
+     Response body logic when user updating email address:
+
+                        * User want to update email address of which have been verified, newEmailAddress response field will be filled with new email address.
+
+
+                        * User want to update email address of which have not been verified, { oldEmailAddress, emailAddress} response field will be filled with new email address.
+
+
+                        * User want to update email address of which have been verified and updated before, { oldEmailAddress, emailAddress} response field will be filled with verified email before. newEmailAddress response field will be filled with newest email address.
+
+
 
 
     action code : 10103
@@ -5349,6 +5391,8 @@ async def public_update_user_v4_async(
         400: Bad Request - RestErrorResponse (20002: validation error | 20019: unable to parse request body | 10154: country not found | 10130: user under age)
 
         401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
+
+        403: Forbidden - RestErrorResponse (20003: forbidden access)
 
         409: Conflict - RestErrorResponse (10133: email already used)
 
@@ -5501,13 +5545,13 @@ def public_upgrade_headless_account_with_verification_code_v4(
     Supported user data fields:
 
 
-                              * displayName
+                        * displayName
 
 
-                              * dateOfBirth : format YYYY-MM-DD, e.g. 2019-04-29
+                        * dateOfBirth : format YYYY-MM-DD, e.g. 2019-04-29
 
 
-                              * country : format ISO3166-1 alpha-2 two letter, e.g. US
+                        * country : format ISO3166-1 alpha-2 two letter, e.g. US
 
 
     action code : 10124
@@ -5577,13 +5621,13 @@ async def public_upgrade_headless_account_with_verification_code_v4_async(
     Supported user data fields:
 
 
-                              * displayName
+                        * displayName
 
 
-                              * dateOfBirth : format YYYY-MM-DD, e.g. 2019-04-29
+                        * dateOfBirth : format YYYY-MM-DD, e.g. 2019-04-29
 
 
-                              * country : format ISO3166-1 alpha-2 two letter, e.g. US
+                        * country : format ISO3166-1 alpha-2 two letter, e.g. US
 
 
     action code : 10124

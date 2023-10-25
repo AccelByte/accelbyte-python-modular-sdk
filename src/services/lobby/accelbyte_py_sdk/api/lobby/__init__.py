@@ -8,13 +8,19 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Lobby Server."""
 
-__version__ = "3.25.0"
+__version__ = "3.30.2"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
 # pylint: disable=line-too-long
 
 # admin
+from .wrappers import admin_delete_global_config
+from .wrappers import admin_delete_global_config_async
+from .wrappers import admin_get_global_config
+from .wrappers import admin_get_global_config_async
+from .wrappers import admin_update_global_config
+from .wrappers import admin_update_global_config_async
 from .wrappers import create_template
 from .wrappers import create_template_async
 from .wrappers import delete_template_localization
@@ -51,6 +57,8 @@ from .wrappers import admin_update_config_v1_async
 # friends
 from .wrappers import add_friends_without_confirmation
 from .wrappers import add_friends_without_confirmation_async
+from .wrappers import bulk_delete_friends
+from .wrappers import bulk_delete_friends_async
 from .wrappers import get_incoming_friend_requests
 from .wrappers import get_incoming_friend_requests_async
 from .wrappers import get_list_of_friends
@@ -69,6 +77,8 @@ from .wrappers import get_user_outgoing_friends
 from .wrappers import get_user_outgoing_friends_async
 from .wrappers import get_user_outgoing_friends_with_time
 from .wrappers import get_user_outgoing_friends_with_time_async
+from .wrappers import sync_native_friends
+from .wrappers import sync_native_friends_async
 from .wrappers import user_accept_friend_request
 from .wrappers import user_accept_friend_request_async
 from .wrappers import user_cancel_friend_request

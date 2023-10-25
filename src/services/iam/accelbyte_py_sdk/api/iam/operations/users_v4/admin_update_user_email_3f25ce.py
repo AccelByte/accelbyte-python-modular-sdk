@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (7.0.0)
+# AccelByte Gaming Services Iam Service (7.4.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -38,7 +38,7 @@ class AdminUpdateUserEmailAddressV4(Operation):
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
 
 
 

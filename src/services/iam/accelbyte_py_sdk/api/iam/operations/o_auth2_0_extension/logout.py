@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (7.0.0)
+# AccelByte Gaming Services Iam Service (7.4.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -43,10 +43,10 @@ class Logout(Operation):
 
 
 
-                    * VerifyToken to verify token from header
+                  * VerifyToken to verify token from header
 
 
-                    * AddTokenToRevocationList to revoke token with TTL
+                  * AddTokenToRevocationList to revoke token with TTL
 
     Properties:
         url: /iam/v3/logout

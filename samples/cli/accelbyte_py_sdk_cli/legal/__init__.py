@@ -6,7 +6,7 @@
 
 # template_file: command-init.j2
 
-# justice-legal-service (1.31.2)
+# justice-legal-service (1.33.1)
 
 from ._change_preference_consent import change_preference_consent
 from ._retrieve_accepted_agreements import retrieve_accepted_agreements

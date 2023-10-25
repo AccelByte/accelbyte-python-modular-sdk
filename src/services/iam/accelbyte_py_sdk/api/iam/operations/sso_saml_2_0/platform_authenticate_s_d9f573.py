@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (7.0.0)
+# AccelByte Gaming Services Iam Service (7.4.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -42,7 +42,7 @@ class PlatformAuthenticateSAMLV3Handler(Operation):
 
 
 
-                              * azure
+                        * azure
     Microsoft login page will redirects to this endpoint after login success
     as previously defined on authentication request SAML
 

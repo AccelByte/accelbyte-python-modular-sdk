@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (7.0.0)
+# AccelByte Gaming Services Iam Service (7.4.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -50,67 +50,67 @@ class RequestOneTimeLinkingCodeV3(Operation):
 
 
 
-                    * steam
+                  * steam
 
 
-                    * steamopenid
+                  * steamopenid
 
 
-                    * facebook
+                  * facebook
 
 
-                    * google
+                  * google
 
 
-                    * oculus
+                  * oculus
 
 
-                    * twitch
+                  * twitch
 
 
-                    * discord
+                  * discord
 
 
-                    * android
+                  * android
 
 
-                    * ios
+                  * ios
 
 
-                    * apple
+                  * apple
 
 
-                    * device
+                  * device
 
 
-                    * justice
+                  * justice
 
 
-                    * epicgames
+                  * epicgames
 
 
-                    * ps4
+                  * ps4
 
 
-                    * ps5
+                  * ps5
 
 
-                    * nintendo
+                  * nintendo
 
 
-                    * awscognito
+                  * awscognito
 
 
-                    * live
+                  * live
 
 
-                    * xblweb
+                  * xblweb
 
 
-                    * netflix
+                  * netflix
 
 
-                    * snapchat
+                  * snapchat
 
     Properties:
         url: /iam/v3/link/code/request

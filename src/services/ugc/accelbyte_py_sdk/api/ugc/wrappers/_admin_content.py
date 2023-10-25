@@ -38,8 +38,10 @@ from ..models import ModelsCreateContentRequestS3
 from ..models import ModelsCreateContentResponse
 from ..models import ModelsCreateScreenshotRequest
 from ..models import ModelsCreateScreenshotResponse
+from ..models import ModelsGetContentBulkByShareCodesRequest
 from ..models import ModelsGetContentPreviewResponse
 from ..models import ModelsHideContentRequest
+from ..models import ModelsListContentVersionsResponse
 from ..models import ModelsPaginatedContentDownloadResponse
 from ..models import ModelsUpdateScreenshotRequest
 from ..models import ModelsUpdateScreenshotResponse
@@ -50,6 +52,7 @@ from ..operations.admin_content import AdminDeleteContentScreenshot
 from ..operations.admin_content import AdminDownloadContentPreview
 from ..operations.admin_content import AdminGetContent
 from ..operations.admin_content import AdminGetContentBulk
+from ..operations.admin_content import AdminGetContentBulkByShareCodes
 from ..operations.admin_content import AdminGetSpecificContent
 from ..operations.admin_content import AdminGetUserContentByShareCode
 from ..operations.admin_content import AdminHideUserContent
@@ -57,10 +60,14 @@ from ..operations.admin_content import AdminSearchChannelSpecificContent
 from ..operations.admin_content import AdminSearchContent
 from ..operations.admin_content import AdminUpdateContentDirect
 from ..operations.admin_content import AdminUpdateContentS3
+from ..operations.admin_content import AdminUpdateContentS3ByShareCode
 from ..operations.admin_content import AdminUpdateScreenshots
 from ..operations.admin_content import AdminUploadContentDirect
 from ..operations.admin_content import AdminUploadContentS3
 from ..operations.admin_content import AdminUploadContentScreenshot
+from ..operations.admin_content import DeleteContentByShareCode
+from ..operations.admin_content import ListContentVersions
+from ..operations.admin_content import RollbackContentVersion
 from ..operations.admin_content import SingleAdminDeleteContent
 from ..operations.admin_content import SingleAdminGetContent
 from ..operations.admin_content import SingleAdminUpdateContentDirect
@@ -637,6 +644,112 @@ async def admin_get_content_bulk_async(
     )
 
 
+@same_doc_as(AdminGetContentBulkByShareCodes)
+def admin_get_content_bulk_by_share_codes(
+    body: ModelsGetContentBulkByShareCodesRequest,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Bulk get content by content sharecodes (AdminGetContentBulkByShareCodes)
+
+    Required permission ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [READ].
+    Maximum sharecodes per request 100
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [READ]
+
+    Properties:
+        url: /ugc/v1/admin/namespaces/{namespace}/contents/sharecodes/bulk
+
+        method: POST
+
+        tags: ["Admin Content"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED ModelsGetContentBulkByShareCodesRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - List[ModelsContentDownloadResponse] (OK)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = AdminGetContentBulkByShareCodes.create(
+        body=body,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(AdminGetContentBulkByShareCodes)
+async def admin_get_content_bulk_by_share_codes_async(
+    body: ModelsGetContentBulkByShareCodesRequest,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Bulk get content by content sharecodes (AdminGetContentBulkByShareCodes)
+
+    Required permission ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [READ].
+    Maximum sharecodes per request 100
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [READ]
+
+    Properties:
+        url: /ugc/v1/admin/namespaces/{namespace}/contents/sharecodes/bulk
+
+        method: POST
+
+        tags: ["Admin Content"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED ModelsGetContentBulkByShareCodesRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - List[ModelsContentDownloadResponse] (OK)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = AdminGetContentBulkByShareCodes.create(
+        body=body,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(AdminGetSpecificContent)
 def admin_get_specific_content(
     content_id: str,
@@ -969,6 +1082,7 @@ async def admin_hide_user_content_async(
 def admin_search_channel_specific_content(
     channel_id: str,
     creator: Optional[str] = None,
+    ishidden: Optional[str] = None,
     isofficial: Optional[str] = None,
     limit: Optional[int] = None,
     name: Optional[str] = None,
@@ -1029,6 +1143,8 @@ def admin_search_channel_specific_content(
 
         creator: (creator) OPTIONAL str in query
 
+        ishidden: (ishidden) OPTIONAL str in query
+
         isofficial: (isofficial) OPTIONAL str in query
 
         limit: (limit) OPTIONAL int in query
@@ -1065,6 +1181,7 @@ def admin_search_channel_specific_content(
     request = AdminSearchChannelSpecificContent.create(
         channel_id=channel_id,
         creator=creator,
+        ishidden=ishidden,
         isofficial=isofficial,
         limit=limit,
         name=name,
@@ -1084,6 +1201,7 @@ def admin_search_channel_specific_content(
 async def admin_search_channel_specific_content_async(
     channel_id: str,
     creator: Optional[str] = None,
+    ishidden: Optional[str] = None,
     isofficial: Optional[str] = None,
     limit: Optional[int] = None,
     name: Optional[str] = None,
@@ -1144,6 +1262,8 @@ async def admin_search_channel_specific_content_async(
 
         creator: (creator) OPTIONAL str in query
 
+        ishidden: (ishidden) OPTIONAL str in query
+
         isofficial: (isofficial) OPTIONAL str in query
 
         limit: (limit) OPTIONAL int in query
@@ -1180,6 +1300,7 @@ async def admin_search_channel_specific_content_async(
     request = AdminSearchChannelSpecificContent.create(
         channel_id=channel_id,
         creator=creator,
+        ishidden=ishidden,
         isofficial=isofficial,
         limit=limit,
         name=name,
@@ -1200,6 +1321,7 @@ async def admin_search_channel_specific_content_async(
 @same_doc_as(AdminSearchContent)
 def admin_search_content(
     creator: Optional[str] = None,
+    ishidden: Optional[str] = None,
     isofficial: Optional[str] = None,
     limit: Optional[int] = None,
     name: Optional[str] = None,
@@ -1258,6 +1380,8 @@ def admin_search_content(
 
         creator: (creator) OPTIONAL str in query
 
+        ishidden: (ishidden) OPTIONAL str in query
+
         isofficial: (isofficial) OPTIONAL str in query
 
         limit: (limit) OPTIONAL int in query
@@ -1293,6 +1417,7 @@ def admin_search_content(
             return None, error
     request = AdminSearchContent.create(
         creator=creator,
+        ishidden=ishidden,
         isofficial=isofficial,
         limit=limit,
         name=name,
@@ -1311,6 +1436,7 @@ def admin_search_content(
 @same_doc_as(AdminSearchContent)
 async def admin_search_content_async(
     creator: Optional[str] = None,
+    ishidden: Optional[str] = None,
     isofficial: Optional[str] = None,
     limit: Optional[int] = None,
     name: Optional[str] = None,
@@ -1369,6 +1495,8 @@ async def admin_search_content_async(
 
         creator: (creator) OPTIONAL str in query
 
+        ishidden: (ishidden) OPTIONAL str in query
+
         isofficial: (isofficial) OPTIONAL str in query
 
         limit: (limit) OPTIONAL int in query
@@ -1404,6 +1532,7 @@ async def admin_search_content_async(
             return None, error
     request = AdminSearchContent.create(
         creator=creator,
+        ishidden=ishidden,
         isofficial=isofficial,
         limit=limit,
         name=name,
@@ -1723,6 +1852,178 @@ async def admin_update_content_s3_async(
         body=body,
         channel_id=channel_id,
         content_id=content_id,
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(AdminUpdateContentS3ByShareCode)
+def admin_update_content_s3_by_share_code(
+    body: ModelsAdminUpdateContentRequest,
+    channel_id: str,
+    share_code: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Update content to S3 bucket by share code (AdminUpdateContentS3ByShareCode)
+
+    Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE].
+
+    All request body are required except `payload`, `preview`, `tags`,`contentType`, `updateContentFile`, `customAttributes` and `shareCode`.
+
+    `contentType` values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.
+
+    If not specified, it will use `fileExtension` value.
+
+    To update content file, set `updateContentFile` to `true` and upload the file using URL in `payloadURL.url` in response body.
+
+    `shareCode` format should follows:
+
+    Max length: 7
+    Available characters: abcdefhkpqrstuxyz
+
+
+
+
+     NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]
+
+    Properties:
+        url: /ugc/v1/admin/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/s3/sharecodes/{shareCode}
+
+        method: PUT
+
+        tags: ["Admin Content"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED ModelsAdminUpdateContentRequest in body
+
+        channel_id: (channelId) REQUIRED str in path
+
+        namespace: (namespace) REQUIRED str in path
+
+        share_code: (shareCode) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelsCreateContentResponse (OK)
+
+        400: Bad Request - ResponseError (Bad Request)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        404: Not Found - ResponseError (Not Found)
+
+        409: Conflict - ResponseError (Conflict)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = AdminUpdateContentS3ByShareCode.create(
+        body=body,
+        channel_id=channel_id,
+        share_code=share_code,
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(AdminUpdateContentS3ByShareCode)
+async def admin_update_content_s3_by_share_code_async(
+    body: ModelsAdminUpdateContentRequest,
+    channel_id: str,
+    share_code: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Update content to S3 bucket by share code (AdminUpdateContentS3ByShareCode)
+
+    Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE].
+
+    All request body are required except `payload`, `preview`, `tags`,`contentType`, `updateContentFile`, `customAttributes` and `shareCode`.
+
+    `contentType` values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.
+
+    If not specified, it will use `fileExtension` value.
+
+    To update content file, set `updateContentFile` to `true` and upload the file using URL in `payloadURL.url` in response body.
+
+    `shareCode` format should follows:
+
+    Max length: 7
+    Available characters: abcdefhkpqrstuxyz
+
+
+
+
+     NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]
+
+    Properties:
+        url: /ugc/v1/admin/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/s3/sharecodes/{shareCode}
+
+        method: PUT
+
+        tags: ["Admin Content"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED ModelsAdminUpdateContentRequest in body
+
+        channel_id: (channelId) REQUIRED str in path
+
+        namespace: (namespace) REQUIRED str in path
+
+        share_code: (shareCode) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelsCreateContentResponse (OK)
+
+        400: Bad Request - ResponseError (Bad Request)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        404: Not Found - ResponseError (Not Found)
+
+        409: Conflict - ResponseError (Conflict)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = AdminUpdateContentS3ByShareCode.create(
+        body=body,
+        channel_id=channel_id,
+        share_code=share_code,
         user_id=user_id,
         namespace=namespace,
     )
@@ -2240,6 +2541,346 @@ async def admin_upload_content_screenshot_async(
     request = AdminUploadContentScreenshot.create(
         body=body,
         content_id=content_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(DeleteContentByShareCode)
+def delete_content_by_share_code(
+    channel_id: str,
+    share_code: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Delete content by share code (DeleteContentByShareCode)
+
+    Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE].
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]
+
+    Properties:
+        url: /ugc/v1/admin/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/sharecodes/{shareCode}
+
+        method: DELETE
+
+        tags: ["Admin Content"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        channel_id: (channelId) REQUIRED str in path
+
+        namespace: (namespace) REQUIRED str in path
+
+        share_code: (shareCode) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+    Responses:
+        204: No Content - (No Content)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = DeleteContentByShareCode.create(
+        channel_id=channel_id,
+        share_code=share_code,
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(DeleteContentByShareCode)
+async def delete_content_by_share_code_async(
+    channel_id: str,
+    share_code: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Delete content by share code (DeleteContentByShareCode)
+
+    Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE].
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]
+
+    Properties:
+        url: /ugc/v1/admin/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/sharecodes/{shareCode}
+
+        method: DELETE
+
+        tags: ["Admin Content"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        channel_id: (channelId) REQUIRED str in path
+
+        namespace: (namespace) REQUIRED str in path
+
+        share_code: (shareCode) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+    Responses:
+        204: No Content - (No Content)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = DeleteContentByShareCode.create(
+        channel_id=channel_id,
+        share_code=share_code,
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(ListContentVersions)
+def list_content_versions(
+    content_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """List content's payload versions (ListContentVersions)
+
+    Required permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]
+    Content's payload versions created when UGC is created or updated with `updateContentFile` set to true. Only list up to 10 latest versions.
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]
+
+    Properties:
+        url: /ugc/v1/admin/namespaces/{namespace}/contents/{contentId}/versions
+
+        method: GET
+
+        tags: ["Admin Content"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        content_id: (contentId) REQUIRED str in path
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelsListContentVersionsResponse (OK)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = ListContentVersions.create(
+        content_id=content_id,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(ListContentVersions)
+async def list_content_versions_async(
+    content_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """List content's payload versions (ListContentVersions)
+
+    Required permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]
+    Content's payload versions created when UGC is created or updated with `updateContentFile` set to true. Only list up to 10 latest versions.
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]
+
+    Properties:
+        url: /ugc/v1/admin/namespaces/{namespace}/contents/{contentId}/versions
+
+        method: GET
+
+        tags: ["Admin Content"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        content_id: (contentId) REQUIRED str in path
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelsListContentVersionsResponse (OK)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = ListContentVersions.create(
+        content_id=content_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(RollbackContentVersion)
+def rollback_content_version(
+    content_id: str,
+    version_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Rollback content's payload version (RollbackContentVersion)
+
+    Required permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]
+    Rollback content's payload to specified version.
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]
+
+    Properties:
+        url: /ugc/v1/admin/namespaces/{namespace}/contents/{contentId}/rollback/{versionId}
+
+        method: PUT
+
+        tags: ["Admin Content"]
+
+        consumes: ["*/*"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        content_id: (contentId) REQUIRED str in path
+
+        namespace: (namespace) REQUIRED str in path
+
+        version_id: (versionId) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelsContentDownloadResponse (OK)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = RollbackContentVersion.create(
+        content_id=content_id,
+        version_id=version_id,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(RollbackContentVersion)
+async def rollback_content_version_async(
+    content_id: str,
+    version_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Rollback content's payload version (RollbackContentVersion)
+
+    Required permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]
+    Rollback content's payload to specified version.
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]
+
+    Properties:
+        url: /ugc/v1/admin/namespaces/{namespace}/contents/{contentId}/rollback/{versionId}
+
+        method: PUT
+
+        tags: ["Admin Content"]
+
+        consumes: ["*/*"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        content_id: (contentId) REQUIRED str in path
+
+        namespace: (namespace) REQUIRED str in path
+
+        version_id: (versionId) REQUIRED str in path
+
+    Responses:
+        200: OK - ModelsContentDownloadResponse (OK)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = RollbackContentVersion.create(
+        content_id=content_id,
+        version_id=version_id,
         namespace=namespace,
     )
     return await run_request_async(

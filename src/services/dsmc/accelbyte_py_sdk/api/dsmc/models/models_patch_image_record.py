@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Dsm Controller Service (6.4.0)
+# AccelByte Gaming Services Dsm Controller Service (6.4.3)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -27,15 +27,13 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
 
-from ..models.models_uploader_flag import ModelsUploaderFlag
+from ..models.models_image_replication import ModelsImageReplication
 
 
 class ModelsPatchImageRecord(Model):
     """Models patch image record (models.PatchImageRecord)
 
     Properties:
-        artifact_path: (artifactPath) REQUIRED str
-
         created_at: (createdAt) REQUIRED str
 
         docker_path: (dockerPath) REQUIRED str
@@ -54,14 +52,23 @@ class ModelsPatchImageRecord(Model):
 
         updated_at: (updatedAt) REQUIRED str
 
-        uploader_flags: (uploaderFlags) REQUIRED List[ModelsUploaderFlag]
+        uploader_flag: (uploaderFlag) REQUIRED str
 
         version: (version) REQUIRED str
+
+        artifact_path: (artifactPath) OPTIONAL str
+
+        core_dump_enabled: (coreDumpEnabled) OPTIONAL bool
+
+        image_replications: (imageReplications) OPTIONAL List[ModelsImageReplication]
+
+        image_replications_map: (imageReplicationsMap) OPTIONAL Dict[str, ModelsImageReplication]
+
+        ulimit_file_size: (ulimitFileSize) OPTIONAL int
     """
 
     # region fields
 
-    artifact_path: str  # REQUIRED
     created_at: str  # REQUIRED
     docker_path: str  # REQUIRED
     image: str  # REQUIRED
@@ -71,16 +78,17 @@ class ModelsPatchImageRecord(Model):
     patch_version: str  # REQUIRED
     persistent: bool  # REQUIRED
     updated_at: str  # REQUIRED
-    uploader_flags: List[ModelsUploaderFlag]  # REQUIRED
+    uploader_flag: str  # REQUIRED
     version: str  # REQUIRED
+    artifact_path: str  # OPTIONAL
+    core_dump_enabled: bool  # OPTIONAL
+    image_replications: List[ModelsImageReplication]  # OPTIONAL
+    image_replications_map: Dict[str, ModelsImageReplication]  # OPTIONAL
+    ulimit_file_size: int  # OPTIONAL
 
     # endregion fields
 
     # region with_x methods
-
-    def with_artifact_path(self, value: str) -> ModelsPatchImageRecord:
-        self.artifact_path = value
-        return self
 
     def with_created_at(self, value: str) -> ModelsPatchImageRecord:
         self.created_at = value
@@ -118,14 +126,36 @@ class ModelsPatchImageRecord(Model):
         self.updated_at = value
         return self
 
-    def with_uploader_flags(
-        self, value: List[ModelsUploaderFlag]
-    ) -> ModelsPatchImageRecord:
-        self.uploader_flags = value
+    def with_uploader_flag(self, value: str) -> ModelsPatchImageRecord:
+        self.uploader_flag = value
         return self
 
     def with_version(self, value: str) -> ModelsPatchImageRecord:
         self.version = value
+        return self
+
+    def with_artifact_path(self, value: str) -> ModelsPatchImageRecord:
+        self.artifact_path = value
+        return self
+
+    def with_core_dump_enabled(self, value: bool) -> ModelsPatchImageRecord:
+        self.core_dump_enabled = value
+        return self
+
+    def with_image_replications(
+        self, value: List[ModelsImageReplication]
+    ) -> ModelsPatchImageRecord:
+        self.image_replications = value
+        return self
+
+    def with_image_replications_map(
+        self, value: Dict[str, ModelsImageReplication]
+    ) -> ModelsPatchImageRecord:
+        self.image_replications_map = value
+        return self
+
+    def with_ulimit_file_size(self, value: int) -> ModelsPatchImageRecord:
+        self.ulimit_file_size = value
         return self
 
     # endregion with_x methods
@@ -134,10 +164,6 @@ class ModelsPatchImageRecord(Model):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "artifact_path"):
-            result["artifactPath"] = str(self.artifact_path)
-        elif include_empty:
-            result["artifactPath"] = ""
         if hasattr(self, "created_at"):
             result["createdAt"] = str(self.created_at)
         elif include_empty:
@@ -174,16 +200,40 @@ class ModelsPatchImageRecord(Model):
             result["updatedAt"] = str(self.updated_at)
         elif include_empty:
             result["updatedAt"] = ""
-        if hasattr(self, "uploader_flags"):
-            result["uploaderFlags"] = [
-                i0.to_dict(include_empty=include_empty) for i0 in self.uploader_flags
-            ]
+        if hasattr(self, "uploader_flag"):
+            result["uploaderFlag"] = str(self.uploader_flag)
         elif include_empty:
-            result["uploaderFlags"] = []
+            result["uploaderFlag"] = ""
         if hasattr(self, "version"):
             result["version"] = str(self.version)
         elif include_empty:
             result["version"] = ""
+        if hasattr(self, "artifact_path"):
+            result["artifactPath"] = str(self.artifact_path)
+        elif include_empty:
+            result["artifactPath"] = ""
+        if hasattr(self, "core_dump_enabled"):
+            result["coreDumpEnabled"] = bool(self.core_dump_enabled)
+        elif include_empty:
+            result["coreDumpEnabled"] = False
+        if hasattr(self, "image_replications"):
+            result["imageReplications"] = [
+                i0.to_dict(include_empty=include_empty)
+                for i0 in self.image_replications
+            ]
+        elif include_empty:
+            result["imageReplications"] = []
+        if hasattr(self, "image_replications_map"):
+            result["imageReplicationsMap"] = {
+                str(k0): v0.to_dict(include_empty=include_empty)
+                for k0, v0 in self.image_replications_map.items()
+            }
+        elif include_empty:
+            result["imageReplicationsMap"] = {}
+        if hasattr(self, "ulimit_file_size"):
+            result["ulimitFileSize"] = int(self.ulimit_file_size)
+        elif include_empty:
+            result["ulimitFileSize"] = 0
         return result
 
     # endregion to methods
@@ -193,7 +243,6 @@ class ModelsPatchImageRecord(Model):
     @classmethod
     def create(
         cls,
-        artifact_path: str,
         created_at: str,
         docker_path: str,
         image: str,
@@ -203,12 +252,16 @@ class ModelsPatchImageRecord(Model):
         patch_version: str,
         persistent: bool,
         updated_at: str,
-        uploader_flags: List[ModelsUploaderFlag],
+        uploader_flag: str,
         version: str,
+        artifact_path: Optional[str] = None,
+        core_dump_enabled: Optional[bool] = None,
+        image_replications: Optional[List[ModelsImageReplication]] = None,
+        image_replications_map: Optional[Dict[str, ModelsImageReplication]] = None,
+        ulimit_file_size: Optional[int] = None,
         **kwargs,
     ) -> ModelsPatchImageRecord:
         instance = cls()
-        instance.artifact_path = artifact_path
         instance.created_at = created_at
         instance.docker_path = docker_path
         instance.image = image
@@ -218,8 +271,18 @@ class ModelsPatchImageRecord(Model):
         instance.patch_version = patch_version
         instance.persistent = persistent
         instance.updated_at = updated_at
-        instance.uploader_flags = uploader_flags
+        instance.uploader_flag = uploader_flag
         instance.version = version
+        if artifact_path is not None:
+            instance.artifact_path = artifact_path
+        if core_dump_enabled is not None:
+            instance.core_dump_enabled = core_dump_enabled
+        if image_replications is not None:
+            instance.image_replications = image_replications
+        if image_replications_map is not None:
+            instance.image_replications_map = image_replications_map
+        if ulimit_file_size is not None:
+            instance.ulimit_file_size = ulimit_file_size
         return instance
 
     @classmethod
@@ -229,10 +292,6 @@ class ModelsPatchImageRecord(Model):
         instance = cls()
         if not dict_:
             return instance
-        if "artifactPath" in dict_ and dict_["artifactPath"] is not None:
-            instance.artifact_path = str(dict_["artifactPath"])
-        elif include_empty:
-            instance.artifact_path = ""
         if "createdAt" in dict_ and dict_["createdAt"] is not None:
             instance.created_at = str(dict_["createdAt"])
         elif include_empty:
@@ -269,17 +328,45 @@ class ModelsPatchImageRecord(Model):
             instance.updated_at = str(dict_["updatedAt"])
         elif include_empty:
             instance.updated_at = ""
-        if "uploaderFlags" in dict_ and dict_["uploaderFlags"] is not None:
-            instance.uploader_flags = [
-                ModelsUploaderFlag.create_from_dict(i0, include_empty=include_empty)
-                for i0 in dict_["uploaderFlags"]
-            ]
+        if "uploaderFlag" in dict_ and dict_["uploaderFlag"] is not None:
+            instance.uploader_flag = str(dict_["uploaderFlag"])
         elif include_empty:
-            instance.uploader_flags = []
+            instance.uploader_flag = ""
         if "version" in dict_ and dict_["version"] is not None:
             instance.version = str(dict_["version"])
         elif include_empty:
             instance.version = ""
+        if "artifactPath" in dict_ and dict_["artifactPath"] is not None:
+            instance.artifact_path = str(dict_["artifactPath"])
+        elif include_empty:
+            instance.artifact_path = ""
+        if "coreDumpEnabled" in dict_ and dict_["coreDumpEnabled"] is not None:
+            instance.core_dump_enabled = bool(dict_["coreDumpEnabled"])
+        elif include_empty:
+            instance.core_dump_enabled = False
+        if "imageReplications" in dict_ and dict_["imageReplications"] is not None:
+            instance.image_replications = [
+                ModelsImageReplication.create_from_dict(i0, include_empty=include_empty)
+                for i0 in dict_["imageReplications"]
+            ]
+        elif include_empty:
+            instance.image_replications = []
+        if (
+            "imageReplicationsMap" in dict_
+            and dict_["imageReplicationsMap"] is not None
+        ):
+            instance.image_replications_map = {
+                str(k0): ModelsImageReplication.create_from_dict(
+                    v0, include_empty=include_empty
+                )
+                for k0, v0 in dict_["imageReplicationsMap"].items()
+            }
+        elif include_empty:
+            instance.image_replications_map = {}
+        if "ulimitFileSize" in dict_ and dict_["ulimitFileSize"] is not None:
+            instance.ulimit_file_size = int(dict_["ulimitFileSize"])
+        elif include_empty:
+            instance.ulimit_file_size = 0
         return instance
 
     @classmethod
@@ -323,7 +410,6 @@ class ModelsPatchImageRecord(Model):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "artifactPath": "artifact_path",
             "createdAt": "created_at",
             "dockerPath": "docker_path",
             "image": "image",
@@ -333,14 +419,18 @@ class ModelsPatchImageRecord(Model):
             "patchVersion": "patch_version",
             "persistent": "persistent",
             "updatedAt": "updated_at",
-            "uploaderFlags": "uploader_flags",
+            "uploaderFlag": "uploader_flag",
             "version": "version",
+            "artifactPath": "artifact_path",
+            "coreDumpEnabled": "core_dump_enabled",
+            "imageReplications": "image_replications",
+            "imageReplicationsMap": "image_replications_map",
+            "ulimitFileSize": "ulimit_file_size",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "artifactPath": True,
             "createdAt": True,
             "dockerPath": True,
             "image": True,
@@ -350,8 +440,13 @@ class ModelsPatchImageRecord(Model):
             "patchVersion": True,
             "persistent": True,
             "updatedAt": True,
-            "uploaderFlags": True,
+            "uploaderFlag": True,
             "version": True,
+            "artifactPath": False,
+            "coreDumpEnabled": False,
+            "imageReplications": False,
+            "imageReplicationsMap": False,
+            "ulimitFileSize": False,
         }
 
     # endregion static methods

@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Session Service (3.0.0)
+# AccelByte Gaming Services Session Service (3.9.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -34,28 +34,39 @@ class ApimodelsDSInformationResponse(Model):
     """Apimodels DS information response (apimodels.DSInformationResponse)
 
     Properties:
+        created_at: (CreatedAt) REQUIRED str
+
         requested_at: (RequestedAt) REQUIRED str
 
-        status: (Status) REQUIRED str
-
-        status_v2: (StatusV2) REQUIRED str
-
         server: (Server) OPTIONAL ModelsGameServer
+
+        status: (Status) OPTIONAL str
+
+        status_v2: (StatusV2) OPTIONAL str
     """
 
     # region fields
 
+    created_at: str  # REQUIRED
     requested_at: str  # REQUIRED
-    status: str  # REQUIRED
-    status_v2: str  # REQUIRED
     server: ModelsGameServer  # OPTIONAL
+    status: str  # OPTIONAL
+    status_v2: str  # OPTIONAL
 
     # endregion fields
 
     # region with_x methods
 
+    def with_created_at(self, value: str) -> ApimodelsDSInformationResponse:
+        self.created_at = value
+        return self
+
     def with_requested_at(self, value: str) -> ApimodelsDSInformationResponse:
         self.requested_at = value
+        return self
+
+    def with_server(self, value: ModelsGameServer) -> ApimodelsDSInformationResponse:
+        self.server = value
         return self
 
     def with_status(self, value: str) -> ApimodelsDSInformationResponse:
@@ -66,20 +77,24 @@ class ApimodelsDSInformationResponse(Model):
         self.status_v2 = value
         return self
 
-    def with_server(self, value: ModelsGameServer) -> ApimodelsDSInformationResponse:
-        self.server = value
-        return self
-
     # endregion with_x methods
 
     # region to methods
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
+        if hasattr(self, "created_at"):
+            result["CreatedAt"] = str(self.created_at)
+        elif include_empty:
+            result["CreatedAt"] = ""
         if hasattr(self, "requested_at"):
             result["RequestedAt"] = str(self.requested_at)
         elif include_empty:
             result["RequestedAt"] = ""
+        if hasattr(self, "server"):
+            result["Server"] = self.server.to_dict(include_empty=include_empty)
+        elif include_empty:
+            result["Server"] = ModelsGameServer()
         if hasattr(self, "status"):
             result["Status"] = str(self.status)
         elif include_empty:
@@ -88,10 +103,6 @@ class ApimodelsDSInformationResponse(Model):
             result["StatusV2"] = str(self.status_v2)
         elif include_empty:
             result["StatusV2"] = ""
-        if hasattr(self, "server"):
-            result["Server"] = self.server.to_dict(include_empty=include_empty)
-        elif include_empty:
-            result["Server"] = ModelsGameServer()
         return result
 
     # endregion to methods
@@ -101,18 +112,22 @@ class ApimodelsDSInformationResponse(Model):
     @classmethod
     def create(
         cls,
+        created_at: str,
         requested_at: str,
-        status: str,
-        status_v2: str,
         server: Optional[ModelsGameServer] = None,
+        status: Optional[str] = None,
+        status_v2: Optional[str] = None,
         **kwargs,
     ) -> ApimodelsDSInformationResponse:
         instance = cls()
+        instance.created_at = created_at
         instance.requested_at = requested_at
-        instance.status = status
-        instance.status_v2 = status_v2
         if server is not None:
             instance.server = server
+        if status is not None:
+            instance.status = status
+        if status_v2 is not None:
+            instance.status_v2 = status_v2
         return instance
 
     @classmethod
@@ -122,10 +137,20 @@ class ApimodelsDSInformationResponse(Model):
         instance = cls()
         if not dict_:
             return instance
+        if "CreatedAt" in dict_ and dict_["CreatedAt"] is not None:
+            instance.created_at = str(dict_["CreatedAt"])
+        elif include_empty:
+            instance.created_at = ""
         if "RequestedAt" in dict_ and dict_["RequestedAt"] is not None:
             instance.requested_at = str(dict_["RequestedAt"])
         elif include_empty:
             instance.requested_at = ""
+        if "Server" in dict_ and dict_["Server"] is not None:
+            instance.server = ModelsGameServer.create_from_dict(
+                dict_["Server"], include_empty=include_empty
+            )
+        elif include_empty:
+            instance.server = ModelsGameServer()
         if "Status" in dict_ and dict_["Status"] is not None:
             instance.status = str(dict_["Status"])
         elif include_empty:
@@ -134,12 +159,6 @@ class ApimodelsDSInformationResponse(Model):
             instance.status_v2 = str(dict_["StatusV2"])
         elif include_empty:
             instance.status_v2 = ""
-        if "Server" in dict_ and dict_["Server"] is not None:
-            instance.server = ModelsGameServer.create_from_dict(
-                dict_["Server"], include_empty=include_empty
-            )
-        elif include_empty:
-            instance.server = ModelsGameServer()
         return instance
 
     @classmethod
@@ -183,19 +202,21 @@ class ApimodelsDSInformationResponse(Model):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
+            "CreatedAt": "created_at",
             "RequestedAt": "requested_at",
+            "Server": "server",
             "Status": "status",
             "StatusV2": "status_v2",
-            "Server": "server",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
+            "CreatedAt": True,
             "RequestedAt": True,
-            "Status": True,
-            "StatusV2": True,
             "Server": False,
+            "Status": False,
+            "StatusV2": False,
         }
 
     # endregion static methods

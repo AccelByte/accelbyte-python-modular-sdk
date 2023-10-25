@@ -242,19 +242,19 @@ def admin_update_input_validations(
 
 
 
-                            * displayName
+                      * displayName
 
 
-                            * password
+                      * password
 
 
-                            * username
+                      * username
 
 
-                            * email
+                      * email
 
 
-                            * avatar
+                      * avatar
 
 
 
@@ -271,16 +271,16 @@ def admin_update_input_validations(
 
 
 
-                            * lowercase
+                      * lowercase
 
 
-                            * uppercase
+                      * uppercase
 
 
-                            * mixed: uppercase and lowercase
+                      * mixed: uppercase and lowercase
 
 
-                            * mixed: uppercase and/or lowercase
+                      * mixed: uppercase and/or lowercase
 
 
     flexible special character non words with `allowAllSpecialCharacters`
@@ -294,10 +294,10 @@ def admin_update_input_validations(
 
 
 
-                            * anywhere
+                      * anywhere
 
 
-                            * middle
+                      * middle
 
 
 
@@ -372,19 +372,19 @@ async def admin_update_input_validations_async(
 
 
 
-                            * displayName
+                      * displayName
 
 
-                            * password
+                      * password
 
 
-                            * username
+                      * username
 
 
-                            * email
+                      * email
 
 
-                            * avatar
+                      * avatar
 
 
 
@@ -401,16 +401,16 @@ async def admin_update_input_validations_async(
 
 
 
-                            * lowercase
+                      * lowercase
 
 
-                            * uppercase
+                      * uppercase
 
 
-                            * mixed: uppercase and lowercase
+                      * mixed: uppercase and lowercase
 
 
-                            * mixed: uppercase and/or lowercase
+                      * mixed: uppercase and/or lowercase
 
 
     flexible special character non words with `allowAllSpecialCharacters`
@@ -424,10 +424,10 @@ async def admin_update_input_validations_async(
 
 
 
-                            * anywhere
+                      * anywhere
 
 
-                            * middle
+                      * middle
 
 
 

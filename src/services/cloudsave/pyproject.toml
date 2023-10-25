@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "accelbyte-py-sdk-service-cloudsave"
 readme = "README.md"
-version = "3.11.0"
+version = "3.12.4"
 description = "AccelByte Python SDK - AccelByte Gaming Services Cloudsave Service"
 requires-python = ">=3.9"
 dependencies = [

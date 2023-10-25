@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.33.0"
+__version__ = "4.38.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -115,6 +115,11 @@ from ._category import public_get_root_categories_async
 from ._category import update_category
 from ._category import update_category_async
 
+from ._clawback import mock_play_station_stream_event
+from ._clawback import mock_play_station_stream_event_async
+from ._clawback import query_iap_clawback_history
+from ._clawback import query_iap_clawback_history_async
+
 from ._currency import create_currency
 from ._currency import create_currency_async
 from ._currency import delete_currency
@@ -134,6 +139,8 @@ from ._dlc import delete_dlc_item_config
 from ._dlc import delete_dlc_item_config_async
 from ._dlc import delete_platform_dlc_config
 from ._dlc import delete_platform_dlc_config_async
+from ._dlc import ge_dlc_durable_reward_short_map
+from ._dlc import ge_dlc_durable_reward_short_map_async
 from ._dlc import get_dlc_item_config
 from ._dlc import get_dlc_item_config_async
 from ._dlc import get_platform_dlc_config
@@ -258,6 +265,8 @@ from ._fulfillment import fulfill_item
 from ._fulfillment import fulfill_item_async
 from ._fulfillment import fulfill_rewards
 from ._fulfillment import fulfill_rewards_async
+from ._fulfillment import fulfill_rewards_v2
+from ._fulfillment import fulfill_rewards_v2_async
 from ._fulfillment import public_redeem_code
 from ._fulfillment import public_redeem_code_async
 from ._fulfillment import query_fulfillment_histories
@@ -273,8 +282,6 @@ from ._fulfillment_script import get_fulfillment_script
 from ._fulfillment_script import get_fulfillment_script_async
 from ._fulfillment_script import list_fulfillment_scripts
 from ._fulfillment_script import list_fulfillment_scripts_async
-from ._fulfillment_script import test_fulfillment_script_eval
-from ._fulfillment_script import test_fulfillment_script_eval_async
 from ._fulfillment_script import update_fulfillment_script
 from ._fulfillment_script import update_fulfillment_script_async
 
@@ -366,6 +373,10 @@ from ._iap import update_xbl_bp_cert_file
 from ._iap import update_xbl_bp_cert_file_async
 from ._iap import update_xbl_iap_config
 from ._iap import update_xbl_iap_config_async
+from ._iap import validate_existed_playstation_iap_config
+from ._iap import validate_existed_playstation_iap_config_async
+from ._iap import validate_playstation_iap_config
+from ._iap import validate_playstation_iap_config_async
 
 from ._invoice import download_invoice_details
 from ._invoice import download_invoice_details_async
@@ -400,6 +411,8 @@ from ._item import get_available_predicate_types
 from ._item import get_available_predicate_types_async
 from ._item import get_bulk_item_id_by_skus
 from ._item import get_bulk_item_id_by_skus_async
+from ._item import get_estimated_price
+from ._item import get_estimated_price_async
 from ._item import get_item
 from ._item import get_item_async
 from ._item import get_item_by_app_id
@@ -410,6 +423,8 @@ from ._item import get_item_dynamic_data
 from ._item import get_item_dynamic_data_async
 from ._item import get_item_id_by_sku
 from ._item import get_item_id_by_sku_async
+from ._item import get_items
+from ._item import get_items_async
 from ._item import get_item_type_config
 from ._item import get_item_type_config_async
 from ._item import get_locale_item
@@ -424,6 +439,8 @@ from ._item import public_bulk_get_items
 from ._item import public_bulk_get_items_async
 from ._item import public_get_app
 from ._item import public_get_app_async
+from ._item import public_get_estimated_price
+from ._item import public_get_estimated_price_async
 from ._item import public_get_item
 from ._item import public_get_item_async
 from ._item import public_get_item_by_app_id

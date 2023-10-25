@@ -53,7 +53,7 @@ def platform_authenticate_samlv3_handler(
 
 
 
-                              * azure
+                        * azure
     Microsoft login page will redirects to this endpoint after login success
     as previously defined on authentication request SAML
 
@@ -112,7 +112,7 @@ async def platform_authenticate_samlv3_handler_async(
 
 
 
-                              * azure
+                        * azure
     Microsoft login page will redirects to this endpoint after login success
     as previously defined on authentication request SAML
 

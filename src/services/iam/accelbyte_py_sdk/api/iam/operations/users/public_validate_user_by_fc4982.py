@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (7.0.0)
+# AccelByte Gaming Services Iam Service (7.4.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -43,7 +43,7 @@ class PublicValidateUserByUserIDAndPasswordV3(Operation):
 
 
 
-                              * This endpoint validate the user password by specifying the userId and password
+                        * This endpoint validate the user password by specifying the userId and password
 
     Properties:
         url: /iam/v3/public/namespaces/{namespace}/users/{userId}/validate

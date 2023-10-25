@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Qos Manager Service (1.18.3)
+# AccelByte Gaming Services Qos Manager Service (1.18.5)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

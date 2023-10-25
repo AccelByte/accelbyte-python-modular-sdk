@@ -3,14 +3,14 @@
   "info": {
     "description": "Justice Matchmaking Service",
     "title": "Justice Matchmaking Service",
-    "version": "2.25.7"
+    "version": "2.26.2"
   },
   "schemes": [
     "https"
   ],
   "externalDocs": {
     "description": "API Docs",
-    "url": "https://stage.accelbyte.io/matchmaking/apidocs"
+    "url": "https://demo.accelbyte.io/matchmaking/apidocs"
   },
   "securityDefinitions": {
     "HasPermission": {
@@ -4038,6 +4038,13 @@
           "type": "string",
           "x-nullable": false
         },
+        "ticket_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "x-nullable": true
+        },
         "updated_at": {
           "format": "date-time",
           "type": "string",
@@ -4143,6 +4150,13 @@
           "type": "string",
           "x-nullable": false
         },
+        "ticket_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "x-nullable": true
+        },
         "time_to_match_seconds": {
           "format": "int64",
           "type": "integer"
@@ -4246,6 +4260,12 @@
         },
         "ticket_id": {
           "type": "string"
+        },
+        "ticket_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         }
       },
       "required": [
@@ -4265,7 +4285,8 @@
         "sampling_properties",
         "sorted_latency",
         "status",
-        "ticket_id"
+        "ticket_id",
+        "ticket_ids"
       ]
     },
     "models.Pagination": {
@@ -5099,13 +5120,13 @@
   },
   "x-docs": {
     "alias": "matchmaking",
-    "host": "https://stage.accelbyte.io",
+    "host": "https://demo.accelbyte.io",
     "path": "/matchmaking/apidocs/api.json"
   },
   "x-version": {
-    "buildDate": "2023-08-09T08:10:39+00:00",
-    "gitHash": "d779c2de6feed0e1c84c7b87750ab2b0547eff69",
-    "version": "2.25.7",
+    "buildDate": "2023-10-11T02:40:56+00:00",
+    "gitHash": "9e1563b045cf9e016178a5945273e2b616dc638f",
+    "version": "2.26.2",
     "version-roles-seeding": "0.0.23"
   }
 }

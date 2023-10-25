@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Dsm Controller Service (6.4.0)
+# AccelByte Gaming Services Dsm Controller Service (6.4.3)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -27,15 +27,11 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
 
-from ..models.models_uploader_flag import ModelsUploaderFlag
-
 
 class ModelsCreateImagePatchRequest(Model):
     """Models create image patch request (models.CreateImagePatchRequest)
 
     Properties:
-        artifact_path: (artifactPath) REQUIRED str
-
         docker_path: (dockerPath) REQUIRED str
 
         image: (image) REQUIRED str
@@ -48,30 +44,34 @@ class ModelsCreateImagePatchRequest(Model):
 
         persistent: (persistent) REQUIRED bool
 
-        uploader_flags: (uploaderFlags) REQUIRED List[ModelsUploaderFlag]
+        uploader_flag: (uploaderFlag) REQUIRED str
 
         version: (version) REQUIRED str
+
+        artifact_path: (artifactPath) OPTIONAL str
+
+        core_dump_enabled: (coreDumpEnabled) OPTIONAL bool
+
+        ulimit_file_size: (ulimitFileSize) OPTIONAL int
     """
 
     # region fields
 
-    artifact_path: str  # REQUIRED
     docker_path: str  # REQUIRED
     image: str  # REQUIRED
     image_size: int  # REQUIRED
     namespace: str  # REQUIRED
     patch_version: str  # REQUIRED
     persistent: bool  # REQUIRED
-    uploader_flags: List[ModelsUploaderFlag]  # REQUIRED
+    uploader_flag: str  # REQUIRED
     version: str  # REQUIRED
+    artifact_path: str  # OPTIONAL
+    core_dump_enabled: bool  # OPTIONAL
+    ulimit_file_size: int  # OPTIONAL
 
     # endregion fields
 
     # region with_x methods
-
-    def with_artifact_path(self, value: str) -> ModelsCreateImagePatchRequest:
-        self.artifact_path = value
-        return self
 
     def with_docker_path(self, value: str) -> ModelsCreateImagePatchRequest:
         self.docker_path = value
@@ -97,14 +97,24 @@ class ModelsCreateImagePatchRequest(Model):
         self.persistent = value
         return self
 
-    def with_uploader_flags(
-        self, value: List[ModelsUploaderFlag]
-    ) -> ModelsCreateImagePatchRequest:
-        self.uploader_flags = value
+    def with_uploader_flag(self, value: str) -> ModelsCreateImagePatchRequest:
+        self.uploader_flag = value
         return self
 
     def with_version(self, value: str) -> ModelsCreateImagePatchRequest:
         self.version = value
+        return self
+
+    def with_artifact_path(self, value: str) -> ModelsCreateImagePatchRequest:
+        self.artifact_path = value
+        return self
+
+    def with_core_dump_enabled(self, value: bool) -> ModelsCreateImagePatchRequest:
+        self.core_dump_enabled = value
+        return self
+
+    def with_ulimit_file_size(self, value: int) -> ModelsCreateImagePatchRequest:
+        self.ulimit_file_size = value
         return self
 
     # endregion with_x methods
@@ -113,10 +123,6 @@ class ModelsCreateImagePatchRequest(Model):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "artifact_path"):
-            result["artifactPath"] = str(self.artifact_path)
-        elif include_empty:
-            result["artifactPath"] = ""
         if hasattr(self, "docker_path"):
             result["dockerPath"] = str(self.docker_path)
         elif include_empty:
@@ -141,16 +147,26 @@ class ModelsCreateImagePatchRequest(Model):
             result["persistent"] = bool(self.persistent)
         elif include_empty:
             result["persistent"] = False
-        if hasattr(self, "uploader_flags"):
-            result["uploaderFlags"] = [
-                i0.to_dict(include_empty=include_empty) for i0 in self.uploader_flags
-            ]
+        if hasattr(self, "uploader_flag"):
+            result["uploaderFlag"] = str(self.uploader_flag)
         elif include_empty:
-            result["uploaderFlags"] = []
+            result["uploaderFlag"] = ""
         if hasattr(self, "version"):
             result["version"] = str(self.version)
         elif include_empty:
             result["version"] = ""
+        if hasattr(self, "artifact_path"):
+            result["artifactPath"] = str(self.artifact_path)
+        elif include_empty:
+            result["artifactPath"] = ""
+        if hasattr(self, "core_dump_enabled"):
+            result["coreDumpEnabled"] = bool(self.core_dump_enabled)
+        elif include_empty:
+            result["coreDumpEnabled"] = False
+        if hasattr(self, "ulimit_file_size"):
+            result["ulimitFileSize"] = int(self.ulimit_file_size)
+        elif include_empty:
+            result["ulimitFileSize"] = 0
         return result
 
     # endregion to methods
@@ -160,27 +176,34 @@ class ModelsCreateImagePatchRequest(Model):
     @classmethod
     def create(
         cls,
-        artifact_path: str,
         docker_path: str,
         image: str,
         image_size: int,
         namespace: str,
         patch_version: str,
         persistent: bool,
-        uploader_flags: List[ModelsUploaderFlag],
+        uploader_flag: str,
         version: str,
+        artifact_path: Optional[str] = None,
+        core_dump_enabled: Optional[bool] = None,
+        ulimit_file_size: Optional[int] = None,
         **kwargs,
     ) -> ModelsCreateImagePatchRequest:
         instance = cls()
-        instance.artifact_path = artifact_path
         instance.docker_path = docker_path
         instance.image = image
         instance.image_size = image_size
         instance.namespace = namespace
         instance.patch_version = patch_version
         instance.persistent = persistent
-        instance.uploader_flags = uploader_flags
+        instance.uploader_flag = uploader_flag
         instance.version = version
+        if artifact_path is not None:
+            instance.artifact_path = artifact_path
+        if core_dump_enabled is not None:
+            instance.core_dump_enabled = core_dump_enabled
+        if ulimit_file_size is not None:
+            instance.ulimit_file_size = ulimit_file_size
         return instance
 
     @classmethod
@@ -190,10 +213,6 @@ class ModelsCreateImagePatchRequest(Model):
         instance = cls()
         if not dict_:
             return instance
-        if "artifactPath" in dict_ and dict_["artifactPath"] is not None:
-            instance.artifact_path = str(dict_["artifactPath"])
-        elif include_empty:
-            instance.artifact_path = ""
         if "dockerPath" in dict_ and dict_["dockerPath"] is not None:
             instance.docker_path = str(dict_["dockerPath"])
         elif include_empty:
@@ -218,17 +237,26 @@ class ModelsCreateImagePatchRequest(Model):
             instance.persistent = bool(dict_["persistent"])
         elif include_empty:
             instance.persistent = False
-        if "uploaderFlags" in dict_ and dict_["uploaderFlags"] is not None:
-            instance.uploader_flags = [
-                ModelsUploaderFlag.create_from_dict(i0, include_empty=include_empty)
-                for i0 in dict_["uploaderFlags"]
-            ]
+        if "uploaderFlag" in dict_ and dict_["uploaderFlag"] is not None:
+            instance.uploader_flag = str(dict_["uploaderFlag"])
         elif include_empty:
-            instance.uploader_flags = []
+            instance.uploader_flag = ""
         if "version" in dict_ and dict_["version"] is not None:
             instance.version = str(dict_["version"])
         elif include_empty:
             instance.version = ""
+        if "artifactPath" in dict_ and dict_["artifactPath"] is not None:
+            instance.artifact_path = str(dict_["artifactPath"])
+        elif include_empty:
+            instance.artifact_path = ""
+        if "coreDumpEnabled" in dict_ and dict_["coreDumpEnabled"] is not None:
+            instance.core_dump_enabled = bool(dict_["coreDumpEnabled"])
+        elif include_empty:
+            instance.core_dump_enabled = False
+        if "ulimitFileSize" in dict_ and dict_["ulimitFileSize"] is not None:
+            instance.ulimit_file_size = int(dict_["ulimitFileSize"])
+        elif include_empty:
+            instance.ulimit_file_size = 0
         return instance
 
     @classmethod
@@ -272,29 +300,33 @@ class ModelsCreateImagePatchRequest(Model):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "artifactPath": "artifact_path",
             "dockerPath": "docker_path",
             "image": "image",
             "imageSize": "image_size",
             "namespace": "namespace",
             "patchVersion": "patch_version",
             "persistent": "persistent",
-            "uploaderFlags": "uploader_flags",
+            "uploaderFlag": "uploader_flag",
             "version": "version",
+            "artifactPath": "artifact_path",
+            "coreDumpEnabled": "core_dump_enabled",
+            "ulimitFileSize": "ulimit_file_size",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "artifactPath": True,
             "dockerPath": True,
             "image": True,
             "imageSize": True,
             "namespace": True,
             "patchVersion": True,
             "persistent": True,
-            "uploaderFlags": True,
+            "uploaderFlag": True,
             "version": True,
+            "artifactPath": False,
+            "coreDumpEnabled": False,
+            "ulimitFileSize": False,
         }
 
     # endregion static methods

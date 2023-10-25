@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (7.0.0)
+# AccelByte Gaming Services Iam Service (7.4.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -62,15 +62,16 @@ class PublicPartialUpdateUserV3(Operation):
 
 
 
-     Several case of updating email address
+     Response body logic when user updating email address:
 
-                        * User want to update email address of which have been verified, newEmailAddress response field will be filled with new email address.
-
-
-                        * User want to update email address of which have not been verified, { oldEmailAddress, emailAddress} response field will be filled with new email address.
+                    * User want to update email address of which have been verified, newEmailAddress response field will be filled with new email address.
 
 
-                        * User want to update email address of which have been verified and updated before, { oldEmailAddress, emailAddress} response field will be filled with verified email before. newEmailAddress response field will be filled with newest email address.
+                    * User want to update email address of which have not been verified, { oldEmailAddress, emailAddress} response field will be filled with new email address.
+
+
+                    * User want to update email address of which have been verified and updated before, { oldEmailAddress, emailAddress} response field will be filled with verified email before. newEmailAddress response field will be filled with newest email address.
+
 
 
 
@@ -99,6 +100,8 @@ class PublicPartialUpdateUserV3(Operation):
         400: Bad Request - RestErrorResponse (20002: validation error | 20019: unable to parse request body | 10154: country not found | 10130: user under age)
 
         401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
+
+        403: Forbidden - RestErrorResponse (20003: forbidden access)
 
         409: Conflict - RestErrorResponse (10133: email already used)
 
@@ -220,6 +223,8 @@ class PublicPartialUpdateUserV3(Operation):
 
         401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
 
+        403: Forbidden - RestErrorResponse (20003: forbidden access)
+
         409: Conflict - RestErrorResponse (10133: email already used)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
@@ -242,6 +247,8 @@ class PublicPartialUpdateUserV3(Operation):
         if code == 400:
             return None, RestErrorResponse.create_from_dict(content)
         if code == 401:
+            return None, RestErrorResponse.create_from_dict(content)
+        if code == 403:
             return None, RestErrorResponse.create_from_dict(content)
         if code == 409:
             return None, RestErrorResponse.create_from_dict(content)

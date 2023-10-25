@@ -6,10 +6,9 @@
 
 # template_file: command-init.j2
 
-# justice-platform-service (4.33.0)
+# justice-platform-service (4.38.0)
 
 from ._list_fulfillment_scripts import list_fulfillment_scripts
-from ._test_fulfillment_script_eval import test_fulfillment_script_eval
 from ._get_fulfillment_script import get_fulfillment_script
 from ._create_fulfillment_script import create_fulfillment_script
 from ._delete_fulfillment_script import delete_fulfillment_script
@@ -72,6 +71,8 @@ from ._grant_entitlements import grant_entitlements
 from ._revoke_entitlements import revoke_entitlements
 from ._get_entitlement import get_entitlement
 from ._query_fulfillment_histories import query_fulfillment_histories
+from ._query_iap_clawback_history import query_iap_clawback_history
+from ._mock_play_station_stream_event import mock_play_station_stream_event
 from ._get_apple_iap_config import get_apple_iap_config
 from ._update_apple_iap_config import update_apple_iap_config
 from ._delete_apple_iap_config import delete_apple_iap_config
@@ -91,6 +92,10 @@ from ._delete_oculus_iap_config import delete_oculus_iap_config
 from ._get_play_station_iap_config import get_play_station_iap_config
 from ._update_playstation_iap_config import update_playstation_iap_config
 from ._delete_playstation_iap_config import delete_playstation_iap_config
+from ._validate_existed_playstation_iap_config import (
+    validate_existed_playstation_iap_config,
+)
+from ._validate_playstation_iap_config import validate_playstation_iap_config
 from ._get_steam_iap_config import get_steam_iap_config
 from ._update_steam_iap_config import update_steam_iap_config
 from ._delete_steam_iap_config import delete_steam_iap_config
@@ -108,8 +113,10 @@ from ._create_item import create_item
 from ._get_item_by_app_id import get_item_by_app_id
 from ._query_items import query_items
 from ._list_basic_items_by_features import list_basic_items_by_features
+from ._get_items import get_items
 from ._get_item_by_sku import get_item_by_sku
 from ._get_locale_item_by_sku import get_locale_item_by_sku
+from ._get_estimated_price import get_estimated_price
 from ._get_item_id_by_sku import get_item_id_by_sku
 from ._get_bulk_item_id_by_skus import get_bulk_item_id_by_skus
 from ._bulk_get_locale_items import bulk_get_locale_items
@@ -362,10 +369,12 @@ from ._public_get_category import public_get_category
 from ._public_get_child_categories import public_get_child_categories
 from ._public_get_descendant_categories import public_get_descendant_categories
 from ._public_list_currencies import public_list_currencies
+from ._ge_dlc_durable_reward_short_map import ge_dlc_durable_reward_short_map
 from ._get_iap_item_mapping import get_iap_item_mapping
 from ._public_get_item_by_app_id import public_get_item_by_app_id
 from ._public_query_items import public_query_items
 from ._public_get_item_by_sku import public_get_item_by_sku
+from ._public_get_estimated_price import public_get_estimated_price
 from ._public_bulk_get_items import public_bulk_get_items
 from ._public_validate_item_purchase_condition import (
     public_validate_item_purchase_condition,
@@ -484,11 +493,11 @@ from ._public_list_user_wallet_transactions import public_list_user_wallet_trans
 from ._query_items_1 import query_items_1
 from ._import_store_1 import import_store_1
 from ._export_store_1 import export_store_1
+from ._fulfill_rewards_v2 import fulfill_rewards_v2
 
 
 commands = [
     list_fulfillment_scripts,
-    test_fulfillment_script_eval,
     get_fulfillment_script,
     create_fulfillment_script,
     delete_fulfillment_script,
@@ -551,6 +560,8 @@ commands = [
     revoke_entitlements,
     get_entitlement,
     query_fulfillment_histories,
+    query_iap_clawback_history,
+    mock_play_station_stream_event,
     get_apple_iap_config,
     update_apple_iap_config,
     delete_apple_iap_config,
@@ -570,6 +581,8 @@ commands = [
     get_play_station_iap_config,
     update_playstation_iap_config,
     delete_playstation_iap_config,
+    validate_existed_playstation_iap_config,
+    validate_playstation_iap_config,
     get_steam_iap_config,
     update_steam_iap_config,
     delete_steam_iap_config,
@@ -587,8 +600,10 @@ commands = [
     get_item_by_app_id,
     query_items,
     list_basic_items_by_features,
+    get_items,
     get_item_by_sku,
     get_locale_item_by_sku,
+    get_estimated_price,
     get_item_id_by_sku,
     get_bulk_item_id_by_skus,
     bulk_get_locale_items,
@@ -819,10 +834,12 @@ commands = [
     public_get_child_categories,
     public_get_descendant_categories,
     public_list_currencies,
+    ge_dlc_durable_reward_short_map,
     get_iap_item_mapping,
     public_get_item_by_app_id,
     public_query_items,
     public_get_item_by_sku,
+    public_get_estimated_price,
     public_bulk_get_items,
     public_validate_item_purchase_condition,
     public_search_items,
@@ -901,4 +918,5 @@ commands = [
     query_items_1,
     import_store_1,
     export_store_1,
+    fulfill_rewards_v2,
 ]

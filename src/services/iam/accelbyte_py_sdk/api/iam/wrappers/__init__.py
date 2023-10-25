@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Iam Service."""
 
-__version__ = "7.0.0"
+__version__ = "7.4.1"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -73,6 +73,15 @@ from ._clients import update_client_permission
 from ._clients import update_client_permission_async
 from ._clients import update_client_secret
 from ._clients import update_client_secret_async
+
+from ._country import admin_add_country_blacklist_v3
+from ._country import admin_add_country_blacklist_v3_async
+from ._country import admin_get_country_blacklist_v3
+from ._country import admin_get_country_blacklist_v3_async
+from ._country import admin_get_country_list_v3
+from ._country import admin_get_country_list_v3_async
+from ._country import public_get_country_list_v3
+from ._country import public_get_country_list_v3_async
 
 from ._devices_v4 import admin_ban_device_v4
 from ._devices_v4 import admin_ban_device_v4_async
@@ -172,6 +181,8 @@ from ._o_auth2_0_extension import platform_authentication_v3
 from ._o_auth2_0_extension import platform_authentication_v3_async
 from ._o_auth2_0_extension import platform_token_refresh_v3
 from ._o_auth2_0_extension import platform_token_refresh_v3_async
+from ._o_auth2_0_extension import platform_token_refresh_v3_deprecate
+from ._o_auth2_0_extension import platform_token_refresh_v3_deprecate_async
 from ._o_auth2_0_extension import request_game_token_code_response_v3
 from ._o_auth2_0_extension import request_game_token_code_response_v3_async
 from ._o_auth2_0_extension import request_game_token_response_v3
@@ -352,6 +363,8 @@ from ._users import admin_ban_user_v2
 from ._users import admin_ban_user_v2_async
 from ._users import admin_ban_user_v3
 from ._users import admin_ban_user_v3_async
+from ._users import admin_bulk_get_users_platform
+from ._users import admin_bulk_get_users_platform_async
 from ._users import admin_create_justice_user
 from ._users import admin_create_justice_user_async
 from ._users import admin_create_user_roles_v2
@@ -414,6 +427,8 @@ from ._users import admin_invite_user_v3
 from ._users import admin_invite_user_v3_async
 from ._users import admin_link_platform_account
 from ._users import admin_link_platform_account_async
+from ._users import admin_list_user_id_by_platform_user_i_ds_v3
+from ._users import admin_list_user_id_by_platform_user_i_ds_v3_async
 from ._users import admin_list_user_id_by_user_i_ds_v3
 from ._users import admin_list_user_id_by_user_i_ds_v3_async
 from ._users import admin_list_users_v3
@@ -438,6 +453,8 @@ from ._users import admin_search_user_v3
 from ._users import admin_search_user_v3_async
 from ._users import admin_send_verification_code_v3
 from ._users import admin_send_verification_code_v3_async
+from ._users import admin_trustly_update_user_identity
+from ._users import admin_trustly_update_user_identity_async
 from ._users import admin_update_age_restriction_config_v2
 from ._users import admin_update_age_restriction_config_v2_async
 from ._users import admin_update_age_restriction_config_v3

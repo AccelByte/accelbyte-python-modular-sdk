@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (7.0.0)
+# AccelByte Gaming Services Iam Service (7.4.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -49,7 +49,7 @@ class AdminSendVerificationCodeV3(Operation):
 
 
 
-                1. UserAccountRegistration
+              1. UserAccountRegistration
 
 
     a context type used for verifying email address in user account registration. It returns 409 if the email address already verified.
@@ -59,7 +59,7 @@ class AdminSendVerificationCodeV3(Operation):
 
 
 
-                2. UpdateEmailAddress
+              2. UpdateEmailAddress
 
 
     a context type used for verify user before updating email address.(Without email address verified checking)
@@ -68,7 +68,7 @@ class AdminSendVerificationCodeV3(Operation):
 
 
 
-                3. upgradeHeadlessAccount
+              3. upgradeHeadlessAccount
 
 
     The context is intended to be used whenever the email address wanted to be automatically verified on upgrading a headless account.

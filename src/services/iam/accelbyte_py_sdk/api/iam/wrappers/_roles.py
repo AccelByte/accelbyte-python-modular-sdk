@@ -135,7 +135,7 @@ def add_role_managers(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [POST]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -199,7 +199,7 @@ async def add_role_managers_async(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [POST]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -270,7 +270,7 @@ def add_role_members(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [POST]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -339,7 +339,7 @@ async def add_role_members_async(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [POST]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -440,25 +440,25 @@ def add_role_permission(
 
 
 
-                            1. Seconds: 0-59 * / , -
+                      1. Seconds: 0-59 * / , -
 
 
-                            2. Minutes: 0-59 * / , -
+                      2. Minutes: 0-59 * / , -
 
 
-                            3. Hours: 0-23 * / , -
+                      3. Hours: 0-23 * / , -
 
 
-                            4. Day of month: 1-31 * / , - L W
+                      4. Day of month: 1-31 * / , - L W
 
 
-                            5. Month: 1-12 JAN-DEC * / , -
+                      5. Month: 1-12 JAN-DEC * / , -
 
 
-                            6. Day of week: 0-6 SUN-SAT * / , - L #
+                      6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-                            7. Year: 1970-2099 * / , -
+                      7. Year: 1970-2099 * / , -
 
 
 
@@ -468,34 +468,34 @@ def add_role_permission(
 
 
 
-                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                      1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
+                      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+                      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
 
     Endpoint migration guide
 
 
-                            * Substitute endpoint(update): /iam/v3/admin/roles/{roleId}/permissions [PUT]
+                      * Substitute endpoint(update): /iam/v3/admin/roles/{roleId}/permissions [PUT]
 
 
-                            * Substitute endpoint(create): /iam/v3/admin/roles/{roleId}/permissions [POST]
+                      * Substitute endpoint(create): /iam/v3/admin/roles/{roleId}/permissions [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -600,25 +600,25 @@ async def add_role_permission_async(
 
 
 
-                            1. Seconds: 0-59 * / , -
+                      1. Seconds: 0-59 * / , -
 
 
-                            2. Minutes: 0-59 * / , -
+                      2. Minutes: 0-59 * / , -
 
 
-                            3. Hours: 0-23 * / , -
+                      3. Hours: 0-23 * / , -
 
 
-                            4. Day of month: 1-31 * / , - L W
+                      4. Day of month: 1-31 * / , - L W
 
 
-                            5. Month: 1-12 JAN-DEC * / , -
+                      5. Month: 1-12 JAN-DEC * / , -
 
 
-                            6. Day of week: 0-6 SUN-SAT * / , - L #
+                      6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-                            7. Year: 1970-2099 * / , -
+                      7. Year: 1970-2099 * / , -
 
 
 
@@ -628,34 +628,34 @@ async def add_role_permission_async(
 
 
 
-                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                      1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
+                      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+                      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
 
     Endpoint migration guide
 
 
-                            * Substitute endpoint(update): /iam/v3/admin/roles/{roleId}/permissions [PUT]
+                      * Substitute endpoint(update): /iam/v3/admin/roles/{roleId}/permissions [PUT]
 
 
-                            * Substitute endpoint(create): /iam/v3/admin/roles/{roleId}/permissions [POST]
+                      * Substitute endpoint(create): /iam/v3/admin/roles/{roleId}/permissions [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -1013,25 +1013,25 @@ def admin_add_role_permissions_v3(
 
 
 
-                            1. Seconds: 0-59 * / , -
+                      1. Seconds: 0-59 * / , -
 
 
-                            2. Minutes: 0-59 * / , -
+                      2. Minutes: 0-59 * / , -
 
 
-                            3. Hours: 0-23 * / , -
+                      3. Hours: 0-23 * / , -
 
 
-                            4. Day of month: 1-31 * / , - L W
+                      4. Day of month: 1-31 * / , - L W
 
 
-                            5. Month: 1-12 JAN-DEC * / , -
+                      5. Month: 1-12 JAN-DEC * / , -
 
 
-                            6. Day of week: 0-6 SUN-SAT * / , - L #
+                      6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-                            7. Year: 1970-2099 * / , -
+                      7. Year: 1970-2099 * / , -
 
 
 
@@ -1041,25 +1041,25 @@ def admin_add_role_permissions_v3(
 
 
 
-                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                      1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
+                      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+                      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -1153,25 +1153,25 @@ async def admin_add_role_permissions_v3_async(
 
 
 
-                            1. Seconds: 0-59 * / , -
+                      1. Seconds: 0-59 * / , -
 
 
-                            2. Minutes: 0-59 * / , -
+                      2. Minutes: 0-59 * / , -
 
 
-                            3. Hours: 0-23 * / , -
+                      3. Hours: 0-23 * / , -
 
 
-                            4. Day of month: 1-31 * / , - L W
+                      4. Day of month: 1-31 * / , - L W
 
 
-                            5. Month: 1-12 JAN-DEC * / , -
+                      5. Month: 1-12 JAN-DEC * / , -
 
 
-                            6. Day of week: 0-6 SUN-SAT * / , - L #
+                      6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-                            7. Year: 1970-2099 * / , -
+                      7. Year: 1970-2099 * / , -
 
 
 
@@ -1181,25 +1181,25 @@ async def admin_add_role_permissions_v3_async(
 
 
 
-                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                      1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
+                      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+                      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -1295,25 +1295,25 @@ def admin_add_role_permissions_v4(
 
 
 
-                            1. Seconds: 0-59 * / , -
+                      1. Seconds: 0-59 * / , -
 
 
-                            2. Minutes: 0-59 * / , -
+                      2. Minutes: 0-59 * / , -
 
 
-                            3. Hours: 0-23 * / , -
+                      3. Hours: 0-23 * / , -
 
 
-                            4. Day of month: 1-31 * / , - L W
+                      4. Day of month: 1-31 * / , - L W
 
 
-                            5. Month: 1-12 JAN-DEC * / , -
+                      5. Month: 1-12 JAN-DEC * / , -
 
 
-                            6. Day of week: 0-6 SUN-SAT * / , - L #
+                      6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-                            7. Year: 1970-2099 * / , -
+                      7. Year: 1970-2099 * / , -
 
 
 
@@ -1323,25 +1323,25 @@ def admin_add_role_permissions_v4(
 
 
 
-                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                      1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
+                      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+                      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -1433,25 +1433,25 @@ async def admin_add_role_permissions_v4_async(
 
 
 
-                            1. Seconds: 0-59 * / , -
+                      1. Seconds: 0-59 * / , -
 
 
-                            2. Minutes: 0-59 * / , -
+                      2. Minutes: 0-59 * / , -
 
 
-                            3. Hours: 0-23 * / , -
+                      3. Hours: 0-23 * / , -
 
 
-                            4. Day of month: 1-31 * / , - L W
+                      4. Day of month: 1-31 * / , - L W
 
 
-                            5. Month: 1-12 JAN-DEC * / , -
+                      5. Month: 1-12 JAN-DEC * / , -
 
 
-                            6. Day of week: 0-6 SUN-SAT * / , - L #
+                      6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-                            7. Year: 1970-2099 * / , -
+                      7. Year: 1970-2099 * / , -
 
 
 
@@ -1461,25 +1461,25 @@ async def admin_add_role_permissions_v4_async(
 
 
 
-                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                      1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
+                      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+                      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -3951,25 +3951,25 @@ def admin_update_role_permissions_v3(
 
 
 
-                            1. Seconds: 0-59 * / , -
+                      1. Seconds: 0-59 * / , -
 
 
-                            2. Minutes: 0-59 * / , -
+                      2. Minutes: 0-59 * / , -
 
 
-                            3. Hours: 0-23 * / , -
+                      3. Hours: 0-23 * / , -
 
 
-                            4. Day of month: 1-31 * / , - L W
+                      4. Day of month: 1-31 * / , - L W
 
 
-                            5. Month: 1-12 JAN-DEC * / , -
+                      5. Month: 1-12 JAN-DEC * / , -
 
 
-                            6. Day of week: 0-6 SUN-SAT * / , - L #
+                      6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-                            7. Year: 1970-2099 * / , -
+                      7. Year: 1970-2099 * / , -
 
 
 
@@ -3979,25 +3979,25 @@ def admin_update_role_permissions_v3(
 
 
 
-                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                      1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
+                      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+                      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -4091,25 +4091,25 @@ async def admin_update_role_permissions_v3_async(
 
 
 
-                            1. Seconds: 0-59 * / , -
+                      1. Seconds: 0-59 * / , -
 
 
-                            2. Minutes: 0-59 * / , -
+                      2. Minutes: 0-59 * / , -
 
 
-                            3. Hours: 0-23 * / , -
+                      3. Hours: 0-23 * / , -
 
 
-                            4. Day of month: 1-31 * / , - L W
+                      4. Day of month: 1-31 * / , - L W
 
 
-                            5. Month: 1-12 JAN-DEC * / , -
+                      5. Month: 1-12 JAN-DEC * / , -
 
 
-                            6. Day of week: 0-6 SUN-SAT * / , - L #
+                      6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-                            7. Year: 1970-2099 * / , -
+                      7. Year: 1970-2099 * / , -
 
 
 
@@ -4119,25 +4119,25 @@ async def admin_update_role_permissions_v3_async(
 
 
 
-                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                      1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
+                      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+                      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -4233,25 +4233,25 @@ def admin_update_role_permissions_v4(
 
 
 
-                            1. Seconds: 0-59 * / , -
+                      1. Seconds: 0-59 * / , -
 
 
-                            2. Minutes: 0-59 * / , -
+                      2. Minutes: 0-59 * / , -
 
 
-                            3. Hours: 0-23 * / , -
+                      3. Hours: 0-23 * / , -
 
 
-                            4. Day of month: 1-31 * / , - L W
+                      4. Day of month: 1-31 * / , - L W
 
 
-                            5. Month: 1-12 JAN-DEC * / , -
+                      5. Month: 1-12 JAN-DEC * / , -
 
 
-                            6. Day of week: 0-6 SUN-SAT * / , - L #
+                      6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-                            7. Year: 1970-2099 * / , -
+                      7. Year: 1970-2099 * / , -
 
 
 
@@ -4261,25 +4261,25 @@ def admin_update_role_permissions_v4(
 
 
 
-                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                      1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
+                      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+                      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -4371,25 +4371,25 @@ async def admin_update_role_permissions_v4_async(
 
 
 
-                            1. Seconds: 0-59 * / , -
+                      1. Seconds: 0-59 * / , -
 
 
-                            2. Minutes: 0-59 * / , -
+                      2. Minutes: 0-59 * / , -
 
 
-                            3. Hours: 0-23 * / , -
+                      3. Hours: 0-23 * / , -
 
 
-                            4. Day of month: 1-31 * / , - L W
+                      4. Day of month: 1-31 * / , - L W
 
 
-                            5. Month: 1-12 JAN-DEC * / , -
+                      5. Month: 1-12 JAN-DEC * / , -
 
 
-                            6. Day of week: 0-6 SUN-SAT * / , - L #
+                      6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-                            7. Year: 1970-2099 * / , -
+                      7. Year: 1970-2099 * / , -
 
 
 
@@ -4399,25 +4399,25 @@ async def admin_update_role_permissions_v4_async(
 
 
 
-                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                      1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
+                      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+                      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -4726,7 +4726,7 @@ def create_role(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles [POST]
+                      * Substitute endpoint: /iam/v3/admin/roles [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [CREATE]
@@ -4794,7 +4794,7 @@ async def create_role_async(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles [POST]
+                      * Substitute endpoint: /iam/v3/admin/roles [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [CREATE]
@@ -4847,7 +4847,7 @@ def delete_role(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId} [DELETE]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId} [DELETE]
 
     Required Permission(s):
         - ADMIN:ROLE [DELETE]
@@ -4898,7 +4898,7 @@ async def delete_role_async(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId} [DELETE]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId} [DELETE]
 
     Required Permission(s):
         - ADMIN:ROLE [DELETE]
@@ -4955,10 +4955,10 @@ def delete_role_permission(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/permissions/{resource}/{action} [DELETE]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/permissions/{resource}/{action} [DELETE]
 
 
-                            * Substitute endpoint: /iam/v4/admin/roles/{roleId}/permissions [DELETE]
+                      * Substitute endpoint: /iam/v4/admin/roles/{roleId}/permissions [DELETE]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -5021,10 +5021,10 @@ async def delete_role_permission_async(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/permissions/{resource}/{action} [DELETE]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/permissions/{resource}/{action} [DELETE]
 
 
-                            * Substitute endpoint: /iam/v4/admin/roles/{roleId}/permissions [DELETE]
+                      * Substitute endpoint: /iam/v4/admin/roles/{roleId}/permissions [DELETE]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -5085,7 +5085,7 @@ def get_role(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId} [GET]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId} [GET]
 
     Required Permission(s):
         - ROLE [READ]
@@ -5134,7 +5134,7 @@ async def get_role_async(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId} [GET]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId} [GET]
 
     Required Permission(s):
         - ROLE [READ]
@@ -5190,7 +5190,7 @@ def get_role_admin_status(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [GET]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [GET]
 
     Required Permission(s):
         - ROLE [READ]
@@ -5246,7 +5246,7 @@ async def get_role_admin_status_async(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [GET]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [GET]
 
     Required Permission(s):
         - ROLE [READ]
@@ -5304,7 +5304,7 @@ def get_role_managers(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [GET]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [GET]
 
     Required Permission(s):
         - ROLE [READ]
@@ -5360,7 +5360,7 @@ async def get_role_managers_async(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [GET]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [GET]
 
     Required Permission(s):
         - ROLE [READ]
@@ -5413,7 +5413,7 @@ def get_role_members(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [GET]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [GET]
 
     Required Permission(s):
         - ROLE [READ]
@@ -5464,7 +5464,7 @@ async def get_role_members_async(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [GET]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [GET]
 
     Required Permission(s):
         - ROLE [READ]
@@ -5519,7 +5519,7 @@ def get_roles(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles [GET]
+                      * Substitute endpoint: /iam/v3/admin/roles [GET]
 
     Required Permission(s):
         - ROLE [READ]
@@ -5568,7 +5568,7 @@ async def get_roles_async(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles [GET]
+                      * Substitute endpoint: /iam/v3/admin/roles [GET]
 
     Required Permission(s):
         - ROLE [READ]
@@ -5797,7 +5797,7 @@ def remove_role_admin(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [DELETE]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [DELETE]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -5850,7 +5850,7 @@ async def remove_role_admin_async(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [DELETE]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [DELETE]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -5908,7 +5908,7 @@ def remove_role_managers(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [DELETE]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [DELETE]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -5967,7 +5967,7 @@ async def remove_role_managers_async(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [DELETE]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [DELETE]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -6028,7 +6028,7 @@ def remove_role_members(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [DELETE]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [DELETE]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -6087,7 +6087,7 @@ async def remove_role_members_async(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [DELETE]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [DELETE]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -6155,7 +6155,7 @@ def set_role_as_admin(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [POST]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -6218,7 +6218,7 @@ async def set_role_as_admin_async(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [POST]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -6276,7 +6276,7 @@ def update_role(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId} [PATCH]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId} [PATCH]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -6335,7 +6335,7 @@ async def update_role_async(
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId} [PATCH]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId} [PATCH]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -6434,25 +6434,25 @@ def update_role_permissions(
 
 
 
-                            1. Seconds: 0-59 * / , -
+                      1. Seconds: 0-59 * / , -
 
 
-                            2. Minutes: 0-59 * / , -
+                      2. Minutes: 0-59 * / , -
 
 
-                            3. Hours: 0-23 * / , -
+                      3. Hours: 0-23 * / , -
 
 
-                            4. Day of month: 1-31 * / , - L W
+                      4. Day of month: 1-31 * / , - L W
 
 
-                            5. Month: 1-12 JAN-DEC * / , -
+                      5. Month: 1-12 JAN-DEC * / , -
 
 
-                            6. Day of week: 0-6 SUN-SAT * / , - L #
+                      6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-                            7. Year: 1970-2099 * / , -
+                      7. Year: 1970-2099 * / , -
 
 
 
@@ -6462,31 +6462,31 @@ def update_role_permissions(
 
 
 
-                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                      1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
+                      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+                      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
 
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/permissions [POST]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/permissions [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]
@@ -6583,25 +6583,25 @@ async def update_role_permissions_async(
 
 
 
-                            1. Seconds: 0-59 * / , -
+                      1. Seconds: 0-59 * / , -
 
 
-                            2. Minutes: 0-59 * / , -
+                      2. Minutes: 0-59 * / , -
 
 
-                            3. Hours: 0-23 * / , -
+                      3. Hours: 0-23 * / , -
 
 
-                            4. Day of month: 1-31 * / , - L W
+                      4. Day of month: 1-31 * / , - L W
 
 
-                            5. Month: 1-12 JAN-DEC * / , -
+                      5. Month: 1-12 JAN-DEC * / , -
 
 
-                            6. Day of week: 0-6 SUN-SAT * / , - L #
+                      6. Day of week: 0-6 SUN-SAT * / , - L #
 
 
-                            7. Year: 1970-2099 * / , -
+                      7. Year: 1970-2099 * / , -
 
 
 
@@ -6611,31 +6611,31 @@ async def update_role_permissions_async(
 
 
 
-                            1. *: all values in the fields, e.g. * in seconds fields indicates every second
+                      1. *: all values in the fields, e.g. * in seconds fields indicates every second
 
 
-                            2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+                      2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
 
 
-                            3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+                      3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
 
 
-                            4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+                      4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
 
 
-                            5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+                      5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
 
 
-                            6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
+                      6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
 
 
-                            7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+                      7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
 
 
     Endpoint migration guide
 
 
-                            * Substitute endpoint: /iam/v3/admin/roles/{roleId}/permissions [POST]
+                      * Substitute endpoint: /iam/v3/admin/roles/{roleId}/permissions [POST]
 
     Required Permission(s):
         - ADMIN:ROLE [UPDATE]

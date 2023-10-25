@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (7.0.0)
+# AccelByte Gaming Services Iam Service (7.4.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -49,7 +49,7 @@ class PublicSendVerificationCodeV3(Operation):
 
 
 
-                          1.
+                    1.
     UserAccountRegistration
 
 
@@ -60,7 +60,7 @@ class PublicSendVerificationCodeV3(Operation):
 
 
 
-                          2.
+                    2.
     UpdateEmailAddress
 
 
@@ -70,7 +70,7 @@ class PublicSendVerificationCodeV3(Operation):
 
 
 
-                          3. upgradeHeadlessAccount
+                    3. upgradeHeadlessAccount
 
 
     The context is intended to be used whenever the email address wanted to be automatically verified on upgrading a headless account.

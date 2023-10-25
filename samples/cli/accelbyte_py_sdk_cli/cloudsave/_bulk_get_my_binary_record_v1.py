@@ -6,7 +6,7 @@
 
 # template_file: command.j2
 
-# AGS Cloudsave Service (3.11.0)
+# AGS Cloudsave Service (3.12.4)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

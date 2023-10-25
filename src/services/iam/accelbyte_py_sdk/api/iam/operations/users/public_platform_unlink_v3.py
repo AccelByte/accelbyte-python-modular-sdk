@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (7.0.0)
+# AccelByte Gaming Services Iam Service (7.4.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -44,46 +44,46 @@ class PublicPlatformUnlinkV3(Operation):
 
 
 
-                          * steam
+                    * steam
 
 
-                          * steamopenid
+                    * steamopenid
 
 
-                          * facebook
+                    * facebook
 
 
-                          * google
+                    * google
 
 
-                          * oculus
+                    * oculus
 
 
-                          * twitch
+                    * twitch
 
 
-                          * android
+                    * android
 
 
-                          * ios
+                    * ios
 
 
-                          * apple
+                    * apple
 
 
-                          * device
+                    * device
 
 
-                          * discord
+                    * discord
 
 
-                          * awscognito
+                    * awscognito
 
 
-                          * epicgames
+                    * epicgames
 
 
-                          * nintendo
+                    * nintendo
 
 
 

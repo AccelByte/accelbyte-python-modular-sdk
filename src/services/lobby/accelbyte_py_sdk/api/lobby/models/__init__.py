@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Lobby Server."""
 
-__version__ = "3.25.0"
+__version__ = "3.30.2"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -17,7 +17,8 @@ __email__ = "dev@accelbyte.net"
 from .handlers_get_users_presence_response import HandlersGetUsersPresenceResponse
 from .handlers_user_presence import HandlersUserPresence
 from .log_app_message_declaration import LogAppMessageDeclaration
-from .model_bulk_add_friends_request import ModelBulkAddFriendsRequest
+from .model_bulk_friends_request import ModelBulkFriendsRequest
+from .model_bulk_friends_response import ModelBulkFriendsResponse
 from .model_bulk_users_free_form_notification_request_v1 import (
     ModelBulkUsersFreeFormNotificationRequestV1,
 )
@@ -26,6 +27,7 @@ from .model_create_topic_request import ModelCreateTopicRequest
 from .model_create_topic_request_v1 import ModelCreateTopicRequestV1
 from .model_free_form_notification_request import ModelFreeFormNotificationRequest
 from .model_free_form_notification_request_v1 import ModelFreeFormNotificationRequestV1
+from .model_friend_with_platform import ModelFriendWithPlatform
 from .model_get_all_notification_template_slug_resp import (
     ModelGetAllNotificationTemplateSlugResp,
 )
@@ -40,6 +42,7 @@ from .model_get_user_incoming_friends_response import (
 from .model_get_user_outgoing_friends_response import (
     ModelGetUserOutgoingFriendsResponse,
 )
+from .model_global_configuration import ModelGlobalConfiguration
 from .model_incoming_friends_with_time_data import ModelIncomingFriendsWithTimeData
 from .model_list_bulk_user_platforms_response import ModelListBulkUserPlatformsResponse
 from .model_load_incoming_friends_with_time_response import (
@@ -49,6 +52,8 @@ from .model_load_outgoing_friends_with_time_response import (
     ModelLoadOutgoingFriendsWithTimeResponse,
 )
 from .model_localization import ModelLocalization
+from .model_native_friend_request import ModelNativeFriendRequest
+from .model_native_friend_sync_response import ModelNativeFriendSyncResponse
 from .model_notification_template_response import ModelNotificationTemplateResponse
 from .model_notification_topic_response import ModelNotificationTopicResponse
 from .model_notification_topic_response_v1 import ModelNotificationTopicResponseV1
@@ -60,6 +65,7 @@ from .model_notification_with_template_request_v1 import (
 )
 from .model_outgoing_friends_with_time_data import ModelOutgoingFriendsWithTimeData
 from .model_pagination import ModelPagination
+from .model_put_global_configuration_request import ModelPutGlobalConfigurationRequest
 from .model_template_content import ModelTemplateContent
 from .model_template_localization import ModelTemplateLocalization
 from .model_template_localization_response import ModelTemplateLocalizationResponse

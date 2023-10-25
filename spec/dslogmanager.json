@@ -8,14 +8,14 @@
     },
     "description": "Justice DS Log Manager Service",
     "title": "justice-ds-log-manager-service",
-    "version": "3.3.1"
+    "version": "3.4.1"
   },
   "schemes": [
     "https"
   ],
   "externalDocs": {
     "description": "API Docs",
-    "url": "https://stage.accelbyte.io/dslogmanager/apidocs"
+    "url": "https://demo.accelbyte.io/dslogmanager/apidocs"
   },
   "securityDefinitions": {
     "HasPermission": {
@@ -147,7 +147,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "```\nRequired permission: ADMIN:NAMESPACE:{namespace}:DSLM:SERVER [READ]\n\nThis endpoint used to retrieve terminated servers in a namespace\n```",
+        "description": "```\nRequired permission: ADMIN:NAMESPACE:{namespace}:DSLM:SERVER [READ]\n\nThis endpoint used to retrieve terminated servers in a namespace\n\nThe namespace filter is will give result exact namespace response\n```",
         "operationId": "listTerminatedServers",
         "parameters": [
           {
@@ -222,6 +222,12 @@
             "description": "session id of the game",
             "in": "query",
             "name": "session_id",
+            "type": "string"
+          },
+          {
+            "description": "the source of the request, currently only for dsmc use with value: dsmc",
+            "in": "query",
+            "name": "source",
             "type": "string"
           },
           {
@@ -787,7 +793,6 @@
       },
       "required": [
         "game_mode",
-        "matching_allies",
         "namespace",
         "session_id"
       ]
@@ -972,9 +977,7 @@
         }
       },
       "required": [
-        "allocation_events",
         "allocation_id",
-        "alternate_ips",
         "cpu_limit",
         "deployment",
         "deployment_override",
@@ -990,13 +993,11 @@
         "params",
         "pod_name",
         "port",
-        "ports",
         "protocol",
         "provider",
         "region",
         "session_id",
         "status",
-        "status_history",
         "termination_reason"
       ]
     },
@@ -1048,15 +1049,15 @@
   },
   "x-docs": {
     "alias": "dslogmanager",
-    "host": "https://stage.accelbyte.io",
+    "host": "https://demo.accelbyte.io",
     "path": "/dslogmanager/apidocs/api.json"
   },
   "x-version": {
-    "buildDate": "2023-08-16T06:34:25+00:00",
-    "gitHash": "f58f788776b559ef107daa5b73cd0974f08b4b84",
+    "buildDate": "2023-09-16T05:43:29+00:00",
+    "gitHash": "c45a779d57a6c1000fc0782d40c2ffd29f08b3fb",
     "name": "justice-ds-log-manager-service",
-    "revisionID": "3.3.1",
-    "version": "3.3.1",
+    "revisionID": "3.4.1",
+    "version": "3.4.1",
     "version-roles-seeding": "0.0.3"
   }
 }

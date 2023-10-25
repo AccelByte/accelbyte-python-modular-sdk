@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (7.0.0)
+# AccelByte Gaming Services Iam Service (7.4.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -42,7 +42,7 @@ class AdminUpdateDeviceBanV4(Operation):
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]

@@ -3,14 +3,14 @@
   "info": {
     "description": "Justice Session Service",
     "title": "justice-session-service",
-    "version": "3.0.0"
+    "version": "3.9.0"
   },
   "schemes": [
     "https"
   ],
   "externalDocs": {
     "description": "API Docs",
-    "url": "https://stage.accelbyte.io/session/apidocs"
+    "url": "https://demo.accelbyte.io/session/apidocs"
   },
   "securityDefinitions": {
     "HasPermission": {
@@ -169,6 +169,136 @@
         "summary": "List of environment variables. Requires ADMIN:SESSION:CONFIGURATION:ENVIRONMENTVARIABLE [READ]",
         "tags": [
           "Environment Variable"
+        ]
+      }
+    },
+    "/session/v1/admin/global-configurations": {
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Delete of global configuration data.",
+        "operationId": "adminDeleteGlobalConfiguration",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "Delete of global configuration data. Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [DELETE]",
+        "tags": [
+          "Global Configuration"
+        ]
+      },
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Record of global configuration data.",
+        "operationId": "adminListGlobalConfiguration",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/apimodels.GlobalConfigurationResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "Record of global configuration data. Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [READ]",
+        "tags": [
+          "Global Configuration"
+        ]
+      },
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Upsert global configuration data.",
+        "operationId": "adminUpdateGlobalConfiguration",
+        "parameters": [
+          {
+            "description": "Update global configuration",
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apimodels.PutGlobalConfigurationRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/apimodels.GlobalConfigurationResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "Upsert global configuration data. Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [UPDATE]",
+        "tags": [
+          "Global Configuration"
         ]
       }
     },
@@ -458,7 +588,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Create template configuration to be applied across party and session.\nSession configuration mandatory :\n- name\n- joinability (example value : OPEN, CLOSED, INVITE_ONLY)\n- autoJoin: when enabled, players will automatically join the initial game session creation. Game session will not send any invite and players dont need to act upon it. default: false (disabled)\n- Type (example value : P2P, DS, NONE) if type empty, type will be assign to NONE\n- MinPlayers (must greater or equal 0)\n- MaxPlayers (must greater than 0)\n- InviteTimeout (must greater or equal 0) if InviteTimeout equal 0 will be use default DefaultTimeoutSecond (60s)\n- InactiveTimeout (must greater or equal 0) if InactiveTimeout equal 0 will be use default DefaultTimeoutSecond (60s)\n- Persistent will only applies to session with type DS (example value true or false, default: false)\n\t- If Persistent True the session always active even DS removing or terminate and Session will be request DS again until DS Ready or Busy.\n\t- To Stop Session Not request again to DS or want Delete Session can Delete Session using endpoint DELETE /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}\n\t- If Persistent False the session will be inactive if all member left and DS terminate or removing\n- nativeSessionSetting:\n\t- XboxSessionTemplateName: the XBox session template name that correspondent to the AB session template, and is needed to define XBox session\u0026#39;s joinRestriction and maxMembersCount when doing the session sync.\n\t- XboxServiceConfigID: the XBox service configuration ID.\n\t- PSNServiceLabel: the PSN service label.\n\t- SessionTitle: the session title. In PSN, this will be used to define name of the session thats displayed on PlayStation system UI.\n\t- ShouldSync: to define whether the service needs to do session sync with native platform(s). Default: false (disabled).\n\t- PSNSupportedPlatforms: the PSN supported platforms. In PSN, if ShouldSync true and PSNSupportedPlatforms is empty, then PS5 will be set as default value.\n- PSNBaseUrl this is for base URL PSN if not set will be default value https://s2s.sp-int.playstation.net. In a single namespace only 1 PSN Env that can be used. Multiple session template should refers to the same PSN Env as we have in IAM Service.\n    - https://s2s.sp-int.playstation.net (DEV, need IP Whitelist)\n    - https://s2s.prod-qa.playstation.net (QA Environment/PSN Certification)\n    - https://s2s.np.playstation.net (Production)\n    - localizedSessionName : for localized name and default language\n\t\texample payload :\n\t\t\u0026#34;localizedSessionName\u0026#34;:{\n\t\t\t\u0026#34;defaultLanguage\u0026#34; : \u0026#34;en-US\u0026#34;\n\t\t\t\u0026#34;localizedText\u0026#34; :{\n\t\t\t\t\u0026#34;en-US\u0026#34; : \u0026#34;title\u0026#34;\n\t\t\t}\n\t\t}\n- TieTeamsSessionLifetime (optional, default: false): If it is set to true, the lifetime of any partyId session inside teams attribute will be tied to the game session. Only applies when the teams partyId is game session.\n\n",
+        "description": "Create template configuration to be applied across party and session.\nSession configuration mandatory :\n- name\n- joinability (example value : OPEN, CLOSED, INVITE_ONLY)\n- autoJoin: when enabled, players will automatically join the initial game session creation. Game session will not send any invite and players dont need to act upon it. default: false (disabled)\n- Type (example value : P2P, DS, NONE) if type empty, type will be assign to NONE\n- MinPlayers (must greater or equal 0)\n- MaxPlayers (must greater than 0)\n- InviteTimeout (must greater or equal 0) if InviteTimeout equal 0 will be use default DefaultTimeoutSecond (60s)\n- InactiveTimeout (must greater or equal 0) if InactiveTimeout equal 0 will be use default DefaultTimeoutSecond (60s)\n- Persistent will only applies to session with type DS (example value true or false, default: false)\n\t- If Persistent True the session always active even DS removing or terminate and Session will be request DS again until DS Ready or Busy.\n\t- To Stop Session Not request again to DS or want Delete Session can Delete Session using endpoint DELETE /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}\n\t- If Persistent False the session will be inactive if all member left and DS terminate or removing\n- nativeSessionSetting:\n\t- XboxSessionTemplateName: the XBox session template name that correspondent to the AB session template, and is needed to define XBox session\u0026#39;s joinRestriction and maxMembersCount when doing the session sync.\n\t- XboxServiceConfigID: the XBox service configuration ID.\n\t- PSNServiceLabel: the PSN service label.\n\t- SessionTitle: the session title. In PSN, this will be used to define name of the session thats displayed on PlayStation system UI.\n\t- ShouldSync: to define whether the service needs to do session sync with native platform(s). Default: false (disabled).\n\t- PSNSupportedPlatforms: the PSN supported platforms. In PSN, if ShouldSync true and PSNSupportedPlatforms is empty, then PS5 will be set as default value.\n- PSNBaseUrl this is for base URL PSN if not set will be default value https://s2s.sp-int.playstation.net. In a single namespace only 1 PSN Env that can be used. Multiple session template should refers to the same PSN Env as we have in IAM Service.\n    - https://s2s.sp-int.playstation.net (DEV, need IP Whitelist)\n    - https://s2s.prod-qa.playstation.net (QA Environment/PSN Certification)\n    - https://s2s.np.playstation.net (Production)\n    - localizedSessionName : for localized name and default language\n\t\texample payload :\n\t\t\u0026#34;localizedSessionName\u0026#34;:{\n\t\t\t\u0026#34;defaultLanguage\u0026#34; : \u0026#34;en-US\u0026#34;\n\t\t\t\u0026#34;localizedText\u0026#34; :{\n\t\t\t\t\u0026#34;en-US\u0026#34; : \u0026#34;title\u0026#34;\n\t\t\t}\n\t\t}\n\t- if the game client wants to enable push context to PSN, game client will need to store PSN_PUSH_CONTEXT_ID on the player attributes, otherwise Session service will try to populate from the session attributes or auto generate with random UUID if empty.\n- TieTeamsSessionLifetime (optional, default: false): If it is set to true, the lifetime of any partyId session inside teams attribute will be tied to the game session. Only applies when the teams partyId is game session.\n\n",
         "operationId": "adminCreateConfigurationTemplateV1",
         "parameters": [
           {
@@ -766,7 +896,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Modify template configuration\nSession configuration mandatory :\n- name\n- joinability (example value : OPEN, CLOSED, INVITE_ONLY)\n- autoJoin: when enabled, players will automatically join the initial game session creation. Game session will not send any invite and players dont need to act upon it. default: false (disabled)\n- Type (example value : P2P, DS, NONE) if type empty, type will be assign to NONE\n- MinPlayers (must greater or equal 0)\n- MaxPlayers (must greater than 0)\n- InviteTimeout (must greater or equal 0) if InviteTimeout equal 0 will be use default DefaultTimeoutSecond (60s)\n- InactiveTimeout (must greater or equal 0) if InactiveTimeout equal 0 will be use default DefaultTimeoutSecond (60s)\n- Persistent Flag only can use with type DS (example value true or false)\n- If Persistent True the session always active even DS removing or terminate and Session will be request DS again until DS Ready or Busy.\n- To Stop Session Not request again to DS or want Delete Session can Delete Session using endpoint DELETE /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}\n- If Persistent False the session will be inactive if all member left and DS terminate or removing\n- nativeSessionSetting:\n\t- XboxSessionTemplateName: the XBox session template name that correspondent to the AB session template, and is needed to define XBox session\u0026#39;s joinRestriction and maxMembersCount when doing the session sync.\n\t- XboxServiceConfigID: the XBox service configuration ID.\n\t- PSNServiceLabel: the PSN service label.\n\t- SessionTitle: the session title. In PSN, this will be used to define name of the session thats displayed on PlayStation system UI.\n\t- ShouldSync: to define whether the service needs to do session sync with native platform(s). Default: false (disabled).\n\t- PSNSupportedPlatforms: the PSN supported platforms. In PSN, if ShouldSync true and PSNSupportedPlatforms is empty, then PS5 will be set as default value.\n- PSNBaseUrl this is for base URL PSN if not set will be default value https://s2s.sp-int.playstation.net. In a single namespace only 1 PSN Env that can be used. Multiple session template should refers to the same PSN Env as we have in IAM Service.\n    - https://s2s.sp-int.playstation.net (DEV, need IP Whitelist)\n    - https://s2s.prod-qa.playstation.net (QA Environment/PSN Certification)\n    - https://s2s.np.playstation.net (Production)\n    - localizedSessionName : for localized name and default language\n\t\texample payload :\n\t\t\u0026#34;localizedSessionName\u0026#34;:{\n\t\t\t\u0026#34;defaultLanguage\u0026#34; : \u0026#34;en-US\u0026#34;\n\t\t\t\u0026#34;localizedText\u0026#34; :{\n\t\t\t\t\u0026#34;en-US\u0026#34; : \u0026#34;title\u0026#34;\n\t\t\t}\n\t\t}\n- TieTeamsSessionLifetime: If it is set to true, the lifetime of any partyId session inside teams attribute will be tied to the game session. Only applies when the teams partyId is game session.\n\n",
+        "description": "Modify template configuration\nSession configuration mandatory :\n- name\n- joinability (example value : OPEN, CLOSED, INVITE_ONLY)\n- autoJoin: when enabled, players will automatically join the initial game session creation. Game session will not send any invite and players dont need to act upon it. default: false (disabled)\n- Type (example value : P2P, DS, NONE) if type empty, type will be assign to NONE\n- MinPlayers (must greater or equal 0)\n- MaxPlayers (must greater than 0)\n- InviteTimeout (must greater or equal 0) if InviteTimeout equal 0 will be use default DefaultTimeoutSecond (60s)\n- InactiveTimeout (must greater or equal 0) if InactiveTimeout equal 0 will be use default DefaultTimeoutSecond (60s)\n- Persistent Flag only can use with type DS (example value true or false)\n- If Persistent True the session always active even DS removing or terminate and Session will be request DS again until DS Ready or Busy.\n- To Stop Session Not request again to DS or want Delete Session can Delete Session using endpoint DELETE /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}\n- If Persistent False the session will be inactive if all member left and DS terminate or removing\n- nativeSessionSetting:\n\t- XboxSessionTemplateName: the XBox session template name that correspondent to the AB session template, and is needed to define XBox session\u0026#39;s joinRestriction and maxMembersCount when doing the session sync.\n\t- XboxServiceConfigID: the XBox service configuration ID.\n\t- PSNServiceLabel: the PSN service label.\n\t- SessionTitle: the session title. In PSN, this will be used to define name of the session thats displayed on PlayStation system UI.\n\t- ShouldSync: to define whether the service needs to do session sync with native platform(s). Default: false (disabled).\n\t- PSNSupportedPlatforms: the PSN supported platforms. In PSN, if ShouldSync true and PSNSupportedPlatforms is empty, then PS5 will be set as default value.\n- PSNBaseUrl this is for base URL PSN if not set will be default value https://s2s.sp-int.playstation.net. In a single namespace only 1 PSN Env that can be used. Multiple session template should refers to the same PSN Env as we have in IAM Service.\n    - https://s2s.sp-int.playstation.net (DEV, need IP Whitelist)\n    - https://s2s.prod-qa.playstation.net (QA Environment/PSN Certification)\n    - https://s2s.np.playstation.net (Production)\n    - localizedSessionName : for localized name and default language\n\t\texample payload :\n\t\t\u0026#34;localizedSessionName\u0026#34;:{\n\t\t\t\u0026#34;defaultLanguage\u0026#34; : \u0026#34;en-US\u0026#34;\n\t\t\t\u0026#34;localizedText\u0026#34; :{\n\t\t\t\t\u0026#34;en-US\u0026#34; : \u0026#34;title\u0026#34;\n\t\t\t}\n\t\t}\n\t- if the game client wants to enable push context to PSN, game client will need to store PSN_PUSH_CONTEXT_ID on the player attributes, otherwise Session service will try to populate from the session attributes or auto generate with random UUID if empty.\n- TieTeamsSessionLifetime: If it is set to true, the lifetime of any partyId session inside teams attribute will be tied to the game session. Only applies when the teams partyId is game session.\n\n",
         "operationId": "adminUpdateConfigurationTemplateV1",
         "parameters": [
           {
@@ -1145,6 +1275,76 @@
           }
         ],
         "summary": "Get all game sessions.",
+        "tags": [
+          "Game Session"
+        ]
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Query game sessions by admin.\n\nBy default, API will return a list of available game sessions (joinability: open).\nSession service has several DSInformation status to track DS request to DSMC:\n   - NEED_TO_REQUEST: number of active players hasn\u0026#39;t reached session\u0026#39;s minPlayers therefore DS has not yet requested.\n   - REQUESTED: DS is being requested to DSMC.\n   - AVAILABLE: DS is ready to use. The DSMC status for this DS is either READY/BUSY.\n   - FAILED_TO_REQUEST: DSMC fails to create the DS.\n\nquery parameter \\\u0026#34;availability\\\u0026#34; to filter sessions\u0026#39; availability:\nall: return all sessions regardless it\u0026#39;s full\nfull: only return active sessions\ndefault behavior (unset or else): return only available sessions (not full)\n",
+        "operationId": "adminQueryGameSessionsByAttributes",
+        "parameters": [
+          {
+            "description": "a list of attributes to filter from available sessions",
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "additionalProperties": true,
+              "type": "object"
+            }
+          },
+          {
+            "description": "namespace of the game",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/apimodels.GameSessionQueryResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "Query game sessions by admin",
         "tags": [
           "Game Session"
         ]
@@ -1745,9 +1945,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "additionalProperties": {
-                "type": "object"
-              },
+              "additionalProperties": true,
               "type": "object"
             }
           },
@@ -1824,9 +2022,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "additionalProperties": {
-                "type": "object"
-              },
+              "additionalProperties": true,
               "type": "object"
             }
           },
@@ -1871,7 +2067,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Admin get attributes of players.\n\nField descriptions:\n\t- userID           : user who owns the attributes.\n\t- crossplayEnabled : set to true if the player wants to enable crossplay to their session (default: false).\n\t- platforms        : list of the player\u0026#39;s 3rd party platform account information.\n\t\t- name   : platform name. supported platforms: STEAM, XBOX, PSN\n\t\t- userID : platform userID\n\t- data             : other data that the player wants to store.\n\t- currentPlatform  : latest user game platform.\n\t- roles\t\t\t   : user role for matchmaking role base support.\n",
+        "description": "Admin get attributes of players.\n\nField descriptions:\n\t- userID           : user who owns the attributes.\n\t- crossplayEnabled : set to true if the player wants to enable crossplay to their session (default: false).\n\t- platforms        : list of the player\u0026#39;s 3rd party platform account information.\n\t\t- name   : platform name. supported platforms: STEAM, XBOX, PSN\n\t\t- userID : platform userID\n\t- data             : other data that the player wants to store.\n\t\t- PSN_PUSH_CONTEXT_ID: if provided, session will refer to this when performing session sync with PSN, otherwise will populate from session attributes, otherwise will populate from session attributes\n\t- currentPlatform  : latest user game platform.\n\t- roles\t\t\t   : user role for matchmaking role base support.\n",
         "operationId": "adminQueryPlayerAttributes",
         "parameters": [
           {
@@ -1942,7 +2138,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Admin get attributes of a player.\n\nField descriptions:\n\t- userID           : user who owns the attributes.\n\t- crossplayEnabled : set to true if the player wants to enable crossplay to their session (default: false).\n\t- platforms        : list of the player\u0026#39;s 3rd party platform account information.\n\t\t- name   : platform name. supported platforms: STEAM, XBOX, PSN\n\t\t- userID : platform userID\n\t- data             : other data that the player wants to store.\n\t- currentPlatform  : latest user game platform.\n\t- roles\t\t\t   : user role for matchmaking role base support.\n",
+        "description": "Admin get attributes of a player.\n\nField descriptions:\n\t- userID           : user who owns the attributes.\n\t- crossplayEnabled : set to true if the player wants to enable crossplay to their session (default: false).\n\t- platforms        : list of the player\u0026#39;s 3rd party platform account information.\n\t\t- name   : platform name. supported platforms: STEAM, XBOX, PSN\n\t\t- userID : platform userID\n\t- data             : other data that the player wants to store.\n\t\t- PSN_PUSH_CONTEXT_ID: if provided, session will refer to this when performing session sync with PSN, otherwise will populate from session attributes\n\t- currentPlatform  : latest user game platform.\n\t- roles\t\t\t   : user role for matchmaking role base support.\n",
         "operationId": "adminGetPlayerAttributes",
         "parameters": [
           {
@@ -2083,7 +2279,7 @@
           "application/json"
         ],
         "description": "Query game sessions.\n\nBy default, API will return a list of available game sessions (joinability: open).\nSession service has several DSInformation status to track DS request to DSMC:\n   - NEED_TO_REQUEST: number of active players hasn\u0026#39;t reached session\u0026#39;s minPlayers therefore DS has not yet requested.\n   - REQUESTED: DS is being requested to DSMC.\n   - AVAILABLE: DS is ready to use. The DSMC status for this DS is either READY/BUSY.\n   - FAILED_TO_REQUEST: DSMC fails to create the DS.\n\nquery parameter \\\u0026#34;availability\\\u0026#34; to filter sessions\u0026#39; availability:\nall: return all sessions regardless it\u0026#39;s full\nfull: only return active sessions\ndefault behavior (unset or else): return only available sessions (not full)\n",
-        "operationId": "publicQueryGameSessions",
+        "operationId": "publicQueryGameSessionsByAttributes",
         "parameters": [
           {
             "description": "a list of attributes to filter from available sessions",
@@ -2091,9 +2287,7 @@
             "name": "body",
             "required": true,
             "schema": {
-              "additionalProperties": {
-                "type": "object"
-              },
+              "additionalProperties": true,
               "type": "object"
             }
           },
@@ -2443,7 +2637,7 @@
         "operationId": "patchUpdateGameSession",
         "parameters": [
           {
-            "description": "Update game session request",
+            "description": "Patch update game session request",
             "in": "body",
             "name": "body",
             "required": true,
@@ -2705,11 +2899,8 @@
           "application/json"
         ],
         "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/apimodels.GameSessionResponse"
-            }
+          "204": {
+            "description": "No Content"
           },
           "400": {
             "description": "Bad Request",
@@ -3607,11 +3798,8 @@
           "application/json"
         ],
         "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/apimodels.PartySessionResponse"
-            }
+          "204": {
+            "description": "No Content"
           },
           "400": {
             "description": "Bad Request",
@@ -4251,9 +4439,7 @@
             "name": "body",
             "required": true,
             "schema": {
-              "additionalProperties": {
-                "type": "object"
-              },
+              "additionalProperties": true,
               "type": "object"
             }
           },
@@ -4279,9 +4465,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "additionalProperties": {
-                "type": "object"
-              },
+              "additionalProperties": true,
               "type": "object"
             }
           },
@@ -4340,9 +4524,7 @@
             "name": "body",
             "required": true,
             "schema": {
-              "additionalProperties": {
-                "type": "object"
-              },
+              "additionalProperties": true,
               "type": "object"
             }
           },
@@ -4375,9 +4557,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "additionalProperties": {
-                "type": "object"
-              },
+              "additionalProperties": true,
               "type": "object"
             }
           },
@@ -4550,7 +4730,7 @@
         ]
       },
       "get": {
-        "description": "Get player attributes.\n\nField descriptions:\n\t- userID           : user who owns the attributes.\n\t- crossplayEnabled : set to true if the player wants to enable crossplay to their session (default: false).\n\t- platforms        : list of the player\u0026#39;s 3rd party platform account information.\n\t\t- name   : platform name. supported platforms: STEAM, XBOX, PSN\n\t\t- userID : platform userID\n\t- data             : other data that the player wants to store.\n\t- currentPlatform  : latest user game platform.\n\t- roles\t\t\t   : user role for matchmaking role base support.\n",
+        "description": "Get player attributes.\n\nField descriptions:\n\t- userID           : user who owns the attributes.\n\t- crossplayEnabled : set to true if the player wants to enable crossplay to their session (default: false).\n\t- platforms        : list of the player\u0026#39;s 3rd party platform account information.\n\t\t- name   : platform name. supported platforms: STEAM, XBOX, PSN\n\t\t- userID : platform userID\n\t- data             : other data that the player wants to store.\n\t\t- PSN_PUSH_CONTEXT_ID: if provided, session will refer to this when performing session sync with PSN, otherwise will populate from session attributes\n\t- currentPlatform  : latest user game platform.\n\t- roles\t\t\t   : user role for matchmaking role base support.\n",
         "operationId": "publicGetPlayerAttributes",
         "parameters": [
           {
@@ -4610,7 +4790,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "This API behaves to upsert player\u0026#39;s attributes.\n\nField descriptions:\n\t- userID           : user who owns the attributes.\n\t- crossplayEnabled : set to true if the player wants to enable crossplay to their session (default: false).\n\t- platforms        : list of the player\u0026#39;s 3rd party platform account information.\n\t\t- name   : platform name. supported platforms: STEAM, XBOX, PSN\n\t\t- userID : platform userID\n\t- data             : other data that the player wants to store.\n\t- currentPlatform  : latest user game platform.\n\t- roles\t\t\t   : user role for matchmaking role base support.\n",
+        "description": "This API behaves to upsert player\u0026#39;s attributes.\n\nField descriptions:\n\t- userID           : user who owns the attributes.\n\t- crossplayEnabled : set to true if the player wants to enable crossplay to their session (default: false).\n\t- platforms        : list of the player\u0026#39;s 3rd party platform account information.\n\t\t- name   : platform name. supported platforms: STEAM, XBOX, PSN\n\t\t- userID : platform userID\n\t- data             : other data that the player wants to store.\n\t\t- PSN_PUSH_CONTEXT_ID: if provided, session will refer to this when performing session sync with PSN, otherwise will populate from session attributes\n\t- currentPlatform  : latest user game platform.\n\t- roles\t\t\t   : user role for matchmaking role base support.\n",
         "operationId": "publicStorePlayerAttributes",
         "parameters": [
           {
@@ -4910,6 +5090,10 @@
           },
           "type": "array"
         },
+        "immutableStorage": {
+          "type": "boolean",
+          "x-omitempty": false
+        },
         "inactiveTimeout": {
           "format": "int32",
           "type": "integer"
@@ -5037,6 +5221,10 @@
             "type": "string"
           },
           "type": "array"
+        },
+        "immutableStorage": {
+          "type": "boolean",
+          "x-omitempty": false
         },
         "inactiveTimeout": {
           "format": "int32",
@@ -5274,6 +5462,9 @@
     },
     "apimodels.DSInformationResponse": {
       "properties": {
+        "CreatedAt": {
+          "type": "string"
+        },
         "RequestedAt": {
           "type": "string"
         },
@@ -5288,9 +5479,8 @@
         }
       },
       "required": [
-        "RequestedAt",
-        "Status",
-        "StatusV2"
+        "CreatedAt",
+        "RequestedAt"
       ]
     },
     "apimodels.DeleteBulkGameSessionRequest": {
@@ -5465,6 +5655,51 @@
         "namespace",
         "updatedAt",
         "version"
+      ]
+    },
+    "apimodels.GlobalConfigurationResponse": {
+      "properties": {
+        "regionRetryMapping": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "type": "object"
+        },
+        "regionURLMapping": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "testGameMode": {
+          "type": "string"
+        },
+        "testRegionURLMapping": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "testTargetUserIDs": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "regionRetryMapping",
+        "regionURLMapping",
+        "testGameMode",
+        "testRegionURLMapping",
+        "testTargetUserIDs",
+        "updatedAt"
       ]
     },
     "apimodels.JoinByCodeRequest": {
@@ -5748,6 +5983,10 @@
           },
           "type": "array"
         },
+        "immutableStorage": {
+          "type": "boolean",
+          "x-omitempty": false
+        },
         "inactiveTimeout": {
           "format": "int32",
           "type": "integer"
@@ -5818,6 +6057,47 @@
         "persistent",
         "textChat",
         "type"
+      ]
+    },
+    "apimodels.PutGlobalConfigurationRequest": {
+      "properties": {
+        "regionRetryMapping": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "type": "object"
+        },
+        "regionURLMapping": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "testGameMode": {
+          "type": "string"
+        },
+        "testRegionURLMapping": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "testTargetUserIDs": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "regionRetryMapping",
+        "regionURLMapping",
+        "testGameMode",
+        "testRegionURLMapping",
+        "testTargetUserIDs"
       ]
     },
     "apimodels.PutPlatformCredentialsRequest": {
@@ -5902,6 +6182,10 @@
             "type": "string"
           },
           "type": "array"
+        },
+        "immutableStorage": {
+          "type": "boolean",
+          "x-omitempty": false
         },
         "inactiveTimeout": {
           "format": "int32",
@@ -6226,6 +6510,12 @@
           },
           "type": "array"
         },
+        "ams_protocol": {
+          "items": {
+            "$ref": "#/definitions/models.PortConfigurationAMS"
+          },
+          "type": "array"
+        },
         "custom_attribute": {
           "type": "string"
         },
@@ -6287,18 +6577,9 @@
       },
       "required": [
         "custom_attribute",
-        "deployment",
-        "game_version",
-        "image_version",
-        "ip",
         "is_override_game_version",
         "last_update",
         "namespace",
-        "pod_name",
-        "port",
-        "ports",
-        "protocol",
-        "provider",
         "region",
         "session_id",
         "source",
@@ -6390,6 +6671,20 @@
         "updatedAt"
       ]
     },
+    "models.PortConfigurationAMS": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "protocol": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "protocol"
+      ]
+    },
     "models.Team": {
       "properties": {
         "UserIDs": {
@@ -6456,13 +6751,13 @@
   },
   "x-docs": {
     "alias": "session",
-    "host": "https://stage.accelbyte.io",
+    "host": "https://demo.accelbyte.io",
     "path": "/session/apidocs/api.json"
   },
   "x-version": {
-    "buildDate": "2023-08-14T08:16:52+00:00",
-    "gitHash": "4c61ee597ca2556f92b39cb1fbb8dde90a31607e",
-    "version": "3.0.0",
-    "version-roles-seeding": "0.0.40"
+    "buildDate": "2023-10-11T03:02:53+00:00",
+    "gitHash": "b44b3f124bd9fc0c74e402b63817ebc40fc5cfbd",
+    "version": "3.9.0",
+    "version-roles-seeding": "0.0.49"
   }
 }

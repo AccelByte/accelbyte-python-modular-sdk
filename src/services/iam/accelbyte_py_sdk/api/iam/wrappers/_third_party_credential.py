@@ -161,10 +161,10 @@ def add_third_party_login_platform_credential_v3(
 
 
 
-                            * Current supported value for TokenAuthenticationType are code, idToken and bearerToken
+                      * Current supported value for TokenAuthenticationType are code, idToken and bearerToken
 
 
-                            * `TokenClaimsMapping` is used to extract user info from idToken claims or user info endpoint response accessed using bearerToken.
+                      * `TokenClaimsMapping` is used to extract user info from idToken claims or user info endpoint response accessed using bearerToken.
     Its a JSON format with key should be `name`, `email` and `avatarUrl`
     since IAM will look up for these key when extracting user info. default claims keys : userIdentity/sub, name, email and avatarUrl/picture
 
@@ -313,10 +313,10 @@ async def add_third_party_login_platform_credential_v3_async(
 
 
 
-                            * Current supported value for TokenAuthenticationType are code, idToken and bearerToken
+                      * Current supported value for TokenAuthenticationType are code, idToken and bearerToken
 
 
-                            * `TokenClaimsMapping` is used to extract user info from idToken claims or user info endpoint response accessed using bearerToken.
+                      * `TokenClaimsMapping` is used to extract user info from idToken claims or user info endpoint response accessed using bearerToken.
     Its a JSON format with key should be `name`, `email` and `avatarUrl`
     since IAM will look up for these key when extracting user info. default claims keys : userIdentity/sub, name, email and avatarUrl/picture
 
@@ -1201,10 +1201,10 @@ def update_third_party_login_platform_credential_v3(
 
 
 
-                            * Current supported value for TokenAuthenticationType is code, idToken and bearerToken
+                      * Current supported value for TokenAuthenticationType is code, idToken and bearerToken
 
 
-                            * `TokenClaimsMapping` is used to extract user info from idToken claims or user info endpoint response accessed using bearerToken.
+                      * `TokenClaimsMapping` is used to extract user info from idToken claims or user info endpoint response accessed using bearerToken.
     Its a JSON format with key should be `name`, `email` and `avatarUrl`
     since IAM will look up for these key when extracting user info. default claims keys : userIdentity/sub, name, email and avatarUrl/picture
 
@@ -1355,10 +1355,10 @@ async def update_third_party_login_platform_credential_v3_async(
 
 
 
-                            * Current supported value for TokenAuthenticationType is code, idToken and bearerToken
+                      * Current supported value for TokenAuthenticationType is code, idToken and bearerToken
 
 
-                            * `TokenClaimsMapping` is used to extract user info from idToken claims or user info endpoint response accessed using bearerToken.
+                      * `TokenClaimsMapping` is used to extract user info from idToken claims or user info endpoint response accessed using bearerToken.
     Its a JSON format with key should be `name`, `email` and `avatarUrl`
     since IAM will look up for these key when extracting user info. default claims keys : userIdentity/sub, name, email and avatarUrl/picture
 

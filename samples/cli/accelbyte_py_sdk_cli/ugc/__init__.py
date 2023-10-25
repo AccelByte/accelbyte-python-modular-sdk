@@ -6,7 +6,7 @@
 
 # template_file: command-init.j2
 
-# justice-ugc-service (2.12.0)
+# justice-ugc-service (2.15.0)
 
 from ._single_admin_get_channel import single_admin_get_channel
 from ._admin_create_channel import admin_create_channel
@@ -23,12 +23,17 @@ from ._single_admin_delete_content import single_admin_delete_content
 from ._single_admin_get_content import single_admin_get_content
 from ._admin_get_content_bulk import admin_get_content_bulk
 from ._admin_search_content import admin_search_content
+from ._admin_get_content_bulk_by_share_codes import (
+    admin_get_content_bulk_by_share_codes,
+)
 from ._admin_get_user_content_by_share_code import admin_get_user_content_by_share_code
 from ._admin_get_specific_content import admin_get_specific_content
 from ._admin_download_content_preview import admin_download_content_preview
+from ._rollback_content_version import rollback_content_version
 from ._admin_update_screenshots import admin_update_screenshots
 from ._admin_upload_content_screenshot import admin_upload_content_screenshot
 from ._admin_delete_content_screenshot import admin_delete_content_screenshot
+from ._list_content_versions import list_content_versions
 from ._single_admin_get_all_groups import single_admin_get_all_groups
 from ._admin_create_group import admin_create_group
 from ._single_admin_get_group import single_admin_get_group
@@ -47,7 +52,11 @@ from ._admin_get_channel import admin_get_channel
 from ._admin_delete_all_user_channels import admin_delete_all_user_channels
 from ._admin_update_channel import admin_update_channel
 from ._admin_delete_channel import admin_delete_channel
+from ._admin_update_content_s3_by_share_code import (
+    admin_update_content_s3_by_share_code,
+)
 from ._admin_update_content_s3 import admin_update_content_s3
+from ._delete_content_by_share_code import delete_content_by_share_code
 from ._admin_update_content_direct import admin_update_content_direct
 from ._admin_delete_content import admin_delete_content
 from ._admin_get_content import admin_get_content
@@ -121,12 +130,15 @@ commands = [
     single_admin_get_content,
     admin_get_content_bulk,
     admin_search_content,
+    admin_get_content_bulk_by_share_codes,
     admin_get_user_content_by_share_code,
     admin_get_specific_content,
     admin_download_content_preview,
+    rollback_content_version,
     admin_update_screenshots,
     admin_upload_content_screenshot,
     admin_delete_content_screenshot,
+    list_content_versions,
     single_admin_get_all_groups,
     admin_create_group,
     single_admin_get_group,
@@ -145,7 +157,9 @@ commands = [
     admin_delete_all_user_channels,
     admin_update_channel,
     admin_delete_channel,
+    admin_update_content_s3_by_share_code,
     admin_update_content_s3,
+    delete_content_by_share_code,
     admin_update_content_direct,
     admin_delete_content,
     admin_get_content,

@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (7.0.0)
+# AccelByte Gaming Services Iam Service (7.4.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -44,10 +44,10 @@ class PublicGetUserBanHistoryV3(Operation):
 
 
 
-                          * This endpoint retrieve the first page of the data if after and before parameters is empty
+                    * This endpoint retrieve the first page of the data if after and before parameters is empty
 
 
-                          * The pagination is not working yet
+                    * The pagination is not working yet
 
     Properties:
         url: /iam/v3/public/namespaces/{namespace}/users/{userId}/bans

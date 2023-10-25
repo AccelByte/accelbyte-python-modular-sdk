@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service (7.0.0)
+# AccelByte Gaming Services Iam Service (7.4.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -43,10 +43,10 @@ class AdminLinkPlatformAccount(Operation):
     By default, these cases are not allowed
 
 
-                    * The platform account current is linked by another account
+                  * The platform account current is linked by another account
 
 
-                    * The target account ever linked this platform's another account
+                  * The target account ever linked this platform's another account
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]

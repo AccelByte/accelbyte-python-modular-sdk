@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# Fleet Commander (0.2.1)
+# Fleet Commander (1.3.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

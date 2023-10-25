@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Session Service."""
 
-__version__ = "3.0.0"
+__version__ = "3.9.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -45,6 +45,9 @@ from .apimodels_environment_variable_response import (
 )
 from .apimodels_game_session_query_response import ApimodelsGameSessionQueryResponse
 from .apimodels_game_session_response import ApimodelsGameSessionResponse
+from .apimodels_global_configuration_response import (
+    ApimodelsGlobalConfigurationResponse,
+)
 from .apimodels_join_by_code_request import ApimodelsJoinByCodeRequest
 from .apimodels_kick_response import ApimodelsKickResponse
 from .apimodels_pagination import ApimodelsPagination
@@ -65,6 +68,9 @@ from .apimodels_players_current_platform_response import (
 )
 from .apimodels_promote_leader_request import ApimodelsPromoteLeaderRequest
 from .apimodels_public_configuration import ApimodelsPublicConfiguration
+from .apimodels_put_global_configuration_request import (
+    ApimodelsPutGlobalConfigurationRequest,
+)
 from .apimodels_put_platform_credentials_request import (
     ApimodelsPutPlatformCredentialsRequest,
 )
@@ -91,6 +97,7 @@ from .models_game_server import ModelsGameServer
 from .models_native_session_setting import ModelsNativeSessionSetting
 from .models_party_members import ModelsPartyMembers
 from .models_platform_credentials import ModelsPlatformCredentials
+from .models_port_configuration_ams import ModelsPortConfigurationAMS
 from .models_psn_app_server_credentials import ModelsPSNAppServerCredentials
 from .models_team import ModelsTeam
 from .models_user_platform_info import ModelsUserPlatformInfo

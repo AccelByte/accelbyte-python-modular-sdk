@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Iam Service."""
 
-__version__ = "7.0.0"
+__version__ = "7.4.1"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -75,6 +75,16 @@ from .wrappers import update_client_permission
 from .wrappers import update_client_permission_async
 from .wrappers import update_client_secret
 from .wrappers import update_client_secret_async
+
+# country
+from .wrappers import admin_add_country_blacklist_v3
+from .wrappers import admin_add_country_blacklist_v3_async
+from .wrappers import admin_get_country_blacklist_v3
+from .wrappers import admin_get_country_blacklist_v3_async
+from .wrappers import admin_get_country_list_v3
+from .wrappers import admin_get_country_list_v3_async
+from .wrappers import public_get_country_list_v3
+from .wrappers import public_get_country_list_v3_async
 
 # devices_v4
 from .wrappers import admin_ban_device_v4
@@ -179,6 +189,8 @@ from .wrappers import platform_authentication_v3
 from .wrappers import platform_authentication_v3_async
 from .wrappers import platform_token_refresh_v3
 from .wrappers import platform_token_refresh_v3_async
+from .wrappers import platform_token_refresh_v3_deprecate
+from .wrappers import platform_token_refresh_v3_deprecate_async
 from .wrappers import request_game_token_code_response_v3
 from .wrappers import request_game_token_code_response_v3_async
 from .wrappers import request_game_token_response_v3
@@ -351,6 +363,8 @@ from .wrappers import admin_ban_user_v2
 from .wrappers import admin_ban_user_v2_async
 from .wrappers import admin_ban_user_v3
 from .wrappers import admin_ban_user_v3_async
+from .wrappers import admin_bulk_get_users_platform
+from .wrappers import admin_bulk_get_users_platform_async
 from .wrappers import admin_create_justice_user
 from .wrappers import admin_create_justice_user_async
 from .wrappers import admin_create_user_roles_v2
@@ -413,6 +427,8 @@ from .wrappers import admin_invite_user_v3
 from .wrappers import admin_invite_user_v3_async
 from .wrappers import admin_link_platform_account
 from .wrappers import admin_link_platform_account_async
+from .wrappers import admin_list_user_id_by_platform_user_i_ds_v3
+from .wrappers import admin_list_user_id_by_platform_user_i_ds_v3_async
 from .wrappers import admin_list_user_id_by_user_i_ds_v3
 from .wrappers import admin_list_user_id_by_user_i_ds_v3_async
 from .wrappers import admin_list_users_v3
@@ -437,6 +453,8 @@ from .wrappers import admin_search_user_v3
 from .wrappers import admin_search_user_v3_async
 from .wrappers import admin_send_verification_code_v3
 from .wrappers import admin_send_verification_code_v3_async
+from .wrappers import admin_trustly_update_user_identity
+from .wrappers import admin_trustly_update_user_identity_async
 from .wrappers import admin_update_age_restriction_config_v2
 from .wrappers import admin_update_age_restriction_config_v2_async
 from .wrappers import admin_update_age_restriction_config_v3

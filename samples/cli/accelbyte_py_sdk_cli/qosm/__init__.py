@@ -6,7 +6,7 @@
 
 # template_file: command-init.j2
 
-# Justice QoS Manager Service (1.18.3)
+# Justice QoS Manager Service (1.18.5)
 
 from ._update_server_config import update_server_config
 from ._delete_server import delete_server

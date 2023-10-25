@@ -69,7 +69,7 @@ def admin_ban_device_v4(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [CREATE]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [CREATE]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [CREATE]
@@ -130,7 +130,7 @@ async def admin_ban_device_v4_async(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [CREATE]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [CREATE]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [CREATE]
@@ -193,7 +193,7 @@ def admin_decrypt_device_v4(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -252,7 +252,7 @@ async def admin_decrypt_device_v4_async(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -315,7 +315,7 @@ def admin_generate_report_v4(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -384,7 +384,7 @@ async def admin_generate_report_v4_async(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -457,7 +457,7 @@ def admin_get_banned_devices_v4(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -530,7 +530,7 @@ async def admin_get_banned_devices_v4_async(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -601,7 +601,7 @@ def admin_get_device_bans_v4(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -660,7 +660,7 @@ async def admin_get_device_bans_v4_async(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -721,7 +721,7 @@ def admin_get_device_ban_v4(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -782,7 +782,7 @@ async def admin_get_device_ban_v4_async(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -845,7 +845,7 @@ def admin_get_devices_by_user_v4(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -906,7 +906,7 @@ async def admin_get_devices_by_user_v4_async(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -968,7 +968,7 @@ def admin_get_device_types_v4(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -1021,7 +1021,7 @@ async def admin_get_device_types_v4_async(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -1077,7 +1077,7 @@ def admin_get_user_device_bans_v4(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -1136,7 +1136,7 @@ async def admin_get_user_device_bans_v4_async(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
@@ -1197,7 +1197,7 @@ def admin_get_users_by_device_v4(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:USER [READ]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:USER [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER [READ]
@@ -1256,7 +1256,7 @@ async def admin_get_users_by_device_v4_async(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:USER [READ]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:USER [READ]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:USER [READ]
@@ -1317,7 +1317,7 @@ def admin_unban_device_v4(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]
@@ -1376,7 +1376,7 @@ async def admin_unban_device_v4_async(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]
@@ -1438,7 +1438,7 @@ def admin_update_device_ban_v4(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]
@@ -1505,7 +1505,7 @@ async def admin_update_device_ban_v4_async(
 
     Required permission
 
-                                                                                                    'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
+                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]

@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the Fleet Commander."""
 
-__version__ = "0.2.1"
+__version__ = "1.3.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -28,8 +28,15 @@ from ._ams_info import info_regions_async
 from ._ams_info import info_supported_instances
 from ._ams_info import info_supported_instances_async
 
-from ._fleet_commander import func3
-from ._fleet_commander import func3_async
+from ._auth import auth_check
+from ._auth import auth_check_async
+
+from ._fleet_commander import basic_health_check
+from ._fleet_commander import basic_health_check_async
+from ._fleet_commander import func1
+from ._fleet_commander import func1_async
+from ._fleet_commander import portal_health_check
+from ._fleet_commander import portal_health_check_async
 
 from ._fleets import fleet_claim_by_id
 from ._fleets import fleet_claim_by_id_async
@@ -55,11 +62,6 @@ from ._images import image_list_async
 from ._images import image_patch
 from ._images import image_patch_async
 
-from ._operations import func2
-from ._operations import func2_async
-from ._operations import portal_health_check
-from ._operations import portal_health_check_async
-
 from ._servers import fleet_server_history
 from ._servers import fleet_server_history_async
 from ._servers import fleet_server_info
@@ -67,5 +69,7 @@ from ._servers import fleet_server_info_async
 from ._servers import server_history
 from ._servers import server_history_async
 
+from ._watchdogs import local_watchdog_connect
+from ._watchdogs import local_watchdog_connect_async
 from ._watchdogs import watchdog_connect
 from ._watchdogs import watchdog_connect_async
