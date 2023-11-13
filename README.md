@@ -1,3 +1,5 @@
+> This project is still under development.
+
 # AccelByte Modular Python SDK
 
 A software development kit (SDK) for interacting with AccelByte services written in Python.
@@ -954,15 +956,13 @@ x-authorization:
 same with the models there are also a number of utility functions generated with each operation that should help in the ease of use.
 
 ```python
-# accelbyte_py_sdk/api/basic/operations/user_profile/get_user_profile_info.py
-
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-# 
+#
 # Code generated. DO NOT EDIT!
 
-# template file: accelbyte_gaming services_py_codegen
+# template file: operation.j2
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -978,35 +978,35 @@ same with the models there are also a number of utility functions generated with
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Basic Service (1.36.1)
+# AccelByte Gaming Services Basic Service (2.13.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from .....core import Operation
-from .....core import HeaderStr
-from .....core import HttpResponse
+from accelbyte_py_sdk.core import Operation
+from accelbyte_py_sdk.core import HeaderStr
+from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import ErrorEntity
-from ...models import UserProfilePrivateInfo
+from ...models import UserProfileInfo
 from ...models import ValidationErrorEntity
 
 
-class GetUserProfileInfo(Operation):
-    """Get user profile (getUserProfileInfo)
+class PublicGetUserProfileInfo(Operation):
+    """Get user profile (publicGetUserProfileInfo)
 
     Get user profile.
     Other detail info:
 
-      * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:USER:{userId}:PROFILE" , action=2 (READ)
-      *  Returns : user profile
+      * Required permission : resource= "NAMESPACE:{namespace}:USER:{userId}:PROFILE" , action=2 (READ)
       *  Action code : 11403
+      *  Returns : user profile
 
     Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:PROFILE [READ]
+        - NAMESPACE:{namespace}:USER:{userId}:PROFILE [READ]
 
     Properties:
-        url: /basic/v1/admin/namespaces/{namespace}/users/{userId}/profiles
+        url: /basic/v1/public/namespaces/{namespace}/users/{userId}/profiles
 
         method: GET
 
@@ -1023,7 +1023,7 @@ class GetUserProfileInfo(Operation):
         user_id: (userId) REQUIRED str in path
 
     Responses:
-        200: OK - UserProfilePrivateInfo (successful operation)
+        200: OK - UserProfileInfo (Successful operation)
 
         400: Bad Request - ValidationErrorEntity (20002: validation error)
 
@@ -1036,15 +1036,15 @@ class GetUserProfileInfo(Operation):
 
     # region fields
 
-    _url: str = "/basic/v1/admin/namespaces/{namespace}/users/{userId}/profiles"
+    _url: str = "/basic/v1/public/namespaces/{namespace}/users/{userId}/profiles"
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
 
-    namespace: str                                                                                 # REQUIRED in [path]
-    user_id: str                                                                                   # REQUIRED in [path]
+    namespace: str  # REQUIRED in [path]
+    user_id: str  # REQUIRED in [path]
 
     # endregion fields
 
@@ -1103,11 +1103,11 @@ class GetUserProfileInfo(Operation):
 
     # region with_x methods
 
-    def with_namespace(self, value: str) -> GetUserProfileInfo:
+    def with_namespace(self, value: str) -> PublicGetUserProfileInfo:
         self.namespace = value
         return self
 
-    def with_user_id(self, value: str) -> GetUserProfileInfo:
+    def with_user_id(self, value: str) -> PublicGetUserProfileInfo:
         self.user_id = value
         return self
 
@@ -1132,10 +1132,15 @@ class GetUserProfileInfo(Operation):
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, UserProfilePrivateInfo], Union[None, ErrorEntity, HttpResponse, ValidationErrorEntity]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, UserProfileInfo],
+        Union[None, ErrorEntity, HttpResponse, ValidationErrorEntity],
+    ]:
         """Parse the given response.
 
-        200: OK - UserProfilePrivateInfo (successful operation)
+        200: OK - UserProfileInfo (Successful operation)
 
         400: Bad Request - ValidationErrorEntity (20002: validation error)
 
@@ -1151,13 +1156,15 @@ class GetUserProfileInfo(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        pre_processed_response, error = self.pre_process_response(code=code, content_type=content_type, content=content)
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
         if error is not None:
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return UserProfilePrivateInfo.create_from_dict(content), None
+            return UserProfileInfo.create_from_dict(content), None
         if code == 400:
             return None, ValidationErrorEntity.create_from_dict(content)
         if code == 401:
@@ -1167,25 +1174,25 @@ class GetUserProfileInfo(Operation):
         if code == 404:
             return None, ErrorEntity.create_from_dict(content)
 
-        return self.handle_undocumented_response(code=code, content_type=content_type, content=content)
+        return self.handle_undocumented_response(
+            code=code, content_type=content_type, content=content
+        )
 
     # endregion response methods
 
     # region static methods
 
     @classmethod
-    def create(
-        cls,
-        namespace: str,
-        user_id: str,
-    ) -> GetUserProfileInfo:
+    def create(cls, namespace: str, user_id: str, **kwargs) -> PublicGetUserProfileInfo:
         instance = cls()
         instance.namespace = namespace
         instance.user_id = user_id
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> GetUserProfileInfo:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> PublicGetUserProfileInfo:
         instance = cls()
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
@@ -1285,24 +1292,29 @@ continuing from the previous examples (GetUserProfileInfo), its wrapper would be
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from ....core import get_namespace as get_services_namespace
-from ....core import run_request
-from ....core import same_doc_as
+from accelbyte_py_sdk.core import get_namespace as get_services_namespace
+from accelbyte_py_sdk.core import run_request
+from accelbyte_py_sdk.core import same_doc_as
 
-from ..operations.user_profile import GetUserProfileInfo
+from ..operations.user_profile import PublicGetUserProfileInfo
 
 
-@same_doc_as(GetUserProfileInfo)
-def get_user_profile_info(user_id: str, namespace: Optional[str] = None):
+@same_doc_as(PublicGetUserProfileInfo)
+def public_get_user_profile_info(
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
     if namespace is None:
         namespace, error = get_services_namespace()
         if error:
             return None, error
-    request = GetUserProfileInfo.create(
+    request = PublicGetUserProfileInfo.create(
         user_id=user_id,
         namespace=namespace,
     )
-    return run_request(request)
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
 ```
 
 this wrapper function automatically fills up the required path parameter `namespace`.
@@ -1311,12 +1323,12 @@ now to use it only the `user_id` is now required.
 
 ```python
 import accelbyte_py_sdk
-from accelbyte_py_sdk.api.basic import get_user_profile_info
+from accelbyte_py_sdk.api.basic import public_get_user_profile_info
 
 if __name__ == "__main__":
     accelbyte_py_sdk.initialize()
 
-    user_profile_info, error = get_user_profile_info(user_id="lorem")
+    user_profile_info, error = public_get_user_profile_info(user_id="lorem")
     assert error is not None
 
     print(f"Hello there {user_profile_info.first_name}!")
