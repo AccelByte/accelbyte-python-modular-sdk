@@ -158,14 +158,6 @@ test_broken_link:
 	DOCKER_SKIP_BUILD=1 bash "$(SDK_MD_CRAWLER_PATH)/md-crawler.sh" -i "https://docs.accelbyte.io/guides/customization/python-sdk-guide.html"
 	[ ! -f test_broken_link.err ]
 
-version:
-	if [ -n "$$MAJOR" ]; then VERSION_PART=1; elif [ -n "$$PATCH" ]; then VERSION_PART=3; else VERSION_PART=2; fi && \
-			VERSION_OLD=$$(cat version.txt | tr -d '\n') && \
-			VERSION_NEW=$$(awk -v part=$$VERSION_PART -F. "{OFS=\".\"; \$$part+=1; print \$$0}" version.txt) && \
-			echo $${VERSION_NEW} > version.txt && \
-			sed -i "s/version = \"[0-9]\+\.[0-9]\+\.[0-9]\+\"/version = \"$$VERSION_NEW\"/" "src/core/pyproject.toml" && \
-			sed -i "s/version = \"[0-9]\+\.[0-9]\+\.[0-9]\+\"/version = \"$$VERSION_NEW\"/" "src/all/pyproject.toml"
-
 outstanding_deprecation:
 	find * -type f -iname '*.py' \
 		| xargs awk ' \
@@ -189,4 +181,50 @@ outstanding_deprecation:
 					exit (count_not_ok ? 1 : 0); \
 				}' \
 		| tee outstanding_deprecation.out
-	@echo 1..$$(grep -c '^\(not \)\?ok' outstanding_deprecation.out) 
+	@echo 1..$$(grep -c '^\(not \)\?ok' outstanding_deprecation.out)
+
+version:
+	if [ -n "$$MAJOR" ]; then VERSION_PART=1; elif [ -n "$$PATCH" ]; then VERSION_PART=3; else VERSION_PART=2; fi && \
+			VERSION_OLD=$$(cat version.txt | tr -d '\n') && \
+			VERSION_NEW=$$(awk -v part=$$VERSION_PART -F. "{OFS=\".\"; \$$part+=1; print \$$0}" version.txt) && \
+			echo $${VERSION_NEW} > version.txt && \
+			sed -i "s/version = \"[0-9]\+\.[0-9]\+\.[0-9]\+\"/version = \"$$VERSION_NEW\"/" "src/core/pyproject.toml" && \
+			sed -i "s/version = \"[0-9]\+\.[0-9]\+\.[0-9]\+\"/version = \"$$VERSION_NEW\"/" "src/all/pyproject.toml"
+
+bump_service:
+	@test -n "$(SERVICE)" || (echo "SERVICE is not set" ; exit 1)
+	@./version/package.sh $(SERVICE)
+
+bump_services:
+	@find spec -type f -iname '*.json' \
+		| grep -oP '(?<=/)\w+(?=.json)' \
+		| xargs -I{} sh -c '$(MAKE) --no-print-directory bump_service SERVICE={} || exit 255'
+
+bump_feature:
+	@test -n "$(FEATURE)" || (echo "FEATURE is not set" ; exit 1)
+	@./version/package.sh $(FEATURE) features
+
+bump_features:
+	@find src/features -mindepth 1 -maxdepth 1 -type d -printf '%f\n' \
+		| xargs -I{} sh -c '$(MAKE) --no-print-directory bump_feature FEATURE={} || exit 255'
+
+bump_all: bump_services bump_features
+
+tag_service:
+	@test -n "$(SERVICE)" || (echo "SERVICE is not set" ; exit 1)
+	@./version/tag.sh $(SERVICE)
+
+tag_services:
+	@find spec -type f -iname '*.json' \
+		| grep -oP '(?<=/)\w+(?=.json)' \
+		| xargs -I{} sh -c '$(MAKE) --no-print-directory tag_service SERVICE={} || exit 255'
+
+tag_feature:
+	@test -n "$(FEATURE)" || (echo "FEATURE is not set" ; exit 1)
+	@./version/tag.sh $(FEATURE) features
+
+tag_features:
+	@find src/features -mindepth 1 -maxdepth 1 -type d -printf '%f\n' \
+		| xargs -I{} sh -c '$(MAKE) --no-print-directory tag_feature FEATURE={} || exit 255'
+
+tag_all: tag_services tag_features
