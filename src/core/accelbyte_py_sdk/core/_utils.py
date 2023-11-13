@@ -302,7 +302,7 @@ def is_file(key: str, value: Any) -> bool:
 def is_json_mime_type(content_type: Optional[str]) -> bool:
     if content_type is None:
         return False
-    parts = content_type.split("; ")
+    parts = [x.strip() for x in content_type.split(";")]
     for part in parts:
         if "/" not in part:
             continue
@@ -340,23 +340,25 @@ def set_logger_level(
 
 def try_convert_content_type(
     actual_content_type: str, expected_content_types: List[str], content: Any
-) -> Tuple[bool, Any]:
+) -> Tuple[bool, Any, Optional[str]]:
     same_content_type = {
         "application/zip": ("application/x-zip-compressed",),
     }
+    errors = []
     for expected_content_type in expected_content_types:
         if (
             expected_content_type in same_content_type
             and actual_content_type in same_content_type[expected_content_type]
         ):
-            return True, content
+            return True, content, None
         if actual_content_type == "text/plain":
             if expected_content_type == "application/json":
                 # noinspection PyBroadException
                 # pylint: disable=broad-except
                 try:
                     new_content = json.loads(content)
-                    return True, new_content
-                except Exception:
-                    pass
-    return False, content
+                    return True, new_content, None
+                except Exception as error:
+                    errors.append(str(error))
+    errors.insert(0, f"{content=}\n")
+    return False, content, "\n".join(errors)
