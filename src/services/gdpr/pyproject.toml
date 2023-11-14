@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "accelbyte-py-sdk-service-gdpr"
 readme = "README.md"
-version = "2.3.0"
+version = "0.1.0"
 description = "AccelByte Python SDK - AccelByte Gaming Services Gdpr Service"
 requires-python = ">=3.9"
 dependencies = [
