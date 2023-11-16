@@ -3,6 +3,7 @@
 # and restrictions contact your company contract manager.
 
 SHELL := /bin/bash
+UPLOAD_INTERVAL := 30
 
 #ENV_FILE_PATH ?= $(PWD)/tests/sample_apps/.env
 
@@ -68,84 +69,97 @@ test_cli:
 					done)'
 	[ ! -f test_cli.err ]
 
-clean_package:
-	@test -n "$(PACKAGE_PATH)" || (echo "PACKAGE_PATH is not set" ; exit 1)
-	@echo "Cleaning $(PACKAGE_PATH).." && \
-		rm -rf $$(readlink -f $(PACKAGE_PATH))/build/ && \
-		rm -rf $$(readlink -f $(PACKAGE_PATH))/dist/ && \
-		rm -rf $$(readlink -f $(PACKAGE_PATH))/*.egg && \
-		rm -rf $$(readlink -f $(PACKAGE_PATH))/*.egg-info
+bumpif_package:
+	@test -n "$(PKG_PATH)" || (echo "PKG_PATH is not set" ; exit 1)
+	@sh/bumpif.sh $(PKG_PATH)
+	@sh/udpate.sh $(PKG_PATH) 1> /dev/null
+
+prerelease_package:
+	@test -n "$(PKG_PATH)" || (echo "PKG_PATH is not set" ; exit 1)
+	@test -n "$(PRE)" || (echo "PRE is not set" ; exit 1)
+	@sh/prerelease.sh $(PKG_PATH) $(PRE)
+	@sh/update.sh $(PKG_PATH) 1> /dev/null
 
 build_package:
-	@test -n "$(PACKAGE_PATH)" || (echo "PACKAGE_PATH is not set" ; exit 1)
-	@if [[ $(PACKAGE_PATH) == "src/core" ]] || [[ $(PACKAGE_PATH) == "src/all" ]]; then \
-			cp README.md $(PACKAGE_PATH); \
-		fi
-	@echo "Building $(PACKAGE_PATH).." && \
-		docker run --rm --tty --user $$(id -u):$$(id -g) \
-			--volume $$(readlink -f $(PACKAGE_PATH)):/data --workdir /data --entrypoint /bin/sh python:3.9-slim \
-				-c 'python -m venv /tmp && \
-					/tmp/bin/python -m pip install --upgrade pip build setuptools setuptools_scm wheel && \
-					/tmp/bin/python -m build'
-	@if [[ $(PACKAGE_PATH) == "src/core" ]] || [[ $(PACKAGE_PATH) == "src/all" ]]; then \
-			rm -f $(PACKAGE_PATH)/README.md; \
-		fi
+	@test -n "$(PKG_PATH)" || (echo "PKG_PATH is not set" ; exit 1)
+	@sh/build.sh $(PKG_PATH)
+
+tag_package:
+	@test -n "$(PKG_PATH)" || (echo "PKG_PATH is not set" ; exit 1)
+	@sh/tag.sh $(PKG_PATH)
 
 test_upload_package:
-	@test -n "$(PACKAGE_PATH)" || (echo "PACKAGE_PATH is not set" ; exit 1)
+	@test -n "$(PKG_PATH)" || (echo "PKG_PATH is not set" ; exit 1)
 	@test -n "$(PYPIRC_PATH)" || (echo "PYPIRC_PATH is not set" ; exit 1)
-		@echo "Uploading $(PACKAGE_PATH) to Test PyPI.." && \
-			docker run --rm --tty --user $$(id -u):$$(id -g) \
-				--volume $$(readlink -f $(PACKAGE_PATH)):/data \
-				--volume $(PYPIRC_PATH):/.pypirc \
-				--workdir /data --entrypoint /bin/sh python:3.9-slim \
-					-c 'python -m venv /tmp && \
-						/tmp/bin/python -m pip install --upgrade twine && \
-						/tmp/bin/python -m twine upload --repository testpypi --config-file /.pypirc --verbose dist/*'
+		@sh/upload.sh $(PKG_PATH) $(PYPIRC_PATH) testpypi
 
 upload_package:
-	@test -n "$(PACKAGE_PATH)" || (echo "PACKAGE_PATH is not set" ; exit 1)
+	@test -n "$(PKG_PATH)" || (echo "PKG_PATH is not set" ; exit 1)
 	@test -n "$(PYPIRC_PATH)" || (echo "PYPIRC_PATH is not set" ; exit 1)
-		@echo "Uploading $(PACKAGE_PATH) to Test PyPI.." && \
-			docker run --rm --tty --user $$(id -u):$$(id -g) \
-				--volume $$(readlink -f $(PACKAGE_PATH)):/data \
-				--volume $(PYPIRC_PATH):/.pypirc \
-				--workdir /data --entrypoint /bin/sh python:3.9-slim \
-					-c 'python -m venv /tmp && \
-						/tmp/bin/python -m pip install --upgrade twine && \
-						/tmp/bin/python -m twine upload --config-file /.pypirc --verbose dist/*'
+		@sh/upload.sh $(PKG_PATH) $(PYPIRC_PATH) pypi
 
-clean_all:
-	@sh -c 'make clean_package PACKAGE_PATH=src/core'
-	@find src/services -type d -maxdepth 1 | xargs -I {} \
-		sh -c 'make clean_package PACKAGE_PATH={} || exit 255'
-	@find src/features -type d -maxdepth 1 | xargs -I {} \
-		sh -c 'make clean_package PACKAGE_PATH={} || exit 255'
-	@sh -c 'make clean_package PACKAGE_PATH=src/all'
+releaseif_package:
+	@test -n "$(PKG_PATH)" || (echo "PKG_PATH is not set" ; exit 1)
+	@test -n "$(PYPIRC_PATH)" || (echo "PYPIRC_PATH is not set" ; exit 1)
+	@test -n "$(REPO)" || (echo "REPO is not set" ; exit 1)
+	@sh/releaseif.sh $(PKG_PATH) $(PYPIRC_PATH) $(REPO)
+
+bumpif_all:
+	@sh -c 'make --no-print-directory bumpif_package PKG_PATH=src/core'
+	@find src/services -mindepth 1 -maxdepth 1 -type d | sort | xargs -I {} \
+		sh -c 'make --no-print-directory bumpif_package PKG_PATH={} || exit 255'
+	@find src/features -mindepth 1 -maxdepth 1 -type d | sort | xargs -I {} \
+		sh -c 'make --no-print-directory bumpif_package PKG_PATH={} || exit 255'
+	@sh -c 'make --no-print-directory bumpif_package PKG_PATH=src/all'
+
+prerelease_all:
+	@test -n "$(PRE)" || (echo "PRE is not set" ; exit 1)
+	@sh -c 'make --no-print-directory prerelease_package PKG_PATH=src/core PRE=$(PRE)'
+	@find src/services -mindepth 1 -maxdepth 1 -type d | sort | xargs -I {} \
+		sh -c 'make --no-print-directory prerelease_package PKG_PATH={} PRE=$(PRE) || exit 255'
+	@find src/features -mindepth 1 -maxdepth 1 -type d | sort | xargs -I {} \
+		sh -c 'make --no-print-directory prerelease_package PKG_PATH={} PRE=$(PRE) || exit 255'
+	@sh -c 'make --no-print-directory prerelease_package PKG_PATH=src/all PRE=$(PRE)'
 
 build_all:
-	@sh -c 'make build_package PACKAGE_PATH=src/core'
-	@find src/services -type d -maxdepth 1 | xargs -I {} \
-		sh -c 'make build_package PACKAGE_PATH={} || exit 255'
-	@find src/features -type d -maxdepth 1 | xargs -I {} \
-		sh -c 'make build_package PACKAGE_PATH={} || exit 255'
-	@sh -c 'make build_package PACKAGE_PATH=src/all'
+	@sh -c 'make --no-print-directory build_package PKG_PATH=src/core'
+	@find src/services -mindepth 1 -maxdepth 1 -type d | sort | xargs -I {} \
+		sh -c 'make --no-print-directory build_package PKG_PATH={} || exit 255'
+	@find src/features -mindepth 1 -maxdepth 1 -type d| sort | xargs -I {} \
+		sh -c 'make --no-print-directory build_package PKG_PATH={} || exit 255'
+	@sh -c 'make --no-print-directory build_package PKG_PATH=src/all'
+
+tag_all:
+	@sh -c 'make --no-print-directory tag_package PKG_PATH=src/core'
+	@find src/services -mindepth 1 -maxdepth 1 -type d | sort | xargs -I {} \
+		sh -c 'make --no-print-directory tag_package PKG_PATH={} || exit 255'
+	@find src/features -mindepth 1 -maxdepth 1 -type d| sort | xargs -I {} \
+		sh -c 'make --no-print-directory tag_package PKG_PATH={} || exit 255'
+	@sh -c 'make --no-print-directory tag_package PKG_PATH=src/all'
 
 test_upload_all:
-	@sh -c 'make test_upload_package PACKAGE_PATH=src/core PYPIRC_PATH=$(PYPIRC_PATH)'
-	@find src/services -type d -maxdepth 1 | xargs -I {} \
-		sh -c 'make test_upload_package PACKAGE_PATH={} PYPIRC_PATH=$(PYPIRC_PATH) || exit 255'
-	@find src/features -type d -maxdepth 1 | xargs -I {} \
-		sh -c 'make test_upload_package PACKAGE_PATH={} PYPIRC_PATH=$(PYPIRC_PATH) || exit 255'
-	@sh -c 'make test_upload_package PACKAGE_PATH=src/all PYPIRC_PATH=$(PYPIRC_PATH)'
+	@sh -c '{ make --no-print-directory test_upload_package PKG_PATH=src/core PYPIRC_PATH=$(PYPIRC_PATH); sleep $(UPLOAD_INTERVAL); }'
+	@find src/services -mindepth 1 -maxdepth 1 -type d | sort | xargs -I {} \
+		sh -c '{ make --no-print-directory test_upload_package PKG_PATH={} PYPIRC_PATH=$(PYPIRC_PATH) || exit 255; sleep $(UPLOAD_INTERVAL); }'
+	@find src/features -mindepth 1 -maxdepth 1 -type d | sort | xargs -I {} \
+		sh -c '{ make --no-print-directory test_upload_package PKG_PATH={} PYPIRC_PATH=$(PYPIRC_PATH) || exit 255; sleep $(UPLOAD_INTERVAL); }'
+	@sh -c 'make --no-print-directory test_upload_package PKG_PATH=src/all PYPIRC_PATH=$(PYPIRC_PATH)'
 
-upload_all: clean_all build_all
-	@sh -c 'make upload_package PACKAGE_PATH=src/core PYPIRC_PATH=$(PYPIRC_PATH)'
-	@find src/services -type d -maxdepth 1 | xargs -I {} \
-		sh -c 'make upload_package PACKAGE_PATH={} PYPIRC_PATH=$(PYPIRC_PATH) || exit 255'
-	@find src/features -type d -maxdepth 1 | xargs -I {} \
-		sh -c 'make upload_package PACKAGE_PATH={} PYPIRC_PATH=$(PYPIRC_PATH) || exit 255'
-	@sh -c 'make upload_package PACKAGE_PATH=src/all PYPIRC_PATH=$(PYPIRC_PATH)'
+upload_all:
+	@sh -c '{ make --no-print-directory upload_package PKG_PATH=src/core PYPIRC_PATH=$(PYPIRC_PATH); sleep $(UPLOAD_INTERVAL); }'
+	@find src/services -mindepth 1 -maxdepth 1 -type d | sort | xargs -I {} \
+		sh -c '{ make --no-print-directory upload_package PKG_PATH={} PYPIRC_PATH=$(PYPIRC_PATH) || exit 255; sleep $(UPLOAD_INTERVAL); }'
+	@find src/features -mindepth 1 -maxdepth 1 -type d | sort | xargs -I {} \
+		sh -c '{ make --no-print-directory upload_package PKG_PATH={} PYPIRC_PATH=$(PYPIRC_PATH) || exit 255; sleep $(UPLOAD_INTERVAL); }'
+	@sh -c 'make --no-print-directory upload_package PKG_PATH=src/all PYPIRC_PATH=$(PYPIRC_PATH)'
+
+releaseif_all:
+	@sh -c '{ make --no-print-directory releaseif_package PKG_PATH=src/core PYPIRC_PATH=$(PYPIRC_PATH) REPO=$(REPO); sleep $(UPLOAD_INTERVAL); }'
+	@find src/services -mindepth 1 -maxdepth 1 -type d | sort | xargs -I {} \
+		sh -c '{ make --no-print-directory releaseif_package PKG_PATH={} PYPIRC_PATH=$(PYPIRC_PATH) REPO=$(REPO) || exit 255; sleep $(UPLOAD_INTERVAL); }'
+	@find src/features -mindepth 1 -maxdepth 1 -type d | sort | xargs -I {} \
+		sh -c '{ make --no-print-directory releaseif_package PKG_PATH={} PYPIRC_PATH=$(PYPIRC_PATH) REPO=$(REPO) || exit 255; sleep $(UPLOAD_INTERVAL); }'
+	@sh -c 'make --no-print-directory releaseif_package PKG_PATH=src/all PYPIRC_PATH=$(PYPIRC_PATH) REPO=$(REPO)'
 
 test_broken_link:
 	@test -n "$(SDK_MD_CRAWLER_PATH)" || (echo "SDK_MD_CRAWLER_PATH is not set" ; exit 1)
@@ -182,49 +196,3 @@ outstanding_deprecation:
 				}' \
 		| tee outstanding_deprecation.out
 	@echo 1..$$(grep -c '^\(not \)\?ok' outstanding_deprecation.out)
-
-version:
-	if [ -n "$$MAJOR" ]; then VERSION_PART=1; elif [ -n "$$PATCH" ]; then VERSION_PART=3; else VERSION_PART=2; fi && \
-			VERSION_OLD=$$(cat version.txt | tr -d '\n') && \
-			VERSION_NEW=$$(awk -v part=$$VERSION_PART -F. "{OFS=\".\"; \$$part+=1; print \$$0}" version.txt) && \
-			echo $${VERSION_NEW} > version.txt && \
-			sed -i "s/version = \"[0-9]\+\.[0-9]\+\.[0-9]\+\"/version = \"$$VERSION_NEW\"/" "src/core/pyproject.toml" && \
-			sed -i "s/version = \"[0-9]\+\.[0-9]\+\.[0-9]\+\"/version = \"$$VERSION_NEW\"/" "src/all/pyproject.toml"
-
-bump_service:
-	@test -n "$(SERVICE)" || (echo "SERVICE is not set" ; exit 1)
-	@./version/package.sh $(SERVICE)
-
-bump_services:
-	@find spec -type f -iname '*.json' \
-		| grep -oP '(?<=/)\w+(?=.json)' \
-		| xargs -I{} sh -c '$(MAKE) --no-print-directory bump_service SERVICE={} || exit 255'
-
-bump_feature:
-	@test -n "$(FEATURE)" || (echo "FEATURE is not set" ; exit 1)
-	@./version/package.sh $(FEATURE) features
-
-bump_features:
-	@find src/features -mindepth 1 -maxdepth 1 -type d -printf '%f\n' \
-		| xargs -I{} sh -c '$(MAKE) --no-print-directory bump_feature FEATURE={} || exit 255'
-
-bump_all: bump_services bump_features
-
-tag_service:
-	@test -n "$(SERVICE)" || (echo "SERVICE is not set" ; exit 1)
-	@./version/tag.sh $(SERVICE)
-
-tag_services:
-	@find spec -type f -iname '*.json' \
-		| grep -oP '(?<=/)\w+(?=.json)' \
-		| xargs -I{} sh -c '$(MAKE) --no-print-directory tag_service SERVICE={} || exit 255'
-
-tag_feature:
-	@test -n "$(FEATURE)" || (echo "FEATURE is not set" ; exit 1)
-	@./version/tag.sh $(FEATURE) features
-
-tag_features:
-	@find src/features -mindepth 1 -maxdepth 1 -type d -printf '%f\n' \
-		| xargs -I{} sh -c '$(MAKE) --no-print-directory tag_feature FEATURE={} || exit 255'
-
-tag_all: tag_services tag_features
