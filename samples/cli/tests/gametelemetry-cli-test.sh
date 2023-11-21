@@ -29,10 +29,11 @@ touch "tmp.dat"
 if [ "$BATCH" = true ] ; then
 
 $PYTHON -m $MODULE 'start-interactive-session' --continue_on_error '--writer=tap' << END
+gametelemetry-get-namespaces-game-telemetry-v1-admin-namespaces-get --login_with_auth "Bearer foo"
 gametelemetry-get-events-game-telemetry-v1-admin-namespaces-namespace-events-get --login_with_auth "Bearer foo"
-gametelemetry-protected-save-events-game-telemetry-v1-protected-events-post '[{"ClientTimestamp": "1986-09-29T00:00:00Z", "EventId": "zG7aWmYY", "EventName": "iyQkwLbu", "EventNamespace": "Mdywn8TY", "EventTimestamp": "1998-02-18T00:00:00Z", "Payload": {"2SrhZw6U": {}, "iFEK9UE8": {}, "Tt4WdrOD": {}}}, {"ClientTimestamp": "1991-06-22T00:00:00Z", "EventId": "kCvsVh4H", "EventName": "Mc9vxd2h", "EventNamespace": "taVwkxAG", "EventTimestamp": "1981-05-21T00:00:00Z", "Payload": {"ED5GOZM5": {}, "vowNoHtu": {}, "L1zLh3u7": {}}}, {"ClientTimestamp": "1982-04-29T00:00:00Z", "EventId": "EfgNdr06", "EventName": "cA3pSmUI", "EventNamespace": "nlB7W49r", "EventTimestamp": "1971-10-03T00:00:00Z", "Payload": {"CdWr3Spt": {}, "IUOBHqRW": {}, "OIjjoadp": {}}}]' --login_with_auth "Bearer foo"
-gametelemetry-protected-get-playtime-game-telemetry-v1-protected-steam-ids-steam-id-playtime-get 'xXIB4rsL' --login_with_auth "Bearer foo"
-gametelemetry-protected-update-playtime-game-telemetry-v1-protected-steam-ids-steam-id-playtime-playtime-put 'imqp9A38' 'HiechWrZ' --login_with_auth "Bearer foo"
+gametelemetry-protected-save-events-game-telemetry-v1-protected-events-post '[{"ClientTimestamp": "1973-09-06T00:00:00Z", "EventId": "Guann9xR", "EventName": "Efl8RW0m", "EventNamespace": "zaSRIBWs", "EventTimestamp": "1980-12-14T00:00:00Z", "Payload": {"uLMFysGG": {}, "dgu7bKUe": {}, "Rq7UzZMF": {}}}, {"ClientTimestamp": "1993-12-29T00:00:00Z", "EventId": "TD4VJuEm", "EventName": "nS701iQ4", "EventNamespace": "UdmGmljE", "EventTimestamp": "1985-01-18T00:00:00Z", "Payload": {"YPwymlQO": {}, "7WAtyMPJ": {}, "61VCkBUo": {}}}, {"ClientTimestamp": "1972-05-25T00:00:00Z", "EventId": "erqtacNw", "EventName": "YyrUiEtk", "EventNamespace": "INhelVR0", "EventTimestamp": "1983-02-20T00:00:00Z", "Payload": {"boG1k6pN": {}, "C7EjxVz8": {}, "Loe3sjFL": {}}}]' --login_with_auth "Bearer foo"
+gametelemetry-protected-get-playtime-game-telemetry-v1-protected-steam-ids-steam-id-playtime-get 'fIPKDtbz' --login_with_auth "Bearer foo"
+gametelemetry-protected-update-playtime-game-telemetry-v1-protected-steam-ids-steam-id-playtime-playtime-put 'Lxt4Iz4W' 'OkNqYjZD' --login_with_auth "Bearer foo"
 exit()
 END
 
@@ -52,7 +53,7 @@ eval_tap() {
 }
 
 echo "TAP version 13"
-echo "1..5"
+echo "1..6"
 
 #- 1 Login
 eval_tap 0 1 'Login # SKIP not tested' test.out
@@ -61,33 +62,39 @@ if [ $EXIT_CODE -ne 0 ]; then
   exit $EXIT_CODE
 fi
 
-#- 2 GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet
+#- 2 GetNamespacesGameTelemetryV1AdminNamespacesGet
+$PYTHON -m $MODULE 'gametelemetry-get-namespaces-game-telemetry-v1-admin-namespaces-get' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 2 'GetNamespacesGameTelemetryV1AdminNamespacesGet' test.out
+
+#- 3 GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet
 $PYTHON -m $MODULE 'gametelemetry-get-events-game-telemetry-v1-admin-namespaces-namespace-events-get' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 2 'GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet' test.out
+eval_tap $? 3 'GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet' test.out
 
-#- 3 ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost
+#- 4 ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost
 $PYTHON -m $MODULE 'gametelemetry-protected-save-events-game-telemetry-v1-protected-events-post' \
-    '[{"ClientTimestamp": "1989-01-14T00:00:00Z", "EventId": "wYZcoPVl", "EventName": "SvYFDKCr", "EventNamespace": "4bwfRXjK", "EventTimestamp": "1974-03-21T00:00:00Z", "Payload": {"12baQdO6": {}, "sDlRWI42": {}, "f3BVK5IU": {}}}, {"ClientTimestamp": "1985-11-30T00:00:00Z", "EventId": "fIejDhgq", "EventName": "9z7tf4gn", "EventNamespace": "ZwGBMJ4P", "EventTimestamp": "1997-09-29T00:00:00Z", "Payload": {"44cZq9Ca": {}, "JWX7c58Z": {}, "JoVWSbmv": {}}}, {"ClientTimestamp": "1971-12-18T00:00:00Z", "EventId": "88wylzFp", "EventName": "A59iK2g9", "EventNamespace": "BslFUSDh", "EventTimestamp": "1985-06-25T00:00:00Z", "Payload": {"zAJsbF4w": {}, "LgkbW6Vr": {}, "H1PMdMLV": {}}}]' \
+    '[{"ClientTimestamp": "1971-05-09T00:00:00Z", "EventId": "iwB7eZUC", "EventName": "w4BGGPM0", "EventNamespace": "cxhvGscW", "EventTimestamp": "1975-08-22T00:00:00Z", "Payload": {"1NTPOVSQ": {}, "8s2YZ7Kz": {}, "ceMZjvrq": {}}}, {"ClientTimestamp": "1980-07-27T00:00:00Z", "EventId": "6WAgiWns", "EventName": "KouDqu5z", "EventNamespace": "jJ4vaiLW", "EventTimestamp": "1980-08-08T00:00:00Z", "Payload": {"WLiQVKOa": {}, "PuQvknHj": {}, "pEuQveNC": {}}}, {"ClientTimestamp": "1974-06-10T00:00:00Z", "EventId": "1DFvDJXf", "EventName": "zagzRW3D", "EventNamespace": "MGAY3mlZ", "EventTimestamp": "1995-01-19T00:00:00Z", "Payload": {"fRafZuCx": {}, "vl95GLvV": {}, "TwV3JAV9": {}}}]' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 3 'ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost' test.out
+eval_tap $? 4 'ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost' test.out
 
-#- 4 ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet
+#- 5 ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet
 $PYTHON -m $MODULE 'gametelemetry-protected-get-playtime-game-telemetry-v1-protected-steam-ids-steam-id-playtime-get' \
-    'zHMnfw7p' \
+    '07zprUEV' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 4 'ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet' test.out
+eval_tap $? 5 'ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet' test.out
 
-#- 5 ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut
+#- 6 ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut
 $PYTHON -m $MODULE 'gametelemetry-protected-update-playtime-game-telemetry-v1-protected-steam-ids-steam-id-playtime-playtime-put' \
-    'CqJRQs5k' \
-    'UgWJWutT' \
+    'vPuQz7hS' \
+    '7qvvs1F1' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 5 'ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut' test.out
+eval_tap $? 6 'ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut' test.out
 
 
 fi

@@ -4,7 +4,7 @@ This is a service module for the [AccelByte Modular Python SDK](https://github.c
 
 ```text
 AccelByte Gaming Services Session Service
-* Version: 3.9.0
+* Version: 3.11.0
 ```
 
 ## Setup

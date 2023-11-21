@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Achievement Service (2.21.2)
+# AccelByte Gaming Services Achievement Service (2.21.3)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

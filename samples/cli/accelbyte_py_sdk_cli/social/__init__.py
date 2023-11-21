@@ -6,7 +6,7 @@
 
 # template_file: command-init.j2
 
-# justice-social-service (2.9.6)
+# justice-social-service (2.10.1)
 
 from ._get_namespace_slot_config import get_namespace_slot_config
 from ._update_namespace_slot_config import update_namespace_slot_config
@@ -39,6 +39,8 @@ from ._get_global_stat_item_by_stat_code import get_global_stat_item_by_stat_cod
 from ._get_stat_cycles import get_stat_cycles
 from ._create_stat_cycle import create_stat_cycle
 from ._bulk_get_stat_cycle import bulk_get_stat_cycle
+from ._export_stat_cycle import export_stat_cycle
+from ._import_stat_cycle import import_stat_cycle
 from ._get_stat_cycle import get_stat_cycle
 from ._update_stat_cycle import update_stat_cycle
 from ._delete_stat_cycle import delete_stat_cycle
@@ -57,6 +59,7 @@ from ._query_stats import query_stats
 from ._get_stat import get_stat
 from ._delete_stat import delete_stat
 from ._update_stat import update_stat
+from ._get_stat_items import get_stat_items
 from ._delete_tied_stat import delete_tied_stat
 from ._get_user_stat_cycle_items import get_user_stat_cycle_items
 from ._get_user_stat_items import get_user_stat_items
@@ -136,6 +139,8 @@ commands = [
     get_stat_cycles,
     create_stat_cycle,
     bulk_get_stat_cycle,
+    export_stat_cycle,
+    import_stat_cycle,
     get_stat_cycle,
     update_stat_cycle,
     delete_stat_cycle,
@@ -154,6 +159,7 @@ commands = [
     get_stat,
     delete_stat,
     update_stat,
+    get_stat_items,
     delete_tied_stat,
     get_user_stat_cycle_items,
     get_user_stat_items,

@@ -76,7 +76,13 @@ def get_global_stat_item_by_stat_code(
     Responses:
         200: OK - GlobalStatItemInfo (successful operation)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12244: Global stat item of [{statCode}] cannot be found in namespace [{namespace}])
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -126,7 +132,13 @@ async def get_global_stat_item_by_stat_code_async(
     Responses:
         200: OK - GlobalStatItemInfo (successful operation)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12244: Global stat item of [{statCode}] cannot be found in namespace [{namespace}])
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -178,7 +190,13 @@ def get_global_stat_item_by_stat_code_1(
     Responses:
         200: OK - GlobalStatItemInfo (successful operation)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12244: Global stat item of [{statCode}] cannot be found in namespace [{namespace}])
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -228,7 +246,13 @@ async def get_global_stat_item_by_stat_code_1_async(
     Responses:
         200: OK - GlobalStatItemInfo (successful operation)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12244: Global stat item of [{statCode}] cannot be found in namespace [{namespace}])
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -285,6 +309,12 @@ def get_global_stat_items(
 
     Responses:
         200: OK - GlobalStatItemPagingSlicedResult (successful operation)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -341,6 +371,12 @@ async def get_global_stat_items_async(
 
     Responses:
         200: OK - GlobalStatItemPagingSlicedResult (successful operation)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -399,6 +435,12 @@ def get_global_stat_items_1(
 
     Responses:
         200: OK - GlobalStatItemPagingSlicedResult (successful operation)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -455,6 +497,12 @@ async def get_global_stat_items_1_async(
 
     Responses:
         200: OK - GlobalStatItemPagingSlicedResult (successful operation)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()

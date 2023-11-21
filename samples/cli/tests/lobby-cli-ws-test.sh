@@ -27,108 +27,108 @@ export PYTHONPATH=$MODULE_PATH:$PYTHONPATH
 if [ "$BATCH" = true ] ; then
 
 $PYTHON -m $MODULE 'start-batched-ws-session' --continue_on_error '--writer=tap' << END
-'type: acceptFriendsNotif\nfriendId: jtioNzTC'
-'type: acceptFriendsRequest\nid: DHBUCM1m\nfriendId: ElJW6mA0'
-'type: acceptFriendsResponse\nid: 3KT5zYkM\ncode: 19'
-'type: blockPlayerNotif\nblockedUserId: UPGfxja1\nuserId: 4idqQRxU'
-'type: blockPlayerRequest\nid: ezp5HUmf\nblockUserId: XgBfU2Ak\nnamespace: dOTplAfO'
-'type: blockPlayerResponse\nid: v3XkZvHk\nblockUserId: 2oirSKsI\ncode: 75\nnamespace: XOauF9rQ'
-'type: cancelFriendsNotif\nuserId: wgwxsJQD'
-'type: cancelFriendsRequest\nid: Pgp7ufCq\nfriendId: xcyzFR1C'
-'type: cancelFriendsResponse\nid: GGIHgsPB\ncode: 98'
-'type: cancelMatchmakingRequest\nid: mZTfwJWC\ngameMode: LobCZSb1\nisTempParty: True'
-'type: cancelMatchmakingResponse\nid: GgqAqfcx\ncode: 28'
-'type: channelChatNotif\nchannelSlug: ozp8mDQW\nfrom: YCG7IbwT\npayload: AHsYCeos\nsentAt: oTbKq2DB'
-'type: clientResetRequest\nnamespace: gWAqURyu\nuserId: vls2w5bZ'
-'type: connectNotif\nlobbySessionId: 1qRp7JRR'
-'type: disconnectNotif\nconnectionId: OqjKduSp\nnamespace: iW30MYeg'
-'type: dsNotif\nalternateIps: [LQW3PZAA,0q1SSFhn,EdPZoQfG]\ncustomAttribute: lloxFqqb\ndeployment: Xe2xTmP8\ngameVersion: 6B8atLyT\nimageVersion: B5EzunJp\nip: A9gLzAKI\nisOK: True\nisOverrideGameVersion: False\nlastUpdate: E9MsyLbA\nmatchId: FCULM3EG\nmessage: Ck4IC54t\nnamespace: ctU8B4qQ\npodName: F6dXk8qn\nport: 47\nports: {"fKL8OKgY":7,"Qw7Imsbd":3,"BDszYRSi":62}\nprotocol: wJ0CSQyL\nprovider: JA7EzUnw\nregion: 4Rr2iAcT\nsessionId: TJIuvpL0\nstatus: 6ID5aZhA'
-'type: errorNotif\nmessage: yVEFygaO'
-'type: exitAllChannel\nnamespace: 0KlbbgQL\nuserId: q0Ocywq7'
-'type: friendsStatusRequest\nid: dXnsZxgt'
-'type: friendsStatusResponse\nid: qzC1uyCd\nactivity: [yHqA1buk,0zBT71qk,nz9Vfbw4]\navailability: [83,2,57]\ncode: 48\nfriendIds: [NlNtI5nD,qNR80Zlr,dzbjvzuj]\nlastSeenAt: [FP1mjWoD,NOlPjb4x,gFJpLDGr]'
-'type: getAllSessionAttributeRequest\nid: ZUu6fPsH'
-'type: getAllSessionAttributeResponse\nid: 27UF65JV\nattributes: {"75rdMghp":"51x29pjM","5A9UJarm":"nBUMf4z9","aBui5FPg":"I6u2tiME"}\ncode: 100'
-'type: getFriendshipStatusRequest\nid: dKLDLyP1\nfriendId: 3RyyiMQs'
-'type: getFriendshipStatusResponse\nid: Vq9vINI5\ncode: 39\nfriendshipStatus: zDjIbNaz'
-'type: getSessionAttributeRequest\nid: EwJ5JBN9\nkey: TbB3NeK1'
-'type: getSessionAttributeResponse\nid: rHJQr0ii\ncode: 42\nvalue: yfCEhAYv'
+'type: acceptFriendsNotif\nfriendId: DIq0zD2E'
+'type: acceptFriendsRequest\nid: eNIhOgXe\nfriendId: rU7yWimv'
+'type: acceptFriendsResponse\nid: DWeRRtXk\ncode: 3'
+'type: blockPlayerNotif\nblockedUserId: cSMIjZTf\nuserId: 4ersmBUI'
+'type: blockPlayerRequest\nid: UCNkNeIQ\nblockUserId: EJDszvvS\nnamespace: huJfjxHj'
+'type: blockPlayerResponse\nid: UBCJrVnJ\nblockUserId: 6zRL1SZ6\ncode: 51\nnamespace: fRmhBnaY'
+'type: cancelFriendsNotif\nuserId: J2nRpic7'
+'type: cancelFriendsRequest\nid: grdDInXO\nfriendId: ashRzkno'
+'type: cancelFriendsResponse\nid: 57LebAF1\ncode: 12'
+'type: cancelMatchmakingRequest\nid: D3N1OUgC\ngameMode: TFPRTTwt\nisTempParty: False'
+'type: cancelMatchmakingResponse\nid: zjS6gtv5\ncode: 99'
+'type: channelChatNotif\nchannelSlug: DvHD9rLz\nfrom: rYxOYkub\npayload: lw4CtzX3\nsentAt: lG6mJwnW'
+'type: clientResetRequest\nnamespace: 6mgj4iNS\nuserId: oOuvCAhp'
+'type: connectNotif\nlobbySessionId: 7sSSrluR'
+'type: disconnectNotif\nconnectionId: l3PE6Ug6\nnamespace: Awnp40E5'
+'type: dsNotif\nalternateIps: [b8ztaFX2,V69n86p7,JNxaxHYD]\ncustomAttribute: xW7Lj1yK\ndeployment: uNmCK1Al\ngameVersion: odeSg0e7\nimageVersion: iqd5SQ5f\nip: 1jbN2fZe\nisOK: True\nisOverrideGameVersion: False\nlastUpdate: CWXq7Me3\nmatchId: 2VhBxL5j\nmessage: g0mI0OPO\nnamespace: 5SR2uoUq\npodName: nuMpB0Yn\nport: 75\nports: {"aFlkqeW8":30,"bllHau5Z":8,"QFlbFd0Y":26}\nprotocol: oTGsMUH3\nprovider: W7ybxxxp\nregion: Xyun6p5X\nsessionId: 1GfP0pkj\nstatus: mNeKPnLR'
+'type: errorNotif\nmessage: zW3avhwf'
+'type: exitAllChannel\nnamespace: lSJPAvW6\nuserId: n5p2XLI6'
+'type: friendsStatusRequest\nid: FNy18wLj'
+'type: friendsStatusResponse\nid: 8pKMKOGL\nactivity: [eWwTQtUb,bDf0aGqV,clyo9zNf]\navailability: [30,24,83]\ncode: 4\nfriendIds: [CefT5lPs,JPuZOgCe,EpKsPzyO]\nlastSeenAt: [0PkFZwbJ,lZJFdvLl,oGVgZQhD]'
+'type: getAllSessionAttributeRequest\nid: 1zEXbZiS'
+'type: getAllSessionAttributeResponse\nid: DDijUGqN\nattributes: {"B0XnRLBY":"TUOFXUjP","oVVFqf3x":"2wFmkQzf","ZyxlHFRB":"PK4tHsek"}\ncode: 45'
+'type: getFriendshipStatusRequest\nid: n4IGTSjG\nfriendId: P1YALYci'
+'type: getFriendshipStatusResponse\nid: ZCI04Hd3\ncode: 53\nfriendshipStatus: qEYfB0tG'
+'type: getSessionAttributeRequest\nid: V6SPYstq\nkey: 5tlTogN0'
+'type: getSessionAttributeResponse\nid: AslXKtVa\ncode: 23\nvalue: jzql27IG'
 'type: heartbeat'
-'type: joinDefaultChannelRequest\nid: MsRVa1qd'
-'type: joinDefaultChannelResponse\nid: CAXnI1qs\nchannelSlug: aDEipXKr\ncode: 85'
-'type: listIncomingFriendsRequest\nid: 2Hv7hpCd'
-'type: listIncomingFriendsResponse\nid: iGKh0d48\ncode: 19\nuserIds: [T4SMAvSG,9dIEaEAQ,LR9J5fU9]'
-'type: listOfFriendsRequest\nid: XndIb6r1\nfriendId: stuYFtRH'
-'type: listOfFriendsResponse\nid: WE8MqwCL\ncode: 19\nfriendIds: [XxtTB1fi,kjczGG9D,MdIv49gm]'
-'type: listOnlineFriendsRequest\nid: ZQyXQ37h'
-'type: listOutgoingFriendsRequest\nid: yarRLFt2'
-'type: listOutgoingFriendsResponse\nid: zwvykvCK\ncode: 23\nfriendIds: [wJbxT3dL,esurQPwe,FjwAeGMT]'
-'type: matchmakingNotif\ncounterPartyMember: [kdFmI6mf,8dNdtx6z,O41uSAfa]\nmatchId: 815pg8Ji\nmessage: iOPUtgnU\npartyMember: [CjzDotPF,5DsapwY8,mut4t560]\nreadyDuration: 27\nstatus: 1ILfCfjl'
-'type: messageNotif\nid: T8CF7nOG\nfrom: SWFubMBo\npayload: Gh8HjJb6\nsentAt: 23\nto: 7yaeg3nP\ntopic: YXWAPalH'
-'type: offlineNotificationRequest\nid: QL2A4gZq'
-'type: offlineNotificationResponse\nid: z36wVoaW\ncode: 39'
-'type: onlineFriends\nid: AKm5L53K\ncode: 85\nonlineFriendIds: [A4oqhqzo,FwJXNPYB,MaFGaYv3]'
-'type: partyChatNotif\nid: QVF6WqhE\nfrom: TMfXcUGq\npayload: bjLPcR11\nreceivedAt: 35\nto: wYIKw6hE'
-'type: partyChatRequest\nid: rwsBoiBh\nfrom: dqyjOaVy\npayload: UBCdihbX\nreceivedAt: 55\nto: JOsAbVCh'
-'type: partyChatResponse\nid: zltNT7O1\ncode: 7'
-'type: partyCreateRequest\nid: hlCv81Lp'
-'type: partyCreateResponse\nid: khxIA9mJ\ncode: 78\ninvitationToken: wCgtKLMM\ninvitees: pe1k7r7j\nleaderId: n34iZnuo\nmembers: Biz952ZC\npartyId: mPnLJROa'
-'type: partyDataUpdateNotif\ncustomAttributes: {"QJkAV1If":{},"hxgDqBnr":{},"gw8sCugb":{}}\ninvitees: [cRwhbbSH,NQl6Q4v7,3IvzVB9v]\nleader: CbyH9LCv\nmembers: [b35P0LFL,gy7KBNv1,uCPvI9bo]\nnamespace: nAwFvqNW\npartyId: QD0pHTvB\nupdatedAt: 85'
-'type: partyGetInvitedNotif\nfrom: eheHIsiY\ninvitationToken: iVsz0lIy\npartyId: dCbqOeW2'
-'type: partyInfoRequest\nid: 9dmzjN2g'
-'type: partyInfoResponse\nid: Mliw601A\ncode: 39\ncustomAttributes: {"vLHkqbcv":{},"Gag2pQMX":{},"1THmr7kY":{}}\ninvitationToken: OJnARPah\ninvitees: ChYRW963\nleaderId: YJLTb4xp\nmembers: cycBhmUZ\npartyId: 6qFquTNW'
-'type: partyInviteNotif\ninviteeId: 6WjvFg4g\ninviterId: a7aMSdMn'
-'type: partyInviteRequest\nid: 8ZmZKszT\nfriendId: UB6hdeGD'
-'type: partyInviteResponse\nid: UQbKBn7G\ncode: 99'
-'type: partyJoinNotif\nuserId: mLToh9LK'
-'type: partyJoinRequest\nid: N13E1A3M\ninvitationToken: 4qc9E3Tk\npartyId: 5NMRb7N1'
-'type: partyJoinResponse\nid: XEfxDOpx\ncode: 23\ninvitationToken: NXDYEToY\ninvitees: diDwQGi1\nleaderId: cHg2r728\nmembers: hqaoXf29\npartyId: sdToAcyP'
-'type: partyKickNotif\nleaderId: TWnua6g8\npartyId: 7F0m3XXn\nuserId: EyBqfYgc'
-'type: partyKickRequest\nid: HDcl7kNW\nmemberId: jxZJlsLL'
-'type: partyKickResponse\nid: 78Ui1Swi\ncode: 88'
-'type: partyLeaveNotif\nleaderId: 6aZweHKQ\nuserId: cbDVXWYn'
-'type: partyLeaveRequest\nid: zyOD4CIk\nignoreUserRegistry: False'
-'type: partyLeaveResponse\nid: EWpwnGIk\ncode: 66'
-'type: partyPromoteLeaderRequest\nid: yQId5Q3T\nnewLeaderUserId: 0yF9cyNi'
-'type: partyPromoteLeaderResponse\nid: JkDBkzDx\ncode: 64\ninvitationToken: hFuT8j7r\ninvitees: IFMdQiej\nleaderId: ifFanlNP\nmembers: AN7NV41c\npartyId: 3dQ9T3w7'
-'type: partyRejectNotif\nleaderId: cFd4sWbm\npartyId: hMvILfbI\nuserId: XFHXrthI'
-'type: partyRejectRequest\nid: IK2S1gAC\ninvitationToken: md1sVPuZ\npartyId: fasjgIVf'
-'type: partyRejectResponse\nid: zwCGOxhg\ncode: 19\npartyId: 2DdNRQTD'
-'type: personalChatHistoryRequest\nid: F5XkCagL\nfriendId: bfW1ey71'
-'type: personalChatHistoryResponse\nid: EMktT9ne\nchat: GuIYizM6\ncode: 43\nfriendId: IiF3vSIm'
-'type: personalChatNotif\nid: bftGJjMt\nfrom: vDTDTZgD\npayload: q8j44CDV\nreceivedAt: 69\nto: FLYn47PH'
-'type: personalChatRequest\nid: WZduFI5J\nfrom: bqW4GveU\npayload: ekKvMnDN\nreceivedAt: 46\nto: cv6kvDba'
-'type: personalChatResponse\nid: 25kZyC9K\ncode: 62'
-'type: rejectFriendsNotif\nuserId: hkHRc86J'
-'type: rejectFriendsRequest\nid: 3BocHcvK\nfriendId: psEuYlFA'
-'type: rejectFriendsResponse\nid: tRe77Yrm\ncode: 64'
-'type: rematchmakingNotif\nbanDuration: 51'
-'type: requestFriendsNotif\nfriendId: cd1TMn3W'
-'type: requestFriendsRequest\nid: YWAc06mL\nfriendId: SNbEXIfk'
-'type: requestFriendsResponse\nid: elzpgchM\ncode: 2'
-'type: sendChannelChatRequest\nid: J6VqM5tB\nchannelSlug: WQHuuM2K\npayload: 0VeYG0HW'
-'type: sendChannelChatResponse\nid: xMFA4N3j\ncode: 14'
-'type: setReadyConsentNotif\nmatchId: nVCT6pyv\nuserId: qbgiGvKZ'
-'type: setReadyConsentRequest\nid: cHua8mFW\nmatchId: gVf4n8Li'
-'type: setReadyConsentResponse\nid: TyaCJj82\ncode: 48'
-'type: setSessionAttributeRequest\nid: SIe14RST\nkey: MghaJ0AQ\nnamespace: gVfB5QpQ\nvalue: 14rsny2c'
-'type: setSessionAttributeResponse\nid: I2xL6rFL\ncode: 60'
-'type: setUserStatusRequest\nid: k6Q0XiZd\nactivity: KfJkYuBD\navailability: 38'
-'type: setUserStatusResponse\nid: IovdQLyf\ncode: 79'
-'type: shutdownNotif\nmessage: 2KyfUxHu'
-'type: signalingP2PNotif\ndestinationId: Ctb1vAVl\nmessage: wyOOnJNh'
-'type: startMatchmakingRequest\nid: vSIYjd5c\nextraAttributes: bijuJBzo\ngameMode: vMyZHoaC\npartyAttributes: {"GxnOZZDI":{},"SHGbFlhp":{},"NnxIFW8D":{}}\npriority: 26\ntempParty: 4GmnJUyE'
-'type: startMatchmakingResponse\nid: 6dJdOJrn\ncode: 48'
-'type: unblockPlayerNotif\nunblockedUserId: wL6PxzvA\nuserId: DtGumcFt'
-'type: unblockPlayerRequest\nid: ZYqcoh7e\nnamespace: BqcNrGW8\nunblockedUserId: 79qQfdJm'
-'type: unblockPlayerResponse\nid: XHicKMMK\ncode: 93\nnamespace: o0U4AMxS\nunblockedUserId: B0NXxFcH'
-'type: unfriendNotif\nfriendId: 7q5hFCqU'
-'type: unfriendRequest\nid: 7JdIZw7f\nfriendId: i5Iv2IK5'
-'type: unfriendResponse\nid: 59KnwlFQ\ncode: 58'
+'type: joinDefaultChannelRequest\nid: Ga602SCv'
+'type: joinDefaultChannelResponse\nid: ld5DYqxX\nchannelSlug: vix3Drxj\ncode: 36'
+'type: listIncomingFriendsRequest\nid: cKzURkJi'
+'type: listIncomingFriendsResponse\nid: Dh9doo03\ncode: 37\nuserIds: [s5VT40tB,DH8uHOqq,1JUZL5iQ]'
+'type: listOfFriendsRequest\nid: JbJV814K\nfriendId: S8oltpVD'
+'type: listOfFriendsResponse\nid: pr6KxtpS\ncode: 13\nfriendIds: [xj7BMavF,N1MKN8vc,NKNgjvXO]'
+'type: listOnlineFriendsRequest\nid: EMwSwS8J'
+'type: listOutgoingFriendsRequest\nid: YH446zcL'
+'type: listOutgoingFriendsResponse\nid: nL8ek2ex\ncode: 27\nfriendIds: [PDEZxCKN,K41Txn17,URBplpyR]'
+'type: matchmakingNotif\ncounterPartyMember: [hSZoLXBA,2pqbbAdJ,RNLu0KzC]\nmatchId: ZwObkBlZ\nmessage: XB0RF7Dx\npartyMember: [maEnI6OB,BDii0yvB,8oAw0ctM]\nreadyDuration: 57\nstatus: IrjRzfDy'
+'type: messageNotif\nid: dV9jqMJC\nfrom: UCs1amCS\npayload: lpcaK9Ry\nsentAt: 12\nto: pxJczfhk\ntopic: 7M1T22Fa'
+'type: offlineNotificationRequest\nid: vYzPjHHm'
+'type: offlineNotificationResponse\nid: jac5e2OZ\ncode: 95'
+'type: onlineFriends\nid: TipDvj3B\ncode: 44\nonlineFriendIds: [7KMn7BXR,XL1mk4No,PDzKOuC2]'
+'type: partyChatNotif\nid: my7nGXsV\nfrom: daIeYkX6\npayload: Q73ZA3X6\nreceivedAt: 2\nto: bxfgtzDW'
+'type: partyChatRequest\nid: 3LaKkX8f\nfrom: TGU6cRbR\npayload: c31g3rQJ\nreceivedAt: 23\nto: QO1Sj1nS'
+'type: partyChatResponse\nid: QQ2jKY6J\ncode: 97'
+'type: partyCreateRequest\nid: l9TYbAnt'
+'type: partyCreateResponse\nid: JLVUwt75\ncode: 19\ninvitationToken: EjMrKU6Q\ninvitees: ls0uKEDz\nleaderId: mrpq0hT2\nmembers: B1rT0D3y\npartyId: ajk5mUCg'
+'type: partyDataUpdateNotif\ncustomAttributes: {"LlXjL8wQ":{},"edHpuvz5":{},"QOG2sp6l":{}}\ninvitees: [zMOF8Lro,KuFdCLvc,LXRgBWDH]\nleader: fo77EtEi\nmembers: [erf2b3OJ,LBglAdcb,N6EpdrEg]\nnamespace: oWtA3DTT\npartyId: CUjE0xGr\nupdatedAt: 14'
+'type: partyGetInvitedNotif\nfrom: rwB3Hq2Z\ninvitationToken: PPUA31TM\npartyId: DXLD5200'
+'type: partyInfoRequest\nid: fL9uMBAV'
+'type: partyInfoResponse\nid: iv7MTAn1\ncode: 41\ncustomAttributes: {"iRR3iJs7":{},"1Y2YDKqd":{},"HAjf9N3r":{}}\ninvitationToken: PQdJWskv\ninvitees: cMPgTbzx\nleaderId: O4ayMBMw\nmembers: lV9ppI0t\npartyId: wRdWGo9X'
+'type: partyInviteNotif\ninviteeId: 6EX0tVHu\ninviterId: hX3MG2d4'
+'type: partyInviteRequest\nid: iUHKVG1N\nfriendId: 5wpSKQ3u'
+'type: partyInviteResponse\nid: bXqzyio3\ncode: 98'
+'type: partyJoinNotif\nuserId: PHVt9zBd'
+'type: partyJoinRequest\nid: w3zpUjKe\ninvitationToken: A4TB0CS2\npartyId: b0r4LjG7'
+'type: partyJoinResponse\nid: PUVVi2Zx\ncode: 3\ninvitationToken: 0UZ0HmJL\ninvitees: 4Ekcp2bS\nleaderId: jRukmYkt\nmembers: 2jBiqFaU\npartyId: FqXkWVxI'
+'type: partyKickNotif\nleaderId: t73OKeKu\npartyId: JFXx0b6q\nuserId: T19xteDd'
+'type: partyKickRequest\nid: N4GH9Ib4\nmemberId: HWVU6iDL'
+'type: partyKickResponse\nid: WnMullGY\ncode: 60'
+'type: partyLeaveNotif\nleaderId: i6U3Bimg\nuserId: MLL1Azj7'
+'type: partyLeaveRequest\nid: 0YnXAMAs\nignoreUserRegistry: True'
+'type: partyLeaveResponse\nid: gGV4b2jG\ncode: 73'
+'type: partyPromoteLeaderRequest\nid: kZfU2NPC\nnewLeaderUserId: Y4DVe7WP'
+'type: partyPromoteLeaderResponse\nid: ybynyOHZ\ncode: 65\ninvitationToken: VEpg6rXK\ninvitees: piow5JKI\nleaderId: i4K6UzYq\nmembers: 9tfJaqda\npartyId: Qv95Yed0'
+'type: partyRejectNotif\nleaderId: pRbxNKWH\npartyId: X6Mc0vHw\nuserId: 3m59Mvr8'
+'type: partyRejectRequest\nid: 3zp5sVXy\ninvitationToken: GTWE27Gk\npartyId: oUpBg3dV'
+'type: partyRejectResponse\nid: zaoU2Ndo\ncode: 99\npartyId: t2JEKqpn'
+'type: personalChatHistoryRequest\nid: Vc8DbuyN\nfriendId: ngAvJRel'
+'type: personalChatHistoryResponse\nid: zUZC7Etx\nchat: Oiudmi2J\ncode: 56\nfriendId: PEIpQVZn'
+'type: personalChatNotif\nid: GbRFOTtl\nfrom: yHtI2BcA\npayload: OykBM1FX\nreceivedAt: 75\nto: 4drV3Kdb'
+'type: personalChatRequest\nid: deSODiN1\nfrom: W9Sg70D3\npayload: TvWLVSqI\nreceivedAt: 34\nto: z1L5lquw'
+'type: personalChatResponse\nid: 2m3xVHas\ncode: 40'
+'type: rejectFriendsNotif\nuserId: BfGW2le6'
+'type: rejectFriendsRequest\nid: sWSyxtwV\nfriendId: amdmBMy4'
+'type: rejectFriendsResponse\nid: UdsX1DME\ncode: 84'
+'type: rematchmakingNotif\nbanDuration: 28'
+'type: requestFriendsNotif\nfriendId: ZFUpFF5H'
+'type: requestFriendsRequest\nid: mScHGbXp\nfriendId: i9gnijh1'
+'type: requestFriendsResponse\nid: 7vCpsiUV\ncode: 61'
+'type: sendChannelChatRequest\nid: GLQTgtOz\nchannelSlug: bDbk1961\npayload: eNHoVOCj'
+'type: sendChannelChatResponse\nid: kgBQ2FGf\ncode: 4'
+'type: setReadyConsentNotif\nmatchId: OWQFglI6\nuserId: YeV8kJX9'
+'type: setReadyConsentRequest\nid: s1nbohyW\nmatchId: 3lnZlH3l'
+'type: setReadyConsentResponse\nid: PaXdo7RQ\ncode: 79'
+'type: setSessionAttributeRequest\nid: oPNzhOPs\nkey: WHS7WigI\nnamespace: TKTHopvG\nvalue: I7iqjKdy'
+'type: setSessionAttributeResponse\nid: PWFnWoB7\ncode: 90'
+'type: setUserStatusRequest\nid: LoMJKU1e\nactivity: 5hb61MCU\navailability: 10'
+'type: setUserStatusResponse\nid: LwJIz10y\ncode: 83'
+'type: shutdownNotif\nmessage: dq2oua6P'
+'type: signalingP2PNotif\ndestinationId: LHTrc7Pw\nmessage: hRXZUWR0'
+'type: startMatchmakingRequest\nid: aodti2Hg\nextraAttributes: Flja0gKx\ngameMode: 9dKV7xvM\npartyAttributes: {"HXsKtDph":{},"rFJIjynw":{},"E7DFmr0D":{}}\npriority: 91\ntempParty: 7usky06m'
+'type: startMatchmakingResponse\nid: 8YHCz5RT\ncode: 21'
+'type: unblockPlayerNotif\nunblockedUserId: 5TFlO4aa\nuserId: eNWumpym'
+'type: unblockPlayerRequest\nid: Mu8gEiMx\nnamespace: KGxnKElB\nunblockedUserId: 7hahoWXh'
+'type: unblockPlayerResponse\nid: Cgwyxsge\ncode: 20\nnamespace: 3iLRohs2\nunblockedUserId: GPQ4fFpm'
+'type: unfriendNotif\nfriendId: Y2ITcDZW'
+'type: unfriendRequest\nid: DprYMLcI\nfriendId: MVaKz2iN'
+'type: unfriendResponse\nid: tm39xwjx\ncode: 77'
 'type: userBannedNotification'
-'type: userMetricRequest\nid: jNK2G8qD'
-'type: userMetricResponse\nid: 0qt3AWgC\ncode: 3\nplayerCount: 99'
-'type: userStatusNotif\nactivity: lD0Bl8YM\navailability: 23\nlastSeenAt: jc05KDXZ\nuserId: sZnKyl1U'
+'type: userMetricRequest\nid: Aqmfny8I'
+'type: userMetricResponse\nid: OnTBfgm1\ncode: 52\nplayerCount: 15'
+'type: userStatusNotif\nactivity: s5WkOzqa\navailability: 52\nlastSeenAt: B8U4zfFl\nuserId: YyShKbb7'
 send()
 END
 
@@ -160,157 +160,157 @@ fi
 
 #- 2 AcceptFriendsNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: acceptFriendsNotif\nfriendId: i1z3yOjY' \
+    'type: acceptFriendsNotif\nfriendId: qcg0Okwk' \
     > test.out 2>&1
 eval_tap $? 2 'AcceptFriendsNotif' test.out
 
 #- 3 AcceptFriendsRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: acceptFriendsRequest\nid: VqM66YU8\nfriendId: dL1Jua2i' \
+    'type: acceptFriendsRequest\nid: UYj279tY\nfriendId: bNrKi1Rx' \
     > test.out 2>&1
 eval_tap $? 3 'AcceptFriendsRequest' test.out
 
 #- 4 AcceptFriendsResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: acceptFriendsResponse\nid: vzOGQH2M\ncode: 96' \
+    'type: acceptFriendsResponse\nid: g1HYUwnG\ncode: 91' \
     > test.out 2>&1
 eval_tap $? 4 'AcceptFriendsResponse' test.out
 
 #- 5 BlockPlayerNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: blockPlayerNotif\nblockedUserId: yki60Rk4\nuserId: TNbGRO9W' \
+    'type: blockPlayerNotif\nblockedUserId: d381kzAr\nuserId: rVrZ71Xv' \
     > test.out 2>&1
 eval_tap $? 5 'BlockPlayerNotif' test.out
 
 #- 6 BlockPlayerRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: blockPlayerRequest\nid: HxiJmLNi\nblockUserId: svyQIl2C\nnamespace: 8TbEuxVk' \
+    'type: blockPlayerRequest\nid: v3RM9J7o\nblockUserId: Y63p6cZ8\nnamespace: 0FLIEO7m' \
     > test.out 2>&1
 eval_tap $? 6 'BlockPlayerRequest' test.out
 
 #- 7 BlockPlayerResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: blockPlayerResponse\nid: S2NDhPnA\nblockUserId: 88wokMSS\ncode: 64\nnamespace: NwmUYWyg' \
+    'type: blockPlayerResponse\nid: CesDPeNM\nblockUserId: lqSp3IKP\ncode: 31\nnamespace: xeEq2HVi' \
     > test.out 2>&1
 eval_tap $? 7 'BlockPlayerResponse' test.out
 
 #- 8 CancelFriendsNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: cancelFriendsNotif\nuserId: fCpdg086' \
+    'type: cancelFriendsNotif\nuserId: S2opMoFc' \
     > test.out 2>&1
 eval_tap $? 8 'CancelFriendsNotif' test.out
 
 #- 9 CancelFriendsRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: cancelFriendsRequest\nid: 4hPp9wcK\nfriendId: jYogKVSa' \
+    'type: cancelFriendsRequest\nid: gxMMZjA6\nfriendId: rCr3U8WO' \
     > test.out 2>&1
 eval_tap $? 9 'CancelFriendsRequest' test.out
 
 #- 10 CancelFriendsResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: cancelFriendsResponse\nid: X3kGGkkv\ncode: 39' \
+    'type: cancelFriendsResponse\nid: SwVKKrYa\ncode: 3' \
     > test.out 2>&1
 eval_tap $? 10 'CancelFriendsResponse' test.out
 
 #- 11 CancelMatchmakingRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: cancelMatchmakingRequest\nid: MsaVhIHX\ngameMode: xnFAIWDh\nisTempParty: False' \
+    'type: cancelMatchmakingRequest\nid: HCRZgeb5\ngameMode: Nf22gpQG\nisTempParty: False' \
     > test.out 2>&1
 eval_tap $? 11 'CancelMatchmakingRequest' test.out
 
 #- 12 CancelMatchmakingResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: cancelMatchmakingResponse\nid: q3JWzTRb\ncode: 85' \
+    'type: cancelMatchmakingResponse\nid: 275kLf8U\ncode: 43' \
     > test.out 2>&1
 eval_tap $? 12 'CancelMatchmakingResponse' test.out
 
 #- 13 ChannelChatNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: channelChatNotif\nchannelSlug: XEC2vAt7\nfrom: NWlJz6VG\npayload: PkNMXF2D\nsentAt: BWzQVwdc' \
+    'type: channelChatNotif\nchannelSlug: Z79VOcQb\nfrom: n3jcBvtc\npayload: 05wrO2Vj\nsentAt: fJ9KVNsz' \
     > test.out 2>&1
 eval_tap $? 13 'ChannelChatNotif' test.out
 
 #- 14 ClientResetRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: clientResetRequest\nnamespace: XF7ZgMHn\nuserId: Oly8Ru07' \
+    'type: clientResetRequest\nnamespace: 3gHd4EKN\nuserId: Tn267BM8' \
     > test.out 2>&1
 eval_tap $? 14 'ClientResetRequest' test.out
 
 #- 15 ConnectNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: connectNotif\nlobbySessionId: D7VjHnJK' \
+    'type: connectNotif\nlobbySessionId: d60qsvLL' \
     > test.out 2>&1
 eval_tap $? 15 'ConnectNotif' test.out
 
 #- 16 DisconnectNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: disconnectNotif\nconnectionId: yS7Pp2cL\nnamespace: sReziMOF' \
+    'type: disconnectNotif\nconnectionId: rHZ6iKTu\nnamespace: RmIWo04o' \
     > test.out 2>&1
 eval_tap $? 16 'DisconnectNotif' test.out
 
 #- 17 DsNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: dsNotif\nalternateIps: [8Fvwaa7y,eKn5Swxn,fwZzqkco]\ncustomAttribute: bL9Shf2L\ndeployment: S7m3Il2z\ngameVersion: HXHZXKxw\nimageVersion: NSWkKSHo\nip: HBXTflXa\nisOK: True\nisOverrideGameVersion: True\nlastUpdate: B88Q0wY2\nmatchId: L0bJed4A\nmessage: CRupcLm1\nnamespace: fSa16jiE\npodName: aSicaPVC\nport: 2\nports: {"nD2Nen1n":18,"UKPb6UdT":15,"xTeB2SIZ":18}\nprotocol: WIGPlMHB\nprovider: MN4lVmSH\nregion: PhnK9wiv\nsessionId: 6TrJySfp\nstatus: TIDTKSxJ' \
+    'type: dsNotif\nalternateIps: [MjfrZMfI,gL4hgpwV,8ACrFgY4]\ncustomAttribute: lAWz2KYr\ndeployment: LUXM7VP4\ngameVersion: 07mXFisi\nimageVersion: ZxBGKCMd\nip: 3ijY6XD5\nisOK: False\nisOverrideGameVersion: False\nlastUpdate: sKXyqgOI\nmatchId: vy1uSda6\nmessage: XEF1ZomW\nnamespace: eXKGprxc\npodName: z0Wxz3GC\nport: 4\nports: {"FoFVoKMt":37,"TXKS6Qg5":97,"pnGEGD7N":87}\nprotocol: sMPXGsEQ\nprovider: xPepY0Y8\nregion: Wvx8MxWU\nsessionId: hFcw87ni\nstatus: v8TfvZRX' \
     > test.out 2>&1
 eval_tap $? 17 'DsNotif' test.out
 
 #- 18 ErrorNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: errorNotif\nmessage: MeGoRfBn' \
+    'type: errorNotif\nmessage: 93gjSPf7' \
     > test.out 2>&1
 eval_tap $? 18 'ErrorNotif' test.out
 
 #- 19 ExitAllChannel
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: exitAllChannel\nnamespace: 1Dt3yvBB\nuserId: gnld4OnY' \
+    'type: exitAllChannel\nnamespace: RqPHVXBS\nuserId: Ek3ZvmJk' \
     > test.out 2>&1
 eval_tap $? 19 'ExitAllChannel' test.out
 
 #- 20 FriendsStatusRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: friendsStatusRequest\nid: NlnLXUuk' \
+    'type: friendsStatusRequest\nid: wllIWtPI' \
     > test.out 2>&1
 eval_tap $? 20 'FriendsStatusRequest' test.out
 
 #- 21 FriendsStatusResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: friendsStatusResponse\nid: oNqvS3ba\nactivity: [6tSxRBMq,EWgWqt2V,QinrRIkH]\navailability: [47,53,42]\ncode: 53\nfriendIds: [aays4V6W,KESd1yyI,wB1jp6HZ]\nlastSeenAt: [l2Nw2gwZ,cbpM0qSd,eud8ynEl]' \
+    'type: friendsStatusResponse\nid: 6GYSQEzd\nactivity: [s5ymjtyz,JGVgT2uZ,eiIZ2Ocv]\navailability: [10,20,45]\ncode: 30\nfriendIds: [Tt6MXUOO,O1avtj5O,CAjmPr7r]\nlastSeenAt: [U2nikDP9,iIETB9gl,x8ra9tPu]' \
     > test.out 2>&1
 eval_tap $? 21 'FriendsStatusResponse' test.out
 
 #- 22 GetAllSessionAttributeRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: getAllSessionAttributeRequest\nid: 3qPcrkRN' \
+    'type: getAllSessionAttributeRequest\nid: LOaBxsgt' \
     > test.out 2>&1
 eval_tap $? 22 'GetAllSessionAttributeRequest' test.out
 
 #- 23 GetAllSessionAttributeResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: getAllSessionAttributeResponse\nid: Z2xvuMhn\nattributes: {"cmhjCPNp":"FnNswdge","A7gBJd3M":"D1HFgVYy","CmelHzkj":"dE7hGegX"}\ncode: 39' \
+    'type: getAllSessionAttributeResponse\nid: pOmsTxAR\nattributes: {"GEhoDMvR":"5NBzFgY3","R2JegYIq":"t0FeT5HU","3Peaq3bS":"1VBytQ0i"}\ncode: 53' \
     > test.out 2>&1
 eval_tap $? 23 'GetAllSessionAttributeResponse' test.out
 
 #- 24 GetFriendshipStatusRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: getFriendshipStatusRequest\nid: Lt1QkIDM\nfriendId: pUVvTBCO' \
+    'type: getFriendshipStatusRequest\nid: ikqN0zQT\nfriendId: zeQf6wvS' \
     > test.out 2>&1
 eval_tap $? 24 'GetFriendshipStatusRequest' test.out
 
 #- 25 GetFriendshipStatusResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: getFriendshipStatusResponse\nid: wVo5QtSH\ncode: 79\nfriendshipStatus: OWeEBtHw' \
+    'type: getFriendshipStatusResponse\nid: pCtSiRLn\ncode: 17\nfriendshipStatus: RZd0Y5ZC' \
     > test.out 2>&1
 eval_tap $? 25 'GetFriendshipStatusResponse' test.out
 
 #- 26 GetSessionAttributeRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: getSessionAttributeRequest\nid: ishRKyCx\nkey: byiffE0p' \
+    'type: getSessionAttributeRequest\nid: 1x0jjv5N\nkey: qiaITJzV' \
     > test.out 2>&1
 eval_tap $? 26 'GetSessionAttributeRequest' test.out
 
 #- 27 GetSessionAttributeResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: getSessionAttributeResponse\nid: KH3qftoG\ncode: 2\nvalue: nI3zhWhU' \
+    'type: getSessionAttributeResponse\nid: wTfM31Nc\ncode: 64\nvalue: YQYr841Q' \
     > test.out 2>&1
 eval_tap $? 27 'GetSessionAttributeResponse' test.out
 
@@ -322,289 +322,289 @@ eval_tap $? 28 'Heartbeat' test.out
 
 #- 29 JoinDefaultChannelRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: joinDefaultChannelRequest\nid: fpkzCuLc' \
+    'type: joinDefaultChannelRequest\nid: dKqmRf3U' \
     > test.out 2>&1
 eval_tap $? 29 'JoinDefaultChannelRequest' test.out
 
 #- 30 JoinDefaultChannelResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: joinDefaultChannelResponse\nid: 0EVFHBnm\nchannelSlug: 1MxFIwaS\ncode: 28' \
+    'type: joinDefaultChannelResponse\nid: Zc0Cdklr\nchannelSlug: lDL1v9mC\ncode: 90' \
     > test.out 2>&1
 eval_tap $? 30 'JoinDefaultChannelResponse' test.out
 
 #- 31 ListIncomingFriendsRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: listIncomingFriendsRequest\nid: RDT7aPCi' \
+    'type: listIncomingFriendsRequest\nid: y8xEY3fh' \
     > test.out 2>&1
 eval_tap $? 31 'ListIncomingFriendsRequest' test.out
 
 #- 32 ListIncomingFriendsResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: listIncomingFriendsResponse\nid: WEd6TCpZ\ncode: 71\nuserIds: [oVRRcJRU,6PVKgtUH,H8MK3Hx3]' \
+    'type: listIncomingFriendsResponse\nid: Pk2eAfDV\ncode: 38\nuserIds: [6yRLuh5p,1foOWM5s,YcUPuh6f]' \
     > test.out 2>&1
 eval_tap $? 32 'ListIncomingFriendsResponse' test.out
 
 #- 33 ListOfFriendsRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: listOfFriendsRequest\nid: FQBKPzvO\nfriendId: mj5Xlz5R' \
+    'type: listOfFriendsRequest\nid: tH624MIM\nfriendId: 61j2sKot' \
     > test.out 2>&1
 eval_tap $? 33 'ListOfFriendsRequest' test.out
 
 #- 34 ListOfFriendsResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: listOfFriendsResponse\nid: UMsFX2wG\ncode: 40\nfriendIds: [Ov2SQEeK,B4Qsiyya,kXOHvp7R]' \
+    'type: listOfFriendsResponse\nid: DOQXRONM\ncode: 5\nfriendIds: [wSWLOuiY,Xj99ZTjk,CDX6sUAF]' \
     > test.out 2>&1
 eval_tap $? 34 'ListOfFriendsResponse' test.out
 
 #- 35 ListOnlineFriendsRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: listOnlineFriendsRequest\nid: dof9INgt' \
+    'type: listOnlineFriendsRequest\nid: QOmX7BWZ' \
     > test.out 2>&1
 eval_tap $? 35 'ListOnlineFriendsRequest' test.out
 
 #- 36 ListOutgoingFriendsRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: listOutgoingFriendsRequest\nid: GZBpTjTk' \
+    'type: listOutgoingFriendsRequest\nid: kheONtxm' \
     > test.out 2>&1
 eval_tap $? 36 'ListOutgoingFriendsRequest' test.out
 
 #- 37 ListOutgoingFriendsResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: listOutgoingFriendsResponse\nid: kArZlXg2\ncode: 33\nfriendIds: [1DZuTbHg,xC3z278q,QVFmPgR8]' \
+    'type: listOutgoingFriendsResponse\nid: Mq2s03mj\ncode: 50\nfriendIds: [Pz0oKyee,CGJVSYOr,lJ1s40ZM]' \
     > test.out 2>&1
 eval_tap $? 37 'ListOutgoingFriendsResponse' test.out
 
 #- 38 MatchmakingNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: matchmakingNotif\ncounterPartyMember: [7d9cOEgX,6UiSxu9W,6gw8JwUW]\nmatchId: 8B6a9ZRr\nmessage: qxZXWqkA\npartyMember: [1MZsIkoC,QHi1d6UK,6Dckx2vb]\nreadyDuration: 30\nstatus: FPszjO4k' \
+    'type: matchmakingNotif\ncounterPartyMember: [rINORkUg,dgwFekzp,EW1HANH0]\nmatchId: 4mxA3VCJ\nmessage: IBhOizJy\npartyMember: [IIyAzwsS,cAFQTBDq,RVpECJHG]\nreadyDuration: 88\nstatus: ZxoaUVJE' \
     > test.out 2>&1
 eval_tap $? 38 'MatchmakingNotif' test.out
 
 #- 39 MessageNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: messageNotif\nid: 2XYeQCHT\nfrom: C6Eeo8kW\npayload: pbcmmAM3\nsentAt: 92\nto: OLa9hcvZ\ntopic: T99EuDMl' \
+    'type: messageNotif\nid: oYMsFqab\nfrom: 8P2guTgv\npayload: 0ddbYFqs\nsentAt: 42\nto: GrCl02Fs\ntopic: LdziXAIJ' \
     > test.out 2>&1
 eval_tap $? 39 'MessageNotif' test.out
 
 #- 40 OfflineNotificationRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: offlineNotificationRequest\nid: epGILHcQ' \
+    'type: offlineNotificationRequest\nid: Wp7fHkxo' \
     > test.out 2>&1
 eval_tap $? 40 'OfflineNotificationRequest' test.out
 
 #- 41 OfflineNotificationResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: offlineNotificationResponse\nid: BH3EQXk7\ncode: 53' \
+    'type: offlineNotificationResponse\nid: 33xMCfoz\ncode: 50' \
     > test.out 2>&1
 eval_tap $? 41 'OfflineNotificationResponse' test.out
 
 #- 42 OnlineFriends
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: onlineFriends\nid: W2Xeb1w3\ncode: 69\nonlineFriendIds: [uGp6lyQa,KJgCJ9Wy,n0hGG79n]' \
+    'type: onlineFriends\nid: sQJL3QnI\ncode: 64\nonlineFriendIds: [7hFD8AmJ,32dC3n1i,gwtN2gQB]' \
     > test.out 2>&1
 eval_tap $? 42 'OnlineFriends' test.out
 
 #- 43 PartyChatNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyChatNotif\nid: 4xk0ROw5\nfrom: ygSQGpXr\npayload: YrIgAqc5\nreceivedAt: 55\nto: 0Wj3hn7A' \
+    'type: partyChatNotif\nid: wSA0PrOS\nfrom: 4VQtv8Of\npayload: l7k91ihP\nreceivedAt: 21\nto: Xgll8eTy' \
     > test.out 2>&1
 eval_tap $? 43 'PartyChatNotif' test.out
 
 #- 44 PartyChatRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyChatRequest\nid: zS27xrO5\nfrom: meoSPRLb\npayload: FoF2rFKb\nreceivedAt: 13\nto: m5DMAqEk' \
+    'type: partyChatRequest\nid: 3mjnXlQp\nfrom: kV6k7pnF\npayload: trY0xIEE\nreceivedAt: 76\nto: lRCIkQ01' \
     > test.out 2>&1
 eval_tap $? 44 'PartyChatRequest' test.out
 
 #- 45 PartyChatResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyChatResponse\nid: vnZRXnAd\ncode: 68' \
+    'type: partyChatResponse\nid: 3PPRfqFT\ncode: 33' \
     > test.out 2>&1
 eval_tap $? 45 'PartyChatResponse' test.out
 
 #- 46 PartyCreateRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyCreateRequest\nid: YAyTTOCy' \
+    'type: partyCreateRequest\nid: lRgxwXwM' \
     > test.out 2>&1
 eval_tap $? 46 'PartyCreateRequest' test.out
 
 #- 47 PartyCreateResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyCreateResponse\nid: 6kKyyAKi\ncode: 87\ninvitationToken: i3uccuQJ\ninvitees: eHxFrynK\nleaderId: WEP8sbal\nmembers: y3lAFbfT\npartyId: aC12RcuF' \
+    'type: partyCreateResponse\nid: AXiaRaAL\ncode: 44\ninvitationToken: WvkuVFWZ\ninvitees: gwGyPYlf\nleaderId: 97ixukYu\nmembers: 6MtmR2F2\npartyId: 2tfRVPZc' \
     > test.out 2>&1
 eval_tap $? 47 'PartyCreateResponse' test.out
 
 #- 48 PartyDataUpdateNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyDataUpdateNotif\ncustomAttributes: {"2V61KP0q":{},"K0VwaAg9":{},"xbHDeRhI":{}}\ninvitees: [aANhFnXv,1mN3ljpi,aSZ3iSUl]\nleader: GwQXvZbx\nmembers: [8FOro0ov,uLFl0u66,xkqmmY2V]\nnamespace: yl2tWaCD\npartyId: mqizUGR0\nupdatedAt: 68' \
+    'type: partyDataUpdateNotif\ncustomAttributes: {"Ne817Wha":{},"hGd7L9mf":{},"FTfPTbvj":{}}\ninvitees: [o1wy8wu7,5YzrfYWT,OZHDNmed]\nleader: WFYqsacp\nmembers: [2XqdAJrL,A2Swdchx,46oOEr2d]\nnamespace: xaKtRE9s\npartyId: z8YEr6Xo\nupdatedAt: 22' \
     > test.out 2>&1
 eval_tap $? 48 'PartyDataUpdateNotif' test.out
 
 #- 49 PartyGetInvitedNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyGetInvitedNotif\nfrom: tgBHDOFa\ninvitationToken: pRjyloQN\npartyId: PZ9BVgrp' \
+    'type: partyGetInvitedNotif\nfrom: 6w9O0gFF\ninvitationToken: E3Cuodoc\npartyId: kZgAeY8L' \
     > test.out 2>&1
 eval_tap $? 49 'PartyGetInvitedNotif' test.out
 
 #- 50 PartyInfoRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyInfoRequest\nid: cq4jU83R' \
+    'type: partyInfoRequest\nid: Mk3lAXp5' \
     > test.out 2>&1
 eval_tap $? 50 'PartyInfoRequest' test.out
 
 #- 51 PartyInfoResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyInfoResponse\nid: HUcrAs3l\ncode: 89\ncustomAttributes: {"hyQfq1zi":{},"vJuPRPnV":{},"pUWMgYzK":{}}\ninvitationToken: N8guiQqS\ninvitees: WvXI4SEn\nleaderId: 6VaXmv0i\nmembers: vHG1kyv0\npartyId: W3g8VP6M' \
+    'type: partyInfoResponse\nid: Zwh0Mn8W\ncode: 48\ncustomAttributes: {"xEBEcLvx":{},"spURJEj2":{},"NpGniKiY":{}}\ninvitationToken: ulsnPtWk\ninvitees: KtqTOJWa\nleaderId: iEO1u8fG\nmembers: f0z8WTYy\npartyId: vJJ1YSkL' \
     > test.out 2>&1
 eval_tap $? 51 'PartyInfoResponse' test.out
 
 #- 52 PartyInviteNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyInviteNotif\ninviteeId: REA0YtXl\ninviterId: WNIQMWYZ' \
+    'type: partyInviteNotif\ninviteeId: cDqHoEgU\ninviterId: 93jbf3mC' \
     > test.out 2>&1
 eval_tap $? 52 'PartyInviteNotif' test.out
 
 #- 53 PartyInviteRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyInviteRequest\nid: xXu0Wbu8\nfriendId: bWlaFumq' \
+    'type: partyInviteRequest\nid: D3LEZfhY\nfriendId: 1NjXsbh0' \
     > test.out 2>&1
 eval_tap $? 53 'PartyInviteRequest' test.out
 
 #- 54 PartyInviteResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyInviteResponse\nid: mUgzGRyM\ncode: 81' \
+    'type: partyInviteResponse\nid: LxtymWZm\ncode: 58' \
     > test.out 2>&1
 eval_tap $? 54 'PartyInviteResponse' test.out
 
 #- 55 PartyJoinNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyJoinNotif\nuserId: w5PMB2R0' \
+    'type: partyJoinNotif\nuserId: 5Fa7m5K5' \
     > test.out 2>&1
 eval_tap $? 55 'PartyJoinNotif' test.out
 
 #- 56 PartyJoinRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyJoinRequest\nid: jAIgKXOQ\ninvitationToken: ATPRIwJS\npartyId: i5teQDVy' \
+    'type: partyJoinRequest\nid: otRrRqKf\ninvitationToken: ZPr1luSu\npartyId: BQu0qrGe' \
     > test.out 2>&1
 eval_tap $? 56 'PartyJoinRequest' test.out
 
 #- 57 PartyJoinResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyJoinResponse\nid: YJ8Oc23V\ncode: 5\ninvitationToken: 2nzPUgCM\ninvitees: eHD5AyPG\nleaderId: vlPSkRnw\nmembers: RUUf1fGt\npartyId: HLLDcrAy' \
+    'type: partyJoinResponse\nid: ouxu6YDt\ncode: 98\ninvitationToken: jzKcnTGi\ninvitees: KzyeS7SA\nleaderId: hsFgKw4R\nmembers: qP6zFRFV\npartyId: mNpfjBFh' \
     > test.out 2>&1
 eval_tap $? 57 'PartyJoinResponse' test.out
 
 #- 58 PartyKickNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyKickNotif\nleaderId: fppjzbbz\npartyId: 4mkW8vaa\nuserId: GHnXeP7C' \
+    'type: partyKickNotif\nleaderId: ywHe6kZZ\npartyId: HstsBpWA\nuserId: 0ft0LMwV' \
     > test.out 2>&1
 eval_tap $? 58 'PartyKickNotif' test.out
 
 #- 59 PartyKickRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyKickRequest\nid: gZ63wUje\nmemberId: oSfrl7s5' \
+    'type: partyKickRequest\nid: oSSug43c\nmemberId: XrsDSjRh' \
     > test.out 2>&1
 eval_tap $? 59 'PartyKickRequest' test.out
 
 #- 60 PartyKickResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyKickResponse\nid: tzJD3AkR\ncode: 54' \
+    'type: partyKickResponse\nid: 3ox3mBnP\ncode: 93' \
     > test.out 2>&1
 eval_tap $? 60 'PartyKickResponse' test.out
 
 #- 61 PartyLeaveNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyLeaveNotif\nleaderId: yIvNRRGX\nuserId: 8IkB7tnH' \
+    'type: partyLeaveNotif\nleaderId: 1oed7NRX\nuserId: Gen2LOYy' \
     > test.out 2>&1
 eval_tap $? 61 'PartyLeaveNotif' test.out
 
 #- 62 PartyLeaveRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyLeaveRequest\nid: 8bGXbqQ8\nignoreUserRegistry: True' \
+    'type: partyLeaveRequest\nid: h46ImEvG\nignoreUserRegistry: True' \
     > test.out 2>&1
 eval_tap $? 62 'PartyLeaveRequest' test.out
 
 #- 63 PartyLeaveResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyLeaveResponse\nid: HyJ2hkLJ\ncode: 78' \
+    'type: partyLeaveResponse\nid: qf9gsDUW\ncode: 45' \
     > test.out 2>&1
 eval_tap $? 63 'PartyLeaveResponse' test.out
 
 #- 64 PartyPromoteLeaderRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyPromoteLeaderRequest\nid: e4jR7iDw\nnewLeaderUserId: KKyHyLPG' \
+    'type: partyPromoteLeaderRequest\nid: iFOZXWrt\nnewLeaderUserId: IbdSkEzu' \
     > test.out 2>&1
 eval_tap $? 64 'PartyPromoteLeaderRequest' test.out
 
 #- 65 PartyPromoteLeaderResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyPromoteLeaderResponse\nid: qbfd5e0R\ncode: 7\ninvitationToken: JPAT1zxb\ninvitees: vvsa57oD\nleaderId: 3pyIr8zc\nmembers: CAAMhswR\npartyId: pxWJhjSp' \
+    'type: partyPromoteLeaderResponse\nid: QJaWcgjD\ncode: 18\ninvitationToken: TYQ7ixGS\ninvitees: LIL9Efgy\nleaderId: Ww1rsyeI\nmembers: sxalgbLp\npartyId: dp6ZnwVK' \
     > test.out 2>&1
 eval_tap $? 65 'PartyPromoteLeaderResponse' test.out
 
 #- 66 PartyRejectNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyRejectNotif\nleaderId: 9sWyVXsK\npartyId: JZhncZfl\nuserId: rid6vpRB' \
+    'type: partyRejectNotif\nleaderId: 3rRv0QqE\npartyId: 0oHXXE70\nuserId: Mb9Ctvc5' \
     > test.out 2>&1
 eval_tap $? 66 'PartyRejectNotif' test.out
 
 #- 67 PartyRejectRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyRejectRequest\nid: wxgk8wsI\ninvitationToken: aSdiY3OK\npartyId: oyB1rRMN' \
+    'type: partyRejectRequest\nid: 1VFr0TsX\ninvitationToken: sKQ8tYif\npartyId: oesKQXaU' \
     > test.out 2>&1
 eval_tap $? 67 'PartyRejectRequest' test.out
 
 #- 68 PartyRejectResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: partyRejectResponse\nid: QELkoCj9\ncode: 44\npartyId: CAKcz6na' \
+    'type: partyRejectResponse\nid: oOd692m9\ncode: 65\npartyId: TcidoXqx' \
     > test.out 2>&1
 eval_tap $? 68 'PartyRejectResponse' test.out
 
 #- 69 PersonalChatHistoryRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: personalChatHistoryRequest\nid: 48Ft18nV\nfriendId: 2aoQ3SAN' \
+    'type: personalChatHistoryRequest\nid: IlWtWck7\nfriendId: YOrzUlU6' \
     > test.out 2>&1
 eval_tap $? 69 'PersonalChatHistoryRequest' test.out
 
 #- 70 PersonalChatHistoryResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: personalChatHistoryResponse\nid: IvFZBXuV\nchat: ZGjo6Tn5\ncode: 59\nfriendId: 3CSkQsKb' \
+    'type: personalChatHistoryResponse\nid: MG0Y8m9V\nchat: Cb8Qufmv\ncode: 14\nfriendId: gd0Z8a2N' \
     > test.out 2>&1
 eval_tap $? 70 'PersonalChatHistoryResponse' test.out
 
 #- 71 PersonalChatNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: personalChatNotif\nid: aoe4RtM3\nfrom: QknxSlrZ\npayload: 50I21QnQ\nreceivedAt: 72\nto: O3FJiSSl' \
+    'type: personalChatNotif\nid: E2bTefvQ\nfrom: gF1wyGrl\npayload: ZOGgysAS\nreceivedAt: 5\nto: SWggScTz' \
     > test.out 2>&1
 eval_tap $? 71 'PersonalChatNotif' test.out
 
 #- 72 PersonalChatRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: personalChatRequest\nid: bL5Vrpxb\nfrom: SBn9L802\npayload: 82Qg8sOS\nreceivedAt: 80\nto: uapQLxwi' \
+    'type: personalChatRequest\nid: L5GCEviO\nfrom: 58wlgmfj\npayload: n1ymfk49\nreceivedAt: 3\nto: R6Limh3z' \
     > test.out 2>&1
 eval_tap $? 72 'PersonalChatRequest' test.out
 
 #- 73 PersonalChatResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: personalChatResponse\nid: lZScYW7x\ncode: 37' \
+    'type: personalChatResponse\nid: hO2kAro5\ncode: 58' \
     > test.out 2>&1
 eval_tap $? 73 'PersonalChatResponse' test.out
 
 #- 74 RejectFriendsNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: rejectFriendsNotif\nuserId: t5TJKOKl' \
+    'type: rejectFriendsNotif\nuserId: DMx6BgQ0' \
     > test.out 2>&1
 eval_tap $? 74 'RejectFriendsNotif' test.out
 
 #- 75 RejectFriendsRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: rejectFriendsRequest\nid: mg94eIyD\nfriendId: c8Ja1N9h' \
+    'type: rejectFriendsRequest\nid: GbAZat40\nfriendId: UE2R3c0D' \
     > test.out 2>&1
 eval_tap $? 75 'RejectFriendsRequest' test.out
 
 #- 76 RejectFriendsResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: rejectFriendsResponse\nid: fDiBprAb\ncode: 37' \
+    'type: rejectFriendsResponse\nid: ifKjF0Nk\ncode: 0' \
     > test.out 2>&1
 eval_tap $? 76 'RejectFriendsResponse' test.out
 
@@ -616,133 +616,133 @@ eval_tap $? 77 'RematchmakingNotif' test.out
 
 #- 78 RequestFriendsNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: requestFriendsNotif\nfriendId: Tg7aYMiK' \
+    'type: requestFriendsNotif\nfriendId: tFV0CcQy' \
     > test.out 2>&1
 eval_tap $? 78 'RequestFriendsNotif' test.out
 
 #- 79 RequestFriendsRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: requestFriendsRequest\nid: 7hMeU6JZ\nfriendId: 99nAUszi' \
+    'type: requestFriendsRequest\nid: 9Ojx97bt\nfriendId: H5rmqhAv' \
     > test.out 2>&1
 eval_tap $? 79 'RequestFriendsRequest' test.out
 
 #- 80 RequestFriendsResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: requestFriendsResponse\nid: yont7ITe\ncode: 62' \
+    'type: requestFriendsResponse\nid: knoKlq41\ncode: 14' \
     > test.out 2>&1
 eval_tap $? 80 'RequestFriendsResponse' test.out
 
 #- 81 SendChannelChatRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: sendChannelChatRequest\nid: wlwc6IUQ\nchannelSlug: wyJ5W8kL\npayload: 1HCsDaDj' \
+    'type: sendChannelChatRequest\nid: T791rcAt\nchannelSlug: zsrxlzaV\npayload: jYEm2BcL' \
     > test.out 2>&1
 eval_tap $? 81 'SendChannelChatRequest' test.out
 
 #- 82 SendChannelChatResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: sendChannelChatResponse\nid: gLkqHEBk\ncode: 32' \
+    'type: sendChannelChatResponse\nid: urQar8zz\ncode: 80' \
     > test.out 2>&1
 eval_tap $? 82 'SendChannelChatResponse' test.out
 
 #- 83 SetReadyConsentNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: setReadyConsentNotif\nmatchId: nDzaiwEg\nuserId: RyXwqj9G' \
+    'type: setReadyConsentNotif\nmatchId: Q48m6xq0\nuserId: CuDiqFrq' \
     > test.out 2>&1
 eval_tap $? 83 'SetReadyConsentNotif' test.out
 
 #- 84 SetReadyConsentRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: setReadyConsentRequest\nid: BAHdjcb1\nmatchId: gcESWmt1' \
+    'type: setReadyConsentRequest\nid: ntJyioI3\nmatchId: YMWqIkW9' \
     > test.out 2>&1
 eval_tap $? 84 'SetReadyConsentRequest' test.out
 
 #- 85 SetReadyConsentResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: setReadyConsentResponse\nid: xPzC8upI\ncode: 99' \
+    'type: setReadyConsentResponse\nid: TaVDt4p3\ncode: 86' \
     > test.out 2>&1
 eval_tap $? 85 'SetReadyConsentResponse' test.out
 
 #- 86 SetSessionAttributeRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: setSessionAttributeRequest\nid: Bitkq2bZ\nkey: tNjDXnMI\nnamespace: euvI0qWK\nvalue: 2yjVm36g' \
+    'type: setSessionAttributeRequest\nid: u45zbK3X\nkey: DORzOf2B\nnamespace: J65Ftvf3\nvalue: kprcO0K4' \
     > test.out 2>&1
 eval_tap $? 86 'SetSessionAttributeRequest' test.out
 
 #- 87 SetSessionAttributeResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: setSessionAttributeResponse\nid: nV2PLjWT\ncode: 83' \
+    'type: setSessionAttributeResponse\nid: 8T1meLUy\ncode: 77' \
     > test.out 2>&1
 eval_tap $? 87 'SetSessionAttributeResponse' test.out
 
 #- 88 SetUserStatusRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: setUserStatusRequest\nid: LN0mRItV\nactivity: I7u2Gc8s\navailability: 64' \
+    'type: setUserStatusRequest\nid: Tw8wKE8B\nactivity: I9jwggeg\navailability: 47' \
     > test.out 2>&1
 eval_tap $? 88 'SetUserStatusRequest' test.out
 
 #- 89 SetUserStatusResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: setUserStatusResponse\nid: 7nLkfGi7\ncode: 36' \
+    'type: setUserStatusResponse\nid: bzQwpUy8\ncode: 39' \
     > test.out 2>&1
 eval_tap $? 89 'SetUserStatusResponse' test.out
 
 #- 90 ShutdownNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: shutdownNotif\nmessage: KQuer7D4' \
+    'type: shutdownNotif\nmessage: h3ZOaXpR' \
     > test.out 2>&1
 eval_tap $? 90 'ShutdownNotif' test.out
 
 #- 91 SignalingP2PNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: signalingP2PNotif\ndestinationId: uHtVTo9c\nmessage: ELphxxEo' \
+    'type: signalingP2PNotif\ndestinationId: KdP02wOc\nmessage: pDgXf6Uv' \
     > test.out 2>&1
 eval_tap $? 91 'SignalingP2PNotif' test.out
 
 #- 92 StartMatchmakingRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: startMatchmakingRequest\nid: RP6h73yy\nextraAttributes: 1OYixxBT\ngameMode: SMWgwmVZ\npartyAttributes: {"ceatYTnV":{},"29AYym90":{},"NJcmuXoQ":{}}\npriority: 64\ntempParty: obk4xefa' \
+    'type: startMatchmakingRequest\nid: MmEVpSSk\nextraAttributes: LhddnrfU\ngameMode: u3ubJGZH\npartyAttributes: {"XnKya6Go":{},"iqiRcHXZ":{},"FAhPeSoR":{}}\npriority: 85\ntempParty: 7TwjX9ur' \
     > test.out 2>&1
 eval_tap $? 92 'StartMatchmakingRequest' test.out
 
 #- 93 StartMatchmakingResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: startMatchmakingResponse\nid: OylKsGUF\ncode: 82' \
+    'type: startMatchmakingResponse\nid: jmhpJ82W\ncode: 32' \
     > test.out 2>&1
 eval_tap $? 93 'StartMatchmakingResponse' test.out
 
 #- 94 UnblockPlayerNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: unblockPlayerNotif\nunblockedUserId: Gn4Mnepo\nuserId: xdLLitve' \
+    'type: unblockPlayerNotif\nunblockedUserId: XaejVO7P\nuserId: gQfwPnxy' \
     > test.out 2>&1
 eval_tap $? 94 'UnblockPlayerNotif' test.out
 
 #- 95 UnblockPlayerRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: unblockPlayerRequest\nid: yixUpgc1\nnamespace: FORFxgyn\nunblockedUserId: 6tAegKKg' \
+    'type: unblockPlayerRequest\nid: cm5UbtKT\nnamespace: L33bBnLA\nunblockedUserId: Hbab2uHJ' \
     > test.out 2>&1
 eval_tap $? 95 'UnblockPlayerRequest' test.out
 
 #- 96 UnblockPlayerResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: unblockPlayerResponse\nid: giWRqhWj\ncode: 67\nnamespace: DbAEkj8S\nunblockedUserId: FmbU0pin' \
+    'type: unblockPlayerResponse\nid: bzzMerQS\ncode: 49\nnamespace: b9af0WU2\nunblockedUserId: kiWLRoTa' \
     > test.out 2>&1
 eval_tap $? 96 'UnblockPlayerResponse' test.out
 
 #- 97 UnfriendNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: unfriendNotif\nfriendId: 0zjADN4i' \
+    'type: unfriendNotif\nfriendId: Gfcu2zqW' \
     > test.out 2>&1
 eval_tap $? 97 'UnfriendNotif' test.out
 
 #- 98 UnfriendRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: unfriendRequest\nid: qf5Xa4x0\nfriendId: 6lOxUvUY' \
+    'type: unfriendRequest\nid: b8ONuBAy\nfriendId: VkDM0tCc' \
     > test.out 2>&1
 eval_tap $? 98 'UnfriendRequest' test.out
 
 #- 99 UnfriendResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: unfriendResponse\nid: v6ZDsLcP\ncode: 92' \
+    'type: unfriendResponse\nid: vgjI4SQJ\ncode: 56' \
     > test.out 2>&1
 eval_tap $? 99 'UnfriendResponse' test.out
 
@@ -754,19 +754,19 @@ eval_tap $? 100 'UserBannedNotification' test.out
 
 #- 101 UserMetricRequest
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: userMetricRequest\nid: ul6TJqKK' \
+    'type: userMetricRequest\nid: bdNPiBPj' \
     > test.out 2>&1
 eval_tap $? 101 'UserMetricRequest' test.out
 
 #- 102 UserMetricResponse
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: userMetricResponse\nid: ub6pseIe\ncode: 5\nplayerCount: 26' \
+    'type: userMetricResponse\nid: lDT2oGdm\ncode: 66\nplayerCount: 95' \
     > test.out 2>&1
 eval_tap $? 102 'UserMetricResponse' test.out
 
 #- 103 UserStatusNotif
 $PYTHON -m $MODULE 'one-shot-websocket' \
-    'type: userStatusNotif\nactivity: 8LXvkn7d\navailability: 89\nlastSeenAt: 9C8qrgVc\nuserId: 8Rtf9wDG' \
+    'type: userStatusNotif\nactivity: lOFCeiyq\navailability: 15\nlastSeenAt: boHg0sb2\nuserId: xWfgOemE' \
     > test.out 2>&1
 eval_tap $? 103 'UserStatusNotif' test.out
 

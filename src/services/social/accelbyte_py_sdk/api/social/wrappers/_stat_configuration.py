@@ -35,6 +35,7 @@ from ..models import StatImportInfo
 from ..models import StatInfo
 from ..models import StatPagingSlicedResult
 from ..models import StatUpdate
+from ..models import ValidationErrorEntity
 
 from ..operations.stat_configuration import CreateStat
 from ..operations.stat_configuration import CreateStat1
@@ -43,6 +44,7 @@ from ..operations.stat_configuration import DeleteTiedStat
 from ..operations.stat_configuration import ExportStats
 from ..operations.stat_configuration import GetStat
 from ..operations.stat_configuration import GetStats
+from ..operations.stat_configuration import ImportStatCycle
 from ..operations.stat_configuration import ImportStats
 from ..operations.stat_configuration import QueryStats
 from ..operations.stat_configuration import UpdateStat
@@ -61,10 +63,10 @@ def create_stat(
 
     Create stat.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-              *  Returns : created stat template
-              * default minimum value is 0
-              * default maximum value is 1.7976931348623157e+308
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+            *  Returns : created stat template
+            * default minimum value is 0
+            * default maximum value is 1.7976931348623157e+308
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
@@ -89,9 +91,19 @@ def create_stat(
     Responses:
         201: Created - StatInfo (Create stat successfully)
 
+        400: Bad Request - ErrorEntity (Bad request)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (12271: Stat template with code [{statCode}] already exists in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -115,10 +127,10 @@ async def create_stat_async(
 
     Create stat.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-              *  Returns : created stat template
-              * default minimum value is 0
-              * default maximum value is 1.7976931348623157e+308
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+            *  Returns : created stat template
+            * default minimum value is 0
+            * default maximum value is 1.7976931348623157e+308
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
@@ -143,9 +155,19 @@ async def create_stat_async(
     Responses:
         201: Created - StatInfo (Create stat successfully)
 
+        400: Bad Request - ErrorEntity (Bad request)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (12271: Stat template with code [{statCode}] already exists in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -171,10 +193,10 @@ def create_stat_1(
 
     Create stat.
     Other detail info:
-              *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-              *  Returns : created stat template
-              * default minimum value is 0
-              * default maximum value is 1.7976931348623157e+308
+            *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+            *  Returns : created stat template
+            * default minimum value is 0
+            * default maximum value is 1.7976931348623157e+308
 
     Required Permission(s):
         - NAMESPACE:{namespace}:STAT [CREATE]
@@ -199,9 +221,19 @@ def create_stat_1(
     Responses:
         201: Created - StatInfo (Create stat successfully)
 
+        400: Bad Request - ErrorEntity (Bad request)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (12271: Stat template with code [{statCode}] already exists in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -225,10 +257,10 @@ async def create_stat_1_async(
 
     Create stat.
     Other detail info:
-              *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-              *  Returns : created stat template
-              * default minimum value is 0
-              * default maximum value is 1.7976931348623157e+308
+            *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+            *  Returns : created stat template
+            * default minimum value is 0
+            * default maximum value is 1.7976931348623157e+308
 
     Required Permission(s):
         - NAMESPACE:{namespace}:STAT [CREATE]
@@ -253,9 +285,19 @@ async def create_stat_1_async(
     Responses:
         201: Created - StatInfo (Create stat successfully)
 
+        400: Bad Request - ErrorEntity (Bad request)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (12271: Stat template with code [{statCode}] already exists in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -281,7 +323,7 @@ def delete_stat(
 
     Deletes stat template.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [DELETE]
@@ -306,7 +348,13 @@ def delete_stat(
     Responses:
         204: No Content - (Successful delete of stat)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}])
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -330,7 +378,7 @@ async def delete_stat_async(
 
     Deletes stat template.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [DELETE]
@@ -355,7 +403,13 @@ async def delete_stat_async(
     Responses:
         204: No Content - (Successful delete of stat)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}])
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -381,7 +435,7 @@ def delete_tied_stat(
 
     Deletes stat template.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [DELETE]
@@ -406,7 +460,15 @@ def delete_tied_stat(
     Responses:
         204: No Content - (Successfully delete the stat of tied status)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}])
+
         409: Conflict - ErrorEntity (12276:  Stat template with code [{statCode}] in namespace [{namespace}] not deletable due it is in an INIT status )
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -430,7 +492,7 @@ async def delete_tied_stat_async(
 
     Deletes stat template.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [DELETE]
@@ -455,7 +517,15 @@ async def delete_tied_stat_async(
     Responses:
         204: No Content - (Successfully delete the stat of tied status)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}])
+
         409: Conflict - ErrorEntity (12276:  Stat template with code [{statCode}] in namespace [{namespace}] not deletable due it is in an INIT status )
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -481,7 +551,7 @@ def export_stats(
     Export all stat configurations for a given namespace into file At current, only JSON file is supported.
 
     Other detail info:
-              *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -503,6 +573,12 @@ def export_stats(
 
     Responses:
         200: OK - Any (successful export of stat configs)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -525,7 +601,7 @@ async def export_stats_async(
     Export all stat configurations for a given namespace into file At current, only JSON file is supported.
 
     Other detail info:
-              *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -547,6 +623,12 @@ async def export_stats_async(
 
     Responses:
         200: OK - Any (successful export of stat configs)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -571,8 +653,8 @@ def get_stat(
 
     Get stat by statCode.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-              *  Returns : stat info
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  Returns : stat info
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -597,7 +679,13 @@ def get_stat(
     Responses:
         200: OK - StatInfo (successful operation)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}])
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -621,8 +709,8 @@ async def get_stat_async(
 
     Get stat by statCode.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-              *  Returns : stat info
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  Returns : stat info
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -647,7 +735,13 @@ async def get_stat_async(
     Responses:
         200: OK - StatInfo (successful operation)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}])
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -677,8 +771,8 @@ def get_stats(
 
     List stats by pagination.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-              *  Returns : stats
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  Returns : stats
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -710,6 +804,12 @@ def get_stats(
 
     Responses:
         200: OK - StatPagingSlicedResult (successful operation)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -741,8 +841,8 @@ async def get_stats_async(
 
     List stats by pagination.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-              *  Returns : stats
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  Returns : stats
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -774,6 +874,12 @@ async def get_stats_async(
 
     Responses:
         200: OK - StatPagingSlicedResult (successful operation)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -785,6 +891,128 @@ async def get_stats_async(
         is_public=is_public,
         limit=limit,
         offset=offset,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(ImportStatCycle)
+def import_stat_cycle(
+    file: Optional[Any] = None,
+    replace_existing: Optional[bool] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Import stat cycle configurations (importStatCycle)
+
+    Import stat cycle configurations for a given namespace from file. At current, only JSON file is supported.
+
+    Other detail info:
+            *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
+
+    Properties:
+        url: /social/v1/admin/namespaces/{namespace}/statCycles/import
+
+        method: POST
+
+        tags: ["StatConfiguration"]
+
+        consumes: ["multipart/form-data"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        file: (file) OPTIONAL Any in form_data
+
+        namespace: (namespace) REQUIRED str in path
+
+        replace_existing: (replaceExisting) OPTIONAL bool in query
+
+    Responses:
+        201: Created - StatImportInfo (Import stat cycles successfully)
+
+        400: Bad Request - ErrorEntity (12222: Stats data for namespace [{namespace}] is invalid)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = ImportStatCycle.create(
+        file=file,
+        replace_existing=replace_existing,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(ImportStatCycle)
+async def import_stat_cycle_async(
+    file: Optional[Any] = None,
+    replace_existing: Optional[bool] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Import stat cycle configurations (importStatCycle)
+
+    Import stat cycle configurations for a given namespace from file. At current, only JSON file is supported.
+
+    Other detail info:
+            *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
+
+    Properties:
+        url: /social/v1/admin/namespaces/{namespace}/statCycles/import
+
+        method: POST
+
+        tags: ["StatConfiguration"]
+
+        consumes: ["multipart/form-data"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        file: (file) OPTIONAL Any in form_data
+
+        namespace: (namespace) REQUIRED str in path
+
+        replace_existing: (replaceExisting) OPTIONAL bool in query
+
+    Responses:
+        201: Created - StatImportInfo (Import stat cycles successfully)
+
+        400: Bad Request - ErrorEntity (12222: Stats data for namespace [{namespace}] is invalid)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = ImportStatCycle.create(
+        file=file,
+        replace_existing=replace_existing,
         namespace=namespace,
     )
     return await run_request_async(
@@ -805,7 +1033,7 @@ def import_stats(
     Import stat configurations for a given namespace from file. At current, only JSON file is supported.
 
     Other detail info:
-              *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+            *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
@@ -832,7 +1060,13 @@ def import_stats(
     Responses:
         201: Created - StatImportInfo (Import stats successfully)
 
-        400: Bad Request - ErrorEntity (70138: Stats data for namespace [{namespace}] is invalid)
+        400: Bad Request - ErrorEntity (12222: Stats data for namespace [{namespace}] is invalid)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -859,7 +1093,7 @@ async def import_stats_async(
     Import stat configurations for a given namespace from file. At current, only JSON file is supported.
 
     Other detail info:
-              *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+            *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
@@ -886,7 +1120,13 @@ async def import_stats_async(
     Responses:
         201: Created - StatImportInfo (Import stats successfully)
 
-        400: Bad Request - ErrorEntity (70138: Stats data for namespace [{namespace}] is invalid)
+        400: Bad Request - ErrorEntity (12222: Stats data for namespace [{namespace}] is invalid)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -917,8 +1157,8 @@ def query_stats(
 
     Query stats by keyword.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-              *  Returns : stats
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  Returns : stats
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -950,6 +1190,12 @@ def query_stats(
 
     Responses:
         200: OK - StatPagingSlicedResult (successful operation)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -981,8 +1227,8 @@ async def query_stats_async(
 
     Query stats by keyword.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-              *  Returns : stats
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+            *  Returns : stats
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -1014,6 +1260,12 @@ async def query_stats_async(
 
     Responses:
         200: OK - StatPagingSlicedResult (successful operation)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1044,8 +1296,8 @@ def update_stat(
 
     Update stat.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
-              *  Returns : updated stat
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
+            *  Returns : updated stat
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [UPDATE]
@@ -1072,7 +1324,15 @@ def update_stat(
     Responses:
         200: OK - StatInfo (successful update of stat)
 
+        400: Bad Request - ErrorEntity (Bad request)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}] | 12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1098,8 +1358,8 @@ async def update_stat_async(
 
     Update stat.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
-              *  Returns : updated stat
+            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
+            *  Returns : updated stat
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [UPDATE]
@@ -1126,7 +1386,15 @@ async def update_stat_async(
     Responses:
         200: OK - StatInfo (successful update of stat)
 
+        400: Bad Request - ErrorEntity (Bad request)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}] | 12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "accelbyte-py-sdk-service-achievement"
 readme = "README.md"
-version = "0.1.0-a0"
+version = "2.21.3"
 description = "AccelByte Python SDK - AccelByte Gaming Services Achievement Service"
 requires-python = ">=3.9"
 dependencies = [

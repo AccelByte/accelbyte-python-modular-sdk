@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Social Service (2.9.6)
+# AccelByte Gaming Services Social Service (2.10.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -64,9 +64,15 @@ class StopStatCycle(Operation):
     Responses:
         200: OK - StatCycleInfo (successful operation)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (12279: Invalid stat cycle status: Stat cycle [{id}], namespace [{namespace}], status [{status}])
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
 
     # region fields
@@ -174,9 +180,15 @@ class StopStatCycle(Operation):
 
         200: OK - StatCycleInfo (successful operation)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (12279: Invalid stat cycle status: Stat cycle [{id}], namespace [{namespace}], status [{status}])
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -193,9 +205,15 @@ class StopStatCycle(Operation):
 
         if code == 200:
             return StatCycleInfo.create_from_dict(content), None
+        if code == 401:
+            return None, ErrorEntity.create_from_dict(content)
+        if code == 403:
+            return None, ErrorEntity.create_from_dict(content)
         if code == 404:
             return None, ErrorEntity.create_from_dict(content)
         if code == 409:
+            return None, ErrorEntity.create_from_dict(content)
+        if code == 500:
             return None, ErrorEntity.create_from_dict(content)
 
         return self.handle_undocumented_response(

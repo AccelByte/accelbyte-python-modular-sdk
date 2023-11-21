@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Social Service (2.9.6)
+# AccelByte Gaming Services Social Service (2.10.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -30,6 +30,7 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 from accelbyte_py_sdk.core import StrEnum
 
+from ...models import ErrorEntity
 from ...models import StatCyclePagingSlicedResult
 
 
@@ -87,6 +88,12 @@ class GetStatCycles(Operation):
 
     Responses:
         200: OK - StatCyclePagingSlicedResult (successful operation)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
 
     # region fields
@@ -249,10 +256,18 @@ class GetStatCycles(Operation):
     # noinspection PyMethodMayBeStatic
     def parse_response(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[Union[None, StatCyclePagingSlicedResult], Union[None, HttpResponse]]:
+    ) -> Tuple[
+        Union[None, StatCyclePagingSlicedResult], Union[None, ErrorEntity, HttpResponse]
+    ]:
         """Parse the given response.
 
         200: OK - StatCyclePagingSlicedResult (successful operation)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -269,6 +284,12 @@ class GetStatCycles(Operation):
 
         if code == 200:
             return StatCyclePagingSlicedResult.create_from_dict(content), None
+        if code == 401:
+            return None, ErrorEntity.create_from_dict(content)
+        if code == 403:
+            return None, ErrorEntity.create_from_dict(content)
+        if code == 500:
+            return None, ErrorEntity.create_from_dict(content)
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content

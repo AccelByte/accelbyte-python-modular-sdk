@@ -38,12 +38,14 @@ from ..models import StatCycleCreate
 from ..models import StatCycleInfo
 from ..models import StatCyclePagingSlicedResult
 from ..models import StatCycleUpdate
+from ..models import ValidationErrorEntity
 
 from ..operations.stat_cycle_configuration import BulkAddStats
 from ..operations.stat_cycle_configuration import BulkGetStatCycle
 from ..operations.stat_cycle_configuration import BulkGetStatCycle1
 from ..operations.stat_cycle_configuration import CreateStatCycle
 from ..operations.stat_cycle_configuration import DeleteStatCycle
+from ..operations.stat_cycle_configuration import ExportStatCycle
 from ..operations.stat_cycle_configuration import GetStatCycle
 from ..operations.stat_cycle_configuration import GetStatCycle1
 from ..operations.stat_cycle_configuration import GetStatCycles
@@ -102,7 +104,17 @@ def bulk_add_stats(
     Responses:
         200: OK - List[BulkStatCycleOperationResult] (successful operation)
 
+        400: Bad Request - ErrorEntity (Bad request)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -155,7 +167,17 @@ async def bulk_add_stats_async(
     Responses:
         200: OK - List[BulkStatCycleOperationResult] (successful operation)
 
+        400: Bad Request - ErrorEntity (Bad request)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -207,6 +229,16 @@ def bulk_get_stat_cycle(
 
     Responses:
         200: OK - BulkStatCycleResult (successful operation)
+
+        400: Bad Request - ErrorEntity (Bad request)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -255,6 +287,16 @@ async def bulk_get_stat_cycle_async(
 
     Responses:
         200: OK - BulkStatCycleResult (successful operation)
+
+        400: Bad Request - ErrorEntity (Bad request)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -305,6 +347,16 @@ def bulk_get_stat_cycle_1(
 
     Responses:
         200: OK - BulkStatCycleResult (successful operation)
+
+        400: Bad Request - ErrorEntity (Bad request)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -353,6 +405,16 @@ async def bulk_get_stat_cycle_1_async(
 
     Responses:
         200: OK - BulkStatCycleResult (successful operation)
+
+        400: Bad Request - ErrorEntity (Bad request)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -414,6 +476,14 @@ def create_stat_cycle(
         201: Created - StatCycleInfo (successful operation)
 
         400: Bad Request - ErrorEntity (12225: Invalid time range | 12226: Invalid date [{date}] of month [{month}])
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -473,6 +543,14 @@ async def create_stat_cycle_async(
         201: Created - StatCycleInfo (successful operation)
 
         400: Bad Request - ErrorEntity (12225: Invalid time range | 12226: Invalid date [{date}] of month [{month}])
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -523,7 +601,13 @@ def delete_stat_cycle(
     Responses:
         204: No Content - (Successful operation)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -572,7 +656,13 @@ async def delete_stat_cycle_async(
     Responses:
         204: No Content - (Successful operation)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -580,6 +670,108 @@ async def delete_stat_cycle_async(
             return None, error
     request = DeleteStatCycle.create(
         cycle_id=cycle_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(ExportStatCycle)
+def export_stat_cycle(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Export all stat cycle configurations (exportStatCycle)
+
+    Export all stat cycle configurations for a given namespace into file At current, only JSON file is supported.
+
+    Other detail info:
+            *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:STAT [READ]
+
+    Properties:
+        url: /social/v1/admin/namespaces/{namespace}/statCycles/export
+
+        method: GET
+
+        tags: ["StatCycleConfiguration"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - Any (successful export of stat cycle configs)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = ExportStatCycle.create(
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(ExportStatCycle)
+async def export_stat_cycle_async(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Export all stat cycle configurations (exportStatCycle)
+
+    Export all stat cycle configurations for a given namespace into file At current, only JSON file is supported.
+
+    Other detail info:
+            *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:STAT [READ]
+
+    Properties:
+        url: /social/v1/admin/namespaces/{namespace}/statCycles/export
+
+        method: GET
+
+        tags: ["StatCycleConfiguration"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - Any (successful export of stat cycle configs)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = ExportStatCycle.create(
         namespace=namespace,
     )
     return await run_request_async(
@@ -624,7 +816,13 @@ def get_stat_cycle(
     Responses:
         200: OK - StatCycleInfo (successful operation)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -674,7 +872,13 @@ async def get_stat_cycle_async(
     Responses:
         200: OK - StatCycleInfo (successful operation)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -726,7 +930,13 @@ def get_stat_cycle_1(
     Responses:
         200: OK - StatCycleInfo (successful operation)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -776,7 +986,13 @@ async def get_stat_cycle_1_async(
     Responses:
         200: OK - StatCycleInfo (successful operation)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -842,6 +1058,12 @@ def get_stat_cycles(
 
     Responses:
         200: OK - StatCyclePagingSlicedResult (successful operation)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -910,6 +1132,12 @@ async def get_stat_cycles_async(
 
     Responses:
         200: OK - StatCyclePagingSlicedResult (successful operation)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -980,6 +1208,12 @@ def get_stat_cycles_1(
 
     Responses:
         200: OK - StatCyclePagingSlicedResult (successful operation)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1048,6 +1282,12 @@ async def get_stat_cycles_1_async(
 
     Responses:
         200: OK - StatCyclePagingSlicedResult (successful operation)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1104,9 +1344,15 @@ def stop_stat_cycle(
     Responses:
         200: OK - StatCycleInfo (successful operation)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (12279: Invalid stat cycle status: Stat cycle [{id}], namespace [{namespace}], status [{status}])
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1156,9 +1402,15 @@ async def stop_stat_cycle_async(
     Responses:
         200: OK - StatCycleInfo (successful operation)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (12279: Invalid stat cycle status: Stat cycle [{id}], namespace [{namespace}], status [{status}])
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1215,9 +1467,17 @@ def update_stat_cycle(
 
         400: Bad Request - ErrorEntity (12225: Invalid time range | 12226: Invalid date [{date}] of month [{month}])
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (12277: Stat cycle [{id}] in namespace [{namespace}] with status [{status}] cannot be updated)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1273,9 +1533,17 @@ async def update_stat_cycle_async(
 
         400: Bad Request - ErrorEntity (12225: Invalid time range | 12226: Invalid date [{date}] of month [{month}])
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
         404: Not Found - ErrorEntity (12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (12277: Stat cycle [{id}] in namespace [{namespace}] with status [{status}] cannot be updated)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()

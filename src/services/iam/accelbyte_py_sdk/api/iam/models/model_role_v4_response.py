@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Iam Service (7.4.1)
+# AccelByte Gaming Services Iam Service (7.6.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

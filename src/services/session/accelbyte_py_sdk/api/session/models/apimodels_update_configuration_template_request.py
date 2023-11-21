@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Session Service (3.9.0)
+# AccelByte Gaming Services Session Service (3.11.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -38,6 +38,8 @@ class ApimodelsUpdateConfigurationTemplateRequest(Model):
 
         deployment: (deployment) REQUIRED str
 
+        enable_secret: (enableSecret) REQUIRED bool
+
         inactive_timeout: (inactiveTimeout) REQUIRED int
 
         invite_timeout: (inviteTimeout) REQUIRED int
@@ -60,6 +62,10 @@ class ApimodelsUpdateConfigurationTemplateRequest(Model):
 
         auto_join: (autoJoin) OPTIONAL bool
 
+        disable_code_generation: (disableCodeGeneration) OPTIONAL bool
+
+        ds_manual_set_ready: (dsManualSetReady) OPTIONAL bool
+
         ds_source: (dsSource) OPTIONAL str
 
         fallback_claim_keys: (fallbackClaimKeys) OPTIONAL List[str]
@@ -81,6 +87,7 @@ class ApimodelsUpdateConfigurationTemplateRequest(Model):
 
     client_version: str  # REQUIRED
     deployment: str  # REQUIRED
+    enable_secret: bool  # REQUIRED
     inactive_timeout: int  # REQUIRED
     invite_timeout: int  # REQUIRED
     joinability: str  # REQUIRED
@@ -92,6 +99,8 @@ class ApimodelsUpdateConfigurationTemplateRequest(Model):
     text_chat: bool  # REQUIRED
     type_: str  # REQUIRED
     auto_join: bool  # OPTIONAL
+    disable_code_generation: bool  # OPTIONAL
+    ds_manual_set_ready: bool  # OPTIONAL
     ds_source: str  # OPTIONAL
     fallback_claim_keys: List[str]  # OPTIONAL
     immutable_storage: bool  # OPTIONAL
@@ -115,6 +124,12 @@ class ApimodelsUpdateConfigurationTemplateRequest(Model):
         self, value: str
     ) -> ApimodelsUpdateConfigurationTemplateRequest:
         self.deployment = value
+        return self
+
+    def with_enable_secret(
+        self, value: bool
+    ) -> ApimodelsUpdateConfigurationTemplateRequest:
+        self.enable_secret = value
         return self
 
     def with_inactive_timeout(
@@ -179,6 +194,18 @@ class ApimodelsUpdateConfigurationTemplateRequest(Model):
         self.auto_join = value
         return self
 
+    def with_disable_code_generation(
+        self, value: bool
+    ) -> ApimodelsUpdateConfigurationTemplateRequest:
+        self.disable_code_generation = value
+        return self
+
+    def with_ds_manual_set_ready(
+        self, value: bool
+    ) -> ApimodelsUpdateConfigurationTemplateRequest:
+        self.ds_manual_set_ready = value
+        return self
+
     def with_ds_source(self, value: str) -> ApimodelsUpdateConfigurationTemplateRequest:
         self.ds_source = value
         return self
@@ -239,6 +266,10 @@ class ApimodelsUpdateConfigurationTemplateRequest(Model):
             result["deployment"] = str(self.deployment)
         elif include_empty:
             result["deployment"] = ""
+        if hasattr(self, "enable_secret"):
+            result["enableSecret"] = bool(self.enable_secret)
+        elif include_empty:
+            result["enableSecret"] = False
         if hasattr(self, "inactive_timeout"):
             result["inactiveTimeout"] = int(self.inactive_timeout)
         elif include_empty:
@@ -283,6 +314,14 @@ class ApimodelsUpdateConfigurationTemplateRequest(Model):
             result["autoJoin"] = bool(self.auto_join)
         elif include_empty:
             result["autoJoin"] = False
+        if hasattr(self, "disable_code_generation"):
+            result["disableCodeGeneration"] = bool(self.disable_code_generation)
+        elif include_empty:
+            result["disableCodeGeneration"] = False
+        if hasattr(self, "ds_manual_set_ready"):
+            result["dsManualSetReady"] = bool(self.ds_manual_set_ready)
+        elif include_empty:
+            result["dsManualSetReady"] = False
         if hasattr(self, "ds_source"):
             result["dsSource"] = str(self.ds_source)
         elif include_empty:
@@ -328,6 +367,7 @@ class ApimodelsUpdateConfigurationTemplateRequest(Model):
         cls,
         client_version: str,
         deployment: str,
+        enable_secret: bool,
         inactive_timeout: int,
         invite_timeout: int,
         joinability: str,
@@ -339,6 +379,8 @@ class ApimodelsUpdateConfigurationTemplateRequest(Model):
         text_chat: bool,
         type_: str,
         auto_join: Optional[bool] = None,
+        disable_code_generation: Optional[bool] = None,
+        ds_manual_set_ready: Optional[bool] = None,
         ds_source: Optional[str] = None,
         fallback_claim_keys: Optional[List[str]] = None,
         immutable_storage: Optional[bool] = None,
@@ -352,6 +394,7 @@ class ApimodelsUpdateConfigurationTemplateRequest(Model):
         instance = cls()
         instance.client_version = client_version
         instance.deployment = deployment
+        instance.enable_secret = enable_secret
         instance.inactive_timeout = inactive_timeout
         instance.invite_timeout = invite_timeout
         instance.joinability = joinability
@@ -364,6 +407,10 @@ class ApimodelsUpdateConfigurationTemplateRequest(Model):
         instance.type_ = type_
         if auto_join is not None:
             instance.auto_join = auto_join
+        if disable_code_generation is not None:
+            instance.disable_code_generation = disable_code_generation
+        if ds_manual_set_ready is not None:
+            instance.ds_manual_set_ready = ds_manual_set_ready
         if ds_source is not None:
             instance.ds_source = ds_source
         if fallback_claim_keys is not None:
@@ -397,6 +444,10 @@ class ApimodelsUpdateConfigurationTemplateRequest(Model):
             instance.deployment = str(dict_["deployment"])
         elif include_empty:
             instance.deployment = ""
+        if "enableSecret" in dict_ and dict_["enableSecret"] is not None:
+            instance.enable_secret = bool(dict_["enableSecret"])
+        elif include_empty:
+            instance.enable_secret = False
         if "inactiveTimeout" in dict_ and dict_["inactiveTimeout"] is not None:
             instance.inactive_timeout = int(dict_["inactiveTimeout"])
         elif include_empty:
@@ -441,6 +492,17 @@ class ApimodelsUpdateConfigurationTemplateRequest(Model):
             instance.auto_join = bool(dict_["autoJoin"])
         elif include_empty:
             instance.auto_join = False
+        if (
+            "disableCodeGeneration" in dict_
+            and dict_["disableCodeGeneration"] is not None
+        ):
+            instance.disable_code_generation = bool(dict_["disableCodeGeneration"])
+        elif include_empty:
+            instance.disable_code_generation = False
+        if "dsManualSetReady" in dict_ and dict_["dsManualSetReady"] is not None:
+            instance.ds_manual_set_ready = bool(dict_["dsManualSetReady"])
+        elif include_empty:
+            instance.ds_manual_set_ready = False
         if "dsSource" in dict_ and dict_["dsSource"] is not None:
             instance.ds_source = str(dict_["dsSource"])
         elif include_empty:
@@ -532,6 +594,7 @@ class ApimodelsUpdateConfigurationTemplateRequest(Model):
         return {
             "clientVersion": "client_version",
             "deployment": "deployment",
+            "enableSecret": "enable_secret",
             "inactiveTimeout": "inactive_timeout",
             "inviteTimeout": "invite_timeout",
             "joinability": "joinability",
@@ -543,6 +606,8 @@ class ApimodelsUpdateConfigurationTemplateRequest(Model):
             "textChat": "text_chat",
             "type": "type_",
             "autoJoin": "auto_join",
+            "disableCodeGeneration": "disable_code_generation",
+            "dsManualSetReady": "ds_manual_set_ready",
             "dsSource": "ds_source",
             "fallbackClaimKeys": "fallback_claim_keys",
             "immutableStorage": "immutable_storage",
@@ -558,6 +623,7 @@ class ApimodelsUpdateConfigurationTemplateRequest(Model):
         return {
             "clientVersion": True,
             "deployment": True,
+            "enableSecret": True,
             "inactiveTimeout": True,
             "inviteTimeout": True,
             "joinability": True,
@@ -569,6 +635,8 @@ class ApimodelsUpdateConfigurationTemplateRequest(Model):
             "textChat": True,
             "type": True,
             "autoJoin": False,
+            "disableCodeGeneration": False,
+            "dsManualSetReady": False,
             "dsSource": False,
             "fallbackClaimKeys": False,
             "immutableStorage": False,

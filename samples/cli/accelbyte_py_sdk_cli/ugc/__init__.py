@@ -6,7 +6,7 @@
 
 # template_file: command-init.j2
 
-# justice-ugc-service (2.15.0)
+# justice-ugc-service (2.17.0)
 
 from ._single_admin_get_channel import single_admin_get_channel
 from ._admin_create_channel import admin_create_channel
@@ -95,7 +95,9 @@ from ._update_channel import update_channel
 from ._delete_channel import delete_channel
 from ._create_content_direct import create_content_direct
 from ._create_content_s3 import create_content_s3
+from ._public_update_content_by_share_code import public_update_content_by_share_code
 from ._update_content_s3 import update_content_s3
+from ._public_delete_content_by_share_code import public_delete_content_by_share_code
 from ._update_content_direct import update_content_direct
 from ._delete_content import delete_content
 from ._public_get_user_content import public_get_user_content
@@ -114,6 +116,71 @@ from ._update_group import update_group
 from ._delete_group import delete_group
 from ._get_group_content import get_group_content
 from ._delete_all_user_states import delete_all_user_states
+from ._admin_get_content_by_channel_idv2 import admin_get_content_by_channel_idv2
+from ._admin_create_content_v2 import admin_create_content_v2
+from ._admin_delete_official_content_v2 import admin_delete_official_content_v2
+from ._admin_update_official_content_v2 import admin_update_official_content_v2
+from ._admin_update_official_content_file_location import (
+    admin_update_official_content_file_location,
+)
+from ._admin_generate_official_content_upload_urlv2 import (
+    admin_generate_official_content_upload_urlv2,
+)
+from ._admin_list_content_v2 import admin_list_content_v2
+from ._admin_bulk_get_content_by_i_ds_v2 import admin_bulk_get_content_by_i_ds_v2
+from ._admin_get_content_bulk_by_share_codes_v2 import (
+    admin_get_content_bulk_by_share_codes_v2,
+)
+from ._admin_get_content_by_share_code_v2 import admin_get_content_by_share_code_v2
+from ._admin_get_content_by_content_idv2 import admin_get_content_by_content_idv2
+from ._rollback_content_version_v2 import rollback_content_version_v2
+from ._admin_update_screenshots_v2 import admin_update_screenshots_v2
+from ._admin_upload_content_screenshot_v2 import admin_upload_content_screenshot_v2
+from ._admin_delete_content_screenshot_v2 import admin_delete_content_screenshot_v2
+from ._list_content_versions_v2 import list_content_versions_v2
+from ._admin_get_official_group_contents_v2 import admin_get_official_group_contents_v2
+from ._admin_update_content_by_share_code_v2 import (
+    admin_update_content_by_share_code_v2,
+)
+from ._admin_delete_content_by_share_code_v2 import (
+    admin_delete_content_by_share_code_v2,
+)
+from ._admin_delete_user_content_v2 import admin_delete_user_content_v2
+from ._admin_update_user_content_v2 import admin_update_user_content_v2
+from ._admin_update_user_content_file_location import (
+    admin_update_user_content_file_location,
+)
+from ._admin_generate_user_content_upload_urlv2 import (
+    admin_generate_user_content_upload_urlv2,
+)
+from ._admin_get_content_by_user_idv2 import admin_get_content_by_user_idv2
+from ._admin_update_content_hide_status_v2 import admin_update_content_hide_status_v2
+from ._admin_get_user_group_contents_v2 import admin_get_user_group_contents_v2
+from ._public_get_content_by_channel_idv2 import public_get_content_by_channel_idv2
+from ._public_list_content_v2 import public_list_content_v2
+from ._public_bulk_get_content_by_idv2 import public_bulk_get_content_by_idv2
+from ._public_get_content_by_share_code_v2 import public_get_content_by_share_code_v2
+from ._public_get_content_by_idv2 import public_get_content_by_idv2
+from ._public_add_download_count_v2 import public_add_download_count_v2
+from ._public_list_content_downloader_v2 import public_list_content_downloader_v2
+from ._public_list_content_like_v2 import public_list_content_like_v2
+from ._update_content_like_status_v2 import update_content_like_status_v2
+from ._public_create_content_v2 import public_create_content_v2
+from ._public_update_content_by_share_code_v2 import (
+    public_update_content_by_share_code_v2,
+)
+from ._public_delete_content_by_share_code_v2 import (
+    public_delete_content_by_share_code_v2,
+)
+from ._public_delete_content_v2 import public_delete_content_v2
+from ._public_update_content_v2 import public_update_content_v2
+from ._public_update_content_file_location import public_update_content_file_location
+from ._public_generate_content_upload_urlv2 import public_generate_content_upload_urlv2
+from ._public_get_content_by_user_idv2 import public_get_content_by_user_idv2
+from ._update_screenshots_v2 import update_screenshots_v2
+from ._upload_content_screenshot_v2 import upload_content_screenshot_v2
+from ._delete_content_screenshot_v2 import delete_content_screenshot_v2
+from ._public_get_group_contents_v2 import public_get_group_contents_v2
 
 
 commands = [
@@ -194,7 +261,9 @@ commands = [
     delete_channel,
     create_content_direct,
     create_content_s3,
+    public_update_content_by_share_code,
     update_content_s3,
+    public_delete_content_by_share_code,
     update_content_direct,
     delete_content,
     public_get_user_content,
@@ -213,4 +282,51 @@ commands = [
     delete_group,
     get_group_content,
     delete_all_user_states,
+    admin_get_content_by_channel_idv2,
+    admin_create_content_v2,
+    admin_delete_official_content_v2,
+    admin_update_official_content_v2,
+    admin_update_official_content_file_location,
+    admin_generate_official_content_upload_urlv2,
+    admin_list_content_v2,
+    admin_bulk_get_content_by_i_ds_v2,
+    admin_get_content_bulk_by_share_codes_v2,
+    admin_get_content_by_share_code_v2,
+    admin_get_content_by_content_idv2,
+    rollback_content_version_v2,
+    admin_update_screenshots_v2,
+    admin_upload_content_screenshot_v2,
+    admin_delete_content_screenshot_v2,
+    list_content_versions_v2,
+    admin_get_official_group_contents_v2,
+    admin_update_content_by_share_code_v2,
+    admin_delete_content_by_share_code_v2,
+    admin_delete_user_content_v2,
+    admin_update_user_content_v2,
+    admin_update_user_content_file_location,
+    admin_generate_user_content_upload_urlv2,
+    admin_get_content_by_user_idv2,
+    admin_update_content_hide_status_v2,
+    admin_get_user_group_contents_v2,
+    public_get_content_by_channel_idv2,
+    public_list_content_v2,
+    public_bulk_get_content_by_idv2,
+    public_get_content_by_share_code_v2,
+    public_get_content_by_idv2,
+    public_add_download_count_v2,
+    public_list_content_downloader_v2,
+    public_list_content_like_v2,
+    update_content_like_status_v2,
+    public_create_content_v2,
+    public_update_content_by_share_code_v2,
+    public_delete_content_by_share_code_v2,
+    public_delete_content_v2,
+    public_update_content_v2,
+    public_update_content_file_location,
+    public_generate_content_upload_urlv2,
+    public_get_content_by_user_idv2,
+    update_screenshots_v2,
+    upload_content_screenshot_v2,
+    delete_content_screenshot_v2,
+    public_get_group_contents_v2,
 ]
