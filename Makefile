@@ -71,14 +71,12 @@ test_cli:
 
 bumpif_package:
 	@test -n "$(PKG_PATH)" || (echo "PKG_PATH is not set" ; exit 1)
-	@sh/bumpif.sh $(PKG_PATH)
-	@sh/udpate.sh $(PKG_PATH) 1> /dev/null
+	@sh -c 'sh/bumpif.sh $(PKG_PATH) && sh/update.sh $(PKG_PATH) 1> /dev/null || true'
 
 prerelease_package:
 	@test -n "$(PKG_PATH)" || (echo "PKG_PATH is not set" ; exit 1)
 	@test -n "$(PRE)" || (echo "PRE is not set" ; exit 1)
-	@sh/prerelease.sh $(PKG_PATH) $(PRE)
-	@sh/update.sh $(PKG_PATH) 1> /dev/null
+	@sh/prerelease.sh $(PKG_PATH) $(PRE) && sh/update.sh $(PKG_PATH) 1> /dev/null
 
 build_package:
 	@test -n "$(PKG_PATH)" || (echo "PKG_PATH is not set" ; exit 1)
@@ -91,12 +89,12 @@ tag_package:
 test_upload_package:
 	@test -n "$(PKG_PATH)" || (echo "PKG_PATH is not set" ; exit 1)
 	@test -n "$(PYPIRC_PATH)" || (echo "PYPIRC_PATH is not set" ; exit 1)
-		@sh/upload.sh $(PKG_PATH) $(PYPIRC_PATH) testpypi
+	@sh -c 'sh/upload.sh $(PKG_PATH) $(PYPIRC_PATH) testpypi || true'
 
 upload_package:
 	@test -n "$(PKG_PATH)" || (echo "PKG_PATH is not set" ; exit 1)
 	@test -n "$(PYPIRC_PATH)" || (echo "PYPIRC_PATH is not set" ; exit 1)
-		@sh/upload.sh $(PKG_PATH) $(PYPIRC_PATH) pypi
+	@sh -c 'sh/upload.sh $(PKG_PATH) $(PYPIRC_PATH) pypi || true'
 
 releaseif_package:
 	@test -n "$(PKG_PATH)" || (echo "PKG_PATH is not set" ; exit 1)

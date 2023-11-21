@@ -34,7 +34,20 @@ if [[ "$VERSION" == "null" ]]; then
   VERSION="0.1.0"
 fi
 
+PKG_TOML="$PKG_PATH/pyproject.toml"
+
+PKG_NAME=$(sed -n -r 's/name = "(.+)"/\1/p' "$PKG_TOML")
+
+REPO_HOST=$([ "$REPO" == "testpypi" ] && echo "test.pypi.org" || echo "pypi.org")
+
+REPO_URL=$"https://$REPO_HOST/project/$PKG_NAME/$VERSION/"
+
 # - start -
+
+EXISTS=$(curl -L -s -o /dev/null -w "%{http_code}\n" "$REPO_URL")
+if [[ "$EXISTS" -eq 200 ]]; then
+  echo "[upload] skipping $PKG_PATH ($VERSION) - it already exists"; exit 2
+fi
 
 echo "[upload] uploading $PKG_PATH ($VERSION) to $REPO - .."
 

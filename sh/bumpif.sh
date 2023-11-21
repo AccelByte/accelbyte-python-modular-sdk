@@ -36,6 +36,5 @@ if [ "$CHANGES" -gt 0 ]; then
 
   echo "[bumpif] bumped $PKG_PATH ($VERSION -> $NEW_VERSION) | $CHANGES change(s) found"
 else
-  echo "[bumpif] skipped $PKG_PATH | 0 changes found"
-  exit 2
+  echo "[bumpif] skipped $PKG_PATH | 0 changes found"; exit 2
 fi
