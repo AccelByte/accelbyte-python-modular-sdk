@@ -73,6 +73,8 @@ pipeline {
     // -------------------------------------- Generate --------------------------------------
     stage("Generate SDK") {
       steps {
+        sh "sudo apt install -y jq"
+
         // Setup generate branch
         dir(sdkRepoName) {
           sh "git branch ${sdkGenerateBranchName}"
@@ -108,6 +110,7 @@ pipeline {
 
         // Bump SDK version and Commit the generated code to branch, overwrite existing
         dir(sdkPath) {
+          sh "sudo apt install -y jq"
           sh "make bumpif_all tag_all"
           sh "git add --all"
           sh "git commit -m 'chore(sdk): generate python extend sdk (${getTimestampUtc()})' -m 'generated from openapi spec commit: ${sdkSpecCommitHash}'"

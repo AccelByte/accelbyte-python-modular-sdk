@@ -72,6 +72,7 @@ pipeline {
           }
           github.createRelease(githubPat, githubOwner, githubRepo, params.RELEASE_TAG, params.RELEASE_TAG, params.RELEASE_NOTE)
           withCredentials([file(credentialsId: 'justice-codegen-sdk-pypirc', variable: 'PYPIRC_PATH')]) {
+            sh "sudo apt install -y jq"
             sh 'make build_all upload_all PYPIRC_PATH=$PYPIRC_PATH'
           }
         }
