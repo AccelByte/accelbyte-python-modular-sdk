@@ -108,7 +108,7 @@ pipeline {
 
         // Bump SDK version and Commit the generated code to branch, overwrite existing
         dir(sdkPath) {
-          //sh "make bumpif_all tag_all"
+          sh "make bumpif_all tag_all"
           sh "git add --all"
           sh "git commit -m 'chore(sdk): generate python extend sdk (${getTimestampUtc()})' -m 'generated from openapi spec commit: ${sdkSpecCommitHash}'"
 

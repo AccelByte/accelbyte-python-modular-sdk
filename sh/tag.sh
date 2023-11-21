@@ -51,6 +51,11 @@ if [[ -z "$PREV_TAG" ]]; then
   exit 0
 fi
 
+if [[ "$PREV_TAG" == "$TAG" ]]; then
+  echo "[tag] skipped $PKG_PATH ($VERSION) - $TAG already exists"
+  exit 0
+fi
+
 CHANGES=$(git diff --name-only | { grep -c "$PKG_PATH" || test $? = 1; } | { grep -v grep || test $? = 1; })
 if [ "$CHANGES" -gt 0 ]; then
   PREV_COMMIT=$(git rev-list -n 1 "$PREV_TAG")
