@@ -54,6 +54,8 @@ def get_events_game_telemetry_v1_admin_namespaces_namespace_events_get(
 ):
     """Get Events (get_events_game_telemetry_v1_admin_namespaces__namespace__events_get)
 
+    This endpoint requires valid JWT token and telemetry permission
+    This endpoint retrieves event list
 
     Properties:
         url: /game-telemetry/v1/admin/namespaces/{namespace}/events
@@ -129,6 +131,8 @@ async def get_events_game_telemetry_v1_admin_namespaces_namespace_events_get_asy
 ):
     """Get Events (get_events_game_telemetry_v1_admin_namespaces__namespace__events_get)
 
+    This endpoint requires valid JWT token and telemetry permission
+    This endpoint retrieves event list
 
     Properties:
         url: /game-telemetry/v1/admin/namespaces/{namespace}/events

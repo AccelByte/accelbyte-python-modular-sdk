@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Leaderboard Service (2.26.4)
+# AccelByte Gaming Services Leaderboard Service (2.26.5)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

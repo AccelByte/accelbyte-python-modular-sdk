@@ -6,7 +6,7 @@
 
 # template_file: command-init.j2
 
-# justice-leaderboard-service (2.26.4)
+# justice-leaderboard-service (2.26.5)
 
 from ._get_leaderboard_configurations_admin_v1 import (
     get_leaderboard_configurations_admin_v1,

@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Platform Service (4.40.0)
+# AccelByte Gaming Services Platform Service (4.41.0)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -29,7 +29,7 @@ from accelbyte_py_sdk.core import Model
 
 
 class XboxAchievement(Model):
-    """xbox achievement request (xbox achievement)
+    """xbox achievement request (XboxAchievement)
 
     Properties:
         id_: (id) OPTIONAL str

@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.40.0"
+__version__ = "4.41.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -297,6 +297,7 @@ from .full_item_info import ItemTypeEnum as FullItemInfoItemTypeEnum
 from .full_item_info import StatusEnum as FullItemInfoStatusEnum
 from .full_item_info import AppTypeEnum as FullItemInfoAppTypeEnum
 from .full_item_info import SeasonTypeEnum as FullItemInfoSeasonTypeEnum
+from .full_item_paging_result import FullItemPagingResult
 from .full_item_paging_sliced_result import FullItemPagingSlicedResult
 from .full_section_info import FullSectionInfo
 from .full_section_info import RotationTypeEnum as FullSectionInfoRotationTypeEnum
@@ -734,8 +735,8 @@ from .ticket_dynamic_info import TicketDynamicInfo
 from .ticket_sale_decrement_request import TicketSaleDecrementRequest
 from .ticket_sale_increment_request import TicketSaleIncrementRequest
 from .ticket_sale_increment_result import TicketSaleIncrementResult
-from .time_limited_balance import TimeLimitedBalance
 from .timed_ownership import TimedOwnership
+from .time_limited_balance import TimeLimitedBalance
 from .tls_config import TLSConfig
 from .trade_chain_action_history_info import TradeChainActionHistoryInfo
 from .trade_chain_action_history_info import (

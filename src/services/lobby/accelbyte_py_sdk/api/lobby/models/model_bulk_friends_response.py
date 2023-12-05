@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Lobby Server (3.31.0)
+# AccelByte Gaming Services Lobby Server (3.32.3)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
