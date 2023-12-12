@@ -64,9 +64,7 @@ class ModelsChatMessageWithPaginationResponse(Model):
         self.paging = value
         return self
 
-    def with_total_data(
-        self, value: int
-    ) -> ModelsChatMessageWithPaginationResponse:
+    def with_total_data(self, value: int) -> ModelsChatMessageWithPaginationResponse:
         self.total_data = value
         return self
 
@@ -77,7 +75,9 @@ class ModelsChatMessageWithPaginationResponse(Model):
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
         if hasattr(self, "data"):
-            result["data"] = [i0.to_dict(include_empty=include_empty) for i0 in self.data]
+            result["data"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.data
+            ]
         elif include_empty:
             result["data"] = []
         if hasattr(self, "paging"):
@@ -100,7 +100,7 @@ class ModelsChatMessageWithPaginationResponse(Model):
         data: List[ModelsChatMessageResponse],
         paging: ModelsPagination,
         total_data: int,
-        **kwargs
+        **kwargs,
     ) -> ModelsChatMessageWithPaginationResponse:
         instance = cls()
         instance.data = data
@@ -116,11 +116,18 @@ class ModelsChatMessageWithPaginationResponse(Model):
         if not dict_:
             return instance
         if "data" in dict_ and dict_["data"] is not None:
-            instance.data = [ModelsChatMessageResponse.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["data"]]
+            instance.data = [
+                ModelsChatMessageResponse.create_from_dict(
+                    i0, include_empty=include_empty
+                )
+                for i0 in dict_["data"]
+            ]
         elif include_empty:
             instance.data = []
         if "paging" in dict_ and dict_["paging"] is not None:
-            instance.paging = ModelsPagination.create_from_dict(dict_["paging"], include_empty=include_empty)
+            instance.paging = ModelsPagination.create_from_dict(
+                dict_["paging"], include_empty=include_empty
+            )
         elif include_empty:
             instance.paging = ModelsPagination()
         if "totalData" in dict_ and dict_["totalData"] is not None:
@@ -155,7 +162,7 @@ class ModelsChatMessageWithPaginationResponse(Model):
     ) -> Union[
         ModelsChatMessageWithPaginationResponse,
         List[ModelsChatMessageWithPaginationResponse],
-        Dict[Any, ModelsChatMessageWithPaginationResponse]
+        Dict[Any, ModelsChatMessageWithPaginationResponse],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -182,7 +189,5 @@ class ModelsChatMessageWithPaginationResponse(Model):
             "paging": True,
             "totalData": True,
         }
-
-
 
     # endregion static methods

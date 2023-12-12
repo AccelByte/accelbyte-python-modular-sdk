@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ApiSendChatParams(Model):
     """Api send chat params (api.SendChatParams)
 
@@ -44,9 +43,7 @@ class ApiSendChatParams(Model):
 
     # region with_x methods
 
-    def with_message(
-        self, value: str
-    ) -> ApiSendChatParams:
+    def with_message(self, value: str) -> ApiSendChatParams:
         self.message = value
         return self
 
@@ -67,11 +64,7 @@ class ApiSendChatParams(Model):
     # region static methods
 
     @classmethod
-    def create(
-        cls,
-        message: str,
-        **kwargs
-    ) -> ApiSendChatParams:
+    def create(cls, message: str, **kwargs) -> ApiSendChatParams:
         instance = cls()
         instance.message = message
         return instance
@@ -113,9 +106,7 @@ class ApiSendChatParams(Model):
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
     ) -> Union[
-        ApiSendChatParams,
-        List[ApiSendChatParams],
-        Dict[Any, ApiSendChatParams]
+        ApiSendChatParams, List[ApiSendChatParams], Dict[Any, ApiSendChatParams]
     ]:
         if many:
             if isinstance(any_, dict):
@@ -138,7 +129,5 @@ class ApiSendChatParams(Model):
         return {
             "message": True,
         }
-
-
 
     # endregion static methods

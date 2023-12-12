@@ -32,10 +32,13 @@ from accelbyte_py_sdk.core import StrEnum
 class ScopeEnum(StrEnum):
     NAMESPACE = "NAMESPACE"
     USER = "USER"
+
+
 class StatusEnum(StrEnum):
     DRAFT = "DRAFT"
     SENT = "SENT"
     UNSENT = "UNSENT"
+
 
 class ModelsGetInboxMessagesResponseData(Model):
     """Models get inbox messages response data (models.GetInboxMessagesResponseData)
@@ -79,27 +82,19 @@ class ModelsGetInboxMessagesResponseData(Model):
 
     # region with_x methods
 
-    def with_created_at(
-        self, value: int
-    ) -> ModelsGetInboxMessagesResponseData:
+    def with_created_at(self, value: int) -> ModelsGetInboxMessagesResponseData:
         self.created_at = value
         return self
 
-    def with_expired_at(
-        self, value: int
-    ) -> ModelsGetInboxMessagesResponseData:
+    def with_expired_at(self, value: int) -> ModelsGetInboxMessagesResponseData:
         self.expired_at = value
         return self
 
-    def with_id(
-        self, value: str
-    ) -> ModelsGetInboxMessagesResponseData:
+    def with_id(self, value: str) -> ModelsGetInboxMessagesResponseData:
         self.id_ = value
         return self
 
-    def with_message(
-        self, value: Dict[str, Any]
-    ) -> ModelsGetInboxMessagesResponseData:
+    def with_message(self, value: Dict[str, Any]) -> ModelsGetInboxMessagesResponseData:
         self.message = value
         return self
 
@@ -109,9 +104,7 @@ class ModelsGetInboxMessagesResponseData(Model):
         self.scope = value
         return self
 
-    def with_sender_id(
-        self, value: str
-    ) -> ModelsGetInboxMessagesResponseData:
+    def with_sender_id(self, value: str) -> ModelsGetInboxMessagesResponseData:
         self.sender_id = value
         return self
 
@@ -121,21 +114,15 @@ class ModelsGetInboxMessagesResponseData(Model):
         self.status = value
         return self
 
-    def with_updated_at(
-        self, value: int
-    ) -> ModelsGetInboxMessagesResponseData:
+    def with_updated_at(self, value: int) -> ModelsGetInboxMessagesResponseData:
         self.updated_at = value
         return self
 
-    def with_user_ids(
-        self, value: List[str]
-    ) -> ModelsGetInboxMessagesResponseData:
+    def with_user_ids(self, value: List[str]) -> ModelsGetInboxMessagesResponseData:
         self.user_ids = value
         return self
 
-    def with_category(
-        self, value: str
-    ) -> ModelsGetInboxMessagesResponseData:
+    def with_category(self, value: str) -> ModelsGetInboxMessagesResponseData:
         self.category = value
         return self
 
@@ -204,7 +191,7 @@ class ModelsGetInboxMessagesResponseData(Model):
         updated_at: int,
         user_ids: List[str],
         category: Optional[str] = None,
-        **kwargs
+        **kwargs,
     ) -> ModelsGetInboxMessagesResponseData:
         instance = cls()
         instance.created_at = created_at
@@ -295,7 +282,7 @@ class ModelsGetInboxMessagesResponseData(Model):
     ) -> Union[
         ModelsGetInboxMessagesResponseData,
         List[ModelsGetInboxMessagesResponseData],
-        Dict[Any, ModelsGetInboxMessagesResponseData]
+        Dict[Any, ModelsGetInboxMessagesResponseData],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -343,6 +330,5 @@ class ModelsGetInboxMessagesResponseData(Model):
             "scope": ["NAMESPACE", "USER"],
             "status": ["DRAFT", "SENT", "UNSENT"],
         }
-
 
     # endregion static methods

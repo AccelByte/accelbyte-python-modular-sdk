@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ApiCreateNamespaceTopicParams(Model):
     """Api create namespace topic params (api.CreateNamespaceTopicParams)
 
@@ -47,15 +46,11 @@ class ApiCreateNamespaceTopicParams(Model):
 
     # region with_x methods
 
-    def with_description(
-        self, value: str
-    ) -> ApiCreateNamespaceTopicParams:
+    def with_description(self, value: str) -> ApiCreateNamespaceTopicParams:
         self.description = value
         return self
 
-    def with_name(
-        self, value: str
-    ) -> ApiCreateNamespaceTopicParams:
+    def with_name(self, value: str) -> ApiCreateNamespaceTopicParams:
         self.name = value
         return self
 
@@ -81,10 +76,7 @@ class ApiCreateNamespaceTopicParams(Model):
 
     @classmethod
     def create(
-        cls,
-        description: str,
-        name: str,
-        **kwargs
+        cls, description: str, name: str, **kwargs
     ) -> ApiCreateNamespaceTopicParams:
         instance = cls()
         instance.description = description
@@ -134,7 +126,7 @@ class ApiCreateNamespaceTopicParams(Model):
     ) -> Union[
         ApiCreateNamespaceTopicParams,
         List[ApiCreateNamespaceTopicParams],
-        Dict[Any, ApiCreateNamespaceTopicParams]
+        Dict[Any, ApiCreateNamespaceTopicParams],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -159,7 +151,5 @@ class ApiCreateNamespaceTopicParams(Model):
             "description": True,
             "name": True,
         }
-
-
 
     # endregion static methods

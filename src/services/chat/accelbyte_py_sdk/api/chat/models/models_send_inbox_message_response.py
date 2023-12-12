@@ -30,7 +30,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsSendInboxMessageResponse(Model, MutableMapping):
     """Models send inbox message response (models.SendInboxMessageResponse)
 
@@ -74,9 +73,7 @@ class ModelsSendInboxMessageResponse(Model, MutableMapping):
 
     @classmethod
     def create(
-        cls,
-        dict_: Optional[dict] = None,
-        **kwargs
+        cls, dict_: Optional[dict] = None, **kwargs
     ) -> ModelsSendInboxMessageResponse:
         instance = cls()
         if dict_ is not None:
@@ -119,7 +116,7 @@ class ModelsSendInboxMessageResponse(Model, MutableMapping):
     ) -> Union[
         ModelsSendInboxMessageResponse,
         List[ModelsSendInboxMessageResponse],
-        Dict[Any, ModelsSendInboxMessageResponse]
+        Dict[Any, ModelsSendInboxMessageResponse],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -133,14 +130,10 @@ class ModelsSendInboxMessageResponse(Model, MutableMapping):
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
-        return {
-        }
+        return {}
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
-        return {
-        }
-
-
+        return {}
 
     # endregion static methods

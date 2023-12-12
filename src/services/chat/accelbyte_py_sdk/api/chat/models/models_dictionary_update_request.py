@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsDictionaryUpdateRequest(Model):
     """Models dictionary update request (models.DictionaryUpdateRequest)
 
@@ -53,27 +52,19 @@ class ModelsDictionaryUpdateRequest(Model):
 
     # region with_x methods
 
-    def with_false_negative(
-        self, value: List[str]
-    ) -> ModelsDictionaryUpdateRequest:
+    def with_false_negative(self, value: List[str]) -> ModelsDictionaryUpdateRequest:
         self.false_negative = value
         return self
 
-    def with_false_positive(
-        self, value: List[str]
-    ) -> ModelsDictionaryUpdateRequest:
+    def with_false_positive(self, value: List[str]) -> ModelsDictionaryUpdateRequest:
         self.false_positive = value
         return self
 
-    def with_word(
-        self, value: str
-    ) -> ModelsDictionaryUpdateRequest:
+    def with_word(self, value: str) -> ModelsDictionaryUpdateRequest:
         self.word = value
         return self
 
-    def with_word_type(
-        self, value: str
-    ) -> ModelsDictionaryUpdateRequest:
+    def with_word_type(self, value: str) -> ModelsDictionaryUpdateRequest:
         self.word_type = value
         return self
 
@@ -112,7 +103,7 @@ class ModelsDictionaryUpdateRequest(Model):
         false_positive: List[str],
         word: str,
         word_type: str,
-        **kwargs
+        **kwargs,
     ) -> ModelsDictionaryUpdateRequest:
         instance = cls()
         instance.false_negative = false_negative
@@ -172,7 +163,7 @@ class ModelsDictionaryUpdateRequest(Model):
     ) -> Union[
         ModelsDictionaryUpdateRequest,
         List[ModelsDictionaryUpdateRequest],
-        Dict[Any, ModelsDictionaryUpdateRequest]
+        Dict[Any, ModelsDictionaryUpdateRequest],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -201,7 +192,5 @@ class ModelsDictionaryUpdateRequest(Model):
             "word": True,
             "wordType": True,
         }
-
-
 
     # endregion static methods

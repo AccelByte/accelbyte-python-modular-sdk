@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsChatSnapshotMessage(Model):
     """Models chat snapshot message (models.ChatSnapshotMessage)
 
@@ -53,27 +52,19 @@ class ModelsChatSnapshotMessage(Model):
 
     # region with_x methods
 
-    def with_chat_id(
-        self, value: str
-    ) -> ModelsChatSnapshotMessage:
+    def with_chat_id(self, value: str) -> ModelsChatSnapshotMessage:
         self.chat_id = value
         return self
 
-    def with_created_at(
-        self, value: int
-    ) -> ModelsChatSnapshotMessage:
+    def with_created_at(self, value: int) -> ModelsChatSnapshotMessage:
         self.created_at = value
         return self
 
-    def with_message(
-        self, value: str
-    ) -> ModelsChatSnapshotMessage:
+    def with_message(self, value: str) -> ModelsChatSnapshotMessage:
         self.message = value
         return self
 
-    def with_sender_id(
-        self, value: str
-    ) -> ModelsChatSnapshotMessage:
+    def with_sender_id(self, value: str) -> ModelsChatSnapshotMessage:
         self.sender_id = value
         return self
 
@@ -107,12 +98,7 @@ class ModelsChatSnapshotMessage(Model):
 
     @classmethod
     def create(
-        cls,
-        chat_id: str,
-        created_at: int,
-        message: str,
-        sender_id: str,
-        **kwargs
+        cls, chat_id: str, created_at: int, message: str, sender_id: str, **kwargs
     ) -> ModelsChatSnapshotMessage:
         instance = cls()
         instance.chat_id = chat_id
@@ -172,7 +158,7 @@ class ModelsChatSnapshotMessage(Model):
     ) -> Union[
         ModelsChatSnapshotMessage,
         List[ModelsChatSnapshotMessage],
-        Dict[Any, ModelsChatSnapshotMessage]
+        Dict[Any, ModelsChatSnapshotMessage],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -201,7 +187,5 @@ class ModelsChatSnapshotMessage(Model):
             "message": True,
             "senderId": True,
         }
-
-
 
     # endregion static methods

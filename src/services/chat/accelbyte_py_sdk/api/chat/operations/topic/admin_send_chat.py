@@ -34,50 +34,49 @@ from ...models import ModelsChatMessageResponse
 from ...models import RestapiErrorResponseBody
 
 
-
 class AdminSendChat(Operation):
     """admins send chat to group topic (adminSendChat)
 
-Send message to chat topic as system.
+    Send message to chat topic as system.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/chats
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/chats
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ApiSendChatParams in body
+        body: (body) REQUIRED ApiSendChatParams in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - List[ModelsChatMessageResponse] (OK)
+    Responses:
+        200: OK - List[ModelsChatMessageResponse] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
 
     # region fields
 
     _url: str = "/chat/admin/namespaces/{namespace}/topic/{topic}/chats"
     _method: str = "POST"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     body: ApiSendChatParams  # REQUIRED in [body]
@@ -130,6 +129,7 @@ Responses:
         if not hasattr(self, "body") or self.body is None:
             return None
         return self.body.to_dict()
+
     def get_path_params(self) -> dict:
         result = {}
         if hasattr(self, "namespace"):
@@ -183,7 +183,12 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, List[ModelsChatMessageResponse]], Union[None, HttpResponse, RestapiErrorResponseBody]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, List[ModelsChatMessageResponse]],
+        Union[None, HttpResponse, RestapiErrorResponseBody],
+    ]:
         """Parse the given response.
 
         200: OK - List[ModelsChatMessageResponse] (OK)
@@ -210,7 +215,9 @@ Responses:
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return [ModelsChatMessageResponse.create_from_dict(i) for i in content], None
+            return [
+                ModelsChatMessageResponse.create_from_dict(i) for i in content
+            ], None
         if code == 400:
             return None, RestapiErrorResponseBody.create_from_dict(content)
         if code == 401:
@@ -230,11 +237,7 @@ Responses:
 
     @classmethod
     def create(
-        cls,
-        body: ApiSendChatParams,
-        namespace: str,
-        topic: str,
-        **kwargs
+        cls, body: ApiSendChatParams, namespace: str, topic: str, **kwargs
     ) -> AdminSendChat:
         instance = cls()
         instance.body = body
@@ -248,7 +251,9 @@ Responses:
     ) -> AdminSendChat:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = ApiSendChatParams.create_from_dict(dict_["body"], include_empty=include_empty)
+            instance.body = ApiSendChatParams.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
         elif include_empty:
             instance.body = ApiSendChatParams()
         if "namespace" in dict_ and dict_["namespace"] is not None:

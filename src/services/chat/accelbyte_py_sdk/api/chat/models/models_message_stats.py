@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsMessageStats(Model):
     """Models message stats (models.MessageStats)
 
@@ -53,27 +52,19 @@ class ModelsMessageStats(Model):
 
     # region with_x methods
 
-    def with_id(
-        self, value: str
-    ) -> ModelsMessageStats:
+    def with_id(self, value: str) -> ModelsMessageStats:
         self.id_ = value
         return self
 
-    def with_message_read(
-        self, value: int
-    ) -> ModelsMessageStats:
+    def with_message_read(self, value: int) -> ModelsMessageStats:
         self.message_read = value
         return self
 
-    def with_message_stored(
-        self, value: int
-    ) -> ModelsMessageStats:
+    def with_message_stored(self, value: int) -> ModelsMessageStats:
         self.message_stored = value
         return self
 
-    def with_notification_sent(
-        self, value: int
-    ) -> ModelsMessageStats:
+    def with_notification_sent(self, value: int) -> ModelsMessageStats:
         self.notification_sent = value
         return self
 
@@ -112,7 +103,7 @@ class ModelsMessageStats(Model):
         message_read: int,
         message_stored: int,
         notification_sent: int,
-        **kwargs
+        **kwargs,
     ) -> ModelsMessageStats:
         instance = cls()
         instance.id_ = id_
@@ -170,9 +161,7 @@ class ModelsMessageStats(Model):
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
     ) -> Union[
-        ModelsMessageStats,
-        List[ModelsMessageStats],
-        Dict[Any, ModelsMessageStats]
+        ModelsMessageStats, List[ModelsMessageStats], Dict[Any, ModelsMessageStats]
     ]:
         if many:
             if isinstance(any_, dict):
@@ -201,7 +190,5 @@ class ModelsMessageStats(Model):
             "messageStored": True,
             "notificationSent": True,
         }
-
-
 
     # endregion static methods

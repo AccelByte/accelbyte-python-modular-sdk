@@ -42,84 +42,84 @@ from ..operations.config import AdminUpdateConfigV1
 from ..operations.config import ExportConfig
 from ..operations.config import ImportConfig
 
+
 @same_doc_as(AdminGetAllConfigV1)
 def admin_get_all_config_v1(
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
 ):
     """admin get all namespaces config (adminGetAllConfigV1)
 
-Get chat config of all namespaces.
+    Get chat config of all namespaces.
 
-Properties:
-    url: /chat/v1/admin/config
+    Properties:
+        url: /chat/v1/admin/config
 
-    method: GET
+        method: GET
 
-    tags: ["config"]
+        tags: ["config"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-Responses:
-    200: OK - ModelsConfigList (OK)
+    Responses:
+        200: OK - ModelsConfigList (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
-    request = AdminGetAllConfigV1.create(
-    )
+    request = AdminGetAllConfigV1.create()
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(AdminGetAllConfigV1)
 async def admin_get_all_config_v1_async(
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
 ):
     """admin get all namespaces config (adminGetAllConfigV1)
 
-Get chat config of all namespaces.
+    Get chat config of all namespaces.
 
-Properties:
-    url: /chat/v1/admin/config
+    Properties:
+        url: /chat/v1/admin/config
 
-    method: GET
+        method: GET
 
-    tags: ["config"]
+        tags: ["config"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-Responses:
-    200: OK - ModelsConfigList (OK)
+    Responses:
+        200: OK - ModelsConfigList (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
-    request = AdminGetAllConfigV1.create(
+    request = AdminGetAllConfigV1.create()
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+
 
 @same_doc_as(AdminGetConfigV1)
 def admin_get_config_v1(
@@ -129,35 +129,35 @@ def admin_get_config_v1(
 ):
     """admin get namespace config (adminGetConfigV1)
 
-Get chat config of a namespace.
+    Get chat config of a namespace.
 
-Properties:
-    url: /chat/v1/admin/config/namespaces/{namespace}
+    Properties:
+        url: /chat/v1/admin/config/namespaces/{namespace}
 
-    method: GET
+        method: GET
 
-    tags: ["config"]
+        tags: ["config"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsConfigResponse (OK)
+    Responses:
+        200: OK - ModelsConfigResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -177,35 +177,35 @@ async def admin_get_config_v1_async(
 ):
     """admin get namespace config (adminGetConfigV1)
 
-Get chat config of a namespace.
+    Get chat config of a namespace.
 
-Properties:
-    url: /chat/v1/admin/config/namespaces/{namespace}
+    Properties:
+        url: /chat/v1/admin/config/namespaces/{namespace}
 
-    method: GET
+        method: GET
 
-    tags: ["config"]
+        tags: ["config"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsConfigResponse (OK)
+    Responses:
+        200: OK - ModelsConfigResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -214,7 +214,10 @@ Responses:
     request = AdminGetConfigV1.create(
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminUpdateConfigV1)
 def admin_update_config_v1(
@@ -225,39 +228,39 @@ def admin_update_config_v1(
 ):
     """admin update namespace config (adminUpdateConfigV1)
 
-Update chat config of a namespace.
+    Update chat config of a namespace.
 
-Properties:
-    url: /chat/v1/admin/config/namespaces/{namespace}
+    Properties:
+        url: /chat/v1/admin/config/namespaces/{namespace}
 
-    method: PUT
+        method: PUT
 
-    tags: ["config"]
+        tags: ["config"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsConfigResponse in body
+        body: (body) REQUIRED ModelsConfigResponse in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsConfigResponse (OK)
+    Responses:
+        200: OK - ModelsConfigResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    412: Precondition Failed - RestapiErrorResponseBody (Precondition Failed)
+        412: Precondition Failed - RestapiErrorResponseBody (Precondition Failed)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -279,39 +282,39 @@ async def admin_update_config_v1_async(
 ):
     """admin update namespace config (adminUpdateConfigV1)
 
-Update chat config of a namespace.
+    Update chat config of a namespace.
 
-Properties:
-    url: /chat/v1/admin/config/namespaces/{namespace}
+    Properties:
+        url: /chat/v1/admin/config/namespaces/{namespace}
 
-    method: PUT
+        method: PUT
 
-    tags: ["config"]
+        tags: ["config"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsConfigResponse in body
+        body: (body) REQUIRED ModelsConfigResponse in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsConfigResponse (OK)
+    Responses:
+        200: OK - ModelsConfigResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    412: Precondition Failed - RestapiErrorResponseBody (Precondition Failed)
+        412: Precondition Failed - RestapiErrorResponseBody (Precondition Failed)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -321,7 +324,10 @@ Responses:
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(ExportConfig)
 def export_config(
@@ -331,31 +337,31 @@ def export_config(
 ):
     """Export chat config to a json file. (ExportConfig)
 
-Export chat configuration to a json file. The file can then be imported from the /import endpoint.
+    Export chat configuration to a json file. The file can then be imported from the /import endpoint.
 
-Properties:
-    url: /chat/v1/admin/config/namespaces/{namespace}/export
+    Properties:
+        url: /chat/v1/admin/config/namespaces/{namespace}/export
 
-    method: GET
+        method: GET
 
-    tags: ["config"]
+        tags: ["config"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - List[ModelsConfigExport] (OK)
+    Responses:
+        200: OK - List[ModelsConfigExport] (OK)
 
-    401: Unauthorized - ResponseError (Unauthorized)
+        401: Unauthorized - ResponseError (Unauthorized)
 
-    403: Forbidden - ResponseError (Forbidden)
+        403: Forbidden - ResponseError (Forbidden)
 
-    500: Internal Server Error - ResponseError (Internal Server Error)
+        500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -375,31 +381,31 @@ async def export_config_async(
 ):
     """Export chat config to a json file. (ExportConfig)
 
-Export chat configuration to a json file. The file can then be imported from the /import endpoint.
+    Export chat configuration to a json file. The file can then be imported from the /import endpoint.
 
-Properties:
-    url: /chat/v1/admin/config/namespaces/{namespace}/export
+    Properties:
+        url: /chat/v1/admin/config/namespaces/{namespace}/export
 
-    method: GET
+        method: GET
 
-    tags: ["config"]
+        tags: ["config"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - List[ModelsConfigExport] (OK)
+    Responses:
+        200: OK - List[ModelsConfigExport] (OK)
 
-    401: Unauthorized - ResponseError (Unauthorized)
+        401: Unauthorized - ResponseError (Unauthorized)
 
-    403: Forbidden - ResponseError (Forbidden)
+        403: Forbidden - ResponseError (Forbidden)
 
-    500: Internal Server Error - ResponseError (Internal Server Error)
+        500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -408,7 +414,10 @@ Responses:
     request = ExportConfig.create(
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(ImportConfig)
 def import_config(
@@ -419,34 +428,34 @@ def import_config(
 ):
     """Import chat config from a json file. (ImportConfig)
 
-Import config configuration from file. The existing configuration will be replaced.
-The json file to import can be obtained from the /export endpoint.
+    Import config configuration from file. The existing configuration will be replaced.
+    The json file to import can be obtained from the /export endpoint.
 
-Properties:
-    url: /chat/v1/admin/config/namespaces/{namespace}/import
+    Properties:
+        url: /chat/v1/admin/config/namespaces/{namespace}/import
 
-    method: POST
+        method: POST
 
-    tags: ["config"]
+        tags: ["config"]
 
-    consumes: ["multipart/form-data"]
+        consumes: ["multipart/form-data"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    file: (file) OPTIONAL Any in form_data
+        file: (file) OPTIONAL Any in form_data
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsImportConfigResponse (OK)
+    Responses:
+        200: OK - ModelsImportConfigResponse (OK)
 
-    401: Unauthorized - ResponseError (Unauthorized)
+        401: Unauthorized - ResponseError (Unauthorized)
 
-    403: Forbidden - ResponseError (Forbidden)
+        403: Forbidden - ResponseError (Forbidden)
 
-    500: Internal Server Error - ResponseError (Internal Server Error)
+        500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -468,34 +477,34 @@ async def import_config_async(
 ):
     """Import chat config from a json file. (ImportConfig)
 
-Import config configuration from file. The existing configuration will be replaced.
-The json file to import can be obtained from the /export endpoint.
+    Import config configuration from file. The existing configuration will be replaced.
+    The json file to import can be obtained from the /export endpoint.
 
-Properties:
-    url: /chat/v1/admin/config/namespaces/{namespace}/import
+    Properties:
+        url: /chat/v1/admin/config/namespaces/{namespace}/import
 
-    method: POST
+        method: POST
 
-    tags: ["config"]
+        tags: ["config"]
 
-    consumes: ["multipart/form-data"]
+        consumes: ["multipart/form-data"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    file: (file) OPTIONAL Any in form_data
+        file: (file) OPTIONAL Any in form_data
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsImportConfigResponse (OK)
+    Responses:
+        200: OK - ModelsImportConfigResponse (OK)
 
-    401: Unauthorized - ResponseError (Unauthorized)
+        401: Unauthorized - ResponseError (Unauthorized)
 
-    403: Forbidden - ResponseError (Forbidden)
+        403: Forbidden - ResponseError (Forbidden)
 
-    500: Internal Server Error - ResponseError (Internal Server Error)
+        500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -505,4 +514,6 @@ Responses:
         file=file,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )

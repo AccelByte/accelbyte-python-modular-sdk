@@ -51,21 +51,15 @@ class ModelsGetInboxUsersResponse(Model):
 
     # region with_x methods
 
-    def with_data(
-        self, value: List[ModelsUserInbox]
-    ) -> ModelsGetInboxUsersResponse:
+    def with_data(self, value: List[ModelsUserInbox]) -> ModelsGetInboxUsersResponse:
         self.data = value
         return self
 
-    def with_next(
-        self, value: str
-    ) -> ModelsGetInboxUsersResponse:
+    def with_next(self, value: str) -> ModelsGetInboxUsersResponse:
         self.next_ = value
         return self
 
-    def with_previous(
-        self, value: str
-    ) -> ModelsGetInboxUsersResponse:
+    def with_previous(self, value: str) -> ModelsGetInboxUsersResponse:
         self.previous = value
         return self
 
@@ -76,7 +70,9 @@ class ModelsGetInboxUsersResponse(Model):
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
         if hasattr(self, "data"):
-            result["data"] = [i0.to_dict(include_empty=include_empty) for i0 in self.data]
+            result["data"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.data
+            ]
         elif include_empty:
             result["data"] = []
         if hasattr(self, "next_"):
@@ -95,11 +91,7 @@ class ModelsGetInboxUsersResponse(Model):
 
     @classmethod
     def create(
-        cls,
-        data: List[ModelsUserInbox],
-        next_: str,
-        previous: str,
-        **kwargs
+        cls, data: List[ModelsUserInbox], next_: str, previous: str, **kwargs
     ) -> ModelsGetInboxUsersResponse:
         instance = cls()
         instance.data = data
@@ -115,7 +107,10 @@ class ModelsGetInboxUsersResponse(Model):
         if not dict_:
             return instance
         if "data" in dict_ and dict_["data"] is not None:
-            instance.data = [ModelsUserInbox.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["data"]]
+            instance.data = [
+                ModelsUserInbox.create_from_dict(i0, include_empty=include_empty)
+                for i0 in dict_["data"]
+            ]
         elif include_empty:
             instance.data = []
         if "next" in dict_ and dict_["next"] is not None:
@@ -154,7 +149,7 @@ class ModelsGetInboxUsersResponse(Model):
     ) -> Union[
         ModelsGetInboxUsersResponse,
         List[ModelsGetInboxUsersResponse],
-        Dict[Any, ModelsGetInboxUsersResponse]
+        Dict[Any, ModelsGetInboxUsersResponse],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -181,7 +176,5 @@ class ModelsGetInboxUsersResponse(Model):
             "next": True,
             "previous": True,
         }
-
-
 
     # endregion static methods

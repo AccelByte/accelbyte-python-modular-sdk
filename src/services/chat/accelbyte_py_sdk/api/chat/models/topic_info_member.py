@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class TopicInfoMember(Model):
     """Topic info member (topic.InfoMember)
 
@@ -47,15 +46,11 @@ class TopicInfoMember(Model):
 
     # region with_x methods
 
-    def with_user_id(
-        self, value: str
-    ) -> TopicInfoMember:
+    def with_user_id(self, value: str) -> TopicInfoMember:
         self.user_id = value
         return self
 
-    def with_left_at(
-        self, value: int
-    ) -> TopicInfoMember:
+    def with_left_at(self, value: int) -> TopicInfoMember:
         self.left_at = value
         return self
 
@@ -81,10 +76,7 @@ class TopicInfoMember(Model):
 
     @classmethod
     def create(
-        cls,
-        user_id: str,
-        left_at: Optional[int] = None,
-        **kwargs
+        cls, user_id: str, left_at: Optional[int] = None, **kwargs
     ) -> TopicInfoMember:
         instance = cls()
         instance.user_id = user_id
@@ -132,11 +124,7 @@ class TopicInfoMember(Model):
     @classmethod
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[
-        TopicInfoMember,
-        List[TopicInfoMember],
-        Dict[Any, TopicInfoMember]
-    ]:
+    ) -> Union[TopicInfoMember, List[TopicInfoMember], Dict[Any, TopicInfoMember]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -160,7 +148,5 @@ class TopicInfoMember(Model):
             "userId": True,
             "leftAt": False,
         }
-
-
 
     # endregion static methods

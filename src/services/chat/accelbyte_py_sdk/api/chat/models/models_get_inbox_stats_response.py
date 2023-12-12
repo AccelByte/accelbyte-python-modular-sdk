@@ -45,9 +45,7 @@ class ModelsGetInboxStatsResponse(Model):
 
     # region with_x methods
 
-    def with_data(
-        self, value: List[ModelsMessageStats]
-    ) -> ModelsGetInboxStatsResponse:
+    def with_data(self, value: List[ModelsMessageStats]) -> ModelsGetInboxStatsResponse:
         self.data = value
         return self
 
@@ -58,7 +56,9 @@ class ModelsGetInboxStatsResponse(Model):
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
         if hasattr(self, "data"):
-            result["data"] = [i0.to_dict(include_empty=include_empty) for i0 in self.data]
+            result["data"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.data
+            ]
         elif include_empty:
             result["data"] = []
         return result
@@ -69,9 +69,7 @@ class ModelsGetInboxStatsResponse(Model):
 
     @classmethod
     def create(
-        cls,
-        data: List[ModelsMessageStats],
-        **kwargs
+        cls, data: List[ModelsMessageStats], **kwargs
     ) -> ModelsGetInboxStatsResponse:
         instance = cls()
         instance.data = data
@@ -85,7 +83,10 @@ class ModelsGetInboxStatsResponse(Model):
         if not dict_:
             return instance
         if "data" in dict_ and dict_["data"] is not None:
-            instance.data = [ModelsMessageStats.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["data"]]
+            instance.data = [
+                ModelsMessageStats.create_from_dict(i0, include_empty=include_empty)
+                for i0 in dict_["data"]
+            ]
         elif include_empty:
             instance.data = []
         return instance
@@ -116,7 +117,7 @@ class ModelsGetInboxStatsResponse(Model):
     ) -> Union[
         ModelsGetInboxStatsResponse,
         List[ModelsGetInboxStatsResponse],
-        Dict[Any, ModelsGetInboxStatsResponse]
+        Dict[Any, ModelsGetInboxStatsResponse],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -139,7 +140,5 @@ class ModelsGetInboxStatsResponse(Model):
         return {
             "data": True,
         }
-
-
 
     # endregion static methods

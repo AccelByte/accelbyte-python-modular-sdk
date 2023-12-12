@@ -72,14 +72,14 @@ from ..operations.topic import AdminDeleteChat
 from ..operations.topic import AdminDeleteTopic
 from ..operations.topic import AdminQueryTopic
 from ..operations.topic import (
-AdminQueryTopicTopicSubTypeEnum
-, AdminQueryTopicTopicTypeEnum
+    AdminQueryTopicTopicSubTypeEnum,
+    AdminQueryTopicTopicTypeEnum,
 )
 from ..operations.topic import AdminQueryTopicLog
 from ..operations.topic import AdminQueryUsersTopic
 from ..operations.topic import (
-AdminQueryUsersTopicTopicSubTypeEnum
-, AdminQueryUsersTopicTopicTypeEnum
+    AdminQueryUsersTopicTopicSubTypeEnum,
+    AdminQueryUsersTopicTopicTypeEnum,
 )
 from ..operations.topic import AdminRemoveTopicMember
 from ..operations.topic import AdminSendChat
@@ -98,6 +98,7 @@ from ..operations.topic import PublicTopicList
 from ..operations.topic import PublicUnbanTopicMembers
 from ..operations.topic import PublicUnmuteUser
 
+
 @same_doc_as(AdminAddTopicMember)
 def admin_add_topic_member(
     body: ApiAddMemberParams,
@@ -109,31 +110,31 @@ def admin_add_topic_member(
 ):
     """admin add user to topic (adminAddTopicMember)
 
-Add new member for topic in a namespace.
+    Add new member for topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/user/{userId}
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/user/{userId}
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ApiAddMemberParams in body
+        body: (body) REQUIRED ApiAddMemberParams in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-    user_id: (userId) REQUIRED str in path
+        user_id: (userId) REQUIRED str in path
 
-Responses:
-    200: OK - MessageActionAddUserToTopicResult
+    Responses:
+        200: OK - MessageActionAddUserToTopicResult
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -159,31 +160,31 @@ async def admin_add_topic_member_async(
 ):
     """admin add user to topic (adminAddTopicMember)
 
-Add new member for topic in a namespace.
+    Add new member for topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/user/{userId}
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/user/{userId}
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ApiAddMemberParams in body
+        body: (body) REQUIRED ApiAddMemberParams in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-    user_id: (userId) REQUIRED str in path
+        user_id: (userId) REQUIRED str in path
 
-Responses:
-    200: OK - MessageActionAddUserToTopicResult
+    Responses:
+        200: OK - MessageActionAddUserToTopicResult
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -195,7 +196,10 @@ Responses:
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminBanTopicMembers)
 def admin_ban_topic_members(
@@ -207,37 +211,37 @@ def admin_ban_topic_members(
 ):
     """admins ban user in group topic (adminBanTopicMembers)
 
-Ban users in some topic. banned user not assigned to shard for channel topic, and cannot send and query chat.
+    Ban users in some topic. banned user not assigned to shard for channel topic, and cannot send and query chat.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/ban-members
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/ban-members
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsBanTopicMemberParam in body
+        body: (body) REQUIRED ModelsBanTopicMemberParam in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsBanTopicMemberResult (OK)
+    Responses:
+        200: OK - ModelsBanTopicMemberResult (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -261,37 +265,37 @@ async def admin_ban_topic_members_async(
 ):
     """admins ban user in group topic (adminBanTopicMembers)
 
-Ban users in some topic. banned user not assigned to shard for channel topic, and cannot send and query chat.
+    Ban users in some topic. banned user not assigned to shard for channel topic, and cannot send and query chat.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/ban-members
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/ban-members
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsBanTopicMemberParam in body
+        body: (body) REQUIRED ModelsBanTopicMemberParam in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsBanTopicMemberResult (OK)
+    Responses:
+        200: OK - ModelsBanTopicMemberResult (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -302,7 +306,10 @@ Responses:
         topic=topic,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminChannelTopicInfo)
 def admin_channel_topic_info(
@@ -313,37 +320,37 @@ def admin_channel_topic_info(
 ):
     """admin get channel topic detail (adminChannelTopicInfo)
 
-Get chat list of topic in a namespace.
+    Get chat list of topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/channel
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/channel
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsChannelTopicResponse (OK)
+    Responses:
+        200: OK - ModelsChannelTopicResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Bad Request)
+        404: Not Found - RestapiErrorResponseBody (Bad Request)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -365,37 +372,37 @@ async def admin_channel_topic_info_async(
 ):
     """admin get channel topic detail (adminChannelTopicInfo)
 
-Get chat list of topic in a namespace.
+    Get chat list of topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/channel
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/channel
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsChannelTopicResponse (OK)
+    Responses:
+        200: OK - ModelsChannelTopicResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Bad Request)
+        404: Not Found - RestapiErrorResponseBody (Bad Request)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -405,7 +412,10 @@ Responses:
         topic=topic,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminChannelTopicList)
 def admin_channel_topic_list(
@@ -418,39 +428,39 @@ def admin_channel_topic_list(
 ):
     """admin get list of channel topic (adminChannelTopicList)
 
-Get channel chat list of topic in a namespace.
+    Get channel chat list of topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/channel
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/channel
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    topic_name: (topicName) OPTIONAL str in query
+        topic_name: (topicName) OPTIONAL str in query
 
-Responses:
-    200: OK - ModelsChannelTopicWithPaginationResponse (OK)
+    Responses:
+        200: OK - ModelsChannelTopicWithPaginationResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -476,39 +486,39 @@ async def admin_channel_topic_list_async(
 ):
     """admin get list of channel topic (adminChannelTopicList)
 
-Get channel chat list of topic in a namespace.
+    Get channel chat list of topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/channel
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/channel
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    topic_name: (topicName) OPTIONAL str in query
+        topic_name: (topicName) OPTIONAL str in query
 
-Responses:
-    200: OK - ModelsChannelTopicWithPaginationResponse (OK)
+    Responses:
+        200: OK - ModelsChannelTopicWithPaginationResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -520,7 +530,10 @@ Responses:
         topic_name=topic_name,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminChannelTopicSummary)
 def admin_channel_topic_summary(
@@ -530,33 +543,33 @@ def admin_channel_topic_summary(
 ):
     """admin get channel topic summary (adminChannelTopicSummary)
 
-Get chat list of topic in a namespace.
+    Get chat list of topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/channel/summary
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/channel/summary
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsChannelTopicSummaryResponse (OK)
+    Responses:
+        200: OK - ModelsChannelTopicSummaryResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -576,33 +589,33 @@ async def admin_channel_topic_summary_async(
 ):
     """admin get channel topic summary (adminChannelTopicSummary)
 
-Get chat list of topic in a namespace.
+    Get chat list of topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/channel/summary
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/channel/summary
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsChannelTopicSummaryResponse (OK)
+    Responses:
+        200: OK - ModelsChannelTopicSummaryResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -611,7 +624,10 @@ Responses:
     request = AdminChannelTopicSummary.create(
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminChatHistory)
 def admin_chat_history(
@@ -631,53 +647,53 @@ def admin_chat_history(
 ):
     """admin get chat history (adminChatHistory)
 
-Get chat history in a namespace.
+    Get chat history in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/chats
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/chats
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    chat_id: (chatId) OPTIONAL List[str] in query
+        chat_id: (chatId) OPTIONAL List[str] in query
 
-    end_created_at: (endCreatedAt) OPTIONAL int in query
+        end_created_at: (endCreatedAt) OPTIONAL int in query
 
-    keyword: (keyword) OPTIONAL str in query
+        keyword: (keyword) OPTIONAL str in query
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    order: (order) OPTIONAL str in query
+        order: (order) OPTIONAL str in query
 
-    sender_user_id: (senderUserId) OPTIONAL str in query
+        sender_user_id: (senderUserId) OPTIONAL str in query
 
-    shard_id: (shardId) OPTIONAL str in query
+        shard_id: (shardId) OPTIONAL str in query
 
-    start_created_at: (startCreatedAt) OPTIONAL int in query
+        start_created_at: (startCreatedAt) OPTIONAL int in query
 
-    topic: (topic) OPTIONAL List[str] in query
+        topic: (topic) OPTIONAL List[str] in query
 
-Responses:
-    200: OK - ModelsChatMessageWithPaginationResponse (OK)
+    Responses:
+        200: OK - ModelsChatMessageWithPaginationResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -717,53 +733,53 @@ async def admin_chat_history_async(
 ):
     """admin get chat history (adminChatHistory)
 
-Get chat history in a namespace.
+    Get chat history in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/chats
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/chats
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    chat_id: (chatId) OPTIONAL List[str] in query
+        chat_id: (chatId) OPTIONAL List[str] in query
 
-    end_created_at: (endCreatedAt) OPTIONAL int in query
+        end_created_at: (endCreatedAt) OPTIONAL int in query
 
-    keyword: (keyword) OPTIONAL str in query
+        keyword: (keyword) OPTIONAL str in query
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    order: (order) OPTIONAL str in query
+        order: (order) OPTIONAL str in query
 
-    sender_user_id: (senderUserId) OPTIONAL str in query
+        sender_user_id: (senderUserId) OPTIONAL str in query
 
-    shard_id: (shardId) OPTIONAL str in query
+        shard_id: (shardId) OPTIONAL str in query
 
-    start_created_at: (startCreatedAt) OPTIONAL int in query
+        start_created_at: (startCreatedAt) OPTIONAL int in query
 
-    topic: (topic) OPTIONAL List[str] in query
+        topic: (topic) OPTIONAL List[str] in query
 
-Responses:
-    200: OK - ModelsChatMessageWithPaginationResponse (OK)
+    Responses:
+        200: OK - ModelsChatMessageWithPaginationResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -782,7 +798,10 @@ Responses:
         topic=topic,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminCreateNamespaceTopic)
 def admin_create_namespace_topic(
@@ -793,27 +812,27 @@ def admin_create_namespace_topic(
 ):
     """Use to create namespace group. Message that send to this group send to connected user in a namespace (adminCreateNamespaceTopic)
 
-Create new namespace group topic in a namespace.
+    Create new namespace group topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/namespace-topic
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/namespace-topic
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ApiCreateNamespaceTopicParams in body
+        body: (body) REQUIRED ApiCreateNamespaceTopicParams in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ApiCreateTopicResponse
+    Responses:
+        200: OK - ApiCreateTopicResponse
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -835,27 +854,27 @@ async def admin_create_namespace_topic_async(
 ):
     """Use to create namespace group. Message that send to this group send to connected user in a namespace (adminCreateNamespaceTopic)
 
-Create new namespace group topic in a namespace.
+    Create new namespace group topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/namespace-topic
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/namespace-topic
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ApiCreateNamespaceTopicParams in body
+        body: (body) REQUIRED ApiCreateNamespaceTopicParams in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ApiCreateTopicResponse
+    Responses:
+        200: OK - ApiCreateTopicResponse
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -865,7 +884,10 @@ Responses:
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminCreateTopic)
 def admin_create_topic(
@@ -876,27 +898,27 @@ def admin_create_topic(
 ):
     """Use to create group. Only group admin can use this operation (adminCreateTopic)
 
-Create new group topic in a namespace.
+    Create new group topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ApiCreateTopicParams in body
+        body: (body) REQUIRED ApiCreateTopicParams in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ApiCreateTopicResponse
+    Responses:
+        200: OK - ApiCreateTopicResponse
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -918,27 +940,27 @@ async def admin_create_topic_async(
 ):
     """Use to create group. Only group admin can use this operation (adminCreateTopic)
 
-Create new group topic in a namespace.
+    Create new group topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ApiCreateTopicParams in body
+        body: (body) REQUIRED ApiCreateTopicParams in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ApiCreateTopicResponse
+    Responses:
+        200: OK - ApiCreateTopicResponse
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -948,7 +970,10 @@ Responses:
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminDeleteChat)
 def admin_delete_chat(
@@ -960,37 +985,37 @@ def admin_delete_chat(
 ):
     """admins delete chat (adminDeleteChat)
 
-Delete chat.
+    Delete chat.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/chats/{chatId}
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/chats/{chatId}
 
-    method: DELETE
+        method: DELETE
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    chat_id: (chatId) REQUIRED str in path
+        chat_id: (chatId) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    204: No Content - (No Content)
+    Responses:
+        204: No Content - (No Content)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1014,37 +1039,37 @@ async def admin_delete_chat_async(
 ):
     """admins delete chat (adminDeleteChat)
 
-Delete chat.
+    Delete chat.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/chats/{chatId}
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/chats/{chatId}
 
-    method: DELETE
+        method: DELETE
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    chat_id: (chatId) REQUIRED str in path
+        chat_id: (chatId) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    204: No Content - (No Content)
+    Responses:
+        204: No Content - (No Content)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1055,7 +1080,10 @@ Responses:
         topic=topic,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminDeleteTopic)
 def admin_delete_topic(
@@ -1066,27 +1094,27 @@ def admin_delete_topic(
 ):
     """Use to delete group. Only group admin can use this operation (adminDeleteTopic)
 
-Delete topic in a namespace.
+    Delete topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}
 
-    method: DELETE
+        method: DELETE
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - MessageActionDeleteTopicResult
+    Responses:
+        200: OK - MessageActionDeleteTopicResult
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1108,27 +1136,27 @@ async def admin_delete_topic_async(
 ):
     """Use to delete group. Only group admin can use this operation (adminDeleteTopic)
 
-Delete topic in a namespace.
+    Delete topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}
 
-    method: DELETE
+        method: DELETE
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - MessageActionDeleteTopicResult
+    Responses:
+        200: OK - MessageActionDeleteTopicResult
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1138,7 +1166,10 @@ Responses:
         topic=topic,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminQueryTopic)
 def admin_query_topic(
@@ -1157,51 +1188,51 @@ def admin_query_topic(
 ):
     """admin query topics (adminQueryTopic)
 
-Get topics in a namespace.
+    Get topics in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topics
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topics
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    include_members: (includeMembers) OPTIONAL bool in query
+        include_members: (includeMembers) OPTIONAL bool in query
 
-    include_past_members: (includePastMembers) OPTIONAL bool in query
+        include_past_members: (includePastMembers) OPTIONAL bool in query
 
-    include_past_topics: (includePastTopics) OPTIONAL bool in query
+        include_past_topics: (includePastTopics) OPTIONAL bool in query
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    topic: (topic) OPTIONAL List[str] in query
+        topic: (topic) OPTIONAL List[str] in query
 
-    topic_sub_type: (topicSubType) OPTIONAL Union[str, TopicSubTypeEnum] in query
+        topic_sub_type: (topicSubType) OPTIONAL Union[str, TopicSubTypeEnum] in query
 
-    topic_type: (topicType) OPTIONAL Union[str, TopicTypeEnum] in query
+        topic_type: (topicType) OPTIONAL Union[str, TopicTypeEnum] in query
 
-    user_id: (userId) OPTIONAL str in query
+        user_id: (userId) OPTIONAL str in query
 
-Responses:
-    200: OK - List[ModelsTopicInfo] (OK)
+    Responses:
+        200: OK - List[ModelsTopicInfo] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1239,51 +1270,51 @@ async def admin_query_topic_async(
 ):
     """admin query topics (adminQueryTopic)
 
-Get topics in a namespace.
+    Get topics in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topics
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topics
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    include_members: (includeMembers) OPTIONAL bool in query
+        include_members: (includeMembers) OPTIONAL bool in query
 
-    include_past_members: (includePastMembers) OPTIONAL bool in query
+        include_past_members: (includePastMembers) OPTIONAL bool in query
 
-    include_past_topics: (includePastTopics) OPTIONAL bool in query
+        include_past_topics: (includePastTopics) OPTIONAL bool in query
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    topic: (topic) OPTIONAL List[str] in query
+        topic: (topic) OPTIONAL List[str] in query
 
-    topic_sub_type: (topicSubType) OPTIONAL Union[str, TopicSubTypeEnum] in query
+        topic_sub_type: (topicSubType) OPTIONAL Union[str, TopicSubTypeEnum] in query
 
-    topic_type: (topicType) OPTIONAL Union[str, TopicTypeEnum] in query
+        topic_type: (topicType) OPTIONAL Union[str, TopicTypeEnum] in query
 
-    user_id: (userId) OPTIONAL str in query
+        user_id: (userId) OPTIONAL str in query
 
-Responses:
-    200: OK - List[ModelsTopicInfo] (OK)
+    Responses:
+        200: OK - List[ModelsTopicInfo] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1301,7 +1332,10 @@ Responses:
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminQueryTopicLog)
 def admin_query_topic_log(
@@ -1319,49 +1353,49 @@ def admin_query_topic_log(
 ):
     """admin query topic log (adminQueryTopicLog)
 
-Get chat log of topic in a namespace.
+    Get chat log of topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/log
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/log
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    end_created_at: (endCreatedAt) OPTIONAL int in query
+        end_created_at: (endCreatedAt) OPTIONAL int in query
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    sender_user_id: (senderUserId) OPTIONAL str in query
+        sender_user_id: (senderUserId) OPTIONAL str in query
 
-    start_created_at: (startCreatedAt) OPTIONAL int in query
+        start_created_at: (startCreatedAt) OPTIONAL int in query
 
-    topic_id: (topicId) OPTIONAL str in query
+        topic_id: (topicId) OPTIONAL str in query
 
-    topic_ids: (topicIds) OPTIONAL List[str] in query
+        topic_ids: (topicIds) OPTIONAL List[str] in query
 
-    user_id: (userId) OPTIONAL str in query
+        user_id: (userId) OPTIONAL str in query
 
-Responses:
-    200: OK - ModelsTopicLogWithPaginationResponse (OK)
+    Responses:
+        200: OK - ModelsTopicLogWithPaginationResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1397,49 +1431,49 @@ async def admin_query_topic_log_async(
 ):
     """admin query topic log (adminQueryTopicLog)
 
-Get chat log of topic in a namespace.
+    Get chat log of topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/log
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/log
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    end_created_at: (endCreatedAt) OPTIONAL int in query
+        end_created_at: (endCreatedAt) OPTIONAL int in query
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    sender_user_id: (senderUserId) OPTIONAL str in query
+        sender_user_id: (senderUserId) OPTIONAL str in query
 
-    start_created_at: (startCreatedAt) OPTIONAL int in query
+        start_created_at: (startCreatedAt) OPTIONAL int in query
 
-    topic_id: (topicId) OPTIONAL str in query
+        topic_id: (topicId) OPTIONAL str in query
 
-    topic_ids: (topicIds) OPTIONAL List[str] in query
+        topic_ids: (topicIds) OPTIONAL List[str] in query
 
-    user_id: (userId) OPTIONAL str in query
+        user_id: (userId) OPTIONAL str in query
 
-Responses:
-    200: OK - ModelsTopicLogWithPaginationResponse (OK)
+    Responses:
+        200: OK - ModelsTopicLogWithPaginationResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1456,7 +1490,10 @@ Responses:
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminQueryUsersTopic)
 def admin_query_users_topic(
@@ -1472,45 +1509,45 @@ def admin_query_users_topic(
 ):
     """admin query user's topics (adminQueryUsersTopic)
 
-Get user's topics in a namespace.
+    Get user's topics in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/users/{userId}/topics
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/users/{userId}/topics
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    user_id: (userId) REQUIRED str in path
+        user_id: (userId) REQUIRED str in path
 
-    include_past_topics: (includePastTopics) OPTIONAL bool in query
+        include_past_topics: (includePastTopics) OPTIONAL bool in query
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    topic_sub_type: (topicSubType) OPTIONAL Union[str, TopicSubTypeEnum] in query
+        topic_sub_type: (topicSubType) OPTIONAL Union[str, TopicSubTypeEnum] in query
 
-    topic_type: (topicType) OPTIONAL Union[str, TopicTypeEnum] in query
+        topic_type: (topicType) OPTIONAL Union[str, TopicTypeEnum] in query
 
-Responses:
-    200: OK - ModelsTopicLogWithPaginationResponse (OK)
+    Responses:
+        200: OK - ModelsTopicLogWithPaginationResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1542,45 +1579,45 @@ async def admin_query_users_topic_async(
 ):
     """admin query user's topics (adminQueryUsersTopic)
 
-Get user's topics in a namespace.
+    Get user's topics in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/users/{userId}/topics
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/users/{userId}/topics
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    user_id: (userId) REQUIRED str in path
+        user_id: (userId) REQUIRED str in path
 
-    include_past_topics: (includePastTopics) OPTIONAL bool in query
+        include_past_topics: (includePastTopics) OPTIONAL bool in query
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    topic_sub_type: (topicSubType) OPTIONAL Union[str, TopicSubTypeEnum] in query
+        topic_sub_type: (topicSubType) OPTIONAL Union[str, TopicSubTypeEnum] in query
 
-    topic_type: (topicType) OPTIONAL Union[str, TopicTypeEnum] in query
+        topic_type: (topicType) OPTIONAL Union[str, TopicTypeEnum] in query
 
-Responses:
-    200: OK - ModelsTopicLogWithPaginationResponse (OK)
+    Responses:
+        200: OK - ModelsTopicLogWithPaginationResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1595,7 +1632,10 @@ Responses:
         topic_type=topic_type,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminRemoveTopicMember)
 def admin_remove_topic_member(
@@ -1607,29 +1647,29 @@ def admin_remove_topic_member(
 ):
     """admin remove user from topic (adminRemoveTopicMember)
 
-Remove member from topic in a namespace.
+    Remove member from topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/user/{userId}
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/user/{userId}
 
-    method: DELETE
+        method: DELETE
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-    user_id: (userId) REQUIRED str in path
+        user_id: (userId) REQUIRED str in path
 
-Responses:
-    200: OK - MessageActionAddUserToTopicResult
+    Responses:
+        200: OK - MessageActionAddUserToTopicResult
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1653,29 +1693,29 @@ async def admin_remove_topic_member_async(
 ):
     """admin remove user from topic (adminRemoveTopicMember)
 
-Remove member from topic in a namespace.
+    Remove member from topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/user/{userId}
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/user/{userId}
 
-    method: DELETE
+        method: DELETE
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-    user_id: (userId) REQUIRED str in path
+        user_id: (userId) REQUIRED str in path
 
-Responses:
-    200: OK - MessageActionAddUserToTopicResult
+    Responses:
+        200: OK - MessageActionAddUserToTopicResult
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1686,7 +1726,10 @@ Responses:
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminSendChat)
 def admin_send_chat(
@@ -1698,37 +1741,37 @@ def admin_send_chat(
 ):
     """admins send chat to group topic (adminSendChat)
 
-Send message to chat topic as system.
+    Send message to chat topic as system.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/chats
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/chats
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ApiSendChatParams in body
+        body: (body) REQUIRED ApiSendChatParams in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - List[ModelsChatMessageResponse] (OK)
+    Responses:
+        200: OK - List[ModelsChatMessageResponse] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1752,37 +1795,37 @@ async def admin_send_chat_async(
 ):
     """admins send chat to group topic (adminSendChat)
 
-Send message to chat topic as system.
+    Send message to chat topic as system.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/chats
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/chats
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ApiSendChatParams in body
+        body: (body) REQUIRED ApiSendChatParams in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - List[ModelsChatMessageResponse] (OK)
+    Responses:
+        200: OK - List[ModelsChatMessageResponse] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1793,7 +1836,10 @@ Responses:
         topic=topic,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @deprecated
 @same_doc_as(AdminTopicChatHistory)
@@ -1813,51 +1859,51 @@ def admin_topic_chat_history(
 ):
     """admin get chat history (adminTopicChatHistory)
 
-Get chat history in a namespace.
+    Get chat history in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/chats
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/chats
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-    end_created_at: (endCreatedAt) OPTIONAL int in query
+        end_created_at: (endCreatedAt) OPTIONAL int in query
 
-    keyword: (keyword) OPTIONAL str in query
+        keyword: (keyword) OPTIONAL str in query
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    order: (order) OPTIONAL str in query
+        order: (order) OPTIONAL str in query
 
-    sender_user_id: (senderUserId) OPTIONAL str in query
+        sender_user_id: (senderUserId) OPTIONAL str in query
 
-    shard_id: (shardId) OPTIONAL str in query
+        shard_id: (shardId) OPTIONAL str in query
 
-    start_created_at: (startCreatedAt) OPTIONAL int in query
+        start_created_at: (startCreatedAt) OPTIONAL int in query
 
-Responses:
-    200: OK - ModelsChatMessageWithPaginationResponse (OK)
+    Responses:
+        200: OK - ModelsChatMessageWithPaginationResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1896,51 +1942,51 @@ async def admin_topic_chat_history_async(
 ):
     """admin get chat history (adminTopicChatHistory)
 
-Get chat history in a namespace.
+    Get chat history in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/chats
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/chats
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-    end_created_at: (endCreatedAt) OPTIONAL int in query
+        end_created_at: (endCreatedAt) OPTIONAL int in query
 
-    keyword: (keyword) OPTIONAL str in query
+        keyword: (keyword) OPTIONAL str in query
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    order: (order) OPTIONAL str in query
+        order: (order) OPTIONAL str in query
 
-    sender_user_id: (senderUserId) OPTIONAL str in query
+        sender_user_id: (senderUserId) OPTIONAL str in query
 
-    shard_id: (shardId) OPTIONAL str in query
+        shard_id: (shardId) OPTIONAL str in query
 
-    start_created_at: (startCreatedAt) OPTIONAL int in query
+        start_created_at: (startCreatedAt) OPTIONAL int in query
 
-Responses:
-    200: OK - ModelsChatMessageWithPaginationResponse (OK)
+    Responses:
+        200: OK - ModelsChatMessageWithPaginationResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1958,7 +2004,10 @@ Responses:
         start_created_at=start_created_at,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminTopicList)
 def admin_topic_list(
@@ -1971,39 +2020,39 @@ def admin_topic_list(
 ):
     """admin get list of topic (adminTopicList)
 
-Get chat list of topic in a namespace.
+    Get chat list of topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    topic_type: (topicType) OPTIONAL str in query
+        topic_type: (topicType) OPTIONAL str in query
 
-Responses:
-    200: OK - List[ModelsTopicResponse] (OK)
+    Responses:
+        200: OK - List[ModelsTopicResponse] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2029,39 +2078,39 @@ async def admin_topic_list_async(
 ):
     """admin get list of topic (adminTopicList)
 
-Get chat list of topic in a namespace.
+    Get chat list of topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    topic_type: (topicType) OPTIONAL str in query
+        topic_type: (topicType) OPTIONAL str in query
 
-Responses:
-    200: OK - List[ModelsTopicResponse] (OK)
+    Responses:
+        200: OK - List[ModelsTopicResponse] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2073,7 +2122,10 @@ Responses:
         topic_type=topic_type,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminTopicMembers)
 def admin_topic_members(
@@ -2089,45 +2141,45 @@ def admin_topic_members(
 ):
     """admin get topic member (adminTopicMembers)
 
-Get topic members.
+    Get topic members.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/members
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/members
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-    is_banned: (isBanned) OPTIONAL bool in query
+        is_banned: (isBanned) OPTIONAL bool in query
 
-    is_moderator: (isModerator) OPTIONAL bool in query
+        is_moderator: (isModerator) OPTIONAL bool in query
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    shard_id: (shardId) OPTIONAL str in query
+        shard_id: (shardId) OPTIONAL str in query
 
-Responses:
-    200: OK - ModelsTopicMemberWithPaginationResponse (OK)
+    Responses:
+        200: OK - ModelsTopicMemberWithPaginationResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2159,45 +2211,45 @@ async def admin_topic_members_async(
 ):
     """admin get topic member (adminTopicMembers)
 
-Get topic members.
+    Get topic members.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/members
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/members
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-    is_banned: (isBanned) OPTIONAL bool in query
+        is_banned: (isBanned) OPTIONAL bool in query
 
-    is_moderator: (isModerator) OPTIONAL bool in query
+        is_moderator: (isModerator) OPTIONAL bool in query
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    shard_id: (shardId) OPTIONAL str in query
+        shard_id: (shardId) OPTIONAL str in query
 
-Responses:
-    200: OK - ModelsTopicMemberWithPaginationResponse (OK)
+    Responses:
+        200: OK - ModelsTopicMemberWithPaginationResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2212,7 +2264,10 @@ Responses:
         shard_id=shard_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminTopicShards)
 def admin_topic_shards(
@@ -2223,35 +2278,35 @@ def admin_topic_shards(
 ):
     """admin get shard list of topic (adminTopicShards)
 
-Get shard list from topic.
+    Get shard list from topic.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/shards
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/shards
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - List[str] (OK)
+    Responses:
+        200: OK - List[str] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2273,35 +2328,35 @@ async def admin_topic_shards_async(
 ):
     """admin get shard list of topic (adminTopicShards)
 
-Get shard list from topic.
+    Get shard list from topic.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/shards
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/shards
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - List[str] (OK)
+    Responses:
+        200: OK - List[str] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2311,7 +2366,10 @@ Responses:
         topic=topic,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminUnbanTopicMembers)
 def admin_unban_topic_members(
@@ -2323,37 +2381,37 @@ def admin_unban_topic_members(
 ):
     """admins unban user in group topic (adminUnbanTopicMembers)
 
-Unban users in some topic.
+    Unban users in some topic.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/unban-members
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/unban-members
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsUnbanTopicMemberParam in body
+        body: (body) REQUIRED ModelsUnbanTopicMemberParam in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsUnbanTopicMemberResult (OK)
+    Responses:
+        200: OK - ModelsUnbanTopicMemberResult (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2377,37 +2435,37 @@ async def admin_unban_topic_members_async(
 ):
     """admins unban user in group topic (adminUnbanTopicMembers)
 
-Unban users in some topic.
+    Unban users in some topic.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/unban-members
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/unban-members
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsUnbanTopicMemberParam in body
+        body: (body) REQUIRED ModelsUnbanTopicMemberParam in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsUnbanTopicMemberResult (OK)
+    Responses:
+        200: OK - ModelsUnbanTopicMemberResult (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2418,7 +2476,10 @@ Responses:
         topic=topic,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminUpdateTopic)
 def admin_update_topic(
@@ -2430,29 +2491,29 @@ def admin_update_topic(
 ):
     """Use to update group information. Only group admin can use this operation (adminUpdateTopic)
 
-Update group topic in a namespace.
+    Update group topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}
 
-    method: PUT
+        method: PUT
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ApiUpdateTopicParams in body
+        body: (body) REQUIRED ApiUpdateTopicParams in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - ApiCreateTopicResponse
+    Responses:
+        200: OK - ApiCreateTopicResponse
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2476,29 +2537,29 @@ async def admin_update_topic_async(
 ):
     """Use to update group information. Only group admin can use this operation (adminUpdateTopic)
 
-Update group topic in a namespace.
+    Update group topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}
 
-    method: PUT
+        method: PUT
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ApiUpdateTopicParams in body
+        body: (body) REQUIRED ApiUpdateTopicParams in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - ApiCreateTopicResponse
+    Responses:
+        200: OK - ApiCreateTopicResponse
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2509,7 +2570,10 @@ Responses:
         topic=topic,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(PublicBanTopicMembers)
 def public_ban_topic_members(
@@ -2521,37 +2585,37 @@ def public_ban_topic_members(
 ):
     """public ban topic members in a group topic (publicBanTopicMembers)
 
-Ban topic members in a group topic.
+    Ban topic members in a group topic.
 
-Properties:
-    url: /chat/public/namespaces/{namespace}/topic/{topic}/ban-members
+    Properties:
+        url: /chat/public/namespaces/{namespace}/topic/{topic}/ban-members
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsPublicBanTopicMembersRequest in body
+        body: (body) REQUIRED ModelsPublicBanTopicMembersRequest in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsPublicBanTopicMembersResponse
+    Responses:
+        200: OK - ModelsPublicBanTopicMembersResponse
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2575,37 +2639,37 @@ async def public_ban_topic_members_async(
 ):
     """public ban topic members in a group topic (publicBanTopicMembers)
 
-Ban topic members in a group topic.
+    Ban topic members in a group topic.
 
-Properties:
-    url: /chat/public/namespaces/{namespace}/topic/{topic}/ban-members
+    Properties:
+        url: /chat/public/namespaces/{namespace}/topic/{topic}/ban-members
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsPublicBanTopicMembersRequest in body
+        body: (body) REQUIRED ModelsPublicBanTopicMembersRequest in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsPublicBanTopicMembersResponse
+    Responses:
+        200: OK - ModelsPublicBanTopicMembersResponse
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2616,7 +2680,10 @@ Responses:
         topic=topic,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(PublicChatHistory)
 def public_chat_history(
@@ -2630,41 +2697,41 @@ def public_chat_history(
 ):
     """public get chat history (publicChatHistory)
 
-get chat history in a namespace.
+    get chat history in a namespace.
 
-Properties:
-    url: /chat/public/namespaces/{namespace}/topic/{topic}/chats
+    Properties:
+        url: /chat/public/namespaces/{namespace}/topic/{topic}/chats
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    order: (order) OPTIONAL str in query
+        order: (order) OPTIONAL str in query
 
-    start_created_at: (startCreatedAt) OPTIONAL int in query
+        start_created_at: (startCreatedAt) OPTIONAL int in query
 
-Responses:
-    200: OK - List[ModelsChatMessageResponse] (OK)
+    Responses:
+        200: OK - List[ModelsChatMessageResponse] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2692,41 +2759,41 @@ async def public_chat_history_async(
 ):
     """public get chat history (publicChatHistory)
 
-get chat history in a namespace.
+    get chat history in a namespace.
 
-Properties:
-    url: /chat/public/namespaces/{namespace}/topic/{topic}/chats
+    Properties:
+        url: /chat/public/namespaces/{namespace}/topic/{topic}/chats
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    order: (order) OPTIONAL str in query
+        order: (order) OPTIONAL str in query
 
-    start_created_at: (startCreatedAt) OPTIONAL int in query
+        start_created_at: (startCreatedAt) OPTIONAL int in query
 
-Responses:
-    200: OK - List[ModelsChatMessageResponse] (OK)
+    Responses:
+        200: OK - List[ModelsChatMessageResponse] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2739,7 +2806,10 @@ Responses:
         start_created_at=start_created_at,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(PublicDeleteChat)
 def public_delete_chat(
@@ -2751,37 +2821,37 @@ def public_delete_chat(
 ):
     """public delete chat (publicDeleteChat)
 
-Delete chat.
+    Delete chat.
 
-Properties:
-    url: /chat/public/namespaces/{namespace}/topic/{topic}/chats/{chatId}
+    Properties:
+        url: /chat/public/namespaces/{namespace}/topic/{topic}/chats/{chatId}
 
-    method: DELETE
+        method: DELETE
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    chat_id: (chatId) REQUIRED str in path
+        chat_id: (chatId) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    204: No Content - (No Content)
+    Responses:
+        204: No Content - (No Content)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2805,37 +2875,37 @@ async def public_delete_chat_async(
 ):
     """public delete chat (publicDeleteChat)
 
-Delete chat.
+    Delete chat.
 
-Properties:
-    url: /chat/public/namespaces/{namespace}/topic/{topic}/chats/{chatId}
+    Properties:
+        url: /chat/public/namespaces/{namespace}/topic/{topic}/chats/{chatId}
 
-    method: DELETE
+        method: DELETE
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    chat_id: (chatId) REQUIRED str in path
+        chat_id: (chatId) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    204: No Content - (No Content)
+    Responses:
+        204: No Content - (No Content)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2846,7 +2916,10 @@ Responses:
         topic=topic,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(PublicGetMutedTopics)
 def public_get_muted_topics(
@@ -2856,33 +2929,33 @@ def public_get_muted_topics(
 ):
     """public get muted at topics (publicGetMutedTopics)
 
-get chat muted topics in a namespace.
+    get chat muted topics in a namespace.
 
-Properties:
-    url: /chat/public/namespaces/{namespace}/muted
+    Properties:
+        url: /chat/public/namespaces/{namespace}/muted
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - List[ApiMutedTopicResponse] (OK)
+    Responses:
+        200: OK - List[ApiMutedTopicResponse] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2902,33 +2975,33 @@ async def public_get_muted_topics_async(
 ):
     """public get muted at topics (publicGetMutedTopics)
 
-get chat muted topics in a namespace.
+    get chat muted topics in a namespace.
 
-Properties:
-    url: /chat/public/namespaces/{namespace}/muted
+    Properties:
+        url: /chat/public/namespaces/{namespace}/muted
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - List[ApiMutedTopicResponse] (OK)
+    Responses:
+        200: OK - List[ApiMutedTopicResponse] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2937,7 +3010,10 @@ Responses:
     request = PublicGetMutedTopics.create(
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(PublicMuteUser)
 def public_mute_user(
@@ -2949,37 +3025,37 @@ def public_mute_user(
 ):
     """public mute user in a topic (publicMuteUser)
 
-Mute user.
+    Mute user.
 
-Properties:
-    url: /chat/public/namespaces/{namespace}/topic/{topic}/mute
+    Properties:
+        url: /chat/public/namespaces/{namespace}/topic/{topic}/mute
 
-    method: PUT
+        method: PUT
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ApiMuteUserRequest in body
+        body: (body) REQUIRED ApiMuteUserRequest in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    204: No Content - (No Content)
+    Responses:
+        204: No Content - (No Content)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3003,37 +3079,37 @@ async def public_mute_user_async(
 ):
     """public mute user in a topic (publicMuteUser)
 
-Mute user.
+    Mute user.
 
-Properties:
-    url: /chat/public/namespaces/{namespace}/topic/{topic}/mute
+    Properties:
+        url: /chat/public/namespaces/{namespace}/topic/{topic}/mute
 
-    method: PUT
+        method: PUT
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ApiMuteUserRequest in body
+        body: (body) REQUIRED ApiMuteUserRequest in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    204: No Content - (No Content)
+    Responses:
+        204: No Content - (No Content)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3044,7 +3120,10 @@ Responses:
         topic=topic,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(PublicTopicList)
 def public_topic_list(
@@ -3057,39 +3136,39 @@ def public_topic_list(
 ):
     """public get list of topic (publicTopicList)
 
-get chat list of topic in a namespace.
+    get chat list of topic in a namespace.
 
-Properties:
-    url: /chat/public/namespaces/{namespace}/topic
+    Properties:
+        url: /chat/public/namespaces/{namespace}/topic
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    topic_type: (topicType) OPTIONAL str in query
+        topic_type: (topicType) OPTIONAL str in query
 
-Responses:
-    200: OK - List[ModelsChatMessageResponse] (OK)
+    Responses:
+        200: OK - List[ModelsChatMessageResponse] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3115,39 +3194,39 @@ async def public_topic_list_async(
 ):
     """public get list of topic (publicTopicList)
 
-get chat list of topic in a namespace.
+    get chat list of topic in a namespace.
 
-Properties:
-    url: /chat/public/namespaces/{namespace}/topic
+    Properties:
+        url: /chat/public/namespaces/{namespace}/topic
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    topic_type: (topicType) OPTIONAL str in query
+        topic_type: (topicType) OPTIONAL str in query
 
-Responses:
-    200: OK - List[ModelsChatMessageResponse] (OK)
+    Responses:
+        200: OK - List[ModelsChatMessageResponse] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3159,7 +3238,10 @@ Responses:
         topic_type=topic_type,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(PublicUnbanTopicMembers)
 def public_unban_topic_members(
@@ -3171,37 +3253,37 @@ def public_unban_topic_members(
 ):
     """public unban topic members in a group topic (publicUnbanTopicMembers)
 
-Unban topic members in a group topic.
+    Unban topic members in a group topic.
 
-Properties:
-    url: /chat/public/namespaces/{namespace}/topic/{topic}/unban-members
+    Properties:
+        url: /chat/public/namespaces/{namespace}/topic/{topic}/unban-members
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsPublicUnbanTopicMembersRequest in body
+        body: (body) REQUIRED ModelsPublicUnbanTopicMembersRequest in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsPublicUnbanTopicMembersResponse
+    Responses:
+        200: OK - ModelsPublicUnbanTopicMembersResponse
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3225,37 +3307,37 @@ async def public_unban_topic_members_async(
 ):
     """public unban topic members in a group topic (publicUnbanTopicMembers)
 
-Unban topic members in a group topic.
+    Unban topic members in a group topic.
 
-Properties:
-    url: /chat/public/namespaces/{namespace}/topic/{topic}/unban-members
+    Properties:
+        url: /chat/public/namespaces/{namespace}/topic/{topic}/unban-members
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsPublicUnbanTopicMembersRequest in body
+        body: (body) REQUIRED ModelsPublicUnbanTopicMembersRequest in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsPublicUnbanTopicMembersResponse
+    Responses:
+        200: OK - ModelsPublicUnbanTopicMembersResponse
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3266,7 +3348,10 @@ Responses:
         topic=topic,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(PublicUnmuteUser)
 def public_unmute_user(
@@ -3278,37 +3363,37 @@ def public_unmute_user(
 ):
     """public unmute user in a topic (publicUnmuteUser)
 
-Unmute user.
+    Unmute user.
 
-Properties:
-    url: /chat/public/namespaces/{namespace}/topic/{topic}/unmute
+    Properties:
+        url: /chat/public/namespaces/{namespace}/topic/{topic}/unmute
 
-    method: PUT
+        method: PUT
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ApiUnmuteUserRequest in body
+        body: (body) REQUIRED ApiUnmuteUserRequest in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    204: No Content - (No Content)
+    Responses:
+        204: No Content - (No Content)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3332,37 +3417,37 @@ async def public_unmute_user_async(
 ):
     """public unmute user in a topic (publicUnmuteUser)
 
-Unmute user.
+    Unmute user.
 
-Properties:
-    url: /chat/public/namespaces/{namespace}/topic/{topic}/unmute
+    Properties:
+        url: /chat/public/namespaces/{namespace}/topic/{topic}/unmute
 
-    method: PUT
+        method: PUT
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ApiUnmuteUserRequest in body
+        body: (body) REQUIRED ApiUnmuteUserRequest in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    204: No Content - (No Content)
+    Responses:
+        204: No Content - (No Content)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3373,4 +3458,6 @@ Responses:
         topic=topic,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )

@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsPagination(Model):
     """Models pagination (models.Pagination)
 
@@ -47,15 +46,11 @@ class ModelsPagination(Model):
 
     # region with_x methods
 
-    def with_next(
-        self, value: str
-    ) -> ModelsPagination:
+    def with_next(self, value: str) -> ModelsPagination:
         self.next_ = value
         return self
 
-    def with_previous(
-        self, value: str
-    ) -> ModelsPagination:
+    def with_previous(self, value: str) -> ModelsPagination:
         self.previous = value
         return self
 
@@ -80,12 +75,7 @@ class ModelsPagination(Model):
     # region static methods
 
     @classmethod
-    def create(
-        cls,
-        next_: str,
-        previous: str,
-        **kwargs
-    ) -> ModelsPagination:
+    def create(cls, next_: str, previous: str, **kwargs) -> ModelsPagination:
         instance = cls()
         instance.next_ = next_
         instance.previous = previous
@@ -131,11 +121,7 @@ class ModelsPagination(Model):
     @classmethod
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[
-        ModelsPagination,
-        List[ModelsPagination],
-        Dict[Any, ModelsPagination]
-    ]:
+    ) -> Union[ModelsPagination, List[ModelsPagination], Dict[Any, ModelsPagination]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -159,7 +145,5 @@ class ModelsPagination(Model):
             "next": True,
             "previous": True,
         }
-
-
 
     # endregion static methods

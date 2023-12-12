@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ApiUpdateTopicParams(Model):
     """Api update topic params (api.UpdateTopicParams)
 
@@ -50,21 +49,15 @@ class ApiUpdateTopicParams(Model):
 
     # region with_x methods
 
-    def with_description(
-        self, value: str
-    ) -> ApiUpdateTopicParams:
+    def with_description(self, value: str) -> ApiUpdateTopicParams:
         self.description = value
         return self
 
-    def with_is_joinable(
-        self, value: bool
-    ) -> ApiUpdateTopicParams:
+    def with_is_joinable(self, value: bool) -> ApiUpdateTopicParams:
         self.is_joinable = value
         return self
 
-    def with_name(
-        self, value: str
-    ) -> ApiUpdateTopicParams:
+    def with_name(self, value: str) -> ApiUpdateTopicParams:
         self.name = value
         return self
 
@@ -94,11 +87,7 @@ class ApiUpdateTopicParams(Model):
 
     @classmethod
     def create(
-        cls,
-        description: str,
-        is_joinable: bool,
-        name: str,
-        **kwargs
+        cls, description: str, is_joinable: bool, name: str, **kwargs
     ) -> ApiUpdateTopicParams:
         instance = cls()
         instance.description = description
@@ -153,7 +142,7 @@ class ApiUpdateTopicParams(Model):
     ) -> Union[
         ApiUpdateTopicParams,
         List[ApiUpdateTopicParams],
-        Dict[Any, ApiUpdateTopicParams]
+        Dict[Any, ApiUpdateTopicParams],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -180,7 +169,5 @@ class ApiUpdateTopicParams(Model):
             "isJoinable": True,
             "name": True,
         }
-
-
 
     # endregion static methods

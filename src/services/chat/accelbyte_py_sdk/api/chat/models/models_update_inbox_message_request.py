@@ -33,6 +33,7 @@ class ScopeEnum(StrEnum):
     NAMESPACE = "NAMESPACE"
     USER = "USER"
 
+
 class ModelsUpdateInboxMessageRequest(Model):
     """Models update inbox message request (models.UpdateInboxMessageRequest)
 
@@ -57,15 +58,11 @@ class ModelsUpdateInboxMessageRequest(Model):
 
     # region with_x methods
 
-    def with_expired_at(
-        self, value: int
-    ) -> ModelsUpdateInboxMessageRequest:
+    def with_expired_at(self, value: int) -> ModelsUpdateInboxMessageRequest:
         self.expired_at = value
         return self
 
-    def with_message(
-        self, value: Dict[str, Any]
-    ) -> ModelsUpdateInboxMessageRequest:
+    def with_message(self, value: Dict[str, Any]) -> ModelsUpdateInboxMessageRequest:
         self.message = value
         return self
 
@@ -75,9 +72,7 @@ class ModelsUpdateInboxMessageRequest(Model):
         self.scope = value
         return self
 
-    def with_user_ids(
-        self, value: List[str]
-    ) -> ModelsUpdateInboxMessageRequest:
+    def with_user_ids(self, value: List[str]) -> ModelsUpdateInboxMessageRequest:
         self.user_ids = value
         return self
 
@@ -116,7 +111,7 @@ class ModelsUpdateInboxMessageRequest(Model):
         message: Dict[str, Any],
         scope: Union[str, ScopeEnum],
         user_ids: List[str],
-        **kwargs
+        **kwargs,
     ) -> ModelsUpdateInboxMessageRequest:
         instance = cls()
         instance.expired_at = expired_at
@@ -176,7 +171,7 @@ class ModelsUpdateInboxMessageRequest(Model):
     ) -> Union[
         ModelsUpdateInboxMessageRequest,
         List[ModelsUpdateInboxMessageRequest],
-        Dict[Any, ModelsUpdateInboxMessageRequest]
+        Dict[Any, ModelsUpdateInboxMessageRequest],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -211,6 +206,5 @@ class ModelsUpdateInboxMessageRequest(Model):
         return {
             "scope": ["NAMESPACE", "USER"],
         }
-
 
     # endregion static methods

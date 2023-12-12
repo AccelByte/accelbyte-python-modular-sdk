@@ -34,50 +34,49 @@ from ...models import ModelsPublicUnbanTopicMembersResponse
 from ...models import RestapiErrorResponseBody
 
 
-
 class PublicUnbanTopicMembers(Operation):
     """public unban topic members in a group topic (publicUnbanTopicMembers)
 
-Unban topic members in a group topic.
+    Unban topic members in a group topic.
 
-Properties:
-    url: /chat/public/namespaces/{namespace}/topic/{topic}/unban-members
+    Properties:
+        url: /chat/public/namespaces/{namespace}/topic/{topic}/unban-members
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsPublicUnbanTopicMembersRequest in body
+        body: (body) REQUIRED ModelsPublicUnbanTopicMembersRequest in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsPublicUnbanTopicMembersResponse
+    Responses:
+        200: OK - ModelsPublicUnbanTopicMembersResponse
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
 
     # region fields
 
     _url: str = "/chat/public/namespaces/{namespace}/topic/{topic}/unban-members"
     _method: str = "POST"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     body: ModelsPublicUnbanTopicMembersRequest  # REQUIRED in [body]
@@ -130,6 +129,7 @@ Responses:
         if not hasattr(self, "body") or self.body is None:
             return None
         return self.body.to_dict()
+
     def get_path_params(self) -> dict:
         result = {}
         if hasattr(self, "namespace"):
@@ -146,7 +146,9 @@ Responses:
 
     # region with_x methods
 
-    def with_body(self, value: ModelsPublicUnbanTopicMembersRequest) -> PublicUnbanTopicMembers:
+    def with_body(
+        self, value: ModelsPublicUnbanTopicMembersRequest
+    ) -> PublicUnbanTopicMembers:
         self.body = value
         return self
 
@@ -183,7 +185,12 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, ModelsPublicUnbanTopicMembersResponse], Union[None, HttpResponse, RestapiErrorResponseBody]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, ModelsPublicUnbanTopicMembersResponse],
+        Union[None, HttpResponse, RestapiErrorResponseBody],
+    ]:
         """Parse the given response.
 
         200: OK - ModelsPublicUnbanTopicMembersResponse
@@ -234,7 +241,7 @@ Responses:
         body: ModelsPublicUnbanTopicMembersRequest,
         namespace: str,
         topic: str,
-        **kwargs
+        **kwargs,
     ) -> PublicUnbanTopicMembers:
         instance = cls()
         instance.body = body
@@ -248,7 +255,9 @@ Responses:
     ) -> PublicUnbanTopicMembers:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = ModelsPublicUnbanTopicMembersRequest.create_from_dict(dict_["body"], include_empty=include_empty)
+            instance.body = ModelsPublicUnbanTopicMembersRequest.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
         elif include_empty:
             instance.body = ModelsPublicUnbanTopicMembersRequest()
         if "namespace" in dict_ and dict_["namespace"] is not None:

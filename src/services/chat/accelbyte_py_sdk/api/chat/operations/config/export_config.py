@@ -33,44 +33,43 @@ from ...models import ModelsConfigExport
 from ...models import ResponseError
 
 
-
 class ExportConfig(Operation):
     """Export chat config to a json file. (ExportConfig)
 
-Export chat configuration to a json file. The file can then be imported from the /import endpoint.
+    Export chat configuration to a json file. The file can then be imported from the /import endpoint.
 
-Properties:
-    url: /chat/v1/admin/config/namespaces/{namespace}/export
+    Properties:
+        url: /chat/v1/admin/config/namespaces/{namespace}/export
 
-    method: GET
+        method: GET
 
-    tags: ["config"]
+        tags: ["config"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - List[ModelsConfigExport] (OK)
+    Responses:
+        200: OK - List[ModelsConfigExport] (OK)
 
-    401: Unauthorized - ResponseError (Unauthorized)
+        401: Unauthorized - ResponseError (Unauthorized)
 
-    403: Forbidden - ResponseError (Forbidden)
+        403: Forbidden - ResponseError (Forbidden)
 
-    500: Internal Server Error - ResponseError (Internal Server Error)
+        500: Internal Server Error - ResponseError (Internal Server Error)
     """
 
     # region fields
 
     _url: str = "/chat/v1/admin/config/namespaces/{namespace}/export"
     _method: str = "GET"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     namespace: str  # REQUIRED in [path]
@@ -151,7 +150,11 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, List[ModelsConfigExport]], Union[None, HttpResponse, ResponseError]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, List[ModelsConfigExport]], Union[None, HttpResponse, ResponseError]
+    ]:
         """Parse the given response.
 
         200: OK - List[ModelsConfigExport] (OK)
@@ -193,19 +196,13 @@ Responses:
     # region static methods
 
     @classmethod
-    def create(
-        cls,
-        namespace: str,
-        **kwargs
-    ) -> ExportConfig:
+    def create(cls, namespace: str, **kwargs) -> ExportConfig:
         instance = cls()
         instance.namespace = namespace
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> ExportConfig:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> ExportConfig:
         instance = cls()
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])

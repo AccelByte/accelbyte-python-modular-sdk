@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsDictionary(Model):
     """Models dictionary (models.Dictionary)
 
@@ -56,33 +55,23 @@ class ModelsDictionary(Model):
 
     # region with_x methods
 
-    def with_id(
-        self, value: str
-    ) -> ModelsDictionary:
+    def with_id(self, value: str) -> ModelsDictionary:
         self.id_ = value
         return self
 
-    def with_namespace(
-        self, value: str
-    ) -> ModelsDictionary:
+    def with_namespace(self, value: str) -> ModelsDictionary:
         self.namespace = value
         return self
 
-    def with_parent_id(
-        self, value: str
-    ) -> ModelsDictionary:
+    def with_parent_id(self, value: str) -> ModelsDictionary:
         self.parent_id = value
         return self
 
-    def with_word(
-        self, value: str
-    ) -> ModelsDictionary:
+    def with_word(self, value: str) -> ModelsDictionary:
         self.word = value
         return self
 
-    def with_word_type(
-        self, value: str
-    ) -> ModelsDictionary:
+    def with_word_type(self, value: str) -> ModelsDictionary:
         self.word_type = value
         return self
 
@@ -126,7 +115,7 @@ class ModelsDictionary(Model):
         parent_id: str,
         word: str,
         word_type: str,
-        **kwargs
+        **kwargs,
     ) -> ModelsDictionary:
         instance = cls()
         instance.id_ = id_
@@ -188,11 +177,7 @@ class ModelsDictionary(Model):
     @classmethod
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[
-        ModelsDictionary,
-        List[ModelsDictionary],
-        Dict[Any, ModelsDictionary]
-    ]:
+    ) -> Union[ModelsDictionary, List[ModelsDictionary], Dict[Any, ModelsDictionary]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -222,7 +207,5 @@ class ModelsDictionary(Model):
             "word": True,
             "wordType": True,
         }
-
-
 
     # endregion static methods

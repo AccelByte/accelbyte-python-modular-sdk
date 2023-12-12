@@ -33,44 +33,43 @@ from ...models import ApiAddMemberParams
 from ...models import MessageActionAddUserToTopicResult
 
 
-
 class AdminAddTopicMember(Operation):
     """admin add user to topic (adminAddTopicMember)
 
-Add new member for topic in a namespace.
+    Add new member for topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/user/{userId}
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/user/{userId}
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ApiAddMemberParams in body
+        body: (body) REQUIRED ApiAddMemberParams in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-    user_id: (userId) REQUIRED str in path
+        user_id: (userId) REQUIRED str in path
 
-Responses:
-    200: OK - MessageActionAddUserToTopicResult
+    Responses:
+        200: OK - MessageActionAddUserToTopicResult
     """
 
     # region fields
 
     _url: str = "/chat/admin/namespaces/{namespace}/topic/{topic}/user/{userId}"
     _method: str = "POST"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     body: ApiAddMemberParams  # REQUIRED in [body]
@@ -124,6 +123,7 @@ Responses:
         if not hasattr(self, "body") or self.body is None:
             return None
         return self.body.to_dict()
+
     def get_path_params(self) -> dict:
         result = {}
         if hasattr(self, "namespace"):
@@ -187,7 +187,11 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, MessageActionAddUserToTopicResult], Union[None, HttpResponse]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, MessageActionAddUserToTopicResult], Union[None, HttpResponse]
+    ]:
         """Parse the given response.
 
         200: OK - MessageActionAddUserToTopicResult
@@ -223,7 +227,7 @@ Responses:
         namespace: str,
         topic: str,
         user_id: str,
-        **kwargs
+        **kwargs,
     ) -> AdminAddTopicMember:
         instance = cls()
         instance.body = body
@@ -238,7 +242,9 @@ Responses:
     ) -> AdminAddTopicMember:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = ApiAddMemberParams.create_from_dict(dict_["body"], include_empty=include_empty)
+            instance.body = ApiAddMemberParams.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
         elif include_empty:
             instance.body = ApiAddMemberParams()
         if "namespace" in dict_ and dict_["namespace"] is not None:

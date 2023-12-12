@@ -32,50 +32,49 @@ from accelbyte_py_sdk.core import HttpResponse
 from ...models import RestapiErrorResponseBody
 
 
-
 class AdminProfanityDelete(Operation):
     """admin delete profanity words (adminProfanityDelete)
 
-Delete profanity words.
+    Delete profanity words.
 
-Properties:
-    url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/{id}
+    Properties:
+        url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/{id}
 
-    method: DELETE
+        method: DELETE
 
-    tags: ["profanity"]
+        tags: ["profanity"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    id_: (id) REQUIRED str in path
+        id_: (id) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    204: No Content - (No Content)
+    Responses:
+        204: No Content - (No Content)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
 
     # region fields
 
     _url: str = "/chat/v1/admin/profanity/namespaces/{namespace}/dictionary/{id}"
     _method: str = "DELETE"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     id_: str  # REQUIRED in [path]
@@ -167,7 +166,9 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[None, Union[None, HttpResponse, RestapiErrorResponseBody]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[None, Union[None, HttpResponse, RestapiErrorResponseBody]]:
         """Parse the given response.
 
         204: No Content - (No Content)
@@ -217,12 +218,7 @@ Responses:
     # region static methods
 
     @classmethod
-    def create(
-        cls,
-        id_: str,
-        namespace: str,
-        **kwargs
-    ) -> AdminProfanityDelete:
+    def create(cls, id_: str, namespace: str, **kwargs) -> AdminProfanityDelete:
         instance = cls()
         instance.id_ = id_
         instance.namespace = namespace

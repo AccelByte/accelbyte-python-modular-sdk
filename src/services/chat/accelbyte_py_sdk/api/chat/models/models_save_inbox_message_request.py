@@ -32,9 +32,12 @@ from accelbyte_py_sdk.core import StrEnum
 class ScopeEnum(StrEnum):
     NAMESPACE = "NAMESPACE"
     USER = "USER"
+
+
 class StatusEnum(StrEnum):
     DRAFT = "DRAFT"
     SENT = "SENT"
+
 
 class ModelsSaveInboxMessageRequest(Model):
     """Models save inbox message request (models.SaveInboxMessageRequest)
@@ -66,27 +69,19 @@ class ModelsSaveInboxMessageRequest(Model):
 
     # region with_x methods
 
-    def with_category(
-        self, value: str
-    ) -> ModelsSaveInboxMessageRequest:
+    def with_category(self, value: str) -> ModelsSaveInboxMessageRequest:
         self.category = value
         return self
 
-    def with_expired_at(
-        self, value: int
-    ) -> ModelsSaveInboxMessageRequest:
+    def with_expired_at(self, value: int) -> ModelsSaveInboxMessageRequest:
         self.expired_at = value
         return self
 
-    def with_message(
-        self, value: Dict[str, Any]
-    ) -> ModelsSaveInboxMessageRequest:
+    def with_message(self, value: Dict[str, Any]) -> ModelsSaveInboxMessageRequest:
         self.message = value
         return self
 
-    def with_scope(
-        self, value: Union[str, ScopeEnum]
-    ) -> ModelsSaveInboxMessageRequest:
+    def with_scope(self, value: Union[str, ScopeEnum]) -> ModelsSaveInboxMessageRequest:
         self.scope = value
         return self
 
@@ -96,9 +91,7 @@ class ModelsSaveInboxMessageRequest(Model):
         self.status = value
         return self
 
-    def with_user_ids(
-        self, value: List[str]
-    ) -> ModelsSaveInboxMessageRequest:
+    def with_user_ids(self, value: List[str]) -> ModelsSaveInboxMessageRequest:
         self.user_ids = value
         return self
 
@@ -147,7 +140,7 @@ class ModelsSaveInboxMessageRequest(Model):
         scope: Union[str, ScopeEnum],
         status: Union[str, StatusEnum],
         user_ids: List[str],
-        **kwargs
+        **kwargs,
     ) -> ModelsSaveInboxMessageRequest:
         instance = cls()
         instance.category = category
@@ -217,7 +210,7 @@ class ModelsSaveInboxMessageRequest(Model):
     ) -> Union[
         ModelsSaveInboxMessageRequest,
         List[ModelsSaveInboxMessageRequest],
-        Dict[Any, ModelsSaveInboxMessageRequest]
+        Dict[Any, ModelsSaveInboxMessageRequest],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -257,6 +250,5 @@ class ModelsSaveInboxMessageRequest(Model):
             "scope": ["NAMESPACE", "USER"],
             "status": ["DRAFT", "SENT"],
         }
-
 
     # endregion static methods

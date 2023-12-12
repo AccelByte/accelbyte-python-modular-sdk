@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsUnsendInboxMessageRequest(Model):
     """Models unsend inbox message request (models.UnsendInboxMessageRequest)
 
@@ -44,9 +43,7 @@ class ModelsUnsendInboxMessageRequest(Model):
 
     # region with_x methods
 
-    def with_user_ids(
-        self, value: List[str]
-    ) -> ModelsUnsendInboxMessageRequest:
+    def with_user_ids(self, value: List[str]) -> ModelsUnsendInboxMessageRequest:
         self.user_ids = value
         return self
 
@@ -67,11 +64,7 @@ class ModelsUnsendInboxMessageRequest(Model):
     # region static methods
 
     @classmethod
-    def create(
-        cls,
-        user_ids: List[str],
-        **kwargs
-    ) -> ModelsUnsendInboxMessageRequest:
+    def create(cls, user_ids: List[str], **kwargs) -> ModelsUnsendInboxMessageRequest:
         instance = cls()
         instance.user_ids = user_ids
         return instance
@@ -115,7 +108,7 @@ class ModelsUnsendInboxMessageRequest(Model):
     ) -> Union[
         ModelsUnsendInboxMessageRequest,
         List[ModelsUnsendInboxMessageRequest],
-        Dict[Any, ModelsUnsendInboxMessageRequest]
+        Dict[Any, ModelsUnsendInboxMessageRequest],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -138,7 +131,5 @@ class ModelsUnsendInboxMessageRequest(Model):
         return {
             "userIds": True,
         }
-
-
 
     # endregion static methods

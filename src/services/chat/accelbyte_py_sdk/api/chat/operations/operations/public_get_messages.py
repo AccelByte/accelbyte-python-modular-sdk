@@ -33,40 +33,38 @@ from ...models import LogAppMessageDeclaration
 from ...models import RestapiErrorResponseBody
 
 
-
 class PublicGetMessages(Operation):
     """get service messages (publicGetMessages)
 
-get the list of messages.
+    get the list of messages.
 
-Properties:
-    url: /chat/v1/messages
+    Properties:
+        url: /chat/v1/messages
 
-    method: GET
+        method: GET
 
-    tags: []
+        tags: []
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-Responses:
-    200: OK - List[LogAppMessageDeclaration] (OK)
+    Responses:
+        200: OK - List[LogAppMessageDeclaration] (OK)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
 
     # region fields
 
     _url: str = "/chat/v1/messages"
     _method: str = "GET"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
-
 
     # endregion fields
 
@@ -105,9 +103,7 @@ Responses:
     # region get_x_params methods
 
     def get_all_params(self) -> dict:
-        return {
-        }
-
+        return {}
 
     # endregion get_x_params methods
 
@@ -130,7 +126,12 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, List[LogAppMessageDeclaration]], Union[None, HttpResponse, RestapiErrorResponseBody]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, List[LogAppMessageDeclaration]],
+        Union[None, HttpResponse, RestapiErrorResponseBody],
+    ]:
         """Parse the given response.
 
         200: OK - List[LogAppMessageDeclaration] (OK)
@@ -164,10 +165,7 @@ Responses:
     # region static methods
 
     @classmethod
-    def create(
-        cls,
-        **kwargs
-    ) -> PublicGetMessages:
+    def create(cls, **kwargs) -> PublicGetMessages:
         instance = cls()
         return instance
 
@@ -180,12 +178,10 @@ Responses:
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
-        return {
-        }
+        return {}
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
-        return {
-        }
+        return {}
 
     # endregion static methods

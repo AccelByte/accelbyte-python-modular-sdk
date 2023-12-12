@@ -32,40 +32,39 @@ from accelbyte_py_sdk.core import HttpResponse
 from ...models import MessageActionDeleteTopicResult
 
 
-
 class AdminDeleteTopic(Operation):
     """Use to delete group. Only group admin can use this operation (adminDeleteTopic)
 
-Delete topic in a namespace.
+    Delete topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}
 
-    method: DELETE
+        method: DELETE
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - MessageActionDeleteTopicResult
+    Responses:
+        200: OK - MessageActionDeleteTopicResult
     """
 
     # region fields
 
     _url: str = "/chat/admin/namespaces/{namespace}/topic/{topic}"
     _method: str = "DELETE"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     namespace: str  # REQUIRED in [path]
@@ -157,7 +156,9 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, MessageActionDeleteTopicResult], Union[None, HttpResponse]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[Union[None, MessageActionDeleteTopicResult], Union[None, HttpResponse]]:
         """Parse the given response.
 
         200: OK - MessageActionDeleteTopicResult
@@ -187,12 +188,7 @@ Responses:
     # region static methods
 
     @classmethod
-    def create(
-        cls,
-        namespace: str,
-        topic: str,
-        **kwargs
-    ) -> AdminDeleteTopic:
+    def create(cls, namespace: str, topic: str, **kwargs) -> AdminDeleteTopic:
         instance = cls()
         instance.namespace = namespace
         instance.topic = topic

@@ -63,45 +63,31 @@ class ModelsAddInboxCategoryRequest(Model):
 
     # region with_x methods
 
-    def with_enabled(
-        self, value: bool
-    ) -> ModelsAddInboxCategoryRequest:
+    def with_enabled(self, value: bool) -> ModelsAddInboxCategoryRequest:
         self.enabled = value
         return self
 
-    def with_expires_in(
-        self, value: int
-    ) -> ModelsAddInboxCategoryRequest:
+    def with_expires_in(self, value: int) -> ModelsAddInboxCategoryRequest:
         self.expires_in = value
         return self
 
-    def with_name(
-        self, value: str
-    ) -> ModelsAddInboxCategoryRequest:
+    def with_name(self, value: str) -> ModelsAddInboxCategoryRequest:
         self.name = value
         return self
 
-    def with_save_inbox(
-        self, value: bool
-    ) -> ModelsAddInboxCategoryRequest:
+    def with_save_inbox(self, value: bool) -> ModelsAddInboxCategoryRequest:
         self.save_inbox = value
         return self
 
-    def with_send_notification(
-        self, value: bool
-    ) -> ModelsAddInboxCategoryRequest:
+    def with_send_notification(self, value: bool) -> ModelsAddInboxCategoryRequest:
         self.send_notification = value
         return self
 
-    def with_hook(
-        self, value: ModelsCategoryHook
-    ) -> ModelsAddInboxCategoryRequest:
+    def with_hook(self, value: ModelsCategoryHook) -> ModelsAddInboxCategoryRequest:
         self.hook = value
         return self
 
-    def with_json_schema(
-        self, value: Dict[str, Any]
-    ) -> ModelsAddInboxCategoryRequest:
+    def with_json_schema(self, value: Dict[str, Any]) -> ModelsAddInboxCategoryRequest:
         self.json_schema = value
         return self
 
@@ -155,7 +141,7 @@ class ModelsAddInboxCategoryRequest(Model):
         send_notification: bool,
         hook: Optional[ModelsCategoryHook] = None,
         json_schema: Optional[Dict[str, Any]] = None,
-        **kwargs
+        **kwargs,
     ) -> ModelsAddInboxCategoryRequest:
         instance = cls()
         instance.enabled = enabled
@@ -197,11 +183,15 @@ class ModelsAddInboxCategoryRequest(Model):
         elif include_empty:
             instance.send_notification = False
         if "hook" in dict_ and dict_["hook"] is not None:
-            instance.hook = ModelsCategoryHook.create_from_dict(dict_["hook"], include_empty=include_empty)
+            instance.hook = ModelsCategoryHook.create_from_dict(
+                dict_["hook"], include_empty=include_empty
+            )
         elif include_empty:
             instance.hook = ModelsCategoryHook()
         if "jsonSchema" in dict_ and dict_["jsonSchema"] is not None:
-            instance.json_schema = {str(k0): v0 for k0, v0 in dict_["jsonSchema"].items()}
+            instance.json_schema = {
+                str(k0): v0 for k0, v0 in dict_["jsonSchema"].items()
+            }
         elif include_empty:
             instance.json_schema = {}
         return instance
@@ -232,7 +222,7 @@ class ModelsAddInboxCategoryRequest(Model):
     ) -> Union[
         ModelsAddInboxCategoryRequest,
         List[ModelsAddInboxCategoryRequest],
-        Dict[Any, ModelsAddInboxCategoryRequest]
+        Dict[Any, ModelsAddInboxCategoryRequest],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -267,7 +257,5 @@ class ModelsAddInboxCategoryRequest(Model):
             "hook": False,
             "jsonSchema": False,
         }
-
-
 
     # endregion static methods

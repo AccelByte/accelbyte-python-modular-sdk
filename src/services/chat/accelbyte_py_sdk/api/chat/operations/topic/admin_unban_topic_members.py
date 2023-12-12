@@ -34,50 +34,49 @@ from ...models import ModelsUnbanTopicMemberResult
 from ...models import RestapiErrorResponseBody
 
 
-
 class AdminUnbanTopicMembers(Operation):
     """admins unban user in group topic (adminUnbanTopicMembers)
 
-Unban users in some topic.
+    Unban users in some topic.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/unban-members
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/unban-members
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsUnbanTopicMemberParam in body
+        body: (body) REQUIRED ModelsUnbanTopicMemberParam in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsUnbanTopicMemberResult (OK)
+    Responses:
+        200: OK - ModelsUnbanTopicMemberResult (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
 
     # region fields
 
     _url: str = "/chat/admin/namespaces/{namespace}/topic/{topic}/unban-members"
     _method: str = "POST"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     body: ModelsUnbanTopicMemberParam  # REQUIRED in [body]
@@ -130,6 +129,7 @@ Responses:
         if not hasattr(self, "body") or self.body is None:
             return None
         return self.body.to_dict()
+
     def get_path_params(self) -> dict:
         result = {}
         if hasattr(self, "namespace"):
@@ -183,7 +183,12 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, ModelsUnbanTopicMemberResult], Union[None, HttpResponse, RestapiErrorResponseBody]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, ModelsUnbanTopicMemberResult],
+        Union[None, HttpResponse, RestapiErrorResponseBody],
+    ]:
         """Parse the given response.
 
         200: OK - ModelsUnbanTopicMemberResult (OK)
@@ -230,11 +235,7 @@ Responses:
 
     @classmethod
     def create(
-        cls,
-        body: ModelsUnbanTopicMemberParam,
-        namespace: str,
-        topic: str,
-        **kwargs
+        cls, body: ModelsUnbanTopicMemberParam, namespace: str, topic: str, **kwargs
     ) -> AdminUnbanTopicMembers:
         instance = cls()
         instance.body = body
@@ -248,7 +249,9 @@ Responses:
     ) -> AdminUnbanTopicMembers:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = ModelsUnbanTopicMemberParam.create_from_dict(dict_["body"], include_empty=include_empty)
+            instance.body = ModelsUnbanTopicMemberParam.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
         elif include_empty:
             instance.body = ModelsUnbanTopicMemberParam()
         if "namespace" in dict_ and dict_["namespace"] is not None:

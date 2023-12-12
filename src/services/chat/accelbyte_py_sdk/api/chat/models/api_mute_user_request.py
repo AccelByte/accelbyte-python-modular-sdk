@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ApiMuteUserRequest(Model):
     """Api mute user request (api.MuteUserRequest)
 
@@ -47,15 +46,11 @@ class ApiMuteUserRequest(Model):
 
     # region with_x methods
 
-    def with_duration(
-        self, value: int
-    ) -> ApiMuteUserRequest:
+    def with_duration(self, value: int) -> ApiMuteUserRequest:
         self.duration = value
         return self
 
-    def with_user_id(
-        self, value: str
-    ) -> ApiMuteUserRequest:
+    def with_user_id(self, value: str) -> ApiMuteUserRequest:
         self.user_id = value
         return self
 
@@ -80,12 +75,7 @@ class ApiMuteUserRequest(Model):
     # region static methods
 
     @classmethod
-    def create(
-        cls,
-        duration: int,
-        user_id: str,
-        **kwargs
-    ) -> ApiMuteUserRequest:
+    def create(cls, duration: int, user_id: str, **kwargs) -> ApiMuteUserRequest:
         instance = cls()
         instance.duration = duration
         instance.user_id = user_id
@@ -132,9 +122,7 @@ class ApiMuteUserRequest(Model):
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
     ) -> Union[
-        ApiMuteUserRequest,
-        List[ApiMuteUserRequest],
-        Dict[Any, ApiMuteUserRequest]
+        ApiMuteUserRequest, List[ApiMuteUserRequest], Dict[Any, ApiMuteUserRequest]
     ]:
         if many:
             if isinstance(any_, dict):
@@ -159,7 +147,5 @@ class ApiMuteUserRequest(Model):
             "duration": True,
             "userId": True,
         }
-
-
 
     # endregion static methods

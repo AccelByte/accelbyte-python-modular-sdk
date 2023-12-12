@@ -33,48 +33,47 @@ from ...models import ModelsConfigResponse
 from ...models import RestapiErrorResponseBody
 
 
-
 class AdminGetConfigV1(Operation):
     """admin get namespace config (adminGetConfigV1)
 
-Get chat config of a namespace.
+    Get chat config of a namespace.
 
-Properties:
-    url: /chat/v1/admin/config/namespaces/{namespace}
+    Properties:
+        url: /chat/v1/admin/config/namespaces/{namespace}
 
-    method: GET
+        method: GET
 
-    tags: ["config"]
+        tags: ["config"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsConfigResponse (OK)
+    Responses:
+        200: OK - ModelsConfigResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
 
     # region fields
 
     _url: str = "/chat/v1/admin/config/namespaces/{namespace}"
     _method: str = "GET"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     namespace: str  # REQUIRED in [path]
@@ -155,7 +154,12 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, ModelsConfigResponse], Union[None, HttpResponse, RestapiErrorResponseBody]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, ModelsConfigResponse],
+        Union[None, HttpResponse, RestapiErrorResponseBody],
+    ]:
         """Parse the given response.
 
         200: OK - ModelsConfigResponse (OK)
@@ -205,11 +209,7 @@ Responses:
     # region static methods
 
     @classmethod
-    def create(
-        cls,
-        namespace: str,
-        **kwargs
-    ) -> AdminGetConfigV1:
+    def create(cls, namespace: str, **kwargs) -> AdminGetConfigV1:
         instance = cls()
         instance.namespace = namespace
         return instance

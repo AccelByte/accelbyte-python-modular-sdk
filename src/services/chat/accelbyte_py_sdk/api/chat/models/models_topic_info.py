@@ -63,45 +63,31 @@ class ModelsTopicInfo(Model):
 
     # region with_x methods
 
-    def with_created_at(
-        self, value: int
-    ) -> ModelsTopicInfo:
+    def with_created_at(self, value: int) -> ModelsTopicInfo:
         self.created_at = value
         return self
 
-    def with_id(
-        self, value: str
-    ) -> ModelsTopicInfo:
+    def with_id(self, value: str) -> ModelsTopicInfo:
         self.id_ = value
         return self
 
-    def with_name(
-        self, value: str
-    ) -> ModelsTopicInfo:
+    def with_name(self, value: str) -> ModelsTopicInfo:
         self.name = value
         return self
 
-    def with_sub_type(
-        self, value: str
-    ) -> ModelsTopicInfo:
+    def with_sub_type(self, value: str) -> ModelsTopicInfo:
         self.sub_type = value
         return self
 
-    def with_type(
-        self, value: str
-    ) -> ModelsTopicInfo:
+    def with_type(self, value: str) -> ModelsTopicInfo:
         self.type_ = value
         return self
 
-    def with_deleted_at(
-        self, value: int
-    ) -> ModelsTopicInfo:
+    def with_deleted_at(self, value: int) -> ModelsTopicInfo:
         self.deleted_at = value
         return self
 
-    def with_members(
-        self, value: List[TopicInfoMember]
-    ) -> ModelsTopicInfo:
+    def with_members(self, value: List[TopicInfoMember]) -> ModelsTopicInfo:
         self.members = value
         return self
 
@@ -136,7 +122,9 @@ class ModelsTopicInfo(Model):
         elif include_empty:
             result["deletedAt"] = 0
         if hasattr(self, "members"):
-            result["members"] = [i0.to_dict(include_empty=include_empty) for i0 in self.members]
+            result["members"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.members
+            ]
         elif include_empty:
             result["members"] = []
         return result
@@ -155,7 +143,7 @@ class ModelsTopicInfo(Model):
         type_: str,
         deleted_at: Optional[int] = None,
         members: Optional[List[TopicInfoMember]] = None,
-        **kwargs
+        **kwargs,
     ) -> ModelsTopicInfo:
         instance = cls()
         instance.created_at = created_at
@@ -201,7 +189,10 @@ class ModelsTopicInfo(Model):
         elif include_empty:
             instance.deleted_at = 0
         if "members" in dict_ and dict_["members"] is not None:
-            instance.members = [TopicInfoMember.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["members"]]
+            instance.members = [
+                TopicInfoMember.create_from_dict(i0, include_empty=include_empty)
+                for i0 in dict_["members"]
+            ]
         elif include_empty:
             instance.members = []
         return instance
@@ -229,11 +220,7 @@ class ModelsTopicInfo(Model):
     @classmethod
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[
-        ModelsTopicInfo,
-        List[ModelsTopicInfo],
-        Dict[Any, ModelsTopicInfo]
-    ]:
+    ) -> Union[ModelsTopicInfo, List[ModelsTopicInfo], Dict[Any, ModelsTopicInfo]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -267,7 +254,5 @@ class ModelsTopicInfo(Model):
             "deletedAt": False,
             "members": False,
         }
-
-
 
     # endregion static methods

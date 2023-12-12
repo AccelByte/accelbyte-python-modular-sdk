@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ResponseError(Model):
     """Response error (response.Error)
 
@@ -47,15 +46,11 @@ class ResponseError(Model):
 
     # region with_x methods
 
-    def with_error_code(
-        self, value: int
-    ) -> ResponseError:
+    def with_error_code(self, value: int) -> ResponseError:
         self.error_code = value
         return self
 
-    def with_error_message(
-        self, value: str
-    ) -> ResponseError:
+    def with_error_message(self, value: str) -> ResponseError:
         self.error_message = value
         return self
 
@@ -80,12 +75,7 @@ class ResponseError(Model):
     # region static methods
 
     @classmethod
-    def create(
-        cls,
-        error_code: int,
-        error_message: str,
-        **kwargs
-    ) -> ResponseError:
+    def create(cls, error_code: int, error_message: str, **kwargs) -> ResponseError:
         instance = cls()
         instance.error_code = error_code
         instance.error_message = error_message
@@ -131,11 +121,7 @@ class ResponseError(Model):
     @classmethod
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[
-        ResponseError,
-        List[ResponseError],
-        Dict[Any, ResponseError]
-    ]:
+    ) -> Union[ResponseError, List[ResponseError], Dict[Any, ResponseError]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -159,7 +145,5 @@ class ResponseError(Model):
             "errorCode": True,
             "errorMessage": True,
         }
-
-
 
     # endregion static methods

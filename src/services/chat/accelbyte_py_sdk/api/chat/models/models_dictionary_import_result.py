@@ -69,9 +69,7 @@ class ModelsDictionaryImportResult(Model):
 
     @classmethod
     def create(
-        cls,
-        words: ModelsDictionaryWordChanges,
-        **kwargs
+        cls, words: ModelsDictionaryWordChanges, **kwargs
     ) -> ModelsDictionaryImportResult:
         instance = cls()
         instance.words = words
@@ -85,7 +83,9 @@ class ModelsDictionaryImportResult(Model):
         if not dict_:
             return instance
         if "words" in dict_ and dict_["words"] is not None:
-            instance.words = ModelsDictionaryWordChanges.create_from_dict(dict_["words"], include_empty=include_empty)
+            instance.words = ModelsDictionaryWordChanges.create_from_dict(
+                dict_["words"], include_empty=include_empty
+            )
         elif include_empty:
             instance.words = ModelsDictionaryWordChanges()
         return instance
@@ -116,7 +116,7 @@ class ModelsDictionaryImportResult(Model):
     ) -> Union[
         ModelsDictionaryImportResult,
         List[ModelsDictionaryImportResult],
-        Dict[Any, ModelsDictionaryImportResult]
+        Dict[Any, ModelsDictionaryImportResult],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -139,7 +139,5 @@ class ModelsDictionaryImportResult(Model):
         return {
             "words": True,
         }
-
-
 
     # endregion static methods

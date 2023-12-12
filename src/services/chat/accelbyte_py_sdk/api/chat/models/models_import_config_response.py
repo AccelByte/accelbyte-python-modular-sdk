@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsImportConfigResponse(Model):
     """Models import config response (models.ImportConfigResponse)
 
@@ -53,27 +52,19 @@ class ModelsImportConfigResponse(Model):
 
     # region with_x methods
 
-    def with_failed_configs(
-        self, value: List[str]
-    ) -> ModelsImportConfigResponse:
+    def with_failed_configs(self, value: List[str]) -> ModelsImportConfigResponse:
         self.failed_configs = value
         return self
 
-    def with_ignored_configs(
-        self, value: List[str]
-    ) -> ModelsImportConfigResponse:
+    def with_ignored_configs(self, value: List[str]) -> ModelsImportConfigResponse:
         self.ignored_configs = value
         return self
 
-    def with_new_configs(
-        self, value: List[str]
-    ) -> ModelsImportConfigResponse:
+    def with_new_configs(self, value: List[str]) -> ModelsImportConfigResponse:
         self.new_configs = value
         return self
 
-    def with_replaced_configs(
-        self, value: List[str]
-    ) -> ModelsImportConfigResponse:
+    def with_replaced_configs(self, value: List[str]) -> ModelsImportConfigResponse:
         self.replaced_configs = value
         return self
 
@@ -112,7 +103,7 @@ class ModelsImportConfigResponse(Model):
         ignored_configs: List[str],
         new_configs: List[str],
         replaced_configs: List[str],
-        **kwargs
+        **kwargs,
     ) -> ModelsImportConfigResponse:
         instance = cls()
         instance.failed_configs = failed_configs
@@ -172,7 +163,7 @@ class ModelsImportConfigResponse(Model):
     ) -> Union[
         ModelsImportConfigResponse,
         List[ModelsImportConfigResponse],
-        Dict[Any, ModelsImportConfigResponse]
+        Dict[Any, ModelsImportConfigResponse],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -201,7 +192,5 @@ class ModelsImportConfigResponse(Model):
             "newConfigs": True,
             "replacedConfigs": True,
         }
-
-
 
     # endregion static methods

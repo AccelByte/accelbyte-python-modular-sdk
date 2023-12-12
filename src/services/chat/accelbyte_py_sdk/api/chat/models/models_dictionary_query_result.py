@@ -57,15 +57,11 @@ class ModelsDictionaryQueryResult(Model):
         self.data = value
         return self
 
-    def with_next(
-        self, value: str
-    ) -> ModelsDictionaryQueryResult:
+    def with_next(self, value: str) -> ModelsDictionaryQueryResult:
         self.next_ = value
         return self
 
-    def with_previous(
-        self, value: str
-    ) -> ModelsDictionaryQueryResult:
+    def with_previous(self, value: str) -> ModelsDictionaryQueryResult:
         self.previous = value
         return self
 
@@ -76,7 +72,9 @@ class ModelsDictionaryQueryResult(Model):
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
         if hasattr(self, "data"):
-            result["data"] = [i0.to_dict(include_empty=include_empty) for i0 in self.data]
+            result["data"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.data
+            ]
         elif include_empty:
             result["data"] = []
         if hasattr(self, "next_"):
@@ -99,7 +97,7 @@ class ModelsDictionaryQueryResult(Model):
         data: List[ModelsDictionaryWithChildren],
         next_: str,
         previous: str,
-        **kwargs
+        **kwargs,
     ) -> ModelsDictionaryQueryResult:
         instance = cls()
         instance.data = data
@@ -115,7 +113,12 @@ class ModelsDictionaryQueryResult(Model):
         if not dict_:
             return instance
         if "data" in dict_ and dict_["data"] is not None:
-            instance.data = [ModelsDictionaryWithChildren.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["data"]]
+            instance.data = [
+                ModelsDictionaryWithChildren.create_from_dict(
+                    i0, include_empty=include_empty
+                )
+                for i0 in dict_["data"]
+            ]
         elif include_empty:
             instance.data = []
         if "next" in dict_ and dict_["next"] is not None:
@@ -154,7 +157,7 @@ class ModelsDictionaryQueryResult(Model):
     ) -> Union[
         ModelsDictionaryQueryResult,
         List[ModelsDictionaryQueryResult],
-        Dict[Any, ModelsDictionaryQueryResult]
+        Dict[Any, ModelsDictionaryQueryResult],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -181,7 +184,5 @@ class ModelsDictionaryQueryResult(Model):
             "next": True,
             "previous": True,
         }
-
-
 
     # endregion static methods

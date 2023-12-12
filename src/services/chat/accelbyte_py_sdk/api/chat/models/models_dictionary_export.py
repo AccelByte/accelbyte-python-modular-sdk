@@ -58,7 +58,9 @@ class ModelsDictionaryExport(Model):
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
         if hasattr(self, "dictionaries"):
-            result["dictionaries"] = [i0.to_dict(include_empty=include_empty) for i0 in self.dictionaries]
+            result["dictionaries"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.dictionaries
+            ]
         elif include_empty:
             result["dictionaries"] = []
         return result
@@ -69,9 +71,7 @@ class ModelsDictionaryExport(Model):
 
     @classmethod
     def create(
-        cls,
-        dictionaries: List[ModelsDictionaryExportItem],
-        **kwargs
+        cls, dictionaries: List[ModelsDictionaryExportItem], **kwargs
     ) -> ModelsDictionaryExport:
         instance = cls()
         instance.dictionaries = dictionaries
@@ -85,7 +85,12 @@ class ModelsDictionaryExport(Model):
         if not dict_:
             return instance
         if "dictionaries" in dict_ and dict_["dictionaries"] is not None:
-            instance.dictionaries = [ModelsDictionaryExportItem.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["dictionaries"]]
+            instance.dictionaries = [
+                ModelsDictionaryExportItem.create_from_dict(
+                    i0, include_empty=include_empty
+                )
+                for i0 in dict_["dictionaries"]
+            ]
         elif include_empty:
             instance.dictionaries = []
         return instance
@@ -116,7 +121,7 @@ class ModelsDictionaryExport(Model):
     ) -> Union[
         ModelsDictionaryExport,
         List[ModelsDictionaryExport],
-        Dict[Any, ModelsDictionaryExport]
+        Dict[Any, ModelsDictionaryExport],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -139,7 +144,5 @@ class ModelsDictionaryExport(Model):
         return {
             "dictionaries": True,
         }
-
-
 
     # endregion static methods

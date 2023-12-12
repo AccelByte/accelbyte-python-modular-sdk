@@ -33,46 +33,45 @@ from ...models import ApiMutedTopicResponse
 from ...models import RestapiErrorResponseBody
 
 
-
 class PublicGetMutedTopics(Operation):
     """public get muted at topics (publicGetMutedTopics)
 
-get chat muted topics in a namespace.
+    get chat muted topics in a namespace.
 
-Properties:
-    url: /chat/public/namespaces/{namespace}/muted
+    Properties:
+        url: /chat/public/namespaces/{namespace}/muted
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - List[ApiMutedTopicResponse] (OK)
+    Responses:
+        200: OK - List[ApiMutedTopicResponse] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
 
     # region fields
 
     _url: str = "/chat/public/namespaces/{namespace}/muted"
     _method: str = "GET"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     namespace: str  # REQUIRED in [path]
@@ -153,7 +152,12 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, List[ApiMutedTopicResponse]], Union[None, HttpResponse, RestapiErrorResponseBody]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, List[ApiMutedTopicResponse]],
+        Union[None, HttpResponse, RestapiErrorResponseBody],
+    ]:
         """Parse the given response.
 
         200: OK - List[ApiMutedTopicResponse] (OK)
@@ -199,11 +203,7 @@ Responses:
     # region static methods
 
     @classmethod
-    def create(
-        cls,
-        namespace: str,
-        **kwargs
-    ) -> PublicGetMutedTopics:
+    def create(cls, namespace: str, **kwargs) -> PublicGetMutedTopics:
         instance = cls()
         instance.namespace = namespace
         return instance

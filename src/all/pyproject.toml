@@ -17,6 +17,7 @@ dependencies = [
     "accelbyte-py-sdk-service-achievement",
     "accelbyte-py-sdk-service-ams",
     "accelbyte-py-sdk-service-basic",
+    "accelbyte-py-sdk-service-chat",
     "accelbyte-py-sdk-service-cloudsave",
     "accelbyte-py-sdk-service-dslogmanager",
     "accelbyte-py-sdk-service-dsmc",

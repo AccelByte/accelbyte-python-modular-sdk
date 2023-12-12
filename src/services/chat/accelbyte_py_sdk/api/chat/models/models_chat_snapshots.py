@@ -66,21 +66,15 @@ class ModelsChatSnapshots(Model):
 
     # region with_x methods
 
-    def with_chat_id(
-        self, value: str
-    ) -> ModelsChatSnapshots:
+    def with_chat_id(self, value: str) -> ModelsChatSnapshots:
         self.chat_id = value
         return self
 
-    def with_created_at(
-        self, value: int
-    ) -> ModelsChatSnapshots:
+    def with_created_at(self, value: int) -> ModelsChatSnapshots:
         self.created_at = value
         return self
 
-    def with_joined_topics(
-        self, value: List[str]
-    ) -> ModelsChatSnapshots:
+    def with_joined_topics(self, value: List[str]) -> ModelsChatSnapshots:
         self.joined_topics = value
         return self
 
@@ -90,27 +84,19 @@ class ModelsChatSnapshots(Model):
         self.messages = value
         return self
 
-    def with_namespace(
-        self, value: str
-    ) -> ModelsChatSnapshots:
+    def with_namespace(self, value: str) -> ModelsChatSnapshots:
         self.namespace = value
         return self
 
-    def with_sender_id(
-        self, value: str
-    ) -> ModelsChatSnapshots:
+    def with_sender_id(self, value: str) -> ModelsChatSnapshots:
         self.sender_id = value
         return self
 
-    def with_ticket_id(
-        self, value: str
-    ) -> ModelsChatSnapshots:
+    def with_ticket_id(self, value: str) -> ModelsChatSnapshots:
         self.ticket_id = value
         return self
 
-    def with_topic_id(
-        self, value: str
-    ) -> ModelsChatSnapshots:
+    def with_topic_id(self, value: str) -> ModelsChatSnapshots:
         self.topic_id = value
         return self
 
@@ -133,7 +119,9 @@ class ModelsChatSnapshots(Model):
         elif include_empty:
             result["joinedTopics"] = []
         if hasattr(self, "messages"):
-            result["messages"] = [i0.to_dict(include_empty=include_empty) for i0 in self.messages]
+            result["messages"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.messages
+            ]
         elif include_empty:
             result["messages"] = []
         if hasattr(self, "namespace"):
@@ -169,7 +157,7 @@ class ModelsChatSnapshots(Model):
         sender_id: str,
         ticket_id: str,
         topic_id: str,
-        **kwargs
+        **kwargs,
     ) -> ModelsChatSnapshots:
         instance = cls()
         instance.chat_id = chat_id
@@ -202,7 +190,12 @@ class ModelsChatSnapshots(Model):
         elif include_empty:
             instance.joined_topics = []
         if "messages" in dict_ and dict_["messages"] is not None:
-            instance.messages = [ModelsChatSnapshotMessage.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["messages"]]
+            instance.messages = [
+                ModelsChatSnapshotMessage.create_from_dict(
+                    i0, include_empty=include_empty
+                )
+                for i0 in dict_["messages"]
+            ]
         elif include_empty:
             instance.messages = []
         if "namespace" in dict_ and dict_["namespace"] is not None:
@@ -247,9 +240,7 @@ class ModelsChatSnapshots(Model):
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
     ) -> Union[
-        ModelsChatSnapshots,
-        List[ModelsChatSnapshots],
-        Dict[Any, ModelsChatSnapshots]
+        ModelsChatSnapshots, List[ModelsChatSnapshots], Dict[Any, ModelsChatSnapshots]
     ]:
         if many:
             if isinstance(any_, dict):
@@ -286,7 +277,5 @@ class ModelsChatSnapshots(Model):
             "ticketId": True,
             "topicId": True,
         }
-
-
 
     # endregion static methods

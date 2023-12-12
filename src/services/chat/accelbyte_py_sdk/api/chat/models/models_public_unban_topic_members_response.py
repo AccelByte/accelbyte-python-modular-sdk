@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsPublicUnbanTopicMembersResponse(Model):
     """Models public unban topic members response (models.PublicUnbanTopicMembersResponse)
 
@@ -44,9 +43,7 @@ class ModelsPublicUnbanTopicMembersResponse(Model):
 
     # region with_x methods
 
-    def with_user_i_ds(
-        self, value: List[str]
-    ) -> ModelsPublicUnbanTopicMembersResponse:
+    def with_user_i_ds(self, value: List[str]) -> ModelsPublicUnbanTopicMembersResponse:
         self.user_i_ds = value
         return self
 
@@ -68,9 +65,7 @@ class ModelsPublicUnbanTopicMembersResponse(Model):
 
     @classmethod
     def create(
-        cls,
-        user_i_ds: List[str],
-        **kwargs
+        cls, user_i_ds: List[str], **kwargs
     ) -> ModelsPublicUnbanTopicMembersResponse:
         instance = cls()
         instance.user_i_ds = user_i_ds
@@ -115,7 +110,7 @@ class ModelsPublicUnbanTopicMembersResponse(Model):
     ) -> Union[
         ModelsPublicUnbanTopicMembersResponse,
         List[ModelsPublicUnbanTopicMembersResponse],
-        Dict[Any, ModelsPublicUnbanTopicMembersResponse]
+        Dict[Any, ModelsPublicUnbanTopicMembersResponse],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -138,7 +133,5 @@ class ModelsPublicUnbanTopicMembersResponse(Model):
         return {
             "userIDs": True,
         }
-
-
 
     # endregion static methods

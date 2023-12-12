@@ -34,64 +34,63 @@ from ...models import ModelsChatMessageWithPaginationResponse
 from ...models import RestapiErrorResponseBody
 
 
-
 class AdminTopicChatHistory(Operation):
     """admin get chat history (adminTopicChatHistory)
 
-Get chat history in a namespace.
+    Get chat history in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/chats
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/chats
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-    end_created_at: (endCreatedAt) OPTIONAL int in query
+        end_created_at: (endCreatedAt) OPTIONAL int in query
 
-    keyword: (keyword) OPTIONAL str in query
+        keyword: (keyword) OPTIONAL str in query
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    order: (order) OPTIONAL str in query
+        order: (order) OPTIONAL str in query
 
-    sender_user_id: (senderUserId) OPTIONAL str in query
+        sender_user_id: (senderUserId) OPTIONAL str in query
 
-    shard_id: (shardId) OPTIONAL str in query
+        shard_id: (shardId) OPTIONAL str in query
 
-    start_created_at: (startCreatedAt) OPTIONAL int in query
+        start_created_at: (startCreatedAt) OPTIONAL int in query
 
-Responses:
-    200: OK - ModelsChatMessageWithPaginationResponse (OK)
+    Responses:
+        200: OK - ModelsChatMessageWithPaginationResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
 
     # region fields
 
     _url: str = "/chat/admin/namespaces/{namespace}/topic/{topic}/chats"
     _method: str = "GET"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     namespace: str  # REQUIRED in [path]
@@ -154,6 +153,7 @@ Responses:
         if hasattr(self, "topic"):
             result["topic"] = self.topic
         return result
+
     def get_query_params(self) -> dict:
         result = {}
         if hasattr(self, "end_created_at"):
@@ -275,7 +275,12 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, ModelsChatMessageWithPaginationResponse], Union[None, HttpResponse, RestapiErrorResponseBody]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, ModelsChatMessageWithPaginationResponse],
+        Union[None, HttpResponse, RestapiErrorResponseBody],
+    ]:
         """Parse the given response.
 
         200: OK - ModelsChatMessageWithPaginationResponse (OK)
@@ -302,7 +307,10 @@ Responses:
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return ModelsChatMessageWithPaginationResponse.create_from_dict(content), None
+            return (
+                ModelsChatMessageWithPaginationResponse.create_from_dict(content),
+                None,
+            )
         if code == 400:
             return None, RestapiErrorResponseBody.create_from_dict(content)
         if code == 401:
@@ -333,7 +341,7 @@ Responses:
         sender_user_id: Optional[str] = None,
         shard_id: Optional[str] = None,
         start_created_at: Optional[int] = None,
-        **kwargs
+        **kwargs,
     ) -> AdminTopicChatHistory:
         instance = cls()
         instance.namespace = namespace

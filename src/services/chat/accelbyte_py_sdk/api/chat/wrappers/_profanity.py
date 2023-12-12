@@ -45,11 +45,10 @@ from ..operations.profanity import AdminProfanityDelete
 from ..operations.profanity import AdminProfanityExport
 from ..operations.profanity import AdminProfanityGroup
 from ..operations.profanity import AdminProfanityImport
-from ..operations.profanity import (
-AdminProfanityImportActionEnum
-)
+from ..operations.profanity import AdminProfanityImportActionEnum
 from ..operations.profanity import AdminProfanityQuery
 from ..operations.profanity import AdminProfanityUpdate
+
 
 @same_doc_as(AdminProfanityCreate)
 def admin_profanity_create(
@@ -60,37 +59,37 @@ def admin_profanity_create(
 ):
     """admin insert new profanity words (adminProfanityCreate)
 
-Insert new word for profanity censor
+    Insert new word for profanity censor
 
-Properties:
-    url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary
+    Properties:
+        url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary
 
-    method: POST
+        method: POST
 
-    tags: ["profanity"]
+        tags: ["profanity"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsDictionaryInsertRequest in body
+        body: (body) REQUIRED ModelsDictionaryInsertRequest in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsDictionary (OK)
+    Responses:
+        200: OK - ModelsDictionary (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -112,37 +111,37 @@ async def admin_profanity_create_async(
 ):
     """admin insert new profanity words (adminProfanityCreate)
 
-Insert new word for profanity censor
+    Insert new word for profanity censor
 
-Properties:
-    url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary
+    Properties:
+        url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary
 
-    method: POST
+        method: POST
 
-    tags: ["profanity"]
+        tags: ["profanity"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsDictionaryInsertRequest in body
+        body: (body) REQUIRED ModelsDictionaryInsertRequest in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsDictionary (OK)
+    Responses:
+        200: OK - ModelsDictionary (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -152,7 +151,10 @@ Responses:
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminProfanityCreateBulk)
 def admin_profanity_create_bulk(
@@ -163,37 +165,37 @@ def admin_profanity_create_bulk(
 ):
     """admin bulk insert new profanity words (adminProfanityCreateBulk)
 
-Bulk insert new word for profanity censor
+    Bulk insert new word for profanity censor
 
-Properties:
-    url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/bulk
+    Properties:
+        url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/bulk
 
-    method: POST
+        method: POST
 
-    tags: ["profanity"]
+        tags: ["profanity"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsDictionaryInsertBulkRequest in body
+        body: (body) REQUIRED ModelsDictionaryInsertBulkRequest in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    204: No Content - ModelsDictionary (No Content)
+    Responses:
+        204: No Content - ModelsDictionary (No Content)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -215,37 +217,37 @@ async def admin_profanity_create_bulk_async(
 ):
     """admin bulk insert new profanity words (adminProfanityCreateBulk)
 
-Bulk insert new word for profanity censor
+    Bulk insert new word for profanity censor
 
-Properties:
-    url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/bulk
+    Properties:
+        url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/bulk
 
-    method: POST
+        method: POST
 
-    tags: ["profanity"]
+        tags: ["profanity"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsDictionaryInsertBulkRequest in body
+        body: (body) REQUIRED ModelsDictionaryInsertBulkRequest in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    204: No Content - ModelsDictionary (No Content)
+    Responses:
+        204: No Content - ModelsDictionary (No Content)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -255,7 +257,10 @@ Responses:
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminProfanityDelete)
 def admin_profanity_delete(
@@ -266,37 +271,37 @@ def admin_profanity_delete(
 ):
     """admin delete profanity words (adminProfanityDelete)
 
-Delete profanity words.
+    Delete profanity words.
 
-Properties:
-    url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/{id}
+    Properties:
+        url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/{id}
 
-    method: DELETE
+        method: DELETE
 
-    tags: ["profanity"]
+        tags: ["profanity"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    id_: (id) REQUIRED str in path
+        id_: (id) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    204: No Content - (No Content)
+    Responses:
+        204: No Content - (No Content)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -318,37 +323,37 @@ async def admin_profanity_delete_async(
 ):
     """admin delete profanity words (adminProfanityDelete)
 
-Delete profanity words.
+    Delete profanity words.
 
-Properties:
-    url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/{id}
+    Properties:
+        url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/{id}
 
-    method: DELETE
+        method: DELETE
 
-    tags: ["profanity"]
+        tags: ["profanity"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    id_: (id) REQUIRED str in path
+        id_: (id) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    204: No Content - (No Content)
+    Responses:
+        204: No Content - (No Content)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -358,7 +363,10 @@ Responses:
         id_=id_,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminProfanityExport)
 def admin_profanity_export(
@@ -368,33 +376,33 @@ def admin_profanity_export(
 ):
     """admin export profanity words (adminProfanityExport)
 
-Export profanity words
+    Export profanity words
 
-Properties:
-    url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/export
+    Properties:
+        url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/export
 
-    method: GET
+        method: GET
 
-    tags: ["profanity"]
+        tags: ["profanity"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsDictionaryExport (OK)
+    Responses:
+        200: OK - ModelsDictionaryExport (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -414,33 +422,33 @@ async def admin_profanity_export_async(
 ):
     """admin export profanity words (adminProfanityExport)
 
-Export profanity words
+    Export profanity words
 
-Properties:
-    url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/export
+    Properties:
+        url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/export
 
-    method: GET
+        method: GET
 
-    tags: ["profanity"]
+        tags: ["profanity"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsDictionaryExport (OK)
+    Responses:
+        200: OK - ModelsDictionaryExport (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -449,7 +457,10 @@ Responses:
     request = AdminProfanityExport.create(
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminProfanityGroup)
 def admin_profanity_group(
@@ -461,37 +472,37 @@ def admin_profanity_group(
 ):
     """admin get profanity words group (adminProfanityGroup)
 
-Get profanity words group.
+    Get profanity words group.
 
-Properties:
-    url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/group
+    Properties:
+        url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/group
 
-    method: GET
+        method: GET
 
-    tags: ["profanity"]
+        tags: ["profanity"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-Responses:
-    200: OK - List[ModelsDictionaryGroup] (OK)
+    Responses:
+        200: OK - List[ModelsDictionaryGroup] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -515,37 +526,37 @@ async def admin_profanity_group_async(
 ):
     """admin get profanity words group (adminProfanityGroup)
 
-Get profanity words group.
+    Get profanity words group.
 
-Properties:
-    url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/group
+    Properties:
+        url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/group
 
-    method: GET
+        method: GET
 
-    tags: ["profanity"]
+        tags: ["profanity"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-Responses:
-    200: OK - List[ModelsDictionaryGroup] (OK)
+    Responses:
+        200: OK - List[ModelsDictionaryGroup] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -556,7 +567,10 @@ Responses:
         offset=offset,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminProfanityImport)
 def admin_profanity_import(
@@ -569,41 +583,41 @@ def admin_profanity_import(
 ):
     """admin import profanity words (adminProfanityImport)
 
-Import profanity words
+    Import profanity words
 
-Properties:
-    url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/import
+    Properties:
+        url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/import
 
-    method: POST
+        method: POST
 
-    tags: ["profanity"]
+        tags: ["profanity"]
 
-    consumes: ["multipart/form-data"]
+        consumes: ["multipart/form-data"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    file: (file) REQUIRED Any in form_data
+        file: (file) REQUIRED Any in form_data
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    action: (action) OPTIONAL Union[str, ActionEnum] in query
+        action: (action) OPTIONAL Union[str, ActionEnum] in query
 
-    show_result: (showResult) OPTIONAL bool in query
+        show_result: (showResult) OPTIONAL bool in query
 
-Responses:
-    200: OK - ModelsDictionaryImportResult (returned when showResult=true)
+    Responses:
+        200: OK - ModelsDictionaryImportResult (returned when showResult=true)
 
-    204: No Content - (No Content returned when showResult=false or not defined)
+        204: No Content - (No Content returned when showResult=false or not defined)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -629,41 +643,41 @@ async def admin_profanity_import_async(
 ):
     """admin import profanity words (adminProfanityImport)
 
-Import profanity words
+    Import profanity words
 
-Properties:
-    url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/import
+    Properties:
+        url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/import
 
-    method: POST
+        method: POST
 
-    tags: ["profanity"]
+        tags: ["profanity"]
 
-    consumes: ["multipart/form-data"]
+        consumes: ["multipart/form-data"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    file: (file) REQUIRED Any in form_data
+        file: (file) REQUIRED Any in form_data
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    action: (action) OPTIONAL Union[str, ActionEnum] in query
+        action: (action) OPTIONAL Union[str, ActionEnum] in query
 
-    show_result: (showResult) OPTIONAL bool in query
+        show_result: (showResult) OPTIONAL bool in query
 
-Responses:
-    200: OK - ModelsDictionaryImportResult (returned when showResult=true)
+    Responses:
+        200: OK - ModelsDictionaryImportResult (returned when showResult=true)
 
-    204: No Content - (No Content returned when showResult=false or not defined)
+        204: No Content - (No Content returned when showResult=false or not defined)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -675,7 +689,10 @@ Responses:
         show_result=show_result,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminProfanityQuery)
 def admin_profanity_query(
@@ -692,49 +709,49 @@ def admin_profanity_query(
 ):
     """admin query profanity words (adminProfanityQuery)
 
-Query all profanity words.
+    Query all profanity words.
 
-Properties:
-    url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary
+    Properties:
+        url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary
 
-    method: GET
+        method: GET
 
-    tags: ["profanity"]
+        tags: ["profanity"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    filter_mask: (filterMask) OPTIONAL str in query
+        filter_mask: (filterMask) OPTIONAL str in query
 
-    include_children: (includeChildren) OPTIONAL bool in query
+        include_children: (includeChildren) OPTIONAL bool in query
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    parent_id: (parentId) OPTIONAL str in query
+        parent_id: (parentId) OPTIONAL str in query
 
-    start_with: (startWith) OPTIONAL str in query
+        start_with: (startWith) OPTIONAL str in query
 
-    word_type: (wordType) OPTIONAL str in query
+        word_type: (wordType) OPTIONAL str in query
 
-Responses:
-    200: OK - ModelsDictionaryQueryResult (OK)
+    Responses:
+        200: OK - ModelsDictionaryQueryResult (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -768,49 +785,49 @@ async def admin_profanity_query_async(
 ):
     """admin query profanity words (adminProfanityQuery)
 
-Query all profanity words.
+    Query all profanity words.
 
-Properties:
-    url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary
+    Properties:
+        url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary
 
-    method: GET
+        method: GET
 
-    tags: ["profanity"]
+        tags: ["profanity"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    filter_mask: (filterMask) OPTIONAL str in query
+        filter_mask: (filterMask) OPTIONAL str in query
 
-    include_children: (includeChildren) OPTIONAL bool in query
+        include_children: (includeChildren) OPTIONAL bool in query
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    parent_id: (parentId) OPTIONAL str in query
+        parent_id: (parentId) OPTIONAL str in query
 
-    start_with: (startWith) OPTIONAL str in query
+        start_with: (startWith) OPTIONAL str in query
 
-    word_type: (wordType) OPTIONAL str in query
+        word_type: (wordType) OPTIONAL str in query
 
-Responses:
-    200: OK - ModelsDictionaryQueryResult (OK)
+    Responses:
+        200: OK - ModelsDictionaryQueryResult (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -826,7 +843,10 @@ Responses:
         word_type=word_type,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminProfanityUpdate)
 def admin_profanity_update(
@@ -838,39 +858,39 @@ def admin_profanity_update(
 ):
     """admin update profanity word (adminProfanityUpdate)
 
-Update profanity word
+    Update profanity word
 
-Properties:
-    url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/{id}
+    Properties:
+        url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/{id}
 
-    method: PUT
+        method: PUT
 
-    tags: ["profanity"]
+        tags: ["profanity"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsDictionaryUpdateRequest in body
+        body: (body) REQUIRED ModelsDictionaryUpdateRequest in body
 
-    id_: (id) REQUIRED str in path
+        id_: (id) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsDictionary (OK)
+    Responses:
+        200: OK - ModelsDictionary (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -894,39 +914,39 @@ async def admin_profanity_update_async(
 ):
     """admin update profanity word (adminProfanityUpdate)
 
-Update profanity word
+    Update profanity word
 
-Properties:
-    url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/{id}
+    Properties:
+        url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/{id}
 
-    method: PUT
+        method: PUT
 
-    tags: ["profanity"]
+        tags: ["profanity"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsDictionaryUpdateRequest in body
+        body: (body) REQUIRED ModelsDictionaryUpdateRequest in body
 
-    id_: (id) REQUIRED str in path
+        id_: (id) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsDictionary (OK)
+    Responses:
+        200: OK - ModelsDictionary (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -937,4 +957,6 @@ Responses:
         id_=id_,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )

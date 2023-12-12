@@ -33,47 +33,46 @@ from ...models import ModelsImportConfigResponse
 from ...models import ResponseError
 
 
-
 class ImportConfig(Operation):
     """Import chat config from a json file. (ImportConfig)
 
-Import config configuration from file. The existing configuration will be replaced.
-The json file to import can be obtained from the /export endpoint.
+    Import config configuration from file. The existing configuration will be replaced.
+    The json file to import can be obtained from the /export endpoint.
 
-Properties:
-    url: /chat/v1/admin/config/namespaces/{namespace}/import
+    Properties:
+        url: /chat/v1/admin/config/namespaces/{namespace}/import
 
-    method: POST
+        method: POST
 
-    tags: ["config"]
+        tags: ["config"]
 
-    consumes: ["multipart/form-data"]
+        consumes: ["multipart/form-data"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    file: (file) OPTIONAL Any in form_data
+        file: (file) OPTIONAL Any in form_data
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsImportConfigResponse (OK)
+    Responses:
+        200: OK - ModelsImportConfigResponse (OK)
 
-    401: Unauthorized - ResponseError (Unauthorized)
+        401: Unauthorized - ResponseError (Unauthorized)
 
-    403: Forbidden - ResponseError (Forbidden)
+        403: Forbidden - ResponseError (Forbidden)
 
-    500: Internal Server Error - ResponseError (Internal Server Error)
+        500: Internal Server Error - ResponseError (Internal Server Error)
     """
 
     # region fields
 
     _url: str = "/chat/v1/admin/config/namespaces/{namespace}/import"
     _method: str = "POST"
-    _consumes: List[str] = ['multipart/form-data']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["multipart/form-data"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     file: Any  # OPTIONAL in [form_data]
@@ -126,6 +125,7 @@ Responses:
         if hasattr(self, "file"):
             result["file"] = self.file
         return result
+
     def get_path_params(self) -> dict:
         result = {}
         if hasattr(self, "namespace"):
@@ -169,7 +169,12 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, ModelsImportConfigResponse], Union[None, HttpResponse, ResponseError]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, ModelsImportConfigResponse],
+        Union[None, HttpResponse, ResponseError],
+    ]:
         """Parse the given response.
 
         200: OK - ModelsImportConfigResponse (OK)
@@ -212,10 +217,7 @@ Responses:
 
     @classmethod
     def create(
-        cls,
-        namespace: str,
-        file: Optional[Any] = None,
-        **kwargs
+        cls, namespace: str, file: Optional[Any] = None, **kwargs
     ) -> ImportConfig:
         instance = cls()
         instance.namespace = namespace
@@ -224,9 +226,7 @@ Responses:
         return instance
 
     @classmethod
-    def create_from_dict(
-        cls, dict_: dict, include_empty: bool = False
-    ) -> ImportConfig:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> ImportConfig:
         instance = cls()
         if "file" in dict_ and dict_["file"] is not None:
             instance.file = Any(dict_["file"])

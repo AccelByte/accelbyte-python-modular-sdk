@@ -27,7 +27,9 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
 
-from ..models.models_get_inbox_messages_response_data import ModelsGetInboxMessagesResponseData
+from ..models.models_get_inbox_messages_response_data import (
+    ModelsGetInboxMessagesResponseData,
+)
 
 
 class ModelsGetInboxMessagesResponse(Model):
@@ -57,15 +59,11 @@ class ModelsGetInboxMessagesResponse(Model):
         self.data = value
         return self
 
-    def with_next(
-        self, value: str
-    ) -> ModelsGetInboxMessagesResponse:
+    def with_next(self, value: str) -> ModelsGetInboxMessagesResponse:
         self.next_ = value
         return self
 
-    def with_previous(
-        self, value: str
-    ) -> ModelsGetInboxMessagesResponse:
+    def with_previous(self, value: str) -> ModelsGetInboxMessagesResponse:
         self.previous = value
         return self
 
@@ -76,7 +74,9 @@ class ModelsGetInboxMessagesResponse(Model):
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
         if hasattr(self, "data"):
-            result["data"] = [i0.to_dict(include_empty=include_empty) for i0 in self.data]
+            result["data"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.data
+            ]
         elif include_empty:
             result["data"] = []
         if hasattr(self, "next_"):
@@ -99,7 +99,7 @@ class ModelsGetInboxMessagesResponse(Model):
         data: List[ModelsGetInboxMessagesResponseData],
         next_: str,
         previous: str,
-        **kwargs
+        **kwargs,
     ) -> ModelsGetInboxMessagesResponse:
         instance = cls()
         instance.data = data
@@ -115,7 +115,12 @@ class ModelsGetInboxMessagesResponse(Model):
         if not dict_:
             return instance
         if "data" in dict_ and dict_["data"] is not None:
-            instance.data = [ModelsGetInboxMessagesResponseData.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["data"]]
+            instance.data = [
+                ModelsGetInboxMessagesResponseData.create_from_dict(
+                    i0, include_empty=include_empty
+                )
+                for i0 in dict_["data"]
+            ]
         elif include_empty:
             instance.data = []
         if "next" in dict_ and dict_["next"] is not None:
@@ -154,7 +159,7 @@ class ModelsGetInboxMessagesResponse(Model):
     ) -> Union[
         ModelsGetInboxMessagesResponse,
         List[ModelsGetInboxMessagesResponse],
-        Dict[Any, ModelsGetInboxMessagesResponse]
+        Dict[Any, ModelsGetInboxMessagesResponse],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -181,7 +186,5 @@ class ModelsGetInboxMessagesResponse(Model):
             "next": True,
             "previous": True,
         }
-
-
 
     # endregion static methods

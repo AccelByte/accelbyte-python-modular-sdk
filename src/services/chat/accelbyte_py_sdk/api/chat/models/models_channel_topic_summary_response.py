@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsChannelTopicSummaryResponse(Model):
     """Models channel topic summary response (models.ChannelTopicSummaryResponse)
 
@@ -47,15 +46,11 @@ class ModelsChannelTopicSummaryResponse(Model):
 
     # region with_x methods
 
-    def with_total_channel(
-        self, value: int
-    ) -> ModelsChannelTopicSummaryResponse:
+    def with_total_channel(self, value: int) -> ModelsChannelTopicSummaryResponse:
         self.total_channel = value
         return self
 
-    def with_total_shard(
-        self, value: int
-    ) -> ModelsChannelTopicSummaryResponse:
+    def with_total_shard(self, value: int) -> ModelsChannelTopicSummaryResponse:
         self.total_shard = value
         return self
 
@@ -81,10 +76,7 @@ class ModelsChannelTopicSummaryResponse(Model):
 
     @classmethod
     def create(
-        cls,
-        total_channel: int,
-        total_shard: int,
-        **kwargs
+        cls, total_channel: int, total_shard: int, **kwargs
     ) -> ModelsChannelTopicSummaryResponse:
         instance = cls()
         instance.total_channel = total_channel
@@ -134,7 +126,7 @@ class ModelsChannelTopicSummaryResponse(Model):
     ) -> Union[
         ModelsChannelTopicSummaryResponse,
         List[ModelsChannelTopicSummaryResponse],
-        Dict[Any, ModelsChannelTopicSummaryResponse]
+        Dict[Any, ModelsChannelTopicSummaryResponse],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -159,7 +151,5 @@ class ModelsChannelTopicSummaryResponse(Model):
             "totalChannel": True,
             "totalShard": True,
         }
-
-
 
     # endregion static methods

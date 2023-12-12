@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsChatMessageResponse(Model):
     """Models chat message response (models.ChatMessageResponse)
 
@@ -59,39 +58,27 @@ class ModelsChatMessageResponse(Model):
 
     # region with_x methods
 
-    def with_from(
-        self, value: str
-    ) -> ModelsChatMessageResponse:
+    def with_from(self, value: str) -> ModelsChatMessageResponse:
         self.from_ = value
         return self
 
-    def with_id(
-        self, value: str
-    ) -> ModelsChatMessageResponse:
+    def with_id(self, value: str) -> ModelsChatMessageResponse:
         self.id_ = value
         return self
 
-    def with_message(
-        self, value: str
-    ) -> ModelsChatMessageResponse:
+    def with_message(self, value: str) -> ModelsChatMessageResponse:
         self.message = value
         return self
 
-    def with_read_at(
-        self, value: int
-    ) -> ModelsChatMessageResponse:
+    def with_read_at(self, value: int) -> ModelsChatMessageResponse:
         self.read_at = value
         return self
 
-    def with_received_at(
-        self, value: int
-    ) -> ModelsChatMessageResponse:
+    def with_received_at(self, value: int) -> ModelsChatMessageResponse:
         self.received_at = value
         return self
 
-    def with_topic_id(
-        self, value: str
-    ) -> ModelsChatMessageResponse:
+    def with_topic_id(self, value: str) -> ModelsChatMessageResponse:
         self.topic_id = value
         return self
 
@@ -140,7 +127,7 @@ class ModelsChatMessageResponse(Model):
         read_at: int,
         received_at: int,
         topic_id: str,
-        **kwargs
+        **kwargs,
     ) -> ModelsChatMessageResponse:
         instance = cls()
         instance.from_ = from_
@@ -210,7 +197,7 @@ class ModelsChatMessageResponse(Model):
     ) -> Union[
         ModelsChatMessageResponse,
         List[ModelsChatMessageResponse],
-        Dict[Any, ModelsChatMessageResponse]
+        Dict[Any, ModelsChatMessageResponse],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -243,7 +230,5 @@ class ModelsChatMessageResponse(Model):
             "receivedAt": True,
             "topicId": True,
         }
-
-
 
     # endregion static methods

@@ -53,30 +53,27 @@ from ..operations.inbox import AdminGetCategorySchema
 from ..operations.inbox import AdminGetInboxCategories
 from ..operations.inbox import AdminGetInboxMessages
 from ..operations.inbox import (
-AdminGetInboxMessagesScopeEnum
-, AdminGetInboxMessagesStatusEnum
+    AdminGetInboxMessagesScopeEnum,
+    AdminGetInboxMessagesStatusEnum,
 )
 from ..operations.inbox import AdminGetInboxStats
 from ..operations.inbox import AdminGetInboxUsers
-from ..operations.inbox import (
-AdminGetInboxUsersStatusEnum
-)
+from ..operations.inbox import AdminGetInboxUsersStatusEnum
 from ..operations.inbox import AdminSaveInboxMessage
 from ..operations.inbox import AdminSendInboxMessage
 from ..operations.inbox import AdminUnsendInboxMessage
 from ..operations.inbox import AdminUpdateInboxCategory
 from ..operations.inbox import AdminUpdateInboxMessage
 from ..models import (
-ModelsSaveInboxMessageRequestScopeEnum
-, ModelsSaveInboxMessageRequestStatusEnum
+    ModelsSaveInboxMessageRequestScopeEnum,
+    ModelsSaveInboxMessageRequestStatusEnum,
 )
 from ..models import (
-ModelsSaveInboxMessageResponseScopeEnum
-, ModelsSaveInboxMessageResponseStatusEnum
+    ModelsSaveInboxMessageResponseScopeEnum,
+    ModelsSaveInboxMessageResponseStatusEnum,
 )
-from ..models import (
-ModelsUpdateInboxMessageRequestScopeEnum
-)
+from ..models import ModelsUpdateInboxMessageRequestScopeEnum
+
 
 @same_doc_as(AdminAddInboxCategory)
 def admin_add_inbox_category(
@@ -87,35 +84,35 @@ def admin_add_inbox_category(
 ):
     """add inbox category (adminAddInboxCategory)
 
-Add inbox category.
+    Add inbox category.
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/categories
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/categories
 
-    method: POST
+        method: POST
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsAddInboxCategoryRequest in body
+        body: (body) REQUIRED ModelsAddInboxCategoryRequest in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsAddInboxCategoryResponse (OK)
+    Responses:
+        200: OK - ModelsAddInboxCategoryResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -137,35 +134,35 @@ async def admin_add_inbox_category_async(
 ):
     """add inbox category (adminAddInboxCategory)
 
-Add inbox category.
+    Add inbox category.
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/categories
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/categories
 
-    method: POST
+        method: POST
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsAddInboxCategoryRequest in body
+        body: (body) REQUIRED ModelsAddInboxCategoryRequest in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsAddInboxCategoryResponse (OK)
+    Responses:
+        200: OK - ModelsAddInboxCategoryResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -175,7 +172,10 @@ Responses:
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminDeleteInboxCategory)
 def admin_delete_inbox_category(
@@ -186,35 +186,35 @@ def admin_delete_inbox_category(
 ):
     """admin delete inbox category (adminDeleteInboxCategory)
 
-Delete inbox category
+    Delete inbox category
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}
 
-    method: DELETE
+        method: DELETE
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    category: (category) REQUIRED str in path
+        category: (category) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - (OK)
+    Responses:
+        200: OK - (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -236,35 +236,35 @@ async def admin_delete_inbox_category_async(
 ):
     """admin delete inbox category (adminDeleteInboxCategory)
 
-Delete inbox category
+    Delete inbox category
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}
 
-    method: DELETE
+        method: DELETE
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    category: (category) REQUIRED str in path
+        category: (category) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - (OK)
+    Responses:
+        200: OK - (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -274,7 +274,10 @@ Responses:
         category=category,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminDeleteInboxMessage)
 def admin_delete_inbox_message(
@@ -286,37 +289,37 @@ def admin_delete_inbox_message(
 ):
     """admin delete inbox message (adminDeleteInboxMessage)
 
-Delete inbox message
+    Delete inbox message
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/message/{messageId}
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/message/{messageId}
 
-    method: DELETE
+        method: DELETE
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    message_id: (messageId) REQUIRED str in path
+        message_id: (messageId) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    force: (force) OPTIONAL bool in query
+        force: (force) OPTIONAL bool in query
 
-Responses:
-    200: OK - (OK)
+    Responses:
+        200: OK - (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -340,37 +343,37 @@ async def admin_delete_inbox_message_async(
 ):
     """admin delete inbox message (adminDeleteInboxMessage)
 
-Delete inbox message
+    Delete inbox message
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/message/{messageId}
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/message/{messageId}
 
-    method: DELETE
+        method: DELETE
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    message_id: (messageId) REQUIRED str in path
+        message_id: (messageId) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    force: (force) OPTIONAL bool in query
+        force: (force) OPTIONAL bool in query
 
-Responses:
-    200: OK - (OK)
+    Responses:
+        200: OK - (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -381,7 +384,10 @@ Responses:
         force=force,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminGetCategorySchema)
 def admin_get_category_schema(
@@ -392,37 +398,37 @@ def admin_get_category_schema(
 ):
     """admin get category schema (adminGetCategorySchema)
 
-Get category schema.
+    Get category schema.
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}/schema.json
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}/schema.json
 
-    method: GET
+        method: GET
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    category: (category) REQUIRED str in path
+        category: (category) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsJSONSchemaType (OK)
+    Responses:
+        200: OK - ModelsJSONSchemaType (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Forbidden)
+        404: Not Found - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -444,37 +450,37 @@ async def admin_get_category_schema_async(
 ):
     """admin get category schema (adminGetCategorySchema)
 
-Get category schema.
+    Get category schema.
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}/schema.json
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}/schema.json
 
-    method: GET
+        method: GET
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    category: (category) REQUIRED str in path
+        category: (category) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsJSONSchemaType (OK)
+    Responses:
+        200: OK - ModelsJSONSchemaType (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Forbidden)
+        404: Not Found - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -484,7 +490,10 @@ Responses:
         category=category,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminGetInboxCategories)
 def admin_get_inbox_categories(
@@ -494,33 +503,33 @@ def admin_get_inbox_categories(
 ):
     """admin get inbox categories (adminGetInboxCategories)
 
-Get inbox categories
+    Get inbox categories
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/categories
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/categories
 
-    method: GET
+        method: GET
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - List[ModelsGetInboxCategoriesResponseItem] (OK)
+    Responses:
+        200: OK - List[ModelsGetInboxCategoriesResponseItem] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -540,33 +549,33 @@ async def admin_get_inbox_categories_async(
 ):
     """admin get inbox categories (adminGetInboxCategories)
 
-Get inbox categories
+    Get inbox categories
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/categories
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/categories
 
-    method: GET
+        method: GET
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - List[ModelsGetInboxCategoriesResponseItem] (OK)
+    Responses:
+        200: OK - List[ModelsGetInboxCategoriesResponseItem] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -575,7 +584,10 @@ Responses:
     request = AdminGetInboxCategories.create(
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminGetInboxMessages)
 def admin_get_inbox_messages(
@@ -595,53 +607,53 @@ def admin_get_inbox_messages(
 ):
     """admin get inbox messages (adminGetInboxMessages)
 
-Get inbox messages
+    Get inbox messages
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/messages
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/messages
 
-    method: GET
+        method: GET
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    active_only: (activeOnly) OPTIONAL bool in query
+        active_only: (activeOnly) OPTIONAL bool in query
 
-    end_created_at: (endCreatedAt) OPTIONAL int in query
+        end_created_at: (endCreatedAt) OPTIONAL int in query
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    message_id: (messageId) OPTIONAL List[str] in query
+        message_id: (messageId) OPTIONAL List[str] in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    order: (order) OPTIONAL str in query
+        order: (order) OPTIONAL str in query
 
-    scope: (scope) OPTIONAL Union[str, ScopeEnum] in query
+        scope: (scope) OPTIONAL Union[str, ScopeEnum] in query
 
-    start_created_at: (startCreatedAt) OPTIONAL int in query
+        start_created_at: (startCreatedAt) OPTIONAL int in query
 
-    status: (status) OPTIONAL Union[str, StatusEnum] in query
+        status: (status) OPTIONAL Union[str, StatusEnum] in query
 
-    transient: (transient) OPTIONAL bool in query
+        transient: (transient) OPTIONAL bool in query
 
-Responses:
-    200: OK - ModelsGetInboxMessagesResponse (OK)
+    Responses:
+        200: OK - ModelsGetInboxMessagesResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -681,53 +693,53 @@ async def admin_get_inbox_messages_async(
 ):
     """admin get inbox messages (adminGetInboxMessages)
 
-Get inbox messages
+    Get inbox messages
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/messages
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/messages
 
-    method: GET
+        method: GET
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    active_only: (activeOnly) OPTIONAL bool in query
+        active_only: (activeOnly) OPTIONAL bool in query
 
-    end_created_at: (endCreatedAt) OPTIONAL int in query
+        end_created_at: (endCreatedAt) OPTIONAL int in query
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    message_id: (messageId) OPTIONAL List[str] in query
+        message_id: (messageId) OPTIONAL List[str] in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    order: (order) OPTIONAL str in query
+        order: (order) OPTIONAL str in query
 
-    scope: (scope) OPTIONAL Union[str, ScopeEnum] in query
+        scope: (scope) OPTIONAL Union[str, ScopeEnum] in query
 
-    start_created_at: (startCreatedAt) OPTIONAL int in query
+        start_created_at: (startCreatedAt) OPTIONAL int in query
 
-    status: (status) OPTIONAL Union[str, StatusEnum] in query
+        status: (status) OPTIONAL Union[str, StatusEnum] in query
 
-    transient: (transient) OPTIONAL bool in query
+        transient: (transient) OPTIONAL bool in query
 
-Responses:
-    200: OK - ModelsGetInboxMessagesResponse (OK)
+    Responses:
+        200: OK - ModelsGetInboxMessagesResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -746,7 +758,10 @@ Responses:
         transient=transient,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminGetInboxStats)
 def admin_get_inbox_stats(
@@ -757,35 +772,35 @@ def admin_get_inbox_stats(
 ):
     """admin get inbox stats (adminGetInboxStats)
 
-Get inbox stats
+    Get inbox stats
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/stats
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/stats
 
-    method: GET
+        method: GET
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    message_id: (messageId) OPTIONAL List[str] in query
+        message_id: (messageId) OPTIONAL List[str] in query
 
-Responses:
-    200: OK - ModelsGetInboxStatsResponse (OK)
+    Responses:
+        200: OK - ModelsGetInboxStatsResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -807,35 +822,35 @@ async def admin_get_inbox_stats_async(
 ):
     """admin get inbox stats (adminGetInboxStats)
 
-Get inbox stats
+    Get inbox stats
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/stats
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/stats
 
-    method: GET
+        method: GET
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    message_id: (messageId) OPTIONAL List[str] in query
+        message_id: (messageId) OPTIONAL List[str] in query
 
-Responses:
-    200: OK - ModelsGetInboxStatsResponse (OK)
+    Responses:
+        200: OK - ModelsGetInboxStatsResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -845,7 +860,10 @@ Responses:
         message_id=message_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminGetInboxUsers)
 def admin_get_inbox_users(
@@ -860,43 +878,43 @@ def admin_get_inbox_users(
 ):
     """admin get inbox users (adminGetInboxUsers)
 
-Get inbox users
+    Get inbox users
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/messages/{inbox}/users
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/messages/{inbox}/users
 
-    method: GET
+        method: GET
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    inbox: (inbox) REQUIRED str in path
+        inbox: (inbox) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    status: (status) OPTIONAL Union[str, StatusEnum] in query
+        status: (status) OPTIONAL Union[str, StatusEnum] in query
 
-    user_id: (userId) OPTIONAL str in query
+        user_id: (userId) OPTIONAL str in query
 
-Responses:
-    200: OK - ModelsGetInboxUsersResponse (OK)
+    Responses:
+        200: OK - ModelsGetInboxUsersResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -926,43 +944,43 @@ async def admin_get_inbox_users_async(
 ):
     """admin get inbox users (adminGetInboxUsers)
 
-Get inbox users
+    Get inbox users
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/messages/{inbox}/users
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/messages/{inbox}/users
 
-    method: GET
+        method: GET
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    inbox: (inbox) REQUIRED str in path
+        inbox: (inbox) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    status: (status) OPTIONAL Union[str, StatusEnum] in query
+        status: (status) OPTIONAL Union[str, StatusEnum] in query
 
-    user_id: (userId) OPTIONAL str in query
+        user_id: (userId) OPTIONAL str in query
 
-Responses:
-    200: OK - ModelsGetInboxUsersResponse (OK)
+    Responses:
+        200: OK - ModelsGetInboxUsersResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -976,7 +994,10 @@ Responses:
         user_id=user_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminSaveInboxMessage)
 def admin_save_inbox_message(
@@ -987,35 +1008,35 @@ def admin_save_inbox_message(
 ):
     """admin save inbox message (adminSaveInboxMessage)
 
-Save inbox message
+    Save inbox message
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/messages
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/messages
 
-    method: POST
+        method: POST
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsSaveInboxMessageRequest in body
+        body: (body) REQUIRED ModelsSaveInboxMessageRequest in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsSaveInboxMessageResponse (OK)
+    Responses:
+        200: OK - ModelsSaveInboxMessageResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1037,35 +1058,35 @@ async def admin_save_inbox_message_async(
 ):
     """admin save inbox message (adminSaveInboxMessage)
 
-Save inbox message
+    Save inbox message
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/messages
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/messages
 
-    method: POST
+        method: POST
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsSaveInboxMessageRequest in body
+        body: (body) REQUIRED ModelsSaveInboxMessageRequest in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsSaveInboxMessageResponse (OK)
+    Responses:
+        200: OK - ModelsSaveInboxMessageResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1075,7 +1096,10 @@ Responses:
         body=body,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminSendInboxMessage)
 def admin_send_inbox_message(
@@ -1087,37 +1111,37 @@ def admin_send_inbox_message(
 ):
     """admin send inbox message (adminSendInboxMessage)
 
-Send inbox message
+    Send inbox message
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/messages/{messageId}/send
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/messages/{messageId}/send
 
-    method: POST
+        method: POST
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsSendInboxMessageRequest in body
+        body: (body) REQUIRED ModelsSendInboxMessageRequest in body
 
-    message_id: (messageId) REQUIRED str in path
+        message_id: (messageId) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsSendInboxMessageResponse (OK)
+    Responses:
+        200: OK - ModelsSendInboxMessageResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1141,37 +1165,37 @@ async def admin_send_inbox_message_async(
 ):
     """admin send inbox message (adminSendInboxMessage)
 
-Send inbox message
+    Send inbox message
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/messages/{messageId}/send
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/messages/{messageId}/send
 
-    method: POST
+        method: POST
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsSendInboxMessageRequest in body
+        body: (body) REQUIRED ModelsSendInboxMessageRequest in body
 
-    message_id: (messageId) REQUIRED str in path
+        message_id: (messageId) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsSendInboxMessageResponse (OK)
+    Responses:
+        200: OK - ModelsSendInboxMessageResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1182,7 +1206,10 @@ Responses:
         message_id=message_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminUnsendInboxMessage)
 def admin_unsend_inbox_message(
@@ -1194,37 +1221,37 @@ def admin_unsend_inbox_message(
 ):
     """admin unsend inbox message (adminUnsendInboxMessage)
 
-Unsend inbox message
+    Unsend inbox message
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/messages/{inbox}/unsend
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/messages/{inbox}/unsend
 
-    method: POST
+        method: POST
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsUnsendInboxMessageRequest in body
+        body: (body) REQUIRED ModelsUnsendInboxMessageRequest in body
 
-    inbox: (inbox) REQUIRED str in path
+        inbox: (inbox) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsUnsendInboxMessageResponse (OK)
+    Responses:
+        200: OK - ModelsUnsendInboxMessageResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1248,37 +1275,37 @@ async def admin_unsend_inbox_message_async(
 ):
     """admin unsend inbox message (adminUnsendInboxMessage)
 
-Unsend inbox message
+    Unsend inbox message
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/messages/{inbox}/unsend
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/messages/{inbox}/unsend
 
-    method: POST
+        method: POST
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsUnsendInboxMessageRequest in body
+        body: (body) REQUIRED ModelsUnsendInboxMessageRequest in body
 
-    inbox: (inbox) REQUIRED str in path
+        inbox: (inbox) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsUnsendInboxMessageResponse (OK)
+    Responses:
+        200: OK - ModelsUnsendInboxMessageResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1289,7 +1316,10 @@ Responses:
         inbox=inbox,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminUpdateInboxCategory)
 def admin_update_inbox_category(
@@ -1301,37 +1331,37 @@ def admin_update_inbox_category(
 ):
     """admin update inbox category (adminUpdateInboxCategory)
 
-Update inbox category
+    Update inbox category
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}
 
-    method: PATCH
+        method: PATCH
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsUpdateInboxCategoryRequest in body
+        body: (body) REQUIRED ModelsUpdateInboxCategoryRequest in body
 
-    category: (category) REQUIRED str in path
+        category: (category) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - (OK)
+    Responses:
+        200: OK - (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1355,37 +1385,37 @@ async def admin_update_inbox_category_async(
 ):
     """admin update inbox category (adminUpdateInboxCategory)
 
-Update inbox category
+    Update inbox category
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}
 
-    method: PATCH
+        method: PATCH
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsUpdateInboxCategoryRequest in body
+        body: (body) REQUIRED ModelsUpdateInboxCategoryRequest in body
 
-    category: (category) REQUIRED str in path
+        category: (category) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - (OK)
+    Responses:
+        200: OK - (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1396,7 +1426,10 @@ Responses:
         category=category,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminUpdateInboxMessage)
 def admin_update_inbox_message(
@@ -1408,37 +1441,37 @@ def admin_update_inbox_message(
 ):
     """admin update inbox message (adminUpdateInboxMessage)
 
-Update inbox message
+    Update inbox message
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/messages/{messageId}
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/messages/{messageId}
 
-    method: PATCH
+        method: PATCH
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsUpdateInboxMessageRequest in body
+        body: (body) REQUIRED ModelsUpdateInboxMessageRequest in body
 
-    message_id: (messageId) REQUIRED str in path
+        message_id: (messageId) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - (OK)
+    Responses:
+        200: OK - (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1462,37 +1495,37 @@ async def admin_update_inbox_message_async(
 ):
     """admin update inbox message (adminUpdateInboxMessage)
 
-Update inbox message
+    Update inbox message
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/messages/{messageId}
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/messages/{messageId}
 
-    method: PATCH
+        method: PATCH
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsUpdateInboxMessageRequest in body
+        body: (body) REQUIRED ModelsUpdateInboxMessageRequest in body
 
-    message_id: (messageId) REQUIRED str in path
+        message_id: (messageId) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - (OK)
+    Responses:
+        200: OK - (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -1503,4 +1536,6 @@ Responses:
         message_id=message_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )

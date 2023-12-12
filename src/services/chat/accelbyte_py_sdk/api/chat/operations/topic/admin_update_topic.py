@@ -33,42 +33,41 @@ from ...models import ApiCreateTopicResponse
 from ...models import ApiUpdateTopicParams
 
 
-
 class AdminUpdateTopic(Operation):
     """Use to update group information. Only group admin can use this operation (adminUpdateTopic)
 
-Update group topic in a namespace.
+    Update group topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}
 
-    method: PUT
+        method: PUT
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ApiUpdateTopicParams in body
+        body: (body) REQUIRED ApiUpdateTopicParams in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - ApiCreateTopicResponse
+    Responses:
+        200: OK - ApiCreateTopicResponse
     """
 
     # region fields
 
     _url: str = "/chat/admin/namespaces/{namespace}/topic/{topic}"
     _method: str = "PUT"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     body: ApiUpdateTopicParams  # REQUIRED in [body]
@@ -121,6 +120,7 @@ Responses:
         if not hasattr(self, "body") or self.body is None:
             return None
         return self.body.to_dict()
+
     def get_path_params(self) -> dict:
         result = {}
         if hasattr(self, "namespace"):
@@ -174,7 +174,9 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, ApiCreateTopicResponse], Union[None, HttpResponse]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[Union[None, ApiCreateTopicResponse], Union[None, HttpResponse]]:
         """Parse the given response.
 
         200: OK - ApiCreateTopicResponse
@@ -205,11 +207,7 @@ Responses:
 
     @classmethod
     def create(
-        cls,
-        body: ApiUpdateTopicParams,
-        namespace: str,
-        topic: str,
-        **kwargs
+        cls, body: ApiUpdateTopicParams, namespace: str, topic: str, **kwargs
     ) -> AdminUpdateTopic:
         instance = cls()
         instance.body = body
@@ -223,7 +221,9 @@ Responses:
     ) -> AdminUpdateTopic:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = ApiUpdateTopicParams.create_from_dict(dict_["body"], include_empty=include_empty)
+            instance.body = ApiUpdateTopicParams.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
         elif include_empty:
             instance.body = ApiUpdateTopicParams()
         if "namespace" in dict_ and dict_["namespace"] is not None:

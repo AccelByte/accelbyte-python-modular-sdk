@@ -33,62 +33,61 @@ from ...models import ModelsDictionaryQueryResult
 from ...models import RestapiErrorResponseBody
 
 
-
 class AdminProfanityQuery(Operation):
     """admin query profanity words (adminProfanityQuery)
 
-Query all profanity words.
+    Query all profanity words.
 
-Properties:
-    url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary
+    Properties:
+        url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary
 
-    method: GET
+        method: GET
 
-    tags: ["profanity"]
+        tags: ["profanity"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    filter_mask: (filterMask) OPTIONAL str in query
+        filter_mask: (filterMask) OPTIONAL str in query
 
-    include_children: (includeChildren) OPTIONAL bool in query
+        include_children: (includeChildren) OPTIONAL bool in query
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    parent_id: (parentId) OPTIONAL str in query
+        parent_id: (parentId) OPTIONAL str in query
 
-    start_with: (startWith) OPTIONAL str in query
+        start_with: (startWith) OPTIONAL str in query
 
-    word_type: (wordType) OPTIONAL str in query
+        word_type: (wordType) OPTIONAL str in query
 
-Responses:
-    200: OK - ModelsDictionaryQueryResult (OK)
+    Responses:
+        200: OK - ModelsDictionaryQueryResult (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
 
     # region fields
 
     _url: str = "/chat/v1/admin/profanity/namespaces/{namespace}/dictionary"
     _method: str = "GET"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     namespace: str  # REQUIRED in [path]
@@ -147,6 +146,7 @@ Responses:
         if hasattr(self, "namespace"):
             result["namespace"] = self.namespace
         return result
+
     def get_query_params(self) -> dict:
         result = {}
         if hasattr(self, "filter_mask"):
@@ -250,7 +250,12 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, ModelsDictionaryQueryResult], Union[None, HttpResponse, RestapiErrorResponseBody]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, ModelsDictionaryQueryResult],
+        Union[None, HttpResponse, RestapiErrorResponseBody],
+    ]:
         """Parse the given response.
 
         200: OK - ModelsDictionaryQueryResult (OK)
@@ -310,7 +315,7 @@ Responses:
         parent_id: Optional[str] = None,
         start_with: Optional[str] = None,
         word_type: Optional[str] = None,
-        **kwargs
+        **kwargs,
     ) -> AdminProfanityQuery:
         instance = cls()
         instance.namespace = namespace

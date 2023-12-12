@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsTopicResponse(Model):
     """Models topic response (models.TopicResponse)
 
@@ -62,45 +61,31 @@ class ModelsTopicResponse(Model):
 
     # region with_x methods
 
-    def with_created_at(
-        self, value: int
-    ) -> ModelsTopicResponse:
+    def with_created_at(self, value: int) -> ModelsTopicResponse:
         self.created_at = value
         return self
 
-    def with_created_by(
-        self, value: str
-    ) -> ModelsTopicResponse:
+    def with_created_by(self, value: str) -> ModelsTopicResponse:
         self.created_by = value
         return self
 
-    def with_last_message_at(
-        self, value: int
-    ) -> ModelsTopicResponse:
+    def with_last_message_at(self, value: int) -> ModelsTopicResponse:
         self.last_message_at = value
         return self
 
-    def with_name(
-        self, value: str
-    ) -> ModelsTopicResponse:
+    def with_name(self, value: str) -> ModelsTopicResponse:
         self.name = value
         return self
 
-    def with_namespace(
-        self, value: str
-    ) -> ModelsTopicResponse:
+    def with_namespace(self, value: str) -> ModelsTopicResponse:
         self.namespace = value
         return self
 
-    def with_topic_id(
-        self, value: str
-    ) -> ModelsTopicResponse:
+    def with_topic_id(self, value: str) -> ModelsTopicResponse:
         self.topic_id = value
         return self
 
-    def with_type(
-        self, value: str
-    ) -> ModelsTopicResponse:
+    def with_type(self, value: str) -> ModelsTopicResponse:
         self.type_ = value
         return self
 
@@ -154,7 +139,7 @@ class ModelsTopicResponse(Model):
         namespace: str,
         topic_id: str,
         type_: str,
-        **kwargs
+        **kwargs,
     ) -> ModelsTopicResponse:
         instance = cls()
         instance.created_at = created_at
@@ -227,9 +212,7 @@ class ModelsTopicResponse(Model):
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
     ) -> Union[
-        ModelsTopicResponse,
-        List[ModelsTopicResponse],
-        Dict[Any, ModelsTopicResponse]
+        ModelsTopicResponse, List[ModelsTopicResponse], Dict[Any, ModelsTopicResponse]
     ]:
         if many:
             if isinstance(any_, dict):
@@ -264,7 +247,5 @@ class ModelsTopicResponse(Model):
             "topicId": True,
             "type": True,
         }
-
-
 
     # endregion static methods

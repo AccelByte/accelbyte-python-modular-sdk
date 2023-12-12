@@ -35,6 +35,7 @@ class TypeEnum(StrEnum):
     TOPIC_JOIN = "TOPIC_JOIN"
     TOPIC_LEAVE = "TOPIC_LEAVE"
 
+
 class ModelsTopicLogItem(Model):
     """Models topic log item (models.TopicLogItem)
 
@@ -68,45 +69,31 @@ class ModelsTopicLogItem(Model):
 
     # region with_x methods
 
-    def with_created_at(
-        self, value: int
-    ) -> ModelsTopicLogItem:
+    def with_created_at(self, value: int) -> ModelsTopicLogItem:
         self.created_at = value
         return self
 
-    def with_id(
-        self, value: str
-    ) -> ModelsTopicLogItem:
+    def with_id(self, value: str) -> ModelsTopicLogItem:
         self.id_ = value
         return self
 
-    def with_message(
-        self, value: str
-    ) -> ModelsTopicLogItem:
+    def with_message(self, value: str) -> ModelsTopicLogItem:
         self.message = value
         return self
 
-    def with_sender_id(
-        self, value: str
-    ) -> ModelsTopicLogItem:
+    def with_sender_id(self, value: str) -> ModelsTopicLogItem:
         self.sender_id = value
         return self
 
-    def with_topic_id(
-        self, value: str
-    ) -> ModelsTopicLogItem:
+    def with_topic_id(self, value: str) -> ModelsTopicLogItem:
         self.topic_id = value
         return self
 
-    def with_type(
-        self, value: Union[str, TypeEnum]
-    ) -> ModelsTopicLogItem:
+    def with_type(self, value: Union[str, TypeEnum]) -> ModelsTopicLogItem:
         self.type_ = value
         return self
 
-    def with_user_id(
-        self, value: str
-    ) -> ModelsTopicLogItem:
+    def with_user_id(self, value: str) -> ModelsTopicLogItem:
         self.user_id = value
         return self
 
@@ -160,7 +147,7 @@ class ModelsTopicLogItem(Model):
         topic_id: str,
         type_: Union[str, TypeEnum],
         user_id: str,
-        **kwargs
+        **kwargs,
     ) -> ModelsTopicLogItem:
         instance = cls()
         instance.created_at = created_at
@@ -233,9 +220,7 @@ class ModelsTopicLogItem(Model):
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
     ) -> Union[
-        ModelsTopicLogItem,
-        List[ModelsTopicLogItem],
-        Dict[Any, ModelsTopicLogItem]
+        ModelsTopicLogItem, List[ModelsTopicLogItem], Dict[Any, ModelsTopicLogItem]
     ]:
         if many:
             if isinstance(any_, dict):
@@ -276,6 +261,5 @@ class ModelsTopicLogItem(Model):
         return {
             "type": ["TOPIC_CREATE", "TOPIC_DELETE", "TOPIC_JOIN", "TOPIC_LEAVE"],
         }
-
 
     # endregion static methods

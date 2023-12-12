@@ -33,6 +33,7 @@ from accelbyte_py_sdk.core import StrEnum
 from ...models import ModelsGetInboxUsersResponse
 from ...models import RestapiErrorResponseBody
 
+
 class StatusEnum(StrEnum):
     READ = "READ"
     UNREAD = "UNREAD"
@@ -41,52 +42,52 @@ class StatusEnum(StrEnum):
 class AdminGetInboxUsers(Operation):
     """admin get inbox users (adminGetInboxUsers)
 
-Get inbox users
+    Get inbox users
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/messages/{inbox}/users
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/messages/{inbox}/users
 
-    method: GET
+        method: GET
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    inbox: (inbox) REQUIRED str in path
+        inbox: (inbox) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    status: (status) OPTIONAL Union[str, StatusEnum] in query
+        status: (status) OPTIONAL Union[str, StatusEnum] in query
 
-    user_id: (userId) OPTIONAL str in query
+        user_id: (userId) OPTIONAL str in query
 
-Responses:
-    200: OK - ModelsGetInboxUsersResponse (OK)
+    Responses:
+        200: OK - ModelsGetInboxUsersResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
 
     # region fields
 
     _url: str = "/chat/v1/admin/inbox/namespaces/{namespace}/messages/{inbox}/users"
     _method: str = "GET"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     inbox: str  # REQUIRED in [path]
@@ -145,6 +146,7 @@ Responses:
         if hasattr(self, "namespace"):
             result["namespace"] = self.namespace
         return result
+
     def get_query_params(self) -> dict:
         result = {}
         if hasattr(self, "limit"):
@@ -226,7 +228,12 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, ModelsGetInboxUsersResponse], Union[None, HttpResponse, RestapiErrorResponseBody]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, ModelsGetInboxUsersResponse],
+        Union[None, HttpResponse, RestapiErrorResponseBody],
+    ]:
         """Parse the given response.
 
         200: OK - ModelsGetInboxUsersResponse (OK)
@@ -280,7 +287,7 @@ Responses:
         offset: Optional[int] = None,
         status: Optional[Union[str, StatusEnum]] = None,
         user_id: Optional[str] = None,
-        **kwargs
+        **kwargs,
     ) -> AdminGetInboxUsers:
         instance = cls()
         instance.inbox = inbox

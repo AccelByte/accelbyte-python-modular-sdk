@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class LogAppMessageDeclaration(Model):
     """Log app message declaration (log.AppMessageDeclaration)
 
@@ -59,39 +58,27 @@ class LogAppMessageDeclaration(Model):
 
     # region with_x methods
 
-    def with_attributes(
-        self, value: List[str]
-    ) -> LogAppMessageDeclaration:
+    def with_attributes(self, value: List[str]) -> LogAppMessageDeclaration:
         self.attributes = value
         return self
 
-    def with_code(
-        self, value: str
-    ) -> LogAppMessageDeclaration:
+    def with_code(self, value: str) -> LogAppMessageDeclaration:
         self.code = value
         return self
 
-    def with_code_name(
-        self, value: str
-    ) -> LogAppMessageDeclaration:
+    def with_code_name(self, value: str) -> LogAppMessageDeclaration:
         self.code_name = value
         return self
 
-    def with_section(
-        self, value: str
-    ) -> LogAppMessageDeclaration:
+    def with_section(self, value: str) -> LogAppMessageDeclaration:
         self.section = value
         return self
 
-    def with_service(
-        self, value: str
-    ) -> LogAppMessageDeclaration:
+    def with_service(self, value: str) -> LogAppMessageDeclaration:
         self.service = value
         return self
 
-    def with_text(
-        self, value: str
-    ) -> LogAppMessageDeclaration:
+    def with_text(self, value: str) -> LogAppMessageDeclaration:
         self.text = value
         return self
 
@@ -140,7 +127,7 @@ class LogAppMessageDeclaration(Model):
         section: str,
         service: str,
         text: str,
-        **kwargs
+        **kwargs,
     ) -> LogAppMessageDeclaration:
         instance = cls()
         instance.attributes = attributes
@@ -210,7 +197,7 @@ class LogAppMessageDeclaration(Model):
     ) -> Union[
         LogAppMessageDeclaration,
         List[LogAppMessageDeclaration],
-        Dict[Any, LogAppMessageDeclaration]
+        Dict[Any, LogAppMessageDeclaration],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -243,7 +230,5 @@ class LogAppMessageDeclaration(Model):
             "Service": True,
             "Text": True,
         }
-
-
 
     # endregion static methods

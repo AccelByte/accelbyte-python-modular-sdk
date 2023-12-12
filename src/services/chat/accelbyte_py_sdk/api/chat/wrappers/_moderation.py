@@ -36,6 +36,7 @@ from ..operations.moderation import AdminDeleteChatSnapshot
 from ..operations.moderation import AdminGetChatSnapshot
 from ..operations.moderation import PublicGetChatSnapshot
 
+
 @same_doc_as(AdminDeleteChatSnapshot)
 def admin_delete_chat_snapshot(
     chat_id: str,
@@ -45,37 +46,37 @@ def admin_delete_chat_snapshot(
 ):
     """admin delete chat snapshot (adminDeleteChatSnapshot)
 
-Delete the chat snapshot
+    Delete the chat snapshot
 
-Properties:
-    url: /chat/v1/admin/namespaces/{namespace}/snapshot/{chatId}
+    Properties:
+        url: /chat/v1/admin/namespaces/{namespace}/snapshot/{chatId}
 
-    method: DELETE
+        method: DELETE
 
-    tags: ["moderation"]
+        tags: ["moderation"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    chat_id: (chatId) REQUIRED str in path
+        chat_id: (chatId) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    204: No Content - (No Content)
+    Responses:
+        204: No Content - (No Content)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -97,37 +98,37 @@ async def admin_delete_chat_snapshot_async(
 ):
     """admin delete chat snapshot (adminDeleteChatSnapshot)
 
-Delete the chat snapshot
+    Delete the chat snapshot
 
-Properties:
-    url: /chat/v1/admin/namespaces/{namespace}/snapshot/{chatId}
+    Properties:
+        url: /chat/v1/admin/namespaces/{namespace}/snapshot/{chatId}
 
-    method: DELETE
+        method: DELETE
 
-    tags: ["moderation"]
+        tags: ["moderation"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    chat_id: (chatId) REQUIRED str in path
+        chat_id: (chatId) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    204: No Content - (No Content)
+    Responses:
+        204: No Content - (No Content)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -137,7 +138,10 @@ Responses:
         chat_id=chat_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(AdminGetChatSnapshot)
 def admin_get_chat_snapshot(
@@ -148,37 +152,37 @@ def admin_get_chat_snapshot(
 ):
     """admin get chat snapshot (adminGetChatSnapshot)
 
-Get the chat snapshot
+    Get the chat snapshot
 
-Properties:
-    url: /chat/v1/admin/namespaces/{namespace}/snapshot/{chatId}
+    Properties:
+        url: /chat/v1/admin/namespaces/{namespace}/snapshot/{chatId}
 
-    method: GET
+        method: GET
 
-    tags: ["moderation"]
+        tags: ["moderation"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    chat_id: (chatId) REQUIRED str in path
+        chat_id: (chatId) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsChatSnapshots (OK)
+    Responses:
+        200: OK - ModelsChatSnapshots (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -200,37 +204,37 @@ async def admin_get_chat_snapshot_async(
 ):
     """admin get chat snapshot (adminGetChatSnapshot)
 
-Get the chat snapshot
+    Get the chat snapshot
 
-Properties:
-    url: /chat/v1/admin/namespaces/{namespace}/snapshot/{chatId}
+    Properties:
+        url: /chat/v1/admin/namespaces/{namespace}/snapshot/{chatId}
 
-    method: GET
+        method: GET
 
-    tags: ["moderation"]
+        tags: ["moderation"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    chat_id: (chatId) REQUIRED str in path
+        chat_id: (chatId) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsChatSnapshots (OK)
+    Responses:
+        200: OK - ModelsChatSnapshots (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -240,7 +244,10 @@ Responses:
         chat_id=chat_id,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
 
 @same_doc_as(PublicGetChatSnapshot)
 def public_get_chat_snapshot(
@@ -252,39 +259,39 @@ def public_get_chat_snapshot(
 ):
     """public get chat snapshot (publicGetChatSnapshot)
 
-Get the chat snapshot
+    Get the chat snapshot
 
-Properties:
-    url: /chat/v1/public/namespaces/{namespace}/topic/{topic}/snapshot/{chatId}
+    Properties:
+        url: /chat/v1/public/namespaces/{namespace}/topic/{topic}/snapshot/{chatId}
 
-    method: GET
+        method: GET
 
-    tags: ["moderation"]
+        tags: ["moderation"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    chat_id: (chatId) REQUIRED str in path
+        chat_id: (chatId) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsChatSnapshots (OK)
+    Responses:
+        200: OK - ModelsChatSnapshots (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -308,39 +315,39 @@ async def public_get_chat_snapshot_async(
 ):
     """public get chat snapshot (publicGetChatSnapshot)
 
-Get the chat snapshot
+    Get the chat snapshot
 
-Properties:
-    url: /chat/v1/public/namespaces/{namespace}/topic/{topic}/snapshot/{chatId}
+    Properties:
+        url: /chat/v1/public/namespaces/{namespace}/topic/{topic}/snapshot/{chatId}
 
-    method: GET
+        method: GET
 
-    tags: ["moderation"]
+        tags: ["moderation"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    chat_id: (chatId) REQUIRED str in path
+        chat_id: (chatId) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsChatSnapshots (OK)
+    Responses:
+        200: OK - ModelsChatSnapshots (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -351,4 +358,6 @@ Responses:
         topic=topic,
         namespace=namespace,
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )

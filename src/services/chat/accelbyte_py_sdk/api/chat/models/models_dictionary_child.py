@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsDictionaryChild(Model):
     """Models dictionary child (models.DictionaryChild)
 
@@ -47,15 +46,11 @@ class ModelsDictionaryChild(Model):
 
     # region with_x methods
 
-    def with_id(
-        self, value: str
-    ) -> ModelsDictionaryChild:
+    def with_id(self, value: str) -> ModelsDictionaryChild:
         self.id_ = value
         return self
 
-    def with_word(
-        self, value: str
-    ) -> ModelsDictionaryChild:
+    def with_word(self, value: str) -> ModelsDictionaryChild:
         self.word = value
         return self
 
@@ -80,12 +75,7 @@ class ModelsDictionaryChild(Model):
     # region static methods
 
     @classmethod
-    def create(
-        cls,
-        id_: str,
-        word: str,
-        **kwargs
-    ) -> ModelsDictionaryChild:
+    def create(cls, id_: str, word: str, **kwargs) -> ModelsDictionaryChild:
         instance = cls()
         instance.id_ = id_
         instance.word = word
@@ -134,7 +124,7 @@ class ModelsDictionaryChild(Model):
     ) -> Union[
         ModelsDictionaryChild,
         List[ModelsDictionaryChild],
-        Dict[Any, ModelsDictionaryChild]
+        Dict[Any, ModelsDictionaryChild],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -159,7 +149,5 @@ class ModelsDictionaryChild(Model):
             "id": True,
             "word": True,
         }
-
-
 
     # endregion static methods

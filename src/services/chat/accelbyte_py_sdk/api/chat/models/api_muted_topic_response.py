@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ApiMutedTopicResponse(Model):
     """Api muted topic response (api.MutedTopicResponse)
 
@@ -50,21 +49,15 @@ class ApiMutedTopicResponse(Model):
 
     # region with_x methods
 
-    def with_expiration_time(
-        self, value: int
-    ) -> ApiMutedTopicResponse:
+    def with_expiration_time(self, value: int) -> ApiMutedTopicResponse:
         self.expiration_time = value
         return self
 
-    def with_remaining_time(
-        self, value: int
-    ) -> ApiMutedTopicResponse:
+    def with_remaining_time(self, value: int) -> ApiMutedTopicResponse:
         self.remaining_time = value
         return self
 
-    def with_topic_id(
-        self, value: str
-    ) -> ApiMutedTopicResponse:
+    def with_topic_id(self, value: str) -> ApiMutedTopicResponse:
         self.topic_id = value
         return self
 
@@ -94,11 +87,7 @@ class ApiMutedTopicResponse(Model):
 
     @classmethod
     def create(
-        cls,
-        expiration_time: int,
-        remaining_time: int,
-        topic_id: str,
-        **kwargs
+        cls, expiration_time: int, remaining_time: int, topic_id: str, **kwargs
     ) -> ApiMutedTopicResponse:
         instance = cls()
         instance.expiration_time = expiration_time
@@ -153,7 +142,7 @@ class ApiMutedTopicResponse(Model):
     ) -> Union[
         ApiMutedTopicResponse,
         List[ApiMutedTopicResponse],
-        Dict[Any, ApiMutedTopicResponse]
+        Dict[Any, ApiMutedTopicResponse],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -180,7 +169,5 @@ class ApiMutedTopicResponse(Model):
             "remainingTime": True,
             "topicId": True,
         }
-
-
 
     # endregion static methods

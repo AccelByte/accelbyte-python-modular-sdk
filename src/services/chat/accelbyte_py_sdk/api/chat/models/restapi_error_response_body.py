@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class RestapiErrorResponseBody(Model):
     """Restapi error response body (restapi.ErrorResponseBody)
 
@@ -47,15 +46,11 @@ class RestapiErrorResponseBody(Model):
 
     # region with_x methods
 
-    def with_error_code(
-        self, value: int
-    ) -> RestapiErrorResponseBody:
+    def with_error_code(self, value: int) -> RestapiErrorResponseBody:
         self.error_code = value
         return self
 
-    def with_error_message(
-        self, value: str
-    ) -> RestapiErrorResponseBody:
+    def with_error_message(self, value: str) -> RestapiErrorResponseBody:
         self.error_message = value
         return self
 
@@ -81,10 +76,7 @@ class RestapiErrorResponseBody(Model):
 
     @classmethod
     def create(
-        cls,
-        error_code: int,
-        error_message: str,
-        **kwargs
+        cls, error_code: int, error_message: str, **kwargs
     ) -> RestapiErrorResponseBody:
         instance = cls()
         instance.error_code = error_code
@@ -134,7 +126,7 @@ class RestapiErrorResponseBody(Model):
     ) -> Union[
         RestapiErrorResponseBody,
         List[RestapiErrorResponseBody],
-        Dict[Any, RestapiErrorResponseBody]
+        Dict[Any, RestapiErrorResponseBody],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -159,7 +151,5 @@ class RestapiErrorResponseBody(Model):
             "ErrorCode": True,
             "ErrorMessage": True,
         }
-
-
 
     # endregion static methods

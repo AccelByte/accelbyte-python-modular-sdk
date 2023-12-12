@@ -34,65 +34,64 @@ from ..models import RestapiErrorResponseBody
 
 from ..operations.operations import PublicGetMessages
 
+
 @same_doc_as(PublicGetMessages)
 def public_get_messages(
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
 ):
     """get service messages (publicGetMessages)
 
-get the list of messages.
+    get the list of messages.
 
-Properties:
-    url: /chat/v1/messages
+    Properties:
+        url: /chat/v1/messages
 
-    method: GET
+        method: GET
 
-    tags: []
+        tags: []
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-Responses:
-    200: OK - List[LogAppMessageDeclaration] (OK)
+    Responses:
+        200: OK - List[LogAppMessageDeclaration] (OK)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
-    request = PublicGetMessages.create(
-    )
+    request = PublicGetMessages.create()
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(PublicGetMessages)
 async def public_get_messages_async(
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
 ):
     """get service messages (publicGetMessages)
 
-get the list of messages.
+    get the list of messages.
 
-Properties:
-    url: /chat/v1/messages
+    Properties:
+        url: /chat/v1/messages
 
-    method: GET
+        method: GET
 
-    tags: []
+        tags: []
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-Responses:
-    200: OK - List[LogAppMessageDeclaration] (OK)
+    Responses:
+        200: OK - List[LogAppMessageDeclaration] (OK)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
-    request = PublicGetMessages.create(
+    request = PublicGetMessages.create()
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
     )
-    return await run_request_async(request, additional_headers=x_additional_headers, **kwargs)

@@ -10,6 +10,7 @@ click
 ../../src/services/achievement
 ../../src/services/ams
 ../../src/services/basic
+../../src/services/chat
 ../../src/services/cloudsave
 ../../src/services/dslogmanager
 ../../src/services/dsmc

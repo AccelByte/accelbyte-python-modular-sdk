@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsDictionaryGroup(Model):
     """Models dictionary group (models.DictionaryGroup)
 
@@ -47,15 +46,11 @@ class ModelsDictionaryGroup(Model):
 
     # region with_x methods
 
-    def with_count(
-        self, value: int
-    ) -> ModelsDictionaryGroup:
+    def with_count(self, value: int) -> ModelsDictionaryGroup:
         self.count = value
         return self
 
-    def with_name(
-        self, value: str
-    ) -> ModelsDictionaryGroup:
+    def with_name(self, value: str) -> ModelsDictionaryGroup:
         self.name = value
         return self
 
@@ -80,12 +75,7 @@ class ModelsDictionaryGroup(Model):
     # region static methods
 
     @classmethod
-    def create(
-        cls,
-        count: int,
-        name: str,
-        **kwargs
-    ) -> ModelsDictionaryGroup:
+    def create(cls, count: int, name: str, **kwargs) -> ModelsDictionaryGroup:
         instance = cls()
         instance.count = count
         instance.name = name
@@ -134,7 +124,7 @@ class ModelsDictionaryGroup(Model):
     ) -> Union[
         ModelsDictionaryGroup,
         List[ModelsDictionaryGroup],
-        Dict[Any, ModelsDictionaryGroup]
+        Dict[Any, ModelsDictionaryGroup],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -159,7 +149,5 @@ class ModelsDictionaryGroup(Model):
             "count": True,
             "name": True,
         }
-
-
 
     # endregion static methods

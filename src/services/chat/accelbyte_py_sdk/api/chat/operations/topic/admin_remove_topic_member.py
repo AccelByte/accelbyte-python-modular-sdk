@@ -32,42 +32,41 @@ from accelbyte_py_sdk.core import HttpResponse
 from ...models import MessageActionAddUserToTopicResult
 
 
-
 class AdminRemoveTopicMember(Operation):
     """admin remove user from topic (adminRemoveTopicMember)
 
-Remove member from topic in a namespace.
+    Remove member from topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/{topic}/user/{userId}
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/{topic}/user/{userId}
 
-    method: DELETE
+        method: DELETE
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    topic: (topic) REQUIRED str in path
+        topic: (topic) REQUIRED str in path
 
-    user_id: (userId) REQUIRED str in path
+        user_id: (userId) REQUIRED str in path
 
-Responses:
-    200: OK - MessageActionAddUserToTopicResult
+    Responses:
+        200: OK - MessageActionAddUserToTopicResult
     """
 
     # region fields
 
     _url: str = "/chat/admin/namespaces/{namespace}/topic/{topic}/user/{userId}"
     _method: str = "DELETE"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     namespace: str  # REQUIRED in [path]
@@ -170,7 +169,11 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, MessageActionAddUserToTopicResult], Union[None, HttpResponse]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, MessageActionAddUserToTopicResult], Union[None, HttpResponse]
+    ]:
         """Parse the given response.
 
         200: OK - MessageActionAddUserToTopicResult
@@ -201,11 +204,7 @@ Responses:
 
     @classmethod
     def create(
-        cls,
-        namespace: str,
-        topic: str,
-        user_id: str,
-        **kwargs
+        cls, namespace: str, topic: str, user_id: str, **kwargs
     ) -> AdminRemoveTopicMember:
         instance = cls()
         instance.namespace = namespace

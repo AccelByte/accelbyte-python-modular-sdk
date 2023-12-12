@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsTopicMemberResponse(Model):
     """Models topic member response (models.TopicMemberResponse)
 
@@ -53,27 +52,19 @@ class ModelsTopicMemberResponse(Model):
 
     # region with_x methods
 
-    def with_is_admin(
-        self, value: bool
-    ) -> ModelsTopicMemberResponse:
+    def with_is_admin(self, value: bool) -> ModelsTopicMemberResponse:
         self.is_admin = value
         return self
 
-    def with_is_banned(
-        self, value: bool
-    ) -> ModelsTopicMemberResponse:
+    def with_is_banned(self, value: bool) -> ModelsTopicMemberResponse:
         self.is_banned = value
         return self
 
-    def with_shard_id(
-        self, value: str
-    ) -> ModelsTopicMemberResponse:
+    def with_shard_id(self, value: str) -> ModelsTopicMemberResponse:
         self.shard_id = value
         return self
 
-    def with_user_id(
-        self, value: str
-    ) -> ModelsTopicMemberResponse:
+    def with_user_id(self, value: str) -> ModelsTopicMemberResponse:
         self.user_id = value
         return self
 
@@ -107,12 +98,7 @@ class ModelsTopicMemberResponse(Model):
 
     @classmethod
     def create(
-        cls,
-        is_admin: bool,
-        is_banned: bool,
-        shard_id: str,
-        user_id: str,
-        **kwargs
+        cls, is_admin: bool, is_banned: bool, shard_id: str, user_id: str, **kwargs
     ) -> ModelsTopicMemberResponse:
         instance = cls()
         instance.is_admin = is_admin
@@ -172,7 +158,7 @@ class ModelsTopicMemberResponse(Model):
     ) -> Union[
         ModelsTopicMemberResponse,
         List[ModelsTopicMemberResponse],
-        Dict[Any, ModelsTopicMemberResponse]
+        Dict[Any, ModelsTopicMemberResponse],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -201,7 +187,5 @@ class ModelsTopicMemberResponse(Model):
             "shardId": True,
             "userId": True,
         }
-
-
 
     # endregion static methods

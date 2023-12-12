@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ApiCreateTopicResponse(Model):
     """Api create topic response (api.CreateTopicResponse)
 
@@ -68,57 +67,39 @@ class ApiCreateTopicResponse(Model):
 
     # region with_x methods
 
-    def with_created_at(
-        self, value: int
-    ) -> ApiCreateTopicResponse:
+    def with_created_at(self, value: int) -> ApiCreateTopicResponse:
         self.created_at = value
         return self
 
-    def with_created_by(
-        self, value: str
-    ) -> ApiCreateTopicResponse:
+    def with_created_by(self, value: str) -> ApiCreateTopicResponse:
         self.created_by = value
         return self
 
-    def with_description(
-        self, value: str
-    ) -> ApiCreateTopicResponse:
+    def with_description(self, value: str) -> ApiCreateTopicResponse:
         self.description = value
         return self
 
-    def with_is_channel(
-        self, value: bool
-    ) -> ApiCreateTopicResponse:
+    def with_is_channel(self, value: bool) -> ApiCreateTopicResponse:
         self.is_channel = value
         return self
 
-    def with_is_joinable(
-        self, value: bool
-    ) -> ApiCreateTopicResponse:
+    def with_is_joinable(self, value: bool) -> ApiCreateTopicResponse:
         self.is_joinable = value
         return self
 
-    def with_name(
-        self, value: str
-    ) -> ApiCreateTopicResponse:
+    def with_name(self, value: str) -> ApiCreateTopicResponse:
         self.name = value
         return self
 
-    def with_namespace(
-        self, value: str
-    ) -> ApiCreateTopicResponse:
+    def with_namespace(self, value: str) -> ApiCreateTopicResponse:
         self.namespace = value
         return self
 
-    def with_topic_id(
-        self, value: str
-    ) -> ApiCreateTopicResponse:
+    def with_topic_id(self, value: str) -> ApiCreateTopicResponse:
         self.topic_id = value
         return self
 
-    def with_type(
-        self, value: str
-    ) -> ApiCreateTopicResponse:
+    def with_type(self, value: str) -> ApiCreateTopicResponse:
         self.type_ = value
         return self
 
@@ -182,7 +163,7 @@ class ApiCreateTopicResponse(Model):
         namespace: str,
         topic_id: str,
         type_: str,
-        **kwargs
+        **kwargs,
     ) -> ApiCreateTopicResponse:
         instance = cls()
         instance.created_at = created_at
@@ -267,7 +248,7 @@ class ApiCreateTopicResponse(Model):
     ) -> Union[
         ApiCreateTopicResponse,
         List[ApiCreateTopicResponse],
-        Dict[Any, ApiCreateTopicResponse]
+        Dict[Any, ApiCreateTopicResponse],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -306,7 +287,5 @@ class ApiCreateTopicResponse(Model):
             "topicId": True,
             "type": True,
         }
-
-
 
     # endregion static methods

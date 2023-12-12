@@ -63,33 +63,23 @@ class ModelsDictionaryWithChildren(Model):
 
     # region with_x methods
 
-    def with_id(
-        self, value: str
-    ) -> ModelsDictionaryWithChildren:
+    def with_id(self, value: str) -> ModelsDictionaryWithChildren:
         self.id_ = value
         return self
 
-    def with_namespace(
-        self, value: str
-    ) -> ModelsDictionaryWithChildren:
+    def with_namespace(self, value: str) -> ModelsDictionaryWithChildren:
         self.namespace = value
         return self
 
-    def with_parent_id(
-        self, value: str
-    ) -> ModelsDictionaryWithChildren:
+    def with_parent_id(self, value: str) -> ModelsDictionaryWithChildren:
         self.parent_id = value
         return self
 
-    def with_word(
-        self, value: str
-    ) -> ModelsDictionaryWithChildren:
+    def with_word(self, value: str) -> ModelsDictionaryWithChildren:
         self.word = value
         return self
 
-    def with_word_type(
-        self, value: str
-    ) -> ModelsDictionaryWithChildren:
+    def with_word_type(self, value: str) -> ModelsDictionaryWithChildren:
         self.word_type = value
         return self
 
@@ -132,11 +122,15 @@ class ModelsDictionaryWithChildren(Model):
         elif include_empty:
             result["wordType"] = ""
         if hasattr(self, "false_negatives"):
-            result["falseNegatives"] = [i0.to_dict(include_empty=include_empty) for i0 in self.false_negatives]
+            result["falseNegatives"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.false_negatives
+            ]
         elif include_empty:
             result["falseNegatives"] = []
         if hasattr(self, "false_positives"):
-            result["falsePositives"] = [i0.to_dict(include_empty=include_empty) for i0 in self.false_positives]
+            result["falsePositives"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.false_positives
+            ]
         elif include_empty:
             result["falsePositives"] = []
         return result
@@ -155,7 +149,7 @@ class ModelsDictionaryWithChildren(Model):
         word_type: str,
         false_negatives: Optional[List[ModelsDictionaryChild]] = None,
         false_positives: Optional[List[ModelsDictionaryChild]] = None,
-        **kwargs
+        **kwargs,
     ) -> ModelsDictionaryWithChildren:
         instance = cls()
         instance.id_ = id_
@@ -197,11 +191,17 @@ class ModelsDictionaryWithChildren(Model):
         elif include_empty:
             instance.word_type = ""
         if "falseNegatives" in dict_ and dict_["falseNegatives"] is not None:
-            instance.false_negatives = [ModelsDictionaryChild.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["falseNegatives"]]
+            instance.false_negatives = [
+                ModelsDictionaryChild.create_from_dict(i0, include_empty=include_empty)
+                for i0 in dict_["falseNegatives"]
+            ]
         elif include_empty:
             instance.false_negatives = []
         if "falsePositives" in dict_ and dict_["falsePositives"] is not None:
-            instance.false_positives = [ModelsDictionaryChild.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["falsePositives"]]
+            instance.false_positives = [
+                ModelsDictionaryChild.create_from_dict(i0, include_empty=include_empty)
+                for i0 in dict_["falsePositives"]
+            ]
         elif include_empty:
             instance.false_positives = []
         return instance
@@ -232,7 +232,7 @@ class ModelsDictionaryWithChildren(Model):
     ) -> Union[
         ModelsDictionaryWithChildren,
         List[ModelsDictionaryWithChildren],
-        Dict[Any, ModelsDictionaryWithChildren]
+        Dict[Any, ModelsDictionaryWithChildren],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -267,7 +267,5 @@ class ModelsDictionaryWithChildren(Model):
             "falseNegatives": False,
             "falsePositives": False,
         }
-
-
 
     # endregion static methods

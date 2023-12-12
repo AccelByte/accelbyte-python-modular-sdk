@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsDictionaryExportItem(Model):
     """Models dictionary export item (models.DictionaryExportItem)
 
@@ -50,21 +49,15 @@ class ModelsDictionaryExportItem(Model):
 
     # region with_x methods
 
-    def with_word(
-        self, value: str
-    ) -> ModelsDictionaryExportItem:
+    def with_word(self, value: str) -> ModelsDictionaryExportItem:
         self.word = value
         return self
 
-    def with_false_negative(
-        self, value: List[str]
-    ) -> ModelsDictionaryExportItem:
+    def with_false_negative(self, value: List[str]) -> ModelsDictionaryExportItem:
         self.false_negative = value
         return self
 
-    def with_false_positive(
-        self, value: List[str]
-    ) -> ModelsDictionaryExportItem:
+    def with_false_positive(self, value: List[str]) -> ModelsDictionaryExportItem:
         self.false_positive = value
         return self
 
@@ -98,7 +91,7 @@ class ModelsDictionaryExportItem(Model):
         word: str,
         false_negative: Optional[List[str]] = None,
         false_positive: Optional[List[str]] = None,
-        **kwargs
+        **kwargs,
     ) -> ModelsDictionaryExportItem:
         instance = cls()
         instance.word = word
@@ -155,7 +148,7 @@ class ModelsDictionaryExportItem(Model):
     ) -> Union[
         ModelsDictionaryExportItem,
         List[ModelsDictionaryExportItem],
-        Dict[Any, ModelsDictionaryExportItem]
+        Dict[Any, ModelsDictionaryExportItem],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -182,7 +175,5 @@ class ModelsDictionaryExportItem(Model):
             "falseNegative": False,
             "falsePositive": False,
         }
-
-
 
     # endregion static methods

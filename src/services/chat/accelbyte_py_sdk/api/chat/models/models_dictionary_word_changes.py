@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsDictionaryWordChanges(Model):
     """Models dictionary word changes (models.DictionaryWordChanges)
 
@@ -56,33 +55,23 @@ class ModelsDictionaryWordChanges(Model):
 
     # region with_x methods
 
-    def with_added(
-        self, value: List[str]
-    ) -> ModelsDictionaryWordChanges:
+    def with_added(self, value: List[str]) -> ModelsDictionaryWordChanges:
         self.added = value
         return self
 
-    def with_failed(
-        self, value: List[str]
-    ) -> ModelsDictionaryWordChanges:
+    def with_failed(self, value: List[str]) -> ModelsDictionaryWordChanges:
         self.failed = value
         return self
 
-    def with_ignored(
-        self, value: List[str]
-    ) -> ModelsDictionaryWordChanges:
+    def with_ignored(self, value: List[str]) -> ModelsDictionaryWordChanges:
         self.ignored = value
         return self
 
-    def with_replaced(
-        self, value: List[str]
-    ) -> ModelsDictionaryWordChanges:
+    def with_replaced(self, value: List[str]) -> ModelsDictionaryWordChanges:
         self.replaced = value
         return self
 
-    def with_unchanged(
-        self, value: List[str]
-    ) -> ModelsDictionaryWordChanges:
+    def with_unchanged(self, value: List[str]) -> ModelsDictionaryWordChanges:
         self.unchanged = value
         return self
 
@@ -126,7 +115,7 @@ class ModelsDictionaryWordChanges(Model):
         ignored: List[str],
         replaced: List[str],
         unchanged: List[str],
-        **kwargs
+        **kwargs,
     ) -> ModelsDictionaryWordChanges:
         instance = cls()
         instance.added = added
@@ -191,7 +180,7 @@ class ModelsDictionaryWordChanges(Model):
     ) -> Union[
         ModelsDictionaryWordChanges,
         List[ModelsDictionaryWordChanges],
-        Dict[Any, ModelsDictionaryWordChanges]
+        Dict[Any, ModelsDictionaryWordChanges],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -222,7 +211,5 @@ class ModelsDictionaryWordChanges(Model):
             "replaced": True,
             "unchanged": True,
         }
-
-
 
     # endregion static methods

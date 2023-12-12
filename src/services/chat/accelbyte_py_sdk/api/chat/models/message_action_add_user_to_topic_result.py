@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class MessageActionAddUserToTopicResult(Model):
     """Message action add user to topic result (message.ActionAddUserToTopicResult)
 
@@ -50,21 +49,15 @@ class MessageActionAddUserToTopicResult(Model):
 
     # region with_x methods
 
-    def with_processed(
-        self, value: int
-    ) -> MessageActionAddUserToTopicResult:
+    def with_processed(self, value: int) -> MessageActionAddUserToTopicResult:
         self.processed = value
         return self
 
-    def with_topic_id(
-        self, value: str
-    ) -> MessageActionAddUserToTopicResult:
+    def with_topic_id(self, value: str) -> MessageActionAddUserToTopicResult:
         self.topic_id = value
         return self
 
-    def with_user_id(
-        self, value: str
-    ) -> MessageActionAddUserToTopicResult:
+    def with_user_id(self, value: str) -> MessageActionAddUserToTopicResult:
         self.user_id = value
         return self
 
@@ -94,11 +87,7 @@ class MessageActionAddUserToTopicResult(Model):
 
     @classmethod
     def create(
-        cls,
-        processed: int,
-        topic_id: str,
-        user_id: str,
-        **kwargs
+        cls, processed: int, topic_id: str, user_id: str, **kwargs
     ) -> MessageActionAddUserToTopicResult:
         instance = cls()
         instance.processed = processed
@@ -153,7 +142,7 @@ class MessageActionAddUserToTopicResult(Model):
     ) -> Union[
         MessageActionAddUserToTopicResult,
         List[MessageActionAddUserToTopicResult],
-        Dict[Any, MessageActionAddUserToTopicResult]
+        Dict[Any, MessageActionAddUserToTopicResult],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -180,7 +169,5 @@ class MessageActionAddUserToTopicResult(Model):
             "topicId": True,
             "userId": True,
         }
-
-
 
     # endregion static methods

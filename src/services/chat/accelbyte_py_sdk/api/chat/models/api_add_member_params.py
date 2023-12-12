@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ApiAddMemberParams(Model):
     """Api add member params (api.AddMemberParams)
 
@@ -44,9 +43,7 @@ class ApiAddMemberParams(Model):
 
     # region with_x methods
 
-    def with_is_admin(
-        self, value: bool
-    ) -> ApiAddMemberParams:
+    def with_is_admin(self, value: bool) -> ApiAddMemberParams:
         self.is_admin = value
         return self
 
@@ -67,11 +64,7 @@ class ApiAddMemberParams(Model):
     # region static methods
 
     @classmethod
-    def create(
-        cls,
-        is_admin: bool,
-        **kwargs
-    ) -> ApiAddMemberParams:
+    def create(cls, is_admin: bool, **kwargs) -> ApiAddMemberParams:
         instance = cls()
         instance.is_admin = is_admin
         return instance
@@ -113,9 +106,7 @@ class ApiAddMemberParams(Model):
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
     ) -> Union[
-        ApiAddMemberParams,
-        List[ApiAddMemberParams],
-        Dict[Any, ApiAddMemberParams]
+        ApiAddMemberParams, List[ApiAddMemberParams], Dict[Any, ApiAddMemberParams]
     ]:
         if many:
             if isinstance(any_, dict):
@@ -138,7 +129,5 @@ class ApiAddMemberParams(Model):
         return {
             "isAdmin": True,
         }
-
-
 
     # endregion static methods

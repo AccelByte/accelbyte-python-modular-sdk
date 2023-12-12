@@ -33,52 +33,51 @@ from ...models import ModelsConfigResponse
 from ...models import RestapiErrorResponseBody
 
 
-
 class AdminUpdateConfigV1(Operation):
     """admin update namespace config (adminUpdateConfigV1)
 
-Update chat config of a namespace.
+    Update chat config of a namespace.
 
-Properties:
-    url: /chat/v1/admin/config/namespaces/{namespace}
+    Properties:
+        url: /chat/v1/admin/config/namespaces/{namespace}
 
-    method: PUT
+        method: PUT
 
-    tags: ["config"]
+        tags: ["config"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsConfigResponse in body
+        body: (body) REQUIRED ModelsConfigResponse in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsConfigResponse (OK)
+    Responses:
+        200: OK - ModelsConfigResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Not Found)
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
-    412: Precondition Failed - RestapiErrorResponseBody (Precondition Failed)
+        412: Precondition Failed - RestapiErrorResponseBody (Precondition Failed)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
 
     # region fields
 
     _url: str = "/chat/v1/admin/config/namespaces/{namespace}"
     _method: str = "PUT"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     body: ModelsConfigResponse  # REQUIRED in [body]
@@ -130,6 +129,7 @@ Responses:
         if not hasattr(self, "body") or self.body is None:
             return None
         return self.body.to_dict()
+
     def get_path_params(self) -> dict:
         result = {}
         if hasattr(self, "namespace"):
@@ -173,7 +173,12 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, ModelsConfigResponse], Union[None, HttpResponse, RestapiErrorResponseBody]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, ModelsConfigResponse],
+        Union[None, HttpResponse, RestapiErrorResponseBody],
+    ]:
         """Parse the given response.
 
         200: OK - ModelsConfigResponse (OK)
@@ -228,10 +233,7 @@ Responses:
 
     @classmethod
     def create(
-        cls,
-        body: ModelsConfigResponse,
-        namespace: str,
-        **kwargs
+        cls, body: ModelsConfigResponse, namespace: str, **kwargs
     ) -> AdminUpdateConfigV1:
         instance = cls()
         instance.body = body
@@ -244,7 +246,9 @@ Responses:
     ) -> AdminUpdateConfigV1:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = ModelsConfigResponse.create_from_dict(dict_["body"], include_empty=include_empty)
+            instance.body = ModelsConfigResponse.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
         elif include_empty:
             instance.body = ModelsConfigResponse()
         if "namespace" in dict_ and dict_["namespace"] is not None:

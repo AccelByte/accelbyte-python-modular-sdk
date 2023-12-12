@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsConfigExport(Model):
     """Models config export (models.ConfigExport)
 
@@ -95,111 +94,75 @@ class ModelsConfigExport(Model):
 
     # region with_x methods
 
-    def with_chat_rate_limit_burst(
-        self, value: int
-    ) -> ModelsConfigExport:
+    def with_chat_rate_limit_burst(self, value: int) -> ModelsConfigExport:
         self.chat_rate_limit_burst = value
         return self
 
-    def with_chat_rate_limit_duration(
-        self, value: int
-    ) -> ModelsConfigExport:
+    def with_chat_rate_limit_duration(self, value: int) -> ModelsConfigExport:
         self.chat_rate_limit_duration = value
         return self
 
-    def with_concurrent_users_limit(
-        self, value: int
-    ) -> ModelsConfigExport:
+    def with_concurrent_users_limit(self, value: int) -> ModelsConfigExport:
         self.concurrent_users_limit = value
         return self
 
-    def with_general_rate_limit_burst(
-        self, value: int
-    ) -> ModelsConfigExport:
+    def with_general_rate_limit_burst(self, value: int) -> ModelsConfigExport:
         self.general_rate_limit_burst = value
         return self
 
-    def with_general_rate_limit_duration(
-        self, value: int
-    ) -> ModelsConfigExport:
+    def with_general_rate_limit_duration(self, value: int) -> ModelsConfigExport:
         self.general_rate_limit_duration = value
         return self
 
-    def with_namespace(
-        self, value: str
-    ) -> ModelsConfigExport:
+    def with_namespace(self, value: str) -> ModelsConfigExport:
         self.namespace = value
         return self
 
-    def with_enable_clan_chat(
-        self, value: bool
-    ) -> ModelsConfigExport:
+    def with_enable_clan_chat(self, value: bool) -> ModelsConfigExport:
         self.enable_clan_chat = value
         return self
 
-    def with_enable_manual_topic_creation(
-        self, value: bool
-    ) -> ModelsConfigExport:
+    def with_enable_manual_topic_creation(self, value: bool) -> ModelsConfigExport:
         self.enable_manual_topic_creation = value
         return self
 
-    def with_enable_profanity_filter(
-        self, value: bool
-    ) -> ModelsConfigExport:
+    def with_enable_profanity_filter(self, value: bool) -> ModelsConfigExport:
         self.enable_profanity_filter = value
         return self
 
-    def with_filter_app_name(
-        self, value: str
-    ) -> ModelsConfigExport:
+    def with_filter_app_name(self, value: str) -> ModelsConfigExport:
         self.filter_app_name = value
         return self
 
-    def with_filter_param(
-        self, value: str
-    ) -> ModelsConfigExport:
+    def with_filter_param(self, value: str) -> ModelsConfigExport:
         self.filter_param = value
         return self
 
-    def with_filter_type(
-        self, value: str
-    ) -> ModelsConfigExport:
+    def with_filter_type(self, value: str) -> ModelsConfigExport:
         self.filter_type = value
         return self
 
-    def with_shard_capacity_limit(
-        self, value: int
-    ) -> ModelsConfigExport:
+    def with_shard_capacity_limit(self, value: int) -> ModelsConfigExport:
         self.shard_capacity_limit = value
         return self
 
-    def with_shard_default_limit(
-        self, value: int
-    ) -> ModelsConfigExport:
+    def with_shard_default_limit(self, value: int) -> ModelsConfigExport:
         self.shard_default_limit = value
         return self
 
-    def with_shard_hard_limit(
-        self, value: int
-    ) -> ModelsConfigExport:
+    def with_shard_hard_limit(self, value: int) -> ModelsConfigExport:
         self.shard_hard_limit = value
         return self
 
-    def with_spam_chat_burst(
-        self, value: int
-    ) -> ModelsConfigExport:
+    def with_spam_chat_burst(self, value: int) -> ModelsConfigExport:
         self.spam_chat_burst = value
         return self
 
-    def with_spam_chat_duration(
-        self, value: int
-    ) -> ModelsConfigExport:
+    def with_spam_chat_duration(self, value: int) -> ModelsConfigExport:
         self.spam_chat_duration = value
         return self
 
-    def with_spam_mute_duration(
-        self, value: int
-    ) -> ModelsConfigExport:
+    def with_spam_mute_duration(self, value: int) -> ModelsConfigExport:
         self.spam_mute_duration = value
         return self
 
@@ -238,7 +201,9 @@ class ModelsConfigExport(Model):
         elif include_empty:
             result["enableClanChat"] = False
         if hasattr(self, "enable_manual_topic_creation"):
-            result["enableManualTopicCreation"] = bool(self.enable_manual_topic_creation)
+            result["enableManualTopicCreation"] = bool(
+                self.enable_manual_topic_creation
+            )
         elif include_empty:
             result["enableManualTopicCreation"] = False
         if hasattr(self, "enable_profanity_filter"):
@@ -308,7 +273,7 @@ class ModelsConfigExport(Model):
         spam_chat_burst: Optional[int] = None,
         spam_chat_duration: Optional[int] = None,
         spam_mute_duration: Optional[int] = None,
-        **kwargs
+        **kwargs,
     ) -> ModelsConfigExport:
         instance = cls()
         instance.chat_rate_limit_burst = chat_rate_limit_burst
@@ -354,20 +319,34 @@ class ModelsConfigExport(Model):
             instance.chat_rate_limit_burst = int(dict_["chatRateLimitBurst"])
         elif include_empty:
             instance.chat_rate_limit_burst = 0
-        if "chatRateLimitDuration" in dict_ and dict_["chatRateLimitDuration"] is not None:
+        if (
+            "chatRateLimitDuration" in dict_
+            and dict_["chatRateLimitDuration"] is not None
+        ):
             instance.chat_rate_limit_duration = int(dict_["chatRateLimitDuration"])
         elif include_empty:
             instance.chat_rate_limit_duration = 0
-        if "concurrentUsersLimit" in dict_ and dict_["concurrentUsersLimit"] is not None:
+        if (
+            "concurrentUsersLimit" in dict_
+            and dict_["concurrentUsersLimit"] is not None
+        ):
             instance.concurrent_users_limit = int(dict_["concurrentUsersLimit"])
         elif include_empty:
             instance.concurrent_users_limit = 0
-        if "generalRateLimitBurst" in dict_ and dict_["generalRateLimitBurst"] is not None:
+        if (
+            "generalRateLimitBurst" in dict_
+            and dict_["generalRateLimitBurst"] is not None
+        ):
             instance.general_rate_limit_burst = int(dict_["generalRateLimitBurst"])
         elif include_empty:
             instance.general_rate_limit_burst = 0
-        if "generalRateLimitDuration" in dict_ and dict_["generalRateLimitDuration"] is not None:
-            instance.general_rate_limit_duration = int(dict_["generalRateLimitDuration"])
+        if (
+            "generalRateLimitDuration" in dict_
+            and dict_["generalRateLimitDuration"] is not None
+        ):
+            instance.general_rate_limit_duration = int(
+                dict_["generalRateLimitDuration"]
+            )
         elif include_empty:
             instance.general_rate_limit_duration = 0
         if "namespace" in dict_ and dict_["namespace"] is not None:
@@ -378,11 +357,19 @@ class ModelsConfigExport(Model):
             instance.enable_clan_chat = bool(dict_["enableClanChat"])
         elif include_empty:
             instance.enable_clan_chat = False
-        if "enableManualTopicCreation" in dict_ and dict_["enableManualTopicCreation"] is not None:
-            instance.enable_manual_topic_creation = bool(dict_["enableManualTopicCreation"])
+        if (
+            "enableManualTopicCreation" in dict_
+            and dict_["enableManualTopicCreation"] is not None
+        ):
+            instance.enable_manual_topic_creation = bool(
+                dict_["enableManualTopicCreation"]
+            )
         elif include_empty:
             instance.enable_manual_topic_creation = False
-        if "enableProfanityFilter" in dict_ and dict_["enableProfanityFilter"] is not None:
+        if (
+            "enableProfanityFilter" in dict_
+            and dict_["enableProfanityFilter"] is not None
+        ):
             instance.enable_profanity_filter = bool(dict_["enableProfanityFilter"])
         elif include_empty:
             instance.enable_profanity_filter = False
@@ -448,9 +435,7 @@ class ModelsConfigExport(Model):
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
     ) -> Union[
-        ModelsConfigExport,
-        List[ModelsConfigExport],
-        Dict[Any, ModelsConfigExport]
+        ModelsConfigExport, List[ModelsConfigExport], Dict[Any, ModelsConfigExport]
     ]:
         if many:
             if isinstance(any_, dict):
@@ -507,7 +492,5 @@ class ModelsConfigExport(Model):
             "spamChatDuration": False,
             "spamMuteDuration": False,
         }
-
-
 
     # endregion static methods

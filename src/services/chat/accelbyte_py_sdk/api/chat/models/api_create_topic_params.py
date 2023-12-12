@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ApiCreateTopicParams(Model):
     """Api create topic params (api.CreateTopicParams)
 
@@ -65,51 +64,35 @@ class ApiCreateTopicParams(Model):
 
     # region with_x methods
 
-    def with_admins(
-        self, value: List[str]
-    ) -> ApiCreateTopicParams:
+    def with_admins(self, value: List[str]) -> ApiCreateTopicParams:
         self.admins = value
         return self
 
-    def with_description(
-        self, value: str
-    ) -> ApiCreateTopicParams:
+    def with_description(self, value: str) -> ApiCreateTopicParams:
         self.description = value
         return self
 
-    def with_is_channel(
-        self, value: bool
-    ) -> ApiCreateTopicParams:
+    def with_is_channel(self, value: bool) -> ApiCreateTopicParams:
         self.is_channel = value
         return self
 
-    def with_is_joinable(
-        self, value: bool
-    ) -> ApiCreateTopicParams:
+    def with_is_joinable(self, value: bool) -> ApiCreateTopicParams:
         self.is_joinable = value
         return self
 
-    def with_members(
-        self, value: List[str]
-    ) -> ApiCreateTopicParams:
+    def with_members(self, value: List[str]) -> ApiCreateTopicParams:
         self.members = value
         return self
 
-    def with_name(
-        self, value: str
-    ) -> ApiCreateTopicParams:
+    def with_name(self, value: str) -> ApiCreateTopicParams:
         self.name = value
         return self
 
-    def with_type(
-        self, value: str
-    ) -> ApiCreateTopicParams:
+    def with_type(self, value: str) -> ApiCreateTopicParams:
         self.type_ = value
         return self
 
-    def with_shard_limit(
-        self, value: int
-    ) -> ApiCreateTopicParams:
+    def with_shard_limit(self, value: int) -> ApiCreateTopicParams:
         self.shard_limit = value
         return self
 
@@ -168,7 +151,7 @@ class ApiCreateTopicParams(Model):
         name: str,
         type_: str,
         shard_limit: Optional[int] = None,
-        **kwargs
+        **kwargs,
     ) -> ApiCreateTopicParams:
         instance = cls()
         instance.admins = admins
@@ -249,7 +232,7 @@ class ApiCreateTopicParams(Model):
     ) -> Union[
         ApiCreateTopicParams,
         List[ApiCreateTopicParams],
-        Dict[Any, ApiCreateTopicParams]
+        Dict[Any, ApiCreateTopicParams],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -286,7 +269,5 @@ class ApiCreateTopicParams(Model):
             "type": True,
             "shardLimit": False,
         }
-
-
 
     # endregion static methods

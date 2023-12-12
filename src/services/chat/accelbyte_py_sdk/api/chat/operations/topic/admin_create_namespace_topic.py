@@ -33,40 +33,39 @@ from ...models import ApiCreateNamespaceTopicParams
 from ...models import ApiCreateTopicResponse
 
 
-
 class AdminCreateNamespaceTopic(Operation):
     """Use to create namespace group. Message that send to this group send to connected user in a namespace (adminCreateNamespaceTopic)
 
-Create new namespace group topic in a namespace.
+    Create new namespace group topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/namespace-topic
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/namespace-topic
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ApiCreateNamespaceTopicParams in body
+        body: (body) REQUIRED ApiCreateNamespaceTopicParams in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ApiCreateTopicResponse
+    Responses:
+        200: OK - ApiCreateTopicResponse
     """
 
     # region fields
 
     _url: str = "/chat/admin/namespaces/{namespace}/namespace-topic"
     _method: str = "POST"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     body: ApiCreateNamespaceTopicParams  # REQUIRED in [body]
@@ -118,6 +117,7 @@ Responses:
         if not hasattr(self, "body") or self.body is None:
             return None
         return self.body.to_dict()
+
     def get_path_params(self) -> dict:
         result = {}
         if hasattr(self, "namespace"):
@@ -132,7 +132,9 @@ Responses:
 
     # region with_x methods
 
-    def with_body(self, value: ApiCreateNamespaceTopicParams) -> AdminCreateNamespaceTopic:
+    def with_body(
+        self, value: ApiCreateNamespaceTopicParams
+    ) -> AdminCreateNamespaceTopic:
         self.body = value
         return self
 
@@ -161,7 +163,9 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, ApiCreateTopicResponse], Union[None, HttpResponse]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[Union[None, ApiCreateTopicResponse], Union[None, HttpResponse]]:
         """Parse the given response.
 
         200: OK - ApiCreateTopicResponse
@@ -192,10 +196,7 @@ Responses:
 
     @classmethod
     def create(
-        cls,
-        body: ApiCreateNamespaceTopicParams,
-        namespace: str,
-        **kwargs
+        cls, body: ApiCreateNamespaceTopicParams, namespace: str, **kwargs
     ) -> AdminCreateNamespaceTopic:
         instance = cls()
         instance.body = body
@@ -208,7 +209,9 @@ Responses:
     ) -> AdminCreateNamespaceTopic:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = ApiCreateNamespaceTopicParams.create_from_dict(dict_["body"], include_empty=include_empty)
+            instance.body = ApiCreateNamespaceTopicParams.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
         elif include_empty:
             instance.body = ApiCreateNamespaceTopicParams()
         if "namespace" in dict_ and dict_["namespace"] is not None:

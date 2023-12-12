@@ -32,6 +32,7 @@ from accelbyte_py_sdk.core import StrEnum
 class DriverEnum(StrEnum):
     KAFKA = "KAFKA"
 
+
 class ModelsCategoryHook(Model):
     """Models category hook (models.CategoryHook)
 
@@ -50,15 +51,11 @@ class ModelsCategoryHook(Model):
 
     # region with_x methods
 
-    def with_driver(
-        self, value: Union[str, DriverEnum]
-    ) -> ModelsCategoryHook:
+    def with_driver(self, value: Union[str, DriverEnum]) -> ModelsCategoryHook:
         self.driver = value
         return self
 
-    def with_params(
-        self, value: str
-    ) -> ModelsCategoryHook:
+    def with_params(self, value: str) -> ModelsCategoryHook:
         self.params = value
         return self
 
@@ -84,10 +81,7 @@ class ModelsCategoryHook(Model):
 
     @classmethod
     def create(
-        cls,
-        driver: Union[str, DriverEnum],
-        params: str,
-        **kwargs
+        cls, driver: Union[str, DriverEnum], params: str, **kwargs
     ) -> ModelsCategoryHook:
         instance = cls()
         instance.driver = driver
@@ -135,9 +129,7 @@ class ModelsCategoryHook(Model):
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
     ) -> Union[
-        ModelsCategoryHook,
-        List[ModelsCategoryHook],
-        Dict[Any, ModelsCategoryHook]
+        ModelsCategoryHook, List[ModelsCategoryHook], Dict[Any, ModelsCategoryHook]
     ]:
         if many:
             if isinstance(any_, dict):
@@ -168,6 +160,5 @@ class ModelsCategoryHook(Model):
         return {
             "driver": ["KAFKA"],
         }
-
 
     # endregion static methods

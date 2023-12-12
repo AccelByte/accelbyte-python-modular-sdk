@@ -30,7 +30,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsJSONSchemaType(Model, MutableMapping):
     """Models JSON schema type (models.JSONSchemaType)
 
@@ -73,11 +72,7 @@ class ModelsJSONSchemaType(Model, MutableMapping):
     # region static methods
 
     @classmethod
-    def create(
-        cls,
-        dict_: Optional[dict] = None,
-        **kwargs
-    ) -> ModelsJSONSchemaType:
+    def create(cls, dict_: Optional[dict] = None, **kwargs) -> ModelsJSONSchemaType:
         instance = cls()
         if dict_ is not None:
             instance.store = copy.deepcopy(dict_)
@@ -119,7 +114,7 @@ class ModelsJSONSchemaType(Model, MutableMapping):
     ) -> Union[
         ModelsJSONSchemaType,
         List[ModelsJSONSchemaType],
-        Dict[Any, ModelsJSONSchemaType]
+        Dict[Any, ModelsJSONSchemaType],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -133,14 +128,10 @@ class ModelsJSONSchemaType(Model, MutableMapping):
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
-        return {
-        }
+        return {}
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
-        return {
-        }
-
-
+        return {}
 
     # endregion static methods

@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class MessageActionDeleteTopicResult(Model):
     """Message action delete topic result (message.ActionDeleteTopicResult)
 
@@ -47,15 +46,11 @@ class MessageActionDeleteTopicResult(Model):
 
     # region with_x methods
 
-    def with_processed(
-        self, value: int
-    ) -> MessageActionDeleteTopicResult:
+    def with_processed(self, value: int) -> MessageActionDeleteTopicResult:
         self.processed = value
         return self
 
-    def with_topic_id(
-        self, value: str
-    ) -> MessageActionDeleteTopicResult:
+    def with_topic_id(self, value: str) -> MessageActionDeleteTopicResult:
         self.topic_id = value
         return self
 
@@ -81,10 +76,7 @@ class MessageActionDeleteTopicResult(Model):
 
     @classmethod
     def create(
-        cls,
-        processed: int,
-        topic_id: str,
-        **kwargs
+        cls, processed: int, topic_id: str, **kwargs
     ) -> MessageActionDeleteTopicResult:
         instance = cls()
         instance.processed = processed
@@ -134,7 +126,7 @@ class MessageActionDeleteTopicResult(Model):
     ) -> Union[
         MessageActionDeleteTopicResult,
         List[MessageActionDeleteTopicResult],
-        Dict[Any, MessageActionDeleteTopicResult]
+        Dict[Any, MessageActionDeleteTopicResult],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -159,7 +151,5 @@ class MessageActionDeleteTopicResult(Model):
             "processed": True,
             "topicId": True,
         }
-
-
 
     # endregion static methods

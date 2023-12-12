@@ -45,9 +45,7 @@ class ModelsConfigList(Model):
 
     # region with_x methods
 
-    def with_configs(
-        self, value: List[ModelsConfig]
-    ) -> ModelsConfigList:
+    def with_configs(self, value: List[ModelsConfig]) -> ModelsConfigList:
         self.configs = value
         return self
 
@@ -58,7 +56,9 @@ class ModelsConfigList(Model):
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
         if hasattr(self, "configs"):
-            result["configs"] = [i0.to_dict(include_empty=include_empty) for i0 in self.configs]
+            result["configs"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.configs
+            ]
         elif include_empty:
             result["configs"] = []
         return result
@@ -68,11 +68,7 @@ class ModelsConfigList(Model):
     # region static methods
 
     @classmethod
-    def create(
-        cls,
-        configs: List[ModelsConfig],
-        **kwargs
-    ) -> ModelsConfigList:
+    def create(cls, configs: List[ModelsConfig], **kwargs) -> ModelsConfigList:
         instance = cls()
         instance.configs = configs
         return instance
@@ -85,7 +81,10 @@ class ModelsConfigList(Model):
         if not dict_:
             return instance
         if "configs" in dict_ and dict_["configs"] is not None:
-            instance.configs = [ModelsConfig.create_from_dict(i0, include_empty=include_empty) for i0 in dict_["configs"]]
+            instance.configs = [
+                ModelsConfig.create_from_dict(i0, include_empty=include_empty)
+                for i0 in dict_["configs"]
+            ]
         elif include_empty:
             instance.configs = []
         return instance
@@ -113,11 +112,7 @@ class ModelsConfigList(Model):
     @classmethod
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[
-        ModelsConfigList,
-        List[ModelsConfigList],
-        Dict[Any, ModelsConfigList]
-    ]:
+    ) -> Union[ModelsConfigList, List[ModelsConfigList], Dict[Any, ModelsConfigList]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -139,7 +134,5 @@ class ModelsConfigList(Model):
         return {
             "configs": True,
         }
-
-
 
     # endregion static methods

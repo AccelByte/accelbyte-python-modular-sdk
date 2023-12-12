@@ -33,40 +33,39 @@ from ...models import ApiCreateTopicParams
 from ...models import ApiCreateTopicResponse
 
 
-
 class AdminCreateTopic(Operation):
     """Use to create group. Only group admin can use this operation (adminCreateTopic)
 
-Create new group topic in a namespace.
+    Create new group topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic
 
-    method: POST
+        method: POST
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ApiCreateTopicParams in body
+        body: (body) REQUIRED ApiCreateTopicParams in body
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ApiCreateTopicResponse
+    Responses:
+        200: OK - ApiCreateTopicResponse
     """
 
     # region fields
 
     _url: str = "/chat/admin/namespaces/{namespace}/topic"
     _method: str = "POST"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     body: ApiCreateTopicParams  # REQUIRED in [body]
@@ -118,6 +117,7 @@ Responses:
         if not hasattr(self, "body") or self.body is None:
             return None
         return self.body.to_dict()
+
     def get_path_params(self) -> dict:
         result = {}
         if hasattr(self, "namespace"):
@@ -161,7 +161,9 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, ApiCreateTopicResponse], Union[None, HttpResponse]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[Union[None, ApiCreateTopicResponse], Union[None, HttpResponse]]:
         """Parse the given response.
 
         200: OK - ApiCreateTopicResponse
@@ -192,10 +194,7 @@ Responses:
 
     @classmethod
     def create(
-        cls,
-        body: ApiCreateTopicParams,
-        namespace: str,
-        **kwargs
+        cls, body: ApiCreateTopicParams, namespace: str, **kwargs
     ) -> AdminCreateTopic:
         instance = cls()
         instance.body = body
@@ -208,7 +207,9 @@ Responses:
     ) -> AdminCreateTopic:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = ApiCreateTopicParams.create_from_dict(dict_["body"], include_empty=include_empty)
+            instance.body = ApiCreateTopicParams.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
         elif include_empty:
             instance.body = ApiCreateTopicParams()
         if "namespace" in dict_ and dict_["namespace"] is not None:

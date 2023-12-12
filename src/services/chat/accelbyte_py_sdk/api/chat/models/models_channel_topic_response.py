@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsChannelTopicResponse(Model):
     """Models channel topic response (models.ChannelTopicResponse)
 
@@ -74,69 +73,47 @@ class ModelsChannelTopicResponse(Model):
 
     # region with_x methods
 
-    def with_created_at(
-        self, value: int
-    ) -> ModelsChannelTopicResponse:
+    def with_created_at(self, value: int) -> ModelsChannelTopicResponse:
         self.created_at = value
         return self
 
-    def with_created_by(
-        self, value: str
-    ) -> ModelsChannelTopicResponse:
+    def with_created_by(self, value: str) -> ModelsChannelTopicResponse:
         self.created_by = value
         return self
 
-    def with_description(
-        self, value: str
-    ) -> ModelsChannelTopicResponse:
+    def with_description(self, value: str) -> ModelsChannelTopicResponse:
         self.description = value
         return self
 
-    def with_is_joinable(
-        self, value: bool
-    ) -> ModelsChannelTopicResponse:
+    def with_is_joinable(self, value: bool) -> ModelsChannelTopicResponse:
         self.is_joinable = value
         return self
 
-    def with_message_per_minutes(
-        self, value: float
-    ) -> ModelsChannelTopicResponse:
+    def with_message_per_minutes(self, value: float) -> ModelsChannelTopicResponse:
         self.message_per_minutes = value
         return self
 
-    def with_name(
-        self, value: str
-    ) -> ModelsChannelTopicResponse:
+    def with_name(self, value: str) -> ModelsChannelTopicResponse:
         self.name = value
         return self
 
-    def with_namespace(
-        self, value: str
-    ) -> ModelsChannelTopicResponse:
+    def with_namespace(self, value: str) -> ModelsChannelTopicResponse:
         self.namespace = value
         return self
 
-    def with_shard_limit(
-        self, value: int
-    ) -> ModelsChannelTopicResponse:
+    def with_shard_limit(self, value: int) -> ModelsChannelTopicResponse:
         self.shard_limit = value
         return self
 
-    def with_shard_number(
-        self, value: int
-    ) -> ModelsChannelTopicResponse:
+    def with_shard_number(self, value: int) -> ModelsChannelTopicResponse:
         self.shard_number = value
         return self
 
-    def with_topic_id(
-        self, value: str
-    ) -> ModelsChannelTopicResponse:
+    def with_topic_id(self, value: str) -> ModelsChannelTopicResponse:
         self.topic_id = value
         return self
 
-    def with_total_member(
-        self, value: int
-    ) -> ModelsChannelTopicResponse:
+    def with_total_member(self, value: int) -> ModelsChannelTopicResponse:
         self.total_member = value
         return self
 
@@ -210,7 +187,7 @@ class ModelsChannelTopicResponse(Model):
         shard_number: int,
         topic_id: str,
         total_member: int,
-        **kwargs
+        **kwargs,
     ) -> ModelsChannelTopicResponse:
         instance = cls()
         instance.created_at = created_at
@@ -305,7 +282,7 @@ class ModelsChannelTopicResponse(Model):
     ) -> Union[
         ModelsChannelTopicResponse,
         List[ModelsChannelTopicResponse],
-        Dict[Any, ModelsChannelTopicResponse]
+        Dict[Any, ModelsChannelTopicResponse],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -348,7 +325,5 @@ class ModelsChannelTopicResponse(Model):
             "topicId": True,
             "totalMember": True,
         }
-
-
 
     # endregion static methods

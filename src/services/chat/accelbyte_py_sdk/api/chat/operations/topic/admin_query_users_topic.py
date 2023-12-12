@@ -33,12 +33,15 @@ from accelbyte_py_sdk.core import StrEnum
 from ...models import ModelsTopicLogWithPaginationResponse
 from ...models import RestapiErrorResponseBody
 
+
 class TopicSubTypeEnum(StrEnum):
     CLAN = "CLAN"
     NAMESPACE = "NAMESPACE"
     NORMAL = "NORMAL"
     PARTY = "PARTY"
     SESSION = "SESSION"
+
+
 class TopicTypeEnum(StrEnum):
     GROUP = "GROUP"
     PERSONAL = "PERSONAL"
@@ -47,54 +50,54 @@ class TopicTypeEnum(StrEnum):
 class AdminQueryUsersTopic(Operation):
     """admin query user's topics (adminQueryUsersTopic)
 
-Get user's topics in a namespace.
+    Get user's topics in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/users/{userId}/topics
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/users/{userId}/topics
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    user_id: (userId) REQUIRED str in path
+        user_id: (userId) REQUIRED str in path
 
-    include_past_topics: (includePastTopics) OPTIONAL bool in query
+        include_past_topics: (includePastTopics) OPTIONAL bool in query
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    topic_sub_type: (topicSubType) OPTIONAL Union[str, TopicSubTypeEnum] in query
+        topic_sub_type: (topicSubType) OPTIONAL Union[str, TopicSubTypeEnum] in query
 
-    topic_type: (topicType) OPTIONAL Union[str, TopicTypeEnum] in query
+        topic_type: (topicType) OPTIONAL Union[str, TopicTypeEnum] in query
 
-Responses:
-    200: OK - ModelsTopicLogWithPaginationResponse (OK)
+    Responses:
+        200: OK - ModelsTopicLogWithPaginationResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
 
     # region fields
 
     _url: str = "/chat/admin/namespaces/{namespace}/users/{userId}/topics"
     _method: str = "GET"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     namespace: str  # REQUIRED in [path]
@@ -154,6 +157,7 @@ Responses:
         if hasattr(self, "user_id"):
             result["userId"] = self.user_id
         return result
+
     def get_query_params(self) -> dict:
         result = {}
         if hasattr(self, "include_past_topics"):
@@ -196,7 +200,9 @@ Responses:
         self.offset = value
         return self
 
-    def with_topic_sub_type(self, value: Union[str, TopicSubTypeEnum]) -> AdminQueryUsersTopic:
+    def with_topic_sub_type(
+        self, value: Union[str, TopicSubTypeEnum]
+    ) -> AdminQueryUsersTopic:
         self.topic_sub_type = value
         return self
 
@@ -245,7 +251,12 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, ModelsTopicLogWithPaginationResponse], Union[None, HttpResponse, RestapiErrorResponseBody]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, ModelsTopicLogWithPaginationResponse],
+        Union[None, HttpResponse, RestapiErrorResponseBody],
+    ]:
         """Parse the given response.
 
         200: OK - ModelsTopicLogWithPaginationResponse (OK)
@@ -300,7 +311,7 @@ Responses:
         offset: Optional[int] = None,
         topic_sub_type: Optional[Union[str, TopicSubTypeEnum]] = None,
         topic_type: Optional[Union[str, TopicTypeEnum]] = None,
-        **kwargs
+        **kwargs,
     ) -> AdminQueryUsersTopic:
         instance = cls()
         instance.namespace = namespace
@@ -379,7 +390,13 @@ Responses:
     @staticmethod
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
-            "topicSubType": ["CLAN", "NAMESPACE", "NORMAL", "PARTY", "SESSION"],  # in query
+            "topicSubType": [
+                "CLAN",
+                "NAMESPACE",
+                "NORMAL",
+                "PARTY",
+                "SESSION",
+            ],  # in query
             "topicType": ["GROUP", "PERSONAL"],  # in query
         }
 

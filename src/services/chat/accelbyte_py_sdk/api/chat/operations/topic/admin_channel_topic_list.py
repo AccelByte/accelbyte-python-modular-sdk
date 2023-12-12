@@ -33,52 +33,51 @@ from ...models import ModelsChannelTopicWithPaginationResponse
 from ...models import RestapiErrorResponseBody
 
 
-
 class AdminChannelTopicList(Operation):
     """admin get list of channel topic (adminChannelTopicList)
 
-Get channel chat list of topic in a namespace.
+    Get channel chat list of topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic/channel
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic/channel
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    topic_name: (topicName) OPTIONAL str in query
+        topic_name: (topicName) OPTIONAL str in query
 
-Responses:
-    200: OK - ModelsChannelTopicWithPaginationResponse (OK)
+    Responses:
+        200: OK - ModelsChannelTopicWithPaginationResponse (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
 
     # region fields
 
     _url: str = "/chat/admin/namespaces/{namespace}/topic/channel"
     _method: str = "GET"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     namespace: str  # REQUIRED in [path]
@@ -133,6 +132,7 @@ Responses:
         if hasattr(self, "namespace"):
             result["namespace"] = self.namespace
         return result
+
     def get_query_params(self) -> dict:
         result = {}
         if hasattr(self, "limit"):
@@ -196,7 +196,12 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, ModelsChannelTopicWithPaginationResponse], Union[None, HttpResponse, RestapiErrorResponseBody]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, ModelsChannelTopicWithPaginationResponse],
+        Union[None, HttpResponse, RestapiErrorResponseBody],
+    ]:
         """Parse the given response.
 
         200: OK - ModelsChannelTopicWithPaginationResponse (OK)
@@ -223,7 +228,10 @@ Responses:
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return ModelsChannelTopicWithPaginationResponse.create_from_dict(content), None
+            return (
+                ModelsChannelTopicWithPaginationResponse.create_from_dict(content),
+                None,
+            )
         if code == 400:
             return None, RestapiErrorResponseBody.create_from_dict(content)
         if code == 401:
@@ -248,7 +256,7 @@ Responses:
         limit: Optional[int] = None,
         offset: Optional[int] = None,
         topic_name: Optional[str] = None,
-        **kwargs
+        **kwargs,
     ) -> AdminChannelTopicList:
         instance = cls()
         instance.namespace = namespace

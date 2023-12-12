@@ -33,6 +33,7 @@ from accelbyte_py_sdk.core import StrEnum
 from ...models import ModelsDictionaryImportResult
 from ...models import RestapiErrorResponseBody
 
+
 class ActionEnum(StrEnum):
     FULLREPLACE = "FULLREPLACE"
     LEAVEOUT = "LEAVEOUT"
@@ -42,50 +43,50 @@ class ActionEnum(StrEnum):
 class AdminProfanityImport(Operation):
     """admin import profanity words (adminProfanityImport)
 
-Import profanity words
+    Import profanity words
 
-Properties:
-    url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/import
+    Properties:
+        url: /chat/v1/admin/profanity/namespaces/{namespace}/dictionary/import
 
-    method: POST
+        method: POST
 
-    tags: ["profanity"]
+        tags: ["profanity"]
 
-    consumes: ["multipart/form-data"]
+        consumes: ["multipart/form-data"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    file: (file) REQUIRED Any in form_data
+        file: (file) REQUIRED Any in form_data
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    action: (action) OPTIONAL Union[str, ActionEnum] in query
+        action: (action) OPTIONAL Union[str, ActionEnum] in query
 
-    show_result: (showResult) OPTIONAL bool in query
+        show_result: (showResult) OPTIONAL bool in query
 
-Responses:
-    200: OK - ModelsDictionaryImportResult (returned when showResult=true)
+    Responses:
+        200: OK - ModelsDictionaryImportResult (returned when showResult=true)
 
-    204: No Content - (No Content returned when showResult=false or not defined)
+        204: No Content - (No Content returned when showResult=false or not defined)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
 
     # region fields
 
     _url: str = "/chat/v1/admin/profanity/namespaces/{namespace}/dictionary/import"
     _method: str = "POST"
-    _consumes: List[str] = ['multipart/form-data']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["multipart/form-data"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     file: Any  # REQUIRED in [form_data]
@@ -141,11 +142,13 @@ Responses:
         if hasattr(self, "file"):
             result["file"] = self.file
         return result
+
     def get_path_params(self) -> dict:
         result = {}
         if hasattr(self, "namespace"):
             result["namespace"] = self.namespace
         return result
+
     def get_query_params(self) -> dict:
         result = {}
         if hasattr(self, "action"):
@@ -207,7 +210,12 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, ModelsDictionaryImportResult], Union[None, HttpResponse, RestapiErrorResponseBody]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, ModelsDictionaryImportResult],
+        Union[None, HttpResponse, RestapiErrorResponseBody],
+    ]:
         """Parse the given response.
 
         200: OK - ModelsDictionaryImportResult (returned when showResult=true)
@@ -263,7 +271,7 @@ Responses:
         namespace: str,
         action: Optional[Union[str, ActionEnum]] = None,
         show_result: Optional[bool] = None,
-        **kwargs
+        **kwargs,
     ) -> AdminProfanityImport:
         instance = cls()
         instance.file = file

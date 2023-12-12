@@ -33,52 +33,51 @@ from ...models import ModelsTopicResponse
 from ...models import RestapiErrorResponseBody
 
 
-
 class AdminTopicList(Operation):
     """admin get list of topic (adminTopicList)
 
-Get chat list of topic in a namespace.
+    Get chat list of topic in a namespace.
 
-Properties:
-    url: /chat/admin/namespaces/{namespace}/topic
+    Properties:
+        url: /chat/admin/namespaces/{namespace}/topic
 
-    method: GET
+        method: GET
 
-    tags: ["topic"]
+        tags: ["topic"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-    limit: (limit) OPTIONAL int in query
+        limit: (limit) OPTIONAL int in query
 
-    offset: (offset) OPTIONAL int in query
+        offset: (offset) OPTIONAL int in query
 
-    topic_type: (topicType) OPTIONAL str in query
+        topic_type: (topicType) OPTIONAL str in query
 
-Responses:
-    200: OK - List[ModelsTopicResponse] (OK)
+    Responses:
+        200: OK - List[ModelsTopicResponse] (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
 
     # region fields
 
     _url: str = "/chat/admin/namespaces/{namespace}/topic"
     _method: str = "GET"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     namespace: str  # REQUIRED in [path]
@@ -133,6 +132,7 @@ Responses:
         if hasattr(self, "namespace"):
             result["namespace"] = self.namespace
         return result
+
     def get_query_params(self) -> dict:
         result = {}
         if hasattr(self, "limit"):
@@ -196,7 +196,12 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, List[ModelsTopicResponse]], Union[None, HttpResponse, RestapiErrorResponseBody]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, List[ModelsTopicResponse]],
+        Union[None, HttpResponse, RestapiErrorResponseBody],
+    ]:
         """Parse the given response.
 
         200: OK - List[ModelsTopicResponse] (OK)
@@ -248,7 +253,7 @@ Responses:
         limit: Optional[int] = None,
         offset: Optional[int] = None,
         topic_type: Optional[str] = None,
-        **kwargs
+        **kwargs,
     ) -> AdminTopicList:
         instance = cls()
         instance.namespace = namespace

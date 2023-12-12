@@ -63,27 +63,19 @@ class ModelsGetInboxCategoriesResponseItem(Model):
 
     # region with_x methods
 
-    def with_enabled(
-        self, value: bool
-    ) -> ModelsGetInboxCategoriesResponseItem:
+    def with_enabled(self, value: bool) -> ModelsGetInboxCategoriesResponseItem:
         self.enabled = value
         return self
 
-    def with_expires_in(
-        self, value: int
-    ) -> ModelsGetInboxCategoriesResponseItem:
+    def with_expires_in(self, value: int) -> ModelsGetInboxCategoriesResponseItem:
         self.expires_in = value
         return self
 
-    def with_name(
-        self, value: str
-    ) -> ModelsGetInboxCategoriesResponseItem:
+    def with_name(self, value: str) -> ModelsGetInboxCategoriesResponseItem:
         self.name = value
         return self
 
-    def with_save_inbox(
-        self, value: bool
-    ) -> ModelsGetInboxCategoriesResponseItem:
+    def with_save_inbox(self, value: bool) -> ModelsGetInboxCategoriesResponseItem:
         self.save_inbox = value
         return self
 
@@ -155,7 +147,7 @@ class ModelsGetInboxCategoriesResponseItem(Model):
         send_notification: bool,
         hook: Optional[ModelsCategoryHook] = None,
         json_schema: Optional[Dict[str, Any]] = None,
-        **kwargs
+        **kwargs,
     ) -> ModelsGetInboxCategoriesResponseItem:
         instance = cls()
         instance.enabled = enabled
@@ -197,11 +189,15 @@ class ModelsGetInboxCategoriesResponseItem(Model):
         elif include_empty:
             instance.send_notification = False
         if "hook" in dict_ and dict_["hook"] is not None:
-            instance.hook = ModelsCategoryHook.create_from_dict(dict_["hook"], include_empty=include_empty)
+            instance.hook = ModelsCategoryHook.create_from_dict(
+                dict_["hook"], include_empty=include_empty
+            )
         elif include_empty:
             instance.hook = ModelsCategoryHook()
         if "jsonSchema" in dict_ and dict_["jsonSchema"] is not None:
-            instance.json_schema = {str(k0): v0 for k0, v0 in dict_["jsonSchema"].items()}
+            instance.json_schema = {
+                str(k0): v0 for k0, v0 in dict_["jsonSchema"].items()
+            }
         elif include_empty:
             instance.json_schema = {}
         return instance
@@ -232,7 +228,7 @@ class ModelsGetInboxCategoriesResponseItem(Model):
     ) -> Union[
         ModelsGetInboxCategoriesResponseItem,
         List[ModelsGetInboxCategoriesResponseItem],
-        Dict[Any, ModelsGetInboxCategoriesResponseItem]
+        Dict[Any, ModelsGetInboxCategoriesResponseItem],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -267,7 +263,5 @@ class ModelsGetInboxCategoriesResponseItem(Model):
             "hook": False,
             "jsonSchema": False,
         }
-
-
 
     # endregion static methods

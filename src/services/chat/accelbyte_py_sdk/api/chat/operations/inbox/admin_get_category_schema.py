@@ -33,50 +33,51 @@ from ...models import ModelsJSONSchemaType
 from ...models import RestapiErrorResponseBody
 
 
-
 class AdminGetCategorySchema(Operation):
     """admin get category schema (adminGetCategorySchema)
 
-Get category schema.
+    Get category schema.
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}/schema.json
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}/schema.json
 
-    method: GET
+        method: GET
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    category: (category) REQUIRED str in path
+        category: (category) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - ModelsJSONSchemaType (OK)
+    Responses:
+        200: OK - ModelsJSONSchemaType (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    404: Not Found - RestapiErrorResponseBody (Forbidden)
+        404: Not Found - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
 
     # region fields
 
-    _url: str = "/chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}/schema.json"
+    _url: str = (
+        "/chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}/schema.json"
+    )
     _method: str = "GET"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     category: str  # REQUIRED in [path]
@@ -168,7 +169,12 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, ModelsJSONSchemaType], Union[None, HttpResponse, RestapiErrorResponseBody]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, ModelsJSONSchemaType],
+        Union[None, HttpResponse, RestapiErrorResponseBody],
+    ]:
         """Parse the given response.
 
         200: OK - ModelsJSONSchemaType (OK)
@@ -218,12 +224,7 @@ Responses:
     # region static methods
 
     @classmethod
-    def create(
-        cls,
-        category: str,
-        namespace: str,
-        **kwargs
-    ) -> AdminGetCategorySchema:
+    def create(cls, category: str, namespace: str, **kwargs) -> AdminGetCategorySchema:
         instance = cls()
         instance.category = category
         instance.namespace = namespace

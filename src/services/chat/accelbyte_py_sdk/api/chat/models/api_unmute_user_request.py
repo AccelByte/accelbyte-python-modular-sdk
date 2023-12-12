@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ApiUnmuteUserRequest(Model):
     """Api unmute user request (api.UnmuteUserRequest)
 
@@ -44,9 +43,7 @@ class ApiUnmuteUserRequest(Model):
 
     # region with_x methods
 
-    def with_user_id(
-        self, value: str
-    ) -> ApiUnmuteUserRequest:
+    def with_user_id(self, value: str) -> ApiUnmuteUserRequest:
         self.user_id = value
         return self
 
@@ -67,11 +64,7 @@ class ApiUnmuteUserRequest(Model):
     # region static methods
 
     @classmethod
-    def create(
-        cls,
-        user_id: str,
-        **kwargs
-    ) -> ApiUnmuteUserRequest:
+    def create(cls, user_id: str, **kwargs) -> ApiUnmuteUserRequest:
         instance = cls()
         instance.user_id = user_id
         return instance
@@ -115,7 +108,7 @@ class ApiUnmuteUserRequest(Model):
     ) -> Union[
         ApiUnmuteUserRequest,
         List[ApiUnmuteUserRequest],
-        Dict[Any, ApiUnmuteUserRequest]
+        Dict[Any, ApiUnmuteUserRequest],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -138,7 +131,5 @@ class ApiUnmuteUserRequest(Model):
         return {
             "userId": True,
         }
-
-
 
     # endregion static methods

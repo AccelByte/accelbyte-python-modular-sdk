@@ -33,50 +33,49 @@ from ...models import ModelsUpdateInboxCategoryRequest
 from ...models import RestapiErrorResponseBody
 
 
-
 class AdminUpdateInboxCategory(Operation):
     """admin update inbox category (adminUpdateInboxCategory)
 
-Update inbox category
+    Update inbox category
 
-Properties:
-    url: /chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}
+    Properties:
+        url: /chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}
 
-    method: PATCH
+        method: PATCH
 
-    tags: ["inbox"]
+        tags: ["inbox"]
 
-    consumes: ["application/json"]
+        consumes: ["application/json"]
 
-    produces: ["application/json"]
+        produces: ["application/json"]
 
-    securities: [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-    body: (body) REQUIRED ModelsUpdateInboxCategoryRequest in body
+        body: (body) REQUIRED ModelsUpdateInboxCategoryRequest in body
 
-    category: (category) REQUIRED str in path
+        category: (category) REQUIRED str in path
 
-    namespace: (namespace) REQUIRED str in path
+        namespace: (namespace) REQUIRED str in path
 
-Responses:
-    200: OK - (OK)
+    Responses:
+        200: OK - (OK)
 
-    400: Bad Request - RestapiErrorResponseBody (Bad Request)
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
-    401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
-    403: Forbidden - RestapiErrorResponseBody (Forbidden)
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
-    500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
 
     # region fields
 
     _url: str = "/chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}"
     _method: str = "PATCH"
-    _consumes: List[str] = ['application/json']
-    _produces: List[str] = ['application/json']
-    _securities: List[List[str]] =    [['BEARER_AUTH']]
+    _consumes: List[str] = ["application/json"]
+    _produces: List[str] = ["application/json"]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     body: ModelsUpdateInboxCategoryRequest  # REQUIRED in [body]
@@ -129,6 +128,7 @@ Responses:
         if not hasattr(self, "body") or self.body is None:
             return None
         return self.body.to_dict()
+
     def get_path_params(self) -> dict:
         result = {}
         if hasattr(self, "category"):
@@ -145,7 +145,9 @@ Responses:
 
     # region with_x methods
 
-    def with_body(self, value: ModelsUpdateInboxCategoryRequest) -> AdminUpdateInboxCategory:
+    def with_body(
+        self, value: ModelsUpdateInboxCategoryRequest
+    ) -> AdminUpdateInboxCategory:
         self.body = value
         return self
 
@@ -182,7 +184,11 @@ Responses:
     # region response methods
 
     # noinspection PyMethodMayBeStatic
-    def parse_response(self, code: int, content_type: str, content: Any) -> Tuple[Union[None, HttpResponse], Union[None, HttpResponse, RestapiErrorResponseBody]]:
+    def parse_response(
+        self, code: int, content_type: str, content: Any
+    ) -> Tuple[
+        Union[None, HttpResponse], Union[None, HttpResponse, RestapiErrorResponseBody]
+    ]:
         """Parse the given response.
 
         200: OK - (OK)
@@ -233,7 +239,7 @@ Responses:
         body: ModelsUpdateInboxCategoryRequest,
         category: str,
         namespace: str,
-        **kwargs
+        **kwargs,
     ) -> AdminUpdateInboxCategory:
         instance = cls()
         instance.body = body
@@ -247,7 +253,9 @@ Responses:
     ) -> AdminUpdateInboxCategory:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = ModelsUpdateInboxCategoryRequest.create_from_dict(dict_["body"], include_empty=include_empty)
+            instance.body = ModelsUpdateInboxCategoryRequest.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
         elif include_empty:
             instance.body = ModelsUpdateInboxCategoryRequest()
         if "category" in dict_ and dict_["category"] is not None:

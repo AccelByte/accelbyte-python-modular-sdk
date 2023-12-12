@@ -28,7 +28,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-
 class ModelsUserInbox(Model):
     """Models user inbox (models.UserInbox)
 
@@ -50,21 +49,15 @@ class ModelsUserInbox(Model):
 
     # region with_x methods
 
-    def with_keep(
-        self, value: bool
-    ) -> ModelsUserInbox:
+    def with_keep(self, value: bool) -> ModelsUserInbox:
         self.keep = value
         return self
 
-    def with_read_at(
-        self, value: int
-    ) -> ModelsUserInbox:
+    def with_read_at(self, value: int) -> ModelsUserInbox:
         self.read_at = value
         return self
 
-    def with_user_id(
-        self, value: str
-    ) -> ModelsUserInbox:
+    def with_user_id(self, value: str) -> ModelsUserInbox:
         self.user_id = value
         return self
 
@@ -94,11 +87,7 @@ class ModelsUserInbox(Model):
 
     @classmethod
     def create(
-        cls,
-        keep: bool,
-        read_at: int,
-        user_id: str,
-        **kwargs
+        cls, keep: bool, read_at: int, user_id: str, **kwargs
     ) -> ModelsUserInbox:
         instance = cls()
         instance.keep = keep
@@ -150,11 +139,7 @@ class ModelsUserInbox(Model):
     @classmethod
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[
-        ModelsUserInbox,
-        List[ModelsUserInbox],
-        Dict[Any, ModelsUserInbox]
-    ]:
+    ) -> Union[ModelsUserInbox, List[ModelsUserInbox], Dict[Any, ModelsUserInbox]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -180,7 +165,5 @@ class ModelsUserInbox(Model):
             "readAt": True,
             "userId": True,
         }
-
-
 
     # endregion static methods
