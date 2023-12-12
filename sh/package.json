@@ -3,6 +3,7 @@
   "src/services/achievement": "0.2.0",
   "src/services/ams": "0.1.0",
   "src/services/basic": "0.2.0",
+  "src/services/chat": "0.1.0",
   "src/services/cloudsave": "0.2.0",
   "src/services/dslogmanager": "0.1.0",
   "src/services/dsmc": "0.2.0",
