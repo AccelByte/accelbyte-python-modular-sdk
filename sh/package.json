@@ -28,5 +28,5 @@
   "src/services/ugc": "0.2.0",
   "src/features/auth": "0.1.0",
   "src/features/token-validation": "0.1.0",
-  "src/all": "0.1.0"
+  "src/all": "0.2.0"
 }
