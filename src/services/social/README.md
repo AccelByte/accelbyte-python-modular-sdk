@@ -1,10 +1,12 @@
+[//]: # (Code generated. DO NOT EDIT!)
+
 # AccelByte Modular Python SDK - Service Module
 
 This is a service module for the [AccelByte Modular Python SDK](https://github.com/AccelByte/accelbyte-python-modular-sdk) package.
 
 ```text
 AccelByte Gaming Services Social Service
-* Version: 2.10.2
+* Version: 2.11.0
 ```
 
 ## Setup

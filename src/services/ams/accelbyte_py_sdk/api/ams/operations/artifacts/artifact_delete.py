@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# Fleet Commander (1.4.0)
+# Fleet Commander (1.7.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -29,24 +29,23 @@ from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 
-from ...models import ApiFleetArtifactsSampleRulesResponse
 from ...models import ResponseErrorResponse
 
 
-class FleetArtifactSamplingRulesGet(Operation):
-    """Get the sampling rules for a fleet (FleetArtifactSamplingRulesGet)
+class ArtifactDelete(Operation):
+    """Deletes the specified artifact (ArtifactDelete)
 
-    Required Permission: ADMIN:NAMESPACE:{namespace}:AMS:ARTIFACTS [READ]
+    Required Permission: ADMIN:NAMESPACE:{namespace}:AMS:ARTIFACT [DELETE]
 
     Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:AMS:ARTIFACTS [READ]
+        - ADMIN:NAMESPACE:{namespace}:AMS:ARTIFACT [DELETE]
 
     Properties:
-        url: /ams/v1/admin/namespaces/{namespace}/fleets/{fleetID}/artifacts-sampling-rules
+        url: /ams/v1/admin/namespaces/{namespace}/artifacts/{artifactID}
 
-        method: GET
+        method: DELETE
 
-        tags: ["Images"]
+        tags: ["Artifacts"]
 
         consumes: ["application/json"]
 
@@ -54,36 +53,34 @@ class FleetArtifactSamplingRulesGet(Operation):
 
         securities: [BEARER_AUTH]
 
-        fleet_id: (fleetID) REQUIRED str in path
+        artifact_id: (artifactID) REQUIRED str in path
 
         namespace: (namespace) REQUIRED str in path
 
     Responses:
-        200: OK - ApiFleetArtifactsSampleRulesResponse (success)
+        202: Accepted - (delete received)
 
-        400: Bad Request - ResponseErrorResponse (invalid fleet ID)
+        204: No Content - ResponseErrorResponse (no artifact with specifed artifactID)
+
+        400: Bad Request - ResponseErrorResponse (bad request)
 
         401: Unauthorized - ResponseErrorResponse (no authorization provided)
 
         403: Forbidden - ResponseErrorResponse (insufficient permissions)
-
-        404: Not Found - ResponseErrorResponse (artifact sampling rules not found for fleet)
 
         500: Internal Server Error - ResponseErrorResponse (internal server error)
     """
 
     # region fields
 
-    _url: str = (
-        "/ams/v1/admin/namespaces/{namespace}/fleets/{fleetID}/artifacts-sampling-rules"
-    )
-    _method: str = "GET"
+    _url: str = "/ams/v1/admin/namespaces/{namespace}/artifacts/{artifactID}"
+    _method: str = "DELETE"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
-    fleet_id: str  # REQUIRED in [path]
+    artifact_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
 
     # endregion fields
@@ -129,8 +126,8 @@ class FleetArtifactSamplingRulesGet(Operation):
 
     def get_path_params(self) -> dict:
         result = {}
-        if hasattr(self, "fleet_id"):
-            result["fleetID"] = self.fleet_id
+        if hasattr(self, "artifact_id"):
+            result["artifactID"] = self.artifact_id
         if hasattr(self, "namespace"):
             result["namespace"] = self.namespace
         return result
@@ -143,11 +140,11 @@ class FleetArtifactSamplingRulesGet(Operation):
 
     # region with_x methods
 
-    def with_fleet_id(self, value: str) -> FleetArtifactSamplingRulesGet:
-        self.fleet_id = value
+    def with_artifact_id(self, value: str) -> ArtifactDelete:
+        self.artifact_id = value
         return self
 
-    def with_namespace(self, value: str) -> FleetArtifactSamplingRulesGet:
+    def with_namespace(self, value: str) -> ArtifactDelete:
         self.namespace = value
         return self
 
@@ -157,10 +154,10 @@ class FleetArtifactSamplingRulesGet(Operation):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "fleet_id") and self.fleet_id:
-            result["fleetID"] = str(self.fleet_id)
+        if hasattr(self, "artifact_id") and self.artifact_id:
+            result["artifactID"] = str(self.artifact_id)
         elif include_empty:
-            result["fleetID"] = ""
+            result["artifactID"] = ""
         if hasattr(self, "namespace") and self.namespace:
             result["namespace"] = str(self.namespace)
         elif include_empty:
@@ -175,20 +172,19 @@ class FleetArtifactSamplingRulesGet(Operation):
     def parse_response(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
-        Union[None, ApiFleetArtifactsSampleRulesResponse],
-        Union[None, HttpResponse, ResponseErrorResponse],
+        Union[None, HttpResponse], Union[None, HttpResponse, ResponseErrorResponse]
     ]:
         """Parse the given response.
 
-        200: OK - ApiFleetArtifactsSampleRulesResponse (success)
+        202: Accepted - (delete received)
 
-        400: Bad Request - ResponseErrorResponse (invalid fleet ID)
+        204: No Content - ResponseErrorResponse (no artifact with specifed artifactID)
+
+        400: Bad Request - ResponseErrorResponse (bad request)
 
         401: Unauthorized - ResponseErrorResponse (no authorization provided)
 
         403: Forbidden - ResponseErrorResponse (insufficient permissions)
-
-        404: Not Found - ResponseErrorResponse (artifact sampling rules not found for fleet)
 
         500: Internal Server Error - ResponseErrorResponse (internal server error)
 
@@ -205,15 +201,15 @@ class FleetArtifactSamplingRulesGet(Operation):
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
-        if code == 200:
-            return ApiFleetArtifactsSampleRulesResponse.create_from_dict(content), None
+        if code == 202:
+            return HttpResponse.create(code, "Accepted"), None
+        if code == 204:
+            return None, None
         if code == 400:
             return None, ResponseErrorResponse.create_from_dict(content)
         if code == 401:
             return None, ResponseErrorResponse.create_from_dict(content)
         if code == 403:
-            return None, ResponseErrorResponse.create_from_dict(content)
-        if code == 404:
             return None, ResponseErrorResponse.create_from_dict(content)
         if code == 500:
             return None, ResponseErrorResponse.create_from_dict(content)
@@ -227,23 +223,21 @@ class FleetArtifactSamplingRulesGet(Operation):
     # region static methods
 
     @classmethod
-    def create(
-        cls, fleet_id: str, namespace: str, **kwargs
-    ) -> FleetArtifactSamplingRulesGet:
+    def create(cls, artifact_id: str, namespace: str, **kwargs) -> ArtifactDelete:
         instance = cls()
-        instance.fleet_id = fleet_id
+        instance.artifact_id = artifact_id
         instance.namespace = namespace
         return instance
 
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> FleetArtifactSamplingRulesGet:
+    ) -> ArtifactDelete:
         instance = cls()
-        if "fleetID" in dict_ and dict_["fleetID"] is not None:
-            instance.fleet_id = str(dict_["fleetID"])
+        if "artifactID" in dict_ and dict_["artifactID"] is not None:
+            instance.artifact_id = str(dict_["artifactID"])
         elif include_empty:
-            instance.fleet_id = ""
+            instance.artifact_id = ""
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
@@ -253,14 +247,14 @@ class FleetArtifactSamplingRulesGet(Operation):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "fleetID": "fleet_id",
+            "artifactID": "artifact_id",
             "namespace": "namespace",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "fleetID": True,
+            "artifactID": True,
             "namespace": True,
         }
 

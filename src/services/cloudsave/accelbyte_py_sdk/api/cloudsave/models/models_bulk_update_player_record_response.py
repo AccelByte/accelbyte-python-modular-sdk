@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# Fleet Commander (1.4.0)
+# AccelByte Gaming Services Cloudsave Service (3.12.8)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -27,36 +27,39 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
 
-from ..models.api_artifact_sampling_rule_response import ApiArtifactSamplingRuleResponse
 
-
-class ApiArtifactTypeSamplingRulesResponse(Model):
-    """Api artifact type sampling rules response (api.ArtifactTypeSamplingRulesResponse)
+class ModelsBulkUpdatePlayerRecordResponse(Model):
+    """Models bulk update player record response (models.BulkUpdatePlayerRecordResponse)
 
     Properties:
-        crashed: (crashed) REQUIRED ApiArtifactSamplingRuleResponse
+        detail: (detail) REQUIRED Dict[str, Any]
 
-        success: (success) REQUIRED ApiArtifactSamplingRuleResponse
+        key: (key) REQUIRED str
+
+        success: (success) REQUIRED bool
     """
 
     # region fields
 
-    crashed: ApiArtifactSamplingRuleResponse  # REQUIRED
-    success: ApiArtifactSamplingRuleResponse  # REQUIRED
+    detail: Dict[str, Any]  # REQUIRED
+    key: str  # REQUIRED
+    success: bool  # REQUIRED
 
     # endregion fields
 
     # region with_x methods
 
-    def with_crashed(
-        self, value: ApiArtifactSamplingRuleResponse
-    ) -> ApiArtifactTypeSamplingRulesResponse:
-        self.crashed = value
+    def with_detail(
+        self, value: Dict[str, Any]
+    ) -> ModelsBulkUpdatePlayerRecordResponse:
+        self.detail = value
         return self
 
-    def with_success(
-        self, value: ApiArtifactSamplingRuleResponse
-    ) -> ApiArtifactTypeSamplingRulesResponse:
+    def with_key(self, value: str) -> ModelsBulkUpdatePlayerRecordResponse:
+        self.key = value
+        return self
+
+    def with_success(self, value: bool) -> ModelsBulkUpdatePlayerRecordResponse:
         self.success = value
         return self
 
@@ -66,14 +69,18 @@ class ApiArtifactTypeSamplingRulesResponse(Model):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "crashed"):
-            result["crashed"] = self.crashed.to_dict(include_empty=include_empty)
+        if hasattr(self, "detail"):
+            result["detail"] = {str(k0): v0 for k0, v0 in self.detail.items()}
         elif include_empty:
-            result["crashed"] = ApiArtifactSamplingRuleResponse()
+            result["detail"] = {}
+        if hasattr(self, "key"):
+            result["key"] = str(self.key)
+        elif include_empty:
+            result["key"] = ""
         if hasattr(self, "success"):
-            result["success"] = self.success.to_dict(include_empty=include_empty)
+            result["success"] = bool(self.success)
         elif include_empty:
-            result["success"] = ApiArtifactSamplingRuleResponse()
+            result["success"] = False
         return result
 
     # endregion to methods
@@ -82,41 +89,39 @@ class ApiArtifactTypeSamplingRulesResponse(Model):
 
     @classmethod
     def create(
-        cls,
-        crashed: ApiArtifactSamplingRuleResponse,
-        success: ApiArtifactSamplingRuleResponse,
-        **kwargs,
-    ) -> ApiArtifactTypeSamplingRulesResponse:
+        cls, detail: Dict[str, Any], key: str, success: bool, **kwargs
+    ) -> ModelsBulkUpdatePlayerRecordResponse:
         instance = cls()
-        instance.crashed = crashed
+        instance.detail = detail
+        instance.key = key
         instance.success = success
         return instance
 
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> ApiArtifactTypeSamplingRulesResponse:
+    ) -> ModelsBulkUpdatePlayerRecordResponse:
         instance = cls()
         if not dict_:
             return instance
-        if "crashed" in dict_ and dict_["crashed"] is not None:
-            instance.crashed = ApiArtifactSamplingRuleResponse.create_from_dict(
-                dict_["crashed"], include_empty=include_empty
-            )
+        if "detail" in dict_ and dict_["detail"] is not None:
+            instance.detail = {str(k0): v0 for k0, v0 in dict_["detail"].items()}
         elif include_empty:
-            instance.crashed = ApiArtifactSamplingRuleResponse()
+            instance.detail = {}
+        if "key" in dict_ and dict_["key"] is not None:
+            instance.key = str(dict_["key"])
+        elif include_empty:
+            instance.key = ""
         if "success" in dict_ and dict_["success"] is not None:
-            instance.success = ApiArtifactSamplingRuleResponse.create_from_dict(
-                dict_["success"], include_empty=include_empty
-            )
+            instance.success = bool(dict_["success"])
         elif include_empty:
-            instance.success = ApiArtifactSamplingRuleResponse()
+            instance.success = False
         return instance
 
     @classmethod
     def create_many_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, ApiArtifactTypeSamplingRulesResponse]:
+    ) -> Dict[str, ModelsBulkUpdatePlayerRecordResponse]:
         return (
             {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
             if dict_
@@ -126,7 +131,7 @@ class ApiArtifactTypeSamplingRulesResponse(Model):
     @classmethod
     def create_many_from_list(
         cls, list_: list, include_empty: bool = False
-    ) -> List[ApiArtifactTypeSamplingRulesResponse]:
+    ) -> List[ModelsBulkUpdatePlayerRecordResponse]:
         return (
             [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
             if list_
@@ -137,9 +142,9 @@ class ApiArtifactTypeSamplingRulesResponse(Model):
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
     ) -> Union[
-        ApiArtifactTypeSamplingRulesResponse,
-        List[ApiArtifactTypeSamplingRulesResponse],
-        Dict[Any, ApiArtifactTypeSamplingRulesResponse],
+        ModelsBulkUpdatePlayerRecordResponse,
+        List[ModelsBulkUpdatePlayerRecordResponse],
+        Dict[Any, ModelsBulkUpdatePlayerRecordResponse],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -154,14 +159,16 @@ class ApiArtifactTypeSamplingRulesResponse(Model):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "crashed": "crashed",
+            "detail": "detail",
+            "key": "key",
             "success": "success",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "crashed": True,
+            "detail": True,
+            "key": True,
             "success": True,
         }
 

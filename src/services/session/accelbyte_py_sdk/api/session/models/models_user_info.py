@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# Fleet Commander (1.4.0)
+# AccelByte Gaming Services Session Service (3.12.3)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -28,30 +28,37 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-class ApiArtifactSamplingRuleResponse(Model):
-    """Api artifact sampling rule response (api.ArtifactSamplingRuleResponse)
+class ModelsUserInfo(Model):
+    """Models user info (models.UserInfo)
 
     Properties:
-        collect: (collect) REQUIRED bool
+        namespace: (namespace) OPTIONAL str
 
-        percentage: (percentage) REQUIRED float
+        platform_name: (platformName) OPTIONAL str
+
+        user_id: (userID) OPTIONAL str
     """
 
     # region fields
 
-    collect: bool  # REQUIRED
-    percentage: float  # REQUIRED
+    namespace: str  # OPTIONAL
+    platform_name: str  # OPTIONAL
+    user_id: str  # OPTIONAL
 
     # endregion fields
 
     # region with_x methods
 
-    def with_collect(self, value: bool) -> ApiArtifactSamplingRuleResponse:
-        self.collect = value
+    def with_namespace(self, value: str) -> ModelsUserInfo:
+        self.namespace = value
         return self
 
-    def with_percentage(self, value: float) -> ApiArtifactSamplingRuleResponse:
-        self.percentage = value
+    def with_platform_name(self, value: str) -> ModelsUserInfo:
+        self.platform_name = value
+        return self
+
+    def with_user_id(self, value: str) -> ModelsUserInfo:
+        self.user_id = value
         return self
 
     # endregion with_x methods
@@ -60,14 +67,18 @@ class ApiArtifactSamplingRuleResponse(Model):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "collect"):
-            result["collect"] = bool(self.collect)
+        if hasattr(self, "namespace"):
+            result["namespace"] = str(self.namespace)
         elif include_empty:
-            result["collect"] = False
-        if hasattr(self, "percentage"):
-            result["percentage"] = float(self.percentage)
+            result["namespace"] = ""
+        if hasattr(self, "platform_name"):
+            result["platformName"] = str(self.platform_name)
         elif include_empty:
-            result["percentage"] = 0.0
+            result["platformName"] = ""
+        if hasattr(self, "user_id"):
+            result["userID"] = str(self.user_id)
+        elif include_empty:
+            result["userID"] = ""
         return result
 
     # endregion to methods
@@ -76,34 +87,46 @@ class ApiArtifactSamplingRuleResponse(Model):
 
     @classmethod
     def create(
-        cls, collect: bool, percentage: float, **kwargs
-    ) -> ApiArtifactSamplingRuleResponse:
+        cls,
+        namespace: Optional[str] = None,
+        platform_name: Optional[str] = None,
+        user_id: Optional[str] = None,
+        **kwargs,
+    ) -> ModelsUserInfo:
         instance = cls()
-        instance.collect = collect
-        instance.percentage = percentage
+        if namespace is not None:
+            instance.namespace = namespace
+        if platform_name is not None:
+            instance.platform_name = platform_name
+        if user_id is not None:
+            instance.user_id = user_id
         return instance
 
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> ApiArtifactSamplingRuleResponse:
+    ) -> ModelsUserInfo:
         instance = cls()
         if not dict_:
             return instance
-        if "collect" in dict_ and dict_["collect"] is not None:
-            instance.collect = bool(dict_["collect"])
+        if "namespace" in dict_ and dict_["namespace"] is not None:
+            instance.namespace = str(dict_["namespace"])
         elif include_empty:
-            instance.collect = False
-        if "percentage" in dict_ and dict_["percentage"] is not None:
-            instance.percentage = float(dict_["percentage"])
+            instance.namespace = ""
+        if "platformName" in dict_ and dict_["platformName"] is not None:
+            instance.platform_name = str(dict_["platformName"])
         elif include_empty:
-            instance.percentage = 0.0
+            instance.platform_name = ""
+        if "userID" in dict_ and dict_["userID"] is not None:
+            instance.user_id = str(dict_["userID"])
+        elif include_empty:
+            instance.user_id = ""
         return instance
 
     @classmethod
     def create_many_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, ApiArtifactSamplingRuleResponse]:
+    ) -> Dict[str, ModelsUserInfo]:
         return (
             {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
             if dict_
@@ -113,7 +136,7 @@ class ApiArtifactSamplingRuleResponse(Model):
     @classmethod
     def create_many_from_list(
         cls, list_: list, include_empty: bool = False
-    ) -> List[ApiArtifactSamplingRuleResponse]:
+    ) -> List[ModelsUserInfo]:
         return (
             [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
             if list_
@@ -123,11 +146,7 @@ class ApiArtifactSamplingRuleResponse(Model):
     @classmethod
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[
-        ApiArtifactSamplingRuleResponse,
-        List[ApiArtifactSamplingRuleResponse],
-        Dict[Any, ApiArtifactSamplingRuleResponse],
-    ]:
+    ) -> Union[ModelsUserInfo, List[ModelsUserInfo], Dict[Any, ModelsUserInfo]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -141,15 +160,17 @@ class ApiArtifactSamplingRuleResponse(Model):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "collect": "collect",
-            "percentage": "percentage",
+            "namespace": "namespace",
+            "platformName": "platform_name",
+            "userID": "user_id",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "collect": True,
-            "percentage": True,
+            "namespace": False,
+            "platformName": False,
+            "userID": False,
         }
 
     # endregion static methods

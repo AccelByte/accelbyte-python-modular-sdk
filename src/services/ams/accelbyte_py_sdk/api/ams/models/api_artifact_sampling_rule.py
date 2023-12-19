@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Platform Service (4.41.0)
+# Fleet Commander (1.7.1)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -27,36 +27,31 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
 
-from ..models.catalog_change_info import CatalogChangeInfo
-from ..models.paging import Paging
 
-
-class CatalogChangePagingSlicedResult(Model):
-    """Catalog change paging sliced result (CatalogChangePagingSlicedResult)
+class ApiArtifactSamplingRule(Model):
+    """Api artifact sampling rule (api.ArtifactSamplingRule)
 
     Properties:
-        data: (data) REQUIRED List[CatalogChangeInfo]
+        collect: (collect) REQUIRED bool
 
-        paging: (paging) OPTIONAL Paging
+        percentage: (percentage) REQUIRED int
     """
 
     # region fields
 
-    data: List[CatalogChangeInfo]  # REQUIRED
-    paging: Paging  # OPTIONAL
+    collect: bool  # REQUIRED
+    percentage: int  # REQUIRED
 
     # endregion fields
 
     # region with_x methods
 
-    def with_data(
-        self, value: List[CatalogChangeInfo]
-    ) -> CatalogChangePagingSlicedResult:
-        self.data = value
+    def with_collect(self, value: bool) -> ApiArtifactSamplingRule:
+        self.collect = value
         return self
 
-    def with_paging(self, value: Paging) -> CatalogChangePagingSlicedResult:
-        self.paging = value
+    def with_percentage(self, value: int) -> ApiArtifactSamplingRule:
+        self.percentage = value
         return self
 
     # endregion with_x methods
@@ -65,16 +60,14 @@ class CatalogChangePagingSlicedResult(Model):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "data"):
-            result["data"] = [
-                i0.to_dict(include_empty=include_empty) for i0 in self.data
-            ]
+        if hasattr(self, "collect"):
+            result["collect"] = bool(self.collect)
         elif include_empty:
-            result["data"] = []
-        if hasattr(self, "paging"):
-            result["paging"] = self.paging.to_dict(include_empty=include_empty)
+            result["collect"] = False
+        if hasattr(self, "percentage"):
+            result["percentage"] = int(self.percentage)
         elif include_empty:
-            result["paging"] = Paging()
+            result["percentage"] = 0
         return result
 
     # endregion to methods
@@ -83,40 +76,34 @@ class CatalogChangePagingSlicedResult(Model):
 
     @classmethod
     def create(
-        cls, data: List[CatalogChangeInfo], paging: Optional[Paging] = None, **kwargs
-    ) -> CatalogChangePagingSlicedResult:
+        cls, collect: bool, percentage: int, **kwargs
+    ) -> ApiArtifactSamplingRule:
         instance = cls()
-        instance.data = data
-        if paging is not None:
-            instance.paging = paging
+        instance.collect = collect
+        instance.percentage = percentage
         return instance
 
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> CatalogChangePagingSlicedResult:
+    ) -> ApiArtifactSamplingRule:
         instance = cls()
         if not dict_:
             return instance
-        if "data" in dict_ and dict_["data"] is not None:
-            instance.data = [
-                CatalogChangeInfo.create_from_dict(i0, include_empty=include_empty)
-                for i0 in dict_["data"]
-            ]
+        if "collect" in dict_ and dict_["collect"] is not None:
+            instance.collect = bool(dict_["collect"])
         elif include_empty:
-            instance.data = []
-        if "paging" in dict_ and dict_["paging"] is not None:
-            instance.paging = Paging.create_from_dict(
-                dict_["paging"], include_empty=include_empty
-            )
+            instance.collect = False
+        if "percentage" in dict_ and dict_["percentage"] is not None:
+            instance.percentage = int(dict_["percentage"])
         elif include_empty:
-            instance.paging = Paging()
+            instance.percentage = 0
         return instance
 
     @classmethod
     def create_many_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, CatalogChangePagingSlicedResult]:
+    ) -> Dict[str, ApiArtifactSamplingRule]:
         return (
             {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
             if dict_
@@ -126,7 +113,7 @@ class CatalogChangePagingSlicedResult(Model):
     @classmethod
     def create_many_from_list(
         cls, list_: list, include_empty: bool = False
-    ) -> List[CatalogChangePagingSlicedResult]:
+    ) -> List[ApiArtifactSamplingRule]:
         return (
             [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
             if list_
@@ -137,9 +124,9 @@ class CatalogChangePagingSlicedResult(Model):
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
     ) -> Union[
-        CatalogChangePagingSlicedResult,
-        List[CatalogChangePagingSlicedResult],
-        Dict[Any, CatalogChangePagingSlicedResult],
+        ApiArtifactSamplingRule,
+        List[ApiArtifactSamplingRule],
+        Dict[Any, ApiArtifactSamplingRule],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -154,15 +141,15 @@ class CatalogChangePagingSlicedResult(Model):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "data": "data",
-            "paging": "paging",
+            "collect": "collect",
+            "percentage": "percentage",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "data": True,
-            "paging": False,
+            "collect": True,
+            "percentage": True,
         }
 
     # endregion static methods

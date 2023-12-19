@@ -44,7 +44,6 @@ from ..operations.stat_configuration import DeleteTiedStat
 from ..operations.stat_configuration import ExportStats
 from ..operations.stat_configuration import GetStat
 from ..operations.stat_configuration import GetStats
-from ..operations.stat_configuration import ImportStatCycle
 from ..operations.stat_configuration import ImportStats
 from ..operations.stat_configuration import QueryStats
 from ..operations.stat_configuration import UpdateStat
@@ -63,10 +62,10 @@ def create_stat(
 
     Create stat.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-            *  Returns : created stat template
-            * default minimum value is 0
-            * default maximum value is 1.7976931348623157e+308
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+              *  Returns : created stat template
+              * default minimum value is 0
+              * default maximum value is 1.7976931348623157e+308
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
@@ -127,10 +126,10 @@ async def create_stat_async(
 
     Create stat.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-            *  Returns : created stat template
-            * default minimum value is 0
-            * default maximum value is 1.7976931348623157e+308
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+              *  Returns : created stat template
+              * default minimum value is 0
+              * default maximum value is 1.7976931348623157e+308
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
@@ -193,10 +192,10 @@ def create_stat_1(
 
     Create stat.
     Other detail info:
-            *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-            *  Returns : created stat template
-            * default minimum value is 0
-            * default maximum value is 1.7976931348623157e+308
+              *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+              *  Returns : created stat template
+              * default minimum value is 0
+              * default maximum value is 1.7976931348623157e+308
 
     Required Permission(s):
         - NAMESPACE:{namespace}:STAT [CREATE]
@@ -257,10 +256,10 @@ async def create_stat_1_async(
 
     Create stat.
     Other detail info:
-            *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-            *  Returns : created stat template
-            * default minimum value is 0
-            * default maximum value is 1.7976931348623157e+308
+              *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+              *  Returns : created stat template
+              * default minimum value is 0
+              * default maximum value is 1.7976931348623157e+308
 
     Required Permission(s):
         - NAMESPACE:{namespace}:STAT [CREATE]
@@ -323,7 +322,7 @@ def delete_stat(
 
     Deletes stat template.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [DELETE]
@@ -378,7 +377,7 @@ async def delete_stat_async(
 
     Deletes stat template.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [DELETE]
@@ -435,7 +434,7 @@ def delete_tied_stat(
 
     Deletes stat template.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [DELETE]
@@ -492,7 +491,7 @@ async def delete_tied_stat_async(
 
     Deletes stat template.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [DELETE]
@@ -551,7 +550,7 @@ def export_stats(
     Export all stat configurations for a given namespace into file At current, only JSON file is supported.
 
     Other detail info:
-            *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+              *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -601,7 +600,7 @@ async def export_stats_async(
     Export all stat configurations for a given namespace into file At current, only JSON file is supported.
 
     Other detail info:
-            *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+              *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -653,8 +652,8 @@ def get_stat(
 
     Get stat by statCode.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-            *  Returns : stat info
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+              *  Returns : stat info
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -709,8 +708,8 @@ async def get_stat_async(
 
     Get stat by statCode.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-            *  Returns : stat info
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+              *  Returns : stat info
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -771,8 +770,8 @@ def get_stats(
 
     List stats by pagination.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-            *  Returns : stats
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+              *  Returns : stats
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -841,8 +840,8 @@ async def get_stats_async(
 
     List stats by pagination.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-            *  Returns : stats
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+              *  Returns : stats
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -898,128 +897,6 @@ async def get_stats_async(
     )
 
 
-@same_doc_as(ImportStatCycle)
-def import_stat_cycle(
-    file: Optional[Any] = None,
-    replace_existing: Optional[bool] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
-    """Import stat cycle configurations (importStatCycle)
-
-    Import stat cycle configurations for a given namespace from file. At current, only JSON file is supported.
-
-    Other detail info:
-            *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
-
-    Properties:
-        url: /social/v1/admin/namespaces/{namespace}/statCycles/import
-
-        method: POST
-
-        tags: ["StatConfiguration"]
-
-        consumes: ["multipart/form-data"]
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
-
-        file: (file) OPTIONAL Any in form_data
-
-        namespace: (namespace) REQUIRED str in path
-
-        replace_existing: (replaceExisting) OPTIONAL bool in query
-
-    Responses:
-        201: Created - StatImportInfo (Import stat cycles successfully)
-
-        400: Bad Request - ErrorEntity (12222: Stats data for namespace [{namespace}] is invalid)
-
-        401: Unauthorized - ErrorEntity (20001: Unauthorized)
-
-        403: Forbidden - ErrorEntity (20013: insufficient permission)
-
-        500: Internal Server Error - ErrorEntity (20000: Internal server error)
-    """
-    if namespace is None:
-        namespace, error = get_services_namespace()
-        if error:
-            return None, error
-    request = ImportStatCycle.create(
-        file=file,
-        replace_existing=replace_existing,
-        namespace=namespace,
-    )
-    return run_request(request, additional_headers=x_additional_headers, **kwargs)
-
-
-@same_doc_as(ImportStatCycle)
-async def import_stat_cycle_async(
-    file: Optional[Any] = None,
-    replace_existing: Optional[bool] = None,
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
-    """Import stat cycle configurations (importStatCycle)
-
-    Import stat cycle configurations for a given namespace from file. At current, only JSON file is supported.
-
-    Other detail info:
-            *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
-
-    Properties:
-        url: /social/v1/admin/namespaces/{namespace}/statCycles/import
-
-        method: POST
-
-        tags: ["StatConfiguration"]
-
-        consumes: ["multipart/form-data"]
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
-
-        file: (file) OPTIONAL Any in form_data
-
-        namespace: (namespace) REQUIRED str in path
-
-        replace_existing: (replaceExisting) OPTIONAL bool in query
-
-    Responses:
-        201: Created - StatImportInfo (Import stat cycles successfully)
-
-        400: Bad Request - ErrorEntity (12222: Stats data for namespace [{namespace}] is invalid)
-
-        401: Unauthorized - ErrorEntity (20001: Unauthorized)
-
-        403: Forbidden - ErrorEntity (20013: insufficient permission)
-
-        500: Internal Server Error - ErrorEntity (20000: Internal server error)
-    """
-    if namespace is None:
-        namespace, error = get_services_namespace()
-        if error:
-            return None, error
-    request = ImportStatCycle.create(
-        file=file,
-        replace_existing=replace_existing,
-        namespace=namespace,
-    )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
-
-
 @same_doc_as(ImportStats)
 def import_stats(
     file: Optional[Any] = None,
@@ -1033,7 +910,7 @@ def import_stats(
     Import stat configurations for a given namespace from file. At current, only JSON file is supported.
 
     Other detail info:
-            *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+              *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
@@ -1093,7 +970,7 @@ async def import_stats_async(
     Import stat configurations for a given namespace from file. At current, only JSON file is supported.
 
     Other detail info:
-            *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+              *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
@@ -1157,8 +1034,8 @@ def query_stats(
 
     Query stats by keyword.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-            *  Returns : stats
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+              *  Returns : stats
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -1227,8 +1104,8 @@ async def query_stats_async(
 
     Query stats by keyword.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-            *  Returns : stats
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+              *  Returns : stats
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [READ]
@@ -1296,8 +1173,8 @@ def update_stat(
 
     Update stat.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
-            *  Returns : updated stat
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
+              *  Returns : updated stat
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [UPDATE]
@@ -1358,8 +1235,8 @@ async def update_stat_async(
 
     Update stat.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
-            *  Returns : updated stat
+              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
+              *  Returns : updated stat
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [UPDATE]

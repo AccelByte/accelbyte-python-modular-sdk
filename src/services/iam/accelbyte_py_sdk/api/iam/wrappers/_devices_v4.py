@@ -63,16 +63,7 @@ def admin_ban_device_v4(
 ):
     """Admin Ban a device (AdminBanDeviceV4)
 
-    This is the endpoint for an admin to ban a device.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [CREATE]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [CREATE]
+    This is the endpoint for an admin to ban a device
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/bans
@@ -124,16 +115,7 @@ async def admin_ban_device_v4_async(
 ):
     """Admin Ban a device (AdminBanDeviceV4)
 
-    This is the endpoint for an admin to ban a device.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [CREATE]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [CREATE]
+    This is the endpoint for an admin to ban a device
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/bans
@@ -187,16 +169,7 @@ def admin_decrypt_device_v4(
 ):
     """Admin decrypt device id (AdminDecryptDeviceV4)
 
-    This is the endpoint for an admin to decrypt device id.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
+    This is the endpoint for an admin to decrypt device id
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/decrypt
@@ -246,16 +219,7 @@ async def admin_decrypt_device_v4_async(
 ):
     """Admin decrypt device id (AdminDecryptDeviceV4)
 
-    This is the endpoint for an admin to decrypt device id.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
+    This is the endpoint for an admin to decrypt device id
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/decrypt
@@ -309,16 +273,7 @@ def admin_generate_report_v4(
 ):
     """Admin generate device report (AdminGenerateReportV4)
 
-    This is the endpoint for an admin to generate device report.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
+    This is the endpoint for an admin to generate device report
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/report
@@ -378,16 +333,7 @@ async def admin_generate_report_v4_async(
 ):
     """Admin generate device report (AdminGenerateReportV4)
 
-    This is the endpoint for an admin to generate device report.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
+    This is the endpoint for an admin to generate device report
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/report
@@ -451,16 +397,7 @@ def admin_get_banned_devices_v4(
 ):
     """Admin get banned devices (AdminGetBannedDevicesV4)
 
-    This is the endpoint for an admin to get banned devices.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
+    This is the endpoint for an admin to get banned devices
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/banned
@@ -524,16 +461,7 @@ async def admin_get_banned_devices_v4_async(
 ):
     """Admin get banned devices (AdminGetBannedDevicesV4)
 
-    This is the endpoint for an admin to get banned devices.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
+    This is the endpoint for an admin to get banned devices
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/banned
@@ -595,16 +523,7 @@ def admin_get_device_bans_v4(
 ):
     """Admin get device ban list (AdminGetDeviceBansV4)
 
-    This is the endpoint for an admin to get device ban list.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
+    This is the endpoint for an admin to get device ban list
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/bans
@@ -654,16 +573,7 @@ async def admin_get_device_bans_v4_async(
 ):
     """Admin get device ban list (AdminGetDeviceBansV4)
 
-    This is the endpoint for an admin to get device ban list.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
+    This is the endpoint for an admin to get device ban list
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/bans
@@ -715,16 +625,7 @@ def admin_get_device_ban_v4(
 ):
     """Admin get device ban config (AdminGetDeviceBanV4)
 
-    This is the endpoint for an admin to get device ban config.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
+    This is the endpoint for an admin to get device ban config
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/bans/{banId}
@@ -776,16 +677,7 @@ async def admin_get_device_ban_v4_async(
 ):
     """Admin get device ban config (AdminGetDeviceBanV4)
 
-    This is the endpoint for an admin to get device ban config.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
+    This is the endpoint for an admin to get device ban config
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/bans/{banId}
@@ -839,16 +731,7 @@ def admin_get_devices_by_user_v4(
 ):
     """Admin get devices by user id (AdminGetDevicesByUserV4)
 
-    This is the endpoint for an admin to get devices a user ever used to login.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
+    This is the endpoint for an admin to get devices a user ever used to login
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices
@@ -900,16 +783,7 @@ async def admin_get_devices_by_user_v4_async(
 ):
     """Admin get devices by user id (AdminGetDevicesByUserV4)
 
-    This is the endpoint for an admin to get devices a user ever used to login.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
+    This is the endpoint for an admin to get devices a user ever used to login
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices
@@ -962,16 +836,7 @@ def admin_get_device_types_v4(
 ):
     """Admin get device types (AdminGetDeviceTypesV4)
 
-    This is the endpoint for an admin to get device types.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
+    This is the endpoint for an admin to get device types
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/types
@@ -1015,16 +880,7 @@ async def admin_get_device_types_v4_async(
 ):
     """Admin get device types (AdminGetDeviceTypesV4)
 
-    This is the endpoint for an admin to get device types.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
+    This is the endpoint for an admin to get device types
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/types
@@ -1071,16 +927,7 @@ def admin_get_user_device_bans_v4(
 ):
     """Admin get device bans of user (AdminGetUserDeviceBansV4)
 
-    This is the endpoint for an admin to get device bans of user.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
+    This is the endpoint for an admin to get device bans of user
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/bans
@@ -1130,16 +977,7 @@ async def admin_get_user_device_bans_v4_async(
 ):
     """Admin get device bans of user (AdminGetUserDeviceBansV4)
 
-    This is the endpoint for an admin to get device bans of user.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [READ]
+    This is the endpoint for an admin to get device bans of user
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/bans
@@ -1191,16 +1029,7 @@ def admin_get_users_by_device_v4(
 ):
     """Admin get users by device id (AdminGetUsersByDeviceV4)
 
-    This is the endpoint for an admin to get users that ever login on the device.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:USER [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER [READ]
+    This is the endpoint for an admin to get users that ever login on the device
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/users
@@ -1250,16 +1079,7 @@ async def admin_get_users_by_device_v4_async(
 ):
     """Admin get users by device id (AdminGetUsersByDeviceV4)
 
-    This is the endpoint for an admin to get users that ever login on the device.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:USER [READ]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER [READ]
+    This is the endpoint for an admin to get users that ever login on the device
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/users
@@ -1311,16 +1131,7 @@ def admin_unban_device_v4(
 ):
     """Admin unban device (AdminUnbanDeviceV4)
 
-    This is the endpoint for an admin to unban device.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]
+    This is the endpoint for an admin to unban device
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/unban
@@ -1370,16 +1181,7 @@ async def admin_unban_device_v4_async(
 ):
     """Admin unban device (AdminUnbanDeviceV4)
 
-    This is the endpoint for an admin to unban device.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]
+    This is the endpoint for an admin to unban device
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/unban
@@ -1432,16 +1234,7 @@ def admin_update_device_ban_v4(
 ):
     """Admin update device ban config (AdminUpdateDeviceBanV4)
 
-    This is the endpoint for an admin to update a device ban config.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]
+    This is the endpoint for an admin to update a device ban config
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/bans/{banId}
@@ -1499,16 +1292,7 @@ async def admin_update_device_ban_v4_async(
 ):
     """Admin update device ban config (AdminUpdateDeviceBanV4)
 
-    This is the endpoint for an admin to update a device ban config.
-
-
-
-    Required permission
-
-                                                                            'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]
+    This is the endpoint for an admin to update a device ban config
 
     Properties:
         url: /iam/v4/admin/namespaces/{namespace}/devices/bans/{banId}

@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Event Log Service Index (2.2.0)
+# AccelByte Gaming Services Event Log Service Index (2.2.1)
 
 
 ## Operations

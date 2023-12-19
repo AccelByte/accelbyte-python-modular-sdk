@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.41.0"
+__version__ = "4.42.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -109,7 +109,7 @@ from .catalog_change_info import ActionEnum as CatalogChangeInfoActionEnum
 from .catalog_change_info import StatusEnum as CatalogChangeInfoStatusEnum
 from .catalog_change_info import ItemTypeEnum as CatalogChangeInfoItemTypeEnum
 from .catalog_change_info import TypeEnum as CatalogChangeInfoTypeEnum
-from .catalog_change_paging_sliced_result import CatalogChangePagingSlicedResult
+from .catalog_change_paging_result import CatalogChangePagingResult
 from .catalog_change_statistics import CatalogChangeStatistics
 from .category_create import CategoryCreate
 from .category_info import CategoryInfo
@@ -218,6 +218,11 @@ from .entitlement_grant import SourceEnum as EntitlementGrantSourceEnum
 from .entitlement_grant_result import EntitlementGrantResult
 from .entitlement_history_info import EntitlementHistoryInfo
 from .entitlement_history_info import ActionEnum as EntitlementHistoryInfoActionEnum
+from .entitlement_ifc import EntitlementIfc
+from .entitlement_ifc import AppTypeEnum as EntitlementIfcAppTypeEnum
+from .entitlement_ifc import ClazzEnum as EntitlementIfcClazzEnum
+from .entitlement_ifc import StatusEnum as EntitlementIfcStatusEnum
+from .entitlement_ifc import TypeEnum as EntitlementIfcTypeEnum
 from .entitlement_info import EntitlementInfo
 from .entitlement_info import ClazzEnum as EntitlementInfoClazzEnum
 from .entitlement_info import SourceEnum as EntitlementInfoSourceEnum
@@ -227,6 +232,7 @@ from .entitlement_info import AppTypeEnum as EntitlementInfoAppTypeEnum
 from .entitlement_loot_box_reward import EntitlementLootBoxReward
 from .entitlement_ownership import EntitlementOwnership
 from .entitlement_paging_sliced_result import EntitlementPagingSlicedResult
+from .entitlement_prechek_result import EntitlementPrechekResult
 from .entitlement_revocation import EntitlementRevocation
 from .entitlement_revocation import StatusEnum as EntitlementRevocationStatusEnum
 from .entitlement_revocation_config import EntitlementRevocationConfig
@@ -590,6 +596,7 @@ from .populated_item_info import ItemTypeEnum as PopulatedItemInfoItemTypeEnum
 from .populated_item_info import StatusEnum as PopulatedItemInfoStatusEnum
 from .populated_item_info import AppTypeEnum as PopulatedItemInfoAppTypeEnum
 from .populated_item_info import SeasonTypeEnum as PopulatedItemInfoSeasonTypeEnum
+from .pre_check_fulfillment_request import PreCheckFulfillmentRequest
 from .predicate import Predicate
 from .predicate import ComparisonEnum as PredicateComparisonEnum
 from .predicate import PredicateTypeEnum as PredicatePredicateTypeEnum
@@ -738,6 +745,7 @@ from .ticket_sale_increment_result import TicketSaleIncrementResult
 from .timed_ownership import TimedOwnership
 from .time_limited_balance import TimeLimitedBalance
 from .tls_config import TLSConfig
+from .trade_action_paging_sliced_result import TradeActionPagingSlicedResult
 from .trade_chain_action_history_info import TradeChainActionHistoryInfo
 from .trade_chain_action_history_info import (
     StatusEnum as TradeChainActionHistoryInfoStatusEnum,

@@ -1,3 +1,5 @@
+# Code generated. DO NOT EDIT!
+
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
@@ -5,7 +7,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "accelbyte-py-sdk-service-matchmaking"
 readme = "README.md"
-version = "0.2.0"
+version = "0.3.0"
 description = "AccelByte Python SDK - AccelByte Gaming Services Matchmaking Service"
 requires-python = ">=3.9"
 dependencies = [

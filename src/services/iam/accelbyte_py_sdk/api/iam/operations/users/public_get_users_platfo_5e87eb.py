@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Social Service (2.10.2)
+# AccelByte Gaming Services Iam Service (7.7.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -29,64 +29,70 @@ from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 
-from ...models import ErrorEntity
-from ...models import StatImportInfo
+from ...models import ModelUsersPlatformInfosRequestV3
+from ...models import ModelUsersPlatformInfosResponse
+from ...models import RestErrorResponse
 
 
-class ImportStatCycle(Operation):
-    """Import stat cycle configurations (importStatCycle)
+class PublicGetUsersPlatformInfosV3(Operation):
+    """Get user's basic info and public info of 3rd party account (PublicGetUsersPlatformInfosV3)
 
-    Import stat cycle configurations for a given namespace from file. At current, only JSON file is supported.
+    Note:
+    1. the max count of user ids in the request is 100
+    2. if platform id is not empty, the result will only contain the corresponding platform infos
+    3. if platform id is empty, the result will contain all the supported platform infos
 
-    Other detail info:
-            *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+    __Supported 3rd platforms:__
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
+    * __PSN(ps4web, ps4, ps5)__
+    * display name
+    * avatar
+    * __Xbox(live, xblweb)__
+    * display name
+    * __Steam(steam, steamopenid)__
+    * display name
+    * avatar
+    * __EpicGames(epicgames)__
+    * display name
 
     Properties:
-        url: /social/v1/admin/namespaces/{namespace}/statCycles/import
+        url: /iam/v3/public/namespaces/{namespace}/users/platforms
 
         method: POST
 
-        tags: ["StatConfiguration"]
+        tags: ["Users"]
 
-        consumes: ["multipart/form-data"]
+        consumes: ["application/json"]
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
-        file: (file) OPTIONAL Any in form_data
+        body: (body) REQUIRED ModelUsersPlatformInfosRequestV3 in body
 
         namespace: (namespace) REQUIRED str in path
 
-        replace_existing: (replaceExisting) OPTIONAL bool in query
-
     Responses:
-        201: Created - StatImportInfo (Import stat cycles successfully)
+        200: OK - ModelUsersPlatformInfosResponse (OK)
 
-        400: Bad Request - ErrorEntity (12222: Stats data for namespace [{namespace}] is invalid)
+        400: Bad Request - RestErrorResponse (20019: unable to parse request body | 20002: validation error)
 
-        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+        401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
 
-        403: Forbidden - ErrorEntity (20013: insufficient permission)
-
-        500: Internal Server Error - ErrorEntity (20000: Internal server error)
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
 
     # region fields
 
-    _url: str = "/social/v1/admin/namespaces/{namespace}/statCycles/import"
+    _url: str = "/iam/v3/public/namespaces/{namespace}/users/platforms"
     _method: str = "POST"
-    _consumes: List[str] = ["multipart/form-data"]
+    _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
-    file: Any  # OPTIONAL in [form_data]
+    body: ModelUsersPlatformInfosRequestV3  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
-    replace_existing: bool  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -126,27 +132,19 @@ class ImportStatCycle(Operation):
 
     def get_all_params(self) -> dict:
         return {
-            "form_data": self.get_form_data_params(),
+            "body": self.get_body_params(),
             "path": self.get_path_params(),
-            "query": self.get_query_params(),
         }
 
-    def get_form_data_params(self) -> dict:
-        result = {}
-        if hasattr(self, "file"):
-            result["file"] = self.file
-        return result
+    def get_body_params(self) -> Any:
+        if not hasattr(self, "body") or self.body is None:
+            return None
+        return self.body.to_dict()
 
     def get_path_params(self) -> dict:
         result = {}
         if hasattr(self, "namespace"):
             result["namespace"] = self.namespace
-        return result
-
-    def get_query_params(self) -> dict:
-        result = {}
-        if hasattr(self, "replace_existing"):
-            result["replaceExisting"] = self.replace_existing
         return result
 
     # endregion get_x_params methods
@@ -157,16 +155,14 @@ class ImportStatCycle(Operation):
 
     # region with_x methods
 
-    def with_file(self, value: Any) -> ImportStatCycle:
-        self.file = value
+    def with_body(
+        self, value: ModelUsersPlatformInfosRequestV3
+    ) -> PublicGetUsersPlatformInfosV3:
+        self.body = value
         return self
 
-    def with_namespace(self, value: str) -> ImportStatCycle:
+    def with_namespace(self, value: str) -> PublicGetUsersPlatformInfosV3:
         self.namespace = value
-        return self
-
-    def with_replace_existing(self, value: bool) -> ImportStatCycle:
-        self.replace_existing = value
         return self
 
     # endregion with_x methods
@@ -175,18 +171,14 @@ class ImportStatCycle(Operation):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "file") and self.file:
-            result["file"] = Any(self.file)
+        if hasattr(self, "body") and self.body:
+            result["body"] = self.body.to_dict(include_empty=include_empty)
         elif include_empty:
-            result["file"] = Any()
+            result["body"] = ModelUsersPlatformInfosRequestV3()
         if hasattr(self, "namespace") and self.namespace:
             result["namespace"] = str(self.namespace)
         elif include_empty:
             result["namespace"] = ""
-        if hasattr(self, "replace_existing") and self.replace_existing:
-            result["replaceExisting"] = bool(self.replace_existing)
-        elif include_empty:
-            result["replaceExisting"] = False
         return result
 
     # endregion to methods
@@ -196,18 +188,19 @@ class ImportStatCycle(Operation):
     # noinspection PyMethodMayBeStatic
     def parse_response(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[Union[None, StatImportInfo], Union[None, ErrorEntity, HttpResponse]]:
+    ) -> Tuple[
+        Union[None, ModelUsersPlatformInfosResponse],
+        Union[None, HttpResponse, RestErrorResponse],
+    ]:
         """Parse the given response.
 
-        201: Created - StatImportInfo (Import stat cycles successfully)
+        200: OK - ModelUsersPlatformInfosResponse (OK)
 
-        400: Bad Request - ErrorEntity (12222: Stats data for namespace [{namespace}] is invalid)
+        400: Bad Request - RestErrorResponse (20019: unable to parse request body | 20002: validation error)
 
-        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+        401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
 
-        403: Forbidden - ErrorEntity (20013: insufficient permission)
-
-        500: Internal Server Error - ErrorEntity (20000: Internal server error)
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -222,16 +215,14 @@ class ImportStatCycle(Operation):
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
-        if code == 201:
-            return StatImportInfo.create_from_dict(content), None
+        if code == 200:
+            return ModelUsersPlatformInfosResponse.create_from_dict(content), None
         if code == 400:
-            return None, ErrorEntity.create_from_dict(content)
+            return None, RestErrorResponse.create_from_dict(content)
         if code == 401:
-            return None, ErrorEntity.create_from_dict(content)
-        if code == 403:
-            return None, ErrorEntity.create_from_dict(content)
+            return None, RestErrorResponse.create_from_dict(content)
         if code == 500:
-            return None, ErrorEntity.create_from_dict(content)
+            return None, RestErrorResponse.create_from_dict(content)
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content
@@ -243,53 +234,42 @@ class ImportStatCycle(Operation):
 
     @classmethod
     def create(
-        cls,
-        namespace: str,
-        file: Optional[Any] = None,
-        replace_existing: Optional[bool] = None,
-        **kwargs,
-    ) -> ImportStatCycle:
+        cls, body: ModelUsersPlatformInfosRequestV3, namespace: str, **kwargs
+    ) -> PublicGetUsersPlatformInfosV3:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
-        if file is not None:
-            instance.file = file
-        if replace_existing is not None:
-            instance.replace_existing = replace_existing
         return instance
 
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> ImportStatCycle:
+    ) -> PublicGetUsersPlatformInfosV3:
         instance = cls()
-        if "file" in dict_ and dict_["file"] is not None:
-            instance.file = Any(dict_["file"])
+        if "body" in dict_ and dict_["body"] is not None:
+            instance.body = ModelUsersPlatformInfosRequestV3.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
         elif include_empty:
-            instance.file = Any()
+            instance.body = ModelUsersPlatformInfosRequestV3()
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
             instance.namespace = ""
-        if "replaceExisting" in dict_ and dict_["replaceExisting"] is not None:
-            instance.replace_existing = bool(dict_["replaceExisting"])
-        elif include_empty:
-            instance.replace_existing = False
         return instance
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "file": "file",
+            "body": "body",
             "namespace": "namespace",
-            "replaceExisting": "replace_existing",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "file": False,
+            "body": True,
             "namespace": True,
-            "replaceExisting": False,
         }
 
     # endregion static methods

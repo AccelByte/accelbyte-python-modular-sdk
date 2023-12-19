@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Gdpr Service Index (2.5.0)
+# AccelByte Gaming Services Gdpr Service Index (2.5.1)
 
 
 ## Operations

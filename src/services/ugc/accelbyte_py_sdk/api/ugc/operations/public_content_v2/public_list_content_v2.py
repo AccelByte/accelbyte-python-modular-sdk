@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Ugc Service (2.18.0)
+# AccelByte Gaming Services Ugc Service (2.19.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -66,6 +66,8 @@ class PublicListContentV2(Operation):
 
         namespace: (namespace) REQUIRED str in path
 
+        is_official: (isOfficial) OPTIONAL bool in query
+
         limit: (limit) OPTIONAL int in query
 
         name: (name) OPTIONAL str in query
@@ -81,11 +83,13 @@ class PublicListContentV2(Operation):
         type_: (type) OPTIONAL str in query
 
     Responses:
-        200: OK - ModelsPaginatedContentDownloadResponseV2 (OK)
+        200: OK - ModelsPaginatedContentDownloadResponseV2 (list content's)
 
-        401: Unauthorized - ResponseError (Unauthorized)
+        400: Bad Request - ResponseError (770800: invalid paging parameter/max allowed number of tags is {maxTags}/invalid official parameter/invalid ishidden parameter)
 
-        500: Internal Server Error - ResponseError (Internal Server Error)
+        401: Unauthorized - ResponseError (20001: unauthorized access)
+
+        500: Internal Server Error - ResponseError (770801: Unable to get ugc content: database/Unable to get creator | 770803: Failed generate download URL)
     """
 
     # region fields
@@ -98,6 +102,7 @@ class PublicListContentV2(Operation):
     _location_query: str = None
 
     namespace: str  # REQUIRED in [path]
+    is_official: bool  # OPTIONAL in [query]
     limit: int  # OPTIONAL in [query]
     name: str  # OPTIONAL in [query]
     offset: int  # OPTIONAL in [query]
@@ -156,6 +161,8 @@ class PublicListContentV2(Operation):
 
     def get_query_params(self) -> dict:
         result = {}
+        if hasattr(self, "is_official"):
+            result["isOfficial"] = self.is_official
         if hasattr(self, "limit"):
             result["limit"] = self.limit
         if hasattr(self, "name"):
@@ -182,6 +189,10 @@ class PublicListContentV2(Operation):
 
     def with_namespace(self, value: str) -> PublicListContentV2:
         self.namespace = value
+        return self
+
+    def with_is_official(self, value: bool) -> PublicListContentV2:
+        self.is_official = value
         return self
 
     def with_limit(self, value: int) -> PublicListContentV2:
@@ -222,6 +233,10 @@ class PublicListContentV2(Operation):
             result["namespace"] = str(self.namespace)
         elif include_empty:
             result["namespace"] = ""
+        if hasattr(self, "is_official") and self.is_official:
+            result["isOfficial"] = bool(self.is_official)
+        elif include_empty:
+            result["isOfficial"] = False
         if hasattr(self, "limit") and self.limit:
             result["limit"] = int(self.limit)
         elif include_empty:
@@ -265,11 +280,13 @@ class PublicListContentV2(Operation):
     ]:
         """Parse the given response.
 
-        200: OK - ModelsPaginatedContentDownloadResponseV2 (OK)
+        200: OK - ModelsPaginatedContentDownloadResponseV2 (list content's)
 
-        401: Unauthorized - ResponseError (Unauthorized)
+        400: Bad Request - ResponseError (770800: invalid paging parameter/max allowed number of tags is {maxTags}/invalid official parameter/invalid ishidden parameter)
 
-        500: Internal Server Error - ResponseError (Internal Server Error)
+        401: Unauthorized - ResponseError (20001: unauthorized access)
+
+        500: Internal Server Error - ResponseError (770801: Unable to get ugc content: database/Unable to get creator | 770803: Failed generate download URL)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -289,6 +306,8 @@ class PublicListContentV2(Operation):
                 ModelsPaginatedContentDownloadResponseV2.create_from_dict(content),
                 None,
             )
+        if code == 400:
+            return None, ResponseError.create_from_dict(content)
         if code == 401:
             return None, ResponseError.create_from_dict(content)
         if code == 500:
@@ -306,6 +325,7 @@ class PublicListContentV2(Operation):
     def create(
         cls,
         namespace: str,
+        is_official: Optional[bool] = None,
         limit: Optional[int] = None,
         name: Optional[str] = None,
         offset: Optional[int] = None,
@@ -317,6 +337,8 @@ class PublicListContentV2(Operation):
     ) -> PublicListContentV2:
         instance = cls()
         instance.namespace = namespace
+        if is_official is not None:
+            instance.is_official = is_official
         if limit is not None:
             instance.limit = limit
         if name is not None:
@@ -342,6 +364,10 @@ class PublicListContentV2(Operation):
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
             instance.namespace = ""
+        if "isOfficial" in dict_ and dict_["isOfficial"] is not None:
+            instance.is_official = bool(dict_["isOfficial"])
+        elif include_empty:
+            instance.is_official = False
         if "limit" in dict_ and dict_["limit"] is not None:
             instance.limit = int(dict_["limit"])
         elif include_empty:
@@ -376,6 +402,7 @@ class PublicListContentV2(Operation):
     def get_field_info() -> Dict[str, str]:
         return {
             "namespace": "namespace",
+            "isOfficial": "is_official",
             "limit": "limit",
             "name": "name",
             "offset": "offset",
@@ -389,6 +416,7 @@ class PublicListContentV2(Operation):
     def get_required_map() -> Dict[str, bool]:
         return {
             "namespace": True,
+            "isOfficial": False,
             "limit": False,
             "name": False,
             "offset": False,

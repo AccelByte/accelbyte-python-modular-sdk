@@ -56,14 +56,11 @@ if [[ "$PREV_TAG" == "$TAG" ]]; then
   exit 0
 fi
 
-CHANGES=$(git diff --name-only | { grep -c "$PKG_PATH" || test $? = 1; } | { grep -v grep || test $? = 1; })
-if [ "$CHANGES" -gt 0 ]; then
-  PREV_COMMIT=$(git rev-list -n 1 "$PREV_TAG")
+PREV_COMMIT=$(git rev-list -n 1 "$PREV_TAG")
 
-  if [[ "$DRYRUN" -ne 1 ]]; then
-    git tag "$TAG" "$LAST_COMMIT"
-  fi
-
-  echo "[tag] tagged $PKG_PATH ($VERSION) | $PREV_TAG ($PREV_COMMIT) -> $TAG ($LAST_COMMIT)"
-  exit 0
+if [[ "$DRYRUN" -ne 1 ]]; then
+  git tag "$TAG" "$LAST_COMMIT"
 fi
+
+echo "[tag] tagged $PKG_PATH ($VERSION) | $PREV_TAG ($PREV_COMMIT) -> $TAG ($LAST_COMMIT)"
+exit 0
