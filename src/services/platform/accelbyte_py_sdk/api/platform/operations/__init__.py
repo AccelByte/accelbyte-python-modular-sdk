@@ -8,6 +8,6 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.42.0"
+__version__ = "4.43.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"

@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Platform Service (4.42.0)
+# AccelByte Gaming Services Platform Service (4.43.0)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -29,7 +29,7 @@ from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 
-from ...models import EntitlementSoldRequest
+from ...models import AdminEntitlementSoldRequest
 from ...models import EntitlementSoldResult
 from ...models import ErrorEntity
 
@@ -54,7 +54,7 @@ class SellUserEntitlement(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL EntitlementSoldRequest in body
+        body: (body) OPTIONAL AdminEntitlementSoldRequest in body
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -67,7 +67,7 @@ class SellUserEntitlement(Operation):
 
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31178: Entitlement [{entitlementId}] out of time range | 31180: Duplicate request id: [{requestId}] | 31181: Entitlement [{entitlementId}] is not sellable | 31182: Entitlement [{entitlementId}] already sold | 20006: optimistic lock)
+        409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31178: Entitlement [{entitlementId}] out of time range | 31180: Duplicate request id: [{requestId}] | 31181: Entitlement [{entitlementId}] is not sellable | 31182: Entitlement [{entitlementId}] already sold | 31183: Entitlement [{entitlementId}] origin [{origin}] not allowed be operated at [{platform}] | 20006: optimistic lock)
     """
 
     # region fields
@@ -79,7 +79,7 @@ class SellUserEntitlement(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
-    body: EntitlementSoldRequest  # OPTIONAL in [body]
+    body: AdminEntitlementSoldRequest  # OPTIONAL in [body]
     entitlement_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
@@ -149,7 +149,7 @@ class SellUserEntitlement(Operation):
 
     # region with_x methods
 
-    def with_body(self, value: EntitlementSoldRequest) -> SellUserEntitlement:
+    def with_body(self, value: AdminEntitlementSoldRequest) -> SellUserEntitlement:
         self.body = value
         return self
 
@@ -174,7 +174,7 @@ class SellUserEntitlement(Operation):
         if hasattr(self, "body") and self.body:
             result["body"] = self.body.to_dict(include_empty=include_empty)
         elif include_empty:
-            result["body"] = EntitlementSoldRequest()
+            result["body"] = AdminEntitlementSoldRequest()
         if hasattr(self, "entitlement_id") and self.entitlement_id:
             result["entitlementId"] = str(self.entitlement_id)
         elif include_empty:
@@ -205,7 +205,7 @@ class SellUserEntitlement(Operation):
 
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31178: Entitlement [{entitlementId}] out of time range | 31180: Duplicate request id: [{requestId}] | 31181: Entitlement [{entitlementId}] is not sellable | 31182: Entitlement [{entitlementId}] already sold | 20006: optimistic lock)
+        409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31178: Entitlement [{entitlementId}] out of time range | 31180: Duplicate request id: [{requestId}] | 31181: Entitlement [{entitlementId}] is not sellable | 31182: Entitlement [{entitlementId}] already sold | 31183: Entitlement [{entitlementId}] origin [{origin}] not allowed be operated at [{platform}] | 20006: optimistic lock)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -241,7 +241,7 @@ class SellUserEntitlement(Operation):
         entitlement_id: str,
         namespace: str,
         user_id: str,
-        body: Optional[EntitlementSoldRequest] = None,
+        body: Optional[AdminEntitlementSoldRequest] = None,
         **kwargs,
     ) -> SellUserEntitlement:
         instance = cls()
@@ -258,11 +258,11 @@ class SellUserEntitlement(Operation):
     ) -> SellUserEntitlement:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = EntitlementSoldRequest.create_from_dict(
+            instance.body = AdminEntitlementSoldRequest.create_from_dict(
                 dict_["body"], include_empty=include_empty
             )
         elif include_empty:
-            instance.body = EntitlementSoldRequest()
+            instance.body = AdminEntitlementSoldRequest()
         if "entitlementId" in dict_ and dict_["entitlementId"] is not None:
             instance.entitlement_id = str(dict_["entitlementId"])
         elif include_empty:

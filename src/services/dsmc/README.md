@@ -6,7 +6,7 @@ This is a service module for the [AccelByte Modular Python SDK](https://github.c
 
 ```text
 AccelByte Gaming Services Dsm Controller Service
-* Version: 6.4.6
+* Version: 6.4.7
 ```
 
 ## Setup

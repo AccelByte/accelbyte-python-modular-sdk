@@ -6,7 +6,7 @@
 
 # template_file: command.j2
 
-# AGS Seasonpass Service (1.20.0)
+# AGS Seasonpass Service (1.20.1)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Dsm Controller Service Index (6.4.6)
+# AccelByte Gaming Services Dsm Controller Service Index (6.4.7)
 
 
 ## Operations

@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Dsm Controller Service (6.4.6)
+# AccelByte Gaming Services Dsm Controller Service (6.4.7)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

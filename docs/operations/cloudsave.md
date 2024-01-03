@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Cloudsave Service Index (3.12.8)
+# AccelByte Gaming Services Cloudsave Service Index (3.12.9)
 
 
 ## Operations

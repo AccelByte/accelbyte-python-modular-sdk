@@ -45,7 +45,7 @@ def admin_get_member_active_session(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Get Member Active Session . Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [READ] (adminGetMemberActiveSession)
+    """Get Member Active Session. (adminGetMemberActiveSession)
 
     Get Member Active Session.
 
@@ -97,7 +97,7 @@ async def admin_get_member_active_session_async(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Get Member Active Session . Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [READ] (adminGetMemberActiveSession)
+    """Get Member Active Session. (adminGetMemberActiveSession)
 
     Get Member Active Session.
 
@@ -151,7 +151,7 @@ def admin_reconcile_max_active_session(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Reconcile Max Active Session . Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [UPDATE] (adminReconcileMaxActiveSession)
+    """Reconcile Max Active Session. (adminReconcileMaxActiveSession)
 
     Reconcile Max Active Session.
 
@@ -203,7 +203,7 @@ async def admin_reconcile_max_active_session_async(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Reconcile Max Active Session . Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [UPDATE] (adminReconcileMaxActiveSession)
+    """Reconcile Max Active Session. (adminReconcileMaxActiveSession)
 
     Reconcile Max Active Session.
 

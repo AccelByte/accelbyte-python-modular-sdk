@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.42.0"
+__version__ = "4.43.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -20,6 +20,8 @@ from .action import StatusEnum as ActionStatusEnum
 from .action_request import ActionRequest
 from .additional_data import AdditionalData
 from .additional_data_entitlement import AdditionalDataEntitlement
+from .admin_entitlement_decrement import AdminEntitlementDecrement
+from .admin_entitlement_sold_request import AdminEntitlementSoldRequest
 from .admin_order_create import AdminOrderCreate
 from .admin_order_create import PlatformEnum as AdminOrderCreatePlatformEnum
 from .adyen_config import AdyenConfig
@@ -28,6 +30,7 @@ from .app_config import AppConfig
 from .app_entitlement_info import AppEntitlementInfo
 from .app_entitlement_info import StatusEnum as AppEntitlementInfoStatusEnum
 from .app_entitlement_info import AppTypeEnum as AppEntitlementInfoAppTypeEnum
+from .app_entitlement_info import OriginEnum as AppEntitlementInfoOriginEnum
 from .app_entitlement_paging_sliced_result import AppEntitlementPagingSlicedResult
 from .app_info import AppInfo
 from .app_info import GenresEnum as AppInfoGenresEnum
@@ -193,45 +196,62 @@ from .dlc_item import DLCItem
 from .dlc_item_config_info import DLCItemConfigInfo
 from .dlc_item_config_update import DLCItemConfigUpdate
 from .dlc_record import DLCRecord
+from .dlc_record import (
+    EntitlementOriginSyncStatusEnum as DLCRecordEntitlementOriginSyncStatusEnum,
+)
 from .dlc_record import StatusEnum as DLCRecordStatusEnum
 from .durable_entitlement_revocation_config import DurableEntitlementRevocationConfig
 from .durable_entitlement_revocation_config import (
     StrategyEnum as DurableEntitlementRevocationConfigStrategyEnum,
 )
+from .entitlement_origin_sync_result import EntitlementOriginSyncResult
+from .entitlement_config_info import EntitlementConfigInfo
 from .entitlement_decrement import EntitlementDecrement
 from .entitlement_decrement_result import EntitlementDecrementResult
 from .entitlement_decrement_result import (
     ClazzEnum as EntitlementDecrementResultClazzEnum,
 )
 from .entitlement_decrement_result import (
-    SourceEnum as EntitlementDecrementResultSourceEnum,
-)
-from .entitlement_decrement_result import (
     StatusEnum as EntitlementDecrementResultStatusEnum,
 )
-from .entitlement_decrement_result import TypeEnum as EntitlementDecrementResultTypeEnum
 from .entitlement_decrement_result import (
     AppTypeEnum as EntitlementDecrementResultAppTypeEnum,
 )
+from .entitlement_decrement_result import (
+    OriginEnum as EntitlementDecrementResultOriginEnum,
+)
+from .entitlement_decrement_result import (
+    SourceEnum as EntitlementDecrementResultSourceEnum,
+)
+from .entitlement_decrement_result import TypeEnum as EntitlementDecrementResultTypeEnum
 from .entitlement_grant import EntitlementGrant
+from .entitlement_grant import OriginEnum as EntitlementGrantOriginEnum
 from .entitlement_grant import SourceEnum as EntitlementGrantSourceEnum
 from .entitlement_grant_result import EntitlementGrantResult
 from .entitlement_history_info import EntitlementHistoryInfo
 from .entitlement_history_info import ActionEnum as EntitlementHistoryInfoActionEnum
+from .entitlement_history_info import OriginEnum as EntitlementHistoryInfoOriginEnum
 from .entitlement_ifc import EntitlementIfc
 from .entitlement_ifc import AppTypeEnum as EntitlementIfcAppTypeEnum
 from .entitlement_ifc import ClazzEnum as EntitlementIfcClazzEnum
+from .entitlement_ifc import OriginEnum as EntitlementIfcOriginEnum
 from .entitlement_ifc import StatusEnum as EntitlementIfcStatusEnum
 from .entitlement_ifc import TypeEnum as EntitlementIfcTypeEnum
 from .entitlement_info import EntitlementInfo
 from .entitlement_info import ClazzEnum as EntitlementInfoClazzEnum
-from .entitlement_info import SourceEnum as EntitlementInfoSourceEnum
 from .entitlement_info import StatusEnum as EntitlementInfoStatusEnum
-from .entitlement_info import TypeEnum as EntitlementInfoTypeEnum
 from .entitlement_info import AppTypeEnum as EntitlementInfoAppTypeEnum
+from .entitlement_info import OriginEnum as EntitlementInfoOriginEnum
+from .entitlement_info import SourceEnum as EntitlementInfoSourceEnum
+from .entitlement_info import TypeEnum as EntitlementInfoTypeEnum
 from .entitlement_loot_box_reward import EntitlementLootBoxReward
 from .entitlement_ownership import EntitlementOwnership
 from .entitlement_paging_sliced_result import EntitlementPagingSlicedResult
+from .entitlement_platform_config_info import EntitlementPlatformConfigInfo
+from .entitlement_platform_config_update import EntitlementPlatformConfigUpdate
+from .entitlement_platform_config_update import (
+    AllowedPlatformOriginsEnum as EntitlementPlatformConfigUpdateAllowedPlatformOriginsEnum,
+)
 from .entitlement_prechek_result import EntitlementPrechekResult
 from .entitlement_revocation import EntitlementRevocation
 from .entitlement_revocation import StatusEnum as EntitlementRevocationStatusEnum
@@ -242,7 +262,9 @@ from .entitlement_sold_result import EntitlementSoldResult
 from .entitlement_summary import EntitlementSummary
 from .entitlement_summary import ClazzEnum as EntitlementSummaryClazzEnum
 from .entitlement_summary import TypeEnum as EntitlementSummaryTypeEnum
+from .entitlement_summary import OriginEnum as EntitlementSummaryOriginEnum
 from .entitlement_update import EntitlementUpdate
+from .entitlement_update import OriginEnum as EntitlementUpdateOriginEnum
 from .entitlement_update import StatusEnum as EntitlementUpdateStatusEnum
 from .epic_games_dlc_sync_request import EpicGamesDLCSyncRequest
 from .epic_games_iap_config_info import EpicGamesIAPConfigInfo
@@ -276,15 +298,24 @@ from .ful_fill_item_payload import FulFillItemPayload
 from .ful_fill_item_payload import (
     ItemIdentityTypeEnum as FulFillItemPayloadItemIdentityTypeEnum,
 )
+from .ful_fill_item_payload import (
+    EntitlementOriginEnum as FulFillItemPayloadEntitlementOriginEnum,
+)
 from .fulfillment_error import FulfillmentError
 from .fulfillment_history_info import FulfillmentHistoryInfo
 from .fulfillment_history_info import StatusEnum as FulfillmentHistoryInfoStatusEnum
+from .fulfillment_history_info import (
+    EntitlementOriginEnum as FulfillmentHistoryInfoEntitlementOriginEnum,
+)
 from .fulfillment_history_paging_sliced_result import (
     FulfillmentHistoryPagingSlicedResult,
 )
 from .fulfillment_item import FulfillmentItem
 from .fulfillment_item import ItemTypeEnum as FulfillmentItemItemTypeEnum
 from .fulfillment_request import FulfillmentRequest
+from .fulfillment_request import (
+    EntitlementOriginEnum as FulfillmentRequestEntitlementOriginEnum,
+)
 from .fulfillment_request import OriginEnum as FulfillmentRequestOriginEnum
 from .fulfillment_request import SourceEnum as FulfillmentRequestSourceEnum
 from .fulfillment_result import FulfillmentResult
@@ -381,6 +412,9 @@ from .item_purchase_condition_validate_request import (
 from .item_purchase_condition_validate_result import ItemPurchaseConditionValidateResult
 from .item_return_request import ItemReturnRequest
 from .item_revocation import ItemRevocation
+from .item_revocation import (
+    EntitlementOriginEnum as ItemRevocationEntitlementOriginEnum,
+)
 from .item_revocation import ItemTypeEnum as ItemRevocationItemTypeEnum
 from .item_revocation import StatusEnum as ItemRevocationStatusEnum
 from .item_snapshot import ItemSnapshot
@@ -652,6 +686,7 @@ from .revoke_entitlement_payload import RevokeEntitlementPayload
 from .revoke_entry import RevokeEntry
 from .revoke_entry import TypeEnum as RevokeEntryTypeEnum
 from .revoke_item import RevokeItem
+from .revoke_item import EntitlementOriginEnum as RevokeItemEntitlementOriginEnum
 from .revoke_item import ItemIdentityTypeEnum as RevokeItemItemIdentityTypeEnum
 from .revoke_item import OriginEnum as RevokeItemOriginEnum
 from .revoke_item_summary import RevokeItemSummary
@@ -663,8 +698,13 @@ from .reward_condition import RewardCondition
 from .reward_create import RewardCreate
 from .reward_info import RewardInfo
 from .reward_item import RewardItem
+from .reward_migration_result import RewardMigrationResult
+from .reward_migration_result import StatusEnum as RewardMigrationResultStatusEnum
 from .reward_paging_sliced_result import RewardPagingSlicedResult
 from .rewards_request import RewardsRequest
+from .rewards_request import (
+    EntitlementOriginEnum as RewardsRequestEntitlementOriginEnum,
+)
 from .rewards_request import OriginEnum as RewardsRequestOriginEnum
 from .rewards_request import SourceEnum as RewardsRequestSourceEnum
 from .reward_update import RewardUpdate
@@ -691,12 +731,13 @@ from .slide import TypeEnum as SlideTypeEnum
 from .slide import VideoSourceEnum as SlideVideoSourceEnum
 from .stackable_entitlement_info import StackableEntitlementInfo
 from .stackable_entitlement_info import ClazzEnum as StackableEntitlementInfoClazzEnum
-from .stackable_entitlement_info import SourceEnum as StackableEntitlementInfoSourceEnum
 from .stackable_entitlement_info import StatusEnum as StackableEntitlementInfoStatusEnum
-from .stackable_entitlement_info import TypeEnum as StackableEntitlementInfoTypeEnum
 from .stackable_entitlement_info import (
     AppTypeEnum as StackableEntitlementInfoAppTypeEnum,
 )
+from .stackable_entitlement_info import OriginEnum as StackableEntitlementInfoOriginEnum
+from .stackable_entitlement_info import SourceEnum as StackableEntitlementInfoSourceEnum
+from .stackable_entitlement_info import TypeEnum as StackableEntitlementInfoTypeEnum
 from .steam_achievement import SteamAchievement
 from .steam_achievement_update_request import SteamAchievementUpdateRequest
 from .steam_dlc_sync_request import SteamDLCSyncRequest
@@ -769,6 +810,9 @@ from .twitch_sync_result import IapOrderStatusEnum as TwitchSyncResultIapOrderSt
 from .user_dlc import UserDLC
 from .user_dlc import PlatformEnum as UserDLCPlatformEnum
 from .user_dlc_record import UserDLCRecord
+from .user_dlc_record import (
+    EntitlementOriginSyncStatusEnum as UserDLCRecordEntitlementOriginSyncStatusEnum,
+)
 from .user_dlc_record import PlatformEnum as UserDLCRecordPlatformEnum
 from .user_dlc_record import StatusEnum as UserDLCRecordStatusEnum
 from .validation_error_entity import ValidationErrorEntity
