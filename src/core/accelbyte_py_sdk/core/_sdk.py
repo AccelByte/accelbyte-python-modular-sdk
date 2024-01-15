@@ -30,8 +30,8 @@ class OperationPreprocessor(Protocol):
 
 class RequestPreprocessor(Protocol):
     def __call__(
-        self, proto: ProtoHttpRequest, sdk: AccelByteSDK, *args, **kwargs
-    ) -> ProtoHttpRequest:
+        self, proto: ProtoHttpRequest, operation: Operation, sdk: AccelByteSDK, *args, **kwargs
+    ) -> Tuple[ProtoHttpRequest, Optional[HttpResponse]]:
         ...
 
 
@@ -446,7 +446,7 @@ class AccelByteSDK:
             return None, error, kwargs
 
         for k, v in self.request_preprocessors.items():
-            proto, error = v(proto=proto, sdk=self)
+            proto, error = v(proto=proto, operation=operation, sdk=self, **kwargs)
             if error:
                 return None, error, kwargs
 
