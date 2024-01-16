@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Session Browser Service (1.18.0)
+# AccelByte Gaming Services Session Browser Service (1.18.1)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

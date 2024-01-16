@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Iam Service Index (7.8.0)
+# AccelByte Gaming Services Iam Service Index (7.8.3)
 
 
 ## Operations

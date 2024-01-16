@@ -38,7 +38,7 @@ class FriendsStatusResponse(WebSocketMessage):
     # region fields
 
     activity: List[str]
-    availability: List[int]
+    availability: List[str]
     code: int
     friend_ids: List[str]
     id_: str
@@ -112,7 +112,7 @@ class FriendsStatusResponse(WebSocketMessage):
                 name == "availability"
             ):
                 instance.availability = [
-                    int(i) for i in value.removeprefix("[").removesuffix("]").split(",")
+                    str(i) for i in value.removeprefix("[").removesuffix("]").split(",")
                 ]
                 continue
             if (not is_strict and name.casefold() == "code".casefold()) or (

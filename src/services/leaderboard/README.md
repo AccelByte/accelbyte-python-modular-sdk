@@ -6,7 +6,7 @@ This is a service module for the [AccelByte Modular Python SDK](https://github.c
 
 ```text
 AccelByte Gaming Services Leaderboard Service
-* Version: 2.26.6
+* Version: 2.26.7
 ```
 
 ## Setup

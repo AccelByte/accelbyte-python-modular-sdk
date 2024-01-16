@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# Fleet Commander (1.7.1)
+# Fleet Commander (1.8.1)
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -29,12 +29,12 @@ from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 
-from ...models import ApiAccountLinkTokenResponse
+from ...models import ApiAccountResponse
 from ...models import ResponseErrorResponse
 
 
-class AccountLinkTokenGet(Operation):
-    """Get a linking token for another namespace to use to link to the account to which this namespace is linked.  Fails if no account linked. (AccountLinkTokenGet)
+class AdminAccountGet(Operation):
+    """get the account associated with the namespace (AdminAccountGet)
 
     Required Permission: ADMIN:NAMESPACE:{namespace}:ARMADA:ACCOUNT [READ]
 
@@ -42,7 +42,7 @@ class AccountLinkTokenGet(Operation):
         - ADMIN:NAMESPACE:{namespace}:ARMADA:ACCOUNT [READ]
 
     Properties:
-        url: /ams/v1/admin/namespaces/{namespace}/account/link
+        url: /ams/v1/admin/namespaces/{namespace}/account
 
         method: GET
 
@@ -57,7 +57,7 @@ class AccountLinkTokenGet(Operation):
         namespace: (namespace) REQUIRED str in path
 
     Responses:
-        200: OK - ApiAccountLinkTokenResponse (success)
+        200: OK - ApiAccountResponse (success)
 
         401: Unauthorized - ResponseErrorResponse (no authorization provided)
 
@@ -70,7 +70,7 @@ class AccountLinkTokenGet(Operation):
 
     # region fields
 
-    _url: str = "/ams/v1/admin/namespaces/{namespace}/account/link"
+    _url: str = "/ams/v1/admin/namespaces/{namespace}/account"
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
@@ -134,7 +134,7 @@ class AccountLinkTokenGet(Operation):
 
     # region with_x methods
 
-    def with_namespace(self, value: str) -> AccountLinkTokenGet:
+    def with_namespace(self, value: str) -> AdminAccountGet:
         self.namespace = value
         return self
 
@@ -158,12 +158,12 @@ class AccountLinkTokenGet(Operation):
     def parse_response(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
-        Union[None, ApiAccountLinkTokenResponse],
+        Union[None, ApiAccountResponse],
         Union[None, HttpResponse, ResponseErrorResponse],
     ]:
         """Parse the given response.
 
-        200: OK - ApiAccountLinkTokenResponse (success)
+        200: OK - ApiAccountResponse (success)
 
         401: Unauthorized - ResponseErrorResponse (no authorization provided)
 
@@ -187,7 +187,7 @@ class AccountLinkTokenGet(Operation):
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return ApiAccountLinkTokenResponse.create_from_dict(content), None
+            return ApiAccountResponse.create_from_dict(content), None
         if code == 401:
             return None, ResponseErrorResponse.create_from_dict(content)
         if code == 403:
@@ -206,7 +206,7 @@ class AccountLinkTokenGet(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, namespace: str, **kwargs) -> AccountLinkTokenGet:
+    def create(cls, namespace: str, **kwargs) -> AdminAccountGet:
         instance = cls()
         instance.namespace = namespace
         return instance
@@ -214,7 +214,7 @@ class AccountLinkTokenGet(Operation):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> AccountLinkTokenGet:
+    ) -> AdminAccountGet:
         instance = cls()
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])

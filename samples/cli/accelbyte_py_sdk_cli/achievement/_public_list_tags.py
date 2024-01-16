@@ -6,7 +6,7 @@
 
 # template_file: command.j2
 
-# AGS Achievement Service (2.21.7)
+# AGS Achievement Service (2.21.8)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

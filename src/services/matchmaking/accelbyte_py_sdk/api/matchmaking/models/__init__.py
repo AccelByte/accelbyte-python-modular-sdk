@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Matchmaking Service."""
 
-__version__ = "2.28.0"
+__version__ = "2.29.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -23,6 +23,9 @@ from .models_channel import ModelsChannel
 from .models_channel_request import ModelsChannelRequest
 from .models_channel_request import (
     BlockedPlayerOptionEnum as ModelsChannelRequestBlockedPlayerOptionEnum,
+)
+from .models_channel_request import (
+    SubGamemodeSelectionEnum as ModelsChannelRequestSubGamemodeSelectionEnum,
 )
 from .models_channel_v1 import ModelsChannelV1
 from .models_combination import ModelsCombination
@@ -85,6 +88,9 @@ from .models_update_alliance_rule import ModelsUpdateAllianceRule
 from .models_update_channel_request import ModelsUpdateChannelRequest
 from .models_update_channel_request import (
     BlockedPlayerOptionEnum as ModelsUpdateChannelRequestBlockedPlayerOptionEnum,
+)
+from .models_update_channel_request import (
+    SubGamemodeSelectionEnum as ModelsUpdateChannelRequestSubGamemodeSelectionEnum,
 )
 from .models_update_player_playtime_weight_response import (
     ModelsUpdatePlayerPlaytimeWeightResponse,

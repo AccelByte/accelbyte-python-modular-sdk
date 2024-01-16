@@ -6,7 +6,7 @@
 
 # template_file: command.j2
 
-# AGS Session Service (3.13.0)
+# AGS Session Service (3.13.3)
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
