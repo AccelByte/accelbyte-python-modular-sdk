@@ -6,7 +6,7 @@
 
 # template_file: command.j2
 
-# AGS Leaderboard Service (2.26.7)
+# AGS Leaderboard Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

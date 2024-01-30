@@ -6,7 +6,7 @@
 
 # template_file: command.j2
 
-# AGS Session Browser Service ()
+# AGS Session Browser Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

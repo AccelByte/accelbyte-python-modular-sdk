@@ -6,7 +6,7 @@
 
 # template file: ws-model.j2
 
-# AccelByte Gaming Services Lobby Ws Service (0.1.0)
+# AccelByte Gaming Services Lobby Ws Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

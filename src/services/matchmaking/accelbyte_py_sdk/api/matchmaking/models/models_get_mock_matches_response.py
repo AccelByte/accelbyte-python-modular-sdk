@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Matchmaking Service (2.29.0)
+# AccelByte Gaming Services Matchmaking Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

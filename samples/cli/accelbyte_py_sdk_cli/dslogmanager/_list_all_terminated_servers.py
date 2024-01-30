@@ -6,7 +6,7 @@
 
 # template_file: command.j2
 
-# AGS Ds Log Manager Service (3.4.1)
+# AGS Ds Log Manager Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

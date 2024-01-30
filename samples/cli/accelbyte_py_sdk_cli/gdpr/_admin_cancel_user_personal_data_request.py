@@ -6,7 +6,7 @@
 
 # template_file: command.j2
 
-# AGS Gdpr Service (2.6.0)
+# AGS Gdpr Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

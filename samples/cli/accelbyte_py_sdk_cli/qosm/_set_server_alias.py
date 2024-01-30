@@ -6,7 +6,7 @@
 
 # template_file: command.j2
 
-# Justice Qo S Manager Service ()
+# Justice Qo S Manager Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

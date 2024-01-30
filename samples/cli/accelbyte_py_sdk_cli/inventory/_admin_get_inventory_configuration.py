@@ -6,7 +6,7 @@
 
 # template_file: command.j2
 
-# AGS Inventory Service (0.1.0)
+# AGS Inventory Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

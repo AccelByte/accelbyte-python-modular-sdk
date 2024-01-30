@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Gdpr Service (2.6.0)
+# AccelByte Gaming Services Gdpr Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

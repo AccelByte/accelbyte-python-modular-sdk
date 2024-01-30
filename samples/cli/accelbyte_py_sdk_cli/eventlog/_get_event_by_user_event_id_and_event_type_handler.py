@@ -6,7 +6,7 @@
 
 # template_file: command.j2
 
-# AGS Event Log Service ()
+# AGS Event Log Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

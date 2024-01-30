@@ -6,7 +6,7 @@
 
 # template_file: command.j2
 
-# AGS Chat Service (demo)
+# AGS Chat Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

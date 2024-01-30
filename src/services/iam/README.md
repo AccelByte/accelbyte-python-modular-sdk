@@ -6,7 +6,7 @@ This is a service module for the [AccelByte Modular Python SDK](https://github.c
 
 ```text
 AccelByte Gaming Services Iam Service
-* Version: 7.8.3
+* Version: 7.9.0
 ```
 
 ## Setup

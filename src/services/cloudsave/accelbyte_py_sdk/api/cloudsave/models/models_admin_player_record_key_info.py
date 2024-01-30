@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Cloudsave Service (3.13.0)
+# AccelByte Gaming Services Cloudsave Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

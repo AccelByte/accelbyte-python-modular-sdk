@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Legal Service (1.35.0)
+# AccelByte Gaming Services Legal Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
