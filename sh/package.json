@@ -5,6 +5,7 @@
   "src/services/basic": "0.5.0",
   "src/services/chat": "0.5.0",
   "src/services/cloudsave": "0.6.0",
+  "src/services/dsartifact": "0.1.0",
   "src/services/dslogmanager": "0.3.0",
   "src/services/dsmc": "0.5.0",
   "src/services/eventlog": "0.3.0",
