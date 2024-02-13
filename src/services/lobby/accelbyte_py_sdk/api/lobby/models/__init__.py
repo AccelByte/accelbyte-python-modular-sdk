@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Lobby Server."""
 
-__version__ = "3.33.2"
+__version__ = "3.35.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -27,6 +27,8 @@ from .model_create_topic_request import ModelCreateTopicRequest
 from .model_create_topic_request_v1 import ModelCreateTopicRequestV1
 from .model_free_form_notification_request import ModelFreeFormNotificationRequest
 from .model_free_form_notification_request_v1 import ModelFreeFormNotificationRequestV1
+from .model_friendship_connection import ModelFriendshipConnection
+from .model_friendship_connection_response import ModelFriendshipConnectionResponse
 from .model_friend_with_platform import ModelFriendWithPlatform
 from .model_get_all_notification_template_slug_resp import (
     ModelGetAllNotificationTemplateSlugResp,
@@ -116,6 +118,7 @@ from .models_admin_verify_message_profanity_response import (
 )
 from .models_blocked_by_player_data import ModelsBlockedByPlayerData
 from .models_blocked_player_data import ModelsBlockedPlayerData
+from .models_block_player_request import ModelsBlockPlayerRequest
 from .models_config import ModelsConfig
 from .models_config_list import ModelsConfigList
 from .models_config_req import ModelsConfigReq
@@ -154,6 +157,7 @@ from .models_profanity_rule import ModelsProfanityRule
 from .models_set_player_session_attribute_request import (
     ModelsSetPlayerSessionAttributeRequest,
 )
+from .models_unblock_player_request import ModelsUnblockPlayerRequest
 from .models_update_config_request import ModelsUpdateConfigRequest
 from .models_update_config_response import ModelsUpdateConfigResponse
 from .response_error import ResponseError

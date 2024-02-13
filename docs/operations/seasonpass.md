@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Seasonpass Service Index (1.21.0)
+# AccelByte Gaming Services Seasonpass Service Index (1.21.1)
 
 
 ## Operations
