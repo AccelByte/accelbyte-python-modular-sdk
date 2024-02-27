@@ -37,7 +37,9 @@ from ..models import ApimodelsListItemTypesResp
 from ..operations.admin_item_types import AdminCreateItemType
 from ..operations.admin_item_types import AdminDeleteItemType
 from ..operations.admin_item_types import AdminListItemTypes
-from ..operations.admin_item_types import AdminListItemTypesSortByEnum
+from ..operations.admin_item_types import (
+    AdminListItemTypesSortByEnum,
+)
 
 
 @same_doc_as(AdminCreateItemType)

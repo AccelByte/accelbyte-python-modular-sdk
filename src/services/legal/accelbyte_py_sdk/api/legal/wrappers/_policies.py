@@ -35,13 +35,17 @@ from ..models import RetrievePolicyResponse
 from ..models import UpdatePolicyRequest
 
 from ..operations.policies import RetrieveLatestPolicies
-from ..operations.policies import RetrieveLatestPoliciesPolicyTypeEnum
+from ..operations.policies import (
+    RetrieveLatestPoliciesPolicyTypeEnum,
+)
 from ..operations.policies import RetrieveLatestPoliciesByNamespaceAndCountryPublic
 from ..operations.policies import (
     RetrieveLatestPoliciesByNamespaceAndCountryPublicPolicyTypeEnum,
 )
 from ..operations.policies import RetrieveLatestPoliciesPublic
-from ..operations.policies import RetrieveLatestPoliciesPublicPolicyTypeEnum
+from ..operations.policies import (
+    RetrieveLatestPoliciesPublicPolicyTypeEnum,
+)
 from ..operations.policies import RetrievePolicies
 from ..operations.policies import SetDefaultPolicy2
 from ..operations.policies import UpdatePolicy

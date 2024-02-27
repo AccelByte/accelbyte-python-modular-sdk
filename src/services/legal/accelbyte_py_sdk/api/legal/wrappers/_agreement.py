@@ -393,6 +393,7 @@ async def change_preference_consent_1_async(
     )
 
 
+@deprecated
 @same_doc_as(IndirectBulkAcceptVersionedPolicy1)
 def indirect_bulk_accept_versioned_policy_1(
     user_id: str,
@@ -436,6 +437,7 @@ def indirect_bulk_accept_versioned_policy_1(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(IndirectBulkAcceptVersionedPolicy1)
 async def indirect_bulk_accept_versioned_policy_1_async(
     user_id: str,

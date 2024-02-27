@@ -34,7 +34,9 @@ from ..models import RestapiErrorResponse
 from ..models import RestapiReportingLimit
 
 from ..operations.admin_configurations import Get
-from ..operations.admin_configurations import GetCategoryEnum
+from ..operations.admin_configurations import (
+    GetCategoryEnum,
+)
 from ..operations.admin_configurations import Upsert
 
 

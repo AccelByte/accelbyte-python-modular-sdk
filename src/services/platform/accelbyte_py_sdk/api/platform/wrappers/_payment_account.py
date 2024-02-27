@@ -32,7 +32,9 @@ from accelbyte_py_sdk.core import same_doc_as
 from ..models import PaymentAccount
 
 from ..operations.payment_account import PublicDeletePaymentAccount
-from ..operations.payment_account import PublicDeletePaymentAccountTypeEnum
+from ..operations.payment_account import (
+    PublicDeletePaymentAccountTypeEnum,
+)
 from ..operations.payment_account import PublicGetPaymentAccounts
 from ..models import PaymentAccountTypeEnum
 

@@ -47,13 +47,19 @@ from ..models import XblDLCSyncRequest
 from ..operations.dlc import DeleteDLCItemConfig
 from ..operations.dlc import DeletePlatformDLCConfig
 from ..operations.dlc import GeDLCDurableRewardShortMap
-from ..operations.dlc import GeDLCDurableRewardShortMapDlcTypeEnum
+from ..operations.dlc import (
+    GeDLCDurableRewardShortMapDlcTypeEnum,
+)
 from ..operations.dlc import GetDLCItemConfig
 from ..operations.dlc import GetPlatformDLCConfig
 from ..operations.dlc import GetUserDLC
-from ..operations.dlc import GetUserDLCTypeEnum
+from ..operations.dlc import (
+    GetUserDLCTypeEnum,
+)
 from ..operations.dlc import GetUserDLCByPlatform
-from ..operations.dlc import GetUserDLCByPlatformTypeEnum
+from ..operations.dlc import (
+    GetUserDLCByPlatformTypeEnum,
+)
 from ..operations.dlc import PublicSyncPsnDlcInventory
 from ..operations.dlc import PublicSyncPsnDlcInventoryWithMultipleServiceLabels
 from ..operations.dlc import SyncEpicGameDLC

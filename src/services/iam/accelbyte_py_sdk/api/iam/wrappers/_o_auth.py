@@ -36,7 +36,9 @@ from ..models import OauthmodelErrorResponse
 from ..models import OauthmodelTokenResponse
 
 from ..operations.o_auth import Authorization
-from ..operations.o_auth import AuthorizationResponseTypeEnum
+from ..operations.o_auth import (
+    AuthorizationResponseTypeEnum,
+)
 from ..operations.o_auth import GetJWKS
 from ..operations.o_auth import GetRevocationList
 from ..operations.o_auth import PlatformTokenRequestHandler
@@ -44,7 +46,9 @@ from ..operations.o_auth import RevokeAUser
 from ..operations.o_auth import RevokeToken
 from ..operations.o_auth import RevokeUser
 from ..operations.o_auth import TokenGrant
-from ..operations.o_auth import TokenGrantGrantTypeEnum
+from ..operations.o_auth import (
+    TokenGrantGrantTypeEnum,
+)
 from ..operations.o_auth import VerifyToken
 
 

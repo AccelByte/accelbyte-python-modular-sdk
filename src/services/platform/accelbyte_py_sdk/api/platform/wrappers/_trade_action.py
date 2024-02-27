@@ -35,7 +35,9 @@ from ..models import TradeChainedActionCommitRequest
 
 from ..operations.trade_action import Commit
 from ..operations.trade_action import GetTradeHistoryByCriteria
-from ..operations.trade_action import GetTradeHistoryByCriteriaStatusEnum
+from ..operations.trade_action import (
+    GetTradeHistoryByCriteriaStatusEnum,
+)
 from ..operations.trade_action import GetTradeHistoryByTransactionId
 from ..models import TradeChainActionHistoryInfoStatusEnum
 

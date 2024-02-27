@@ -44,7 +44,9 @@ from ..operations.fulfillment import FulfillRewardsV2
 from ..operations.fulfillment import PreCheckFulfillItem
 from ..operations.fulfillment import PublicRedeemCode
 from ..operations.fulfillment import QueryFulfillmentHistories
-from ..operations.fulfillment import QueryFulfillmentHistoriesStatusEnum
+from ..operations.fulfillment import (
+    QueryFulfillmentHistoriesStatusEnum,
+)
 from ..operations.fulfillment import RedeemCode
 from ..models import FulfillmentItemItemTypeEnum
 from ..models import (

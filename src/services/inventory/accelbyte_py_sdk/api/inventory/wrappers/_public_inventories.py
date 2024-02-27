@@ -33,7 +33,9 @@ from ..models import ApimodelsErrorResponse
 from ..models import ApimodelsListInventoryResp
 
 from ..operations.public_inventories import PublicListInventories
-from ..operations.public_inventories import PublicListInventoriesSortByEnum
+from ..operations.public_inventories import (
+    PublicListInventoriesSortByEnum,
+)
 
 
 @same_doc_as(PublicListInventories)

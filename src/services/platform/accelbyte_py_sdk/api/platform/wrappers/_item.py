@@ -99,7 +99,9 @@ from ..operations.item import (
     PublicQueryItemsSortByEnum,
 )
 from ..operations.item import PublicSearchItems
-from ..operations.item import PublicSearchItemsItemTypeEnum
+from ..operations.item import (
+    PublicSearchItemsItemTypeEnum,
+)
 from ..operations.item import PublicValidateItemPurchaseCondition
 from ..operations.item import QueryItems
 from ..operations.item import (
@@ -115,12 +117,18 @@ from ..operations.item import (
     QueryItems1SortByEnum,
 )
 from ..operations.item import QueryUncategorizedItems
-from ..operations.item import QueryUncategorizedItemsSortByEnum
+from ..operations.item import (
+    QueryUncategorizedItemsSortByEnum,
+)
 from ..operations.item import ReturnItem
 from ..operations.item import SearchItems
-from ..operations.item import SearchItemsItemTypeEnum
+from ..operations.item import (
+    SearchItemsItemTypeEnum,
+)
 from ..operations.item import SearchItemTypeConfig
-from ..operations.item import SearchItemTypeConfigItemTypeEnum
+from ..operations.item import (
+    SearchItemTypeConfigItemTypeEnum,
+)
 from ..operations.item import SyncInGameItem
 from ..operations.item import UpdateApp
 from ..operations.item import UpdateItem

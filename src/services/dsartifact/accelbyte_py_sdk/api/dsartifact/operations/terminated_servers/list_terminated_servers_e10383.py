@@ -33,8 +33,8 @@ from ...models import ModelsListTerminatedServersResponse
 from ...models import ResponseError
 
 
-class ListTerminatedServers(Operation):
-    """Retrieve All Terminated Servers in a Namespace (listTerminatedServers)
+class ListTerminatedServersWithNamespace(Operation):
+    """Retrieve All Terminated Servers in a Namespace (listTerminatedServersWithNamespace)
 
     ```
     Required permission: ADMIN:NAMESPACE:{namespace}:DSAM:SERVER [READ]
@@ -196,51 +196,51 @@ class ListTerminatedServers(Operation):
 
     # region with_x methods
 
-    def with_namespace(self, value: str) -> ListTerminatedServers:
+    def with_namespace(self, value: str) -> ListTerminatedServersWithNamespace:
         self.namespace = value
         return self
 
-    def with_deployment(self, value: str) -> ListTerminatedServers:
+    def with_deployment(self, value: str) -> ListTerminatedServersWithNamespace:
         self.deployment = value
         return self
 
-    def with_game_mode(self, value: str) -> ListTerminatedServers:
+    def with_game_mode(self, value: str) -> ListTerminatedServersWithNamespace:
         self.game_mode = value
         return self
 
-    def with_limit(self, value: int) -> ListTerminatedServers:
+    def with_limit(self, value: int) -> ListTerminatedServersWithNamespace:
         self.limit = value
         return self
 
-    def with_next_(self, value: str) -> ListTerminatedServers:
+    def with_next_(self, value: str) -> ListTerminatedServersWithNamespace:
         self.next_ = value
         return self
 
-    def with_party_id(self, value: str) -> ListTerminatedServers:
+    def with_party_id(self, value: str) -> ListTerminatedServersWithNamespace:
         self.party_id = value
         return self
 
-    def with_pod_name(self, value: str) -> ListTerminatedServers:
+    def with_pod_name(self, value: str) -> ListTerminatedServersWithNamespace:
         self.pod_name = value
         return self
 
-    def with_previous(self, value: str) -> ListTerminatedServers:
+    def with_previous(self, value: str) -> ListTerminatedServersWithNamespace:
         self.previous = value
         return self
 
-    def with_provider(self, value: str) -> ListTerminatedServers:
+    def with_provider(self, value: str) -> ListTerminatedServersWithNamespace:
         self.provider = value
         return self
 
-    def with_region(self, value: str) -> ListTerminatedServers:
+    def with_region(self, value: str) -> ListTerminatedServersWithNamespace:
         self.region = value
         return self
 
-    def with_session_id(self, value: str) -> ListTerminatedServers:
+    def with_session_id(self, value: str) -> ListTerminatedServersWithNamespace:
         self.session_id = value
         return self
 
-    def with_user_id(self, value: str) -> ListTerminatedServers:
+    def with_user_id(self, value: str) -> ListTerminatedServersWithNamespace:
         self.user_id = value
         return self
 
@@ -367,7 +367,7 @@ class ListTerminatedServers(Operation):
         session_id: Optional[str] = None,
         user_id: Optional[str] = None,
         **kwargs,
-    ) -> ListTerminatedServers:
+    ) -> ListTerminatedServersWithNamespace:
         instance = cls()
         instance.namespace = namespace
         if deployment is not None:
@@ -399,7 +399,7 @@ class ListTerminatedServers(Operation):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> ListTerminatedServers:
+    ) -> ListTerminatedServersWithNamespace:
         instance = cls()
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])

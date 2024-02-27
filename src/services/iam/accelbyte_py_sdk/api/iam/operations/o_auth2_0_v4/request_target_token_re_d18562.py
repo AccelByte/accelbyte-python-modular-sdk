@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Cloudsave Service
+# AccelByte Gaming Services Iam Service
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -29,56 +29,51 @@ from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 
-from ...models import ModelsResponseError
+from ...models import OauthmodelLoginQueueTicketResponse
+from ...models import OauthmodelTokenResponseV3
 
 
-class AdminDeleteTagHandlerV1(Operation):
-    """Delete a tag (adminDeleteTagHandlerV1)
+class RequestTargetTokenResponseV4(Operation):
+    """Generate target token by code (RequestTargetTokenResponseV4)
 
-    ## Description
-
-    Endpoint to delete a tag
+    This endpoint is being used to generate target token.
+    It requires basic header with ClientID and Secret, it should match the ClientID when call `/iam/v3/namespace/{namespace}/token/request`
+    The code should be generated from `/iam/v3/namespace/{namespace}/token/request`.
 
     Properties:
-        url: /cloudsave/v1/admin/namespaces/{namespace}/tags/{tag}
+        url: /iam/v4/oauth/token/exchange
 
-        method: DELETE
+        method: POST
 
-        tags: ["Tags"]
+        tags: ["OAuth2.0 V4"]
 
-        consumes: ["application/json"]
+        consumes: ["application/x-www-form-urlencoded"]
 
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
 
-        namespace: (namespace) REQUIRED str in path
+        additional_data: (additionalData) OPTIONAL str in form_data
 
-        tag: (tag) REQUIRED str in path
+        code: (code) REQUIRED str in form_data
 
     Responses:
-        201: Created - (Tag deleted)
+        200: OK - OauthmodelTokenResponseV3 (Succeed to exchange token.)
 
-        401: Unauthorized - ModelsResponseError (20001: unauthorized access)
-
-        403: Forbidden - ModelsResponseError (20013: insufficient permission)
-
-        404: Not Found - ModelsResponseError (18510: tag not found)
-
-        500: Internal Server Error - ModelsResponseError (18509: unable to delete tag)
+        202: Accepted - OauthmodelLoginQueueTicketResponse (Login queue ticket returned)
     """
 
     # region fields
 
-    _url: str = "/cloudsave/v1/admin/namespaces/{namespace}/tags/{tag}"
-    _method: str = "DELETE"
-    _consumes: List[str] = ["application/json"]
+    _url: str = "/iam/v4/oauth/token/exchange"
+    _method: str = "POST"
+    _consumes: List[str] = ["application/x-www-form-urlencoded"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
-    namespace: str  # REQUIRED in [path]
-    tag: str  # REQUIRED in [path]
+    additional_data: str  # OPTIONAL in [form_data]
+    code: str  # REQUIRED in [form_data]
 
     # endregion fields
 
@@ -118,15 +113,15 @@ class AdminDeleteTagHandlerV1(Operation):
 
     def get_all_params(self) -> dict:
         return {
-            "path": self.get_path_params(),
+            "form_data": self.get_form_data_params(),
         }
 
-    def get_path_params(self) -> dict:
+    def get_form_data_params(self) -> dict:
         result = {}
-        if hasattr(self, "namespace"):
-            result["namespace"] = self.namespace
-        if hasattr(self, "tag"):
-            result["tag"] = self.tag
+        if hasattr(self, "additional_data"):
+            result["additionalData"] = self.additional_data
+        if hasattr(self, "code"):
+            result["code"] = self.code
         return result
 
     # endregion get_x_params methods
@@ -137,12 +132,12 @@ class AdminDeleteTagHandlerV1(Operation):
 
     # region with_x methods
 
-    def with_namespace(self, value: str) -> AdminDeleteTagHandlerV1:
-        self.namespace = value
+    def with_additional_data(self, value: str) -> RequestTargetTokenResponseV4:
+        self.additional_data = value
         return self
 
-    def with_tag(self, value: str) -> AdminDeleteTagHandlerV1:
-        self.tag = value
+    def with_code(self, value: str) -> RequestTargetTokenResponseV4:
+        self.code = value
         return self
 
     # endregion with_x methods
@@ -151,14 +146,14 @@ class AdminDeleteTagHandlerV1(Operation):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "namespace") and self.namespace:
-            result["namespace"] = str(self.namespace)
+        if hasattr(self, "additional_data") and self.additional_data:
+            result["additionalData"] = str(self.additional_data)
         elif include_empty:
-            result["namespace"] = ""
-        if hasattr(self, "tag") and self.tag:
-            result["tag"] = str(self.tag)
+            result["additionalData"] = ""
+        if hasattr(self, "code") and self.code:
+            result["code"] = str(self.code)
         elif include_empty:
-            result["tag"] = ""
+            result["code"] = ""
         return result
 
     # endregion to methods
@@ -169,19 +164,14 @@ class AdminDeleteTagHandlerV1(Operation):
     def parse_response(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
-        Union[None, Optional[str]], Union[None, HttpResponse, ModelsResponseError]
+        Union[None, OauthmodelLoginQueueTicketResponse, OauthmodelTokenResponseV3],
+        Union[None, HttpResponse],
     ]:
         """Parse the given response.
 
-        201: Created - (Tag deleted)
+        200: OK - OauthmodelTokenResponseV3 (Succeed to exchange token.)
 
-        401: Unauthorized - ModelsResponseError (20001: unauthorized access)
-
-        403: Forbidden - ModelsResponseError (20013: insufficient permission)
-
-        404: Not Found - ModelsResponseError (18510: tag not found)
-
-        500: Internal Server Error - ModelsResponseError (18509: unable to delete tag)
+        202: Accepted - OauthmodelLoginQueueTicketResponse (Login queue ticket returned)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -196,16 +186,10 @@ class AdminDeleteTagHandlerV1(Operation):
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
-        if code == 201:
-            return HttpResponse.create(code, "Created"), None
-        if code == 401:
-            return None, ModelsResponseError.create_from_dict(content)
-        if code == 403:
-            return None, ModelsResponseError.create_from_dict(content)
-        if code == 404:
-            return None, ModelsResponseError.create_from_dict(content)
-        if code == 500:
-            return None, ModelsResponseError.create_from_dict(content)
+        if code == 200:
+            return OauthmodelTokenResponseV3.create_from_dict(content), None
+        if code == 202:
+            return OauthmodelLoginQueueTicketResponse.create_from_dict(content), None
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content
@@ -216,10 +200,13 @@ class AdminDeleteTagHandlerV1(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, namespace: str, tag: str, **kwargs) -> AdminDeleteTagHandlerV1:
+    def create(
+        cls, code: str, additional_data: Optional[str] = None, **kwargs
+    ) -> RequestTargetTokenResponseV4:
         instance = cls()
-        instance.namespace = namespace
-        instance.tag = tag
+        instance.code = code
+        if additional_data is not None:
+            instance.additional_data = additional_data
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -227,30 +214,30 @@ class AdminDeleteTagHandlerV1(Operation):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> AdminDeleteTagHandlerV1:
+    ) -> RequestTargetTokenResponseV4:
         instance = cls()
-        if "namespace" in dict_ and dict_["namespace"] is not None:
-            instance.namespace = str(dict_["namespace"])
+        if "additionalData" in dict_ and dict_["additionalData"] is not None:
+            instance.additional_data = str(dict_["additionalData"])
         elif include_empty:
-            instance.namespace = ""
-        if "tag" in dict_ and dict_["tag"] is not None:
-            instance.tag = str(dict_["tag"])
+            instance.additional_data = ""
+        if "code" in dict_ and dict_["code"] is not None:
+            instance.code = str(dict_["code"])
         elif include_empty:
-            instance.tag = ""
+            instance.code = ""
         return instance
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "namespace": "namespace",
-            "tag": "tag",
+            "additionalData": "additional_data",
+            "code": "code",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "namespace": True,
-            "tag": True,
+            "additionalData": False,
+            "code": True,
         }
 
     # endregion static methods

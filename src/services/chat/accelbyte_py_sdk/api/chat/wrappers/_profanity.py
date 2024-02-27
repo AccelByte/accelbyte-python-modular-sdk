@@ -45,7 +45,9 @@ from ..operations.profanity import AdminProfanityDelete
 from ..operations.profanity import AdminProfanityExport
 from ..operations.profanity import AdminProfanityGroup
 from ..operations.profanity import AdminProfanityImport
-from ..operations.profanity import AdminProfanityImportActionEnum
+from ..operations.profanity import (
+    AdminProfanityImportActionEnum,
+)
 from ..operations.profanity import AdminProfanityQuery
 from ..operations.profanity import AdminProfanityUpdate
 

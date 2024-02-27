@@ -51,7 +51,9 @@ from ..operations.store import ExportStore
 from ..operations.store import ExportStore1
 from ..operations.store import ExportStoreByCSV
 from ..operations.store import GetCatalogDefinition
-from ..operations.store import GetCatalogDefinitionCatalogTypeEnum
+from ..operations.store import (
+    GetCatalogDefinitionCatalogTypeEnum,
+)
 from ..operations.store import GetPublishedStore
 from ..operations.store import GetPublishedStoreBackup
 from ..operations.store import GetStore

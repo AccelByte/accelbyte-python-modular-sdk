@@ -44,7 +44,9 @@ from ..operations.public_items import PublicBulkUpdateMyItems
 from ..operations.public_items import PublicConsumeMyItem
 from ..operations.public_items import PublicGetItem
 from ..operations.public_items import PublicListItems
-from ..operations.public_items import PublicListItemsSortByEnum
+from ..operations.public_items import (
+    PublicListItemsSortByEnum,
+)
 from ..operations.public_items import PublicMoveMyItems
 
 

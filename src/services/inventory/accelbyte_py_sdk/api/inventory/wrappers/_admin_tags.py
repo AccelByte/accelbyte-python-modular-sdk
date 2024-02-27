@@ -37,7 +37,9 @@ from ..models import ApimodelsListTagsResp
 from ..operations.admin_tags import AdminCreateTag
 from ..operations.admin_tags import AdminDeleteTag
 from ..operations.admin_tags import AdminListTags
-from ..operations.admin_tags import AdminListTagsSortByEnum
+from ..operations.admin_tags import (
+    AdminListTagsSortByEnum,
+)
 from ..models import ApimodelsCreateTagReqOwnerEnum
 from ..models import ApimodelsCreateTagRespOwnerEnum
 

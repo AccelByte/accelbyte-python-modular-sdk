@@ -33,9 +33,13 @@ from ..models import InvoiceSummary
 from ..models import ValidationErrorEntity
 
 from ..operations.invoice import DownloadInvoiceDetails
-from ..operations.invoice import DownloadInvoiceDetailsItemTypeEnum
+from ..operations.invoice import (
+    DownloadInvoiceDetailsItemTypeEnum,
+)
 from ..operations.invoice import GenerateInvoiceSummary
-from ..operations.invoice import GenerateInvoiceSummaryItemTypeEnum
+from ..operations.invoice import (
+    GenerateInvoiceSummaryItemTypeEnum,
+)
 
 
 @same_doc_as(DownloadInvoiceDetails)

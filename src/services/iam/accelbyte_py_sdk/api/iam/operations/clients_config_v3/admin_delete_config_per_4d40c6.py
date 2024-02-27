@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Cloudsave Service
+# AccelByte Gaming Services Iam Service
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -29,23 +29,21 @@ from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 
-from ...models import ModelsResponseError
-from ...models import ModelsTagRequest
+from ...models import ClientmodelPermissionSetDeleteGroupRequest
+from ...models import RestErrorResponse
 
 
-class AdminPostTagHandlerV1(Operation):
-    """Create a tag (adminPostTagHandlerV1)
+class AdminDeleteConfigPermissionsByGroup(Operation):
+    """Delete Client config permissions by module and group (AdminDeleteConfigPermissionsByGroup)
 
-    ## Description
-
-    Endpoint to create a tag
+    Delete Client config permissions by module and group.
 
     Properties:
-        url: /cloudsave/v1/admin/namespaces/{namespace}/tags
+        url: /iam/v3/admin/clientConfig/permissions
 
-        method: POST
+        method: DELETE
 
-        tags: ["Tags"]
+        tags: ["Clients Config V3"]
 
         consumes: ["application/json"]
 
@@ -53,35 +51,26 @@ class AdminPostTagHandlerV1(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ModelsTagRequest in body
-
-        namespace: (namespace) REQUIRED str in path
+        body: (body) REQUIRED ClientmodelPermissionSetDeleteGroupRequest in body
 
     Responses:
-        201: Created - (Tag created)
+        204: No Content - (Operation succeeded)
 
-        400: Bad Request - ModelsResponseError (18505: invalid request body | 20002: validation error)
+        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
 
-        401: Unauthorized - ModelsResponseError (20001: unauthorized access)
-
-        403: Forbidden - ModelsResponseError (20013: insufficient permission)
-
-        409: Conflict - ModelsResponseError (18506: tag already exists)
-
-        500: Internal Server Error - ModelsResponseError (20000: internal server error | 18507: unable to create tag)
+        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
     """
 
     # region fields
 
-    _url: str = "/cloudsave/v1/admin/namespaces/{namespace}/tags"
-    _method: str = "POST"
+    _url: str = "/iam/v3/admin/clientConfig/permissions"
+    _method: str = "DELETE"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
-    body: ModelsTagRequest  # REQUIRED in [body]
-    namespace: str  # REQUIRED in [path]
+    body: ClientmodelPermissionSetDeleteGroupRequest  # REQUIRED in [body]
 
     # endregion fields
 
@@ -122,19 +111,12 @@ class AdminPostTagHandlerV1(Operation):
     def get_all_params(self) -> dict:
         return {
             "body": self.get_body_params(),
-            "path": self.get_path_params(),
         }
 
     def get_body_params(self) -> Any:
         if not hasattr(self, "body") or self.body is None:
             return None
         return self.body.to_dict()
-
-    def get_path_params(self) -> dict:
-        result = {}
-        if hasattr(self, "namespace"):
-            result["namespace"] = self.namespace
-        return result
 
     # endregion get_x_params methods
 
@@ -144,12 +126,10 @@ class AdminPostTagHandlerV1(Operation):
 
     # region with_x methods
 
-    def with_body(self, value: ModelsTagRequest) -> AdminPostTagHandlerV1:
+    def with_body(
+        self, value: ClientmodelPermissionSetDeleteGroupRequest
+    ) -> AdminDeleteConfigPermissionsByGroup:
         self.body = value
-        return self
-
-    def with_namespace(self, value: str) -> AdminPostTagHandlerV1:
-        self.namespace = value
         return self
 
     # endregion with_x methods
@@ -161,11 +141,7 @@ class AdminPostTagHandlerV1(Operation):
         if hasattr(self, "body") and self.body:
             result["body"] = self.body.to_dict(include_empty=include_empty)
         elif include_empty:
-            result["body"] = ModelsTagRequest()
-        if hasattr(self, "namespace") and self.namespace:
-            result["namespace"] = str(self.namespace)
-        elif include_empty:
-            result["namespace"] = ""
+            result["body"] = ClientmodelPermissionSetDeleteGroupRequest()
         return result
 
     # endregion to methods
@@ -175,22 +151,14 @@ class AdminPostTagHandlerV1(Operation):
     # noinspection PyMethodMayBeStatic
     def parse_response(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[
-        Union[None, Optional[str]], Union[None, HttpResponse, ModelsResponseError]
-    ]:
+    ) -> Tuple[None, Union[None, HttpResponse, RestErrorResponse]]:
         """Parse the given response.
 
-        201: Created - (Tag created)
+        204: No Content - (Operation succeeded)
 
-        400: Bad Request - ModelsResponseError (18505: invalid request body | 20002: validation error)
+        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
 
-        401: Unauthorized - ModelsResponseError (20001: unauthorized access)
-
-        403: Forbidden - ModelsResponseError (20013: insufficient permission)
-
-        409: Conflict - ModelsResponseError (18506: tag already exists)
-
-        500: Internal Server Error - ModelsResponseError (20000: internal server error | 18507: unable to create tag)
+        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -205,18 +173,12 @@ class AdminPostTagHandlerV1(Operation):
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
-        if code == 201:
-            return HttpResponse.create(code, "Created"), None
-        if code == 400:
-            return None, ModelsResponseError.create_from_dict(content)
+        if code == 204:
+            return None, None
         if code == 401:
-            return None, ModelsResponseError.create_from_dict(content)
+            return None, RestErrorResponse.create_from_dict(content)
         if code == 403:
-            return None, ModelsResponseError.create_from_dict(content)
-        if code == 409:
-            return None, ModelsResponseError.create_from_dict(content)
-        if code == 500:
-            return None, ModelsResponseError.create_from_dict(content)
+            return None, RestErrorResponse.create_from_dict(content)
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content
@@ -228,11 +190,10 @@ class AdminPostTagHandlerV1(Operation):
 
     @classmethod
     def create(
-        cls, body: ModelsTagRequest, namespace: str, **kwargs
-    ) -> AdminPostTagHandlerV1:
+        cls, body: ClientmodelPermissionSetDeleteGroupRequest, **kwargs
+    ) -> AdminDeleteConfigPermissionsByGroup:
         instance = cls()
         instance.body = body
-        instance.namespace = namespace
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -240,32 +201,26 @@ class AdminPostTagHandlerV1(Operation):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> AdminPostTagHandlerV1:
+    ) -> AdminDeleteConfigPermissionsByGroup:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = ModelsTagRequest.create_from_dict(
+            instance.body = ClientmodelPermissionSetDeleteGroupRequest.create_from_dict(
                 dict_["body"], include_empty=include_empty
             )
         elif include_empty:
-            instance.body = ModelsTagRequest()
-        if "namespace" in dict_ and dict_["namespace"] is not None:
-            instance.namespace = str(dict_["namespace"])
-        elif include_empty:
-            instance.namespace = ""
+            instance.body = ClientmodelPermissionSetDeleteGroupRequest()
         return instance
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
             "body": "body",
-            "namespace": "namespace",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
             "body": True,
-            "namespace": True,
         }
 
     # endregion static methods

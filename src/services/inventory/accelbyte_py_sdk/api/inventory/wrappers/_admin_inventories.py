@@ -39,7 +39,9 @@ from ..models import ApimodelsUpdateInventoryReq
 from ..operations.admin_inventories import AdminCreateInventory
 from ..operations.admin_inventories import AdminGetInventory
 from ..operations.admin_inventories import AdminListInventories
-from ..operations.admin_inventories import AdminListInventoriesSortByEnum
+from ..operations.admin_inventories import (
+    AdminListInventoriesSortByEnum,
+)
 from ..operations.admin_inventories import AdminUpdateInventory
 from ..operations.admin_inventories import DeleteInventory
 

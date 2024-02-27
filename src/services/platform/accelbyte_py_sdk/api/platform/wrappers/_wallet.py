@@ -54,7 +54,9 @@ from ..operations.wallet import BulkCredit
 from ..operations.wallet import BulkDebit
 from ..operations.wallet import CheckBalance
 from ..operations.wallet import CheckWallet
-from ..operations.wallet import CheckWalletOriginEnum
+from ..operations.wallet import (
+    CheckWalletOriginEnum,
+)
 from ..operations.wallet import CreditUserWallet
 from ..operations.wallet import DebitByWalletPlatform
 from ..operations.wallet import DebitUserWallet
@@ -62,7 +64,9 @@ from ..operations.wallet import DebitUserWalletByCurrencyCode
 from ..operations.wallet import DisableUserWallet
 from ..operations.wallet import EnableUserWallet
 from ..operations.wallet import GetPlatformWalletConfig
-from ..operations.wallet import GetPlatformWalletConfigPlatformEnum
+from ..operations.wallet import (
+    GetPlatformWalletConfigPlatformEnum,
+)
 from ..operations.wallet import GetUserWallet
 from ..operations.wallet import GetWallet
 from ..operations.wallet import ListUserCurrencyTransactions
@@ -73,11 +77,17 @@ from ..operations.wallet import PublicGetWallet
 from ..operations.wallet import PublicListUserWalletTransactions
 from ..operations.wallet import QueryUserCurrencyWallets
 from ..operations.wallet import QueryWallets
-from ..operations.wallet import QueryWalletsOriginEnum
+from ..operations.wallet import (
+    QueryWalletsOriginEnum,
+)
 from ..operations.wallet import ResetPlatformWalletConfig
-from ..operations.wallet import ResetPlatformWalletConfigPlatformEnum
+from ..operations.wallet import (
+    ResetPlatformWalletConfigPlatformEnum,
+)
 from ..operations.wallet import UpdatePlatformWalletConfig
-from ..operations.wallet import UpdatePlatformWalletConfigPlatformEnum
+from ..operations.wallet import (
+    UpdatePlatformWalletConfigPlatformEnum,
+)
 from ..models import BulkCreditResultStatusEnum
 from ..models import BulkDebitResultStatusEnum
 from ..models import CreditRequestOriginEnum, CreditRequestSourceEnum

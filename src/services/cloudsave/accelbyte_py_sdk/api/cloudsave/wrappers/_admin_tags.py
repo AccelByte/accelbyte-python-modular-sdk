@@ -33,10 +33,9 @@ from ..models import ModelsListTagsResponse
 from ..models import ModelsResponseError
 from ..models import ModelsTagRequest
 
-from ..operations.tags import AdminDeleteTagHandlerV1
-from ..operations.tags import AdminListTagsHandlerV1
-from ..operations.tags import AdminPostTagHandlerV1
-from ..operations.tags import PublicListTagsHandlerV1
+from ..operations.admin_tags import AdminDeleteTagHandlerV1
+from ..operations.admin_tags import AdminListTagsHandlerV1
+from ..operations.admin_tags import AdminPostTagHandlerV1
 
 
 @same_doc_as(AdminDeleteTagHandlerV1)
@@ -50,14 +49,14 @@ def admin_delete_tag_handler_v1(
 
     ## Description
 
-    Endpoint to delete a tag
+    This endpoint will delete tag by name
 
     Properties:
         url: /cloudsave/v1/admin/namespaces/{namespace}/tags/{tag}
 
         method: DELETE
 
-        tags: ["Tags"]
+        tags: ["AdminTags"]
 
         consumes: ["application/json"]
 
@@ -70,7 +69,7 @@ def admin_delete_tag_handler_v1(
         tag: (tag) REQUIRED str in path
 
     Responses:
-        201: Created - (Tag deleted)
+        204: No Content - (Tag deleted)
 
         401: Unauthorized - ModelsResponseError (20001: unauthorized access)
 
@@ -102,14 +101,14 @@ async def admin_delete_tag_handler_v1_async(
 
     ## Description
 
-    Endpoint to delete a tag
+    This endpoint will delete tag by name
 
     Properties:
         url: /cloudsave/v1/admin/namespaces/{namespace}/tags/{tag}
 
         method: DELETE
 
-        tags: ["Tags"]
+        tags: ["AdminTags"]
 
         consumes: ["application/json"]
 
@@ -122,7 +121,7 @@ async def admin_delete_tag_handler_v1_async(
         tag: (tag) REQUIRED str in path
 
     Responses:
-        201: Created - (Tag deleted)
+        204: No Content - (Tag deleted)
 
         401: Unauthorized - ModelsResponseError (20001: unauthorized access)
 
@@ -147,6 +146,8 @@ async def admin_delete_tag_handler_v1_async(
 
 @same_doc_as(AdminListTagsHandlerV1)
 def admin_list_tags_handler_v1(
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -155,14 +156,14 @@ def admin_list_tags_handler_v1(
 
     ## Description
 
-    Endpoint to list out available tags
+    Retrieve list of available tags by namespace
 
     Properties:
         url: /cloudsave/v1/admin/namespaces/{namespace}/tags
 
         method: GET
 
-        tags: ["Tags"]
+        tags: ["AdminTags"]
 
         consumes: ["application/json"]
 
@@ -171,6 +172,10 @@ def admin_list_tags_handler_v1(
         securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
+
+        limit: (limit) OPTIONAL int in query
+
+        offset: (offset) OPTIONAL int in query
 
     Responses:
         200: OK - ModelsListTagsResponse (Available tags retrieved)
@@ -188,6 +193,8 @@ def admin_list_tags_handler_v1(
         if error:
             return None, error
     request = AdminListTagsHandlerV1.create(
+        limit=limit,
+        offset=offset,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -195,6 +202,8 @@ def admin_list_tags_handler_v1(
 
 @same_doc_as(AdminListTagsHandlerV1)
 async def admin_list_tags_handler_v1_async(
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -203,14 +212,14 @@ async def admin_list_tags_handler_v1_async(
 
     ## Description
 
-    Endpoint to list out available tags
+    Retrieve list of available tags by namespace
 
     Properties:
         url: /cloudsave/v1/admin/namespaces/{namespace}/tags
 
         method: GET
 
-        tags: ["Tags"]
+        tags: ["AdminTags"]
 
         consumes: ["application/json"]
 
@@ -219,6 +228,10 @@ async def admin_list_tags_handler_v1_async(
         securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
+
+        limit: (limit) OPTIONAL int in query
+
+        offset: (offset) OPTIONAL int in query
 
     Responses:
         200: OK - ModelsListTagsResponse (Available tags retrieved)
@@ -236,6 +249,8 @@ async def admin_list_tags_handler_v1_async(
         if error:
             return None, error
     request = AdminListTagsHandlerV1.create(
+        limit=limit,
+        offset=offset,
         namespace=namespace,
     )
     return await run_request_async(
@@ -254,14 +269,14 @@ def admin_post_tag_handler_v1(
 
     ## Description
 
-    Endpoint to create a tag
+    This endpoint will create new tags
 
     Properties:
         url: /cloudsave/v1/admin/namespaces/{namespace}/tags
 
         method: POST
 
-        tags: ["Tags"]
+        tags: ["AdminTags"]
 
         consumes: ["application/json"]
 
@@ -308,14 +323,14 @@ async def admin_post_tag_handler_v1_async(
 
     ## Description
 
-    Endpoint to create a tag
+    This endpoint will create new tags
 
     Properties:
         url: /cloudsave/v1/admin/namespaces/{namespace}/tags
 
         method: POST
 
-        tags: ["Tags"]
+        tags: ["AdminTags"]
 
         consumes: ["application/json"]
 
@@ -346,104 +361,6 @@ async def admin_post_tag_handler_v1_async(
             return None, error
     request = AdminPostTagHandlerV1.create(
         body=body,
-        namespace=namespace,
-    )
-    return await run_request_async(
-        request, additional_headers=x_additional_headers, **kwargs
-    )
-
-
-@same_doc_as(PublicListTagsHandlerV1)
-def public_list_tags_handler_v1(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
-    """List tags (publicListTagsHandlerV1)
-
-    ## Description
-
-    Endpoint to list out available tags
-
-    Properties:
-        url: /cloudsave/v1/namespaces/{namespace}/tags
-
-        method: GET
-
-        tags: ["Tags"]
-
-        consumes: ["application/json"]
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH]
-
-        namespace: (namespace) REQUIRED str in path
-
-    Responses:
-        200: OK - ModelsListTagsResponse (Available tags retrieved)
-
-        400: Bad Request - ModelsResponseError (18503: unable to list tags)
-
-        401: Unauthorized - ModelsResponseError (20001: unauthorized access)
-
-        403: Forbidden - ModelsResponseError (20013: insufficient permission)
-
-        500: Internal Server Error - ModelsResponseError (18502: unable to list tags)
-    """
-    if namespace is None:
-        namespace, error = get_services_namespace()
-        if error:
-            return None, error
-    request = PublicListTagsHandlerV1.create(
-        namespace=namespace,
-    )
-    return run_request(request, additional_headers=x_additional_headers, **kwargs)
-
-
-@same_doc_as(PublicListTagsHandlerV1)
-async def public_list_tags_handler_v1_async(
-    namespace: Optional[str] = None,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
-):
-    """List tags (publicListTagsHandlerV1)
-
-    ## Description
-
-    Endpoint to list out available tags
-
-    Properties:
-        url: /cloudsave/v1/namespaces/{namespace}/tags
-
-        method: GET
-
-        tags: ["Tags"]
-
-        consumes: ["application/json"]
-
-        produces: ["application/json"]
-
-        securities: [BEARER_AUTH]
-
-        namespace: (namespace) REQUIRED str in path
-
-    Responses:
-        200: OK - ModelsListTagsResponse (Available tags retrieved)
-
-        400: Bad Request - ModelsResponseError (18503: unable to list tags)
-
-        401: Unauthorized - ModelsResponseError (20001: unauthorized access)
-
-        403: Forbidden - ModelsResponseError (20013: insufficient permission)
-
-        500: Internal Server Error - ModelsResponseError (18502: unable to list tags)
-    """
-    if namespace is None:
-        namespace, error = get_services_namespace()
-        if error:
-            return None, error
-    request = PublicListTagsHandlerV1.create(
         namespace=namespace,
     )
     return await run_request_async(

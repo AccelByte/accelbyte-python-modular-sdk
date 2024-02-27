@@ -84,7 +84,9 @@ from ..operations.iap import GetEpicGamesIAPConfig
 from ..operations.iap import GetGoogleIAPConfig
 from ..operations.iap import GetIAPItemConfig
 from ..operations.iap import GetIAPItemMapping
-from ..operations.iap import GetIAPItemMappingPlatformEnum
+from ..operations.iap import (
+    GetIAPItemMappingPlatformEnum,
+)
 from ..operations.iap import GetOculusIAPConfig
 from ..operations.iap import GetPlayStationIAPConfig
 from ..operations.iap import GetSteamIAPConfig
@@ -102,7 +104,10 @@ from ..operations.iap import (
     QueryUserIAPConsumeHistoryTypeEnum,
 )
 from ..operations.iap import QueryUserIAPOrders
-from ..operations.iap import QueryUserIAPOrdersStatusEnum, QueryUserIAPOrdersTypeEnum
+from ..operations.iap import (
+    QueryUserIAPOrdersStatusEnum,
+    QueryUserIAPOrdersTypeEnum,
+)
 from ..operations.iap import SyncEpicGamesInventory
 from ..operations.iap import SyncOculusConsumableEntitlements
 from ..operations.iap import SyncSteamInventory

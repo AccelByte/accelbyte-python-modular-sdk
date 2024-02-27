@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Cloudsave Service
+# AccelByte Gaming Services Iam Service
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -29,23 +29,21 @@ from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 
-from ...models import ModelsListTagsResponse
-from ...models import ModelsResponseError
+from ...models import ClientmodelListUpsertModulesRequest
+from ...models import RestErrorResponse
 
 
-class AdminListTagsHandlerV1(Operation):
-    """List tags (adminListTagsHandlerV1)
+class AdminUpdateAvailablePermissionsByModule(Operation):
+    """Update or create Client permissions module (AdminUpdateAvailablePermissionsByModule)
 
-    ## Description
-
-    Endpoint to list out available tags
+    Update Client available permissions, if module or group not exists, it will auto create.
 
     Properties:
-        url: /cloudsave/v1/admin/namespaces/{namespace}/tags
+        url: /iam/v3/admin/clientConfig/permissions
 
-        method: GET
+        method: PUT
 
-        tags: ["Tags"]
+        tags: ["Clients Config V3"]
 
         consumes: ["application/json"]
 
@@ -53,30 +51,26 @@ class AdminListTagsHandlerV1(Operation):
 
         securities: [BEARER_AUTH]
 
-        namespace: (namespace) REQUIRED str in path
+        body: (body) REQUIRED ClientmodelListUpsertModulesRequest in body
 
     Responses:
-        200: OK - ModelsListTagsResponse (Available tags retrieved)
+        204: No Content - (Operation succeeded)
 
-        400: Bad Request - ModelsResponseError (18503: unable to list tags)
+        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
 
-        401: Unauthorized - ModelsResponseError (20001: unauthorized access)
-
-        403: Forbidden - ModelsResponseError (20013: insufficient permission)
-
-        500: Internal Server Error - ModelsResponseError (18502: unable to list tags)
+        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
     """
 
     # region fields
 
-    _url: str = "/cloudsave/v1/admin/namespaces/{namespace}/tags"
-    _method: str = "GET"
+    _url: str = "/iam/v3/admin/clientConfig/permissions"
+    _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
-    namespace: str  # REQUIRED in [path]
+    body: ClientmodelListUpsertModulesRequest  # REQUIRED in [body]
 
     # endregion fields
 
@@ -116,14 +110,13 @@ class AdminListTagsHandlerV1(Operation):
 
     def get_all_params(self) -> dict:
         return {
-            "path": self.get_path_params(),
+            "body": self.get_body_params(),
         }
 
-    def get_path_params(self) -> dict:
-        result = {}
-        if hasattr(self, "namespace"):
-            result["namespace"] = self.namespace
-        return result
+    def get_body_params(self) -> Any:
+        if not hasattr(self, "body") or self.body is None:
+            return None
+        return self.body.to_dict()
 
     # endregion get_x_params methods
 
@@ -133,8 +126,10 @@ class AdminListTagsHandlerV1(Operation):
 
     # region with_x methods
 
-    def with_namespace(self, value: str) -> AdminListTagsHandlerV1:
-        self.namespace = value
+    def with_body(
+        self, value: ClientmodelListUpsertModulesRequest
+    ) -> AdminUpdateAvailablePermissionsByModule:
+        self.body = value
         return self
 
     # endregion with_x methods
@@ -143,10 +138,10 @@ class AdminListTagsHandlerV1(Operation):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "namespace") and self.namespace:
-            result["namespace"] = str(self.namespace)
+        if hasattr(self, "body") and self.body:
+            result["body"] = self.body.to_dict(include_empty=include_empty)
         elif include_empty:
-            result["namespace"] = ""
+            result["body"] = ClientmodelListUpsertModulesRequest()
         return result
 
     # endregion to methods
@@ -156,21 +151,14 @@ class AdminListTagsHandlerV1(Operation):
     # noinspection PyMethodMayBeStatic
     def parse_response(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[
-        Union[None, ModelsListTagsResponse],
-        Union[None, HttpResponse, ModelsResponseError],
-    ]:
+    ) -> Tuple[None, Union[None, HttpResponse, RestErrorResponse]]:
         """Parse the given response.
 
-        200: OK - ModelsListTagsResponse (Available tags retrieved)
+        204: No Content - (Operation succeeded)
 
-        400: Bad Request - ModelsResponseError (18503: unable to list tags)
+        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
 
-        401: Unauthorized - ModelsResponseError (20001: unauthorized access)
-
-        403: Forbidden - ModelsResponseError (20013: insufficient permission)
-
-        500: Internal Server Error - ModelsResponseError (18502: unable to list tags)
+        403: Forbidden - RestErrorResponse (20013: insufficient permissions)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -185,16 +173,12 @@ class AdminListTagsHandlerV1(Operation):
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
-        if code == 200:
-            return ModelsListTagsResponse.create_from_dict(content), None
-        if code == 400:
-            return None, ModelsResponseError.create_from_dict(content)
+        if code == 204:
+            return None, None
         if code == 401:
-            return None, ModelsResponseError.create_from_dict(content)
+            return None, RestErrorResponse.create_from_dict(content)
         if code == 403:
-            return None, ModelsResponseError.create_from_dict(content)
-        if code == 500:
-            return None, ModelsResponseError.create_from_dict(content)
+            return None, RestErrorResponse.create_from_dict(content)
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content
@@ -205,9 +189,11 @@ class AdminListTagsHandlerV1(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, namespace: str, **kwargs) -> AdminListTagsHandlerV1:
+    def create(
+        cls, body: ClientmodelListUpsertModulesRequest, **kwargs
+    ) -> AdminUpdateAvailablePermissionsByModule:
         instance = cls()
-        instance.namespace = namespace
+        instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -215,24 +201,26 @@ class AdminListTagsHandlerV1(Operation):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> AdminListTagsHandlerV1:
+    ) -> AdminUpdateAvailablePermissionsByModule:
         instance = cls()
-        if "namespace" in dict_ and dict_["namespace"] is not None:
-            instance.namespace = str(dict_["namespace"])
+        if "body" in dict_ and dict_["body"] is not None:
+            instance.body = ClientmodelListUpsertModulesRequest.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
         elif include_empty:
-            instance.namespace = ""
+            instance.body = ClientmodelListUpsertModulesRequest()
         return instance
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "namespace": "namespace",
+            "body": "body",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "namespace": True,
+            "body": True,
         }
 
     # endregion static methods

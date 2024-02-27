@@ -44,7 +44,9 @@ from ..operations.admin_items import AdminBulkUpdateMyItems
 from ..operations.admin_items import AdminConsumeUserItem
 from ..operations.admin_items import AdminGetInventoryItem
 from ..operations.admin_items import AdminListItems
-from ..operations.admin_items import AdminListItemsSortByEnum
+from ..operations.admin_items import (
+    AdminListItemsSortByEnum,
+)
 from ..operations.admin_items import AdminSaveItem
 from ..operations.admin_items import AdminSaveItemToInventory
 

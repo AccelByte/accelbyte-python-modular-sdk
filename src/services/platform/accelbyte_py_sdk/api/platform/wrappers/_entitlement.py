@@ -74,15 +74,21 @@ from ..operations.entitlement import ExistsAnyUserActiveEntitlementByItemIds
 from ..operations.entitlement import GetEntitlement
 from ..operations.entitlement import GetEntitlementConfigInfo
 from ..operations.entitlement import GetPlatformEntitlementConfig
-from ..operations.entitlement import GetPlatformEntitlementConfigPlatformEnum
+from ..operations.entitlement import (
+    GetPlatformEntitlementConfigPlatformEnum,
+)
 from ..operations.entitlement import GetUserActiveEntitlementsByItemIds
 from ..operations.entitlement import GetUserAppEntitlementByAppId
 from ..operations.entitlement import GetUserAppEntitlementOwnershipByAppId
 from ..operations.entitlement import GetUserEntitlement
 from ..operations.entitlement import GetUserEntitlementByItemId
-from ..operations.entitlement import GetUserEntitlementByItemIdEntitlementClazzEnum
+from ..operations.entitlement import (
+    GetUserEntitlementByItemIdEntitlementClazzEnum,
+)
 from ..operations.entitlement import GetUserEntitlementBySku
-from ..operations.entitlement import GetUserEntitlementBySkuEntitlementClazzEnum
+from ..operations.entitlement import (
+    GetUserEntitlementBySkuEntitlementClazzEnum,
+)
 from ..operations.entitlement import GetUserEntitlementHistories
 from ..operations.entitlement import GetUserEntitlementOwnershipByItemId
 from ..operations.entitlement import (
@@ -117,7 +123,9 @@ from ..operations.entitlement import (
     PublicGetUserEntitlementByItemIdEntitlementClazzEnum,
 )
 from ..operations.entitlement import PublicGetUserEntitlementBySku
-from ..operations.entitlement import PublicGetUserEntitlementBySkuEntitlementClazzEnum
+from ..operations.entitlement import (
+    PublicGetUserEntitlementBySkuEntitlementClazzEnum,
+)
 from ..operations.entitlement import PublicGetUserEntitlementOwnershipByItemId
 from ..operations.entitlement import (
     PublicGetUserEntitlementOwnershipByItemIdEntitlementClazzEnum,
@@ -134,7 +142,9 @@ from ..operations.entitlement import (
     PublicQueryUserEntitlementsEntitlementClazzEnum,
 )
 from ..operations.entitlement import PublicQueryUserEntitlementsByAppType
-from ..operations.entitlement import PublicQueryUserEntitlementsByAppTypeAppTypeEnum
+from ..operations.entitlement import (
+    PublicQueryUserEntitlementsByAppTypeAppTypeEnum,
+)
 from ..operations.entitlement import PublicSellUserEntitlement
 from ..operations.entitlement import PublicSplitUserEntitlement
 from ..operations.entitlement import PublicTransferUserEntitlement
@@ -152,7 +162,9 @@ from ..operations.entitlement import (
     QueryUserEntitlementsOriginEnum,
 )
 from ..operations.entitlement import QueryUserEntitlementsByAppType
-from ..operations.entitlement import QueryUserEntitlementsByAppTypeAppTypeEnum
+from ..operations.entitlement import (
+    QueryUserEntitlementsByAppTypeAppTypeEnum,
+)
 from ..operations.entitlement import RevokeAllEntitlements
 from ..operations.entitlement import RevokeEntitlements
 from ..operations.entitlement import RevokeUseCount
@@ -161,7 +173,9 @@ from ..operations.entitlement import RevokeUserEntitlementByUseCount
 from ..operations.entitlement import RevokeUserEntitlements
 from ..operations.entitlement import SellUserEntitlement
 from ..operations.entitlement import UpdatePlatformEntitlementConfig
-from ..operations.entitlement import UpdatePlatformEntitlementConfigPlatformEnum
+from ..operations.entitlement import (
+    UpdatePlatformEntitlementConfigPlatformEnum,
+)
 from ..operations.entitlement import UpdateUserEntitlement
 from ..models import (
     AppEntitlementInfoAppTypeEnum,

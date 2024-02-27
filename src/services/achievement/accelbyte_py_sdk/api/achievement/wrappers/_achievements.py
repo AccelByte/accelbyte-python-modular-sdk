@@ -43,14 +43,18 @@ from ..operations.achievements import AdminCreateNewAchievement
 from ..operations.achievements import AdminDeleteAchievement
 from ..operations.achievements import AdminGetAchievement
 from ..operations.achievements import AdminListAchievements
-from ..operations.achievements import AdminListAchievementsSortByEnum
+from ..operations.achievements import (
+    AdminListAchievementsSortByEnum,
+)
 from ..operations.achievements import AdminUpdateAchievement
 from ..operations.achievements import AdminUpdateAchievementListOrder
 from ..operations.achievements import ExportAchievements
 from ..operations.achievements import ImportAchievements
 from ..operations.achievements import PublicGetAchievement
 from ..operations.achievements import PublicListAchievements
-from ..operations.achievements import PublicListAchievementsSortByEnum
+from ..operations.achievements import (
+    PublicListAchievementsSortByEnum,
+)
 
 
 @same_doc_as(AdminCreateNewAchievement)

@@ -60,11 +60,17 @@ from ..operations.order import PublicDownloadUserOrderReceipt
 from ..operations.order import PublicGetUserOrder
 from ..operations.order import PublicGetUserOrderHistories
 from ..operations.order import PublicQueryUserOrders
-from ..operations.order import PublicQueryUserOrdersStatusEnum
+from ..operations.order import (
+    PublicQueryUserOrdersStatusEnum,
+)
 from ..operations.order import QueryOrders
-from ..operations.order import QueryOrdersStatusEnum
+from ..operations.order import (
+    QueryOrdersStatusEnum,
+)
 from ..operations.order import QueryUserOrders
-from ..operations.order import QueryUserOrdersStatusEnum
+from ..operations.order import (
+    QueryUserOrdersStatusEnum,
+)
 from ..operations.order import RefundOrder
 from ..operations.order import UpdateUserOrderStatus
 from ..models import (

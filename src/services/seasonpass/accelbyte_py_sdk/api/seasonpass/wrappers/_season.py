@@ -65,9 +65,13 @@ from ..operations.season import PublicGetCurrentUserSeason
 from ..operations.season import PublicGetUserSeason
 from ..operations.season import PublishSeason
 from ..operations.season import QuerySeasons
-from ..operations.season import QuerySeasonsStatusEnum
+from ..operations.season import (
+    QuerySeasonsStatusEnum,
+)
 from ..operations.season import QueryUserExpGrantHistory
-from ..operations.season import QueryUserExpGrantHistorySourceEnum
+from ..operations.season import (
+    QueryUserExpGrantHistorySourceEnum,
+)
 from ..operations.season import QueryUserExpGrantHistoryTag
 from ..operations.season import ResetUserSeason
 from ..operations.season import RetireSeason

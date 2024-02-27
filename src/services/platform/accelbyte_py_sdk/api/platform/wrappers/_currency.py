@@ -42,9 +42,13 @@ from ..operations.currency import DeleteCurrency
 from ..operations.currency import GetCurrencyConfig
 from ..operations.currency import GetCurrencySummary
 from ..operations.currency import ListCurrencies
-from ..operations.currency import ListCurrenciesCurrencyTypeEnum
+from ..operations.currency import (
+    ListCurrenciesCurrencyTypeEnum,
+)
 from ..operations.currency import PublicListCurrencies
-from ..operations.currency import PublicListCurrenciesCurrencyTypeEnum
+from ..operations.currency import (
+    PublicListCurrenciesCurrencyTypeEnum,
+)
 from ..operations.currency import UpdateCurrency
 from ..models import CurrencyCreateCurrencyTypeEnum
 from ..models import CurrencyInfoCurrencyTypeEnum

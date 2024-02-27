@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Social Service."""
 
-__version__ = "2.11.4"
+__version__ = "2.12.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -44,6 +44,9 @@ from .game_profile_info import GameProfileInfo
 from .game_profile_public_info import GameProfilePublicInfo
 from .game_profile_request import GameProfileRequest
 from .global_stat_item_info import GlobalStatItemInfo
+from .global_stat_item_info import (
+    GlobalAggregationMethodEnum as GlobalStatItemInfoGlobalAggregationMethodEnum,
+)
 from .global_stat_item_paging_sliced_result import GlobalStatItemPagingSlicedResult
 from .namespace_slot_config_info import NamespaceSlotConfigInfo
 from .paging import Paging
@@ -52,6 +55,9 @@ from .slot_info import SlotInfo
 from .slot_metadata_update import SlotMetadataUpdate
 from .stat_create import StatCreate
 from .stat_create import SetByEnum as StatCreateSetByEnum
+from .stat_create import (
+    GlobalAggregationMethodEnum as StatCreateGlobalAggregationMethodEnum,
+)
 from .stat_cycle_create import StatCycleCreate
 from .stat_cycle_create import CycleTypeEnum as StatCycleCreateCycleTypeEnum
 from .stat_cycle_info import StatCycleInfo
@@ -64,6 +70,9 @@ from .stat_import_info import StatImportInfo
 from .stat_info import StatInfo
 from .stat_info import SetByEnum as StatInfoSetByEnum
 from .stat_info import StatusEnum as StatInfoStatusEnum
+from .stat_info import (
+    GlobalAggregationMethodEnum as StatInfoGlobalAggregationMethodEnum,
+)
 from .stat_item_inc import StatItemInc
 from .stat_item_inc_result import StatItemIncResult
 from .stat_item_update import StatItemUpdate
@@ -73,6 +82,9 @@ from .stat_item_value_paging_sliced_result import StatItemValuePagingSlicedResul
 from .stat_paging_sliced_result import StatPagingSlicedResult
 from .stat_reset_info import StatResetInfo
 from .stat_update import StatUpdate
+from .stat_update import (
+    GlobalAggregationMethodEnum as StatUpdateGlobalAggregationMethodEnum,
+)
 from .user_game_profiles import UserGameProfiles
 from .user_slot_config_info import UserSlotConfigInfo
 from .user_stat_cycle_item_info import UserStatCycleItemInfo

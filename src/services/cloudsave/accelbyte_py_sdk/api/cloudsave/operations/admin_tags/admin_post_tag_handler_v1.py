@@ -29,23 +29,23 @@ from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 
-from ...models import ModelsListTagsResponse
 from ...models import ModelsResponseError
+from ...models import ModelsTagRequest
 
 
-class PublicListTagsHandlerV1(Operation):
-    """List tags (publicListTagsHandlerV1)
+class AdminPostTagHandlerV1(Operation):
+    """Create a tag (adminPostTagHandlerV1)
 
     ## Description
 
-    Endpoint to list out available tags
+    This endpoint will create new tags
 
     Properties:
-        url: /cloudsave/v1/namespaces/{namespace}/tags
+        url: /cloudsave/v1/admin/namespaces/{namespace}/tags
 
-        method: GET
+        method: POST
 
-        tags: ["Tags"]
+        tags: ["AdminTags"]
 
         consumes: ["application/json"]
 
@@ -53,29 +53,34 @@ class PublicListTagsHandlerV1(Operation):
 
         securities: [BEARER_AUTH]
 
+        body: (body) REQUIRED ModelsTagRequest in body
+
         namespace: (namespace) REQUIRED str in path
 
     Responses:
-        200: OK - ModelsListTagsResponse (Available tags retrieved)
+        201: Created - (Tag created)
 
-        400: Bad Request - ModelsResponseError (18503: unable to list tags)
+        400: Bad Request - ModelsResponseError (18505: invalid request body | 20002: validation error)
 
         401: Unauthorized - ModelsResponseError (20001: unauthorized access)
 
         403: Forbidden - ModelsResponseError (20013: insufficient permission)
 
-        500: Internal Server Error - ModelsResponseError (18502: unable to list tags)
+        409: Conflict - ModelsResponseError (18506: tag already exists)
+
+        500: Internal Server Error - ModelsResponseError (20000: internal server error | 18507: unable to create tag)
     """
 
     # region fields
 
-    _url: str = "/cloudsave/v1/namespaces/{namespace}/tags"
-    _method: str = "GET"
+    _url: str = "/cloudsave/v1/admin/namespaces/{namespace}/tags"
+    _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
+    body: ModelsTagRequest  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
 
     # endregion fields
@@ -116,8 +121,14 @@ class PublicListTagsHandlerV1(Operation):
 
     def get_all_params(self) -> dict:
         return {
+            "body": self.get_body_params(),
             "path": self.get_path_params(),
         }
+
+    def get_body_params(self) -> Any:
+        if not hasattr(self, "body") or self.body is None:
+            return None
+        return self.body.to_dict()
 
     def get_path_params(self) -> dict:
         result = {}
@@ -133,7 +144,11 @@ class PublicListTagsHandlerV1(Operation):
 
     # region with_x methods
 
-    def with_namespace(self, value: str) -> PublicListTagsHandlerV1:
+    def with_body(self, value: ModelsTagRequest) -> AdminPostTagHandlerV1:
+        self.body = value
+        return self
+
+    def with_namespace(self, value: str) -> AdminPostTagHandlerV1:
         self.namespace = value
         return self
 
@@ -143,6 +158,10 @@ class PublicListTagsHandlerV1(Operation):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
+        if hasattr(self, "body") and self.body:
+            result["body"] = self.body.to_dict(include_empty=include_empty)
+        elif include_empty:
+            result["body"] = ModelsTagRequest()
         if hasattr(self, "namespace") and self.namespace:
             result["namespace"] = str(self.namespace)
         elif include_empty:
@@ -157,20 +176,21 @@ class PublicListTagsHandlerV1(Operation):
     def parse_response(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
-        Union[None, ModelsListTagsResponse],
-        Union[None, HttpResponse, ModelsResponseError],
+        Union[None, Optional[str]], Union[None, HttpResponse, ModelsResponseError]
     ]:
         """Parse the given response.
 
-        200: OK - ModelsListTagsResponse (Available tags retrieved)
+        201: Created - (Tag created)
 
-        400: Bad Request - ModelsResponseError (18503: unable to list tags)
+        400: Bad Request - ModelsResponseError (18505: invalid request body | 20002: validation error)
 
         401: Unauthorized - ModelsResponseError (20001: unauthorized access)
 
         403: Forbidden - ModelsResponseError (20013: insufficient permission)
 
-        500: Internal Server Error - ModelsResponseError (18502: unable to list tags)
+        409: Conflict - ModelsResponseError (18506: tag already exists)
+
+        500: Internal Server Error - ModelsResponseError (20000: internal server error | 18507: unable to create tag)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -185,13 +205,15 @@ class PublicListTagsHandlerV1(Operation):
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
-        if code == 200:
-            return ModelsListTagsResponse.create_from_dict(content), None
+        if code == 201:
+            return HttpResponse.create(code, "Created"), None
         if code == 400:
             return None, ModelsResponseError.create_from_dict(content)
         if code == 401:
             return None, ModelsResponseError.create_from_dict(content)
         if code == 403:
+            return None, ModelsResponseError.create_from_dict(content)
+        if code == 409:
             return None, ModelsResponseError.create_from_dict(content)
         if code == 500:
             return None, ModelsResponseError.create_from_dict(content)
@@ -205,8 +227,11 @@ class PublicListTagsHandlerV1(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, namespace: str, **kwargs) -> PublicListTagsHandlerV1:
+    def create(
+        cls, body: ModelsTagRequest, namespace: str, **kwargs
+    ) -> AdminPostTagHandlerV1:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
@@ -215,8 +240,14 @@ class PublicListTagsHandlerV1(Operation):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> PublicListTagsHandlerV1:
+    ) -> AdminPostTagHandlerV1:
         instance = cls()
+        if "body" in dict_ and dict_["body"] is not None:
+            instance.body = ModelsTagRequest.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
+        elif include_empty:
+            instance.body = ModelsTagRequest()
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
@@ -226,12 +257,14 @@ class PublicListTagsHandlerV1(Operation):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
+            "body": "body",
             "namespace": "namespace",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
+            "body": True,
             "namespace": True,
         }
 

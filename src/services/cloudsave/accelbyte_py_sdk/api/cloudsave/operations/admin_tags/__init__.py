@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Cloudsave Service."""
 
-__version__ = "3.15.0"
+__version__ = "3.15.1"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -17,4 +17,3 @@ __email__ = "dev@accelbyte.net"
 from .admin_delete_tag_handler_v1 import AdminDeleteTagHandlerV1
 from .admin_list_tags_handler_v1 import AdminListTagsHandlerV1
 from .admin_post_tag_handler_v1 import AdminPostTagHandlerV1
-from .public_list_tags_handler_v1 import PublicListTagsHandlerV1

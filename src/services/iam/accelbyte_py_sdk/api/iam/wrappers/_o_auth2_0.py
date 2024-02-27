@@ -59,7 +59,9 @@ from ..operations.o_auth2_0 import (
     SimultaneousLoginV3NativePlatformEnum,
 )
 from ..operations.o_auth2_0 import TokenGrantV3
-from ..operations.o_auth2_0 import TokenGrantV3GrantTypeEnum
+from ..operations.o_auth2_0 import (
+    TokenGrantV3GrantTypeEnum,
+)
 from ..operations.o_auth2_0 import TokenIntrospectionV3
 from ..operations.o_auth2_0 import TokenRevocationV3
 from ..operations.o_auth2_0 import Verify2faCode
@@ -1617,7 +1619,7 @@ def token_grant_v3(
     It generates a token by checking the client credentials provided through Authorization header.
     5. Grant Type == `urn:ietf:params:oauth:grant-type:extend_client_credentials`:
     It generates a token by checking the client credentials provided through Authorization header.
-    It only allow publisher namespace client.
+    It only allow publisher/studio namespace client.
     In generated token:
     1. There wil be no roles, namespace_roles & permission.
     2. The scope will be fixed as 'extend'.
@@ -1760,7 +1762,7 @@ async def token_grant_v3_async(
     It generates a token by checking the client credentials provided through Authorization header.
     5. Grant Type == `urn:ietf:params:oauth:grant-type:extend_client_credentials`:
     It generates a token by checking the client credentials provided through Authorization header.
-    It only allow publisher namespace client.
+    It only allow publisher/studio namespace client.
     In generated token:
     1. There wil be no roles, namespace_roles & permission.
     2. The scope will be fixed as 'extend'.

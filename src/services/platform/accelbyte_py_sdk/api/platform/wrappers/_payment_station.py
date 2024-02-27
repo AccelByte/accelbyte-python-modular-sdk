@@ -42,13 +42,21 @@ from ..models import PaymentUrlCreate
 from ..models import TaxResult
 
 from ..operations.payment_station import GetPaymentCustomization
-from ..operations.payment_station import GetPaymentCustomizationPaymentProviderEnum
+from ..operations.payment_station import (
+    GetPaymentCustomizationPaymentProviderEnum,
+)
 from ..operations.payment_station import GetPaymentPublicConfig
-from ..operations.payment_station import GetPaymentPublicConfigPaymentProviderEnum
+from ..operations.payment_station import (
+    GetPaymentPublicConfigPaymentProviderEnum,
+)
 from ..operations.payment_station import GetPaymentTaxValue
-from ..operations.payment_station import GetPaymentTaxValuePaymentProviderEnum
+from ..operations.payment_station import (
+    GetPaymentTaxValuePaymentProviderEnum,
+)
 from ..operations.payment_station import Pay
-from ..operations.payment_station import PayPaymentProviderEnum
+from ..operations.payment_station import (
+    PayPaymentProviderEnum,
+)
 from ..operations.payment_station import PublicCheckPaymentOrderPaidStatus
 from ..operations.payment_station import PublicGetPaymentMethods
 from ..operations.payment_station import PublicGetPaymentUrl

@@ -49,9 +49,13 @@ from ..operations.reward import GetReward1
 from ..operations.reward import GetRewardByCode
 from ..operations.reward import ImportRewards
 from ..operations.reward import QueryRewards
-from ..operations.reward import QueryRewardsSortByEnum
+from ..operations.reward import (
+    QueryRewardsSortByEnum,
+)
 from ..operations.reward import QueryRewards1
-from ..operations.reward import QueryRewards1SortByEnum
+from ..operations.reward import (
+    QueryRewards1SortByEnum,
+)
 from ..operations.reward import UpdateReward
 
 

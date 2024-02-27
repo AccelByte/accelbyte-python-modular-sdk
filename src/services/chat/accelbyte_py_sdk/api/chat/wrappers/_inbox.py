@@ -58,7 +58,9 @@ from ..operations.inbox import (
 )
 from ..operations.inbox import AdminGetInboxStats
 from ..operations.inbox import AdminGetInboxUsers
-from ..operations.inbox import AdminGetInboxUsersStatusEnum
+from ..operations.inbox import (
+    AdminGetInboxUsersStatusEnum,
+)
 from ..operations.inbox import AdminSaveInboxMessage
 from ..operations.inbox import AdminSendInboxMessage
 from ..operations.inbox import AdminUnsendInboxMessage

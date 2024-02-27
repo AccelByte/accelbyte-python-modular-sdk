@@ -33,7 +33,9 @@ from ..models import ApimodelsErrorResponse
 from ..models import ApimodelsListTagsResp
 
 from ..operations.public_tags import PublicListTags
-from ..operations.public_tags import PublicListTagsSortByEnum
+from ..operations.public_tags import (
+    PublicListTagsSortByEnum,
+)
 
 
 @same_doc_as(PublicListTags)

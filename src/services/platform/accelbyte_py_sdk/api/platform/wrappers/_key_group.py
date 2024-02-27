@@ -45,7 +45,9 @@ from ..operations.key_group import GetKeyGroup
 from ..operations.key_group import GetKeyGroupByBoothName
 from ..operations.key_group import GetKeyGroupDynamic
 from ..operations.key_group import ListKeys
-from ..operations.key_group import ListKeysStatusEnum
+from ..operations.key_group import (
+    ListKeysStatusEnum,
+)
 from ..operations.key_group import QueryKeyGroups
 from ..operations.key_group import UpdateKeyGroup
 from ..operations.key_group import UploadKeys

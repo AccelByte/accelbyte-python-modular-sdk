@@ -58,7 +58,10 @@ from ..operations.image_config import ImageDetailClient
 from ..operations.image_config import ImageLimitClient
 from ..operations.image_config import ImportImages
 from ..operations.image_config import ListImages
-from ..operations.image_config import ListImagesSortByEnum, ListImagesSortDirectionEnum
+from ..operations.image_config import (
+    ListImagesSortByEnum,
+    ListImagesSortDirectionEnum,
+)
 from ..operations.image_config import ListImagesClient
 from ..operations.image_config import (
     ListImagesClientSortByEnum,

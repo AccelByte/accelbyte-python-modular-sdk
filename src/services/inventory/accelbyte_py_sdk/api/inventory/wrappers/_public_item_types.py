@@ -33,7 +33,9 @@ from ..models import ApimodelsErrorResponse
 from ..models import ApimodelsListItemTypesResp
 
 from ..operations.public_item_types import PublicListItemTypes
-from ..operations.public_item_types import PublicListItemTypesSortByEnum
+from ..operations.public_item_types import (
+    PublicListItemTypesSortByEnum,
+)
 
 
 @same_doc_as(PublicListItemTypes)
