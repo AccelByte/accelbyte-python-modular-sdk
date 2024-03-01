@@ -3,6 +3,7 @@
   "src/services/achievement": "0.8.0",
   "src/services/ams": "0.5.0",
   "src/services/basic": "0.7.0",
+  "src/services/challenge": "0.1.0",
   "src/services/chat": "0.7.0",
   "src/services/cloudsave": "0.8.0",
   "src/services/dsartifact": "0.2.0",
