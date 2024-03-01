@@ -10,6 +10,7 @@ src/core
 src/services/achievement
 src/services/ams
 src/services/basic
+src/services/challenge
 src/services/chat
 src/services/cloudsave
 src/services/dsartifact
