@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains websocket models used by the AccelByte Gaming Services Lobby Ws Service."""
 
-__version__ = "0.1.0"
+__version__ = "3.35.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -52,6 +52,7 @@ from .list_outgoing_friends_request import ListOutgoingFriendsRequest
 from .list_outgoing_friends_response import ListOutgoingFriendsResponse
 from .matchmaking_notif import MatchmakingNotif
 from .message_notif import MessageNotif
+from .message_session_notif import MessageSessionNotif
 from .offline_notification_request import OfflineNotificationRequest
 from .offline_notification_response import OfflineNotificationResponse
 from .online_friends import OnlineFriends
@@ -160,6 +161,7 @@ models = {
     ListOutgoingFriendsResponse.get_type(): ListOutgoingFriendsResponse,
     MatchmakingNotif.get_type(): MatchmakingNotif,
     MessageNotif.get_type(): MessageNotif,
+    MessageSessionNotif.get_type(): MessageSessionNotif,
     OfflineNotificationRequest.get_type(): OfflineNotificationRequest,
     OfflineNotificationResponse.get_type(): OfflineNotificationResponse,
     OnlineFriends.get_type(): OnlineFriends,

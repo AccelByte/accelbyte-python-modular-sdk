@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.47.0"
+__version__ = "4.48.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -209,7 +209,6 @@ from .durable_entitlement_revocation_config import DurableEntitlementRevocationC
 from .durable_entitlement_revocation_config import (
     StrategyEnum as DurableEntitlementRevocationConfigStrategyEnum,
 )
-from .entitlement_origin_sync_result import EntitlementOriginSyncResult
 from .entitlement_config_info import EntitlementConfigInfo
 from .entitlement_decrement import EntitlementDecrement
 from .entitlement_decrement_result import EntitlementDecrementResult
@@ -235,6 +234,7 @@ from .entitlement_grant import SourceEnum as EntitlementGrantSourceEnum
 from .entitlement_grant_result import EntitlementGrantResult
 from .entitlement_history_info import EntitlementHistoryInfo
 from .entitlement_history_info import ActionEnum as EntitlementHistoryInfoActionEnum
+from .entitlement_history_info import ClazzEnum as EntitlementHistoryInfoClazzEnum
 from .entitlement_history_info import OriginEnum as EntitlementHistoryInfoOriginEnum
 from .entitlement_ifc import EntitlementIfc
 from .entitlement_ifc import AppTypeEnum as EntitlementIfcAppTypeEnum
@@ -250,6 +250,7 @@ from .entitlement_info import OriginEnum as EntitlementInfoOriginEnum
 from .entitlement_info import SourceEnum as EntitlementInfoSourceEnum
 from .entitlement_info import TypeEnum as EntitlementInfoTypeEnum
 from .entitlement_loot_box_reward import EntitlementLootBoxReward
+from .entitlement_origin_sync_result import EntitlementOriginSyncResult
 from .entitlement_ownership import EntitlementOwnership
 from .entitlement_paging_sliced_result import EntitlementPagingSlicedResult
 from .entitlement_platform_config_info import EntitlementPlatformConfigInfo
@@ -658,6 +659,16 @@ from .public_custom_config_info import PublicCustomConfigInfo
 from .public_custom_config_info import (
     ConnectionTypeEnum as PublicCustomConfigInfoConnectionTypeEnum,
 )
+from .public_entitlement_history_info import PublicEntitlementHistoryInfo
+from .public_entitlement_history_info import (
+    ActionEnum as PublicEntitlementHistoryInfoActionEnum,
+)
+from .public_entitlement_history_info import (
+    ClazzEnum as PublicEntitlementHistoryInfoClazzEnum,
+)
+from .public_entitlement_history_info import (
+    OriginEnum as PublicEntitlementHistoryInfoOriginEnum,
+)
 from .purchase_condition import PurchaseCondition
 from .purchase_condition_update import PurchaseConditionUpdate
 from .purchased_item_count import PurchasedItemCount
@@ -835,6 +846,9 @@ from .user_dlc_record import (
 )
 from .user_dlc_record import PlatformEnum as UserDLCRecordPlatformEnum
 from .user_dlc_record import StatusEnum as UserDLCRecordStatusEnum
+from .user_entitlement_history_paging_sliced_result import (
+    UserEntitlementHistoryPagingSlicedResult,
+)
 from .validation_error_entity import ValidationErrorEntity
 from .view_create import ViewCreate
 from .view_info import ViewInfo

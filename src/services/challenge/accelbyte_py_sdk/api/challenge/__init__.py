@@ -19,6 +19,8 @@ from .wrappers import admin_create_challenge
 from .wrappers import admin_create_challenge_async
 from .wrappers import admin_delete_challenge
 from .wrappers import admin_delete_challenge_async
+from .wrappers import admin_delete_tied_challenge
+from .wrappers import admin_delete_tied_challenge_async
 from .wrappers import admin_get_challenge
 from .wrappers import admin_get_challenge_async
 from .wrappers import admin_get_challenges

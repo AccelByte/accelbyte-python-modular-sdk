@@ -18,6 +18,8 @@ from ._challenge_configuration import admin_create_challenge
 from ._challenge_configuration import admin_create_challenge_async
 from ._challenge_configuration import admin_delete_challenge
 from ._challenge_configuration import admin_delete_challenge_async
+from ._challenge_configuration import admin_delete_tied_challenge
+from ._challenge_configuration import admin_delete_tied_challenge_async
 from ._challenge_configuration import admin_get_challenge
 from ._challenge_configuration import admin_get_challenge_async
 from ._challenge_configuration import admin_get_challenges
