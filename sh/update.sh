@@ -21,12 +21,12 @@ fi
 
 NEW_VERSION=$2
 if [ -z "$NEW_VERSION" ]; then
-  NEW_VERSION=$(jq -r .\""$PKG_PATH"\" "$VERSION_FILE")
+  NEW_VERSION=$(docker run -t --rm -v "$(readlink -f "$(pwd)")":/data/ -w /data/ dwdraju/alpine-curl-jq jq -r .\""$PKG_PATH"\" "$VERSION_FILE")
   if [[ "$NEW_VERSION" == "null" ]]; then
     NEW_VERSION="0.1.0"
   fi
 else
-  jq ".\"$PKG_PATH\" = \"$NEW_VERSION\"" "$VERSION_FILE" > "$VERSION_FILE.tmp" && mv "$VERSION_FILE.tmp" "$VERSION_FILE"
+  docker run -t --rm -v "$(readlink -f "$(pwd)")":/data/ -w /data/ dwdraju/alpine-curl-jq jq ".\"$PKG_PATH\" = \"$NEW_VERSION\"" "$VERSION_FILE" > "$VERSION_FILE.tmp" && mv "$VERSION_FILE.tmp" "$VERSION_FILE"
 fi
 
 # - start -
