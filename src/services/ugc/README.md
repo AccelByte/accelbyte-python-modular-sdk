@@ -6,7 +6,7 @@ This is a service module for the [AccelByte Modular Python SDK](https://github.c
 
 ```text
 AccelByte Gaming Services Ugc Service
-* Version: 2.19.7
+* Version: 2.20.0
 ```
 
 ## Setup

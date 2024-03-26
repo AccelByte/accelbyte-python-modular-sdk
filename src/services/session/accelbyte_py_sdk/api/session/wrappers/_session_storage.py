@@ -47,7 +47,8 @@ def admin_delete_user_session_storage(
 ):
     """Delete Session Storage. (adminDeleteUserSessionStorage)
 
-    Delete Session Storage.
+    Delete Session Storage By sessionID
+    Session Storage feature only available for Gamesession
 
     Properties:
         url: /session/v1/admin/namespaces/{namespace}/sessions/{sessionId}/storage
@@ -97,7 +98,8 @@ async def admin_delete_user_session_storage_async(
 ):
     """Delete Session Storage. (adminDeleteUserSessionStorage)
 
-    Delete Session Storage.
+    Delete Session Storage By sessionID
+    Session Storage feature only available for Gamesession
 
     Properties:
         url: /session/v1/admin/namespaces/{namespace}/sessions/{sessionId}/storage
@@ -149,7 +151,8 @@ def admin_read_session_storage(
 ):
     """Read Session Storage. (adminReadSessionStorage)
 
-    Read Session Storage.
+    Read Session Storage by sessionID
+    Session Storage feature only available for Gamesession
 
     Properties:
         url: /session/v1/admin/namespaces/{namespace}/sessions/{sessionId}/storage
@@ -199,7 +202,8 @@ async def admin_read_session_storage_async(
 ):
     """Read Session Storage. (adminReadSessionStorage)
 
-    Read Session Storage.
+    Read Session Storage by sessionID
+    Session Storage feature only available for Gamesession
 
     Properties:
         url: /session/v1/admin/namespaces/{namespace}/sessions/{sessionId}/storage
@@ -252,7 +256,8 @@ def admin_read_user_session_storage(
 ):
     """Read Session Storage User. (adminReadUserSessionStorage)
 
-    Read Session Storage User.
+    Read Session Storage by sessionID and userID
+    Session Storage feature only available for Gamesession
 
     Properties:
         url: /session/v1/admin/namespaces/{namespace}/sessions/{sessionId}/storage/users/{userId}
@@ -306,7 +311,8 @@ async def admin_read_user_session_storage_async(
 ):
     """Read Session Storage User. (adminReadUserSessionStorage)
 
-    Read Session Storage User.
+    Read Session Storage by sessionID and userID
+    Session Storage feature only available for Gamesession
 
     Properties:
         url: /session/v1/admin/namespaces/{namespace}/sessions/{sessionId}/storage/users/{userId}
@@ -372,6 +378,8 @@ def public_update_insert_session_storage(
     },
     "data": 123
     }
+    game Admin can update or insert session storage
+    Session Storage feature only available for Gamesession
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/sessions/{sessionId}/storage/users/{userId}
@@ -440,6 +448,8 @@ async def public_update_insert_session_storage_async(
     },
     "data": 123
     }
+    game Admin can update or insert session storage
+    Session Storage feature only available for Gamesession
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/sessions/{sessionId}/storage/users/{userId}
@@ -509,6 +519,8 @@ def public_update_insert_session_storage_leader(
     },
     "data": 123
     }
+    game Admin can update or insert session storage
+    Session Storage feature only available for Gamesession
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/sessions/{sessionId}/storage/leader
@@ -573,6 +585,8 @@ async def public_update_insert_session_storage_leader_async(
     },
     "data": 123
     }
+    game Admin can update or insert session storage
+    Session Storage feature only available for Gamesession
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/sessions/{sessionId}/storage/leader

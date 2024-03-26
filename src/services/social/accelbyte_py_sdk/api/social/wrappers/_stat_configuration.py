@@ -71,6 +71,7 @@ def create_stat(
               *  Returns : created stat template
               * default minimum value is 0
               * default maximum value is 1.7976931348623157e+308
+              * Field globalAggregationMethod will be ignored when setAsGlobal field is false
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
@@ -135,6 +136,7 @@ async def create_stat_async(
               *  Returns : created stat template
               * default minimum value is 0
               * default maximum value is 1.7976931348623157e+308
+              * Field globalAggregationMethod will be ignored when setAsGlobal field is false
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
@@ -201,6 +203,7 @@ def create_stat_1(
               *  Returns : created stat template
               * default minimum value is 0
               * default maximum value is 1.7976931348623157e+308
+              * Field globalAggregationMethod will be ignored when setAsGlobal field is false
 
     Required Permission(s):
         - NAMESPACE:{namespace}:STAT [CREATE]
@@ -265,6 +268,7 @@ async def create_stat_1_async(
               *  Returns : created stat template
               * default minimum value is 0
               * default maximum value is 1.7976931348623157e+308
+              * Field globalAggregationMethod will be ignored when setAsGlobal field is false
 
     Required Permission(s):
         - NAMESPACE:{namespace}:STAT [CREATE]
@@ -1180,6 +1184,7 @@ def update_stat(
     Other detail info:
               *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
               *  Returns : updated stat
+              *  Field globalAggregationMethod will be ignored when the stat is not set as global
               *  Field globalAggregationMethod is not updatable when the stat status is TIED
 
     Required Permission(s):
@@ -1243,6 +1248,7 @@ async def update_stat_async(
     Other detail info:
               *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
               *  Returns : updated stat
+              *  Field globalAggregationMethod will be ignored when the stat is not set as global
               *  Field globalAggregationMethod is not updatable when the stat status is TIED
 
     Required Permission(s):

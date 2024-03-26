@@ -46,7 +46,7 @@ def admin_evaluate_progress(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """&lt;ul&gt;&lt;li&gt;Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:PROGRESSION [UPDATE]&lt;/li&gt;&lt;/ul&gt; (adminEvaluateProgress)
+    """Evaluate User's Progressions (adminEvaluateProgress)
 
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:PROGRESSION [UPDATE]
 
@@ -99,7 +99,7 @@ async def admin_evaluate_progress_async(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """&lt;ul&gt;&lt;li&gt;Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:PROGRESSION [UPDATE]&lt;/li&gt;&lt;/ul&gt; (adminEvaluateProgress)
+    """Evaluate User's Progressions (adminEvaluateProgress)
 
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:PROGRESSION [UPDATE]
 
@@ -153,8 +153,12 @@ def evaluate_my_progress(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Evaluate my progress (EvaluateMyProgress)
+    """Evaluate User's Challenge Progressions (EvaluateMyProgress)
 
+    * Required permission: NAMESPACE:{namespace}:CHALLENGE:PROGRESSION [UPDATE]
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:CHALLENGE:PROGRESSION [UPDATE]
 
     Properties:
         url: /challenge/v1/public/namespaces/{namespace}/users/me/progress/evaluate
@@ -196,8 +200,12 @@ async def evaluate_my_progress_async(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Evaluate my progress (EvaluateMyProgress)
+    """Evaluate User's Challenge Progressions (EvaluateMyProgress)
 
+    * Required permission: NAMESPACE:{namespace}:CHALLENGE:PROGRESSION [UPDATE]
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:CHALLENGE:PROGRESSION [UPDATE]
 
     Properties:
         url: /challenge/v1/public/namespaces/{namespace}/users/me/progress/evaluate
@@ -243,8 +251,12 @@ def public_get_user_progression(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Public get user progression (publicGetUserProgression)
+    """List User's Progressions (publicGetUserProgression)
 
+    * Required permission: NAMESPACE:{namespace}:CHALLENGE:PROGRESSION [READ]
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:CHALLENGE:PROGRESSION [READ]
 
     Properties:
         url: /challenge/v1/public/namespaces/{namespace}/users/me/progress/{challengeCode}
@@ -296,8 +308,12 @@ async def public_get_user_progression_async(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Public get user progression (publicGetUserProgression)
+    """List User's Progressions (publicGetUserProgression)
 
+    * Required permission: NAMESPACE:{namespace}:CHALLENGE:PROGRESSION [READ]
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:CHALLENGE:PROGRESSION [READ]
 
     Properties:
         url: /challenge/v1/public/namespaces/{namespace}/users/me/progress/{challengeCode}

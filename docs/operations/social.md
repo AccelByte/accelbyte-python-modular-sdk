@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Social Service Index (2.12.2)
+# AccelByte Gaming Services Statistics Service Index (2.12.3)
 
 
 ## Operations

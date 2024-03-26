@@ -57,7 +57,7 @@ def admin_get_user_rewards(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """&lt;ul&gt;&lt;li&gt;Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]&lt;/li&gt;&lt;/ul&gt; (adminGetUserRewards)
+    """List User's Rewards (adminGetUserRewards)
 
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]
 
@@ -124,7 +124,7 @@ async def admin_get_user_rewards_async(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """&lt;ul&gt;&lt;li&gt;Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]&lt;/li&gt;&lt;/ul&gt; (adminGetUserRewards)
+    """List User's Rewards (adminGetUserRewards)
 
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]
 
@@ -189,8 +189,12 @@ def public_claim_user_rewards(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Public claim user rewards (publicClaimUserRewards)
+    """Claim User's Rewards (publicClaimUserRewards)
 
+    * Required permission: NAMESPACE:{namespace}:CHALLENGE:REWARD:CLAIM [UPDATE]
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:CHALLENGE:REWARD:CLAIM [UPDATE]
 
     Properties:
         url: /challenge/v1/public/namespaces/{namespace}/users/me/rewards/claim
@@ -238,8 +242,12 @@ async def public_claim_user_rewards_async(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Public claim user rewards (publicClaimUserRewards)
+    """Claim User's Rewards (publicClaimUserRewards)
 
+    * Required permission: NAMESPACE:{namespace}:CHALLENGE:REWARD:CLAIM [UPDATE]
+
+    Required Permission(s):
+        - NAMESPACE:{namespace}:CHALLENGE:REWARD:CLAIM [UPDATE]
 
     Properties:
         url: /challenge/v1/public/namespaces/{namespace}/users/me/rewards/claim
@@ -292,8 +300,12 @@ def public_get_user_rewards(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Public get user rewards (publicGetUserRewards)
+    """List User's Rewards (publicGetUserRewards)
 
+    * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]
 
     Properties:
         url: /challenge/v1/public/namespaces/{namespace}/users/me/rewards
@@ -351,8 +363,12 @@ async def public_get_user_rewards_async(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Public get user rewards (publicGetUserRewards)
+    """List User's Rewards (publicGetUserRewards)
 
+    * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]
 
     Properties:
         url: /challenge/v1/public/namespaces/{namespace}/users/me/rewards

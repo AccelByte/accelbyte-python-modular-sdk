@@ -6,7 +6,7 @@
 
 # template_file: command.j2
 
-# AGS Social Service
+# AGS Statistics Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

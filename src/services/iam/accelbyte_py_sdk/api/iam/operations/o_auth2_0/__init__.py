@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Iam Service."""
 
-__version__ = "7.12.0"
+__version__ = "7.13.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -30,7 +30,6 @@ from .revoke_user_v3 import RevokeUserV3
 from .send_mfa_authentication_code import SendMFAAuthenticationCode
 from .simultaneous_login_v3 import SimultaneousLoginV3
 from .simultaneous_login_v3 import (
-    SimultaneousPlatformEnum as SimultaneousLoginV3SimultaneousPlatformEnum,
     NativePlatformEnum as SimultaneousLoginV3NativePlatformEnum,
 )
 from .token_grant_v3 import TokenGrantV3
