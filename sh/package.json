@@ -26,6 +26,7 @@
   "src/services/seasonpass": "0.10.0",
   "src/services/session": "0.10.0",
   "src/services/sessionbrowser": "0.9.0",
+  "src/services/sessionhistory": "0.0.0",
   "src/services/social": "0.10.0",
   "src/services/ugc": "0.10.0",
   "src/features/auth": "0.2.0",

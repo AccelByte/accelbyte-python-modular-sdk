@@ -33,6 +33,7 @@ src/services/reporting
 src/services/seasonpass
 src/services/session
 src/services/sessionbrowser
+src/services/sessionhistory
 src/services/social
 src/services/ugc
 

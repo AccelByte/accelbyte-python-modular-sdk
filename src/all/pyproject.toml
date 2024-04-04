@@ -42,6 +42,7 @@ dependencies = [
     "accelbyte-py-sdk-service-seasonpass",
     "accelbyte-py-sdk-service-session",
     "accelbyte-py-sdk-service-sessionbrowser",
+    "accelbyte-py-sdk-service-sessionhistory",
     "accelbyte-py-sdk-service-social",
     "accelbyte-py-sdk-service-ugc",
 ]
