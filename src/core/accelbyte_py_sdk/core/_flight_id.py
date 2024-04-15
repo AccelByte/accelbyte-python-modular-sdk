@@ -16,7 +16,7 @@ class FlightIdPreprocessor:
         operation: Operation,
         sdk: "AccelByteSDK",
         *args,
-        **kwargs
+        **kwargs,
     ) -> Tuple[ProtoHttpRequest, Optional[HttpResponse]]:
         if not proto.headers.has_flight_id():
             flight_id = self.get_flight_id(operation=operation, sdk=sdk, **kwargs)
