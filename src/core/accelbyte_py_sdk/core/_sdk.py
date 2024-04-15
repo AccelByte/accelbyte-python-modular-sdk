@@ -434,12 +434,22 @@ class AccelByteSDK:
     ):
         config_repo = kwargs.pop("config_repo", self.get_config_repository())
         token_repo = kwargs.pop("token_repo", self.get_token_repository())
-        base_url = kwargs.pop("base_url", "") or config_repo.get_base_url()
+        base_url = (
+            kwargs.pop("base_url", "")
+            or config_repo.get_base_url_override(operation.service_name)
+            or config_repo.get_base_url()
+        )
+        base_path = (
+            kwargs.pop("base_path", "")
+            or config_repo.get_base_path_override(operation.service_name)
+            or ""
+        )
         additional_headers = kwargs.pop("additional_headers", None)
         additional_headers_override = kwargs.pop("additional_headers_override", True)
         proto, error = create_proto_from_operation(
             operation=operation,
             base_url=base_url,
+            base_path=base_path,
             config_repo=config_repo,
             token_repo=token_repo,
             additional_headers=additional_headers,

@@ -118,6 +118,8 @@ class Operation:
     # region overrideable members
 
     url: str = ""
+    path: str = ""
+    base_path: str = ""
     method: str = "GET"
     consumes: List[str] = []
     produces: List[str] = []
@@ -125,6 +127,7 @@ class Operation:
     location_query: Optional[str] = None
     authorization_override: Optional[str] = None
 
+    service_name: Optional[str] = None
     x_flight_id: Optional[str] = None
 
     def get_all_params(self) -> dict:

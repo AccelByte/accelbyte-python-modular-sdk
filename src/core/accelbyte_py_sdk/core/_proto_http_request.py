@@ -16,7 +16,7 @@ from ._http_response import HttpResponse
 from ._operation import Operation
 from ._utils import SENTINEL
 from ._utils import create_basic_authentication
-from ._utils import create_url
+from ._utils import create_path, create_url
 from ._utils import is_file
 from ._utils import is_json_mime_type
 
@@ -217,14 +217,22 @@ def create_proto_from_operation(
     config_repo: ConfigRepository,
     token_repo: TokenRepository,
     base_url: str = "",
+    base_path: str = "",
     additional_headers: Optional[Dict[str, str]] = None,
     additional_headers_override: bool = True,
     **kwargs,
 ) -> Tuple[Optional[ProtoHttpRequest], Optional[HttpResponse]]:
-    base_url = base_url if base_url is not None else ""
+    base_url = base_url or ""
+    base_path = base_path or operation.base_path or ""
+
+    path = (
+        create_path(path=operation.path, base_path=base_path)
+        if base_path
+        else operation.url
+    )
 
     url = create_url(
-        path=operation.url,
+        path=path,
         base=base_url,
         path_params=operation.get_path_params(),
         query_params=operation.get_query_params(),

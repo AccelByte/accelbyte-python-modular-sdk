@@ -9,7 +9,7 @@ import yaml
 from abc import ABC, abstractmethod
 from os import environ
 from pathlib import Path
-from typing import Any, List, Optional, Tuple, Union
+from typing import Any, Dict, List, Optional, Tuple, Union
 
 
 class ConfigRepository(ABC):
@@ -45,6 +45,14 @@ class ConfigRepository(ABC):
     def get_app_version(self) -> str:
         pass
 
+    # noinspection PyMethodMayBeStatic
+    def get_base_url_override(self, service_name: Optional[str]) -> Optional[str]:
+        return None
+
+    # noinspection PyMethodMayBeStatic
+    def get_base_path_override(self, service_name: Optional[str]) -> Optional[str]:
+        return None
+
     def get_client_auth(self) -> Tuple[str, str]:
         return self.get_client_id(), self.get_client_secret()
 
@@ -60,6 +68,9 @@ class MyConfigRepository(ConfigRepository):
         app_version: Optional[str] = None,
         auto_add_amazon_trace_id: Optional[bool] = None,
         auto_add_user_agent: Optional[bool] = None,
+        base_url_overrides: Optional[Dict[str, str]] = None,
+        base_path_overrides: Optional[Dict[str, str]] = None,
+        **kwargs,
     ) -> None:
         self._base_url = base_url
         self._client_id = client_id
@@ -73,6 +84,8 @@ class MyConfigRepository(ConfigRepository):
         self._auto_add_user_agent = (
             auto_add_user_agent if auto_add_user_agent is not None else True
         )
+        self._base_url_overrides = base_url_overrides or {}
+        self._base_path_overrides = base_path_overrides or {}
 
     def auto_add_amazon_trace_id(self) -> bool:
         return self._auto_add_amazon_trace_id
@@ -97,6 +110,16 @@ class MyConfigRepository(ConfigRepository):
 
     def get_app_version(self) -> str:
         return self._app_version
+
+    def get_base_url_override(self, service_name: Optional[str]) -> Optional[str]:
+        if not service_name:
+            return None
+        return self._base_url_overrides.get(service_name, None)
+
+    def get_base_path_override(self, service_name: Optional[str]) -> Optional[str]:
+        if not service_name:
+            return None
+        return self._base_path_overrides.get(service_name, None)
 
 
 class DictConfigRepository(ConfigRepository):
@@ -138,6 +161,14 @@ class DictConfigRepository(ConfigRepository):
         "autoAddUserAgent",
         "AutoAddUserAgent",
     ]
+    base_url_overrides_key_fmt: List[str] = [
+        "AB_{}_BASE_URL",
+        "{}BaseUrl",
+    ]
+    base_path_overrides_key_fmt: List[str] = [
+        "AB_{}_BASE_PATH",
+        "{}BasePath",
+    ]
 
     def __init__(self, dict_: dict):
         self._dict = dict_
@@ -153,6 +184,8 @@ class DictConfigRepository(ConfigRepository):
         self._auto_add_user_agent = DictConfigRepository._force_cast_to_bool(
             self._try_get_value(self.auto_add_user_agent_keys, True)
         )
+        self._base_url_overrides = {}
+        self._base_path_overrides = {}
 
     def auto_add_amazon_trace_id(self) -> bool:
         return self._auto_add_amazon_trace_id
@@ -177,6 +210,36 @@ class DictConfigRepository(ConfigRepository):
 
     def get_app_version(self) -> str:
         return self._app_version
+
+    def get_base_url_override(self, service_name: Optional[str]) -> Optional[str]:
+        if not service_name:
+            return None
+        if service_name in self._base_url_overrides:
+            return self._base_url_overrides[service_name]
+        ci_keys = {k.casefold(): k for k in self._dict}
+        for fmt in self.base_url_overrides_key_fmt:
+            key = fmt.format(service_name).casefold()
+            if key in ci_keys:
+                result = self._dict[ci_keys.get(key)]
+                self._base_url_overrides[service_name] = result
+                return result
+        self._base_url_overrides[service_name] = None
+        return None
+
+    def get_base_path_override(self, service_name: Optional[str]) -> Optional[str]:
+        if not service_name:
+            return None
+        if service_name in self._base_path_overrides:
+            return self._base_path_overrides[service_name]
+        ci_keys = {k.casefold(): k for k in self._dict}
+        for fmt in self.base_path_overrides_key_fmt:
+            key = fmt.format(service_name).casefold()
+            if key in ci_keys:
+                result = self._dict[ci_keys.get(key)]
+                self._base_path_overrides[service_name] = result
+                return result
+        self._base_path_overrides[service_name] = None
+        return None
 
     def _try_get_value(
         self, keys: Union[str, List[str]], default: Union[None, Any] = None

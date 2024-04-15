@@ -173,6 +173,13 @@ def create_url(
     return result
 
 
+def create_path(path: str, base_path: Optional[str] = None) -> str:
+    path = f"/{path.removeprefix('/').removesuffix('/')}"
+    base_path = f"/{base_path.removeprefix('/').removeprefix('/')}" if base_path else ""
+    result = f"{base_path}{path}"
+    return result
+
+
 def flatten_query_params(
     query_params: Optional[Dict[str, Union[Any, List[Any]]]] = None,
     collection_format_map: Optional[Dict[str, Optional[str]]] = None,
