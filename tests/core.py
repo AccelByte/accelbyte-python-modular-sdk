@@ -4,6 +4,7 @@ from typing import Any, Tuple, List, Union, Dict, Optional
 from unittest import TestCase
 
 import accelbyte_py_sdk
+from accelbyte_py_sdk.core import AccelByteSDK
 from accelbyte_py_sdk.core import DictConfigRepository
 from accelbyte_py_sdk.core import Header
 from accelbyte_py_sdk.core import HeaderStr
@@ -86,12 +87,15 @@ class TestModel(Model):
 
 
 class TestOperation(Operation):
-    _url: str = "/test/profiles"
-    _method: str = "GET"
-    _consumes: List[str] = ["application/json"]
-    _produces: List[str] = ["application/json"]
-    _security_type: Optional[str] = "bearer"
+    url: str = "/test/profiles"
+    path: str = "/profiles"
+    base_path: str = "/test"
+    method: str = "GET"
+    consumes: List[str] = ["application/json"]
+    produces: List[str] = ["application/json"]
     _location_query: str = None
+
+    service_name: Optional[str] = "test"
 
     body: TestModel
     cookie: Union[str, HeaderStr]
@@ -402,6 +406,74 @@ class CoreTestCase(TestCase):
 
     def test_get_http_client_throws_value_error_when_none(self):
         self.assertRaises(ValueError, get_http_client)
+
+    def test_initialize_with_base_url_overrides(self):
+        # arrange
+        test_service_name = "foo"
+        test_base_url = "https://accelbyte.io"
+
+        # act
+        config = MyConfigRepository(
+            base_url="http://0.0.0.0:8080",
+            client_id="admin",
+            client_secret="pass",
+            namespace="spam&eggs",
+            base_url_overrides={test_service_name: test_base_url},
+        )
+
+        # assert
+        self.assertEqual(test_base_url, config.get_base_url_override(test_service_name))
+
+        # arrange
+        sdk = AccelByteSDK()
+        sdk.initialize(options={"config": config})
+
+        # act
+        operation = TestOperation()
+        operation.path = "/foo"
+        operation.base_path = "/test"
+        operation.service_name = test_service_name
+        operation.securities = []
+        proto, error, kwargs = sdk._pre_run_request(operation=operation)
+
+        # assert
+        self.assertIsNone(error, error)
+        self.assertEqual("https://accelbyte.io/test/foo", proto.url)
+
+    def test_initialize_with_base_path_overrides(self):
+        # arrange
+        test_service_name = "foo"
+        test_base_path = "/test2"
+
+        # act
+        config = MyConfigRepository(
+            base_url="http://0.0.0.0:8080",
+            client_id="admin",
+            client_secret="pass",
+            namespace="spam&eggs",
+            base_path_overrides={test_service_name: test_base_path},
+        )
+
+        # assert
+        self.assertEqual(
+            test_base_path, config.get_base_path_override(test_service_name)
+        )
+
+        # arrange
+        sdk = AccelByteSDK()
+        sdk.initialize(options={"config": config})
+
+        # act
+        operation = TestOperation()
+        operation.path = "/foo"
+        operation.base_path = "/test"
+        operation.service_name = test_service_name
+        operation.securities = []
+        proto, error, kwargs = sdk._pre_run_request(operation=operation)
+
+        # assert
+        self.assertIsNone(error, error)
+        self.assertEqual("http://0.0.0.0:8080/test2/foo", proto.url)
 
     def test_get_client_auth_allows_empty_secret(self):
         config = MyConfigRepository(
