@@ -78,7 +78,7 @@ class PublicUpgradeHeadlessAccountV3(Operation):
 
         404: Not Found - RestErrorResponse (10139: platform account not found | 10154: country not found)
 
-        409: Conflict - RestErrorResponse (10153: user exist | 10170: account is already a full account)
+        409: Conflict - RestErrorResponse (10153: user exist | 10170: account is already a full account | 10222: unique display name already exists)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -86,11 +86,15 @@ class PublicUpgradeHeadlessAccountV3(Operation):
     # region fields
 
     _url: str = "/iam/v3/public/namespaces/{namespace}/users/me/headless/code/verify"
+    _path: str = "/iam/v3/public/namespaces/{namespace}/users/me/headless/code/verify"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     body: ModelUpgradeHeadlessAccountWithVerificationCodeRequestV3  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -102,6 +106,14 @@ class PublicUpgradeHeadlessAccountV3(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:
@@ -204,7 +216,7 @@ class PublicUpgradeHeadlessAccountV3(Operation):
 
         404: Not Found - RestErrorResponse (10139: platform account not found | 10154: country not found)
 
-        409: Conflict - RestErrorResponse (10153: user exist | 10170: account is already a full account)
+        409: Conflict - RestErrorResponse (10153: user exist | 10170: account is already a full account | 10222: unique display name already exists)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
 

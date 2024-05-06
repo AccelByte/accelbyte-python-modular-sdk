@@ -78,11 +78,15 @@ class PublicVerifyHeadlessAccountV3(Operation):
     # region fields
 
     _url: str = "/iam/v3/public/namespaces/{namespace}/users/me/headless/verify"
+    _path: str = "/iam/v3/public/namespaces/{namespace}/users/me/headless/verify"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     body: ModelUpgradeHeadlessAccountV3Request  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -95,6 +99,14 @@ class PublicVerifyHeadlessAccountV3(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

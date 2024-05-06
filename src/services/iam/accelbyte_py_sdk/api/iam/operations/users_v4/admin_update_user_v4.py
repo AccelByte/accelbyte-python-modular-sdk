@@ -79,7 +79,7 @@ class AdminUpdateUserV4(Operation):
 
         404: Not Found - RestErrorResponse (10139: platform account not found | 20008: user not found)
 
-        409: Conflict - RestErrorResponse (10133: email already used)
+        409: Conflict - RestErrorResponse (10133: email already used | 10222: unique display name already exists)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -87,11 +87,15 @@ class AdminUpdateUserV4(Operation):
     # region fields
 
     _url: str = "/iam/v4/admin/namespaces/{namespace}/users/{userId}"
+    _path: str = "/iam/v4/admin/namespaces/{namespace}/users/{userId}"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     body: ModelUserUpdateRequestV3  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -104,6 +108,14 @@ class AdminUpdateUserV4(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:
@@ -214,7 +226,7 @@ class AdminUpdateUserV4(Operation):
 
         404: Not Found - RestErrorResponse (10139: platform account not found | 20008: user not found)
 
-        409: Conflict - RestErrorResponse (10133: email already used)
+        409: Conflict - RestErrorResponse (10133: email already used | 10222: unique display name already exists)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
 

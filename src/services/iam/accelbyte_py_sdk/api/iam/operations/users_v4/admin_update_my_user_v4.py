@@ -66,7 +66,7 @@ class AdminUpdateMyUserV4(Operation):
 
         401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
 
-        409: Conflict - RestErrorResponse (10177: username already used)
+        409: Conflict - RestErrorResponse (10177: username already used | 10222: unique display name already exists)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -74,11 +74,15 @@ class AdminUpdateMyUserV4(Operation):
     # region fields
 
     _url: str = "/iam/v4/admin/users/me"
+    _path: str = "/iam/v4/admin/users/me"
+    _base_path: str = ""
     _method: str = "PATCH"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     body: ModelUserUpdateRequestV3  # REQUIRED in [body]
 
@@ -89,6 +93,14 @@ class AdminUpdateMyUserV4(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:
@@ -170,7 +182,7 @@ class AdminUpdateMyUserV4(Operation):
 
         401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
 
-        409: Conflict - RestErrorResponse (10177: username already used)
+        409: Conflict - RestErrorResponse (10177: username already used | 10222: unique display name already exists)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
 

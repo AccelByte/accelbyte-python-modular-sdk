@@ -36,11 +36,7 @@ class ListExtOrderNoByExtTxId(Operation):
     [Not Supported Yet In Starter] List external order No by external transaction id.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:PAYMENT", action=2 (READ)
-      *  Returns : payment orders
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:PAYMENT [READ]
+      * Returns : payment orders
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/orders/byExtTxId
@@ -53,7 +49,7 @@ class ListExtOrderNoByExtTxId(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -66,11 +62,15 @@ class ListExtOrderNoByExtTxId(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/payment/orders/byExtTxId"
+    _path: str = "/platform/admin/namespaces/{namespace}/payment/orders/byExtTxId"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     namespace: str  # REQUIRED in [path]
     ext_tx_id: str  # REQUIRED in [query]
@@ -82,6 +82,14 @@ class ListExtOrderNoByExtTxId(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

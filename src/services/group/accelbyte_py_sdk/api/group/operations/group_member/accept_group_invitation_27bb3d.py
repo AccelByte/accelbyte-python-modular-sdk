@@ -38,33 +38,15 @@ class AcceptGroupInvitationPublicV1(Operation):
 
     Required valid user authentication
 
-
-
-
     This endpoint is used to accept group invitation.
-
-
-
 
     Accept group invitation. If specific user is not invited in the specific group ID, it will show the the error to show if the user is not invited yet.
 
-
-
-
     This endpoint will also check if the user who access this endpoint is already joined to specific group
-
-
-
 
     Accessing this endpoint will make all requests (invite / join request) will be deleted for the user who access this endpoint
 
-
-
-
     Existing members will receive notification of newly accepted member.
-
-
-
 
     Action Code: 73401
 
@@ -104,11 +86,17 @@ class AcceptGroupInvitationPublicV1(Operation):
     # region fields
 
     _url: str = "/group/v1/public/namespaces/{namespace}/groups/{groupId}/invite/accept"
+    _path: str = (
+        "/group/v1/public/namespaces/{namespace}/groups/{groupId}/invite/accept"
+    )
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     group_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -120,6 +108,14 @@ class AcceptGroupInvitationPublicV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

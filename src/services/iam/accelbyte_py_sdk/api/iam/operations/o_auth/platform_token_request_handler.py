@@ -35,7 +35,7 @@ from ...models import OauthmodelTokenResponse
 
 
 class PlatformTokenRequestHandler(Operation):
-    """OAuth2 access token generation specific to platform (PlatformTokenRequestHandler)
+    """[DEPRECATED] OAuth2 access token generation specific to platform (PlatformTokenRequestHandler)
 
     ## The endpoint is going to be deprecated
     This endpoint requires all requests to have Authorization header set with Basic access authentication
@@ -84,11 +84,15 @@ class PlatformTokenRequestHandler(Operation):
     # region fields
 
     _url: str = "/iam/oauth/namespaces/{namespace}/platforms/{platformId}/token"
+    _path: str = "/iam/oauth/namespaces/{namespace}/platforms/{platformId}/token"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/x-www-form-urlencoded"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     device_id: str  # OPTIONAL in [form_data]
     mac_address: str  # OPTIONAL in [form_data]
@@ -103,6 +107,14 @@ class PlatformTokenRequestHandler(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

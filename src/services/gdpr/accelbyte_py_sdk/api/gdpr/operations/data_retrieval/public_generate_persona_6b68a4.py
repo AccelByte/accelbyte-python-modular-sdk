@@ -36,7 +36,12 @@ from ...models import ResponseError
 class PublicGeneratePersonalDataURL(Operation):
     """Generate personal data download url (PublicGeneratePersonalDataURL)
 
+    Generate personal data download url
     Requires valid user access token
+    Scope: account
+
+    Required Scope(s):
+        - account
 
     Properties:
         url: /gdpr/public/namespaces/{namespace}/users/{userId}/requests/{requestDate}/generate
@@ -74,11 +79,15 @@ class PublicGeneratePersonalDataURL(Operation):
     # region fields
 
     _url: str = "/gdpr/public/namespaces/{namespace}/users/{userId}/requests/{requestDate}/generate"
+    _path: str = "/gdpr/public/namespaces/{namespace}/users/{userId}/requests/{requestDate}/generate"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/x-www-form-urlencoded"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "gdpr"
 
     password: str  # REQUIRED in [form_data]
     namespace: str  # REQUIRED in [path]
@@ -92,6 +101,14 @@ class PublicGeneratePersonalDataURL(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -36,23 +36,35 @@ from ...models import RestErrorResponse
 class PublicSearchUserV3(Operation):
     """Search User (PublicSearchUserV3)
 
-    This endpoint search all users on the specified namespace that match the query on these fields: display name, and username or by 3rd party display name.
-    The query length should greater than 2ï¼otherwise will not query the database. The default limit value is 100.
-    **Note: searching by 3rd party platform display name is exact query**
-    ---
-    When searching by 3rd party platform display name:
-    1. set __by__ to __thirdPartyPlatform__
-    2. set __platformId__ to the supported platform id
-    3. set __platformBy__ to __platformDisplayName__
-    ---
-    Supported platform id:
+    This endpoint search all users on the specified namespace that match the query on these fields: display name, unique display name, username or by 3rd party display name.
+    The query length should between 3-20, otherwise will not query the database.
+    The default limit value is 20.
 
+    ## Searching by 3rd party platform
+
+    **Note: searching by 3rd party platform display name will use exact query, not fuzzy query.**
+
+    Step when searching by 3rd party platform display name:
+    1. set __by__ to __thirdPartyPlatform__
+    2. set __platformId__ to the _supported platform id_
+    3. set __platformBy__ to __platformDisplayName__
+
+    ### Supported platform id:
+    * Steam group(steamnetwork)
     * steam
     * steamopenid
-    * facebook
-    * google
+    * PSN group(psn)
+    * ps4web
+    * ps4
+    * ps5
+    * XBOX group(xbox)
+    * live
+    * xblweb
+    * Oculus group(oculusgroup)
     * oculus
     * oculusweb
+    * facebook
+    * google
     * twitch
     * discord
     * android
@@ -60,16 +72,13 @@ class PublicSearchUserV3(Operation):
     * apple
     * device
     * epicgames
-    * ps4
-    * ps5
-    * ps4web
     * nintendo
     * awscognito
-    * live
-    * xblweb
     * netflix
     * snapchat
-    * oidc platform id
+    * _oidc platform id_
+
+    Note: you can use either platform ID or platform group as __platformId__ query parameter.
 
     Properties:
         url: /iam/v3/public/namespaces/{namespace}/users
@@ -107,17 +116,23 @@ class PublicSearchUserV3(Operation):
 
         404: Not Found - RestErrorResponse (20008: user not found)
 
+        429: Too Many Requests - RestErrorResponse (20007: too many requests)
+
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
 
     # region fields
 
     _url: str = "/iam/v3/public/namespaces/{namespace}/users"
+    _path: str = "/iam/v3/public/namespaces/{namespace}/users"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     namespace: str  # REQUIRED in [path]
     by: str  # OPTIONAL in [query]
@@ -134,6 +149,14 @@ class PublicSearchUserV3(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:
@@ -284,6 +307,8 @@ class PublicSearchUserV3(Operation):
 
         404: Not Found - RestErrorResponse (20008: user not found)
 
+        429: Too Many Requests - RestErrorResponse (20007: too many requests)
+
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
 
         ---: HttpResponse (Undocumented Response)
@@ -306,6 +331,8 @@ class PublicSearchUserV3(Operation):
         if code == 401:
             return None, RestErrorResponse.create_from_dict(content)
         if code == 404:
+            return None, RestErrorResponse.create_from_dict(content)
+        if code == 429:
             return None, RestErrorResponse.create_from_dict(content)
         if code == 500:
             return None, RestErrorResponse.create_from_dict(content)

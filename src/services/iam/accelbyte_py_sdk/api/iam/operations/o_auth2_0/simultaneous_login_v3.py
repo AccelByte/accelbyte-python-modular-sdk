@@ -105,11 +105,15 @@ class SimultaneousLoginV3(Operation):
     # region fields
 
     _url: str = "/iam/v3/oauth/simultaneousLogin"
+    _path: str = "/iam/v3/oauth/simultaneousLogin"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/x-www-form-urlencoded"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     simultaneous_platform: str  # OPTIONAL in [form_data]
     simultaneous_ticket: str  # OPTIONAL in [form_data]
@@ -123,6 +127,14 @@ class SimultaneousLoginV3(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

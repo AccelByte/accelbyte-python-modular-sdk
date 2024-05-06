@@ -71,11 +71,17 @@ class SendMultipleUsersFreeformNotificationV1Admin(Operation):
     _url: str = (
         "/lobby/v1/admin/notification/namespaces/{namespace}/bulkUsers/freeform/notify"
     )
+    _path: str = (
+        "/lobby/v1/admin/notification/namespaces/{namespace}/bulkUsers/freeform/notify"
+    )
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "lobby"
 
     body: ModelBulkUsersFreeFormNotificationRequestV1  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -87,6 +93,14 @@ class SendMultipleUsersFreeformNotificationV1Admin(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

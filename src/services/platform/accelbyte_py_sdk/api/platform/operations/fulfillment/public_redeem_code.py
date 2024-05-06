@@ -40,11 +40,7 @@ class PublicRedeemCode(Operation):
     Redeem campaign code, this api have rate limit, default: only allow request once per user in 2 seconds
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT", action=1 (CREATED)
-      *  Returns : fulfillment result
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT []
+      * Returns : fulfillment result
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/fulfillment/code
@@ -57,7 +53,7 @@ class PublicRedeemCode(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL FulfillCodeRequest in body
 
@@ -82,11 +78,17 @@ class PublicRedeemCode(Operation):
     _url: str = (
         "/platform/public/namespaces/{namespace}/users/{userId}/fulfillment/code"
     )
+    _path: str = (
+        "/platform/public/namespaces/{namespace}/users/{userId}/fulfillment/code"
+    )
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: FulfillCodeRequest  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -99,6 +101,14 @@ class PublicRedeemCode(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

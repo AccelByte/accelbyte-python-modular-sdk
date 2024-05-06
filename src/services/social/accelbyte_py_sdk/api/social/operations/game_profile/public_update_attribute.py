@@ -88,11 +88,15 @@ class PublicUpdateAttribute(Operation):
     # region fields
 
     _url: str = "/social/public/namespaces/{namespace}/users/{userId}/profiles/{profileId}/attributes/{attributeName}"
+    _path: str = "/social/public/namespaces/{namespace}/users/{userId}/profiles/{profileId}/attributes/{attributeName}"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "social"
 
     body: Attribute  # OPTIONAL in [body]
     attribute_name: str  # REQUIRED in [path]
@@ -107,6 +111,14 @@ class PublicUpdateAttribute(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -37,8 +37,7 @@ class UploadRevocationPluginConfigCert(Operation):
     """Upload revocation plugin custom config tls cert (uploadRevocationPluginConfigCert)
 
     Upload revocation plugin custom config tls cert.Other detail info:
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:REVOCATION, action=4 (UPDATE)
-      *  Returns : updated service plugin config
+      * Returns : updated service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/revocation/plugins/revocation/revocation/customConfig/cert
@@ -66,11 +65,15 @@ class UploadRevocationPluginConfigCert(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/revocation/plugins/revocation/revocation/customConfig/cert"
+    _path: str = "/platform/admin/namespaces/{namespace}/revocation/plugins/revocation/revocation/customConfig/cert"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["multipart/form-data"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     file: Any  # OPTIONAL in [form_data]
     namespace: str  # REQUIRED in [path]
@@ -82,6 +85,14 @@ class UploadRevocationPluginConfigCert(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

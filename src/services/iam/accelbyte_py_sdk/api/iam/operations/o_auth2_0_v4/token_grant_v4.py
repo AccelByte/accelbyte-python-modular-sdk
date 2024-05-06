@@ -71,7 +71,7 @@ class TokenGrantV4(Operation):
     It generates a token by checking the client credentials provided through Authorization header.
     5. Grant Type == `urn:ietf:params:oauth:grant-type:extend_client_credentials`:
     It generates a token by checking the client credentials provided through Authorization header.
-    It only allow publisher namespace client.
+    It only allows publisher/studio namespace client.
     In generated token:
     1. There wil be no roles, namespace_roles & permission.
     2. The scope will be fixed as 'extend'.
@@ -178,11 +178,15 @@ class TokenGrantV4(Operation):
     # region fields
 
     _url: str = "/iam/v4/oauth/token"
+    _path: str = "/iam/v4/oauth/token"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/x-www-form-urlencoded"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     auth_trust_id: Union[str, HeaderStr]  # OPTIONAL in [header]
     device_id: Union[str, HeaderStr]  # OPTIONAL in [header]
@@ -208,6 +212,14 @@ class TokenGrantV4(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -38,13 +38,6 @@ class ImportStoreByCSV(Operation):
 
     This API is used to import a store by CSV format.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [UPDATE]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}/importByCSV
 
@@ -56,7 +49,7 @@ class ImportStoreByCSV(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         category: (category) OPTIONAL Any in form_data
 
@@ -85,11 +78,15 @@ class ImportStoreByCSV(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/stores/{storeId}/importByCSV"
+    _path: str = "/platform/admin/namespaces/{namespace}/stores/{storeId}/importByCSV"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["multipart/form-data"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     category: Any  # OPTIONAL in [form_data]
     display: Any  # OPTIONAL in [form_data]
@@ -106,6 +103,14 @@ class ImportStoreByCSV(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

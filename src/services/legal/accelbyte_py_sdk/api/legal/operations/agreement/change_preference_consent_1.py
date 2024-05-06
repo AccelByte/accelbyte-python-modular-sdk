@@ -37,9 +37,6 @@ class ChangePreferenceConsent1(Operation):
     """Accept/Revoke Marketing Preference Consent (changePreferenceConsent_1)
 
     Change marketing preference consent.
-    Other detail info:
-
-      * Required permission : login user
 
     Properties:
         url: /agreement/public/agreements/localized-policy-versions/preferences
@@ -65,11 +62,15 @@ class ChangePreferenceConsent1(Operation):
     # region fields
 
     _url: str = "/agreement/public/agreements/localized-policy-versions/preferences"
+    _path: str = "/agreement/public/agreements/localized-policy-versions/preferences"
+    _base_path: str = ""
     _method: str = "PATCH"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "legal"
 
     body: List[AcceptAgreementRequest]  # OPTIONAL in [body]
 
@@ -80,6 +81,14 @@ class ChangePreferenceConsent1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

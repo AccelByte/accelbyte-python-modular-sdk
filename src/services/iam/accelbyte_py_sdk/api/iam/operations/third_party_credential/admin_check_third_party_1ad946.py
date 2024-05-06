@@ -37,10 +37,12 @@ class AdminCheckThirdPartyLoginPlatformAvailabilityV3(Operation):
     """Check 3rd party platform availability (AdminCheckThirdPartyLoginPlatformAvailabilityV3)
 
     This is the API to check specific 3rd party platform availability.
-    supported platform:
-    - (psn) ps4web
-    - (psn) ps4
-    - (psn) ps5
+    Passing platform group name or it's member will return same platform availability data
+    Supported third party platform and platform group:
+    - PSN group(psn)
+    - ps4web
+    - ps4
+    - ps5
 
     Properties:
         url: /iam/v3/admin/platforms/{platformId}/availability
@@ -70,11 +72,15 @@ class AdminCheckThirdPartyLoginPlatformAvailabilityV3(Operation):
     # region fields
 
     _url: str = "/iam/v3/admin/platforms/{platformId}/availability"
+    _path: str = "/iam/v3/admin/platforms/{platformId}/availability"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     platform_id: str  # REQUIRED in [path]
 
@@ -85,6 +91,14 @@ class AdminCheckThirdPartyLoginPlatformAvailabilityV3(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

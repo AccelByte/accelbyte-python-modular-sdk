@@ -36,7 +36,7 @@ from ...models import RestErrorResponse
 
 
 class PublicCreateUserV2(Operation):
-    """Create User (PublicCreateUserV2)
+    """[DEPRECATED] Create User (PublicCreateUserV2)
 
     ## The endpoint is going to be deprecated
     **Endpoint migration guide**
@@ -82,11 +82,15 @@ class PublicCreateUserV2(Operation):
     # region fields
 
     _url: str = "/iam/v2/public/namespaces/{namespace}/users"
+    _path: str = "/iam/v2/public/namespaces/{namespace}/users"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     body: ModelUserCreateRequest  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -98,6 +102,14 @@ class PublicCreateUserV2(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

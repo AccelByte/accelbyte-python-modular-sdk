@@ -116,11 +116,17 @@ class AdminPutPlayerPublicRecordHandlerV1(Operation):
     _url: str = (
         "/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/records/{key}/public"
     )
+    _path: str = (
+        "/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/records/{key}/public"
+    )
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "cloudsave"
 
     body: ModelsPlayerRecordRequest  # REQUIRED in [body]
     key: str  # REQUIRED in [path]
@@ -134,6 +140,14 @@ class AdminPutPlayerPublicRecordHandlerV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

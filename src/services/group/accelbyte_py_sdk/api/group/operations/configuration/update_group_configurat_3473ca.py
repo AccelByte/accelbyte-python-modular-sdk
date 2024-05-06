@@ -37,20 +37,9 @@ from ...models import ResponseErrorResponse
 class UpdateGroupConfigurationGlobalRuleAdminV1(Operation):
     """update existing configuration global rule (updateGroupConfigurationGlobalRuleAdminV1)
 
-    Required permission 'ADMIN:NAMESPACE:{namespace}:GROUP:CONFIGURATION [UPDATE]'
-
-
-
-
     This endpoint is used to update existing global rule configuration based on the allowed action. It will replace the permission with the request
 
-
-
-
     Action Code: 73106
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:GROUP:CONFIGURATION [UPDATE]
 
     Properties:
         url: /group/v1/admin/namespaces/{namespace}/configuration/{configurationCode}/rules/{allowedAction}
@@ -90,11 +79,15 @@ class UpdateGroupConfigurationGlobalRuleAdminV1(Operation):
     # region fields
 
     _url: str = "/group/v1/admin/namespaces/{namespace}/configuration/{configurationCode}/rules/{allowedAction}"
+    _path: str = "/group/v1/admin/namespaces/{namespace}/configuration/{configurationCode}/rules/{allowedAction}"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     body: ModelsUpdateGroupConfigurationGlobalRulesRequestV1  # REQUIRED in [body]
     allowed_action: str  # REQUIRED in [path]
@@ -108,6 +101,14 @@ class UpdateGroupConfigurationGlobalRuleAdminV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

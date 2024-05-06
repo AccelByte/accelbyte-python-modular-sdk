@@ -42,17 +42,13 @@ class UpdateMyProfile(Operation):
     Updates user profile in the target namespace (namespace in the path). If token's namespace doesn't match the target namespace, the service automatically maps the token's user ID into the user ID in the target namespace. The endpoint returns the updated user profile on a successful call.
     Other detail info:
 
-      * Required permission : resource= "NAMESPACE:{namespace}:PROFILE" , action=4 (UPDATE)
-      *  Action code : 11402
+      * Action code : 11402
       *  Returns : user profile
       *  Path's namespace :
         * can be filled with publisher namespace in order to update publisher user profile
         * can be filled with game namespace in order to update game user profile
       *  Language : allowed format: en, en-US
       *  Timezone : IANA time zone, e.g. Asia/Shanghai
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:PROFILE [UPDATE]
 
     Properties:
         url: /basic/v1/public/namespaces/{namespace}/users/me/profiles
@@ -65,7 +61,7 @@ class UpdateMyProfile(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL UserProfileUpdate in body
 
@@ -86,11 +82,15 @@ class UpdateMyProfile(Operation):
     # region fields
 
     _url: str = "/basic/v1/public/namespaces/{namespace}/users/me/profiles"
+    _path: str = "/basic/v1/public/namespaces/{namespace}/users/me/profiles"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "basic"
 
     body: UserProfileUpdate  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -102,6 +102,14 @@ class UpdateMyProfile(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

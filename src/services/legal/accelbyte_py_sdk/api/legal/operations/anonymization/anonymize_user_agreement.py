@@ -35,11 +35,7 @@ from ...models import ErrorEntity
 class AnonymizeUserAgreement(Operation):
     """Anonymize user's agreement record (anonymizeUserAgreement)
 
-    This API will anonymize agreement record for specified user. Other detail info:
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=8 (DELETE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:*:LEGAL [DELETE]
+    This API will anonymize agreement record for specified user.
 
     Properties:
         url: /agreement/admin/users/{userId}/anonymization/agreements
@@ -52,7 +48,7 @@ class AnonymizeUserAgreement(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         user_id: (userId) REQUIRED str in path
 
@@ -65,11 +61,15 @@ class AnonymizeUserAgreement(Operation):
     # region fields
 
     _url: str = "/agreement/admin/users/{userId}/anonymization/agreements"
+    _path: str = "/agreement/admin/users/{userId}/anonymization/agreements"
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "legal"
 
     user_id: str  # REQUIRED in [path]
 
@@ -80,6 +80,14 @@ class AnonymizeUserAgreement(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

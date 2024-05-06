@@ -39,10 +39,6 @@ class RetrieveEligibilitiesPublicIndirect(Operation):
     Retrieve the active policies and its conformance status by user.
     This process only supports cross-namespace checking between game namespace and publisher namespace , that means if the active policy already accepted by the same user in publisher namespace, then it will also be considered as eligible in non-publisher namespace.
 
-    Other detail info:
-
-      * Required permission : login user
-
     Properties:
         url: /agreement/public/eligibilities/namespaces/{namespace}/countries/{countryCode}/clients/{clientId}/users/{userId}
 
@@ -73,11 +69,15 @@ class RetrieveEligibilitiesPublicIndirect(Operation):
     # region fields
 
     _url: str = "/agreement/public/eligibilities/namespaces/{namespace}/countries/{countryCode}/clients/{clientId}/users/{userId}"
+    _path: str = "/agreement/public/eligibilities/namespaces/{namespace}/countries/{countryCode}/clients/{clientId}/users/{userId}"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "legal"
 
     client_id: str  # REQUIRED in [path]
     country_code: str  # REQUIRED in [path]
@@ -91,6 +91,14 @@ class RetrieveEligibilitiesPublicIndirect(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

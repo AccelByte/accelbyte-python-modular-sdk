@@ -36,15 +36,8 @@ from ...models import OculusReconcileResult
 class SyncOculusConsumableEntitlements(Operation):
     """Sync Oculus entitlements. (syncOculusConsumableEntitlements)
 
-    Sync Oculus entitlements.
-
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:IAP", action=4 (UPDATE)
-      *  Returns :
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:IAP [UPDATE]
+    Sync Oculus entitlements.Other detail info:
+      * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/oculus/sync
@@ -57,7 +50,7 @@ class SyncOculusConsumableEntitlements(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -72,11 +65,17 @@ class SyncOculusConsumableEntitlements(Operation):
     # region fields
 
     _url: str = "/platform/public/namespaces/{namespace}/users/{userId}/iap/oculus/sync"
+    _path: str = (
+        "/platform/public/namespaces/{namespace}/users/{userId}/iap/oculus/sync"
+    )
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
@@ -88,6 +87,14 @@ class SyncOculusConsumableEntitlements(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

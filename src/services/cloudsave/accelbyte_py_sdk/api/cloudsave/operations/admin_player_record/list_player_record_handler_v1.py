@@ -35,7 +35,7 @@ from ...models import ModelsResponseError
 
 
 class ListPlayerRecordHandlerV1(Operation):
-    """Retrieve list of public player records (listPlayerRecordHandlerV1)
+    """[DEPRECATED] Retrieve list of public player records (listPlayerRecordHandlerV1)
 
     Retrieve list of player records key and userID under given namespace.
 
@@ -75,11 +75,15 @@ class ListPlayerRecordHandlerV1(Operation):
     # region fields
 
     _url: str = "/cloudsave/v1/admin/namespaces/{namespace}/users/records"
+    _path: str = "/cloudsave/v1/admin/namespaces/{namespace}/users/records"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "cloudsave"
 
     namespace: str  # REQUIRED in [path]
     limit: int  # OPTIONAL in [query]
@@ -93,6 +97,14 @@ class ListPlayerRecordHandlerV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -38,50 +38,23 @@ class InviteGroupPublicV1(Operation):
 
     Required valid user authentication
 
-
-
-
     Required Member Role Permission: "GROUP:INVITE [CREATE]"
-
-
-
 
     This endpoint is used to invite specific user to the group.
 
-
-
-
     invite specific user to the group. If specific user is already have the join request to the group, this endpoint will notify if this user already have join request that needs to be accepted / rejected
 
-
-
-
     Invited user will receive notification through lobby.
-
-
-
 
     Action Code: 73406
 
 
 
-
-
-
     memberRolePermissions example value :
-
-
-
 
     "action": 1
 
-
-
-
     "resourceName": "GROUP:INVITE"
-
-
-
 
     The invited user will have a permission to invite another user to the group
 
@@ -124,11 +97,15 @@ class InviteGroupPublicV1(Operation):
     # region fields
 
     _url: str = "/group/v1/public/namespaces/{namespace}/users/{userId}/invite"
+    _path: str = "/group/v1/public/namespaces/{namespace}/users/{userId}/invite"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
@@ -140,6 +117,14 @@ class InviteGroupPublicV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

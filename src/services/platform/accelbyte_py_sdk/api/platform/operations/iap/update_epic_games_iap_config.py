@@ -37,11 +37,7 @@ class UpdateEpicGamesIAPConfig(Operation):
     """Update epic games iap config (updateEpicGamesIAPConfig)
 
     Update epic games iap config. Other detail info:
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
-      *  Returns : updated epic games iap config
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:IAP:CONFIG [UPDATE]
+      * Returns : updated epic games iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/epicgames
@@ -54,7 +50,7 @@ class UpdateEpicGamesIAPConfig(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL EpicGamesIAPConfigRequest in body
 
@@ -67,11 +63,15 @@ class UpdateEpicGamesIAPConfig(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/iap/config/epicgames"
+    _path: str = "/platform/admin/namespaces/{namespace}/iap/config/epicgames"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: EpicGamesIAPConfigRequest  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -83,6 +83,14 @@ class UpdateEpicGamesIAPConfig(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

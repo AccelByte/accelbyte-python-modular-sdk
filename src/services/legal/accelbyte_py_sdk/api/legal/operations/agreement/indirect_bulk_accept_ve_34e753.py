@@ -35,15 +35,9 @@ from ...models import AcceptAgreementResponse
 
 
 class IndirectBulkAcceptVersionedPolicyV2(Operation):
-    """Bulk Accept Policy Versions (Indirect) (indirectBulkAcceptVersionedPolicyV2)
+    """[DEPRECATED] Bulk Accept Policy Versions (Indirect) (indirectBulkAcceptVersionedPolicyV2)
 
     Accepts many legal policy versions all at once. Supply with localized version policy id, version policy id, policy id, userId, namespace, country code and client id to accept an agreement. This endpoint used by APIGateway during new user registration.
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:LEGAL", action=1 (CREATE)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:LEGAL [CREATE]
 
     Properties:
         url: /agreement/public/agreements/policies/namespaces/{namespace}/countries/{countryCode}/clients/{clientId}/users/{userId}
@@ -56,7 +50,7 @@ class IndirectBulkAcceptVersionedPolicyV2(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL List[AcceptAgreementRequest] in body
 
@@ -75,11 +69,15 @@ class IndirectBulkAcceptVersionedPolicyV2(Operation):
     # region fields
 
     _url: str = "/agreement/public/agreements/policies/namespaces/{namespace}/countries/{countryCode}/clients/{clientId}/users/{userId}"
+    _path: str = "/agreement/public/agreements/policies/namespaces/{namespace}/countries/{countryCode}/clients/{clientId}/users/{userId}"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "legal"
 
     body: List[AcceptAgreementRequest]  # OPTIONAL in [body]
     client_id: str  # REQUIRED in [path]
@@ -94,6 +92,14 @@ class IndirectBulkAcceptVersionedPolicyV2(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -36,7 +36,7 @@ from ...models import RestErrorResponse
 
 
 class UpdateClient(Operation):
-    """Update Client (UpdateClient)
+    """[DEPRECATED] Update Client (UpdateClient)
 
     ## The endpoint is going to be deprecated
     **Endpoint migration guide**
@@ -74,11 +74,15 @@ class UpdateClient(Operation):
     # region fields
 
     _url: str = "/iam/clients/{clientId}"
+    _path: str = "/iam/clients/{clientId}"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     body: ClientmodelClientUpdateRequest  # REQUIRED in [body]
     client_id: str  # REQUIRED in [path]
@@ -90,6 +94,14 @@ class UpdateClient(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

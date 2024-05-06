@@ -37,44 +37,17 @@ from ...models import ResponseErrorResponse
 class CreateGroupConfigurationAdminV1(Operation):
     """create new configuration (createGroupConfigurationAdminV1)
 
-    Required permission 'ADMIN:NAMESPACE:{namespace}:GROUP:CONFIGURATION [CREATE]'
-
-
-
-
     This endpoint is used to create new configuration. Before creating the configuration, make sure that member role for admin and group member are already created before.
-
-
-
 
     For each of the global rule, it will be the rule detail that consists of these fields:
 
+    * **ruleAttribute**: attribute of the player that needs to be checked
+    * **ruleCriteria**: criteria of the value. The value will be in enum of EQUAL, MINIMUM, MAXIMUM
+    * **ruleValue**: value that needs to be checked
 
-
-
-
-
-      * ruleAttribute : attribute of the player that needs to be checked
-
-
-      * ruleCriteria : criteria of the value. The value will be in enum of EQUAL, MINIMUM, MAXIMUM
-
-
-      * ruleValue : value that needs to be checked
-
-
-
-
-
-    Allowed Action can only be filled with any available action in the Group Service. For the configuration, the only value is "createGroup"
-
-
-
+    Allowed Action can only be filled with any available action in the Group Service. For the configuration, the only value is **"createGroup"**
 
     Action Code: 73103
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:GROUP:CONFIGURATION [CREATE]
 
     Properties:
         url: /group/v1/admin/namespaces/{namespace}/configuration
@@ -110,11 +83,15 @@ class CreateGroupConfigurationAdminV1(Operation):
     # region fields
 
     _url: str = "/group/v1/admin/namespaces/{namespace}/configuration"
+    _path: str = "/group/v1/admin/namespaces/{namespace}/configuration"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     body: ModelsCreateGroupConfigurationRequestV1  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -126,6 +103,14 @@ class CreateGroupConfigurationAdminV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

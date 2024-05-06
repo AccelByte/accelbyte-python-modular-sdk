@@ -37,13 +37,6 @@ class PurgeExpiredSection(Operation):
 
     This API is used to purge expired section.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=8 (DELETE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [DELETE]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/sections/purge/expired
 
@@ -55,7 +48,7 @@ class PurgeExpiredSection(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -70,11 +63,15 @@ class PurgeExpiredSection(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/sections/purge/expired"
+    _path: str = "/platform/admin/namespaces/{namespace}/sections/purge/expired"
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     namespace: str  # REQUIRED in [path]
     store_id: str  # REQUIRED in [query]
@@ -86,6 +83,14 @@ class PurgeExpiredSection(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

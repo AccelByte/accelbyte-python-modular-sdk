@@ -35,14 +35,9 @@ from ...models import ResponseError
 class AdminResetServicesConfiguration(Operation):
     """Reset Registered Services Configuration (AdminResetServicesConfiguration)
 
-    [TEST FACILITY ONLY]
+    **[TEST FACILITY ONLY]**
     Reset Registered Services Configuration to use the default configuration.
-
-
-    Required permission `ADMIN:NAMESPACE:{namespace}:GDPR:CONFIGURATION [DELETE]` and scope `account`
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:GDPR:CONFIGURATION [DELETE]
+    Scope: account
 
     Required Scope(s):
         - account
@@ -73,11 +68,15 @@ class AdminResetServicesConfiguration(Operation):
     # region fields
 
     _url: str = "/gdpr/admin/namespaces/{namespace}/services/configurations/reset"
+    _path: str = "/gdpr/admin/namespaces/{namespace}/services/configurations/reset"
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "gdpr"
 
     namespace: str  # REQUIRED in [path]
 
@@ -88,6 +87,14 @@ class AdminResetServicesConfiguration(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

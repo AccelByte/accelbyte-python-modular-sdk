@@ -38,23 +38,11 @@ class GetGroupInviteRequestPublicV2(Operation):
 
     Required valid user authentication
 
-
-
-
     Required Member Role Permission: "GROUP:JOIN [READ]"
-
-
-
 
     This endpoint is used to Get Group Invite Request List
 
-
-
-
     Get Group Invite Request List for specific group. Group members needs to have permission and also belong to the group to access this endpoint
-
-
-
 
     Action Code: 73501
 
@@ -96,11 +84,17 @@ class GetGroupInviteRequestPublicV2(Operation):
     _url: str = (
         "/group/v2/public/namespaces/{namespace}/groups/{groupId}/invite/request"
     )
+    _path: str = (
+        "/group/v2/public/namespaces/{namespace}/groups/{groupId}/invite/request"
+    )
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     group_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -114,6 +108,14 @@ class GetGroupInviteRequestPublicV2(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

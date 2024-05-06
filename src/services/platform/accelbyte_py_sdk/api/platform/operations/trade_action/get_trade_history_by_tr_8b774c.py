@@ -39,8 +39,7 @@ class GetTradeHistoryByTransactionId(Operation):
 
     Other detail info:
 
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:TRADE, action=2 (REDA)
-      *  Returns : trade history based on transaction ID
+      * Returns : trade history based on transaction ID
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/trade/{transactionId}
@@ -66,11 +65,15 @@ class GetTradeHistoryByTransactionId(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/trade/{transactionId}"
+    _path: str = "/platform/admin/namespaces/{namespace}/trade/{transactionId}"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     namespace: str  # REQUIRED in [path]
     transaction_id: str  # REQUIRED in [path]
@@ -82,6 +85,14 @@ class GetTradeHistoryByTransactionId(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

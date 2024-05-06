@@ -36,10 +36,8 @@ from ...models import ResponseError
 class AdminGetListPersonalDataRequest(Operation):
     """Get list personal data requests (AdminGetListPersonalDataRequest)
 
-    Required permission `ADMIN:NAMESPACE:{namespace}:INFORMATION:USER [READ]` and scope `account`
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:INFORMATION:USER [READ]
+    Get list personal data requests
+    Scope: account
 
     Required Scope(s):
         - account
@@ -82,11 +80,15 @@ class AdminGetListPersonalDataRequest(Operation):
     # region fields
 
     _url: str = "/gdpr/admin/namespaces/{namespace}/requests"
+    _path: str = "/gdpr/admin/namespaces/{namespace}/requests"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "gdpr"
 
     namespace: str  # REQUIRED in [path]
     limit: int  # OPTIONAL in [query]
@@ -100,6 +102,14 @@ class AdminGetListPersonalDataRequest(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

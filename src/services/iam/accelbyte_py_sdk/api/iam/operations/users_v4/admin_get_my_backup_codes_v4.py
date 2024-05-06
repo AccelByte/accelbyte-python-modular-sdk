@@ -35,7 +35,7 @@ from ...models import RestErrorResponse
 
 
 class AdminGetMyBackupCodesV4(Operation):
-    """Get backup codes (AdminGetMyBackupCodesV4)
+    """[DEPRECATED] Get backup codes (AdminGetMyBackupCodesV4)
 
     This endpoint is used to get 8-digits backup codes.
     Each code is a one-time code and will be deleted once used.
@@ -70,11 +70,15 @@ class AdminGetMyBackupCodesV4(Operation):
     # region fields
 
     _url: str = "/iam/v4/admin/users/me/mfa/backupCode"
+    _path: str = "/iam/v4/admin/users/me/mfa/backupCode"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     # endregion fields
 
@@ -83,6 +87,14 @@ class AdminGetMyBackupCodesV4(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

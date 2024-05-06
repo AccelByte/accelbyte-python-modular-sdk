@@ -38,11 +38,7 @@ class DownloadUserOrderReceipt(Operation):
     Download user order receipt by orderNo.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ORDER", action=2 (READ)
-      *  Returns : order receipt pdf
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ORDER [READ]
+      * Returns : order receipt pdf
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/receipt.pdf
@@ -55,7 +51,7 @@ class DownloadUserOrderReceipt(Operation):
 
         produces: ["application/pdf"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -74,11 +70,15 @@ class DownloadUserOrderReceipt(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/receipt.pdf"
+    _path: str = "/platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/receipt.pdf"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/pdf"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     namespace: str  # REQUIRED in [path]
     order_no: str  # REQUIRED in [path]
@@ -91,6 +91,14 @@ class DownloadUserOrderReceipt(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -37,15 +37,8 @@ from ...models import GoogleReceiptResolveResult
 class PublicFulfillGoogleIAPItem(Operation):
     """Fulfill google iap item. (publicFulfillGoogleIAPItem)
 
-    Verify google iap receipt and fulfill item.
-
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:IAP", action=4 (UPDATE)
-      *  Returns :
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:IAP [UPDATE]
+    Verify google iap receipt and fulfill item.Other detail info:
+      * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/google/receipt
@@ -58,7 +51,7 @@ class PublicFulfillGoogleIAPItem(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL GoogleIAPReceipt in body
 
@@ -81,11 +74,17 @@ class PublicFulfillGoogleIAPItem(Operation):
     _url: str = (
         "/platform/public/namespaces/{namespace}/users/{userId}/iap/google/receipt"
     )
+    _path: str = (
+        "/platform/public/namespaces/{namespace}/users/{userId}/iap/google/receipt"
+    )
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: GoogleIAPReceipt  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -98,6 +97,14 @@ class PublicFulfillGoogleIAPItem(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

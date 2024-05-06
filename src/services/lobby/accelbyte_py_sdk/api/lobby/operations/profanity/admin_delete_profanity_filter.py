@@ -77,11 +77,17 @@ class AdminDeleteProfanityFilter(Operation):
     _url: str = (
         "/lobby/v1/admin/profanity/namespaces/{namespace}/list/{list}/filters/delete"
     )
+    _path: str = (
+        "/lobby/v1/admin/profanity/namespaces/{namespace}/list/{list}/filters/delete"
+    )
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "lobby"
 
     body: ModelsAdminDeleteProfanityFilterRequest  # REQUIRED in [body]
     list_: str  # REQUIRED in [path]
@@ -94,6 +100,14 @@ class AdminDeleteProfanityFilter(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

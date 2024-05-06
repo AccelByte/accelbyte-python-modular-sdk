@@ -55,6 +55,9 @@ class AuthorizeV3(Operation):
     redirects to the given redirect uri with the following information:
     ?error={error_code}&error;_description={error description}
 
+    For Public Client case, it's mandatory to fill **code_challenge** to avoid authorization code interception attack.
+    Please refer to the RFC for more information about Proof Key for Code Exchange(PKCE): https://datatracker.ietf.org/doc/html/rfc7636
+
     Following are the error code based on the specification:
     - invalid_request: The request is missing a required parameter,
     includes an invalid parameter value, includes a parameter more than once, or is otherwise malformed.
@@ -113,11 +116,15 @@ class AuthorizeV3(Operation):
     # region fields
 
     _url: str = "/iam/v3/oauth/authorize"
+    _path: str = "/iam/v3/oauth/authorize"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BASIC_AUTH"]]
     _location_query: str = "request_id"
+
+    service_name: Optional[str] = "iam"
 
     code_challenge: str  # OPTIONAL in [query]
     code_challenge_method: Union[str, CodeChallengeMethodEnum]  # OPTIONAL in [query]
@@ -138,6 +145,14 @@ class AuthorizeV3(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -59,6 +59,7 @@
 | model.CreateGoalRequest | [ModelCreateGoalRequest](../../accelbyte_py_sdk/api/challenge/models/model_create_goal_request.py) |
 | model.EvaluatePlayerProgressionRequest | [ModelEvaluatePlayerProgressionRequest](../../accelbyte_py_sdk/api/challenge/models/model_evaluate_player_progression_request.py) |
 | model.GetGoalsResponse | [ModelGetGoalsResponse](../../accelbyte_py_sdk/api/challenge/models/model_get_goals_response.py) |
+| model.GoalMeta | [ModelGoalMeta](../../accelbyte_py_sdk/api/challenge/models/model_goal_meta.py) |
 | model.GoalOrder | [ModelGoalOrder](../../accelbyte_py_sdk/api/challenge/models/model_goal_order.py) |
 | model.GoalProgressionResponse | [ModelGoalProgressionResponse](../../accelbyte_py_sdk/api/challenge/models/model_goal_progression_response.py) |
 | model.GoalResponse | [ModelGoalResponse](../../accelbyte_py_sdk/api/challenge/models/model_goal_response.py) |

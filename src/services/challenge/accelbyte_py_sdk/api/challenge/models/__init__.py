@@ -40,6 +40,7 @@ from .model_evaluate_player_progression_request import (
     ModelEvaluatePlayerProgressionRequest,
 )
 from .model_get_goals_response import ModelGetGoalsResponse
+from .model_goal_meta import ModelGoalMeta
 from .model_goal_order import ModelGoalOrder
 from .model_goal_progression_response import ModelGoalProgressionResponse
 from .model_goal_progression_response import (

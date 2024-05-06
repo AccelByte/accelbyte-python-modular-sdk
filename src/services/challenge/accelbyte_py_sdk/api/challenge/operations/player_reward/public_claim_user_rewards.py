@@ -38,10 +38,10 @@ from ...models import ResponseError
 class PublicClaimUserRewards(Operation):
     """Claim User's Rewards (publicClaimUserRewards)
 
-    * Required permission: NAMESPACE:{namespace}:CHALLENGE:REWARD:CLAIM [UPDATE]
+    * Required permission: NAMESPACE:{namespace}:CHALLENGE:REWARD [UPDATE]
 
     Required Permission(s):
-        - NAMESPACE:{namespace}:CHALLENGE:REWARD:CLAIM [UPDATE]
+        - NAMESPACE:{namespace}:CHALLENGE:REWARD [UPDATE]
 
     Properties:
         url: /challenge/v1/public/namespaces/{namespace}/users/me/rewards/claim
@@ -75,11 +75,15 @@ class PublicClaimUserRewards(Operation):
     # region fields
 
     _url: str = "/challenge/v1/public/namespaces/{namespace}/users/me/rewards/claim"
+    _path: str = "/challenge/v1/public/namespaces/{namespace}/users/me/rewards/claim"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "challenge"
 
     body: ModelClaimUserRewardsReq  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -91,6 +95,14 @@ class PublicClaimUserRewards(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

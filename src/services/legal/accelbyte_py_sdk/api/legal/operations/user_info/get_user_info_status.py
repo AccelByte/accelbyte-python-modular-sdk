@@ -38,12 +38,6 @@ class GetUserInfoStatus(Operation):
     Get user info cache last updated time per namespace.
     The query parameter namespaces can be a list of namespace separated by comma.
     If query parameter namespaces is empty, user info cache status for all available namespaces will be returned.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:*:LEGAL [READ]
 
     Properties:
         url: /agreement/admin/userInfo
@@ -56,7 +50,7 @@ class GetUserInfoStatus(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespaces: (namespaces) OPTIONAL str in query
 
@@ -67,11 +61,15 @@ class GetUserInfoStatus(Operation):
     # region fields
 
     _url: str = "/agreement/admin/userInfo"
+    _path: str = "/agreement/admin/userInfo"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "legal"
 
     namespaces: str  # OPTIONAL in [query]
 
@@ -82,6 +80,14 @@ class GetUserInfoStatus(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

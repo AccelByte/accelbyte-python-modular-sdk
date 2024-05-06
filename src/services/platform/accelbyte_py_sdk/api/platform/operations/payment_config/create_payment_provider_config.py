@@ -62,11 +62,7 @@ class CreatePaymentProviderConfig(Operation):
       4. namespace and region are *
 
     Other detail info:
-      * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=1 (CREATE)
-      *  Returns : payment provider config
-
-    Required Permission(s):
-        - ADMIN:PAYMENT:CONFIG [CREATE]
+      * Returns : payment provider config
 
     Properties:
         url: /platform/admin/payment/config/provider
@@ -79,7 +75,7 @@ class CreatePaymentProviderConfig(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL PaymentProviderConfigEdit in body
 
@@ -96,11 +92,15 @@ class CreatePaymentProviderConfig(Operation):
     # region fields
 
     _url: str = "/platform/admin/payment/config/provider"
+    _path: str = "/platform/admin/payment/config/provider"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: PaymentProviderConfigEdit  # OPTIONAL in [body]
 
@@ -111,6 +111,14 @@ class CreatePaymentProviderConfig(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

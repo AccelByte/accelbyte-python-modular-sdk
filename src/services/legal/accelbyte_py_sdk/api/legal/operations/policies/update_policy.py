@@ -37,12 +37,6 @@ class UpdatePolicy(Operation):
     """Update Country-Specific Policy (updatePolicy)
 
     Update country-specific policy.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:*:LEGAL [UPDATE]
 
     Properties:
         url: /agreement/admin/policies/{policyId}
@@ -55,7 +49,7 @@ class UpdatePolicy(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL UpdatePolicyRequest in body
 
@@ -70,11 +64,15 @@ class UpdatePolicy(Operation):
     # region fields
 
     _url: str = "/agreement/admin/policies/{policyId}"
+    _path: str = "/agreement/admin/policies/{policyId}"
+    _base_path: str = ""
     _method: str = "PATCH"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "legal"
 
     body: UpdatePolicyRequest  # OPTIONAL in [body]
     policy_id: str  # REQUIRED in [path]
@@ -86,6 +84,14 @@ class UpdatePolicy(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -36,12 +36,8 @@ from ...models import PlayStationDLCSyncRequest
 class PublicSyncPsnDlcInventory(Operation):
     """Synchronize with dlc entitlements in PSN Store. (publicSyncPsnDlcInventory)
 
-    Synchronize with dlc entitlements in PSN Store.
-
-    Other detail info:
-
-      * Required permission : resource=NAMESPACE:{namespace}:USER:{userId}:DLC, action=4 (UPDATE)
-      *  Returns : result of synchronization
+    Synchronize with dlc entitlements in PSN Store.Other detail info:
+      * Returns : result of synchronization
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/dlc/psn/sync
@@ -71,11 +67,15 @@ class PublicSyncPsnDlcInventory(Operation):
     # region fields
 
     _url: str = "/platform/public/namespaces/{namespace}/users/{userId}/dlc/psn/sync"
+    _path: str = "/platform/public/namespaces/{namespace}/users/{userId}/dlc/psn/sync"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: PlayStationDLCSyncRequest  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -88,6 +88,14 @@ class PublicSyncPsnDlcInventory(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

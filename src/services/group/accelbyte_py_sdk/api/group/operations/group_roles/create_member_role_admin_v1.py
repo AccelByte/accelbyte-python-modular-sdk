@@ -37,42 +37,19 @@ from ...models import ResponseErrorResponse
 class CreateMemberRoleAdminV1(Operation):
     """create new member role (createMemberRoleAdminV1)
 
-    Required permission ADMIN:NAMESPACE:{namespace}:GROUP:ROLE [CREATE]
-
-
-
-
     This endpoint is used to create new member role
-
-
-
 
     Action Code: 73202
 
 
 
-
-
-
     memberRolePermissions example value :
-
-
-
 
     "action": 1
 
-
-
-
     "resourceName": "GROUP:ROLE"
 
-
-
-
     The changes will give user with that role have a permission to create a role for new group member
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:GROUP:ROLE [CREATE]
 
     Properties:
         url: /group/v1/admin/namespaces/{namespace}/roles
@@ -106,11 +83,15 @@ class CreateMemberRoleAdminV1(Operation):
     # region fields
 
     _url: str = "/group/v1/admin/namespaces/{namespace}/roles"
+    _path: str = "/group/v1/admin/namespaces/{namespace}/roles"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     body: ModelsCreateMemberRoleRequestV1  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -122,6 +103,14 @@ class CreateMemberRoleAdminV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

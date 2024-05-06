@@ -38,11 +38,7 @@ class DeletePaymentProviderConfig(Operation):
     [Not Supported Yet In Starter] Delete payment provider config.
     Other detail info:
 
-      * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=8 (DELETE)
-      *  Returns : payment provider config
-
-    Required Permission(s):
-        - ADMIN:PAYMENT:CONFIG [DELETE]
+      * Returns : payment provider config
 
     Properties:
         url: /platform/admin/payment/config/provider/{id}
@@ -55,7 +51,7 @@ class DeletePaymentProviderConfig(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         id_: (id) REQUIRED str in path
 
@@ -68,11 +64,15 @@ class DeletePaymentProviderConfig(Operation):
     # region fields
 
     _url: str = "/platform/admin/payment/config/provider/{id}"
+    _path: str = "/platform/admin/payment/config/provider/{id}"
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     id_: str  # REQUIRED in [path]
 
@@ -83,6 +83,14 @@ class DeletePaymentProviderConfig(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

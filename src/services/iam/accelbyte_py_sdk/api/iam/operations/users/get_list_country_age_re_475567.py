@@ -35,7 +35,7 @@ from ...models import RestErrorResponse
 
 
 class GetListCountryAgeRestriction(Operation):
-    """Get List Country age restriction (GetListCountryAgeRestriction)
+    """[DEPRECATED] Get List Country age restriction (GetListCountryAgeRestriction)
 
     ## The endpoint is going to be deprecated
     **Endpoint migration guide**
@@ -69,11 +69,15 @@ class GetListCountryAgeRestriction(Operation):
     # region fields
 
     _url: str = "/iam/v2/admin/namespaces/{namespace}/countries/agerestrictions"
+    _path: str = "/iam/v2/admin/namespaces/{namespace}/countries/agerestrictions"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     namespace: str  # REQUIRED in [path]
 
@@ -84,6 +88,14 @@ class GetListCountryAgeRestriction(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

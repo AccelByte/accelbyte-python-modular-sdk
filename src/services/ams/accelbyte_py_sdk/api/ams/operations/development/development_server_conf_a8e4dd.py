@@ -37,6 +37,8 @@ from ...models import ResponseErrorResponse
 class DevelopmentServerConfigurationCreate(Operation):
     """create a new development server configuration (DevelopmentServerConfigurationCreate)
 
+    Configuration name can be up to 128 characters and must conform to ^[.a-zA-Z0-9_-]+$
+
     Required Permission: ADMIN:NAMESPACE:{namespace}:ARMADA:FLEET [CREATE]
 
     Required Permission(s):
@@ -47,7 +49,7 @@ class DevelopmentServerConfigurationCreate(Operation):
 
         method: POST
 
-        tags: ["Development", "Fleets", "Images"]
+        tags: ["Development"]
 
         consumes: ["application/json"]
 
@@ -74,11 +76,17 @@ class DevelopmentServerConfigurationCreate(Operation):
     # region fields
 
     _url: str = "/ams/v1/admin/namespaces/{namespace}/development/server-configurations"
+    _path: str = (
+        "/ams/v1/admin/namespaces/{namespace}/development/server-configurations"
+    )
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "ams"
 
     body: ApiDevelopmentServerConfigurationCreateRequest  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -90,6 +98,14 @@ class DevelopmentServerConfigurationCreate(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

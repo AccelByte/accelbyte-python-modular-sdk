@@ -41,7 +41,6 @@ class DebitByWalletPlatform(Operation):
     Pay with user wallet by currency code and client platform.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
 
 
 
@@ -61,9 +60,6 @@ class DebitByWalletPlatform(Operation):
 
         { "$data": "value" }
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [UPDATE]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/debitByWalletPlatform
 
@@ -75,7 +71,7 @@ class DebitByWalletPlatform(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         request: (request) REQUIRED DebitByWalletPlatformRequest in body
 
@@ -96,11 +92,15 @@ class DebitByWalletPlatform(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/debitByWalletPlatform"
+    _path: str = "/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/debitByWalletPlatform"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     request: DebitByWalletPlatformRequest  # REQUIRED in [body]
     currency_code: str  # REQUIRED in [path]
@@ -114,6 +114,14 @@ class DebitByWalletPlatform(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

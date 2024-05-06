@@ -36,12 +36,7 @@ class SaveAdminEmailConfiguration(Operation):
     """Add admin email address configuration (SaveAdminEmailConfiguration)
 
     Add admin email address for receiving personal data request notification.
-
-
-    Required permission `ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [CREATE]` and scope `account`
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [CREATE]
+    Scope: account
 
     Required Scope(s):
         - account
@@ -76,11 +71,15 @@ class SaveAdminEmailConfiguration(Operation):
     # region fields
 
     _url: str = "/gdpr/admin/namespaces/{namespace}/emails/configurations"
+    _path: str = "/gdpr/admin/namespaces/{namespace}/emails/configurations"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "gdpr"
 
     body: List[str]  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -92,6 +91,14 @@ class SaveAdminEmailConfiguration(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

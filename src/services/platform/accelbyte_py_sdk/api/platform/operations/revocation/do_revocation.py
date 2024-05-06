@@ -39,8 +39,7 @@ class DoRevocation(Operation):
     Do revocation.
     Other detail info:
 
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:USER:{userId}:REVOCATION, action=4 (UPDATE)
-      *  Returns : revocation results
+      * Returns : revocation results
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/revocation
@@ -68,11 +67,15 @@ class DoRevocation(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/users/{userId}/revocation"
+    _path: str = "/platform/admin/namespaces/{namespace}/users/{userId}/revocation"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: RevocationRequest  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -85,6 +88,14 @@ class DoRevocation(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

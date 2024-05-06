@@ -73,11 +73,15 @@ class ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(Ope
     # region fields
 
     _url: str = "/game-telemetry/v1/protected/steamIds/{steamId}/playtime"
+    _path: str = "/game-telemetry/v1/protected/steamIds/{steamId}/playtime"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["COOKIE_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "gametelemetry"
 
     cookie: Union[str, HeaderStr]  # OPTIONAL in [header]
     steam_id: str  # REQUIRED in [path]
@@ -89,6 +93,14 @@ class ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(Ope
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

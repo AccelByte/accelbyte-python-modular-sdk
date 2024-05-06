@@ -78,11 +78,15 @@ class GetCurrentCycleLeaderboardRankingAdminV3(Operation):
     # region fields
 
     _url: str = "/leaderboard/v3/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}/cycles/{cycleId}"
+    _path: str = "/leaderboard/v3/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}/cycles/{cycleId}"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "leaderboard"
 
     cycle_id: str  # REQUIRED in [path]
     leaderboard_code: str  # REQUIRED in [path]
@@ -97,6 +101,14 @@ class GetCurrentCycleLeaderboardRankingAdminV3(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -38,10 +38,6 @@ class MockPlayStationStreamEvent(Operation):
 
     Mock Sync PlayStation Clawback event..
 
-    Other detail info:
-
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:IAP:CLAWBACK, action=1(CREATE)
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/clawback/playstation/mock
 
@@ -66,11 +62,15 @@ class MockPlayStationStreamEvent(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/iap/clawback/playstation/mock"
+    _path: str = "/platform/admin/namespaces/{namespace}/iap/clawback/playstation/mock"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: StreamEvent  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -82,6 +82,14 @@ class MockPlayStationStreamEvent(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -86,17 +86,23 @@ class CreateUserFromInvitationV4(Operation):
 
         404: Not Found - RestErrorResponse (10180: admin invitation not found or expired | 10154: country not found)
 
+        409: Conflict - RestErrorResponse (10222: unique display name already exists)
+
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
 
     # region fields
 
     _url: str = "/iam/v4/public/namespaces/{namespace}/users/invite/{invitationId}"
+    _path: str = "/iam/v4/public/namespaces/{namespace}/users/invite/{invitationId}"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     body: AccountCreateUserRequestV4  # REQUIRED in [body]
     invitation_id: str  # REQUIRED in [path]
@@ -109,6 +115,14 @@ class CreateUserFromInvitationV4(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:
@@ -220,6 +234,8 @@ class CreateUserFromInvitationV4(Operation):
 
         404: Not Found - RestErrorResponse (10180: admin invitation not found or expired | 10154: country not found)
 
+        409: Conflict - RestErrorResponse (10222: unique display name already exists)
+
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
 
         ---: HttpResponse (Undocumented Response)
@@ -242,6 +258,8 @@ class CreateUserFromInvitationV4(Operation):
         if code == 403:
             return None, RestErrorResponse.create_from_dict(content)
         if code == 404:
+            return None, RestErrorResponse.create_from_dict(content)
+        if code == 409:
             return None, RestErrorResponse.create_from_dict(content)
         if code == 500:
             return None, RestErrorResponse.create_from_dict(content)

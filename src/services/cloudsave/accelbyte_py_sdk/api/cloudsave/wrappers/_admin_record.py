@@ -706,6 +706,7 @@ def admin_list_admin_game_record_v1(
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     query: Optional[str] = None,
+    tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -735,6 +736,8 @@ def admin_list_admin_game_record_v1(
 
         query: (query) OPTIONAL str in query
 
+        tags: (tags) OPTIONAL List[str] in query
+
     Responses:
         200: OK - ModelsListAdminGameRecordKeysResponse (Retrieve list of records key by namespace)
 
@@ -754,6 +757,7 @@ def admin_list_admin_game_record_v1(
         limit=limit,
         offset=offset,
         query=query,
+        tags=tags,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -764,6 +768,7 @@ async def admin_list_admin_game_record_v1_async(
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     query: Optional[str] = None,
+    tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -793,6 +798,8 @@ async def admin_list_admin_game_record_v1_async(
 
         query: (query) OPTIONAL str in query
 
+        tags: (tags) OPTIONAL List[str] in query
+
     Responses:
         200: OK - ModelsListAdminGameRecordKeysResponse (Retrieve list of records key by namespace)
 
@@ -812,6 +819,7 @@ async def admin_list_admin_game_record_v1_async(
         limit=limit,
         offset=offset,
         query=query,
+        tags=tags,
         namespace=namespace,
     )
     return await run_request_async(
@@ -824,6 +832,8 @@ def admin_list_admin_user_records_v1(
     user_id: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
+    query: Optional[str] = None,
+    tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -853,6 +863,10 @@ def admin_list_admin_user_records_v1(
 
         offset: (offset) OPTIONAL int in query
 
+        query: (query) OPTIONAL str in query
+
+        tags: (tags) OPTIONAL List[str] in query
+
     Responses:
         200: OK - ModelsListAdminPlayerRecordKeysResponse (Successful operation)
 
@@ -872,6 +886,8 @@ def admin_list_admin_user_records_v1(
         user_id=user_id,
         limit=limit,
         offset=offset,
+        query=query,
+        tags=tags,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -882,6 +898,8 @@ async def admin_list_admin_user_records_v1_async(
     user_id: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
+    query: Optional[str] = None,
+    tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -911,6 +929,10 @@ async def admin_list_admin_user_records_v1_async(
 
         offset: (offset) OPTIONAL int in query
 
+        query: (query) OPTIONAL str in query
+
+        tags: (tags) OPTIONAL List[str] in query
+
     Responses:
         200: OK - ModelsListAdminPlayerRecordKeysResponse (Successful operation)
 
@@ -930,6 +952,8 @@ async def admin_list_admin_user_records_v1_async(
         user_id=user_id,
         limit=limit,
         offset=offset,
+        query=query,
+        tags=tags,
         namespace=namespace,
     )
     return await run_request_async(

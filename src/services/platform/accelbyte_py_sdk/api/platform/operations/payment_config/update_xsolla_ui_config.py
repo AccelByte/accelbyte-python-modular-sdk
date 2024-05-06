@@ -40,11 +40,7 @@ class UpdateXsollaUIConfig(Operation):
     [Not Supported Yet In Starter] Update xsolla UI configuration.Reference: [Xsolla Document](https://developers.xsolla.com/api.html#ui-integrations).
     Other detail info:
 
-      * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)
-      *  Returns : updated payment merchant config
-
-    Required Permission(s):
-        - ADMIN:PAYMENT:CONFIG [UPDATE]
+      * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/xsollauiconfig
@@ -57,7 +53,7 @@ class UpdateXsollaUIConfig(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL XsollaPaywallConfigRequest in body
 
@@ -72,11 +68,15 @@ class UpdateXsollaUIConfig(Operation):
     # region fields
 
     _url: str = "/platform/admin/payment/config/merchant/{id}/xsollauiconfig"
+    _path: str = "/platform/admin/payment/config/merchant/{id}/xsollauiconfig"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: XsollaPaywallConfigRequest  # OPTIONAL in [body]
     id_: str  # REQUIRED in [path]
@@ -88,6 +88,14 @@ class UpdateXsollaUIConfig(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -74,11 +74,17 @@ class GetActiveCustomGameSessions(Operation):
     _url: str = (
         "/sessionbrowser/admin/namespaces/{namespace}/gamesession/active/custom-game"
     )
+    _path: str = (
+        "/sessionbrowser/admin/namespaces/{namespace}/gamesession/active/custom-game"
+    )
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "sessionbrowser"
 
     namespace: str  # REQUIRED in [path]
     limit: int  # OPTIONAL in [query]
@@ -93,6 +99,14 @@ class GetActiveCustomGameSessions(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

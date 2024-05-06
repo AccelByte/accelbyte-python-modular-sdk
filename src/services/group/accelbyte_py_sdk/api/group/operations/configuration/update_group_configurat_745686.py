@@ -37,20 +37,9 @@ from ...models import ResponseErrorResponse
 class UpdateGroupConfigurationAdminV1(Operation):
     """update existing configuration (updateGroupConfigurationAdminV1)
 
-    Required permission 'ADMIN:NAMESPACE:{namespace}:GROUP:CONFIGURATION [UPDATE]'
-
-
-
-
     This endpoint is used to update existing configuration. groupAdminRoleId and groupMemberRoleId won't be able to be updated. User can try to change the member role permission instead for each of those member role
 
-
-
-
     Action Code: 73102
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:GROUP:CONFIGURATION [UPDATE]
 
     Properties:
         url: /group/v1/admin/namespaces/{namespace}/configuration/{configurationCode}
@@ -90,11 +79,17 @@ class UpdateGroupConfigurationAdminV1(Operation):
     _url: str = (
         "/group/v1/admin/namespaces/{namespace}/configuration/{configurationCode}"
     )
+    _path: str = (
+        "/group/v1/admin/namespaces/{namespace}/configuration/{configurationCode}"
+    )
+    _base_path: str = ""
     _method: str = "PATCH"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     body: ModelsUpdateGroupConfigurationRequestV1  # REQUIRED in [body]
     configuration_code: str  # REQUIRED in [path]
@@ -107,6 +102,14 @@ class UpdateGroupConfigurationAdminV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

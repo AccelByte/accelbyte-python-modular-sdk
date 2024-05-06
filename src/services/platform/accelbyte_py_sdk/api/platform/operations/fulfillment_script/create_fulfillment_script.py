@@ -40,14 +40,10 @@ class CreateFulfillmentScript(Operation):
     [Not Supported Yet In Starter] Create fulfillment script.
     Other detail info:
 
-      * Required permission : resource="ADMIN:FULFILLMENT", action=1 (CREATE)
 
     Fulfillment scripts are used for adding custom fulfillment logic based on ITEM_TYPE : [MEDIA,INGAMEITEM] for now, and the custom scripts only cover grantDays.
     Example for grantDays:
     `order && ((order.currency && order.currency.currencyCode) == 'LP' || order.isFree) ? 30 : -1`
-
-    Required Permission(s):
-        - ADMIN:FULFILLMENT [CREATE]
 
     Properties:
         url: /platform/admin/fulfillment/scripts/{id}
@@ -60,7 +56,7 @@ class CreateFulfillmentScript(Operation):
 
         produces: []
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL FulfillmentScriptCreate in body
 
@@ -75,11 +71,15 @@ class CreateFulfillmentScript(Operation):
     # region fields
 
     _url: str = "/platform/admin/fulfillment/scripts/{id}"
+    _path: str = "/platform/admin/fulfillment/scripts/{id}"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = []
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: FulfillmentScriptCreate  # OPTIONAL in [body]
     id_: str  # REQUIRED in [path]
@@ -91,6 +91,14 @@ class CreateFulfillmentScript(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

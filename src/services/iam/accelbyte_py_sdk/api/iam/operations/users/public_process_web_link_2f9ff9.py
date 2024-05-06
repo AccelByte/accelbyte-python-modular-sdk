@@ -38,6 +38,19 @@ class PublicProcessWebLinkPlatformV3(Operation):
 
     This endpoint is used to process third party account link, this endpoint will return the link status directly instead of redirecting to the original page.
     The param **state** comes from the response of `/users/me/platforms/{platformId}/web/link`
+    Supported platforms:
+    - ps4web
+    - xblweb
+    - steamopenid
+    - epicgames
+    - facebook
+    - twitch
+    - google
+    - apple
+    - snapchat
+    - discord
+    - amazon
+    - oculusweb
 
     Properties:
         url: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/process
@@ -69,11 +82,15 @@ class PublicProcessWebLinkPlatformV3(Operation):
     # region fields
 
     _url: str = "/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/process"
+    _path: str = "/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/process"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/x-www-form-urlencoded"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     code: str  # OPTIONAL in [form_data]
     state: str  # REQUIRED in [form_data]
@@ -87,6 +104,14 @@ class PublicProcessWebLinkPlatformV3(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

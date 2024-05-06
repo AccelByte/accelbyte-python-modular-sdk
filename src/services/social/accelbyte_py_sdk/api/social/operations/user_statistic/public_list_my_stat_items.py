@@ -85,11 +85,15 @@ class PublicListMyStatItems(Operation):
     # region fields
 
     _url: str = "/social/v1/public/namespaces/{namespace}/users/me/statitems"
+    _path: str = "/social/v1/public/namespaces/{namespace}/users/me/statitems"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "social"
 
     namespace: str  # REQUIRED in [path]
     limit: int  # OPTIONAL in [query]
@@ -105,6 +109,14 @@ class PublicListMyStatItems(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

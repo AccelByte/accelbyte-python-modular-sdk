@@ -36,11 +36,7 @@ from ...models import AcceptAgreementResponse
 class IndirectBulkAcceptVersionedPolicy(Operation):
     """Admin bulk accept Policy Versions (indirectBulkAcceptVersionedPolicy)
 
-    Accepts many legal policy versions all at once. Supply with localized version policy id and userId to accept an agreement. Other detail info:
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:LEGAL", action=1 (CREATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:LEGAL [CREATE]
+    Accepts many legal policy versions all at once. Supply with localized version policy id and userId to accept an agreement.
 
     Properties:
         url: /agreement/admin/namespaces/{namespace}/users/{userId}/agreements/policies
@@ -53,7 +49,7 @@ class IndirectBulkAcceptVersionedPolicy(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL List[AcceptAgreementRequest] in body
 
@@ -76,11 +72,17 @@ class IndirectBulkAcceptVersionedPolicy(Operation):
     _url: str = (
         "/agreement/admin/namespaces/{namespace}/users/{userId}/agreements/policies"
     )
+    _path: str = (
+        "/agreement/admin/namespaces/{namespace}/users/{userId}/agreements/policies"
+    )
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "legal"
 
     body: List[AcceptAgreementRequest]  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -96,6 +98,14 @@ class IndirectBulkAcceptVersionedPolicy(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

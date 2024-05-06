@@ -38,23 +38,11 @@ class GetUserGroupStatusInformationV2(Operation):
 
     Required valid user authentication
 
-
-
-
     Required Member Role Permission: "GROUP [READ]"
-
-
-
 
     This endpoint is used to get user group status information.
 
-
-
-
     get user group status information. This endpoint will check the member and group information, and also the role permission of the the user who accesses this endpoint
-
-
-
 
     Action Code: 73409
 
@@ -97,11 +85,17 @@ class GetUserGroupStatusInformationV2(Operation):
     _url: str = (
         "/group/v2/public/namespaces/{namespace}/users/{userId}/groups/{groupId}/status"
     )
+    _path: str = (
+        "/group/v2/public/namespaces/{namespace}/users/{userId}/groups/{groupId}/status"
+    )
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     group_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -114,6 +108,14 @@ class GetUserGroupStatusInformationV2(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -35,7 +35,7 @@ from ...models import RestErrorResponse
 
 
 class AdminGetUserBanV2(Operation):
-    """Get user's bans (AdminGetUserBanV2)
+    """[DEPRECATED] Get user's bans (AdminGetUserBanV2)
 
     ## The endpoint is going to be deprecated
     **Endpoint migration guide**
@@ -73,11 +73,15 @@ class AdminGetUserBanV2(Operation):
     # region fields
 
     _url: str = "/iam/v2/admin/namespaces/{namespace}/users/{userId}/bans"
+    _path: str = "/iam/v2/admin/namespaces/{namespace}/users/{userId}/bans"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
@@ -90,6 +94,14 @@ class AdminGetUserBanV2(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

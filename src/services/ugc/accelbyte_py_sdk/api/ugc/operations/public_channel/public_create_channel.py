@@ -71,11 +71,15 @@ class PublicCreateChannel(Operation):
     # region fields
 
     _url: str = "/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels"
+    _path: str = "/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json", "application/octet-stream"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "ugc"
 
     body: ModelsPublicChannelRequest  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -88,6 +92,14 @@ class PublicCreateChannel(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

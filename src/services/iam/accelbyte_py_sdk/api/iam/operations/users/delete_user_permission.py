@@ -34,7 +34,7 @@ from ...models import RestErrorResponse
 
 
 class DeleteUserPermission(Operation):
-    """Delete User Permission (DeleteUserPermission)
+    """[DEPRECATED] Delete User Permission (DeleteUserPermission)
 
     ## The endpoint is going to be deprecated
     ### Endpoint migration guide
@@ -78,11 +78,17 @@ class DeleteUserPermission(Operation):
     _url: str = (
         "/iam/namespaces/{namespace}/users/{userId}/permissions/{resource}/{action}"
     )
+    _path: str = (
+        "/iam/namespaces/{namespace}/users/{userId}/permissions/{resource}/{action}"
+    )
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     action: int  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -96,6 +102,14 @@ class DeleteUserPermission(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

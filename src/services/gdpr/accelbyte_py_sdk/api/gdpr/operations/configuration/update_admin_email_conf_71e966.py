@@ -36,11 +36,10 @@ class UpdateAdminEmailConfiguration(Operation):
     """Update admin email address configuration (UpdateAdminEmailConfiguration)
 
     Update admin email address for receiving personal data request notification.
+    Scope: account
 
-    Required permission `ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [UPDATE]`
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [UPDATE]
+    Required Scope(s):
+        - account
 
     Properties:
         url: /gdpr/admin/namespaces/{namespace}/emails/configurations
@@ -72,11 +71,15 @@ class UpdateAdminEmailConfiguration(Operation):
     # region fields
 
     _url: str = "/gdpr/admin/namespaces/{namespace}/emails/configurations"
+    _path: str = "/gdpr/admin/namespaces/{namespace}/emails/configurations"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "gdpr"
 
     body: List[str]  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -88,6 +91,14 @@ class UpdateAdminEmailConfiguration(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

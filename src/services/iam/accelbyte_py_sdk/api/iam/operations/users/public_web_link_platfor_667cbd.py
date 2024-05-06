@@ -34,6 +34,19 @@ class PublicWebLinkPlatformEstablish(Operation):
     """Establish Link Progress  (PublicWebLinkPlatformEstablish)
 
     This endpoint is used by third party to redirect the code for the purpose of linking the account third party to IAM account.
+    Supported platforms:
+    - ps4web
+    - xblweb
+    - steamopenid
+    - epicgames
+    - facebook
+    - twitch
+    - google
+    - apple
+    - snapchat
+    - discord
+    - amazon
+    - oculusweb
 
     Properties:
         url: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/establish
@@ -65,11 +78,15 @@ class PublicWebLinkPlatformEstablish(Operation):
     # region fields
 
     _url: str = "/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/establish"
+    _path: str = "/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/establish"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = "PLACEHOLDER"
+
+    service_name: Optional[str] = "iam"
 
     namespace: str  # REQUIRED in [path]
     platform_id: str  # REQUIRED in [path]
@@ -83,6 +100,14 @@ class PublicWebLinkPlatformEstablish(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -35,7 +35,34 @@ from ...models import RestErrorResponse
 class AdminDeleteUserLinkingHistoryByPlatformIDV3(Operation):
     """Admin remove user's platform linking history. (AdminDeleteUserLinkingHistoryByPlatformIDV3)
 
-    This API is for admin to delete user's linking history with target platform id
+    This API is for admin to delete user's linking history with target platform id.
+    Supported platform:
+    - Steam group(steamnetwork)
+    - steam
+    - steamopenid
+    - PSN group(psn)
+    - ps4web
+    - ps4
+    - ps5
+    - XBOX group(xbox)
+    - live
+    - xblweb
+    - Oculus group(oculusgroup)
+    - oculus
+    - oculusweb
+    - facebook
+    - google
+    - twitch
+    - discord
+    - apple
+    - epicgames
+    - nintendo
+    - awscognito
+    - netflix
+    - snapchat
+    - oidc platform id
+
+    Note: you can use either platform ID or platform group as platformId query parameter
 
     Properties:
         url: /iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId}/link/histories
@@ -73,11 +100,15 @@ class AdminDeleteUserLinkingHistoryByPlatformIDV3(Operation):
     # region fields
 
     _url: str = "/iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId}/link/histories"
+    _path: str = "/iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId}/link/histories"
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     namespace: str  # REQUIRED in [path]
     platform_id: str  # REQUIRED in [path]
@@ -90,6 +121,14 @@ class AdminDeleteUserLinkingHistoryByPlatformIDV3(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -38,11 +38,7 @@ class PublicGetWallet(Operation):
     get a wallet by currency code.
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
-      *  Returns : wallet info
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:WALLET [READ]
+      * Returns : wallet info
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}
@@ -55,7 +51,7 @@ class PublicGetWallet(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -72,11 +68,17 @@ class PublicGetWallet(Operation):
     _url: str = (
         "/platform/public/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}"
     )
+    _path: str = (
+        "/platform/public/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}"
+    )
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     currency_code: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -89,6 +91,14 @@ class PublicGetWallet(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

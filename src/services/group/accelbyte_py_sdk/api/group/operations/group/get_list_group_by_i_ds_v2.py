@@ -39,13 +39,7 @@ class GetListGroupByIDsV2(Operation):
 
     Required valid user authentication
 
-
-
-
     Get list of groups by group Ids.
-
-
-
 
     Action Code: 73303
 
@@ -81,11 +75,15 @@ class GetListGroupByIDsV2(Operation):
     # region fields
 
     _url: str = "/group/v2/public/namespaces/{namespace}/groups/bulk"
+    _path: str = "/group/v2/public/namespaces/{namespace}/groups/bulk"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     body: ModelsGetGroupListRequestV2  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -97,6 +95,14 @@ class GetListGroupByIDsV2(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

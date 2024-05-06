@@ -39,11 +39,7 @@ class GetCurrencyConfig(Operation):
     [SERVICE COMMUNICATION ONLY] Get currency config by code.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CURRENCY", action=2 (READ)
-      *  Returns : simplified Currency
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CURRENCY [READ]
+      * Returns : simplified Currency
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/currencies/{currencyCode}/config
@@ -56,7 +52,7 @@ class GetCurrencyConfig(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -73,11 +69,17 @@ class GetCurrencyConfig(Operation):
     _url: str = (
         "/platform/admin/namespaces/{namespace}/currencies/{currencyCode}/config"
     )
+    _path: str = (
+        "/platform/admin/namespaces/{namespace}/currencies/{currencyCode}/config"
+    )
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     currency_code: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -89,6 +91,14 @@ class GetCurrencyConfig(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

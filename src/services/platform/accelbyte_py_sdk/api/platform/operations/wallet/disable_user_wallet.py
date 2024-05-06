@@ -34,15 +34,9 @@ from ...models import ErrorEntity
 
 
 class DisableUserWallet(Operation):
-    """Disable a user wallet (disableUserWallet)
+    """[DEPRECATED] Disable a user wallet (disableUserWallet)
 
     disable a user wallet.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [UPDATE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/disable
@@ -55,7 +49,7 @@ class DisableUserWallet(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -74,11 +68,15 @@ class DisableUserWallet(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/disable"
+    _path: str = "/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/disable"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
@@ -91,6 +89,14 @@ class DisableUserWallet(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

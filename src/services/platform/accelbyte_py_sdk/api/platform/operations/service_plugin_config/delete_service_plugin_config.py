@@ -32,12 +32,9 @@ from accelbyte_py_sdk.core import deprecated
 
 
 class DeleteServicePluginConfig(Operation):
-    """Delete service plugin config (deleteServicePluginConfig)
+    """[DEPRECATED] Delete service plugin config (deleteServicePluginConfig)
 
-    Delete service plugin config.
-    Other detail info:
-
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:CONFIG:SERVICEPLUGIN, action=8 (DELETE)
+    Delete service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/configs/servicePlugin
@@ -61,11 +58,15 @@ class DeleteServicePluginConfig(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/configs/servicePlugin"
+    _path: str = "/platform/admin/namespaces/{namespace}/configs/servicePlugin"
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     namespace: str  # REQUIRED in [path]
 
@@ -76,6 +77,14 @@ class DeleteServicePluginConfig(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

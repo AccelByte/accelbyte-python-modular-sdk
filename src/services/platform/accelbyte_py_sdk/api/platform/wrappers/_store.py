@@ -30,6 +30,8 @@ from accelbyte_py_sdk.core import run_request_async
 from accelbyte_py_sdk.core import deprecated
 from accelbyte_py_sdk.core import same_doc_as
 
+from ..models import CatalogConfigInfo
+from ..models import CatalogConfigUpdate
 from ..models import CatalogDefinitionInfo
 from ..models import ErrorEntity
 from ..models import ExportStoreRequest
@@ -50,6 +52,7 @@ from ..operations.store import DownloadCSVTemplates
 from ..operations.store import ExportStore
 from ..operations.store import ExportStore1
 from ..operations.store import ExportStoreByCSV
+from ..operations.store import GetCatalogConfig
 from ..operations.store import GetCatalogDefinition
 from ..operations.store import (
     GetCatalogDefinitionCatalogTypeEnum,
@@ -64,6 +67,7 @@ from ..operations.store import ListStores
 from ..operations.store import PublicListStores
 from ..operations.store import QueryImportHistory
 from ..operations.store import RollbackPublishedStore
+from ..operations.store import UpdateCatalogConfig
 from ..operations.store import UpdateStore
 from ..models import CatalogDefinitionInfoItemTypeEnum
 from ..models import ExportStoreToCSVRequestCatalogTypeEnum
@@ -83,11 +87,7 @@ def clone_store(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=1 (CREATE)
-      *  Returns : clone store info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [CREATE]
+      * Returns : clone store info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}/clone
@@ -100,7 +100,7 @@ def clone_store(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -141,11 +141,7 @@ async def clone_store_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=1 (CREATE)
-      *  Returns : clone store info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [CREATE]
+      * Returns : clone store info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}/clone
@@ -158,7 +154,7 @@ async def clone_store_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -200,11 +196,7 @@ def create_store(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=1 (CREATE)
-      *  Returns : created store data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [CREATE]
+      * Returns : created store data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores
@@ -217,7 +209,7 @@ def create_store(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL StoreCreate in body
 
@@ -254,11 +246,7 @@ async def create_store_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=1 (CREATE)
-      *  Returns : created store data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [CREATE]
+      * Returns : created store data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores
@@ -271,7 +259,7 @@ async def create_store_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL StoreCreate in body
 
@@ -309,13 +297,6 @@ def delete_published_store(
 
      Warning: Please do not use this API once published to public user.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=8 (DELETE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [DELETE]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/published
 
@@ -327,7 +308,7 @@ def delete_published_store(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -358,13 +339,6 @@ async def delete_published_store_async(
 
      Warning: Please do not use this API once published to public user.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=8 (DELETE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [DELETE]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/published
 
@@ -376,7 +350,7 @@ async def delete_published_store_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -409,11 +383,7 @@ def delete_store(
     This API is used to delete a store. Only non published store can be deleted.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=8 (DELETE)
-      *  Returns : store
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [DELETE]
+      * Returns : store
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}
@@ -426,7 +396,7 @@ def delete_store(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -462,11 +432,7 @@ async def delete_store_async(
     This API is used to delete a store. Only non published store can be deleted.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=8 (DELETE)
-      *  Returns : store
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [DELETE]
+      * Returns : store
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}
@@ -479,7 +445,7 @@ async def delete_store_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -515,13 +481,6 @@ def download_csv_templates(
 
     This API is used to download store csv templates for store importing by CSV feature
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/downloadCSVTemplates
 
@@ -533,7 +492,7 @@ def download_csv_templates(
 
         produces: ["application/zip"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -560,13 +519,6 @@ async def download_csv_templates_async(
 
     This API is used to download store csv templates for store importing by CSV feature
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/downloadCSVTemplates
 
@@ -578,7 +530,7 @@ async def download_csv_templates_async(
 
         produces: ["application/zip"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -610,12 +562,6 @@ def export_store(
     This API is used to export a store.
 
     This api has been deprecated, pls use /v2/admin/namespaces/{namespace}/stores/export to export store.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [READ]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}/export
@@ -628,7 +574,7 @@ def export_store(
 
         produces: ["application/zip"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -663,12 +609,6 @@ async def export_store_async(
     This API is used to export a store.
 
     This api has been deprecated, pls use /v2/admin/namespaces/{namespace}/stores/export to export store.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [READ]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}/export
@@ -681,7 +621,7 @@ async def export_store_async(
 
         produces: ["application/zip"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -717,13 +657,6 @@ def export_store_1(
 
     This API is used to export a whole or partial store.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [READ]
-
     Properties:
         url: /platform/v2/admin/namespaces/{namespace}/stores/{storeId}/export
 
@@ -735,7 +668,7 @@ def export_store_1(
 
         produces: ["application/zip"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL ExportStoreRequest in body
 
@@ -772,13 +705,6 @@ async def export_store_1_async(
 
     This API is used to export a whole or partial store.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [READ]
-
     Properties:
         url: /platform/v2/admin/namespaces/{namespace}/stores/{storeId}/export
 
@@ -790,7 +716,7 @@ async def export_store_1_async(
 
         produces: ["application/zip"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL ExportStoreRequest in body
 
@@ -828,13 +754,6 @@ def export_store_by_csv(
 
     This API is used to export a store to CSV format
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/exportByCSV
 
@@ -846,7 +765,7 @@ def export_store_by_csv(
 
         produces: ["text/csv"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL ExportStoreToCSVRequest in body
 
@@ -883,13 +802,6 @@ async def export_store_by_csv_async(
 
     This API is used to export a store to CSV format
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/exportByCSV
 
@@ -901,7 +813,7 @@ async def export_store_by_csv_async(
 
         produces: ["text/csv"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL ExportStoreToCSVRequest in body
 
@@ -929,6 +841,84 @@ async def export_store_by_csv_async(
     )
 
 
+@same_doc_as(GetCatalogConfig)
+def get_catalog_config(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get catalog config (getCatalogConfig)
+
+    Get catalog config.
+
+    Properties:
+        url: /platform/admin/namespaces/{namespace}/catalog/configs
+
+        method: GET
+
+        tags: ["Store"]
+
+        consumes: []
+
+        produces: []
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - CatalogConfigInfo (successful operation)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GetCatalogConfig.create(
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(GetCatalogConfig)
+async def get_catalog_config_async(
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get catalog config (getCatalogConfig)
+
+    Get catalog config.
+
+    Properties:
+        url: /platform/admin/namespaces/{namespace}/catalog/configs
+
+        method: GET
+
+        tags: ["Store"]
+
+        consumes: []
+
+        produces: []
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - CatalogConfigInfo (successful operation)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = GetCatalogConfig.create(
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(GetCatalogDefinition)
 def get_catalog_definition(
     catalog_type: Union[str, GetCatalogDefinitionCatalogTypeEnum],
@@ -942,8 +932,7 @@ def get_catalog_definition(
 
     Other detail info:
 
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:STORE, action=2 (READ)
-      *  Returns : catalog definition
+      * Returns : catalog definition
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/catalogDefinition
@@ -989,8 +978,7 @@ async def get_catalog_definition_async(
 
     Other detail info:
 
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:STORE, action=2 (READ)
-      *  Returns : catalog definition
+      * Returns : catalog definition
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/catalogDefinition
@@ -1037,11 +1025,7 @@ def get_published_store(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-      *  Returns : store data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [READ]
+      * Returns : store data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/published
@@ -1054,7 +1038,7 @@ def get_published_store(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1085,11 +1069,7 @@ async def get_published_store_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-      *  Returns : store data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [READ]
+      * Returns : store data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/published
@@ -1102,7 +1082,7 @@ async def get_published_store_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1135,11 +1115,7 @@ def get_published_store_backup(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-      *  Returns : store backup info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [READ]
+      * Returns : store backup info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/published/backup
@@ -1152,7 +1128,7 @@ def get_published_store_backup(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1183,11 +1159,7 @@ async def get_published_store_backup_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-      *  Returns : store backup info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [READ]
+      * Returns : store backup info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/published/backup
@@ -1200,7 +1172,7 @@ async def get_published_store_backup_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1234,11 +1206,7 @@ def get_store(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-      *  Returns : store data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [READ]
+      * Returns : store data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}
@@ -1251,7 +1219,7 @@ def get_store(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1286,11 +1254,7 @@ async def get_store_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-      *  Returns : store data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [READ]
+      * Returns : store data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}
@@ -1303,7 +1267,7 @@ async def get_store_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1341,12 +1305,6 @@ def import_store(
     This API is used to import a store.
 
     This api has been deprecated, pls use /v2/admin/namespaces/{namespace}/stores/import to import store.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [UPDATE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/import
@@ -1359,7 +1317,7 @@ def import_store(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         file: (file) OPTIONAL Any in form_data
 
@@ -1400,12 +1358,6 @@ async def import_store_async(
     This API is used to import a store.
 
     This api has been deprecated, pls use /v2/admin/namespaces/{namespace}/stores/import to import store.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [UPDATE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/import
@@ -1418,7 +1370,7 @@ async def import_store_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         file: (file) OPTIONAL Any in form_data
 
@@ -1460,13 +1412,6 @@ def import_store_1(
 
     This API is used to import a store.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [UPDATE]
-
     Properties:
         url: /platform/v2/admin/namespaces/{namespace}/stores/import
 
@@ -1478,7 +1423,7 @@ def import_store_1(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         file: (file) OPTIONAL Any in form_data
 
@@ -1521,13 +1466,6 @@ async def import_store_1_async(
 
     This API is used to import a store.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [UPDATE]
-
     Properties:
         url: /platform/v2/admin/namespaces/{namespace}/stores/import
 
@@ -1539,7 +1477,7 @@ async def import_store_1_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         file: (file) OPTIONAL Any in form_data
 
@@ -1587,13 +1525,6 @@ def import_store_by_csv(
 
     This API is used to import a store by CSV format.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [UPDATE]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}/importByCSV
 
@@ -1605,7 +1536,7 @@ def import_store_by_csv(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         category: (category) OPTIONAL Any in form_data
 
@@ -1662,13 +1593,6 @@ async def import_store_by_csv_async(
 
     This API is used to import a store by CSV format.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [UPDATE]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}/importByCSV
 
@@ -1680,7 +1604,7 @@ async def import_store_by_csv_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         category: (category) OPTIONAL Any in form_data
 
@@ -1735,11 +1659,7 @@ def list_stores(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-      *  Returns : the list of stores
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [READ]
+      * Returns : the list of stores
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores
@@ -1752,7 +1672,7 @@ def list_stores(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1781,11 +1701,7 @@ async def list_stores_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-      *  Returns : the list of stores
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [READ]
+      * Returns : the list of stores
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores
@@ -1798,7 +1714,7 @@ async def list_stores_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1926,13 +1842,6 @@ def query_import_history(
 
     This API is used to query import store history
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}/import/history
 
@@ -1944,7 +1853,7 @@ def query_import_history(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2001,13 +1910,6 @@ async def query_import_history_async(
 
     This API is used to query import store history
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}/import/history
 
@@ -2019,7 +1921,7 @@ async def query_import_history_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2073,11 +1975,7 @@ def rollback_published_store(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
-      *  Returns : updated store info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [UPDATE]
+      * Returns : updated store info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/published/rollback
@@ -2090,7 +1988,7 @@ def rollback_published_store(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2121,11 +2019,7 @@ async def rollback_published_store_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
-      *  Returns : updated store info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [UPDATE]
+      * Returns : updated store info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/published/rollback
@@ -2138,7 +2032,7 @@ async def rollback_published_store_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2152,6 +2046,98 @@ async def rollback_published_store_async(
         if error:
             return None, error
     request = RollbackPublishedStore.create(
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(UpdateCatalogConfig)
+def update_catalog_config(
+    body: Optional[CatalogConfigUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Update catalog config (updateCatalogConfig)
+
+    Update catalog config. Other detail info:
+      * Returns : updated catalog config
+
+    Properties:
+        url: /platform/admin/namespaces/{namespace}/catalog/configs
+
+        method: PUT
+
+        tags: ["Store"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) OPTIONAL CatalogConfigUpdate in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - CatalogConfigInfo (successful operation)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = UpdateCatalogConfig.create(
+        body=body,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(UpdateCatalogConfig)
+async def update_catalog_config_async(
+    body: Optional[CatalogConfigUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Update catalog config (updateCatalogConfig)
+
+    Update catalog config. Other detail info:
+      * Returns : updated catalog config
+
+    Properties:
+        url: /platform/admin/namespaces/{namespace}/catalog/configs
+
+        method: PUT
+
+        tags: ["Store"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) OPTIONAL CatalogConfigUpdate in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - CatalogConfigInfo (successful operation)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = UpdateCatalogConfig.create(
+        body=body,
         namespace=namespace,
     )
     return await run_request_async(
@@ -2173,11 +2159,7 @@ def update_store(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
-      *  Returns : updated store data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [UPDATE]
+      * Returns : updated store data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}
@@ -2190,7 +2172,7 @@ def update_store(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL StoreUpdate in body
 
@@ -2233,11 +2215,7 @@ async def update_store_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
-      *  Returns : updated store data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [UPDATE]
+      * Returns : updated store data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}
@@ -2250,7 +2228,7 @@ async def update_store_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL StoreUpdate in body
 

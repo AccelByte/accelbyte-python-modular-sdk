@@ -34,13 +34,9 @@ from ...models import PagedRetrieveUserAcceptedAgreementResponse
 
 
 class RetrieveAllUsersByPolicyVersion1(Operation):
-    """Retrieve All Users Accepting Legal Agreements (retrieveAllUsersByPolicyVersion_1)
+    """Retrieve Users Accepting Legal Agreements (retrieveAllUsersByPolicyVersion_1)
 
-    This API will return all users who has accepted a specific policy version.Other detail info:
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:LEGAL", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:LEGAL [READ]
+    This API will return all users who has accepted a specific policy version.
 
     Properties:
         url: /agreement/admin/namespaces/{namespace}/agreements/policy-versions/users
@@ -53,7 +49,7 @@ class RetrieveAllUsersByPolicyVersion1(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -78,11 +74,17 @@ class RetrieveAllUsersByPolicyVersion1(Operation):
     _url: str = (
         "/agreement/admin/namespaces/{namespace}/agreements/policy-versions/users"
     )
+    _path: str = (
+        "/agreement/admin/namespaces/{namespace}/agreements/policy-versions/users"
+    )
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "legal"
 
     namespace: str  # REQUIRED in [path]
     convert_game_user_id: bool  # OPTIONAL in [query]
@@ -98,6 +100,14 @@ class RetrieveAllUsersByPolicyVersion1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

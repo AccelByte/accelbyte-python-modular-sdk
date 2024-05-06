@@ -39,11 +39,7 @@ class UpdateDLCItemConfig(Operation):
     """Update DLC item config (updateDLCItemConfig)
 
     Update DLC item config. Other detail info:
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:DLC:CONFIG", action=4 (UPDATE)
-      *  Returns : updated DLC item config
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DLC:CONFIG [UPDATE]
+      * Returns : updated DLC item config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/dlc/config/item
@@ -56,7 +52,7 @@ class UpdateDLCItemConfig(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL DLCItemConfigUpdate in body
 
@@ -75,11 +71,15 @@ class UpdateDLCItemConfig(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/dlc/config/item"
+    _path: str = "/platform/admin/namespaces/{namespace}/dlc/config/item"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: DLCItemConfigUpdate  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -91,6 +91,14 @@ class UpdateDLCItemConfig(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

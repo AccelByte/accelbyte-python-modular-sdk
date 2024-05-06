@@ -36,9 +36,9 @@ from ...models import ResponseError
 class PublicSubmitMyAccountDeletionRequest(Operation):
     """Submit my account deletion requests. (PublicSubmitMyAccountDeletionRequest)
 
+    Submit my account deletion requests.
     Requires valid user access token
-
-    This is for in-game only and require a valid platformId and platform token. If a full account is not logged by 3rd platform, then please use /gdpr/public/namespaces/{namespace}/users/{userId}/deletions
+    This is for in-game only and require a valid platformId and platform token. If a full account is not logged by 3rd platform, then please use [/gdpr/public/namespaces/{namespace}/users/{userId}/deletions](#operations-Data_Deletion-PublicSubmitUserAccountDeletionRequest)
 
     Properties:
         url: /gdpr/public/users/me/deletions
@@ -74,11 +74,15 @@ class PublicSubmitMyAccountDeletionRequest(Operation):
     # region fields
 
     _url: str = "/gdpr/public/users/me/deletions"
+    _path: str = "/gdpr/public/users/me/deletions"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/x-www-form-urlencoded"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "gdpr"
 
     platform_id: str  # REQUIRED in [form_data]
     platform_token: str  # REQUIRED in [form_data]
@@ -90,6 +94,14 @@ class PublicSubmitMyAccountDeletionRequest(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

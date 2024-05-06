@@ -40,12 +40,8 @@ class FulfillRewardsV2(Operation):
     [SERVICE COMMUNICATION ONLY] Fulfill rewards.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT", action=1 (CREATED)
-      *  Returns : fulfillment result
+      * Returns : fulfillment result
       *  rewards Item unsupported Type : SUBSCRIPTION
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT []
 
     Properties:
         url: /platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillment/rewards
@@ -58,7 +54,7 @@ class FulfillRewardsV2(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL RewardsRequest in body
 
@@ -81,11 +77,17 @@ class FulfillRewardsV2(Operation):
     _url: str = (
         "/platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillment/rewards"
     )
+    _path: str = (
+        "/platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillment/rewards"
+    )
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: RewardsRequest  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -98,6 +100,14 @@ class FulfillRewardsV2(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

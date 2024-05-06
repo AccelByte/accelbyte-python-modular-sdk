@@ -72,17 +72,23 @@ class PublicInviteUserV4(Operation):
 
         422: Unprocessable Entity - RestErrorResponse (10183: unprocessable entity)
 
+        429: Too Many Requests - RestErrorResponse (20007: too many requests)
+
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
 
     # region fields
 
     _url: str = "/iam/v4/public/users/invite"
+    _path: str = "/iam/v4/public/users/invite"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     body: ModelPublicInviteUserRequestV4  # REQUIRED in [body]
 
@@ -93,6 +99,14 @@ class PublicInviteUserV4(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:
@@ -177,6 +191,8 @@ class PublicInviteUserV4(Operation):
 
         422: Unprocessable Entity - RestErrorResponse (10183: unprocessable entity)
 
+        429: Too Many Requests - RestErrorResponse (20007: too many requests)
+
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
 
         ---: HttpResponse (Undocumented Response)
@@ -199,6 +215,8 @@ class PublicInviteUserV4(Operation):
         if code == 409:
             return None, RestErrorResponse.create_from_dict(content)
         if code == 422:
+            return None, RestErrorResponse.create_from_dict(content)
+        if code == 429:
             return None, RestErrorResponse.create_from_dict(content)
         if code == 500:
             return None, RestErrorResponse.create_from_dict(content)

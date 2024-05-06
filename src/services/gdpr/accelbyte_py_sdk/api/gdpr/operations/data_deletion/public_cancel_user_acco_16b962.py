@@ -35,7 +35,12 @@ from ...models import ResponseError
 class PublicCancelUserAccountDeletionRequest(Operation):
     """Cancel user's account deletion request (PublicCancelUserAccountDeletionRequest)
 
+    Cancel user's account deletion request
     Requires valid user access token
+    Scope: account
+
+    Required Scope(s):
+        - account
 
     Properties:
         url: /gdpr/public/namespaces/{namespace}/users/{userId}/deletions
@@ -69,11 +74,15 @@ class PublicCancelUserAccountDeletionRequest(Operation):
     # region fields
 
     _url: str = "/gdpr/public/namespaces/{namespace}/users/{userId}/deletions"
+    _path: str = "/gdpr/public/namespaces/{namespace}/users/{userId}/deletions"
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "gdpr"
 
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
@@ -85,6 +94,14 @@ class PublicCancelUserAccountDeletionRequest(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

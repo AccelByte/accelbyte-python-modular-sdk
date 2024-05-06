@@ -36,12 +36,6 @@ class RetrieveLocalizedPolicyVersions(Operation):
     """Retrieve Versions from Country-Specific Policy (retrieveLocalizedPolicyVersions)
 
     Retrieve versions of a particular country-specific policy.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:*:LEGAL [READ]
 
     Properties:
         url: /agreement/admin/localized-policy-versions/versions/{policyVersionId}
@@ -54,7 +48,7 @@ class RetrieveLocalizedPolicyVersions(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         policy_version_id: (policyVersionId) REQUIRED str in path
 
@@ -65,11 +59,15 @@ class RetrieveLocalizedPolicyVersions(Operation):
     # region fields
 
     _url: str = "/agreement/admin/localized-policy-versions/versions/{policyVersionId}"
+    _path: str = "/agreement/admin/localized-policy-versions/versions/{policyVersionId}"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "legal"
 
     policy_version_id: str  # REQUIRED in [path]
 
@@ -80,6 +78,14 @@ class RetrieveLocalizedPolicyVersions(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

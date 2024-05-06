@@ -34,7 +34,7 @@ from ...models import OauthmodelTokenResponse
 
 
 class VerifyToken(Operation):
-    """OAuth2 token verification API (VerifyToken)
+    """[DEPRECATED] OAuth2 token verification API (VerifyToken)
 
     ## The endpoint is going to be deprecated
     This endpoint requires all requests to have Authorization header set with Basic access authentication constructed from client id and client secret.
@@ -67,11 +67,15 @@ class VerifyToken(Operation):
     # region fields
 
     _url: str = "/iam/oauth/verify"
+    _path: str = "/iam/oauth/verify"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/x-www-form-urlencoded"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BASIC_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     token: str  # REQUIRED in [form_data]
 
@@ -82,6 +86,14 @@ class VerifyToken(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

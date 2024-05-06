@@ -73,11 +73,15 @@ class AdminDeleteRolePermissionV3(Operation):
     # region fields
 
     _url: str = "/iam/v3/admin/roles/{roleId}/permissions/{resource}/{action}"
+    _path: str = "/iam/v3/admin/roles/{roleId}/permissions/{resource}/{action}"
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     action: int  # REQUIRED in [path]
     resource: str  # REQUIRED in [path]
@@ -90,6 +94,14 @@ class AdminDeleteRolePermissionV3(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

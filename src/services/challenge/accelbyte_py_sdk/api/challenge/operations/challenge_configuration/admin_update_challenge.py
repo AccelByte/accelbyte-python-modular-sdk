@@ -89,11 +89,15 @@ class AdminUpdateChallenge(Operation):
     # region fields
 
     _url: str = "/challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}"
+    _path: str = "/challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "challenge"
 
     body: ModelsUpdateChallengeRequest  # REQUIRED in [body]
     challenge_code: str  # REQUIRED in [path]
@@ -106,6 +110,14 @@ class AdminUpdateChallenge(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

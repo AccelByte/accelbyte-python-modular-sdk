@@ -352,9 +352,19 @@ def platform_token_grant_v4(
     Several platforms are grouped under account groups. The accounts on these platforms have the same platform user id.
     Login using one of these platform will returns the same IAM user.
     Following is the current registered account grouping:
-    - (psn) ps4web
-    - (psn) ps4
-    - (psn) ps5
+    - Steam group(steamnetwork):
+    - steam
+    - steamopenid
+    - PSN group(psn)
+    - ps4web
+    - ps4
+    - ps5
+    - XBOX group(xbox)
+    - live
+    - xblweb
+    - Oculus group(oculusgroup)
+    - oculus
+    - oculusweb
 
     ## Access Token Content
     Following is the access tokenâs content:
@@ -495,9 +505,19 @@ async def platform_token_grant_v4_async(
     Several platforms are grouped under account groups. The accounts on these platforms have the same platform user id.
     Login using one of these platform will returns the same IAM user.
     Following is the current registered account grouping:
-    - (psn) ps4web
-    - (psn) ps4
-    - (psn) ps5
+    - Steam group(steamnetwork):
+    - steam
+    - steamopenid
+    - PSN group(psn)
+    - ps4web
+    - ps4
+    - ps5
+    - XBOX group(xbox)
+    - live
+    - xblweb
+    - Oculus group(oculusgroup)
+    - oculus
+    - oculusweb
 
     ## Access Token Content
     Following is the access tokenâs content:
@@ -895,7 +915,7 @@ def token_grant_v4(
     It generates a token by checking the client credentials provided through Authorization header.
     5. Grant Type == `urn:ietf:params:oauth:grant-type:extend_client_credentials`:
     It generates a token by checking the client credentials provided through Authorization header.
-    It only allow publisher namespace client.
+    It only allows publisher/studio namespace client.
     In generated token:
     1. There wil be no roles, namespace_roles & permission.
     2. The scope will be fixed as 'extend'.
@@ -1059,7 +1079,7 @@ async def token_grant_v4_async(
     It generates a token by checking the client credentials provided through Authorization header.
     5. Grant Type == `urn:ietf:params:oauth:grant-type:extend_client_credentials`:
     It generates a token by checking the client credentials provided through Authorization header.
-    It only allow publisher namespace client.
+    It only allows publisher/studio namespace client.
     In generated token:
     1. There wil be no roles, namespace_roles & permission.
     2. The scope will be fixed as 'extend'.

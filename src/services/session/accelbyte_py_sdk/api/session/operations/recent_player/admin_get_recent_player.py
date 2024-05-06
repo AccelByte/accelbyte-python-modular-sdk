@@ -42,6 +42,8 @@ class AdminGetRecentPlayer(Operation):
     1. Using User Token : It will get the user id from the token
     2. Using client token : it will throw an error
 
+    Please ensure environment variable "RECENT_PLAYER_ENABLED" is set to "TRUE" to use this feature.
+
     Properties:
         url: /session/v1/admin/namespaces/{namespace}/recent-player
 
@@ -76,11 +78,15 @@ class AdminGetRecentPlayer(Operation):
     # region fields
 
     _url: str = "/session/v1/admin/namespaces/{namespace}/recent-player"
+    _path: str = "/session/v1/admin/namespaces/{namespace}/recent-player"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "session"
 
     namespace: str  # REQUIRED in [path]
     limit: int  # OPTIONAL in [query]
@@ -93,6 +99,14 @@ class AdminGetRecentPlayer(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

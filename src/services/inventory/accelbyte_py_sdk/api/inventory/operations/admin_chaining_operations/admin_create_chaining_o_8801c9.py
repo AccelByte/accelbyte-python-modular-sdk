@@ -89,11 +89,15 @@ class AdminCreateChainingOperations(Operation):
     # region fields
 
     _url: str = "/inventory/v1/admin/namespaces/{namespace}/chainingOperations"
+    _path: str = "/inventory/v1/admin/namespaces/{namespace}/chainingOperations"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "inventory"
 
     body: ApimodelsChainingOperationReq  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -105,6 +109,14 @@ class AdminCreateChainingOperations(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

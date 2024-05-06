@@ -38,13 +38,7 @@ class DeleteMemberRolePublicV1(Operation):
 
     Required Member Role Permission: "GROUP:ROLE [UPDATE]"
 
-
-
-
     This endpoint is used to remove role from group member
-
-
-
 
     Action Code: 73204
 
@@ -86,11 +80,15 @@ class DeleteMemberRolePublicV1(Operation):
     # region fields
 
     _url: str = "/group/v1/public/namespaces/{namespace}/roles/{memberRoleId}/members"
+    _path: str = "/group/v1/public/namespaces/{namespace}/roles/{memberRoleId}/members"
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     body: ModelsRemoveRoleFromMemberRequestV1  # REQUIRED in [body]
     member_role_id: str  # REQUIRED in [path]
@@ -103,6 +101,14 @@ class DeleteMemberRolePublicV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

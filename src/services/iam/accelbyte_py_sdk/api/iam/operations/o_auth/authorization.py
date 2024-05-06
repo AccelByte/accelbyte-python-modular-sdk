@@ -38,7 +38,7 @@ class ResponseTypeEnum(StrEnum):
 
 
 class Authorization(Operation):
-    """OAuth2 authorize API (Authorization)
+    """[DEPRECATED] OAuth2 authorize API (Authorization)
 
     ## The endpoint is going to be deprecated
     The endpoint supports two response types:
@@ -100,11 +100,15 @@ class Authorization(Operation):
     # region fields
 
     _url: str = "/iam/oauth/authorize"
+    _path: str = "/iam/oauth/authorize"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/x-www-form-urlencoded"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = "PLACEHOLDER"
+
+    service_name: Optional[str] = "iam"
 
     login: str  # OPTIONAL in [form_data]
     password: str  # OPTIONAL in [form_data]
@@ -121,6 +125,14 @@ class Authorization(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

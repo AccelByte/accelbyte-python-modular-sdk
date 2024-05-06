@@ -38,9 +38,6 @@ class BulkAcceptVersionedPolicy(Operation):
     """Bulk Accept Policy Versions (bulkAcceptVersionedPolicy)
 
     Accepts many legal policy versions all at once. Supply with localized version policy id to accept an agreement.
-    Other detail info:
-
-      * Required permission : login user
 
     Properties:
         url: /agreement/public/agreements/policies
@@ -66,11 +63,15 @@ class BulkAcceptVersionedPolicy(Operation):
     # region fields
 
     _url: str = "/agreement/public/agreements/policies"
+    _path: str = "/agreement/public/agreements/policies"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "legal"
 
     body: List[AcceptAgreementRequest]  # OPTIONAL in [body]
 
@@ -81,6 +82,14 @@ class BulkAcceptVersionedPolicy(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

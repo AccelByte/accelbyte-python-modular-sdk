@@ -36,12 +36,7 @@ from ...models import XblDLCSyncRequest
 class SyncXboxDLC(Operation):
     """Sync Xbox dlc items. (syncXboxDLC)
 
-    Sync Xbox inventory's dlc items.
-
-    Other detail info:
-
-      * Required permission : resource=NAMESPACE:{namespace}:USER:{userId}:DLC, action=4 (UPDATE)
-      *  Returns :
+    Sync Xbox inventory's dlc items
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/dlc/xbl/sync
@@ -71,11 +66,15 @@ class SyncXboxDLC(Operation):
     # region fields
 
     _url: str = "/platform/public/namespaces/{namespace}/users/{userId}/dlc/xbl/sync"
+    _path: str = "/platform/public/namespaces/{namespace}/users/{userId}/dlc/xbl/sync"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: XblDLCSyncRequest  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -88,6 +87,14 @@ class SyncXboxDLC(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

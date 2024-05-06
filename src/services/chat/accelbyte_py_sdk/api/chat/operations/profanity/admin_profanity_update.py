@@ -75,11 +75,15 @@ class AdminProfanityUpdate(Operation):
     # region fields
 
     _url: str = "/chat/v1/admin/profanity/namespaces/{namespace}/dictionary/{id}"
+    _path: str = "/chat/v1/admin/profanity/namespaces/{namespace}/dictionary/{id}"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "chat"
 
     body: ModelsDictionaryUpdateRequest  # REQUIRED in [body]
     id_: str  # REQUIRED in [path]
@@ -92,6 +96,14 @@ class AdminProfanityUpdate(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.49.0"
+__version__ = "4.51.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -101,6 +101,7 @@ from .campaign_create import RedeemTypeEnum as CampaignCreateRedeemTypeEnum
 from .campaign_create import StatusEnum as CampaignCreateStatusEnum
 from .campaign_create import TypeEnum as CampaignCreateTypeEnum
 from .campaign_dynamic_info import CampaignDynamicInfo
+from .campaign_ifc import CampaignIfc
 from .campaign_info import CampaignInfo
 from .campaign_info import RedeemTypeEnum as CampaignInfoRedeemTypeEnum
 from .campaign_info import StatusEnum as CampaignInfoStatusEnum
@@ -117,6 +118,8 @@ from .catalog_change_info import ItemTypeEnum as CatalogChangeInfoItemTypeEnum
 from .catalog_change_info import TypeEnum as CatalogChangeInfoTypeEnum
 from .catalog_change_paging_result import CatalogChangePagingResult
 from .catalog_change_statistics import CatalogChangeStatistics
+from .catalog_config_info import CatalogConfigInfo
+from .catalog_config_update import CatalogConfigUpdate
 from .catalog_definition_info import CatalogDefinitionInfo
 from .catalog_definition_info import ItemTypeEnum as CatalogDefinitionInfoItemTypeEnum
 from .category_create import CategoryCreate
@@ -185,6 +188,8 @@ from .debit_payload import WalletPlatformEnum as DebitPayloadWalletPlatformEnum
 from .debit_request import DebitRequest
 from .debit_request import BalanceSourceEnum as DebitRequestBalanceSourceEnum
 from .debit_result import DebitResult
+from .deduction_detail import DeductionDetail
+from .deduction_detail import DeductionTypeEnum as DeductionDetailDeductionTypeEnum
 from .delete_reward_condition_request import DeleteRewardConditionRequest
 from .detailed_wallet_transaction_info import DetailedWalletTransactionInfo
 from .detailed_wallet_transaction_info import (
@@ -193,6 +198,13 @@ from .detailed_wallet_transaction_info import (
 from .detailed_wallet_transaction_paging_sliced_result import (
     DetailedWalletTransactionPagingSlicedResult,
 )
+from .discount_category import DiscountCategory
+from .discount_code_deduction_detail import DiscountCodeDeductionDetail
+from .discount_code_info import DiscountCodeInfo
+from .discount_config import DiscountConfig
+from .discount_config import DiscountTypeEnum as DiscountConfigDiscountTypeEnum
+from .discount_config import RestrictTypeEnum as DiscountConfigRestrictTypeEnum
+from .discount_item import DiscountItem
 from .dlc_config_reward_short_info import DLCConfigRewardShortInfo
 from .dlc_config_reward_short_info import (
     DlcTypeEnum as DLCConfigRewardShortInfoDlcTypeEnum,
@@ -506,6 +518,8 @@ from .order import StatusEnum as OrderStatusEnum
 from .order_bundle_item_info import OrderBundleItemInfo
 from .order_create import OrderCreate
 from .order_creation_options import OrderCreationOptions
+from .order_discount_preview_request import OrderDiscountPreviewRequest
+from .order_discount_preview_response import OrderDiscountPreviewResponse
 from .order_grant_info import OrderGrantInfo
 from .order_history_info import OrderHistoryInfo
 from .order_history_info import ActionEnum as OrderHistoryInfoActionEnum
@@ -611,6 +625,7 @@ from .payment_url_create import (
     PaymentProviderEnum as PaymentUrlCreatePaymentProviderEnum,
 )
 from .pay_pal_config import PayPalConfig
+from .permission import Permission
 from .platform_dlc_config_info import PlatformDLCConfigInfo
 from .platform_dlc_config_update import PlatformDLCConfigUpdate
 from .platform_dlc_entry import PlatformDlcEntry

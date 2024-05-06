@@ -40,14 +40,10 @@ class GeneratedUserUploadContentUrl(Operation):
     Generate an upload URL for user content. It's valid for 10 minutes.
     Other detail info:
 
-      * Required permission : resource = "ADMIN:NAMESPACE:{namespace}:USER:{userId}:FILEUPLOAD" , action=1 (CREATE)
-      *  Action code : 11102
+      * Action code : 11102
       *  Default maximum file count per user : 10 files
       *  Default maximum file size per user : 104857600 bytes
       *  Returns : URL data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:FILEUPLOAD [CREATE]
 
     Properties:
         url: /basic/v1/admin/namespaces/{namespace}/users/{userId}/files
@@ -60,7 +56,7 @@ class GeneratedUserUploadContentUrl(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -87,11 +83,15 @@ class GeneratedUserUploadContentUrl(Operation):
     # region fields
 
     _url: str = "/basic/v1/admin/namespaces/{namespace}/users/{userId}/files"
+    _path: str = "/basic/v1/admin/namespaces/{namespace}/users/{userId}/files"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "basic"
 
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
@@ -105,6 +105,14 @@ class GeneratedUserUploadContentUrl(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

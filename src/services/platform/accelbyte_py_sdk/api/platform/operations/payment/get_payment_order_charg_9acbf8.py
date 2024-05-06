@@ -39,11 +39,7 @@ class GetPaymentOrderChargeStatus(Operation):
     [Not Supported Yet In Starter] Get payment order charge status.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:PAYMENT", action=2 (READ)
-      *  Returns : payment order charge status
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:PAYMENT [READ]
+      * Returns : payment order charge status
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/orders/{paymentOrderNo}/status
@@ -56,7 +52,7 @@ class GetPaymentOrderChargeStatus(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -73,11 +69,17 @@ class GetPaymentOrderChargeStatus(Operation):
     _url: str = (
         "/platform/admin/namespaces/{namespace}/payment/orders/{paymentOrderNo}/status"
     )
+    _path: str = (
+        "/platform/admin/namespaces/{namespace}/payment/orders/{paymentOrderNo}/status"
+    )
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     namespace: str  # REQUIRED in [path]
     payment_order_no: str  # REQUIRED in [path]
@@ -89,6 +91,14 @@ class GetPaymentOrderChargeStatus(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

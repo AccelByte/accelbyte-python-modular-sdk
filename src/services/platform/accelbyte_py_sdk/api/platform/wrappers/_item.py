@@ -217,11 +217,7 @@ def acquire_item(
     [SERVICE COMMUNICATION ONLY] This api is used for acquiring a published item while the item is maxCount limited, it will decrease the sale available count.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-      *  Returns : acquire result
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
+      * Returns : acquire result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}/acquire
@@ -234,7 +230,7 @@ def acquire_item(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL ItemAcquireRequest in body
 
@@ -272,11 +268,7 @@ async def acquire_item_async(
     [SERVICE COMMUNICATION ONLY] This api is used for acquiring a published item while the item is maxCount limited, it will decrease the sale available count.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-      *  Returns : acquire result
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
+      * Returns : acquire result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}/acquire
@@ -289,7 +281,7 @@ async def acquire_item_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL ItemAcquireRequest in body
 
@@ -333,11 +325,7 @@ def bulk_get_locale_items(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the list of items info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the list of items info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/locale/byIds
@@ -350,7 +338,7 @@ def bulk_get_locale_items(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -401,11 +389,7 @@ async def bulk_get_locale_items_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the list of items info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the list of items info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/locale/byIds
@@ -418,7 +402,7 @@ async def bulk_get_locale_items_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -465,12 +449,6 @@ def bulk_update_region_data(
     """Update item's region data in bulk (bulkUpdateRegionData)
 
     This API is used to update region data of items in bulk
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/regiondata
@@ -483,7 +461,7 @@ def bulk_update_region_data(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL BulkRegionDataChangeRequest in body
 
@@ -525,12 +503,6 @@ async def bulk_update_region_data_async(
     """Update item's region data in bulk (bulkUpdateRegionData)
 
     This API is used to update region data of items in bulk
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/regiondata
@@ -543,7 +515,7 @@ async def bulk_update_region_data_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL BulkRegionDataChangeRequest in body
 
@@ -803,8 +775,7 @@ def create_item(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=1 (CREATE)
-      *  Returns : created item data
+      * Returns : created item data
 
 
 
@@ -824,9 +795,6 @@ def create_item(
 
         { "$data": "value" }
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [CREATE]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/items
 
@@ -838,7 +806,7 @@ def create_item(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL ItemCreate in body
 
@@ -1096,8 +1064,7 @@ async def create_item_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=1 (CREATE)
-      *  Returns : created item data
+      * Returns : created item data
 
 
 
@@ -1117,9 +1084,6 @@ async def create_item_async(
 
         { "$data": "value" }
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [CREATE]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/items
 
@@ -1131,7 +1095,7 @@ async def create_item_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL ItemCreate in body
 
@@ -1174,11 +1138,7 @@ def create_item_type_config(
 
     [Not Supported Yet In Starter] This API is used to create an item type config.
 
-    *  Required permission : resource="ADMIN:ITEM:CONFIG", action=1 (CREATE)
     *  Returns : item type config data
-
-    Required Permission(s):
-        - ADMIN:ITEM:CONFIG [CREATE]
 
     Properties:
         url: /platform/admin/items/configs
@@ -1191,7 +1151,7 @@ def create_item_type_config(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL ItemTypeConfigCreate in body
 
@@ -1220,11 +1180,7 @@ async def create_item_type_config_async(
 
     [Not Supported Yet In Starter] This API is used to create an item type config.
 
-    *  Required permission : resource="ADMIN:ITEM:CONFIG", action=1 (CREATE)
     *  Returns : item type config data
-
-    Required Permission(s):
-        - ADMIN:ITEM:CONFIG [CREATE]
 
     Properties:
         url: /platform/admin/items/configs
@@ -1237,7 +1193,7 @@ async def create_item_type_config_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL ItemTypeConfigCreate in body
 
@@ -1272,11 +1228,7 @@ def defeature_item(
     Remove a feature from an item.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-      *  Returns : updated item
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
+      * Returns : updated item
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}/features/{feature}
@@ -1289,7 +1241,7 @@ def defeature_item(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         feature: (feature) REQUIRED str in path
 
@@ -1333,11 +1285,7 @@ async def defeature_item_async(
     Remove a feature from an item.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-      *  Returns : updated item
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
+      * Returns : updated item
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}/features/{feature}
@@ -1350,7 +1298,7 @@ async def defeature_item_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         feature: (feature) REQUIRED str in path
 
@@ -1398,12 +1346,6 @@ def delete_item(
     force: the default value should be: false. When the value is:
     * false: only the items in the draft store that have never been published yet can be removed.
     *  true: the item in the draft store(even been published before) can be removed.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=8 (DELETE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [DELETE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}
@@ -1416,7 +1358,7 @@ def delete_item(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         item_id: (itemId) REQUIRED str in path
 
@@ -1460,12 +1402,6 @@ async def delete_item_async(
     force: the default value should be: false. When the value is:
     * false: only the items in the draft store that have never been published yet can be removed.
     *  true: the item in the draft store(even been published before) can be removed.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=8 (DELETE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [DELETE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}
@@ -1478,7 +1414,7 @@ async def delete_item_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         item_id: (itemId) REQUIRED str in path
 
@@ -1514,12 +1450,7 @@ def delete_item_type_config(
 ):
     """Delete an item type config (deleteItemTypeConfig)
 
-    [Not Supported Yet In Starter] This API is used to delete an item type config permanently.Other detail info:
-
-      * Required permission : resource="ADMIN:ITEM:CONFIG", action=8 (DELETE)
-
-    Required Permission(s):
-        - ADMIN:ITEM:CONFIG [DELETE]
+    [Not Supported Yet In Starter] This API is used to delete an item type config permanently.
 
     Properties:
         url: /platform/admin/items/configs/{id}
@@ -1532,7 +1463,7 @@ def delete_item_type_config(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         id_: (id) REQUIRED str in path
 
@@ -1553,12 +1484,7 @@ async def delete_item_type_config_async(
 ):
     """Delete an item type config (deleteItemTypeConfig)
 
-    [Not Supported Yet In Starter] This API is used to delete an item type config permanently.Other detail info:
-
-      * Required permission : resource="ADMIN:ITEM:CONFIG", action=8 (DELETE)
-
-    Required Permission(s):
-        - ADMIN:ITEM:CONFIG [DELETE]
+    [Not Supported Yet In Starter] This API is used to delete an item type config permanently.
 
     Properties:
         url: /platform/admin/items/configs/{id}
@@ -1571,7 +1497,7 @@ async def delete_item_type_config_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         id_: (id) REQUIRED str in path
 
@@ -1601,11 +1527,7 @@ def disable_item(
     Disable an item.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-      *  Returns : updated item
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
+      * Returns : updated item
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}/disable
@@ -1618,7 +1540,7 @@ def disable_item(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         item_id: (itemId) REQUIRED str in path
 
@@ -1658,11 +1580,7 @@ async def disable_item_async(
     Disable an item.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-      *  Returns : updated item
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
+      * Returns : updated item
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}/disable
@@ -1675,7 +1593,7 @@ async def disable_item_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         item_id: (itemId) REQUIRED str in path
 
@@ -1717,11 +1635,7 @@ def enable_item(
     Enable an item.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-      *  Returns : updated item
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
+      * Returns : updated item
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}/enable
@@ -1734,7 +1648,7 @@ def enable_item(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         item_id: (itemId) REQUIRED str in path
 
@@ -1774,11 +1688,7 @@ async def enable_item_async(
     Enable an item.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-      *  Returns : updated item
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
+      * Returns : updated item
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}/enable
@@ -1791,7 +1701,7 @@ async def enable_item_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         item_id: (itemId) REQUIRED str in path
 
@@ -1834,11 +1744,7 @@ def feature_item(
     Add a feature to an item.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-      *  Returns : updated item
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
+      * Returns : updated item
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}/features/{feature}
@@ -1851,7 +1757,7 @@ def feature_item(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         feature: (feature) REQUIRED str in path
 
@@ -1895,11 +1801,7 @@ async def feature_item_async(
     Add a feature to an item.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-      *  Returns : updated item
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
+      * Returns : updated item
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}/features/{feature}
@@ -1912,7 +1814,7 @@ async def feature_item_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         feature: (feature) REQUIRED str in path
 
@@ -1959,11 +1861,7 @@ def get_app(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : app data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : app data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}/app
@@ -1976,7 +1874,7 @@ def get_app(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         item_id: (itemId) REQUIRED str in path
 
@@ -2017,11 +1915,7 @@ async def get_app_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : app data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : app data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}/app
@@ -2034,7 +1928,7 @@ async def get_app_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         item_id: (itemId) REQUIRED str in path
 
@@ -2073,8 +1967,7 @@ def get_available_predicate_types(
     Get available predicate types.
     Other detail info:
 
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:ITEM, action=2 (READ)
-      *  Returns : available predicate types
+      * Returns : available predicate types
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/predicate/types
@@ -2117,8 +2010,7 @@ async def get_available_predicate_types_async(
     Get available predicate types.
     Other detail info:
 
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:ITEM, action=2 (READ)
-      *  Returns : available predicate types
+      * Returns : available predicate types
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/predicate/types
@@ -2166,11 +2058,7 @@ def get_bulk_item_id_by_skus(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : item data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : item data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/itemId/bySkus
@@ -2183,7 +2071,7 @@ def get_bulk_item_id_by_skus(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2220,11 +2108,7 @@ async def get_bulk_item_id_by_skus_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : item data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : item data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/itemId/bySkus
@@ -2237,7 +2121,7 @@ async def get_bulk_item_id_by_skus_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2399,11 +2283,7 @@ def get_item(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : item data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : item data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}
@@ -2416,7 +2296,7 @@ def get_item(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         item_id: (itemId) REQUIRED str in path
 
@@ -2459,11 +2339,7 @@ async def get_item_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : item data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : item data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}
@@ -2476,7 +2352,7 @@ async def get_item_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         item_id: (itemId) REQUIRED str in path
 
@@ -2521,11 +2397,7 @@ def get_item_by_app_id(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the item with that appId
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the item with that appId
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/byAppId
@@ -2538,7 +2410,7 @@ def get_item_by_app_id(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2581,11 +2453,7 @@ async def get_item_by_app_id_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the item with that appId
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the item with that appId
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/byAppId
@@ -2598,7 +2466,7 @@ async def get_item_by_app_id_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2643,11 +2511,7 @@ def get_item_by_sku(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the item with sku
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the item with sku
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/bySku
@@ -2660,7 +2524,7 @@ def get_item_by_sku(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2703,11 +2567,7 @@ async def get_item_by_sku_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the item with sku
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the item with sku
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/bySku
@@ -2720,7 +2580,7 @@ async def get_item_by_sku_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2762,11 +2622,7 @@ def get_item_dynamic_data(
     Get item dynamic data for published item.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : item dynamic data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : item dynamic data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}/dynamic
@@ -2779,7 +2635,7 @@ def get_item_dynamic_data(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         item_id: (itemId) REQUIRED str in path
 
@@ -2813,11 +2669,7 @@ async def get_item_dynamic_data_async(
     Get item dynamic data for published item.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : item dynamic data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : item dynamic data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}/dynamic
@@ -2830,7 +2682,7 @@ async def get_item_dynamic_data_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         item_id: (itemId) REQUIRED str in path
 
@@ -2869,11 +2721,7 @@ def get_item_id_by_sku(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the itemId with sku
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the itemId with sku
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/itemId/bySku
@@ -2886,7 +2734,7 @@ def get_item_id_by_sku(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2929,11 +2777,7 @@ async def get_item_id_by_sku_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the itemId with sku
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the itemId with sku
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/itemId/bySku
@@ -2946,7 +2790,7 @@ async def get_item_id_by_sku_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2991,11 +2835,7 @@ def get_items(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the list of items info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the list of items info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/byIds
@@ -3008,7 +2848,7 @@ def get_items(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3051,11 +2891,7 @@ async def get_items_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the list of items info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the list of items info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/byIds
@@ -3068,7 +2904,7 @@ async def get_items_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3108,11 +2944,7 @@ def get_item_type_config(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:ITEM:CONFIG", action=2 (READ)
-      *  Returns : item type config data
-
-    Required Permission(s):
-        - ADMIN:ITEM:CONFIG [READ]
+      * Returns : item type config data
 
     Properties:
         url: /platform/admin/items/configs/{id}
@@ -3125,7 +2957,7 @@ def get_item_type_config(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         id_: (id) REQUIRED str in path
 
@@ -3150,11 +2982,7 @@ async def get_item_type_config_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:ITEM:CONFIG", action=2 (READ)
-      *  Returns : item type config data
-
-    Required Permission(s):
-        - ADMIN:ITEM:CONFIG [READ]
+      * Returns : item type config data
 
     Properties:
         url: /platform/admin/items/configs/{id}
@@ -3167,7 +2995,7 @@ async def get_item_type_config_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         id_: (id) REQUIRED str in path
 
@@ -3202,11 +3030,7 @@ def get_locale_item(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : item data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : item data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}/locale
@@ -3219,7 +3043,7 @@ def get_locale_item(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         item_id: (itemId) REQUIRED str in path
 
@@ -3274,11 +3098,7 @@ async def get_locale_item_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : item data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : item data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}/locale
@@ -3291,7 +3111,7 @@ async def get_locale_item_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         item_id: (itemId) REQUIRED str in path
 
@@ -3348,11 +3168,7 @@ def get_locale_item_by_sku(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : item data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : item data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/bySku/locale
@@ -3365,7 +3181,7 @@ def get_locale_item_by_sku(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3420,11 +3236,7 @@ async def get_locale_item_by_sku_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : item data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : item data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/bySku/locale
@@ -3437,7 +3249,7 @@ async def get_locale_item_by_sku_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3490,11 +3302,7 @@ def list_basic_items_by_features(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the list of basic items
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the list of basic items
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/byFeatures/basic
@@ -3507,7 +3315,7 @@ def list_basic_items_by_features(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3544,11 +3352,7 @@ async def list_basic_items_by_features_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the list of basic items
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the list of basic items
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/byFeatures/basic
@@ -3561,7 +3365,7 @@ async def list_basic_items_by_features_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3596,11 +3400,7 @@ def list_item_type_configs(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:ITEM:CONFIG", action=2 (READ)
-      *  Returns : the list of items
-
-    Required Permission(s):
-        - ADMIN:ITEM:CONFIG [READ]
+      * Returns : the list of items
 
     Properties:
         url: /platform/admin/items/configs
@@ -3613,7 +3413,7 @@ def list_item_type_configs(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
     Responses:
         200: OK - List[ItemTypeConfigInfo] (successful operation)
@@ -3632,11 +3432,7 @@ async def list_item_type_configs_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:ITEM:CONFIG", action=2 (READ)
-      *  Returns : the list of items
-
-    Required Permission(s):
-        - ADMIN:ITEM:CONFIG [READ]
+      * Returns : the list of items
 
     Properties:
         url: /platform/admin/items/configs
@@ -3649,7 +3445,7 @@ async def list_item_type_configs_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
     Responses:
         200: OK - List[ItemTypeConfigInfo] (successful operation)
@@ -5011,11 +4807,7 @@ def query_items(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the list of items
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the list of items
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/byCriteria
@@ -5028,7 +4820,7 @@ def query_items(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5121,11 +4913,7 @@ async def query_items_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the list of items
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the list of items
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/byCriteria
@@ -5138,7 +4926,7 @@ async def query_items_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5240,11 +5028,7 @@ def query_items_1(
     * Not provided: show both ACTIVE and INACTIVE items
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the list of items
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the list of items
 
     Properties:
         url: /platform/v2/admin/namespaces/{namespace}/items/byCriteria
@@ -5257,7 +5041,7 @@ def query_items_1(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5366,11 +5150,7 @@ async def query_items_1_async(
     * Not provided: show both ACTIVE and INACTIVE items
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the list of items
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the list of items
 
     Properties:
         url: /platform/v2/admin/namespaces/{namespace}/items/byCriteria
@@ -5383,7 +5163,7 @@ async def query_items_1_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5477,11 +5257,7 @@ def query_uncategorized_items(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the list of uncategorized items
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the list of uncategorized items
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/uncategorized
@@ -5494,7 +5270,7 @@ def query_uncategorized_items(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5547,11 +5323,7 @@ async def query_uncategorized_items_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the list of uncategorized items
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the list of uncategorized items
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/uncategorized
@@ -5564,7 +5336,7 @@ async def query_uncategorized_items_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5613,12 +5385,6 @@ def return_item(
     """Return item (returnItem)
 
     [SERVICE COMMUNICATION ONLY] This api is used for returning a published item while the item is maxCount limited, it will increase the sale available count if orderNo already acquired.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}/return
@@ -5631,7 +5397,7 @@ def return_item(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL ItemReturnRequest in body
 
@@ -5669,12 +5435,6 @@ async def return_item_async(
     """Return item (returnItem)
 
     [SERVICE COMMUNICATION ONLY] This api is used for returning a published item while the item is maxCount limited, it will increase the sale available count if orderNo already acquired.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}/return
@@ -5687,7 +5447,7 @@ async def return_item_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL ItemReturnRequest in body
 
@@ -5736,11 +5496,7 @@ def search_items(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the list of items
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the list of items
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/search
@@ -5753,7 +5509,7 @@ def search_items(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5816,11 +5572,7 @@ async def search_items_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the list of items
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the list of items
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/search
@@ -5833,7 +5585,7 @@ async def search_items_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5891,11 +5643,7 @@ def search_item_type_config(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:ITEM:CONFIG", action=2 (READ)
-      *  Returns : item type config data
-
-    Required Permission(s):
-        - ADMIN:ITEM:CONFIG [READ]
+      * Returns : item type config data
 
     Properties:
         url: /platform/admin/items/configs/search
@@ -5908,7 +5656,7 @@ def search_item_type_config(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         clazz: (clazz) OPTIONAL str in query
 
@@ -5939,11 +5687,7 @@ async def search_item_type_config_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:ITEM:CONFIG", action=2 (READ)
-      *  Returns : item type config data
-
-    Required Permission(s):
-        - ADMIN:ITEM:CONFIG [READ]
+      * Returns : item type config data
 
     Properties:
         url: /platform/admin/items/configs/search
@@ -5956,7 +5700,7 @@ async def search_item_type_config_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         clazz: (clazz) OPTIONAL str in query
 
@@ -5992,11 +5736,7 @@ def sync_in_game_item(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-      *  Returns : item data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
+      * Returns : item data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items
@@ -6009,7 +5749,7 @@ def sync_in_game_item(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL InGameItemSync in body
 
@@ -6056,11 +5796,7 @@ async def sync_in_game_item_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-      *  Returns : item data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
+      * Returns : item data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items
@@ -6073,7 +5809,7 @@ async def sync_in_game_item_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL InGameItemSync in body
 
@@ -6208,11 +5944,7 @@ def update_app(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-      *  Returns : updated app data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
+      * Returns : updated app data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}/app
@@ -6225,7 +5957,7 @@ def update_app(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL AppUpdate in body
 
@@ -6359,11 +6091,7 @@ async def update_app_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-      *  Returns : updated app data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
+      * Returns : updated app data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}/app
@@ -6376,7 +6104,7 @@ async def update_app_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL AppUpdate in body
 
@@ -6640,8 +6368,7 @@ def update_item(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-      *  Returns : updated item data
+      * Returns : updated item data
 
 
 
@@ -6661,9 +6388,6 @@ def update_item(
 
         { "$data": "value" }
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}
 
@@ -6675,7 +6399,7 @@ def update_item(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL ItemUpdate in body
 
@@ -6939,8 +6663,7 @@ async def update_item_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-      *  Returns : updated item data
+      * Returns : updated item data
 
 
 
@@ -6960,9 +6683,6 @@ async def update_item_async(
 
         { "$data": "value" }
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/{itemId}
 
@@ -6974,7 +6694,7 @@ async def update_item_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL ItemUpdate in body
 
@@ -7139,11 +6859,7 @@ def update_item_type_config(
 
     [Not Supported Yet In Starter] This API is used to update an item type config.
 
-    *  Required permission : resource="ADMIN:ITEM:CONFIG", action=4 (UPDATE)
     *  Returns : item type config data
-
-    Required Permission(s):
-        - ADMIN:ITEM:CONFIG [UPDATE]
 
     Properties:
         url: /platform/admin/items/configs/{id}
@@ -7156,7 +6872,7 @@ def update_item_type_config(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL ItemTypeConfigUpdate in body
 
@@ -7189,11 +6905,7 @@ async def update_item_type_config_async(
 
     [Not Supported Yet In Starter] This API is used to update an item type config.
 
-    *  Required permission : resource="ADMIN:ITEM:CONFIG", action=4 (UPDATE)
     *  Returns : item type config data
-
-    Required Permission(s):
-        - ADMIN:ITEM:CONFIG [UPDATE]
 
     Properties:
         url: /platform/admin/items/configs/{id}
@@ -7206,7 +6918,7 @@ async def update_item_type_config_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL ItemTypeConfigUpdate in body
 

@@ -41,11 +41,7 @@ class DisableCode(Operation):
     Disable an active code, the code can't be disabled if it has already been redeemed.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=4 (UPDATE)
-      *  Returns : disabled code
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CAMPAIGN [UPDATE]
+      * Returns : disabled code
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/codes/{code}/disable
@@ -58,7 +54,7 @@ class DisableCode(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         code: (code) REQUIRED str in path
 
@@ -73,11 +69,15 @@ class DisableCode(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/codes/{code}/disable"
+    _path: str = "/platform/admin/namespaces/{namespace}/codes/{code}/disable"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     code: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -89,6 +89,14 @@ class DisableCode(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

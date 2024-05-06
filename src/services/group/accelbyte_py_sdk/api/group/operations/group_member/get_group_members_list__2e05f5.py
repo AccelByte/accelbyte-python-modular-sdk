@@ -36,20 +36,9 @@ from ...models import ResponseErrorResponse
 class GetGroupMembersListAdminV1(Operation):
     """Get list of group members (getGroupMembersListAdminV1)
 
-    Required permission ADMIN:NAMESPACE:{namespace}:GROUP:MEMBER [READ]
-
-
-
-
     This endpoint is used to get list of group members.
 
-
-
-
     Action Code: 73410
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:GROUP:MEMBER [READ]
 
     Properties:
         url: /group/v1/admin/namespaces/{namespace}/groups/{groupId}/members
@@ -91,11 +80,15 @@ class GetGroupMembersListAdminV1(Operation):
     # region fields
 
     _url: str = "/group/v1/admin/namespaces/{namespace}/groups/{groupId}/members"
+    _path: str = "/group/v1/admin/namespaces/{namespace}/groups/{groupId}/members"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     group_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -110,6 +103,14 @@ class GetGroupMembersListAdminV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

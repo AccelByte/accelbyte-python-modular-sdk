@@ -37,7 +37,31 @@ class AdminGetUserSinglePlatformAccount(Operation):
     """Admin get user single platform account metadata (AdminGetUserSinglePlatformAccount)
 
     This endpoint gets user single platform account metadata.
-    Supported platforms are same with the supported login platforms.
+    Supported Platform:
+    - Steam group(steamnetwork):
+    - steam
+    - steamopenid
+    - PSN group(psn)
+    - ps4web
+    - ps4
+    - ps5
+    - XBOX group(xbox)
+    - live
+    - xblweb
+    - Oculus group(oculusgroup)
+    - oculus
+    - oculusweb
+    - epicgames
+    - nintendo
+    - aws cognito
+    - facebook
+    - google
+    - discord
+    - twitch
+    - snapchat
+    - amazon
+
+    Note: you can use either platform ID or platform group as platformId query parameter
 
     Properties:
         url: /iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId}/metadata
@@ -75,11 +99,15 @@ class AdminGetUserSinglePlatformAccount(Operation):
     # region fields
 
     _url: str = "/iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId}/metadata"
+    _path: str = "/iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId}/metadata"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     namespace: str  # REQUIRED in [path]
     platform_id: str  # REQUIRED in [path]
@@ -92,6 +120,14 @@ class AdminGetUserSinglePlatformAccount(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

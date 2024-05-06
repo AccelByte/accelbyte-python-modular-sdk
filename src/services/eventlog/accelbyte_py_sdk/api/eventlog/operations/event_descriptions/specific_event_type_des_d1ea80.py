@@ -34,7 +34,7 @@ from ...models import ModelsMultipleEventType
 
 
 class SpecificEventTypeDescriptionHandler(Operation):
-    """Get specific list of event type and the descriptions by comma separated value of event types (SpecificEventTypeDescriptionHandler)
+    """[DEPRECATED] Get specific list of event type and the descriptions by comma separated value of event types (SpecificEventTypeDescriptionHandler)
 
 
     Properties:
@@ -63,11 +63,15 @@ class SpecificEventTypeDescriptionHandler(Operation):
     # region fields
 
     _url: str = "/event/descriptions/eventType/listByEventTypes"
+    _path: str = "/event/descriptions/eventType/listByEventTypes"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "eventlog"
 
     event_types: str  # OPTIONAL in [query]
 
@@ -78,6 +82,14 @@ class SpecificEventTypeDescriptionHandler(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

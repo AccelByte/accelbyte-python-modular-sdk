@@ -34,7 +34,7 @@ from ...models import ModelsEventRegistry
 
 
 class GetRegisteredEventsByEventTypeHandler(Operation):
-    """Get registered eventID data from the Event Registry based on the event type (GetRegisteredEventsByEventTypeHandler)
+    """[DEPRECATED] Get registered eventID data from the Event Registry based on the event type (GetRegisteredEventsByEventTypeHandler)
 
     Required permission `ADMIN:NAMESPACE:{namespace}:EVENT [READ]`and scope `analytics`
 
@@ -76,11 +76,15 @@ class GetRegisteredEventsByEventTypeHandler(Operation):
     # region fields
 
     _url: str = "/event/registry/eventTypes/{eventType}"
+    _path: str = "/event/registry/eventTypes/{eventType}"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "eventlog"
 
     event_type: str  # REQUIRED in [path]
 
@@ -91,6 +95,14 @@ class GetRegisteredEventsByEventTypeHandler(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

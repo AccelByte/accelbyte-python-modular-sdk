@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Iam Service."""
 
-__version__ = "7.13.0"
+__version__ = "7.15.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -404,3 +404,4 @@ from .rest_error_response import RestErrorResponse
 from .rest_error_response_with_conflicted_user_platform_accounts import (
     RestErrorResponseWithConflictedUserPlatformAccounts,
 )
+from .rest_permission import RestPermission

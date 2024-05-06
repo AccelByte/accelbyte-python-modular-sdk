@@ -39,15 +39,7 @@ class UpdateGroupCustomRulePublicV2(Operation):
 
     Required valid user authentication
 
-
-
-
-    Update group custom rule. This endpoint will check the group ID of the user based on the access token
-    and compare it with the group ID in path parameter. It will also check the member role of the user based
-    on the access token
-
-
-
+    Update group custom rule. This endpoint will check the group ID of the user based on the access token and compare it with the group ID in path parameter. It will also check the member role of the user based on the access token
 
     Action Code: 73308
 
@@ -87,11 +79,15 @@ class UpdateGroupCustomRulePublicV2(Operation):
     # region fields
 
     _url: str = "/group/v2/public/namespaces/{namespace}/groups/{groupId}/rules/custom"
+    _path: str = "/group/v2/public/namespaces/{namespace}/groups/{groupId}/rules/custom"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     body: ModelsUpdateGroupCustomRuleRequestV1  # REQUIRED in [body]
     group_id: str  # REQUIRED in [path]
@@ -104,6 +100,14 @@ class UpdateGroupCustomRulePublicV2(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

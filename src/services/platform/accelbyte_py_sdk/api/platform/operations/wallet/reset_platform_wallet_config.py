@@ -51,11 +51,7 @@ class ResetPlatformWalletConfig(Operation):
     Reset platform wallet config to default config.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET:CONFIG", action=4 (UPDATE)
-      *  Returns : platform wallet config
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:WALLET:CONFIG [UPDATE]
+      * Returns : platform wallet config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config/reset
@@ -68,7 +64,7 @@ class ResetPlatformWalletConfig(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -81,11 +77,15 @@ class ResetPlatformWalletConfig(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config/reset"
+    _path: str = "/platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config/reset"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     namespace: str  # REQUIRED in [path]
     platform: Union[str, PlatformEnum]  # REQUIRED in [path]
@@ -97,6 +97,14 @@ class ResetPlatformWalletConfig(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

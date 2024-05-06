@@ -64,11 +64,15 @@ class AdminListClientAvailablePermissions(Operation):
     # region fields
 
     _url: str = "/iam/v3/admin/clientConfig/permissions"
+    _path: str = "/iam/v3/admin/clientConfig/permissions"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     exclude_permissions: bool  # OPTIONAL in [query]
 
@@ -79,6 +83,14 @@ class AdminListClientAvailablePermissions(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

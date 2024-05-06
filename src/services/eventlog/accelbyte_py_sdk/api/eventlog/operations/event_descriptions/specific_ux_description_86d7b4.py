@@ -34,7 +34,7 @@ from ...models import ModelsMultipleUX
 
 
 class SpecificUXDescriptionHandler(Operation):
-    """Get specific list of UX and the descriptions by comma separated value of UX (SpecificUXDescriptionHandler)
+    """[DEPRECATED] Get specific list of UX and the descriptions by comma separated value of UX (SpecificUXDescriptionHandler)
 
 
     Properties:
@@ -63,11 +63,15 @@ class SpecificUXDescriptionHandler(Operation):
     # region fields
 
     _url: str = "/event/descriptions/ux/listByUx"
+    _path: str = "/event/descriptions/ux/listByUx"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "eventlog"
 
     ux: str  # OPTIONAL in [query]
 
@@ -78,6 +82,14 @@ class SpecificUXDescriptionHandler(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

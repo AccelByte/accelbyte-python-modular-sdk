@@ -39,11 +39,7 @@ class RevokeEntitlements(Operation):
     Revoke entitlements, skipped revocation will be treated as fail.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : bulk revoke entitlements result
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT [UPDATE]
+      * Returns : bulk revoke entitlements result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/entitlements/revoke
@@ -56,7 +52,7 @@ class RevokeEntitlements(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL List[str] in body
 
@@ -71,11 +67,15 @@ class RevokeEntitlements(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/entitlements/revoke"
+    _path: str = "/platform/admin/namespaces/{namespace}/entitlements/revoke"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: List[str]  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -87,6 +87,14 @@ class RevokeEntitlements(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -36,11 +36,7 @@ class GetAggregatePaymentProviders(Operation):
     [Not Supported Yet In Starter] Get aggregate payment providers, such as XSOLLA, ADYEN.
     Other detail info:
 
-      * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
-      *  Returns : payment provider list
-
-    Required Permission(s):
-        - ADMIN:PAYMENT:CONFIG [READ]
+      * Returns : payment provider list
 
     Properties:
         url: /platform/admin/payment/config/provider/aggregate
@@ -53,7 +49,7 @@ class GetAggregatePaymentProviders(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
     Responses:
         200: OK - List[str] (successful operation)
@@ -62,11 +58,15 @@ class GetAggregatePaymentProviders(Operation):
     # region fields
 
     _url: str = "/platform/admin/payment/config/provider/aggregate"
+    _path: str = "/platform/admin/payment/config/provider/aggregate"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     # endregion fields
 
@@ -75,6 +75,14 @@ class GetAggregatePaymentProviders(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

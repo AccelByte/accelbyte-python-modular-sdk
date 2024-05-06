@@ -38,13 +38,7 @@ class GetGroupListPublicV1(Operation):
 
     Required valid user authentication
 
-
-
-
     Get list of groups. This endpoint will only show OPEN and PUBLIC group type. This endpoint can search based on the group name by filling the "groupName" query parameter
-
-
-
 
     Action Code: 73303
 
@@ -86,11 +80,15 @@ class GetGroupListPublicV1(Operation):
     # region fields
 
     _url: str = "/group/v1/public/namespaces/{namespace}/groups"
+    _path: str = "/group/v1/public/namespaces/{namespace}/groups"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     namespace: str  # REQUIRED in [path]
     group_name: str  # OPTIONAL in [query]
@@ -105,6 +103,14 @@ class GetGroupListPublicV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

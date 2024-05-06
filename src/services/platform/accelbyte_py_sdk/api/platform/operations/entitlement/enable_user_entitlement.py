@@ -39,11 +39,7 @@ class EnableUserEntitlement(Operation):
     Enable user entitlement.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : enable entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : enable entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/enable
@@ -56,7 +52,7 @@ class EnableUserEntitlement(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -75,11 +71,15 @@ class EnableUserEntitlement(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/enable"
+    _path: str = "/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/enable"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     entitlement_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -92,6 +92,14 @@ class EnableUserEntitlement(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

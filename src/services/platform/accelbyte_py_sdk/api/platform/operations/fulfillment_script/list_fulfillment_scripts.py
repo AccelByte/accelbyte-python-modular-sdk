@@ -36,12 +36,6 @@ class ListFulfillmentScripts(Operation):
     """List all fulfillment scripts (listFulfillmentScripts)
 
     [Not Supported Yet In Starter] List all fulfillment scripts.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:FULFILLMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:FULFILLMENT [READ]
 
     Properties:
         url: /platform/admin/fulfillment/scripts
@@ -54,7 +48,7 @@ class ListFulfillmentScripts(Operation):
 
         produces: []
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
     Responses:
         200: OK - List[FulfillmentScriptInfo] (successful operation)
@@ -63,11 +57,15 @@ class ListFulfillmentScripts(Operation):
     # region fields
 
     _url: str = "/platform/admin/fulfillment/scripts"
+    _path: str = "/platform/admin/fulfillment/scripts"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = []
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     # endregion fields
 
@@ -76,6 +74,14 @@ class ListFulfillmentScripts(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

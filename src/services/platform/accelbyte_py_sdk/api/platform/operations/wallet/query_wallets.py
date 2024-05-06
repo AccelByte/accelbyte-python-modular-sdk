@@ -49,16 +49,12 @@ class OriginEnum(StrEnum):
 
 
 class QueryWallets(Operation):
-    """Query wallets (queryWallets)
+    """[DEPRECATED] Query wallets (queryWallets)
 
     Query wallets.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET", action=2 (READ)
-      *  Returns : paginated wallets info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:WALLET [READ]
+      * Returns : paginated wallets info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/wallets
@@ -71,7 +67,7 @@ class QueryWallets(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -92,11 +88,15 @@ class QueryWallets(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/wallets"
+    _path: str = "/platform/admin/namespaces/{namespace}/wallets"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     namespace: str  # REQUIRED in [path]
     currency_code: str  # OPTIONAL in [query]
@@ -112,6 +112,14 @@ class QueryWallets(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

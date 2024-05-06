@@ -41,6 +41,33 @@ class AdminListUserIDByPlatformUserIDsV3(Operation):
     This endpoint intended to list game user ID from the given namespace
     This endpoint return list of user ID by given platform ID and list of platform user ID
 
+    Supported platform:
+    - steam
+    - steamopenid
+    - ps4web
+    - ps4
+    - ps5
+    - live
+    - xblweb
+    - oculus
+    - oculusweb
+    - facebook
+    - google
+    - twitch
+    - discord
+    - android
+    - ios
+    - apple
+    - device
+    - justice
+    - epicgames
+    - nintendo
+    - awscognito
+    - netflix
+    - snapchat
+    - oidc platform id
+
+    Note:
     **nintendo platform user ID**: NSA ID need to be appended with Environment ID using colon as separator. e.g kmzwa8awaa:dd1
 
     Properties:
@@ -79,11 +106,15 @@ class AdminListUserIDByPlatformUserIDsV3(Operation):
     # region fields
 
     _url: str = "/iam/v3/admin/namespaces/{namespace}/platforms/{platformId}/users"
+    _path: str = "/iam/v3/admin/namespaces/{namespace}/platforms/{platformId}/users"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     body: ModelPlatformUserIDRequest  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -97,6 +128,14 @@ class AdminListUserIDByPlatformUserIDsV3(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -70,11 +70,15 @@ class AdminGetMatchmakingDetailBySessionID(Operation):
     # region fields
 
     _url: str = "/sessionhistory/v1/admin/namespaces/{namespace}/matchmaking/session/{sessionId}"
+    _path: str = "/sessionhistory/v1/admin/namespaces/{namespace}/matchmaking/session/{sessionId}"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "sessionhistory"
 
     namespace: str  # REQUIRED in [path]
     session_id: str  # REQUIRED in [path]
@@ -86,6 +90,14 @@ class AdminGetMatchmakingDetailBySessionID(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

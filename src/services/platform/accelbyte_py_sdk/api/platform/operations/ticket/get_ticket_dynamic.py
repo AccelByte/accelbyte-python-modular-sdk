@@ -39,11 +39,7 @@ class GetTicketDynamic(Operation):
     [SERVICE COMMUNICATION ONLY] Get ticket(code/key) dynamic based on booth name.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:TICKET", action=2 (READ)
-      *  Returns : ticket dynamic
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:TICKET [READ]
+      * Returns : ticket dynamic
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/tickets/{boothName}
@@ -56,7 +52,7 @@ class GetTicketDynamic(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         booth_name: (boothName) REQUIRED str in path
 
@@ -71,11 +67,15 @@ class GetTicketDynamic(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/tickets/{boothName}"
+    _path: str = "/platform/admin/namespaces/{namespace}/tickets/{boothName}"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     booth_name: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -87,6 +87,14 @@ class GetTicketDynamic(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -88,11 +88,15 @@ class AdminChatHistory(Operation):
     # region fields
 
     _url: str = "/chat/admin/namespaces/{namespace}/chats"
+    _path: str = "/chat/admin/namespaces/{namespace}/chats"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "chat"
 
     namespace: str  # REQUIRED in [path]
     chat_id: List[str]  # OPTIONAL in [query]
@@ -113,6 +117,14 @@ class AdminChatHistory(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

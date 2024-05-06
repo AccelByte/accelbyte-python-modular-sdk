@@ -58,11 +58,7 @@ def download_invoice_details(
     Download invoice details as a csv file.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ORDER", action=2 (READ)
-      *  Returns : invoice details csv file
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ORDER [READ]
+      * Returns : invoice details csv file
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/invoice/details.csv
@@ -75,7 +71,7 @@ def download_invoice_details(
 
         produces: ["text/csv"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -123,11 +119,7 @@ async def download_invoice_details_async(
     Download invoice details as a csv file.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ORDER", action=2 (READ)
-      *  Returns : invoice details csv file
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ORDER [READ]
+      * Returns : invoice details csv file
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/invoice/details.csv
@@ -140,7 +132,7 @@ async def download_invoice_details_async(
 
         produces: ["text/csv"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -190,11 +182,7 @@ def generate_invoice_summary(
     Generate invoice summary.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ORDER", action=2 (READ)
-      *  Returns : query orders
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ORDER [READ]
+      * Returns : query orders
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/invoice/summary
@@ -207,7 +195,7 @@ def generate_invoice_summary(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -257,11 +245,7 @@ async def generate_invoice_summary_async(
     Generate invoice summary.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ORDER", action=2 (READ)
-      *  Returns : query orders
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ORDER [READ]
+      * Returns : query orders
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/invoice/summary
@@ -274,7 +258,7 @@ async def generate_invoice_summary_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 

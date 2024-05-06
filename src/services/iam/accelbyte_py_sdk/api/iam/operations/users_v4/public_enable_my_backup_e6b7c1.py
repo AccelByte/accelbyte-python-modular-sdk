@@ -35,7 +35,7 @@ from ...models import RestErrorResponse
 
 
 class PublicEnableMyBackupCodesV4(Operation):
-    """Enable 2FA backup codes (PublicEnableMyBackupCodesV4)
+    """[DEPRECATED] Enable 2FA backup codes (PublicEnableMyBackupCodesV4)
 
     This endpoint is used to enable 2FA backup codes.
 
@@ -73,11 +73,15 @@ class PublicEnableMyBackupCodesV4(Operation):
     # region fields
 
     _url: str = "/iam/v4/public/namespaces/{namespace}/users/me/mfa/backupCode/enable"
+    _path: str = "/iam/v4/public/namespaces/{namespace}/users/me/mfa/backupCode/enable"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     namespace: str  # REQUIRED in [path]
 
@@ -88,6 +92,14 @@ class PublicEnableMyBackupCodesV4(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

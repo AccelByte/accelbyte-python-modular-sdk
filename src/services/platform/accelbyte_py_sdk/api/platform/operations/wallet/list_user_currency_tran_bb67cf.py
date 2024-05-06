@@ -39,11 +39,7 @@ class ListUserCurrencyTransactions(Operation):
     List user currency transactions ordered by create time desc.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
-      *  Returns : currency transaction info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [READ]
+      * Returns : currency transaction info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/{currencyCode}/transactions
@@ -56,7 +52,7 @@ class ListUserCurrencyTransactions(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -77,11 +73,15 @@ class ListUserCurrencyTransactions(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/{currencyCode}/transactions"
+    _path: str = "/platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/{currencyCode}/transactions"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     currency_code: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -96,6 +96,14 @@ class ListUserCurrencyTransactions(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -59,11 +59,7 @@ class QuerySubscriptions(Operation):
     Query subscriptions.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SUBSCRIPTION", action=2 (READ)
-      *  Returns : paginated subscriptions
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:SUBSCRIPTION [READ]
+      * Returns : paginated subscriptions
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/subscriptions
@@ -76,7 +72,7 @@ class QuerySubscriptions(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -103,11 +99,15 @@ class QuerySubscriptions(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/subscriptions"
+    _path: str = "/platform/admin/namespaces/{namespace}/subscriptions"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     namespace: str  # REQUIRED in [path]
     charge_status: Union[str, ChargeStatusEnum]  # OPTIONAL in [query]
@@ -126,6 +126,14 @@ class QuerySubscriptions(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

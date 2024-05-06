@@ -57,6 +57,8 @@ class RetrievePlayerRecords(Operation):
 
         offset: (offset) OPTIONAL int in query
 
+        tags: (tags) OPTIONAL List[str] in query
+
     Responses:
         200: OK - ModelsListPlayerRecordKeysResponse (Successful operation)
 
@@ -72,15 +74,20 @@ class RetrievePlayerRecords(Operation):
     # region fields
 
     _url: str = "/cloudsave/v1/namespaces/{namespace}/users/me/records"
+    _path: str = "/cloudsave/v1/namespaces/{namespace}/users/me/records"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
+    service_name: Optional[str] = "cloudsave"
+
     namespace: str  # REQUIRED in [path]
     limit: int  # OPTIONAL in [query]
     offset: int  # OPTIONAL in [query]
+    tags: List[str]  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -89,6 +96,14 @@ class RetrievePlayerRecords(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:
@@ -136,6 +151,8 @@ class RetrievePlayerRecords(Operation):
             result["limit"] = self.limit
         if hasattr(self, "offset"):
             result["offset"] = self.offset
+        if hasattr(self, "tags"):
+            result["tags"] = self.tags
         return result
 
     # endregion get_x_params methods
@@ -158,6 +175,10 @@ class RetrievePlayerRecords(Operation):
         self.offset = value
         return self
 
+    def with_tags(self, value: List[str]) -> RetrievePlayerRecords:
+        self.tags = value
+        return self
+
     # endregion with_x methods
 
     # region to methods
@@ -176,6 +197,10 @@ class RetrievePlayerRecords(Operation):
             result["offset"] = int(self.offset)
         elif include_empty:
             result["offset"] = 0
+        if hasattr(self, "tags") and self.tags:
+            result["tags"] = [str(i0) for i0 in self.tags]
+        elif include_empty:
+            result["tags"] = []
         return result
 
     # endregion to methods
@@ -239,6 +264,7 @@ class RetrievePlayerRecords(Operation):
         namespace: str,
         limit: Optional[int] = None,
         offset: Optional[int] = None,
+        tags: Optional[List[str]] = None,
         **kwargs,
     ) -> RetrievePlayerRecords:
         instance = cls()
@@ -247,6 +273,8 @@ class RetrievePlayerRecords(Operation):
             instance.limit = limit
         if offset is not None:
             instance.offset = offset
+        if tags is not None:
+            instance.tags = tags
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -268,6 +296,10 @@ class RetrievePlayerRecords(Operation):
             instance.offset = int(dict_["offset"])
         elif include_empty:
             instance.offset = 0
+        if "tags" in dict_ and dict_["tags"] is not None:
+            instance.tags = [str(i0) for i0 in dict_["tags"]]
+        elif include_empty:
+            instance.tags = []
         return instance
 
     @staticmethod
@@ -276,6 +308,7 @@ class RetrievePlayerRecords(Operation):
             "namespace": "namespace",
             "limit": "limit",
             "offset": "offset",
+            "tags": "tags",
         }
 
     @staticmethod
@@ -284,6 +317,13 @@ class RetrievePlayerRecords(Operation):
             "namespace": True,
             "limit": False,
             "offset": False,
+            "tags": False,
+        }
+
+    @staticmethod
+    def get_collection_format_map() -> Dict[str, Union[None, str]]:
+        return {
+            "tags": "csv",  # in query
         }
 
     # endregion static methods

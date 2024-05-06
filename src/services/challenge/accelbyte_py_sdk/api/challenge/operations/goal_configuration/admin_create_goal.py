@@ -48,6 +48,7 @@ class AdminCreateGoal(Operation):
         * requirementGroups: list of conditions that conform with the goal progressions.
         * rewards: list of rewards that will be claimable once a goal is complete
         * tag: goal's labels
+        * isActive: when goal is in a schedule, isActive determine whether goal is active to progress or not
     Goal describe set of requirements that need to be fulfilled by players in order to complete it and describe what is the rewards given to player when they complete the goal.The requirement will have target value and a operator that will evaluate that against an observable playerâs attribute (e.g. statistic, entitlement). Goal belongs to a challenge.
 
     Required Permission(s):
@@ -75,6 +76,8 @@ class AdminCreateGoal(Operation):
     Responses:
         201: Created - ModelGoalResponse (Created)
 
+        400: Bad Request - IamErrorResponse (20018: bad request: {{message}})
+
         401: Unauthorized - IamErrorResponse (20001: unauthorized access)
 
         403: Forbidden - IamErrorResponse (20013: insufficient permission)
@@ -91,11 +94,17 @@ class AdminCreateGoal(Operation):
     _url: str = (
         "/challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/goals"
     )
+    _path: str = (
+        "/challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/goals"
+    )
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "challenge"
 
     body: ModelCreateGoalRequest  # REQUIRED in [body]
     challenge_code: str  # REQUIRED in [path]
@@ -108,6 +117,14 @@ class AdminCreateGoal(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:
@@ -211,6 +228,8 @@ class AdminCreateGoal(Operation):
 
         201: Created - ModelGoalResponse (Created)
 
+        400: Bad Request - IamErrorResponse (20018: bad request: {{message}})
+
         401: Unauthorized - IamErrorResponse (20001: unauthorized access)
 
         403: Forbidden - IamErrorResponse (20013: insufficient permission)
@@ -236,6 +255,8 @@ class AdminCreateGoal(Operation):
 
         if code == 201:
             return ModelGoalResponse.create_from_dict(content), None
+        if code == 400:
+            return None, IamErrorResponse.create_from_dict(content)
         if code == 401:
             return None, IamErrorResponse.create_from_dict(content)
         if code == 403:

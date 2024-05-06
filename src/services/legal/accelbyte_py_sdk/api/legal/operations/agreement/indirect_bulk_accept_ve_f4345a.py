@@ -36,12 +36,9 @@ from ...models import ErrorEntity
 
 
 class IndirectBulkAcceptVersionedPolicy1(Operation):
-    """Bulk Accept Policy Versions (Indirect) (indirectBulkAcceptVersionedPolicy_1)
+    """[DEPRECATED] Bulk Accept Policy Versions (Indirect) (indirectBulkAcceptVersionedPolicy_1)
 
     Accepts many legal policy versions all at once. Supply with localized version policy id and userId to accept an agreement. This endpoint used by Authentication Service during new user registration.
-    Other detail info:
-
-      * Required permission : login user
 
     Properties:
         url: /agreement/public/agreements/policies/users/{userId}
@@ -69,11 +66,15 @@ class IndirectBulkAcceptVersionedPolicy1(Operation):
     # region fields
 
     _url: str = "/agreement/public/agreements/policies/users/{userId}"
+    _path: str = "/agreement/public/agreements/policies/users/{userId}"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "legal"
 
     body: List[AcceptAgreementRequest]  # OPTIONAL in [body]
     user_id: str  # REQUIRED in [path]
@@ -85,6 +86,14 @@ class IndirectBulkAcceptVersionedPolicy1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

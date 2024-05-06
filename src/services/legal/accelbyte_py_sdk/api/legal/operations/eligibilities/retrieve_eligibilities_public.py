@@ -39,10 +39,6 @@ class RetrieveEligibilitiesPublic(Operation):
     Retrieve the active policies and its conformance status by user.
     This process supports cross-namespace checking, that means if the active policy already accepted by the same user in other namespace, then it will be considered as eligible.
 
-    Other detail info:
-
-      * Required permission : login user
-
     Properties:
         url: /agreement/public/eligibilities/namespaces/{namespace}
 
@@ -69,11 +65,15 @@ class RetrieveEligibilitiesPublic(Operation):
     # region fields
 
     _url: str = "/agreement/public/eligibilities/namespaces/{namespace}"
+    _path: str = "/agreement/public/eligibilities/namespaces/{namespace}"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "legal"
 
     namespace: str  # REQUIRED in [path]
 
@@ -84,6 +84,14 @@ class RetrieveEligibilitiesPublic(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

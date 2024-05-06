@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Ds Artifact Manager Index (1.11.1)
+# AccelByte Gaming Services Ds Artifact Manager Index (1.11.3)
 
 
 ## Operations

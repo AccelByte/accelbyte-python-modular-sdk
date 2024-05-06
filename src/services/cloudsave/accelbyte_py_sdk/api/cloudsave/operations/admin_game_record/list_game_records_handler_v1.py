@@ -55,6 +55,8 @@ class ListGameRecordsHandlerV1(Operation):
 
         query: (query) OPTIONAL str in query
 
+        tags: (tags) OPTIONAL List[str] in query
+
         limit: (limit) REQUIRED int in query
 
         offset: (offset) REQUIRED int in query
@@ -74,14 +76,19 @@ class ListGameRecordsHandlerV1(Operation):
     # region fields
 
     _url: str = "/cloudsave/v1/admin/namespaces/{namespace}/records"
+    _path: str = "/cloudsave/v1/admin/namespaces/{namespace}/records"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
+    service_name: Optional[str] = "cloudsave"
+
     namespace: str  # REQUIRED in [path]
     query: str  # OPTIONAL in [query]
+    tags: List[str]  # OPTIONAL in [query]
     limit: int  # REQUIRED in [query]
     offset: int  # REQUIRED in [query]
 
@@ -92,6 +99,14 @@ class ListGameRecordsHandlerV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:
@@ -137,6 +152,8 @@ class ListGameRecordsHandlerV1(Operation):
         result = {}
         if hasattr(self, "query"):
             result["query"] = self.query
+        if hasattr(self, "tags"):
+            result["tags"] = self.tags
         if hasattr(self, "limit"):
             result["limit"] = self.limit
         if hasattr(self, "offset"):
@@ -157,6 +174,10 @@ class ListGameRecordsHandlerV1(Operation):
 
     def with_query(self, value: str) -> ListGameRecordsHandlerV1:
         self.query = value
+        return self
+
+    def with_tags(self, value: List[str]) -> ListGameRecordsHandlerV1:
+        self.tags = value
         return self
 
     def with_limit(self, value: int) -> ListGameRecordsHandlerV1:
@@ -181,6 +202,10 @@ class ListGameRecordsHandlerV1(Operation):
             result["query"] = str(self.query)
         elif include_empty:
             result["query"] = ""
+        if hasattr(self, "tags") and self.tags:
+            result["tags"] = [str(i0) for i0 in self.tags]
+        elif include_empty:
+            result["tags"] = []
         if hasattr(self, "limit") and self.limit:
             result["limit"] = int(self.limit)
         elif include_empty:
@@ -253,6 +278,7 @@ class ListGameRecordsHandlerV1(Operation):
         limit: int,
         offset: int,
         query: Optional[str] = None,
+        tags: Optional[List[str]] = None,
         **kwargs,
     ) -> ListGameRecordsHandlerV1:
         instance = cls()
@@ -261,6 +287,8 @@ class ListGameRecordsHandlerV1(Operation):
         instance.offset = offset
         if query is not None:
             instance.query = query
+        if tags is not None:
+            instance.tags = tags
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -278,6 +306,10 @@ class ListGameRecordsHandlerV1(Operation):
             instance.query = str(dict_["query"])
         elif include_empty:
             instance.query = ""
+        if "tags" in dict_ and dict_["tags"] is not None:
+            instance.tags = [str(i0) for i0 in dict_["tags"]]
+        elif include_empty:
+            instance.tags = []
         if "limit" in dict_ and dict_["limit"] is not None:
             instance.limit = int(dict_["limit"])
         elif include_empty:
@@ -293,6 +325,7 @@ class ListGameRecordsHandlerV1(Operation):
         return {
             "namespace": "namespace",
             "query": "query",
+            "tags": "tags",
             "limit": "limit",
             "offset": "offset",
         }
@@ -302,8 +335,15 @@ class ListGameRecordsHandlerV1(Operation):
         return {
             "namespace": True,
             "query": False,
+            "tags": False,
             "limit": True,
             "offset": True,
+        }
+
+    @staticmethod
+    def get_collection_format_map() -> Dict[str, Union[None, str]]:
+        return {
+            "tags": "csv",  # in query
         }
 
     # endregion static methods

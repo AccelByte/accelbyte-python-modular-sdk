@@ -33,17 +33,45 @@ from ...models import RestErrorResponse
 
 
 class PublicPlatformUnlinkAllV3(Operation):
-    """Unlink user's account from specific platform (PublicPlatformUnlinkAllV3)
+    """Public unlink user's account from specific platform for all namespaces (PublicPlatformUnlinkAllV3)
 
     Unlink user's account from third platform in all namespaces.
+    Several platforms are grouped under account groups, you can use either platform ID or platform group as platformId path parameter.
+    example: to unlink steam third party account, you can use steamnetwork / steam / steamopenid as platformId path parameter.
 
-    This API support to handling platform group use case:
-    i.e.
-    1. Steam group: steam, steamopenid
-    2. PSN group: ps4, ps5, psnweb
-    3. XBOX group: live, xblweb
+    Supported platform:
+    - Steam group(steamnetwork)
+    - steam
+    - steamopenid
+    - PSN group(psn)
+    - ps4web
+    - ps4
+    - ps5
+    - XBOX group(xbox)
+    - live
+    - xblweb
+    - Oculus group(oculusgroup)
+    - oculus
+    - oculusweb
+    - facebook
+    - google
+    - twitch
+    - discord
+    - android
+    - ios
+    - apple
+    - device
+    - justice
+    - epicgames
+    - nintendo
+    - awscognito
+    - netflix
+    - snapchat
+    - oidc platform id
 
-    Example: if user unlink from ps4, the API logic will unlink ps5 and psnweb as well.
+    Note:
+    if user unlink platform account that have group, the API logic will unlink all of platform account under that group as well.
+    example: if user unlink from ps4, the API logic will unlink ps5 and ps4web as well
 
     Properties:
         url: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/all
@@ -79,11 +107,17 @@ class PublicPlatformUnlinkAllV3(Operation):
     _url: str = (
         "/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/all"
     )
+    _path: str = (
+        "/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/all"
+    )
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     namespace: str  # REQUIRED in [path]
     platform_id: str  # REQUIRED in [path]
@@ -95,6 +129,14 @@ class PublicPlatformUnlinkAllV3(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

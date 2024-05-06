@@ -38,12 +38,6 @@ class UpdatePolicyVersion1(Operation):
     """Update a Version of Policy (updatePolicyVersion_1)
 
     Update a particular policy version.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:*:LEGAL [UPDATE]
 
     Properties:
         url: /agreement/admin/namespaces/{namespace}/policies/versions/{policyVersionId}
@@ -56,7 +50,7 @@ class UpdatePolicyVersion1(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL UpdatePolicyVersionRequest in body
 
@@ -77,11 +71,17 @@ class UpdatePolicyVersion1(Operation):
     _url: str = (
         "/agreement/admin/namespaces/{namespace}/policies/versions/{policyVersionId}"
     )
+    _path: str = (
+        "/agreement/admin/namespaces/{namespace}/policies/versions/{policyVersionId}"
+    )
+    _base_path: str = ""
     _method: str = "PATCH"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "legal"
 
     body: UpdatePolicyVersionRequest  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -94,6 +94,14 @@ class UpdatePolicyVersion1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

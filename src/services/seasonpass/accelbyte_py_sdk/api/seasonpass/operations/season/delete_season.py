@@ -74,11 +74,15 @@ class DeleteSeason(Operation):
     # region fields
 
     _url: str = "/seasonpass/admin/namespaces/{namespace}/seasons/{seasonId}"
+    _path: str = "/seasonpass/admin/namespaces/{namespace}/seasons/{seasonId}"
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "seasonpass"
 
     namespace: str  # REQUIRED in [path]
     season_id: str  # REQUIRED in [path]
@@ -90,6 +94,14 @@ class DeleteSeason(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

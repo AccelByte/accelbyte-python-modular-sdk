@@ -38,11 +38,7 @@ class PublicSellUserEntitlement(Operation):
     """Sell user entitlement (publicSellUserEntitlement)
 
     Sell user entitlement. If the entitlement is consumable, useCount is 0, the status will be CONSUMED. If the entitlement is durable, the status will be SOLD. Other detail info:
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : entitlement
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : entitlement
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/sell
@@ -55,7 +51,7 @@ class PublicSellUserEntitlement(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL EntitlementSoldRequest in body
 
@@ -76,11 +72,15 @@ class PublicSellUserEntitlement(Operation):
     # region fields
 
     _url: str = "/platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/sell"
+    _path: str = "/platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/sell"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: EntitlementSoldRequest  # OPTIONAL in [body]
     entitlement_id: str  # REQUIRED in [path]
@@ -94,6 +94,14 @@ class PublicSellUserEntitlement(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

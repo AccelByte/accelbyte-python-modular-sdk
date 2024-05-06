@@ -50,11 +50,7 @@ class QueryRewards(Operation):
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:REWARD", action=2 (READ)
-      *  Returns : the list of rewards
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:REWARD [READ]
+      * Returns : the list of rewards
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/rewards/byCriteria
@@ -67,7 +63,7 @@ class QueryRewards(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -88,11 +84,15 @@ class QueryRewards(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/rewards/byCriteria"
+    _path: str = "/platform/admin/namespaces/{namespace}/rewards/byCriteria"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     namespace: str  # REQUIRED in [path]
     event_topic: str  # OPTIONAL in [query]
@@ -107,6 +107,14 @@ class QueryRewards(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

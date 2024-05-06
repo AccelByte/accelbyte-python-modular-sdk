@@ -35,20 +35,9 @@ from ...models import ResponseErrorResponse
 class DeleteMemberRoleAdminV1(Operation):
     """delete member role (deleteMemberRoleAdminV1)
 
-    Required permission ADMIN:NAMESPACE:{namespace}:GROUP:ROLE [DELETE]
-
-
-
-
     This endpoint is used to delete member role. Any member role can't be deleted if the specific role is applied to the configuration (admin and member role)
 
-
-
-
     Action Code: 73207
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:GROUP:ROLE [DELETE]
 
     Properties:
         url: /group/v1/admin/namespaces/{namespace}/roles/{memberRoleId}
@@ -84,11 +73,15 @@ class DeleteMemberRoleAdminV1(Operation):
     # region fields
 
     _url: str = "/group/v1/admin/namespaces/{namespace}/roles/{memberRoleId}"
+    _path: str = "/group/v1/admin/namespaces/{namespace}/roles/{memberRoleId}"
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     member_role_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -100,6 +93,14 @@ class DeleteMemberRoleAdminV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

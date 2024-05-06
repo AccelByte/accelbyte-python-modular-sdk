@@ -36,7 +36,7 @@ from ...models import RestErrorResponse
 
 
 class PublicUpdateUserV2(Operation):
-    """Update User (PublicUpdateUserV2)
+    """[DEPRECATED] Update User (PublicUpdateUserV2)
 
     ## The endpoint is going to be deprecated
     **Endpoint migration guide**
@@ -86,11 +86,15 @@ class PublicUpdateUserV2(Operation):
     # region fields
 
     _url: str = "/iam/v2/public/namespaces/{namespace}/users/{userId}"
+    _path: str = "/iam/v2/public/namespaces/{namespace}/users/{userId}"
+    _base_path: str = ""
     _method: str = "PATCH"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     body: ModelUserUpdateRequest  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -103,6 +107,14 @@ class PublicUpdateUserV2(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

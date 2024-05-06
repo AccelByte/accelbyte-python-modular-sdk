@@ -36,7 +36,7 @@ from ...models import ResponseError
 
 
 class UpdateContentDirect(Operation):
-    """Update content to a channel (UpdateContentDirect)
+    """[DEPRECATED] Update content to a channel (UpdateContentDirect)
 
     Required permission NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE].
 
@@ -85,11 +85,15 @@ class UpdateContentDirect(Operation):
     # region fields
 
     _url: str = "/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}"
+    _path: str = "/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json", "application/octet-stream"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "ugc"
 
     body: ModelsCreateContentRequest  # REQUIRED in [body]
     channel_id: str  # REQUIRED in [path]
@@ -104,6 +108,14 @@ class UpdateContentDirect(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

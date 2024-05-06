@@ -40,12 +40,8 @@ class GetCountryGroups(Operation):
     List country groups. Will return all available country groups if the query param is not specified
     Other detail info:
 
-      * Required permission : resource = "ADMIN:NAMESPACE:{namespace}:MISC" , action=2 (READ)
-      *  Action code : 11203
+      * Action code : 11203
       *  Returns : list of country groups
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:MISC [READ]
 
     Properties:
         url: /basic/v1/admin/namespaces/{namespace}/misc/countrygroups
@@ -58,7 +54,7 @@ class GetCountryGroups(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -79,11 +75,15 @@ class GetCountryGroups(Operation):
     # region fields
 
     _url: str = "/basic/v1/admin/namespaces/{namespace}/misc/countrygroups"
+    _path: str = "/basic/v1/admin/namespaces/{namespace}/misc/countrygroups"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "basic"
 
     namespace: str  # REQUIRED in [path]
     group_code: str  # OPTIONAL in [query]
@@ -95,6 +95,14 @@ class GetCountryGroups(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

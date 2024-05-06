@@ -40,11 +40,7 @@ class GetItemBySku(Operation):
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-      *  Returns : the item with sku
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [READ]
+      * Returns : the item with sku
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/bySku
@@ -57,7 +53,7 @@ class GetItemBySku(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -76,11 +72,15 @@ class GetItemBySku(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/items/bySku"
+    _path: str = "/platform/admin/namespaces/{namespace}/items/bySku"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     namespace: str  # REQUIRED in [path]
     active_only: bool  # OPTIONAL in [query]
@@ -94,6 +94,14 @@ class GetItemBySku(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

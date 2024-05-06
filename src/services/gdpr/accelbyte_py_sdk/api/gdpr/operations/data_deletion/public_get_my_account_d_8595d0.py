@@ -36,6 +36,7 @@ from ...models import ResponseError
 class PublicGetMyAccountDeletionStatus(Operation):
     """Retrieve my account deletion status (PublicGetMyAccountDeletionStatus)
 
+    Retrieve my account deletion status
     Requires valid user access token
 
     Properties:
@@ -64,11 +65,15 @@ class PublicGetMyAccountDeletionStatus(Operation):
     # region fields
 
     _url: str = "/gdpr/public/users/me/deletions/status"
+    _path: str = "/gdpr/public/users/me/deletions/status"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "gdpr"
 
     # endregion fields
 
@@ -77,6 +82,14 @@ class PublicGetMyAccountDeletionStatus(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

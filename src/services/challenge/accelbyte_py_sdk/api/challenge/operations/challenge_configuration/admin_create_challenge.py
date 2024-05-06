@@ -51,6 +51,7 @@ class AdminCreateChallenge(Operation):
       * endDate: timestamp of when the challenge is ended (optional)
       * endAfter: describe number of period challenge will be retired after (optional)
     To configure challenge that never end, leave the endDate and endAfter field null/empty.
+      * repeatAfter: describe number of period challenge's goals will be repeated after. Leave it empty if you don't want to repeat the challenge.
       * rotation: describe how long goals in a challenge will be available for players to progress before rotated with another goals. (DAILY|WEEKLY|MONTHLY|NONE)
       * activeGoalsPerRotation: number of goals per rotation (currently only applicable for RANDOMIZE assignment)
       * assignmentRule: describe how the goals will be assigned and scheduled to users. (FIXED|RANDOMIZED|UNSCHEDULED)
@@ -93,11 +94,15 @@ class AdminCreateChallenge(Operation):
     # region fields
 
     _url: str = "/challenge/v1/admin/namespaces/{namespace}/challenges"
+    _path: str = "/challenge/v1/admin/namespaces/{namespace}/challenges"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "challenge"
 
     body: ModelCreateChallengeRequest  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -109,6 +114,14 @@ class AdminCreateChallenge(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

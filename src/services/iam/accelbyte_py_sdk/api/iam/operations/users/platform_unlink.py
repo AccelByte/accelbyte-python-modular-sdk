@@ -34,7 +34,7 @@ from ...models import RestErrorResponse
 
 
 class PlatformUnlink(Operation):
-    """Unlink user's account with platform (PlatformUnlink)
+    """[DEPRECATED] Unlink user's account with platform (PlatformUnlink)
 
     ## The endpoint is going to be deprecated
     ### Endpoint migration guide
@@ -95,11 +95,17 @@ class PlatformUnlink(Operation):
     _url: str = (
         "/iam/namespaces/{namespace}/users/{userId}/platforms/{platformId}/unlink"
     )
+    _path: str = (
+        "/iam/namespaces/{namespace}/users/{userId}/platforms/{platformId}/unlink"
+    )
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/x-www-form-urlencoded", "text/plain"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     platform_namespace: str  # OPTIONAL in [form_data]
     namespace: str  # REQUIRED in [path]
@@ -113,6 +119,14 @@ class PlatformUnlink(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

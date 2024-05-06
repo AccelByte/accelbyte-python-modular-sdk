@@ -38,11 +38,7 @@ class QueryCodes(Operation):
     Query campaign codes.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=2 (READ) (READ)
-      *  Returns : list of codes
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CAMPAIGN [READ]
+      * Returns : list of codes
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/codes/campaigns/{campaignId}
@@ -55,7 +51,7 @@ class QueryCodes(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         campaign_id: (campaignId) REQUIRED str in path
 
@@ -78,11 +74,15 @@ class QueryCodes(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/codes/campaigns/{campaignId}"
+    _path: str = "/platform/admin/namespaces/{namespace}/codes/campaigns/{campaignId}"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     campaign_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -99,6 +99,14 @@ class QueryCodes(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

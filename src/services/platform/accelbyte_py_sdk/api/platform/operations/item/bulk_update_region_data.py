@@ -38,12 +38,6 @@ class BulkUpdateRegionData(Operation):
     """Update item's region data in bulk (bulkUpdateRegionData)
 
     This API is used to update region data of items in bulk
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ITEM [UPDATE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/items/regiondata
@@ -56,7 +50,7 @@ class BulkUpdateRegionData(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL BulkRegionDataChangeRequest in body
 
@@ -79,11 +73,15 @@ class BulkUpdateRegionData(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/items/regiondata"
+    _path: str = "/platform/admin/namespaces/{namespace}/items/regiondata"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: BulkRegionDataChangeRequest  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -96,6 +94,14 @@ class BulkUpdateRegionData(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

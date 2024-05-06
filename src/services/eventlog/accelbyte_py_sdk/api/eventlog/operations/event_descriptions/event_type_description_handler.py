@@ -34,7 +34,7 @@ from ...models import ModelsMultipleEventType
 
 
 class EventTypeDescriptionHandler(Operation):
-    """Get list of event type and the descriptions (EventTypeDescriptionHandler)
+    """[DEPRECATED] Get list of event type and the descriptions (EventTypeDescriptionHandler)
 
 
     Properties:
@@ -57,11 +57,15 @@ class EventTypeDescriptionHandler(Operation):
     # region fields
 
     _url: str = "/event/descriptions/eventType"
+    _path: str = "/event/descriptions/eventType"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "eventlog"
 
     # endregion fields
 
@@ -70,6 +74,14 @@ class EventTypeDescriptionHandler(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

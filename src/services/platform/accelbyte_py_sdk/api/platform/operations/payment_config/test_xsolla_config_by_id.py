@@ -39,11 +39,7 @@ class TestXsollaConfigById(Operation):
     [Not Supported Yet In Starter] Test xsolla configuration in payment merchant config. Reference: [Xsolla Document](https://developers.xsolla.com/?#simple-checkout).
     Other detail info:
 
-      * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
-      *  Returns : test xsolla config
-
-    Required Permission(s):
-        - ADMIN:PAYMENT:CONFIG [READ]
+      * Returns : test xsolla config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/xsollaconfig/test
@@ -56,7 +52,7 @@ class TestXsollaConfigById(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         id_: (id) REQUIRED str in path
 
@@ -69,11 +65,15 @@ class TestXsollaConfigById(Operation):
     # region fields
 
     _url: str = "/platform/admin/payment/config/merchant/{id}/xsollaconfig/test"
+    _path: str = "/platform/admin/payment/config/merchant/{id}/xsollaconfig/test"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     id_: str  # REQUIRED in [path]
 
@@ -84,6 +84,14 @@ class TestXsollaConfigById(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

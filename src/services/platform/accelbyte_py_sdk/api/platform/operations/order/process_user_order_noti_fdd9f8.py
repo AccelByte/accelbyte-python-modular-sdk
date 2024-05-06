@@ -38,11 +38,7 @@ class ProcessUserOrderNotification(Operation):
     [SERVICE COMMUNICATION ONLY] This API is used as a web hook for payment notification from justice payment service.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ORDER", action=4 (UPDATE)
-      *  Returns : Process result
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ORDER [UPDATE]
+      * Returns : Process result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/notifications
@@ -55,7 +51,7 @@ class ProcessUserOrderNotification(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL TradeNotification in body
 
@@ -74,11 +70,15 @@ class ProcessUserOrderNotification(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/notifications"
+    _path: str = "/platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/notifications"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: TradeNotification  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -92,6 +92,14 @@ class ProcessUserOrderNotification(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

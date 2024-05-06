@@ -55,11 +55,7 @@ class SearchItemTypeConfig(Operation):
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:ITEM:CONFIG", action=2 (READ)
-      *  Returns : item type config data
-
-    Required Permission(s):
-        - ADMIN:ITEM:CONFIG [READ]
+      * Returns : item type config data
 
     Properties:
         url: /platform/admin/items/configs/search
@@ -72,7 +68,7 @@ class SearchItemTypeConfig(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         clazz: (clazz) OPTIONAL str in query
 
@@ -87,11 +83,15 @@ class SearchItemTypeConfig(Operation):
     # region fields
 
     _url: str = "/platform/admin/items/configs/search"
+    _path: str = "/platform/admin/items/configs/search"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     clazz: str  # OPTIONAL in [query]
     item_type: Union[str, ItemTypeEnum]  # REQUIRED in [query]
@@ -103,6 +103,14 @@ class SearchItemTypeConfig(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

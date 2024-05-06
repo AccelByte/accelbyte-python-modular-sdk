@@ -39,13 +39,9 @@ class UpdateMyPrivateCustomAttributesPartially(Operation):
     Update partially private custom attributes tied to me.
     Other detail info:
 
-      * Required permission : resource= "NAMESPACE:{namespace}:PROFILE" , action=4 (UPDATE)
-      *  Action code : 11402
+      * Action code : 11402
       *  Request body : allowed format: JSON object
       *  Returns : Updated custom attributes
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:PROFILE [UPDATE]
 
     Properties:
         url: /basic/v1/public/namespaces/{namespace}/users/me/profiles/privateCustomAttributes
@@ -58,7 +54,7 @@ class UpdateMyPrivateCustomAttributesPartially(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL Dict[str, Any] in body
 
@@ -79,11 +75,15 @@ class UpdateMyPrivateCustomAttributesPartially(Operation):
     # region fields
 
     _url: str = "/basic/v1/public/namespaces/{namespace}/users/me/profiles/privateCustomAttributes"
+    _path: str = "/basic/v1/public/namespaces/{namespace}/users/me/profiles/privateCustomAttributes"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "basic"
 
     body: Dict[str, Any]  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -95,6 +95,14 @@ class UpdateMyPrivateCustomAttributesPartially(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -39,11 +39,7 @@ class UpdateXblBPCertFile(Operation):
     Upload xbl business partner cert file.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
-      *  Returns : updated xbl iap config
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:IAP:CONFIG [UPDATE]
+      * Returns : updated xbl iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/xbl/cert
@@ -56,7 +52,7 @@ class UpdateXblBPCertFile(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         file: (file) OPTIONAL Any in form_data
 
@@ -73,11 +69,15 @@ class UpdateXblBPCertFile(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/iap/config/xbl/cert"
+    _path: str = "/platform/admin/namespaces/{namespace}/iap/config/xbl/cert"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["multipart/form-data"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     file: Any  # OPTIONAL in [form_data]
     password: str  # OPTIONAL in [form_data]
@@ -90,6 +90,14 @@ class UpdateXblBPCertFile(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

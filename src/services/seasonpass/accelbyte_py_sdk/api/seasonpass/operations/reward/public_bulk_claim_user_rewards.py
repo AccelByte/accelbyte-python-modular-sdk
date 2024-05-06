@@ -74,11 +74,15 @@ class PublicBulkClaimUserRewards(Operation):
     # region fields
 
     _url: str = "/seasonpass/public/namespaces/{namespace}/users/{userId}/seasons/current/rewards/bulk"
+    _path: str = "/seasonpass/public/namespaces/{namespace}/users/{userId}/seasons/current/rewards/bulk"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "seasonpass"
 
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
@@ -90,6 +94,14 @@ class PublicBulkClaimUserRewards(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

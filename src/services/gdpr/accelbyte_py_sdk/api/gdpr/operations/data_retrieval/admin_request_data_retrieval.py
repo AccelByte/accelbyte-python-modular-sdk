@@ -36,15 +36,9 @@ from ...models import ResponseError
 class AdminRequestDataRetrieval(Operation):
     """Submit user personal data retrieval request (AdminRequestDataRetrieval)
 
-    Required permission `ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [CREATE]` and scope `account`
-
-
-
-
+    Submit user personal data retrieval request
     If admin request data for themselves, password is need to be set
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [CREATE]
+    Scope: account
 
     Required Scope(s):
         - account
@@ -81,11 +75,15 @@ class AdminRequestDataRetrieval(Operation):
     # region fields
 
     _url: str = "/gdpr/admin/namespaces/{namespace}/users/{userId}/requests"
+    _path: str = "/gdpr/admin/namespaces/{namespace}/users/{userId}/requests"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/x-www-form-urlencoded"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "gdpr"
 
     password: str  # OPTIONAL in [form_data]
     namespace: str  # REQUIRED in [path]
@@ -98,6 +96,14 @@ class AdminRequestDataRetrieval(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

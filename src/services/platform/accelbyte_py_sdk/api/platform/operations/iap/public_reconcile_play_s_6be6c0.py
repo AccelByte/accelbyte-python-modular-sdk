@@ -37,15 +37,8 @@ from ...models import PlayStationReconcileResult
 class PublicReconcilePlayStationStoreWithMultipleServiceLabels(Operation):
     """Synchronize with entitlements in PSN Store with multiple service labels. (publicReconcilePlayStationStoreWithMultipleServiceLabels)
 
-    Synchronize with entitlements in PSN Store with multiple service labels.
-
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:IAP", action=4 (UPDATE)
-      *  Returns : result of synchronization
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:IAP [UPDATE]
+    Synchronize with entitlements in PSN Store with multiple service labels.Other detail info:
+      * Returns : result of synchronization
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/psn/sync/multiServiceLabels
@@ -58,7 +51,7 @@ class PublicReconcilePlayStationStoreWithMultipleServiceLabels(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL PlayStationMultiServiceLabelsReconcileRequest in body
 
@@ -75,11 +68,15 @@ class PublicReconcilePlayStationStoreWithMultipleServiceLabels(Operation):
     # region fields
 
     _url: str = "/platform/public/namespaces/{namespace}/users/{userId}/iap/psn/sync/multiServiceLabels"
+    _path: str = "/platform/public/namespaces/{namespace}/users/{userId}/iap/psn/sync/multiServiceLabels"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: PlayStationMultiServiceLabelsReconcileRequest  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -92,6 +89,14 @@ class PublicReconcilePlayStationStoreWithMultipleServiceLabels(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

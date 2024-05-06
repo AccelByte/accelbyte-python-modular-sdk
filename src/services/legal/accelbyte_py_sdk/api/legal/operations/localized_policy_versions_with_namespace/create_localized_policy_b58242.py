@@ -38,12 +38,6 @@ class CreateLocalizedPolicyVersion1(Operation):
     """Create a Localized Version from Country-Specific Policy (createLocalizedPolicyVersion_1)
 
     Create a version of a particular country-specific policy.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:LEGAL", action=1 (CREATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:LEGAL [CREATE]
 
     Properties:
         url: /agreement/admin/namespaces/{namespace}/localized-policy-versions/versions/{policyVersionId}
@@ -56,7 +50,7 @@ class CreateLocalizedPolicyVersion1(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL CreateLocalizedPolicyVersionRequest in body
 
@@ -75,11 +69,15 @@ class CreateLocalizedPolicyVersion1(Operation):
     # region fields
 
     _url: str = "/agreement/admin/namespaces/{namespace}/localized-policy-versions/versions/{policyVersionId}"
+    _path: str = "/agreement/admin/namespaces/{namespace}/localized-policy-versions/versions/{policyVersionId}"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "legal"
 
     body: CreateLocalizedPolicyVersionRequest  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -92,6 +90,14 @@ class CreateLocalizedPolicyVersion1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

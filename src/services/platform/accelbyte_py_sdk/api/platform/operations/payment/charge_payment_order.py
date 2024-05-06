@@ -40,11 +40,7 @@ class ChargePaymentOrder(Operation):
     [Not Supported Yet In Starter] [TEST FACILITY ONLY] Forbidden in live environment. Charge payment order without payment flow for unpaid payment order, usually for test usage to simulate real currency payment process.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:PAYMENT", action=4 (UPDATE)
-      *  Returns : payment order instance
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:PAYMENT [UPDATE]
+      * Returns : payment order instance
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/orders/{paymentOrderNo}
@@ -57,7 +53,7 @@ class ChargePaymentOrder(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL PaymentOrderChargeRequest in body
 
@@ -78,11 +74,17 @@ class ChargePaymentOrder(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/payment/orders/{paymentOrderNo}"
+    _path: str = (
+        "/platform/admin/namespaces/{namespace}/payment/orders/{paymentOrderNo}"
+    )
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: PaymentOrderChargeRequest  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -95,6 +97,14 @@ class ChargePaymentOrder(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

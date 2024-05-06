@@ -67,11 +67,7 @@ def create_currency(
     Create a currency.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CURRENCY", action=1 (CREATE)
-      *  Returns : created currency
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CURRENCY [CREATE]
+      * Returns : created currency
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/currencies
@@ -84,7 +80,7 @@ def create_currency(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL CurrencyCreate in body
 
@@ -120,11 +116,7 @@ async def create_currency_async(
     Create a currency.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CURRENCY", action=1 (CREATE)
-      *  Returns : created currency
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CURRENCY [CREATE]
+      * Returns : created currency
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/currencies
@@ -137,7 +129,7 @@ async def create_currency_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL CurrencyCreate in body
 
@@ -175,11 +167,7 @@ def delete_currency(
     Delete a currency by currency code.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CURRENCY", action=8 (DELETE)
-      *  Returns :
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CURRENCY [DELETE]
+      * Returns :
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/currencies/{currencyCode}
@@ -192,7 +180,7 @@ def delete_currency(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -226,11 +214,7 @@ async def delete_currency_async(
     Delete a currency by currency code.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CURRENCY", action=8 (DELETE)
-      *  Returns :
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CURRENCY [DELETE]
+      * Returns :
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/currencies/{currencyCode}
@@ -243,7 +227,7 @@ async def delete_currency_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -279,11 +263,7 @@ def get_currency_config(
     [SERVICE COMMUNICATION ONLY] Get currency config by code.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CURRENCY", action=2 (READ)
-      *  Returns : simplified Currency
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CURRENCY [READ]
+      * Returns : simplified Currency
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/currencies/{currencyCode}/config
@@ -296,7 +276,7 @@ def get_currency_config(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -330,11 +310,7 @@ async def get_currency_config_async(
     [SERVICE COMMUNICATION ONLY] Get currency config by code.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CURRENCY", action=2 (READ)
-      *  Returns : simplified Currency
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CURRENCY [READ]
+      * Returns : simplified Currency
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/currencies/{currencyCode}/config
@@ -347,7 +323,7 @@ async def get_currency_config_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -383,11 +359,7 @@ def get_currency_summary(
     Get currency summary by code.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CURRENCY", action=2 (READ)
-      *  Returns : simplified Currency
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CURRENCY [READ]
+      * Returns : simplified Currency
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/currencies/{currencyCode}/summary
@@ -400,7 +372,7 @@ def get_currency_summary(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -434,11 +406,7 @@ async def get_currency_summary_async(
     Get currency summary by code.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CURRENCY", action=2 (READ)
-      *  Returns : simplified Currency
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CURRENCY [READ]
+      * Returns : simplified Currency
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/currencies/{currencyCode}/summary
@@ -451,7 +419,7 @@ async def get_currency_summary_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -487,11 +455,7 @@ def list_currencies(
     List currencies of a namespace.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CURRENCY", action=2 (READ)
-      *  Returns : Currency List
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CURRENCY [READ]
+      * Returns : Currency List
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/currencies
@@ -504,7 +468,7 @@ def list_currencies(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -536,11 +500,7 @@ async def list_currencies_async(
     List currencies of a namespace.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CURRENCY", action=2 (READ)
-      *  Returns : Currency List
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CURRENCY [READ]
+      * Returns : Currency List
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/currencies
@@ -553,7 +513,7 @@ async def list_currencies_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -682,11 +642,7 @@ def update_currency(
     Update a currency by currency code.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CURRENCY", action=4 (UPDATE)
-      *  Returns : updated currency
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CURRENCY [UPDATE]
+      * Returns : updated currency
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/currencies/{currencyCode}
@@ -699,7 +655,7 @@ def update_currency(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL CurrencyUpdate in body
 
@@ -739,11 +695,7 @@ async def update_currency_async(
     Update a currency by currency code.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CURRENCY", action=4 (UPDATE)
-      *  Returns : updated currency
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CURRENCY [UPDATE]
+      * Returns : updated currency
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/currencies/{currencyCode}
@@ -756,7 +708,7 @@ async def update_currency_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL CurrencyUpdate in body
 

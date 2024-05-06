@@ -43,10 +43,10 @@ class StatusEnum(StrEnum):
 class PublicGetUserRewards(Operation):
     """List User's Rewards (publicGetUserRewards)
 
-    * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]
+    * Required permission: NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]
 
     Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]
+        - NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]
 
     Properties:
         url: /challenge/v1/public/namespaces/{namespace}/users/me/rewards
@@ -84,11 +84,15 @@ class PublicGetUserRewards(Operation):
     # region fields
 
     _url: str = "/challenge/v1/public/namespaces/{namespace}/users/me/rewards"
+    _path: str = "/challenge/v1/public/namespaces/{namespace}/users/me/rewards"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "challenge"
 
     namespace: str  # REQUIRED in [path]
     limit: int  # OPTIONAL in [query]
@@ -103,6 +107,14 @@ class PublicGetUserRewards(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

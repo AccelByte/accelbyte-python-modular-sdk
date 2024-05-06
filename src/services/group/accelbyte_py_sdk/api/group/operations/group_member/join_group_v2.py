@@ -38,42 +38,17 @@ class JoinGroupV2(Operation):
 
     Required valid user authentication
 
-
-
-
     This endpoint is used to join as group member
-
-
-
 
     Join to the group. This endpoint will check the the the type of the group based on the groupID.
 
-
-
-
     Additional Information:
 
-
-
-
-
-
-      * User cannot join to the group with PRIVATE type
-
-
-      * Joining PUBLIC group type will create join request and need approval from the privileged group member to accept the request to become the member
-
-
-      * Joining OPEN group type will make this user become member of that group immediately
-
-
-
-
+    * User cannot join to the group with PRIVATE type
+    * Joining PUBLIC group type will create join request and need approval from the privileged group member to accept the request to become the member
+    * Joining OPEN group type will make this user become member of that group immediately
 
     This endpoint will return status field to give information whether the user is JOINED or REQUESTED to join to the specific group
-
-
-
 
     Action Code: 73403
 
@@ -111,11 +86,15 @@ class JoinGroupV2(Operation):
     # region fields
 
     _url: str = "/group/v2/public/namespaces/{namespace}/groups/{groupId}/join"
+    _path: str = "/group/v2/public/namespaces/{namespace}/groups/{groupId}/join"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     group_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -127,6 +106,14 @@ class JoinGroupV2(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

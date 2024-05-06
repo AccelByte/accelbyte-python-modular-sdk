@@ -38,8 +38,7 @@ class UpdateSectionPluginConfig(Operation):
     """Update section plugin config (updateSectionPluginConfig)
 
     Update section config. Other detail info:
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG, action=4 (UPDATE)
-      *  Returns : updated service plugin config
+      * Returns : updated service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/catalog/plugins/section
@@ -67,11 +66,15 @@ class UpdateSectionPluginConfig(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/catalog/plugins/section"
+    _path: str = "/platform/admin/namespaces/{namespace}/catalog/plugins/section"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: SectionPluginConfigUpdate  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -83,6 +86,14 @@ class UpdateSectionPluginConfig(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

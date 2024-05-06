@@ -59,6 +59,8 @@ class ListGameBinaryRecordsV1(Operation):
 
         query: (query) OPTIONAL str in query
 
+        tags: (tags) OPTIONAL List[str] in query
+
     Responses:
         200: OK - ModelsListGameBinaryRecordsResponse (Retrieve list of records by namespace)
 
@@ -74,16 +76,21 @@ class ListGameBinaryRecordsV1(Operation):
     # region fields
 
     _url: str = "/cloudsave/v1/namespaces/{namespace}/binaries"
+    _path: str = "/cloudsave/v1/namespaces/{namespace}/binaries"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
+    service_name: Optional[str] = "cloudsave"
+
     namespace: str  # REQUIRED in [path]
     limit: int  # OPTIONAL in [query]
     offset: int  # OPTIONAL in [query]
     query: str  # OPTIONAL in [query]
+    tags: List[str]  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -92,6 +99,14 @@ class ListGameBinaryRecordsV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:
@@ -141,6 +156,8 @@ class ListGameBinaryRecordsV1(Operation):
             result["offset"] = self.offset
         if hasattr(self, "query"):
             result["query"] = self.query
+        if hasattr(self, "tags"):
+            result["tags"] = self.tags
         return result
 
     # endregion get_x_params methods
@@ -167,6 +184,10 @@ class ListGameBinaryRecordsV1(Operation):
         self.query = value
         return self
 
+    def with_tags(self, value: List[str]) -> ListGameBinaryRecordsV1:
+        self.tags = value
+        return self
+
     # endregion with_x methods
 
     # region to methods
@@ -189,6 +210,10 @@ class ListGameBinaryRecordsV1(Operation):
             result["query"] = str(self.query)
         elif include_empty:
             result["query"] = ""
+        if hasattr(self, "tags") and self.tags:
+            result["tags"] = [str(i0) for i0 in self.tags]
+        elif include_empty:
+            result["tags"] = []
         return result
 
     # endregion to methods
@@ -253,6 +278,7 @@ class ListGameBinaryRecordsV1(Operation):
         limit: Optional[int] = None,
         offset: Optional[int] = None,
         query: Optional[str] = None,
+        tags: Optional[List[str]] = None,
         **kwargs,
     ) -> ListGameBinaryRecordsV1:
         instance = cls()
@@ -263,6 +289,8 @@ class ListGameBinaryRecordsV1(Operation):
             instance.offset = offset
         if query is not None:
             instance.query = query
+        if tags is not None:
+            instance.tags = tags
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -288,6 +316,10 @@ class ListGameBinaryRecordsV1(Operation):
             instance.query = str(dict_["query"])
         elif include_empty:
             instance.query = ""
+        if "tags" in dict_ and dict_["tags"] is not None:
+            instance.tags = [str(i0) for i0 in dict_["tags"]]
+        elif include_empty:
+            instance.tags = []
         return instance
 
     @staticmethod
@@ -297,6 +329,7 @@ class ListGameBinaryRecordsV1(Operation):
             "limit": "limit",
             "offset": "offset",
             "query": "query",
+            "tags": "tags",
         }
 
     @staticmethod
@@ -306,6 +339,13 @@ class ListGameBinaryRecordsV1(Operation):
             "limit": False,
             "offset": False,
             "query": False,
+            "tags": False,
+        }
+
+    @staticmethod
+    def get_collection_format_map() -> Dict[str, Union[None, str]]:
+        return {
+            "tags": "csv",  # in query
         }
 
     # endregion static methods

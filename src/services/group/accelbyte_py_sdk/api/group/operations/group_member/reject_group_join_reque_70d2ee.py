@@ -38,28 +38,13 @@ class RejectGroupJoinRequestPublicV2(Operation):
 
     Required valid user authentication
 
-
-
-
     Required Member Role Permission: "GROUP:JOIN [CREATE]"
-
-
-
 
     This endpoint is used to reject group join request.
 
-
-
-
     Reject group join request. If specific user is not asked to join the specific group ID, it will show the the error to show if the user is not asked to join yet.
 
-
-
-
     This endpoint will also check if the specific user is already joined to specific group
-
-
-
 
     Action Code: 73408
 
@@ -101,11 +86,15 @@ class RejectGroupJoinRequestPublicV2(Operation):
     # region fields
 
     _url: str = "/group/v2/public/namespaces/{namespace}/users/{userId}/groups/{groupId}/join/reject"
+    _path: str = "/group/v2/public/namespaces/{namespace}/users/{userId}/groups/{groupId}/join/reject"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     group_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -118,6 +107,14 @@ class RejectGroupJoinRequestPublicV2(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

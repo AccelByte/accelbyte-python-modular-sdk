@@ -35,7 +35,7 @@ from ...models import RestErrorResponse
 
 
 class AddRolePermission(Operation):
-    """Add Role Permission (AddRolePermission)
+    """[DEPRECATED] Add Role Permission (AddRolePermission)
 
     ## The endpoint is going to be deprecated
     This endpoint will update existing permission (bitwise OR the action) if found one with same resource, otherwise it will append a new permission
@@ -104,11 +104,15 @@ class AddRolePermission(Operation):
     # region fields
 
     _url: str = "/iam/roles/{roleId}/permissions/{resource}/{action}"
+    _path: str = "/iam/roles/{roleId}/permissions/{resource}/{action}"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     body: ModelUpdatePermissionScheduleRequest  # REQUIRED in [body]
     action: int  # REQUIRED in [path]
@@ -122,6 +126,14 @@ class AddRolePermission(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

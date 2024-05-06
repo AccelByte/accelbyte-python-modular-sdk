@@ -34,7 +34,7 @@ from ...models import ModelsEventResponse
 
 
 class GetEventByNamespaceHandler(Operation):
-    """Get events from all users in a namespace (GetEventByNamespaceHandler)
+    """[DEPRECATED] Get events from all users in a namespace (GetEventByNamespaceHandler)
 
     Required permission `NAMESPACE:{namespace}:EVENT [UPDATE]` and scope `analytics`
 
@@ -84,11 +84,15 @@ class GetEventByNamespaceHandler(Operation):
     # region fields
 
     _url: str = "/event/namespaces/{namespace}"
+    _path: str = "/event/namespaces/{namespace}"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "eventlog"
 
     namespace: str  # REQUIRED in [path]
     offset: int  # OPTIONAL in [query]
@@ -103,6 +107,14 @@ class GetEventByNamespaceHandler(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

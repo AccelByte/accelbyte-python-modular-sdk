@@ -37,20 +37,9 @@ from ...models import ResponseErrorResponse
 class UpdateMemberRoleAdminV1(Operation):
     """update member role (updateMemberRoleAdminV1)
 
-    Required permission ADMIN:NAMESPACE:{namespace}:GROUP:ROLE [UPDATE]
-
-
-
-
     This endpoint is used to update member role
 
-
-
-
     Action Code: 73204
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:GROUP:ROLE [UPDATE]
 
     Properties:
         url: /group/v1/admin/namespaces/{namespace}/roles/{memberRoleId}
@@ -88,11 +77,15 @@ class UpdateMemberRoleAdminV1(Operation):
     # region fields
 
     _url: str = "/group/v1/admin/namespaces/{namespace}/roles/{memberRoleId}"
+    _path: str = "/group/v1/admin/namespaces/{namespace}/roles/{memberRoleId}"
+    _base_path: str = ""
     _method: str = "PATCH"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     body: ModelsUpdateMemberRoleRequestV1  # REQUIRED in [body]
     member_role_id: str  # REQUIRED in [path]
@@ -105,6 +98,14 @@ class UpdateMemberRoleAdminV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

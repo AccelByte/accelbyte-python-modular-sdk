@@ -37,42 +37,19 @@ from ...models import ResponseErrorResponse
 class UpdateMemberRolePermissionAdminV1(Operation):
     """update member role permission (updateMemberRolePermissionAdminV1)
 
-    Required permission ADMIN:NAMESPACE:{namespace}:GROUP:ROLE [UPDATE]
-
-
-
-
     This endpoint is used to update member role permission. It will replace the existing permission based on the request from this endpoint
-
-
-
 
     Action Code: 73205
 
 
 
-
-
-
     memberRolePermissions example value :
-
-
-
 
     "action": 2
 
-
-
-
     "resourceName": "GROUP:ROLE"
 
-
-
-
     The changes will update user role to be able to read a role of other member
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:GROUP:ROLE [UPDATE]
 
     Properties:
         url: /group/v1/admin/namespaces/{namespace}/roles/{memberRoleId}/permissions
@@ -112,11 +89,17 @@ class UpdateMemberRolePermissionAdminV1(Operation):
     _url: str = (
         "/group/v1/admin/namespaces/{namespace}/roles/{memberRoleId}/permissions"
     )
+    _path: str = (
+        "/group/v1/admin/namespaces/{namespace}/roles/{memberRoleId}/permissions"
+    )
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     body: ModelsUpdateMemberRolePermissionsRequestV1  # REQUIRED in [body]
     member_role_id: str  # REQUIRED in [path]
@@ -129,6 +112,14 @@ class UpdateMemberRolePermissionAdminV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

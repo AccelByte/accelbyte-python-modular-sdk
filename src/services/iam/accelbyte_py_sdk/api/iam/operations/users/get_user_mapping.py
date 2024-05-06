@@ -35,7 +35,7 @@ from ...models import RestErrorResponse
 
 
 class GetUserMapping(Operation):
-    """Get user mapping (GetUserMapping)
+    """[DEPRECATED] Get user mapping (GetUserMapping)
 
     ## The endpoint is going to be deprecated
     ### Endpoint migration guide
@@ -43,8 +43,8 @@ class GetUserMapping(Operation):
 
     This endpoint requires the client access token as the bearer token
     This endpoint will support publisher access to game and game access to publisher
-    If targetNamespace filled with publisher namespace then this endpoint will return its game user id and game namespace
-    If targetNamespace filled with game namespace then this endpoint will return its publisher user id and publisher namespace. Will create game user id if not exists.
+    If targetNamespace filled with publisher namespace then this endpoint will return its publisher user id and publisher namespace.
+    If targetNamespace filled with game namespace then this endpoint will return its game user id and game namespace. **Will create game user id if not exists.**
 
     Properties:
         url: /iam/namespaces/{namespace}/users/{userId}/platforms/justice/{targetNamespace}
@@ -82,11 +82,17 @@ class GetUserMapping(Operation):
     _url: str = (
         "/iam/namespaces/{namespace}/users/{userId}/platforms/justice/{targetNamespace}"
     )
+    _path: str = (
+        "/iam/namespaces/{namespace}/users/{userId}/platforms/justice/{targetNamespace}"
+    )
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     namespace: str  # REQUIRED in [path]
     target_namespace: str  # REQUIRED in [path]
@@ -99,6 +105,14 @@ class GetUserMapping(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

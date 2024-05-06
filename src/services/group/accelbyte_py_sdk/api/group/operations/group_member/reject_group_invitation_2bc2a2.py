@@ -38,18 +38,9 @@ class RejectGroupInvitationPublicV2(Operation):
 
     Required valid user authentication
 
-
-
-
     This endpoint is used to reject group invitation.
 
-
-
-
     Reject group invitation. If specific user is not invited in the specific group ID, it will show the the error to show if the user is not invited yet.
-
-
-
 
     Action Code: 73402
 
@@ -89,11 +80,17 @@ class RejectGroupInvitationPublicV2(Operation):
     # region fields
 
     _url: str = "/group/v2/public/namespaces/{namespace}/groups/{groupId}/invite/reject"
+    _path: str = (
+        "/group/v2/public/namespaces/{namespace}/groups/{groupId}/invite/reject"
+    )
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     group_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -105,6 +102,14 @@ class RejectGroupInvitationPublicV2(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

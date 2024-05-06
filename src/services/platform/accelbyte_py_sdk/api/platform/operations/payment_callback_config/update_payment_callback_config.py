@@ -39,11 +39,7 @@ class UpdatePaymentCallbackConfig(Operation):
     [Not Supported Yet In Starter] Update payment callback configuration.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:PAYMENT:CONFIG", action=4 (UPDATE)
-      *  Returns : Payment callback config
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:PAYMENT:CONFIG [UPDATE]
+      * Returns : Payment callback config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/config/callback
@@ -56,7 +52,7 @@ class UpdatePaymentCallbackConfig(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL PaymentCallbackConfigUpdate in body
 
@@ -69,11 +65,15 @@ class UpdatePaymentCallbackConfig(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/payment/config/callback"
+    _path: str = "/platform/admin/namespaces/{namespace}/payment/config/callback"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: PaymentCallbackConfigUpdate  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -85,6 +85,14 @@ class UpdatePaymentCallbackConfig(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

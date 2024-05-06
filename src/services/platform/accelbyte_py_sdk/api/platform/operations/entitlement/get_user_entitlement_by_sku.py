@@ -49,13 +49,6 @@ class GetUserEntitlementBySku(Operation):
 
     Get user entitlement by sku.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/bySku
 
@@ -67,7 +60,7 @@ class GetUserEntitlementBySku(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -92,11 +85,17 @@ class GetUserEntitlementBySku(Operation):
     _url: str = (
         "/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/bySku"
     )
+    _path: str = (
+        "/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/bySku"
+    )
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
@@ -112,6 +111,14 @@ class GetUserEntitlementBySku(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

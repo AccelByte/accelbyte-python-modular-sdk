@@ -68,11 +68,7 @@ def create_key_group(
     Create key group.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=1 (CREATE)
-      *  Returns : created key group
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:KEYGROUP [CREATE]
+      * Returns : created key group
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups
@@ -85,7 +81,7 @@ def create_key_group(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL KeyGroupCreate in body
 
@@ -121,11 +117,7 @@ async def create_key_group_async(
     Create key group.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=1 (CREATE)
-      *  Returns : created key group
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:KEYGROUP [CREATE]
+      * Returns : created key group
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups
@@ -138,7 +130,7 @@ async def create_key_group_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL KeyGroupCreate in body
 
@@ -176,11 +168,7 @@ def get_key_group(
     Get key group.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=2 (READ)
-      *  Returns : key group info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:KEYGROUP [READ]
+      * Returns : key group info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}
@@ -193,7 +181,7 @@ def get_key_group(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         key_group_id: (keyGroupId) REQUIRED str in path
 
@@ -227,11 +215,7 @@ async def get_key_group_async(
     Get key group.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=2 (READ)
-      *  Returns : key group info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:KEYGROUP [READ]
+      * Returns : key group info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}
@@ -244,7 +228,7 @@ async def get_key_group_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         key_group_id: (keyGroupId) REQUIRED str in path
 
@@ -281,11 +265,7 @@ def get_key_group_by_booth_name(
     Get key group.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=2 (READ)
-      *  Returns : key group info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:KEYGROUP [READ]
+      * Returns : key group info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/byBoothName
@@ -298,7 +278,7 @@ def get_key_group_by_booth_name(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -333,11 +313,7 @@ async def get_key_group_by_booth_name_async(
     Get key group.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=2 (READ)
-      *  Returns : key group info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:KEYGROUP [READ]
+      * Returns : key group info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/byBoothName
@@ -350,7 +326,7 @@ async def get_key_group_by_booth_name_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -386,11 +362,7 @@ def get_key_group_dynamic(
     Get key group dynamic.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=2 (READ)
-      *  Returns : key group info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:KEYGROUP [READ]
+      * Returns : key group info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}/dynamic
@@ -403,7 +375,7 @@ def get_key_group_dynamic(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         key_group_id: (keyGroupId) REQUIRED str in path
 
@@ -437,11 +409,7 @@ async def get_key_group_dynamic_async(
     Get key group dynamic.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=2 (READ)
-      *  Returns : key group info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:KEYGROUP [READ]
+      * Returns : key group info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}/dynamic
@@ -454,7 +422,7 @@ async def get_key_group_dynamic_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         key_group_id: (keyGroupId) REQUIRED str in path
 
@@ -493,11 +461,7 @@ def list_keys(
     This API is used to list keys of a key group.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=2 (READ)
-      *  Returns : keys
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:KEYGROUP [READ]
+      * Returns : keys
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}/keys
@@ -510,7 +474,7 @@ def list_keys(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         key_group_id: (keyGroupId) REQUIRED str in path
 
@@ -554,11 +518,7 @@ async def list_keys_async(
     This API is used to list keys of a key group.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=2 (READ)
-      *  Returns : keys
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:KEYGROUP [READ]
+      * Returns : keys
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}/keys
@@ -571,7 +531,7 @@ async def list_keys_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         key_group_id: (keyGroupId) REQUIRED str in path
 
@@ -617,11 +577,7 @@ def query_key_groups(
     Query key groups, if name is presented, it's fuzzy match.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=2 (READ)
-      *  Returns : slice of key group
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:KEYGROUP [READ]
+      * Returns : slice of key group
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups
@@ -634,7 +590,7 @@ def query_key_groups(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -678,11 +634,7 @@ async def query_key_groups_async(
     Query key groups, if name is presented, it's fuzzy match.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=2 (READ)
-      *  Returns : slice of key group
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:KEYGROUP [READ]
+      * Returns : slice of key group
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups
@@ -695,7 +647,7 @@ async def query_key_groups_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -739,11 +691,7 @@ def update_key_group(
     Update key group.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=4 (UPDATE)
-      *  Returns : updated key group
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:KEYGROUP [UPDATE]
+      * Returns : updated key group
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}
@@ -756,7 +704,7 @@ def update_key_group(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL KeyGroupUpdate in body
 
@@ -798,11 +746,7 @@ async def update_key_group_async(
     Update key group.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=4 (UPDATE)
-      *  Returns : updated key group
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:KEYGROUP [UPDATE]
+      * Returns : updated key group
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}
@@ -815,7 +759,7 @@ async def update_key_group_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL KeyGroupUpdate in body
 
@@ -860,11 +804,7 @@ def upload_keys(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=4 (UPDATE)
-      *  Returns : item data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:KEYGROUP [UPDATE]
+      * Returns : item data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}/keys
@@ -877,7 +817,7 @@ def upload_keys(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         file: (file) OPTIONAL Any in form_data
 
@@ -918,11 +858,7 @@ async def upload_keys_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=4 (UPDATE)
-      *  Returns : item data
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:KEYGROUP [UPDATE]
+      * Returns : item data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}/keys
@@ -935,7 +871,7 @@ async def upload_keys_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         file: (file) OPTIONAL Any in form_data
 

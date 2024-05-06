@@ -39,11 +39,7 @@ class PreCheckRevokeUserEntitlementByUseCount(Operation):
     Checks if specified use count of user entitlement can be revoked without actually revoking it.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=1 (READ)
-      *  Returns : true if revokable, false otherwise
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
+      * Returns : true if revokable, false otherwise
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/revoke/byUseCount/preCheck
@@ -56,7 +52,7 @@ class PreCheckRevokeUserEntitlementByUseCount(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -75,11 +71,15 @@ class PreCheckRevokeUserEntitlementByUseCount(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/revoke/byUseCount/preCheck"
+    _path: str = "/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/revoke/byUseCount/preCheck"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     entitlement_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -93,6 +93,14 @@ class PreCheckRevokeUserEntitlementByUseCount(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

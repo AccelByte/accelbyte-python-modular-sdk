@@ -76,11 +76,15 @@ class DeleteInventory(Operation):
     # region fields
 
     _url: str = "/inventory/v1/admin/namespaces/{namespace}/inventories/{inventoryId}"
+    _path: str = "/inventory/v1/admin/namespaces/{namespace}/inventories/{inventoryId}"
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "inventory"
 
     body: ApimodelsDeleteInventoryReq  # REQUIRED in [body]
     inventory_id: str  # REQUIRED in [path]
@@ -93,6 +97,14 @@ class DeleteInventory(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

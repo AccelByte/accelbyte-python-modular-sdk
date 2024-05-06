@@ -41,11 +41,7 @@ class CreateCodes(Operation):
     This API is used to create campaign codes, it will increase the batch No. based on last creation.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=1 (CREATE)
-      *  Returns : number of codes created
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CAMPAIGN [CREATE]
+      * Returns : number of codes created
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/codes/campaigns/{campaignId}
@@ -58,7 +54,7 @@ class CreateCodes(Operation):
 
         produces: []
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL CodeCreate in body
 
@@ -71,17 +67,23 @@ class CreateCodes(Operation):
 
         404: Not Found - ErrorEntity (37141: Campaign [{campaignId}] does not exist in namespace [{namespace}])
 
+        409: Conflict - ErrorEntity (37180: Code [{code}] already exists in namespace [{namespace}])
+
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
 
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/codes/campaigns/{campaignId}"
+    _path: str = "/platform/admin/namespaces/{namespace}/codes/campaigns/{campaignId}"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = []
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: CodeCreate  # OPTIONAL in [body]
     campaign_id: str  # REQUIRED in [path]
@@ -94,6 +96,14 @@ class CreateCodes(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:
@@ -199,6 +209,8 @@ class CreateCodes(Operation):
 
         404: Not Found - ErrorEntity (37141: Campaign [{campaignId}] does not exist in namespace [{namespace}])
 
+        409: Conflict - ErrorEntity (37180: Code [{code}] already exists in namespace [{namespace}])
+
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
 
         ---: HttpResponse (Undocumented Response)
@@ -217,6 +229,8 @@ class CreateCodes(Operation):
         if code == 201:
             return CodeCreateResult.create_from_dict(content), None
         if code == 404:
+            return None, ErrorEntity.create_from_dict(content)
+        if code == 409:
             return None, ErrorEntity.create_from_dict(content)
         if code == 422:
             return None, ValidationErrorEntity.create_from_dict(content)

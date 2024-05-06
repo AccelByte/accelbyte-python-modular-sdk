@@ -37,12 +37,7 @@ class AdminGetServicesConfiguration(Operation):
     """Get Registered Services Configuration (AdminGetServicesConfiguration)
 
     Get Registered Services Configuration.
-
-
-    Required permission `ADMIN:NAMESPACE:{namespace}:GDPR:CONFIGURATION [READ]` and scope `account`
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:GDPR:CONFIGURATION [READ]
+    Scope: account
 
     Required Scope(s):
         - account
@@ -75,11 +70,15 @@ class AdminGetServicesConfiguration(Operation):
     # region fields
 
     _url: str = "/gdpr/admin/namespaces/{namespace}/services/configurations"
+    _path: str = "/gdpr/admin/namespaces/{namespace}/services/configurations"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "gdpr"
 
     namespace: str  # REQUIRED in [path]
 
@@ -90,6 +89,14 @@ class AdminGetServicesConfiguration(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

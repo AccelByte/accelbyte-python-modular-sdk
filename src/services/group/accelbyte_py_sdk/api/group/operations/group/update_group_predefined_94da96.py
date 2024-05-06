@@ -39,25 +39,11 @@ class UpdateGroupPredefinedRulePublicV1(Operation):
 
     Required valid user authentication
 
-
-
-
     Required Member Role Permission: "GROUP [UPDATE]"
 
-
-
-
-    Update predefined group rule. This endpoint will check the group ID of the user based on the access token
-    and compare it with the group ID in path parameter. It will also check the member role of the user based on
-    the access token
-
-
-
+    Update predefined group rule. This endpoint will check the group ID of the user based on the access token and compare it with the group ID in path parameter. It will also check the member role of the user based on the access token
 
     If the rule action is not defined in the group, it will be added immediately to the predefined group rule
-
-
-
 
     Action Code: 73310
 
@@ -102,11 +88,15 @@ class UpdateGroupPredefinedRulePublicV1(Operation):
     # region fields
 
     _url: str = "/group/v1/public/namespaces/{namespace}/groups/{groupId}/rules/defined/{allowedAction}"
+    _path: str = "/group/v1/public/namespaces/{namespace}/groups/{groupId}/rules/defined/{allowedAction}"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     body: ModelsUpdateGroupPredefinedRuleRequestV1  # REQUIRED in [body]
     allowed_action: str  # REQUIRED in [path]
@@ -120,6 +110,14 @@ class UpdateGroupPredefinedRulePublicV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

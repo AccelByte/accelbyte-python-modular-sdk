@@ -79,9 +79,19 @@ class PlatformTokenGrantV4(Operation):
     Several platforms are grouped under account groups. The accounts on these platforms have the same platform user id.
     Login using one of these platform will returns the same IAM user.
     Following is the current registered account grouping:
-    - (psn) ps4web
-    - (psn) ps4
-    - (psn) ps5
+    - Steam group(steamnetwork):
+    - steam
+    - steamopenid
+    - PSN group(psn)
+    - ps4web
+    - ps4
+    - ps5
+    - XBOX group(xbox)
+    - live
+    - xblweb
+    - Oculus group(oculusgroup)
+    - oculus
+    - oculusweb
 
     ## Access Token Content
     Following is the access tokenâs content:
@@ -156,11 +166,15 @@ class PlatformTokenGrantV4(Operation):
     # region fields
 
     _url: str = "/iam/v4/oauth/platforms/{platformId}/token"
+    _path: str = "/iam/v4/oauth/platforms/{platformId}/token"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/x-www-form-urlencoded"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     additional_data: str  # OPTIONAL in [form_data]
     client_id: str  # OPTIONAL in [form_data]
@@ -180,6 +194,14 @@ class PlatformTokenGrantV4(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -36,20 +36,9 @@ from ...models import ResponseErrorResponse
 class GetGroupConfigurationAdminV1(Operation):
     """get existing configuration (getGroupConfigurationAdminV1)
 
-    Required permission 'ADMIN:NAMESPACE:{namespace}:GROUP:CONFIGURATION [READ]'
-
-
-
-
     This endpoint is used to get existing configuration. This Configuration is used as the main rule of the service. Each namespace will have its own configuration
 
-
-
-
     Action Code: 73101
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:GROUP:CONFIGURATION [READ]
 
     Properties:
         url: /group/v1/admin/namespaces/{namespace}/configuration/{configurationCode}
@@ -87,11 +76,17 @@ class GetGroupConfigurationAdminV1(Operation):
     _url: str = (
         "/group/v1/admin/namespaces/{namespace}/configuration/{configurationCode}"
     )
+    _path: str = (
+        "/group/v1/admin/namespaces/{namespace}/configuration/{configurationCode}"
+    )
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     configuration_code: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -103,6 +98,14 @@ class GetGroupConfigurationAdminV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

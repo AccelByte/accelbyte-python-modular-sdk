@@ -39,20 +39,9 @@ class UpdateGroupCustomAttributesPublicV1(Operation):
 
     Requires valid user authentication
 
+    Required Member Role Permission: "GROUP [UPDATE]
 
-
-
-    Required Member Role Permission: "GROUP [UPDATE]"
-
-
-
-
-    This endpoint replaces current group custom attributes entirely.
-    This endpoint will check the group ID of the user based on the access token and compare it with the group ID in path parameter.
-    It will also check the member role of the user based on the access token
-
-
-
+    This endpoint replaces current group custom attributes entirely. This endpoint will check the group ID of the user based on the access token and compare it with the group ID in path parameter. It will also check the member role of the user based on the access token
 
     Action Code: 73311
 
@@ -97,11 +86,17 @@ class UpdateGroupCustomAttributesPublicV1(Operation):
     _url: str = (
         "/group/v1/public/namespaces/{namespace}/groups/{groupId}/attributes/custom"
     )
+    _path: str = (
+        "/group/v1/public/namespaces/{namespace}/groups/{groupId}/attributes/custom"
+    )
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     body: ModelsUpdateGroupCustomAttributesRequestV1  # REQUIRED in [body]
     group_id: str  # REQUIRED in [path]
@@ -114,6 +109,14 @@ class UpdateGroupCustomAttributesPublicV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

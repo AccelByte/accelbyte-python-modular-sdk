@@ -75,9 +75,6 @@ def delete_loot_box_plugin_config(
     """Delete lootbox plugin config (deleteLootBoxPluginConfig)
 
     Delete service plugin config.
-    Other detail info:
-
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG, action=8 (DELETE)
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/catalog/plugins/lootbox
@@ -116,9 +113,6 @@ async def delete_loot_box_plugin_config_async(
     """Delete lootbox plugin config (deleteLootBoxPluginConfig)
 
     Delete service plugin config.
-    Other detail info:
-
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG, action=8 (DELETE)
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/catalog/plugins/lootbox
@@ -159,9 +153,6 @@ def delete_revocation_plugin_config(
     """Delete revocation plugin config (deleteRevocationPluginConfig)
 
     Delete service plugin config.
-    Other detail info:
-
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:REVOCATION, action=8 (DELETE)
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/revocation/plugins/revocation
@@ -200,9 +191,6 @@ async def delete_revocation_plugin_config_async(
     """Delete revocation plugin config (deleteRevocationPluginConfig)
 
     Delete service plugin config.
-    Other detail info:
-
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:REVOCATION, action=8 (DELETE)
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/revocation/plugins/revocation
@@ -243,9 +231,6 @@ def delete_section_plugin_config(
     """Delete section plugin config (deleteSectionPluginConfig)
 
     Delete section plugin config.
-    Other detail info:
-
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG, action=8 (DELETE)
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/catalog/plugins/section
@@ -284,9 +269,6 @@ async def delete_section_plugin_config_async(
     """Delete section plugin config (deleteSectionPluginConfig)
 
     Delete section plugin config.
-    Other detail info:
-
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG, action=8 (DELETE)
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/catalog/plugins/section
@@ -327,10 +309,7 @@ def delete_service_plugin_config(
 ):
     """Delete service plugin config (deleteServicePluginConfig)
 
-    Delete service plugin config.
-    Other detail info:
-
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:CONFIG:SERVICEPLUGIN, action=8 (DELETE)
+    Delete service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/configs/servicePlugin
@@ -369,10 +348,7 @@ async def delete_service_plugin_config_async(
 ):
     """Delete service plugin config (deleteServicePluginConfig)
 
-    Delete service plugin config.
-    Other detail info:
-
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:CONFIG:SERVICEPLUGIN, action=8 (DELETE)
+    Delete service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/configs/servicePlugin
@@ -414,9 +390,6 @@ def get_loot_box_grpc_info(
     """Get lootbox plugin gRPC info (getLootBoxGrpcInfo)
 
     Get lootbox plugin gRPC info.
-    Other detail info:
-
-      * Required permission : resource= ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG , action=2 (READ)
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/catalog/plugins/lootbox/grpcInfo
@@ -459,9 +432,6 @@ async def get_loot_box_grpc_info_async(
     """Get lootbox plugin gRPC info (getLootBoxGrpcInfo)
 
     Get lootbox plugin gRPC info.
-    Other detail info:
-
-      * Required permission : resource= ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG , action=2 (READ)
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/catalog/plugins/lootbox/grpcInfo
@@ -505,9 +475,6 @@ def get_loot_box_plugin_config(
     """Get lootbox plugin config (getLootBoxPluginConfig)
 
     Get lootbox plugin config.
-    Other detail info:
-
-      * Required permission : resource= ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG , action=2 (READ)
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/catalog/plugins/lootbox
@@ -546,9 +513,6 @@ async def get_loot_box_plugin_config_async(
     """Get lootbox plugin config (getLootBoxPluginConfig)
 
     Get lootbox plugin config.
-    Other detail info:
-
-      * Required permission : resource= ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG , action=2 (READ)
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/catalog/plugins/lootbox
@@ -589,9 +553,6 @@ def get_revocation_plugin_config(
     """Get revocation plugin config (getRevocationPluginConfig)
 
     Get revocation plugin config.
-    Other detail info:
-
-      * Required permission : resource= ADMIN:NAMESPACE:{namespace}:PLUGIN:REVOCATION , action=2 (READ)
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/revocation/plugins/revocation
@@ -630,9 +591,6 @@ async def get_revocation_plugin_config_async(
     """Get revocation plugin config (getRevocationPluginConfig)
 
     Get revocation plugin config.
-    Other detail info:
-
-      * Required permission : resource= ADMIN:NAMESPACE:{namespace}:PLUGIN:REVOCATION , action=2 (READ)
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/revocation/plugins/revocation
@@ -673,9 +631,6 @@ def get_section_plugin_config(
     """Get section plugin config (getSectionPluginConfig)
 
     Get section plugin config.
-    Other detail info:
-
-      * Required permission : resource= ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG , action=2 (READ)
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/catalog/plugins/section
@@ -714,9 +669,6 @@ async def get_section_plugin_config_async(
     """Get section plugin config (getSectionPluginConfig)
 
     Get section plugin config.
-    Other detail info:
-
-      * Required permission : resource= ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG , action=2 (READ)
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/catalog/plugins/section
@@ -757,10 +709,7 @@ def get_service_plugin_config(
 ):
     """Get service plugin config (getServicePluginConfig)
 
-    Get service plugin config.
-    Other detail info:
-
-      * Required permission : resource= ADMIN:NAMESPACE:{namespace}:CONFIG:SERVICEPLUGIN , action=2 (READ)
+    Get service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/configs/servicePlugin
@@ -799,10 +748,7 @@ async def get_service_plugin_config_async(
 ):
     """Get service plugin config (getServicePluginConfig)
 
-    Get service plugin config.
-    Other detail info:
-
-      * Required permission : resource= ADMIN:NAMESPACE:{namespace}:CONFIG:SERVICEPLUGIN , action=2 (READ)
+    Get service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/configs/servicePlugin
@@ -844,8 +790,7 @@ def update_loot_box_plugin_config(
     """Update lootbox plugin config (updateLootBoxPluginConfig)
 
     Update lootbox plugin config. Other detail info:
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG, action=4 (UPDATE)
-      *  Returns : updated service plugin config
+      * Returns : updated service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/catalog/plugins/lootbox
@@ -890,8 +835,7 @@ async def update_loot_box_plugin_config_async(
     """Update lootbox plugin config (updateLootBoxPluginConfig)
 
     Update lootbox plugin config. Other detail info:
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG, action=4 (UPDATE)
-      *  Returns : updated service plugin config
+      * Returns : updated service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/catalog/plugins/lootbox
@@ -938,8 +882,7 @@ def update_revocation_plugin_config(
     """Update revocation plugin config (updateRevocationPluginConfig)
 
     Update revocation plugin config. Other detail info:
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:REVOCATION, action=4 (UPDATE)
-      *  Returns : updated service plugin config
+      * Returns : updated service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/revocation/plugins/revocation
@@ -984,8 +927,7 @@ async def update_revocation_plugin_config_async(
     """Update revocation plugin config (updateRevocationPluginConfig)
 
     Update revocation plugin config. Other detail info:
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:REVOCATION, action=4 (UPDATE)
-      *  Returns : updated service plugin config
+      * Returns : updated service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/revocation/plugins/revocation
@@ -1032,8 +974,7 @@ def update_section_plugin_config(
     """Update section plugin config (updateSectionPluginConfig)
 
     Update section config. Other detail info:
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG, action=4 (UPDATE)
-      *  Returns : updated service plugin config
+      * Returns : updated service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/catalog/plugins/section
@@ -1078,8 +1019,7 @@ async def update_section_plugin_config_async(
     """Update section plugin config (updateSectionPluginConfig)
 
     Update section config. Other detail info:
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG, action=4 (UPDATE)
-      *  Returns : updated service plugin config
+      * Returns : updated service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/catalog/plugins/section
@@ -1127,8 +1067,7 @@ def update_service_plugin_config(
     """Update service plugin config service (updateServicePluginConfig)
 
     Update catalog config. Other detail info:
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:CONFIG:SERVICEPLUGIN, action=4 (UPDATE)
-      *  Returns : updated service plugin config
+      * Returns : updated service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/configs/servicePlugin
@@ -1174,8 +1113,7 @@ async def update_service_plugin_config_async(
     """Update service plugin config service (updateServicePluginConfig)
 
     Update catalog config. Other detail info:
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:CONFIG:SERVICEPLUGIN, action=4 (UPDATE)
-      *  Returns : updated service plugin config
+      * Returns : updated service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/configs/servicePlugin
@@ -1222,8 +1160,7 @@ def upload_revocation_plugin_config_cert(
     """Upload revocation plugin custom config tls cert (uploadRevocationPluginConfigCert)
 
     Upload revocation plugin custom config tls cert.Other detail info:
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:REVOCATION, action=4 (UPDATE)
-      *  Returns : updated service plugin config
+      * Returns : updated service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/revocation/plugins/revocation/revocation/customConfig/cert
@@ -1268,8 +1205,7 @@ async def upload_revocation_plugin_config_cert_async(
     """Upload revocation plugin custom config tls cert (uploadRevocationPluginConfigCert)
 
     Upload revocation plugin custom config tls cert.Other detail info:
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:REVOCATION, action=4 (UPDATE)
-      *  Returns : updated service plugin config
+      * Returns : updated service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/revocation/plugins/revocation/revocation/customConfig/cert
@@ -1316,8 +1252,7 @@ def upload_section_plugin_config_cert(
     """Upload section plugin custom config tls cert (uploadSectionPluginConfigCert)
 
     Upload section plugin custom config tls cert.Other detail info:
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG, action=4 (UPDATE)
-      *  Returns : updated service plugin config
+      * Returns : updated service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/catalog/plugins/section/customConfig/cert
@@ -1362,8 +1297,7 @@ async def upload_section_plugin_config_cert_async(
     """Upload section plugin custom config tls cert (uploadSectionPluginConfigCert)
 
     Upload section plugin custom config tls cert.Other detail info:
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG, action=4 (UPDATE)
-      *  Returns : updated service plugin config
+      * Returns : updated service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/catalog/plugins/section/customConfig/cert
@@ -1410,8 +1344,7 @@ def uplod_loot_box_plugin_config_cert(
     """Upload lootbox plugin custom config tls cert (uplodLootBoxPluginConfigCert)
 
     Upload lootbox plugin custom config tls cert.Other detail info:
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG, action=4 (UPDATE)
-      *  Returns : updated service plugin config
+      * Returns : updated service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/catalog/plugins/lootbox/customConfig/cert
@@ -1456,8 +1389,7 @@ async def uplod_loot_box_plugin_config_cert_async(
     """Upload lootbox plugin custom config tls cert (uplodLootBoxPluginConfigCert)
 
     Upload lootbox plugin custom config tls cert.Other detail info:
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG, action=4 (UPDATE)
-      *  Returns : updated service plugin config
+      * Returns : updated service plugin config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/catalog/plugins/lootbox/customConfig/cert

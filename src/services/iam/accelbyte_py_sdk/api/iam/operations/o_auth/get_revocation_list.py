@@ -34,7 +34,7 @@ from ...models import OauthapiRevocationList
 
 
 class GetRevocationList(Operation):
-    """OAuth2 revocation list API (GetRevocationList)
+    """[DEPRECATED] OAuth2 revocation list API (GetRevocationList)
 
     ## The endpoint is going to be deprecated
     This endpoint will return a list of revoked users and revoked tokens. List of revoked tokens in bloom filter format. This endpoint requires all requests to have Authorization header set with Basic access authentication constructed from client id and client secret.
@@ -65,11 +65,15 @@ class GetRevocationList(Operation):
     # region fields
 
     _url: str = "/iam/oauth/revocationlist"
+    _path: str = "/iam/oauth/revocationlist"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = [""]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BASIC_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     # endregion fields
 
@@ -78,6 +82,14 @@ class GetRevocationList(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

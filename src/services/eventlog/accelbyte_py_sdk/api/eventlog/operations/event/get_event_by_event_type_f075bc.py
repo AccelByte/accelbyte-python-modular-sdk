@@ -34,7 +34,7 @@ from ...models import ModelsEventResponse
 
 
 class GetEventByEventTypeHandler(Operation):
-    """Get events from all users in a namespace with specific eventType (GetEventByEventTypeHandler)
+    """[DEPRECATED] Get events from all users in a namespace with specific eventType (GetEventByEventTypeHandler)
 
     Required permission `NAMESPACE:{namespace}:EVENT [UPDATE]`and scope `analytics`
 
@@ -86,11 +86,15 @@ class GetEventByEventTypeHandler(Operation):
     # region fields
 
     _url: str = "/event/namespaces/{namespace}/eventType/{eventType}"
+    _path: str = "/event/namespaces/{namespace}/eventType/{eventType}"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "eventlog"
 
     event_type: float  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -106,6 +110,14 @@ class GetEventByEventTypeHandler(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

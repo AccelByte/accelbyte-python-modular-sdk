@@ -244,11 +244,7 @@ def consume_user_entitlement(
     Consume user entitlement. If the entitlement useCount is 0, the status will be CONSUMED.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : consumed entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : consumed entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/decrement
@@ -261,7 +257,7 @@ def consume_user_entitlement(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL AdminEntitlementDecrement in body
 
@@ -307,11 +303,7 @@ async def consume_user_entitlement_async(
     Consume user entitlement. If the entitlement useCount is 0, the status will be CONSUMED.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : consumed entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : consumed entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/decrement
@@ -324,7 +316,7 @@ async def consume_user_entitlement_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL AdminEntitlementDecrement in body
 
@@ -372,11 +364,7 @@ def disable_user_entitlement(
      Like revoke, it will lose the entitlement ownership, except disabled entitlement can enable.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : disable entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : disable entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/disable
@@ -389,7 +377,7 @@ def disable_user_entitlement(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -430,11 +418,7 @@ async def disable_user_entitlement_async(
      Like revoke, it will lose the entitlement ownership, except disabled entitlement can enable.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : disable entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : disable entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/disable
@@ -447,7 +431,7 @@ async def disable_user_entitlement_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -487,11 +471,7 @@ def enable_entitlement_origin_feature(
     Enable Entitlement origin feature.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT:CONFIG", action=4 (READ)
-      *  Returns : entitlement info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT:CONFIG [READ]
+      * Returns : entitlement info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/entitlements/config/entitlementOrigin/enable
@@ -504,7 +484,7 @@ def enable_entitlement_origin_feature(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -532,11 +512,7 @@ async def enable_entitlement_origin_feature_async(
     Enable Entitlement origin feature.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT:CONFIG", action=4 (READ)
-      *  Returns : entitlement info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT:CONFIG [READ]
+      * Returns : entitlement info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/entitlements/config/entitlementOrigin/enable
@@ -549,7 +525,7 @@ async def enable_entitlement_origin_feature_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -581,11 +557,7 @@ def enable_user_entitlement(
     Enable user entitlement.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : enable entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : enable entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/enable
@@ -598,7 +570,7 @@ def enable_user_entitlement(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -638,11 +610,7 @@ async def enable_user_entitlement_async(
     Enable user entitlement.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : enable entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : enable entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/enable
@@ -655,7 +623,7 @@ async def enable_user_entitlement_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -699,13 +667,6 @@ def exists_any_user_active_entitlement(
 
     Exists any user active entitlement of specified itemIds, skus and appIds
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/any
 
@@ -717,7 +678,7 @@ def exists_any_user_active_entitlement(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -764,13 +725,6 @@ async def exists_any_user_active_entitlement_async(
 
     Exists any user active entitlement of specified itemIds, skus and appIds
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/any
 
@@ -782,7 +736,7 @@ async def exists_any_user_active_entitlement_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -829,13 +783,6 @@ def exists_any_user_active_entitlement_by_item_ids(
 
     Exists any user active entitlement of specified items.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/anyOf
 
@@ -847,7 +794,7 @@ def exists_any_user_active_entitlement_by_item_ids(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -886,13 +833,6 @@ async def exists_any_user_active_entitlement_by_item_ids_async(
 
     Exists any user active entitlement of specified items.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/anyOf
 
@@ -904,7 +844,7 @@ async def exists_any_user_active_entitlement_by_item_ids_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -945,11 +885,7 @@ def get_entitlement(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
-      *  Returns : entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT [READ]
+      * Returns : entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/entitlements/{entitlementId}
@@ -962,7 +898,7 @@ def get_entitlement(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -997,11 +933,7 @@ async def get_entitlement_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
-      *  Returns : entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT [READ]
+      * Returns : entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/entitlements/{entitlementId}
@@ -1014,7 +946,7 @@ async def get_entitlement_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -1050,11 +982,7 @@ def get_entitlement_config_info(
     Get entitlement config info.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT:CONFIG", action=2 (READ)
-      *  Returns : entitlement info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT:CONFIG [READ]
+      * Returns : entitlement info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/entitlements/config/info
@@ -1067,7 +995,7 @@ def get_entitlement_config_info(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1099,11 +1027,7 @@ async def get_entitlement_config_info_async(
     Get entitlement config info.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT:CONFIG", action=2 (READ)
-      *  Returns : entitlement info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT:CONFIG [READ]
+      * Returns : entitlement info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/entitlements/config/info
@@ -1116,7 +1040,7 @@ async def get_entitlement_config_info_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1150,11 +1074,7 @@ def get_platform_entitlement_config(
     Get platform entitlement config list.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT:CONFIG", action=2 (READ)
-      *  Returns : entitlement info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT:CONFIG [READ]
+      * Returns : entitlement info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/platforms/{platform}/entitlement/config
@@ -1167,7 +1087,7 @@ def get_platform_entitlement_config(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1199,11 +1119,7 @@ async def get_platform_entitlement_config_async(
     Get platform entitlement config list.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT:CONFIG", action=2 (READ)
-      *  Returns : entitlement info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT:CONFIG [READ]
+      * Returns : entitlement info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/platforms/{platform}/entitlement/config
@@ -1216,7 +1132,7 @@ async def get_platform_entitlement_config_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1251,13 +1167,6 @@ def get_user_active_entitlements_by_item_ids(
 
     Get user entitlements by itemIds.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byItemIds
 
@@ -1269,7 +1178,7 @@ def get_user_active_entitlements_by_item_ids(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1308,13 +1217,6 @@ async def get_user_active_entitlements_by_item_ids_async(
 
     Get user entitlements by itemIds.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byItemIds
 
@@ -1326,7 +1228,7 @@ async def get_user_active_entitlements_by_item_ids_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1367,13 +1269,6 @@ def get_user_app_entitlement_by_app_id(
 
     Get user app entitlement by appId.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byAppId
 
@@ -1385,7 +1280,7 @@ def get_user_app_entitlement_by_app_id(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1426,13 +1321,6 @@ async def get_user_app_entitlement_by_app_id_async(
 
     Get user app entitlement by appId.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byAppId
 
@@ -1444,7 +1332,7 @@ async def get_user_app_entitlement_by_app_id_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1486,13 +1374,6 @@ def get_user_app_entitlement_ownership_by_app_id(
 
     Get user app entitlement ownership by appId.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/byAppId
 
@@ -1504,7 +1385,7 @@ def get_user_app_entitlement_ownership_by_app_id(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1539,13 +1420,6 @@ async def get_user_app_entitlement_ownership_by_app_id_async(
 
     Get user app entitlement ownership by appId.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/byAppId
 
@@ -1557,7 +1431,7 @@ async def get_user_app_entitlement_ownership_by_app_id_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1596,11 +1470,7 @@ def get_user_entitlement(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-      *  Returns : entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
+      * Returns : entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}
@@ -1613,7 +1483,7 @@ def get_user_entitlement(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -1652,11 +1522,7 @@ async def get_user_entitlement_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-      *  Returns : entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
+      * Returns : entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}
@@ -1669,7 +1535,7 @@ async def get_user_entitlement_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -1713,13 +1579,6 @@ def get_user_entitlement_by_item_id(
 
     Get user entitlement by itemId.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byItemId
 
@@ -1731,7 +1590,7 @@ def get_user_entitlement_by_item_id(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1782,13 +1641,6 @@ async def get_user_entitlement_by_item_id_async(
 
     Get user entitlement by itemId.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byItemId
 
@@ -1800,7 +1652,7 @@ async def get_user_entitlement_by_item_id_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1853,13 +1705,6 @@ def get_user_entitlement_by_sku(
 
     Get user entitlement by sku.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/bySku
 
@@ -1871,7 +1716,7 @@ def get_user_entitlement_by_sku(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1922,13 +1767,6 @@ async def get_user_entitlement_by_sku_async(
 
     Get user entitlement by sku.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/bySku
 
@@ -1940,7 +1778,7 @@ async def get_user_entitlement_by_sku_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1990,11 +1828,7 @@ def get_user_entitlement_histories(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-      *  Returns : list of entitlement history
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
+      * Returns : list of entitlement history
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/history
@@ -2007,7 +1841,7 @@ def get_user_entitlement_histories(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -2044,11 +1878,7 @@ async def get_user_entitlement_histories_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-      *  Returns : list of entitlement history
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
+      * Returns : list of entitlement history
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/history
@@ -2061,7 +1891,7 @@ async def get_user_entitlement_histories_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -2102,13 +1932,6 @@ def get_user_entitlement_ownership_by_item_id(
 
     Get user entitlement ownership by itemId.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/byItemId
 
@@ -2120,7 +1943,7 @@ def get_user_entitlement_ownership_by_item_id(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2165,13 +1988,6 @@ async def get_user_entitlement_ownership_by_item_id_async(
 
     Get user entitlement ownership by itemId.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/byItemId
 
@@ -2183,7 +1999,7 @@ async def get_user_entitlement_ownership_by_item_id_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2227,13 +2043,6 @@ def get_user_entitlement_ownership_by_item_ids(
 
     Get user entitlement ownership by itemIds.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/byItemIds
 
@@ -2245,7 +2054,7 @@ def get_user_entitlement_ownership_by_item_ids(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2284,13 +2093,6 @@ async def get_user_entitlement_ownership_by_item_ids_async(
 
     Get user entitlement ownership by itemIds.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/byItemIds
 
@@ -2302,7 +2104,7 @@ async def get_user_entitlement_ownership_by_item_ids_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2346,13 +2148,6 @@ def get_user_entitlement_ownership_by_sku(
 
     Get user entitlement ownership by sku.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/bySku
 
@@ -2364,7 +2159,7 @@ def get_user_entitlement_ownership_by_sku(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2409,13 +2204,6 @@ async def get_user_entitlement_ownership_by_sku_async(
 
     Get user entitlement ownership by sku.
 
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/bySku
 
@@ -2427,7 +2215,7 @@ async def get_user_entitlement_ownership_by_sku_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2482,11 +2270,7 @@ def grant_entitlements(
       *  LOOTBOX
 
     Other detail info:
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : bulk grant entitlements result
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT [UPDATE]
+      * Returns : bulk grant entitlements result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/entitlements/grant
@@ -2499,7 +2283,7 @@ def grant_entitlements(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL BulkEntitlementGrantRequest in body
 
@@ -2545,11 +2329,7 @@ async def grant_entitlements_async(
       *  LOOTBOX
 
     Other detail info:
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : bulk grant entitlements result
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT [UPDATE]
+      * Returns : bulk grant entitlements result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/entitlements/grant
@@ -2562,7 +2342,7 @@ async def grant_entitlements_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL BulkEntitlementGrantRequest in body
 
@@ -2613,11 +2393,7 @@ def grant_user_entitlement(
       *  LOOTBOX
 
     Other detail info:
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=1 (CREATE)
-      *  Returns : granted entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [CREATE]
+      * Returns : granted entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements
@@ -2630,7 +2406,7 @@ def grant_user_entitlement(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL List[EntitlementGrant] in body
 
@@ -2684,11 +2460,7 @@ async def grant_user_entitlement_async(
       *  LOOTBOX
 
     Other detail info:
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=1 (CREATE)
-      *  Returns : granted entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [CREATE]
+      * Returns : granted entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements
@@ -2701,7 +2473,7 @@ async def grant_user_entitlement_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL List[EntitlementGrant] in body
 
@@ -2744,11 +2516,7 @@ def pre_check_revoke_user_entitlement_by_use_count(
     Checks if specified use count of user entitlement can be revoked without actually revoking it.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=1 (READ)
-      *  Returns : true if revokable, false otherwise
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
+      * Returns : true if revokable, false otherwise
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/revoke/byUseCount/preCheck
@@ -2761,7 +2529,7 @@ def pre_check_revoke_user_entitlement_by_use_count(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -2803,11 +2571,7 @@ async def pre_check_revoke_user_entitlement_by_use_count_async(
     Checks if specified use count of user entitlement can be revoked without actually revoking it.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=1 (READ)
-      *  Returns : true if revokable, false otherwise
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
+      * Returns : true if revokable, false otherwise
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/revoke/byUseCount/preCheck
@@ -2820,7 +2584,7 @@ async def pre_check_revoke_user_entitlement_by_use_count_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -2864,11 +2628,7 @@ def public_consume_user_entitlement(
     Consume user entitlement. If the entitlement useCount is 0, the status will be CONSUMED. Client should pass item id in options if entitlement clazz is OPTIONBOX
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : consumed entitlement
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : consumed entitlement
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/decrement
@@ -2881,7 +2641,7 @@ def public_consume_user_entitlement(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL EntitlementDecrement in body
 
@@ -2927,11 +2687,7 @@ async def public_consume_user_entitlement_async(
     Consume user entitlement. If the entitlement useCount is 0, the status will be CONSUMED. Client should pass item id in options if entitlement clazz is OPTIONBOX
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : consumed entitlement
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : consumed entitlement
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/decrement
@@ -2944,7 +2700,7 @@ async def public_consume_user_entitlement_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL EntitlementDecrement in body
 
@@ -2991,13 +2747,6 @@ def public_exists_any_my_active_entitlement(
 
     Exists any my active entitlement of specified itemIds, skus and appIds
 
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/public/namespaces/{namespace}/users/me/entitlements/ownership/any
 
@@ -3009,7 +2758,7 @@ def public_exists_any_my_active_entitlement(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3048,13 +2797,6 @@ async def public_exists_any_my_active_entitlement_async(
 
     Exists any my active entitlement of specified itemIds, skus and appIds
 
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/public/namespaces/{namespace}/users/me/entitlements/ownership/any
 
@@ -3066,7 +2808,7 @@ async def public_exists_any_my_active_entitlement_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3108,13 +2850,6 @@ def public_exists_any_user_active_entitlement(
 
     Exists any user active entitlement of specified itemIds, skus and appIds
 
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/ownership/any
 
@@ -3126,7 +2861,7 @@ def public_exists_any_user_active_entitlement(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3169,13 +2904,6 @@ async def public_exists_any_user_active_entitlement_async(
 
     Exists any user active entitlement of specified itemIds, skus and appIds
 
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/ownership/any
 
@@ -3187,7 +2915,7 @@ async def public_exists_any_user_active_entitlement_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3305,13 +3033,6 @@ def public_get_entitlement_ownership_token(
 
     if there's no active entitlement for the specific params, the entitlements section will be omitted.
 
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/public/namespaces/{namespace}/users/me/entitlements/ownershipToken
 
@@ -3323,7 +3044,7 @@ def public_get_entitlement_ownership_token(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3436,13 +3157,6 @@ async def public_get_entitlement_ownership_token_async(
 
     if there's no active entitlement for the specific params, the entitlements section will be omitted.
 
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/public/namespaces/{namespace}/users/me/entitlements/ownershipToken
 
@@ -3454,7 +3168,7 @@ async def public_get_entitlement_ownership_token_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3495,12 +3209,8 @@ def public_get_my_app_entitlement_ownership_by_app_id(
 
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
-      *  Path's namespace :
+      * Path's namespace :
         * can be filled with publisher namespace in order to get publisher namespace app entitlement ownership
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:ENTITLEMENT [READ]
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/me/entitlements/ownership/byAppId
@@ -3513,7 +3223,7 @@ def public_get_my_app_entitlement_ownership_by_app_id(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3546,12 +3256,8 @@ async def public_get_my_app_entitlement_ownership_by_app_id_async(
 
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
-      *  Path's namespace :
+      * Path's namespace :
         * can be filled with publisher namespace in order to get publisher namespace app entitlement ownership
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:ENTITLEMENT [READ]
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/me/entitlements/ownership/byAppId
@@ -3564,7 +3270,7 @@ async def public_get_my_app_entitlement_ownership_by_app_id_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3602,13 +3308,9 @@ def public_get_my_entitlement_ownership_by_item_id(
 
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
-      *  Path's namespace :
+      * Path's namespace :
         * can be filled with publisher namespace in order to get publisher namespace entitlement ownership by sku
         * can be filled with game namespace in order to get game namespace entitlement ownership by sku
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:ENTITLEMENT [READ]
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/me/entitlements/ownership/byItemId
@@ -3621,7 +3323,7 @@ def public_get_my_entitlement_ownership_by_item_id(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3660,13 +3362,9 @@ async def public_get_my_entitlement_ownership_by_item_id_async(
 
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
-      *  Path's namespace :
+      * Path's namespace :
         * can be filled with publisher namespace in order to get publisher namespace entitlement ownership by sku
         * can be filled with game namespace in order to get game namespace entitlement ownership by sku
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:ENTITLEMENT [READ]
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/me/entitlements/ownership/byItemId
@@ -3679,7 +3377,7 @@ async def public_get_my_entitlement_ownership_by_item_id_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3720,13 +3418,9 @@ def public_get_my_entitlement_ownership_by_sku(
 
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
-      *  Path's namespace :
+      * Path's namespace :
         * can be filled with publisher namespace in order to get publisher namespace entitlement ownership by sku
         * can be filled with game namespace in order to get game namespace entitlement ownership by sku
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:ENTITLEMENT [READ]
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/me/entitlements/ownership/bySku
@@ -3739,7 +3433,7 @@ def public_get_my_entitlement_ownership_by_sku(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3778,13 +3472,9 @@ async def public_get_my_entitlement_ownership_by_sku_async(
 
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
-      *  Path's namespace :
+      * Path's namespace :
         * can be filled with publisher namespace in order to get publisher namespace entitlement ownership by sku
         * can be filled with game namespace in order to get game namespace entitlement ownership by sku
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:ENTITLEMENT [READ]
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/me/entitlements/ownership/bySku
@@ -3797,7 +3487,7 @@ async def public_get_my_entitlement_ownership_by_sku_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3834,13 +3524,6 @@ def public_get_user_app_entitlement_by_app_id(
 
     Get user app entitlement by appId.
 
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/byAppId
 
@@ -3852,7 +3535,7 @@ def public_get_user_app_entitlement_by_app_id(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3889,13 +3572,6 @@ async def public_get_user_app_entitlement_by_app_id_async(
 
     Get user app entitlement by appId.
 
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/byAppId
 
@@ -3907,7 +3583,7 @@ async def public_get_user_app_entitlement_by_app_id_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3946,13 +3622,6 @@ def public_get_user_app_entitlement_ownership_by_app_id(
 
     Get user app entitlement ownership by appId.
 
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/ownership/byAppId
 
@@ -3964,7 +3633,7 @@ def public_get_user_app_entitlement_ownership_by_app_id(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3999,13 +3668,6 @@ async def public_get_user_app_entitlement_ownership_by_app_id_async(
 
     Get user app entitlement ownership by appId.
 
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/ownership/byAppId
 
@@ -4017,7 +3679,7 @@ async def public_get_user_app_entitlement_ownership_by_app_id_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4056,11 +3718,7 @@ def public_get_user_entitlement(
 
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-      *  Returns : entitlement
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
+      * Returns : entitlement
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}
@@ -4073,7 +3731,7 @@ def public_get_user_entitlement(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -4112,11 +3770,7 @@ async def public_get_user_entitlement_async(
 
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-      *  Returns : entitlement
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
+      * Returns : entitlement
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}
@@ -4129,7 +3783,7 @@ async def public_get_user_entitlement_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -4172,13 +3826,6 @@ def public_get_user_entitlement_by_item_id(
 
     Get user entitlement by itemId.
 
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/byItemId
 
@@ -4190,7 +3837,7 @@ def public_get_user_entitlement_by_item_id(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4234,13 +3881,6 @@ async def public_get_user_entitlement_by_item_id_async(
 
     Get user entitlement by itemId.
 
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/byItemId
 
@@ -4252,7 +3892,7 @@ async def public_get_user_entitlement_by_item_id_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4298,13 +3938,6 @@ def public_get_user_entitlement_by_sku(
 
     Get user entitlement by sku.
 
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/bySku
 
@@ -4316,7 +3949,7 @@ def public_get_user_entitlement_by_sku(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4360,13 +3993,6 @@ async def public_get_user_entitlement_by_sku_async(
 
     Get user entitlement by sku.
 
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/bySku
 
@@ -4378,7 +4004,7 @@ async def public_get_user_entitlement_by_sku_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4423,13 +4049,6 @@ def public_get_user_entitlement_ownership_by_item_id(
 
     Get user entitlement ownership by itemId.
 
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/ownership/byItemId
 
@@ -4441,7 +4060,7 @@ def public_get_user_entitlement_ownership_by_item_id(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4482,13 +4101,6 @@ async def public_get_user_entitlement_ownership_by_item_id_async(
 
     Get user entitlement ownership by itemId.
 
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/ownership/byItemId
 
@@ -4500,7 +4112,7 @@ async def public_get_user_entitlement_ownership_by_item_id_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4540,13 +4152,6 @@ def public_get_user_entitlement_ownership_by_item_ids(
 
     Get user entitlement ownership by itemIds.
 
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/ownership/byItemIds
 
@@ -4558,7 +4163,7 @@ def public_get_user_entitlement_ownership_by_item_ids(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4593,13 +4198,6 @@ async def public_get_user_entitlement_ownership_by_item_ids_async(
 
     Get user entitlement ownership by itemIds.
 
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/ownership/byItemIds
 
@@ -4611,7 +4209,7 @@ async def public_get_user_entitlement_ownership_by_item_ids_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4651,13 +4249,6 @@ def public_get_user_entitlement_ownership_by_sku(
 
     Get user entitlement ownership by sku.
 
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/ownership/bySku
 
@@ -4669,7 +4260,7 @@ def public_get_user_entitlement_ownership_by_sku(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4710,13 +4301,6 @@ async def public_get_user_entitlement_ownership_by_sku_async(
 
     Get user entitlement ownership by sku.
 
-    Other detail info:
-
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
-
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/ownership/bySku
 
@@ -4728,7 +4312,7 @@ async def public_get_user_entitlement_ownership_by_sku_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4771,11 +4355,7 @@ def public_get_user_entitlements_by_ids(
 
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-      *  Returns : entitlement list
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
+      * Returns : entitlement list
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/byIds
@@ -4788,7 +4368,7 @@ def public_get_user_entitlements_by_ids(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4829,11 +4409,7 @@ async def public_get_user_entitlements_by_ids_async(
 
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-      *  Returns : entitlement list
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
+      * Returns : entitlement list
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/byIds
@@ -4846,7 +4422,7 @@ async def public_get_user_entitlements_by_ids_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4896,11 +4472,7 @@ def public_query_user_entitlements(
 
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-      *  Returns : entitlement list
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
+      * Returns : entitlement list
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements
@@ -4913,7 +4485,7 @@ def public_query_user_entitlements(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4976,11 +4548,7 @@ async def public_query_user_entitlements_async(
 
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-      *  Returns : entitlement list
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
+      * Returns : entitlement list
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements
@@ -4993,7 +4561,7 @@ async def public_query_user_entitlements_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5052,11 +4620,7 @@ def public_query_user_entitlements_by_app_type(
 
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-      *  Returns : app entitlement pagination
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
+      * Returns : app entitlement pagination
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/byAppType
@@ -5069,7 +4633,7 @@ def public_query_user_entitlements_by_app_type(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5114,11 +4678,7 @@ async def public_query_user_entitlements_by_app_type_async(
 
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-      *  Returns : app entitlement pagination
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
+      * Returns : app entitlement pagination
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/byAppType
@@ -5131,7 +4691,7 @@ async def public_query_user_entitlements_by_app_type_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5174,11 +4734,7 @@ def public_sell_user_entitlement(
     """Sell user entitlement (publicSellUserEntitlement)
 
     Sell user entitlement. If the entitlement is consumable, useCount is 0, the status will be CONSUMED. If the entitlement is durable, the status will be SOLD. Other detail info:
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : entitlement
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : entitlement
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/sell
@@ -5191,7 +4747,7 @@ def public_sell_user_entitlement(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL EntitlementSoldRequest in body
 
@@ -5233,11 +4789,7 @@ async def public_sell_user_entitlement_async(
     """Sell user entitlement (publicSellUserEntitlement)
 
     Sell user entitlement. If the entitlement is consumable, useCount is 0, the status will be CONSUMED. If the entitlement is durable, the status will be SOLD. Other detail info:
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : entitlement
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : entitlement
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/sell
@@ -5250,7 +4802,7 @@ async def public_sell_user_entitlement_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL EntitlementSoldRequest in body
 
@@ -5294,11 +4846,7 @@ def public_split_user_entitlement(
     """Split user entitlement (publicSplitUserEntitlement)
 
     Split a specified use count of entitlement and create a new entitlement with splitting use count.Other detail info:
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : entitlement
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : entitlement
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/split
@@ -5311,7 +4859,7 @@ def public_split_user_entitlement(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL EntitlementSplitRequest in body
 
@@ -5353,11 +4901,7 @@ async def public_split_user_entitlement_async(
     """Split user entitlement (publicSplitUserEntitlement)
 
     Split a specified use count of entitlement and create a new entitlement with splitting use count.Other detail info:
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : entitlement
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : entitlement
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/split
@@ -5370,7 +4914,7 @@ async def public_split_user_entitlement_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL EntitlementSplitRequest in body
 
@@ -5414,11 +4958,7 @@ def public_transfer_user_entitlement(
     """Transfer user entitlement (publicTransferUserEntitlement)
 
     Transfer a specified use count from entitlement A to B..Other detail info:
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : entitlement
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : entitlement
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/transfer
@@ -5431,7 +4971,7 @@ def public_transfer_user_entitlement(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL EntitlementTransferRequest in body
 
@@ -5473,11 +5013,7 @@ async def public_transfer_user_entitlement_async(
     """Transfer user entitlement (publicTransferUserEntitlement)
 
     Transfer a specified use count from entitlement A to B..Other detail info:
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : entitlement
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : entitlement
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/transfer
@@ -5490,7 +5026,7 @@ async def public_transfer_user_entitlement_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL EntitlementTransferRequest in body
 
@@ -5542,11 +5078,7 @@ def public_user_entitlement_history(
 
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-      *  Returns : user entitlement history list
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
+      * Returns : user entitlement history list
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/history
@@ -5559,7 +5091,7 @@ def public_user_entitlement_history(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5614,11 +5146,7 @@ async def public_user_entitlement_history_async(
 
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-      *  Returns : user entitlement history list
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
+      * Returns : user entitlement history list
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/entitlements/history
@@ -5631,7 +5159,7 @@ async def public_user_entitlement_history_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5691,11 +5219,7 @@ def query_entitlements(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
-      *  Returns : entitlement list
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT [READ]
+      * Returns : entitlement list
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/entitlements
@@ -5708,7 +5232,7 @@ def query_entitlements(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5775,11 +5299,7 @@ async def query_entitlements_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
-      *  Returns : entitlement list
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT [READ]
+      * Returns : entitlement list
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/entitlements
@@ -5792,7 +5312,7 @@ async def query_entitlements_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5854,11 +5374,7 @@ def query_entitlements_1(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
-      *  Returns : entitlement list
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT [READ]
+      * Returns : entitlement list
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/entitlements/byItemIds
@@ -5871,7 +5387,7 @@ def query_entitlements_1(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5916,11 +5432,7 @@ async def query_entitlements_1_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
-      *  Returns : entitlement list
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT [READ]
+      * Returns : entitlement list
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/entitlements/byItemIds
@@ -5933,7 +5445,7 @@ async def query_entitlements_1_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5990,11 +5502,7 @@ def query_user_entitlements(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-      *  Returns : entitlement list
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
+      * Returns : entitlement list
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements
@@ -6007,7 +5515,7 @@ def query_user_entitlements(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -6086,11 +5594,7 @@ async def query_user_entitlements_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-      *  Returns : entitlement list
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [READ]
+      * Returns : entitlement list
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements
@@ -6103,7 +5607,7 @@ async def query_user_entitlements_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -6175,11 +5679,7 @@ def query_user_entitlements_by_app_type(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2
-      *  Returns : app entitlement pagination
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT []
+      * Returns : app entitlement pagination
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byAppType
@@ -6192,7 +5692,7 @@ def query_user_entitlements_by_app_type(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -6241,11 +5741,7 @@ async def query_user_entitlements_by_app_type_async(
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2
-      *  Returns : app entitlement pagination
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT []
+      * Returns : app entitlement pagination
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byAppType
@@ -6258,7 +5754,7 @@ async def query_user_entitlements_by_app_type_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -6304,11 +5800,7 @@ def revoke_all_entitlements(
     Revoke all entitlements of a user (This API is for testing purpose only)
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : revoked entitlements count
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : revoked entitlements count
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/revoke
@@ -6321,7 +5813,7 @@ def revoke_all_entitlements(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -6353,11 +5845,7 @@ async def revoke_all_entitlements_async(
     Revoke all entitlements of a user (This API is for testing purpose only)
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : revoked entitlements count
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : revoked entitlements count
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/revoke
@@ -6370,7 +5858,7 @@ async def revoke_all_entitlements_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -6404,11 +5892,7 @@ def revoke_entitlements(
     Revoke entitlements, skipped revocation will be treated as fail.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : bulk revoke entitlements result
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT [UPDATE]
+      * Returns : bulk revoke entitlements result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/entitlements/revoke
@@ -6421,7 +5905,7 @@ def revoke_entitlements(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL List[str] in body
 
@@ -6455,11 +5939,7 @@ async def revoke_entitlements_async(
     Revoke entitlements, skipped revocation will be treated as fail.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : bulk revoke entitlements result
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT [UPDATE]
+      * Returns : bulk revoke entitlements result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/entitlements/revoke
@@ -6472,7 +5952,7 @@ async def revoke_entitlements_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL List[str] in body
 
@@ -6511,11 +5991,7 @@ def revoke_use_count(
     Revoke specified use count of user entitlement. please use /{entitlementId}/revoke/byUseCount endpoint instead of this endpoint
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : revoke entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : revoke entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/revokeByUseCount
@@ -6528,7 +6004,7 @@ def revoke_use_count(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL RevokeUseCountRequest in body
 
@@ -6571,11 +6047,7 @@ async def revoke_use_count_async(
     Revoke specified use count of user entitlement. please use /{entitlementId}/revoke/byUseCount endpoint instead of this endpoint
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : revoke entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : revoke entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/revokeByUseCount
@@ -6588,7 +6060,7 @@ async def revoke_use_count_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL RevokeUseCountRequest in body
 
@@ -6631,11 +6103,7 @@ def revoke_user_entitlement(
     Revoke user entitlement.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : revoke entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : revoke entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/revoke
@@ -6648,7 +6116,7 @@ def revoke_user_entitlement(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -6686,11 +6154,7 @@ async def revoke_user_entitlement_async(
     Revoke user entitlement.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : revoke entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : revoke entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/revoke
@@ -6703,7 +6167,7 @@ async def revoke_user_entitlement_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -6744,11 +6208,7 @@ def revoke_user_entitlement_by_use_count(
     Revoke specified count of user entitlement.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : The revoked entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : The revoked entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/revoke/byUseCount
@@ -6761,7 +6221,7 @@ def revoke_user_entitlement_by_use_count(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL RevokeUseCountRequest in body
 
@@ -6803,11 +6263,7 @@ async def revoke_user_entitlement_by_use_count_async(
     Revoke specified count of user entitlement.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : The revoked entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : The revoked entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/revoke/byUseCount
@@ -6820,7 +6276,7 @@ async def revoke_user_entitlement_by_use_count_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL RevokeUseCountRequest in body
 
@@ -6863,11 +6319,7 @@ def revoke_user_entitlements(
     Revoke user's entitlements by ids.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : revoke entitlements count
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : revoke entitlements count
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/revoke/byIds
@@ -6880,7 +6332,7 @@ def revoke_user_entitlements(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -6916,11 +6368,7 @@ async def revoke_user_entitlements_async(
     Revoke user's entitlements by ids.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : revoke entitlements count
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : revoke entitlements count
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/revoke/byIds
@@ -6933,7 +6381,7 @@ async def revoke_user_entitlements_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -6970,8 +6418,7 @@ def sell_user_entitlement(
     """Sell user entitlement (sellUserEntitlement)
 
     Sell user entitlement. If the entitlement is consumable, useCount is 0, the status will be CONSUMED. If the entitlement is durable, the status will be SOLD. Other detail info:
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT, action=4 (UPDATE)
-      *  Returns : entitlement
+      * Returns : entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/sell
@@ -7026,8 +6473,7 @@ async def sell_user_entitlement_async(
     """Sell user entitlement (sellUserEntitlement)
 
     Sell user entitlement. If the entitlement is consumable, useCount is 0, the status will be CONSUMED. If the entitlement is durable, the status will be SOLD. Other detail info:
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT, action=4 (UPDATE)
-      *  Returns : entitlement
+      * Returns : entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/sell
@@ -7085,11 +6531,7 @@ def update_platform_entitlement_config(
     Update platform entitlement config.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT:CONFIG", action=4 (UPDATE)
-      *  Returns : platform entitlement config
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT:CONFIG [UPDATE]
+      * Returns : platform entitlement config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/platforms/{platform}/entitlement/config
@@ -7102,7 +6544,7 @@ def update_platform_entitlement_config(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL EntitlementPlatformConfigUpdate in body
 
@@ -7140,11 +6582,7 @@ async def update_platform_entitlement_config_async(
     Update platform entitlement config.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT:CONFIG", action=4 (UPDATE)
-      *  Returns : platform entitlement config
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:ENTITLEMENT:CONFIG [UPDATE]
+      * Returns : platform entitlement config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/platforms/{platform}/entitlement/config
@@ -7157,7 +6595,7 @@ async def update_platform_entitlement_config_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL EntitlementPlatformConfigUpdate in body
 
@@ -7198,11 +6636,7 @@ def update_user_entitlement(
     Update user entitlement. If update CONSUMABLE entitlement useCount to 0, the status will be CONSUMED.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : updated entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : updated entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}
@@ -7215,7 +6649,7 @@ def update_user_entitlement(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL EntitlementUpdate in body
 
@@ -7261,11 +6695,7 @@ async def update_user_entitlement_async(
     Update user entitlement. If update CONSUMABLE entitlement useCount to 0, the status will be CONSUMED.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-      *  Returns : updated entitlement
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT [UPDATE]
+      * Returns : updated entitlement
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}
@@ -7278,7 +6708,7 @@ async def update_user_entitlement_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL EntitlementUpdate in body
 

@@ -1816,7 +1816,34 @@ def admin_delete_user_linking_history_by_platform_idv3(
 ):
     """Admin remove user's platform linking history. (AdminDeleteUserLinkingHistoryByPlatformIDV3)
 
-    This API is for admin to delete user's linking history with target platform id
+    This API is for admin to delete user's linking history with target platform id.
+    Supported platform:
+    - Steam group(steamnetwork)
+    - steam
+    - steamopenid
+    - PSN group(psn)
+    - ps4web
+    - ps4
+    - ps5
+    - XBOX group(xbox)
+    - live
+    - xblweb
+    - Oculus group(oculusgroup)
+    - oculus
+    - oculusweb
+    - facebook
+    - google
+    - twitch
+    - discord
+    - apple
+    - epicgames
+    - nintendo
+    - awscognito
+    - netflix
+    - snapchat
+    - oidc platform id
+
+    Note: you can use either platform ID or platform group as platformId query parameter
 
     Properties:
         url: /iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId}/link/histories
@@ -1872,7 +1899,34 @@ async def admin_delete_user_linking_history_by_platform_idv3_async(
 ):
     """Admin remove user's platform linking history. (AdminDeleteUserLinkingHistoryByPlatformIDV3)
 
-    This API is for admin to delete user's linking history with target platform id
+    This API is for admin to delete user's linking history with target platform id.
+    Supported platform:
+    - Steam group(steamnetwork)
+    - steam
+    - steamopenid
+    - PSN group(psn)
+    - ps4web
+    - ps4
+    - ps5
+    - XBOX group(xbox)
+    - live
+    - xblweb
+    - Oculus group(oculusgroup)
+    - oculus
+    - oculusweb
+    - facebook
+    - google
+    - twitch
+    - discord
+    - apple
+    - epicgames
+    - nintendo
+    - awscognito
+    - netflix
+    - snapchat
+    - oidc platform id
+
+    Note: you can use either platform ID or platform group as platformId query parameter
 
     Properties:
         url: /iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId}/link/histories
@@ -3853,9 +3907,41 @@ def admin_get_user_by_platform_user_idv3(
     """Admin Get User By Platform User ID (AdminGetUserByPlatformUserIDV3)
 
     Get User By Platform User ID
+    This endpoint return user information by given platform ID and platform user ID.
+    Several platforms are grouped under account groups, you can use either platform ID or platform group as platformId path parameter.
+    example: for steam network platform, you can use steamnetwork / steam / steamopenid as platformId path parameter.
 
-    This endpoint return user information by given platform ID and platform user ID
+    Supported platform:
+    - Steam group(steamnetwork)
+    - steam
+    - steamopenid
+    - PSN group(psn)
+    - ps4web
+    - ps4
+    - ps5
+    - XBOX group(xbox)
+    - live
+    - xblweb
+    - Oculus group(oculusgroup)
+    - oculus
+    - oculusweb
+    - facebook
+    - google
+    - twitch
+    - discord
+    - android
+    - ios
+    - apple
+    - device
+    - justice
+    - epicgames
+    - nintendo
+    - awscognito
+    - netflix
+    - snapchat
+    - oidc platform id
 
+    Note:
     **nintendo platform user ID**: NSA ID need to be appended with Environment ID using colon as separator. e.g kmzwa8awaa:dd1
 
     Properties:
@@ -3911,9 +3997,41 @@ async def admin_get_user_by_platform_user_idv3_async(
     """Admin Get User By Platform User ID (AdminGetUserByPlatformUserIDV3)
 
     Get User By Platform User ID
+    This endpoint return user information by given platform ID and platform user ID.
+    Several platforms are grouped under account groups, you can use either platform ID or platform group as platformId path parameter.
+    example: for steam network platform, you can use steamnetwork / steam / steamopenid as platformId path parameter.
 
-    This endpoint return user information by given platform ID and platform user ID
+    Supported platform:
+    - Steam group(steamnetwork)
+    - steam
+    - steamopenid
+    - PSN group(psn)
+    - ps4web
+    - ps4
+    - ps5
+    - XBOX group(xbox)
+    - live
+    - xblweb
+    - Oculus group(oculusgroup)
+    - oculus
+    - oculusweb
+    - facebook
+    - google
+    - twitch
+    - discord
+    - android
+    - ios
+    - apple
+    - device
+    - justice
+    - epicgames
+    - nintendo
+    - awscognito
+    - netflix
+    - snapchat
+    - oidc platform id
 
+    Note:
     **nintendo platform user ID**: NSA ID need to be appended with Environment ID using colon as separator. e.g kmzwa8awaa:dd1
 
     Properties:
@@ -4410,8 +4528,8 @@ def admin_get_user_mapping(
 
     This endpoint requires the client access token as the bearer token
     This endpoint will support publisher access to game and game access to publisher
-    If targetNamespace filled with publisher namespace then this endpoint will return its game user id and game namespace
-    If targetNamespace filled with game namespace then this endpoint will return its publisher user id and publisher namespace. Will create game user id if not exists.
+    If targetNamespace filled with publisher namespace then this endpoint will return its publisher user id and publisher namespace.
+    If targetNamespace filled with game namespace then this endpoint will return its game user id and game namespace.
 
     Properties:
         url: /iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/justice/{targetNamespace}
@@ -4467,8 +4585,8 @@ async def admin_get_user_mapping_async(
 
     This endpoint requires the client access token as the bearer token
     This endpoint will support publisher access to game and game access to publisher
-    If targetNamespace filled with publisher namespace then this endpoint will return its game user id and game namespace
-    If targetNamespace filled with game namespace then this endpoint will return its publisher user id and publisher namespace. Will create game user id if not exists.
+    If targetNamespace filled with publisher namespace then this endpoint will return its publisher user id and publisher namespace.
+    If targetNamespace filled with game namespace then this endpoint will return its game user id and game namespace.
 
     Properties:
         url: /iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/justice/{targetNamespace}
@@ -4677,7 +4795,31 @@ def admin_get_user_single_platform_account(
     """Admin get user single platform account metadata (AdminGetUserSinglePlatformAccount)
 
     This endpoint gets user single platform account metadata.
-    Supported platforms are same with the supported login platforms.
+    Supported Platform:
+    - Steam group(steamnetwork):
+    - steam
+    - steamopenid
+    - PSN group(psn)
+    - ps4web
+    - ps4
+    - ps5
+    - XBOX group(xbox)
+    - live
+    - xblweb
+    - Oculus group(oculusgroup)
+    - oculus
+    - oculusweb
+    - epicgames
+    - nintendo
+    - aws cognito
+    - facebook
+    - google
+    - discord
+    - twitch
+    - snapchat
+    - amazon
+
+    Note: you can use either platform ID or platform group as platformId query parameter
 
     Properties:
         url: /iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId}/metadata
@@ -4734,7 +4876,31 @@ async def admin_get_user_single_platform_account_async(
     """Admin get user single platform account metadata (AdminGetUserSinglePlatformAccount)
 
     This endpoint gets user single platform account metadata.
-    Supported platforms are same with the supported login platforms.
+    Supported Platform:
+    - Steam group(steamnetwork):
+    - steam
+    - steamopenid
+    - PSN group(psn)
+    - ps4web
+    - ps4
+    - ps5
+    - XBOX group(xbox)
+    - live
+    - xblweb
+    - Oculus group(oculusgroup)
+    - oculus
+    - oculusweb
+    - epicgames
+    - nintendo
+    - aws cognito
+    - facebook
+    - google
+    - discord
+    - twitch
+    - snapchat
+    - amazon
+
+    Note: you can use either platform ID or platform group as platformId query parameter
 
     Properties:
         url: /iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId}/metadata
@@ -5157,6 +5323,33 @@ def admin_list_user_id_by_platform_user_i_ds_v3(
     This endpoint intended to list game user ID from the given namespace
     This endpoint return list of user ID by given platform ID and list of platform user ID
 
+    Supported platform:
+    - steam
+    - steamopenid
+    - ps4web
+    - ps4
+    - ps5
+    - live
+    - xblweb
+    - oculus
+    - oculusweb
+    - facebook
+    - google
+    - twitch
+    - discord
+    - android
+    - ios
+    - apple
+    - device
+    - justice
+    - epicgames
+    - nintendo
+    - awscognito
+    - netflix
+    - snapchat
+    - oidc platform id
+
+    Note:
     **nintendo platform user ID**: NSA ID need to be appended with Environment ID using colon as separator. e.g kmzwa8awaa:dd1
 
     Properties:
@@ -5219,6 +5412,33 @@ async def admin_list_user_id_by_platform_user_i_ds_v3_async(
     This endpoint intended to list game user ID from the given namespace
     This endpoint return list of user ID by given platform ID and list of platform user ID
 
+    Supported platform:
+    - steam
+    - steamopenid
+    - ps4web
+    - ps4
+    - ps5
+    - live
+    - xblweb
+    - oculus
+    - oculusweb
+    - facebook
+    - google
+    - twitch
+    - discord
+    - android
+    - ios
+    - apple
+    - device
+    - justice
+    - epicgames
+    - nintendo
+    - awscognito
+    - netflix
+    - snapchat
+    - oidc platform id
+
+    Note:
     **nintendo platform user ID**: NSA ID need to be appended with Environment ID using colon as separator. e.g kmzwa8awaa:dd1
 
     Properties:
@@ -5650,17 +5870,45 @@ def admin_platform_unlink_all_v3(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Unlink user's account from specific platform (AdminPlatformUnlinkAllV3)
+    """Admin unlink user's account from specific platform for all namespaces (AdminPlatformUnlinkAllV3)
 
     Unlink user's account from third platform in all namespaces.
+    Several platforms are grouped under account groups, you can use either platform ID or platform group as platformId path parameter.
+    example: to unlink steam third party account, you can use steamnetwork / steam / steamopenid as platformId path parameter
 
-    This API support to handling platform group use case:
-    i.e.
-    1. Steam group: steam, steamopenid
-    2. PSN group: ps4, ps5, psnweb
-    3. XBOX group: live, xblweb
+    Supported platform:
+    - Steam group(steamnetwork)
+    - steam
+    - steamopenid
+    - PSN group(psn)
+    - ps4web
+    - ps4
+    - ps5
+    - XBOX group(xbox)
+    - live
+    - xblweb
+    - Oculus group(oculusgroup)
+    - oculus
+    - oculusweb
+    - facebook
+    - google
+    - twitch
+    - discord
+    - android
+    - ios
+    - apple
+    - device
+    - justice
+    - epicgames
+    - nintendo
+    - awscognito
+    - netflix
+    - snapchat
+    - oidc platform id
 
-    Example: if user unlink from ps4, the API logic will unlink ps5 and psnweb as well.
+    Note:
+    if user unlink platform account that have group, the API logic will unlink all of platform account under that group as well.
+    example: if user unlink from ps4, the API logic will unlink ps5 and ps4web as well
 
     Properties:
         url: /iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId}/all
@@ -5712,17 +5960,45 @@ async def admin_platform_unlink_all_v3_async(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Unlink user's account from specific platform (AdminPlatformUnlinkAllV3)
+    """Admin unlink user's account from specific platform for all namespaces (AdminPlatformUnlinkAllV3)
 
     Unlink user's account from third platform in all namespaces.
+    Several platforms are grouped under account groups, you can use either platform ID or platform group as platformId path parameter.
+    example: to unlink steam third party account, you can use steamnetwork / steam / steamopenid as platformId path parameter
 
-    This API support to handling platform group use case:
-    i.e.
-    1. Steam group: steam, steamopenid
-    2. PSN group: ps4, ps5, psnweb
-    3. XBOX group: live, xblweb
+    Supported platform:
+    - Steam group(steamnetwork)
+    - steam
+    - steamopenid
+    - PSN group(psn)
+    - ps4web
+    - ps4
+    - ps5
+    - XBOX group(xbox)
+    - live
+    - xblweb
+    - Oculus group(oculusgroup)
+    - oculus
+    - oculusweb
+    - facebook
+    - google
+    - twitch
+    - discord
+    - android
+    - ios
+    - apple
+    - device
+    - justice
+    - epicgames
+    - nintendo
+    - awscognito
+    - netflix
+    - snapchat
+    - oidc platform id
 
-    Example: if user unlink from ps4, the API logic will unlink ps5 and psnweb as well.
+    Note:
+    if user unlink platform account that have group, the API logic will unlink all of platform account under that group as well.
+    example: if user unlink from ps4, the API logic will unlink ps5 and ps4web as well
 
     Properties:
         url: /iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId}/all
@@ -5777,7 +6053,7 @@ def admin_platform_unlink_v3(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Unlink user's account from specific platform (AdminPlatformUnlinkV3)
+    """Admin unlink user's account from specific platform (AdminPlatformUnlinkV3)
 
     ## Supported platforms:
     - **steam**
@@ -5858,7 +6134,7 @@ async def admin_platform_unlink_v3_async(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Unlink user's account from specific platform (AdminPlatformUnlinkV3)
+    """Admin unlink user's account from specific platform (AdminPlatformUnlinkV3)
 
     ## Supported platforms:
     - **steam**
@@ -8236,7 +8512,7 @@ def admin_update_user_v3(
 
         404: Not Found - RestErrorResponse (10139: platform account not found | 20008: user not found)
 
-        409: Conflict - RestErrorResponse (10133: email already used)
+        409: Conflict - RestErrorResponse (10133: email already used | 10222: unique display name already exists)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -8304,7 +8580,7 @@ async def admin_update_user_v3_async(
 
         404: Not Found - RestErrorResponse (10139: platform account not found | 20008: user not found)
 
-        409: Conflict - RestErrorResponse (10133: email already used)
+        409: Conflict - RestErrorResponse (10133: email already used | 10222: unique display name already exists)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -8375,7 +8651,7 @@ def admin_upgrade_headless_account_v3(
 
         404: Not Found - RestErrorResponse (20008: user not found | 10139: platform account not found | 10154: country not found)
 
-        409: Conflict - RestErrorResponse (10153: user exist | 10170: account is already a full account)
+        409: Conflict - RestErrorResponse (10153: user exist | 10170: account is already a full account | 10222: unique display name already exists)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -8444,7 +8720,7 @@ async def admin_upgrade_headless_account_v3_async(
 
         404: Not Found - RestErrorResponse (20008: user not found | 10139: platform account not found | 10154: country not found)
 
-        409: Conflict - RestErrorResponse (10153: user exist | 10170: account is already a full account)
+        409: Conflict - RestErrorResponse (10153: user exist | 10170: account is already a full account | 10222: unique display name already exists)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -9117,6 +9393,8 @@ def create_user_from_invitation_v3(
 
         404: Not Found - RestErrorResponse (10180: admin invitation not found or expired | 10154: country not found)
 
+        409: Conflict - RestErrorResponse (10222: unique display name already exists)
+
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
     if namespace is None:
@@ -9179,6 +9457,8 @@ async def create_user_from_invitation_v3_async(
         403: Forbidden - RestErrorResponse (20003: forbidden access | 10213: country is blocked)
 
         404: Not Found - RestErrorResponse (10180: admin invitation not found or expired | 10154: country not found)
+
+        409: Conflict - RestErrorResponse (10222: unique display name already exists)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -11773,8 +12053,8 @@ def get_user_mapping(
 
     This endpoint requires the client access token as the bearer token
     This endpoint will support publisher access to game and game access to publisher
-    If targetNamespace filled with publisher namespace then this endpoint will return its game user id and game namespace
-    If targetNamespace filled with game namespace then this endpoint will return its publisher user id and publisher namespace. Will create game user id if not exists.
+    If targetNamespace filled with publisher namespace then this endpoint will return its publisher user id and publisher namespace.
+    If targetNamespace filled with game namespace then this endpoint will return its game user id and game namespace. **Will create game user id if not exists.**
 
     Properties:
         url: /iam/namespaces/{namespace}/users/{userId}/platforms/justice/{targetNamespace}
@@ -11835,8 +12115,8 @@ async def get_user_mapping_async(
 
     This endpoint requires the client access token as the bearer token
     This endpoint will support publisher access to game and game access to publisher
-    If targetNamespace filled with publisher namespace then this endpoint will return its game user id and game namespace
-    If targetNamespace filled with game namespace then this endpoint will return its publisher user id and publisher namespace. Will create game user id if not exists.
+    If targetNamespace filled with publisher namespace then this endpoint will return its publisher user id and publisher namespace.
+    If targetNamespace filled with game namespace then this endpoint will return its game user id and game namespace. **Will create game user id if not exists.**
 
     Properties:
         url: /iam/namespaces/{namespace}/users/{userId}/platforms/justice/{targetNamespace}
@@ -13307,7 +13587,9 @@ def public_create_user_v3(
 
         404: Not Found - RestErrorResponse (10154: country not found)
 
-        409: Conflict - RestErrorResponse (10133: email already used)
+        409: Conflict - RestErrorResponse (10133: email already used | 10222: unique display name already exists)
+
+        429: Too Many Requests - RestErrorResponse (20007: too many requests)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -13367,7 +13649,9 @@ async def public_create_user_v3_async(
 
         404: Not Found - RestErrorResponse (10154: country not found)
 
-        409: Conflict - RestErrorResponse (10133: email already used)
+        409: Conflict - RestErrorResponse (10133: email already used | 10222: unique display name already exists)
+
+        429: Too Many Requests - RestErrorResponse (20007: too many requests)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -14443,14 +14727,18 @@ def public_get_my_user_v3(
     __Supported 3rd platforms:__
 
     * __PSN(ps4web, ps4, ps5)__
+    * account id
     * display name
     * avatar
     * __Xbox(live, xblweb)__
+    * xuid or pxuid
     * display name
     * __Steam(steam, steamopenid)__
+    * steam id
     * display name
     * avatar
     * __EpicGames(epicgames)__
+    * epic account id
     * display name
 
     action code : 10147
@@ -14496,14 +14784,18 @@ async def public_get_my_user_v3_async(
     __Supported 3rd platforms:__
 
     * __PSN(ps4web, ps4, ps5)__
+    * account id
     * display name
     * avatar
     * __Xbox(live, xblweb)__
+    * xuid or pxuid
     * display name
     * __Steam(steam, steamopenid)__
+    * steam id
     * display name
     * avatar
     * __EpicGames(epicgames)__
+    * epic account id
     * display name
 
     action code : 10147
@@ -14906,8 +15198,42 @@ def public_get_user_by_platform_user_idv3(
 ):
     """Get User By Platform User ID (PublicGetUserByPlatformUserIDV3)
 
-    Get User By Platform User ID
-    This endpoint return user information by given platform ID and platform user ID
+    Get User By Platform User ID.
+    This endpoint return user information by given platform ID and platform user ID.
+    Several platforms are grouped under account groups, you can use either platform ID or platform group as platformId path parameter.
+    example: for steam network platform, you can use steamnetwork / steam / steamopenid as platformId path parameter.
+
+    Supported platform:
+    - Steam group(steamnetwork)
+    - steam
+    - steamopenid
+    - PSN group(psn)
+    - ps4web
+    - ps4
+    - ps5
+    - XBOX group(xbox)
+    - live
+    - xblweb
+    - Oculus group(oculusgroup)
+    - oculus
+    - oculusweb
+    - facebook
+    - google
+    - twitch
+    - discord
+    - android
+    - ios
+    - apple
+    - device
+    - justice
+    - epicgames
+    - nintendo
+    - awscognito
+    - netflix
+    - snapchat
+    - oidc platform id
+
+    Note:
     **nintendo platform user ID**: NSA ID need to be appended with Environment ID using colon as separator. e.g kmzwa8awaa:dd1
 
     Properties:
@@ -14962,8 +15288,42 @@ async def public_get_user_by_platform_user_idv3_async(
 ):
     """Get User By Platform User ID (PublicGetUserByPlatformUserIDV3)
 
-    Get User By Platform User ID
-    This endpoint return user information by given platform ID and platform user ID
+    Get User By Platform User ID.
+    This endpoint return user information by given platform ID and platform user ID.
+    Several platforms are grouped under account groups, you can use either platform ID or platform group as platformId path parameter.
+    example: for steam network platform, you can use steamnetwork / steam / steamopenid as platformId path parameter.
+
+    Supported platform:
+    - Steam group(steamnetwork)
+    - steam
+    - steamopenid
+    - PSN group(psn)
+    - ps4web
+    - ps4
+    - ps5
+    - XBOX group(xbox)
+    - live
+    - xblweb
+    - Oculus group(oculusgroup)
+    - oculus
+    - oculusweb
+    - facebook
+    - google
+    - twitch
+    - discord
+    - android
+    - ios
+    - apple
+    - device
+    - justice
+    - epicgames
+    - nintendo
+    - awscognito
+    - netflix
+    - snapchat
+    - oidc platform id
+
+    Note:
     **nintendo platform user ID**: NSA ID need to be appended with Environment ID using colon as separator. e.g kmzwa8awaa:dd1
 
     Properties:
@@ -15607,14 +15967,18 @@ def public_get_users_platform_infos_v3(
     __Supported 3rd platforms:__
 
     * __PSN(ps4web, ps4, ps5)__
+    * account id
     * display name
     * avatar
     * __Xbox(live, xblweb)__
+    * xuid or pxuid
     * display name
     * __Steam(steam, steamopenid)__
+    * steam id
     * display name
     * avatar
     * __EpicGames(epicgames)__
+    * epic account id
     * display name
 
     Properties:
@@ -15671,14 +16035,18 @@ async def public_get_users_platform_infos_v3_async(
     __Supported 3rd platforms:__
 
     * __PSN(ps4web, ps4, ps5)__
+    * account id
     * display name
     * avatar
     * __Xbox(live, xblweb)__
+    * xuid or pxuid
     * display name
     * __Steam(steam, steamopenid)__
+    * steam id
     * display name
     * avatar
     * __EpicGames(epicgames)__
+    * epic account id
     * display name
 
     Properties:
@@ -16067,6 +16435,31 @@ def public_list_user_id_by_platform_user_i_ds_v3(
     This endpoint intended to list game user ID from the given namespace
     This endpoint return list of user ID by given platform ID and list of platform user ID
 
+    Supported platform:
+    - steam
+    - steamopenid
+    - ps4web
+    - ps4
+    - ps5
+    - live
+    - xblweb
+    - oculus
+    - oculusweb
+    - facebook
+    - google
+    - twitch
+    - discord
+    - apple
+    - device
+    - justice
+    - epicgames
+    - nintendo
+    - awscognito
+    - netflix
+    - snapchat
+    - oidc platform id
+
+    Note:
     **nintendo platform user ID**: NSA ID need to be appended with Environment ID using colon as separator. e.g kmzwa8awaa:dd1
 
     Properties:
@@ -16129,6 +16522,31 @@ async def public_list_user_id_by_platform_user_i_ds_v3_async(
     This endpoint intended to list game user ID from the given namespace
     This endpoint return list of user ID by given platform ID and list of platform user ID
 
+    Supported platform:
+    - steam
+    - steamopenid
+    - ps4web
+    - ps4
+    - ps5
+    - live
+    - xblweb
+    - oculus
+    - oculusweb
+    - facebook
+    - google
+    - twitch
+    - discord
+    - apple
+    - device
+    - justice
+    - epicgames
+    - nintendo
+    - awscognito
+    - netflix
+    - snapchat
+    - oidc platform id
+
+    Note:
     **nintendo platform user ID**: NSA ID need to be appended with Environment ID using colon as separator. e.g kmzwa8awaa:dd1
 
     Properties:
@@ -16224,7 +16642,7 @@ def public_partial_update_user_v3(
 
         403: Forbidden - RestErrorResponse (20003: forbidden access | 10213: country is blocked)
 
-        409: Conflict - RestErrorResponse (10133: email already used)
+        409: Conflict - RestErrorResponse (10133: email already used | 10222: unique display name already exists)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -16285,7 +16703,7 @@ async def public_partial_update_user_v3_async(
 
         403: Forbidden - RestErrorResponse (20003: forbidden access | 10213: country is blocked)
 
-        409: Conflict - RestErrorResponse (10133: email already used)
+        409: Conflict - RestErrorResponse (10133: email already used | 10222: unique display name already exists)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -16643,17 +17061,45 @@ def public_platform_unlink_all_v3(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Unlink user's account from specific platform (PublicPlatformUnlinkAllV3)
+    """Public unlink user's account from specific platform for all namespaces (PublicPlatformUnlinkAllV3)
 
     Unlink user's account from third platform in all namespaces.
+    Several platforms are grouped under account groups, you can use either platform ID or platform group as platformId path parameter.
+    example: to unlink steam third party account, you can use steamnetwork / steam / steamopenid as platformId path parameter.
 
-    This API support to handling platform group use case:
-    i.e.
-    1. Steam group: steam, steamopenid
-    2. PSN group: ps4, ps5, psnweb
-    3. XBOX group: live, xblweb
+    Supported platform:
+    - Steam group(steamnetwork)
+    - steam
+    - steamopenid
+    - PSN group(psn)
+    - ps4web
+    - ps4
+    - ps5
+    - XBOX group(xbox)
+    - live
+    - xblweb
+    - Oculus group(oculusgroup)
+    - oculus
+    - oculusweb
+    - facebook
+    - google
+    - twitch
+    - discord
+    - android
+    - ios
+    - apple
+    - device
+    - justice
+    - epicgames
+    - nintendo
+    - awscognito
+    - netflix
+    - snapchat
+    - oidc platform id
 
-    Example: if user unlink from ps4, the API logic will unlink ps5 and psnweb as well.
+    Note:
+    if user unlink platform account that have group, the API logic will unlink all of platform account under that group as well.
+    example: if user unlink from ps4, the API logic will unlink ps5 and ps4web as well
 
     Properties:
         url: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/all
@@ -16701,17 +17147,45 @@ async def public_platform_unlink_all_v3_async(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Unlink user's account from specific platform (PublicPlatformUnlinkAllV3)
+    """Public unlink user's account from specific platform for all namespaces (PublicPlatformUnlinkAllV3)
 
     Unlink user's account from third platform in all namespaces.
+    Several platforms are grouped under account groups, you can use either platform ID or platform group as platformId path parameter.
+    example: to unlink steam third party account, you can use steamnetwork / steam / steamopenid as platformId path parameter.
 
-    This API support to handling platform group use case:
-    i.e.
-    1. Steam group: steam, steamopenid
-    2. PSN group: ps4, ps5, psnweb
-    3. XBOX group: live, xblweb
+    Supported platform:
+    - Steam group(steamnetwork)
+    - steam
+    - steamopenid
+    - PSN group(psn)
+    - ps4web
+    - ps4
+    - ps5
+    - XBOX group(xbox)
+    - live
+    - xblweb
+    - Oculus group(oculusgroup)
+    - oculus
+    - oculusweb
+    - facebook
+    - google
+    - twitch
+    - discord
+    - android
+    - ios
+    - apple
+    - device
+    - justice
+    - epicgames
+    - nintendo
+    - awscognito
+    - netflix
+    - snapchat
+    - oidc platform id
 
-    Example: if user unlink from ps4, the API logic will unlink ps5 and psnweb as well.
+    Note:
+    if user unlink platform account that have group, the API logic will unlink all of platform account under that group as well.
+    example: if user unlink from ps4, the API logic will unlink ps5 and ps4web as well
 
     Properties:
         url: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/all
@@ -16762,7 +17236,7 @@ def public_platform_unlink_v3(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Unlink user's account from specific platform (PublicPlatformUnlinkV3)
+    """Public unlink user's account from specific platform (PublicPlatformUnlinkV3)
 
     ## Supported platforms:
     - **steam**
@@ -16836,7 +17310,7 @@ async def public_platform_unlink_v3_async(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Unlink user's account from specific platform (PublicPlatformUnlinkV3)
+    """Public unlink user's account from specific platform (PublicPlatformUnlinkV3)
 
     ## Supported platforms:
     - **steam**
@@ -16917,6 +17391,19 @@ def public_process_web_link_platform_v3(
 
     This endpoint is used to process third party account link, this endpoint will return the link status directly instead of redirecting to the original page.
     The param **state** comes from the response of `/users/me/platforms/{platformId}/web/link`
+    Supported platforms:
+    - ps4web
+    - xblweb
+    - steamopenid
+    - epicgames
+    - facebook
+    - twitch
+    - google
+    - apple
+    - snapchat
+    - discord
+    - amazon
+    - oculusweb
 
     Properties:
         url: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/process
@@ -16970,6 +17457,19 @@ async def public_process_web_link_platform_v3_async(
 
     This endpoint is used to process third party account link, this endpoint will return the link status directly instead of redirecting to the original page.
     The param **state** comes from the response of `/users/me/platforms/{platformId}/web/link`
+    Supported platforms:
+    - ps4web
+    - xblweb
+    - steamopenid
+    - epicgames
+    - facebook
+    - twitch
+    - google
+    - apple
+    - snapchat
+    - discord
+    - amazon
+    - oculusweb
 
     Properties:
         url: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/process
@@ -17134,23 +17634,35 @@ def public_search_user_v3(
 ):
     """Search User (PublicSearchUserV3)
 
-    This endpoint search all users on the specified namespace that match the query on these fields: display name, and username or by 3rd party display name.
-    The query length should greater than 2ï¼otherwise will not query the database. The default limit value is 100.
-    **Note: searching by 3rd party platform display name is exact query**
-    ---
-    When searching by 3rd party platform display name:
-    1. set __by__ to __thirdPartyPlatform__
-    2. set __platformId__ to the supported platform id
-    3. set __platformBy__ to __platformDisplayName__
-    ---
-    Supported platform id:
+    This endpoint search all users on the specified namespace that match the query on these fields: display name, unique display name, username or by 3rd party display name.
+    The query length should between 3-20, otherwise will not query the database.
+    The default limit value is 20.
 
+    ## Searching by 3rd party platform
+
+    **Note: searching by 3rd party platform display name will use exact query, not fuzzy query.**
+
+    Step when searching by 3rd party platform display name:
+    1. set __by__ to __thirdPartyPlatform__
+    2. set __platformId__ to the _supported platform id_
+    3. set __platformBy__ to __platformDisplayName__
+
+    ### Supported platform id:
+    * Steam group(steamnetwork)
     * steam
     * steamopenid
-    * facebook
-    * google
+    * PSN group(psn)
+    * ps4web
+    * ps4
+    * ps5
+    * XBOX group(xbox)
+    * live
+    * xblweb
+    * Oculus group(oculusgroup)
     * oculus
     * oculusweb
+    * facebook
+    * google
     * twitch
     * discord
     * android
@@ -17158,16 +17670,13 @@ def public_search_user_v3(
     * apple
     * device
     * epicgames
-    * ps4
-    * ps5
-    * ps4web
     * nintendo
     * awscognito
-    * live
-    * xblweb
     * netflix
     * snapchat
-    * oidc platform id
+    * _oidc platform id_
+
+    Note: you can use either platform ID or platform group as __platformId__ query parameter.
 
     Properties:
         url: /iam/v3/public/namespaces/{namespace}/users
@@ -17204,6 +17713,8 @@ def public_search_user_v3(
         401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
 
         404: Not Found - RestErrorResponse (20008: user not found)
+
+        429: Too Many Requests - RestErrorResponse (20007: too many requests)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -17237,23 +17748,35 @@ async def public_search_user_v3_async(
 ):
     """Search User (PublicSearchUserV3)
 
-    This endpoint search all users on the specified namespace that match the query on these fields: display name, and username or by 3rd party display name.
-    The query length should greater than 2ï¼otherwise will not query the database. The default limit value is 100.
-    **Note: searching by 3rd party platform display name is exact query**
-    ---
-    When searching by 3rd party platform display name:
-    1. set __by__ to __thirdPartyPlatform__
-    2. set __platformId__ to the supported platform id
-    3. set __platformBy__ to __platformDisplayName__
-    ---
-    Supported platform id:
+    This endpoint search all users on the specified namespace that match the query on these fields: display name, unique display name, username or by 3rd party display name.
+    The query length should between 3-20, otherwise will not query the database.
+    The default limit value is 20.
 
+    ## Searching by 3rd party platform
+
+    **Note: searching by 3rd party platform display name will use exact query, not fuzzy query.**
+
+    Step when searching by 3rd party platform display name:
+    1. set __by__ to __thirdPartyPlatform__
+    2. set __platformId__ to the _supported platform id_
+    3. set __platformBy__ to __platformDisplayName__
+
+    ### Supported platform id:
+    * Steam group(steamnetwork)
     * steam
     * steamopenid
-    * facebook
-    * google
+    * PSN group(psn)
+    * ps4web
+    * ps4
+    * ps5
+    * XBOX group(xbox)
+    * live
+    * xblweb
+    * Oculus group(oculusgroup)
     * oculus
     * oculusweb
+    * facebook
+    * google
     * twitch
     * discord
     * android
@@ -17261,16 +17784,13 @@ async def public_search_user_v3_async(
     * apple
     * device
     * epicgames
-    * ps4
-    * ps5
-    * ps4web
     * nintendo
     * awscognito
-    * live
-    * xblweb
     * netflix
     * snapchat
-    * oidc platform id
+    * _oidc platform id_
+
+    Note: you can use either platform ID or platform group as __platformId__ query parameter.
 
     Properties:
         url: /iam/v3/public/namespaces/{namespace}/users
@@ -17307,6 +17827,8 @@ async def public_search_user_v3_async(
         401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
 
         404: Not Found - RestErrorResponse (20008: user not found)
+
+        429: Too Many Requests - RestErrorResponse (20007: too many requests)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -17365,6 +17887,8 @@ def public_send_registration_code(
         400: Bad Request - RestErrorResponse (20002: validation error | 20019: unable to parse request body)
 
         409: Conflict - RestErrorResponse (10133: email already used)
+
+        429: Too Many Requests - RestErrorResponse (20007: too many requests)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -17414,6 +17938,8 @@ async def public_send_registration_code_async(
         400: Bad Request - RestErrorResponse (20002: validation error | 20019: unable to parse request body)
 
         409: Conflict - RestErrorResponse (10133: email already used)
+
+        429: Too Many Requests - RestErrorResponse (20007: too many requests)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -17799,6 +18325,8 @@ def public_update_password_v3(
 
         401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
 
+        429: Too Many Requests - RestErrorResponse (20007: too many requests)
+
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
     if namespace is None:
@@ -17846,6 +18374,8 @@ async def public_update_password_v3_async(
         400: Bad Request - RestErrorResponse (20019: unable to parse request body | 20002: validation error | 10142: new password cannot be same with original | 10143: password not match)
 
         401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
+
+        429: Too Many Requests - RestErrorResponse (20007: too many requests)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -18048,7 +18578,7 @@ def public_upgrade_headless_account_v3(
 
         404: Not Found - RestErrorResponse (10139: platform account not found | 10154: country not found)
 
-        409: Conflict - RestErrorResponse (10153: user exist | 10170: account is already a full account)
+        409: Conflict - RestErrorResponse (10153: user exist | 10170: account is already a full account | 10222: unique display name already exists)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -18113,7 +18643,7 @@ async def public_upgrade_headless_account_v3_async(
 
         404: Not Found - RestErrorResponse (10139: platform account not found | 10154: country not found)
 
-        409: Conflict - RestErrorResponse (10153: user exist | 10170: account is already a full account)
+        409: Conflict - RestErrorResponse (10153: user exist | 10170: account is already a full account | 10222: unique display name already exists)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -18648,6 +19178,19 @@ def public_web_link_platform(
     """Create Public Web Linking (PublicWebLinkPlatform)
 
     This endpoint is used to generate third party login page which will redirected to establish endpoint.
+    Supported platforms:
+    - ps4web
+    - xblweb
+    - steamopenid
+    - epicgames
+    - facebook
+    - twitch
+    - google
+    - apple
+    - snapchat
+    - discord
+    - amazon
+    - oculusweb
 
     Properties:
         url: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link
@@ -18704,6 +19247,19 @@ async def public_web_link_platform_async(
     """Create Public Web Linking (PublicWebLinkPlatform)
 
     This endpoint is used to generate third party login page which will redirected to establish endpoint.
+    Supported platforms:
+    - ps4web
+    - xblweb
+    - steamopenid
+    - epicgames
+    - facebook
+    - twitch
+    - google
+    - apple
+    - snapchat
+    - discord
+    - amazon
+    - oculusweb
 
     Properties:
         url: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link
@@ -18762,6 +19318,19 @@ def public_web_link_platform_establish(
     """Establish Link Progress  (PublicWebLinkPlatformEstablish)
 
     This endpoint is used by third party to redirect the code for the purpose of linking the account third party to IAM account.
+    Supported platforms:
+    - ps4web
+    - xblweb
+    - steamopenid
+    - epicgames
+    - facebook
+    - twitch
+    - google
+    - apple
+    - snapchat
+    - discord
+    - amazon
+    - oculusweb
 
     Properties:
         url: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/establish
@@ -18814,6 +19383,19 @@ async def public_web_link_platform_establish_async(
     """Establish Link Progress  (PublicWebLinkPlatformEstablish)
 
     This endpoint is used by third party to redirect the code for the purpose of linking the account third party to IAM account.
+    Supported platforms:
+    - ps4web
+    - xblweb
+    - steamopenid
+    - epicgames
+    - facebook
+    - twitch
+    - google
+    - apple
+    - snapchat
+    - discord
+    - amazon
+    - oculusweb
 
     Properties:
         url: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/establish
@@ -20042,7 +20624,7 @@ def update_user_v3(
 
         403: Forbidden - RestErrorResponse (10213: country is blocked)
 
-        409: Conflict - RestErrorResponse (10133: email already used)
+        409: Conflict - RestErrorResponse (10133: email already used | 10222: unique display name already exists)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -20107,7 +20689,7 @@ async def update_user_v3_async(
 
         403: Forbidden - RestErrorResponse (10213: country is blocked)
 
-        409: Conflict - RestErrorResponse (10133: email already used)
+        409: Conflict - RestErrorResponse (10133: email already used | 10222: unique display name already exists)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """

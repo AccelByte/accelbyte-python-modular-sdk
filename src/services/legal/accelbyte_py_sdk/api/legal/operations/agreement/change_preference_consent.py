@@ -36,12 +36,7 @@ from ...models import ErrorEntity
 class ChangePreferenceConsent(Operation):
     """Change Preference Consent (changePreferenceConsent)
 
-    This API will Update Preference Consent. Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:LEGAL", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:LEGAL [UPDATE]
+    This API will Update Preference Consent
 
     Properties:
         url: /agreement/admin/agreements/localized-policy-versions/preferences/namespaces/{namespace}/userId/{userId}
@@ -54,7 +49,7 @@ class ChangePreferenceConsent(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL List[AcceptAgreementRequest] in body
 
@@ -71,11 +66,15 @@ class ChangePreferenceConsent(Operation):
     # region fields
 
     _url: str = "/agreement/admin/agreements/localized-policy-versions/preferences/namespaces/{namespace}/userId/{userId}"
+    _path: str = "/agreement/admin/agreements/localized-policy-versions/preferences/namespaces/{namespace}/userId/{userId}"
+    _base_path: str = ""
     _method: str = "PATCH"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "legal"
 
     body: List[AcceptAgreementRequest]  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -88,6 +87,14 @@ class ChangePreferenceConsent(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

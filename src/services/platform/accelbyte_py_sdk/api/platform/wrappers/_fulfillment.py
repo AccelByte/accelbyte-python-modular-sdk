@@ -74,11 +74,7 @@ def fulfill_item(
     Fulfill item.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT", action=1 (CREATED)
-      *  Returns : fulfillment result
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT []
+      * Returns : fulfillment result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/fulfillment
@@ -91,7 +87,7 @@ def fulfill_item(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL FulfillmentRequest in body
 
@@ -133,11 +129,7 @@ async def fulfill_item_async(
     Fulfill item.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT", action=1 (CREATED)
-      *  Returns : fulfillment result
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT []
+      * Returns : fulfillment result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/fulfillment
@@ -150,7 +142,7 @@ async def fulfill_item_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL FulfillmentRequest in body
 
@@ -194,11 +186,7 @@ def fulfill_rewards(
     [SERVICE COMMUNICATION ONLY] Fulfill rewards.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT", action=1 (CREATED)
-      *  Returns : fulfillment result
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT []
+      * Returns : fulfillment result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/fulfillment/rewards
@@ -211,7 +199,7 @@ def fulfill_rewards(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL RewardsRequest in body
 
@@ -253,11 +241,7 @@ async def fulfill_rewards_async(
     [SERVICE COMMUNICATION ONLY] Fulfill rewards.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT", action=1 (CREATED)
-      *  Returns : fulfillment result
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT []
+      * Returns : fulfillment result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/fulfillment/rewards
@@ -270,7 +254,7 @@ async def fulfill_rewards_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL RewardsRequest in body
 
@@ -314,12 +298,8 @@ def fulfill_rewards_v2(
     [SERVICE COMMUNICATION ONLY] Fulfill rewards.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT", action=1 (CREATED)
-      *  Returns : fulfillment result
+      * Returns : fulfillment result
       *  rewards Item unsupported Type : SUBSCRIPTION
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT []
 
     Properties:
         url: /platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillment/rewards
@@ -332,7 +312,7 @@ def fulfill_rewards_v2(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL RewardsRequest in body
 
@@ -374,12 +354,8 @@ async def fulfill_rewards_v2_async(
     [SERVICE COMMUNICATION ONLY] Fulfill rewards.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT", action=1 (CREATED)
-      *  Returns : fulfillment result
+      * Returns : fulfillment result
       *  rewards Item unsupported Type : SUBSCRIPTION
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT []
 
     Properties:
         url: /platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillment/rewards
@@ -392,7 +368,7 @@ async def fulfill_rewards_v2_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL RewardsRequest in body
 
@@ -436,11 +412,7 @@ def pre_check_fulfill_item(
     Retrieve and check fulfillment items based on the provided request.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT", action=READ
-      *  Returns : list of fulfillment items
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT []
+      * Returns : list of fulfillment items
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/fulfillment/preCheck
@@ -453,7 +425,7 @@ def pre_check_fulfill_item(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL PreCheckFulfillmentRequest in body
 
@@ -493,11 +465,7 @@ async def pre_check_fulfill_item_async(
     Retrieve and check fulfillment items based on the provided request.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT", action=READ
-      *  Returns : list of fulfillment items
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT []
+      * Returns : list of fulfillment items
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/fulfillment/preCheck
@@ -510,7 +478,7 @@ async def pre_check_fulfill_item_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL PreCheckFulfillmentRequest in body
 
@@ -552,11 +520,7 @@ def public_redeem_code(
     Redeem campaign code, this api have rate limit, default: only allow request once per user in 2 seconds
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT", action=1 (CREATED)
-      *  Returns : fulfillment result
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT []
+      * Returns : fulfillment result
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/fulfillment/code
@@ -569,7 +533,7 @@ def public_redeem_code(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL FulfillCodeRequest in body
 
@@ -613,11 +577,7 @@ async def public_redeem_code_async(
     Redeem campaign code, this api have rate limit, default: only allow request once per user in 2 seconds
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT", action=1 (CREATED)
-      *  Returns : fulfillment result
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT []
+      * Returns : fulfillment result
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/fulfillment/code
@@ -630,7 +590,7 @@ async def public_redeem_code_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL FulfillCodeRequest in body
 
@@ -678,11 +638,7 @@ def query_fulfillment_histories(
     Query fulfillment histories in a namespace.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:FULFILLMENT", action=2 (READ)
-      *  Returns : query fulfillment history
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:FULFILLMENT [READ]
+      * Returns : query fulfillment history
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/fulfillment/history
@@ -695,7 +651,7 @@ def query_fulfillment_histories(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -739,11 +695,7 @@ async def query_fulfillment_histories_async(
     Query fulfillment histories in a namespace.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:FULFILLMENT", action=2 (READ)
-      *  Returns : query fulfillment history
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:FULFILLMENT [READ]
+      * Returns : query fulfillment history
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/fulfillment/history
@@ -756,7 +708,7 @@ async def query_fulfillment_histories_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -800,11 +752,7 @@ def redeem_code(
     Redeem campaign code.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT", action=1 (CREATED)
-      *  Returns : fulfillment result
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT []
+      * Returns : fulfillment result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/fulfillment/code
@@ -817,7 +765,7 @@ def redeem_code(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL FulfillCodeRequest in body
 
@@ -859,11 +807,7 @@ async def redeem_code_async(
     Redeem campaign code.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT", action=1 (CREATED)
-      *  Returns : fulfillment result
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT []
+      * Returns : fulfillment result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/fulfillment/code
@@ -876,7 +820,7 @@ async def redeem_code_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL FulfillCodeRequest in body
 

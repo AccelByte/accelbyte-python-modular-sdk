@@ -44,12 +44,8 @@ class UpdateCountryGroup(Operation):
     - To update countries only, do not include countryGroupName key or just specify it with blank value.
     Other detail info:
 
-      * Required permission : resource = "ADMIN:NAMESPACE:{namespace}:MISC" , action=4 (UPDATE)
-      *  Action code : 11202
+      * Action code : 11202
       *  Returns : updated country group
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:MISC [UPDATE]
 
     Properties:
         url: /basic/v1/admin/namespaces/{namespace}/misc/countrygroups/{countryGroupCode}
@@ -62,7 +58,7 @@ class UpdateCountryGroup(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL UpdateCountryGroupRequest in body
 
@@ -87,11 +83,17 @@ class UpdateCountryGroup(Operation):
     _url: str = (
         "/basic/v1/admin/namespaces/{namespace}/misc/countrygroups/{countryGroupCode}"
     )
+    _path: str = (
+        "/basic/v1/admin/namespaces/{namespace}/misc/countrygroups/{countryGroupCode}"
+    )
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "basic"
 
     body: UpdateCountryGroupRequest  # OPTIONAL in [body]
     country_group_code: str  # REQUIRED in [path]
@@ -104,6 +106,14 @@ class UpdateCountryGroup(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

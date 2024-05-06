@@ -72,11 +72,15 @@ class PublicRemoveTrustedDeviceV4(Operation):
     # region fields
 
     _url: str = "/iam/v4/public/namespaces/{namespace}/users/me/mfa/device"
+    _path: str = "/iam/v4/public/namespaces/{namespace}/users/me/mfa/device"
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     cookie: Union[str, HeaderStr]  # OPTIONAL in [header]
     namespace: str  # REQUIRED in [path]
@@ -88,6 +92,14 @@ class PublicRemoveTrustedDeviceV4(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

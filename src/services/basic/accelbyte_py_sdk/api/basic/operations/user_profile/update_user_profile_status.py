@@ -41,12 +41,8 @@ class UpdateUserProfileStatus(Operation):
     Update user profile status.
     Other detail info:
 
-      * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:USER:{userId}:PROFILE" , action=4 (UPDATE)
-      *  Action code : 11406
+      * Action code : 11406
       *  Returns : user profile
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:PROFILE [UPDATE]
 
     Properties:
         url: /basic/v1/admin/namespaces/{namespace}/users/{userId}/profiles/status
@@ -59,7 +55,7 @@ class UpdateUserProfileStatus(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL UserProfileStatusUpdate in body
 
@@ -82,11 +78,15 @@ class UpdateUserProfileStatus(Operation):
     # region fields
 
     _url: str = "/basic/v1/admin/namespaces/{namespace}/users/{userId}/profiles/status"
+    _path: str = "/basic/v1/admin/namespaces/{namespace}/users/{userId}/profiles/status"
+    _base_path: str = ""
     _method: str = "PATCH"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "basic"
 
     body: UserProfileStatusUpdate  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -99,6 +99,14 @@ class UpdateUserProfileStatus(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -39,11 +39,7 @@ class PublicGetUserOrder(Operation):
     Get user order.
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ORDER", action=2 (READ)
-      *  Returns : get order
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:ORDER [READ]
+      * Returns : get order
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/orders/{orderNo}
@@ -56,7 +52,7 @@ class PublicGetUserOrder(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -75,11 +71,17 @@ class PublicGetUserOrder(Operation):
     _url: str = (
         "/platform/public/namespaces/{namespace}/users/{userId}/orders/{orderNo}"
     )
+    _path: str = (
+        "/platform/public/namespaces/{namespace}/users/{userId}/orders/{orderNo}"
+    )
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     namespace: str  # REQUIRED in [path]
     order_no: str  # REQUIRED in [path]
@@ -92,6 +94,14 @@ class PublicGetUserOrder(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

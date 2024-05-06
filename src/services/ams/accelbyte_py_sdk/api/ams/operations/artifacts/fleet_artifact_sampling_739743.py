@@ -77,11 +77,17 @@ class FleetArtifactSamplingRulesGet(Operation):
     _url: str = (
         "/ams/v1/admin/namespaces/{namespace}/fleets/{fleetID}/artifacts-sampling-rules"
     )
+    _path: str = (
+        "/ams/v1/admin/namespaces/{namespace}/fleets/{fleetID}/artifacts-sampling-rules"
+    )
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "ams"
 
     fleet_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -93,6 +99,14 @@ class FleetArtifactSamplingRulesGet(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

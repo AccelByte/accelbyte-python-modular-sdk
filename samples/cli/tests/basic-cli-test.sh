@@ -30,72 +30,63 @@ if [ "$BATCH" = true ] ; then
 
 $PYTHON -m $MODULE 'start-interactive-session' --continue_on_error '--writer=tap' << END
 basic-get-namespaces --login_with_auth "Bearer foo"
-basic-create-namespace --body '{"displayName": "dSPcAMxj", "namespace": "suYKqw1f"}' --login_with_auth "Bearer foo"
+basic-create-namespace --body '{"displayName": "p2OKl3eU", "namespace": "s3onI039"}' --login_with_auth "Bearer foo"
 basic-get-namespace --login_with_auth "Bearer foo"
 basic-delete-namespace --login_with_auth "Bearer foo"
-basic-get-actions --login_with_auth "Bearer foo"
-basic-ban-users --body '{"actionId": 59, "comment": "Z683kIqc", "userIds": ["u3D8QBG7", "8zxLDtvo", "wbU7ska6"]}' --login_with_auth "Bearer foo"
-basic-get-banned-users '["LfxFYGVz", "5lTl7RlV", "Uz36O4Zu"]' --login_with_auth "Bearer foo"
-basic-report-user --body '{"category": "jVVNecPh", "description": "mkDzsqkS", "gameSessionId": "7U0UkI6s", "subcategory": "lXmAFxlT", "userId": "yC5obo6l"}' --login_with_auth "Bearer foo"
-basic-get-user-status 'L2TqIP1V' --login_with_auth "Bearer foo"
-basic-un-ban-users --body '{"comment": "V9MdVLFB", "userIds": ["0JZcqKEO", "yZmqNImU", "9fM5Jrzy"]}' --login_with_auth "Bearer foo"
-basic-update-namespace --body '{"displayName": "rSEfzy0u"}' --login_with_auth "Bearer foo"
+basic-update-namespace --body '{"displayName": "R7rH8PFs"}' --login_with_auth "Bearer foo"
 basic-get-child-namespaces --login_with_auth "Bearer foo"
-basic-create-config --body '{"key": "oqHmefzp", "value": "unSfIQ19"}' --login_with_auth "Bearer foo"
-basic-get-config-1 'zo0NEOED' --login_with_auth "Bearer foo"
-basic-delete-config-1 '8WJxo448' --login_with_auth "Bearer foo"
-basic-update-config-1 'ZZ85BDMX' --body '{"value": "BVVL0dSH"}' --login_with_auth "Bearer foo"
+basic-create-config --body '{"key": "jFEwPdfL", "value": "qSSBCzTx"}' --login_with_auth "Bearer foo"
+basic-get-config 'saedcRiU' --login_with_auth "Bearer foo"
+basic-delete-config 'MNOJ6eWm' --login_with_auth "Bearer foo"
+basic-update-config 'mcI8SNXR' --body '{"value": "svRZ8A8s"}' --login_with_auth "Bearer foo"
 basic-get-namespace-context --login_with_auth "Bearer foo"
-basic-get-config --login_with_auth "Bearer foo"
-basic-delete-config --login_with_auth "Bearer foo"
-basic-update-config --body '{"apiKey": "Ne8wB0Jf"}' --login_with_auth "Bearer foo"
-basic-generated-upload-url 'DTyz21ef' 'bOk8vUdW' --login_with_auth "Bearer foo"
+basic-generated-upload-url 'YJDRW28S' 'olH7z1YC' --login_with_auth "Bearer foo"
 basic-get-game-namespaces --login_with_auth "Bearer foo"
 basic-get-country-groups --login_with_auth "Bearer foo"
-basic-add-country-group --body '{"countries": [{"code": "JbKpuduV", "name": "RsCYgalp"}, {"code": "xhAZKm9p", "name": "5jjkBcjG"}, {"code": "AeH7Wy2I", "name": "WDzk2WUs"}], "countryGroupCode": "LOtrNMww", "countryGroupName": "2XYPFH13"}' --login_with_auth "Bearer foo"
-basic-update-country-group 'UuBlDU3I' --body '{"countries": [{"code": "WAjH4YOS", "name": "uMooQAnS"}, {"code": "FLws4Hsg", "name": "cirHiFh2"}, {"code": "hEft7eRN", "name": "OLAawvnA"}], "countryGroupName": "F37mV3jM"}' --login_with_auth "Bearer foo"
-basic-delete-country-group 'uWSuZtnl' --login_with_auth "Bearer foo"
+basic-add-country-group --body '{"countries": [{"code": "sgwWQoqp", "name": "4HlCzE5k"}, {"code": "U3LNxwsw", "name": "MhrQP2F7"}, {"code": "JMQ0yZte", "name": "gp6gyS16"}], "countryGroupCode": "d6VPFRle", "countryGroupName": "gJC3eHF7"}' --login_with_auth "Bearer foo"
+basic-update-country-group 'BxXhqPoR' --body '{"countries": [{"code": "pzrG3FU3", "name": "9vk1ahuP"}, {"code": "ThnqyORa", "name": "J7y2aYl9"}, {"code": "i3gfKWoH", "name": "lf4hTSmK"}], "countryGroupName": "SDnGbg4W"}' --login_with_auth "Bearer foo"
+basic-delete-country-group 'YV16YKpt' --login_with_auth "Bearer foo"
 basic-get-languages --login_with_auth "Bearer foo"
 basic-get-time-zones --login_with_auth "Bearer foo"
-basic-get-user-profile-info-by-public-id 'KNooWkyf' --login_with_auth "Bearer foo"
-basic-admin-get-user-profile-public-info-by-ids --body '{"userIds": ["pHFBzuiM", "OPdpCdaR", "mIN9hB2M"]}' --login_with_auth "Bearer foo"
+basic-get-user-profile-info-by-public-id 'MtS0BQPt' --login_with_auth "Bearer foo"
+basic-admin-get-user-profile-public-info-by-ids --body '{"userIds": ["aYQl8LUp", "546hHE81", "sybrr8iJ"]}' --login_with_auth "Bearer foo"
 basic-get-namespace-publisher --login_with_auth "Bearer foo"
-basic-get-publisher-config 'p7LoFJFr' --login_with_auth "Bearer foo"
+basic-get-publisher-config 'Tic3qxmO' --login_with_auth "Bearer foo"
 basic-change-namespace-status --body '{"status": "INACTIVE"}' --login_with_auth "Bearer foo"
-basic-anonymize-user-profile 'xLM7CvkU' --login_with_auth "Bearer foo"
-basic-generated-user-upload-content-url 'gG3OR40R' 'bIxz6ZNS' --login_with_auth "Bearer foo"
-basic-get-user-profile-info '6Z9Yk4GY' --login_with_auth "Bearer foo"
-basic-update-user-profile 'QuAMdfP0' --body '{"avatarLargeUrl": "JnkBtDMa", "avatarSmallUrl": "COnc1B1y", "avatarUrl": "orkSd8jl", "customAttributes": {"5Iy0NwW2": {}, "PQjwfc3n": {}, "eaQAnKLR": {}}, "dateOfBirth": "1981-07-01", "firstName": "Sby4rxBF", "language": "JwU", "lastName": "7XrUFmDT", "privateCustomAttributes": {"1Sk3ZFYz": {}, "yUQhPkR1": {}, "O7bOBArw": {}}, "status": "INACTIVE", "timeZone": "R9TrNbvA", "zipCode": "wgjT1BGG"}' --login_with_auth "Bearer foo"
-basic-delete-user-profile 'dsqQzCft' --login_with_auth "Bearer foo"
-basic-get-custom-attributes-info '6lGGbOjD' --login_with_auth "Bearer foo"
-basic-update-custom-attributes-partially 'Niudp4lc' --body '{"6lzvgoRl": {}, "d12Lj0s6": {}, "Kza0Vruv": {}}' --login_with_auth "Bearer foo"
-basic-get-private-custom-attributes-info 'pShQEIlK' --login_with_auth "Bearer foo"
-basic-update-private-custom-attributes-partially 'YQQGrQgU' --body '{"cOwbk1ls": {}, "q4LbUbFz": {}, "e4i9Wg7n": {}}' --login_with_auth "Bearer foo"
-basic-update-user-profile-status 'JhceDuAV' --body '{"status": "ACTIVE"}' --login_with_auth "Bearer foo"
+basic-anonymize-user-profile 'INoVpXcE' --login_with_auth "Bearer foo"
+basic-generated-user-upload-content-url 'darjXGeL' 'X8EG6KSn' --login_with_auth "Bearer foo"
+basic-get-user-profile-info 'vHw9s3gI' --login_with_auth "Bearer foo"
+basic-update-user-profile 'd3qpAzWk' --body '{"avatarLargeUrl": "qY1ZcXcj", "avatarSmallUrl": "PEGssOOv", "avatarUrl": "uY8mPP4t", "customAttributes": {"7Map8oP4": {}, "s1mIEkt6": {}, "ovnEItTT": {}}, "dateOfBirth": "1992-07-13", "firstName": "b3tqA166", "language": "af", "lastName": "r3rv0XTi", "privateCustomAttributes": {"aXAiSujt": {}, "hcxJKMJy": {}, "3JOOZdPL": {}}, "status": "INACTIVE", "timeZone": "mxeZwlNk", "zipCode": "NkVCVtvX"}' --login_with_auth "Bearer foo"
+basic-delete-user-profile 'dn5UPdvS' --login_with_auth "Bearer foo"
+basic-get-custom-attributes-info 'eRGqvW7P' --login_with_auth "Bearer foo"
+basic-update-custom-attributes-partially 'iUvQgpy3' --body '{"o5GJylaz": {}, "Zsi4Qh6c": {}, "JpJukrQ0": {}}' --login_with_auth "Bearer foo"
+basic-get-private-custom-attributes-info 'E97hN8aw' --login_with_auth "Bearer foo"
+basic-update-private-custom-attributes-partially '27x1xxT3' --body '{"pFOj5wgd": {}, "08eTfQsk": {}, "MKidRp5Z": {}}' --login_with_auth "Bearer foo"
+basic-update-user-profile-status 'gP1ccpCI' --body '{"status": "ACTIVE"}' --login_with_auth "Bearer foo"
 basic-public-get-time --login_with_auth "Bearer foo"
 basic-public-get-namespaces --login_with_auth "Bearer foo"
-basic-public-generated-upload-url 'wLvpDlqw' 'jRSUaJfB' --login_with_auth "Bearer foo"
+basic-get-namespace-1 --login_with_auth "Bearer foo"
+basic-public-generated-upload-url '3lTV9M99' 'JQH8xL6N' --login_with_auth "Bearer foo"
 basic-public-get-languages --login_with_auth "Bearer foo"
 basic-public-get-time-zones --login_with_auth "Bearer foo"
-basic-public-get-user-profile-public-info-by-ids 'YFksBcLN' --login_with_auth "Bearer foo"
-basic-public-get-user-profile-info-by-public-id 'hD9I0CDQ' --login_with_auth "Bearer foo"
+basic-public-get-user-profile-public-info-by-ids 'nofkwhJ9' --login_with_auth "Bearer foo"
+basic-public-get-user-profile-info-by-public-id 'oX9Vyl19' --login_with_auth "Bearer foo"
 basic-public-get-namespace-publisher --login_with_auth "Bearer foo"
 basic-get-my-profile-info --login_with_auth "Bearer foo"
-basic-update-my-profile --body '{"avatarLargeUrl": "YIIlkK6N", "avatarSmallUrl": "Dtk23Qwo", "avatarUrl": "RKxk8wbH", "customAttributes": {"cDQPIEDh": {}, "bFbwztmq": {}, "kEgQzLjx": {}}, "dateOfBirth": "1987-09-19", "firstName": "0P8bgAUJ", "language": "RdR_534", "lastName": "UiPIIeNH", "privateCustomAttributes": {"w8s8lzzs": {}, "ZbRZZgRV": {}, "nkGJGMwB": {}}, "timeZone": "BEgf4fIH", "zipCode": "tQh7cZNi"}' --login_with_auth "Bearer foo"
-basic-create-my-profile --body '{"avatarLargeUrl": "0YxT9XXw", "avatarSmallUrl": "1jFGcjMU", "avatarUrl": "Ar3AraSz", "customAttributes": {"WNkKUCSV": {}, "91u4RLXh": {}, "Y4rimMWY": {}}, "dateOfBirth": "1995-11-05", "firstName": "6vBP9wrX", "language": "fygG_868", "lastName": "ckDHDyLK", "privateCustomAttributes": {"5EUE3Nfe": {}, "WRPvyagf": {}, "qm6HXnFf": {}}, "timeZone": "40oaH1XV"}' --login_with_auth "Bearer foo"
+basic-update-my-profile --body '{"avatarLargeUrl": "QiY4IQN9", "avatarSmallUrl": "BDWJdAiQ", "avatarUrl": "KSiHf9S4", "customAttributes": {"oqDP8ius": {}, "SqItlklR": {}, "Erg615vX": {}}, "dateOfBirth": "1984-07-23", "firstName": "YPBUsFQR", "language": "ej", "lastName": "f4LviuEa", "privateCustomAttributes": {"ND8J8S0U": {}, "IaP4mYfc": {}, "CaxhCbXr": {}}, "timeZone": "6mRbDKKf", "zipCode": "r7uzGQ0n"}' --login_with_auth "Bearer foo"
+basic-create-my-profile --body '{"avatarLargeUrl": "R6QhkSiT", "avatarSmallUrl": "cZr1u9uU", "avatarUrl": "X2v2Pgow", "customAttributes": {"uaRlfdOW": {}, "9hcZM768": {}, "M46CLbgO": {}}, "dateOfBirth": "1994-11-06", "firstName": "XrIY4heg", "language": "yt_ayOf_602", "lastName": "cjifaHr7", "privateCustomAttributes": {"tWXNTskR": {}, "SbvoZdXG": {}, "IlHGt2h2": {}}, "timeZone": "FlyxEBXn"}' --login_with_auth "Bearer foo"
 basic-get-my-private-custom-attributes-info --login_with_auth "Bearer foo"
-basic-update-my-private-custom-attributes-partially --body '{"WFaSHwHo": {}, "tjQQlWdG": {}, "hwFldVa8": {}}' --login_with_auth "Bearer foo"
+basic-update-my-private-custom-attributes-partially --body '{"XVMW94mp": {}, "nmyrb8Ig": {}, "1SLIxLfn": {}}' --login_with_auth "Bearer foo"
 basic-get-my-zip-code --login_with_auth "Bearer foo"
-basic-update-my-zip-code '{"zipCode": "e4mQuWkP"}' --login_with_auth "Bearer foo"
-basic-public-report-user '5NHiqhaI' --body '{"category": "h7gyQzbT", "description": "qeljBrQF", "gameSessionId": "nLilDrfs", "subcategory": "Qne7Cp6u", "userId": "SRnJHdYo"}' --login_with_auth "Bearer foo"
-basic-public-generated-user-upload-content-url 'wEdvhe2h' '1RhFhlYT' --login_with_auth "Bearer foo"
-basic-public-get-user-profile-info 'zwcDkyG5' --login_with_auth "Bearer foo"
-basic-public-update-user-profile 'npzioaai' --body '{"avatarLargeUrl": "C81CFOGa", "avatarSmallUrl": "4uvNu1PL", "avatarUrl": "UpJ6w1dd", "customAttributes": {"bHGHNjXl": {}, "0iEeCV60": {}, "oFk7BU9o": {}}, "dateOfBirth": "1988-03-11", "firstName": "wK7q0Ncd", "language": "TyQ-zD", "lastName": "rGyTb4wd", "privateCustomAttributes": {"BfGuj3SD": {}, "M6cEbA1m": {}, "ovZq08zd": {}}, "timeZone": "jSTSQwTD", "zipCode": "3F0Zh3lE"}' --login_with_auth "Bearer foo"
-basic-public-create-user-profile 'oX7TxTrf' --body '{"avatarLargeUrl": "wIVXxRnS", "avatarSmallUrl": "zBYtwyRq", "avatarUrl": "TUr2UnjR", "customAttributes": {"dxc5mjdr": {}, "Oi7cz6mb": {}, "CopEZOdJ": {}}, "dateOfBirth": "1983-01-01", "firstName": "a5GVOPzm", "language": "Moz-XXdO", "lastName": "Nt6ywpiG", "timeZone": "zmi9SE67"}' --login_with_auth "Bearer foo"
-basic-public-get-custom-attributes-info '7Skn55aj' --login_with_auth "Bearer foo"
-basic-public-update-custom-attributes-partially '0G6IdbLj' --body '{"KjLK3CGt": {}, "So1QsLAr": {}, "oOYLc4Eg": {}}' --login_with_auth "Bearer foo"
-basic-public-get-user-profile-public-info 'w4vsztvr' --login_with_auth "Bearer foo"
-basic-public-update-user-profile-status 'miFYMcqX' --body '{"status": "ACTIVE"}' --login_with_auth "Bearer foo"
+basic-update-my-zip-code '{"zipCode": "LZU3FAdW"}' --login_with_auth "Bearer foo"
+basic-public-generated-user-upload-content-url 'R4rPd8nH' 'hAYhYdYw' --login_with_auth "Bearer foo"
+basic-public-get-user-profile-info 'uNvwRA2t' --login_with_auth "Bearer foo"
+basic-public-update-user-profile 'zSNLYam2' --body '{"avatarLargeUrl": "TCFCnZEO", "avatarSmallUrl": "9P2Qh0HF", "avatarUrl": "ElnPGiMj", "customAttributes": {"CNZtcAFV": {}, "FJaXwFHD": {}, "G3JHV8ji": {}}, "dateOfBirth": "1997-06-22", "firstName": "ugrJllAf", "language": "Fqa", "lastName": "8zow6GaC", "privateCustomAttributes": {"Abrnz35B": {}, "r84i54n0": {}, "48gMkpej": {}}, "timeZone": "4m0MPaAX", "zipCode": "2HyyANH4"}' --login_with_auth "Bearer foo"
+basic-public-create-user-profile 'E6DO9GF9' --body '{"avatarLargeUrl": "CklSuaJt", "avatarSmallUrl": "EwuwdkTB", "avatarUrl": "m3N7BTXH", "customAttributes": {"ZDl5IfDL": {}, "ciVGSTu8": {}, "70HreWm6": {}}, "dateOfBirth": "1991-06-24", "firstName": "tOf6C0DM", "language": "ElwO", "lastName": "nOfcKxTO", "timeZone": "Ue0KSUgI"}' --login_with_auth "Bearer foo"
+basic-public-get-custom-attributes-info 'rK1Ta4Mp' --login_with_auth "Bearer foo"
+basic-public-update-custom-attributes-partially 'ejBvtofV' --body '{"p7JxUcMr": {}, "v7PTpRfd": {}, "QUvViFlP": {}}' --login_with_auth "Bearer foo"
+basic-public-get-user-profile-public-info 'lsS4W0Xs' --login_with_auth "Bearer foo"
+basic-public-update-user-profile-status 'XhGG7HqE' --body '{"status": "INACTIVE"}' --login_with_auth "Bearer foo"
 exit()
 END
 
@@ -115,7 +106,7 @@ eval_tap() {
 }
 
 echo "TAP version 13"
-echo "1..70"
+echo "1..61"
 
 #- 1 Login
 eval_tap 0 1 'Login # SKIP not tested' test.out
@@ -132,7 +123,7 @@ eval_tap $? 2 'GetNamespaces' test.out
 
 #- 3 CreateNamespace
 $PYTHON -m $MODULE 'basic-create-namespace' \
-    --body '{"displayName": "Lch0pf40", "namespace": "93h8yygb"}' \
+    --body '{"displayName": "C9Llt6Je", "namespace": "ndnWorq0"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 3 'CreateNamespace' test.out
@@ -149,449 +140,387 @@ $PYTHON -m $MODULE 'basic-delete-namespace' \
     > test.out 2>&1
 eval_tap $? 5 'DeleteNamespace' test.out
 
-#- 6 GetActions
-$PYTHON -m $MODULE 'basic-get-actions' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 6 'GetActions' test.out
-
-#- 7 BanUsers
-$PYTHON -m $MODULE 'basic-ban-users' \
-    --body '{"actionId": 17, "comment": "7MR3Rbbw", "userIds": ["HNQddEN3", "qVPRpNTb", "zd5ZBsbi"]}' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 7 'BanUsers' test.out
-
-#- 8 GetBannedUsers
-$PYTHON -m $MODULE 'basic-get-banned-users' \
-    '["HikYE9KV", "tKNGt4iA", "3XActoE4"]' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 8 'GetBannedUsers' test.out
-
-#- 9 ReportUser
-$PYTHON -m $MODULE 'basic-report-user' \
-    --body '{"category": "7JyonuWF", "description": "Fglm6EJN", "gameSessionId": "97xSsxXH", "subcategory": "nDL5Y8dv", "userId": "cfJZ8S97"}' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 9 'ReportUser' test.out
-
-#- 10 GetUserStatus
-$PYTHON -m $MODULE 'basic-get-user-status' \
-    'je1Y9a5I' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 10 'GetUserStatus' test.out
-
-#- 11 UnBanUsers
-$PYTHON -m $MODULE 'basic-un-ban-users' \
-    --body '{"comment": "OXU6mLTF", "userIds": ["jQdF5i80", "53VlHxUO", "fOnVFdbY"]}' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 11 'UnBanUsers' test.out
-
-#- 12 UpdateNamespace
+#- 6 UpdateNamespace
 $PYTHON -m $MODULE 'basic-update-namespace' \
-    --body '{"displayName": "LafeccCg"}' \
+    --body '{"displayName": "rBXSTS26"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 12 'UpdateNamespace' test.out
+eval_tap $? 6 'UpdateNamespace' test.out
 
-#- 13 GetChildNamespaces
+#- 7 GetChildNamespaces
 $PYTHON -m $MODULE 'basic-get-child-namespaces' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 13 'GetChildNamespaces' test.out
+eval_tap $? 7 'GetChildNamespaces' test.out
 
-#- 14 CreateConfig
+#- 8 CreateConfig
 $PYTHON -m $MODULE 'basic-create-config' \
-    --body '{"key": "2nsC5jg8", "value": "Oc01Lhdg"}' \
+    --body '{"key": "fqW2bzdJ", "value": "FiiSInjH"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 14 'CreateConfig' test.out
+eval_tap $? 8 'CreateConfig' test.out
 
-#- 15 GetConfig1
-$PYTHON -m $MODULE 'basic-get-config-1' \
-    'jBlZ36yG' \
+#- 9 GetConfig
+$PYTHON -m $MODULE 'basic-get-config' \
+    'ysETXmZq' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 15 'GetConfig1' test.out
+eval_tap $? 9 'GetConfig' test.out
 
-#- 16 DeleteConfig1
-$PYTHON -m $MODULE 'basic-delete-config-1' \
-    'jgOnNwz1' \
+#- 10 DeleteConfig
+$PYTHON -m $MODULE 'basic-delete-config' \
+    'B6iqysUV' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 16 'DeleteConfig1' test.out
+eval_tap $? 10 'DeleteConfig' test.out
 
-#- 17 UpdateConfig1
-$PYTHON -m $MODULE 'basic-update-config-1' \
-    'B5yTxTWd' \
-    --body '{"value": "8bcKf02M"}' \
+#- 11 UpdateConfig
+$PYTHON -m $MODULE 'basic-update-config' \
+    '95GKDhn6' \
+    --body '{"value": "1hjy56EN"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 17 'UpdateConfig1' test.out
+eval_tap $? 11 'UpdateConfig' test.out
 
-#- 18 GetNamespaceContext
+#- 12 GetNamespaceContext
 $PYTHON -m $MODULE 'basic-get-namespace-context' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 18 'GetNamespaceContext' test.out
+eval_tap $? 12 'GetNamespaceContext' test.out
 
-#- 19 GetConfig
-$PYTHON -m $MODULE 'basic-get-config' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 19 'GetConfig' test.out
-
-#- 20 DeleteConfig
-$PYTHON -m $MODULE 'basic-delete-config' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 20 'DeleteConfig' test.out
-
-#- 21 UpdateConfig
-$PYTHON -m $MODULE 'basic-update-config' \
-    --body '{"apiKey": "oM6TmBc8"}' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 21 'UpdateConfig' test.out
-
-#- 22 GeneratedUploadUrl
+#- 13 GeneratedUploadUrl
 $PYTHON -m $MODULE 'basic-generated-upload-url' \
-    '5j9Mkhfc' \
-    'AYtvCxr8' \
+    'Yk0e76MI' \
+    've6DVhAs' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 22 'GeneratedUploadUrl' test.out
+eval_tap $? 13 'GeneratedUploadUrl' test.out
 
-#- 23 GetGameNamespaces
+#- 14 GetGameNamespaces
 $PYTHON -m $MODULE 'basic-get-game-namespaces' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 23 'GetGameNamespaces' test.out
+eval_tap $? 14 'GetGameNamespaces' test.out
 
-#- 24 GetCountries
-eval_tap 0 24 'GetCountries # SKIP deprecated' test.out
+#- 15 GetCountries
+eval_tap 0 15 'GetCountries # SKIP deprecated' test.out
 
-#- 25 GetCountryGroups
+#- 16 GetCountryGroups
 $PYTHON -m $MODULE 'basic-get-country-groups' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 25 'GetCountryGroups' test.out
+eval_tap $? 16 'GetCountryGroups' test.out
 
-#- 26 AddCountryGroup
+#- 17 AddCountryGroup
 $PYTHON -m $MODULE 'basic-add-country-group' \
-    --body '{"countries": [{"code": "RqZVUDY2", "name": "qIw5oGKA"}, {"code": "qhQopGbR", "name": "GYnVBTRr"}, {"code": "1zcueSAD", "name": "GXI4vcZj"}], "countryGroupCode": "KS0Y9HYD", "countryGroupName": "uLbDjUIJ"}' \
+    --body '{"countries": [{"code": "ClOLm44f", "name": "rFEtknvg"}, {"code": "U1gOm0QC", "name": "DjmjLAC8"}, {"code": "MA9uEj7H", "name": "uyQV7u7K"}], "countryGroupCode": "QfYdPRgp", "countryGroupName": "NbFnF8O5"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 26 'AddCountryGroup' test.out
+eval_tap $? 17 'AddCountryGroup' test.out
 
-#- 27 UpdateCountryGroup
+#- 18 UpdateCountryGroup
 $PYTHON -m $MODULE 'basic-update-country-group' \
-    'jyMpCV4w' \
-    --body '{"countries": [{"code": "w3g3ox2G", "name": "RIP4d2cB"}, {"code": "NJ5WpcHq", "name": "APvG735v"}, {"code": "AUOuXIgl", "name": "GzrYXIns"}], "countryGroupName": "rfZpVRDg"}' \
+    'AGk0O77x' \
+    --body '{"countries": [{"code": "Rr8Pmgy0", "name": "7kYcyqPE"}, {"code": "fa4tCWa8", "name": "06X1KHtP"}, {"code": "g40cnWTE", "name": "9oFGLxLO"}], "countryGroupName": "kyDrzEfK"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 27 'UpdateCountryGroup' test.out
+eval_tap $? 18 'UpdateCountryGroup' test.out
 
-#- 28 DeleteCountryGroup
+#- 19 DeleteCountryGroup
 $PYTHON -m $MODULE 'basic-delete-country-group' \
-    'jojFDbTT' \
+    'lj46KBF3' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 28 'DeleteCountryGroup' test.out
+eval_tap $? 19 'DeleteCountryGroup' test.out
 
-#- 29 GetLanguages
+#- 20 GetLanguages
 $PYTHON -m $MODULE 'basic-get-languages' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 29 'GetLanguages' test.out
+eval_tap $? 20 'GetLanguages' test.out
 
-#- 30 GetTimeZones
+#- 21 GetTimeZones
 $PYTHON -m $MODULE 'basic-get-time-zones' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 30 'GetTimeZones' test.out
+eval_tap $? 21 'GetTimeZones' test.out
 
-#- 31 GetUserProfileInfoByPublicId
+#- 22 GetUserProfileInfoByPublicId
 $PYTHON -m $MODULE 'basic-get-user-profile-info-by-public-id' \
-    'wRNx4AL4' \
+    'xuHOeNl3' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 31 'GetUserProfileInfoByPublicId' test.out
+eval_tap $? 22 'GetUserProfileInfoByPublicId' test.out
 
-#- 32 AdminGetUserProfilePublicInfoByIds
+#- 23 AdminGetUserProfilePublicInfoByIds
 $PYTHON -m $MODULE 'basic-admin-get-user-profile-public-info-by-ids' \
-    --body '{"userIds": ["lDg8eDwN", "XMWKR6s5", "8pluvrJN"]}' \
+    --body '{"userIds": ["K4Jh6s3e", "BKPAtwzr", "2mb5O3Xs"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 32 'AdminGetUserProfilePublicInfoByIds' test.out
+eval_tap $? 23 'AdminGetUserProfilePublicInfoByIds' test.out
 
-#- 33 GetNamespacePublisher
+#- 24 GetNamespacePublisher
 $PYTHON -m $MODULE 'basic-get-namespace-publisher' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 33 'GetNamespacePublisher' test.out
+eval_tap $? 24 'GetNamespacePublisher' test.out
 
-#- 34 GetPublisherConfig
+#- 25 GetPublisherConfig
 $PYTHON -m $MODULE 'basic-get-publisher-config' \
-    'aSFKODah' \
+    'apCRupn9' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 34 'GetPublisherConfig' test.out
+eval_tap $? 25 'GetPublisherConfig' test.out
 
-#- 35 ChangeNamespaceStatus
+#- 26 ChangeNamespaceStatus
 $PYTHON -m $MODULE 'basic-change-namespace-status' \
     --body '{"status": "ACTIVE"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 35 'ChangeNamespaceStatus' test.out
+eval_tap $? 26 'ChangeNamespaceStatus' test.out
 
-#- 36 AnonymizeUserProfile
+#- 27 AnonymizeUserProfile
 $PYTHON -m $MODULE 'basic-anonymize-user-profile' \
-    '3FY4KCO7' \
+    '5tbhyMwU' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 36 'AnonymizeUserProfile' test.out
+eval_tap $? 27 'AnonymizeUserProfile' test.out
 
-#- 37 GeneratedUserUploadContentUrl
+#- 28 GeneratedUserUploadContentUrl
 $PYTHON -m $MODULE 'basic-generated-user-upload-content-url' \
-    'rV3T87YB' \
-    'leFKvw79' \
+    'UOSV5A2o' \
+    'Klgp6ELr' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 37 'GeneratedUserUploadContentUrl' test.out
+eval_tap $? 28 'GeneratedUserUploadContentUrl' test.out
 
-#- 38 GetUserProfileInfo
+#- 29 GetUserProfileInfo
 $PYTHON -m $MODULE 'basic-get-user-profile-info' \
-    'ed9T9Rs2' \
+    '3ypoExgv' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 38 'GetUserProfileInfo' test.out
+eval_tap $? 29 'GetUserProfileInfo' test.out
 
-#- 39 UpdateUserProfile
+#- 30 UpdateUserProfile
 $PYTHON -m $MODULE 'basic-update-user-profile' \
-    'jQUwpqai' \
-    --body '{"avatarLargeUrl": "fXQ9EeYu", "avatarSmallUrl": "5X1Wh6Yf", "avatarUrl": "yK1rieMh", "customAttributes": {"Hm2N7vQQ": {}, "xDU8h0Hp": {}, "pZcAPyZd": {}}, "dateOfBirth": "1984-10-29", "firstName": "2mw1g4Qr", "language": "Gjh_uMZq", "lastName": "tAgU3rBF", "privateCustomAttributes": {"Lj00QK6G": {}, "LjtIH3E7": {}, "xCkC6f4I": {}}, "status": "ACTIVE", "timeZone": "34gULByb", "zipCode": "lBzYId1T"}' \
+    'w8rt3icH' \
+    --body '{"avatarLargeUrl": "hfho157g", "avatarSmallUrl": "CNRmt64v", "avatarUrl": "ZyItpnIv", "customAttributes": {"mIEFxMbR": {}, "aKBlEAPr": {}, "EovgXYdd": {}}, "dateOfBirth": "1998-11-10", "firstName": "9u06NQm0", "language": "LQm_Zdge_FF", "lastName": "LmxElKfZ", "privateCustomAttributes": {"C3Rpw2ap": {}, "URQtxZqM": {}, "zQ5qpdfU": {}}, "status": "INACTIVE", "timeZone": "qOg63snM", "zipCode": "mh4XjJZg"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 39 'UpdateUserProfile' test.out
+eval_tap $? 30 'UpdateUserProfile' test.out
 
-#- 40 DeleteUserProfile
+#- 31 DeleteUserProfile
 $PYTHON -m $MODULE 'basic-delete-user-profile' \
-    'qTVJrU96' \
+    'NZiNtjCb' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 40 'DeleteUserProfile' test.out
+eval_tap $? 31 'DeleteUserProfile' test.out
 
-#- 41 GetCustomAttributesInfo
+#- 32 GetCustomAttributesInfo
 $PYTHON -m $MODULE 'basic-get-custom-attributes-info' \
-    '5x3MLwxY' \
+    'JBDEanvj' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 41 'GetCustomAttributesInfo' test.out
+eval_tap $? 32 'GetCustomAttributesInfo' test.out
 
-#- 42 UpdateCustomAttributesPartially
+#- 33 UpdateCustomAttributesPartially
 $PYTHON -m $MODULE 'basic-update-custom-attributes-partially' \
-    'FVYRcKhI' \
-    --body '{"3Sttm4vw": {}, "2rvZAWyu": {}, "wAyu9pZZ": {}}' \
+    'MVfAxz8q' \
+    --body '{"jKC4AdgM": {}, "m455PZ9R": {}, "VDPzphu4": {}}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 42 'UpdateCustomAttributesPartially' test.out
+eval_tap $? 33 'UpdateCustomAttributesPartially' test.out
 
-#- 43 GetPrivateCustomAttributesInfo
+#- 34 GetPrivateCustomAttributesInfo
 $PYTHON -m $MODULE 'basic-get-private-custom-attributes-info' \
-    'EE6iLNGe' \
+    '0sFiGUvs' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 43 'GetPrivateCustomAttributesInfo' test.out
+eval_tap $? 34 'GetPrivateCustomAttributesInfo' test.out
 
-#- 44 UpdatePrivateCustomAttributesPartially
+#- 35 UpdatePrivateCustomAttributesPartially
 $PYTHON -m $MODULE 'basic-update-private-custom-attributes-partially' \
-    'St90MzWe' \
-    --body '{"puTHNh7V": {}, "1p9yiTd9": {}, "qAwFiLpR": {}}' \
+    'z6k59F2Q' \
+    --body '{"RI16vIUj": {}, "DYZkvNVS": {}, "1ME41BCE": {}}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 44 'UpdatePrivateCustomAttributesPartially' test.out
+eval_tap $? 35 'UpdatePrivateCustomAttributesPartially' test.out
 
-#- 45 UpdateUserProfileStatus
+#- 36 UpdateUserProfileStatus
 $PYTHON -m $MODULE 'basic-update-user-profile-status' \
-    'mUnMkxsT' \
-    --body '{"status": "ACTIVE"}' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 45 'UpdateUserProfileStatus' test.out
-
-#- 46 PublicGetTime
-$PYTHON -m $MODULE 'basic-public-get-time' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 46 'PublicGetTime' test.out
-
-#- 47 PublicGetNamespaces
-$PYTHON -m $MODULE 'basic-public-get-namespaces' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 47 'PublicGetNamespaces' test.out
-
-#- 48 PublicGeneratedUploadUrl
-$PYTHON -m $MODULE 'basic-public-generated-upload-url' \
-    'dyx4t7bW' \
-    'POBsCohN' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 48 'PublicGeneratedUploadUrl' test.out
-
-#- 49 PublicGetCountries
-eval_tap 0 49 'PublicGetCountries # SKIP deprecated' test.out
-
-#- 50 PublicGetLanguages
-$PYTHON -m $MODULE 'basic-public-get-languages' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 50 'PublicGetLanguages' test.out
-
-#- 51 PublicGetTimeZones
-$PYTHON -m $MODULE 'basic-public-get-time-zones' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 51 'PublicGetTimeZones' test.out
-
-#- 52 PublicGetUserProfilePublicInfoByIds
-$PYTHON -m $MODULE 'basic-public-get-user-profile-public-info-by-ids' \
-    'kGpkoZLF' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 52 'PublicGetUserProfilePublicInfoByIds' test.out
-
-#- 53 PublicGetUserProfileInfoByPublicId
-$PYTHON -m $MODULE 'basic-public-get-user-profile-info-by-public-id' \
-    'hwSLiJS9' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 53 'PublicGetUserProfileInfoByPublicId' test.out
-
-#- 54 PublicGetNamespacePublisher
-$PYTHON -m $MODULE 'basic-public-get-namespace-publisher' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 54 'PublicGetNamespacePublisher' test.out
-
-#- 55 GetMyProfileInfo
-$PYTHON -m $MODULE 'basic-get-my-profile-info' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 55 'GetMyProfileInfo' test.out
-
-#- 56 UpdateMyProfile
-$PYTHON -m $MODULE 'basic-update-my-profile' \
-    --body '{"avatarLargeUrl": "I8xXfOzk", "avatarSmallUrl": "sIJ2Bgja", "avatarUrl": "jNtbQ2qZ", "customAttributes": {"McWnj3bu": {}, "HDm8eoIb": {}, "eKAJOGH8": {}}, "dateOfBirth": "1973-08-15", "firstName": "OltOcbe7", "language": "nuG_Yhwe_543", "lastName": "7hpia2IC", "privateCustomAttributes": {"CrI9ksqz": {}, "1p33b08B": {}, "cSlBz7vN": {}}, "timeZone": "7x0AiMR2", "zipCode": "YOJPrCrz"}' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 56 'UpdateMyProfile' test.out
-
-#- 57 CreateMyProfile
-$PYTHON -m $MODULE 'basic-create-my-profile' \
-    --body '{"avatarLargeUrl": "Awy3NUVh", "avatarSmallUrl": "0A3o42LY", "avatarUrl": "B0VvBxoI", "customAttributes": {"1SisdpmK": {}, "42UlNszQ": {}, "XOU3WILj": {}}, "dateOfBirth": "1972-09-14", "firstName": "uwZ4CH83", "language": "Je_LPhc", "lastName": "Ia12ENWz", "privateCustomAttributes": {"b44UAPK9": {}, "Gal8dQR3": {}, "UUCWLeP1": {}}, "timeZone": "WOonMVns"}' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 57 'CreateMyProfile' test.out
-
-#- 58 GetMyPrivateCustomAttributesInfo
-$PYTHON -m $MODULE 'basic-get-my-private-custom-attributes-info' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 58 'GetMyPrivateCustomAttributesInfo' test.out
-
-#- 59 UpdateMyPrivateCustomAttributesPartially
-$PYTHON -m $MODULE 'basic-update-my-private-custom-attributes-partially' \
-    --body '{"bIWO5gGL": {}, "tr9CgB1d": {}, "927DxyYt": {}}' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 59 'UpdateMyPrivateCustomAttributesPartially' test.out
-
-#- 60 GetMyZipCode
-$PYTHON -m $MODULE 'basic-get-my-zip-code' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 60 'GetMyZipCode' test.out
-
-#- 61 UpdateMyZipCode
-$PYTHON -m $MODULE 'basic-update-my-zip-code' \
-    '{"zipCode": "3T0tc1HT"}' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 61 'UpdateMyZipCode' test.out
-
-#- 62 PublicReportUser
-$PYTHON -m $MODULE 'basic-public-report-user' \
-    'ouwEepp1' \
-    --body '{"category": "tPjf6FSk", "description": "2i5I9JjC", "gameSessionId": "TqrS2XeO", "subcategory": "3hZm3UWC", "userId": "k6mB16Y2"}' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 62 'PublicReportUser' test.out
-
-#- 63 PublicGeneratedUserUploadContentUrl
-$PYTHON -m $MODULE 'basic-public-generated-user-upload-content-url' \
-    'tyTU4pf5' \
-    'f0zQziVN' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 63 'PublicGeneratedUserUploadContentUrl' test.out
-
-#- 64 PublicGetUserProfileInfo
-$PYTHON -m $MODULE 'basic-public-get-user-profile-info' \
-    'QMPIsDkS' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 64 'PublicGetUserProfileInfo' test.out
-
-#- 65 PublicUpdateUserProfile
-$PYTHON -m $MODULE 'basic-public-update-user-profile' \
-    'Lo8CjKbe' \
-    --body '{"avatarLargeUrl": "Zepz228X", "avatarSmallUrl": "gIbzgfe0", "avatarUrl": "lrIXPM96", "customAttributes": {"lDM8iyXw": {}, "G6XnNyKb": {}, "WzZM6tB3": {}}, "dateOfBirth": "1985-06-08", "firstName": "wLpaMM0r", "language": "Bnhu-ia", "lastName": "RHyHu30M", "privateCustomAttributes": {"jQbJtp0l": {}, "ckHA7sdL": {}, "s7fposm5": {}}, "timeZone": "hxfdIBu4", "zipCode": "moP7DfxD"}' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 65 'PublicUpdateUserProfile' test.out
-
-#- 66 PublicCreateUserProfile
-$PYTHON -m $MODULE 'basic-public-create-user-profile' \
-    'mteZOxOY' \
-    --body '{"avatarLargeUrl": "u4aJQVeS", "avatarSmallUrl": "G1Rea2BK", "avatarUrl": "z7xKSivN", "customAttributes": {"vadwbkDt": {}, "Gj7s3eC5": {}, "l43WRQf0": {}}, "dateOfBirth": "1985-10-31", "firstName": "S6gXq1NU", "language": "CDGD", "lastName": "7w94WMit", "timeZone": "zF784FbE"}' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 66 'PublicCreateUserProfile' test.out
-
-#- 67 PublicGetCustomAttributesInfo
-$PYTHON -m $MODULE 'basic-public-get-custom-attributes-info' \
-    '7sjVezhV' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 67 'PublicGetCustomAttributesInfo' test.out
-
-#- 68 PublicUpdateCustomAttributesPartially
-$PYTHON -m $MODULE 'basic-public-update-custom-attributes-partially' \
-    'H6BMztXO' \
-    --body '{"O1vcaxIh": {}, "Rr5iozQH": {}, "uHXKTeeM": {}}' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 68 'PublicUpdateCustomAttributesPartially' test.out
-
-#- 69 PublicGetUserProfilePublicInfo
-$PYTHON -m $MODULE 'basic-public-get-user-profile-public-info' \
-    'u8Ao6I9U' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 69 'PublicGetUserProfilePublicInfo' test.out
-
-#- 70 PublicUpdateUserProfileStatus
-$PYTHON -m $MODULE 'basic-public-update-user-profile-status' \
-    'WVFAhIfe' \
+    '2PKXVrO1' \
     --body '{"status": "INACTIVE"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 70 'PublicUpdateUserProfileStatus' test.out
+eval_tap $? 36 'UpdateUserProfileStatus' test.out
+
+#- 37 PublicGetTime
+$PYTHON -m $MODULE 'basic-public-get-time' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 37 'PublicGetTime' test.out
+
+#- 38 PublicGetNamespaces
+$PYTHON -m $MODULE 'basic-public-get-namespaces' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 38 'PublicGetNamespaces' test.out
+
+#- 39 GetNamespace1
+$PYTHON -m $MODULE 'basic-get-namespace-1' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 39 'GetNamespace1' test.out
+
+#- 40 PublicGeneratedUploadUrl
+$PYTHON -m $MODULE 'basic-public-generated-upload-url' \
+    'MA51iGdb' \
+    'Qtc2F0IQ' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 40 'PublicGeneratedUploadUrl' test.out
+
+#- 41 PublicGetCountries
+eval_tap 0 41 'PublicGetCountries # SKIP deprecated' test.out
+
+#- 42 PublicGetLanguages
+$PYTHON -m $MODULE 'basic-public-get-languages' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 42 'PublicGetLanguages' test.out
+
+#- 43 PublicGetTimeZones
+$PYTHON -m $MODULE 'basic-public-get-time-zones' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 43 'PublicGetTimeZones' test.out
+
+#- 44 PublicGetUserProfilePublicInfoByIds
+$PYTHON -m $MODULE 'basic-public-get-user-profile-public-info-by-ids' \
+    'lEFE8cth' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 44 'PublicGetUserProfilePublicInfoByIds' test.out
+
+#- 45 PublicGetUserProfileInfoByPublicId
+$PYTHON -m $MODULE 'basic-public-get-user-profile-info-by-public-id' \
+    'RpXJ87yb' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 45 'PublicGetUserProfileInfoByPublicId' test.out
+
+#- 46 PublicGetNamespacePublisher
+$PYTHON -m $MODULE 'basic-public-get-namespace-publisher' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 46 'PublicGetNamespacePublisher' test.out
+
+#- 47 GetMyProfileInfo
+$PYTHON -m $MODULE 'basic-get-my-profile-info' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 47 'GetMyProfileInfo' test.out
+
+#- 48 UpdateMyProfile
+$PYTHON -m $MODULE 'basic-update-my-profile' \
+    --body '{"avatarLargeUrl": "jFcMYbdC", "avatarSmallUrl": "ZPJNxKYB", "avatarUrl": "b7MlaYWZ", "customAttributes": {"fK2lOQTf": {}, "tcSPwXhP": {}, "WJVdfDRS": {}}, "dateOfBirth": "1979-12-21", "firstName": "AsPa3oAO", "language": "iCqH_661", "lastName": "PyR6CYDO", "privateCustomAttributes": {"DZSRsCzE": {}, "OxAuxV1s": {}, "B8TWfgnU": {}}, "timeZone": "zbGM0HUT", "zipCode": "md6KaANN"}' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 48 'UpdateMyProfile' test.out
+
+#- 49 CreateMyProfile
+$PYTHON -m $MODULE 'basic-create-my-profile' \
+    --body '{"avatarLargeUrl": "dGZaGBJj", "avatarSmallUrl": "aIdQtMdV", "avatarUrl": "GxvfsLfc", "customAttributes": {"kno88Bcl": {}, "VKK93xIb": {}, "7vQ4e5Sn": {}}, "dateOfBirth": "1996-09-28", "firstName": "HG1NLN8e", "language": "OU_ejfb_188", "lastName": "Llucv8j8", "privateCustomAttributes": {"EzzlizYZ": {}, "35zw6gDG": {}, "3MRiMm4t": {}}, "timeZone": "OYXAVVHb"}' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 49 'CreateMyProfile' test.out
+
+#- 50 GetMyPrivateCustomAttributesInfo
+$PYTHON -m $MODULE 'basic-get-my-private-custom-attributes-info' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 50 'GetMyPrivateCustomAttributesInfo' test.out
+
+#- 51 UpdateMyPrivateCustomAttributesPartially
+$PYTHON -m $MODULE 'basic-update-my-private-custom-attributes-partially' \
+    --body '{"z1GDIeHa": {}, "KhTLdb7f": {}, "YJ8u6U8o": {}}' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 51 'UpdateMyPrivateCustomAttributesPartially' test.out
+
+#- 52 GetMyZipCode
+$PYTHON -m $MODULE 'basic-get-my-zip-code' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 52 'GetMyZipCode' test.out
+
+#- 53 UpdateMyZipCode
+$PYTHON -m $MODULE 'basic-update-my-zip-code' \
+    '{"zipCode": "rNE7rpSa"}' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 53 'UpdateMyZipCode' test.out
+
+#- 54 PublicGeneratedUserUploadContentUrl
+$PYTHON -m $MODULE 'basic-public-generated-user-upload-content-url' \
+    'CE8oWSVG' \
+    'hROUC6nM' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 54 'PublicGeneratedUserUploadContentUrl' test.out
+
+#- 55 PublicGetUserProfileInfo
+$PYTHON -m $MODULE 'basic-public-get-user-profile-info' \
+    'm5vI2nxq' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 55 'PublicGetUserProfileInfo' test.out
+
+#- 56 PublicUpdateUserProfile
+$PYTHON -m $MODULE 'basic-public-update-user-profile' \
+    'kqbJ4I95' \
+    --body '{"avatarLargeUrl": "aMFOns7a", "avatarSmallUrl": "3E33u1vb", "avatarUrl": "uZeSXp4d", "customAttributes": {"gNEYqBOm": {}, "ZmfvthPR": {}, "UrBWtrwP": {}}, "dateOfBirth": "1971-10-28", "firstName": "h9U67BeI", "language": "chD", "lastName": "gQrg4qkg", "privateCustomAttributes": {"GvBpFmbM": {}, "9pR59ILT": {}, "E1n9hCLJ": {}}, "timeZone": "cZZIamFH", "zipCode": "yatdJ6GQ"}' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 56 'PublicUpdateUserProfile' test.out
+
+#- 57 PublicCreateUserProfile
+$PYTHON -m $MODULE 'basic-public-create-user-profile' \
+    'I3MXeFrv' \
+    --body '{"avatarLargeUrl": "gHy5W3po", "avatarSmallUrl": "uogNv0rX", "avatarUrl": "e5mILdLJ", "customAttributes": {"p7oo6eki": {}, "RG1ktQGB": {}, "k9VudXzY": {}}, "dateOfBirth": "1971-12-18", "firstName": "CeTy7lD2", "language": "aAWd-BEPk", "lastName": "pfae8g0v", "timeZone": "4gCUcoti"}' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 57 'PublicCreateUserProfile' test.out
+
+#- 58 PublicGetCustomAttributesInfo
+$PYTHON -m $MODULE 'basic-public-get-custom-attributes-info' \
+    '2jJiKVWi' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 58 'PublicGetCustomAttributesInfo' test.out
+
+#- 59 PublicUpdateCustomAttributesPartially
+$PYTHON -m $MODULE 'basic-public-update-custom-attributes-partially' \
+    'ar5HJHtm' \
+    --body '{"TC6ZmfkQ": {}, "EukcK7kf": {}, "rbBiEhjx": {}}' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 59 'PublicUpdateCustomAttributesPartially' test.out
+
+#- 60 PublicGetUserProfilePublicInfo
+$PYTHON -m $MODULE 'basic-public-get-user-profile-public-info' \
+    'A9NhgkTq' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 60 'PublicGetUserProfilePublicInfo' test.out
+
+#- 61 PublicUpdateUserProfileStatus
+$PYTHON -m $MODULE 'basic-public-update-user-profile-status' \
+    'oGvi0dx8' \
+    --body '{"status": "INACTIVE"}' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 61 'PublicUpdateUserProfileStatus' test.out
 
 
 fi

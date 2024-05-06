@@ -76,11 +76,15 @@ class QueryMatchHistories(Operation):
     # region fields
 
     _url: str = "/sessionhistory/v2/admin/namespaces/{namespace}/xray/matches/{matchId}/histories"
+    _path: str = "/sessionhistory/v2/admin/namespaces/{namespace}/xray/matches/{matchId}/histories"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "sessionhistory"
 
     match_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -94,6 +98,14 @@ class QueryMatchHistories(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -47,6 +47,9 @@ class AdminSaveItem(Operation):
     Tags will be auto-created.
     ItemType will be auto-created.
 
+    For Ecommerce item, this fields will be override by ecommerce configuration
+    (slotUsed, serverCustomAttributes, customAttributes, type)
+
     Permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY:ITEM [CREATE]
 
     Required Permission(s):
@@ -82,11 +85,15 @@ class AdminSaveItem(Operation):
     # region fields
 
     _url: str = "/inventory/v1/admin/namespaces/{namespace}/users/{userId}/items"
+    _path: str = "/inventory/v1/admin/namespaces/{namespace}/users/{userId}/items"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "inventory"
 
     body: ApimodelsSaveItemReq  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -99,6 +106,14 @@ class AdminSaveItem(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -34,7 +34,7 @@ from ...models import ModelsMultipleEventLevel
 
 
 class SpecificEventLevelDescriptionHandler(Operation):
-    """Get specific list of event level and the descriptions by comma separated value of event levels (SpecificEventLevelDescriptionHandler)
+    """[DEPRECATED] Get specific list of event level and the descriptions by comma separated value of event levels (SpecificEventLevelDescriptionHandler)
 
 
     Properties:
@@ -63,11 +63,15 @@ class SpecificEventLevelDescriptionHandler(Operation):
     # region fields
 
     _url: str = "/event/descriptions/eventLevel/listByEventLevels"
+    _path: str = "/event/descriptions/eventLevel/listByEventLevels"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "eventlog"
 
     event_levels: str  # OPTIONAL in [query]
 
@@ -78,6 +82,14 @@ class SpecificEventLevelDescriptionHandler(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

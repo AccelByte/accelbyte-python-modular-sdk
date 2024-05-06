@@ -40,11 +40,7 @@ class GetUserProfileInfoByPublicId(Operation):
     Get user profile by public id.
     Other detail info:
 
-      * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:PROFILE" , action=2 (READ)
-      *  Returns : user profile info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:PROFILE [READ]
+      * Returns : user profile info
 
     Properties:
         url: /basic/v1/admin/namespaces/{namespace}/profiles/byPublicId
@@ -57,7 +53,7 @@ class GetUserProfileInfoByPublicId(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -78,11 +74,15 @@ class GetUserProfileInfoByPublicId(Operation):
     # region fields
 
     _url: str = "/basic/v1/admin/namespaces/{namespace}/profiles/byPublicId"
+    _path: str = "/basic/v1/admin/namespaces/{namespace}/profiles/byPublicId"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "basic"
 
     namespace: str  # REQUIRED in [path]
     public_id: str  # REQUIRED in [query]
@@ -94,6 +94,14 @@ class GetUserProfileInfoByPublicId(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

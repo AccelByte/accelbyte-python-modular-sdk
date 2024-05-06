@@ -35,10 +35,8 @@ from ...models import ResponseError
 class AdminCancelUserPersonalDataRequest(Operation):
     """Cancel user's personal data requests (AdminCancelUserPersonalDataRequest)
 
-    Required permission `ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [DELETE]` and scope `account`
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [DELETE]
+    Cancel user's personal data requests
+    Scope: account
 
     Required Scope(s):
         - account
@@ -79,11 +77,17 @@ class AdminCancelUserPersonalDataRequest(Operation):
     _url: str = (
         "/gdpr/admin/namespaces/{namespace}/users/{userId}/requests/{requestDate}"
     )
+    _path: str = (
+        "/gdpr/admin/namespaces/{namespace}/users/{userId}/requests/{requestDate}"
+    )
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "gdpr"
 
     namespace: str  # REQUIRED in [path]
     request_date: str  # REQUIRED in [path]
@@ -96,6 +100,14 @@ class AdminCancelUserPersonalDataRequest(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

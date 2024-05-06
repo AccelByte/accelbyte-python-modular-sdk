@@ -36,7 +36,7 @@ from ...models import ServiceGetSessionHistorySearchResponseV2
 
 
 class SearchSessionsV2(Operation):
-    """Search sessions (SearchSessionsV2)
+    """[DEPRECATED] Search sessions (SearchSessionsV2)
 
     ## The endpoint is going to be deprecated
 
@@ -103,11 +103,15 @@ class SearchSessionsV2(Operation):
     # region fields
 
     _url: str = "/matchmaking/v2/admin/namespaces/{namespace}/sessions/history/search"
+    _path: str = "/matchmaking/v2/admin/namespaces/{namespace}/sessions/history/search"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "matchmaking"
 
     namespace: str  # REQUIRED in [path]
     channel: str  # OPTIONAL in [query]
@@ -125,6 +129,14 @@ class SearchSessionsV2(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

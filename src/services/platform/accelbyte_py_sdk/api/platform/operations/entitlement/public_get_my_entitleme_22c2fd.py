@@ -50,13 +50,9 @@ class PublicGetMyEntitlementOwnershipBySku(Operation):
 
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
-      *  Path's namespace :
+      * Path's namespace :
         * can be filled with publisher namespace in order to get publisher namespace entitlement ownership by sku
         * can be filled with game namespace in order to get game namespace entitlement ownership by sku
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:ENTITLEMENT [READ]
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/me/entitlements/ownership/bySku
@@ -69,7 +65,7 @@ class PublicGetMyEntitlementOwnershipBySku(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -86,11 +82,17 @@ class PublicGetMyEntitlementOwnershipBySku(Operation):
     _url: str = (
         "/platform/public/namespaces/{namespace}/users/me/entitlements/ownership/bySku"
     )
+    _path: str = (
+        "/platform/public/namespaces/{namespace}/users/me/entitlements/ownership/bySku"
+    )
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     namespace: str  # REQUIRED in [path]
     entitlement_clazz: Union[str, EntitlementClazzEnum]  # OPTIONAL in [query]
@@ -103,6 +105,14 @@ class PublicGetMyEntitlementOwnershipBySku(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

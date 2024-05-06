@@ -40,11 +40,7 @@ class GetItemTypeConfig(Operation):
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:ITEM:CONFIG", action=2 (READ)
-      *  Returns : item type config data
-
-    Required Permission(s):
-        - ADMIN:ITEM:CONFIG [READ]
+      * Returns : item type config data
 
     Properties:
         url: /platform/admin/items/configs/{id}
@@ -57,7 +53,7 @@ class GetItemTypeConfig(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         id_: (id) REQUIRED str in path
 
@@ -70,11 +66,15 @@ class GetItemTypeConfig(Operation):
     # region fields
 
     _url: str = "/platform/admin/items/configs/{id}"
+    _path: str = "/platform/admin/items/configs/{id}"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     id_: str  # REQUIRED in [path]
 
@@ -85,6 +85,14 @@ class GetItemTypeConfig(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

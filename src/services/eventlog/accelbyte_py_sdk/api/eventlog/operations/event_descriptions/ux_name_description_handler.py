@@ -34,7 +34,7 @@ from ...models import ModelsMultipleUX
 
 
 class UXNameDescriptionHandler(Operation):
-    """Get list of ux name and the descriptions (UXNameDescriptionHandler)
+    """[DEPRECATED] Get list of ux name and the descriptions (UXNameDescriptionHandler)
 
 
     Properties:
@@ -57,11 +57,15 @@ class UXNameDescriptionHandler(Operation):
     # region fields
 
     _url: str = "/event/descriptions/ux"
+    _path: str = "/event/descriptions/ux"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "eventlog"
 
     # endregion fields
 
@@ -70,6 +74,14 @@ class UXNameDescriptionHandler(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

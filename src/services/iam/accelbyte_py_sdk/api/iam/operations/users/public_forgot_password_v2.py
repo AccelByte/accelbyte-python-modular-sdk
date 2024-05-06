@@ -34,7 +34,7 @@ from ...models import ModelSendVerificationCodeRequest
 
 
 class PublicForgotPasswordV2(Operation):
-    """Request Password Reset Code (PublicForgotPasswordV2)
+    """[DEPRECATED] Request Password Reset Code (PublicForgotPasswordV2)
 
     ## The endpoint is going to be deprecated
     **Endpoint migration guide**
@@ -75,11 +75,15 @@ class PublicForgotPasswordV2(Operation):
     # region fields
 
     _url: str = "/iam/v2/public/namespaces/{namespace}/users/forgotPassword"
+    _path: str = "/iam/v2/public/namespaces/{namespace}/users/forgotPassword"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     body: ModelSendVerificationCodeRequest  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -91,6 +95,14 @@ class PublicForgotPasswordV2(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

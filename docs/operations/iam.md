@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Iam Service Index (7.13.0)
+# AccelByte Gaming Services Iam Service Index (7.15.0)
 
 
 ## Operations
@@ -772,3 +772,4 @@
 | oauthmodel.UserBan | [OauthmodelUserBan](../../accelbyte_py_sdk/api/iam/models/oauthmodel_user_ban.py) |
 | rest.ErrorResponse | [RestErrorResponse](../../accelbyte_py_sdk/api/iam/models/rest_error_response.py) |
 | rest.ErrorResponseWithConflictedUserPlatformAccounts | [RestErrorResponseWithConflictedUserPlatformAccounts](../../accelbyte_py_sdk/api/iam/models/rest_error_response_with_conflicted_user_platform_accounts.py) |
+| rest.Permission | [RestPermission](../../accelbyte_py_sdk/api/iam/models/rest_permission.py) |

@@ -39,13 +39,7 @@ class UpdateMemberRolePublicV2(Operation):
 
     Required Member Role Permission: "GROUP:ROLE [UPDATE]
 
-
-
-
     This endpoint is used to assign role to group member
-
-
-
 
     Action Code: 73204
 
@@ -87,11 +81,15 @@ class UpdateMemberRolePublicV2(Operation):
     # region fields
 
     _url: str = "/group/v2/public/namespaces/{namespace}/roles/{memberRoleId}/groups/{groupId}/members"
+    _path: str = "/group/v2/public/namespaces/{namespace}/roles/{memberRoleId}/groups/{groupId}/members"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     body: ModelsAssignRoleToMemberRequestV1  # REQUIRED in [body]
     group_id: str  # REQUIRED in [path]
@@ -105,6 +103,14 @@ class UpdateMemberRolePublicV2(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

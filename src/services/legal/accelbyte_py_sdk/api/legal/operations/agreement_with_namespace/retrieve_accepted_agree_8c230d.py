@@ -36,11 +36,7 @@ from ...models import UsersAgreementsRequest
 class RetrieveAcceptedAgreementsForMultiUsers(Operation):
     """Retrieve Accepted Legal Agreements For Multi Users (retrieveAcceptedAgreementsForMultiUsers)
 
-    This API will return all accepted Legal Agreements for each user, including agreements of game users if publisher user has corresponding game accountOther detail info:
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:LEGAL", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:LEGAL [READ]
+    This API will return all accepted Legal Agreements for each user, including agreements of game users if publisher user has corresponding game account.
 
     Properties:
         url: /agreement/admin/namespaces/{namespace}/agreements
@@ -53,7 +49,7 @@ class RetrieveAcceptedAgreementsForMultiUsers(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL UsersAgreementsRequest in body
 
@@ -66,11 +62,15 @@ class RetrieveAcceptedAgreementsForMultiUsers(Operation):
     # region fields
 
     _url: str = "/agreement/admin/namespaces/{namespace}/agreements"
+    _path: str = "/agreement/admin/namespaces/{namespace}/agreements"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "legal"
 
     body: UsersAgreementsRequest  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -82,6 +82,14 @@ class RetrieveAcceptedAgreementsForMultiUsers(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

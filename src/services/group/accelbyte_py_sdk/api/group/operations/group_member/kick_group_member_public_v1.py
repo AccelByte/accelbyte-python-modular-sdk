@@ -38,23 +38,11 @@ class KickGroupMemberPublicV1(Operation):
 
     Required valid user authentication
 
-
-
-
     Required Member Role Permission: "GROUP:KICK [CREATE]"
-
-
-
 
     This endpoint is used to kick group member.
 
-
-
-
     Kick group member. This endpoint will check the member and group information, and also the role permission of the the user who accesses this endpoint
-
-
-
 
     Action Code: 73409
 
@@ -92,11 +80,15 @@ class KickGroupMemberPublicV1(Operation):
     # region fields
 
     _url: str = "/group/v1/public/namespaces/{namespace}/users/{userId}/kick"
+    _path: str = "/group/v1/public/namespaces/{namespace}/users/{userId}/kick"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
@@ -108,6 +100,14 @@ class KickGroupMemberPublicV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

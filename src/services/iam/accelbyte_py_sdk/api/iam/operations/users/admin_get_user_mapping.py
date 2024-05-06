@@ -38,8 +38,8 @@ class AdminGetUserMapping(Operation):
 
     This endpoint requires the client access token as the bearer token
     This endpoint will support publisher access to game and game access to publisher
-    If targetNamespace filled with publisher namespace then this endpoint will return its game user id and game namespace
-    If targetNamespace filled with game namespace then this endpoint will return its publisher user id and publisher namespace. Will create game user id if not exists.
+    If targetNamespace filled with publisher namespace then this endpoint will return its publisher user id and publisher namespace.
+    If targetNamespace filled with game namespace then this endpoint will return its game user id and game namespace.
 
     Properties:
         url: /iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/justice/{targetNamespace}
@@ -75,11 +75,15 @@ class AdminGetUserMapping(Operation):
     # region fields
 
     _url: str = "/iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/justice/{targetNamespace}"
+    _path: str = "/iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/justice/{targetNamespace}"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     namespace: str  # REQUIRED in [path]
     target_namespace: str  # REQUIRED in [path]
@@ -92,6 +96,14 @@ class AdminGetUserMapping(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

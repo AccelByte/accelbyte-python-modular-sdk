@@ -75,7 +75,7 @@ class PublicUpdateUserV4(Operation):
 
         403: Forbidden - RestErrorResponse (20003: forbidden access)
 
-        409: Conflict - RestErrorResponse (10133: email already used)
+        409: Conflict - RestErrorResponse (10133: email already used | 10222: unique display name already exists)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -83,11 +83,15 @@ class PublicUpdateUserV4(Operation):
     # region fields
 
     _url: str = "/iam/v4/public/namespaces/{namespace}/users/me"
+    _path: str = "/iam/v4/public/namespaces/{namespace}/users/me"
+    _base_path: str = ""
     _method: str = "PATCH"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     body: ModelPublicUserUpdateRequestV3  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -99,6 +103,14 @@ class PublicUpdateUserV4(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:
@@ -197,7 +209,7 @@ class PublicUpdateUserV4(Operation):
 
         403: Forbidden - RestErrorResponse (20003: forbidden access)
 
-        409: Conflict - RestErrorResponse (10133: email already used)
+        409: Conflict - RestErrorResponse (10133: email already used | 10222: unique display name already exists)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
 

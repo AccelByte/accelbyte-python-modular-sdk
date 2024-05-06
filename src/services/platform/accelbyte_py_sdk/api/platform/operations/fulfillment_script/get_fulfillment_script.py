@@ -39,11 +39,7 @@ class GetFulfillmentScript(Operation):
     [Not Supported Yet In Starter] Get fulfillment script by id.
     Other detail info:
 
-      * Required permission : resource="ADMIN:FULFILLMENT", action=2 (READ)
-      *  Returns : get fulfillment script
-
-    Required Permission(s):
-        - ADMIN:FULFILLMENT [READ]
+      * Returns : get fulfillment script
 
     Properties:
         url: /platform/admin/fulfillment/scripts/{id}
@@ -56,7 +52,7 @@ class GetFulfillmentScript(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         id_: (id) REQUIRED str in path
 
@@ -69,11 +65,15 @@ class GetFulfillmentScript(Operation):
     # region fields
 
     _url: str = "/platform/admin/fulfillment/scripts/{id}"
+    _path: str = "/platform/admin/fulfillment/scripts/{id}"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     id_: str  # REQUIRED in [path]
 
@@ -84,6 +84,14 @@ class GetFulfillmentScript(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

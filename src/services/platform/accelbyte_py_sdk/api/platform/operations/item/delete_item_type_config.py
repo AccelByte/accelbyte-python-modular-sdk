@@ -35,12 +35,7 @@ from ...models import ErrorEntity
 class DeleteItemTypeConfig(Operation):
     """Delete an item type config (deleteItemTypeConfig)
 
-    [Not Supported Yet In Starter] This API is used to delete an item type config permanently.Other detail info:
-
-      * Required permission : resource="ADMIN:ITEM:CONFIG", action=8 (DELETE)
-
-    Required Permission(s):
-        - ADMIN:ITEM:CONFIG [DELETE]
+    [Not Supported Yet In Starter] This API is used to delete an item type config permanently.
 
     Properties:
         url: /platform/admin/items/configs/{id}
@@ -53,7 +48,7 @@ class DeleteItemTypeConfig(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         id_: (id) REQUIRED str in path
 
@@ -66,11 +61,15 @@ class DeleteItemTypeConfig(Operation):
     # region fields
 
     _url: str = "/platform/admin/items/configs/{id}"
+    _path: str = "/platform/admin/items/configs/{id}"
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     id_: str  # REQUIRED in [path]
 
@@ -81,6 +80,14 @@ class DeleteItemTypeConfig(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

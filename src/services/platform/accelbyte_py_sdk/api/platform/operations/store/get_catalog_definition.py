@@ -48,8 +48,7 @@ class GetCatalogDefinition(Operation):
 
     Other detail info:
 
-      * Required permission : resource=ADMIN:NAMESPACE:{namespace}:STORE, action=2 (READ)
-      *  Returns : catalog definition
+      * Returns : catalog definition
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/catalogDefinition
@@ -75,11 +74,15 @@ class GetCatalogDefinition(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/stores/catalogDefinition"
+    _path: str = "/platform/admin/namespaces/{namespace}/stores/catalogDefinition"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     namespace: str  # REQUIRED in [path]
     catalog_type: Union[str, CatalogTypeEnum]  # REQUIRED in [query]
@@ -91,6 +94,14 @@ class GetCatalogDefinition(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

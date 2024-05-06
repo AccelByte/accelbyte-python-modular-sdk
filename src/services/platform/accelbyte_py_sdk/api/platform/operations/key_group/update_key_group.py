@@ -41,11 +41,7 @@ class UpdateKeyGroup(Operation):
     Update key group.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=4 (UPDATE)
-      *  Returns : updated key group
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:KEYGROUP [UPDATE]
+      * Returns : updated key group
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}
@@ -58,7 +54,7 @@ class UpdateKeyGroup(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL KeyGroupUpdate in body
 
@@ -79,11 +75,15 @@ class UpdateKeyGroup(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}"
+    _path: str = "/platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}"
+    _base_path: str = ""
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: KeyGroupUpdate  # OPTIONAL in [body]
     key_group_id: str  # REQUIRED in [path]
@@ -96,6 +96,14 @@ class UpdateKeyGroup(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -39,11 +39,7 @@ class DeleteRewardConditionRecord(Operation):
 
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:REWARD", action=8 (DELETE)
-      *  Returns : 204 No Content
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:REWARD [DELETE]
+      * Returns : 204 No Content
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/rewards/{rewardId}/record
@@ -56,7 +52,7 @@ class DeleteRewardConditionRecord(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL DeleteRewardConditionRequest in body
 
@@ -71,11 +67,15 @@ class DeleteRewardConditionRecord(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/rewards/{rewardId}/record"
+    _path: str = "/platform/admin/namespaces/{namespace}/rewards/{rewardId}/record"
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     body: DeleteRewardConditionRequest  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -88,6 +88,14 @@ class DeleteRewardConditionRecord(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

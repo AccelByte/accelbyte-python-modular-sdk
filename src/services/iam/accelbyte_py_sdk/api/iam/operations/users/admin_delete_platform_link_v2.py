@@ -34,7 +34,7 @@ from ...models import RestErrorResponse
 
 
 class AdminDeletePlatformLinkV2(Operation):
-    """Delete the link of user's account with platform (AdminDeletePlatformLinkV2)
+    """[DEPRECATED] Delete the link of user's account with platform (AdminDeletePlatformLinkV2)
 
     ## The endpoint is going to be deprecated
     **Endpoint migration guide**
@@ -93,11 +93,15 @@ class AdminDeletePlatformLinkV2(Operation):
     # region fields
 
     _url: str = "/iam/v2/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId}/link"
+    _path: str = "/iam/v2/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId}/link"
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = ["application/x-www-form-urlencoded", "text/plain"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     platform_namespace: str  # OPTIONAL in [form_data]
     namespace: str  # REQUIRED in [path]
@@ -111,6 +115,14 @@ class AdminDeletePlatformLinkV2(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

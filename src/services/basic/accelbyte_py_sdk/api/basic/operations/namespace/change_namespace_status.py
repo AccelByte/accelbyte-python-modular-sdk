@@ -41,12 +41,8 @@ class ChangeNamespaceStatus(Operation):
     Change a namespace status.
     Other detail info:
 
-      * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:NAMESPACE" , action=4 (UPDATE)
       * Action code : 11306
       *  Returns : updated namespace
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:NAMESPACE [UPDATE]
 
     Properties:
         url: /basic/v1/admin/namespaces/{namespace}/status
@@ -59,7 +55,7 @@ class ChangeNamespaceStatus(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL NamespaceStatusUpdate in body
 
@@ -82,11 +78,15 @@ class ChangeNamespaceStatus(Operation):
     # region fields
 
     _url: str = "/basic/v1/admin/namespaces/{namespace}/status"
+    _path: str = "/basic/v1/admin/namespaces/{namespace}/status"
+    _base_path: str = ""
     _method: str = "PATCH"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "basic"
 
     body: NamespaceStatusUpdate  # OPTIONAL in [body]
     namespace: str  # REQUIRED in [path]
@@ -98,6 +98,14 @@ class ChangeNamespaceStatus(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

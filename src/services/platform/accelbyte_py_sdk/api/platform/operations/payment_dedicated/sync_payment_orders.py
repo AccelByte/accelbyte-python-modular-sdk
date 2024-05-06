@@ -38,11 +38,7 @@ class SyncPaymentOrders(Operation):
     [Not Supported Yet In Starter] Sync payment orders. If response contains nextEvaluatedKey, please use it as query param in the next call to fetch the next batch, a batch has 1000 elements or less.
     Other detail info:
 
-      * Required permission : resource="ADMIN:PAYMENT", action=2 (READ)
-      *  Returns : sync payment orders
-
-    Required Permission(s):
-        - ADMIN:PAYMENT [READ]
+      * Returns : sync payment orders
 
     Properties:
         url: /platform/admin/payment/orders
@@ -55,7 +51,7 @@ class SyncPaymentOrders(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         next_evaluated_key: (nextEvaluatedKey) OPTIONAL str in query
 
@@ -70,11 +66,15 @@ class SyncPaymentOrders(Operation):
     # region fields
 
     _url: str = "/platform/admin/payment/orders"
+    _path: str = "/platform/admin/payment/orders"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     next_evaluated_key: str  # OPTIONAL in [query]
     end: str  # REQUIRED in [query]
@@ -87,6 +87,14 @@ class SyncPaymentOrders(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

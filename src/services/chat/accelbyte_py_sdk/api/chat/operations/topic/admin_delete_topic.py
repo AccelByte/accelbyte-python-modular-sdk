@@ -61,11 +61,15 @@ class AdminDeleteTopic(Operation):
     # region fields
 
     _url: str = "/chat/admin/namespaces/{namespace}/topic/{topic}"
+    _path: str = "/chat/admin/namespaces/{namespace}/topic/{topic}"
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "chat"
 
     namespace: str  # REQUIRED in [path]
     topic: str  # REQUIRED in [path]
@@ -77,6 +81,14 @@ class AdminDeleteTopic(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

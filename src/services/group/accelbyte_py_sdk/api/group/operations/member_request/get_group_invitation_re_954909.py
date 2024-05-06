@@ -38,18 +38,9 @@ class GetGroupInvitationRequestPublicV1(Operation):
 
     Required valid user authentication
 
-
-
-
     This endpoint is used to Get Group Invitation Request List
 
-
-
-
     Get Group Invitation Request List for the user calling this endpoint. It will check any group invitation for this user
-
-
-
 
     Action Code: 73502
 
@@ -87,11 +78,15 @@ class GetGroupInvitationRequestPublicV1(Operation):
     # region fields
 
     _url: str = "/group/v1/public/namespaces/{namespace}/users/me/invite/request"
+    _path: str = "/group/v1/public/namespaces/{namespace}/users/me/invite/request"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     namespace: str  # REQUIRED in [path]
     limit: int  # OPTIONAL in [query]
@@ -104,6 +99,14 @@ class GetGroupInvitationRequestPublicV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

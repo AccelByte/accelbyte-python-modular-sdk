@@ -38,12 +38,6 @@ class PartialUpdatePolicy(Operation):
     """Update Base Legal Policy (partialUpdatePolicy)
 
     Update an existing base policy.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:*:LEGAL [UPDATE]
 
     Properties:
         url: /agreement/admin/base-policies/{basePolicyId}
@@ -56,7 +50,7 @@ class PartialUpdatePolicy(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL UpdateBasePolicyRequest in body
 
@@ -73,11 +67,15 @@ class PartialUpdatePolicy(Operation):
     # region fields
 
     _url: str = "/agreement/admin/base-policies/{basePolicyId}"
+    _path: str = "/agreement/admin/base-policies/{basePolicyId}"
+    _base_path: str = ""
     _method: str = "PATCH"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "legal"
 
     body: UpdateBasePolicyRequest  # OPTIONAL in [body]
     base_policy_id: str  # REQUIRED in [path]
@@ -89,6 +87,14 @@ class PartialUpdatePolicy(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

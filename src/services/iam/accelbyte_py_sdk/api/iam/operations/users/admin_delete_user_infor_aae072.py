@@ -67,11 +67,15 @@ class AdminDeleteUserInformationV3(Operation):
     # region fields
 
     _url: str = "/iam/v3/admin/namespaces/{namespace}/users/{userId}/information"
+    _path: str = "/iam/v3/admin/namespaces/{namespace}/users/{userId}/information"
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
@@ -83,6 +87,14 @@ class AdminDeleteUserInformationV3(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

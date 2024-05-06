@@ -64,16 +64,22 @@ class PublicSendRegistrationCode(Operation):
         400: Bad Request - RestErrorResponse (20002: validation error | 20019: unable to parse request body)
 
         409: Conflict - RestErrorResponse (10133: email already used)
+
+        429: Too Many Requests - RestErrorResponse (20007: too many requests)
     """
 
     # region fields
 
     _url: str = "/iam/v3/public/namespaces/{namespace}/users/code/request"
+    _path: str = "/iam/v3/public/namespaces/{namespace}/users/code/request"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     body: ModelSendRegisterVerificationCodeRequest  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
@@ -85,6 +91,14 @@ class PublicSendRegistrationCode(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:
@@ -181,6 +195,8 @@ class PublicSendRegistrationCode(Operation):
 
         409: Conflict - RestErrorResponse (10133: email already used)
 
+        429: Too Many Requests - RestErrorResponse (20007: too many requests)
+
         ---: HttpResponse (Undocumented Response)
 
         ---: HttpResponse (Unexpected Content-Type Error)
@@ -199,6 +215,8 @@ class PublicSendRegistrationCode(Operation):
         if code == 400:
             return None, RestErrorResponse.create_from_dict(content)
         if code == 409:
+            return None, RestErrorResponse.create_from_dict(content)
+        if code == 429:
             return None, RestErrorResponse.create_from_dict(content)
 
         return self.handle_undocumented_response(

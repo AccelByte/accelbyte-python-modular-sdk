@@ -34,17 +34,11 @@ from ...models import ErrorEntity
 
 
 class ExportStore(Operation):
-    """Export a store (exportStore)
+    """[DEPRECATED] Export a store (exportStore)
 
     This API is used to export a store.
 
     This api has been deprecated, pls use /v2/admin/namespaces/{namespace}/stores/export to export store.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STORE [READ]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}/export
@@ -57,7 +51,7 @@ class ExportStore(Operation):
 
         produces: ["application/zip"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -72,11 +66,15 @@ class ExportStore(Operation):
     # region fields
 
     _url: str = "/platform/admin/namespaces/{namespace}/stores/{storeId}/export"
+    _path: str = "/platform/admin/namespaces/{namespace}/stores/{storeId}/export"
+    _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/zip"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "platform"
 
     namespace: str  # REQUIRED in [path]
     store_id: str  # REQUIRED in [path]
@@ -88,6 +86,14 @@ class ExportStore(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -38,18 +38,9 @@ class LeaveGroupPublicV2(Operation):
 
     Required valid user authentication
 
-
-
-
     This endpoint is used to leave from group.
 
-
-
-
     leave from group. Admin is not allowed to leave the group. This endpoint will also give response if the user does not belong to any group.
-
-
-
 
     Action Code: 73404
 
@@ -87,11 +78,15 @@ class LeaveGroupPublicV2(Operation):
     # region fields
 
     _url: str = "/group/v2/public/namespaces/{namespace}/groups/{groupId}/leave"
+    _path: str = "/group/v2/public/namespaces/{namespace}/groups/{groupId}/leave"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     group_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -103,6 +98,14 @@ class LeaveGroupPublicV2(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

@@ -36,20 +36,9 @@ from ...models import ResponseErrorResponse
 class DeleteGroupConfigurationGlobalRuleAdminV1(Operation):
     """delete existing configuration global rule based on allowed action (deleteGroupConfigurationGlobalRuleAdminV1)
 
-    Required permission 'ADMIN:NAMESPACE:{namespace}:GROUP:CONFIGURATION [UPDATE]'
-
-
-
-
     This endpoint is used to delete existing global rule configuration based on the allowed action. It will not give any error if the allowed action is not existed in the global rule
 
-
-
-
     Action Code: 73105
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:GROUP:CONFIGURATION [UPDATE]
 
     Properties:
         url: /group/v1/admin/namespaces/{namespace}/configuration/{configurationCode}/rules/{allowedAction}
@@ -87,11 +76,15 @@ class DeleteGroupConfigurationGlobalRuleAdminV1(Operation):
     # region fields
 
     _url: str = "/group/v1/admin/namespaces/{namespace}/configuration/{configurationCode}/rules/{allowedAction}"
+    _path: str = "/group/v1/admin/namespaces/{namespace}/configuration/{configurationCode}/rules/{allowedAction}"
+    _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "group"
 
     allowed_action: str  # REQUIRED in [path]
     configuration_code: str  # REQUIRED in [path]
@@ -104,6 +97,14 @@ class DeleteGroupConfigurationGlobalRuleAdminV1(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

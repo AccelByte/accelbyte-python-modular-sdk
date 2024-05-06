@@ -52,11 +52,6 @@ def create_policy_version(
     """Create a Version from Country-Specific Policy (createPolicyVersion)
 
     Create a version of a particular country-specific policy.
-    Other detail info:
-        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=1 (CREATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:*:LEGAL [CREATE]
 
     Properties:
         url: /agreement/admin/policies/{policyId}/versions
@@ -69,7 +64,7 @@ def create_policy_version(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL CreatePolicyVersionRequest in body
 
@@ -97,11 +92,6 @@ async def create_policy_version_async(
     """Create a Version from Country-Specific Policy (createPolicyVersion)
 
     Create a version of a particular country-specific policy.
-    Other detail info:
-        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=1 (CREATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:*:LEGAL [CREATE]
 
     Properties:
         url: /agreement/admin/policies/{policyId}/versions
@@ -114,7 +104,7 @@ async def create_policy_version_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL CreatePolicyVersionRequest in body
 
@@ -144,11 +134,6 @@ def publish_policy_version(
     """Manually Publish a Version from Country-Specific Policy (publishPolicyVersion)
 
     Manually publish a version of a particular country-specific policy.
-    Other detail info:
-        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:*:LEGAL [UPDATE]
 
     Properties:
         url: /agreement/admin/policies/versions/{policyVersionId}/latest
@@ -161,7 +146,7 @@ def publish_policy_version(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         policy_version_id: (policyVersionId) REQUIRED str in path
 
@@ -191,11 +176,6 @@ async def publish_policy_version_async(
     """Manually Publish a Version from Country-Specific Policy (publishPolicyVersion)
 
     Manually publish a version of a particular country-specific policy.
-    Other detail info:
-        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:*:LEGAL [UPDATE]
 
     Properties:
         url: /agreement/admin/policies/versions/{policyVersionId}/latest
@@ -208,7 +188,7 @@ async def publish_policy_version_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         policy_version_id: (policyVersionId) REQUIRED str in path
 
@@ -240,11 +220,6 @@ def retrieve_single_policy_version(
     """Retrieve a Version from Country-Specific Policy (retrieveSinglePolicyVersion)
 
     Retrieve a version of a particular country specific policy. If version is not provided, the Legal Service will assume caller requesting all versions from country-specific policy.
-    Other detail info:
-        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:*:LEGAL [READ]
 
     Properties:
         url: /agreement/admin/policies/{policyId}/versions
@@ -257,7 +232,7 @@ def retrieve_single_policy_version(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         policy_id: (policyId) REQUIRED str in path
 
@@ -285,11 +260,6 @@ async def retrieve_single_policy_version_async(
     """Retrieve a Version from Country-Specific Policy (retrieveSinglePolicyVersion)
 
     Retrieve a version of a particular country specific policy. If version is not provided, the Legal Service will assume caller requesting all versions from country-specific policy.
-    Other detail info:
-        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:*:LEGAL [READ]
 
     Properties:
         url: /agreement/admin/policies/{policyId}/versions
@@ -302,7 +272,7 @@ async def retrieve_single_policy_version_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         policy_id: (policyId) REQUIRED str in path
 
@@ -332,11 +302,6 @@ def update_policy_version(
     """Update a Version of Policy (updatePolicyVersion)
 
     Update a particular policy version.
-    Other detail info:
-        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:*:LEGAL [UPDATE]
 
     Properties:
         url: /agreement/admin/policies/versions/{policyVersionId}
@@ -349,7 +314,7 @@ def update_policy_version(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL UpdatePolicyVersionRequest in body
 
@@ -379,11 +344,6 @@ async def update_policy_version_async(
     """Update a Version of Policy (updatePolicyVersion)
 
     Update a particular policy version.
-    Other detail info:
-        * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:*:LEGAL [UPDATE]
 
     Properties:
         url: /agreement/admin/policies/versions/{policyVersionId}
@@ -396,7 +356,7 @@ async def update_policy_version_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL UpdatePolicyVersionRequest in body
 

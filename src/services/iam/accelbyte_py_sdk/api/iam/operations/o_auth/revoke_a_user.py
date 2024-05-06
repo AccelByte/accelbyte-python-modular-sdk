@@ -32,7 +32,7 @@ from accelbyte_py_sdk.core import deprecated
 
 
 class RevokeAUser(Operation):
-    """OAuth2 user revocation API (RevokeAUser)
+    """[DEPRECATED] OAuth2 user revocation API (RevokeAUser)
 
     ## The endpoint is going to be deprecated
     This endpoint revokes a user.
@@ -68,11 +68,15 @@ class RevokeAUser(Operation):
     # region fields
 
     _url: str = "/iam/oauth/revoke/user"
+    _path: str = "/iam/oauth/revoke/user"
+    _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/x-www-form-urlencoded"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
+
+    service_name: Optional[str] = "iam"
 
     user_id: str  # REQUIRED in [form_data]
 
@@ -83,6 +87,14 @@ class RevokeAUser(Operation):
     @property
     def url(self) -> str:
         return self._url
+
+    @property
+    def path(self) -> str:
+        return self._path
+
+    @property
+    def base_path(self) -> str:
+        return self._base_path
 
     @property
     def method(self) -> str:

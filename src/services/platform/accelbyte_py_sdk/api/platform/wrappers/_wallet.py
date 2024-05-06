@@ -118,11 +118,7 @@ def bulk_credit(
     Credit different users' wallets.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET", action=4 (UPDATE)
-      *  Returns : bulk credit result
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:WALLET [UPDATE]
+      * Returns : bulk credit result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/wallets/credit
@@ -135,7 +131,7 @@ def bulk_credit(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL List[BulkCreditRequest] in body
 
@@ -169,11 +165,7 @@ async def bulk_credit_async(
     Credit different users' wallets.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET", action=4 (UPDATE)
-      *  Returns : bulk credit result
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:WALLET [UPDATE]
+      * Returns : bulk credit result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/wallets/credit
@@ -186,7 +178,7 @@ async def bulk_credit_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL List[BulkCreditRequest] in body
 
@@ -222,11 +214,7 @@ def bulk_debit(
     Debit different users' wallets.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET", action=4 (UPDATE)
-      *  Returns : bulk credit result
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:WALLET [UPDATE]
+      * Returns : bulk credit result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/wallets/debit
@@ -239,7 +227,7 @@ def bulk_debit(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL List[BulkDebitRequest] in body
 
@@ -273,11 +261,7 @@ async def bulk_debit_async(
     Debit different users' wallets.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET", action=4 (UPDATE)
-      *  Returns : bulk credit result
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:WALLET [UPDATE]
+      * Returns : bulk credit result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/wallets/debit
@@ -290,7 +274,7 @@ async def bulk_debit_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL List[BulkDebitRequest] in body
 
@@ -328,11 +312,7 @@ def check_balance(
     Checks if the user has enough balance based on the provided criteria.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
-      *  Returns : boolean value indicating if the user has enough balance
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [READ]
+      * Returns : boolean value indicating if the user has enough balance
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/balanceCheck
@@ -345,7 +325,7 @@ def check_balance(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         request: (request) REQUIRED DebitByWalletPlatformRequest in body
 
@@ -387,11 +367,7 @@ async def check_balance_async(
     Checks if the user has enough balance based on the provided criteria.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
-      *  Returns : boolean value indicating if the user has enough balance
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [READ]
+      * Returns : boolean value indicating if the user has enough balance
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/balanceCheck
@@ -404,7 +380,7 @@ async def check_balance_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         request: (request) REQUIRED DebitByWalletPlatformRequest in body
 
@@ -447,12 +423,6 @@ def check_wallet(
     """Check wallet by balance origin and currency code (checkWallet)
 
     [SERVICE COMMUNICATION ONLY] Check wallet by balance origin and currency code whether it's inactive.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [READ]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/check
@@ -465,7 +435,7 @@ def check_wallet(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -510,12 +480,6 @@ async def check_wallet_async(
     """Check wallet by balance origin and currency code (checkWallet)
 
     [SERVICE COMMUNICATION ONLY] Check wallet by balance origin and currency code whether it's inactive.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [READ]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/check
@@ -528,7 +492,7 @@ async def check_wallet_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -576,10 +540,7 @@ def credit_user_wallet(
     Credit a user wallet by currency code and balance origin, if wallet not exists, it will create a new wallet.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [UPDATE]
+    (UPDATE)
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/credit
@@ -592,7 +553,7 @@ def credit_user_wallet(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL CreditRequest in body
 
@@ -636,10 +597,7 @@ async def credit_user_wallet_async(
     Credit a user wallet by currency code and balance origin, if wallet not exists, it will create a new wallet.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [UPDATE]
+    (UPDATE)
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/credit
@@ -652,7 +610,7 @@ async def credit_user_wallet_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL CreditRequest in body
 
@@ -698,7 +656,6 @@ def debit_by_wallet_platform(
     Pay with user wallet by currency code and client platform.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
 
 
 
@@ -718,9 +675,6 @@ def debit_by_wallet_platform(
 
         { "$data": "value" }
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [UPDATE]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/debitByWalletPlatform
 
@@ -732,7 +686,7 @@ def debit_by_wallet_platform(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         request: (request) REQUIRED DebitByWalletPlatformRequest in body
 
@@ -776,7 +730,6 @@ async def debit_by_wallet_platform_async(
     Pay with user wallet by currency code and client platform.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
 
 
 
@@ -796,9 +749,6 @@ async def debit_by_wallet_platform_async(
 
         { "$data": "value" }
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [UPDATE]
-
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/debitByWalletPlatform
 
@@ -810,7 +760,7 @@ async def debit_by_wallet_platform_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         request: (request) REQUIRED DebitByWalletPlatformRequest in body
 
@@ -855,12 +805,6 @@ def debit_user_wallet(
     """Debit a user wallet (debitUserWallet)
 
     Debit a user wallet.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [UPDATE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/debit
@@ -873,7 +817,7 @@ def debit_user_wallet(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL DebitRequest in body
 
@@ -920,12 +864,6 @@ async def debit_user_wallet_async(
     """Debit a user wallet (debitUserWallet)
 
     Debit a user wallet.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [UPDATE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/debit
@@ -938,7 +876,7 @@ async def debit_user_wallet_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL DebitRequest in body
 
@@ -986,12 +924,6 @@ def debit_user_wallet_by_currency_code(
     """Debit a user wallet by currency code (debitUserWalletByCurrencyCode)
 
     Debit a user wallet by currency code, default is debit system wallet.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [UPDATE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/{currencyCode}/debit
@@ -1004,7 +936,7 @@ def debit_user_wallet_by_currency_code(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL DebitByCurrencyCodeRequest in body
 
@@ -1048,12 +980,6 @@ async def debit_user_wallet_by_currency_code_async(
     """Debit a user wallet by currency code (debitUserWalletByCurrencyCode)
 
     Debit a user wallet by currency code, default is debit system wallet.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [UPDATE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/{currencyCode}/debit
@@ -1066,7 +992,7 @@ async def debit_user_wallet_by_currency_code_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL DebitByCurrencyCodeRequest in body
 
@@ -1112,12 +1038,6 @@ def disable_user_wallet(
     """Disable a user wallet (disableUserWallet)
 
     disable a user wallet.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [UPDATE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/disable
@@ -1130,7 +1050,7 @@ def disable_user_wallet(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1169,12 +1089,6 @@ async def disable_user_wallet_async(
     """Disable a user wallet (disableUserWallet)
 
     disable a user wallet.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [UPDATE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/disable
@@ -1187,7 +1101,7 @@ async def disable_user_wallet_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1228,12 +1142,6 @@ def enable_user_wallet(
     """Enable a user wallet (enableUserWallet)
 
     enable a user wallet.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [UPDATE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/enable
@@ -1246,7 +1154,7 @@ def enable_user_wallet(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1285,12 +1193,6 @@ async def enable_user_wallet_async(
     """Enable a user wallet (enableUserWallet)
 
     enable a user wallet.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [UPDATE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/enable
@@ -1303,7 +1205,7 @@ async def enable_user_wallet_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1344,11 +1246,7 @@ def get_platform_wallet_config(
     Get platform wallet config list.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET:CONFIG", action=2 (READ)
-      *  Returns : wallet info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:WALLET:CONFIG [READ]
+      * Returns : wallet info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config
@@ -1361,7 +1259,7 @@ def get_platform_wallet_config(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1393,11 +1291,7 @@ async def get_platform_wallet_config_async(
     Get platform wallet config list.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET:CONFIG", action=2 (READ)
-      *  Returns : wallet info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:WALLET:CONFIG [READ]
+      * Returns : wallet info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config
@@ -1410,7 +1304,7 @@ async def get_platform_wallet_config_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1446,11 +1340,7 @@ def get_user_wallet(
     get a user wallet.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
-      *  Returns : wallet info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [READ]
+      * Returns : wallet info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}
@@ -1463,7 +1353,7 @@ def get_user_wallet(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1502,11 +1392,7 @@ async def get_user_wallet_async(
     get a user wallet.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
-      *  Returns : wallet info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [READ]
+      * Returns : wallet info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}
@@ -1519,7 +1405,7 @@ async def get_user_wallet_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1559,11 +1445,7 @@ def get_wallet(
     get a wallet by wallet id.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET", action=2 (READ)
-      *  Returns : wallet info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:WALLET [READ]
+      * Returns : wallet info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/wallets/{walletId}
@@ -1576,7 +1458,7 @@ def get_wallet(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1611,11 +1493,7 @@ async def get_wallet_async(
     get a wallet by wallet id.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET", action=2 (READ)
-      *  Returns : wallet info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:WALLET [READ]
+      * Returns : wallet info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/wallets/{walletId}
@@ -1628,7 +1506,7 @@ async def get_wallet_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1667,11 +1545,7 @@ def list_user_currency_transactions(
     List user currency transactions ordered by create time desc.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
-      *  Returns : currency transaction info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [READ]
+      * Returns : currency transaction info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/{currencyCode}/transactions
@@ -1684,7 +1558,7 @@ def list_user_currency_transactions(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -1730,11 +1604,7 @@ async def list_user_currency_transactions_async(
     List user currency transactions ordered by create time desc.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
-      *  Returns : currency transaction info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [READ]
+      * Returns : currency transaction info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/{currencyCode}/transactions
@@ -1747,7 +1617,7 @@ async def list_user_currency_transactions_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -1796,11 +1666,7 @@ def list_user_wallet_transactions(
     List user wallet transactions ordered by create time desc.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
-      *  Returns : wallet transaction info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [READ]
+      * Returns : wallet transaction info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/transactions
@@ -1813,7 +1679,7 @@ def list_user_wallet_transactions(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1860,11 +1726,7 @@ async def list_user_wallet_transactions_async(
     List user wallet transactions ordered by create time desc.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
-      *  Returns : wallet transaction info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [READ]
+      * Returns : wallet transaction info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/transactions
@@ -1877,7 +1739,7 @@ async def list_user_wallet_transactions_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1922,12 +1784,6 @@ def pay_with_user_wallet(
     """Pay with user wallet by currency code and client platform (payWithUserWallet)
 
     Pay with user wallet by currency code and client platform.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [UPDATE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/payment
@@ -1940,7 +1796,7 @@ def pay_with_user_wallet(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL PaymentRequest in body
 
@@ -1982,12 +1838,6 @@ async def pay_with_user_wallet_async(
     """Pay with user wallet by currency code and client platform (payWithUserWallet)
 
     Pay with user wallet by currency code and client platform.
-    Other detail info:
-
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [UPDATE]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/payment
@@ -2000,7 +1850,7 @@ async def pay_with_user_wallet_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL PaymentRequest in body
 
@@ -2044,14 +1894,10 @@ def public_get_my_wallet(
     get my wallet by currency code and namespace.
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:WALLET", action=2 (READ)
-      *  Returns : wallet info
+      * Returns : wallet info
       *  Path's namespace :
         * can be filled with publisher namespace in order to get publisher user wallet
         * can be filled with game namespace in order to get game user wallet
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:WALLET [READ]
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/me/wallets/{currencyCode}
@@ -2064,7 +1910,7 @@ def public_get_my_wallet(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -2096,14 +1942,10 @@ async def public_get_my_wallet_async(
     get my wallet by currency code and namespace.
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:WALLET", action=2 (READ)
-      *  Returns : wallet info
+      * Returns : wallet info
       *  Path's namespace :
         * can be filled with publisher namespace in order to get publisher user wallet
         * can be filled with game namespace in order to get game user wallet
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:WALLET [READ]
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/me/wallets/{currencyCode}
@@ -2116,7 +1958,7 @@ async def public_get_my_wallet_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -2151,11 +1993,7 @@ def public_get_wallet(
     get a wallet by currency code.
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
-      *  Returns : wallet info
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:WALLET [READ]
+      * Returns : wallet info
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}
@@ -2168,7 +2006,7 @@ def public_get_wallet(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -2204,11 +2042,7 @@ async def public_get_wallet_async(
     get a wallet by currency code.
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
-      *  Returns : wallet info
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:WALLET [READ]
+      * Returns : wallet info
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}
@@ -2221,7 +2055,7 @@ async def public_get_wallet_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -2261,11 +2095,7 @@ def public_list_user_wallet_transactions(
     List wallet transactions by currency code ordered by create time desc.
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
-      *  Returns : currency transaction info
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:WALLET [READ]
+      * Returns : currency transaction info
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/transactions
@@ -2278,7 +2108,7 @@ def public_list_user_wallet_transactions(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -2322,11 +2152,7 @@ async def public_list_user_wallet_transactions_async(
     List wallet transactions by currency code ordered by create time desc.
     Other detail info:
 
-      * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
-      *  Returns : currency transaction info
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:WALLET [READ]
+      * Returns : currency transaction info
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/transactions
@@ -2339,7 +2165,7 @@ async def public_list_user_wallet_transactions_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -2382,11 +2208,8 @@ def query_user_currency_wallets(
     Get user currency wallet summary.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
+    (READ)
       *  Returns : currency wallet summary
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [READ]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/summary
@@ -2399,7 +2222,7 @@ def query_user_currency_wallets(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2431,11 +2254,8 @@ async def query_user_currency_wallets_async(
     Get user currency wallet summary.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
+    (READ)
       *  Returns : currency wallet summary
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET [READ]
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/summary
@@ -2448,7 +2268,7 @@ async def query_user_currency_wallets_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2487,11 +2307,7 @@ def query_wallets(
     Query wallets.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET", action=2 (READ)
-      *  Returns : paginated wallets info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:WALLET [READ]
+      * Returns : paginated wallets info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/wallets
@@ -2504,7 +2320,7 @@ def query_wallets(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2553,11 +2369,7 @@ async def query_wallets_async(
     Query wallets.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET", action=2 (READ)
-      *  Returns : paginated wallets info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:WALLET [READ]
+      * Returns : paginated wallets info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/wallets
@@ -2570,7 +2382,7 @@ async def query_wallets_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2616,11 +2428,7 @@ def reset_platform_wallet_config(
     Reset platform wallet config to default config.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET:CONFIG", action=4 (UPDATE)
-      *  Returns : platform wallet config
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:WALLET:CONFIG [UPDATE]
+      * Returns : platform wallet config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config/reset
@@ -2633,7 +2441,7 @@ def reset_platform_wallet_config(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2665,11 +2473,7 @@ async def reset_platform_wallet_config_async(
     Reset platform wallet config to default config.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET:CONFIG", action=4 (UPDATE)
-      *  Returns : platform wallet config
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:WALLET:CONFIG [UPDATE]
+      * Returns : platform wallet config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config/reset
@@ -2682,7 +2486,7 @@ async def reset_platform_wallet_config_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2717,11 +2521,7 @@ def update_platform_wallet_config(
     Update platform wallet config.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET:CONFIG", action=4 (UPDATE)
-      *  Returns : platform wallet config
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:WALLET:CONFIG [UPDATE]
+      * Returns : platform wallet config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config
@@ -2734,7 +2534,7 @@ def update_platform_wallet_config(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL PlatformWalletConfigUpdate in body
 
@@ -2770,11 +2570,7 @@ async def update_platform_wallet_config_async(
     Update platform wallet config.
     Other detail info:
 
-      * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET:CONFIG", action=4 (UPDATE)
-      *  Returns : platform wallet config
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:WALLET:CONFIG [UPDATE]
+      * Returns : platform wallet config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config
@@ -2787,7 +2583,7 @@ async def update_platform_wallet_config_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL PlatformWalletConfigUpdate in body
 
