@@ -79,6 +79,8 @@ class RetrieveLatestPoliciesPublic(Operation):
 
         tags: (tags) OPTIONAL str in query
 
+        visible_only: (visibleOnly) OPTIONAL bool in query
+
     Responses:
         200: OK - List[RetrievePolicyPublicResponse] (successful operation)
 
@@ -103,6 +105,7 @@ class RetrieveLatestPoliciesPublic(Operation):
     default_on_empty: bool  # OPTIONAL in [query]
     policy_type: Union[str, PolicyTypeEnum]  # OPTIONAL in [query]
     tags: str  # OPTIONAL in [query]
+    visible_only: bool  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -170,6 +173,8 @@ class RetrieveLatestPoliciesPublic(Operation):
             result["policyType"] = self.policy_type
         if hasattr(self, "tags"):
             result["tags"] = self.tags
+        if hasattr(self, "visible_only"):
+            result["visibleOnly"] = self.visible_only
         return result
 
     # endregion get_x_params methods
@@ -202,6 +207,10 @@ class RetrieveLatestPoliciesPublic(Operation):
         self.tags = value
         return self
 
+    def with_visible_only(self, value: bool) -> RetrieveLatestPoliciesPublic:
+        self.visible_only = value
+        return self
+
     # endregion with_x methods
 
     # region to methods
@@ -228,6 +237,10 @@ class RetrieveLatestPoliciesPublic(Operation):
             result["tags"] = str(self.tags)
         elif include_empty:
             result["tags"] = ""
+        if hasattr(self, "visible_only") and self.visible_only:
+            result["visibleOnly"] = bool(self.visible_only)
+        elif include_empty:
+            result["visibleOnly"] = False
         return result
 
     # endregion to methods
@@ -283,6 +296,7 @@ class RetrieveLatestPoliciesPublic(Operation):
         default_on_empty: Optional[bool] = None,
         policy_type: Optional[Union[str, PolicyTypeEnum]] = None,
         tags: Optional[str] = None,
+        visible_only: Optional[bool] = None,
         **kwargs,
     ) -> RetrieveLatestPoliciesPublic:
         instance = cls()
@@ -295,6 +309,8 @@ class RetrieveLatestPoliciesPublic(Operation):
             instance.policy_type = policy_type
         if tags is not None:
             instance.tags = tags
+        if visible_only is not None:
+            instance.visible_only = visible_only
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -327,6 +343,10 @@ class RetrieveLatestPoliciesPublic(Operation):
             instance.tags = str(dict_["tags"])
         elif include_empty:
             instance.tags = ""
+        if "visibleOnly" in dict_ and dict_["visibleOnly"] is not None:
+            instance.visible_only = bool(dict_["visibleOnly"])
+        elif include_empty:
+            instance.visible_only = False
         return instance
 
     @staticmethod
@@ -337,6 +357,7 @@ class RetrieveLatestPoliciesPublic(Operation):
             "defaultOnEmpty": "default_on_empty",
             "policyType": "policy_type",
             "tags": "tags",
+            "visibleOnly": "visible_only",
         }
 
     @staticmethod
@@ -347,6 +368,7 @@ class RetrieveLatestPoliciesPublic(Operation):
             "defaultOnEmpty": False,
             "policyType": False,
             "tags": False,
+            "visibleOnly": False,
         }
 
     @staticmethod

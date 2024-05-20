@@ -80,6 +80,8 @@ class AdminCreateChallenge(Operation):
     Responses:
         201: Created - ModelChallengeResponse (Created)
 
+        400: Bad Request - ResponseError (20018: bad request: {{message}})
+
         401: Unauthorized - IamErrorResponse (20001: unauthorized access)
 
         403: Forbidden - IamErrorResponse (20013: insufficient permission)
@@ -215,6 +217,8 @@ class AdminCreateChallenge(Operation):
 
         201: Created - ModelChallengeResponse (Created)
 
+        400: Bad Request - ResponseError (20018: bad request: {{message}})
+
         401: Unauthorized - IamErrorResponse (20001: unauthorized access)
 
         403: Forbidden - IamErrorResponse (20013: insufficient permission)
@@ -240,6 +244,8 @@ class AdminCreateChallenge(Operation):
 
         if code == 201:
             return ModelChallengeResponse.create_from_dict(content), None
+        if code == 400:
+            return None, ResponseError.create_from_dict(content)
         if code == 401:
             return None, IamErrorResponse.create_from_dict(content)
         if code == 403:

@@ -599,6 +599,8 @@ def admin_update_goals(
     Responses:
         200: OK - ModelGoalResponse (OK)
 
+        400: Bad Request - ResponseError (20018: bad request: {{message}})
+
         404: Not Found - ResponseError (Not Found)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
@@ -665,6 +667,8 @@ async def admin_update_goals_async(
 
     Responses:
         200: OK - ModelGoalResponse (OK)
+
+        400: Bad Request - ResponseError (20018: bad request: {{message}})
 
         404: Not Found - ResponseError (Not Found)
 

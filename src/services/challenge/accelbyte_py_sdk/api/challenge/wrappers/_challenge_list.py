@@ -216,6 +216,8 @@ def public_get_scheduled_goals(
 
         403: Forbidden - IamErrorResponse (20013: insufficient permission)
 
+        404: Not Found - ResponseError (20029: not found)
+
         500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
     """
     if namespace is None:
@@ -278,6 +280,8 @@ async def public_get_scheduled_goals_async(
         401: Unauthorized - IamErrorResponse (20001: unauthorized access)
 
         403: Forbidden - IamErrorResponse (20013: insufficient permission)
+
+        404: Not Found - ResponseError (20029: not found)
 
         500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
     """

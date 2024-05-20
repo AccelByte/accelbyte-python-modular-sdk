@@ -72,6 +72,8 @@ class PublicGetScheduledGoals(Operation):
 
         403: Forbidden - IamErrorResponse (20013: insufficient permission)
 
+        404: Not Found - ResponseError (20029: not found)
+
         500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
     """
 
@@ -241,6 +243,8 @@ class PublicGetScheduledGoals(Operation):
 
         403: Forbidden - IamErrorResponse (20013: insufficient permission)
 
+        404: Not Found - ResponseError (20029: not found)
+
         500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
 
         ---: HttpResponse (Undocumented Response)
@@ -262,6 +266,8 @@ class PublicGetScheduledGoals(Operation):
             return None, IamErrorResponse.create_from_dict(content)
         if code == 403:
             return None, IamErrorResponse.create_from_dict(content)
+        if code == 404:
+            return None, ResponseError.create_from_dict(content)
         if code == 500:
             return None, ResponseError.create_from_dict(content)
 

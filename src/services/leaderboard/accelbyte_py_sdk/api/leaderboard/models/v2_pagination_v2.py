@@ -28,8 +28,8 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-class V2Pagination(Model):
-    """V2 pagination (v2.Pagination)
+class V2PaginationV2(Model):
+    """V2 pagination V2 (v2.PaginationV2)
 
     Properties:
         first: (first) REQUIRED str
@@ -52,19 +52,19 @@ class V2Pagination(Model):
 
     # region with_x methods
 
-    def with_first(self, value: str) -> V2Pagination:
+    def with_first(self, value: str) -> V2PaginationV2:
         self.first = value
         return self
 
-    def with_last(self, value: str) -> V2Pagination:
+    def with_last(self, value: str) -> V2PaginationV2:
         self.last = value
         return self
 
-    def with_next(self, value: str) -> V2Pagination:
+    def with_next(self, value: str) -> V2PaginationV2:
         self.next_ = value
         return self
 
-    def with_previous(self, value: str) -> V2Pagination:
+    def with_previous(self, value: str) -> V2PaginationV2:
         self.previous = value
         return self
 
@@ -99,7 +99,7 @@ class V2Pagination(Model):
     @classmethod
     def create(
         cls, first: str, last: str, next_: str, previous: str, **kwargs
-    ) -> V2Pagination:
+    ) -> V2PaginationV2:
         instance = cls()
         instance.first = first
         instance.last = last
@@ -108,7 +108,9 @@ class V2Pagination(Model):
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> V2Pagination:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> V2PaginationV2:
         instance = cls()
         if not dict_:
             return instance
@@ -133,7 +135,7 @@ class V2Pagination(Model):
     @classmethod
     def create_many_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, V2Pagination]:
+    ) -> Dict[str, V2PaginationV2]:
         return (
             {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
             if dict_
@@ -143,7 +145,7 @@ class V2Pagination(Model):
     @classmethod
     def create_many_from_list(
         cls, list_: list, include_empty: bool = False
-    ) -> List[V2Pagination]:
+    ) -> List[V2PaginationV2]:
         return (
             [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
             if list_
@@ -153,7 +155,7 @@ class V2Pagination(Model):
     @classmethod
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[V2Pagination, List[V2Pagination], Dict[Any, V2Pagination]]:
+    ) -> Union[V2PaginationV2, List[V2PaginationV2], Dict[Any, V2PaginationV2]]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Group Service
+# AccelByte Gaming Services Session History Service
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -29,40 +29,48 @@ from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 
+from ...models import LogconfigConfiguration
+from ...models import ResponseError
 
-class GoroutineHandler(Operation):
-    """Goroutine handler (goroutineHandler)
 
+class AdminGetLogConfig(Operation):
+    """Get Log Configuration (adminGetLogConfig)
+
+    Get Log Configuration.
 
     Properties:
-        url: /group/debug/pprof/goroutine
+        url: /sessionhistory/v1/admin/config/log
 
         method: GET
 
-        tags: []
+        tags: ["Config"]
 
-        consumes: []
+        consumes: ["application/json"]
 
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
 
     Responses:
-        200: OK - (OK)
+        200: OK - LogconfigConfiguration (OK)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
     """
 
     # region fields
 
-    _url: str = "/group/debug/pprof/goroutine"
-    _path: str = "/group/debug/pprof/goroutine"
+    _url: str = "/sessionhistory/v1/admin/config/log"
+    _path: str = "/sessionhistory/v1/admin/config/log"
     _base_path: str = ""
     _method: str = "GET"
-    _consumes: List[str] = []
+    _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
-    service_name: Optional[str] = "group"
+    service_name: Optional[str] = "sessionhistory"
 
     # endregion fields
 
@@ -134,10 +142,16 @@ class GoroutineHandler(Operation):
     # noinspection PyMethodMayBeStatic
     def parse_response(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[Union[None, HttpResponse], Union[None, HttpResponse]]:
+    ) -> Tuple[
+        Union[None, LogconfigConfiguration], Union[None, HttpResponse, ResponseError]
+    ]:
         """Parse the given response.
 
-        200: OK - (OK)
+        200: OK - LogconfigConfiguration (OK)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -153,7 +167,11 @@ class GoroutineHandler(Operation):
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return HttpResponse.create(code, "OK"), None
+            return LogconfigConfiguration.create_from_dict(content), None
+        if code == 401:
+            return None, ResponseError.create_from_dict(content)
+        if code == 403:
+            return None, ResponseError.create_from_dict(content)
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content
@@ -164,7 +182,7 @@ class GoroutineHandler(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, **kwargs) -> GoroutineHandler:
+    def create(cls, **kwargs) -> AdminGetLogConfig:
         instance = cls()
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
@@ -173,7 +191,7 @@ class GoroutineHandler(Operation):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> GoroutineHandler:
+    ) -> AdminGetLogConfig:
         instance = cls()
         return instance
 

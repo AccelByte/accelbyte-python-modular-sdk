@@ -52,6 +52,8 @@ class RetrieveAllLegalPoliciesByNamespace(Operation):
 
         namespace: (namespace) REQUIRED str in path
 
+        visible_only: (visibleOnly) OPTIONAL bool in query
+
     Responses:
         200: OK - List[RetrieveBasePolicyResponse] (successful operation)
     """
@@ -70,6 +72,7 @@ class RetrieveAllLegalPoliciesByNamespace(Operation):
     service_name: Optional[str] = "legal"
 
     namespace: str  # REQUIRED in [path]
+    visible_only: bool  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -118,12 +121,19 @@ class RetrieveAllLegalPoliciesByNamespace(Operation):
     def get_all_params(self) -> dict:
         return {
             "path": self.get_path_params(),
+            "query": self.get_query_params(),
         }
 
     def get_path_params(self) -> dict:
         result = {}
         if hasattr(self, "namespace"):
             result["namespace"] = self.namespace
+        return result
+
+    def get_query_params(self) -> dict:
+        result = {}
+        if hasattr(self, "visible_only"):
+            result["visibleOnly"] = self.visible_only
         return result
 
     # endregion get_x_params methods
@@ -138,6 +148,10 @@ class RetrieveAllLegalPoliciesByNamespace(Operation):
         self.namespace = value
         return self
 
+    def with_visible_only(self, value: bool) -> RetrieveAllLegalPoliciesByNamespace:
+        self.visible_only = value
+        return self
+
     # endregion with_x methods
 
     # region to methods
@@ -148,6 +162,10 @@ class RetrieveAllLegalPoliciesByNamespace(Operation):
             result["namespace"] = str(self.namespace)
         elif include_empty:
             result["namespace"] = ""
+        if hasattr(self, "visible_only") and self.visible_only:
+            result["visibleOnly"] = bool(self.visible_only)
+        elif include_empty:
+            result["visibleOnly"] = False
         return result
 
     # endregion to methods
@@ -191,9 +209,13 @@ class RetrieveAllLegalPoliciesByNamespace(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, namespace: str, **kwargs) -> RetrieveAllLegalPoliciesByNamespace:
+    def create(
+        cls, namespace: str, visible_only: Optional[bool] = None, **kwargs
+    ) -> RetrieveAllLegalPoliciesByNamespace:
         instance = cls()
         instance.namespace = namespace
+        if visible_only is not None:
+            instance.visible_only = visible_only
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -207,18 +229,24 @@ class RetrieveAllLegalPoliciesByNamespace(Operation):
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
             instance.namespace = ""
+        if "visibleOnly" in dict_ and dict_["visibleOnly"] is not None:
+            instance.visible_only = bool(dict_["visibleOnly"])
+        elif include_empty:
+            instance.visible_only = False
         return instance
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
             "namespace": "namespace",
+            "visibleOnly": "visible_only",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
             "namespace": True,
+            "visibleOnly": False,
         }
 
     # endregion static methods

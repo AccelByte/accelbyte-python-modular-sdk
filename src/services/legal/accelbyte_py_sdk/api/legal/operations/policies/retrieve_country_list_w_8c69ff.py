@@ -33,7 +33,7 @@ from accelbyte_py_sdk.core import HttpResponse
 class RetrieveCountryListWithPolicies(Operation):
     """Retrieve List of Countries that have Active Legal Policies (retrieveCountryListWithPolicies)
 
-    Retrieve List of Countries that have Active Legal Policies.
+    Retrieve List of Countries that have Active and Visible Legal Policies.
 
     Properties:
         url: /agreement/public/policies/countries/list

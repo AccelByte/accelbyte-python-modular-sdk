@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Group Service
+# AccelByte Gaming Services Session History Service
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -29,40 +29,52 @@ from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 
+from ...models import LogconfigConfiguration
+from ...models import ResponseError
 
-class SymbolHandler(Operation):
-    """Symbol handler (symbolHandler)
 
+class AdminPatchUpdateLogConfig(Operation):
+    """Patch Update Log Configuration (adminPatchUpdateLogConfig)
+
+    Update Log Configuration.
 
     Properties:
-        url: /group/debug/pprof/symbol
+        url: /sessionhistory/v1/admin/config/log
 
-        method: GET
+        method: PATCH
 
-        tags: []
+        tags: ["Config"]
 
-        consumes: []
+        consumes: ["application/json"]
 
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
 
+        body: (body) REQUIRED LogconfigConfiguration in body
+
     Responses:
-        200: OK - (OK)
+        200: OK - LogconfigConfiguration (OK)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
     """
 
     # region fields
 
-    _url: str = "/group/debug/pprof/symbol"
-    _path: str = "/group/debug/pprof/symbol"
+    _url: str = "/sessionhistory/v1/admin/config/log"
+    _path: str = "/sessionhistory/v1/admin/config/log"
     _base_path: str = ""
-    _method: str = "GET"
-    _consumes: List[str] = []
+    _method: str = "PATCH"
+    _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
-    service_name: Optional[str] = "group"
+    service_name: Optional[str] = "sessionhistory"
+
+    body: LogconfigConfiguration  # REQUIRED in [body]
 
     # endregion fields
 
@@ -109,7 +121,14 @@ class SymbolHandler(Operation):
     # region get_x_params methods
 
     def get_all_params(self) -> dict:
-        return {}
+        return {
+            "body": self.get_body_params(),
+        }
+
+    def get_body_params(self) -> Any:
+        if not hasattr(self, "body") or self.body is None:
+            return None
+        return self.body.to_dict()
 
     # endregion get_x_params methods
 
@@ -119,12 +138,20 @@ class SymbolHandler(Operation):
 
     # region with_x methods
 
+    def with_body(self, value: LogconfigConfiguration) -> AdminPatchUpdateLogConfig:
+        self.body = value
+        return self
+
     # endregion with_x methods
 
     # region to methods
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
+        if hasattr(self, "body") and self.body:
+            result["body"] = self.body.to_dict(include_empty=include_empty)
+        elif include_empty:
+            result["body"] = LogconfigConfiguration()
         return result
 
     # endregion to methods
@@ -134,10 +161,16 @@ class SymbolHandler(Operation):
     # noinspection PyMethodMayBeStatic
     def parse_response(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[Union[None, HttpResponse], Union[None, HttpResponse]]:
+    ) -> Tuple[
+        Union[None, LogconfigConfiguration], Union[None, HttpResponse, ResponseError]
+    ]:
         """Parse the given response.
 
-        200: OK - (OK)
+        200: OK - LogconfigConfiguration (OK)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -153,7 +186,11 @@ class SymbolHandler(Operation):
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return HttpResponse.create(code, "OK"), None
+            return LogconfigConfiguration.create_from_dict(content), None
+        if code == 401:
+            return None, ResponseError.create_from_dict(content)
+        if code == 403:
+            return None, ResponseError.create_from_dict(content)
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content
@@ -164,8 +201,11 @@ class SymbolHandler(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, **kwargs) -> SymbolHandler:
+    def create(
+        cls, body: LogconfigConfiguration, **kwargs
+    ) -> AdminPatchUpdateLogConfig:
         instance = cls()
+        instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -173,16 +213,26 @@ class SymbolHandler(Operation):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> SymbolHandler:
+    ) -> AdminPatchUpdateLogConfig:
         instance = cls()
+        if "body" in dict_ and dict_["body"] is not None:
+            instance.body = LogconfigConfiguration.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
+        elif include_empty:
+            instance.body = LogconfigConfiguration()
         return instance
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
-        return {}
+        return {
+            "body": "body",
+        }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
-        return {}
+        return {
+            "body": True,
+        }
 
     # endregion static methods

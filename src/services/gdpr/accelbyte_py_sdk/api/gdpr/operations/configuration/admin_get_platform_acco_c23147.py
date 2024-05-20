@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Group Service
+# AccelByte Gaming Services Gdpr Service
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -29,40 +29,58 @@ from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 
+from ...models import DtoServicesConfigurationResponse
+from ...models import ResponseError
 
-class Profile(Operation):
-    """Profile (profile)
 
+class AdminGetPlatformAccountClosureServicesConfiguration(Operation):
+    """Get Registered Platform Account Closure Services Configuration (AdminGetPlatformAccountClosureServicesConfiguration)
+
+    Get registered platform account closure services configuration.
+    Scope: account
+
+    Required Scope(s):
+        - account
 
     Properties:
-        url: /group/debug/pprof/profile
+        url: /gdpr/admin/namespaces/{namespace}/services/platforms/closure/config
 
         method: GET
 
-        tags: []
+        tags: ["Configuration"]
 
-        consumes: []
+        consumes: ["application/json"]
 
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
 
+        namespace: (namespace) REQUIRED str in path
+
     Responses:
-        200: OK - (OK)
+        200: OK - DtoServicesConfigurationResponse (OK)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
     """
 
     # region fields
 
-    _url: str = "/group/debug/pprof/profile"
-    _path: str = "/group/debug/pprof/profile"
+    _url: str = "/gdpr/admin/namespaces/{namespace}/services/platforms/closure/config"
+    _path: str = "/gdpr/admin/namespaces/{namespace}/services/platforms/closure/config"
     _base_path: str = ""
     _method: str = "GET"
-    _consumes: List[str] = []
+    _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
-    service_name: Optional[str] = "group"
+    service_name: Optional[str] = "gdpr"
+
+    namespace: str  # REQUIRED in [path]
 
     # endregion fields
 
@@ -109,7 +127,15 @@ class Profile(Operation):
     # region get_x_params methods
 
     def get_all_params(self) -> dict:
-        return {}
+        return {
+            "path": self.get_path_params(),
+        }
+
+    def get_path_params(self) -> dict:
+        result = {}
+        if hasattr(self, "namespace"):
+            result["namespace"] = self.namespace
+        return result
 
     # endregion get_x_params methods
 
@@ -119,12 +145,22 @@ class Profile(Operation):
 
     # region with_x methods
 
+    def with_namespace(
+        self, value: str
+    ) -> AdminGetPlatformAccountClosureServicesConfiguration:
+        self.namespace = value
+        return self
+
     # endregion with_x methods
 
     # region to methods
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
+        if hasattr(self, "namespace") and self.namespace:
+            result["namespace"] = str(self.namespace)
+        elif include_empty:
+            result["namespace"] = ""
         return result
 
     # endregion to methods
@@ -134,10 +170,19 @@ class Profile(Operation):
     # noinspection PyMethodMayBeStatic
     def parse_response(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[Union[None, HttpResponse], Union[None, HttpResponse]]:
+    ) -> Tuple[
+        Union[None, DtoServicesConfigurationResponse],
+        Union[None, HttpResponse, ResponseError],
+    ]:
         """Parse the given response.
 
-        200: OK - (OK)
+        200: OK - DtoServicesConfigurationResponse (OK)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        404: Not Found - ResponseError (Not Found)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -153,7 +198,13 @@ class Profile(Operation):
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return HttpResponse.create(code, "OK"), None
+            return DtoServicesConfigurationResponse.create_from_dict(content), None
+        if code == 401:
+            return None, ResponseError.create_from_dict(content)
+        if code == 404:
+            return None, ResponseError.create_from_dict(content)
+        if code == 500:
+            return None, ResponseError.create_from_dict(content)
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content
@@ -164,23 +215,36 @@ class Profile(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, **kwargs) -> Profile:
+    def create(
+        cls, namespace: str, **kwargs
+    ) -> AdminGetPlatformAccountClosureServicesConfiguration:
         instance = cls()
+        instance.namespace = namespace
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> Profile:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> AdminGetPlatformAccountClosureServicesConfiguration:
         instance = cls()
+        if "namespace" in dict_ and dict_["namespace"] is not None:
+            instance.namespace = str(dict_["namespace"])
+        elif include_empty:
+            instance.namespace = ""
         return instance
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
-        return {}
+        return {
+            "namespace": "namespace",
+        }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
-        return {}
+        return {
+            "namespace": True,
+        }
 
     # endregion static methods

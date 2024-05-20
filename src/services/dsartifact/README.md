@@ -6,7 +6,7 @@ This is a service module for the [AccelByte Modular Python SDK](https://github.c
 
 ```text
 AccelByte Gaming Services Ds Artifact Manager
-* Version: 1.11.3
+* Version: 1.11.4
 ```
 
 ## Setup

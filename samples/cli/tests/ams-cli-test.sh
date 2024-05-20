@@ -32,41 +32,41 @@ $PYTHON -m $MODULE 'start-interactive-session' --continue_on_error '--writer=tap
 ams-auth-check --login_with_auth "Bearer foo"
 ams-portal-health-check --login_with_auth "Bearer foo"
 ams-admin-account-get --login_with_auth "Bearer foo"
-ams-admin-account-create '{"name": "QiVT5A1I"}' --login_with_auth "Bearer foo"
+ams-admin-account-create '{"name": "3nELaSzW"}' --login_with_auth "Bearer foo"
 ams-admin-account-link-token-get --login_with_auth "Bearer foo"
-ams-admin-account-link-token-post '{"token": "iqlZB7Jt"}' --login_with_auth "Bearer foo"
+ams-admin-account-link-token-post '{"token": "bthUdZHs"}' --login_with_auth "Bearer foo"
 ams-artifact-get --login_with_auth "Bearer foo"
 ams-artifact-usage-get --login_with_auth "Bearer foo"
-ams-artifact-delete 'EEAwb2Uf' --login_with_auth "Bearer foo"
-ams-artifact-get-url 'SLcucK95' --login_with_auth "Bearer foo"
+ams-artifact-delete 'YiwEWGXB' --login_with_auth "Bearer foo"
+ams-artifact-get-url 'L5hODSvJ' --login_with_auth "Bearer foo"
 ams-development-server-configuration-list --login_with_auth "Bearer foo"
-ams-development-server-configuration-create '{"commandLineArguments": "Xlu4pSMW", "imageId": "wplh1PjS", "name": "CvMbTr30"}' --login_with_auth "Bearer foo"
-ams-development-server-configuration-get 'nvKNSr3C' --login_with_auth "Bearer foo"
-ams-development-server-configuration-delete 'ngvOwDQg' --login_with_auth "Bearer foo"
+ams-development-server-configuration-create '{"commandLineArguments": "spuHQOq0", "imageId": "puvcY6Ps", "name": "p2gu5QEo"}' --login_with_auth "Bearer foo"
+ams-development-server-configuration-get 'UbELdMGr' --login_with_auth "Bearer foo"
+ams-development-server-configuration-delete '29xXONDv' --login_with_auth "Bearer foo"
 ams-fleet-list --login_with_auth "Bearer foo"
-ams-fleet-create '{"active": true, "claimKeys": ["4iMM7uYA", "iomameRJ", "UBxRBUyo"], "dsHostConfiguration": {"instanceId": "AOHCD10k", "instanceType": "tAh65Rtp", "serversPerVm": 30}, "imageDeploymentProfile": {"commandLine": "rHywOLRB", "imageId": "g5HN0upT", "portConfigurations": [{"name": "P43JsPOa", "protocol": "MyKhg8JZ"}, {"name": "wIOLQjec", "protocol": "2W39Dn6H"}, {"name": "NrkCmIFE", "protocol": "BHMzeDLQ"}], "timeout": {"creation": 93, "drain": 87, "session": 12, "unresponsive": 96}}, "name": "4FfWiIQz", "onDemand": false, "regions": [{"bufferSize": 21, "maxServerCount": 48, "minServerCount": 64, "region": "JPi6RCuA"}, {"bufferSize": 67, "maxServerCount": 24, "minServerCount": 96, "region": "JVmaQzYS"}, {"bufferSize": 100, "maxServerCount": 43, "minServerCount": 33, "region": "YH3CY53W"}], "samplingRules": {"coredumps": {"crashed": {"collect": true, "percentage": 76}, "success": {"collect": false, "percentage": 46}}, "logs": {"crashed": {"collect": false, "percentage": 11}, "success": {"collect": false, "percentage": 19}}}}' --login_with_auth "Bearer foo"
-ams-fleet-get 'eULr81l2' --login_with_auth "Bearer foo"
-ams-fleet-update '{"active": false, "claimKeys": ["OAH2IBvX", "fEN0rlfR", "nU3FaRzU"], "dsHostConfiguration": {"instanceId": "1CIReprW", "instanceType": "mvxYCUYA", "serversPerVm": 66}, "imageDeploymentProfile": {"commandLine": "I8WdNR70", "imageId": "6GDsW78x", "portConfigurations": [{"name": "PthG7v6p", "protocol": "nW2vKhnh"}, {"name": "k5FSB9gz", "protocol": "bfvh54Ur"}, {"name": "TZfSaM6j", "protocol": "fIJIOI36"}], "timeout": {"creation": 84, "drain": 14, "session": 64, "unresponsive": 50}}, "name": "NjWkeN60", "onDemand": false, "regions": [{"bufferSize": 67, "maxServerCount": 61, "minServerCount": 10, "region": "JXrEgx2m"}, {"bufferSize": 86, "maxServerCount": 50, "minServerCount": 81, "region": "rvgvaE3j"}, {"bufferSize": 40, "maxServerCount": 16, "minServerCount": 64, "region": "HMUbrFiB"}], "samplingRules": {"coredumps": {"crashed": {"collect": true, "percentage": 61}, "success": {"collect": true, "percentage": 33}}, "logs": {"crashed": {"collect": false, "percentage": 96}, "success": {"collect": true, "percentage": 74}}}}' 'VznALmo2' --login_with_auth "Bearer foo"
-ams-fleet-delete 'N5HCDbJF' --login_with_auth "Bearer foo"
-ams-fleet-artifact-sampling-rules-get 'qQ5y9mcZ' --login_with_auth "Bearer foo"
-ams-fleet-artifact-sampling-rules-set '{"coredumps": {"crashed": {"collect": true, "percentage": 70}, "success": {"collect": true, "percentage": 23}}, "logs": {"crashed": {"collect": false, "percentage": 43}, "success": {"collect": true, "percentage": 63}}}' 'I83n6tkn' --login_with_auth "Bearer foo"
-ams-fleet-servers 'aL28txwK' --login_with_auth "Bearer foo"
-ams-fleet-server-history 'GYScbuKC' --login_with_auth "Bearer foo"
+ams-fleet-create '{"active": false, "claimKeys": ["oYX0CGDx", "jP9hYzn0", "dvvssNAc"], "dsHostConfiguration": {"instanceId": "GtLbVXeG", "instanceType": "qT6u7cVj", "serversPerVm": 13}, "imageDeploymentProfile": {"commandLine": "tUXhjSKF", "imageId": "7JpeJMVG", "portConfigurations": [{"name": "pueA9Ly9", "protocol": "vpaCFJ7n"}, {"name": "kWt8aDoX", "protocol": "thXBbWJF"}, {"name": "SHZfEM0g", "protocol": "9LelnChe"}], "timeout": {"creation": 7, "drain": 2, "session": 45, "unresponsive": 63}}, "name": "W0UFH9rd", "onDemand": true, "regions": [{"bufferSize": 95, "maxServerCount": 79, "minServerCount": 23, "region": "yVCHYeWc"}, {"bufferSize": 82, "maxServerCount": 28, "minServerCount": 19, "region": "wsu2OZ06"}, {"bufferSize": 42, "maxServerCount": 95, "minServerCount": 6, "region": "58jDtSie"}], "samplingRules": {"coredumps": {"crashed": {"collect": true, "percentage": 45}, "success": {"collect": false, "percentage": 33}}, "logs": {"crashed": {"collect": false, "percentage": 92}, "success": {"collect": false, "percentage": 13}}}}' --login_with_auth "Bearer foo"
+ams-fleet-get 'jmlXJXlk' --login_with_auth "Bearer foo"
+ams-fleet-update '{"active": true, "claimKeys": ["ErhDE5G0", "OT1Rehkx", "YysZ1fyY"], "dsHostConfiguration": {"instanceId": "zX6skm5p", "instanceType": "wQ7A9XUq", "serversPerVm": 21}, "imageDeploymentProfile": {"commandLine": "Gm9JSUgn", "imageId": "kfmrbnfj", "portConfigurations": [{"name": "ATWGGMmD", "protocol": "l5oTW1Ar"}, {"name": "GuLAvea0", "protocol": "HruMGQC4"}, {"name": "h10udqF9", "protocol": "FR1z0BEL"}], "timeout": {"creation": 87, "drain": 42, "session": 84, "unresponsive": 40}}, "name": "HZgGp3kx", "onDemand": false, "regions": [{"bufferSize": 56, "maxServerCount": 29, "minServerCount": 85, "region": "a2M3ZTWy"}, {"bufferSize": 48, "maxServerCount": 30, "minServerCount": 13, "region": "g0ZVrD86"}, {"bufferSize": 98, "maxServerCount": 68, "minServerCount": 63, "region": "xFcTPIqK"}], "samplingRules": {"coredumps": {"crashed": {"collect": false, "percentage": 28}, "success": {"collect": false, "percentage": 92}}, "logs": {"crashed": {"collect": false, "percentage": 3}, "success": {"collect": true, "percentage": 25}}}}' 'oWfSJLoL' --login_with_auth "Bearer foo"
+ams-fleet-delete 'KHmFUjJi' --login_with_auth "Bearer foo"
+ams-fleet-artifact-sampling-rules-get 'KD18eOXq' --login_with_auth "Bearer foo"
+ams-fleet-artifact-sampling-rules-set '{"coredumps": {"crashed": {"collect": true, "percentage": 0}, "success": {"collect": false, "percentage": 79}}, "logs": {"crashed": {"collect": false, "percentage": 4}, "success": {"collect": false, "percentage": 69}}}' 'L4svsbx3' --login_with_auth "Bearer foo"
+ams-fleet-servers 'BIUF85sC' --login_with_auth "Bearer foo"
+ams-fleet-server-history 'dkRl1xcM' --login_with_auth "Bearer foo"
 ams-image-list --login_with_auth "Bearer foo"
-ams-image-get 'f2Qdv4t0' --login_with_auth "Bearer foo"
-ams-image-patch '{"addedTags": ["GIk2wKoM", "ebPTncWE", "djimxkwS"], "isProtected": true, "name": "rPgkrmdU", "removedTags": ["QC1p9dKg", "vm4IwGgZ", "G8l8tiES"]}' 'qxCr1q7B' --login_with_auth "Bearer foo"
+ams-image-get 'tVCAypIT' --login_with_auth "Bearer foo"
+ams-image-patch '{"addedTags": ["pQb5zA5a", "N0j2E7A7", "9OT7EvaG"], "isProtected": true, "name": "2WaTLCFn", "removedTags": ["cCHinoSD", "Y6vcDosy", "cqJ1GcVY"]}' '2yP7ivZm' --login_with_auth "Bearer foo"
 ams-qo-s-regions-get --login_with_auth "Bearer foo"
-ams-qo-s-regions-update '{"status": "qrMCS5Q4"}' 'WLxmXrk6' --login_with_auth "Bearer foo"
+ams-qo-s-regions-update '{"status": "GRpNBXxx"}' 'B44vflWv' --login_with_auth "Bearer foo"
 ams-info-regions --login_with_auth "Bearer foo"
-ams-fleet-server-info '3i3c65lm' --login_with_auth "Bearer foo"
-ams-fleet-server-connection-info 'xTTyz2w6' --login_with_auth "Bearer foo"
-ams-server-history 'ush1BZ4a' --login_with_auth "Bearer foo"
+ams-fleet-server-info 'UwnX3kNY' --login_with_auth "Bearer foo"
+ams-fleet-server-connection-info '0iZXju36' --login_with_auth "Bearer foo"
+ams-server-history 'Gk0A5cVl' --login_with_auth "Bearer foo"
 ams-info-supported-instances --login_with_auth "Bearer foo"
 ams-account-get --login_with_auth "Bearer foo"
-ams-fleet-claim-by-id '{"region": "MGZkCCwM", "sessionId": "JUY3qYeo"}' 'kKvmCeV1' --login_with_auth "Bearer foo"
-ams-local-watchdog-connect 'uLKWgf2U' --login_with_auth "Bearer foo"
-ams-fleet-claim-by-keys '{"claimKeys": ["YKJ3COSu", "PoMtiir8", "vZaaggai"], "regions": ["DU9mUg0b", "ZlUZ4qod", "ZsEqD1Sy"], "sessionId": "7CzUb68U"}' --login_with_auth "Bearer foo"
-ams-watchdog-connect '0V3RlgGJ' --login_with_auth "Bearer foo"
+ams-fleet-claim-by-id '{"region": "MwHuKda3", "sessionId": "P1vRpdT8"}' 'jtQyPLw3' --login_with_auth "Bearer foo"
+ams-local-watchdog-connect 'ax70rJSQ' --login_with_auth "Bearer foo"
+ams-fleet-claim-by-keys '{"claimKeys": ["PCEDKHZc", "aNKsvfDI", "F59BGl22"], "regions": ["MrIm7vkJ", "CtagtcKb", "rVJkcviQ"], "sessionId": "gI5Cw97z"}' --login_with_auth "Bearer foo"
+ams-watchdog-connect 'jvV0ULke' --login_with_auth "Bearer foo"
 ams-upload-url-get --login_with_auth "Bearer foo"
 ams-func1 --login_with_auth "Bearer foo"
 ams-basic-health-check --login_with_auth "Bearer foo"
@@ -118,7 +118,7 @@ eval_tap $? 4 'AdminAccountGet' test.out
 
 #- 5 AdminAccountCreate
 $PYTHON -m $MODULE 'ams-admin-account-create' \
-    '{"name": "nAIAXTYk"}' \
+    '{"name": "U9FARLZE"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 5 'AdminAccountCreate' test.out
@@ -131,7 +131,7 @@ eval_tap $? 6 'AdminAccountLinkTokenGet' test.out
 
 #- 7 AdminAccountLinkTokenPost
 $PYTHON -m $MODULE 'ams-admin-account-link-token-post' \
-    '{"token": "qlXzEO6N"}' \
+    '{"token": "qKIaTUnX"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 7 'AdminAccountLinkTokenPost' test.out
@@ -150,14 +150,14 @@ eval_tap $? 9 'ArtifactUsageGet' test.out
 
 #- 10 ArtifactDelete
 $PYTHON -m $MODULE 'ams-artifact-delete' \
-    'jgS122Vu' \
+    'EjvPyqfJ' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 10 'ArtifactDelete' test.out
 
 #- 11 ArtifactGetURL
 $PYTHON -m $MODULE 'ams-artifact-get-url' \
-    'ifP4EC1W' \
+    'EMGKePWI' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 11 'ArtifactGetURL' test.out
@@ -170,21 +170,21 @@ eval_tap $? 12 'DevelopmentServerConfigurationList' test.out
 
 #- 13 DevelopmentServerConfigurationCreate
 $PYTHON -m $MODULE 'ams-development-server-configuration-create' \
-    '{"commandLineArguments": "qrlIyBTM", "imageId": "fwnJvAvp", "name": "HeKxjS7q"}' \
+    '{"commandLineArguments": "oyNavxBa", "imageId": "AKykDck7", "name": "vfmdG5wM"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 13 'DevelopmentServerConfigurationCreate' test.out
 
 #- 14 DevelopmentServerConfigurationGet
 $PYTHON -m $MODULE 'ams-development-server-configuration-get' \
-    'sn3pUqvD' \
+    'XPRoEKNs' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 14 'DevelopmentServerConfigurationGet' test.out
 
 #- 15 DevelopmentServerConfigurationDelete
 $PYTHON -m $MODULE 'ams-development-server-configuration-delete' \
-    'Y0X2QOsa' \
+    'WWLKcYVx' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 15 'DevelopmentServerConfigurationDelete' test.out
@@ -197,58 +197,58 @@ eval_tap $? 16 'FleetList' test.out
 
 #- 17 FleetCreate
 $PYTHON -m $MODULE 'ams-fleet-create' \
-    '{"active": false, "claimKeys": ["vgJIy2wo", "8Ev4bl7A", "5yZjFYah"], "dsHostConfiguration": {"instanceId": "OCNMkzGg", "instanceType": "UYmsplJY", "serversPerVm": 49}, "imageDeploymentProfile": {"commandLine": "BuoDH9oN", "imageId": "TsAZ38Bm", "portConfigurations": [{"name": "6kC68e8h", "protocol": "y47izuVL"}, {"name": "BHXVBHP4", "protocol": "CdKMIocp"}, {"name": "ZzLWzXto", "protocol": "e02nW6fG"}], "timeout": {"creation": 0, "drain": 42, "session": 73, "unresponsive": 20}}, "name": "62HWSwtW", "onDemand": true, "regions": [{"bufferSize": 32, "maxServerCount": 84, "minServerCount": 68, "region": "J93Cr3zN"}, {"bufferSize": 43, "maxServerCount": 5, "minServerCount": 87, "region": "F9OYPzk8"}, {"bufferSize": 79, "maxServerCount": 46, "minServerCount": 29, "region": "sMAh8sav"}], "samplingRules": {"coredumps": {"crashed": {"collect": false, "percentage": 65}, "success": {"collect": false, "percentage": 39}}, "logs": {"crashed": {"collect": true, "percentage": 2}, "success": {"collect": false, "percentage": 48}}}}' \
+    '{"active": true, "claimKeys": ["u63mYc4p", "kW5lsS7e", "d2VVwP26"], "dsHostConfiguration": {"instanceId": "LB1XDVzc", "instanceType": "9Mlko0J4", "serversPerVm": 76}, "imageDeploymentProfile": {"commandLine": "HiiAqTTl", "imageId": "F4cbKPjO", "portConfigurations": [{"name": "nkXwYbJ8", "protocol": "bNF2ebe9"}, {"name": "xCVllBZ2", "protocol": "XUtnCOkG"}, {"name": "PVwXqvdK", "protocol": "NKxxPBOe"}], "timeout": {"creation": 10, "drain": 12, "session": 82, "unresponsive": 65}}, "name": "XBj9zlcv", "onDemand": true, "regions": [{"bufferSize": 89, "maxServerCount": 93, "minServerCount": 43, "region": "SE2nraRW"}, {"bufferSize": 36, "maxServerCount": 10, "minServerCount": 37, "region": "0LeqrKWG"}, {"bufferSize": 92, "maxServerCount": 19, "minServerCount": 57, "region": "Y4gYVcgB"}], "samplingRules": {"coredumps": {"crashed": {"collect": true, "percentage": 27}, "success": {"collect": false, "percentage": 75}}, "logs": {"crashed": {"collect": false, "percentage": 68}, "success": {"collect": true, "percentage": 20}}}}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 17 'FleetCreate' test.out
 
 #- 18 FleetGet
 $PYTHON -m $MODULE 'ams-fleet-get' \
-    '8fBjo0c1' \
+    '7rSGX9Kk' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 18 'FleetGet' test.out
 
 #- 19 FleetUpdate
 $PYTHON -m $MODULE 'ams-fleet-update' \
-    '{"active": false, "claimKeys": ["oKR5azZD", "8xX51kwE", "8owZM8DJ"], "dsHostConfiguration": {"instanceId": "XQDnH0x0", "instanceType": "UpYcgMQE", "serversPerVm": 12}, "imageDeploymentProfile": {"commandLine": "guJIh8bc", "imageId": "Bw66eW3H", "portConfigurations": [{"name": "wFPCZFuR", "protocol": "HQrQo23F"}, {"name": "SouvNG2w", "protocol": "H4WUGa7S"}, {"name": "H4KOzcVh", "protocol": "e7nDaXCc"}], "timeout": {"creation": 76, "drain": 91, "session": 87, "unresponsive": 61}}, "name": "q3OcseWg", "onDemand": false, "regions": [{"bufferSize": 12, "maxServerCount": 66, "minServerCount": 62, "region": "3BArnEFt"}, {"bufferSize": 65, "maxServerCount": 38, "minServerCount": 0, "region": "3u8BuMko"}, {"bufferSize": 37, "maxServerCount": 84, "minServerCount": 55, "region": "DiG9IAKj"}], "samplingRules": {"coredumps": {"crashed": {"collect": true, "percentage": 60}, "success": {"collect": false, "percentage": 30}}, "logs": {"crashed": {"collect": false, "percentage": 1}, "success": {"collect": true, "percentage": 89}}}}' \
-    'SDr1MKmS' \
+    '{"active": false, "claimKeys": ["Ecp0P4St", "o3Y3IGh5", "nwhum2Ag"], "dsHostConfiguration": {"instanceId": "DAknqRkG", "instanceType": "qiZAiCGy", "serversPerVm": 16}, "imageDeploymentProfile": {"commandLine": "rkBsFGjO", "imageId": "fSylXZzn", "portConfigurations": [{"name": "wTOm3J8s", "protocol": "QeQmUwXK"}, {"name": "0Icn56vv", "protocol": "UppdrQNq"}, {"name": "2GzOXHE1", "protocol": "mjIyUjmX"}], "timeout": {"creation": 69, "drain": 23, "session": 90, "unresponsive": 41}}, "name": "1ET5runQ", "onDemand": false, "regions": [{"bufferSize": 79, "maxServerCount": 22, "minServerCount": 48, "region": "LcWCVT3L"}, {"bufferSize": 3, "maxServerCount": 91, "minServerCount": 20, "region": "gfuePFiz"}, {"bufferSize": 40, "maxServerCount": 98, "minServerCount": 24, "region": "38fyV03j"}], "samplingRules": {"coredumps": {"crashed": {"collect": false, "percentage": 6}, "success": {"collect": true, "percentage": 38}}, "logs": {"crashed": {"collect": false, "percentage": 49}, "success": {"collect": false, "percentage": 97}}}}' \
+    'kPuiEdlZ' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 19 'FleetUpdate' test.out
 
 #- 20 FleetDelete
 $PYTHON -m $MODULE 'ams-fleet-delete' \
-    '7XdjDacF' \
+    'RxXApJt5' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 20 'FleetDelete' test.out
 
 #- 21 FleetArtifactSamplingRulesGet
 $PYTHON -m $MODULE 'ams-fleet-artifact-sampling-rules-get' \
-    'wzjUhb8e' \
+    'PyvKmdet' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 21 'FleetArtifactSamplingRulesGet' test.out
 
 #- 22 FleetArtifactSamplingRulesSet
 $PYTHON -m $MODULE 'ams-fleet-artifact-sampling-rules-set' \
-    '{"coredumps": {"crashed": {"collect": true, "percentage": 22}, "success": {"collect": true, "percentage": 60}}, "logs": {"crashed": {"collect": false, "percentage": 42}, "success": {"collect": false, "percentage": 46}}}' \
-    'cuicgxDC' \
+    '{"coredumps": {"crashed": {"collect": true, "percentage": 99}, "success": {"collect": false, "percentage": 12}}, "logs": {"crashed": {"collect": true, "percentage": 16}, "success": {"collect": false, "percentage": 76}}}' \
+    '8uQCOMB5' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 22 'FleetArtifactSamplingRulesSet' test.out
 
 #- 23 FleetServers
 $PYTHON -m $MODULE 'ams-fleet-servers' \
-    'xtSTM27u' \
+    'VrBuC4FF' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 23 'FleetServers' test.out
 
 #- 24 FleetServerHistory
 $PYTHON -m $MODULE 'ams-fleet-server-history' \
-    'TVFcF3FH' \
+    'qENbjZx5' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 24 'FleetServerHistory' test.out
@@ -261,15 +261,15 @@ eval_tap $? 25 'ImageList' test.out
 
 #- 26 ImageGet
 $PYTHON -m $MODULE 'ams-image-get' \
-    'nvEjvkVV' \
+    'CAKjPygm' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 26 'ImageGet' test.out
 
 #- 27 ImagePatch
 $PYTHON -m $MODULE 'ams-image-patch' \
-    '{"addedTags": ["oOES7LI8", "hZwJPaB3", "zf0LYapQ"], "isProtected": true, "name": "n80kEZzy", "removedTags": ["0WrKG63j", "M9tUvIJE", "wmWjvLK5"]}' \
-    'pzFItMaT' \
+    '{"addedTags": ["9BXAgwJD", "ms8kqC6t", "GHe4jM29"], "isProtected": false, "name": "lp9Pd39L", "removedTags": ["0AgoCytV", "YFiAbXMd", "j77ROsr8"]}' \
+    'CyWXaryR' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 27 'ImagePatch' test.out
@@ -282,8 +282,8 @@ eval_tap $? 28 'QoSRegionsGet' test.out
 
 #- 29 QoSRegionsUpdate
 $PYTHON -m $MODULE 'ams-qo-s-regions-update' \
-    '{"status": "1NX7CVeo"}' \
-    'pXIoPc3V' \
+    '{"status": "em3Th637"}' \
+    'fOn8Kf3X' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 29 'QoSRegionsUpdate' test.out
@@ -296,21 +296,21 @@ eval_tap $? 30 'InfoRegions' test.out
 
 #- 31 FleetServerInfo
 $PYTHON -m $MODULE 'ams-fleet-server-info' \
-    '0n49835x' \
+    'zNrBmOVX' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 31 'FleetServerInfo' test.out
 
 #- 32 FleetServerConnectionInfo
 $PYTHON -m $MODULE 'ams-fleet-server-connection-info' \
-    'BLfgSWrU' \
+    'gU91Oldd' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 32 'FleetServerConnectionInfo' test.out
 
 #- 33 ServerHistory
 $PYTHON -m $MODULE 'ams-server-history' \
-    'rLMHFg66' \
+    'qDcLxROy' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 33 'ServerHistory' test.out
@@ -329,29 +329,29 @@ eval_tap $? 35 'AccountGet' test.out
 
 #- 36 FleetClaimByID
 $PYTHON -m $MODULE 'ams-fleet-claim-by-id' \
-    '{"region": "i1KV5xka", "sessionId": "jA50ydvb"}' \
-    'QXblS85F' \
+    '{"region": "IT5oHOo7", "sessionId": "eBpbw2EF"}' \
+    '3Ql34Uy6' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 36 'FleetClaimByID' test.out
 
 #- 37 LocalWatchdogConnect
 $PYTHON -m $MODULE 'ams-local-watchdog-connect' \
-    'ADKB9T11' \
+    '9SMQHtoV' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 37 'LocalWatchdogConnect' test.out
 
 #- 38 FleetClaimByKeys
 $PYTHON -m $MODULE 'ams-fleet-claim-by-keys' \
-    '{"claimKeys": ["vJthp3td", "gyQgQB0p", "d1tXSSnc"], "regions": ["6xHfPCpr", "HgEpkxFt", "RCCrpzgn"], "sessionId": "gGbxx4Ij"}' \
+    '{"claimKeys": ["5l1EeGr0", "ywlQFUf1", "qRtMB6FE"], "regions": ["2zUsKFUU", "x5z4m6H7", "YY29vNm6"], "sessionId": "HBSoqfFi"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 38 'FleetClaimByKeys' test.out
 
 #- 39 WatchdogConnect
 $PYTHON -m $MODULE 'ams-watchdog-connect' \
-    'H9sFCPmG' \
+    'TXzBmDfi' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 39 'WatchdogConnect' test.out

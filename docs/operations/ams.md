@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# Fleet Commander Index (1.17.0)
+# Fleet Commander Index (1.18.0)
 
 
 ## Operations

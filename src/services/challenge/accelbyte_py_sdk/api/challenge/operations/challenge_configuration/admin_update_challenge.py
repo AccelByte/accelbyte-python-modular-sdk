@@ -75,6 +75,8 @@ class AdminUpdateChallenge(Operation):
     Responses:
         200: OK - ModelChallengeResponse (OK)
 
+        400: Bad Request - ResponseError (20018: bad request: {{message}})
+
         401: Unauthorized - ResponseError (Unauthorized)
 
         403: Forbidden - ResponseError (Forbidden)
@@ -220,6 +222,8 @@ class AdminUpdateChallenge(Operation):
 
         200: OK - ModelChallengeResponse (OK)
 
+        400: Bad Request - ResponseError (20018: bad request: {{message}})
+
         401: Unauthorized - ResponseError (Unauthorized)
 
         403: Forbidden - ResponseError (Forbidden)
@@ -245,6 +249,8 @@ class AdminUpdateChallenge(Operation):
 
         if code == 200:
             return ModelChallengeResponse.create_from_dict(content), None
+        if code == 400:
+            return None, ResponseError.create_from_dict(content)
         if code == 401:
             return None, ResponseError.create_from_dict(content)
         if code == 403:
