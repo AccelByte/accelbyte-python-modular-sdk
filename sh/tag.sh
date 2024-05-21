@@ -41,7 +41,7 @@ fi
 
 TAG="$TAG_PREFIX/v$VERSION"
 
-PREV_TAG=$(git tag --list "$TAG_PREFIX/*" --sort=refname | tail -n 1)
+PREV_TAG=$(git tag --list "$TAG_PREFIX/*" --sort=version:refname | tail -n 1)
 if [[ -z "$PREV_TAG" ]]; then
   if [[ "$DRYRUN" -ne 1 ]]; then
     git tag "$TAG" "$LAST_COMMIT"
