@@ -36,11 +36,6 @@ class PublicDeleteProfile(Operation):
     """Deletes game profile (publicDeleteProfile)
 
     Deletes game profile.
-    Other detail info:
-            *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=8 (DELETE)
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE [DELETE]
 
     Properties:
         url: /social/public/namespaces/{namespace}/users/{userId}/profiles/{profileId}
@@ -53,7 +48,7 @@ class PublicDeleteProfile(Operation):
 
         produces: []
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -85,7 +80,7 @@ class PublicDeleteProfile(Operation):
     _method: str = "DELETE"
     _consumes: List[str] = []
     _produces: List[str] = []
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     service_name: Optional[str] = "social"

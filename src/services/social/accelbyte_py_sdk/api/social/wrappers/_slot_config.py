@@ -57,11 +57,6 @@ def delete_namespace_slot_config(
     Deletes a namespace slot configuration, the configuration will be default after delete.
     Other detail info:
 
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:SLOTCONFIG", action=8 (DELETE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:SLOTCONFIG [DELETE]
-
     Properties:
         url: /social/admin/namespaces/{namespace}/config
 
@@ -73,7 +68,7 @@ def delete_namespace_slot_config(
 
         produces: []
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -105,11 +100,6 @@ async def delete_namespace_slot_config_async(
     Deletes a namespace slot configuration, the configuration will be default after delete.
     Other detail info:
 
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:SLOTCONFIG", action=8 (DELETE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:SLOTCONFIG [DELETE]
-
     Properties:
         url: /social/admin/namespaces/{namespace}/config
 
@@ -121,7 +111,7 @@ async def delete_namespace_slot_config_async(
 
         produces: []
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -156,11 +146,6 @@ def delete_user_slot_config(
     Deletes a user slot configuration in given namespace, the namespace slot configuration will be returned after delete.
     Other detail info:
 
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=8 (DELETE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG [DELETE]
-
     Properties:
         url: /social/admin/namespaces/{namespace}/users/{userId}/config
 
@@ -172,7 +157,7 @@ def delete_user_slot_config(
 
         produces: []
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -208,11 +193,6 @@ async def delete_user_slot_config_async(
     Deletes a user slot configuration in given namespace, the namespace slot configuration will be returned after delete.
     Other detail info:
 
-      *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=8 (DELETE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG [DELETE]
-
     Properties:
         url: /social/admin/namespaces/{namespace}/users/{userId}/config
 
@@ -224,7 +204,7 @@ async def delete_user_slot_config_async(
 
         produces: []
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -260,11 +240,7 @@ def get_namespace_slot_config(
 
     Get slot configuration for a given namespace. In case slot configuration is not set, the default will be returned.
     Other detail info:
-        *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:SLOTCONFIG", action=2 (READ)
         *  Returns : namespace slot config info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:SLOTCONFIG [READ]
 
     Properties:
         url: /social/admin/namespaces/{namespace}/config
@@ -277,7 +253,7 @@ def get_namespace_slot_config(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -308,11 +284,7 @@ async def get_namespace_slot_config_async(
 
     Get slot configuration for a given namespace. In case slot configuration is not set, the default will be returned.
     Other detail info:
-        *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:SLOTCONFIG", action=2 (READ)
         *  Returns : namespace slot config info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:SLOTCONFIG [READ]
 
     Properties:
         url: /social/admin/namespaces/{namespace}/config
@@ -325,7 +297,7 @@ async def get_namespace_slot_config_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -359,11 +331,7 @@ def get_user_slot_config(
 
     Get a user slot configuration in given namespace. In case the user slot configuration is not set, the namespace configuration will be returned.
     Other detail info:
-        * Required permission: resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=2 (READ)
         * Returns: slot config info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG [READ]
 
     Properties:
         url: /social/admin/namespaces/{namespace}/users/{userId}/config
@@ -376,7 +344,7 @@ def get_user_slot_config(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -411,11 +379,7 @@ async def get_user_slot_config_async(
 
     Get a user slot configuration in given namespace. In case the user slot configuration is not set, the namespace configuration will be returned.
     Other detail info:
-        * Required permission: resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=2 (READ)
         * Returns: slot config info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG [READ]
 
     Properties:
         url: /social/admin/namespaces/{namespace}/users/{userId}/config
@@ -428,7 +392,7 @@ async def get_user_slot_config_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -465,11 +429,7 @@ def update_namespace_slot_config(
 
     Update a slot namespace configuration.
     Other detail info:
-          *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:SLOTCONFIG", action=4 (UPDATE)
           *  Returns : updated namespace slot config
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:SLOTCONFIG [UPDATE]
 
     Properties:
         url: /social/admin/namespaces/{namespace}/config
@@ -482,7 +442,7 @@ def update_namespace_slot_config(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL SlotConfigUpdate in body
 
@@ -517,11 +477,7 @@ async def update_namespace_slot_config_async(
 
     Update a slot namespace configuration.
     Other detail info:
-          *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:SLOTCONFIG", action=4 (UPDATE)
           *  Returns : updated namespace slot config
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:SLOTCONFIG [UPDATE]
 
     Properties:
         url: /social/admin/namespaces/{namespace}/config
@@ -534,7 +490,7 @@ async def update_namespace_slot_config_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL SlotConfigUpdate in body
 
@@ -572,11 +528,7 @@ def update_user_slot_config(
 
     Update a user slot configuration in given namespace.
     Other detail info:
-          *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=4 (UPDATE)
           *  Returns : updated slot config
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG [UPDATE]
 
     Properties:
         url: /social/admin/namespaces/{namespace}/users/{userId}/config
@@ -589,7 +541,7 @@ def update_user_slot_config(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL SlotConfigUpdate in body
 
@@ -628,11 +580,7 @@ async def update_user_slot_config_async(
 
     Update a user slot configuration in given namespace.
     Other detail info:
-          *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=4 (UPDATE)
           *  Returns : updated slot config
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG [UPDATE]
 
     Properties:
         url: /social/admin/namespaces/{namespace}/users/{userId}/config
@@ -645,7 +593,7 @@ async def update_user_slot_config_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL SlotConfigUpdate in body
 

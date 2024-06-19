@@ -29,6 +29,7 @@ from accelbyte_py_sdk.core import run_request
 from accelbyte_py_sdk.core import run_request_async
 from accelbyte_py_sdk.core import same_doc_as
 
+from ..models import LogconfigConfiguration
 from ..models import ModelsConfigList
 from ..models import ModelsConfigReq
 from ..models import ModelsImportConfigResponse
@@ -38,8 +39,11 @@ from ..models import RestapiErrorResponseBody
 from ..operations.config import AdminExportConfigV1
 from ..operations.config import AdminGetAllConfigV1
 from ..operations.config import AdminGetConfigV1
+from ..operations.config import AdminGetLogConfig
 from ..operations.config import AdminImportConfigV1
+from ..operations.config import AdminPatchUpdateLogConfig
 from ..operations.config import AdminUpdateConfigV1
+from ..models import LogconfigConfigurationLogLevelEnum
 
 
 @same_doc_as(AdminExportConfigV1)
@@ -738,6 +742,64 @@ async def admin_get_config_v1_async(
     )
 
 
+@same_doc_as(AdminGetLogConfig)
+def admin_get_log_config(
+    x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
+    """Get Log Configuration (adminGetLogConfig)
+
+    Get Log Configuration.
+
+    Properties:
+        url: /lobby/v1/admin/config/log
+
+        method: GET
+
+        tags: ["config"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+    Responses:
+        200: OK - LogconfigConfiguration
+    """
+    request = AdminGetLogConfig.create()
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(AdminGetLogConfig)
+async def admin_get_log_config_async(
+    x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
+    """Get Log Configuration (adminGetLogConfig)
+
+    Get Log Configuration.
+
+    Properties:
+        url: /lobby/v1/admin/config/log
+
+        method: GET
+
+        tags: ["config"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+    Responses:
+        200: OK - LogconfigConfiguration
+    """
+    request = AdminGetLogConfig.create()
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(AdminImportConfigV1)
 def admin_import_config_v1(
     file: Optional[Any] = None,
@@ -836,6 +898,76 @@ async def admin_import_config_v1_async(
     request = AdminImportConfigV1.create(
         file=file,
         namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(AdminPatchUpdateLogConfig)
+def admin_patch_update_log_config(
+    body: LogconfigConfiguration,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Patch Update Log Configuration (adminPatchUpdateLogConfig)
+
+    Update Log Configuration.
+
+    Properties:
+        url: /lobby/v1/admin/config/log
+
+        method: PATCH
+
+        tags: ["config"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED LogconfigConfiguration in body
+
+    Responses:
+        200: OK - LogconfigConfiguration
+    """
+    request = AdminPatchUpdateLogConfig.create(
+        body=body,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(AdminPatchUpdateLogConfig)
+async def admin_patch_update_log_config_async(
+    body: LogconfigConfiguration,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Patch Update Log Configuration (adminPatchUpdateLogConfig)
+
+    Update Log Configuration.
+
+    Properties:
+        url: /lobby/v1/admin/config/log
+
+        method: PATCH
+
+        tags: ["config"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED LogconfigConfiguration in body
+
+    Responses:
+        200: OK - LogconfigConfiguration
+    """
+    request = AdminPatchUpdateLogConfig.create(
+        body=body,
     )
     return await run_request_async(
         request, additional_headers=x_additional_headers, **kwargs

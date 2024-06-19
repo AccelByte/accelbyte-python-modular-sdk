@@ -51,11 +51,7 @@ def get_global_stat_item_by_stat_code(
 
     Get global statItem by stat code.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STATITEM", action=2 (READ)
             *  Returns : global stat item
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STATITEM [READ]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/globalstatitems/{statCode}
@@ -68,7 +64,7 @@ def get_global_stat_item_by_stat_code(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -107,11 +103,7 @@ async def get_global_stat_item_by_stat_code_async(
 
     Get global statItem by stat code.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STATITEM", action=2 (READ)
             *  Returns : global stat item
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STATITEM [READ]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/globalstatitems/{statCode}
@@ -124,7 +116,7 @@ async def get_global_stat_item_by_stat_code_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -165,11 +157,7 @@ def get_global_stat_item_by_stat_code_1(
 
     Get global statItem by stat code.
     Other detail info:
-            *  Required permission : resource="NAMESPACE:{namespace}:STATITEM", action=2 (READ)
             *  Returns : global stat item
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:STATITEM [READ]
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/globalstatitems/{statCode}
@@ -182,7 +170,7 @@ def get_global_stat_item_by_stat_code_1(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -221,11 +209,7 @@ async def get_global_stat_item_by_stat_code_1_async(
 
     Get global statItem by stat code.
     Other detail info:
-            *  Required permission : resource="NAMESPACE:{namespace}:STATITEM", action=2 (READ)
             *  Returns : global stat item
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:STATITEM [READ]
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/globalstatitems/{statCode}
@@ -238,7 +222,7 @@ async def get_global_stat_item_by_stat_code_1_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -280,12 +264,6 @@ def get_global_stat_items(
     """List global statItems (getGlobalStatItems)
 
     List global statItems by pagination.
-    Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STATITEM", action=2 (READ)
-            *  Returns : stat items
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STATITEM [READ]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/globalstatitems
@@ -298,7 +276,7 @@ def get_global_stat_items(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -342,12 +320,6 @@ async def get_global_stat_items_async(
     """List global statItems (getGlobalStatItems)
 
     List global statItems by pagination.
-    Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STATITEM", action=2 (READ)
-            *  Returns : stat items
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STATITEM [READ]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/globalstatitems
@@ -360,7 +332,7 @@ async def get_global_stat_items_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -407,11 +379,7 @@ def get_global_stat_items_1(
 
     List global statItems by pagination.
     Other detail info:
-            *  Required permission : resource="NAMESPACE:{namespace}:STATITEM", action=2 (READ)
             *  Returns : stat items
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:STATITEM [READ]
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/globalstatitems
@@ -424,7 +392,7 @@ def get_global_stat_items_1(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -469,11 +437,7 @@ async def get_global_stat_items_1_async(
 
     List global statItems by pagination.
     Other detail info:
-            *  Required permission : resource="NAMESPACE:{namespace}:STATITEM", action=2 (READ)
             *  Returns : stat items
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:STATITEM [READ]
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/globalstatitems
@@ -486,7 +450,7 @@ async def get_global_stat_items_1_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 

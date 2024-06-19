@@ -78,11 +78,6 @@ def bulk_add_stats(
     """Bulk add stat cycle to stats (bulkAddStats)
 
     Bulk add stat cycle to stats.
-    Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statCycles/{cycleId}/stats/add/bulk
@@ -95,7 +90,7 @@ def bulk_add_stats(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL BulkCycleStatsAdd in body
 
@@ -141,11 +136,6 @@ async def bulk_add_stats_async(
     """Bulk add stat cycle to stats (bulkAddStats)
 
     Bulk add stat cycle to stats.
-    Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statCycles/{cycleId}/stats/add/bulk
@@ -158,7 +148,7 @@ async def bulk_add_stats_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL BulkCycleStatsAdd in body
 
@@ -206,11 +196,7 @@ def bulk_get_stat_cycle(
 
     Bulk get stat cycle.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
             *  Returns : list of stat cycles
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [READ]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statCycles/bulk
@@ -223,7 +209,7 @@ def bulk_get_stat_cycle(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL BulkStatCycleRequest in body
 
@@ -264,11 +250,7 @@ async def bulk_get_stat_cycle_async(
 
     Bulk get stat cycle.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
             *  Returns : list of stat cycles
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [READ]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statCycles/bulk
@@ -281,7 +263,7 @@ async def bulk_get_stat_cycle_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL BulkStatCycleRequest in body
 
@@ -324,11 +306,7 @@ def bulk_get_stat_cycle_1(
 
     Bulk get stat cycle.
     Other detail info:
-            *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=2 (READ)
             *  Returns : list of stat cycles
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:STAT [READ]
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/statCycles/bulk
@@ -341,7 +319,7 @@ def bulk_get_stat_cycle_1(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL BulkStatCycleRequest in body
 
@@ -382,11 +360,7 @@ async def bulk_get_stat_cycle_1_async(
 
     Bulk get stat cycle.
     Other detail info:
-            *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=2 (READ)
             *  Returns : list of stat cycles
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:STAT [READ]
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/statCycles/bulk
@@ -399,7 +373,7 @@ async def bulk_get_stat_cycle_1_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL BulkStatCycleRequest in body
 
@@ -451,11 +425,7 @@ def create_stat_cycle(
             * start: Start time must follow RFC3339 standard. e.g. 2023-02-24T05:10:24.865Z. (required)
             * end: End time must follow RFC3339 standard. e.g. 2023-02-24T05:10:24.865Z.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
             *  Returns : created stat cycle
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statCycles
@@ -468,7 +438,7 @@ def create_stat_cycle(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL StatCycleCreate in body
 
@@ -518,11 +488,7 @@ async def create_stat_cycle_async(
             * start: Start time must follow RFC3339 standard. e.g. 2023-02-24T05:10:24.865Z. (required)
             * end: End time must follow RFC3339 standard. e.g. 2023-02-24T05:10:24.865Z.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
             *  Returns : created stat cycle
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statCycles
@@ -535,7 +501,7 @@ async def create_stat_cycle_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL StatCycleCreate in body
 
@@ -577,11 +543,6 @@ def delete_stat_cycle(
     """Deletes stat cycle (deleteStatCycle)
 
     Deletes stat cycle.
-    Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [DELETE]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statCycles/{cycleId}
@@ -594,7 +555,7 @@ def delete_stat_cycle(
 
         produces: []
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         cycle_id: (cycleId) REQUIRED str in path
 
@@ -632,11 +593,6 @@ async def delete_stat_cycle_async(
     """Deletes stat cycle (deleteStatCycle)
 
     Deletes stat cycle.
-    Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [DELETE]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statCycles/{cycleId}
@@ -649,7 +605,7 @@ async def delete_stat_cycle_async(
 
         produces: []
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         cycle_id: (cycleId) REQUIRED str in path
 
@@ -689,12 +645,6 @@ def export_stat_cycle(
 
     Export all stat cycle configurations for a given namespace into file At current, only JSON file is supported.
 
-    Other detail info:
-            *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [READ]
-
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statCycles/export
 
@@ -706,7 +656,7 @@ def export_stat_cycle(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -739,12 +689,6 @@ async def export_stat_cycle_async(
 
     Export all stat cycle configurations for a given namespace into file At current, only JSON file is supported.
 
-    Other detail info:
-            *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [READ]
-
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statCycles/export
 
@@ -756,7 +700,7 @@ async def export_stat_cycle_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -792,11 +736,7 @@ def get_stat_cycle(
 
     Get stat cycle.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
             *  Returns : stat cycle info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [READ]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statCycles/{cycleId}
@@ -809,7 +749,7 @@ def get_stat_cycle(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         cycle_id: (cycleId) REQUIRED str in path
 
@@ -848,11 +788,7 @@ async def get_stat_cycle_async(
 
     Get stat cycle.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
             *  Returns : stat cycle info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [READ]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statCycles/{cycleId}
@@ -865,7 +801,7 @@ async def get_stat_cycle_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         cycle_id: (cycleId) REQUIRED str in path
 
@@ -906,11 +842,7 @@ def get_stat_cycle_1(
 
     Get stat cycle.
     Other detail info:
-            *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=2 (READ)
             *  Returns : stat cycle info
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:STAT [READ]
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/statCycles/{cycleId}
@@ -923,7 +855,7 @@ def get_stat_cycle_1(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         cycle_id: (cycleId) REQUIRED str in path
 
@@ -962,11 +894,7 @@ async def get_stat_cycle_1_async(
 
     Get stat cycle.
     Other detail info:
-            *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=2 (READ)
             *  Returns : stat cycle info
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:STAT [READ]
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/statCycles/{cycleId}
@@ -979,7 +907,7 @@ async def get_stat_cycle_1_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         cycle_id: (cycleId) REQUIRED str in path
 
@@ -1025,11 +953,7 @@ def get_stat_cycles(
 
     List stat cycles by pagination.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
             *  Returns : stat cycles
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [READ]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statCycles
@@ -1042,7 +966,7 @@ def get_stat_cycles(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1099,11 +1023,7 @@ async def get_stat_cycles_async(
 
     List stat cycles by pagination.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
             *  Returns : stat cycles
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [READ]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statCycles
@@ -1116,7 +1036,7 @@ async def get_stat_cycles_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1175,11 +1095,7 @@ def get_stat_cycles_1(
 
     List stat cycles by pagination.
     Other detail info:
-            *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=2 (READ)
             *  Returns : stat cycles
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:STAT [READ]
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/statCycles
@@ -1192,7 +1108,7 @@ def get_stat_cycles_1(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1249,11 +1165,7 @@ async def get_stat_cycles_1_async(
 
     List stat cycles by pagination.
     Other detail info:
-            *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=2 (READ)
             *  Returns : stat cycles
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:STAT [READ]
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/statCycles
@@ -1266,7 +1178,7 @@ async def get_stat_cycles_1_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1321,12 +1233,6 @@ def import_stat_cycle(
 
     Import stat cycle configurations for a given namespace from file. At current, only JSON file is supported.
 
-    Other detail info:
-            *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
-
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statCycles/import
 
@@ -1338,7 +1244,7 @@ def import_stat_cycle(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         file: (file) OPTIONAL Any in form_data
 
@@ -1381,12 +1287,6 @@ async def import_stat_cycle_async(
 
     Import stat cycle configurations for a given namespace from file. At current, only JSON file is supported.
 
-    Other detail info:
-            *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
-
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statCycles/import
 
@@ -1398,7 +1298,7 @@ async def import_stat_cycle_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         file: (file) OPTIONAL Any in form_data
 
@@ -1442,11 +1342,7 @@ def stop_stat_cycle(
 
     Stop stat cycle.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
             *  Returns : updated stat cycle
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [UPDATE]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statCycles/{cycleId}/stop
@@ -1459,7 +1355,7 @@ def stop_stat_cycle(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         cycle_id: (cycleId) REQUIRED str in path
 
@@ -1500,11 +1396,7 @@ async def stop_stat_cycle_async(
 
     Stop stat cycle.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
             *  Returns : updated stat cycle
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [UPDATE]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statCycles/{cycleId}/stop
@@ -1517,7 +1409,7 @@ async def stop_stat_cycle_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         cycle_id: (cycleId) REQUIRED str in path
 
@@ -1561,11 +1453,7 @@ def update_stat_cycle(
 
     Update stat cycle.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
             *  Returns : updated stat cycle
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [UPDATE]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statCycles/{cycleId}
@@ -1578,7 +1466,7 @@ def update_stat_cycle(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL StatCycleUpdate in body
 
@@ -1627,11 +1515,7 @@ async def update_stat_cycle_async(
 
     Update stat cycle.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
             *  Returns : updated stat cycle
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [UPDATE]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statCycles/{cycleId}
@@ -1644,7 +1528,7 @@ async def update_stat_cycle_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL StatCycleUpdate in body
 

@@ -55,11 +55,7 @@ def get_user_stat_cycle_items(
 
     List user's statCycleItems by statCycle.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
               *  Returns : stat cycle items
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/users/{userId}/statCycles/{cycleId}/statCycleitems
@@ -72,7 +68,7 @@ def get_user_stat_cycle_items(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         cycle_id: (cycleId) REQUIRED str in path
 
@@ -137,11 +133,7 @@ async def get_user_stat_cycle_items_async(
 
     List user's statCycleItems by statCycle.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
               *  Returns : stat cycle items
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/users/{userId}/statCycles/{cycleId}/statCycleitems
@@ -154,7 +146,7 @@ async def get_user_stat_cycle_items_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         cycle_id: (cycleId) REQUIRED str in path
 
@@ -220,11 +212,7 @@ def get_user_stat_cycle_items_1(
 
     List user's statCycleItems by statCycle.
     Other detail info:
-              *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
               *  Returns : stat cycle items
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/statCycles/{cycleId}/statCycleitems
@@ -237,7 +225,7 @@ def get_user_stat_cycle_items_1(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         cycle_id: (cycleId) REQUIRED str in path
 
@@ -298,11 +286,7 @@ async def get_user_stat_cycle_items_1_async(
 
     List user's statCycleItems by statCycle.
     Other detail info:
-              *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
               *  Returns : stat cycle items
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/statCycles/{cycleId}/statCycleitems
@@ -315,7 +299,7 @@ async def get_user_stat_cycle_items_1_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         cycle_id: (cycleId) REQUIRED str in path
 
@@ -377,11 +361,7 @@ def public_list_my_stat_cycle_items(
 
     List user's statCycleItems by statCycle.
     Other detail info:
-              *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
               *  Returns : stat cycle items
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/me/statCycles/{cycleId}/statCycleitems
@@ -394,7 +374,7 @@ def public_list_my_stat_cycle_items(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         cycle_id: (cycleId) REQUIRED str in path
 
@@ -451,11 +431,7 @@ async def public_list_my_stat_cycle_items_async(
 
     List user's statCycleItems by statCycle.
     Other detail info:
-              *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
               *  Returns : stat cycle items
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/me/statCycles/{cycleId}/statCycleitems
@@ -468,7 +444,7 @@ async def public_list_my_stat_cycle_items_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         cycle_id: (cycleId) REQUIRED str in path
 

@@ -43,7 +43,7 @@ class GetHealthcheckInfoV1(Operation):
 
         consumes: []
 
-        produces: []
+        produces: ["application/json"]
 
         securities: [BEARER_AUTH]
 
@@ -58,7 +58,7 @@ class GetHealthcheckInfoV1(Operation):
     _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
-    _produces: List[str] = []
+    _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 

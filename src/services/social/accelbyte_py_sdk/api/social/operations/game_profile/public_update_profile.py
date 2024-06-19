@@ -40,11 +40,7 @@ class PublicUpdateProfile(Operation):
 
     Updates user game profile, returns updated profile.
     Other detail info:
-            *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=4 (UPDATE)
             *  Returns : updated game profile
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE [UPDATE]
 
     Properties:
         url: /social/public/namespaces/{namespace}/users/{userId}/profiles/{profileId}
@@ -57,7 +53,7 @@ class PublicUpdateProfile(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL GameProfileRequest in body
 
@@ -95,7 +91,7 @@ class PublicUpdateProfile(Operation):
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     service_name: Optional[str] = "social"

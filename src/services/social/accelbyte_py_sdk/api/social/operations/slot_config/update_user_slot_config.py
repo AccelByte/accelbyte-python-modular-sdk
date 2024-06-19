@@ -42,11 +42,7 @@ class UpdateUserSlotConfig(Operation):
 
     Update a user slot configuration in given namespace.
     Other detail info:
-        *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=4 (UPDATE)
         *  Returns : updated slot config
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG [UPDATE]
 
     Properties:
         url: /social/admin/namespaces/{namespace}/users/{userId}/config
@@ -59,7 +55,7 @@ class UpdateUserSlotConfig(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL SlotConfigUpdate in body
 
@@ -79,7 +75,7 @@ class UpdateUserSlotConfig(Operation):
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     service_name: Optional[str] = "social"

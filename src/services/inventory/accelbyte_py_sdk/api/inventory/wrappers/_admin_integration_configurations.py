@@ -190,7 +190,7 @@ def admin_list_integration_configurations(
 
         tags: ["Admin Integration Configurations"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -250,7 +250,7 @@ async def admin_list_integration_configurations_async(
 
         tags: ["Admin Integration Configurations"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 

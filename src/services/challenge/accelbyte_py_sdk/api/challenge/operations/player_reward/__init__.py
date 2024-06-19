@@ -14,6 +14,8 @@ __email__ = "dev@accelbyte.net"
 
 # pylint: disable=line-too-long
 
+from .admin_claim_user_rewards import AdminClaimUserRewards
+from .admin_claim_users_rewards import AdminClaimUsersRewards
 from .admin_get_user_rewards import AdminGetUserRewards
 from .admin_get_user_rewards import (
     StatusEnum as AdminGetUserRewardsStatusEnum,

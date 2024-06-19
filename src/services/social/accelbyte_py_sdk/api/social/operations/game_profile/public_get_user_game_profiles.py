@@ -38,12 +38,7 @@ class PublicGetUserGameProfiles(Operation):
 
     Returns all profiles for specified users.
     Other detail info:
-            *  Required permission : resource="NAMESPACE:{namespace}:GAMEPROFILE", action=2 (READ)
-
             *  Returns : list of profiles
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:GAMEPROFILE [READ]
 
     Properties:
         url: /social/public/namespaces/{namespace}/profiles
@@ -56,7 +51,7 @@ class PublicGetUserGameProfiles(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -82,7 +77,7 @@ class PublicGetUserGameProfiles(Operation):
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     service_name: Optional[str] = "social"

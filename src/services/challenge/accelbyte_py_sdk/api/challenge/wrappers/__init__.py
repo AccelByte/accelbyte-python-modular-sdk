@@ -54,6 +54,10 @@ from ._goal_configuration import admin_get_goals_async
 from ._goal_configuration import admin_update_goals
 from ._goal_configuration import admin_update_goals_async
 
+from ._player_reward import admin_claim_user_rewards
+from ._player_reward import admin_claim_user_rewards_async
+from ._player_reward import admin_claim_users_rewards
+from ._player_reward import admin_claim_users_rewards_async
 from ._player_reward import admin_get_user_rewards
 from ._player_reward import admin_get_user_rewards_async
 from ._player_reward import public_claim_user_rewards

@@ -43,11 +43,7 @@ class PublicUpdateUserNamespaceSlotMetadata(Operation):
 
     Updates the slot metadata.
     Other detail info:
-            *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SLOTDATA", action=4 (UPDATE)
             *  Returns : updated slot
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:SLOTDATA [UPDATE]
 
     Properties:
         url: /social/public/namespaces/{namespace}/users/{userId}/slots/{slotId}/metadata
@@ -60,7 +56,7 @@ class PublicUpdateUserNamespaceSlotMetadata(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL SlotMetadataUpdate in body
 
@@ -88,7 +84,7 @@ class PublicUpdateUserNamespaceSlotMetadata(Operation):
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     service_name: Optional[str] = "social"

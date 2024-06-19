@@ -67,14 +67,10 @@ def create_stat(
 
     Create stat.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
               *  Returns : created stat template
               * default minimum value is 0
               * default maximum value is 1.7976931348623157e+308
               * Field globalAggregationMethod will be ignored when setAsGlobal field is false
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats
@@ -87,7 +83,7 @@ def create_stat(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL StatCreate in body
 
@@ -132,14 +128,10 @@ async def create_stat_async(
 
     Create stat.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
               *  Returns : created stat template
               * default minimum value is 0
               * default maximum value is 1.7976931348623157e+308
               * Field globalAggregationMethod will be ignored when setAsGlobal field is false
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats
@@ -152,7 +144,7 @@ async def create_stat_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL StatCreate in body
 
@@ -199,14 +191,10 @@ def create_stat_1(
 
     Create stat.
     Other detail info:
-              *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=1 (CREATE)
               *  Returns : created stat template
               * default minimum value is 0
               * default maximum value is 1.7976931348623157e+308
               * Field globalAggregationMethod will be ignored when setAsGlobal field is false
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:STAT [CREATE]
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/stats
@@ -219,7 +207,7 @@ def create_stat_1(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL StatCreate in body
 
@@ -264,14 +252,10 @@ async def create_stat_1_async(
 
     Create stat.
     Other detail info:
-              *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=1 (CREATE)
               *  Returns : created stat template
               * default minimum value is 0
               * default maximum value is 1.7976931348623157e+308
               * Field globalAggregationMethod will be ignored when setAsGlobal field is false
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:STAT [CREATE]
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/stats
@@ -284,7 +268,7 @@ async def create_stat_1_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL StatCreate in body
 
@@ -330,11 +314,6 @@ def delete_stat(
     """Deletes stat (deleteStat)
 
     Deletes stat template.
-    Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [DELETE]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats/{statCode}
@@ -347,7 +326,7 @@ def delete_stat(
 
         produces: []
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -385,11 +364,6 @@ async def delete_stat_async(
     """Deletes stat (deleteStat)
 
     Deletes stat template.
-    Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [DELETE]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats/{statCode}
@@ -402,7 +376,7 @@ async def delete_stat_async(
 
         produces: []
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -442,11 +416,6 @@ def delete_tied_stat(
     """Deletes tied stat (deleteTiedStat)
 
     Deletes stat template.
-    Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [DELETE]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats/{statCode}/tied
@@ -459,7 +428,7 @@ def delete_tied_stat(
 
         produces: []
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -499,11 +468,6 @@ async def delete_tied_stat_async(
     """Deletes tied stat (deleteTiedStat)
 
     Deletes stat template.
-    Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [DELETE]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats/{statCode}/tied
@@ -516,7 +480,7 @@ async def delete_tied_stat_async(
 
         produces: []
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -558,12 +522,6 @@ def export_stats(
 
     Export all stat configurations for a given namespace into file At current, only JSON file is supported.
 
-    Other detail info:
-              *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [READ]
-
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats/export
 
@@ -575,7 +533,7 @@ def export_stats(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -608,12 +566,6 @@ async def export_stats_async(
 
     Export all stat configurations for a given namespace into file At current, only JSON file is supported.
 
-    Other detail info:
-              *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [READ]
-
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats/export
 
@@ -625,7 +577,7 @@ async def export_stats_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -661,11 +613,7 @@ def get_stat(
 
     Get stat by statCode.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
               *  Returns : stat info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [READ]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats/{statCode}
@@ -678,7 +626,7 @@ def get_stat(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -717,11 +665,7 @@ async def get_stat_async(
 
     Get stat by statCode.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
               *  Returns : stat info
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [READ]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats/{statCode}
@@ -734,7 +678,7 @@ async def get_stat_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -779,11 +723,7 @@ def get_stats(
 
     List stats by pagination.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
               *  Returns : stats
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [READ]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats
@@ -796,7 +736,7 @@ def get_stats(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -849,11 +789,7 @@ async def get_stats_async(
 
     List stats by pagination.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
               *  Returns : stats
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [READ]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats
@@ -866,7 +802,7 @@ async def get_stats_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -918,12 +854,6 @@ def import_stats(
 
     Import stat configurations for a given namespace from file. At current, only JSON file is supported.
 
-    Other detail info:
-              *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
-
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats/import
 
@@ -935,7 +865,7 @@ def import_stats(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         file: (file) OPTIONAL Any in form_data
 
@@ -978,12 +908,6 @@ async def import_stats_async(
 
     Import stat configurations for a given namespace from file. At current, only JSON file is supported.
 
-    Other detail info:
-              *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [CREATE]
-
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats/import
 
@@ -995,7 +919,7 @@ async def import_stats_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         file: (file) OPTIONAL Any in form_data
 
@@ -1043,11 +967,7 @@ def query_stats(
 
     Query stats by keyword.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
               *  Returns : stats
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [READ]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats/search
@@ -1060,7 +980,7 @@ def query_stats(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1113,11 +1033,7 @@ async def query_stats_async(
 
     Query stats by keyword.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
               *  Returns : stats
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [READ]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats/search
@@ -1130,7 +1046,7 @@ async def query_stats_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1182,13 +1098,9 @@ def update_stat(
 
     Update stat.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
               *  Returns : updated stat
               *  Field globalAggregationMethod will be ignored when the stat is not set as global
               *  Field globalAggregationMethod is not updatable when the stat status is TIED
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [UPDATE]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats/{statCode}
@@ -1201,7 +1113,7 @@ def update_stat(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL StatUpdate in body
 
@@ -1246,13 +1158,9 @@ async def update_stat_async(
 
     Update stat.
     Other detail info:
-              *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
               *  Returns : updated stat
               *  Field globalAggregationMethod will be ignored when the stat is not set as global
               *  Field globalAggregationMethod is not updatable when the stat status is TIED
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:STAT [UPDATE]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats/{statCode}
@@ -1265,7 +1173,7 @@ async def update_stat_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL StatUpdate in body
 

@@ -487,7 +487,6 @@ def public_list_items(
     inventory_id: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
-    qty_gte: Optional[int] = None,
     sort_by: Optional[Union[str, PublicListItemsSortByEnum]] = None,
     source_item_id: Optional[str] = None,
     tags: Optional[str] = None,
@@ -521,8 +520,6 @@ def public_list_items(
 
         offset: (offset) OPTIONAL int in query
 
-        qty_gte: (qtyGte) OPTIONAL int in query
-
         sort_by: (sortBy) OPTIONAL Union[str, SortByEnum] in query
 
         source_item_id: (sourceItemId) OPTIONAL str in query
@@ -544,7 +541,6 @@ def public_list_items(
         inventory_id=inventory_id,
         limit=limit,
         offset=offset,
-        qty_gte=qty_gte,
         sort_by=sort_by,
         source_item_id=source_item_id,
         tags=tags,
@@ -558,7 +554,6 @@ async def public_list_items_async(
     inventory_id: str,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
-    qty_gte: Optional[int] = None,
     sort_by: Optional[Union[str, PublicListItemsSortByEnum]] = None,
     source_item_id: Optional[str] = None,
     tags: Optional[str] = None,
@@ -592,8 +587,6 @@ async def public_list_items_async(
 
         offset: (offset) OPTIONAL int in query
 
-        qty_gte: (qtyGte) OPTIONAL int in query
-
         sort_by: (sortBy) OPTIONAL Union[str, SortByEnum] in query
 
         source_item_id: (sourceItemId) OPTIONAL str in query
@@ -615,7 +608,6 @@ async def public_list_items_async(
         inventory_id=inventory_id,
         limit=limit,
         offset=offset,
-        qty_gte=qty_gte,
         sort_by=sort_by,
         source_item_id=source_item_id,
         tags=tags,

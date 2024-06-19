@@ -30,7 +30,7 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 
 from ...models import ModelChallengeResponse
-from ...models import ModelsUpdateChallengeRequest
+from ...models import ModelUpdateChallengeRequest
 from ...models import ResponseError
 
 
@@ -49,6 +49,11 @@ class AdminUpdateChallenge(Operation):
       * endDate: timestamp of when the challenge is ended (optional)
       * endAfter: describe number of period challenge will be retired after (optional)
     To configure challenge that never end, leave the endDate and endAfter field null/empty.
+      * repeatAfter: describe number of period challenge's goals will be repeated after. Leave it empty if you don't want to repeat the challenge.
+      * rotation: describe how long goals in a challenge will be available for players to progress before rotated with another goals. (DAILY|WEEKLY|MONTHLY|NONE)
+      * activeGoalsPerRotation: number of goals per rotation (currently only applicable for RANDOMIZE assignment)
+      * assignmentRule: describe how the goals will be assigned and scheduled to users. (FIXED|RANDOMIZED|UNSCHEDULED)
+      * goalsVisibility: describe whether users can see all goals under challenge, or only active goal in one rotation period only. (SHOWALL|PERIODONLY)
 
     Required Permission(s):
         - ADMIN:NAMESPACE:{namespace}:CHALLENGE [UPDATE]
@@ -66,7 +71,7 @@ class AdminUpdateChallenge(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ModelsUpdateChallengeRequest in body
+        body: (body) REQUIRED ModelUpdateChallengeRequest in body
 
         challenge_code: (challengeCode) REQUIRED str in path
 
@@ -101,7 +106,7 @@ class AdminUpdateChallenge(Operation):
 
     service_name: Optional[str] = "challenge"
 
-    body: ModelsUpdateChallengeRequest  # REQUIRED in [body]
+    body: ModelUpdateChallengeRequest  # REQUIRED in [body]
     challenge_code: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
 
@@ -176,7 +181,7 @@ class AdminUpdateChallenge(Operation):
 
     # region with_x methods
 
-    def with_body(self, value: ModelsUpdateChallengeRequest) -> AdminUpdateChallenge:
+    def with_body(self, value: ModelUpdateChallengeRequest) -> AdminUpdateChallenge:
         self.body = value
         return self
 
@@ -197,7 +202,7 @@ class AdminUpdateChallenge(Operation):
         if hasattr(self, "body") and self.body:
             result["body"] = self.body.to_dict(include_empty=include_empty)
         elif include_empty:
-            result["body"] = ModelsUpdateChallengeRequest()
+            result["body"] = ModelUpdateChallengeRequest()
         if hasattr(self, "challenge_code") and self.challenge_code:
             result["challengeCode"] = str(self.challenge_code)
         elif include_empty:
@@ -273,7 +278,7 @@ class AdminUpdateChallenge(Operation):
     @classmethod
     def create(
         cls,
-        body: ModelsUpdateChallengeRequest,
+        body: ModelUpdateChallengeRequest,
         challenge_code: str,
         namespace: str,
         **kwargs,
@@ -292,11 +297,11 @@ class AdminUpdateChallenge(Operation):
     ) -> AdminUpdateChallenge:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = ModelsUpdateChallengeRequest.create_from_dict(
+            instance.body = ModelUpdateChallengeRequest.create_from_dict(
                 dict_["body"], include_empty=include_empty
             )
         elif include_empty:
-            instance.body = ModelsUpdateChallengeRequest()
+            instance.body = ModelUpdateChallengeRequest()
         if "challengeCode" in dict_ and dict_["challengeCode"] is not None:
             instance.challenge_code = str(dict_["challengeCode"])
         elif include_empty:

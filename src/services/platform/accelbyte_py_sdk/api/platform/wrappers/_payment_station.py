@@ -749,7 +749,8 @@ def public_get_payment_url(
     [Not Supported Yet In Starter] Get payment url.
     Other detail info:
 
-      * Returns : Get payment link
+      * For Neon Pay payment provider, the 'neonPayConfig' field can be used to provide success and cancel URL. If 'neonPayConfig' field is not present, the 'returnUrl' will be used for both success and cancel URL.
+      *  Returns : Get payment link
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/link
@@ -772,7 +773,7 @@ def public_get_payment_url(
     Responses:
         200: OK - PaymentUrl (successful operation)
 
-        400: Bad Request - ErrorEntity (33321: Payment provider [{paymentProvider}] not support currency [{currency}] | 33322: Payment provider [{paymentProvider}] not supported | 33332: Amount too small, please contact administrator)
+        400: Bad Request - ErrorEntity (33321: Payment provider [{paymentProvider}] not support currency [{currency}] | 33322: Payment provider [{paymentProvider}] not supported | 33332: Amount too small, please contact administrator | 33333: Neon Pay checkout payment order [{paymentOrderNo}] failed with message [{errMsg}])
 
         403: Forbidden - ErrorEntity (20016: action is banned)
 
@@ -801,7 +802,8 @@ async def public_get_payment_url_async(
     [Not Supported Yet In Starter] Get payment url.
     Other detail info:
 
-      * Returns : Get payment link
+      * For Neon Pay payment provider, the 'neonPayConfig' field can be used to provide success and cancel URL. If 'neonPayConfig' field is not present, the 'returnUrl' will be used for both success and cancel URL.
+      *  Returns : Get payment link
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/link
@@ -824,7 +826,7 @@ async def public_get_payment_url_async(
     Responses:
         200: OK - PaymentUrl (successful operation)
 
-        400: Bad Request - ErrorEntity (33321: Payment provider [{paymentProvider}] not support currency [{currency}] | 33322: Payment provider [{paymentProvider}] not supported | 33332: Amount too small, please contact administrator)
+        400: Bad Request - ErrorEntity (33321: Payment provider [{paymentProvider}] not support currency [{currency}] | 33322: Payment provider [{paymentProvider}] not supported | 33332: Amount too small, please contact administrator | 33333: Neon Pay checkout payment order [{paymentOrderNo}] failed with message [{errMsg}])
 
         403: Forbidden - ErrorEntity (20016: action is banned)
 

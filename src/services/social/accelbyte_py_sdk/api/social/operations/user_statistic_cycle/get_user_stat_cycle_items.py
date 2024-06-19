@@ -39,11 +39,7 @@ class GetUserStatCycleItems(Operation):
 
     List user's statCycleItems by statCycle.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
             *  Returns : stat cycle items
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/users/{userId}/statCycles/{cycleId}/statCycleitems
@@ -56,7 +52,7 @@ class GetUserStatCycleItems(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         cycle_id: (cycleId) REQUIRED str in path
 
@@ -96,7 +92,7 @@ class GetUserStatCycleItems(Operation):
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     service_name: Optional[str] = "social"

@@ -40,14 +40,10 @@ class CreateStat1(Operation):
 
     Create stat.
     Other detail info:
-                *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=1 (CREATE)
                 *  Returns : created stat template
                 * default minimum value is 0
                 * default maximum value is 1.7976931348623157e+308
                 * Field globalAggregationMethod will be ignored when setAsGlobal field is false
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:STAT [CREATE]
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/stats
@@ -60,7 +56,7 @@ class CreateStat1(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL StatCreate in body
 
@@ -92,7 +88,7 @@ class CreateStat1(Operation):
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     service_name: Optional[str] = "social"

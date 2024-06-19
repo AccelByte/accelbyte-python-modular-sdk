@@ -51,7 +51,7 @@ def get_healthcheck_info(
 
         consumes: []
 
-        produces: []
+        produces: ["application/json"]
 
         securities: [BEARER_AUTH]
 
@@ -78,7 +78,7 @@ async def get_healthcheck_info_async(
 
         consumes: []
 
-        produces: []
+        produces: ["application/json"]
 
         securities: [BEARER_AUTH]
 
@@ -107,7 +107,7 @@ def get_healthcheck_info_v1(
 
         consumes: []
 
-        produces: []
+        produces: ["application/json"]
 
         securities: [BEARER_AUTH]
 
@@ -134,7 +134,7 @@ async def get_healthcheck_info_v1_async(
 
         consumes: []
 
-        produces: []
+        produces: ["application/json"]
 
         securities: [BEARER_AUTH]
 

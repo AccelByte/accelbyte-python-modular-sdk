@@ -38,11 +38,7 @@ class GetStatCycle1(Operation):
 
     Get stat cycle.
     Other detail info:
-                *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=2 (READ)
                 *  Returns : stat cycle info
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:STAT [READ]
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/statCycles/{cycleId}
@@ -55,7 +51,7 @@ class GetStatCycle1(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         cycle_id: (cycleId) REQUIRED str in path
 
@@ -81,7 +77,7 @@ class GetStatCycle1(Operation):
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     service_name: Optional[str] = "social"

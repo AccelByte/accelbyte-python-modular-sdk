@@ -39,13 +39,8 @@ class PublicCreateProfile(Operation):
 
     Create new profile for user.
     Other detail info:
-            *  Required permission
-    : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=1 (CREATE)
             *  Returns
     : created game profile
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE [CREATE]
 
     Properties:
         url: /social/public/namespaces/{namespace}/users/{userId}/profiles
@@ -58,7 +53,7 @@ class PublicCreateProfile(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL GameProfileRequest in body
 
@@ -88,7 +83,7 @@ class PublicCreateProfile(Operation):
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     service_name: Optional[str] = "social"

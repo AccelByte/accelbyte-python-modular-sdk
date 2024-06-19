@@ -181,7 +181,7 @@ def admin_get_inventory(
 
         tags: ["Admin Inventories"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -234,7 +234,7 @@ async def admin_get_inventory_async(
 
         tags: ["Admin Inventories"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -294,7 +294,7 @@ def admin_list_inventories(
 
         tags: ["Admin Inventories"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -362,7 +362,7 @@ async def admin_list_inventories_async(
 
         tags: ["Admin Inventories"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 

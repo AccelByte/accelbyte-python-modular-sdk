@@ -29,11 +29,11 @@ touch "tmp.dat"
 if [ "$BATCH" = true ] ; then
 
 $PYTHON -m $MODULE 'start-interactive-session' --continue_on_error '--writer=tap' << END
-dslogmanager-get-server-logs 'bA0va6Hx' --login_with_auth "Bearer foo"
+dslogmanager-get-server-logs 'jL9gZnst' --login_with_auth "Bearer foo"
 dslogmanager-list-terminated-servers --login_with_auth "Bearer foo"
-dslogmanager-download-server-logs 'PEMqj82O' --login_with_auth "Bearer foo"
-dslogmanager-check-server-logs 'FxgpFDea' --login_with_auth "Bearer foo"
-dslogmanager-batch-download-server-logs '{"Downloads": [{"alloc_id": "Ism7iIZa", "namespace": "YkPltxfM", "pod_name": "OsWtXeho"}, {"alloc_id": "u2kmoECO", "namespace": "m2NEww6m", "pod_name": "RIOn4csK"}, {"alloc_id": "eFfLfd7h", "namespace": "TbngcZxs", "pod_name": "JOlUIhXO"}]}' --login_with_auth "Bearer foo"
+dslogmanager-download-server-logs 'PDXXY0Qi' --login_with_auth "Bearer foo"
+dslogmanager-check-server-logs 'CejLN1Hs' --login_with_auth "Bearer foo"
+dslogmanager-batch-download-server-logs '{"Downloads": [{"alloc_id": "CGH7g5Vs", "namespace": "0mnH2ZTA", "pod_name": "uapSXUcw"}, {"alloc_id": "acY3rkPX", "namespace": "9gNh8GgH", "pod_name": "SYqynCfV"}, {"alloc_id": "ryNF535N", "namespace": "El26TPjA", "pod_name": "ckyuYEDd"}]}' --login_with_auth "Bearer foo"
 dslogmanager-list-all-terminated-servers --login_with_auth "Bearer foo"
 dslogmanager-public-get-messages --login_with_auth "Bearer foo"
 exit()
@@ -66,7 +66,7 @@ fi
 
 #- 2 GetServerLogs
 $PYTHON -m $MODULE 'dslogmanager-get-server-logs' \
-    'u6NACP0U' \
+    'AXhwUfce' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 2 'GetServerLogs' test.out
@@ -79,21 +79,21 @@ eval_tap $? 3 'ListTerminatedServers' test.out
 
 #- 4 DownloadServerLogs
 $PYTHON -m $MODULE 'dslogmanager-download-server-logs' \
-    'b5218owR' \
+    'aXiRh0Fn' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 4 'DownloadServerLogs' test.out
 
 #- 5 CheckServerLogs
 $PYTHON -m $MODULE 'dslogmanager-check-server-logs' \
-    'y8E4lWz1' \
+    'zlZMZ5Re' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 5 'CheckServerLogs' test.out
 
 #- 6 BatchDownloadServerLogs
 $PYTHON -m $MODULE 'dslogmanager-batch-download-server-logs' \
-    '{"Downloads": [{"alloc_id": "dtcu4xGW", "namespace": "xbJbLwi3", "pod_name": "0GVGMeXk"}, {"alloc_id": "a5WBNe8P", "namespace": "UchTjQAH", "pod_name": "8mjhWy83"}, {"alloc_id": "z2pxVrvG", "namespace": "H2imLz3F", "pod_name": "E3xEBNnt"}]}' \
+    '{"Downloads": [{"alloc_id": "5jCPvPE4", "namespace": "mJGZb3fD", "pod_name": "B9YGmbCW"}, {"alloc_id": "oTzjlR98", "namespace": "seSjNSAn", "pod_name": "50wxwYdF"}, {"alloc_id": "jObX83nB", "namespace": "N760tAXn", "pod_name": "rhspAotL"}]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 6 'BatchDownloadServerLogs' test.out

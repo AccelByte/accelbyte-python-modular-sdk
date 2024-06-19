@@ -38,9 +38,6 @@ class SortByEnum(StrEnum):
     CREATEDAT = "createdAt"
     CREATEDAT_ASC = "createdAt:asc"
     CREATEDAT_DESC = "createdAt:desc"
-    QTY = "qty"
-    QTY_ASC = "qty:asc"
-    QTY_DESC = "qty:desc"
     UPDATEDAT = "updatedAt"
     UPDATEDAT_ASC = "updatedAt:asc"
     UPDATEDAT_DESC = "updatedAt:desc"
@@ -73,8 +70,6 @@ class PublicListItems(Operation):
 
         offset: (offset) OPTIONAL int in query
 
-        qty_gte: (qtyGte) OPTIONAL int in query
-
         sort_by: (sortBy) OPTIONAL Union[str, SortByEnum] in query
 
         source_item_id: (sourceItemId) OPTIONAL str in query
@@ -106,7 +101,6 @@ class PublicListItems(Operation):
     namespace: str  # REQUIRED in [path]
     limit: int  # OPTIONAL in [query]
     offset: int  # OPTIONAL in [query]
-    qty_gte: int  # OPTIONAL in [query]
     sort_by: Union[str, SortByEnum]  # OPTIONAL in [query]
     source_item_id: str  # OPTIONAL in [query]
     tags: str  # OPTIONAL in [query]
@@ -175,8 +169,6 @@ class PublicListItems(Operation):
             result["limit"] = self.limit
         if hasattr(self, "offset"):
             result["offset"] = self.offset
-        if hasattr(self, "qty_gte"):
-            result["qtyGte"] = self.qty_gte
         if hasattr(self, "sort_by"):
             result["sortBy"] = self.sort_by
         if hasattr(self, "source_item_id"):
@@ -207,10 +199,6 @@ class PublicListItems(Operation):
 
     def with_offset(self, value: int) -> PublicListItems:
         self.offset = value
-        return self
-
-    def with_qty_gte(self, value: int) -> PublicListItems:
-        self.qty_gte = value
         return self
 
     def with_sort_by(self, value: Union[str, SortByEnum]) -> PublicListItems:
@@ -247,10 +235,6 @@ class PublicListItems(Operation):
             result["offset"] = int(self.offset)
         elif include_empty:
             result["offset"] = 0
-        if hasattr(self, "qty_gte") and self.qty_gte:
-            result["qtyGte"] = int(self.qty_gte)
-        elif include_empty:
-            result["qtyGte"] = 0
         if hasattr(self, "sort_by") and self.sort_by:
             result["sortBy"] = str(self.sort_by)
         elif include_empty:
@@ -319,7 +303,6 @@ class PublicListItems(Operation):
         namespace: str,
         limit: Optional[int] = None,
         offset: Optional[int] = None,
-        qty_gte: Optional[int] = None,
         sort_by: Optional[Union[str, SortByEnum]] = None,
         source_item_id: Optional[str] = None,
         tags: Optional[str] = None,
@@ -332,8 +315,6 @@ class PublicListItems(Operation):
             instance.limit = limit
         if offset is not None:
             instance.offset = offset
-        if qty_gte is not None:
-            instance.qty_gte = qty_gte
         if sort_by is not None:
             instance.sort_by = sort_by
         if source_item_id is not None:
@@ -365,10 +346,6 @@ class PublicListItems(Operation):
             instance.offset = int(dict_["offset"])
         elif include_empty:
             instance.offset = 0
-        if "qtyGte" in dict_ and dict_["qtyGte"] is not None:
-            instance.qty_gte = int(dict_["qtyGte"])
-        elif include_empty:
-            instance.qty_gte = 0
         if "sortBy" in dict_ and dict_["sortBy"] is not None:
             instance.sort_by = str(dict_["sortBy"])
         elif include_empty:
@@ -390,7 +367,6 @@ class PublicListItems(Operation):
             "namespace": "namespace",
             "limit": "limit",
             "offset": "offset",
-            "qtyGte": "qty_gte",
             "sortBy": "sort_by",
             "sourceItemId": "source_item_id",
             "tags": "tags",
@@ -403,7 +379,6 @@ class PublicListItems(Operation):
             "namespace": True,
             "limit": False,
             "offset": False,
-            "qtyGte": False,
             "sortBy": False,
             "sourceItemId": False,
             "tags": False,
@@ -416,9 +391,6 @@ class PublicListItems(Operation):
                 "createdAt",
                 "createdAt:asc",
                 "createdAt:desc",
-                "qty",
-                "qty:asc",
-                "qty:desc",
                 "updatedAt",
                 "updatedAt:asc",
                 "updatedAt:desc",

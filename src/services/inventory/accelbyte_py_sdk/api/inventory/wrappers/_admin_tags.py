@@ -180,7 +180,7 @@ def admin_delete_tag(
 
         tags: ["Admin Tags"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -232,7 +232,7 @@ async def admin_delete_tag_async(
 
         tags: ["Admin Tags"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -289,7 +289,7 @@ def admin_list_tags(
 
         tags: ["Admin Tags"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -353,7 +353,7 @@ async def admin_list_tags_async(
 
         tags: ["Admin Tags"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 

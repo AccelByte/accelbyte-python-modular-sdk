@@ -41,11 +41,7 @@ class GetUserNamespaceSlots(Operation):
 
     Get slots for a given user.
     Other detail info:
-            *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTDATA", action=2 (READ)
             *  Returns : list of slots
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTDATA [READ]
 
     Properties:
         url: /social/admin/namespaces/{namespace}/users/{userId}/slots
@@ -58,7 +54,7 @@ class GetUserNamespaceSlots(Operation):
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         namespace: (namespace) REQUIRED str in path
 
@@ -76,7 +72,7 @@ class GetUserNamespaceSlots(Operation):
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     service_name: Optional[str] = "social"
