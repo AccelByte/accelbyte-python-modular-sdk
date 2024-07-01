@@ -40,7 +40,7 @@ def getTimestampUtc() {
 
 pipeline {
   agent {
-    label "justice-codegen-sdk"
+    label "extend-builder-batch"
   }
 
   stages {
