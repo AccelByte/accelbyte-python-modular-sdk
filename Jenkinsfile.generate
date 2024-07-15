@@ -93,7 +93,10 @@ pipeline {
 
         // Generate SDK (SDK only)
         dir(sdkCodegenPath) {
-          sh script: "cd templates/python-modular-extend-sdk && make sdk_all CODEGEN_PATH=${sdkCodegenPath}/${sdkCodegenExe} SDK_PATH=${sdkPath} SPEC_PATH=${sdkPath}/spec", label: "Generate SDK (SDK only)"
+          script {
+            version = sh(returnStdout: true, script: " jq -r '.\"src/all\"' ${sdkPath}/sh/package.json").trim()
+          }
+          sh script: "cd templates/python-modular-extend-sdk && make sdk_all CODEGEN_PATH=${sdkCodegenPath}/${sdkCodegenExe} SDK_PATH=${sdkPath} SPEC_PATH=${sdkPath}/spec VERSION=${version}", label: "Generate SDK (SDK only)"
         }
 
         // Run CLI tests against the Mock Server
