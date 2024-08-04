@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Qos Manager Service Index (1.18.5)
+# AccelByte Gaming Services Qos Manager Service Index (1.19.4)
 
 
 ## Operations

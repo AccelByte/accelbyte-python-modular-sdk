@@ -8,6 +8,6 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Ds Artifact Manager."""
 
-__version__ = "1.11.4"
+__version__ = "1.11.5"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"

@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Session History Service."""
 
-__version__ = "1.10.1"
+__version__ = "1.11.1"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -91,6 +91,12 @@ from .apimodels_x_ray_match_ticket_history_query_response import (
     ApimodelsXRayMatchTicketHistoryQueryResponse,
 )
 from .apimodels_x_ray_ticket_matches_result import ApimodelsXRayTicketMatchesResult
+from .apimodels_x_ray_ticket_observability_request import (
+    ApimodelsXRayTicketObservabilityRequest,
+)
+from .apimodels_x_ray_ticket_observability_response import (
+    ApimodelsXRayTicketObservabilityResponse,
+)
 from .apimodels_x_ray_ticket_query_response import ApimodelsXRayTicketQueryResponse
 from .apimodels_x_ray_ticket_result import ApimodelsXRayTicketResult
 from .apimodels_x_ray_total_active_session_query_response import (
@@ -113,6 +119,7 @@ from .models_matching_ally import ModelsMatchingAlly
 from .models_matching_party import ModelsMatchingParty
 from .models_matching_rule import ModelsMatchingRule
 from .models_matchmaking_result import ModelsMatchmakingResult
+from .models_match_ticket import ModelsMatchTicket
 from .models_party import ModelsParty
 from .models_party_member import ModelsPartyMember
 from .models_party_members import ModelsPartyMembers

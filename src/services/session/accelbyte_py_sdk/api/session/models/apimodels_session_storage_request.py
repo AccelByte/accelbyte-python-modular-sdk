@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Ds Log Manager Service
+# AccelByte Gaming Services Session Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -27,36 +27,24 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
 
-from ..models.models_match_result import ModelsMatchResult
-from ..models.models_server import ModelsServer
 
-
-class ModelsNotifPayloadServerStatusChange(Model):
-    """Models notif payload server status change (models.NotifPayloadServerStatusChange)
+class ApimodelsSessionStorageRequest(Model):
+    """Apimodels session storage request (apimodels.SessionStorageRequest)
 
     Properties:
-        match: (match) REQUIRED ModelsMatchResult
-
-        server: (server) REQUIRED ModelsServer
+        leader: (leader) REQUIRED Dict[str, Any]
     """
 
     # region fields
 
-    match: ModelsMatchResult  # REQUIRED
-    server: ModelsServer  # REQUIRED
+    leader: Dict[str, Any]  # REQUIRED
 
     # endregion fields
 
     # region with_x methods
 
-    def with_match(
-        self, value: ModelsMatchResult
-    ) -> ModelsNotifPayloadServerStatusChange:
-        self.match = value
-        return self
-
-    def with_server(self, value: ModelsServer) -> ModelsNotifPayloadServerStatusChange:
-        self.server = value
+    def with_leader(self, value: Dict[str, Any]) -> ApimodelsSessionStorageRequest:
+        self.leader = value
         return self
 
     # endregion with_x methods
@@ -65,14 +53,10 @@ class ModelsNotifPayloadServerStatusChange(Model):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "match"):
-            result["match"] = self.match.to_dict(include_empty=include_empty)
+        if hasattr(self, "leader"):
+            result["leader"] = {str(k0): v0 for k0, v0 in self.leader.items()}
         elif include_empty:
-            result["match"] = ModelsMatchResult()
-        if hasattr(self, "server"):
-            result["server"] = self.server.to_dict(include_empty=include_empty)
-        elif include_empty:
-            result["server"] = ModelsServer()
+            result["leader"] = {}
         return result
 
     # endregion to methods
@@ -80,39 +64,28 @@ class ModelsNotifPayloadServerStatusChange(Model):
     # region static methods
 
     @classmethod
-    def create(
-        cls, match: ModelsMatchResult, server: ModelsServer, **kwargs
-    ) -> ModelsNotifPayloadServerStatusChange:
+    def create(cls, leader: Dict[str, Any], **kwargs) -> ApimodelsSessionStorageRequest:
         instance = cls()
-        instance.match = match
-        instance.server = server
+        instance.leader = leader
         return instance
 
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> ModelsNotifPayloadServerStatusChange:
+    ) -> ApimodelsSessionStorageRequest:
         instance = cls()
         if not dict_:
             return instance
-        if "match" in dict_ and dict_["match"] is not None:
-            instance.match = ModelsMatchResult.create_from_dict(
-                dict_["match"], include_empty=include_empty
-            )
+        if "leader" in dict_ and dict_["leader"] is not None:
+            instance.leader = {str(k0): v0 for k0, v0 in dict_["leader"].items()}
         elif include_empty:
-            instance.match = ModelsMatchResult()
-        if "server" in dict_ and dict_["server"] is not None:
-            instance.server = ModelsServer.create_from_dict(
-                dict_["server"], include_empty=include_empty
-            )
-        elif include_empty:
-            instance.server = ModelsServer()
+            instance.leader = {}
         return instance
 
     @classmethod
     def create_many_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, ModelsNotifPayloadServerStatusChange]:
+    ) -> Dict[str, ApimodelsSessionStorageRequest]:
         return (
             {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
             if dict_
@@ -122,7 +95,7 @@ class ModelsNotifPayloadServerStatusChange(Model):
     @classmethod
     def create_many_from_list(
         cls, list_: list, include_empty: bool = False
-    ) -> List[ModelsNotifPayloadServerStatusChange]:
+    ) -> List[ApimodelsSessionStorageRequest]:
         return (
             [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
             if list_
@@ -133,9 +106,9 @@ class ModelsNotifPayloadServerStatusChange(Model):
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
     ) -> Union[
-        ModelsNotifPayloadServerStatusChange,
-        List[ModelsNotifPayloadServerStatusChange],
-        Dict[Any, ModelsNotifPayloadServerStatusChange],
+        ApimodelsSessionStorageRequest,
+        List[ApimodelsSessionStorageRequest],
+        Dict[Any, ApimodelsSessionStorageRequest],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -150,15 +123,13 @@ class ModelsNotifPayloadServerStatusChange(Model):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "match": "match",
-            "server": "server",
+            "leader": "leader",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "match": True,
-            "server": True,
+            "leader": True,
         }
 
     # endregion static methods

@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Dsm Controller Service
+# AccelByte Gaming Services Session Service
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -29,78 +29,63 @@ from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 
-from ...models import ModelsImportResponse
 from ...models import ResponseError
 
 
-class ImportImages(Operation):
-    """import images for a namespace (ImportImages)
+class PublicGameSessionCancel(Operation):
+    """cancel a game session invitation. (publicGameSessionCancel)
 
-    Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]
-
-    Required scope: social
-
-    This endpoint import a dedicated servers images in a namespace.
-
-    The image will be upsert. Existing version will be replaced with imported image, will create new one if not found.
-
-    Example data inside imported file
-    [
-    {
-    "namespace": "dewa",
-    "image": "123456789.dkr.ecr.us-west-2.amazonaws.com/ds-dewa:0.0.1-alpha",
-    "version": "0.0.1",
-    "persistent": true
-    }
-    ]
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]
-
-    Required Scope(s):
-        - social
+    cancel a game session invitation.
 
     Properties:
-        url: /dsmcontroller/admin/images/import
+        url: /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/users/{userId}/cancel
 
-        method: POST
+        method: DELETE
 
-        tags: ["Image Config"]
+        tags: ["Game Session"]
 
-        consumes: ["multipart/form-data"]
+        consumes: ["application/json"]
 
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
 
-        file: (file) REQUIRED Any in form_data
+        namespace: (namespace) REQUIRED str in path
+
+        session_id: (sessionId) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
 
     Responses:
-        200: OK - ModelsImportResponse (images imported)
+        204: No Content - (No Content)
 
-        400: Bad Request - ResponseError (malformed request)
+        400: Bad Request - ResponseError (Bad Request)
 
-        401: Unauthorized - ResponseError (unauthorized access)
+        401: Unauthorized - ResponseError (Unauthorized)
 
-        403: Forbidden - ResponseError (forbidden access)
+        403: Forbidden - ResponseError (Forbidden)
+
+        404: Not Found - ResponseError (Not Found)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
 
     # region fields
 
-    _url: str = "/dsmcontroller/admin/images/import"
-    _path: str = "/dsmcontroller/admin/images/import"
+    _url: str = "/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/users/{userId}/cancel"
+    _path: str = "/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/users/{userId}/cancel"
     _base_path: str = ""
-    _method: str = "POST"
-    _consumes: List[str] = ["multipart/form-data"]
+    _method: str = "DELETE"
+    _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
-    service_name: Optional[str] = "dsmc"
+    service_name: Optional[str] = "session"
 
-    file: Any  # REQUIRED in [form_data]
+    namespace: str  # REQUIRED in [path]
+    session_id: str  # REQUIRED in [path]
+    user_id: str  # REQUIRED in [path]
 
     # endregion fields
 
@@ -148,13 +133,17 @@ class ImportImages(Operation):
 
     def get_all_params(self) -> dict:
         return {
-            "form_data": self.get_form_data_params(),
+            "path": self.get_path_params(),
         }
 
-    def get_form_data_params(self) -> dict:
+    def get_path_params(self) -> dict:
         result = {}
-        if hasattr(self, "file"):
-            result[("file", "file")] = self.file
+        if hasattr(self, "namespace"):
+            result["namespace"] = self.namespace
+        if hasattr(self, "session_id"):
+            result["sessionId"] = self.session_id
+        if hasattr(self, "user_id"):
+            result["userId"] = self.user_id
         return result
 
     # endregion get_x_params methods
@@ -165,8 +154,16 @@ class ImportImages(Operation):
 
     # region with_x methods
 
-    def with_file(self, value: Any) -> ImportImages:
-        self.file = value
+    def with_namespace(self, value: str) -> PublicGameSessionCancel:
+        self.namespace = value
+        return self
+
+    def with_session_id(self, value: str) -> PublicGameSessionCancel:
+        self.session_id = value
+        return self
+
+    def with_user_id(self, value: str) -> PublicGameSessionCancel:
+        self.user_id = value
         return self
 
     # endregion with_x methods
@@ -175,10 +172,18 @@ class ImportImages(Operation):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "file") and self.file:
-            result["file"] = Any(self.file)
+        if hasattr(self, "namespace") and self.namespace:
+            result["namespace"] = str(self.namespace)
         elif include_empty:
-            result["file"] = Any()
+            result["namespace"] = ""
+        if hasattr(self, "session_id") and self.session_id:
+            result["sessionId"] = str(self.session_id)
+        elif include_empty:
+            result["sessionId"] = ""
+        if hasattr(self, "user_id") and self.user_id:
+            result["userId"] = str(self.user_id)
+        elif include_empty:
+            result["userId"] = ""
         return result
 
     # endregion to methods
@@ -188,18 +193,18 @@ class ImportImages(Operation):
     # noinspection PyMethodMayBeStatic
     def parse_response(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[
-        Union[None, ModelsImportResponse], Union[None, HttpResponse, ResponseError]
-    ]:
+    ) -> Tuple[None, Union[None, HttpResponse, ResponseError]]:
         """Parse the given response.
 
-        200: OK - ModelsImportResponse (images imported)
+        204: No Content - (No Content)
 
-        400: Bad Request - ResponseError (malformed request)
+        400: Bad Request - ResponseError (Bad Request)
 
-        401: Unauthorized - ResponseError (unauthorized access)
+        401: Unauthorized - ResponseError (Unauthorized)
 
-        403: Forbidden - ResponseError (forbidden access)
+        403: Forbidden - ResponseError (Forbidden)
+
+        404: Not Found - ResponseError (Not Found)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
 
@@ -216,13 +221,15 @@ class ImportImages(Operation):
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
-        if code == 200:
-            return ModelsImportResponse.create_from_dict(content), None
+        if code == 204:
+            return None, None
         if code == 400:
             return None, ResponseError.create_from_dict(content)
         if code == 401:
             return None, ResponseError.create_from_dict(content)
         if code == 403:
+            return None, ResponseError.create_from_dict(content)
+        if code == 404:
             return None, ResponseError.create_from_dict(content)
         if code == 500:
             return None, ResponseError.create_from_dict(content)
@@ -236,32 +243,50 @@ class ImportImages(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, file: Any, **kwargs) -> ImportImages:
+    def create(
+        cls, namespace: str, session_id: str, user_id: str, **kwargs
+    ) -> PublicGameSessionCancel:
         instance = cls()
-        instance.file = file
+        instance.namespace = namespace
+        instance.session_id = session_id
+        instance.user_id = user_id
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> ImportImages:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> PublicGameSessionCancel:
         instance = cls()
-        if "file" in dict_ and dict_["file"] is not None:
-            instance.file = Any(dict_["file"])
+        if "namespace" in dict_ and dict_["namespace"] is not None:
+            instance.namespace = str(dict_["namespace"])
         elif include_empty:
-            instance.file = Any()
+            instance.namespace = ""
+        if "sessionId" in dict_ and dict_["sessionId"] is not None:
+            instance.session_id = str(dict_["sessionId"])
+        elif include_empty:
+            instance.session_id = ""
+        if "userId" in dict_ and dict_["userId"] is not None:
+            instance.user_id = str(dict_["userId"])
+        elif include_empty:
+            instance.user_id = ""
         return instance
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "file": "file",
+            "namespace": "namespace",
+            "sessionId": "session_id",
+            "userId": "user_id",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "file": True,
+            "namespace": True,
+            "sessionId": True,
+            "userId": True,
         }
 
     # endregion static methods

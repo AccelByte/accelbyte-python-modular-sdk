@@ -76,8 +76,13 @@ from .model_update_challenge_request import (
     RotationEnum as ModelUpdateChallengeRequestRotationEnum,
 )
 from .model_update_goal_request import ModelUpdateGoalRequest
+from .model_user_progression_period_response_meta import (
+    ModelUserProgressionPeriodResponseMeta,
+)
 from .model_user_progression_response import ModelUserProgressionResponse
 from .model_user_progression_response_meta import ModelUserProgressionResponseMeta
 from .model_user_reward import ModelUserReward
+from .model_user_reward import StatusEnum as ModelUserRewardStatusEnum
+from .model_user_reward import TypeEnum as ModelUserRewardTypeEnum
 from .models_period import ModelsPeriod
 from .response_error import ResponseError

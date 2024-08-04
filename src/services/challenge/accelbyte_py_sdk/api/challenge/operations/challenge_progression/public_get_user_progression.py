@@ -59,6 +59,8 @@ class PublicGetUserProgression(Operation):
 
         namespace: (namespace) REQUIRED str in path
 
+        date_time: (dateTime) OPTIONAL str in query
+
         goal_code: (goalCode) OPTIONAL str in query
 
         limit: (limit) OPTIONAL int in query
@@ -69,6 +71,8 @@ class PublicGetUserProgression(Operation):
 
     Responses:
         200: OK - ModelUserProgressionResponse (OK)
+
+        400: Bad Request - IamErrorResponse (20018: bad request: {{message}})
 
         401: Unauthorized - IamErrorResponse (20001: unauthorized access)
 
@@ -98,6 +102,7 @@ class PublicGetUserProgression(Operation):
 
     challenge_code: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
+    date_time: str  # OPTIONAL in [query]
     goal_code: str  # OPTIONAL in [query]
     limit: int  # OPTIONAL in [query]
     offset: int  # OPTIONAL in [query]
@@ -163,6 +168,8 @@ class PublicGetUserProgression(Operation):
 
     def get_query_params(self) -> dict:
         result = {}
+        if hasattr(self, "date_time"):
+            result["dateTime"] = self.date_time
         if hasattr(self, "goal_code"):
             result["goalCode"] = self.goal_code
         if hasattr(self, "limit"):
@@ -187,6 +194,10 @@ class PublicGetUserProgression(Operation):
 
     def with_namespace(self, value: str) -> PublicGetUserProgression:
         self.namespace = value
+        return self
+
+    def with_date_time(self, value: str) -> PublicGetUserProgression:
+        self.date_time = value
         return self
 
     def with_goal_code(self, value: str) -> PublicGetUserProgression:
@@ -219,6 +230,10 @@ class PublicGetUserProgression(Operation):
             result["namespace"] = str(self.namespace)
         elif include_empty:
             result["namespace"] = ""
+        if hasattr(self, "date_time") and self.date_time:
+            result["dateTime"] = str(self.date_time)
+        elif include_empty:
+            result["dateTime"] = ""
         if hasattr(self, "goal_code") and self.goal_code:
             result["goalCode"] = str(self.goal_code)
         elif include_empty:
@@ -252,6 +267,8 @@ class PublicGetUserProgression(Operation):
 
         200: OK - ModelUserProgressionResponse (OK)
 
+        400: Bad Request - IamErrorResponse (20018: bad request: {{message}})
+
         401: Unauthorized - IamErrorResponse (20001: unauthorized access)
 
         403: Forbidden - IamErrorResponse (20013: insufficient permission)
@@ -275,6 +292,8 @@ class PublicGetUserProgression(Operation):
 
         if code == 200:
             return ModelUserProgressionResponse.create_from_dict(content), None
+        if code == 400:
+            return None, IamErrorResponse.create_from_dict(content)
         if code == 401:
             return None, IamErrorResponse.create_from_dict(content)
         if code == 403:
@@ -297,6 +316,7 @@ class PublicGetUserProgression(Operation):
         cls,
         challenge_code: str,
         namespace: str,
+        date_time: Optional[str] = None,
         goal_code: Optional[str] = None,
         limit: Optional[int] = None,
         offset: Optional[int] = None,
@@ -306,6 +326,8 @@ class PublicGetUserProgression(Operation):
         instance = cls()
         instance.challenge_code = challenge_code
         instance.namespace = namespace
+        if date_time is not None:
+            instance.date_time = date_time
         if goal_code is not None:
             instance.goal_code = goal_code
         if limit is not None:
@@ -331,6 +353,10 @@ class PublicGetUserProgression(Operation):
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
             instance.namespace = ""
+        if "dateTime" in dict_ and dict_["dateTime"] is not None:
+            instance.date_time = str(dict_["dateTime"])
+        elif include_empty:
+            instance.date_time = ""
         if "goalCode" in dict_ and dict_["goalCode"] is not None:
             instance.goal_code = str(dict_["goalCode"])
         elif include_empty:
@@ -354,6 +380,7 @@ class PublicGetUserProgression(Operation):
         return {
             "challengeCode": "challenge_code",
             "namespace": "namespace",
+            "dateTime": "date_time",
             "goalCode": "goal_code",
             "limit": "limit",
             "offset": "offset",
@@ -365,6 +392,7 @@ class PublicGetUserProgression(Operation):
         return {
             "challengeCode": True,
             "namespace": True,
+            "dateTime": False,
             "goalCode": False,
             "limit": False,
             "offset": False,

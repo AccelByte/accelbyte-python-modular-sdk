@@ -30,8 +30,8 @@ from accelbyte_py_sdk.core import Model
 from ..models.models_image_replication import ModelsImageReplication
 
 
-class ModelsImageRecord(Model):
-    """Models image record (models.ImageRecord)
+class ModelsImageRecordResponse(Model):
+    """Models image record response (models.ImageRecordResponse)
 
     Properties:
         created_at: (createdAt) REQUIRED str
@@ -56,6 +56,8 @@ class ModelsImageRecord(Model):
 
         core_dump_enabled: (coreDumpEnabled) OPTIONAL bool
 
+        deployments: (deployments) OPTIONAL List[str]
+
         image_replications: (imageReplications) OPTIONAL List[ModelsImageReplication]
 
         image_replications_map: (imageReplicationsMap) OPTIONAL Dict[str, ModelsImageReplication]
@@ -76,6 +78,7 @@ class ModelsImageRecord(Model):
     version: str  # REQUIRED
     artifact_path: str  # OPTIONAL
     core_dump_enabled: bool  # OPTIONAL
+    deployments: List[str]  # OPTIONAL
     image_replications: List[ModelsImageReplication]  # OPTIONAL
     image_replications_map: Dict[str, ModelsImageReplication]  # OPTIONAL
     ulimit_file_size: int  # OPTIONAL
@@ -84,63 +87,67 @@ class ModelsImageRecord(Model):
 
     # region with_x methods
 
-    def with_created_at(self, value: str) -> ModelsImageRecord:
+    def with_created_at(self, value: str) -> ModelsImageRecordResponse:
         self.created_at = value
         return self
 
-    def with_docker_path(self, value: str) -> ModelsImageRecord:
+    def with_docker_path(self, value: str) -> ModelsImageRecordResponse:
         self.docker_path = value
         return self
 
-    def with_image(self, value: str) -> ModelsImageRecord:
+    def with_image(self, value: str) -> ModelsImageRecordResponse:
         self.image = value
         return self
 
-    def with_image_size(self, value: int) -> ModelsImageRecord:
+    def with_image_size(self, value: int) -> ModelsImageRecordResponse:
         self.image_size = value
         return self
 
-    def with_modified_by(self, value: str) -> ModelsImageRecord:
+    def with_modified_by(self, value: str) -> ModelsImageRecordResponse:
         self.modified_by = value
         return self
 
-    def with_namespace(self, value: str) -> ModelsImageRecord:
+    def with_namespace(self, value: str) -> ModelsImageRecordResponse:
         self.namespace = value
         return self
 
-    def with_persistent(self, value: bool) -> ModelsImageRecord:
+    def with_persistent(self, value: bool) -> ModelsImageRecordResponse:
         self.persistent = value
         return self
 
-    def with_updated_at(self, value: str) -> ModelsImageRecord:
+    def with_updated_at(self, value: str) -> ModelsImageRecordResponse:
         self.updated_at = value
         return self
 
-    def with_version(self, value: str) -> ModelsImageRecord:
+    def with_version(self, value: str) -> ModelsImageRecordResponse:
         self.version = value
         return self
 
-    def with_artifact_path(self, value: str) -> ModelsImageRecord:
+    def with_artifact_path(self, value: str) -> ModelsImageRecordResponse:
         self.artifact_path = value
         return self
 
-    def with_core_dump_enabled(self, value: bool) -> ModelsImageRecord:
+    def with_core_dump_enabled(self, value: bool) -> ModelsImageRecordResponse:
         self.core_dump_enabled = value
+        return self
+
+    def with_deployments(self, value: List[str]) -> ModelsImageRecordResponse:
+        self.deployments = value
         return self
 
     def with_image_replications(
         self, value: List[ModelsImageReplication]
-    ) -> ModelsImageRecord:
+    ) -> ModelsImageRecordResponse:
         self.image_replications = value
         return self
 
     def with_image_replications_map(
         self, value: Dict[str, ModelsImageReplication]
-    ) -> ModelsImageRecord:
+    ) -> ModelsImageRecordResponse:
         self.image_replications_map = value
         return self
 
-    def with_ulimit_file_size(self, value: int) -> ModelsImageRecord:
+    def with_ulimit_file_size(self, value: int) -> ModelsImageRecordResponse:
         self.ulimit_file_size = value
         return self
 
@@ -194,6 +201,10 @@ class ModelsImageRecord(Model):
             result["coreDumpEnabled"] = bool(self.core_dump_enabled)
         elif include_empty:
             result["coreDumpEnabled"] = False
+        if hasattr(self, "deployments"):
+            result["deployments"] = [str(i0) for i0 in self.deployments]
+        elif include_empty:
+            result["deployments"] = []
         if hasattr(self, "image_replications"):
             result["imageReplications"] = [
                 i0.to_dict(include_empty=include_empty)
@@ -232,11 +243,12 @@ class ModelsImageRecord(Model):
         version: str,
         artifact_path: Optional[str] = None,
         core_dump_enabled: Optional[bool] = None,
+        deployments: Optional[List[str]] = None,
         image_replications: Optional[List[ModelsImageReplication]] = None,
         image_replications_map: Optional[Dict[str, ModelsImageReplication]] = None,
         ulimit_file_size: Optional[int] = None,
         **kwargs,
-    ) -> ModelsImageRecord:
+    ) -> ModelsImageRecordResponse:
         instance = cls()
         instance.created_at = created_at
         instance.docker_path = docker_path
@@ -251,6 +263,8 @@ class ModelsImageRecord(Model):
             instance.artifact_path = artifact_path
         if core_dump_enabled is not None:
             instance.core_dump_enabled = core_dump_enabled
+        if deployments is not None:
+            instance.deployments = deployments
         if image_replications is not None:
             instance.image_replications = image_replications
         if image_replications_map is not None:
@@ -262,7 +276,7 @@ class ModelsImageRecord(Model):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> ModelsImageRecord:
+    ) -> ModelsImageRecordResponse:
         instance = cls()
         if not dict_:
             return instance
@@ -310,6 +324,10 @@ class ModelsImageRecord(Model):
             instance.core_dump_enabled = bool(dict_["coreDumpEnabled"])
         elif include_empty:
             instance.core_dump_enabled = False
+        if "deployments" in dict_ and dict_["deployments"] is not None:
+            instance.deployments = [str(i0) for i0 in dict_["deployments"]]
+        elif include_empty:
+            instance.deployments = []
         if "imageReplications" in dict_ and dict_["imageReplications"] is not None:
             instance.image_replications = [
                 ModelsImageReplication.create_from_dict(i0, include_empty=include_empty)
@@ -338,7 +356,7 @@ class ModelsImageRecord(Model):
     @classmethod
     def create_many_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, ModelsImageRecord]:
+    ) -> Dict[str, ModelsImageRecordResponse]:
         return (
             {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
             if dict_
@@ -348,7 +366,7 @@ class ModelsImageRecord(Model):
     @classmethod
     def create_many_from_list(
         cls, list_: list, include_empty: bool = False
-    ) -> List[ModelsImageRecord]:
+    ) -> List[ModelsImageRecordResponse]:
         return (
             [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
             if list_
@@ -359,7 +377,9 @@ class ModelsImageRecord(Model):
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
     ) -> Union[
-        ModelsImageRecord, List[ModelsImageRecord], Dict[Any, ModelsImageRecord]
+        ModelsImageRecordResponse,
+        List[ModelsImageRecordResponse],
+        Dict[Any, ModelsImageRecordResponse],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -385,6 +405,7 @@ class ModelsImageRecord(Model):
             "version": "version",
             "artifactPath": "artifact_path",
             "coreDumpEnabled": "core_dump_enabled",
+            "deployments": "deployments",
             "imageReplications": "image_replications",
             "imageReplicationsMap": "image_replications_map",
             "ulimitFileSize": "ulimit_file_size",
@@ -404,6 +425,7 @@ class ModelsImageRecord(Model):
             "version": True,
             "artifactPath": False,
             "coreDumpEnabled": False,
+            "deployments": False,
             "imageReplications": False,
             "imageReplicationsMap": False,
             "ulimitFileSize": False,

@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.53.0"
+__version__ = "4.54.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -319,6 +319,7 @@ from .fixed_period_rotation_config import (
     BackfillTypeEnum as FixedPeriodRotationConfigBackfillTypeEnum,
 )
 from .fixed_period_rotation_config import RuleEnum as FixedPeriodRotationConfigRuleEnum
+from .fulfill_bundled_item_result import FulfillBundledItemResult
 from .fulfill_code_request import FulfillCodeRequest
 from .ful_fill_item_payload import FulFillItemPayload
 from .ful_fill_item_payload import (
@@ -327,6 +328,7 @@ from .ful_fill_item_payload import (
 from .ful_fill_item_payload import (
     EntitlementOriginEnum as FulFillItemPayloadEntitlementOriginEnum,
 )
+from .fulfill_item_result import FulfillItemResult
 from .fulfillment_error import FulfillmentError
 from .fulfillment_history_info import FulfillmentHistoryInfo
 from .fulfillment_history_info import StatusEnum as FulfillmentHistoryInfoStatusEnum
@@ -348,6 +350,20 @@ from .fulfillment_result import FulfillmentResult
 from .fulfillment_script_create import FulfillmentScriptCreate
 from .fulfillment_script_info import FulfillmentScriptInfo
 from .fulfillment_script_update import FulfillmentScriptUpdate
+from .fulfillment_state_info import FulfillmentStateInfo
+from .fulfillment_v2_request import FulfillmentV2Request
+from .fulfillment_v2_request_item import FulfillmentV2RequestItem
+from .fulfillment_v2_request_item import (
+    EntitlementOriginEnum as FulfillmentV2RequestItemEntitlementOriginEnum,
+)
+from .fulfillment_v2_request_item import (
+    OriginEnum as FulfillmentV2RequestItemOriginEnum,
+)
+from .fulfillment_v2_request_item import (
+    SourceEnum as FulfillmentV2RequestItemSourceEnum,
+)
+from .fulfillment_v2_result import FulfillmentV2Result
+from .fulfillment_v2_result import StateEnum as FulfillmentV2ResultStateEnum
 from .full_app_info import FullAppInfo
 from .full_app_info import GenresEnum as FullAppInfoGenresEnum
 from .full_app_info import PlatformsEnum as FullAppInfoPlatformsEnum
@@ -741,6 +757,10 @@ from .revoke_entitlement import RevokeEntitlement
 from .revoke_entitlement_payload import RevokeEntitlementPayload
 from .revoke_entry import RevokeEntry
 from .revoke_entry import TypeEnum as RevokeEntryTypeEnum
+from .revoke_fulfillment_v2_result import RevokeFulfillmentV2Result
+from .revoke_fulfillment_v2_result import (
+    StateEnum as RevokeFulfillmentV2ResultStateEnum,
+)
 from .revoke_item import RevokeItem
 from .revoke_item import EntitlementOriginEnum as RevokeItemEntitlementOriginEnum
 from .revoke_item import ItemIdentityTypeEnum as RevokeItemItemIdentityTypeEnum
@@ -783,8 +803,16 @@ from .section_update import SectionUpdate
 from .section_update import RotationTypeEnum as SectionUpdateRotationTypeEnum
 from .service_plugin_config_info import ServicePluginConfigInfo
 from .service_plugin_config_update import ServicePluginConfigUpdate
+from .simple_dlc_reward_item import SimpleDLCRewardItem
 from .simple_entitlement import SimpleEntitlement
 from .simple_user_dlc import SimpleUserDLC
+from .simple_user_dlc_reward_content import SimpleUserDLCRewardContent
+from .simple_user_dlc_reward_content import (
+    TypeEnum as SimpleUserDLCRewardContentTypeEnum,
+)
+from .simple_user_dlc_reward_contents_response import (
+    SimpleUserDLCRewardContentsResponse,
+)
 from .simple_wallet import SimpleWallet
 from .slide import Slide
 from .slide import TypeEnum as SlideTypeEnum

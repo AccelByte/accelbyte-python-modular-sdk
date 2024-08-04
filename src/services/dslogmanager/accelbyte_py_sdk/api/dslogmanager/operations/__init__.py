@@ -8,6 +8,6 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Ds Log Manager Service."""
 
-__version__ = "3.4.1"
+__version__ = "3.7.4"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"

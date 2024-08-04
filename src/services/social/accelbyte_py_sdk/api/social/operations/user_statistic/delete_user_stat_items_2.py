@@ -42,7 +42,7 @@ class DeleteUserStatItems2(Operation):
 
     Delete user's statItems given stat code.
     Other detail info:
-              *  Returns : no content
+                *  Returns : no content
 
     Properties:
         url: /social/v2/admin/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems

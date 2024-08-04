@@ -67,10 +67,10 @@ def create_stat(
 
     Create stat.
     Other detail info:
-              *  Returns : created stat template
-              * default minimum value is 0
-              * default maximum value is 1.7976931348623157e+308
-              * Field globalAggregationMethod will be ignored when setAsGlobal field is false
+                *  Returns : created stat template
+                * default minimum value is 0
+                * default maximum value is 1.7976931348623157e+308
+                * Field globalAggregationMethod will be ignored when setAsGlobal field is false
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats
@@ -128,10 +128,10 @@ async def create_stat_async(
 
     Create stat.
     Other detail info:
-              *  Returns : created stat template
-              * default minimum value is 0
-              * default maximum value is 1.7976931348623157e+308
-              * Field globalAggregationMethod will be ignored when setAsGlobal field is false
+                *  Returns : created stat template
+                * default minimum value is 0
+                * default maximum value is 1.7976931348623157e+308
+                * Field globalAggregationMethod will be ignored when setAsGlobal field is false
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats
@@ -191,10 +191,10 @@ def create_stat_1(
 
     Create stat.
     Other detail info:
-              *  Returns : created stat template
-              * default minimum value is 0
-              * default maximum value is 1.7976931348623157e+308
-              * Field globalAggregationMethod will be ignored when setAsGlobal field is false
+                *  Returns : created stat template
+                * default minimum value is 0
+                * default maximum value is 1.7976931348623157e+308
+                * Field globalAggregationMethod will be ignored when setAsGlobal field is false
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/stats
@@ -252,10 +252,10 @@ async def create_stat_1_async(
 
     Create stat.
     Other detail info:
-              *  Returns : created stat template
-              * default minimum value is 0
-              * default maximum value is 1.7976931348623157e+308
-              * Field globalAggregationMethod will be ignored when setAsGlobal field is false
+                *  Returns : created stat template
+                * default minimum value is 0
+                * default maximum value is 1.7976931348623157e+308
+                * Field globalAggregationMethod will be ignored when setAsGlobal field is false
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/stats
@@ -613,7 +613,7 @@ def get_stat(
 
     Get stat by statCode.
     Other detail info:
-              *  Returns : stat info
+                *  Returns : stat info
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats/{statCode}
@@ -665,7 +665,7 @@ async def get_stat_async(
 
     Get stat by statCode.
     Other detail info:
-              *  Returns : stat info
+                *  Returns : stat info
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats/{statCode}
@@ -723,7 +723,7 @@ def get_stats(
 
     List stats by pagination.
     Other detail info:
-              *  Returns : stats
+                *  Returns : stats
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats
@@ -789,7 +789,7 @@ async def get_stats_async(
 
     List stats by pagination.
     Other detail info:
-              *  Returns : stats
+                *  Returns : stats
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats
@@ -967,7 +967,7 @@ def query_stats(
 
     Query stats by keyword.
     Other detail info:
-              *  Returns : stats
+                *  Returns : stats
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats/search
@@ -1033,7 +1033,7 @@ async def query_stats_async(
 
     Query stats by keyword.
     Other detail info:
-              *  Returns : stats
+                *  Returns : stats
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats/search
@@ -1098,9 +1098,9 @@ def update_stat(
 
     Update stat.
     Other detail info:
-              *  Returns : updated stat
-              *  Field globalAggregationMethod will be ignored when the stat is not set as global
-              *  Field globalAggregationMethod is not updatable when the stat status is TIED
+                *  Returns : updated stat
+                *  Field globalAggregationMethod will be ignored when the stat is not set as global
+                *  Field globalAggregationMethod is not updatable when the stat status is TIED
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats/{statCode}
@@ -1158,9 +1158,9 @@ async def update_stat_async(
 
     Update stat.
     Other detail info:
-              *  Returns : updated stat
-              *  Field globalAggregationMethod will be ignored when the stat is not set as global
-              *  Field globalAggregationMethod is not updatable when the stat status is TIED
+                *  Returns : updated stat
+                *  Field globalAggregationMethod will be ignored when the stat is not set as global
+                *  Field globalAggregationMethod is not updatable when the stat status is TIED
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/stats/{statCode}

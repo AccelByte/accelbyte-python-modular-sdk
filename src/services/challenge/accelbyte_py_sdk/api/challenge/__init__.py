@@ -43,6 +43,8 @@ from .wrappers import admin_evaluate_progress
 from .wrappers import admin_evaluate_progress_async
 from .wrappers import evaluate_my_progress
 from .wrappers import evaluate_my_progress_async
+from .wrappers import public_get_past_user_progression
+from .wrappers import public_get_past_user_progression_async
 from .wrappers import public_get_user_progression
 from .wrappers import public_get_user_progression_async
 

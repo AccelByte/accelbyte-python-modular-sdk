@@ -30,32 +30,32 @@ if [ "$BATCH" = true ] ; then
 
 $PYTHON -m $MODULE 'start-interactive-session' --continue_on_error '--writer=tap' << END
 achievement-admin-list-achievements --login_with_auth "Bearer foo"
-achievement-admin-create-new-achievement '{"achievementCode": "a82vs5yf", "customAttributes": {"LDtNakSj": {}, "DqHK0L56": {}, "0660BRJp": {}}, "defaultLanguage": "Tx5AvGF3", "description": {"qFBy4ZOf": "7hs4slTY", "XspxqL62": "BerGwmKb", "KLZujiar": "a9HwQIPK"}, "global": false, "goalValue": 0.31182272850962967, "hidden": true, "incremental": false, "lockedIcons": [{"slug": "umFKQirA", "url": "uUOuscEJ"}, {"slug": "vZ0fPvyx", "url": "RKctpbr0"}, {"slug": "YcO4lAWw", "url": "X60vqZ6U"}], "name": {"Sl52YfWc": "rxHqXrRX", "BWziOCtU": "9cruwW28", "lUbWbm4W": "f6zIUoOZ"}, "statCode": "QX9QjP98", "tags": ["wiw3s33w", "btOr4BYv", "Wvy8YRXO"], "unlockedIcons": [{"slug": "j6NTJwDL", "url": "68aZ6Ho1"}, {"slug": "KXRzifZl", "url": "t1rRLKQe"}, {"slug": "g3OLqBE0", "url": "iYp1VJEE"}]}' --login_with_auth "Bearer foo"
+achievement-admin-create-new-achievement '{"achievementCode": "72jSACks", "customAttributes": {"r9nVWafg": {}, "HpQYKZTW": {}, "bmf2zsoZ": {}}, "defaultLanguage": "4JAp7szn", "description": {"z3u3QAzo": "LjWACHpL", "Wi2WAvLP": "Q14eiPoi", "Pz8j6G2E": "Qx3VJeGR"}, "global": false, "goalValue": 0.7508311674615921, "hidden": false, "incremental": false, "lockedIcons": [{"slug": "YL1Eze2q", "url": "jzZOxHKV"}, {"slug": "YMZ96z2I", "url": "fc3z5SL3"}, {"slug": "BWgmJRkA", "url": "9rV0D7cq"}], "name": {"ygBztyY0": "cyEIkikO", "POoUHlJR": "GEIiUbQX", "VRJHhFaK": "Mf3DlMJK"}, "statCode": "wmzpwb3f", "tags": ["fEbvR2e6", "w98pg1cw", "3GlX4KiH"], "unlockedIcons": [{"slug": "IZrdRj7L", "url": "kMieBRLf"}, {"slug": "DHlxJDtW", "url": "6obPBhpq"}, {"slug": "6dSnLI5u", "url": "EXImSBJV"}]}' --login_with_auth "Bearer foo"
 achievement-export-achievements --login_with_auth "Bearer foo"
 achievement-import-achievements --login_with_auth "Bearer foo"
-achievement-admin-get-achievement 'TE6yCV7q' --login_with_auth "Bearer foo"
-achievement-admin-update-achievement '{"customAttributes": {"JJKNme7m": {}, "HBLYWU1a": {}, "m6KjzcHi": {}}, "defaultLanguage": "0GCYVIbz", "description": {"AxeX8T44": "ybPXbHcV", "vMgAHxmd": "ESw24og7", "kbc4xGII": "UZm1hAPR"}, "global": false, "goalValue": 0.765465350928962, "hidden": false, "incremental": true, "lockedIcons": [{"slug": "U3Qj0wv6", "url": "SEOiP1ma"}, {"slug": "3TPUJ6Xp", "url": "HH5oNvqR"}, {"slug": "LRjgW0aX", "url": "xCF2teBS"}], "name": {"ItDuRLWT": "Hli9nukY", "5606wXMm": "3XLegdzn", "IaJapn8Q": "qinc1Pyn"}, "statCode": "UqglzDL8", "tags": ["1rXZlSSs", "sRpehp43", "rdxrq2p5"], "unlockedIcons": [{"slug": "T3C3nM5T", "url": "SdMEwHTa"}, {"slug": "dYUgh8SV", "url": "88BbeAQg"}, {"slug": "iKzIv827", "url": "O6Q3PzRf"}]}' '5DYBRjOZ' --login_with_auth "Bearer foo"
-achievement-admin-delete-achievement 'DQrl8ulR' --login_with_auth "Bearer foo"
-achievement-admin-update-achievement-list-order '{"targetOrder": 44}' 'KNHMcNt7' --login_with_auth "Bearer foo"
+achievement-admin-get-achievement 'u6S3PaWN' --login_with_auth "Bearer foo"
+achievement-admin-update-achievement '{"customAttributes": {"P1lZwi8S": {}, "G6ZeVJTt": {}, "usHRaN2r": {}}, "defaultLanguage": "vY3K275H", "description": {"L74KWZtn": "Dxqd2mN3", "Ygdmw9OY": "Tb5aOfeu", "S4TxufL1": "S6QJ2TLe"}, "global": false, "goalValue": 0.44922784835478957, "hidden": false, "incremental": true, "lockedIcons": [{"slug": "qC8RLpd7", "url": "UqRvHrK5"}, {"slug": "r9UvViWb", "url": "0rHgCQSi"}, {"slug": "N9jF4san", "url": "Cgc43KrW"}], "name": {"04jrUgWr": "3kD4Q7rJ", "cjT2w6as": "CVBc58wD", "VaNGfXF9": "9F8uwkKP"}, "statCode": "W8T9jS3h", "tags": ["6gAmvUkX", "txUk4IHz", "qAQcJEcO"], "unlockedIcons": [{"slug": "YrRDsmK9", "url": "rWsGxwC3"}, {"slug": "J7pvxOLR", "url": "RurGk2LD"}, {"slug": "05tfuulE", "url": "yPvyEtO7"}]}' '31LG7qrs' --login_with_auth "Bearer foo"
+achievement-admin-delete-achievement 'WqBOgC5o' --login_with_auth "Bearer foo"
+achievement-admin-update-achievement-list-order '{"targetOrder": 27}' 'iKfZNl3j' --login_with_auth "Bearer foo"
 achievement-admin-list-global-achievements --login_with_auth "Bearer foo"
-achievement-admin-list-global-achievement-contributors 'RABXtDrE' --login_with_auth "Bearer foo"
-achievement-reset-global-achievement 'iD200iIY' --login_with_auth "Bearer foo"
-achievement-bulk-create-psn-event '{"data": [{"events": [{"dateTime": "qnC5JnqG", "eventData": {"eventName": "cQyggaYP", "properties": {"nm65ZoWn": {}, "qu4YtlSH": {}, "j5rx47hm": {}}}, "eventId": "MvjqqMNG", "version": "CjchVHxd"}, {"dateTime": "N4PmrwJO", "eventData": {"eventName": "Madq05dI", "properties": {"HYrCMlsm": {}, "QLXth9oy": {}, "IizAXLbZ": {}}}, "eventId": "JYLss7LL", "version": "z5H6KFfu"}, {"dateTime": "JjeA23wI", "eventData": {"eventName": "calSMbwA", "properties": {"K4GkRxk7": {}, "nF7A2nIn": {}, "xCa7B4lL": {}}}, "eventId": "jqEgIPhx", "version": "WjIaBqrn"}], "thirdPartyUserId": "w7evmNMC", "userId": "Xsso2a02"}, {"events": [{"dateTime": "Ze7lphMq", "eventData": {"eventName": "t0Nc4G2K", "properties": {"FsTLc26S": {}, "EdFmplqP": {}, "bHgTO8R0": {}}}, "eventId": "9neKienJ", "version": "Yoos7UgR"}, {"dateTime": "ruo1dq6O", "eventData": {"eventName": "u0bKIkZg", "properties": {"VAOLGZxK": {}, "ZWFeZ9wn": {}, "zFtpQCKO": {}}}, "eventId": "dY5Qryuh", "version": "e15DS0bp"}, {"dateTime": "1kZMghhx", "eventData": {"eventName": "cO6v53Lx", "properties": {"JnVe0acl": {}, "Qk0xPQrw": {}, "89Tj8Bn3": {}}}, "eventId": "tt4dv7ml", "version": "84JOMDkn"}], "thirdPartyUserId": "KY4YUOtO", "userId": "At29BOZC"}, {"events": [{"dateTime": "VJBpAF0p", "eventData": {"eventName": "EKAYuVyZ", "properties": {"F4F5evhX": {}, "bXPxFwMR": {}, "QgY2vjjR": {}}}, "eventId": "91hhnfgc", "version": "EjsWxuPZ"}, {"dateTime": "aYlFGanW", "eventData": {"eventName": "QcOweIoo", "properties": {"DiMBHk1n": {}, "mAAuQIbG": {}, "yjCdtrbL": {}}}, "eventId": "2M0wHlwQ", "version": "d6M2Eqd6"}, {"dateTime": "F2rIYWIL", "eventData": {"eventName": "j4VtA6cS", "properties": {"ED47IsDV": {}, "EQUDnM4K": {}, "IxxVYpNr": {}}}, "eventId": "Ee4q9XIM", "version": "lhcIMfAU"}], "thirdPartyUserId": "MZrWgRpR", "userId": "in569GeC"}]}' --login_with_auth "Bearer foo"
+achievement-admin-list-global-achievement-contributors 'P9qp7Nmc' --login_with_auth "Bearer foo"
+achievement-reset-global-achievement 'xupBJcG5' --login_with_auth "Bearer foo"
+achievement-bulk-create-psn-event '{"data": [{"events": [{"dateTime": "1GJ31MWX", "eventData": {"eventName": "g8arMhn9", "properties": {"1JwbidTe": {}, "PmdWldva": {}, "Wu3eqt0l": {}}}, "eventId": "eHSJkI4v", "version": "lu50VmL2"}, {"dateTime": "0HOwPb17", "eventData": {"eventName": "Xr0lHXYL", "properties": {"BhHFMugA": {}, "9F8YIFRE": {}, "sKVd8mWA": {}}}, "eventId": "lcVW3SnC", "version": "bVwDFxCI"}, {"dateTime": "G4a9TKNj", "eventData": {"eventName": "ZBZshgr4", "properties": {"DCT8Y2R7": {}, "mGRa3DJo": {}, "NpQDOsV9": {}}}, "eventId": "wyRuMwj5", "version": "2sHaw4Lz"}], "thirdPartyUserId": "A02vfvTl", "userId": "hx4fgqMG"}, {"events": [{"dateTime": "hRSGa6Mk", "eventData": {"eventName": "9uKF1EBY", "properties": {"rlTVDJ4W": {}, "A560NxBl": {}, "kyDKQ7ik": {}}}, "eventId": "LZp8Uzsa", "version": "sv66ptgA"}, {"dateTime": "rSfVUWdL", "eventData": {"eventName": "8eHaH0kU", "properties": {"QY0Yc8nG": {}, "oS1dmR6L": {}, "XHTx7xgn": {}}}, "eventId": "ZYckkGYV", "version": "Xniv6txP"}, {"dateTime": "MraVA1Ed", "eventData": {"eventName": "9d7zM1Y9", "properties": {"7dutg4z5": {}, "JntZoEzo": {}, "OMMRTMOD": {}}}, "eventId": "jbhgh3Pq", "version": "yeTnx7bJ"}], "thirdPartyUserId": "Kdu6umC9", "userId": "BK1iZ8fV"}, {"events": [{"dateTime": "TiscKZva", "eventData": {"eventName": "UNTavAKQ", "properties": {"QZ94fFts": {}, "cmP0IrLe": {}, "03RPkClf": {}}}, "eventId": "0391K1NT", "version": "tKtCNYkx"}, {"dateTime": "SEgH5qQw", "eventData": {"eventName": "ehrUOS8H", "properties": {"VaDt0EWH": {}, "7VUb3PkM": {}, "SYeBRoY0": {}}}, "eventId": "LYIjRvTU", "version": "IL3IKTNR"}, {"dateTime": "EfDi22gn", "eventData": {"eventName": "CyBOZnzo", "properties": {"8tXqNSCh": {}, "53DqRn3s": {}, "jGP77M4g": {}}}, "eventId": "g3WXuAg2", "version": "AgvfCoVC"}], "thirdPartyUserId": "GxGi5jOF", "userId": "LxaAUWnL"}]}' --login_with_auth "Bearer foo"
 achievement-admin-list-tags --login_with_auth "Bearer foo"
-achievement-admin-list-user-achievements 'Lw6enmfr' --login_with_auth "Bearer foo"
-achievement-admin-reset-achievement 'JPWozIRi' 'q2rAC8cc' --login_with_auth "Bearer foo"
-achievement-admin-unlock-achievement 'Eot2IH7M' 'AfDyU26r' --login_with_auth "Bearer foo"
-achievement-admin-anonymize-user-achievement 'S2g4Oaml' --login_with_auth "Bearer foo"
-achievement-admin-list-user-contributions 'qKTGnXhP' --login_with_auth "Bearer foo"
-achievement-public-list-achievements 'gz66JP6T' --login_with_auth "Bearer foo"
-achievement-public-get-achievement 'V6seEwx6' 'ndhX2Rm0' --login_with_auth "Bearer foo"
+achievement-admin-list-user-achievements 'xSWsIR9y' --login_with_auth "Bearer foo"
+achievement-admin-reset-achievement 'w59MK5DZ' 'TnfX9kmw' --login_with_auth "Bearer foo"
+achievement-admin-unlock-achievement 'Y1DiBQ6R' 'kVs1ppzd' --login_with_auth "Bearer foo"
+achievement-admin-anonymize-user-achievement 'pR3H5xZW' --login_with_auth "Bearer foo"
+achievement-admin-list-user-contributions 'YmCZdTmC' --login_with_auth "Bearer foo"
+achievement-public-list-achievements 'zhHHg8Qr' --login_with_auth "Bearer foo"
+achievement-public-get-achievement 'CCjjWnIW' 'SUDjpax9' --login_with_auth "Bearer foo"
 achievement-public-list-global-achievements --login_with_auth "Bearer foo"
-achievement-list-global-achievement-contributors 'IZ6xBtDL' --login_with_auth "Bearer foo"
+achievement-list-global-achievement-contributors 'FIjntafh' --login_with_auth "Bearer foo"
 achievement-public-list-tags --login_with_auth "Bearer foo"
-achievement-public-list-user-achievements 'nhzZ67qy' --login_with_auth "Bearer foo"
-achievement-public-unlock-achievement 'VCIjF2ll' 'NU2JmuGv' --login_with_auth "Bearer foo"
-achievement-list-user-contributions 'ZIWvjBDo' --login_with_auth "Bearer foo"
-achievement-claim-global-achievement-reward 'YrHi3mhh' 'ItGr99s7' --login_with_auth "Bearer foo"
+achievement-public-list-user-achievements 'aLexeeKb' --login_with_auth "Bearer foo"
+achievement-public-unlock-achievement 'lmvRgxF9' 'PO0SRSVm' --login_with_auth "Bearer foo"
+achievement-list-user-contributions '5KqCpCSL' --login_with_auth "Bearer foo"
+achievement-claim-global-achievement-reward '6DhDW1zo' 'bnuBCxqF' --login_with_auth "Bearer foo"
 exit()
 END
 
@@ -92,7 +92,7 @@ eval_tap $? 2 'AdminListAchievements' test.out
 
 #- 3 AdminCreateNewAchievement
 $PYTHON -m $MODULE 'achievement-admin-create-new-achievement' \
-    '{"achievementCode": "wZVsUMNh", "customAttributes": {"ffqqeJEd": {}, "qgZxo7QQ": {}, "woAhrlgq": {}}, "defaultLanguage": "YoFrzs1d", "description": {"7bfFozND": "0SYnlZ9l", "zrlccrx6": "e0pxHC5o", "pst8nlF8": "nm8i5hU0"}, "global": true, "goalValue": 0.4737050643549239, "hidden": true, "incremental": true, "lockedIcons": [{"slug": "UDvJhawv", "url": "AttaGNnQ"}, {"slug": "ERZFB0bH", "url": "vP03K0c1"}, {"slug": "runsAur7", "url": "37fUtqO0"}], "name": {"i3pNvWRh": "wxEvgG5S", "YdUMFOpc": "ygldaYeU", "zD6kicda": "l3d87cuu"}, "statCode": "UI93XDnQ", "tags": ["TNzXbdcv", "zMLJiZQM", "yOvQ0b48"], "unlockedIcons": [{"slug": "5XDAkQis", "url": "cFCVf7hG"}, {"slug": "Any2gDsj", "url": "TspTIFoY"}, {"slug": "ECW6OG75", "url": "HFshBhqS"}]}' \
+    '{"achievementCode": "VDY0E8b2", "customAttributes": {"fmGnZyn9": {}, "lJba9FOq": {}, "maBrJ5NK": {}}, "defaultLanguage": "6GLKm3hx", "description": {"ekCUlOub": "ZLAokBPr", "skXtUQCs": "uYdqMMgA", "w0THYM4C": "QiOywrk1"}, "global": true, "goalValue": 0.6589906315798824, "hidden": true, "incremental": true, "lockedIcons": [{"slug": "ofCcSkPz", "url": "KS1txh7S"}, {"slug": "DWcG7BMp", "url": "D9NiBIG8"}, {"slug": "bT1tbY9b", "url": "mxSSJ2Hm"}], "name": {"h7CoZccX": "vilHTdLU", "2r0idYV3": "4KC3ACDh", "z8Z2DL1W": "f9a41rF9"}, "statCode": "TjLo4TAQ", "tags": ["FZcOgW1z", "P1RI42tl", "qYLGQQt5"], "unlockedIcons": [{"slug": "XZBiEORJ", "url": "4kls9Nq4"}, {"slug": "1NXuD1BJ", "url": "2wQLYfNu"}, {"slug": "LvAHKTuz", "url": "F9M3QQIM"}]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 3 'AdminCreateNewAchievement' test.out
@@ -111,30 +111,30 @@ eval_tap $? 5 'ImportAchievements' test.out
 
 #- 6 AdminGetAchievement
 $PYTHON -m $MODULE 'achievement-admin-get-achievement' \
-    'zN3aQRFL' \
+    'bBOiXSFn' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 6 'AdminGetAchievement' test.out
 
 #- 7 AdminUpdateAchievement
 $PYTHON -m $MODULE 'achievement-admin-update-achievement' \
-    '{"customAttributes": {"WdfEmJ5T": {}, "lF1OdCsa": {}, "Nn4PBwvA": {}}, "defaultLanguage": "q0xzEZNZ", "description": {"0Q1cAAT1": "cT46peFd", "yXf73CQt": "zAI7U9Bs", "bOFeLkDs": "HjmaXtDu"}, "global": true, "goalValue": 0.8176656881265213, "hidden": false, "incremental": true, "lockedIcons": [{"slug": "REfE7JeQ", "url": "ZY8og92f"}, {"slug": "ZDQmC42l", "url": "M2qLpEJC"}, {"slug": "K2PCdAom", "url": "c3CROH9x"}], "name": {"NdIkyekP": "o1XeHAau", "ybHha9vW": "t9W7DdIN", "zFZiD7uN": "Va1Nnuio"}, "statCode": "9votnf3G", "tags": ["eA4OaDHT", "oeZtfvOu", "7x2nWbhr"], "unlockedIcons": [{"slug": "bxrpu4pg", "url": "c5PLFHel"}, {"slug": "zp0TjLsy", "url": "I1xchKe8"}, {"slug": "5EgC2TJG", "url": "4UZhbmQQ"}]}' \
-    'rMmy0H1t' \
+    '{"customAttributes": {"CkZDKi3y": {}, "E3Eb7alk": {}, "fUvwmg2Z": {}}, "defaultLanguage": "GiY096kg", "description": {"xwjxuWDS": "5ygMwh2g", "zgqQcMV0": "F1wqkxmG", "SNaru01W": "4GwSx77N"}, "global": true, "goalValue": 0.240167289414565, "hidden": true, "incremental": false, "lockedIcons": [{"slug": "qGq8yL45", "url": "8lW1dAli"}, {"slug": "rxxptjbD", "url": "ZPBiyjPz"}, {"slug": "DaBDTwcb", "url": "WNWQLm59"}], "name": {"n6qEDBgT": "vK0ZBwZO", "4fRRHm8u": "dzO16Re4", "VgSqJLV2": "VwJ7xrYh"}, "statCode": "RpT1CTHD", "tags": ["Mpd53EmO", "7xlwTw2l", "3cBFW3EI"], "unlockedIcons": [{"slug": "ZKyToJny", "url": "AmWYkkeg"}, {"slug": "kmoX3NtJ", "url": "raUwu6Xj"}, {"slug": "TNxwYdVM", "url": "iO1gBOKv"}]}' \
+    'I8kTvkPM' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 7 'AdminUpdateAchievement' test.out
 
 #- 8 AdminDeleteAchievement
 $PYTHON -m $MODULE 'achievement-admin-delete-achievement' \
-    'vKe1Ueek' \
+    'if0F6TmW' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 8 'AdminDeleteAchievement' test.out
 
 #- 9 AdminUpdateAchievementListOrder
 $PYTHON -m $MODULE 'achievement-admin-update-achievement-list-order' \
-    '{"targetOrder": 64}' \
-    'InpZVNjf' \
+    '{"targetOrder": 45}' \
+    'HbOYjrCp' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 9 'AdminUpdateAchievementListOrder' test.out
@@ -147,21 +147,21 @@ eval_tap $? 10 'AdminListGlobalAchievements' test.out
 
 #- 11 AdminListGlobalAchievementContributors
 $PYTHON -m $MODULE 'achievement-admin-list-global-achievement-contributors' \
-    'zb7tU3Ev' \
+    'QmJyLy34' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 11 'AdminListGlobalAchievementContributors' test.out
 
 #- 12 ResetGlobalAchievement
 $PYTHON -m $MODULE 'achievement-reset-global-achievement' \
-    'JVUnvAUn' \
+    '48FwBxVN' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 12 'ResetGlobalAchievement' test.out
 
 #- 13 BulkCreatePSNEvent
 $PYTHON -m $MODULE 'achievement-bulk-create-psn-event' \
-    '{"data": [{"events": [{"dateTime": "7OBO30dN", "eventData": {"eventName": "Xd0KWu52", "properties": {"QBBUtu68": {}, "2WJ3PUB8": {}, "pTP5V25P": {}}}, "eventId": "dNthcFrs", "version": "GX98RhJr"}, {"dateTime": "NbSetNwX", "eventData": {"eventName": "4exV7A6s", "properties": {"4T0o85RY": {}, "7n3jgBqs": {}, "FnRwGfV6": {}}}, "eventId": "pXAMo8y9", "version": "SYyu9rrX"}, {"dateTime": "vuJj3Cjf", "eventData": {"eventName": "wGQLmpTa", "properties": {"9U2omfXn": {}, "5Q10Y9EK": {}, "EVr9k7sg": {}}}, "eventId": "Zc8qxWLR", "version": "uDoZbCkF"}], "thirdPartyUserId": "xiXjRHn3", "userId": "ClaybWF4"}, {"events": [{"dateTime": "FIQOSVp3", "eventData": {"eventName": "f6ZK9r7T", "properties": {"XekXtD0I": {}, "yH2bqHpK": {}, "OwyZQPBK": {}}}, "eventId": "42SQDxf8", "version": "cNqlvVEn"}, {"dateTime": "m10TWOLc", "eventData": {"eventName": "guBfyaSN", "properties": {"ssWL9AkV": {}, "GR5Q9s2Z": {}, "fBYW5N8X": {}}}, "eventId": "Fyx5dX9l", "version": "zLlXrP8o"}, {"dateTime": "NV7fZlJn", "eventData": {"eventName": "FbHTnPDy", "properties": {"jGRNIwTg": {}, "HypTmQgb": {}, "lhPyJtJN": {}}}, "eventId": "vu5aGAp7", "version": "F8yDdSRE"}], "thirdPartyUserId": "LV0uJ6Oh", "userId": "EgHhxYEY"}, {"events": [{"dateTime": "9nZLx6AU", "eventData": {"eventName": "Zl7jErKn", "properties": {"CXhOXWux": {}, "KLTI6TPG": {}, "WGUWZTi2": {}}}, "eventId": "W9Ucj2zz", "version": "43tCEyKM"}, {"dateTime": "BLdbEF3R", "eventData": {"eventName": "3xPqSiva", "properties": {"O7uDbEn8": {}, "uJA9DnsS": {}, "8yK0rwFS": {}}}, "eventId": "hvukuwp3", "version": "NAy9f6Ok"}, {"dateTime": "xf7KcUX9", "eventData": {"eventName": "VD7o4BlH", "properties": {"gQDUVmPD": {}, "U1EkE1vc": {}, "xoxIRujE": {}}}, "eventId": "qpusNmOV", "version": "8Vrfsztb"}], "thirdPartyUserId": "qec5KDy4", "userId": "6TntQHn2"}]}' \
+    '{"data": [{"events": [{"dateTime": "eKRD1HyW", "eventData": {"eventName": "6d4EiddU", "properties": {"mGxH8QNy": {}, "CsJ7GvcB": {}, "hRS4GsLC": {}}}, "eventId": "IkjPr26V", "version": "W64luAtC"}, {"dateTime": "NItDmz86", "eventData": {"eventName": "7k3NKxV4", "properties": {"NsTbC4ZA": {}, "5Jifdcrq": {}, "CqP6ArlM": {}}}, "eventId": "3DozcIKy", "version": "95bzMCWe"}, {"dateTime": "qLNGPBOk", "eventData": {"eventName": "QL9Ta7uC", "properties": {"KUUgpde8": {}, "YydQjlmF": {}, "YEm6sKcS": {}}}, "eventId": "VroXueb1", "version": "FEv2vq81"}], "thirdPartyUserId": "NapZW6hP", "userId": "KciFSvDh"}, {"events": [{"dateTime": "ZkMhII81", "eventData": {"eventName": "pbv1zIUC", "properties": {"9V611l8v": {}, "7FLWoLps": {}, "HvaR7Y5p": {}}}, "eventId": "xlMOmtAu", "version": "fSRY5XiG"}, {"dateTime": "kT6vgkyw", "eventData": {"eventName": "EUnwNHG7", "properties": {"CGodsTKY": {}, "zxhJdTPR": {}, "j3x0E8aI": {}}}, "eventId": "trG9RspZ", "version": "10N1q9EL"}, {"dateTime": "CfLDH05n", "eventData": {"eventName": "SkEuN9lk", "properties": {"gOurm5tY": {}, "sZbohFFh": {}, "RHb8rqg9": {}}}, "eventId": "ILpij6lR", "version": "Tj6k1ey3"}], "thirdPartyUserId": "HGSj6bgN", "userId": "3RldoMAd"}, {"events": [{"dateTime": "3qUpOw66", "eventData": {"eventName": "7BRHFayZ", "properties": {"WqZ2cr89": {}, "ALVTfRXa": {}, "UZuL1g8b": {}}}, "eventId": "Smta0V6R", "version": "gEBIsbqQ"}, {"dateTime": "45XLwLr6", "eventData": {"eventName": "LP7zAoKo", "properties": {"6QZ7AH88": {}, "Au864a4h": {}, "ygPnxX6r": {}}}, "eventId": "2fxBGxf1", "version": "paveSL18"}, {"dateTime": "d3FoVX8u", "eventData": {"eventName": "xHbnOymr", "properties": {"1hMKKeOk": {}, "5hblaWOX": {}, "YbiXFjvk": {}}}, "eventId": "CCrJ0t2e", "version": "q6SvrUka"}], "thirdPartyUserId": "1P0W3xID", "userId": "pqqLGJ21"}]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 13 'BulkCreatePSNEvent' test.out
@@ -174,52 +174,52 @@ eval_tap $? 14 'AdminListTags' test.out
 
 #- 15 AdminListUserAchievements
 $PYTHON -m $MODULE 'achievement-admin-list-user-achievements' \
-    'PmgVp263' \
+    'eXU3unH8' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 15 'AdminListUserAchievements' test.out
 
 #- 16 AdminResetAchievement
 $PYTHON -m $MODULE 'achievement-admin-reset-achievement' \
-    'IgqFPKqO' \
-    'ro2qiKOl' \
+    'lzZqrIcZ' \
+    'INBxr3th' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 16 'AdminResetAchievement' test.out
 
 #- 17 AdminUnlockAchievement
 $PYTHON -m $MODULE 'achievement-admin-unlock-achievement' \
-    'inWCpyTg' \
-    'j6qzLFRa' \
+    'ElYpFo6x' \
+    'gcoWjkE8' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 17 'AdminUnlockAchievement' test.out
 
 #- 18 AdminAnonymizeUserAchievement
 $PYTHON -m $MODULE 'achievement-admin-anonymize-user-achievement' \
-    'BDuffKfN' \
+    '4goSyT5B' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 18 'AdminAnonymizeUserAchievement' test.out
 
 #- 19 AdminListUserContributions
 $PYTHON -m $MODULE 'achievement-admin-list-user-contributions' \
-    'sZPbJxIX' \
+    'IARyuoxq' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 19 'AdminListUserContributions' test.out
 
 #- 20 PublicListAchievements
 $PYTHON -m $MODULE 'achievement-public-list-achievements' \
-    'd7dMDUZh' \
+    'FQgEQ0KP' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 20 'PublicListAchievements' test.out
 
 #- 21 PublicGetAchievement
 $PYTHON -m $MODULE 'achievement-public-get-achievement' \
-    'J0Zd8SaA' \
-    '0wFggmOj' \
+    'x0ny8x9b' \
+    '8uiq6hb0' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 21 'PublicGetAchievement' test.out
@@ -232,7 +232,7 @@ eval_tap $? 22 'PublicListGlobalAchievements' test.out
 
 #- 23 ListGlobalAchievementContributors
 $PYTHON -m $MODULE 'achievement-list-global-achievement-contributors' \
-    'MiJvDhzD' \
+    'NoK6SU0D' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 23 'ListGlobalAchievementContributors' test.out
@@ -245,30 +245,30 @@ eval_tap $? 24 'PublicListTags' test.out
 
 #- 25 PublicListUserAchievements
 $PYTHON -m $MODULE 'achievement-public-list-user-achievements' \
-    'ymg15sGH' \
+    'lWrxgnq7' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 25 'PublicListUserAchievements' test.out
 
 #- 26 PublicUnlockAchievement
 $PYTHON -m $MODULE 'achievement-public-unlock-achievement' \
-    'gL48ZxEt' \
-    'ZAolpRVY' \
+    'Xz6hPntg' \
+    'wIvj0sR3' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 26 'PublicUnlockAchievement' test.out
 
 #- 27 ListUserContributions
 $PYTHON -m $MODULE 'achievement-list-user-contributions' \
-    'aCemXdVj' \
+    'Xzoubvit' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 27 'ListUserContributions' test.out
 
 #- 28 ClaimGlobalAchievementReward
 $PYTHON -m $MODULE 'achievement-claim-global-achievement-reward' \
-    'MY9xeYDm' \
-    '3WDe8Jgy' \
+    '42AthxR4' \
+    'ZUU6gfi1' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 28 'ClaimGlobalAchievementReward' test.out

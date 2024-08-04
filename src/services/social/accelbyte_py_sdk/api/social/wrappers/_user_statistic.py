@@ -36,6 +36,7 @@ from ..models import BulkStatItemInc
 from ..models import BulkStatItemReset
 from ..models import BulkStatItemUpdate
 from ..models import BulkStatOperationResult
+from ..models import BulkUserStatItemByStatCodes
 from ..models import BulkUserStatItemInc
 from ..models import BulkUserStatItemReset
 from ..models import BulkUserStatItemUpdate
@@ -55,6 +56,7 @@ from ..operations.user_statistic import BulkFetchOrDefaultStatItems
 from ..operations.user_statistic import BulkFetchOrDefaultStatItems1
 from ..operations.user_statistic import BulkFetchStatItems
 from ..operations.user_statistic import BulkFetchStatItems1
+from ..operations.user_statistic import BulkGetOrDefaultByUserId
 from ..operations.user_statistic import BulkIncUserStatItem
 from ..operations.user_statistic import BulkIncUserStatItem1
 from ..operations.user_statistic import BulkIncUserStatItemValue
@@ -107,14 +109,14 @@ def admin_list_users_stat_items(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Admin list user's statItems (AdminListUsersStatItems)
+    """(Legacy) Admin list user's statItems (AdminListUsersStatItems)
 
     Admin list all statItems of user
-    NOTE:
-          * If stat code does not exist, will ignore this stat code.
-          * If stat item does not exist, will return default value
+    NOTE: Legacy endpoint , please use POST /v2/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk/getOrDefault
+            * If stat code does not exist, will ignore this stat code.
+            * If stat item does not exist, will return default value
     Other detail info:
-          *  Returns : stat items
+            *  Returns : stat items
 
     Properties:
         url: /social/v2/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk
@@ -178,14 +180,14 @@ async def admin_list_users_stat_items_async(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
-    """Admin list user's statItems (AdminListUsersStatItems)
+    """(Legacy) Admin list user's statItems (AdminListUsersStatItems)
 
     Admin list all statItems of user
-    NOTE:
-          * If stat code does not exist, will ignore this stat code.
-          * If stat item does not exist, will return default value
+    NOTE: Legacy endpoint , please use POST /v2/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk/getOrDefault
+            * If stat code does not exist, will ignore this stat code.
+            * If stat item does not exist, will return default value
     Other detail info:
-          *  Returns : stat items
+            *  Returns : stat items
 
     Properties:
         url: /social/v2/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk
@@ -253,7 +255,7 @@ def bulk_create_user_stat_items(
 
     Bulk create user's statItems.
     Other detail info:
-          *  Returns : bulk created result
+            *  Returns : bulk created result
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/users/{userId}/statitems/bulk
@@ -311,7 +313,7 @@ async def bulk_create_user_stat_items_async(
 
     Bulk create user's statItems.
     Other detail info:
-          *  Returns : bulk created result
+            *  Returns : bulk created result
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/users/{userId}/statitems/bulk
@@ -831,6 +833,140 @@ async def bulk_fetch_stat_items_1_async(
     )
 
 
+@same_doc_as(BulkGetOrDefaultByUserId)
+def bulk_get_or_default_by_user_id(
+    user_id: str,
+    additional_key: Optional[str] = None,
+    body: Optional[BulkUserStatItemByStatCodes] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Bulk get user's statitems value by user id and multiple stat codes (bulkGetOrDefaultByUserId)
+
+    Bulk get user's statitems value for given namespace and user by multiple stat codes.
+    Will return default value if player doesn't have the stat.
+    Other detail info:
+    + *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+    + *Max stat codes*: 20
+    + *Returns*: list of user's stat item values
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
+
+    Properties:
+        url: /social/v2/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk/getOrDefault
+
+        method: POST
+
+        tags: ["UserStatistic"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        body: (body) OPTIONAL BulkUserStatItemByStatCodes in body
+
+        namespace: (namespace) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+        additional_key: (additionalKey) OPTIONAL str in query
+
+    Responses:
+        200: OK - List[ADTOObjectForUserStatItemValue] (successful operation)
+
+        401: Unauthorized - ErrorEntity (20001: unauthorized access)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = BulkGetOrDefaultByUserId.create(
+        user_id=user_id,
+        additional_key=additional_key,
+        body=body,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(BulkGetOrDefaultByUserId)
+async def bulk_get_or_default_by_user_id_async(
+    user_id: str,
+    additional_key: Optional[str] = None,
+    body: Optional[BulkUserStatItemByStatCodes] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Bulk get user's statitems value by user id and multiple stat codes (bulkGetOrDefaultByUserId)
+
+    Bulk get user's statitems value for given namespace and user by multiple stat codes.
+    Will return default value if player doesn't have the stat.
+    Other detail info:
+    + *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+    + *Max stat codes*: 20
+    + *Returns*: list of user's stat item values
+
+    Required Permission(s):
+        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
+
+    Properties:
+        url: /social/v2/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk/getOrDefault
+
+        method: POST
+
+        tags: ["UserStatistic"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH] or [BEARER_AUTH]
+
+        body: (body) OPTIONAL BulkUserStatItemByStatCodes in body
+
+        namespace: (namespace) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+        additional_key: (additionalKey) OPTIONAL str in query
+
+    Responses:
+        200: OK - List[ADTOObjectForUserStatItemValue] (successful operation)
+
+        401: Unauthorized - ErrorEntity (20001: unauthorized access)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        500: Internal Server Error - ErrorEntity (20000: Internal server error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = BulkGetOrDefaultByUserId.create(
+        user_id=user_id,
+        additional_key=additional_key,
+        body=body,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(BulkIncUserStatItem)
 def bulk_inc_user_stat_item(
     body: Optional[List[BulkUserStatItemInc]] = None,
@@ -842,7 +978,7 @@ def bulk_inc_user_stat_item(
 
     Bulk update multiple user's statitems value.
     Other detail info:
-            *  Returns : bulk updated result
+              *  Returns : bulk updated result
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statitems/value/bulk
@@ -896,7 +1032,7 @@ async def bulk_inc_user_stat_item_async(
 
     Bulk update multiple user's statitems value.
     Other detail info:
-            *  Returns : bulk updated result
+              *  Returns : bulk updated result
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/statitems/value/bulk
@@ -953,7 +1089,7 @@ def bulk_inc_user_stat_item_1(
 
     Bulk update user's statitems value.
     Other detail info:
-            *  Returns : bulk updated result
+              *  Returns : bulk updated result
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk
@@ -1011,7 +1147,7 @@ async def bulk_inc_user_stat_item_1_async(
 
     Bulk update user's statitems value.
     Other detail info:
-            *  Returns : bulk updated result
+              *  Returns : bulk updated result
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk
@@ -1177,7 +1313,7 @@ def bulk_inc_user_stat_item_value_1(
 
     Bulk update user's statitems value.
     Other detail info:
-            *  Returns : bulk updated result
+              *  Returns : bulk updated result
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk
@@ -1235,7 +1371,7 @@ async def bulk_inc_user_stat_item_value_1_async(
 
     Bulk update user's statitems value.
     Other detail info:
-            *  Returns : bulk updated result
+              *  Returns : bulk updated result
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk
@@ -1295,7 +1431,7 @@ def bulk_inc_user_stat_item_value_2(
 
     Public bulk update user's statitems value.
     Other detail info:
-            *  Returns : bulk updated result
+              *  Returns : bulk updated result
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk
@@ -1353,7 +1489,7 @@ async def bulk_inc_user_stat_item_value_2_async(
 
     Public bulk update user's statitems value.
     Other detail info:
-            *  Returns : bulk updated result
+              *  Returns : bulk updated result
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk
@@ -2535,7 +2671,7 @@ def create_user_stat_item(
 
     Create statItem for a user.
     Other detail info:
-              *  Returns : created user's statItem
+                *  Returns : created user's statItem
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems
@@ -2595,7 +2731,7 @@ async def create_user_stat_item_async(
 
     Create statItem for a user.
     Other detail info:
-              *  Returns : created user's statItem
+                *  Returns : created user's statItem
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems
@@ -2658,7 +2794,7 @@ def delete_user_stat_items(
     This endpoint is for testing purpose. Use this endpoint for cleaning up after testing.
     Delete user's statItems given stat code.
     Other detail info:
-              *  Returns : no content
+                *  Returns : no content
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems
@@ -2717,7 +2853,7 @@ async def delete_user_stat_items_async(
     This endpoint is for testing purpose. Use this endpoint for cleaning up after testing.
     Delete user's statItems given stat code.
     Other detail info:
-              *  Returns : no content
+                *  Returns : no content
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems
@@ -2777,7 +2913,7 @@ def delete_user_stat_items_1(
 
     Delete user's statItems given stat code.
     Other detail info:
-                *  Returns : no content
+                  *  Returns : no content
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems
@@ -2835,7 +2971,7 @@ async def delete_user_stat_items_1_async(
 
     Delete user's statItems given stat code.
     Other detail info:
-                *  Returns : no content
+                  *  Returns : no content
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems
@@ -2900,7 +3036,7 @@ def delete_user_stat_items_2(
 
     Delete user's statItems given stat code.
     Other detail info:
-                  *  Returns : no content
+                    *  Returns : no content
 
     Properties:
         url: /social/v2/admin/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems
@@ -2966,7 +3102,7 @@ async def delete_user_stat_items_2_async(
 
     Delete user's statItems given stat code.
     Other detail info:
-                  *  Returns : no content
+                    *  Returns : no content
 
     Properties:
         url: /social/v2/admin/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems
@@ -3160,7 +3296,7 @@ def get_user_stat_items(
 
     List user's statItems.
     Other detail info:
-                    *  Returns : stat items
+                      *  Returns : stat items
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/users/{userId}/statitems
@@ -3236,7 +3372,7 @@ async def get_user_stat_items_async(
 
     List user's statItems.
     Other detail info:
-                    *  Returns : stat items
+                      *  Returns : stat items
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/users/{userId}/statitems
@@ -3310,7 +3446,7 @@ def inc_user_stat_item_value(
 
     Update user's statitem value.
     Other detail info:
-                    *  Returns : updated user's statItem
+                      *  Returns : updated user's statItem
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems/value
@@ -3376,7 +3512,7 @@ async def inc_user_stat_item_value_async(
 
     Update user's statitem value.
     Other detail info:
-                    *  Returns : updated user's statItem
+                      *  Returns : updated user's statItem
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems/value
@@ -3443,7 +3579,7 @@ def public_bulk_create_user_stat_items(
 
     Bulk create statItems.
     Other detail info:
-                    *  Returns : bulk created result
+                      *  Returns : bulk created result
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/statitems/bulk
@@ -3501,7 +3637,7 @@ async def public_bulk_create_user_stat_items_async(
 
     Bulk create statItems.
     Other detail info:
-                    *  Returns : bulk created result
+                      *  Returns : bulk created result
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/statitems/bulk
@@ -3560,7 +3696,7 @@ def public_bulk_inc_user_stat_item(
 
     Public bulk update multiple user's statitems value.
     Other detail info:
-                    *  Returns : bulk updated result
+                      *  Returns : bulk updated result
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/statitems/value/bulk
@@ -3614,7 +3750,7 @@ async def public_bulk_inc_user_stat_item_async(
 
     Public bulk update multiple user's statitems value.
     Other detail info:
-                    *  Returns : bulk updated result
+                      *  Returns : bulk updated result
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/statitems/value/bulk
@@ -3671,7 +3807,7 @@ def public_bulk_inc_user_stat_item_1(
 
     Public bulk update user's statitems value.
     Other detail info:
-                    *  Returns : bulk updated result
+                      *  Returns : bulk updated result
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk
@@ -3729,7 +3865,7 @@ async def public_bulk_inc_user_stat_item_1_async(
 
     Public bulk update user's statitems value.
     Other detail info:
-                    *  Returns : bulk updated result
+                      *  Returns : bulk updated result
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk
@@ -3788,7 +3924,7 @@ def public_bulk_inc_user_stat_item_value(
 
     Public bulk update multiple user's statitems value.
     Other detail info:
-                    *  Returns : bulk updated result
+                      *  Returns : bulk updated result
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/statitems/value/bulk
@@ -3842,7 +3978,7 @@ async def public_bulk_inc_user_stat_item_value_async(
 
     Public bulk update multiple user's statitems value.
     Other detail info:
-                    *  Returns : bulk updated result
+                      *  Returns : bulk updated result
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/statitems/value/bulk
@@ -3899,7 +4035,7 @@ def public_create_user_stat_item(
 
     Create user's statItem.
     Other detail info:
-                    *  Returns : created user's statItem
+                      *  Returns : created user's statItem
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems
@@ -3959,7 +4095,7 @@ async def public_create_user_stat_item_async(
 
     Create user's statItem.
     Other detail info:
-                    *  Returns : created user's statItem
+                      *  Returns : created user's statItem
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems
@@ -4022,7 +4158,7 @@ def public_inc_user_stat_item(
 
     Public update user's statitem value.
     Other detail info:
-                    *  Returns : updated user's statItem
+                      *  Returns : updated user's statItem
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems/value
@@ -4088,7 +4224,7 @@ async def public_inc_user_stat_item_async(
 
     Public update user's statitem value.
     Other detail info:
-                    *  Returns : updated user's statItem
+                      *  Returns : updated user's statItem
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems/value
@@ -4156,7 +4292,7 @@ def public_inc_user_stat_item_value(
 
     Public update user's statitem value.
     Other detail info:
-                    *  Returns : updated user's statItem
+                      *  Returns : updated user's statItem
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems/value
@@ -4222,7 +4358,7 @@ async def public_inc_user_stat_item_value_async(
 
     Public update user's statitem value.
     Other detail info:
-                    *  Returns : updated user's statItem
+                      *  Returns : updated user's statItem
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems/value
@@ -4290,10 +4426,10 @@ def public_list_all_my_stat_items(
 
     Public list all statItems of user.
     NOTE:
-                  * If stat code does not exist, will ignore this stat code.
-                  * If stat item does not exist, will return default value
+                    * If stat code does not exist, will ignore this stat code.
+                    * If stat item does not exist, will return default value
     Other detail info:
-                  *  Returns : stat items
+                    *  Returns : stat items
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/me/statitems/value/bulk
@@ -4353,10 +4489,10 @@ async def public_list_all_my_stat_items_async(
 
     Public list all statItems of user.
     NOTE:
-                  * If stat code does not exist, will ignore this stat code.
-                  * If stat item does not exist, will return default value
+                    * If stat code does not exist, will ignore this stat code.
+                    * If stat item does not exist, will return default value
     Other detail info:
-                  *  Returns : stat items
+                    *  Returns : stat items
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/me/statitems/value/bulk
@@ -4420,7 +4556,7 @@ def public_list_my_stat_items(
 
     Public list all statItems by pagination.
     Other detail info:
-                  *  Returns : stat items
+                    *  Returns : stat items
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/me/statitems
@@ -4488,7 +4624,7 @@ async def public_list_my_stat_items_async(
 
     Public list all statItems by pagination.
     Other detail info:
-                  *  Returns : stat items
+                    *  Returns : stat items
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/me/statitems
@@ -4559,7 +4695,7 @@ def public_query_user_stat_items(
 
     Public list all statItems by pagination.
     Other detail info:
-                  *  Returns : stat items
+                    *  Returns : stat items
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/statitems
@@ -4631,7 +4767,7 @@ async def public_query_user_stat_items_async(
 
     Public list all statItems by pagination.
     Other detail info:
-                  *  Returns : stat items
+                    *  Returns : stat items
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/statitems
@@ -4703,10 +4839,10 @@ def public_query_user_stat_items_1(
 
     Public list all statItems of user.
     NOTE:
-                * If stat code does not exist, will ignore this stat code.
-                * If stat item does not exist, will return default value
+                  * If stat code does not exist, will ignore this stat code.
+                  * If stat item does not exist, will return default value
     Other detail info:
-                *  Returns : stat items
+                  *  Returns : stat items
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk
@@ -4774,10 +4910,10 @@ async def public_query_user_stat_items_1_async(
 
     Public list all statItems of user.
     NOTE:
-                * If stat code does not exist, will ignore this stat code.
-                * If stat item does not exist, will return default value
+                  * If stat code does not exist, will ignore this stat code.
+                  * If stat item does not exist, will return default value
     Other detail info:
-                *  Returns : stat items
+                  *  Returns : stat items
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk
@@ -4847,10 +4983,10 @@ def public_query_user_stat_items_2(
 
     Public list all statItems of user.
     NOTE:
-              * If stat code does not exist, will ignore this stat code.
-              * If stat item does not exist, will return default value
+                * If stat code does not exist, will ignore this stat code.
+                * If stat item does not exist, will return default value
     Other detail info:
-              *  Returns : stat items
+                *  Returns : stat items
 
     Properties:
         url: /social/v2/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk
@@ -4918,10 +5054,10 @@ async def public_query_user_stat_items_2_async(
 
     Public list all statItems of user.
     NOTE:
-              * If stat code does not exist, will ignore this stat code.
-              * If stat item does not exist, will return default value
+                * If stat code does not exist, will ignore this stat code.
+                * If stat item does not exist, will return default value
     Other detail info:
-              *  Returns : stat items
+                *  Returns : stat items
 
     Properties:
         url: /social/v2/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk

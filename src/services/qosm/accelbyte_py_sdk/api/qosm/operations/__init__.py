@@ -8,6 +8,6 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Qos Manager Service."""
 
-__version__ = "1.18.5"
+__version__ = "1.19.4"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"

@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.53.0"
+__version__ = "4.54.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -24,11 +24,16 @@ from .get_dlc_item_config import GetDLCItemConfig
 from .get_platform_dlc_config import GetPlatformDLCConfig
 from .get_user_dlc import GetUserDLC
 from .get_user_dlc import (
+    StatusEnum as GetUserDLCStatusEnum,
     TypeEnum as GetUserDLCTypeEnum,
 )
 from .get_user_dlc_by_platform import GetUserDLCByPlatform
 from .get_user_dlc_by_platform import (
     TypeEnum as GetUserDLCByPlatformTypeEnum,
+)
+from .public_get_my_dlc_content import PublicGetMyDLCContent
+from .public_get_my_dlc_content import (
+    TypeEnum as PublicGetMyDLCContentTypeEnum,
 )
 from .public_sync_psn_dlc_inventory import PublicSyncPsnDlcInventory
 from .public_sync_psn_dlc_inv_429118 import (

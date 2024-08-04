@@ -30,84 +30,91 @@ if [ "$BATCH" = true ] ; then
 
 $PYTHON -m $MODULE 'start-interactive-session' --continue_on_error '--writer=tap' << END
 dsmc-list-config --login_with_auth "Bearer foo"
-dsmc-update-image '{"artifactPath": "lgRrPiRS", "coreDumpEnabled": true, "image": "Nz03JGeH", "imageReplicationsMap": {"AsHLqiON": {"failure_code": "3F850Esv", "region": "XhjnLIsa", "status": "r1bvdc6j", "uri": "rD0cDkdh"}, "0Y8Q8Qck": {"failure_code": "wAbsnk6N", "region": "35gIxYiZ", "status": "3gELKTeL", "uri": "wdJEgUum"}, "NUjTaau6": {"failure_code": "vZQkBkeV", "region": "FudlU4rI", "status": "WDt7043e", "uri": "da9dvKmN"}}, "namespace": "ow8n56sX", "patchVersion": "24JBjh7h", "persistent": false, "version": "wx6PeSfF"}' --login_with_auth "Bearer foo"
-dsmc-create-image '{"artifactPath": "S271G6HK", "coreDumpEnabled": true, "dockerPath": "gjAnVZD8", "image": "E4w2i1Si", "imageSize": 1, "namespace": "1pLG3Nff", "persistent": true, "ulimitFileSize": 76, "version": "OO9AULxs"}' --login_with_auth "Bearer foo"
-dsmc-import-images 'tmp.dat' --login_with_auth "Bearer foo"
-dsmc-create-image-patch '{"artifactPath": "zrYrFSTw", "coreDumpEnabled": true, "dockerPath": "oxg1RTr5", "image": "Asv5NWsu", "imageSize": 94, "namespace": "CvdSa89x", "patchVersion": "mrNUPmtb", "persistent": false, "ulimitFileSize": 22, "uploaderFlag": "ihJpoHe8", "version": "jKW89v2A"}' --login_with_auth "Bearer foo"
+dsmc-update-image '{"artifactPath": "xftVphIw", "coreDumpEnabled": false, "image": "YSxoLoeh", "imageReplicationsMap": {"eZM2jXsu": {"failure_code": "7vU2GyxT", "region": "8rCWVsl8", "status": "s2zDlJ2e", "uri": "O1FnuNMn"}, "3wBR5lh2": {"failure_code": "Xuxg3KQV", "region": "q7nKfbyo", "status": "20DGC2eF", "uri": "HzM5e9Ds"}, "EU31Vvs1": {"failure_code": "VGWVWxCn", "region": "Kw5aTykO", "status": "morIkCWN", "uri": "Dqee0Rgq"}}, "namespace": "5ryzsvhG", "patchVersion": "e2TcNL6V", "persistent": false, "ulimitFileSize": 12, "version": "wKe6bpEB"}' --login_with_auth "Bearer foo"
+dsmc-create-image '{"artifactPath": "uQTlSq68", "coreDumpEnabled": true, "dockerPath": "7BjMoMcb", "image": "RaRuFYec", "imageSize": 81, "namespace": "Pdhk2e8u", "persistent": true, "ulimitFileSize": 52, "version": "zaCcmxuP"}' --login_with_auth "Bearer foo"
+dsmc-create-image-patch '{"artifactPath": "Blw2on7w", "coreDumpEnabled": false, "dockerPath": "8U3bhmuX", "image": "pFAa2JYv", "imageSize": 18, "namespace": "mut7ovl8", "patchVersion": "RYsugnph", "persistent": true, "ulimitFileSize": 93, "uploaderFlag": "Itskz6Ng", "version": "E9pt0w1W"}' --login_with_auth "Bearer foo"
 dsmc-get-lowest-instance-spec --login_with_auth "Bearer foo"
+dsmc-get-worker-config --login_with_auth "Bearer foo"
+dsmc-update-worker-config '{"auto_deletion": false, "ghost_worker": false, "manual_buffer_override": true, "zombie_worker": true}' --login_with_auth "Bearer foo"
+dsmc-create-worker-config '{"auto_deletion": false, "ghost_worker": true, "manual_buffer_override": true, "zombie_worker": false}' --login_with_auth "Bearer foo"
 dsmc-get-config --login_with_auth "Bearer foo"
-dsmc-create-config '{"claim_timeout": 50, "creation_timeout": 89, "default_version": "PknB10TY", "port": 19, "ports": {"bJlS1xaR": 1, "pJ06TdhU": 44, "sqNS7bKg": 64}, "protocol": "RIdTXxzc", "providers": ["8mnRi8l5", "RMYm0Bw2", "MKS1zV9M"], "session_timeout": 32, "unreachable_timeout": 47}' --login_with_auth "Bearer foo"
+dsmc-create-config '{"claim_timeout": 79, "creation_timeout": 25, "default_version": "kil0LUME", "port": 2, "ports": {"94SnsYSp": 27, "6zehB3YV": 9, "NSyzZcS8": 70}, "protocol": "lYWQPKRd", "providers": ["s0Ffkgk2", "yRyWHaUk", "d5K1wXR3"], "session_timeout": 77, "unreachable_timeout": 20}' --login_with_auth "Bearer foo"
 dsmc-delete-config --login_with_auth "Bearer foo"
-dsmc-update-config '{"claim_timeout": 92, "creation_timeout": 96, "default_version": "3WxVN6b6", "port": 35, "protocol": "J5dTFIAt", "providers": ["aYyF4Mqu", "v1LgardT", "4icIzy4r"], "session_timeout": 46, "unreachable_timeout": 73}' --login_with_auth "Bearer foo"
+dsmc-update-config '{"claim_timeout": 92, "creation_timeout": 39, "default_version": "OWYoo5Tw", "port": 95, "protocol": "dIZGbgIx", "providers": ["pb3Ixayu", "oyegOtsR", "iTnFKDM6"], "session_timeout": 86, "unreachable_timeout": 39}' --login_with_auth "Bearer foo"
 dsmc-clear-cache --login_with_auth "Bearer foo"
-dsmc-get-all-deployment '82' '18' --login_with_auth "Bearer foo"
-dsmc-get-deployment 'mLb7NwXQ' --login_with_auth "Bearer foo"
-dsmc-create-deployment '{"allow_version_override": true, "buffer_count": 92, "buffer_percent": 47, "configuration": "QuHWbHtR", "enable_region_overrides": true, "extendable_session": true, "game_version": "QalCCC0q", "max_count": 66, "min_count": 66, "overrides": {"7E9I1ZVw": {"buffer_count": 9, "buffer_percent": 15, "configuration": "HYqKApMs", "enable_region_overrides": false, "extendable_session": false, "game_version": "RivzrhFa", "max_count": 8, "min_count": 82, "name": "7y62GbRY", "region_overrides": {"OuIVpnRU": {"buffer_count": 96, "buffer_percent": 16, "max_count": 59, "min_count": 46, "name": "9wPrqdEJ", "unlimited": true, "use_buffer_percent": false}, "mCAxqH4v": {"buffer_count": 26, "buffer_percent": 74, "max_count": 21, "min_count": 37, "name": "on9UtezK", "unlimited": true, "use_buffer_percent": true}, "Li3e0zqX": {"buffer_count": 67, "buffer_percent": 87, "max_count": 30, "min_count": 17, "name": "aN2qI9gb", "unlimited": true, "use_buffer_percent": true}}, "regions": ["KNGRE7GQ", "DwZiPlCg", "qfXLoPvS"], "session_timeout": 25, "unlimited": true, "use_buffer_percent": true}, "WNEMbSg0": {"buffer_count": 87, "buffer_percent": 7, "configuration": "4IonMH17", "enable_region_overrides": true, "extendable_session": true, "game_version": "K3hdrJeg", "max_count": 43, "min_count": 94, "name": "MDfMwGOb", "region_overrides": {"rDWgzbQ2": {"buffer_count": 94, "buffer_percent": 35, "max_count": 41, "min_count": 68, "name": "LtNrvN2V", "unlimited": true, "use_buffer_percent": true}, "KiCdDNOf": {"buffer_count": 90, "buffer_percent": 100, "max_count": 79, "min_count": 43, "name": "nQ0uSd4D", "unlimited": true, "use_buffer_percent": false}, "XKh0BbSQ": {"buffer_count": 63, "buffer_percent": 100, "max_count": 85, "min_count": 69, "name": "19fgQi9N", "unlimited": true, "use_buffer_percent": true}}, "regions": ["HRZzIqCu", "awqMALbG", "dsSILmPd"], "session_timeout": 83, "unlimited": false, "use_buffer_percent": false}, "VtVuhvxR": {"buffer_count": 64, "buffer_percent": 9, "configuration": "AlbFLSfC", "enable_region_overrides": true, "extendable_session": true, "game_version": "zWFOHJkP", "max_count": 28, "min_count": 24, "name": "CzFkqzml", "region_overrides": {"IlH9tIlg": {"buffer_count": 14, "buffer_percent": 3, "max_count": 36, "min_count": 100, "name": "V1KqNH72", "unlimited": true, "use_buffer_percent": false}, "1f4GyyHN": {"buffer_count": 49, "buffer_percent": 87, "max_count": 80, "min_count": 2, "name": "EQtUmWhv", "unlimited": true, "use_buffer_percent": false}, "dQVtmuDS": {"buffer_count": 59, "buffer_percent": 90, "max_count": 82, "min_count": 75, "name": "9ylrOW2C", "unlimited": false, "use_buffer_percent": true}}, "regions": ["2qaSVjzX", "9ZbqhoR0", "alr4jhSk"], "session_timeout": 38, "unlimited": true, "use_buffer_percent": true}}, "region_overrides": {"8zgGF90R": {"buffer_count": 37, "buffer_percent": 11, "max_count": 68, "min_count": 11, "name": "dnJoP0if", "unlimited": true, "use_buffer_percent": false}, "es8OBsLp": {"buffer_count": 77, "buffer_percent": 68, "max_count": 33, "min_count": 73, "name": "he6WS72x", "unlimited": false, "use_buffer_percent": false}, "J53mudrw": {"buffer_count": 16, "buffer_percent": 49, "max_count": 24, "min_count": 12, "name": "ynFR4mQK", "unlimited": false, "use_buffer_percent": true}}, "regions": ["HGOcMWQk", "R9LAfMZU", "m62E9TGa"], "session_timeout": 85, "unlimited": true, "use_buffer_percent": true}' 'LdRAIFwR' --login_with_auth "Bearer foo"
-dsmc-delete-deployment 'zrGNKqGC' --login_with_auth "Bearer foo"
-dsmc-update-deployment '{"allow_version_override": false, "buffer_count": 88, "buffer_percent": 9, "configuration": "iJZTK7Qq", "enable_region_overrides": true, "extendable_session": true, "game_version": "c6aycUKr", "max_count": 12, "min_count": 63, "regions": ["E4DH5f9E", "FRETmpXh", "ZCpR9DpE"], "session_timeout": 90, "unlimited": false, "use_buffer_percent": true}' 'hBRmQMTk' --login_with_auth "Bearer foo"
-dsmc-create-root-region-override '{"buffer_count": 95, "buffer_percent": 98, "max_count": 89, "min_count": 12, "unlimited": true, "use_buffer_percent": false}' 'rQ23JwOU' 'Umn9hbs1' --login_with_auth "Bearer foo"
-dsmc-delete-root-region-override 'rGOBBXY0' '84G0YGis' --login_with_auth "Bearer foo"
-dsmc-update-root-region-override '{"buffer_count": 94, "buffer_percent": 13, "max_count": 5, "min_count": 22, "unlimited": true, "use_buffer_percent": true}' '1Qm1d2wF' 'YGVuyo0V' --login_with_auth "Bearer foo"
-dsmc-create-deployment-override '{"buffer_count": 44, "buffer_percent": 63, "configuration": "DgmYLYgF", "enable_region_overrides": true, "extendable_session": false, "game_version": "wWFRypTm", "max_count": 41, "min_count": 93, "region_overrides": {"XKgUs7dg": {"buffer_count": 3, "buffer_percent": 61, "max_count": 31, "min_count": 12, "name": "F2MOyo8n", "unlimited": false, "use_buffer_percent": false}, "voQZ33di": {"buffer_count": 11, "buffer_percent": 87, "max_count": 84, "min_count": 69, "name": "1LXhXEMk", "unlimited": true, "use_buffer_percent": false}, "rAImVA4N": {"buffer_count": 76, "buffer_percent": 55, "max_count": 33, "min_count": 35, "name": "ppygSMPL", "unlimited": false, "use_buffer_percent": false}}, "regions": ["Ili6hkYI", "sHFUBBR3", "3GsnPfvZ"], "session_timeout": 33, "unlimited": true, "use_buffer_percent": false}' '0xDw9EzY' 'KmoR22z8' --login_with_auth "Bearer foo"
-dsmc-delete-deployment-override 'jCpPB6UZ' 'YeCRaETE' --login_with_auth "Bearer foo"
-dsmc-update-deployment-override '{"buffer_count": 65, "buffer_percent": 65, "configuration": "8MrxkQuc", "enable_region_overrides": true, "game_version": "5Cx52xdE", "max_count": 68, "min_count": 37, "regions": ["mYn3X9FY", "CFnpKAjd", "n6M8skoi"], "session_timeout": 63, "unlimited": true, "use_buffer_percent": false}' 'QcPSsmV5' 'tuzKoAyU' --login_with_auth "Bearer foo"
-dsmc-create-override-region-override '{"buffer_count": 90, "buffer_percent": 39, "max_count": 56, "min_count": 76, "unlimited": true, "use_buffer_percent": true}' 'Uot2xFVw' 'mVjBiy6h' 'Hdoo4OZ4' --login_with_auth "Bearer foo"
-dsmc-delete-override-region-override 'Nm17oqD1' 'mCUVcWsa' 'S65X3PpA' --login_with_auth "Bearer foo"
-dsmc-update-override-region-override '{"buffer_count": 94, "buffer_percent": 11, "max_count": 8, "min_count": 16, "unlimited": false, "use_buffer_percent": false}' '1uUyspLW' 'iqfqopbJ' '4dUNg652' --login_with_auth "Bearer foo"
-dsmc-get-all-pod-config '23' '80' --login_with_auth "Bearer foo"
-dsmc-get-pod-config 'eIjQjDRW' --login_with_auth "Bearer foo"
-dsmc-create-pod-config '{"cpu_limit": 56, "mem_limit": 88, "params": "aWwqVTVW"}' 'z2NNxIxo' --login_with_auth "Bearer foo"
-dsmc-delete-pod-config 'VoAiW3OO' --login_with_auth "Bearer foo"
-dsmc-update-pod-config '{"cpu_limit": 36, "mem_limit": 39, "name": "WWMtkj4W", "params": "aeoQPl7X"}' 'vb4YV5yZ' --login_with_auth "Bearer foo"
-dsmc-add-port '{"port": 74}' 'pRB40T2M' --login_with_auth "Bearer foo"
-dsmc-delete-port 'wp4k0YCv' --login_with_auth "Bearer foo"
-dsmc-update-port '{"name": "VAfVG82X", "port": 64}' 'uVwoXjzr' --login_with_auth "Bearer foo"
-dsmc-list-images '33' '55' --login_with_auth "Bearer foo"
-dsmc-delete-image '4xzg78ks' 'xOKci67X' --login_with_auth "Bearer foo"
-dsmc-export-images --login_with_auth "Bearer foo"
+dsmc-get-all-deployment '66' '29' --login_with_auth "Bearer foo"
+dsmc-get-deployment 'JM9E0NEi' --login_with_auth "Bearer foo"
+dsmc-create-deployment '{"allow_version_override": false, "buffer_count": 16, "buffer_percent": 65, "configuration": "HWN4meTt", "enable_region_overrides": false, "extendable_session": true, "game_version": "lgoc104R", "max_count": 94, "min_count": 25, "overrides": {"IIy8UsUL": {"buffer_count": 82, "buffer_percent": 66, "configuration": "zuxyO1XK", "enable_region_overrides": false, "extendable_session": true, "game_version": "KXKX2u6b", "max_count": 3, "min_count": 16, "name": "S0eQ24Va", "region_overrides": {"5Oc3h09J": {"buffer_count": 9, "buffer_percent": 82, "max_count": 3, "min_count": 59, "name": "C7WNRyCo", "unlimited": false, "use_buffer_percent": false}, "h7NzI55T": {"buffer_count": 39, "buffer_percent": 88, "max_count": 1, "min_count": 62, "name": "HZpCEBpk", "unlimited": true, "use_buffer_percent": true}, "7cxi7k1J": {"buffer_count": 100, "buffer_percent": 13, "max_count": 56, "min_count": 85, "name": "ldwHp5Qa", "unlimited": true, "use_buffer_percent": true}}, "regions": ["AFhj4lJ7", "YG0Eh7HN", "Ag1SWFuP"], "session_timeout": 77, "unlimited": false, "use_buffer_percent": false}, "UVP7TmHU": {"buffer_count": 69, "buffer_percent": 77, "configuration": "AHZY9zQ2", "enable_region_overrides": true, "extendable_session": false, "game_version": "IYNkWFaC", "max_count": 60, "min_count": 92, "name": "p8PUVBNR", "region_overrides": {"OAaczdL6": {"buffer_count": 4, "buffer_percent": 87, "max_count": 10, "min_count": 8, "name": "dX1RQ3ct", "unlimited": false, "use_buffer_percent": false}, "9QhMMnTJ": {"buffer_count": 6, "buffer_percent": 15, "max_count": 49, "min_count": 30, "name": "nCLwTj4I", "unlimited": true, "use_buffer_percent": false}, "MukqQBr1": {"buffer_count": 58, "buffer_percent": 89, "max_count": 7, "min_count": 21, "name": "UJsbzjBh", "unlimited": true, "use_buffer_percent": true}}, "regions": ["SuwOESKx", "vPGi74bz", "87tM03fJ"], "session_timeout": 11, "unlimited": false, "use_buffer_percent": true}, "7DRKE78D": {"buffer_count": 11, "buffer_percent": 27, "configuration": "km0j9TC0", "enable_region_overrides": false, "extendable_session": true, "game_version": "RtRS1UDn", "max_count": 23, "min_count": 8, "name": "7uKUPtk9", "region_overrides": {"lRSrUtJE": {"buffer_count": 14, "buffer_percent": 92, "max_count": 41, "min_count": 64, "name": "4ldJSxMi", "unlimited": false, "use_buffer_percent": false}, "X87ugvN1": {"buffer_count": 100, "buffer_percent": 5, "max_count": 50, "min_count": 8, "name": "XOtn1zSw", "unlimited": false, "use_buffer_percent": false}, "AX7nLPaS": {"buffer_count": 12, "buffer_percent": 99, "max_count": 15, "min_count": 90, "name": "zJ6D1a55", "unlimited": true, "use_buffer_percent": true}}, "regions": ["qVaLrQGx", "onOfTgIH", "ja4byTYt"], "session_timeout": 52, "unlimited": true, "use_buffer_percent": true}}, "region_overrides": {"eMKRpv76": {"buffer_count": 90, "buffer_percent": 57, "max_count": 33, "min_count": 62, "name": "63aYiggp", "unlimited": false, "use_buffer_percent": false}, "K3ou0HVm": {"buffer_count": 85, "buffer_percent": 56, "max_count": 84, "min_count": 81, "name": "yTYOf2zP", "unlimited": true, "use_buffer_percent": false}, "WnKKe4LH": {"buffer_count": 24, "buffer_percent": 34, "max_count": 47, "min_count": 8, "name": "VOYO3WHU", "unlimited": false, "use_buffer_percent": true}}, "regions": ["QTsXHYxa", "bStXOA8w", "UEbq9kbc"], "session_timeout": 89, "unlimited": false, "use_buffer_percent": false}' 'G9lafkEr' --login_with_auth "Bearer foo"
+dsmc-delete-deployment 'cmExE3gu' --login_with_auth "Bearer foo"
+dsmc-update-deployment '{"allow_version_override": true, "buffer_count": 63, "buffer_percent": 88, "configuration": "J5HoSZqy", "enable_region_overrides": true, "extendable_session": false, "game_version": "EAGKmADD", "max_count": 13, "min_count": 18, "regions": ["16869IXZ", "ToUjeG4p", "RsjMVkbq"], "session_timeout": 45, "unlimited": false, "use_buffer_percent": false}' 'BNjQlzM2' --login_with_auth "Bearer foo"
+dsmc-create-root-region-override '{"buffer_count": 91, "buffer_percent": 96, "max_count": 34, "min_count": 13, "unlimited": true, "use_buffer_percent": true}' 'k9HVvSWn' 'LIRUgzYs' --login_with_auth "Bearer foo"
+dsmc-delete-root-region-override 'K3lTZXWo' 'byPUQxC0' --login_with_auth "Bearer foo"
+dsmc-update-root-region-override '{"buffer_count": 19, "buffer_percent": 4, "max_count": 80, "min_count": 33, "unlimited": false, "use_buffer_percent": true}' 'PZnFXQkl' 'sWnGX8Mm' --login_with_auth "Bearer foo"
+dsmc-create-deployment-override '{"buffer_count": 64, "buffer_percent": 28, "configuration": "5uTWNUQ4", "enable_region_overrides": false, "extendable_session": true, "game_version": "7qXW42Wy", "max_count": 64, "min_count": 83, "region_overrides": {"7XHh5j9p": {"buffer_count": 9, "buffer_percent": 12, "max_count": 15, "min_count": 64, "name": "p5FmBQrl", "unlimited": true, "use_buffer_percent": true}, "037SLZtK": {"buffer_count": 31, "buffer_percent": 59, "max_count": 45, "min_count": 88, "name": "qu29DSqT", "unlimited": true, "use_buffer_percent": false}, "qmGbuIi4": {"buffer_count": 56, "buffer_percent": 22, "max_count": 95, "min_count": 82, "name": "eyd3YEgS", "unlimited": false, "use_buffer_percent": false}}, "regions": ["vbba3aVG", "EPUHRH3M", "cyKpZRG5"], "session_timeout": 1, "unlimited": true, "use_buffer_percent": true}' '3IuzU3hp' 'DNhsujaR' --login_with_auth "Bearer foo"
+dsmc-delete-deployment-override 'fVWaPcu2' 'aDtvjvuz' --login_with_auth "Bearer foo"
+dsmc-update-deployment-override '{"buffer_count": 83, "buffer_percent": 23, "configuration": "9lroSP9t", "enable_region_overrides": true, "game_version": "UgUuGil0", "max_count": 39, "min_count": 18, "regions": ["KqJ25cYU", "urRtl5A6", "sF26zxmr"], "session_timeout": 73, "unlimited": true, "use_buffer_percent": true}' 'zkOyYU5z' '0cBtQSBE' --login_with_auth "Bearer foo"
+dsmc-create-override-region-override '{"buffer_count": 24, "buffer_percent": 67, "max_count": 30, "min_count": 85, "unlimited": true, "use_buffer_percent": true}' 'zl9KRSx5' '0rWjmwsJ' '7HBN2TlY' --login_with_auth "Bearer foo"
+dsmc-delete-override-region-override 'pTHzkIpW' 'XQxyAmk1' 'YKfXnd1L' --login_with_auth "Bearer foo"
+dsmc-update-override-region-override '{"buffer_count": 69, "buffer_percent": 85, "max_count": 83, "min_count": 18, "unlimited": true, "use_buffer_percent": false}' 'yh6qzOYO' '45DAoUXr' '8z1MMSqD' --login_with_auth "Bearer foo"
+dsmc-delete-creating-server-count-queue 'B3xiqTYg' 'p2EwA7at' --login_with_auth "Bearer foo"
+dsmc-get-all-pod-config '76' '93' --login_with_auth "Bearer foo"
+dsmc-get-pod-config 'NHGFpgxX' --login_with_auth "Bearer foo"
+dsmc-create-pod-config '{"cpu_limit": 47, "mem_limit": 0, "params": "BYnimnuJ"}' 'ozWtwFL7' --login_with_auth "Bearer foo"
+dsmc-delete-pod-config 'wMsEWQrP' --login_with_auth "Bearer foo"
+dsmc-update-pod-config '{"cpu_limit": 21, "mem_limit": 60, "name": "4Xum5BnX", "params": "xW4U1Z4H"}' 'XYxmEsNe' --login_with_auth "Bearer foo"
+dsmc-add-port '{"port": 19}' '2l5qw3QE' --login_with_auth "Bearer foo"
+dsmc-delete-port '93PgMuY6' --login_with_auth "Bearer foo"
+dsmc-update-port '{"name": "i3gIpHq8", "port": 79}' 'byrDAQSC' --login_with_auth "Bearer foo"
+dsmc-list-images '70' '49' --login_with_auth "Bearer foo"
+dsmc-delete-image 'T01VHXo2' 'jZVyL6kn' --login_with_auth "Bearer foo"
 dsmc-get-image-limit --login_with_auth "Bearer foo"
-dsmc-delete-image-patch 'XBm3jGMr' 'GLPpNT3k' 'i8FTsl3s' --login_with_auth "Bearer foo"
-dsmc-get-image-detail 'J4l2uU88' --login_with_auth "Bearer foo"
-dsmc-get-image-patches '3jtHZoSi' --login_with_auth "Bearer foo"
-dsmc-get-image-patch-detail 'tejnwfCI' 'rwRdTCZ5' --login_with_auth "Bearer foo"
+dsmc-delete-image-patch 'cKrPsll3' 'lAvEO4ds' '7xQfkAbU' --login_with_auth "Bearer foo"
+dsmc-get-image-detail 'msfu2CPU' --login_with_auth "Bearer foo"
+dsmc-get-image-patches 'XL1mFFsy' --login_with_auth "Bearer foo"
+dsmc-get-image-patch-detail 'oEXbneRl' 'o6ka29Sb' --login_with_auth "Bearer foo"
+dsmc-add-buffer '{"AllocCount": 78, "DeploymentName": "IFp3ZlZ9", "JobCount": 56, "JobPriority": 40, "OverrideVersion": "cdymGWWl", "Region": "U2nTrFha"}' --login_with_auth "Bearer foo"
 dsmc-get-repository --login_with_auth "Bearer foo"
-dsmc-list-server '28' '60' --login_with_auth "Bearer foo"
+dsmc-list-server '34' '8' --login_with_auth "Bearer foo"
 dsmc-count-server --login_with_auth "Bearer foo"
 dsmc-count-server-detailed --login_with_auth "Bearer foo"
 dsmc-list-local-server --login_with_auth "Bearer foo"
-dsmc-delete-local-server 'gyUQLUGd' --login_with_auth "Bearer foo"
-dsmc-get-server 'YxRjGQdZ' --login_with_auth "Bearer foo"
-dsmc-delete-server 'VCikpwyT' --login_with_auth "Bearer foo"
-dsmc-list-session '53' '83' --login_with_auth "Bearer foo"
+dsmc-delete-local-server 'hylgIEb5' --login_with_auth "Bearer foo"
+dsmc-get-server 'HJtBHvBC' --login_with_auth "Bearer foo"
+dsmc-delete-server 'IHtcAqxe' --login_with_auth "Bearer foo"
+dsmc-list-session '94' '51' --login_with_auth "Bearer foo"
 dsmc-count-session --login_with_auth "Bearer foo"
-dsmc-delete-session 'Vyv31GqG' --login_with_auth "Bearer foo"
-dsmc-create-repository '{"namespace": "M1O7cGVL", "repository": "NAX0XhHO"}' --login_with_auth "Bearer foo"
+dsmc-delete-session 'XTzD9aNU' --login_with_auth "Bearer foo"
+dsmc-run-ghost-cleaner-request-handler --login_with_auth "Bearer foo"
+dsmc-run-zombie-cleaner-request-handler '{"JobCount": 12, "Region": "wI52VWeN", "TimeoutSecond": 50, "ZombieCount": 33}' --login_with_auth "Bearer foo"
+dsmc-create-repository '{"namespace": "y2Sth7em", "repository": "YeDqR4Zy"}' --login_with_auth "Bearer foo"
 dsmc-export-config-v1 --login_with_auth "Bearer foo"
 dsmc-import-config-v1 --login_with_auth "Bearer foo"
-dsmc-get-all-deployment-client '87' '47' --login_with_auth "Bearer foo"
-dsmc-create-deployment-client '{"allow_version_override": true, "buffer_count": 70, "buffer_percent": 100, "configuration": "yFIp4Zok", "enable_region_overrides": false, "extendable_session": true, "game_version": "3l6wIYfw", "max_count": 25, "min_count": 59, "overrides": {"SRIZtLcy": {"buffer_count": 84, "buffer_percent": 54, "configuration": "5BVPCeJq", "enable_region_overrides": false, "extendable_session": false, "game_version": "ibPXW7cN", "max_count": 22, "min_count": 50, "name": "cDbOouTY", "region_overrides": {"aj8CIRmh": {"buffer_count": 63, "buffer_percent": 23, "max_count": 75, "min_count": 76, "name": "Xj51qTPq", "unlimited": false, "use_buffer_percent": false}, "wJVuqRDV": {"buffer_count": 56, "buffer_percent": 91, "max_count": 62, "min_count": 25, "name": "JLo8Y559", "unlimited": false, "use_buffer_percent": true}, "XRVVhXOn": {"buffer_count": 71, "buffer_percent": 57, "max_count": 16, "min_count": 54, "name": "QSGCOWXN", "unlimited": true, "use_buffer_percent": false}}, "regions": ["6aMtn1EY", "4DV3kbDP", "TYMnNzUG"], "session_timeout": 87, "unlimited": false, "use_buffer_percent": false}, "I3jiSFBY": {"buffer_count": 65, "buffer_percent": 39, "configuration": "q39bu8DY", "enable_region_overrides": true, "extendable_session": false, "game_version": "yHT6t6bf", "max_count": 48, "min_count": 37, "name": "f8sS1rfF", "region_overrides": {"ntDRltjw": {"buffer_count": 65, "buffer_percent": 77, "max_count": 45, "min_count": 54, "name": "eCEhMRZ0", "unlimited": true, "use_buffer_percent": true}, "0CSuf5j7": {"buffer_count": 48, "buffer_percent": 66, "max_count": 4, "min_count": 59, "name": "anp1eDJ0", "unlimited": false, "use_buffer_percent": true}, "UAgaVP3R": {"buffer_count": 34, "buffer_percent": 87, "max_count": 57, "min_count": 10, "name": "i4aHirZC", "unlimited": true, "use_buffer_percent": false}}, "regions": ["NrPgp8SX", "ZDKGWipB", "RoM4uZO1"], "session_timeout": 85, "unlimited": false, "use_buffer_percent": true}, "cWNeNTuS": {"buffer_count": 65, "buffer_percent": 64, "configuration": "P9boXQeI", "enable_region_overrides": false, "extendable_session": false, "game_version": "4d0vzFWs", "max_count": 38, "min_count": 48, "name": "OcyJD5qP", "region_overrides": {"1BwRcnFV": {"buffer_count": 45, "buffer_percent": 12, "max_count": 33, "min_count": 22, "name": "CmFb7mVd", "unlimited": false, "use_buffer_percent": false}, "ffwTQEac": {"buffer_count": 42, "buffer_percent": 62, "max_count": 17, "min_count": 25, "name": "K2JgvnNO", "unlimited": true, "use_buffer_percent": false}, "ytUFYiZt": {"buffer_count": 60, "buffer_percent": 95, "max_count": 40, "min_count": 81, "name": "8jzQPKRD", "unlimited": true, "use_buffer_percent": true}}, "regions": ["oUqAPSFs", "RyH0Z6AZ", "YjeDABZQ"], "session_timeout": 70, "unlimited": true, "use_buffer_percent": false}}, "region_overrides": {"bw5SDVye": {"buffer_count": 99, "buffer_percent": 3, "max_count": 76, "min_count": 84, "name": "MmqDH0Dp", "unlimited": false, "use_buffer_percent": false}, "dIQauDsW": {"buffer_count": 3, "buffer_percent": 63, "max_count": 28, "min_count": 6, "name": "8qJ60Qnd", "unlimited": true, "use_buffer_percent": true}, "xKvcsY1j": {"buffer_count": 64, "buffer_percent": 83, "max_count": 81, "min_count": 34, "name": "wOuhqrsg", "unlimited": true, "use_buffer_percent": true}}, "regions": ["WSy6bp9o", "pXprf9Tr", "HExGEyG1"], "session_timeout": 48, "unlimited": true, "use_buffer_percent": false}' 'jPFzwXdM' --login_with_auth "Bearer foo"
-dsmc-delete-deployment-client 'ouJfQP8x' --login_with_auth "Bearer foo"
-dsmc-get-all-pod-config-client '90' '25' --login_with_auth "Bearer foo"
-dsmc-create-pod-config-client '{"cpu_limit": 38, "mem_limit": 61, "params": "DOXDxQPz"}' '5TSHwe19' --login_with_auth "Bearer foo"
-dsmc-delete-pod-config-client 'N7wl7SCj' --login_with_auth "Bearer foo"
+dsmc-get-all-deployment-client '33' '5' --login_with_auth "Bearer foo"
+dsmc-get-deployment-client 'F6EXZgnr' --login_with_auth "Bearer foo"
+dsmc-create-deployment-client '{"allow_version_override": true, "buffer_count": 54, "buffer_percent": 57, "configuration": "HxIBxh5O", "enable_region_overrides": true, "extendable_session": false, "game_version": "PJp7P9Ii", "max_count": 36, "min_count": 36, "overrides": {"CHjx84bX": {"buffer_count": 79, "buffer_percent": 15, "configuration": "Iexw9Umx", "enable_region_overrides": false, "extendable_session": false, "game_version": "idGKImbn", "max_count": 97, "min_count": 100, "name": "dEhcOekL", "region_overrides": {"B6HeYlGd": {"buffer_count": 43, "buffer_percent": 78, "max_count": 75, "min_count": 100, "name": "cHvsIbEj", "unlimited": false, "use_buffer_percent": true}, "eFw8C7ul": {"buffer_count": 22, "buffer_percent": 44, "max_count": 21, "min_count": 59, "name": "yrXs1r2c", "unlimited": true, "use_buffer_percent": true}, "KS6nx9x8": {"buffer_count": 100, "buffer_percent": 79, "max_count": 88, "min_count": 42, "name": "WQFroSsI", "unlimited": true, "use_buffer_percent": true}}, "regions": ["ooocM9qo", "tbUcgHmV", "zu4efysu"], "session_timeout": 40, "unlimited": false, "use_buffer_percent": true}, "apVuPCiN": {"buffer_count": 41, "buffer_percent": 61, "configuration": "XlfGqR7s", "enable_region_overrides": true, "extendable_session": true, "game_version": "3O8R52jT", "max_count": 29, "min_count": 84, "name": "x5Vf1ZEH", "region_overrides": {"lDIxfhRG": {"buffer_count": 94, "buffer_percent": 51, "max_count": 55, "min_count": 29, "name": "lMr5SM9O", "unlimited": false, "use_buffer_percent": true}, "Rg0z4BcN": {"buffer_count": 32, "buffer_percent": 60, "max_count": 93, "min_count": 99, "name": "gfbNwav9", "unlimited": false, "use_buffer_percent": false}, "gmQt4K6l": {"buffer_count": 53, "buffer_percent": 43, "max_count": 14, "min_count": 91, "name": "I4ENQOum", "unlimited": false, "use_buffer_percent": false}}, "regions": ["MgtwDjq0", "oLL6ja1c", "8sVhO0cT"], "session_timeout": 18, "unlimited": true, "use_buffer_percent": false}, "7Ar6OFSU": {"buffer_count": 81, "buffer_percent": 5, "configuration": "YJxXqLPO", "enable_region_overrides": true, "extendable_session": false, "game_version": "2kXPFsFP", "max_count": 59, "min_count": 14, "name": "mz2XD2m2", "region_overrides": {"vo0cTI0y": {"buffer_count": 9, "buffer_percent": 55, "max_count": 86, "min_count": 32, "name": "Z47iGCM5", "unlimited": true, "use_buffer_percent": false}, "fQc0vW1H": {"buffer_count": 44, "buffer_percent": 77, "max_count": 69, "min_count": 54, "name": "XBcPfB4J", "unlimited": false, "use_buffer_percent": false}, "qUdBlNuD": {"buffer_count": 93, "buffer_percent": 79, "max_count": 22, "min_count": 64, "name": "dWuGDEti", "unlimited": false, "use_buffer_percent": false}}, "regions": ["V8hKfuIE", "K2yUorhh", "G2UUXGmm"], "session_timeout": 68, "unlimited": false, "use_buffer_percent": false}}, "region_overrides": {"JfRHDYAK": {"buffer_count": 9, "buffer_percent": 60, "max_count": 96, "min_count": 23, "name": "9VI1Yk9t", "unlimited": true, "use_buffer_percent": false}, "JRenRHgw": {"buffer_count": 45, "buffer_percent": 83, "max_count": 19, "min_count": 86, "name": "IgnoEOSJ", "unlimited": true, "use_buffer_percent": false}, "nY95RG1i": {"buffer_count": 79, "buffer_percent": 64, "max_count": 97, "min_count": 65, "name": "ChKKTaRP", "unlimited": false, "use_buffer_percent": true}}, "regions": ["0TSeNgb1", "d3LLC9C2", "eAR46nXy"], "session_timeout": 34, "unlimited": false, "use_buffer_percent": true}' 'W8XdQVQh' --login_with_auth "Bearer foo"
+dsmc-delete-deployment-client 'XQu9ErTm' --login_with_auth "Bearer foo"
+dsmc-get-all-pod-config-client '92' '49' --login_with_auth "Bearer foo"
+dsmc-create-pod-config-client '{"cpu_limit": 57, "mem_limit": 79, "params": "gUsx7JQ5"}' '0UuqadFC' --login_with_auth "Bearer foo"
+dsmc-delete-pod-config-client 'S9k6ba2i' --login_with_auth "Bearer foo"
 dsmc-list-images-client --login_with_auth "Bearer foo"
 dsmc-image-limit-client --login_with_auth "Bearer foo"
-dsmc-image-detail-client 'qGABV6fi' --login_with_auth "Bearer foo"
-dsmc-list-server-client '23' '77' --login_with_auth "Bearer foo"
-dsmc-server-heartbeat '{"podName": "X2nZOjc1"}' --login_with_auth "Bearer foo"
-dsmc-deregister-local-server '{"name": "CyqvqIIz"}' --login_with_auth "Bearer foo"
-dsmc-register-local-server '{"custom_attribute": "oBZG2uFW", "ip": "tUKaDbFR", "name": "KEFrCLcN", "port": 71}' --login_with_auth "Bearer foo"
-dsmc-register-server '{"custom_attribute": "hUzTDsbN", "pod_name": "TyduNo4b"}' --login_with_auth "Bearer foo"
-dsmc-shutdown-server '{"kill_me": true, "pod_name": "JOsmRbNX"}' --login_with_auth "Bearer foo"
-dsmc-get-server-session-timeout 'NvWxMOfI' --login_with_auth "Bearer foo"
-dsmc-get-server-session 'j5lcXRWB' --login_with_auth "Bearer foo"
-dsmc-create-session '{"client_version": "aV0hvHBI", "configuration": "vMY0je0b", "deployment": "ni1zAecE", "game_mode": "odxhaeB7", "matching_allies": [{"matching_parties": [{"party_attributes": {"KRKxjyBG": {}, "DPCuk4rF": {}, "pO8xbq2p": {}}, "party_id": "SWYmnUrf", "party_members": [{"user_id": "31puhXyd"}, {"user_id": "5hqfLHsn"}, {"user_id": "5vFL3Af5"}]}, {"party_attributes": {"jkvQOeYM": {}, "3GNfXf8V": {}, "liylPQ2l": {}}, "party_id": "nogF5zxl", "party_members": [{"user_id": "X2oYflhm"}, {"user_id": "dfwoaWSu"}, {"user_id": "23BQV4h4"}]}, {"party_attributes": {"c8h1gMyp": {}, "jPROtt8Y": {}, "PiHIKI5o": {}}, "party_id": "I23KgJ1z", "party_members": [{"user_id": "QckhiEzX"}, {"user_id": "DDWXO10H"}, {"user_id": "p3CqRBj0"}]}]}, {"matching_parties": [{"party_attributes": {"i5gzoPPo": {}, "9MnCZ8Ed": {}, "TFPEv4I4": {}}, "party_id": "083CtM9g", "party_members": [{"user_id": "MKHme0kl"}, {"user_id": "8wGDzuhn"}, {"user_id": "2p6OYnHf"}]}, {"party_attributes": {"12AxHAxj": {}, "XCwQjNZX": {}, "i33CqpY5": {}}, "party_id": "i4Tx2OQV", "party_members": [{"user_id": "AsIU64Y7"}, {"user_id": "3pyTFXCN"}, {"user_id": "txiYjntw"}]}, {"party_attributes": {"u4T8Y7JW": {}, "GqqsUkOH": {}, "kmhmeLEn": {}}, "party_id": "zQbMXebB", "party_members": [{"user_id": "JmKj4N1B"}, {"user_id": "ocbmREr2"}, {"user_id": "2Kh9GYKB"}]}]}, {"matching_parties": [{"party_attributes": {"pdWGiSow": {}, "fr9txbLW": {}, "Ur0Qii8F": {}}, "party_id": "io4ex0TO", "party_members": [{"user_id": "e5E7oXdL"}, {"user_id": "p8cZTLfH"}, {"user_id": "JwE2RS7T"}]}, {"party_attributes": {"0dDv5jlk": {}, "TJHklnMY": {}, "wXalbQTv": {}}, "party_id": "n9qvFNYs", "party_members": [{"user_id": "pByEbPR2"}, {"user_id": "VuUKA3GG"}, {"user_id": "K5rVyP7Q"}]}, {"party_attributes": {"0SouKIAB": {}, "hh2MFpLm": {}, "Bu7ZWC6Z": {}}, "party_id": "RU0YJfjN", "party_members": [{"user_id": "okWBqz4R"}, {"user_id": "RsepkgPE"}, {"user_id": "NXLsT0iW"}]}]}], "namespace": "6r4Zyr0n", "notification_payload": {}, "pod_name": "K0O894Xy", "region": "tcTfzBYc", "session_id": "7RnUVSUS"}' --login_with_auth "Bearer foo"
-dsmc-claim-server '{"session_id": "VVoi0Hhb"}' --login_with_auth "Bearer foo"
-dsmc-get-session 'JLPvT2J6' --login_with_auth "Bearer foo"
-dsmc-cancel-session 'kAbZedHJ' --login_with_auth "Bearer foo"
+dsmc-image-detail-client 'gxiRa3DV' --login_with_auth "Bearer foo"
+dsmc-list-server-client '45' '36' --login_with_auth "Bearer foo"
+dsmc-count-server-detailed-client --login_with_auth "Bearer foo"
+dsmc-server-heartbeat '{"podName": "5oTrb5DB"}' --login_with_auth "Bearer foo"
+dsmc-deregister-local-server '{"name": "Q86nwKC8"}' --login_with_auth "Bearer foo"
+dsmc-register-local-server '{"custom_attribute": "nlgqin8R", "ip": "AvZMxBmH", "name": "NuNnFehD", "port": 66}' --login_with_auth "Bearer foo"
+dsmc-register-server '{"custom_attribute": "RfgOYbah", "pod_name": "wfmMRHi5"}' --login_with_auth "Bearer foo"
+dsmc-shutdown-server '{"kill_me": false, "pod_name": "j2mDPM6e"}' --login_with_auth "Bearer foo"
+dsmc-get-server-session-timeout 'vbrQbJhK' --login_with_auth "Bearer foo"
+dsmc-get-server-session 'k82Tb1Ub' --login_with_auth "Bearer foo"
+dsmc-create-session '{"client_version": "Q4ubLWP0", "configuration": "mFHB79Qp", "deployment": "4BnbjhO0", "game_mode": "xkkoQZ7O", "matching_allies": [{"matching_parties": [{"party_attributes": {"JgMe63rW": {}, "kKoGxMH5": {}, "3UXdvk1a": {}}, "party_id": "HzvMqqGv", "party_members": [{"user_id": "0JX55dDj"}, {"user_id": "m2vBbcL8"}, {"user_id": "mRBdrwaz"}]}, {"party_attributes": {"uoAuaxZZ": {}, "qVhsnEVU": {}, "MWdSkxIt": {}}, "party_id": "Cn2SuA9v", "party_members": [{"user_id": "gj9hsnC7"}, {"user_id": "NQ6ag6Jq"}, {"user_id": "oz3S7zFW"}]}, {"party_attributes": {"AizGwNZo": {}, "CzOAMAIs": {}, "sUzfre5G": {}}, "party_id": "qSla8OZT", "party_members": [{"user_id": "14VTa2dU"}, {"user_id": "mxJsTvYQ"}, {"user_id": "oGGQ41Vu"}]}]}, {"matching_parties": [{"party_attributes": {"QAzW58yj": {}, "HdaOsH2O": {}, "XsFQ2Bhy": {}}, "party_id": "tsjRebPd", "party_members": [{"user_id": "28jk3SV0"}, {"user_id": "2VQz7dSt"}, {"user_id": "CVbMVrT9"}]}, {"party_attributes": {"2rOrBPgx": {}, "fPxvypRa": {}, "xoJ0HfnF": {}}, "party_id": "GjnaUSJM", "party_members": [{"user_id": "hD5VwEzT"}, {"user_id": "6hyl7LLW"}, {"user_id": "iDOL6BY1"}]}, {"party_attributes": {"SYtazAps": {}, "7INtMeEZ": {}, "CWGZnXtF": {}}, "party_id": "2CY7D52Z", "party_members": [{"user_id": "EegKcJVn"}, {"user_id": "Oc5q3mxS"}, {"user_id": "syRSqdbn"}]}]}, {"matching_parties": [{"party_attributes": {"xjE6US00": {}, "7esM8rIP": {}, "7CkHZHSL": {}}, "party_id": "528BVCqg", "party_members": [{"user_id": "GuYThEH5"}, {"user_id": "mVDT1Acr"}, {"user_id": "LaskjzMo"}]}, {"party_attributes": {"NHiQ61y1": {}, "1orwP0Mb": {}, "v0TY8U38": {}}, "party_id": "dA0Lbi6Y", "party_members": [{"user_id": "4Xoby1Iu"}, {"user_id": "ANkQpnkq"}, {"user_id": "pNaPtSii"}]}, {"party_attributes": {"GzSWBAt2": {}, "U537M0X9": {}, "StIVjNOL": {}}, "party_id": "JKZwkxLC", "party_members": [{"user_id": "AUT8CRie"}, {"user_id": "wYoo3vZf"}, {"user_id": "xMC8rTKf"}]}]}], "namespace": "vIsbg6eT", "notification_payload": {}, "pod_name": "kOhxN2Wx", "region": "TgPf6eM8", "session_id": "DZ6T59lp"}' --login_with_auth "Bearer foo"
+dsmc-claim-server '{"game_mode": "evnFOtez", "matching_allies": [{"matching_parties": [{"party_attributes": {"ZUyPDb2U": {}, "IlOdrwBf": {}, "ExkvLmrw": {}}, "party_id": "ZXKbK7yL", "party_members": [{"user_id": "EExo1LOW"}, {"user_id": "kqR8Zspo"}, {"user_id": "RKT1phn7"}]}, {"party_attributes": {"HQtcYI6W": {}, "CJdybCz2": {}, "MG0BeGP7": {}}, "party_id": "utaCGDWY", "party_members": [{"user_id": "Jye0PTh2"}, {"user_id": "qrdTh9Qj"}, {"user_id": "mvfD6F8F"}]}, {"party_attributes": {"MWnbxpVK": {}, "BHTan326": {}, "apQwEDdz": {}}, "party_id": "BqwYCNzQ", "party_members": [{"user_id": "8RNtkVa1"}, {"user_id": "2tnPw109"}, {"user_id": "xc4tO3ks"}]}]}, {"matching_parties": [{"party_attributes": {"UJOESFfl": {}, "QT5MZkdI": {}, "4bUBy89y": {}}, "party_id": "qOt8A5Ge", "party_members": [{"user_id": "WOjcP8uj"}, {"user_id": "q9bRd0D5"}, {"user_id": "9I3kzVxx"}]}, {"party_attributes": {"By9pFFyY": {}, "WpOyoyqk": {}, "ElA43O6d": {}}, "party_id": "jESxdSQZ", "party_members": [{"user_id": "ig5O6bKQ"}, {"user_id": "kb2QPOWV"}, {"user_id": "iJciyIlI"}]}, {"party_attributes": {"IIzdZjYD": {}, "woioSM1e": {}, "ddLTzfjS": {}}, "party_id": "BII7YdV8", "party_members": [{"user_id": "xDJJGi96"}, {"user_id": "EHjdmNwN"}, {"user_id": "lymwhVVh"}]}]}, {"matching_parties": [{"party_attributes": {"MgZpIk3F": {}, "7N3CvmyL": {}, "2sTaE4X3": {}}, "party_id": "zuRlp7bd", "party_members": [{"user_id": "gRsvuJ8U"}, {"user_id": "Tg8LgVT2"}, {"user_id": "ETHmw19G"}]}, {"party_attributes": {"rjXFYONb": {}, "O68yCK2D": {}, "6cXNofo6": {}}, "party_id": "t01kKqYC", "party_members": [{"user_id": "zRMF7kKN"}, {"user_id": "d48YXBbl"}, {"user_id": "EWu65LN9"}]}, {"party_attributes": {"rqJ09FpZ": {}, "ZF66A6AB": {}, "CbMAV8Zu": {}}, "party_id": "3XxkqQET", "party_members": [{"user_id": "eZ5xMGYg"}, {"user_id": "RZ7IuBR7"}, {"user_id": "Lno02NpM"}]}]}], "namespace": "kJA4cOHP", "notification_payload": {}, "session_id": "eWYTPUY0"}' --login_with_auth "Bearer foo"
+dsmc-get-session 'hKOEItxP' --login_with_auth "Bearer foo"
+dsmc-cancel-session 'gIHg0Qg7' --login_with_auth "Bearer foo"
 dsmc-get-default-provider --login_with_auth "Bearer foo"
 dsmc-list-providers --login_with_auth "Bearer foo"
-dsmc-list-providers-by-region 'QHcOweWv' --login_with_auth "Bearer foo"
+dsmc-list-providers-by-region 'ZSbjXc8S' --login_with_auth "Bearer foo"
 dsmc-public-get-messages --login_with_auth "Bearer foo"
 exit()
 END
@@ -128,7 +135,7 @@ eval_tap() {
 }
 
 echo "TAP version 13"
-echo "1..82"
+echo "1..89"
 
 #- 1 Login
 eval_tap 0 1 'Login # SKIP not tested' test.out
@@ -148,576 +155,624 @@ eval_tap 0 3 'SaveConfig # SKIP deprecated' test.out
 
 #- 4 UpdateImage
 $PYTHON -m $MODULE 'dsmc-update-image' \
-    '{"artifactPath": "c9SQZiOr", "coreDumpEnabled": true, "image": "jyXj4n1w", "imageReplicationsMap": {"wy3oVYt4": {"failure_code": "TmkRy8Up", "region": "cs9UkDyt", "status": "oZfX4YBJ", "uri": "X72kfsIe"}, "RhOj7SuG": {"failure_code": "PfEfyOci", "region": "GiBqHNVf", "status": "yFQW8wes", "uri": "I7oP05Ko"}, "EC4jyZR4": {"failure_code": "sSTf2515", "region": "OSOEtBLM", "status": "8Yc59azJ", "uri": "UqpsquOm"}}, "namespace": "sWxHcGtd", "patchVersion": "ASij5mjS", "persistent": false, "version": "3LgXpgVz"}' \
+    '{"artifactPath": "qrrsDWVb", "coreDumpEnabled": true, "image": "I4tMtxlv", "imageReplicationsMap": {"YMrAnZAq": {"failure_code": "OPUvNANZ", "region": "0IIQF91l", "status": "k7w2DzBe", "uri": "IV4E5I3J"}, "PRiUpau5": {"failure_code": "13e7t7fA", "region": "ROfKLMmm", "status": "6CvtDa8r", "uri": "o8TGbRvD"}, "kFckufGi": {"failure_code": "vp83pfSQ", "region": "ZPXwcPpd", "status": "6vdigiLi", "uri": "oT00XNPA"}}, "namespace": "PT617BpS", "patchVersion": "5AIrjeCx", "persistent": false, "ulimitFileSize": 70, "version": "yvV6771j"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 4 'UpdateImage' test.out
 
 #- 5 CreateImage
 $PYTHON -m $MODULE 'dsmc-create-image' \
-    '{"artifactPath": "3BYtloCB", "coreDumpEnabled": false, "dockerPath": "laWr5A8B", "image": "WjsNFjn9", "imageSize": 66, "namespace": "Bsuw0HH2", "persistent": true, "ulimitFileSize": 17, "version": "V6OUUtN4"}' \
+    '{"artifactPath": "VV0Q4WXS", "coreDumpEnabled": true, "dockerPath": "l0KpnyDd", "image": "3QEjZJuG", "imageSize": 49, "namespace": "pf9VvnmY", "persistent": true, "ulimitFileSize": 52, "version": "A8dIkYDI"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 5 'CreateImage' test.out
 
-#- 6 ImportImages
-$PYTHON -m $MODULE 'dsmc-import-images' \
-    'tmp.dat' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 6 'ImportImages' test.out
-
-#- 7 CreateImagePatch
+#- 6 CreateImagePatch
 $PYTHON -m $MODULE 'dsmc-create-image-patch' \
-    '{"artifactPath": "ZeUub0S3", "coreDumpEnabled": true, "dockerPath": "qaVwqJAg", "image": "a9MImGsr", "imageSize": 58, "namespace": "j8LryVXM", "patchVersion": "UpX56H4O", "persistent": true, "ulimitFileSize": 23, "uploaderFlag": "ry15HnOt", "version": "EnMEMCtr"}' \
+    '{"artifactPath": "kVy4YTJt", "coreDumpEnabled": true, "dockerPath": "04qlWp4a", "image": "sXBeuaMs", "imageSize": 46, "namespace": "EN8gftkw", "patchVersion": "trWkF2wi", "persistent": true, "ulimitFileSize": 39, "uploaderFlag": "MTDrZJFa", "version": "xyYVJXZQ"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 7 'CreateImagePatch' test.out
+eval_tap $? 6 'CreateImagePatch' test.out
 
-#- 8 GetLowestInstanceSpec
+#- 7 GetLowestInstanceSpec
 $PYTHON -m $MODULE 'dsmc-get-lowest-instance-spec' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 8 'GetLowestInstanceSpec' test.out
+eval_tap $? 7 'GetLowestInstanceSpec' test.out
 
-#- 9 GetConfig
+#- 8 GetWorkerConfig
+$PYTHON -m $MODULE 'dsmc-get-worker-config' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 8 'GetWorkerConfig' test.out
+
+#- 9 UpdateWorkerConfig
+$PYTHON -m $MODULE 'dsmc-update-worker-config' \
+    '{"auto_deletion": false, "ghost_worker": false, "manual_buffer_override": true, "zombie_worker": true}' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 9 'UpdateWorkerConfig' test.out
+
+#- 10 CreateWorkerConfig
+$PYTHON -m $MODULE 'dsmc-create-worker-config' \
+    '{"auto_deletion": false, "ghost_worker": true, "manual_buffer_override": false, "zombie_worker": false}' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 10 'CreateWorkerConfig' test.out
+
+#- 11 GetConfig
 $PYTHON -m $MODULE 'dsmc-get-config' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 9 'GetConfig' test.out
+eval_tap $? 11 'GetConfig' test.out
 
-#- 10 CreateConfig
+#- 12 CreateConfig
 $PYTHON -m $MODULE 'dsmc-create-config' \
-    '{"claim_timeout": 100, "creation_timeout": 24, "default_version": "zE4c5NOh", "port": 20, "ports": {"4f1VH1qP": 80, "HWj5K5XM": 4, "kTmWkbFk": 86}, "protocol": "hr40whE1", "providers": ["k5e6uN45", "TVLfhgAS", "X3pq25o6"], "session_timeout": 49, "unreachable_timeout": 44}' \
+    '{"claim_timeout": 71, "creation_timeout": 51, "default_version": "0C3JhGlg", "port": 30, "ports": {"qLKOgMb2": 72, "xq3BD8Ka": 27, "IE2yUfwS": 21}, "protocol": "9ILmdMvR", "providers": ["SxCoL9Yz", "ZVqhZsge", "uuXodQ5q"], "session_timeout": 95, "unreachable_timeout": 79}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 10 'CreateConfig' test.out
+eval_tap $? 12 'CreateConfig' test.out
 
-#- 11 DeleteConfig
+#- 13 DeleteConfig
 $PYTHON -m $MODULE 'dsmc-delete-config' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 11 'DeleteConfig' test.out
+eval_tap $? 13 'DeleteConfig' test.out
 
-#- 12 UpdateConfig
+#- 14 UpdateConfig
 $PYTHON -m $MODULE 'dsmc-update-config' \
-    '{"claim_timeout": 70, "creation_timeout": 24, "default_version": "Wb6SqVcU", "port": 62, "protocol": "lZKl4xwT", "providers": ["a5OzaId5", "yIIzzRt7", "56INgxad"], "session_timeout": 59, "unreachable_timeout": 11}' \
+    '{"claim_timeout": 8, "creation_timeout": 68, "default_version": "BcUyVcv1", "port": 19, "protocol": "HldPj83X", "providers": ["0LZMwbPO", "2wvASJcB", "PsqSy0p0"], "session_timeout": 58, "unreachable_timeout": 70}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 12 'UpdateConfig' test.out
+eval_tap $? 14 'UpdateConfig' test.out
 
-#- 13 ClearCache
+#- 15 ClearCache
 $PYTHON -m $MODULE 'dsmc-clear-cache' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 13 'ClearCache' test.out
+eval_tap $? 15 'ClearCache' test.out
 
-#- 14 GetAllDeployment
+#- 16 GetAllDeployment
 $PYTHON -m $MODULE 'dsmc-get-all-deployment' \
-    '51' \
-    '47' \
+    '69' \
+    '82' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 14 'GetAllDeployment' test.out
+eval_tap $? 16 'GetAllDeployment' test.out
 
-#- 15 GetDeployment
+#- 17 GetDeployment
 $PYTHON -m $MODULE 'dsmc-get-deployment' \
-    'jv3J5zD5' \
+    'mWkF5X9d' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 15 'GetDeployment' test.out
+eval_tap $? 17 'GetDeployment' test.out
 
-#- 16 CreateDeployment
+#- 18 CreateDeployment
 $PYTHON -m $MODULE 'dsmc-create-deployment' \
-    '{"allow_version_override": false, "buffer_count": 76, "buffer_percent": 33, "configuration": "ctPrx2ak", "enable_region_overrides": true, "extendable_session": false, "game_version": "0M31idbO", "max_count": 26, "min_count": 47, "overrides": {"5sZhVS8c": {"buffer_count": 60, "buffer_percent": 19, "configuration": "zg2UrsAO", "enable_region_overrides": false, "extendable_session": false, "game_version": "eAjq2gae", "max_count": 16, "min_count": 71, "name": "ETGCCdR8", "region_overrides": {"yjy7ysgc": {"buffer_count": 56, "buffer_percent": 43, "max_count": 57, "min_count": 27, "name": "xHzAAGtz", "unlimited": false, "use_buffer_percent": false}, "UZ0KUSuJ": {"buffer_count": 27, "buffer_percent": 75, "max_count": 99, "min_count": 85, "name": "L4yjvKLt", "unlimited": false, "use_buffer_percent": true}, "cNn51IxG": {"buffer_count": 100, "buffer_percent": 11, "max_count": 74, "min_count": 18, "name": "yFIEHDxf", "unlimited": true, "use_buffer_percent": true}}, "regions": ["cI54jqAi", "EBXXjS6a", "703wv0V5"], "session_timeout": 80, "unlimited": false, "use_buffer_percent": true}, "v72SH83e": {"buffer_count": 15, "buffer_percent": 78, "configuration": "uRuuJmb6", "enable_region_overrides": true, "extendable_session": false, "game_version": "n1zR5K2K", "max_count": 64, "min_count": 56, "name": "8SOpMJdp", "region_overrides": {"RUAwhBef": {"buffer_count": 99, "buffer_percent": 56, "max_count": 86, "min_count": 7, "name": "sj1SMhF8", "unlimited": true, "use_buffer_percent": false}, "E3Cg9K3Y": {"buffer_count": 69, "buffer_percent": 25, "max_count": 95, "min_count": 19, "name": "JW3iitEh", "unlimited": false, "use_buffer_percent": false}, "BgyT7iQx": {"buffer_count": 35, "buffer_percent": 25, "max_count": 24, "min_count": 66, "name": "0MiqTO5y", "unlimited": true, "use_buffer_percent": false}}, "regions": ["ogSL9Tz9", "SwaVxnaE", "5Ubzg1qj"], "session_timeout": 51, "unlimited": false, "use_buffer_percent": true}, "N831tKKq": {"buffer_count": 97, "buffer_percent": 91, "configuration": "cesqghkQ", "enable_region_overrides": true, "extendable_session": false, "game_version": "mbCw2m3p", "max_count": 11, "min_count": 25, "name": "bvEFIIxl", "region_overrides": {"x5r93bAN": {"buffer_count": 12, "buffer_percent": 82, "max_count": 15, "min_count": 9, "name": "UTEUJ2Zq", "unlimited": true, "use_buffer_percent": true}, "rvCLm98T": {"buffer_count": 11, "buffer_percent": 48, "max_count": 95, "min_count": 42, "name": "SMhD3iio", "unlimited": true, "use_buffer_percent": true}, "Hy8JlYT0": {"buffer_count": 0, "buffer_percent": 55, "max_count": 61, "min_count": 35, "name": "V23OUOBb", "unlimited": false, "use_buffer_percent": true}}, "regions": ["mIgtOcGX", "nmbfKQhK", "IvnQNrKn"], "session_timeout": 3, "unlimited": false, "use_buffer_percent": false}}, "region_overrides": {"yPW6hlzs": {"buffer_count": 98, "buffer_percent": 33, "max_count": 30, "min_count": 86, "name": "CHR3XWcu", "unlimited": true, "use_buffer_percent": true}, "MBKsTMey": {"buffer_count": 40, "buffer_percent": 73, "max_count": 81, "min_count": 77, "name": "IoyE7vR6", "unlimited": false, "use_buffer_percent": false}, "GqQShm8l": {"buffer_count": 86, "buffer_percent": 51, "max_count": 51, "min_count": 19, "name": "eqdulzna", "unlimited": false, "use_buffer_percent": false}}, "regions": ["OwmCqg6i", "cqL0KmKz", "r5iH8Mwr"], "session_timeout": 15, "unlimited": true, "use_buffer_percent": false}' \
-    'MFLZCQ6k' \
+    '{"allow_version_override": false, "buffer_count": 55, "buffer_percent": 34, "configuration": "gHZhHsdh", "enable_region_overrides": false, "extendable_session": true, "game_version": "unDFpuxm", "max_count": 30, "min_count": 19, "overrides": {"sX8KyrLW": {"buffer_count": 71, "buffer_percent": 53, "configuration": "0W5rSu1B", "enable_region_overrides": false, "extendable_session": true, "game_version": "TZMhOeTp", "max_count": 43, "min_count": 95, "name": "cWFG3Kwj", "region_overrides": {"jibl6hVV": {"buffer_count": 38, "buffer_percent": 85, "max_count": 87, "min_count": 76, "name": "9ZumXRta", "unlimited": true, "use_buffer_percent": true}, "TUqKUZu8": {"buffer_count": 52, "buffer_percent": 93, "max_count": 7, "min_count": 80, "name": "XHWzGR5L", "unlimited": false, "use_buffer_percent": false}, "suV5OEGJ": {"buffer_count": 15, "buffer_percent": 89, "max_count": 22, "min_count": 2, "name": "d9qWplRA", "unlimited": false, "use_buffer_percent": true}}, "regions": ["ydv1tZGF", "j4cdkk8y", "kYM2AaEV"], "session_timeout": 24, "unlimited": false, "use_buffer_percent": true}, "YNusP2xi": {"buffer_count": 4, "buffer_percent": 68, "configuration": "VFoKNT0v", "enable_region_overrides": false, "extendable_session": true, "game_version": "uZKgwuha", "max_count": 41, "min_count": 17, "name": "4n3O5BFs", "region_overrides": {"bZ3vTRdw": {"buffer_count": 53, "buffer_percent": 10, "max_count": 11, "min_count": 6, "name": "OhzL35Em", "unlimited": true, "use_buffer_percent": true}, "2s7h1PAz": {"buffer_count": 98, "buffer_percent": 98, "max_count": 8, "min_count": 28, "name": "xL2rfUPf", "unlimited": false, "use_buffer_percent": false}, "X1WQz8EH": {"buffer_count": 52, "buffer_percent": 90, "max_count": 23, "min_count": 80, "name": "nSEodiSe", "unlimited": false, "use_buffer_percent": true}}, "regions": ["Bn2P2nN6", "Q3Zod5aH", "7yaaIskr"], "session_timeout": 10, "unlimited": true, "use_buffer_percent": true}, "tjPE7pPT": {"buffer_count": 43, "buffer_percent": 47, "configuration": "JvmdRACm", "enable_region_overrides": true, "extendable_session": true, "game_version": "XhLwnZIP", "max_count": 87, "min_count": 9, "name": "ZGbRn5qn", "region_overrides": {"yk3RAPQt": {"buffer_count": 57, "buffer_percent": 64, "max_count": 95, "min_count": 46, "name": "8XEaQFu1", "unlimited": true, "use_buffer_percent": false}, "E5UM2NGK": {"buffer_count": 7, "buffer_percent": 70, "max_count": 11, "min_count": 52, "name": "nbAA371t", "unlimited": true, "use_buffer_percent": false}, "hkE1pqBP": {"buffer_count": 56, "buffer_percent": 74, "max_count": 4, "min_count": 77, "name": "OP7CUnmm", "unlimited": false, "use_buffer_percent": true}}, "regions": ["TSWNvIRp", "t9j0Wvwu", "Kp6lagQS"], "session_timeout": 12, "unlimited": true, "use_buffer_percent": true}}, "region_overrides": {"PvqXyE9h": {"buffer_count": 32, "buffer_percent": 17, "max_count": 40, "min_count": 10, "name": "GoEbBfE2", "unlimited": false, "use_buffer_percent": false}, "sSvO1XIT": {"buffer_count": 98, "buffer_percent": 62, "max_count": 80, "min_count": 99, "name": "3WeQsMVR", "unlimited": true, "use_buffer_percent": false}, "9p2j5qSr": {"buffer_count": 8, "buffer_percent": 74, "max_count": 27, "min_count": 99, "name": "NXUN9s95", "unlimited": true, "use_buffer_percent": false}}, "regions": ["lztF3Yxp", "z1rst7kB", "37CNIwzQ"], "session_timeout": 27, "unlimited": false, "use_buffer_percent": true}' \
+    'qlAuLGWT' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 16 'CreateDeployment' test.out
+eval_tap $? 18 'CreateDeployment' test.out
 
-#- 17 DeleteDeployment
+#- 19 DeleteDeployment
 $PYTHON -m $MODULE 'dsmc-delete-deployment' \
-    'zGVrwYEn' \
+    'Me3RXyTu' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 17 'DeleteDeployment' test.out
+eval_tap $? 19 'DeleteDeployment' test.out
 
-#- 18 UpdateDeployment
+#- 20 UpdateDeployment
 $PYTHON -m $MODULE 'dsmc-update-deployment' \
-    '{"allow_version_override": true, "buffer_count": 30, "buffer_percent": 31, "configuration": "RvmAtYrO", "enable_region_overrides": false, "extendable_session": false, "game_version": "VMiwY7DE", "max_count": 0, "min_count": 0, "regions": ["5h1BDN2A", "XTsKJ98L", "PK8mg6qx"], "session_timeout": 98, "unlimited": false, "use_buffer_percent": false}' \
-    'TJRouSRF' \
+    '{"allow_version_override": true, "buffer_count": 36, "buffer_percent": 74, "configuration": "llLNoSiV", "enable_region_overrides": true, "extendable_session": false, "game_version": "733ggVcj", "max_count": 88, "min_count": 16, "regions": ["cj64q2RX", "0NuKkaE6", "MMuYt41J"], "session_timeout": 46, "unlimited": false, "use_buffer_percent": false}' \
+    'yOxLZ92a' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 18 'UpdateDeployment' test.out
+eval_tap $? 20 'UpdateDeployment' test.out
 
-#- 19 CreateRootRegionOverride
+#- 21 CreateRootRegionOverride
 $PYTHON -m $MODULE 'dsmc-create-root-region-override' \
-    '{"buffer_count": 97, "buffer_percent": 74, "max_count": 32, "min_count": 58, "unlimited": false, "use_buffer_percent": true}' \
-    'GD7QPVak' \
-    '6Pkb1TjL' \
+    '{"buffer_count": 3, "buffer_percent": 14, "max_count": 26, "min_count": 23, "unlimited": false, "use_buffer_percent": false}' \
+    'PoiZ3rB7' \
+    'vekigyZk' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 19 'CreateRootRegionOverride' test.out
+eval_tap $? 21 'CreateRootRegionOverride' test.out
 
-#- 20 DeleteRootRegionOverride
+#- 22 DeleteRootRegionOverride
 $PYTHON -m $MODULE 'dsmc-delete-root-region-override' \
-    'FXGjJ1QO' \
-    'mZC3LDkH' \
+    '27YsH8AC' \
+    'XiBIdzL2' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 20 'DeleteRootRegionOverride' test.out
+eval_tap $? 22 'DeleteRootRegionOverride' test.out
 
-#- 21 UpdateRootRegionOverride
+#- 23 UpdateRootRegionOverride
 $PYTHON -m $MODULE 'dsmc-update-root-region-override' \
-    '{"buffer_count": 95, "buffer_percent": 71, "max_count": 67, "min_count": 41, "unlimited": true, "use_buffer_percent": false}' \
-    'ti2m1LkI' \
-    'ynlGO9r2' \
+    '{"buffer_count": 67, "buffer_percent": 50, "max_count": 5, "min_count": 1, "unlimited": true, "use_buffer_percent": true}' \
+    'TkaiMPZa' \
+    'frm7nKBt' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 21 'UpdateRootRegionOverride' test.out
+eval_tap $? 23 'UpdateRootRegionOverride' test.out
 
-#- 22 CreateDeploymentOverride
+#- 24 CreateDeploymentOverride
 $PYTHON -m $MODULE 'dsmc-create-deployment-override' \
-    '{"buffer_count": 38, "buffer_percent": 12, "configuration": "KfbrBFpN", "enable_region_overrides": true, "extendable_session": true, "game_version": "etbPXNfa", "max_count": 73, "min_count": 27, "region_overrides": {"81xu8edO": {"buffer_count": 0, "buffer_percent": 89, "max_count": 7, "min_count": 91, "name": "GPC3w8AL", "unlimited": true, "use_buffer_percent": true}, "ROnvjV9m": {"buffer_count": 17, "buffer_percent": 5, "max_count": 68, "min_count": 90, "name": "DoGCBkn6", "unlimited": true, "use_buffer_percent": false}, "Jjk3BcSU": {"buffer_count": 94, "buffer_percent": 20, "max_count": 59, "min_count": 4, "name": "qFGrd0rE", "unlimited": true, "use_buffer_percent": true}}, "regions": ["wtH5mnSL", "X6Pnxtik", "COHAqg67"], "session_timeout": 37, "unlimited": false, "use_buffer_percent": true}' \
-    '80qBgNSM' \
-    'a4FJsyxm' \
+    '{"buffer_count": 18, "buffer_percent": 52, "configuration": "FlfAqOAv", "enable_region_overrides": true, "extendable_session": true, "game_version": "iPgzwr0P", "max_count": 4, "min_count": 98, "region_overrides": {"phdFmRyB": {"buffer_count": 22, "buffer_percent": 5, "max_count": 42, "min_count": 13, "name": "7iF4vra0", "unlimited": false, "use_buffer_percent": true}, "7UW2bdav": {"buffer_count": 36, "buffer_percent": 42, "max_count": 48, "min_count": 94, "name": "eYUvhJDd", "unlimited": true, "use_buffer_percent": false}, "n8HAVqtN": {"buffer_count": 93, "buffer_percent": 62, "max_count": 10, "min_count": 13, "name": "l1n8cvTD", "unlimited": true, "use_buffer_percent": false}}, "regions": ["Fbe2UjE3", "KsaQkTir", "PFtiLpfj"], "session_timeout": 99, "unlimited": false, "use_buffer_percent": true}' \
+    'JtncYzHj' \
+    'aXJfwatY' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 22 'CreateDeploymentOverride' test.out
+eval_tap $? 24 'CreateDeploymentOverride' test.out
 
-#- 23 DeleteDeploymentOverride
+#- 25 DeleteDeploymentOverride
 $PYTHON -m $MODULE 'dsmc-delete-deployment-override' \
-    'OtWlxbqT' \
-    'c7L6wVtR' \
+    'OIlzNgsU' \
+    'i3ht1KBF' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 23 'DeleteDeploymentOverride' test.out
+eval_tap $? 25 'DeleteDeploymentOverride' test.out
 
-#- 24 UpdateDeploymentOverride
+#- 26 UpdateDeploymentOverride
 $PYTHON -m $MODULE 'dsmc-update-deployment-override' \
-    '{"buffer_count": 8, "buffer_percent": 96, "configuration": "ysgWb5x7", "enable_region_overrides": false, "game_version": "rqh3mWCy", "max_count": 79, "min_count": 89, "regions": ["ZPBXpk5w", "aRGkf0tg", "9ECPLxdk"], "session_timeout": 42, "unlimited": true, "use_buffer_percent": true}' \
-    '5HHyaP7N' \
-    'SwyLil8A' \
+    '{"buffer_count": 96, "buffer_percent": 53, "configuration": "QJ6CM6Hb", "enable_region_overrides": true, "game_version": "erCOwQ6L", "max_count": 63, "min_count": 14, "regions": ["oLh5PcMB", "UHzQmQlj", "rWm4Oe2y"], "session_timeout": 40, "unlimited": true, "use_buffer_percent": true}' \
+    '0b1EhRv4' \
+    'u1YrHH1w' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 24 'UpdateDeploymentOverride' test.out
+eval_tap $? 26 'UpdateDeploymentOverride' test.out
 
-#- 25 CreateOverrideRegionOverride
+#- 27 CreateOverrideRegionOverride
 $PYTHON -m $MODULE 'dsmc-create-override-region-override' \
-    '{"buffer_count": 31, "buffer_percent": 39, "max_count": 54, "min_count": 76, "unlimited": true, "use_buffer_percent": false}' \
-    'cLWpuTC7' \
-    'BuVNDt7o' \
-    'xoNascws' \
+    '{"buffer_count": 74, "buffer_percent": 57, "max_count": 83, "min_count": 70, "unlimited": true, "use_buffer_percent": true}' \
+    'zo8xadYL' \
+    'boanRLm1' \
+    'hA1726lv' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 25 'CreateOverrideRegionOverride' test.out
+eval_tap $? 27 'CreateOverrideRegionOverride' test.out
 
-#- 26 DeleteOverrideRegionOverride
+#- 28 DeleteOverrideRegionOverride
 $PYTHON -m $MODULE 'dsmc-delete-override-region-override' \
-    'HBT9Vibs' \
-    '4H6jf3He' \
-    'Dq2FGMx3' \
+    'LI5N1ctY' \
+    'V86Igauj' \
+    'pQPRZkQM' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 26 'DeleteOverrideRegionOverride' test.out
+eval_tap $? 28 'DeleteOverrideRegionOverride' test.out
 
-#- 27 UpdateOverrideRegionOverride
+#- 29 UpdateOverrideRegionOverride
 $PYTHON -m $MODULE 'dsmc-update-override-region-override' \
-    '{"buffer_count": 65, "buffer_percent": 34, "max_count": 93, "min_count": 73, "unlimited": true, "use_buffer_percent": false}' \
-    'SVvw2pTd' \
-    'DndoXyMb' \
-    '2NBeQTsf' \
+    '{"buffer_count": 5, "buffer_percent": 61, "max_count": 34, "min_count": 96, "unlimited": true, "use_buffer_percent": false}' \
+    'cW5Pl0ri' \
+    'hT174NV9' \
+    'nelP0BqD' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 27 'UpdateOverrideRegionOverride' test.out
+eval_tap $? 29 'UpdateOverrideRegionOverride' test.out
 
-#- 28 GetAllPodConfig
+#- 30 DeleteCreatingServerCountQueue
+$PYTHON -m $MODULE 'dsmc-delete-creating-server-count-queue' \
+    'MQMyroQT' \
+    'YJV1TGlH' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 30 'DeleteCreatingServerCountQueue' test.out
+
+#- 31 GetAllPodConfig
 $PYTHON -m $MODULE 'dsmc-get-all-pod-config' \
-    '54' \
-    '27' \
+    '30' \
+    '34' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 28 'GetAllPodConfig' test.out
+eval_tap $? 31 'GetAllPodConfig' test.out
 
-#- 29 GetPodConfig
+#- 32 GetPodConfig
 $PYTHON -m $MODULE 'dsmc-get-pod-config' \
-    'aAyEPFAM' \
+    'pP30BxxV' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 29 'GetPodConfig' test.out
+eval_tap $? 32 'GetPodConfig' test.out
 
-#- 30 CreatePodConfig
+#- 33 CreatePodConfig
 $PYTHON -m $MODULE 'dsmc-create-pod-config' \
-    '{"cpu_limit": 98, "mem_limit": 79, "params": "5rdam2UE"}' \
-    'QjkzUNzO' \
+    '{"cpu_limit": 69, "mem_limit": 33, "params": "Q51tez3U"}' \
+    '3k87I4Eg' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 30 'CreatePodConfig' test.out
+eval_tap $? 33 'CreatePodConfig' test.out
 
-#- 31 DeletePodConfig
+#- 34 DeletePodConfig
 $PYTHON -m $MODULE 'dsmc-delete-pod-config' \
-    'BgCo9ktn' \
+    'P3bQkoIv' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 31 'DeletePodConfig' test.out
+eval_tap $? 34 'DeletePodConfig' test.out
 
-#- 32 UpdatePodConfig
+#- 35 UpdatePodConfig
 $PYTHON -m $MODULE 'dsmc-update-pod-config' \
-    '{"cpu_limit": 62, "mem_limit": 62, "name": "FSRSHlYd", "params": "sEvF1aWY"}' \
-    'eHIbjPth' \
+    '{"cpu_limit": 16, "mem_limit": 62, "name": "ZgApKUWH", "params": "a2VcUpNb"}' \
+    'mTaiG7tb' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 32 'UpdatePodConfig' test.out
+eval_tap $? 35 'UpdatePodConfig' test.out
 
-#- 33 AddPort
+#- 36 AddPort
 $PYTHON -m $MODULE 'dsmc-add-port' \
-    '{"port": 28}' \
-    'rPRiyTob' \
+    '{"port": 53}' \
+    'ZBtY304G' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 33 'AddPort' test.out
+eval_tap $? 36 'AddPort' test.out
 
-#- 34 DeletePort
+#- 37 DeletePort
 $PYTHON -m $MODULE 'dsmc-delete-port' \
-    '1Af2lVNZ' \
+    'ZxUWnkIH' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 34 'DeletePort' test.out
+eval_tap $? 37 'DeletePort' test.out
 
-#- 35 UpdatePort
+#- 38 UpdatePort
 $PYTHON -m $MODULE 'dsmc-update-port' \
-    '{"name": "jeOk3Pkj", "port": 60}' \
-    '9Rnw3T43' \
+    '{"name": "68B61Zsu", "port": 33}' \
+    '5rUS0MmU' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 35 'UpdatePort' test.out
+eval_tap $? 38 'UpdatePort' test.out
 
-#- 36 ListImages
+#- 39 ListImages
 $PYTHON -m $MODULE 'dsmc-list-images' \
-    '16' \
-    '11' \
+    '24' \
+    '10' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 36 'ListImages' test.out
+eval_tap $? 39 'ListImages' test.out
 
-#- 37 DeleteImage
+#- 40 DeleteImage
 $PYTHON -m $MODULE 'dsmc-delete-image' \
-    'mrV5fsIP' \
-    '2R6JrMVu' \
+    'uPS3Vjn3' \
+    '48rIlsXc' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 37 'DeleteImage' test.out
+eval_tap $? 40 'DeleteImage' test.out
 
-#- 38 ExportImages
-$PYTHON -m $MODULE 'dsmc-export-images' \
-    --login_with_auth "Bearer foo" \
-    > test.out 2>&1
-eval_tap $? 38 'ExportImages' test.out
-
-#- 39 GetImageLimit
+#- 41 GetImageLimit
 $PYTHON -m $MODULE 'dsmc-get-image-limit' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 39 'GetImageLimit' test.out
+eval_tap $? 41 'GetImageLimit' test.out
 
-#- 40 DeleteImagePatch
+#- 42 DeleteImagePatch
 $PYTHON -m $MODULE 'dsmc-delete-image-patch' \
-    'dz03JAXr' \
-    'F5zGbiLw' \
-    'QAtL8ztu' \
+    'seqN06Oo' \
+    'pwmpszRL' \
+    'deYYdXVG' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 40 'DeleteImagePatch' test.out
+eval_tap $? 42 'DeleteImagePatch' test.out
 
-#- 41 GetImageDetail
+#- 43 GetImageDetail
 $PYTHON -m $MODULE 'dsmc-get-image-detail' \
-    'QnkKvs8l' \
+    'WKLav96v' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 41 'GetImageDetail' test.out
+eval_tap $? 43 'GetImageDetail' test.out
 
-#- 42 GetImagePatches
+#- 44 GetImagePatches
 $PYTHON -m $MODULE 'dsmc-get-image-patches' \
-    '58IqjeLA' \
+    'eo9oPAb3' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 42 'GetImagePatches' test.out
+eval_tap $? 44 'GetImagePatches' test.out
 
-#- 43 GetImagePatchDetail
+#- 45 GetImagePatchDetail
 $PYTHON -m $MODULE 'dsmc-get-image-patch-detail' \
-    'TKu4AQdb' \
-    '91zHtHwP' \
+    '6OihJH4R' \
+    'tOHQtq6Y' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 43 'GetImagePatchDetail' test.out
+eval_tap $? 45 'GetImagePatchDetail' test.out
 
-#- 44 GetRepository
+#- 46 AddBuffer
+$PYTHON -m $MODULE 'dsmc-add-buffer' \
+    '{"AllocCount": 53, "DeploymentName": "Em4dq8Cu", "JobCount": 2, "JobPriority": 94, "OverrideVersion": "gNpwo0zr", "Region": "6yxwyEZX"}' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 46 'AddBuffer' test.out
+
+#- 47 GetRepository
 $PYTHON -m $MODULE 'dsmc-get-repository' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 44 'GetRepository' test.out
+eval_tap $? 47 'GetRepository' test.out
 
-#- 45 ListServer
+#- 48 ListServer
 $PYTHON -m $MODULE 'dsmc-list-server' \
-    '74' \
-    '91' \
+    '39' \
+    '40' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 45 'ListServer' test.out
+eval_tap $? 48 'ListServer' test.out
 
-#- 46 CountServer
+#- 49 CountServer
 $PYTHON -m $MODULE 'dsmc-count-server' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 46 'CountServer' test.out
+eval_tap $? 49 'CountServer' test.out
 
-#- 47 CountServerDetailed
+#- 50 CountServerDetailed
 $PYTHON -m $MODULE 'dsmc-count-server-detailed' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 47 'CountServerDetailed' test.out
+eval_tap $? 50 'CountServerDetailed' test.out
 
-#- 48 ListLocalServer
+#- 51 ListLocalServer
 $PYTHON -m $MODULE 'dsmc-list-local-server' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 48 'ListLocalServer' test.out
+eval_tap $? 51 'ListLocalServer' test.out
 
-#- 49 DeleteLocalServer
+#- 52 DeleteLocalServer
 $PYTHON -m $MODULE 'dsmc-delete-local-server' \
-    'lRogW1FQ' \
+    'Vd2JQeEF' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 49 'DeleteLocalServer' test.out
+eval_tap $? 52 'DeleteLocalServer' test.out
 
-#- 50 GetServer
+#- 53 GetServer
 $PYTHON -m $MODULE 'dsmc-get-server' \
-    'vV9gwjIj' \
+    'C4hKrBBk' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 50 'GetServer' test.out
+eval_tap $? 53 'GetServer' test.out
 
-#- 51 DeleteServer
+#- 54 DeleteServer
 $PYTHON -m $MODULE 'dsmc-delete-server' \
-    '3aPmd5vM' \
+    '8DcYk9Pb' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 51 'DeleteServer' test.out
+eval_tap $? 54 'DeleteServer' test.out
 
-#- 52 ListSession
+#- 55 ListSession
 $PYTHON -m $MODULE 'dsmc-list-session' \
-    '14' \
-    '73' \
+    '32' \
+    '19' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 52 'ListSession' test.out
+eval_tap $? 55 'ListSession' test.out
 
-#- 53 CountSession
+#- 56 CountSession
 $PYTHON -m $MODULE 'dsmc-count-session' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 53 'CountSession' test.out
+eval_tap $? 56 'CountSession' test.out
 
-#- 54 DeleteSession
+#- 57 DeleteSession
 $PYTHON -m $MODULE 'dsmc-delete-session' \
-    '9wNtd31G' \
+    'yBmRpQyA' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 54 'DeleteSession' test.out
+eval_tap $? 57 'DeleteSession' test.out
 
-#- 55 CreateRepository
+#- 58 RunGhostCleanerRequestHandler
+$PYTHON -m $MODULE 'dsmc-run-ghost-cleaner-request-handler' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 58 'RunGhostCleanerRequestHandler' test.out
+
+#- 59 RunZombieCleanerRequestHandler
+$PYTHON -m $MODULE 'dsmc-run-zombie-cleaner-request-handler' \
+    '{"JobCount": 34, "Region": "ngozjkNk", "TimeoutSecond": 26, "ZombieCount": 19}' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 59 'RunZombieCleanerRequestHandler' test.out
+
+#- 60 CreateRepository
 $PYTHON -m $MODULE 'dsmc-create-repository' \
-    '{"namespace": "KcOPH4nM", "repository": "aL76N49i"}' \
+    '{"namespace": "JIbs44Wq", "repository": "Vm5N4R0K"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 55 'CreateRepository' test.out
+eval_tap $? 60 'CreateRepository' test.out
 
-#- 56 ExportConfigV1
+#- 61 ExportConfigV1
 $PYTHON -m $MODULE 'dsmc-export-config-v1' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 56 'ExportConfigV1' test.out
+eval_tap $? 61 'ExportConfigV1' test.out
 
-#- 57 ImportConfigV1
+#- 62 ImportConfigV1
 $PYTHON -m $MODULE 'dsmc-import-config-v1' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 57 'ImportConfigV1' test.out
+eval_tap $? 62 'ImportConfigV1' test.out
 
-#- 58 GetAllDeploymentClient
+#- 63 GetAllDeploymentClient
 $PYTHON -m $MODULE 'dsmc-get-all-deployment-client' \
-    '85' \
-    '95' \
+    '84' \
+    '5' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 58 'GetAllDeploymentClient' test.out
+eval_tap $? 63 'GetAllDeploymentClient' test.out
 
-#- 59 CreateDeploymentClient
+#- 64 GetDeploymentClient
+$PYTHON -m $MODULE 'dsmc-get-deployment-client' \
+    '4H32uloy' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 64 'GetDeploymentClient' test.out
+
+#- 65 CreateDeploymentClient
 $PYTHON -m $MODULE 'dsmc-create-deployment-client' \
-    '{"allow_version_override": false, "buffer_count": 51, "buffer_percent": 80, "configuration": "Y1jBEOvx", "enable_region_overrides": false, "extendable_session": false, "game_version": "QFfVD863", "max_count": 22, "min_count": 63, "overrides": {"YE9RVBGT": {"buffer_count": 8, "buffer_percent": 74, "configuration": "p2w8Ss68", "enable_region_overrides": false, "extendable_session": true, "game_version": "meE7voXK", "max_count": 61, "min_count": 42, "name": "CUGsAeIg", "region_overrides": {"hRfHPw23": {"buffer_count": 58, "buffer_percent": 92, "max_count": 82, "min_count": 20, "name": "TOJdDUvn", "unlimited": false, "use_buffer_percent": true}, "fU7KYG0q": {"buffer_count": 25, "buffer_percent": 51, "max_count": 29, "min_count": 4, "name": "NDetC30m", "unlimited": false, "use_buffer_percent": true}, "LVTGzmeU": {"buffer_count": 30, "buffer_percent": 89, "max_count": 16, "min_count": 51, "name": "1r1IvTWf", "unlimited": false, "use_buffer_percent": true}}, "regions": ["lf2UnVTm", "ByEqvuJq", "A7adtxua"], "session_timeout": 36, "unlimited": false, "use_buffer_percent": true}, "3P14KWon": {"buffer_count": 20, "buffer_percent": 1, "configuration": "3qEKyh5t", "enable_region_overrides": false, "extendable_session": true, "game_version": "0iwxbP1O", "max_count": 98, "min_count": 98, "name": "BKPHzd26", "region_overrides": {"rStR5nmW": {"buffer_count": 95, "buffer_percent": 46, "max_count": 39, "min_count": 90, "name": "1wCNq9eF", "unlimited": true, "use_buffer_percent": false}, "m2Iqluha": {"buffer_count": 59, "buffer_percent": 91, "max_count": 69, "min_count": 26, "name": "34cxoI66", "unlimited": false, "use_buffer_percent": false}, "HxSHotGu": {"buffer_count": 47, "buffer_percent": 100, "max_count": 97, "min_count": 1, "name": "ldfQlPHw", "unlimited": false, "use_buffer_percent": true}}, "regions": ["99QiJ9AK", "3ABoZERc", "OZv9Q9jz"], "session_timeout": 94, "unlimited": false, "use_buffer_percent": true}, "u6Ut3KVw": {"buffer_count": 59, "buffer_percent": 1, "configuration": "4AGFMfx2", "enable_region_overrides": true, "extendable_session": false, "game_version": "aIEh3Sb4", "max_count": 86, "min_count": 72, "name": "WwUHpfd0", "region_overrides": {"hjRmqx0V": {"buffer_count": 28, "buffer_percent": 100, "max_count": 91, "min_count": 46, "name": "p7gVB2NT", "unlimited": false, "use_buffer_percent": false}, "YCV5W8DV": {"buffer_count": 7, "buffer_percent": 54, "max_count": 82, "min_count": 22, "name": "cUHjp80n", "unlimited": true, "use_buffer_percent": false}, "VzbXJ4HX": {"buffer_count": 70, "buffer_percent": 84, "max_count": 69, "min_count": 48, "name": "VPtlCnTP", "unlimited": false, "use_buffer_percent": false}}, "regions": ["iv7Txodt", "h8qu7srI", "njYaiP9z"], "session_timeout": 22, "unlimited": true, "use_buffer_percent": true}}, "region_overrides": {"SdE3uXn3": {"buffer_count": 28, "buffer_percent": 30, "max_count": 95, "min_count": 38, "name": "6Tk8epvo", "unlimited": false, "use_buffer_percent": false}, "sXWEYGNO": {"buffer_count": 97, "buffer_percent": 28, "max_count": 75, "min_count": 89, "name": "lf4C4aSY", "unlimited": true, "use_buffer_percent": false}, "g0UxPL7d": {"buffer_count": 6, "buffer_percent": 7, "max_count": 26, "min_count": 23, "name": "S6ZMmTyv", "unlimited": true, "use_buffer_percent": false}}, "regions": ["0Ws9S8ME", "oTf3ESkl", "TZCBQHq9"], "session_timeout": 33, "unlimited": false, "use_buffer_percent": false}' \
-    'wFB72bfv' \
+    '{"allow_version_override": true, "buffer_count": 59, "buffer_percent": 5, "configuration": "I1kWfPpK", "enable_region_overrides": false, "extendable_session": false, "game_version": "gmAfg5oJ", "max_count": 18, "min_count": 75, "overrides": {"E3IIAgl7": {"buffer_count": 62, "buffer_percent": 21, "configuration": "GNyEbjOQ", "enable_region_overrides": true, "extendable_session": true, "game_version": "WCPHY6EL", "max_count": 41, "min_count": 16, "name": "XUhtAhj0", "region_overrides": {"giqKKseq": {"buffer_count": 3, "buffer_percent": 52, "max_count": 65, "min_count": 59, "name": "UZWfq994", "unlimited": false, "use_buffer_percent": false}, "1g1yAMqA": {"buffer_count": 99, "buffer_percent": 56, "max_count": 40, "min_count": 12, "name": "iO6Jzqh6", "unlimited": true, "use_buffer_percent": true}, "D4FPIJSG": {"buffer_count": 45, "buffer_percent": 77, "max_count": 34, "min_count": 40, "name": "JCEyypKz", "unlimited": true, "use_buffer_percent": false}}, "regions": ["rrNRjnBD", "L32Kc3oV", "7FYD3UxL"], "session_timeout": 9, "unlimited": true, "use_buffer_percent": false}, "xH2wX5p4": {"buffer_count": 92, "buffer_percent": 12, "configuration": "G9EPP2Dt", "enable_region_overrides": false, "extendable_session": false, "game_version": "0ZazJR9x", "max_count": 68, "min_count": 53, "name": "quzEUwNu", "region_overrides": {"GXiYx1p8": {"buffer_count": 93, "buffer_percent": 40, "max_count": 13, "min_count": 48, "name": "vojJyYFt", "unlimited": true, "use_buffer_percent": false}, "MHrAKvaV": {"buffer_count": 25, "buffer_percent": 79, "max_count": 58, "min_count": 75, "name": "IK5VIuO2", "unlimited": false, "use_buffer_percent": true}, "HdHHAuMD": {"buffer_count": 21, "buffer_percent": 35, "max_count": 40, "min_count": 27, "name": "7k4q4Oxv", "unlimited": false, "use_buffer_percent": true}}, "regions": ["QQ0gPPSQ", "ZZATfbTB", "2eXyYjZc"], "session_timeout": 82, "unlimited": true, "use_buffer_percent": true}, "57xMaiUB": {"buffer_count": 42, "buffer_percent": 99, "configuration": "k5ATN4HO", "enable_region_overrides": false, "extendable_session": true, "game_version": "sc1S1x2v", "max_count": 77, "min_count": 94, "name": "KmnGzHBX", "region_overrides": {"yc6oESgS": {"buffer_count": 0, "buffer_percent": 80, "max_count": 80, "min_count": 78, "name": "5TFgJVJx", "unlimited": true, "use_buffer_percent": true}, "1KuINsid": {"buffer_count": 7, "buffer_percent": 28, "max_count": 59, "min_count": 42, "name": "lgsG4Qsz", "unlimited": true, "use_buffer_percent": false}, "10LwXu4m": {"buffer_count": 14, "buffer_percent": 1, "max_count": 46, "min_count": 72, "name": "oN9y3BJX", "unlimited": true, "use_buffer_percent": true}}, "regions": ["felGRaAE", "z5x3jlCe", "IZ0l9hpn"], "session_timeout": 87, "unlimited": true, "use_buffer_percent": true}}, "region_overrides": {"strB4Jbp": {"buffer_count": 86, "buffer_percent": 29, "max_count": 15, "min_count": 24, "name": "zxznlmW5", "unlimited": true, "use_buffer_percent": false}, "ZN4Nukm8": {"buffer_count": 50, "buffer_percent": 71, "max_count": 19, "min_count": 94, "name": "ANM2bzss", "unlimited": false, "use_buffer_percent": true}, "Z1BegIlr": {"buffer_count": 53, "buffer_percent": 2, "max_count": 82, "min_count": 25, "name": "wwQwZ4CM", "unlimited": true, "use_buffer_percent": false}}, "regions": ["xXBY08mY", "BbCEa8qn", "xlWdWKNq"], "session_timeout": 58, "unlimited": true, "use_buffer_percent": true}' \
+    'p3k6LbNo' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 59 'CreateDeploymentClient' test.out
+eval_tap $? 65 'CreateDeploymentClient' test.out
 
-#- 60 DeleteDeploymentClient
+#- 66 DeleteDeploymentClient
 $PYTHON -m $MODULE 'dsmc-delete-deployment-client' \
-    '0uAx1mL8' \
+    'wFlBD3V1' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 60 'DeleteDeploymentClient' test.out
+eval_tap $? 66 'DeleteDeploymentClient' test.out
 
-#- 61 GetAllPodConfigClient
+#- 67 GetAllPodConfigClient
 $PYTHON -m $MODULE 'dsmc-get-all-pod-config-client' \
-    '81' \
-    '77' \
+    '99' \
+    '11' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 61 'GetAllPodConfigClient' test.out
+eval_tap $? 67 'GetAllPodConfigClient' test.out
 
-#- 62 CreatePodConfigClient
+#- 68 CreatePodConfigClient
 $PYTHON -m $MODULE 'dsmc-create-pod-config-client' \
-    '{"cpu_limit": 34, "mem_limit": 8, "params": "yNogKlW7"}' \
-    'XZDPht2T' \
+    '{"cpu_limit": 56, "mem_limit": 24, "params": "d4vgsSma"}' \
+    'TS0mLuPU' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 62 'CreatePodConfigClient' test.out
+eval_tap $? 68 'CreatePodConfigClient' test.out
 
-#- 63 DeletePodConfigClient
+#- 69 DeletePodConfigClient
 $PYTHON -m $MODULE 'dsmc-delete-pod-config-client' \
-    'KrKWPqKp' \
+    '7QERdJZP' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 63 'DeletePodConfigClient' test.out
+eval_tap $? 69 'DeletePodConfigClient' test.out
 
-#- 64 ListImagesClient
+#- 70 ListImagesClient
 $PYTHON -m $MODULE 'dsmc-list-images-client' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 64 'ListImagesClient' test.out
+eval_tap $? 70 'ListImagesClient' test.out
 
-#- 65 ImageLimitClient
+#- 71 ImageLimitClient
 $PYTHON -m $MODULE 'dsmc-image-limit-client' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 65 'ImageLimitClient' test.out
+eval_tap $? 71 'ImageLimitClient' test.out
 
-#- 66 ImageDetailClient
+#- 72 ImageDetailClient
 $PYTHON -m $MODULE 'dsmc-image-detail-client' \
-    'bOIsKU46' \
+    '7Xawbvhy' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 66 'ImageDetailClient' test.out
+eval_tap $? 72 'ImageDetailClient' test.out
 
-#- 67 ListServerClient
+#- 73 ListServerClient
 $PYTHON -m $MODULE 'dsmc-list-server-client' \
-    '11' \
-    '97' \
+    '8' \
+    '20' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 67 'ListServerClient' test.out
+eval_tap $? 73 'ListServerClient' test.out
 
-#- 68 ServerHeartbeat
+#- 74 CountServerDetailedClient
+$PYTHON -m $MODULE 'dsmc-count-server-detailed-client' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 74 'CountServerDetailedClient' test.out
+
+#- 75 ServerHeartbeat
 $PYTHON -m $MODULE 'dsmc-server-heartbeat' \
-    '{"podName": "OAMtMTYR"}' \
+    '{"podName": "3pirMVvO"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 68 'ServerHeartbeat' test.out
+eval_tap $? 75 'ServerHeartbeat' test.out
 
-#- 69 DeregisterLocalServer
+#- 76 DeregisterLocalServer
 $PYTHON -m $MODULE 'dsmc-deregister-local-server' \
-    '{"name": "azYTxz7b"}' \
+    '{"name": "XgDb0qol"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 69 'DeregisterLocalServer' test.out
+eval_tap $? 76 'DeregisterLocalServer' test.out
 
-#- 70 RegisterLocalServer
+#- 77 RegisterLocalServer
 $PYTHON -m $MODULE 'dsmc-register-local-server' \
-    '{"custom_attribute": "7R7uN1Cl", "ip": "ZYeMWvS5", "name": "zrDF1zR2", "port": 60}' \
+    '{"custom_attribute": "FCqOrzZl", "ip": "hLFixugM", "name": "L0o9craY", "port": 90}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 70 'RegisterLocalServer' test.out
+eval_tap $? 77 'RegisterLocalServer' test.out
 
-#- 71 RegisterServer
+#- 78 RegisterServer
 $PYTHON -m $MODULE 'dsmc-register-server' \
-    '{"custom_attribute": "nKcu0zz4", "pod_name": "hXgTCEOF"}' \
+    '{"custom_attribute": "Ozh1Olko", "pod_name": "RHJoC7dt"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 71 'RegisterServer' test.out
+eval_tap $? 78 'RegisterServer' test.out
 
-#- 72 ShutdownServer
+#- 79 ShutdownServer
 $PYTHON -m $MODULE 'dsmc-shutdown-server' \
-    '{"kill_me": false, "pod_name": "Q84KiZ7R"}' \
+    '{"kill_me": false, "pod_name": "tAI4YIsv"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 72 'ShutdownServer' test.out
+eval_tap $? 79 'ShutdownServer' test.out
 
-#- 73 GetServerSessionTimeout
+#- 80 GetServerSessionTimeout
 $PYTHON -m $MODULE 'dsmc-get-server-session-timeout' \
-    'igjwnGbC' \
+    '34Lsxo9T' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 73 'GetServerSessionTimeout' test.out
+eval_tap $? 80 'GetServerSessionTimeout' test.out
 
-#- 74 GetServerSession
+#- 81 GetServerSession
 $PYTHON -m $MODULE 'dsmc-get-server-session' \
-    'M8eDyCr7' \
+    'qCY7ygQF' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 74 'GetServerSession' test.out
+eval_tap $? 81 'GetServerSession' test.out
 
-#- 75 CreateSession
+#- 82 CreateSession
 $PYTHON -m $MODULE 'dsmc-create-session' \
-    '{"client_version": "tw9ea5os", "configuration": "JpOWA6NE", "deployment": "b6u6ndJD", "game_mode": "NsWBki4e", "matching_allies": [{"matching_parties": [{"party_attributes": {"ZuOQiVuP": {}, "JWmqSB3r": {}, "t1vPGQZJ": {}}, "party_id": "3v4BBPLW", "party_members": [{"user_id": "peDc48lJ"}, {"user_id": "FK9GRHH7"}, {"user_id": "zPGzZWjo"}]}, {"party_attributes": {"62CMDuoM": {}, "cX9cq2a0": {}, "gzfCjQFb": {}}, "party_id": "OhqfGNZv", "party_members": [{"user_id": "keBPxpYH"}, {"user_id": "nQfxjHBy"}, {"user_id": "7Woeg0Bh"}]}, {"party_attributes": {"n3IO8r2r": {}, "jIpztalD": {}, "2ZU8Zsvm": {}}, "party_id": "LyZAeXGZ", "party_members": [{"user_id": "UokAok5y"}, {"user_id": "D3pZm6LH"}, {"user_id": "Blyuw2yv"}]}]}, {"matching_parties": [{"party_attributes": {"f4uPtkfH": {}, "Li9s1n8J": {}, "0yPmnJVg": {}}, "party_id": "MvXqSghi", "party_members": [{"user_id": "Dh3Jb3nu"}, {"user_id": "JejxqS7k"}, {"user_id": "35xtxeq0"}]}, {"party_attributes": {"0AhEgG3M": {}, "4qZU3QW2": {}, "pYFUXBFV": {}}, "party_id": "GLxgilqV", "party_members": [{"user_id": "YQeV41pX"}, {"user_id": "oN5IL3WR"}, {"user_id": "wLrZI1PY"}]}, {"party_attributes": {"06ExXCYP": {}, "QgCWxaRy": {}, "P7FXWICO": {}}, "party_id": "vch38KfJ", "party_members": [{"user_id": "ihAzzuYo"}, {"user_id": "nqV4FYn6"}, {"user_id": "Il9f063k"}]}]}, {"matching_parties": [{"party_attributes": {"sGI2z0cY": {}, "SwtYtQ5V": {}, "vJIuWjQp": {}}, "party_id": "o7583URL", "party_members": [{"user_id": "A68cB1i0"}, {"user_id": "hjh75WMI"}, {"user_id": "zoI6GztR"}]}, {"party_attributes": {"KeihQOHI": {}, "teOhxByb": {}, "XLizSmFo": {}}, "party_id": "DBW4u26i", "party_members": [{"user_id": "eR3bE2Z7"}, {"user_id": "Ms8DFFWO"}, {"user_id": "owptCY5x"}]}, {"party_attributes": {"dDPNhdGD": {}, "RYeSUQo5": {}, "k9xvAgob": {}}, "party_id": "CW85HLTH", "party_members": [{"user_id": "VxKVu5Fc"}, {"user_id": "YMMBEmRe"}, {"user_id": "7XGZe8ar"}]}]}], "namespace": "FXq1zBuk", "notification_payload": {}, "pod_name": "qlN0tfVi", "region": "UAU18ZYC", "session_id": "Nk7ZFocj"}' \
+    '{"client_version": "sqmY5qe8", "configuration": "gygJNJkQ", "deployment": "ksA8i5Gf", "game_mode": "BTnhcpJP", "matching_allies": [{"matching_parties": [{"party_attributes": {"N27aNEVO": {}, "Gt2nHPwh": {}, "BTjBn3PG": {}}, "party_id": "3eDKcR4m", "party_members": [{"user_id": "1KUumcH0"}, {"user_id": "PXnO8Lcy"}, {"user_id": "mDRo9sfl"}]}, {"party_attributes": {"pW946rIL": {}, "KpjuXJ1D": {}, "FVTLp0Te": {}}, "party_id": "8GOJb5ry", "party_members": [{"user_id": "xU1MWlcU"}, {"user_id": "ueXJtej3"}, {"user_id": "FRXsyLw3"}]}, {"party_attributes": {"srT4nuHo": {}, "jelrTLys": {}, "GnnwTaHj": {}}, "party_id": "OnJ0bn6H", "party_members": [{"user_id": "NWsDiEGv"}, {"user_id": "Ae4mo4PU"}, {"user_id": "Oved8JwI"}]}]}, {"matching_parties": [{"party_attributes": {"DduNavsk": {}, "aM5QOugx": {}, "J24aPK3i": {}}, "party_id": "ZpOuk4te", "party_members": [{"user_id": "WJTDJUuZ"}, {"user_id": "rUtZg0Om"}, {"user_id": "OJd8scCF"}]}, {"party_attributes": {"guuvNHbE": {}, "nkd0ZFE4": {}, "cwNKT9MV": {}}, "party_id": "9700BUSr", "party_members": [{"user_id": "IlycDdWc"}, {"user_id": "6AKx3Jgg"}, {"user_id": "9aKrSRPG"}]}, {"party_attributes": {"WpvHx98I": {}, "eT8UdDVg": {}, "5crws7v3": {}}, "party_id": "9ygOiu9T", "party_members": [{"user_id": "4cTrOr50"}, {"user_id": "rhCQrUBG"}, {"user_id": "eHuMDUPM"}]}]}, {"matching_parties": [{"party_attributes": {"NFqbChqv": {}, "U3NezS5Z": {}, "1XjbuAOm": {}}, "party_id": "lQYE46Sd", "party_members": [{"user_id": "pPi5MV0K"}, {"user_id": "wJBtkGTf"}, {"user_id": "uNzKmvKZ"}]}, {"party_attributes": {"1YhFHLOK": {}, "h8y8o8Rm": {}, "dKqGk3Ua": {}}, "party_id": "fYAEcgZf", "party_members": [{"user_id": "Fzkv3IBI"}, {"user_id": "5HmHFwhe"}, {"user_id": "jIrw73W5"}]}, {"party_attributes": {"bQ6FR7er": {}, "wO936s2L": {}, "9tFa1EbH": {}}, "party_id": "8zRw0ZeS", "party_members": [{"user_id": "GgUmuJaP"}, {"user_id": "xTIj04rh"}, {"user_id": "mxHK1EeT"}]}]}], "namespace": "kuRdyw2c", "notification_payload": {}, "pod_name": "kabLSsDL", "region": "WVrmwC0h", "session_id": "VEOlY7qd"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 75 'CreateSession' test.out
+eval_tap $? 82 'CreateSession' test.out
 
-#- 76 ClaimServer
+#- 83 ClaimServer
 $PYTHON -m $MODULE 'dsmc-claim-server' \
-    '{"session_id": "D8dLFtGE"}' \
+    '{"game_mode": "x7pZdMmn", "matching_allies": [{"matching_parties": [{"party_attributes": {"vs7w3cVy": {}, "UGt8pnLh": {}, "yJFsHJFv": {}}, "party_id": "gGdpCLYu", "party_members": [{"user_id": "ogHbyDE6"}, {"user_id": "NFJ2KokQ"}, {"user_id": "NoB35MtS"}]}, {"party_attributes": {"TuucdxZc": {}, "VLhR7PgJ": {}, "ARUPFWSj": {}}, "party_id": "mvLpjn2m", "party_members": [{"user_id": "TbFPgkVL"}, {"user_id": "OyZBghFR"}, {"user_id": "kyjGsvp4"}]}, {"party_attributes": {"1f135j22": {}, "zBXdRxtS": {}, "xFiswnYj": {}}, "party_id": "k2LAeERs", "party_members": [{"user_id": "7St2JC6a"}, {"user_id": "IU5TrUjV"}, {"user_id": "vwjFdJyr"}]}]}, {"matching_parties": [{"party_attributes": {"EzU25Eb1": {}, "VW73ry00": {}, "zH6WC3UK": {}}, "party_id": "haLZi3i7", "party_members": [{"user_id": "kmvO2RrB"}, {"user_id": "LtMYm1Vw"}, {"user_id": "jTX3oUSC"}]}, {"party_attributes": {"Qe1NaGRK": {}, "ZTr4CM5I": {}, "GaBMEye7": {}}, "party_id": "1CTao6lt", "party_members": [{"user_id": "5deryt4z"}, {"user_id": "q6cv8J3D"}, {"user_id": "xE6uZ972"}]}, {"party_attributes": {"5xHhDzqk": {}, "fIxM2J9u": {}, "t80QjjXR": {}}, "party_id": "snQYHLto", "party_members": [{"user_id": "wThmJOQD"}, {"user_id": "HIuab25j"}, {"user_id": "skz3xcii"}]}]}, {"matching_parties": [{"party_attributes": {"4piCrdQl": {}, "cyo9603X": {}, "dkHsToVM": {}}, "party_id": "CxaZiYg5", "party_members": [{"user_id": "YP4xg7XL"}, {"user_id": "2M79a8fw"}, {"user_id": "zbz04gm4"}]}, {"party_attributes": {"I32dWTIF": {}, "jLnmEBo0": {}, "pkn1IDMa": {}}, "party_id": "ogmZSU9F", "party_members": [{"user_id": "4GdnwRAi"}, {"user_id": "glT3WjpJ"}, {"user_id": "6Dtv7Aaq"}]}, {"party_attributes": {"NpokynLc": {}, "HKhDqy1R": {}, "a7AAaItw": {}}, "party_id": "Ag4vdI6B", "party_members": [{"user_id": "UB7KVpAu"}, {"user_id": "H1T5p4lm"}, {"user_id": "T7mAeRPF"}]}]}], "namespace": "8cWDXV8m", "notification_payload": {}, "session_id": "vJW8JuWr"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 76 'ClaimServer' test.out
+eval_tap $? 83 'ClaimServer' test.out
 
-#- 77 GetSession
+#- 84 GetSession
 $PYTHON -m $MODULE 'dsmc-get-session' \
-    'DhYPlQgd' \
+    '8f8htOdW' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 77 'GetSession' test.out
+eval_tap $? 84 'GetSession' test.out
 
-#- 78 CancelSession
+#- 85 CancelSession
 $PYTHON -m $MODULE 'dsmc-cancel-session' \
-    'ulsTMnSo' \
+    '1UMSlfcC' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 78 'CancelSession' test.out
+eval_tap $? 85 'CancelSession' test.out
 
-#- 79 GetDefaultProvider
+#- 86 GetDefaultProvider
 $PYTHON -m $MODULE 'dsmc-get-default-provider' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 79 'GetDefaultProvider' test.out
+eval_tap $? 86 'GetDefaultProvider' test.out
 
-#- 80 ListProviders
+#- 87 ListProviders
 $PYTHON -m $MODULE 'dsmc-list-providers' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 80 'ListProviders' test.out
+eval_tap $? 87 'ListProviders' test.out
 
-#- 81 ListProvidersByRegion
+#- 88 ListProvidersByRegion
 $PYTHON -m $MODULE 'dsmc-list-providers-by-region' \
-    'DaIVB7aB' \
+    'htZkObjE' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 81 'ListProvidersByRegion' test.out
+eval_tap $? 88 'ListProvidersByRegion' test.out
 
-#- 82 PublicGetMessages
+#- 89 PublicGetMessages
 $PYTHON -m $MODULE 'dsmc-public-get-messages' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 82 'PublicGetMessages' test.out
+eval_tap $? 89 'PublicGetMessages' test.out
 
 
 fi

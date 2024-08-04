@@ -52,6 +52,8 @@ class PublicEnableBackupCodesV4(Operation):
 
         namespace: (namespace) REQUIRED str in path
 
+        language_tag: (languageTag) OPTIONAL str in query
+
     Responses:
         204: No Content - (Backup codes enabled and codes sent to email)
 
@@ -82,6 +84,7 @@ class PublicEnableBackupCodesV4(Operation):
     service_name: Optional[str] = "iam"
 
     namespace: str  # REQUIRED in [path]
+    language_tag: str  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -130,12 +133,19 @@ class PublicEnableBackupCodesV4(Operation):
     def get_all_params(self) -> dict:
         return {
             "path": self.get_path_params(),
+            "query": self.get_query_params(),
         }
 
     def get_path_params(self) -> dict:
         result = {}
         if hasattr(self, "namespace"):
             result["namespace"] = self.namespace
+        return result
+
+    def get_query_params(self) -> dict:
+        result = {}
+        if hasattr(self, "language_tag"):
+            result["languageTag"] = self.language_tag
         return result
 
     # endregion get_x_params methods
@@ -150,6 +160,10 @@ class PublicEnableBackupCodesV4(Operation):
         self.namespace = value
         return self
 
+    def with_language_tag(self, value: str) -> PublicEnableBackupCodesV4:
+        self.language_tag = value
+        return self
+
     # endregion with_x methods
 
     # region to methods
@@ -160,6 +174,10 @@ class PublicEnableBackupCodesV4(Operation):
             result["namespace"] = str(self.namespace)
         elif include_empty:
             result["namespace"] = ""
+        if hasattr(self, "language_tag") and self.language_tag:
+            result["languageTag"] = str(self.language_tag)
+        elif include_empty:
+            result["languageTag"] = ""
         return result
 
     # endregion to methods
@@ -223,9 +241,13 @@ class PublicEnableBackupCodesV4(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, namespace: str, **kwargs) -> PublicEnableBackupCodesV4:
+    def create(
+        cls, namespace: str, language_tag: Optional[str] = None, **kwargs
+    ) -> PublicEnableBackupCodesV4:
         instance = cls()
         instance.namespace = namespace
+        if language_tag is not None:
+            instance.language_tag = language_tag
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -239,18 +261,24 @@ class PublicEnableBackupCodesV4(Operation):
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
             instance.namespace = ""
+        if "languageTag" in dict_ and dict_["languageTag"] is not None:
+            instance.language_tag = str(dict_["languageTag"])
+        elif include_empty:
+            instance.language_tag = ""
         return instance
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
             "namespace": "namespace",
+            "languageTag": "language_tag",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
             "namespace": True,
+            "languageTag": False,
         }
 
     # endregion static methods

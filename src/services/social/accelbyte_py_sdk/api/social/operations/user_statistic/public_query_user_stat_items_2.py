@@ -39,10 +39,10 @@ class PublicQueryUserStatItems2(Operation):
 
     Public list all statItems of user.
     NOTE:
-              * If stat code does not exist, will ignore this stat code.
-              * If stat item does not exist, will return default value
+                * If stat code does not exist, will ignore this stat code.
+                * If stat item does not exist, will return default value
     Other detail info:
-              *  Returns : stat items
+                *  Returns : stat items
 
     Properties:
         url: /social/v2/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk

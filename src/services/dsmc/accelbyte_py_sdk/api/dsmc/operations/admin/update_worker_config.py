@@ -29,31 +29,31 @@ from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 
-from ...models import ModelsImageRecord
+from ...models import ModelsWorkerConfigRequest
 from ...models import ResponseError
 
 
-class ExportImages(Operation):
-    """export DSM Controller images for a namespace (ExportImages)
+class UpdateWorkerConfig(Operation):
+    """Update worker configuration (updateWorkerConfig)
 
-    Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]
+    Required permission: ADMIN:NAMESPACE:{namespace}:WORKER:CONFIG [UPDATE]
 
     Required scope: social
 
-    This endpoint export a dedicated servers images in a namespace.
+    This endpoint updates a worker configuration to control the worker in the DSMC.
 
     Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]
+        - ADMIN:NAMESPACE:{namespace}:WORKER:CONFIG [UPDATE]
 
     Required Scope(s):
         - social
 
     Properties:
-        url: /dsmcontroller/admin/namespaces/{namespace}/images/export
+        url: /dsmcontroller/admin/namespace/{namespace}/workers
 
-        method: GET
+        method: PUT
 
-        tags: ["Image Config"]
+        tags: ["Admin"]
 
         consumes: ["application/json"]
 
@@ -61,26 +61,28 @@ class ExportImages(Operation):
 
         securities: [BEARER_AUTH]
 
+        body: (body) REQUIRED ModelsWorkerConfigRequest in body
+
         namespace: (namespace) REQUIRED str in path
 
     Responses:
-        200: OK - List[ModelsImageRecord] (images exported)
+        204: No Content - (The worker configuration has been successfully updated.)
 
-        401: Unauthorized - ResponseError (unauthorized access)
+        400: Bad Request - ResponseError (Bad Request)
 
-        403: Forbidden - ResponseError (forbidden access)
+        401: Unauthorized - ResponseError (Unauthorized)
 
-        404: Not Found - ResponseError (images not found)
+        404: Not Found - ResponseError (Not Found)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
 
     # region fields
 
-    _url: str = "/dsmcontroller/admin/namespaces/{namespace}/images/export"
-    _path: str = "/dsmcontroller/admin/namespaces/{namespace}/images/export"
+    _url: str = "/dsmcontroller/admin/namespace/{namespace}/workers"
+    _path: str = "/dsmcontroller/admin/namespace/{namespace}/workers"
     _base_path: str = ""
-    _method: str = "GET"
+    _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
@@ -88,6 +90,7 @@ class ExportImages(Operation):
 
     service_name: Optional[str] = "dsmc"
 
+    body: ModelsWorkerConfigRequest  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
 
     # endregion fields
@@ -136,8 +139,14 @@ class ExportImages(Operation):
 
     def get_all_params(self) -> dict:
         return {
+            "body": self.get_body_params(),
             "path": self.get_path_params(),
         }
+
+    def get_body_params(self) -> Any:
+        if not hasattr(self, "body") or self.body is None:
+            return None
+        return self.body.to_dict()
 
     def get_path_params(self) -> dict:
         result = {}
@@ -153,7 +162,11 @@ class ExportImages(Operation):
 
     # region with_x methods
 
-    def with_namespace(self, value: str) -> ExportImages:
+    def with_body(self, value: ModelsWorkerConfigRequest) -> UpdateWorkerConfig:
+        self.body = value
+        return self
+
+    def with_namespace(self, value: str) -> UpdateWorkerConfig:
         self.namespace = value
         return self
 
@@ -163,6 +176,10 @@ class ExportImages(Operation):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
+        if hasattr(self, "body") and self.body:
+            result["body"] = self.body.to_dict(include_empty=include_empty)
+        elif include_empty:
+            result["body"] = ModelsWorkerConfigRequest()
         if hasattr(self, "namespace") and self.namespace:
             result["namespace"] = str(self.namespace)
         elif include_empty:
@@ -176,18 +193,16 @@ class ExportImages(Operation):
     # noinspection PyMethodMayBeStatic
     def parse_response(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[
-        Union[None, List[ModelsImageRecord]], Union[None, HttpResponse, ResponseError]
-    ]:
+    ) -> Tuple[None, Union[None, HttpResponse, ResponseError]]:
         """Parse the given response.
 
-        200: OK - List[ModelsImageRecord] (images exported)
+        204: No Content - (The worker configuration has been successfully updated.)
 
-        401: Unauthorized - ResponseError (unauthorized access)
+        400: Bad Request - ResponseError (Bad Request)
 
-        403: Forbidden - ResponseError (forbidden access)
+        401: Unauthorized - ResponseError (Unauthorized)
 
-        404: Not Found - ResponseError (images not found)
+        404: Not Found - ResponseError (Not Found)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
 
@@ -204,11 +219,11 @@ class ExportImages(Operation):
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
-        if code == 200:
-            return [ModelsImageRecord.create_from_dict(i) for i in content], None
-        if code == 401:
+        if code == 204:
+            return None, None
+        if code == 400:
             return None, ResponseError.create_from_dict(content)
-        if code == 403:
+        if code == 401:
             return None, ResponseError.create_from_dict(content)
         if code == 404:
             return None, ResponseError.create_from_dict(content)
@@ -224,16 +239,27 @@ class ExportImages(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, namespace: str, **kwargs) -> ExportImages:
+    def create(
+        cls, body: ModelsWorkerConfigRequest, namespace: str, **kwargs
+    ) -> UpdateWorkerConfig:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> ExportImages:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> UpdateWorkerConfig:
         instance = cls()
+        if "body" in dict_ and dict_["body"] is not None:
+            instance.body = ModelsWorkerConfigRequest.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
+        elif include_empty:
+            instance.body = ModelsWorkerConfigRequest()
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
@@ -243,12 +269,14 @@ class ExportImages(Operation):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
+            "body": "body",
             "namespace": "namespace",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
+            "body": True,
             "namespace": True,
         }
 

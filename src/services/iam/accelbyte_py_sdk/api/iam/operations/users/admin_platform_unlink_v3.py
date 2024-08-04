@@ -28,13 +28,14 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ModelUnlinkUserPlatformRequest
 from ...models import RestErrorResponse
 
 
 class AdminPlatformUnlinkV3(Operation):
-    """Admin unlink user's account from specific platform (AdminPlatformUnlinkV3)
+    """[DEPRECATED] Admin unlink user's account from specific platform (AdminPlatformUnlinkV3)
 
     ## Supported platforms:
     - **steam**

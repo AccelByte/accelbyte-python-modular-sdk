@@ -38,6 +38,7 @@ from ..models import PlatformDLCConfigInfo
 from ..models import PlatformDLCConfigUpdate
 from ..models import PlayStationDLCSyncMultiServiceLabelsRequest
 from ..models import PlayStationDLCSyncRequest
+from ..models import SimpleUserDLCRewardContentsResponse
 from ..models import SteamDLCSyncRequest
 from ..models import UserDLC
 from ..models import UserDLCRecord
@@ -54,11 +55,16 @@ from ..operations.dlc import GetDLCItemConfig
 from ..operations.dlc import GetPlatformDLCConfig
 from ..operations.dlc import GetUserDLC
 from ..operations.dlc import (
+    GetUserDLCStatusEnum,
     GetUserDLCTypeEnum,
 )
 from ..operations.dlc import GetUserDLCByPlatform
 from ..operations.dlc import (
     GetUserDLCByPlatformTypeEnum,
+)
+from ..operations.dlc import PublicGetMyDLCContent
+from ..operations.dlc import (
+    PublicGetMyDLCContentTypeEnum,
 )
 from ..operations.dlc import PublicSyncPsnDlcInventory
 from ..operations.dlc import PublicSyncPsnDlcInventoryWithMultipleServiceLabels
@@ -490,6 +496,8 @@ async def get_platform_dlc_config_async(
 @same_doc_as(GetUserDLC)
 def get_user_dlc(
     user_id: str,
+    include_all_namespaces: Optional[bool] = None,
+    status: Optional[Union[str, GetUserDLCStatusEnum]] = None,
     type_: Optional[Union[str, GetUserDLCTypeEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
@@ -498,6 +506,7 @@ def get_user_dlc(
     """Get user dlc records (getUserDLC)
 
     Get user dlc records.
+    Note: includeAllNamespaces means this endpoint will return user dlcs from all namespace, example scenario isadmin may need to check the user dlcs before unlink a 3rd party account, so the user dlcs should be from all namespaces because unlinking is a platform level action
     Other detail info:
 
       * Returns : user dlc
@@ -519,6 +528,10 @@ def get_user_dlc(
 
         user_id: (userId) REQUIRED str in path
 
+        include_all_namespaces: (includeAllNamespaces) OPTIONAL bool in query
+
+        status: (status) OPTIONAL Union[str, StatusEnum] in query
+
         type_: (type) OPTIONAL Union[str, TypeEnum] in query
 
     Responses:
@@ -530,6 +543,8 @@ def get_user_dlc(
             return None, error
     request = GetUserDLC.create(
         user_id=user_id,
+        include_all_namespaces=include_all_namespaces,
+        status=status,
         type_=type_,
         namespace=namespace,
     )
@@ -539,6 +554,8 @@ def get_user_dlc(
 @same_doc_as(GetUserDLC)
 async def get_user_dlc_async(
     user_id: str,
+    include_all_namespaces: Optional[bool] = None,
+    status: Optional[Union[str, GetUserDLCStatusEnum]] = None,
     type_: Optional[Union[str, GetUserDLCTypeEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
@@ -547,6 +564,7 @@ async def get_user_dlc_async(
     """Get user dlc records (getUserDLC)
 
     Get user dlc records.
+    Note: includeAllNamespaces means this endpoint will return user dlcs from all namespace, example scenario isadmin may need to check the user dlcs before unlink a 3rd party account, so the user dlcs should be from all namespaces because unlinking is a platform level action
     Other detail info:
 
       * Returns : user dlc
@@ -568,6 +586,10 @@ async def get_user_dlc_async(
 
         user_id: (userId) REQUIRED str in path
 
+        include_all_namespaces: (includeAllNamespaces) OPTIONAL bool in query
+
+        status: (status) OPTIONAL Union[str, StatusEnum] in query
+
         type_: (type) OPTIONAL Union[str, TypeEnum] in query
 
     Responses:
@@ -579,6 +601,8 @@ async def get_user_dlc_async(
             return None, error
     request = GetUserDLC.create(
         user_id=user_id,
+        include_all_namespaces=include_all_namespaces,
+        status=status,
         type_=type_,
         namespace=namespace,
     )
@@ -681,6 +705,90 @@ async def get_user_dlc_by_platform_async(
         type_=type_,
         user_id=user_id,
         namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(PublicGetMyDLCContent)
+def public_get_my_dlc_content(
+    type_: Union[str, PublicGetMyDLCContentTypeEnum],
+    include_all_namespaces: Optional[bool] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get user dlc reward contents (publicGetMyDLCContent)
+
+    Get user dlc reward contents. If includeAllNamespaces is false, will only return the dlc synced from the current namespace
+    Other detail info:
+
+      * Returns : user dlc
+
+    Properties:
+        url: /platform/public/users/me/dlc/content
+
+        method: GET
+
+        tags: ["DLC"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        include_all_namespaces: (includeAllNamespaces) OPTIONAL bool in query
+
+        type_: (type) REQUIRED Union[str, TypeEnum] in query
+
+    Responses:
+        200: OK - SimpleUserDLCRewardContentsResponse (successful operation)
+    """
+    request = PublicGetMyDLCContent.create(
+        type_=type_,
+        include_all_namespaces=include_all_namespaces,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(PublicGetMyDLCContent)
+async def public_get_my_dlc_content_async(
+    type_: Union[str, PublicGetMyDLCContentTypeEnum],
+    include_all_namespaces: Optional[bool] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Get user dlc reward contents (publicGetMyDLCContent)
+
+    Get user dlc reward contents. If includeAllNamespaces is false, will only return the dlc synced from the current namespace
+    Other detail info:
+
+      * Returns : user dlc
+
+    Properties:
+        url: /platform/public/users/me/dlc/content
+
+        method: GET
+
+        tags: ["DLC"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        include_all_namespaces: (includeAllNamespaces) OPTIONAL bool in query
+
+        type_: (type) REQUIRED Union[str, TypeEnum] in query
+
+    Responses:
+        200: OK - SimpleUserDLCRewardContentsResponse (successful operation)
+    """
+    request = PublicGetMyDLCContent.create(
+        type_=type_,
+        include_all_namespaces=include_all_namespaces,
     )
     return await run_request_async(
         request, additional_headers=x_additional_headers, **kwargs

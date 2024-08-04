@@ -55,7 +55,7 @@ def get_user_stat_cycle_items(
 
     List user's statCycleItems by statCycle.
     Other detail info:
-              *  Returns : stat cycle items
+                *  Returns : stat cycle items
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/users/{userId}/statCycles/{cycleId}/statCycleitems
@@ -133,7 +133,7 @@ async def get_user_stat_cycle_items_async(
 
     List user's statCycleItems by statCycle.
     Other detail info:
-              *  Returns : stat cycle items
+                *  Returns : stat cycle items
 
     Properties:
         url: /social/v1/admin/namespaces/{namespace}/users/{userId}/statCycles/{cycleId}/statCycleitems
@@ -212,7 +212,7 @@ def get_user_stat_cycle_items_1(
 
     List user's statCycleItems by statCycle.
     Other detail info:
-              *  Returns : stat cycle items
+                *  Returns : stat cycle items
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/statCycles/{cycleId}/statCycleitems
@@ -286,7 +286,7 @@ async def get_user_stat_cycle_items_1_async(
 
     List user's statCycleItems by statCycle.
     Other detail info:
-              *  Returns : stat cycle items
+                *  Returns : stat cycle items
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/{userId}/statCycles/{cycleId}/statCycleitems
@@ -361,7 +361,7 @@ def public_list_my_stat_cycle_items(
 
     List user's statCycleItems by statCycle.
     Other detail info:
-              *  Returns : stat cycle items
+                *  Returns : stat cycle items
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/me/statCycles/{cycleId}/statCycleitems
@@ -431,7 +431,7 @@ async def public_list_my_stat_cycle_items_async(
 
     List user's statCycleItems by statCycle.
     Other detail info:
-              *  Returns : stat cycle items
+                *  Returns : stat cycle items
 
     Properties:
         url: /social/v1/public/namespaces/{namespace}/users/me/statCycles/{cycleId}/statCycleitems

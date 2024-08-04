@@ -16,4 +16,5 @@ __email__ = "dev@accelbyte.net"
 
 from .admin_evaluate_progress import AdminEvaluateProgress
 from .evaluate_my_progress import EvaluateMyProgress
+from .public_get_past_user_pr_bbe905 import PublicGetPastUserProgression
 from .public_get_user_progression import PublicGetUserProgression
