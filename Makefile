@@ -7,7 +7,21 @@ UPLOAD_INTERVAL := 30
 
 #ENV_FILE_PATH ?= $(PWD)/tests/sample_apps/.env
 
-lint:
+clean:
+	rm -rf src/core/build
+	rm -rf src/core/dist
+	rm -rf src/core/*.egg-info
+	find src/features/*/build -maxdepth 0 -type d -exec rm -rf {} \; || true
+	find src/features/*/dist -maxdepth 0 -type d -exec rm -rf {} \; || true
+	find src/features/*/*.egg-info -maxdepth 0 -type d -exec rm -rf {} \; || true
+	find src/services/*/build -maxdepth 0 -type d -exec rm -rf {} \; || true
+	find src/services/*/dist -maxdepth 0 -type d -exec rm -rf {} \; || true
+	find src/services/*/*.egg-info -maxdepth 0 -type d -exec rm -rf {} \; || true
+	rm -rf src/all/build
+	rm -rf src/all/dist
+	rm -rf src/all/*.egg-info
+
+lint: clean
 	rm -f lint.err
 	docker run -t --rm -v $$(pwd):/data -w /data --entrypoint /bin/sh dhanarab/python-pylint:3.9-2.12.2-2 \
 			-c 'pip install -r requirements-test.txt && pylint -j 0 accelbyte_py_sdk || exit $$(( $$? & (1+2+32) ))' || touch lint.err
