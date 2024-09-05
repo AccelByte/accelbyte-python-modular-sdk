@@ -28,15 +28,18 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ModelUserMFAStatusResponseV4
 from ...models import RestErrorResponse
 
 
 class PublicGetMyMFAStatusV4(Operation):
-    """Get User MFA Status (PublicGetMyMFAStatusV4)
+    """[DEPRECATED] Get User MFA Status (PublicGetMyMFAStatusV4)
 
     This endpoint will get user's' MFA status.
+    ---------
+    **Substitute endpoint**: /iam/v4/public/namespaces/{namespace}/users/me/mfa/status [GET]
 
     Properties:
         url: /iam/v4/public/namespaces/{namespace}/users/me/mfa/status

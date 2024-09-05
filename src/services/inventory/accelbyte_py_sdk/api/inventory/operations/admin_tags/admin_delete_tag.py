@@ -40,9 +40,6 @@ class AdminDeleteTag(Operation):
 
     Permission: ADMIN:NAMESPACE:{namespace}:INVENTORY:TAG [DELETE]
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:INVENTORY:TAG [DELETE]
-
     Properties:
         url: /inventory/v1/admin/namespaces/{namespace}/tags/{tagName}
 

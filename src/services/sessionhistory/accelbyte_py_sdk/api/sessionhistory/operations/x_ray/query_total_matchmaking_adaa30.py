@@ -53,7 +53,7 @@ class QueryTotalMatchmakingExpired(Operation):
 
         namespace: (namespace) REQUIRED str in path
 
-        match_pool: (matchPool) OPTIONAL str in query
+        match_pool: (matchPool) OPTIONAL List[str] in query
 
         end_date: (endDate) REQUIRED str in query
 
@@ -87,7 +87,7 @@ class QueryTotalMatchmakingExpired(Operation):
     service_name: Optional[str] = "sessionhistory"
 
     namespace: str  # REQUIRED in [path]
-    match_pool: str  # OPTIONAL in [query]
+    match_pool: List[str]  # OPTIONAL in [query]
     end_date: str  # REQUIRED in [query]
     start_date: str  # REQUIRED in [query]
 
@@ -169,7 +169,7 @@ class QueryTotalMatchmakingExpired(Operation):
         self.namespace = value
         return self
 
-    def with_match_pool(self, value: str) -> QueryTotalMatchmakingExpired:
+    def with_match_pool(self, value: List[str]) -> QueryTotalMatchmakingExpired:
         self.match_pool = value
         return self
 
@@ -192,9 +192,9 @@ class QueryTotalMatchmakingExpired(Operation):
         elif include_empty:
             result["namespace"] = ""
         if hasattr(self, "match_pool") and self.match_pool:
-            result["matchPool"] = str(self.match_pool)
+            result["matchPool"] = [str(i0) for i0 in self.match_pool]
         elif include_empty:
-            result["matchPool"] = ""
+            result["matchPool"] = []
         if hasattr(self, "end_date") and self.end_date:
             result["endDate"] = str(self.end_date)
         elif include_empty:
@@ -275,7 +275,7 @@ class QueryTotalMatchmakingExpired(Operation):
         namespace: str,
         end_date: str,
         start_date: str,
-        match_pool: Optional[str] = None,
+        match_pool: Optional[List[str]] = None,
         **kwargs,
     ) -> QueryTotalMatchmakingExpired:
         instance = cls()
@@ -298,9 +298,9 @@ class QueryTotalMatchmakingExpired(Operation):
         elif include_empty:
             instance.namespace = ""
         if "matchPool" in dict_ and dict_["matchPool"] is not None:
-            instance.match_pool = str(dict_["matchPool"])
+            instance.match_pool = [str(i0) for i0 in dict_["matchPool"]]
         elif include_empty:
-            instance.match_pool = ""
+            instance.match_pool = []
         if "endDate" in dict_ and dict_["endDate"] is not None:
             instance.end_date = str(dict_["endDate"])
         elif include_empty:
@@ -327,6 +327,12 @@ class QueryTotalMatchmakingExpired(Operation):
             "matchPool": False,
             "endDate": True,
             "startDate": True,
+        }
+
+    @staticmethod
+    def get_collection_format_map() -> Dict[str, Union[None, str]]:
+        return {
+            "matchPool": "csv",  # in query
         }
 
     # endregion static methods

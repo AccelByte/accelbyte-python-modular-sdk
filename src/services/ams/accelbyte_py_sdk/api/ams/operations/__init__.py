@@ -8,6 +8,6 @@
 
 """Auto-generated package that contains models used by the Fleet Commander."""
 
-__version__ = "1.22.1"
+__version__ = "1.24.2"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"

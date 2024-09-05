@@ -206,8 +206,8 @@ from ..models import (
 
 @same_doc_as(AcquireItem)
 def acquire_item(
+    body: ItemAcquireRequest,
     item_id: str,
-    body: Optional[ItemAcquireRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -232,7 +232,7 @@ def acquire_item(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL ItemAcquireRequest in body
+        body: (body) REQUIRED ItemAcquireRequest in body
 
         item_id: (itemId) REQUIRED str in path
 
@@ -248,8 +248,8 @@ def acquire_item(
         if error:
             return None, error
     request = AcquireItem.create(
-        item_id=item_id,
         body=body,
+        item_id=item_id,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -257,8 +257,8 @@ def acquire_item(
 
 @same_doc_as(AcquireItem)
 async def acquire_item_async(
+    body: ItemAcquireRequest,
     item_id: str,
-    body: Optional[ItemAcquireRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -283,7 +283,7 @@ async def acquire_item_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL ItemAcquireRequest in body
+        body: (body) REQUIRED ItemAcquireRequest in body
 
         item_id: (itemId) REQUIRED str in path
 
@@ -299,8 +299,8 @@ async def acquire_item_async(
         if error:
             return None, error
     request = AcquireItem.create(
-        item_id=item_id,
         body=body,
+        item_id=item_id,
         namespace=namespace,
     )
     return await run_request_async(
@@ -550,8 +550,8 @@ async def bulk_update_region_data_async(
 
 @same_doc_as(CreateItem)
 def create_item(
+    body: ItemCreate,
     store_id: str,
-    body: Optional[ItemCreate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -808,7 +808,7 @@ def create_item(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL ItemCreate in body
+        body: (body) REQUIRED ItemCreate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -830,8 +830,8 @@ def create_item(
         if error:
             return None, error
     request = CreateItem.create(
-        store_id=store_id,
         body=body,
+        store_id=store_id,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -839,8 +839,8 @@ def create_item(
 
 @same_doc_as(CreateItem)
 async def create_item_async(
+    body: ItemCreate,
     store_id: str,
-    body: Optional[ItemCreate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1097,7 +1097,7 @@ async def create_item_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL ItemCreate in body
+        body: (body) REQUIRED ItemCreate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1119,8 +1119,8 @@ async def create_item_async(
         if error:
             return None, error
     request = CreateItem.create(
-        store_id=store_id,
         body=body,
+        store_id=store_id,
         namespace=namespace,
     )
     return await run_request_async(
@@ -1130,13 +1130,13 @@ async def create_item_async(
 
 @same_doc_as(CreateItemTypeConfig)
 def create_item_type_config(
-    body: Optional[ItemTypeConfigCreate] = None,
+    body: ItemTypeConfigCreate,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
     """Create an Item Type Config (createItemTypeConfig)
 
-    [Not Supported Yet In Starter] This API is used to create an item type config.
+    [Not supported yet in AGS Shared Cloud] This API is used to create an item type config.
 
     *  Returns : item type config data
 
@@ -1153,7 +1153,7 @@ def create_item_type_config(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL ItemTypeConfigCreate in body
+        body: (body) REQUIRED ItemTypeConfigCreate in body
 
     Responses:
         201: Created - (item type config created)
@@ -1172,13 +1172,13 @@ def create_item_type_config(
 
 @same_doc_as(CreateItemTypeConfig)
 async def create_item_type_config_async(
-    body: Optional[ItemTypeConfigCreate] = None,
+    body: ItemTypeConfigCreate,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
     """Create an Item Type Config (createItemTypeConfig)
 
-    [Not Supported Yet In Starter] This API is used to create an item type config.
+    [Not supported yet in AGS Shared Cloud] This API is used to create an item type config.
 
     *  Returns : item type config data
 
@@ -1195,7 +1195,7 @@ async def create_item_type_config_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL ItemTypeConfigCreate in body
+        body: (body) REQUIRED ItemTypeConfigCreate in body
 
     Responses:
         201: Created - (item type config created)
@@ -1450,7 +1450,7 @@ def delete_item_type_config(
 ):
     """Delete an item type config (deleteItemTypeConfig)
 
-    [Not Supported Yet In Starter] This API is used to delete an item type config permanently.
+    [Not supported yet in AGS Shared Cloud] This API is used to delete an item type config permanently.
 
     Properties:
         url: /platform/admin/items/configs/{id}
@@ -1484,7 +1484,7 @@ async def delete_item_type_config_async(
 ):
     """Delete an item type config (deleteItemTypeConfig)
 
-    [Not Supported Yet In Starter] This API is used to delete an item type config permanently.
+    [Not supported yet in AGS Shared Cloud] This API is used to delete an item type config permanently.
 
     Properties:
         url: /platform/admin/items/configs/{id}
@@ -2940,7 +2940,7 @@ def get_item_type_config(
 ):
     """Get an item type config (getItemTypeConfig)
 
-    [Not Supported Yet In Starter] This API is used to get an item type config.
+    [Not supported yet in AGS Shared Cloud] This API is used to get an item type config.
 
     Other detail info:
 
@@ -2978,7 +2978,7 @@ async def get_item_type_config_async(
 ):
     """Get an item type config (getItemTypeConfig)
 
-    [Not Supported Yet In Starter] This API is used to get an item type config.
+    [Not supported yet in AGS Shared Cloud] This API is used to get an item type config.
 
     Other detail info:
 
@@ -3396,7 +3396,7 @@ def list_item_type_configs(
 ):
     """Get all item type configs (listItemTypeConfigs)
 
-    [Not Supported Yet In Starter] This API is used to get all item type configs.
+    [Not supported yet in AGS Shared Cloud] This API is used to get all item type configs.
 
     Other detail info:
 
@@ -3428,7 +3428,7 @@ async def list_item_type_configs_async(
 ):
     """Get all item type configs (listItemTypeConfigs)
 
-    [Not Supported Yet In Starter] This API is used to get all item type configs.
+    [Not supported yet in AGS Shared Cloud] This API is used to get all item type configs.
 
     Other detail info:
 
@@ -4692,7 +4692,7 @@ async def public_search_items_async(
 
 @same_doc_as(PublicValidateItemPurchaseCondition)
 def public_validate_item_purchase_condition(
-    body: Optional[ItemPurchaseConditionValidateRequest] = None,
+    body: ItemPurchaseConditionValidateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -4714,7 +4714,7 @@ def public_validate_item_purchase_condition(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL ItemPurchaseConditionValidateRequest in body
+        body: (body) REQUIRED ItemPurchaseConditionValidateRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4736,7 +4736,7 @@ def public_validate_item_purchase_condition(
 
 @same_doc_as(PublicValidateItemPurchaseCondition)
 async def public_validate_item_purchase_condition_async(
-    body: Optional[ItemPurchaseConditionValidateRequest] = None,
+    body: ItemPurchaseConditionValidateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -4758,7 +4758,7 @@ async def public_validate_item_purchase_condition_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL ItemPurchaseConditionValidateRequest in body
+        body: (body) REQUIRED ItemPurchaseConditionValidateRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5376,8 +5376,8 @@ async def query_uncategorized_items_async(
 
 @same_doc_as(ReturnItem)
 def return_item(
+    body: ItemReturnRequest,
     item_id: str,
-    body: Optional[ItemReturnRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -5399,7 +5399,7 @@ def return_item(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL ItemReturnRequest in body
+        body: (body) REQUIRED ItemReturnRequest in body
 
         item_id: (itemId) REQUIRED str in path
 
@@ -5417,8 +5417,8 @@ def return_item(
         if error:
             return None, error
     request = ReturnItem.create(
-        item_id=item_id,
         body=body,
+        item_id=item_id,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -5426,8 +5426,8 @@ def return_item(
 
 @same_doc_as(ReturnItem)
 async def return_item_async(
+    body: ItemReturnRequest,
     item_id: str,
-    body: Optional[ItemReturnRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -5449,7 +5449,7 @@ async def return_item_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL ItemReturnRequest in body
+        body: (body) REQUIRED ItemReturnRequest in body
 
         item_id: (itemId) REQUIRED str in path
 
@@ -5467,8 +5467,8 @@ async def return_item_async(
         if error:
             return None, error
     request = ReturnItem.create(
-        item_id=item_id,
         body=body,
+        item_id=item_id,
         namespace=namespace,
     )
     return await run_request_async(
@@ -5639,7 +5639,7 @@ def search_item_type_config(
 ):
     """Get an item type config (searchItemTypeConfig)
 
-    [Not Supported Yet In Starter] This API is used to get an item type config.
+    [Not supported yet in AGS Shared Cloud] This API is used to get an item type config.
 
     Other detail info:
 
@@ -5683,7 +5683,7 @@ async def search_item_type_config_async(
 ):
     """Get an item type config (searchItemTypeConfig)
 
-    [Not Supported Yet In Starter] This API is used to get an item type config.
+    [Not supported yet in AGS Shared Cloud] This API is used to get an item type config.
 
     Other detail info:
 
@@ -5722,15 +5722,15 @@ async def search_item_type_config_async(
 
 @same_doc_as(SyncInGameItem)
 def sync_in_game_item(
+    body: InGameItemSync,
     store_id: str,
-    body: Optional[InGameItemSync] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
     """Sync an in game item (syncInGameItem)
 
-    [Not Supported Yet In Starter] This API is used to sync an in game item in game namespace to publisher namespace, only INGAMEITEM, CODE, COINS and SEASON are supported
+    [Not supported yet in AGS Shared Cloud] This API is used to sync an in game item in game namespace to publisher namespace, only INGAMEITEM, CODE, COINS and SEASON are supported
 
     The synced item has an additional field targetItemId besides targetNamespace, mostly this item should not modified manually again.
 
@@ -5751,7 +5751,7 @@ def sync_in_game_item(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL InGameItemSync in body
+        body: (body) REQUIRED InGameItemSync in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5773,8 +5773,8 @@ def sync_in_game_item(
         if error:
             return None, error
     request = SyncInGameItem.create(
-        store_id=store_id,
         body=body,
+        store_id=store_id,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -5782,15 +5782,15 @@ def sync_in_game_item(
 
 @same_doc_as(SyncInGameItem)
 async def sync_in_game_item_async(
+    body: InGameItemSync,
     store_id: str,
-    body: Optional[InGameItemSync] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
     """Sync an in game item (syncInGameItem)
 
-    [Not Supported Yet In Starter] This API is used to sync an in game item in game namespace to publisher namespace, only INGAMEITEM, CODE, COINS and SEASON are supported
+    [Not supported yet in AGS Shared Cloud] This API is used to sync an in game item in game namespace to publisher namespace, only INGAMEITEM, CODE, COINS and SEASON are supported
 
     The synced item has an additional field targetItemId besides targetNamespace, mostly this item should not modified manually again.
 
@@ -5811,7 +5811,7 @@ async def sync_in_game_item_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL InGameItemSync in body
+        body: (body) REQUIRED InGameItemSync in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5833,8 +5833,8 @@ async def sync_in_game_item_async(
         if error:
             return None, error
     request = SyncInGameItem.create(
-        store_id=store_id,
         body=body,
+        store_id=store_id,
         namespace=namespace,
     )
     return await run_request_async(
@@ -5844,9 +5844,9 @@ async def sync_in_game_item_async(
 
 @same_doc_as(UpdateApp)
 def update_app(
+    body: AppUpdate,
     item_id: str,
     store_id: str,
-    body: Optional[AppUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -5959,7 +5959,7 @@ def update_app(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL AppUpdate in body
+        body: (body) REQUIRED AppUpdate in body
 
         item_id: (itemId) REQUIRED str in path
 
@@ -5981,9 +5981,9 @@ def update_app(
         if error:
             return None, error
     request = UpdateApp.create(
+        body=body,
         item_id=item_id,
         store_id=store_id,
-        body=body,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -5991,9 +5991,9 @@ def update_app(
 
 @same_doc_as(UpdateApp)
 async def update_app_async(
+    body: AppUpdate,
     item_id: str,
     store_id: str,
-    body: Optional[AppUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -6106,7 +6106,7 @@ async def update_app_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL AppUpdate in body
+        body: (body) REQUIRED AppUpdate in body
 
         item_id: (itemId) REQUIRED str in path
 
@@ -6128,9 +6128,9 @@ async def update_app_async(
         if error:
             return None, error
     request = UpdateApp.create(
+        body=body,
         item_id=item_id,
         store_id=store_id,
-        body=body,
         namespace=namespace,
     )
     return await run_request_async(
@@ -6140,9 +6140,9 @@ async def update_app_async(
 
 @same_doc_as(UpdateItem)
 def update_item(
+    body: ItemUpdate,
     item_id: str,
     store_id: str,
-    body: Optional[ItemUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -6401,7 +6401,7 @@ def update_item(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL ItemUpdate in body
+        body: (body) REQUIRED ItemUpdate in body
 
         item_id: (itemId) REQUIRED str in path
 
@@ -6425,9 +6425,9 @@ def update_item(
         if error:
             return None, error
     request = UpdateItem.create(
+        body=body,
         item_id=item_id,
         store_id=store_id,
-        body=body,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -6435,9 +6435,9 @@ def update_item(
 
 @same_doc_as(UpdateItem)
 async def update_item_async(
+    body: ItemUpdate,
     item_id: str,
     store_id: str,
-    body: Optional[ItemUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -6696,7 +6696,7 @@ async def update_item_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL ItemUpdate in body
+        body: (body) REQUIRED ItemUpdate in body
 
         item_id: (itemId) REQUIRED str in path
 
@@ -6720,9 +6720,9 @@ async def update_item_async(
         if error:
             return None, error
     request = UpdateItem.create(
+        body=body,
         item_id=item_id,
         store_id=store_id,
-        body=body,
         namespace=namespace,
     )
     return await run_request_async(
@@ -6732,9 +6732,9 @@ async def update_item_async(
 
 @same_doc_as(UpdateItemPurchaseCondition)
 def update_item_purchase_condition(
+    body: PurchaseConditionUpdate,
     item_id: str,
     store_id: str,
-    body: Optional[PurchaseConditionUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -6756,7 +6756,7 @@ def update_item_purchase_condition(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL PurchaseConditionUpdate in body
+        body: (body) REQUIRED PurchaseConditionUpdate in body
 
         item_id: (itemId) REQUIRED str in path
 
@@ -6780,9 +6780,9 @@ def update_item_purchase_condition(
         if error:
             return None, error
     request = UpdateItemPurchaseCondition.create(
+        body=body,
         item_id=item_id,
         store_id=store_id,
-        body=body,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -6790,9 +6790,9 @@ def update_item_purchase_condition(
 
 @same_doc_as(UpdateItemPurchaseCondition)
 async def update_item_purchase_condition_async(
+    body: PurchaseConditionUpdate,
     item_id: str,
     store_id: str,
-    body: Optional[PurchaseConditionUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -6814,7 +6814,7 @@ async def update_item_purchase_condition_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL PurchaseConditionUpdate in body
+        body: (body) REQUIRED PurchaseConditionUpdate in body
 
         item_id: (itemId) REQUIRED str in path
 
@@ -6838,9 +6838,9 @@ async def update_item_purchase_condition_async(
         if error:
             return None, error
     request = UpdateItemPurchaseCondition.create(
+        body=body,
         item_id=item_id,
         store_id=store_id,
-        body=body,
         namespace=namespace,
     )
     return await run_request_async(
@@ -6850,14 +6850,14 @@ async def update_item_purchase_condition_async(
 
 @same_doc_as(UpdateItemTypeConfig)
 def update_item_type_config(
+    body: ItemTypeConfigUpdate,
     id_: str,
-    body: Optional[ItemTypeConfigUpdate] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
     """Update an Item Type Config (updateItemTypeConfig)
 
-    [Not Supported Yet In Starter] This API is used to update an item type config.
+    [Not supported yet in AGS Shared Cloud] This API is used to update an item type config.
 
     *  Returns : item type config data
 
@@ -6874,7 +6874,7 @@ def update_item_type_config(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL ItemTypeConfigUpdate in body
+        body: (body) REQUIRED ItemTypeConfigUpdate in body
 
         id_: (id) REQUIRED str in path
 
@@ -6888,22 +6888,22 @@ def update_item_type_config(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     request = UpdateItemTypeConfig.create(
-        id_=id_,
         body=body,
+        id_=id_,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
 @same_doc_as(UpdateItemTypeConfig)
 async def update_item_type_config_async(
+    body: ItemTypeConfigUpdate,
     id_: str,
-    body: Optional[ItemTypeConfigUpdate] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
     """Update an Item Type Config (updateItemTypeConfig)
 
-    [Not Supported Yet In Starter] This API is used to update an item type config.
+    [Not supported yet in AGS Shared Cloud] This API is used to update an item type config.
 
     *  Returns : item type config data
 
@@ -6920,7 +6920,7 @@ async def update_item_type_config_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL ItemTypeConfigUpdate in body
+        body: (body) REQUIRED ItemTypeConfigUpdate in body
 
         id_: (id) REQUIRED str in path
 
@@ -6934,8 +6934,8 @@ async def update_item_type_config_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     request = UpdateItemTypeConfig.create(
-        id_=id_,
         body=body,
+        id_=id_,
     )
     return await run_request_async(
         request, additional_headers=x_additional_headers, **kwargs
@@ -6944,8 +6944,8 @@ async def update_item_type_config_async(
 
 @same_doc_as(ValidateItemPurchaseCondition)
 def validate_item_purchase_condition(
+    body: ItemPurchaseConditionValidateRequest,
     user_id: str,
-    body: Optional[ItemPurchaseConditionValidateRequest] = None,
     platform: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
@@ -6968,7 +6968,7 @@ def validate_item_purchase_condition(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL ItemPurchaseConditionValidateRequest in body
+        body: (body) REQUIRED ItemPurchaseConditionValidateRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -6986,8 +6986,8 @@ def validate_item_purchase_condition(
         if error:
             return None, error
     request = ValidateItemPurchaseCondition.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         platform=platform,
         namespace=namespace,
     )
@@ -6996,8 +6996,8 @@ def validate_item_purchase_condition(
 
 @same_doc_as(ValidateItemPurchaseCondition)
 async def validate_item_purchase_condition_async(
+    body: ItemPurchaseConditionValidateRequest,
     user_id: str,
-    body: Optional[ItemPurchaseConditionValidateRequest] = None,
     platform: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
@@ -7020,7 +7020,7 @@ async def validate_item_purchase_condition_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL ItemPurchaseConditionValidateRequest in body
+        body: (body) REQUIRED ItemPurchaseConditionValidateRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -7038,8 +7038,8 @@ async def validate_item_purchase_condition_async(
         if error:
             return None, error
     request = ValidateItemPurchaseCondition.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         platform=platform,
         namespace=namespace,
     )

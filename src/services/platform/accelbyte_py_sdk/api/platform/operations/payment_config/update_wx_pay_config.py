@@ -37,7 +37,7 @@ from ...models import WxPayConfigRequest
 class UpdateWxPayConfig(Operation):
     """Update wxpay configuration (updateWxPayConfig)
 
-    [Not Supported Yet In Starter] Update wxpay configuration.
+    [Not supported yet in AGS Shared Cloud] Update wxpay configuration.
     Other detail info:
 
       * Returns : updated payment merchant config
@@ -55,7 +55,7 @@ class UpdateWxPayConfig(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL WxPayConfigRequest in body
+        body: (body) REQUIRED WxPayConfigRequest in body
 
         id_: (id) REQUIRED str in path
 
@@ -80,7 +80,7 @@ class UpdateWxPayConfig(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: WxPayConfigRequest  # OPTIONAL in [body]
+    body: WxPayConfigRequest  # REQUIRED in [body]
     id_: str  # REQUIRED in [path]
     validate: bool  # OPTIONAL in [query]
 
@@ -164,7 +164,7 @@ class UpdateWxPayConfig(Operation):
         self.body = value
         return self
 
-    def with_id_(self, value: str) -> UpdateWxPayConfig:
+    def with_id(self, value: str) -> UpdateWxPayConfig:
         self.id_ = value
         return self
 
@@ -237,15 +237,14 @@ class UpdateWxPayConfig(Operation):
     @classmethod
     def create(
         cls,
+        body: WxPayConfigRequest,
         id_: str,
-        body: Optional[WxPayConfigRequest] = None,
         validate: Optional[bool] = None,
         **kwargs,
     ) -> UpdateWxPayConfig:
         instance = cls()
+        instance.body = body
         instance.id_ = id_
-        if body is not None:
-            instance.body = body
         if validate is not None:
             instance.validate = validate
         if x_flight_id := kwargs.get("x_flight_id", None):
@@ -284,7 +283,7 @@ class UpdateWxPayConfig(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "id": True,
             "validate": False,
         }

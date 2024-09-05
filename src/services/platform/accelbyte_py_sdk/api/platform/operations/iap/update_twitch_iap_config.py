@@ -52,7 +52,7 @@ class UpdateTwitchIAPConfig(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL TwitchIAPConfigRequest in body
+        body: (body) REQUIRED TwitchIAPConfigRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -73,7 +73,7 @@ class UpdateTwitchIAPConfig(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: TwitchIAPConfigRequest  # OPTIONAL in [body]
+    body: TwitchIAPConfigRequest  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
 
     # endregion fields
@@ -207,12 +207,11 @@ class UpdateTwitchIAPConfig(Operation):
 
     @classmethod
     def create(
-        cls, namespace: str, body: Optional[TwitchIAPConfigRequest] = None, **kwargs
+        cls, body: TwitchIAPConfigRequest, namespace: str, **kwargs
     ) -> UpdateTwitchIAPConfig:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -244,7 +243,7 @@ class UpdateTwitchIAPConfig(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "namespace": True,
         }
 

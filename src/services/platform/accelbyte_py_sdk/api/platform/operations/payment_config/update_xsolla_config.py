@@ -37,7 +37,7 @@ from ...models import XsollaConfig
 class UpdateXsollaConfig(Operation):
     """Update xsolla configuration (updateXsollaConfig)
 
-    [Not Supported Yet In Starter] Update xsolla configuration. Reference: [Xsolla Document](https://developers.xsolla.com/?#simple-checkout).
+    [Not supported yet in AGS Shared Cloud] Update xsolla configuration. Reference: [Xsolla Document](https://developers.xsolla.com/?#simple-checkout).
     Other detail info:
 
       * Returns : updated payment merchant config
@@ -55,7 +55,7 @@ class UpdateXsollaConfig(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL XsollaConfig in body
+        body: (body) REQUIRED XsollaConfig in body
 
         id_: (id) REQUIRED str in path
 
@@ -80,7 +80,7 @@ class UpdateXsollaConfig(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: XsollaConfig  # OPTIONAL in [body]
+    body: XsollaConfig  # REQUIRED in [body]
     id_: str  # REQUIRED in [path]
     validate: bool  # OPTIONAL in [query]
 
@@ -164,7 +164,7 @@ class UpdateXsollaConfig(Operation):
         self.body = value
         return self
 
-    def with_id_(self, value: str) -> UpdateXsollaConfig:
+    def with_id(self, value: str) -> UpdateXsollaConfig:
         self.id_ = value
         return self
 
@@ -236,16 +236,11 @@ class UpdateXsollaConfig(Operation):
 
     @classmethod
     def create(
-        cls,
-        id_: str,
-        body: Optional[XsollaConfig] = None,
-        validate: Optional[bool] = None,
-        **kwargs,
+        cls, body: XsollaConfig, id_: str, validate: Optional[bool] = None, **kwargs
     ) -> UpdateXsollaConfig:
         instance = cls()
+        instance.body = body
         instance.id_ = id_
-        if body is not None:
-            instance.body = body
         if validate is not None:
             instance.validate = validate
         if x_flight_id := kwargs.get("x_flight_id", None):
@@ -284,7 +279,7 @@ class UpdateXsollaConfig(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "id": True,
             "validate": False,
         }

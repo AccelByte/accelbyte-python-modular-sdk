@@ -68,7 +68,7 @@ class UpdateCategory(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL CategoryUpdate in body
+        body: (body) REQUIRED CategoryUpdate in body
 
         category_path: (categoryPath) REQUIRED str in path
 
@@ -101,7 +101,7 @@ class UpdateCategory(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: CategoryUpdate  # OPTIONAL in [body]
+    body: CategoryUpdate  # REQUIRED in [body]
     category_path: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
     store_id: str  # REQUIRED in [query]
@@ -282,18 +282,17 @@ class UpdateCategory(Operation):
     @classmethod
     def create(
         cls,
+        body: CategoryUpdate,
         category_path: str,
         namespace: str,
         store_id: str,
-        body: Optional[CategoryUpdate] = None,
         **kwargs,
     ) -> UpdateCategory:
         instance = cls()
+        instance.body = body
         instance.category_path = category_path
         instance.namespace = namespace
         instance.store_id = store_id
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -335,7 +334,7 @@ class UpdateCategory(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "categoryPath": True,
             "namespace": True,
             "storeId": True,

@@ -37,7 +37,7 @@ from ...models import PaymentMerchantConfigInfo
 class UpdateAdyenConfig(Operation):
     """Update adyen config (updateAdyenConfig)
 
-    [Not Supported Yet In Starter] Update adyen config.
+    [Not supported yet in AGS Shared Cloud] Update adyen config.
     Other detail info:
 
       * Returns : updated payment merchant config
@@ -55,7 +55,7 @@ class UpdateAdyenConfig(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL AdyenConfig in body
+        body: (body) REQUIRED AdyenConfig in body
 
         id_: (id) REQUIRED str in path
 
@@ -82,7 +82,7 @@ class UpdateAdyenConfig(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: AdyenConfig  # OPTIONAL in [body]
+    body: AdyenConfig  # REQUIRED in [body]
     id_: str  # REQUIRED in [path]
     sandbox: bool  # OPTIONAL in [query]
     validate: bool  # OPTIONAL in [query]
@@ -169,7 +169,7 @@ class UpdateAdyenConfig(Operation):
         self.body = value
         return self
 
-    def with_id_(self, value: str) -> UpdateAdyenConfig:
+    def with_id(self, value: str) -> UpdateAdyenConfig:
         self.id_ = value
         return self
 
@@ -250,16 +250,15 @@ class UpdateAdyenConfig(Operation):
     @classmethod
     def create(
         cls,
+        body: AdyenConfig,
         id_: str,
-        body: Optional[AdyenConfig] = None,
         sandbox: Optional[bool] = None,
         validate: Optional[bool] = None,
         **kwargs,
     ) -> UpdateAdyenConfig:
         instance = cls()
+        instance.body = body
         instance.id_ = id_
-        if body is not None:
-            instance.body = body
         if sandbox is not None:
             instance.sandbox = sandbox
         if validate is not None:
@@ -305,7 +304,7 @@ class UpdateAdyenConfig(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "id": True,
             "sandbox": False,
             "validate": False,

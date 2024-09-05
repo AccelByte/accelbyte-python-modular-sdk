@@ -851,9 +851,6 @@ def bulk_get_or_default_by_user_id(
     + *Max stat codes*: 20
     + *Returns*: list of user's stat item values
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
-
     Properties:
         url: /social/v2/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk/getOrDefault
 
@@ -865,7 +862,7 @@ def bulk_get_or_default_by_user_id(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL BulkUserStatItemByStatCodes in body
 
@@ -917,9 +914,6 @@ async def bulk_get_or_default_by_user_id_async(
     + *Max stat codes*: 20
     + *Returns*: list of user's stat item values
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM [READ]
-
     Properties:
         url: /social/v2/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk/getOrDefault
 
@@ -931,7 +925,7 @@ async def bulk_get_or_default_by_user_id_async(
 
         produces: ["application/json"]
 
-        securities: [BEARER_AUTH] or [BEARER_AUTH]
+        securities: [BEARER_AUTH]
 
         body: (body) OPTIONAL BulkUserStatItemByStatCodes in body
 

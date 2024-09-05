@@ -56,7 +56,7 @@ class CreditUserWallet(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL CreditRequest in body
+        body: (body) REQUIRED CreditRequest in body
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -85,7 +85,7 @@ class CreditUserWallet(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: CreditRequest  # OPTIONAL in [body]
+    body: CreditRequest  # REQUIRED in [body]
     currency_code: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
@@ -253,18 +253,17 @@ class CreditUserWallet(Operation):
     @classmethod
     def create(
         cls,
+        body: CreditRequest,
         currency_code: str,
         namespace: str,
         user_id: str,
-        body: Optional[CreditRequest] = None,
         **kwargs,
     ) -> CreditUserWallet:
         instance = cls()
+        instance.body = body
         instance.currency_code = currency_code
         instance.namespace = namespace
         instance.user_id = user_id
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -306,7 +305,7 @@ class CreditUserWallet(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "currencyCode": True,
             "namespace": True,
             "userId": True,

@@ -53,7 +53,7 @@ class PublicReconcilePlayStationStoreWithMultipleServiceLabels(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL PlayStationMultiServiceLabelsReconcileRequest in body
+        body: (body) REQUIRED PlayStationMultiServiceLabelsReconcileRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -62,7 +62,9 @@ class PublicReconcilePlayStationStoreWithMultipleServiceLabels(Operation):
     Responses:
         200: OK - List[PlayStationReconcileResult] (successful operation)
 
-        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39127: Invalid service label [{serviceLabel}])
+        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39127: Invalid service label [{serviceLabel}] | 39132: Bad request for playstation under namespace [{namespace}], reason: [{reason}].)
+
+        404: Not Found - ErrorEntity (39143: PlayStation IAP config not found in namespace [{namespace}])
     """
 
     # region fields
@@ -78,7 +80,7 @@ class PublicReconcilePlayStationStoreWithMultipleServiceLabels(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: PlayStationMultiServiceLabelsReconcileRequest  # OPTIONAL in [body]
+    body: PlayStationMultiServiceLabelsReconcileRequest  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
 
@@ -206,7 +208,9 @@ class PublicReconcilePlayStationStoreWithMultipleServiceLabels(Operation):
 
         200: OK - List[PlayStationReconcileResult] (successful operation)
 
-        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39127: Invalid service label [{serviceLabel}])
+        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39127: Invalid service label [{serviceLabel}] | 39132: Bad request for playstation under namespace [{namespace}], reason: [{reason}].)
+
+        404: Not Found - ErrorEntity (39143: PlayStation IAP config not found in namespace [{namespace}])
 
         ---: HttpResponse (Undocumented Response)
 
@@ -227,6 +231,8 @@ class PublicReconcilePlayStationStoreWithMultipleServiceLabels(Operation):
             ], None
         if code == 400:
             return None, ErrorEntity.create_from_dict(content)
+        if code == 404:
+            return None, ErrorEntity.create_from_dict(content)
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content
@@ -239,16 +245,15 @@ class PublicReconcilePlayStationStoreWithMultipleServiceLabels(Operation):
     @classmethod
     def create(
         cls,
+        body: PlayStationMultiServiceLabelsReconcileRequest,
         namespace: str,
         user_id: str,
-        body: Optional[PlayStationMultiServiceLabelsReconcileRequest] = None,
         **kwargs,
     ) -> PublicReconcilePlayStationStoreWithMultipleServiceLabels:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
         instance.user_id = user_id
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -287,7 +292,7 @@ class PublicReconcilePlayStationStoreWithMultipleServiceLabels(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "namespace": True,
             "userId": True,
         }

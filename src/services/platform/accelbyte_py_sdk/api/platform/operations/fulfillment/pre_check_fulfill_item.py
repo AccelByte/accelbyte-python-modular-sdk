@@ -55,7 +55,7 @@ class PreCheckFulfillItem(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL PreCheckFulfillmentRequest in body
+        body: (body) REQUIRED PreCheckFulfillmentRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -86,7 +86,7 @@ class PreCheckFulfillItem(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: PreCheckFulfillmentRequest  # OPTIONAL in [body]
+    body: PreCheckFulfillmentRequest  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
 
@@ -241,17 +241,12 @@ class PreCheckFulfillItem(Operation):
 
     @classmethod
     def create(
-        cls,
-        namespace: str,
-        user_id: str,
-        body: Optional[PreCheckFulfillmentRequest] = None,
-        **kwargs,
+        cls, body: PreCheckFulfillmentRequest, namespace: str, user_id: str, **kwargs
     ) -> PreCheckFulfillItem:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
         instance.user_id = user_id
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -288,7 +283,7 @@ class PreCheckFulfillItem(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "namespace": True,
             "userId": True,
         }

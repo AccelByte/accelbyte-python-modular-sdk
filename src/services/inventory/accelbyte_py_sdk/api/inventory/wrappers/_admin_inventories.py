@@ -45,6 +45,7 @@ from ..operations.admin_inventories import (
 )
 from ..operations.admin_inventories import AdminPurchasable
 from ..operations.admin_inventories import AdminUpdateInventory
+from ..operations.admin_inventories import AdminUpdateUserInventoriesByInventoryCode
 from ..operations.admin_inventories import DeleteInventory
 
 
@@ -63,9 +64,6 @@ def admin_create_inventory(
     but it can be changed later when using AdminUpdateInventory endpoint.
 
     Permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [CREATE]
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [CREATE]
 
     Properties:
         url: /inventory/v1/admin/namespaces/{namespace}/inventories
@@ -118,9 +116,6 @@ async def admin_create_inventory_async(
 
     Permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [CREATE]
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [CREATE]
-
     Properties:
         url: /inventory/v1/admin/namespaces/{namespace}/inventories
 
@@ -171,9 +166,6 @@ def admin_get_inventory(
 
     Permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [READ]
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [READ]
-
     Properties:
         url: /inventory/v1/admin/namespaces/{namespace}/inventories/{inventoryId}
 
@@ -223,9 +215,6 @@ async def admin_get_inventory_async(
     Getting an inventory info.
 
     Permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [READ]
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [READ]
 
     Properties:
         url: /inventory/v1/admin/namespaces/{namespace}/inventories/{inventoryId}
@@ -283,9 +272,6 @@ def admin_list_inventories(
     The response body will be in the form of standard pagination.
 
     Permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [READ]
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [READ]
 
     Properties:
         url: /inventory/v1/admin/namespaces/{namespace}/inventories
@@ -352,9 +338,6 @@ async def admin_list_inventories_async(
 
     Permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [READ]
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [READ]
-
     Properties:
         url: /inventory/v1/admin/namespaces/{namespace}/inventories
 
@@ -418,9 +401,6 @@ def admin_purchasable(
 
     Permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [UPDATE]
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [UPDATE]
-
     Properties:
         url: /inventory/v1/admin/namespaces/{namespace}/users/{userId}/purchaseable
 
@@ -476,9 +456,6 @@ async def admin_purchasable_async(
     Validate purchase ecommerce item.
 
     Permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [UPDATE]
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [UPDATE]
 
     Properties:
         url: /inventory/v1/admin/namespaces/{namespace}/users/{userId}/purchaseable
@@ -541,9 +518,6 @@ def admin_update_inventory(
 
     Permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [UPDATE]
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [UPDATE]
-
     Properties:
         url: /inventory/v1/admin/namespaces/{namespace}/inventories/{inventoryId}
 
@@ -601,9 +575,6 @@ async def admin_update_inventory_async(
 
     Permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [UPDATE]
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [UPDATE]
-
     Properties:
         url: /inventory/v1/admin/namespaces/{namespace}/inventories/{inventoryId}
 
@@ -646,6 +617,138 @@ async def admin_update_inventory_async(
     )
 
 
+@same_doc_as(AdminUpdateUserInventoriesByInventoryCode)
+def admin_update_user_inventories_by_inventory_code(
+    body: ApimodelsUpdateInventoryReq,
+    inventory_configuration_code: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """To update user inventories by inventory code (AdminUpdateUserInventoriesByInventoryCode)
+
+    Updating user inventories.
+    Positive value will increase MaxSlots from existing value
+    Negative value will decrease MaxSlots from existing value
+    Limited slots can not be changed to unlimited, vice versa
+
+    Permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [UPDATE]
+
+    Properties:
+        url: /inventory/v1/admin/namespaces/{namespace}/users/{userId}/inventoryConfigurations/{inventoryConfigurationCode}/inventories
+
+        method: PUT
+
+        tags: ["Admin Inventories"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED ApimodelsUpdateInventoryReq in body
+
+        inventory_configuration_code: (inventoryConfigurationCode) REQUIRED str in path
+
+        namespace: (namespace) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+    Responses:
+        200: OK - List[ApimodelsInventoryResp] (OK)
+
+        400: Bad Request - ApimodelsErrorResponse (Bad Request)
+
+        401: Unauthorized - ApimodelsErrorResponse (Unauthorized)
+
+        403: Forbidden - ApimodelsErrorResponse (Forbidden)
+
+        404: Not Found - ApimodelsErrorResponse (Not Found)
+
+        500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = AdminUpdateUserInventoriesByInventoryCode.create(
+        body=body,
+        inventory_configuration_code=inventory_configuration_code,
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(AdminUpdateUserInventoriesByInventoryCode)
+async def admin_update_user_inventories_by_inventory_code_async(
+    body: ApimodelsUpdateInventoryReq,
+    inventory_configuration_code: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """To update user inventories by inventory code (AdminUpdateUserInventoriesByInventoryCode)
+
+    Updating user inventories.
+    Positive value will increase MaxSlots from existing value
+    Negative value will decrease MaxSlots from existing value
+    Limited slots can not be changed to unlimited, vice versa
+
+    Permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [UPDATE]
+
+    Properties:
+        url: /inventory/v1/admin/namespaces/{namespace}/users/{userId}/inventoryConfigurations/{inventoryConfigurationCode}/inventories
+
+        method: PUT
+
+        tags: ["Admin Inventories"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED ApimodelsUpdateInventoryReq in body
+
+        inventory_configuration_code: (inventoryConfigurationCode) REQUIRED str in path
+
+        namespace: (namespace) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+    Responses:
+        200: OK - List[ApimodelsInventoryResp] (OK)
+
+        400: Bad Request - ApimodelsErrorResponse (Bad Request)
+
+        401: Unauthorized - ApimodelsErrorResponse (Unauthorized)
+
+        403: Forbidden - ApimodelsErrorResponse (Forbidden)
+
+        404: Not Found - ApimodelsErrorResponse (Not Found)
+
+        500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = AdminUpdateUserInventoriesByInventoryCode.create(
+        body=body,
+        inventory_configuration_code=inventory_configuration_code,
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(DeleteInventory)
 def delete_inventory(
     body: ApimodelsDeleteInventoryReq,
@@ -660,9 +763,6 @@ def delete_inventory(
     If an inventory still has items, it cannot be deleted.
 
     ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [DELETE]
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [DELETE]
 
     Properties:
         url: /inventory/v1/admin/namespaces/{namespace}/inventories/{inventoryId}
@@ -718,9 +818,6 @@ async def delete_inventory_async(
     If an inventory still has items, it cannot be deleted.
 
     ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [DELETE]
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY [DELETE]
 
     Properties:
         url: /inventory/v1/admin/namespaces/{namespace}/inventories/{inventoryId}

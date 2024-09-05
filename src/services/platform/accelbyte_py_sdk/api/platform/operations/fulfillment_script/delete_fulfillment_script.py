@@ -33,7 +33,7 @@ from accelbyte_py_sdk.core import HttpResponse
 class DeleteFulfillmentScript(Operation):
     """Delete fulfillment script (deleteFulfillmentScript)
 
-    [Not Supported Yet In Starter] Delete fulfillment script.
+    [Not supported yet in AGS Shared Cloud] Delete fulfillment script.
 
     Properties:
         url: /platform/admin/fulfillment/scripts/{id}
@@ -132,7 +132,7 @@ class DeleteFulfillmentScript(Operation):
 
     # region with_x methods
 
-    def with_id_(self, value: str) -> DeleteFulfillmentScript:
+    def with_id(self, value: str) -> DeleteFulfillmentScript:
         self.id_ = value
         return self
 

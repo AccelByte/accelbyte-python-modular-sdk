@@ -53,7 +53,7 @@ class RefundOrder(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL OrderRefundCreate in body
+        body: (body) REQUIRED OrderRefundCreate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -82,7 +82,7 @@ class RefundOrder(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: OrderRefundCreate  # OPTIONAL in [body]
+    body: OrderRefundCreate  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
     order_no: str  # REQUIRED in [path]
 
@@ -242,17 +242,12 @@ class RefundOrder(Operation):
 
     @classmethod
     def create(
-        cls,
-        namespace: str,
-        order_no: str,
-        body: Optional[OrderRefundCreate] = None,
-        **kwargs,
+        cls, body: OrderRefundCreate, namespace: str, order_no: str, **kwargs
     ) -> RefundOrder:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
         instance.order_no = order_no
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -287,7 +282,7 @@ class RefundOrder(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "namespace": True,
             "orderNo": True,
         }

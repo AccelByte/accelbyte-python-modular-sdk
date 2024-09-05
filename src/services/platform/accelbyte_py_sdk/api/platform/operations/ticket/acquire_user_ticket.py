@@ -56,7 +56,7 @@ class AcquireUserTicket(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL TicketAcquireRequest in body
+        body: (body) REQUIRED TicketAcquireRequest in body
 
         booth_name: (boothName) REQUIRED str in path
 
@@ -91,7 +91,7 @@ class AcquireUserTicket(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: TicketAcquireRequest  # OPTIONAL in [body]
+    body: TicketAcquireRequest  # REQUIRED in [body]
     booth_name: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
@@ -263,18 +263,17 @@ class AcquireUserTicket(Operation):
     @classmethod
     def create(
         cls,
+        body: TicketAcquireRequest,
         booth_name: str,
         namespace: str,
         user_id: str,
-        body: Optional[TicketAcquireRequest] = None,
         **kwargs,
     ) -> AcquireUserTicket:
         instance = cls()
+        instance.body = body
         instance.booth_name = booth_name
         instance.namespace = namespace
         instance.user_id = user_id
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -316,7 +315,7 @@ class AcquireUserTicket(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "boothName": True,
             "namespace": True,
             "userId": True,

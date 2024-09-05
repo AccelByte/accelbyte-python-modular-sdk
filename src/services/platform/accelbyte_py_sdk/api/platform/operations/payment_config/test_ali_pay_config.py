@@ -36,7 +36,7 @@ from ...models import TestResult
 class TestAliPayConfig(Operation):
     """Test Alipay configuration (testAliPayConfig)
 
-    [Not Supported Yet In Starter] Test AliPay configuration.Reference: [Alipay Document](https://docs.open.alipay.com/270/alipay.trade.page.pay).
+    [Not supported yet in AGS Shared Cloud] Test AliPay configuration.Reference: [Alipay Document](https://docs.open.alipay.com/270/alipay.trade.page.pay).
     Other detail info:
 
       * Returns : test result
@@ -54,7 +54,7 @@ class TestAliPayConfig(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL AliPayConfig in body
+        body: (body) REQUIRED AliPayConfig in body
 
         sandbox: (sandbox) OPTIONAL bool in query
 
@@ -75,7 +75,7 @@ class TestAliPayConfig(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: AliPayConfig  # OPTIONAL in [body]
+    body: AliPayConfig  # REQUIRED in [body]
     sandbox: bool  # OPTIONAL in [query]
 
     # endregion fields
@@ -209,14 +209,10 @@ class TestAliPayConfig(Operation):
 
     @classmethod
     def create(
-        cls,
-        body: Optional[AliPayConfig] = None,
-        sandbox: Optional[bool] = None,
-        **kwargs,
+        cls, body: AliPayConfig, sandbox: Optional[bool] = None, **kwargs
     ) -> TestAliPayConfig:
         instance = cls()
-        if body is not None:
-            instance.body = body
+        instance.body = body
         if sandbox is not None:
             instance.sandbox = sandbox
         if x_flight_id := kwargs.get("x_flight_id", None):
@@ -250,7 +246,7 @@ class TestAliPayConfig(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "sandbox": False,
         }
 

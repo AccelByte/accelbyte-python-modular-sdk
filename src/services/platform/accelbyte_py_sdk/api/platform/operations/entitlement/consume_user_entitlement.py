@@ -55,7 +55,7 @@ class ConsumeUserEntitlement(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL AdminEntitlementDecrement in body
+        body: (body) REQUIRED AdminEntitlementDecrement in body
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -86,7 +86,7 @@ class ConsumeUserEntitlement(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: AdminEntitlementDecrement  # OPTIONAL in [body]
+    body: AdminEntitlementDecrement  # REQUIRED in [body]
     entitlement_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
@@ -257,18 +257,17 @@ class ConsumeUserEntitlement(Operation):
     @classmethod
     def create(
         cls,
+        body: AdminEntitlementDecrement,
         entitlement_id: str,
         namespace: str,
         user_id: str,
-        body: Optional[AdminEntitlementDecrement] = None,
         **kwargs,
     ) -> ConsumeUserEntitlement:
         instance = cls()
+        instance.body = body
         instance.entitlement_id = entitlement_id
         instance.namespace = namespace
         instance.user_id = user_id
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -310,7 +309,7 @@ class ConsumeUserEntitlement(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "entitlementId": True,
             "namespace": True,
             "userId": True,

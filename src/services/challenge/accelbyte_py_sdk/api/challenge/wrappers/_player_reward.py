@@ -63,9 +63,6 @@ def admin_claim_user_rewards(
 
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [UPDATE]
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [UPDATE]
-
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/users/{userId}/rewards/claim
 
@@ -121,9 +118,6 @@ async def admin_claim_user_rewards_async(
     """Claim rewards of a single user (adminClaimUserRewards)
 
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [UPDATE]
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [UPDATE]
 
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/users/{userId}/rewards/claim
@@ -182,9 +176,6 @@ def admin_claim_users_rewards(
 
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [UPDATE]
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [UPDATE]
-
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/users/rewards/claim
 
@@ -236,9 +227,6 @@ async def admin_claim_users_rewards_async(
     """Claim  rewards of multiple users (adminClaimUsersRewards)
 
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [UPDATE]
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [UPDATE]
 
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/users/rewards/claim
@@ -297,9 +285,6 @@ def admin_get_user_rewards(
     """List User's Rewards (adminGetUserRewards)
 
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]
 
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/users/{userId}/rewards
@@ -365,9 +350,6 @@ async def admin_get_user_rewards_async(
 
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]
-
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/users/{userId}/rewards
 
@@ -430,9 +412,6 @@ def public_claim_user_rewards(
 
     * Required permission: NAMESPACE:{namespace}:CHALLENGE:REWARD [UPDATE]
 
-    Required Permission(s):
-        - NAMESPACE:{namespace}:CHALLENGE:REWARD [UPDATE]
-
     Properties:
         url: /challenge/v1/public/namespaces/{namespace}/users/me/rewards/claim
 
@@ -484,9 +463,6 @@ async def public_claim_user_rewards_async(
     """Claim User's Rewards (publicClaimUserRewards)
 
     * Required permission: NAMESPACE:{namespace}:CHALLENGE:REWARD [UPDATE]
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:CHALLENGE:REWARD [UPDATE]
 
     Properties:
         url: /challenge/v1/public/namespaces/{namespace}/users/me/rewards/claim
@@ -544,9 +520,6 @@ def public_get_user_rewards(
     """List User's Rewards (publicGetUserRewards)
 
     * Required permission: NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]
 
     Properties:
         url: /challenge/v1/public/namespaces/{namespace}/users/me/rewards
@@ -607,9 +580,6 @@ async def public_get_user_rewards_async(
     """List User's Rewards (publicGetUserRewards)
 
     * Required permission: NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]
 
     Properties:
         url: /challenge/v1/public/namespaces/{namespace}/users/me/rewards

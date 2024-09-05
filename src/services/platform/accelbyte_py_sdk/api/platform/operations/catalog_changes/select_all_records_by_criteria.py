@@ -236,7 +236,7 @@ class SelectAllRecordsByCriteria(Operation):
         self.selected = value
         return self
 
-    def with_type_(self, value: Union[str, TypeEnum]) -> SelectAllRecordsByCriteria:
+    def with_type(self, value: Union[str, TypeEnum]) -> SelectAllRecordsByCriteria:
         self.type_ = value
         return self
 

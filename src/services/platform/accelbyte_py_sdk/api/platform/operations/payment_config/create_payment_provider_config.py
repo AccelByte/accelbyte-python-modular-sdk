@@ -38,7 +38,7 @@ from ...models import ValidationErrorEntity
 class CreatePaymentProviderConfig(Operation):
     """Create payment provider config (createPaymentProviderConfig)
 
-    [Not Supported Yet In Starter] Create payment provider config.
+    [Not supported yet in AGS Shared Cloud] Create payment provider config.
 
 
 
@@ -77,7 +77,7 @@ class CreatePaymentProviderConfig(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL PaymentProviderConfigEdit in body
+        body: (body) REQUIRED PaymentProviderConfigEdit in body
 
     Responses:
         200: OK - PaymentProviderConfigInfo (successful operation)
@@ -102,7 +102,7 @@ class CreatePaymentProviderConfig(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: PaymentProviderConfigEdit  # OPTIONAL in [body]
+    body: PaymentProviderConfigEdit  # REQUIRED in [body]
 
     # endregion fields
 
@@ -237,11 +237,10 @@ class CreatePaymentProviderConfig(Operation):
 
     @classmethod
     def create(
-        cls, body: Optional[PaymentProviderConfigEdit] = None, **kwargs
+        cls, body: PaymentProviderConfigEdit, **kwargs
     ) -> CreatePaymentProviderConfig:
         instance = cls()
-        if body is not None:
-            instance.body = body
+        instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -268,7 +267,7 @@ class CreatePaymentProviderConfig(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
         }
 
     # endregion static methods

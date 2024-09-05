@@ -57,7 +57,7 @@ class CreateStore(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StoreCreate in body
+        body: (body) REQUIRED StoreCreate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -82,7 +82,7 @@ class CreateStore(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: StoreCreate  # OPTIONAL in [body]
+    body: StoreCreate  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
 
     # endregion fields
@@ -226,13 +226,10 @@ class CreateStore(Operation):
     # region static methods
 
     @classmethod
-    def create(
-        cls, namespace: str, body: Optional[StoreCreate] = None, **kwargs
-    ) -> CreateStore:
+    def create(cls, body: StoreCreate, namespace: str, **kwargs) -> CreateStore:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -262,7 +259,7 @@ class CreateStore(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "namespace": True,
         }
 

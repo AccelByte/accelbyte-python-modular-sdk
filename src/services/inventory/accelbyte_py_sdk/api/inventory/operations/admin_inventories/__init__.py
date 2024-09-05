@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Inventory Service."""
 
-__version__ = "0.2.1"
+__version__ = "0.2.2"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -22,4 +22,5 @@ from .admin_list_inventories import (
 )
 from .admin_purchasable import AdminPurchasable
 from .admin_update_inventory import AdminUpdateInventory
+from .admin_update_user_inven_6f94a4 import AdminUpdateUserInventoriesByInventoryCode
 from .delete_inventory import DeleteInventory

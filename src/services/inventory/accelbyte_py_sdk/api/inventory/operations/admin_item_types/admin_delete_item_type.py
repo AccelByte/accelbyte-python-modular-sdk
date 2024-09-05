@@ -40,9 +40,6 @@ class AdminDeleteItemType(Operation):
 
     Permission: ADMIN:NAMESPACE:{namespace}:INVENTORY:ITEMTYPE [DELETE]
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:INVENTORY:ITEMTYPE [DELETE]
-
     Properties:
         url: /inventory/v1/admin/namespaces/{namespace}/itemtypes/{itemTypeName}
 

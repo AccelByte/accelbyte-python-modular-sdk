@@ -57,9 +57,6 @@ def admin_create_item_type(
 
     Permission: ADMIN:NAMESPACE:{namespace}:INVENTORY:ITEMTYPE [CREATE]
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:INVENTORY:ITEMTYPE [CREATE]
-
     Properties:
         url: /inventory/v1/admin/namespaces/{namespace}/itemtypes
 
@@ -111,9 +108,6 @@ async def admin_create_item_type_async(
     It is safe to call this endpoint even if the itemtype already exists.
 
     Permission: ADMIN:NAMESPACE:{namespace}:INVENTORY:ITEMTYPE [CREATE]
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:INVENTORY:ITEMTYPE [CREATE]
 
     Properties:
         url: /inventory/v1/admin/namespaces/{namespace}/itemtypes
@@ -168,9 +162,6 @@ def admin_delete_item_type(
 
     Permission: ADMIN:NAMESPACE:{namespace}:INVENTORY:ITEMTYPE [DELETE]
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:INVENTORY:ITEMTYPE [DELETE]
-
     Properties:
         url: /inventory/v1/admin/namespaces/{namespace}/itemtypes/{itemTypeName}
 
@@ -219,9 +210,6 @@ async def admin_delete_item_type_async(
     If the itemtypeName doesn't exist in a namespace, it'll return not found.
 
     Permission: ADMIN:NAMESPACE:{namespace}:INVENTORY:ITEMTYPE [DELETE]
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:INVENTORY:ITEMTYPE [DELETE]
 
     Properties:
         url: /inventory/v1/admin/namespaces/{namespace}/itemtypes/{itemTypeName}
@@ -275,9 +263,6 @@ def admin_list_item_types(
     The response body will be in the form of standard pagination.
 
     Permission: ADMIN:NAMESPACE:{namespace}:INVENTORY:ITEMTYPE [READ]
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:INVENTORY:ITEMTYPE [READ]
 
     Properties:
         url: /inventory/v1/admin/namespaces/{namespace}/itemtypes
@@ -335,9 +320,6 @@ async def admin_list_item_types_async(
     The response body will be in the form of standard pagination.
 
     Permission: ADMIN:NAMESPACE:{namespace}:INVENTORY:ITEMTYPE [READ]
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:INVENTORY:ITEMTYPE [READ]
 
     Properties:
         url: /inventory/v1/admin/namespaces/{namespace}/itemtypes

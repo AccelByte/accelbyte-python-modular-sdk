@@ -52,7 +52,7 @@ class PublicValidateItemPurchaseCondition(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL ItemPurchaseConditionValidateRequest in body
+        body: (body) REQUIRED ItemPurchaseConditionValidateRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -79,7 +79,7 @@ class PublicValidateItemPurchaseCondition(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: ItemPurchaseConditionValidateRequest  # OPTIONAL in [body]
+    body: ItemPurchaseConditionValidateRequest  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
 
     # endregion fields
@@ -224,15 +224,11 @@ class PublicValidateItemPurchaseCondition(Operation):
 
     @classmethod
     def create(
-        cls,
-        namespace: str,
-        body: Optional[ItemPurchaseConditionValidateRequest] = None,
-        **kwargs,
+        cls, body: ItemPurchaseConditionValidateRequest, namespace: str, **kwargs
     ) -> PublicValidateItemPurchaseCondition:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -264,7 +260,7 @@ class PublicValidateItemPurchaseCondition(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "namespace": True,
         }
 

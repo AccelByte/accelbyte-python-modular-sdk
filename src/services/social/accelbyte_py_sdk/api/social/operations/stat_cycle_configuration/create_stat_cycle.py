@@ -40,6 +40,7 @@ class CreateStatCycle(Operation):
 
     Create stat cycle.
     Fields:
+            * id: Cycle id, consist of alphanumeric characters with a maximum of 32 characters. if not provided will be generated. (optional).
             * name: Cycle name, maximum length is 128 characters. (required).
             * resetTime: Reset time must follow hours:minutes in 24 hours format e.g. 01:30, 23:15. (required)
             * resetDay: Reset Day follows the ISO-8601 standard, from 1 (Monday) to 7 (Sunday). Required when cycleType is WEEKLY.
@@ -76,6 +77,8 @@ class CreateStatCycle(Operation):
         401: Unauthorized - ErrorEntity (20001: Unauthorized)
 
         403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        409: Conflict - ErrorEntity (12274: Stat cycle with id [{id}] already exists in namespace [{namespace}])
 
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
 
@@ -212,6 +215,8 @@ class CreateStatCycle(Operation):
 
         403: Forbidden - ErrorEntity (20013: insufficient permission)
 
+        409: Conflict - ErrorEntity (12274: Stat cycle with id [{id}] already exists in namespace [{namespace}])
+
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
 
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
@@ -236,6 +241,8 @@ class CreateStatCycle(Operation):
         if code == 401:
             return None, ErrorEntity.create_from_dict(content)
         if code == 403:
+            return None, ErrorEntity.create_from_dict(content)
+        if code == 409:
             return None, ErrorEntity.create_from_dict(content)
         if code == 422:
             return None, ValidationErrorEntity.create_from_dict(content)

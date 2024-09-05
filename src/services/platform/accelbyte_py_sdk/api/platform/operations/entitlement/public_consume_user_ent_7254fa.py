@@ -29,9 +29,9 @@ from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 
-from ...models import EntitlementDecrement
 from ...models import EntitlementDecrementResult
 from ...models import ErrorEntity
+from ...models import PublicEntitlementDecrement
 
 
 class PublicConsumeUserEntitlement(Operation):
@@ -55,7 +55,7 @@ class PublicConsumeUserEntitlement(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL EntitlementDecrement in body
+        body: (body) REQUIRED PublicEntitlementDecrement in body
 
         entitlement_id: (entitlementId) REQUIRED str in path
 
@@ -86,7 +86,7 @@ class PublicConsumeUserEntitlement(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: EntitlementDecrement  # OPTIONAL in [body]
+    body: PublicEntitlementDecrement  # REQUIRED in [body]
     entitlement_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
@@ -164,7 +164,9 @@ class PublicConsumeUserEntitlement(Operation):
 
     # region with_x methods
 
-    def with_body(self, value: EntitlementDecrement) -> PublicConsumeUserEntitlement:
+    def with_body(
+        self, value: PublicEntitlementDecrement
+    ) -> PublicConsumeUserEntitlement:
         self.body = value
         return self
 
@@ -189,7 +191,7 @@ class PublicConsumeUserEntitlement(Operation):
         if hasattr(self, "body") and self.body:
             result["body"] = self.body.to_dict(include_empty=include_empty)
         elif include_empty:
-            result["body"] = EntitlementDecrement()
+            result["body"] = PublicEntitlementDecrement()
         if hasattr(self, "entitlement_id") and self.entitlement_id:
             result["entitlementId"] = str(self.entitlement_id)
         elif include_empty:
@@ -257,18 +259,17 @@ class PublicConsumeUserEntitlement(Operation):
     @classmethod
     def create(
         cls,
+        body: PublicEntitlementDecrement,
         entitlement_id: str,
         namespace: str,
         user_id: str,
-        body: Optional[EntitlementDecrement] = None,
         **kwargs,
     ) -> PublicConsumeUserEntitlement:
         instance = cls()
+        instance.body = body
         instance.entitlement_id = entitlement_id
         instance.namespace = namespace
         instance.user_id = user_id
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -279,11 +280,11 @@ class PublicConsumeUserEntitlement(Operation):
     ) -> PublicConsumeUserEntitlement:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = EntitlementDecrement.create_from_dict(
+            instance.body = PublicEntitlementDecrement.create_from_dict(
                 dict_["body"], include_empty=include_empty
             )
         elif include_empty:
-            instance.body = EntitlementDecrement()
+            instance.body = PublicEntitlementDecrement()
         if "entitlementId" in dict_ and dict_["entitlementId"] is not None:
             instance.entitlement_id = str(dict_["entitlementId"])
         elif include_empty:
@@ -310,7 +311,7 @@ class PublicConsumeUserEntitlement(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "entitlementId": True,
             "namespace": True,
             "userId": True,

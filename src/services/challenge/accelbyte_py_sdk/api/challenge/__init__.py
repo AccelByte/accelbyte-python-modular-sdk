@@ -71,3 +71,13 @@ from .wrappers import public_claim_user_rewards
 from .wrappers import public_claim_user_rewards_async
 from .wrappers import public_get_user_rewards
 from .wrappers import public_get_user_rewards_async
+
+# plugins
+from .wrappers import admin_create_assignment_plugin
+from .wrappers import admin_create_assignment_plugin_async
+from .wrappers import admin_delete_assignment_plugin
+from .wrappers import admin_delete_assignment_plugin_async
+from .wrappers import admin_get_assignment_plugin
+from .wrappers import admin_get_assignment_plugin_async
+from .wrappers import admin_update_assignment_plugin
+from .wrappers import admin_update_assignment_plugin_async

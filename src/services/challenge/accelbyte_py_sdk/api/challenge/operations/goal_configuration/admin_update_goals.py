@@ -66,9 +66,6 @@ class AdminUpdateGoals(Operation):
         * isActive: when goal is in a schedule, isActive determine whether goal is active to progress or not (optional).
     Goal describe set of requirements that need to be fulfilled by players in order to complete it and describe what is the rewards given to player when they complete the goal.The requirement will have target value and a operator that will evaluate that against an observable playerâs attribute (e.g. statistic, entitlement). Goal belongs to a challenge.Supported item type for ENTITLEMENT reward type: APP, BUNDLE, CODE, COINS, EXTENSION, INGAMEITEM, LOOTBOX, MEDIA, OPTIONBOX
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE [UPDATE]
-
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/goals/{code}
 

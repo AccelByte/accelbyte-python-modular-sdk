@@ -56,7 +56,7 @@ class UpdateKeyGroup(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL KeyGroupUpdate in body
+        body: (body) REQUIRED KeyGroupUpdate in body
 
         key_group_id: (keyGroupId) REQUIRED str in path
 
@@ -85,7 +85,7 @@ class UpdateKeyGroup(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: KeyGroupUpdate  # OPTIONAL in [body]
+    body: KeyGroupUpdate  # REQUIRED in [body]
     key_group_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
 
@@ -245,17 +245,12 @@ class UpdateKeyGroup(Operation):
 
     @classmethod
     def create(
-        cls,
-        key_group_id: str,
-        namespace: str,
-        body: Optional[KeyGroupUpdate] = None,
-        **kwargs,
+        cls, body: KeyGroupUpdate, key_group_id: str, namespace: str, **kwargs
     ) -> UpdateKeyGroup:
         instance = cls()
+        instance.body = body
         instance.key_group_id = key_group_id
         instance.namespace = namespace
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -292,7 +287,7 @@ class UpdateKeyGroup(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "keyGroupId": True,
             "namespace": True,
         }

@@ -108,7 +108,7 @@ from ..models import WalletInfoStatusEnum
 
 @same_doc_as(BulkCredit)
 def bulk_credit(
-    body: Optional[List[BulkCreditRequest]] = None,
+    body: List[BulkCreditRequest],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -133,7 +133,7 @@ def bulk_credit(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkCreditRequest] in body
+        body: (body) REQUIRED List[BulkCreditRequest] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -155,7 +155,7 @@ def bulk_credit(
 
 @same_doc_as(BulkCredit)
 async def bulk_credit_async(
-    body: Optional[List[BulkCreditRequest]] = None,
+    body: List[BulkCreditRequest],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -180,7 +180,7 @@ async def bulk_credit_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkCreditRequest] in body
+        body: (body) REQUIRED List[BulkCreditRequest] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -204,7 +204,7 @@ async def bulk_credit_async(
 
 @same_doc_as(BulkDebit)
 def bulk_debit(
-    body: Optional[List[BulkDebitRequest]] = None,
+    body: List[BulkDebitRequest],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -229,7 +229,7 @@ def bulk_debit(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkDebitRequest] in body
+        body: (body) REQUIRED List[BulkDebitRequest] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -251,7 +251,7 @@ def bulk_debit(
 
 @same_doc_as(BulkDebit)
 async def bulk_debit_async(
-    body: Optional[List[BulkDebitRequest]] = None,
+    body: List[BulkDebitRequest],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -276,7 +276,7 @@ async def bulk_debit_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkDebitRequest] in body
+        body: (body) REQUIRED List[BulkDebitRequest] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -528,9 +528,9 @@ async def check_wallet_async(
 
 @same_doc_as(CreditUserWallet)
 def credit_user_wallet(
+    body: CreditRequest,
     currency_code: str,
     user_id: str,
-    body: Optional[CreditRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -555,7 +555,7 @@ def credit_user_wallet(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL CreditRequest in body
+        body: (body) REQUIRED CreditRequest in body
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -575,9 +575,9 @@ def credit_user_wallet(
         if error:
             return None, error
     request = CreditUserWallet.create(
+        body=body,
         currency_code=currency_code,
         user_id=user_id,
-        body=body,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -585,9 +585,9 @@ def credit_user_wallet(
 
 @same_doc_as(CreditUserWallet)
 async def credit_user_wallet_async(
+    body: CreditRequest,
     currency_code: str,
     user_id: str,
-    body: Optional[CreditRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -612,7 +612,7 @@ async def credit_user_wallet_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL CreditRequest in body
+        body: (body) REQUIRED CreditRequest in body
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -632,9 +632,9 @@ async def credit_user_wallet_async(
         if error:
             return None, error
     request = CreditUserWallet.create(
+        body=body,
         currency_code=currency_code,
         user_id=user_id,
-        body=body,
         namespace=namespace,
     )
     return await run_request_async(
@@ -795,9 +795,9 @@ async def debit_by_wallet_platform_async(
 @deprecated
 @same_doc_as(DebitUserWallet)
 def debit_user_wallet(
+    body: DebitRequest,
     user_id: str,
     wallet_id: str,
-    body: Optional[DebitRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -819,7 +819,7 @@ def debit_user_wallet(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL DebitRequest in body
+        body: (body) REQUIRED DebitRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -843,9 +843,9 @@ def debit_user_wallet(
         if error:
             return None, error
     request = DebitUserWallet.create(
+        body=body,
         user_id=user_id,
         wallet_id=wallet_id,
-        body=body,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -854,9 +854,9 @@ def debit_user_wallet(
 @deprecated
 @same_doc_as(DebitUserWallet)
 async def debit_user_wallet_async(
+    body: DebitRequest,
     user_id: str,
     wallet_id: str,
-    body: Optional[DebitRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -878,7 +878,7 @@ async def debit_user_wallet_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL DebitRequest in body
+        body: (body) REQUIRED DebitRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -902,9 +902,9 @@ async def debit_user_wallet_async(
         if error:
             return None, error
     request = DebitUserWallet.create(
+        body=body,
         user_id=user_id,
         wallet_id=wallet_id,
-        body=body,
         namespace=namespace,
     )
     return await run_request_async(
@@ -914,9 +914,9 @@ async def debit_user_wallet_async(
 
 @same_doc_as(DebitUserWalletByCurrencyCode)
 def debit_user_wallet_by_currency_code(
+    body: DebitByCurrencyCodeRequest,
     currency_code: str,
     user_id: str,
-    body: Optional[DebitByCurrencyCodeRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -938,7 +938,7 @@ def debit_user_wallet_by_currency_code(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL DebitByCurrencyCodeRequest in body
+        body: (body) REQUIRED DebitByCurrencyCodeRequest in body
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -960,9 +960,9 @@ def debit_user_wallet_by_currency_code(
         if error:
             return None, error
     request = DebitUserWalletByCurrencyCode.create(
+        body=body,
         currency_code=currency_code,
         user_id=user_id,
-        body=body,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -970,9 +970,9 @@ def debit_user_wallet_by_currency_code(
 
 @same_doc_as(DebitUserWalletByCurrencyCode)
 async def debit_user_wallet_by_currency_code_async(
+    body: DebitByCurrencyCodeRequest,
     currency_code: str,
     user_id: str,
-    body: Optional[DebitByCurrencyCodeRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -994,7 +994,7 @@ async def debit_user_wallet_by_currency_code_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL DebitByCurrencyCodeRequest in body
+        body: (body) REQUIRED DebitByCurrencyCodeRequest in body
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -1016,9 +1016,9 @@ async def debit_user_wallet_by_currency_code_async(
         if error:
             return None, error
     request = DebitUserWalletByCurrencyCode.create(
+        body=body,
         currency_code=currency_code,
         user_id=user_id,
-        body=body,
         namespace=namespace,
     )
     return await run_request_async(
@@ -1774,9 +1774,9 @@ async def list_user_wallet_transactions_async(
 
 @same_doc_as(PayWithUserWallet)
 def pay_with_user_wallet(
+    body: PaymentRequest,
     currency_code: str,
     user_id: str,
-    body: Optional[PaymentRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1798,7 +1798,7 @@ def pay_with_user_wallet(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL PaymentRequest in body
+        body: (body) REQUIRED PaymentRequest in body
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -1818,9 +1818,9 @@ def pay_with_user_wallet(
         if error:
             return None, error
     request = PayWithUserWallet.create(
+        body=body,
         currency_code=currency_code,
         user_id=user_id,
-        body=body,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -1828,9 +1828,9 @@ def pay_with_user_wallet(
 
 @same_doc_as(PayWithUserWallet)
 async def pay_with_user_wallet_async(
+    body: PaymentRequest,
     currency_code: str,
     user_id: str,
-    body: Optional[PaymentRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1852,7 +1852,7 @@ async def pay_with_user_wallet_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL PaymentRequest in body
+        body: (body) REQUIRED PaymentRequest in body
 
         currency_code: (currencyCode) REQUIRED str in path
 
@@ -1872,9 +1872,9 @@ async def pay_with_user_wallet_async(
         if error:
             return None, error
     request = PayWithUserWallet.create(
+        body=body,
         currency_code=currency_code,
         user_id=user_id,
-        body=body,
         namespace=namespace,
     )
     return await run_request_async(
@@ -2510,8 +2510,8 @@ async def reset_platform_wallet_config_async(
 
 @same_doc_as(UpdatePlatformWalletConfig)
 def update_platform_wallet_config(
+    body: PlatformWalletConfigUpdate,
     platform: Union[str, UpdatePlatformWalletConfigPlatformEnum],
-    body: Optional[PlatformWalletConfigUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2536,7 +2536,7 @@ def update_platform_wallet_config(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL PlatformWalletConfigUpdate in body
+        body: (body) REQUIRED PlatformWalletConfigUpdate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2550,8 +2550,8 @@ def update_platform_wallet_config(
         if error:
             return None, error
     request = UpdatePlatformWalletConfig.create(
-        platform=platform,
         body=body,
+        platform=platform,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -2559,8 +2559,8 @@ def update_platform_wallet_config(
 
 @same_doc_as(UpdatePlatformWalletConfig)
 async def update_platform_wallet_config_async(
+    body: PlatformWalletConfigUpdate,
     platform: Union[str, UpdatePlatformWalletConfigPlatformEnum],
-    body: Optional[PlatformWalletConfigUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2585,7 +2585,7 @@ async def update_platform_wallet_config_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL PlatformWalletConfigUpdate in body
+        body: (body) REQUIRED PlatformWalletConfigUpdate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2599,8 +2599,8 @@ async def update_platform_wallet_config_async(
         if error:
             return None, error
     request = UpdatePlatformWalletConfig.create(
-        platform=platform,
         body=body,
+        platform=platform,
         namespace=namespace,
     )
     return await run_request_async(

@@ -89,12 +89,6 @@ def create_image(
     }
     ```
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]
-
-    Required Scope(s):
-        - social
-
     Properties:
         url: /dsmcontroller/admin/images
 
@@ -151,12 +145,6 @@ async def create_image_async(
     "persistent":false
     }
     ```
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]
-
-    Required Scope(s):
-        - social
 
     Properties:
         url: /dsmcontroller/admin/images
@@ -218,12 +206,6 @@ def create_image_patch(
     }
     ```
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]
-
-    Required Scope(s):
-        - social
-
     Properties:
         url: /dsmcontroller/admin/images/patches
 
@@ -280,12 +262,6 @@ async def create_image_patch_async(
     }
     ```
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]
-
-    Required Scope(s):
-        - social
-
     Properties:
         url: /dsmcontroller/admin/images/patches
 
@@ -341,12 +317,6 @@ def create_repository(
     }
     ```
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]
-
-    Required Scope(s):
-        - social
-
     Properties:
         url: /dsmcontroller/admin/repository
 
@@ -398,12 +368,6 @@ async def create_repository_async(
     }
     ```
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]
-
-    Required Scope(s):
-        - social
-
     Properties:
         url: /dsmcontroller/admin/repository
 
@@ -453,12 +417,6 @@ def delete_image(
     This endpoint will delete an image that specified in the request parameter.
 
     Default image is cannot be deleted and will throw error 422 (Unprocessable entity).
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]
-
-    Required Scope(s):
-        - social
 
     Properties:
         url: /dsmcontroller/admin/namespaces/{namespace}/images
@@ -522,12 +480,6 @@ async def delete_image_async(
 
     Default image is cannot be deleted and will throw error 422 (Unprocessable entity).
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]
-
-    Required Scope(s):
-        - social
-
     Properties:
         url: /dsmcontroller/admin/namespaces/{namespace}/images
 
@@ -590,12 +542,6 @@ def delete_image_patch(
     Required scope: social
 
     This endpoint will delete an image patch that specified in the request parameter
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]
-
-    Required Scope(s):
-        - social
 
     Properties:
         url: /dsmcontroller/admin/namespaces/{namespace}/images/patches
@@ -661,12 +607,6 @@ async def delete_image_patch_async(
 
     This endpoint will delete an image patch that specified in the request parameter
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]
-
-    Required Scope(s):
-        - social
-
     Properties:
         url: /dsmcontroller/admin/namespaces/{namespace}/images/patches
 
@@ -731,12 +671,6 @@ def get_image_detail(
 
     This endpoint get specific version of dedicated servers images.
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]
-
-    Required Scope(s):
-        - social
-
     Properties:
         url: /dsmcontroller/admin/namespaces/{namespace}/images/versions/{version}
 
@@ -788,12 +722,6 @@ async def get_image_detail_async(
     Required scope: social
 
     This endpoint get specific version of dedicated servers images.
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]
-
-    Required Scope(s):
-        - social
 
     Properties:
         url: /dsmcontroller/admin/namespaces/{namespace}/images/versions/{version}
@@ -848,12 +776,6 @@ def get_image_limit(
 
     This endpoint get ds image limit for specific namespace
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]
-
-    Required Scope(s):
-        - social
-
     Properties:
         url: /dsmcontroller/admin/namespaces/{namespace}/images/limit
 
@@ -901,12 +823,6 @@ async def get_image_limit_async(
     Required scope: social
 
     This endpoint get ds image limit for specific namespace
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]
-
-    Required Scope(s):
-        - social
 
     Properties:
         url: /dsmcontroller/admin/namespaces/{namespace}/images/limit
@@ -959,12 +875,6 @@ def get_image_patch_detail(
     Required scope: social
 
     This endpoint get specific image patch version of dedicated servers version.
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]
-
-    Required Scope(s):
-        - social
 
     Properties:
         url: /dsmcontroller/admin/namespaces/{namespace}/images/versions/{version}/patches/{versionPatch}
@@ -1021,12 +931,6 @@ async def get_image_patch_detail_async(
     Required scope: social
 
     This endpoint get specific image patch version of dedicated servers version.
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]
-
-    Required Scope(s):
-        - social
 
     Properties:
         url: /dsmcontroller/admin/namespaces/{namespace}/images/versions/{version}/patches/{versionPatch}
@@ -1087,12 +991,6 @@ def get_image_patches(
 
     Image Size unit is byte.
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]
-
-    Required Scope(s):
-        - social
-
     Properties:
         url: /dsmcontroller/admin/namespaces/{namespace}/images/versions/{version}/patches
 
@@ -1145,12 +1043,6 @@ async def get_image_patches_async(
 
     Image Size unit is byte.
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]
-
-    Required Scope(s):
-        - social
-
     Properties:
         url: /dsmcontroller/admin/namespaces/{namespace}/images/versions/{version}/patches
 
@@ -1202,12 +1094,6 @@ def get_repository(
 
     This endpoint get a dedicated servers repository name in a namespace.
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]
-
-    Required Scope(s):
-        - social
-
     Properties:
         url: /dsmcontroller/admin/namespaces/{namespace}/repository
 
@@ -1255,12 +1141,6 @@ async def get_repository_async(
     Required scope: social
 
     This endpoint get a dedicated servers repository name in a namespace.
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]
-
-    Required Scope(s):
-        - social
 
     Properties:
         url: /dsmcontroller/admin/namespaces/{namespace}/repository
@@ -1313,12 +1193,6 @@ def image_detail_client(
 
     This endpoint get specific version of dedicated servers images.
 
-    Required Permission(s):
-        - NAMESPACE:{namespace}:DSM:CONFIG [READ]
-
-    Required Scope(s):
-        - social
-
     Properties:
         url: /dsmcontroller/namespaces/{namespace}/images/versions/{version}
 
@@ -1370,12 +1244,6 @@ async def image_detail_client_async(
     Required scope: social
 
     This endpoint get specific version of dedicated servers images.
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:DSM:CONFIG [READ]
-
-    Required Scope(s):
-        - social
 
     Properties:
         url: /dsmcontroller/namespaces/{namespace}/images/versions/{version}
@@ -1430,12 +1298,6 @@ def image_limit_client(
 
     This endpoint get DS image limit for specific namespace.This endpoint also give the non-persistent image which is used by any deployments
 
-    Required Permission(s):
-        - NAMESPACE:{namespace}:DSM:CONFIG [READ]
-
-    Required Scope(s):
-        - social
-
     Properties:
         url: /dsmcontroller/namespaces/{namespace}/images/limit
 
@@ -1483,12 +1345,6 @@ async def image_limit_client_async(
     Required scope: social
 
     This endpoint get DS image limit for specific namespace.This endpoint also give the non-persistent image which is used by any deployments
-
-    Required Permission(s):
-        - NAMESPACE:{namespace}:DSM:CONFIG [READ]
-
-    Required Scope(s):
-        - social
 
     Properties:
         url: /dsmcontroller/namespaces/{namespace}/images/limit
@@ -1546,12 +1402,6 @@ def list_images(
     This endpoint lists all of dedicated servers images.
 
     Parameter Offset and Count is Required
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]
-
-    Required Scope(s):
-        - social
 
     Properties:
         url: /dsmcontroller/admin/namespaces/{namespace}/images
@@ -1622,12 +1472,6 @@ async def list_images_async(
     This endpoint lists all of dedicated servers images.
 
     Parameter Offset and Count is Required
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]
-
-    Required Scope(s):
-        - social
 
     Properties:
         url: /dsmcontroller/admin/namespaces/{namespace}/images
@@ -1701,12 +1545,6 @@ def list_images_client(
 
     Parameter Offset and Count is Required
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]
-
-    Required Scope(s):
-        - social
-
     Properties:
         url: /dsmcontroller/namespaces/{namespace}/images
 
@@ -1776,12 +1614,6 @@ async def list_images_client_async(
     This endpoint lists all of dedicated servers images.
 
     Parameter Offset and Count is Required
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]
-
-    Required Scope(s):
-        - social
 
     Properties:
         url: /dsmcontroller/namespaces/{namespace}/images
@@ -1857,12 +1689,6 @@ def update_image(
     }
     ```
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]
-
-    Required Scope(s):
-        - social
-
     Properties:
         url: /dsmcontroller/admin/images
 
@@ -1915,12 +1741,6 @@ async def update_image_async(
     "persistent":false
     }
     ```
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]
-
-    Required Scope(s):
-        - social
 
     Properties:
         url: /dsmcontroller/admin/images

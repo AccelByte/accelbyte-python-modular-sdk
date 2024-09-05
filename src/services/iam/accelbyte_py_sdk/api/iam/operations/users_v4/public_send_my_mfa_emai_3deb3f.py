@@ -56,6 +56,8 @@ class PublicSendMyMFAEmailCodeV4(Operation):
 
         action: (action) OPTIONAL str in form_data
 
+        language_tag: (languageTag) OPTIONAL str in form_data
+
         namespace: (namespace) REQUIRED str in path
 
     Responses:
@@ -88,6 +90,7 @@ class PublicSendMyMFAEmailCodeV4(Operation):
     service_name: Optional[str] = "iam"
 
     action: str  # OPTIONAL in [form_data]
+    language_tag: str  # OPTIONAL in [form_data]
     namespace: str  # REQUIRED in [path]
 
     # endregion fields
@@ -144,6 +147,8 @@ class PublicSendMyMFAEmailCodeV4(Operation):
         result = {}
         if hasattr(self, "action"):
             result["action"] = self.action
+        if hasattr(self, "language_tag"):
+            result["languageTag"] = self.language_tag
         return result
 
     def get_path_params(self) -> dict:
@@ -164,6 +169,10 @@ class PublicSendMyMFAEmailCodeV4(Operation):
         self.action = value
         return self
 
+    def with_language_tag(self, value: str) -> PublicSendMyMFAEmailCodeV4:
+        self.language_tag = value
+        return self
+
     def with_namespace(self, value: str) -> PublicSendMyMFAEmailCodeV4:
         self.namespace = value
         return self
@@ -178,6 +187,10 @@ class PublicSendMyMFAEmailCodeV4(Operation):
             result["action"] = str(self.action)
         elif include_empty:
             result["action"] = ""
+        if hasattr(self, "language_tag") and self.language_tag:
+            result["languageTag"] = str(self.language_tag)
+        elif include_empty:
+            result["languageTag"] = ""
         if hasattr(self, "namespace") and self.namespace:
             result["namespace"] = str(self.namespace)
         elif include_empty:
@@ -246,12 +259,18 @@ class PublicSendMyMFAEmailCodeV4(Operation):
 
     @classmethod
     def create(
-        cls, namespace: str, action: Optional[str] = None, **kwargs
+        cls,
+        namespace: str,
+        action: Optional[str] = None,
+        language_tag: Optional[str] = None,
+        **kwargs,
     ) -> PublicSendMyMFAEmailCodeV4:
         instance = cls()
         instance.namespace = namespace
         if action is not None:
             instance.action = action
+        if language_tag is not None:
+            instance.language_tag = language_tag
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -265,6 +284,10 @@ class PublicSendMyMFAEmailCodeV4(Operation):
             instance.action = str(dict_["action"])
         elif include_empty:
             instance.action = ""
+        if "languageTag" in dict_ and dict_["languageTag"] is not None:
+            instance.language_tag = str(dict_["languageTag"])
+        elif include_empty:
+            instance.language_tag = ""
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
@@ -275,6 +298,7 @@ class PublicSendMyMFAEmailCodeV4(Operation):
     def get_field_info() -> Dict[str, str]:
         return {
             "action": "action",
+            "languageTag": "language_tag",
             "namespace": "namespace",
         }
 
@@ -282,6 +306,7 @@ class PublicSendMyMFAEmailCodeV4(Operation):
     def get_required_map() -> Dict[str, bool]:
         return {
             "action": False,
+            "languageTag": False,
             "namespace": True,
         }
 

@@ -53,7 +53,7 @@ class UpdateSectionPluginConfig(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL SectionPluginConfigUpdate in body
+        body: (body) REQUIRED SectionPluginConfigUpdate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -76,7 +76,7 @@ class UpdateSectionPluginConfig(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: SectionPluginConfigUpdate  # OPTIONAL in [body]
+    body: SectionPluginConfigUpdate  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
 
     # endregion fields
@@ -217,12 +217,11 @@ class UpdateSectionPluginConfig(Operation):
 
     @classmethod
     def create(
-        cls, namespace: str, body: Optional[SectionPluginConfigUpdate] = None, **kwargs
+        cls, body: SectionPluginConfigUpdate, namespace: str, **kwargs
     ) -> UpdateSectionPluginConfig:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -254,7 +253,7 @@ class UpdateSectionPluginConfig(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "namespace": True,
         }
 

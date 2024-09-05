@@ -56,7 +56,7 @@ class CreateCampaign(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL CampaignCreate in body
+        body: (body) REQUIRED CampaignCreate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -83,7 +83,7 @@ class CreateCampaign(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: CampaignCreate  # OPTIONAL in [body]
+    body: CampaignCreate  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
 
     # endregion fields
@@ -231,13 +231,10 @@ class CreateCampaign(Operation):
     # region static methods
 
     @classmethod
-    def create(
-        cls, namespace: str, body: Optional[CampaignCreate] = None, **kwargs
-    ) -> CreateCampaign:
+    def create(cls, body: CampaignCreate, namespace: str, **kwargs) -> CreateCampaign:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -269,7 +266,7 @@ class CreateCampaign(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "namespace": True,
         }
 

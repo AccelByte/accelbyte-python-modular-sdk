@@ -27,11 +27,15 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
 
+from ..models.public_entitlement_metadata import PublicEntitlementMetadata
 
-class EntitlementDecrement(Model):
-    """A DTO object for entitlement decrement. (EntitlementDecrement)
+
+class PublicEntitlementDecrement(Model):
+    """A DTO object for entitlement decrement. (PublicEntitlementDecrement)
 
     Properties:
+        metadata: (metadata) OPTIONAL PublicEntitlementMetadata
+
         options: (options) OPTIONAL List[str]
 
         request_id: (requestId) OPTIONAL str
@@ -41,6 +45,7 @@ class EntitlementDecrement(Model):
 
     # region fields
 
+    metadata: PublicEntitlementMetadata  # OPTIONAL
     options: List[str]  # OPTIONAL
     request_id: str  # OPTIONAL
     use_count: int  # OPTIONAL
@@ -49,15 +54,21 @@ class EntitlementDecrement(Model):
 
     # region with_x methods
 
-    def with_options(self, value: List[str]) -> EntitlementDecrement:
+    def with_metadata(
+        self, value: PublicEntitlementMetadata
+    ) -> PublicEntitlementDecrement:
+        self.metadata = value
+        return self
+
+    def with_options(self, value: List[str]) -> PublicEntitlementDecrement:
         self.options = value
         return self
 
-    def with_request_id(self, value: str) -> EntitlementDecrement:
+    def with_request_id(self, value: str) -> PublicEntitlementDecrement:
         self.request_id = value
         return self
 
-    def with_use_count(self, value: int) -> EntitlementDecrement:
+    def with_use_count(self, value: int) -> PublicEntitlementDecrement:
         self.use_count = value
         return self
 
@@ -67,6 +78,10 @@ class EntitlementDecrement(Model):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
+        if hasattr(self, "metadata"):
+            result["metadata"] = self.metadata.to_dict(include_empty=include_empty)
+        elif include_empty:
+            result["metadata"] = PublicEntitlementMetadata()
         if hasattr(self, "options"):
             result["options"] = [str(i0) for i0 in self.options]
         elif include_empty:
@@ -88,12 +103,15 @@ class EntitlementDecrement(Model):
     @classmethod
     def create(
         cls,
+        metadata: Optional[PublicEntitlementMetadata] = None,
         options: Optional[List[str]] = None,
         request_id: Optional[str] = None,
         use_count: Optional[int] = None,
         **kwargs,
-    ) -> EntitlementDecrement:
+    ) -> PublicEntitlementDecrement:
         instance = cls()
+        if metadata is not None:
+            instance.metadata = metadata
         if options is not None:
             instance.options = options
         if request_id is not None:
@@ -105,10 +123,16 @@ class EntitlementDecrement(Model):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> EntitlementDecrement:
+    ) -> PublicEntitlementDecrement:
         instance = cls()
         if not dict_:
             return instance
+        if "metadata" in dict_ and dict_["metadata"] is not None:
+            instance.metadata = PublicEntitlementMetadata.create_from_dict(
+                dict_["metadata"], include_empty=include_empty
+            )
+        elif include_empty:
+            instance.metadata = PublicEntitlementMetadata()
         if "options" in dict_ and dict_["options"] is not None:
             instance.options = [str(i0) for i0 in dict_["options"]]
         elif include_empty:
@@ -126,7 +150,7 @@ class EntitlementDecrement(Model):
     @classmethod
     def create_many_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, EntitlementDecrement]:
+    ) -> Dict[str, PublicEntitlementDecrement]:
         return (
             {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
             if dict_
@@ -136,7 +160,7 @@ class EntitlementDecrement(Model):
     @classmethod
     def create_many_from_list(
         cls, list_: list, include_empty: bool = False
-    ) -> List[EntitlementDecrement]:
+    ) -> List[PublicEntitlementDecrement]:
         return (
             [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
             if list_
@@ -147,9 +171,9 @@ class EntitlementDecrement(Model):
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
     ) -> Union[
-        EntitlementDecrement,
-        List[EntitlementDecrement],
-        Dict[Any, EntitlementDecrement],
+        PublicEntitlementDecrement,
+        List[PublicEntitlementDecrement],
+        Dict[Any, PublicEntitlementDecrement],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -164,6 +188,7 @@ class EntitlementDecrement(Model):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
+            "metadata": "metadata",
             "options": "options",
             "requestId": "request_id",
             "useCount": "use_count",
@@ -172,6 +197,7 @@ class EntitlementDecrement(Model):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
+            "metadata": False,
             "options": False,
             "requestId": False,
             "useCount": False,

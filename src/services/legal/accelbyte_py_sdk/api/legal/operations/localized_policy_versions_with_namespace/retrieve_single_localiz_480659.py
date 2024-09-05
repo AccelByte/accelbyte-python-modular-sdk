@@ -60,6 +60,8 @@ class RetrieveSingleLocalizedPolicyVersion3(Operation):
     Responses:
         200: OK - RetrieveLocalizedPolicyVersionPublicResponse (successful operation)
 
+        403: Forbidden - ErrorEntity (40081: errors.net.accelbyte.platform.legal.policy_not_accessible)
+
         404: Not Found - ErrorEntity (40038: errors.net.accelbyte.platform.legal.localized_policy_version_not_found)
     """
 
@@ -188,6 +190,8 @@ class RetrieveSingleLocalizedPolicyVersion3(Operation):
 
         200: OK - RetrieveLocalizedPolicyVersionPublicResponse (successful operation)
 
+        403: Forbidden - ErrorEntity (40081: errors.net.accelbyte.platform.legal.policy_not_accessible)
+
         404: Not Found - ErrorEntity (40038: errors.net.accelbyte.platform.legal.localized_policy_version_not_found)
 
         ---: HttpResponse (Undocumented Response)
@@ -208,6 +212,8 @@ class RetrieveSingleLocalizedPolicyVersion3(Operation):
                 RetrieveLocalizedPolicyVersionPublicResponse.create_from_dict(content),
                 None,
             )
+        if code == 403:
+            return None, ErrorEntity.create_from_dict(content)
         if code == 404:
             return None, ErrorEntity.create_from_dict(content)
 

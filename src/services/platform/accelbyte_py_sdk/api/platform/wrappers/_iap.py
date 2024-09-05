@@ -1686,8 +1686,8 @@ async def get_xbl_iap_config_async(
 
 @same_doc_as(MockFulfillIAPItem)
 def mock_fulfill_iap_item(
+    body: MockIAPReceipt,
     user_id: str,
-    body: Optional[MockIAPReceipt] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1711,7 +1711,7 @@ def mock_fulfill_iap_item(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL MockIAPReceipt in body
+        body: (body) REQUIRED MockIAPReceipt in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1731,8 +1731,8 @@ def mock_fulfill_iap_item(
         if error:
             return None, error
     request = MockFulfillIAPItem.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -1740,8 +1740,8 @@ def mock_fulfill_iap_item(
 
 @same_doc_as(MockFulfillIAPItem)
 async def mock_fulfill_iap_item_async(
+    body: MockIAPReceipt,
     user_id: str,
-    body: Optional[MockIAPReceipt] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1765,7 +1765,7 @@ async def mock_fulfill_iap_item_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL MockIAPReceipt in body
+        body: (body) REQUIRED MockIAPReceipt in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1785,8 +1785,8 @@ async def mock_fulfill_iap_item_async(
         if error:
             return None, error
     request = MockFulfillIAPItem.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return await run_request_async(
@@ -1796,8 +1796,8 @@ async def mock_fulfill_iap_item_async(
 
 @same_doc_as(PublicFulfillAppleIAPItem)
 def public_fulfill_apple_iap_item(
+    body: AppleIAPReceipt,
     user_id: str,
-    body: Optional[AppleIAPReceipt] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1820,7 +1820,7 @@ def public_fulfill_apple_iap_item(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL AppleIAPReceipt in body
+        body: (body) REQUIRED AppleIAPReceipt in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1829,9 +1829,9 @@ def public_fulfill_apple_iap_item(
     Responses:
         204: No Content - (Fulfill item successfully)
 
-        400: Bad Request - ErrorEntity (39121: Apple iap receipt verify failed with status code [{statusCode}] | 35123: Wallet [{walletId}] is inactive | 38121: Duplicate permanent item exists | 38122: Subscription endDate required)
+        400: Bad Request - ErrorEntity (39121: Apple iap receipt verify failed with status code [{statusCode}] | 35123: Wallet [{walletId}] is inactive | 38121: Duplicate permanent item exists | 38122: Subscription endDate required | 39131: Invalid Apple IAP config under namespace [{namespace}]: [{message}])
 
-        404: Not Found - ErrorEntity (39141: Apple iap receipt of transaction [{transactionId}] for productId [{}] does not exist | 30341: Item [{itemId}] does not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (39141: Apple iap receipt of transaction [{transactionId}] for productId [{}] does not exist | 30341: Item [{itemId}] does not exist in namespace [{namespace}] | 39142: Apple IAP config not found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (39171: The bundle id in namespace [{namespace}] expect [{expected}] but was [{actual}] | 20006: optimistic lock)
     """
@@ -1840,8 +1840,8 @@ def public_fulfill_apple_iap_item(
         if error:
             return None, error
     request = PublicFulfillAppleIAPItem.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -1849,8 +1849,8 @@ def public_fulfill_apple_iap_item(
 
 @same_doc_as(PublicFulfillAppleIAPItem)
 async def public_fulfill_apple_iap_item_async(
+    body: AppleIAPReceipt,
     user_id: str,
-    body: Optional[AppleIAPReceipt] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1873,7 +1873,7 @@ async def public_fulfill_apple_iap_item_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL AppleIAPReceipt in body
+        body: (body) REQUIRED AppleIAPReceipt in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1882,9 +1882,9 @@ async def public_fulfill_apple_iap_item_async(
     Responses:
         204: No Content - (Fulfill item successfully)
 
-        400: Bad Request - ErrorEntity (39121: Apple iap receipt verify failed with status code [{statusCode}] | 35123: Wallet [{walletId}] is inactive | 38121: Duplicate permanent item exists | 38122: Subscription endDate required)
+        400: Bad Request - ErrorEntity (39121: Apple iap receipt verify failed with status code [{statusCode}] | 35123: Wallet [{walletId}] is inactive | 38121: Duplicate permanent item exists | 38122: Subscription endDate required | 39131: Invalid Apple IAP config under namespace [{namespace}]: [{message}])
 
-        404: Not Found - ErrorEntity (39141: Apple iap receipt of transaction [{transactionId}] for productId [{}] does not exist | 30341: Item [{itemId}] does not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (39141: Apple iap receipt of transaction [{transactionId}] for productId [{}] does not exist | 30341: Item [{itemId}] does not exist in namespace [{namespace}] | 39142: Apple IAP config not found in namespace [{namespace}])
 
         409: Conflict - ErrorEntity (39171: The bundle id in namespace [{namespace}] expect [{expected}] but was [{actual}] | 20006: optimistic lock)
     """
@@ -1893,8 +1893,8 @@ async def public_fulfill_apple_iap_item_async(
         if error:
             return None, error
     request = PublicFulfillAppleIAPItem.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return await run_request_async(
@@ -1904,8 +1904,8 @@ async def public_fulfill_apple_iap_item_async(
 
 @same_doc_as(PublicFulfillGoogleIAPItem)
 def public_fulfill_google_iap_item(
+    body: GoogleIAPReceipt,
     user_id: str,
-    body: Optional[GoogleIAPReceipt] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1928,7 +1928,7 @@ def public_fulfill_google_iap_item(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL GoogleIAPReceipt in body
+        body: (body) REQUIRED GoogleIAPReceipt in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1937,9 +1937,9 @@ def public_fulfill_google_iap_item(
     Responses:
         200: OK - GoogleReceiptResolveResult (Successful operation)
 
-        400: Bad Request - ErrorEntity (39122: Google iap receipt is invalid with status code [{statusCode}] and error message [{message}] | 35123: Wallet [{walletId}] is inactive | 38121: Duplicate permanent item exists | 38122: Subscription endDate required)
+        400: Bad Request - ErrorEntity (39122: Google iap receipt is invalid with status code [{statusCode}] and error message [{message}] | 35123: Wallet [{walletId}] is inactive | 38121: Duplicate permanent item exists | 38122: Subscription endDate required | 39135: Invalid Google IAP config under namespace [{namespace}]: [{message}])
 
-        404: Not Found - ErrorEntity (30341: Item [{itemId}] does not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (30341: Item [{itemId}] does not exist in namespace [{namespace}] | 39148: Google IAP config not found in namespace [{namespace}].)
 
         409: Conflict - ErrorEntity (39172: The order id in namespace [{namespace}] expect [{expected}] but was [{actual}] | 39173: The purchase status of google play order [{orderId}] in namespace [{namespace}] expect [{expected}] but was [{actual}] | 39174: The google iap purchase time of order [{orderId}] in namespace [{namespace}] expect [{expected}] but was [{actual}] | 20006: optimistic lock)
     """
@@ -1948,8 +1948,8 @@ def public_fulfill_google_iap_item(
         if error:
             return None, error
     request = PublicFulfillGoogleIAPItem.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -1957,8 +1957,8 @@ def public_fulfill_google_iap_item(
 
 @same_doc_as(PublicFulfillGoogleIAPItem)
 async def public_fulfill_google_iap_item_async(
+    body: GoogleIAPReceipt,
     user_id: str,
-    body: Optional[GoogleIAPReceipt] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1981,7 +1981,7 @@ async def public_fulfill_google_iap_item_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL GoogleIAPReceipt in body
+        body: (body) REQUIRED GoogleIAPReceipt in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1990,9 +1990,9 @@ async def public_fulfill_google_iap_item_async(
     Responses:
         200: OK - GoogleReceiptResolveResult (Successful operation)
 
-        400: Bad Request - ErrorEntity (39122: Google iap receipt is invalid with status code [{statusCode}] and error message [{message}] | 35123: Wallet [{walletId}] is inactive | 38121: Duplicate permanent item exists | 38122: Subscription endDate required)
+        400: Bad Request - ErrorEntity (39122: Google iap receipt is invalid with status code [{statusCode}] and error message [{message}] | 35123: Wallet [{walletId}] is inactive | 38121: Duplicate permanent item exists | 38122: Subscription endDate required | 39135: Invalid Google IAP config under namespace [{namespace}]: [{message}])
 
-        404: Not Found - ErrorEntity (30341: Item [{itemId}] does not exist in namespace [{namespace}])
+        404: Not Found - ErrorEntity (30341: Item [{itemId}] does not exist in namespace [{namespace}] | 39148: Google IAP config not found in namespace [{namespace}].)
 
         409: Conflict - ErrorEntity (39172: The order id in namespace [{namespace}] expect [{expected}] but was [{actual}] | 39173: The purchase status of google play order [{orderId}] in namespace [{namespace}] expect [{expected}] but was [{actual}] | 39174: The google iap purchase time of order [{orderId}] in namespace [{namespace}] expect [{expected}] but was [{actual}] | 20006: optimistic lock)
     """
@@ -2001,8 +2001,8 @@ async def public_fulfill_google_iap_item_async(
         if error:
             return None, error
     request = PublicFulfillGoogleIAPItem.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return await run_request_async(
@@ -2045,7 +2045,9 @@ def public_reconcile_play_station_store(
     Responses:
         200: OK - List[PlayStationReconcileResult] (successful operation)
 
-        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39127: Invalid service label [{serviceLabel}])
+        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39127: Invalid service label [{serviceLabel}] | 39132: Bad request for playstation under namespace [{namespace}], reason: [{reason}].)
+
+        404: Not Found - ErrorEntity (39143: PlayStation IAP config not found in namespace [{namespace}])
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2094,7 +2096,9 @@ async def public_reconcile_play_station_store_async(
     Responses:
         200: OK - List[PlayStationReconcileResult] (successful operation)
 
-        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39127: Invalid service label [{serviceLabel}])
+        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39127: Invalid service label [{serviceLabel}] | 39132: Bad request for playstation under namespace [{namespace}], reason: [{reason}].)
+
+        404: Not Found - ErrorEntity (39143: PlayStation IAP config not found in namespace [{namespace}])
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2112,8 +2116,8 @@ async def public_reconcile_play_station_store_async(
 
 @same_doc_as(PublicReconcilePlayStationStoreWithMultipleServiceLabels)
 def public_reconcile_play_station_store_with_multiple_service_labels(
+    body: PlayStationMultiServiceLabelsReconcileRequest,
     user_id: str,
-    body: Optional[PlayStationMultiServiceLabelsReconcileRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2136,7 +2140,7 @@ def public_reconcile_play_station_store_with_multiple_service_labels(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL PlayStationMultiServiceLabelsReconcileRequest in body
+        body: (body) REQUIRED PlayStationMultiServiceLabelsReconcileRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2145,15 +2149,17 @@ def public_reconcile_play_station_store_with_multiple_service_labels(
     Responses:
         200: OK - List[PlayStationReconcileResult] (successful operation)
 
-        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39127: Invalid service label [{serviceLabel}])
+        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39127: Invalid service label [{serviceLabel}] | 39132: Bad request for playstation under namespace [{namespace}], reason: [{reason}].)
+
+        404: Not Found - ErrorEntity (39143: PlayStation IAP config not found in namespace [{namespace}])
     """
     if namespace is None:
         namespace, error = get_services_namespace()
         if error:
             return None, error
     request = PublicReconcilePlayStationStoreWithMultipleServiceLabels.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -2161,8 +2167,8 @@ def public_reconcile_play_station_store_with_multiple_service_labels(
 
 @same_doc_as(PublicReconcilePlayStationStoreWithMultipleServiceLabels)
 async def public_reconcile_play_station_store_with_multiple_service_labels_async(
+    body: PlayStationMultiServiceLabelsReconcileRequest,
     user_id: str,
-    body: Optional[PlayStationMultiServiceLabelsReconcileRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2185,7 +2191,7 @@ async def public_reconcile_play_station_store_with_multiple_service_labels_async
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL PlayStationMultiServiceLabelsReconcileRequest in body
+        body: (body) REQUIRED PlayStationMultiServiceLabelsReconcileRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2194,15 +2200,17 @@ async def public_reconcile_play_station_store_with_multiple_service_labels_async
     Responses:
         200: OK - List[PlayStationReconcileResult] (successful operation)
 
-        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39127: Invalid service label [{serviceLabel}])
+        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39127: Invalid service label [{serviceLabel}] | 39132: Bad request for playstation under namespace [{namespace}], reason: [{reason}].)
+
+        404: Not Found - ErrorEntity (39143: PlayStation IAP config not found in namespace [{namespace}])
     """
     if namespace is None:
         namespace, error = get_services_namespace()
         if error:
             return None, error
     request = PublicReconcilePlayStationStoreWithMultipleServiceLabels.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return await run_request_async(
@@ -2626,6 +2634,8 @@ def sync_epic_games_inventory(
         200: OK - List[EpicGamesReconcileResult] (successful operation)
 
         400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}])
+
+        404: Not Found - ErrorEntity (39147: Epic IAP config not found in namespace [{namespace}].)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2675,6 +2685,8 @@ async def sync_epic_games_inventory_async(
         200: OK - List[EpicGamesReconcileResult] (successful operation)
 
         400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}])
+
+        404: Not Found - ErrorEntity (39147: Epic IAP config not found in namespace [{namespace}].)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2722,7 +2734,9 @@ def sync_oculus_consumable_entitlements(
     Responses:
         200: OK - List[OculusReconcileResult] (successful operation)
 
-        400: Bad Request - ErrorEntity (39126: User id [{}] in namespace [{}] doesn't link platform [{}])
+        400: Bad Request - ErrorEntity (39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39134: Invalid Oculus IAP config under namespace [{namespace}]: [{message}] | 39133: Bad request for Oculus: [{reason}])
+
+        404: Not Found - ErrorEntity (39146: Oculus IAP config not found in namespace [{namespace}].)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2767,7 +2781,9 @@ async def sync_oculus_consumable_entitlements_async(
     Responses:
         200: OK - List[OculusReconcileResult] (successful operation)
 
-        400: Bad Request - ErrorEntity (39126: User id [{}] in namespace [{}] doesn't link platform [{}])
+        400: Bad Request - ErrorEntity (39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39134: Invalid Oculus IAP config under namespace [{namespace}]: [{message}] | 39133: Bad request for Oculus: [{reason}])
+
+        404: Not Found - ErrorEntity (39146: Oculus IAP config not found in namespace [{namespace}].)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -2784,8 +2800,8 @@ async def sync_oculus_consumable_entitlements_async(
 
 @same_doc_as(SyncSteamInventory)
 def sync_steam_inventory(
+    body: SteamSyncRequest,
     user_id: str,
-    body: Optional[SteamSyncRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2808,7 +2824,7 @@ def sync_steam_inventory(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL SteamSyncRequest in body
+        body: (body) REQUIRED SteamSyncRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2818,14 +2834,16 @@ def sync_steam_inventory(
         204: No Content - (Successful operation)
 
         400: Bad Request - ErrorEntity (39123: IAP request is not in valid application | 39124: IAP request platform [{platformId}] user id is not linked with current user)
+
+        404: Not Found - ErrorEntity (39144: Steam IAP config not found in namespace [{namespace}].)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
         if error:
             return None, error
     request = SyncSteamInventory.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -2833,8 +2851,8 @@ def sync_steam_inventory(
 
 @same_doc_as(SyncSteamInventory)
 async def sync_steam_inventory_async(
+    body: SteamSyncRequest,
     user_id: str,
-    body: Optional[SteamSyncRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2857,7 +2875,7 @@ async def sync_steam_inventory_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL SteamSyncRequest in body
+        body: (body) REQUIRED SteamSyncRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2867,14 +2885,16 @@ async def sync_steam_inventory_async(
         204: No Content - (Successful operation)
 
         400: Bad Request - ErrorEntity (39123: IAP request is not in valid application | 39124: IAP request platform [{platformId}] user id is not linked with current user)
+
+        404: Not Found - ErrorEntity (39144: Steam IAP config not found in namespace [{namespace}].)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
         if error:
             return None, error
     request = SyncSteamInventory.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return await run_request_async(
@@ -2884,7 +2904,7 @@ async def sync_steam_inventory_async(
 
 @same_doc_as(SyncTwitchDropsEntitlement)
 def sync_twitch_drops_entitlement(
-    body: Optional[TwitchSyncRequest] = None,
+    body: TwitchSyncRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2906,7 +2926,7 @@ def sync_twitch_drops_entitlement(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL TwitchSyncRequest in body
+        body: (body) REQUIRED TwitchSyncRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2928,7 +2948,7 @@ def sync_twitch_drops_entitlement(
 
 @same_doc_as(SyncTwitchDropsEntitlement)
 async def sync_twitch_drops_entitlement_async(
-    body: Optional[TwitchSyncRequest] = None,
+    body: TwitchSyncRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2950,7 +2970,7 @@ async def sync_twitch_drops_entitlement_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL TwitchSyncRequest in body
+        body: (body) REQUIRED TwitchSyncRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2974,8 +2994,8 @@ async def sync_twitch_drops_entitlement_async(
 
 @same_doc_as(SyncTwitchDropsEntitlement1)
 def sync_twitch_drops_entitlement_1(
+    body: TwitchSyncRequest,
     user_id: str,
-    body: Optional[TwitchSyncRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2998,7 +3018,7 @@ def sync_twitch_drops_entitlement_1(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL TwitchSyncRequest in body
+        body: (body) REQUIRED TwitchSyncRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3014,8 +3034,8 @@ def sync_twitch_drops_entitlement_1(
         if error:
             return None, error
     request = SyncTwitchDropsEntitlement1.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -3023,8 +3043,8 @@ def sync_twitch_drops_entitlement_1(
 
 @same_doc_as(SyncTwitchDropsEntitlement1)
 async def sync_twitch_drops_entitlement_1_async(
+    body: TwitchSyncRequest,
     user_id: str,
-    body: Optional[TwitchSyncRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3047,7 +3067,7 @@ async def sync_twitch_drops_entitlement_1_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL TwitchSyncRequest in body
+        body: (body) REQUIRED TwitchSyncRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3063,8 +3083,8 @@ async def sync_twitch_drops_entitlement_1_async(
         if error:
             return None, error
     request = SyncTwitchDropsEntitlement1.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return await run_request_async(
@@ -3107,7 +3127,9 @@ def sync_xbox_inventory(
     Responses:
         200: OK - List[XblReconcileResult] (successful operation)
 
-        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}])
+        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39221: Invalid Xbox Business Partner Certificate or password: [{message}])
+
+        404: Not Found - ErrorEntity (39145: XBox IAP config not found in namespace [{namespace}].)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3156,7 +3178,9 @@ async def sync_xbox_inventory_async(
     Responses:
         200: OK - List[XblReconcileResult] (successful operation)
 
-        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}])
+        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39221: Invalid Xbox Business Partner Certificate or password: [{message}])
+
+        404: Not Found - ErrorEntity (39145: XBox IAP config not found in namespace [{namespace}].)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -3174,7 +3198,7 @@ async def sync_xbox_inventory_async(
 
 @same_doc_as(UpdateAppleIAPConfig)
 def update_apple_iap_config(
-    body: Optional[AppleIAPConfigRequest] = None,
+    body: AppleIAPConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3197,7 +3221,7 @@ def update_apple_iap_config(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL AppleIAPConfigRequest in body
+        body: (body) REQUIRED AppleIAPConfigRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3217,7 +3241,7 @@ def update_apple_iap_config(
 
 @same_doc_as(UpdateAppleIAPConfig)
 async def update_apple_iap_config_async(
-    body: Optional[AppleIAPConfigRequest] = None,
+    body: AppleIAPConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3240,7 +3264,7 @@ async def update_apple_iap_config_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL AppleIAPConfigRequest in body
+        body: (body) REQUIRED AppleIAPConfigRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3262,7 +3286,7 @@ async def update_apple_iap_config_async(
 
 @same_doc_as(UpdateEpicGamesIAPConfig)
 def update_epic_games_iap_config(
-    body: Optional[EpicGamesIAPConfigRequest] = None,
+    body: EpicGamesIAPConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3285,7 +3309,7 @@ def update_epic_games_iap_config(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL EpicGamesIAPConfigRequest in body
+        body: (body) REQUIRED EpicGamesIAPConfigRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3305,7 +3329,7 @@ def update_epic_games_iap_config(
 
 @same_doc_as(UpdateEpicGamesIAPConfig)
 async def update_epic_games_iap_config_async(
-    body: Optional[EpicGamesIAPConfigRequest] = None,
+    body: EpicGamesIAPConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3328,7 +3352,7 @@ async def update_epic_games_iap_config_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL EpicGamesIAPConfigRequest in body
+        body: (body) REQUIRED EpicGamesIAPConfigRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3350,7 +3374,7 @@ async def update_epic_games_iap_config_async(
 
 @same_doc_as(UpdateGoogleIAPConfig)
 def update_google_iap_config(
-    body: Optional[GoogleIAPConfigRequest] = None,
+    body: GoogleIAPConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3373,7 +3397,7 @@ def update_google_iap_config(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL GoogleIAPConfigRequest in body
+        body: (body) REQUIRED GoogleIAPConfigRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3393,7 +3417,7 @@ def update_google_iap_config(
 
 @same_doc_as(UpdateGoogleIAPConfig)
 async def update_google_iap_config_async(
-    body: Optional[GoogleIAPConfigRequest] = None,
+    body: GoogleIAPConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3416,7 +3440,7 @@ async def update_google_iap_config_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL GoogleIAPConfigRequest in body
+        body: (body) REQUIRED GoogleIAPConfigRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3530,7 +3554,7 @@ async def update_google_p12_file_async(
 
 @same_doc_as(UpdateIAPItemConfig)
 def update_iap_item_config(
-    body: Optional[IAPItemConfigUpdate] = None,
+    body: IAPItemConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3553,7 +3577,7 @@ def update_iap_item_config(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL IAPItemConfigUpdate in body
+        body: (body) REQUIRED IAPItemConfigUpdate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3579,7 +3603,7 @@ def update_iap_item_config(
 
 @same_doc_as(UpdateIAPItemConfig)
 async def update_iap_item_config_async(
-    body: Optional[IAPItemConfigUpdate] = None,
+    body: IAPItemConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3602,7 +3626,7 @@ async def update_iap_item_config_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL IAPItemConfigUpdate in body
+        body: (body) REQUIRED IAPItemConfigUpdate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3630,7 +3654,7 @@ async def update_iap_item_config_async(
 
 @same_doc_as(UpdateOculusIAPConfig)
 def update_oculus_iap_config(
-    body: Optional[OculusIAPConfigRequest] = None,
+    body: OculusIAPConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3653,7 +3677,7 @@ def update_oculus_iap_config(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL OculusIAPConfigRequest in body
+        body: (body) REQUIRED OculusIAPConfigRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3673,7 +3697,7 @@ def update_oculus_iap_config(
 
 @same_doc_as(UpdateOculusIAPConfig)
 async def update_oculus_iap_config_async(
-    body: Optional[OculusIAPConfigRequest] = None,
+    body: OculusIAPConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3696,7 +3720,7 @@ async def update_oculus_iap_config_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL OculusIAPConfigRequest in body
+        body: (body) REQUIRED OculusIAPConfigRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3718,7 +3742,7 @@ async def update_oculus_iap_config_async(
 
 @same_doc_as(UpdatePlaystationIAPConfig)
 def update_playstation_iap_config(
-    body: Optional[PlaystationIAPConfigRequest] = None,
+    body: PlaystationIAPConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3741,7 +3765,7 @@ def update_playstation_iap_config(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL PlaystationIAPConfigRequest in body
+        body: (body) REQUIRED PlaystationIAPConfigRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3763,7 +3787,7 @@ def update_playstation_iap_config(
 
 @same_doc_as(UpdatePlaystationIAPConfig)
 async def update_playstation_iap_config_async(
-    body: Optional[PlaystationIAPConfigRequest] = None,
+    body: PlaystationIAPConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3786,7 +3810,7 @@ async def update_playstation_iap_config_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL PlaystationIAPConfigRequest in body
+        body: (body) REQUIRED PlaystationIAPConfigRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3810,7 +3834,7 @@ async def update_playstation_iap_config_async(
 
 @same_doc_as(UpdateSteamIAPConfig)
 def update_steam_iap_config(
-    body: Optional[SteamIAPConfigRequest] = None,
+    body: SteamIAPConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3833,7 +3857,7 @@ def update_steam_iap_config(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL SteamIAPConfigRequest in body
+        body: (body) REQUIRED SteamIAPConfigRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3855,7 +3879,7 @@ def update_steam_iap_config(
 
 @same_doc_as(UpdateSteamIAPConfig)
 async def update_steam_iap_config_async(
-    body: Optional[SteamIAPConfigRequest] = None,
+    body: SteamIAPConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3878,7 +3902,7 @@ async def update_steam_iap_config_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL SteamIAPConfigRequest in body
+        body: (body) REQUIRED SteamIAPConfigRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3902,7 +3926,7 @@ async def update_steam_iap_config_async(
 
 @same_doc_as(UpdateTwitchIAPConfig)
 def update_twitch_iap_config(
-    body: Optional[TwitchIAPConfigRequest] = None,
+    body: TwitchIAPConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3925,7 +3949,7 @@ def update_twitch_iap_config(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL TwitchIAPConfigRequest in body
+        body: (body) REQUIRED TwitchIAPConfigRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3945,7 +3969,7 @@ def update_twitch_iap_config(
 
 @same_doc_as(UpdateTwitchIAPConfig)
 async def update_twitch_iap_config_async(
-    body: Optional[TwitchIAPConfigRequest] = None,
+    body: TwitchIAPConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3968,7 +3992,7 @@ async def update_twitch_iap_config_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL TwitchIAPConfigRequest in body
+        body: (body) REQUIRED TwitchIAPConfigRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4094,7 +4118,7 @@ async def update_xbl_bp_cert_file_async(
 
 @same_doc_as(UpdateXblIAPConfig)
 def update_xbl_iap_config(
-    body: Optional[XblIAPConfigRequest] = None,
+    body: XblIAPConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -4117,7 +4141,7 @@ def update_xbl_iap_config(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL XblIAPConfigRequest in body
+        body: (body) REQUIRED XblIAPConfigRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4137,7 +4161,7 @@ def update_xbl_iap_config(
 
 @same_doc_as(UpdateXblIAPConfig)
 async def update_xbl_iap_config_async(
-    body: Optional[XblIAPConfigRequest] = None,
+    body: XblIAPConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -4160,7 +4184,7 @@ async def update_xbl_iap_config_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL XblIAPConfigRequest in body
+        body: (body) REQUIRED XblIAPConfigRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4262,7 +4286,7 @@ async def validate_existed_playstation_iap_config_async(
 
 @same_doc_as(ValidatePlaystationIAPConfig)
 def validate_playstation_iap_config(
-    body: Optional[PlaystationIAPConfigRequest] = None,
+    body: PlaystationIAPConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -4285,7 +4309,7 @@ def validate_playstation_iap_config(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL PlaystationIAPConfigRequest in body
+        body: (body) REQUIRED PlaystationIAPConfigRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4305,7 +4329,7 @@ def validate_playstation_iap_config(
 
 @same_doc_as(ValidatePlaystationIAPConfig)
 async def validate_playstation_iap_config_async(
-    body: Optional[PlaystationIAPConfigRequest] = None,
+    body: PlaystationIAPConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -4328,7 +4352,7 @@ async def validate_playstation_iap_config_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL PlaystationIAPConfigRequest in body
+        body: (body) REQUIRED PlaystationIAPConfigRequest in body
 
         namespace: (namespace) REQUIRED str in path
 

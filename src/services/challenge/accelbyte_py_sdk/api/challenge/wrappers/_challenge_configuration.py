@@ -92,7 +92,7 @@ def admin_create_challenge(
       * repeatAfter: describe number of period challenge's goals will be repeated after. Leave it empty if you don't want to repeat the challenge.
       * rotation: describe how long goals in a challenge will be available for players to progress before rotated with another goals. (DAILY|WEEKLY|MONTHLY|NONE)
       * activeGoalsPerRotation: number of goals per rotation (currently only applicable for RANDOMIZE assignment)
-      * assignmentRule: describe how the goals will be assigned and scheduled to users. (FIXED|RANDOMIZED|UNSCHEDULED)
+      * assignmentRule: describe how the goals will be assigned and scheduled to users. (FIXED|RANDOMIZED|UNSCHEDULED|CUSTOM)
       * goalsVisibility: describe whether users can see all goals under challenge, or only active goal in one rotation period only. (SHOWALL|PERIODONLY)
       * resetConfig: describe when rotation reset will happen (optional).
         * resetTime: Reset time must follow hours:minutes in 24 hours format (e.g. 01:30, 23:15) and in UTC timezone. Default to "00:00"
@@ -101,9 +101,6 @@ def admin_create_challenge(
       * randomizedPerRotation:
         * true: each goal will be randomly assigned to multiple periods
         * false: a goal will only be assigned to one period
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE [CREATE]
 
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/challenges
@@ -173,7 +170,7 @@ async def admin_create_challenge_async(
       * repeatAfter: describe number of period challenge's goals will be repeated after. Leave it empty if you don't want to repeat the challenge.
       * rotation: describe how long goals in a challenge will be available for players to progress before rotated with another goals. (DAILY|WEEKLY|MONTHLY|NONE)
       * activeGoalsPerRotation: number of goals per rotation (currently only applicable for RANDOMIZE assignment)
-      * assignmentRule: describe how the goals will be assigned and scheduled to users. (FIXED|RANDOMIZED|UNSCHEDULED)
+      * assignmentRule: describe how the goals will be assigned and scheduled to users. (FIXED|RANDOMIZED|UNSCHEDULED|CUSTOM)
       * goalsVisibility: describe whether users can see all goals under challenge, or only active goal in one rotation period only. (SHOWALL|PERIODONLY)
       * resetConfig: describe when rotation reset will happen (optional).
         * resetTime: Reset time must follow hours:minutes in 24 hours format (e.g. 01:30, 23:15) and in UTC timezone. Default to "00:00"
@@ -182,9 +179,6 @@ async def admin_create_challenge_async(
       * randomizedPerRotation:
         * true: each goal will be randomly assigned to multiple periods
         * false: a goal will only be assigned to one period
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE [CREATE]
 
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/challenges
@@ -242,9 +236,6 @@ def admin_delete_challenge(
 
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [DELETE]
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE [DELETE]
-
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}
 
@@ -296,9 +287,6 @@ async def admin_delete_challenge_async(
     """Delete a Challenge (adminDeleteChallenge)
 
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [DELETE]
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE [DELETE]
 
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}
@@ -355,9 +343,6 @@ def admin_delete_tied_challenge(
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [DELETE]
       * This endpoint will delete the combination of related data: CHALLENGES, GOALS, SCHEDULES, PLAYER PROGRESSIONS
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE [DELETE]
-
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/tied
 
@@ -410,9 +395,6 @@ async def admin_delete_tied_challenge_async(
 
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [DELETE]
       * This endpoint will delete the combination of related data: CHALLENGES, GOALS, SCHEDULES, PLAYER PROGRESSIONS
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE [DELETE]
 
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/tied
@@ -468,9 +450,6 @@ def admin_get_challenge(
 
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [READ]
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE [READ]
-
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}
 
@@ -520,9 +499,6 @@ async def admin_get_challenge_async(
     """Get a Challenge (adminGetChallenge)
 
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [READ]
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE [READ]
 
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}
@@ -578,9 +554,6 @@ def admin_get_challenges(
     """List Challenges (adminGetChallenges)
 
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [READ]
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE [READ]
 
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/challenges
@@ -641,9 +614,6 @@ async def admin_get_challenges_async(
     """List Challenges (adminGetChallenges)
 
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [READ]
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE [READ]
 
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/challenges
@@ -706,9 +676,6 @@ def admin_get_periods(
 
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [READ]
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE [READ]
-
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/periods
 
@@ -766,9 +733,6 @@ async def admin_get_periods_async(
     """Get Challenge's Periods (adminGetPeriods)
 
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [READ]
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE [READ]
 
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/periods
@@ -830,9 +794,6 @@ def admin_randomize_challenge(
 
     This is a utility endpoint to execute randomize goals schedule on challenge that the assignmentRule is RANDOMIZED and RandomizePerRotation assigned with true.
 
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE [UPDATE]
-
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/randomize
 
@@ -886,9 +847,6 @@ async def admin_randomize_challenge_async(
     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [UPDATE]
 
     This is a utility endpoint to execute randomize goals schedule on challenge that the assignmentRule is RANDOMIZED and RandomizePerRotation assigned with true.
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE [UPDATE]
 
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/randomize
@@ -958,7 +916,7 @@ def admin_update_challenge(
       * repeatAfter: describe number of period challenge's goals will be repeated after. Leave it empty if you don't want to repeat the challenge.
       * rotation: describe how long goals in a challenge will be available for players to progress before rotated with another goals. (DAILY|WEEKLY|MONTHLY|NONE)
       * activeGoalsPerRotation: number of goals per rotation (currently only applicable for RANDOMIZE assignment)
-      * assignmentRule: describe how the goals will be assigned and scheduled to users. (FIXED|RANDOMIZED|UNSCHEDULED)
+      * assignmentRule: describe how the goals will be assigned and scheduled to users. (FIXED|RANDOMIZED|UNSCHEDULED|CUSTOM)
       * goalsVisibility: describe whether users can see all goals under challenge, or only active goal in one rotation period only. (SHOWALL|PERIODONLY)
       * resetConfig: describe when rotation reset will happen (optional).
         * resetTime: Reset time must follow hours:minutes in 24 hours format (e.g. 01:30, 23:15) and in UTC timezone. Default to "00:00"
@@ -967,9 +925,6 @@ def admin_update_challenge(
       * randomizedPerRotation:
         * true: each goal will be randomly assigned to multiple periods
         * false: a goal will only be assigned to one period
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE [UPDATE]
 
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}
@@ -1042,7 +997,7 @@ async def admin_update_challenge_async(
       * repeatAfter: describe number of period challenge's goals will be repeated after. Leave it empty if you don't want to repeat the challenge.
       * rotation: describe how long goals in a challenge will be available for players to progress before rotated with another goals. (DAILY|WEEKLY|MONTHLY|NONE)
       * activeGoalsPerRotation: number of goals per rotation (currently only applicable for RANDOMIZE assignment)
-      * assignmentRule: describe how the goals will be assigned and scheduled to users. (FIXED|RANDOMIZED|UNSCHEDULED)
+      * assignmentRule: describe how the goals will be assigned and scheduled to users. (FIXED|RANDOMIZED|UNSCHEDULED|CUSTOM)
       * goalsVisibility: describe whether users can see all goals under challenge, or only active goal in one rotation period only. (SHOWALL|PERIODONLY)
       * resetConfig: describe when rotation reset will happen (optional).
         * resetTime: Reset time must follow hours:minutes in 24 hours format (e.g. 01:30, 23:15) and in UTC timezone. Default to "00:00"
@@ -1051,9 +1006,6 @@ async def admin_update_challenge_async(
       * randomizedPerRotation:
         * true: each goal will be randomly assigned to multiple periods
         * false: a goal will only be assigned to one period
-
-    Required Permission(s):
-        - ADMIN:NAMESPACE:{namespace}:CHALLENGE [UPDATE]
 
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}

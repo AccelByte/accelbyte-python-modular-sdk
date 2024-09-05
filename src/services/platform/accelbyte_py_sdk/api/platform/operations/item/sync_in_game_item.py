@@ -38,7 +38,7 @@ from ...models import ValidationErrorEntity
 class SyncInGameItem(Operation):
     """Sync an in game item (syncInGameItem)
 
-    [Not Supported Yet In Starter] This API is used to sync an in game item in game namespace to publisher namespace, only INGAMEITEM, CODE, COINS and SEASON are supported
+    [Not supported yet in AGS Shared Cloud] This API is used to sync an in game item in game namespace to publisher namespace, only INGAMEITEM, CODE, COINS and SEASON are supported
 
     The synced item has an additional field targetItemId besides targetNamespace, mostly this item should not modified manually again.
 
@@ -59,7 +59,7 @@ class SyncInGameItem(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL InGameItemSync in body
+        body: (body) REQUIRED InGameItemSync in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -90,7 +90,7 @@ class SyncInGameItem(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: InGameItemSync  # OPTIONAL in [body]
+    body: InGameItemSync  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
     store_id: str  # REQUIRED in [query]
 
@@ -259,17 +259,12 @@ class SyncInGameItem(Operation):
 
     @classmethod
     def create(
-        cls,
-        namespace: str,
-        store_id: str,
-        body: Optional[InGameItemSync] = None,
-        **kwargs,
+        cls, body: InGameItemSync, namespace: str, store_id: str, **kwargs
     ) -> SyncInGameItem:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
         instance.store_id = store_id
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -306,7 +301,7 @@ class SyncInGameItem(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "namespace": True,
             "storeId": True,
         }

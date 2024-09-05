@@ -66,3 +66,12 @@ from ._player_reward import public_claim_user_rewards
 from ._player_reward import public_claim_user_rewards_async
 from ._player_reward import public_get_user_rewards
 from ._player_reward import public_get_user_rewards_async
+
+from ._plugins import admin_create_assignment_plugin
+from ._plugins import admin_create_assignment_plugin_async
+from ._plugins import admin_delete_assignment_plugin
+from ._plugins import admin_delete_assignment_plugin_async
+from ._plugins import admin_get_assignment_plugin
+from ._plugins import admin_get_assignment_plugin_async
+from ._plugins import admin_update_assignment_plugin
+from ._plugins import admin_update_assignment_plugin_async

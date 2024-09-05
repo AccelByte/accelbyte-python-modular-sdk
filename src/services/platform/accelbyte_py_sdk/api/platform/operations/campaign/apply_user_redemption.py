@@ -56,7 +56,7 @@ class ApplyUserRedemption(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL RedeemRequest in body
+        body: (body) REQUIRED RedeemRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -85,7 +85,7 @@ class ApplyUserRedemption(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: RedeemRequest  # OPTIONAL in [body]
+    body: RedeemRequest  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
 
@@ -245,17 +245,12 @@ class ApplyUserRedemption(Operation):
 
     @classmethod
     def create(
-        cls,
-        namespace: str,
-        user_id: str,
-        body: Optional[RedeemRequest] = None,
-        **kwargs,
+        cls, body: RedeemRequest, namespace: str, user_id: str, **kwargs
     ) -> ApplyUserRedemption:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
         instance.user_id = user_id
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -292,7 +287,7 @@ class ApplyUserRedemption(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "namespace": True,
             "userId": True,
         }

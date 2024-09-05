@@ -37,7 +37,7 @@ from ...models import StripeConfig
 class UpdateStripeConfig(Operation):
     """Update stripe config (updateStripeConfig)
 
-    [Not Supported Yet In Starter] Update stripe config.
+    [Not supported yet in AGS Shared Cloud] Update stripe config.
     Other detail info:
 
       * Returns : updated payment merchant config
@@ -55,7 +55,7 @@ class UpdateStripeConfig(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StripeConfig in body
+        body: (body) REQUIRED StripeConfig in body
 
         id_: (id) REQUIRED str in path
 
@@ -82,7 +82,7 @@ class UpdateStripeConfig(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: StripeConfig  # OPTIONAL in [body]
+    body: StripeConfig  # REQUIRED in [body]
     id_: str  # REQUIRED in [path]
     sandbox: bool  # OPTIONAL in [query]
     validate: bool  # OPTIONAL in [query]
@@ -169,7 +169,7 @@ class UpdateStripeConfig(Operation):
         self.body = value
         return self
 
-    def with_id_(self, value: str) -> UpdateStripeConfig:
+    def with_id(self, value: str) -> UpdateStripeConfig:
         self.id_ = value
         return self
 
@@ -250,16 +250,15 @@ class UpdateStripeConfig(Operation):
     @classmethod
     def create(
         cls,
+        body: StripeConfig,
         id_: str,
-        body: Optional[StripeConfig] = None,
         sandbox: Optional[bool] = None,
         validate: Optional[bool] = None,
         **kwargs,
     ) -> UpdateStripeConfig:
         instance = cls()
+        instance.body = body
         instance.id_ = id_
-        if body is not None:
-            instance.body = body
         if sandbox is not None:
             instance.sandbox = sandbox
         if validate is not None:
@@ -305,7 +304,7 @@ class UpdateStripeConfig(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "id": True,
             "sandbox": False,
             "validate": False,

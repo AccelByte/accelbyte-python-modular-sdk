@@ -467,6 +467,8 @@ def retrieve_single_localized_policy_version_3(
     Responses:
         200: OK - RetrieveLocalizedPolicyVersionPublicResponse (successful operation)
 
+        403: Forbidden - ErrorEntity (40081: errors.net.accelbyte.platform.legal.policy_not_accessible)
+
         404: Not Found - ErrorEntity (40038: errors.net.accelbyte.platform.legal.localized_policy_version_not_found)
     """
     if namespace is None:
@@ -512,6 +514,8 @@ async def retrieve_single_localized_policy_version_3_async(
 
     Responses:
         200: OK - RetrieveLocalizedPolicyVersionPublicResponse (successful operation)
+
+        403: Forbidden - ErrorEntity (40081: errors.net.accelbyte.platform.legal.policy_not_accessible)
 
         404: Not Found - ErrorEntity (40038: errors.net.accelbyte.platform.legal.localized_policy_version_not_found)
     """

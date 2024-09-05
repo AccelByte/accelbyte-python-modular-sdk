@@ -57,7 +57,9 @@ class SyncOculusDLC(Operation):
     Responses:
         204: No Content - (Successful operation)
 
-        400: Bad Request - ErrorEntity (39124: IAP request platform [{platformId}] user id is not linked with current user)
+        400: Bad Request - ErrorEntity (39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39134: Invalid Oculus IAP config under namespace [{namespace}]: [{message}] | 39133: Bad request for Oculus: [{reason}])
+
+        404: Not Found - ErrorEntity (39146: Oculus IAP config not found in namespace [{namespace}].)
     """
 
     # region fields
@@ -179,7 +181,9 @@ class SyncOculusDLC(Operation):
 
         204: No Content - (Successful operation)
 
-        400: Bad Request - ErrorEntity (39124: IAP request platform [{platformId}] user id is not linked with current user)
+        400: Bad Request - ErrorEntity (39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39134: Invalid Oculus IAP config under namespace [{namespace}]: [{message}] | 39133: Bad request for Oculus: [{reason}])
+
+        404: Not Found - ErrorEntity (39146: Oculus IAP config not found in namespace [{namespace}].)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -197,6 +201,8 @@ class SyncOculusDLC(Operation):
         if code == 204:
             return None, None
         if code == 400:
+            return None, ErrorEntity.create_from_dict(content)
+        if code == 404:
             return None, ErrorEntity.create_from_dict(content)
 
         return self.handle_undocumented_response(

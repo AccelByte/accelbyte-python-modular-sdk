@@ -62,7 +62,9 @@ class SyncXboxInventory(Operation):
     Responses:
         200: OK - List[XblReconcileResult] (successful operation)
 
-        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}])
+        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39221: Invalid Xbox Business Partner Certificate or password: [{message}])
+
+        404: Not Found - ErrorEntity (39145: XBox IAP config not found in namespace [{namespace}].)
     """
 
     # region fields
@@ -199,7 +201,9 @@ class SyncXboxInventory(Operation):
 
         200: OK - List[XblReconcileResult] (successful operation)
 
-        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}])
+        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39221: Invalid Xbox Business Partner Certificate or password: [{message}])
+
+        404: Not Found - ErrorEntity (39145: XBox IAP config not found in namespace [{namespace}].)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -217,6 +221,8 @@ class SyncXboxInventory(Operation):
         if code == 200:
             return [XblReconcileResult.create_from_dict(i) for i in content], None
         if code == 400:
+            return None, ErrorEntity.create_from_dict(content)
+        if code == 404:
             return None, ErrorEntity.create_from_dict(content)
 
         return self.handle_undocumented_response(

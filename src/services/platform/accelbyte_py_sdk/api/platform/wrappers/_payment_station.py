@@ -83,7 +83,7 @@ def get_payment_customization(
 ):
     """Get payment provider customization (getPaymentCustomization)
 
-    [Not Supported Yet In Starter] Get payment provider customization, at current only Adyen provide customization. This api has been deprecated, pls use /public/namespaces/{namespace}/payment/publicconfig to get adyen config
+    [Not supported yet in AGS Shared Cloud] Get payment provider customization, at current only Adyen provide customization. This api has been deprecated, pls use /public/namespaces/{namespace}/payment/publicconfig to get adyen config
     Other detail info:
 
       * Returns : customization
@@ -138,7 +138,7 @@ async def get_payment_customization_async(
 ):
     """Get payment provider customization (getPaymentCustomization)
 
-    [Not Supported Yet In Starter] Get payment provider customization, at current only Adyen provide customization. This api has been deprecated, pls use /public/namespaces/{namespace}/payment/publicconfig to get adyen config
+    [Not supported yet in AGS Shared Cloud] Get payment provider customization, at current only Adyen provide customization. This api has been deprecated, pls use /public/namespaces/{namespace}/payment/publicconfig to get adyen config
     Other detail info:
 
       * Returns : customization
@@ -194,7 +194,7 @@ def get_payment_public_config(
 ):
     """Get payment provider public config (getPaymentPublicConfig)
 
-    [Not Supported Yet In Starter] Get payment provider public config, at current only Strip provide public config.
+    [Not supported yet in AGS Shared Cloud] Get payment provider public config, at current only Strip provide public config.
     Other detail info:
 
       * Returns : Public config
@@ -248,7 +248,7 @@ async def get_payment_public_config_async(
 ):
     """Get payment provider public config (getPaymentPublicConfig)
 
-    [Not Supported Yet In Starter] Get payment provider public config, at current only Strip provide public config.
+    [Not supported yet in AGS Shared Cloud] Get payment provider public config, at current only Strip provide public config.
     Other detail info:
 
       * Returns : Public config
@@ -304,7 +304,7 @@ def get_payment_tax_value(
 ):
     """get tax result of a payment order (getPaymentTaxValue)
 
-    [Not Supported Yet In Starter] Check and get a payment order's should pay tax.
+    [Not supported yet in AGS Shared Cloud] Check and get a payment order's should pay tax.
     Other detail info:
 
       * Returns : tax result
@@ -362,7 +362,7 @@ async def get_payment_tax_value_async(
 ):
     """get tax result of a payment order (getPaymentTaxValue)
 
-    [Not Supported Yet In Starter] Check and get a payment order's should pay tax.
+    [Not supported yet in AGS Shared Cloud] Check and get a payment order's should pay tax.
     Other detail info:
 
       * Returns : tax result
@@ -413,8 +413,8 @@ async def get_payment_tax_value_async(
 
 @same_doc_as(Pay)
 def pay(
+    body: PaymentToken,
     payment_order_no: str,
-    body: Optional[PaymentToken] = None,
     payment_provider: Optional[Union[str, PayPaymentProviderEnum]] = None,
     zip_code: Optional[str] = None,
     namespace: Optional[str] = None,
@@ -423,7 +423,7 @@ def pay(
 ):
     """Do payment (pay)
 
-    [Not Supported Yet In Starter] Do payment(For now, this only support checkout.com).
+    [Not supported yet in AGS Shared Cloud] Do payment(For now, this only support checkout.com).
     Other detail info:
 
       * Returns : Payment process result
@@ -442,7 +442,7 @@ def pay(
         securities: [BEARER_AUTH]
 
 
-        body: (body) OPTIONAL PaymentToken in body
+        body: (body) REQUIRED PaymentToken in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -466,8 +466,8 @@ def pay(
         if error:
             return None, error
     request = Pay.create(
-        payment_order_no=payment_order_no,
         body=body,
+        payment_order_no=payment_order_no,
         payment_provider=payment_provider,
         zip_code=zip_code,
         namespace=namespace,
@@ -477,8 +477,8 @@ def pay(
 
 @same_doc_as(Pay)
 async def pay_async(
+    body: PaymentToken,
     payment_order_no: str,
-    body: Optional[PaymentToken] = None,
     payment_provider: Optional[Union[str, PayPaymentProviderEnum]] = None,
     zip_code: Optional[str] = None,
     namespace: Optional[str] = None,
@@ -487,7 +487,7 @@ async def pay_async(
 ):
     """Do payment (pay)
 
-    [Not Supported Yet In Starter] Do payment(For now, this only support checkout.com).
+    [Not supported yet in AGS Shared Cloud] Do payment(For now, this only support checkout.com).
     Other detail info:
 
       * Returns : Payment process result
@@ -506,7 +506,7 @@ async def pay_async(
         securities: [BEARER_AUTH]
 
 
-        body: (body) OPTIONAL PaymentToken in body
+        body: (body) REQUIRED PaymentToken in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -530,8 +530,8 @@ async def pay_async(
         if error:
             return None, error
     request = Pay.create(
-        payment_order_no=payment_order_no,
         body=body,
+        payment_order_no=payment_order_no,
         payment_provider=payment_provider,
         zip_code=zip_code,
         namespace=namespace,
@@ -550,7 +550,7 @@ def public_check_payment_order_paid_status(
 ):
     """Check payment order paid status (publicCheckPaymentOrderPaidStatus)
 
-    [Not Supported Yet In Starter] Check payment order paid status.
+    [Not supported yet in AGS Shared Cloud] Check payment order paid status.
     Other detail info:
 
       * Returns : Payment order paid result
@@ -598,7 +598,7 @@ async def public_check_payment_order_paid_status_async(
 ):
     """Check payment order paid status (publicCheckPaymentOrderPaidStatus)
 
-    [Not Supported Yet In Starter] Check payment order paid status.
+    [Not supported yet in AGS Shared Cloud] Check payment order paid status.
     Other detail info:
 
       * Returns : Payment order paid result
@@ -648,7 +648,7 @@ def public_get_payment_methods(
 ):
     """Get payment methods (publicGetPaymentMethods)
 
-    [Not Supported Yet In Starter] Get payment methods.
+    [Not supported yet in AGS Shared Cloud] Get payment methods.
     Other detail info:
 
       * Returns : Payment method list
@@ -696,7 +696,7 @@ async def public_get_payment_methods_async(
 ):
     """Get payment methods (publicGetPaymentMethods)
 
-    [Not Supported Yet In Starter] Get payment methods.
+    [Not supported yet in AGS Shared Cloud] Get payment methods.
     Other detail info:
 
       * Returns : Payment method list
@@ -739,14 +739,14 @@ async def public_get_payment_methods_async(
 
 @same_doc_as(PublicGetPaymentUrl)
 def public_get_payment_url(
-    body: Optional[PaymentUrlCreate] = None,
+    body: PaymentUrlCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
     """Get payment url (publicGetPaymentUrl)
 
-    [Not Supported Yet In Starter] Get payment url.
+    [Not supported yet in AGS Shared Cloud] Get payment url.
     Other detail info:
 
       * For Neon Pay payment provider, the 'neonPayConfig' field can be used to provide success and cancel URL. If 'neonPayConfig' field is not present, the 'returnUrl' will be used for both success and cancel URL.
@@ -766,7 +766,7 @@ def public_get_payment_url(
         securities: [BEARER_AUTH]
 
 
-        body: (body) OPTIONAL PaymentUrlCreate in body
+        body: (body) REQUIRED PaymentUrlCreate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -792,14 +792,14 @@ def public_get_payment_url(
 
 @same_doc_as(PublicGetPaymentUrl)
 async def public_get_payment_url_async(
-    body: Optional[PaymentUrlCreate] = None,
+    body: PaymentUrlCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
 ):
     """Get payment url (publicGetPaymentUrl)
 
-    [Not Supported Yet In Starter] Get payment url.
+    [Not supported yet in AGS Shared Cloud] Get payment url.
     Other detail info:
 
       * For Neon Pay payment provider, the 'neonPayConfig' field can be used to provide success and cancel URL. If 'neonPayConfig' field is not present, the 'returnUrl' will be used for both success and cancel URL.
@@ -819,7 +819,7 @@ async def public_get_payment_url_async(
         securities: [BEARER_AUTH]
 
 
-        body: (body) OPTIONAL PaymentUrlCreate in body
+        body: (body) REQUIRED PaymentUrlCreate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -854,7 +854,7 @@ def public_get_qr_code(
 ):
     """Get qrcode (publicGetQRCode)
 
-    [Not Supported Yet In Starter] Get qrcode.
+    [Not supported yet in AGS Shared Cloud] Get qrcode.
     Other detail info:
 
       * Returns : QRCode image stream
@@ -900,7 +900,7 @@ async def public_get_qr_code_async(
 ):
     """Get qrcode (publicGetQRCode)
 
-    [Not Supported Yet In Starter] Get qrcode.
+    [Not supported yet in AGS Shared Cloud] Get qrcode.
     Other detail info:
 
       * Returns : QRCode image stream
@@ -948,7 +948,7 @@ def public_get_unpaid_payment_order(
 ):
     """Get payment order info (publicGetUnpaidPaymentOrder)
 
-    [Not Supported Yet In Starter] Get payment order info.
+    [Not supported yet in AGS Shared Cloud] Get payment order info.
     Other detail info:
 
       * Returns : Payment order details
@@ -998,7 +998,7 @@ async def public_get_unpaid_payment_order_async(
 ):
     """Get payment order info (publicGetUnpaidPaymentOrder)
 
-    [Not Supported Yet In Starter] Get payment order info.
+    [Not supported yet in AGS Shared Cloud] Get payment order info.
     Other detail info:
 
       * Returns : Payment order details
@@ -1064,7 +1064,7 @@ def public_normalize_payment_return_url(
 ):
     """Normalize payment return url (publicNormalizePaymentReturnUrl)
 
-    [Not Supported Yet In Starter] Normalize payment return url for payment provider
+    [Not supported yet in AGS Shared Cloud] Normalize payment return url for payment provider
     Field                                                                                                                                                        | Type   | Required | Description
     -------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|----------|-----------------------
     orderNo                                                                                                                                                      | String | Yes      | order no
@@ -1186,7 +1186,7 @@ async def public_normalize_payment_return_url_async(
 ):
     """Normalize payment return url (publicNormalizePaymentReturnUrl)
 
-    [Not Supported Yet In Starter] Normalize payment return url for payment provider
+    [Not supported yet in AGS Shared Cloud] Normalize payment return url for payment provider
     Field                                                                                                                                                        | Type   | Required | Description
     -------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|----------|-----------------------
     orderNo                                                                                                                                                      | String | Yes      | order no

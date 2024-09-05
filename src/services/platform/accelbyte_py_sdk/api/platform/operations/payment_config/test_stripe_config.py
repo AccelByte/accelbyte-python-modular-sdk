@@ -36,7 +36,7 @@ from ...models import TestResult
 class TestStripeConfig(Operation):
     """Test stripe configuration (testStripeConfig)
 
-    [Not Supported Yet In Starter] Test stripe configuration.
+    [Not supported yet in AGS Shared Cloud] Test stripe configuration.
 
     #### Check List:
 
@@ -66,7 +66,7 @@ class TestStripeConfig(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StripeConfig in body
+        body: (body) REQUIRED StripeConfig in body
 
         sandbox: (sandbox) OPTIONAL bool in query
 
@@ -87,7 +87,7 @@ class TestStripeConfig(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: StripeConfig  # OPTIONAL in [body]
+    body: StripeConfig  # REQUIRED in [body]
     sandbox: bool  # OPTIONAL in [query]
 
     # endregion fields
@@ -221,14 +221,10 @@ class TestStripeConfig(Operation):
 
     @classmethod
     def create(
-        cls,
-        body: Optional[StripeConfig] = None,
-        sandbox: Optional[bool] = None,
-        **kwargs,
+        cls, body: StripeConfig, sandbox: Optional[bool] = None, **kwargs
     ) -> TestStripeConfig:
         instance = cls()
-        if body is not None:
-            instance.body = body
+        instance.body = body
         if sandbox is not None:
             instance.sandbox = sandbox
         if x_flight_id := kwargs.get("x_flight_id", None):
@@ -262,7 +258,7 @@ class TestStripeConfig(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "sandbox": False,
         }
 

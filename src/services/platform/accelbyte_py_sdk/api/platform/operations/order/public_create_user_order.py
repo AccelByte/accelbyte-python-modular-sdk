@@ -76,7 +76,7 @@ class PublicCreateUserOrder(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL OrderCreate in body
+        body: (body) REQUIRED OrderCreate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -109,7 +109,7 @@ class PublicCreateUserOrder(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: OrderCreate  # OPTIONAL in [body]
+    body: OrderCreate  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
 
@@ -277,13 +277,12 @@ class PublicCreateUserOrder(Operation):
 
     @classmethod
     def create(
-        cls, namespace: str, user_id: str, body: Optional[OrderCreate] = None, **kwargs
+        cls, body: OrderCreate, namespace: str, user_id: str, **kwargs
     ) -> PublicCreateUserOrder:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
         instance.user_id = user_id
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -320,7 +319,7 @@ class PublicCreateUserOrder(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "namespace": True,
             "userId": True,
         }

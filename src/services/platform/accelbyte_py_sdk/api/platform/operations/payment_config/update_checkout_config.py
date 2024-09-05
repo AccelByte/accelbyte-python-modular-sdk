@@ -37,7 +37,7 @@ from ...models import PaymentMerchantConfigInfo
 class UpdateCheckoutConfig(Operation):
     """Update checkout.com config (updateCheckoutConfig)
 
-    [Not Supported Yet In Starter] Update checkout.com config.
+    [Not supported yet in AGS Shared Cloud] Update checkout.com config.
     Other detail info:
 
       * Returns : updated payment merchant config
@@ -55,7 +55,7 @@ class UpdateCheckoutConfig(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL CheckoutConfig in body
+        body: (body) REQUIRED CheckoutConfig in body
 
         id_: (id) REQUIRED str in path
 
@@ -82,7 +82,7 @@ class UpdateCheckoutConfig(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: CheckoutConfig  # OPTIONAL in [body]
+    body: CheckoutConfig  # REQUIRED in [body]
     id_: str  # REQUIRED in [path]
     sandbox: bool  # OPTIONAL in [query]
     validate: bool  # OPTIONAL in [query]
@@ -169,7 +169,7 @@ class UpdateCheckoutConfig(Operation):
         self.body = value
         return self
 
-    def with_id_(self, value: str) -> UpdateCheckoutConfig:
+    def with_id(self, value: str) -> UpdateCheckoutConfig:
         self.id_ = value
         return self
 
@@ -250,16 +250,15 @@ class UpdateCheckoutConfig(Operation):
     @classmethod
     def create(
         cls,
+        body: CheckoutConfig,
         id_: str,
-        body: Optional[CheckoutConfig] = None,
         sandbox: Optional[bool] = None,
         validate: Optional[bool] = None,
         **kwargs,
     ) -> UpdateCheckoutConfig:
         instance = cls()
+        instance.body = body
         instance.id_ = id_
-        if body is not None:
-            instance.body = body
         if sandbox is not None:
             instance.sandbox = sandbox
         if validate is not None:
@@ -305,7 +304,7 @@ class UpdateCheckoutConfig(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "id": True,
             "sandbox": False,
             "validate": False,

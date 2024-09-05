@@ -52,7 +52,7 @@ class UpdateEpicGamesIAPConfig(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL EpicGamesIAPConfigRequest in body
+        body: (body) REQUIRED EpicGamesIAPConfigRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -73,7 +73,7 @@ class UpdateEpicGamesIAPConfig(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: EpicGamesIAPConfigRequest  # OPTIONAL in [body]
+    body: EpicGamesIAPConfigRequest  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
 
     # endregion fields
@@ -207,12 +207,11 @@ class UpdateEpicGamesIAPConfig(Operation):
 
     @classmethod
     def create(
-        cls, namespace: str, body: Optional[EpicGamesIAPConfigRequest] = None, **kwargs
+        cls, body: EpicGamesIAPConfigRequest, namespace: str, **kwargs
     ) -> UpdateEpicGamesIAPConfig:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -244,7 +243,7 @@ class UpdateEpicGamesIAPConfig(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "namespace": True,
         }
 

@@ -67,7 +67,7 @@ class UpdatePlatformWalletConfig(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL PlatformWalletConfigUpdate in body
+        body: (body) REQUIRED PlatformWalletConfigUpdate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -94,7 +94,7 @@ class UpdatePlatformWalletConfig(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: PlatformWalletConfigUpdate  # OPTIONAL in [body]
+    body: PlatformWalletConfigUpdate  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
     platform: Union[str, PlatformEnum]  # REQUIRED in [path]
 
@@ -244,16 +244,15 @@ class UpdatePlatformWalletConfig(Operation):
     @classmethod
     def create(
         cls,
+        body: PlatformWalletConfigUpdate,
         namespace: str,
         platform: Union[str, PlatformEnum],
-        body: Optional[PlatformWalletConfigUpdate] = None,
         **kwargs,
     ) -> UpdatePlatformWalletConfig:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
         instance.platform = platform
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -290,7 +289,7 @@ class UpdatePlatformWalletConfig(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "namespace": True,
             "platform": True,
         }

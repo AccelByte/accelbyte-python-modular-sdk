@@ -36,7 +36,7 @@ from ...models import TestResult
 class TestNeonPayConfig(Operation):
     """Test Neon Pay configuration (testNeonPayConfig)
 
-    [Not Supported Yet In Starter] Check Neon Pay configuration, Reference: [Neon Pay Document](https://docs.neonpay.com/docs/checkout).
+    [Not supported yet in AGS Shared Cloud] Check Neon Pay configuration, Reference: [Neon Pay Document](https://docs.neonpay.com/docs/checkout).
 
     #### Check List:
 
@@ -59,7 +59,7 @@ class TestNeonPayConfig(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL NeonPayConfig in body
+        body: (body) REQUIRED NeonPayConfig in body
 
         sandbox: (sandbox) OPTIONAL bool in query
 
@@ -80,7 +80,7 @@ class TestNeonPayConfig(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: NeonPayConfig  # OPTIONAL in [body]
+    body: NeonPayConfig  # REQUIRED in [body]
     sandbox: bool  # OPTIONAL in [query]
 
     # endregion fields
@@ -214,14 +214,10 @@ class TestNeonPayConfig(Operation):
 
     @classmethod
     def create(
-        cls,
-        body: Optional[NeonPayConfig] = None,
-        sandbox: Optional[bool] = None,
-        **kwargs,
+        cls, body: NeonPayConfig, sandbox: Optional[bool] = None, **kwargs
     ) -> TestNeonPayConfig:
         instance = cls()
-        if body is not None:
-            instance.body = body
+        instance.body = body
         if sandbox is not None:
             instance.sandbox = sandbox
         if x_flight_id := kwargs.get("x_flight_id", None):
@@ -255,7 +251,7 @@ class TestNeonPayConfig(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "sandbox": False,
         }
 

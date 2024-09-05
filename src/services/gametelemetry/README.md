@@ -6,7 +6,7 @@ This is a service module for the [AccelByte Modular Python SDK](https://github.c
 
 ```text
 Analytics Game Telemetry
-* Version: 1.25.1
+* Version: 1.26.0
 ```
 
 ## Setup

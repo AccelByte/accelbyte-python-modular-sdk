@@ -37,7 +37,7 @@ from ...models import PaymentMerchantConfigInfo
 class UpdateNeonPayConfig(Operation):
     """Update Neon Pay config (updateNeonPayConfig)
 
-    [Not Supported Yet In Starter] Update Neon Pay config.
+    [Not supported yet in AGS Shared Cloud] Update Neon Pay config.
     Other detail info:
 
       * Returns : updated payment merchant config
@@ -55,7 +55,7 @@ class UpdateNeonPayConfig(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL NeonPayConfig in body
+        body: (body) REQUIRED NeonPayConfig in body
 
         id_: (id) REQUIRED str in path
 
@@ -82,7 +82,7 @@ class UpdateNeonPayConfig(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: NeonPayConfig  # OPTIONAL in [body]
+    body: NeonPayConfig  # REQUIRED in [body]
     id_: str  # REQUIRED in [path]
     sandbox: bool  # OPTIONAL in [query]
     validate: bool  # OPTIONAL in [query]
@@ -169,7 +169,7 @@ class UpdateNeonPayConfig(Operation):
         self.body = value
         return self
 
-    def with_id_(self, value: str) -> UpdateNeonPayConfig:
+    def with_id(self, value: str) -> UpdateNeonPayConfig:
         self.id_ = value
         return self
 
@@ -250,16 +250,15 @@ class UpdateNeonPayConfig(Operation):
     @classmethod
     def create(
         cls,
+        body: NeonPayConfig,
         id_: str,
-        body: Optional[NeonPayConfig] = None,
         sandbox: Optional[bool] = None,
         validate: Optional[bool] = None,
         **kwargs,
     ) -> UpdateNeonPayConfig:
         instance = cls()
+        instance.body = body
         instance.id_ = id_
-        if body is not None:
-            instance.body = body
         if sandbox is not None:
             instance.sandbox = sandbox
         if validate is not None:
@@ -305,7 +304,7 @@ class UpdateNeonPayConfig(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "id": True,
             "sandbox": False,
             "validate": False,

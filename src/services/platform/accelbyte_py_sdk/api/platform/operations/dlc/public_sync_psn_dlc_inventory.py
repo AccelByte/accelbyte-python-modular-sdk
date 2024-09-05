@@ -61,7 +61,9 @@ class PublicSyncPsnDlcInventory(Operation):
     Responses:
         204: No Content - (Successful operation)
 
-        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39127: Invalid service label [{serviceLabel}])
+        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39127: Invalid service label [{serviceLabel}] | 39132: Bad request for playstation under namespace [{namespace}], reason: [{reason}].)
+
+        404: Not Found - ErrorEntity (39143: PlayStation IAP config not found in namespace [{namespace}])
     """
 
     # region fields
@@ -196,7 +198,9 @@ class PublicSyncPsnDlcInventory(Operation):
 
         204: No Content - (Successful operation)
 
-        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39127: Invalid service label [{serviceLabel}])
+        400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}] | 39127: Invalid service label [{serviceLabel}] | 39132: Bad request for playstation under namespace [{namespace}], reason: [{reason}].)
+
+        404: Not Found - ErrorEntity (39143: PlayStation IAP config not found in namespace [{namespace}])
 
         ---: HttpResponse (Undocumented Response)
 
@@ -214,6 +218,8 @@ class PublicSyncPsnDlcInventory(Operation):
         if code == 204:
             return None, None
         if code == 400:
+            return None, ErrorEntity.create_from_dict(content)
+        if code == 404:
             return None, ErrorEntity.create_from_dict(content)
 
         return self.handle_undocumented_response(

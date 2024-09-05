@@ -52,7 +52,7 @@ class UnlockSteamUserAchievement(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL SteamAchievementUpdateRequest in body
+        body: (body) REQUIRED SteamAchievementUpdateRequest in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -83,7 +83,7 @@ class UnlockSteamUserAchievement(Operation):
 
     service_name: Optional[str] = "platform"
 
-    body: SteamAchievementUpdateRequest  # OPTIONAL in [body]
+    body: SteamAchievementUpdateRequest  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
 
@@ -238,17 +238,12 @@ class UnlockSteamUserAchievement(Operation):
 
     @classmethod
     def create(
-        cls,
-        namespace: str,
-        user_id: str,
-        body: Optional[SteamAchievementUpdateRequest] = None,
-        **kwargs,
+        cls, body: SteamAchievementUpdateRequest, namespace: str, user_id: str, **kwargs
     ) -> UnlockSteamUserAchievement:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
         instance.user_id = user_id
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -285,7 +280,7 @@ class UnlockSteamUserAchievement(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "namespace": True,
             "userId": True,
         }
