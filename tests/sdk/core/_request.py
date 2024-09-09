@@ -349,7 +349,7 @@ class RequestTestCase(TestCase):
         # assert
         self.assertEqual("http://0.0.0.0:8080/foo", request.url)
         self.assertEqual(
-            f"AccelBytePythonSDK/{sdk_version} (Test/1.0.0)",
+            f"ModularPythonSDK/{sdk_version} (Test/1.0.0)",
             request.headers.get("User-Agent"),
         )
 

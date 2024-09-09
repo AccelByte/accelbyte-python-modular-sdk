@@ -4,7 +4,7 @@
 
 """The top-level package for the AccelByte Modular Python SDK."""
 
-__product__ = "AccelBytePythonSDK"
+__product__ = "ModularPythonSDK"
 __version__ = "0.5.0"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
