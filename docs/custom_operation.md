@@ -321,7 +321,7 @@ Output:
 
 ## References
 
-Please see the [/api](../accelbyte_py_sdk/api) directory for mroe examples on how to create custom models and
+Please see the [/services/<service-name>/api](../src/services/) directory for more examples on how to create custom models and
 operations from generated code.
 
 The working code for this example is found [here](../samples/custom-operation).
