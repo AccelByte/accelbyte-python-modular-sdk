@@ -461,59 +461,6 @@ def test_put_game_record_handler_v1(self):
     self.assertIn("foo", result.value)
     self.assertEqual("baz", result.value["foo"])
 ```
-## Event Log
-
-Source: [eventlog.py](../tests/integration/api/eventlog.py)
-
-### Get Event Specific User V2 Handler
-
-```python
-def test_get_event_specific_user_v2_handler(self):
-    self.skipTest(reason="test not ready")
-    return
-
-    from accelbyte_py_sdk.api.eventlog import get_event_specific_user_v2_handler
-
-    # arrange
-    result, error = self.generate_user()
-    if error:
-        self.skipTest(reason="failed to generate user ID")
-
-    username, password, user_id = result
-
-    # act
-    result, error = get_event_specific_user_v2_handler(
-        user_id=user_id,
-    )
-
-    # assert
-    self.assertIsNone(error, error)
-```
-### Query Event Stream Handler
-
-```python
-def test_query_event_stream_handler(self):
-    from accelbyte_py_sdk.core import get_client_id
-    from accelbyte_py_sdk.api.eventlog import query_event_stream_handler
-    from accelbyte_py_sdk.api.eventlog.models import ModelsGenericQueryPayload
-
-    # arrange
-    client_id, error = get_client_id()
-    if error:
-        self.fail(msg=error)
-
-    # act
-    _, error = query_event_stream_handler(
-        body=ModelsGenericQueryPayload.create_from_dict(
-            {
-                "clientId": client_id,
-            }
-        )
-    )
-
-    # assert
-    self.assertIsNone(error, error)
-```
 ## Game Telemetry
 
 Source: [gametelemetry.py](../tests/integration/api/gametelemetry.py)
