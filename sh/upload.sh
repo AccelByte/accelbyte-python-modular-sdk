@@ -58,7 +58,7 @@ if [[ "$DRYRUN" -ne 1 ]]; then
     --volume "$(readlink -f "$PYPIRC_PATH")":/.pypirc \
     --workdir /data \
     --entrypoint /bin/sh \
-    python:3.9-slim \
+    python:3.9 \
     -c 'python -m venv /tmp &&
     /tmp/bin/python -m pip install --upgrade twine &&
     /tmp/bin/python -m twine upload --repository $REPO --config-file /.pypirc --verbose dist/*'

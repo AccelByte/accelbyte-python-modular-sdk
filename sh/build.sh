@@ -45,7 +45,7 @@ if [[ "$DRYRUN" -ne 1 ]]; then
     --volume "$(readlink -f "$PKG_PATH")":/data \
     --workdir /data \
     --entrypoint /bin/sh \
-    python:3.9-slim \
+    python:3.9 \
     -c 'python -m venv /tmp &&
     /tmp/bin/python -m pip install --quiet --upgrade pip build setuptools setuptools_scm wheel &&
     /tmp/bin/python -m build 1> /dev/null'

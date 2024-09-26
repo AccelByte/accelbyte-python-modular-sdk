@@ -56,7 +56,7 @@ test_core:
 			--env PIP_CACHE_DIR=/tmp/pip \
 			--name ab_py_sdk_core_test \
 			--entrypoint /bin/bash \
-			python:3.9-slim \
+			python:3.9 \
 				-c 'rm -f /data/test_core.tap && \
 					python -m venv /tmp/client && \
 					echo "[info] installing requirements-test.txt" && \
@@ -68,7 +68,7 @@ test_core:
 test_integration:
 	@test -n "$(ENV_FILE_PATH)" || (echo "ENV_FILE_PATH is not set" ; exit 1)
 	rm -f test_integration.err
-	docker run --rm --tty --user $$(id -u):$$(id -g) --env PIP_CACHE_DIR=/tmp/pip --env-file $(ENV_FILE_PATH) -v $$(pwd):/data -w /data --entrypoint /bin/sh python:3.9-slim \
+	docker run --rm --tty --user $$(id -u):$$(id -g) --env PIP_CACHE_DIR=/tmp/pip --env-file $(ENV_FILE_PATH) -v $$(pwd):/data -w /data --entrypoint /bin/sh python:3.9 \
 			-c 'python -m venv /tmp && \
 				/tmp/bin/pip install -r requirements-test.txt && \
 				rm -f /data/test_integration.tap && \
@@ -94,7 +94,7 @@ test_cli:
 			--env BATCH=true \
 			--name ab_py_sdk_cli_test \
 			--entrypoint /bin/bash \
-			python:3.9-slim \
+			python:3.9 \
 				-c 'python -m venv /tmp/client && \
 					echo "[info] installing samples/cli/requirements.txt" && \
 					(cd /data/samples/cli && /tmp/client/bin/pip install --upgrade pip && /tmp/client/bin/pip install -r requirements.txt) && \
