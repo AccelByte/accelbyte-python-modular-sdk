@@ -33,7 +33,6 @@ pip install accelbyte-py-sdk-service-basic
 pip install accelbyte-py-sdk-service-cloudsave
 pip install accelbyte-py-sdk-service-dslogmanager
 pip install accelbyte-py-sdk-service-dsmc
-pip install accelbyte-py-sdk-service-eventlog
 pip install accelbyte-py-sdk-service-gametelemetry
 pip install accelbyte-py-sdk-service-gdpr
 pip install accelbyte-py-sdk-service-iam

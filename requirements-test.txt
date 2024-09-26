@@ -16,7 +16,6 @@ src/services/cloudsave
 src/services/dsartifact
 src/services/dslogmanager
 src/services/dsmc
-src/services/eventlog
 src/services/gametelemetry
 src/services/gdpr
 src/services/group

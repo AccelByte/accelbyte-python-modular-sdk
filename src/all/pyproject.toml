@@ -25,7 +25,6 @@ dependencies = [
     "accelbyte-py-sdk-service-dsartifact",
     "accelbyte-py-sdk-service-dslogmanager",
     "accelbyte-py-sdk-service-dsmc",
-    "accelbyte-py-sdk-service-eventlog",
     "accelbyte-py-sdk-service-gametelemetry",
     "accelbyte-py-sdk-service-gdpr",
     "accelbyte-py-sdk-service-group",
