@@ -461,6 +461,112 @@ def test_put_game_record_handler_v1(self):
     self.assertIn("foo", result.value)
     self.assertEqual("baz", result.value["foo"])
 ```
+### Delete Player Record Handler V1
+
+```python
+def test_delete_player_record_handler_v1(self):
+    from accelbyte_py_sdk.api.cloudsave import delete_player_record_handler_v1
+    from accelbyte_py_sdk.api.cloudsave import post_player_record_handler_v1
+
+    # arrange
+    _, error = post_player_record_handler_v1(
+        body=self.models_player_record_request, key=self.post_player_record_handler_key, user_id=self.user_id
+    )
+    self.log_warning(
+        msg=f"Failed to set up player record handler. {str(error)}",
+        condition=error is not None,
+    )
+
+    # act
+    _, error = delete_player_record_handler_v1(key=self.post_player_record_handler_key, user_id=self.user_id)
+
+    # assert
+    self.assertIsNone(error, error)
+```
+### Create Player Record Handler V1
+
+```python
+def test_create_player_record_handler_v1(self):
+    from accelbyte_py_sdk.api.cloudsave import get_player_record_handler_v1
+    from accelbyte_py_sdk.api.cloudsave import post_player_record_handler_v1
+    from accelbyte_py_sdk.api.cloudsave import put_player_record_handler_v1
+    from accelbyte_py_sdk.api.cloudsave import delete_player_record_handler_v1
+
+    # arrange
+    _, error = post_player_record_handler_v1(
+        body=self.models_player_record_request, key=self.post_player_record_handler_key, user_id=self.user_id
+    )
+    self.log_warning(
+        msg=f"Failed to set up player record handler. {str(error)}",
+        condition=error is not None,
+    )
+
+    # act
+    _, error = get_player_record_handler_v1(key=self.post_player_record_handler_key, user_id=self.user_id)
+
+    # assert
+    self.assertIsNone(error, error)
+```
+### Get Player Record Handler V1
+
+```python
+def test_get_player_record_handler_v1(self):
+    from accelbyte_py_sdk.api.cloudsave import get_player_record_handler_v1
+    from accelbyte_py_sdk.api.cloudsave import post_player_record_handler_v1
+
+    # arrange
+    _, error = post_player_record_handler_v1(
+        body=self.models_player_record_request, key=self.post_player_record_handler_key, user_id=self.user_id
+    )
+    self.log_warning(
+        msg=f"Failed to set up player record handler. {str(error)}",
+        condition=error is not None,
+    )
+
+    # act
+    _, error = get_player_record_handler_v1(key=self.post_player_record_handler_key)
+
+    # assert
+    self.assertIsNone(error, error)
+```
+### Put Player Record Handler V1
+
+```python
+def test_put_player_record_handler_v1(self):
+    from accelbyte_py_sdk.api.cloudsave import get_player_record_handler_v1
+    from accelbyte_py_sdk.api.cloudsave import post_player_record_handler_v1
+    from accelbyte_py_sdk.api.cloudsave import put_player_record_handler_v1
+    from accelbyte_py_sdk.api.cloudsave.models import ModelsPlayerRecordRequest
+    from accelbyte_py_sdk.api.cloudsave.models import ModelsPlayerRecordResponse
+
+    # arrange
+    _, error = post_player_record_handler_v1(
+        body=self.models_player_record_request, key=self.post_player_record_handler_key, user_id=self.user_id
+    )
+    self.log_warning(
+        msg=f"Failed to set up player record handler. {str(error)}",
+        condition=error is not None,
+    )
+
+    # act
+    _, error = put_player_record_handler_v1(
+        body=ModelsPlayerRecordRequest.create(dict_={"foo": "baz"}),
+        key=self.post_player_record_handler_key,
+        user_id=self.user_id,
+    )
+
+    # assert
+    self.assertIsNone(error, error)
+
+    result, error = get_player_record_handler_v1(
+        key=self.post_player_record_handler_key, user_id=self.user_id
+    )
+    self.assertIsNotNone(result)
+    self.assertIsInstance(result, ModelsPlayerRecordResponse)
+    self.assertIsNotNone(result.value)
+    self.assertIn("foo", result.value)
+    self.assertEqual("baz", result.value["foo"])
+```
 ## Game Telemetry
 
 Source: [gametelemetry.py](../tests/integration/api/gametelemetry.py)
@@ -1709,7 +1815,6 @@ def test_match_function_list(self):
     # assert
     self.assertIsNone(error, error)
 ```
-
 ## Platform
 
 Source: [platformx.py](../tests/integration/api/platformx.py)
@@ -2206,7 +2311,6 @@ def test_party_flow(self):
     party_ids = [party.id_ for party in result.data]
     self.assertIn(party_id, party_ids)
 ```
-
 ## Social
 
 Source: [social.py](../tests/integration/api/social.py)
