@@ -1,3 +1,4 @@
+from typing import Optional
 from tests.integration.test_case import IntegrationTestCase
 
 from accelbyte_py_sdk.api.cloudsave.models import ModelsGameRecordRequest
@@ -6,6 +7,7 @@ from accelbyte_py_sdk.api.cloudsave.models import ModelsPlayerRecordRequest
 
 class CloudSaveTestCase(IntegrationTestCase):
     post_game_record_handler_key: str = "key"
+    post_player_record_handler_key: str = "key"
     models_game_record_request: ModelsGameRecordRequest = (
         ModelsGameRecordRequest.create(dict_={"foo": "bar"})
     )
@@ -13,14 +15,7 @@ class CloudSaveTestCase(IntegrationTestCase):
         ModelsPlayerRecordRequest.create(dict_={"foo": "bar"})
     )
 
-    # arrange
     user_id: Optional[str] = None
-    generate_user_result, error = self.generate_user()
-    if error:
-        self.skipTest(reason=f"unable to create user: {error}")
-
-    username, password, user_id = generate_user_result
-    self.user_id = user_id
 
     def tearDown(self) -> None:
         from accelbyte_py_sdk.api.cloudsave import delete_game_record_handler_v1
@@ -28,12 +23,6 @@ class CloudSaveTestCase(IntegrationTestCase):
         _, error = delete_game_record_handler_v1(key=self.post_game_record_handler_key)
         self.log_warning(
             msg=f"Failed to tear down game record handler. {str(error)}",
-            condition=error is not None,
-        )
-
-        _, error = delete_player_record_handler_v1(key=self.post_player_record_handler_key, user_id=self.user_id)
-        self.log_warning(
-            msg=f"Failed to tear down player record handler. {str(error)}",
             condition=error is not None,
         )
 
@@ -148,6 +137,8 @@ class CloudSaveTestCase(IntegrationTestCase):
         from accelbyte_py_sdk.api.cloudsave import delete_player_record_handler_v1
         from accelbyte_py_sdk.api.cloudsave import post_player_record_handler_v1
 
+        self.user_id = self.get_user_id()
+
         # arrange
         _, error = post_player_record_handler_v1(
             body=self.models_player_record_request, key=self.post_player_record_handler_key, user_id=self.user_id
@@ -168,10 +159,31 @@ class CloudSaveTestCase(IntegrationTestCase):
     # region test:create_player_record_handler_v1
 
     def test_create_player_record_handler_v1(self):
+        from accelbyte_py_sdk.api.cloudsave import post_player_record_handler_v1
+
+        self.user_id = self.get_user_id()
+
+        # act
+        _, error = post_player_record_handler_v1(
+            body=self.models_player_record_request, key=self.post_player_record_handler_key, user_id=self.user_id
+        )
+        self.log_warning(
+            msg=f"Failed to set up player record handler. {str(error)}",
+            condition=error is not None,
+        )
+
+        # assert
+        self.assertIsNone(error, error)
+
+    # endregion test:post_player_record_handler_v1
+
+    # region test:get_player_record_handler_v1
+
+    def test_get_player_record_handler_v1(self):
         from accelbyte_py_sdk.api.cloudsave import get_player_record_handler_v1
         from accelbyte_py_sdk.api.cloudsave import post_player_record_handler_v1
-        from accelbyte_py_sdk.api.cloudsave import put_player_record_handler_v1
-        from accelbyte_py_sdk.api.cloudsave import delete_player_record_handler_v1
+
+        self.user_id = self.get_user_id()
 
         # arrange
         _, error = post_player_record_handler_v1(
@@ -188,29 +200,6 @@ class CloudSaveTestCase(IntegrationTestCase):
         # assert
         self.assertIsNone(error, error)
 
-    # endregion test:post_player_record_handler_v1
-
-    # region test:get_player_record_handler_v1
-
-    def test_get_player_record_handler_v1(self):
-        from accelbyte_py_sdk.api.cloudsave import get_player_record_handler_v1
-        from accelbyte_py_sdk.api.cloudsave import post_player_record_handler_v1
-
-        # arrange
-        _, error = post_player_record_handler_v1(
-            body=self.models_player_record_request, key=self.post_player_record_handler_key, user_id=self.user_id
-        )
-        self.log_warning(
-            msg=f"Failed to set up player record handler. {str(error)}",
-            condition=error is not None,
-        )
-
-        # act
-        _, error = get_player_record_handler_v1(key=self.post_player_record_handler_key)
-
-        # assert
-        self.assertIsNone(error, error)
-
     # endregion test:get_player_record_handler_v1
 
     # region test:put_player_record_handler_v1
@@ -221,6 +210,8 @@ class CloudSaveTestCase(IntegrationTestCase):
         from accelbyte_py_sdk.api.cloudsave import put_player_record_handler_v1
         from accelbyte_py_sdk.api.cloudsave.models import ModelsPlayerRecordRequest
         from accelbyte_py_sdk.api.cloudsave.models import ModelsPlayerRecordResponse
+
+        self.user_id = self.get_user_id()
 
         # arrange
         _, error = post_player_record_handler_v1(
@@ -235,7 +226,7 @@ class CloudSaveTestCase(IntegrationTestCase):
         _, error = put_player_record_handler_v1(
             body=ModelsPlayerRecordRequest.create(dict_={"foo": "baz"}),
             key=self.post_player_record_handler_key,
-            user_id=self.user_id,
+            user_id = self.user_id,
         )
 
         # assert
