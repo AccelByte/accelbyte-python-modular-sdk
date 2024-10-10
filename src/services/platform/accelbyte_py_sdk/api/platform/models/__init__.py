@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Platform Service."""
 
-__version__ = "4.56.0"
+__version__ = "5.0.1"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -41,8 +41,15 @@ from .app_info import PlatformsEnum as AppInfoPlatformsEnum
 from .app_info import PlayersEnum as AppInfoPlayersEnum
 from .app_info import PrimaryGenreEnum as AppInfoPrimaryGenreEnum
 from .apple_iap_config_info import AppleIAPConfigInfo
+from .apple_iap_config_info import VersionEnum as AppleIAPConfigInfoVersionEnum
 from .apple_iap_config_request import AppleIAPConfigRequest
+from .apple_iap_config_request import VersionEnum as AppleIAPConfigRequestVersionEnum
+from .apple_iap_config_version_info import AppleIAPConfigVersionInfo
+from .apple_iap_config_version_info import (
+    VersionEnum as AppleIAPConfigVersionInfoVersionEnum,
+)
 from .apple_iap_receipt import AppleIAPReceipt
+from .apple_iap_request import AppleIAPRequest
 from .app_localization import AppLocalization
 from .app_update import AppUpdate
 from .app_update import GenresEnum as AppUpdateGenresEnum
@@ -72,6 +79,7 @@ from .billing_account import PaymentProviderEnum as BillingAccountPaymentProvide
 from .billing_history_info import BillingHistoryInfo
 from .billing_history_info import StatusEnum as BillingHistoryInfoStatusEnum
 from .billing_history_paging_sliced_result import BillingHistoryPagingSlicedResult
+from .binary_schema import BinarySchema
 from .box_item import BoxItem
 from .bulk_credit_request import BulkCreditRequest
 from .bulk_credit_result import BulkCreditResult
@@ -331,6 +339,9 @@ from .ful_fill_item_payload import (
     EntitlementOriginEnum as FulFillItemPayloadEntitlementOriginEnum,
 )
 from .fulfill_item_result import FulfillItemResult
+from .fulfillment_action_history import FulfillmentActionHistory
+from .fulfillment_action_history import ActionEnum as FulfillmentActionHistoryActionEnum
+from .fulfillment_action_history import StateEnum as FulfillmentActionHistoryStateEnum
 from .fulfillment_error import FulfillmentError
 from .fulfillment_history_info import FulfillmentHistoryInfo
 from .fulfillment_history_info import StatusEnum as FulfillmentHistoryInfoStatusEnum
@@ -340,8 +351,11 @@ from .fulfillment_history_info import (
 from .fulfillment_history_paging_sliced_result import (
     FulfillmentHistoryPagingSlicedResult,
 )
+from .fulfillment_info import FulfillmentInfo
+from .fulfillment_info import StateEnum as FulfillmentInfoStateEnum
 from .fulfillment_item import FulfillmentItem
 from .fulfillment_item import ItemTypeEnum as FulfillmentItemItemTypeEnum
+from .fulfillment_paging_sliced_result import FulfillmentPagingSlicedResult
 from .fulfillment_request import FulfillmentRequest
 from .fulfillment_request import (
     EntitlementOriginEnum as FulfillmentRequestEntitlementOriginEnum,
@@ -512,6 +526,7 @@ from .mock_iap_receipt import MockIAPReceipt
 from .mock_iap_receipt import TypeEnum as MockIAPReceiptTypeEnum
 from .mock_iap_receipt import ItemIdentityTypeEnum as MockIAPReceiptItemIdentityTypeEnum
 from .neon_pay_config import NeonPayConfig
+from .notification_paging_sliced_result import NotificationPagingSlicedResult
 from .notification_process_result import NotificationProcessResult
 from .notification_process_result import (
     StatusEnum as NotificationProcessResultStatusEnum,
@@ -870,6 +885,38 @@ from .subscription_summary import (
 )
 from .tax_result import TaxResult
 from .test_result import TestResult
+from .third_party_subscription_ownership import ThirdPartySubscriptionOwnership
+from .third_party_subscription_transaction_history_info import (
+    ThirdPartySubscriptionTransactionHistoryInfo,
+)
+from .third_party_subscription_transaction_history_info import (
+    StatusEnum as ThirdPartySubscriptionTransactionHistoryInfoStatusEnum,
+)
+from .third_party_subscription_transaction_history_paging_sliced_result import (
+    ThirdPartySubscriptionTransactionHistoryPagingSlicedResult,
+)
+from .third_party_subscription_transaction_info import (
+    ThirdPartySubscriptionTransactionInfo,
+)
+from .third_party_subscription_transaction_info import (
+    PlatformEnum as ThirdPartySubscriptionTransactionInfoPlatformEnum,
+)
+from .third_party_subscription_transaction_info import (
+    StatusEnum as ThirdPartySubscriptionTransactionInfoStatusEnum,
+)
+from .third_party_subscription_transaction_paging_sliced_result import (
+    ThirdPartySubscriptionTransactionPagingSlicedResult,
+)
+from .third_party_user_subscription_info import ThirdPartyUserSubscriptionInfo
+from .third_party_user_subscription_info import (
+    PlatformEnum as ThirdPartyUserSubscriptionInfoPlatformEnum,
+)
+from .third_party_user_subscription_info import (
+    StatusEnum as ThirdPartyUserSubscriptionInfoStatusEnum,
+)
+from .third_party_user_subscription_paging_sliced_result import (
+    ThirdPartyUserSubscriptionPagingSlicedResult,
+)
 from .ticket_acquire_request import TicketAcquireRequest
 from .ticket_acquire_result import TicketAcquireResult
 from .ticket_booth_id import TicketBoothID

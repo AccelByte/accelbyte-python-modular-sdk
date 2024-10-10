@@ -28,13 +28,14 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ModelDeviceIDDecryptResponseV4
 from ...models import RestErrorResponse
 
 
 class AdminDecryptDeviceV4(Operation):
-    """Admin decrypt device id (AdminDecryptDeviceV4)
+    """[DEPRECATED] Admin decrypt device id (AdminDecryptDeviceV4)
 
     This is the endpoint for an admin to decrypt device id
 

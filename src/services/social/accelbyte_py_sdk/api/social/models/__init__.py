@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Statistics Service."""
 
-__version__ = "2.17.1"
+__version__ = "2.18.1"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -60,6 +60,7 @@ from .stat_create import SetByEnum as StatCreateSetByEnum
 from .stat_create import (
     GlobalAggregationMethodEnum as StatCreateGlobalAggregationMethodEnum,
 )
+from .stat_create import VisibilityEnum as StatCreateVisibilityEnum
 from .stat_cycle_create import StatCycleCreate
 from .stat_cycle_create import CycleTypeEnum as StatCycleCreateCycleTypeEnum
 from .stat_cycle_info import StatCycleInfo
@@ -75,6 +76,7 @@ from .stat_info import StatusEnum as StatInfoStatusEnum
 from .stat_info import (
     GlobalAggregationMethodEnum as StatInfoGlobalAggregationMethodEnum,
 )
+from .stat_info import VisibilityEnum as StatInfoVisibilityEnum
 from .stat_item_inc import StatItemInc
 from .stat_item_inc_result import StatItemIncResult
 from .stat_item_update import StatItemUpdate
@@ -87,6 +89,7 @@ from .stat_update import StatUpdate
 from .stat_update import (
     GlobalAggregationMethodEnum as StatUpdateGlobalAggregationMethodEnum,
 )
+from .stat_update import VisibilityEnum as StatUpdateVisibilityEnum
 from .user_game_profiles import UserGameProfiles
 from .user_slot_config_info import UserSlotConfigInfo
 from .user_stat_cycle_item_info import UserStatCycleItemInfo

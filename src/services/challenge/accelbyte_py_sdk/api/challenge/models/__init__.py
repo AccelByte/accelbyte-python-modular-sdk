@@ -25,6 +25,9 @@ from .model_challenge_response import (
 )
 from .model_challenge_response import RotationEnum as ModelChallengeResponseRotationEnum
 from .model_challenge_response import StatusEnum as ModelChallengeResponseStatusEnum
+from .model_claim_user_rewards_by_goal_code_request import (
+    ModelClaimUserRewardsByGoalCodeRequest,
+)
 from .model_claim_user_rewards_req import ModelClaimUserRewardsReq
 from .model_claim_users_rewards_request import ModelClaimUsersRewardsRequest
 from .model_claim_users_rewards_response import ModelClaimUsersRewardsResponse
@@ -84,6 +87,10 @@ from .model_update_challenge_request import (
 )
 from .model_update_challenge_request import (
     RotationEnum as ModelUpdateChallengeRequestRotationEnum,
+)
+from .model_update_challenge_schedule_request import ModelUpdateChallengeScheduleRequest
+from .model_update_challenge_schedule_request import (
+    ActionEnum as ModelUpdateChallengeScheduleRequestActionEnum,
 )
 from .model_update_goal_request import ModelUpdateGoalRequest
 from .model_user_progression_period_response_meta import (

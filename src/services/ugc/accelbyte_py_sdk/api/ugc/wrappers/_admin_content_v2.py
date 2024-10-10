@@ -192,6 +192,7 @@ def admin_copy_content(
 ):
     """Copy contents from a channel to another (AdminCopyContent)
 
+    Copy existing content from source channel to target channel.
 
     Properties:
         url: /ugc/v2/admin/namespaces/{namespace}/channels/{channelId}/contents/{contentId}/copy
@@ -251,6 +252,7 @@ async def admin_copy_content_async(
 ):
     """Copy contents from a channel to another (AdminCopyContent)
 
+    Copy existing content from source channel to target channel.
 
     Properties:
         url: /ugc/v2/admin/namespaces/{namespace}/channels/{channelId}/contents/{contentId}/copy

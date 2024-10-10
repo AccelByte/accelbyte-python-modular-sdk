@@ -56,7 +56,7 @@ class ForgotPassword(Operation):
 
         produces: ["application/json"]
 
-        securities: [BASIC_AUTH] or [BEARER_AUTH]
+        securities: [BASIC_AUTH][ and BEARER_AUTH]
 
         body: (body) REQUIRED ModelSendVerificationCodeRequest in body
 
@@ -82,7 +82,7 @@ class ForgotPassword(Operation):
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
-    _securities: List[List[str]] = [["BASIC_AUTH"], ["BEARER_AUTH"]]
+    _securities: List[List[str]] = [["BASIC_AUTH", "BEARER_AUTH"]]
     _location_query: str = None
 
     service_name: Optional[str] = "iam"

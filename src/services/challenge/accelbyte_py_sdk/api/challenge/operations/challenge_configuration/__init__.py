@@ -17,6 +17,7 @@ __email__ = "dev@accelbyte.net"
 from .admin_create_challenge import AdminCreateChallenge
 from .admin_delete_challenge import AdminDeleteChallenge
 from .admin_delete_tied_challenge import AdminDeleteTiedChallenge
+from .admin_get_active_challenges import AdminGetActiveChallenges
 from .admin_get_challenge import AdminGetChallenge
 from .admin_get_challenges import AdminGetChallenges
 from .admin_get_challenges import (
@@ -25,3 +26,4 @@ from .admin_get_challenges import (
 from .admin_get_periods import AdminGetPeriods
 from .admin_randomize_challenge import AdminRandomizeChallenge
 from .admin_update_challenge import AdminUpdateChallenge
+from .admin_update_tied_chall_70da14 import AdminUpdateTiedChallengeSchedule
