@@ -43,7 +43,7 @@ pipeline {
           sh "git checkout master"
           sshagent(credentials: [githubSsh])
           {
-            sh "git push ${githubUrl} HEAD:main --tags"
+            sh "git push ${githubUrl} HEAD:main"
           }
         }
       }
@@ -67,22 +67,40 @@ pipeline {
             echo 'Release note still contains one or more template placeholders e.g. @VERSION@, etc. Please check.'
             sh 'false' // Fail this job
           }
-          
+
           sh "git checkout ${params.RELEASE_BRANCH}"
           sshagent(credentials: [githubSsh])
           {
             if (params.RELEASE_BRANCH == "master") {
+              
+              echo "Check if tag `ags/v${params.AGS_VERSION}` is exists"
+              def tagCheck = sh(script: "git tag | grep 'ags/v${params.AGS_VERSION}'", returnStdout: true, returnStatus: true)
+              if (tagCheck == "") {
+                echo "AGS version tag 'ags/v${params.AGS_VERSION}' does not exists in source repository." 
+                sh 'false' // Fail this job
+              }
+
+              echo 'Push bitbucket master to github main'
               sh "git push ${githubUrl} HEAD:main"
+
+              echo "Tag github main with ags version"
+              sh "git push ${githubUrl} 'ags/v${params.AGS_VERSION}'"
+
+              echo "Get all tags related to `ags/v${params.AGS_VERSION}` and push them"
+              sh "git tag --contains \$(git rev-list -n 1 'ags/v${params.AGS_VERSION}') | grep -v 'ags/v${params.AGS_VERSION}' | xargs -I{} sh -c 'git push ${githubUrl} '{}' || exit 255'"
+
+              releaseName = "AccelByte Python Extend Modular SDK for AGS v${params.AGS_VERSION}"
+              github.createRelease(githubPat, githubOwner, githubRepo, "ags/v${params.AGS_VERSION}", releaseName, releaseNote)
+
+              withCredentials([file(credentialsId: 'justice-codegen-sdk-pypirc', variable: 'PYPIRC_PATH')]) {
+                sh "sudo apt install -y jq"
+                sh 'make build_all upload_all PYPIRC_PATH=$PYPIRC_PATH'
+              }
             }
             else {
               sh "git push ${githubUrl} HEAD:${params.RELEASE_BRANCH}"
+              //Point release will be implemented later.
             }
-            sh "git push ${githubUrl} ${params.RELEASE_TAG}"
-          }
-          github.createRelease(githubPat, githubOwner, githubRepo, params.RELEASE_TAG, params.RELEASE_TAG, params.RELEASE_NOTE)
-          withCredentials([file(credentialsId: 'justice-codegen-sdk-pypirc', variable: 'PYPIRC_PATH')]) {
-            sh "sudo apt install -y jq"
-            sh 'make build_all upload_all PYPIRC_PATH=$PYPIRC_PATH'
           }
         }
       }
