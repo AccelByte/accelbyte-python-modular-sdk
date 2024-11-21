@@ -43,6 +43,9 @@ from ._proto_http_request import create_proto_from_operation
 from ._timer import Timer
 from ._timer import TimerStatus
 
+from ._api_response import ApiError
+from ._api_response import ApiResponse
+
 from ._ws_client import WebsocketsWSClient  # deprecated, use WSClient
 
 from ._websocket_client import (
