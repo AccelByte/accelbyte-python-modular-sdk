@@ -38,6 +38,7 @@ class EventTypeEnum(StrEnum):
     CHARGEBACK_REVERSED = "CHARGEBACK_REVERSED"
     OTHER = "OTHER"
     REFUND = "REFUND"
+    REVOKED = "REVOKED"
 
 
 class StatusEnum(StrEnum):
@@ -430,6 +431,7 @@ class QueryIAPClawbackHistory(Operation):
                 "CHARGEBACK_REVERSED",
                 "OTHER",
                 "REFUND",
+                "REVOKED",
             ],  # in query
             "status": ["FAIL", "IGNORED", "INIT", "SUCCESS"],  # in query
         }

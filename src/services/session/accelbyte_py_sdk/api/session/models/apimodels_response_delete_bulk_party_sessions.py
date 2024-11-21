@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# Fleet Commander
+# AccelByte Gaming Services Session Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -27,28 +27,31 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
 
-from ..models.api_available_instance_type import ApiAvailableInstanceType
 
-
-class ApiAvailableInstanceTypesResponse(Model):
-    """Api available instance types response (api.AvailableInstanceTypesResponse)
+class ApimodelsResponseDeleteBulkPartySessions(Model):
+    """Apimodels response delete bulk party sessions (apimodels.ResponseDeleteBulkPartySessions)
 
     Properties:
-        available_instance_types: (availableInstanceTypes) REQUIRED List[ApiAvailableInstanceType]
+        error: (error) REQUIRED str
+
+        id_: (id) REQUIRED str
     """
 
     # region fields
 
-    available_instance_types: List[ApiAvailableInstanceType]  # REQUIRED
+    error: str  # REQUIRED
+    id_: str  # REQUIRED
 
     # endregion fields
 
     # region with_x methods
 
-    def with_available_instance_types(
-        self, value: List[ApiAvailableInstanceType]
-    ) -> ApiAvailableInstanceTypesResponse:
-        self.available_instance_types = value
+    def with_error(self, value: str) -> ApimodelsResponseDeleteBulkPartySessions:
+        self.error = value
+        return self
+
+    def with_id(self, value: str) -> ApimodelsResponseDeleteBulkPartySessions:
+        self.id_ = value
         return self
 
     # endregion with_x methods
@@ -57,13 +60,14 @@ class ApiAvailableInstanceTypesResponse(Model):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "available_instance_types"):
-            result["availableInstanceTypes"] = [
-                i0.to_dict(include_empty=include_empty)
-                for i0 in self.available_instance_types
-            ]
+        if hasattr(self, "error"):
+            result["error"] = str(self.error)
         elif include_empty:
-            result["availableInstanceTypes"] = []
+            result["error"] = ""
+        if hasattr(self, "id_"):
+            result["id"] = str(self.id_)
+        elif include_empty:
+            result["id"] = ""
         return result
 
     # endregion to methods
@@ -72,37 +76,34 @@ class ApiAvailableInstanceTypesResponse(Model):
 
     @classmethod
     def create(
-        cls, available_instance_types: List[ApiAvailableInstanceType], **kwargs
-    ) -> ApiAvailableInstanceTypesResponse:
+        cls, error: str, id_: str, **kwargs
+    ) -> ApimodelsResponseDeleteBulkPartySessions:
         instance = cls()
-        instance.available_instance_types = available_instance_types
+        instance.error = error
+        instance.id_ = id_
         return instance
 
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> ApiAvailableInstanceTypesResponse:
+    ) -> ApimodelsResponseDeleteBulkPartySessions:
         instance = cls()
         if not dict_:
             return instance
-        if (
-            "availableInstanceTypes" in dict_
-            and dict_["availableInstanceTypes"] is not None
-        ):
-            instance.available_instance_types = [
-                ApiAvailableInstanceType.create_from_dict(
-                    i0, include_empty=include_empty
-                )
-                for i0 in dict_["availableInstanceTypes"]
-            ]
+        if "error" in dict_ and dict_["error"] is not None:
+            instance.error = str(dict_["error"])
         elif include_empty:
-            instance.available_instance_types = []
+            instance.error = ""
+        if "id" in dict_ and dict_["id"] is not None:
+            instance.id_ = str(dict_["id"])
+        elif include_empty:
+            instance.id_ = ""
         return instance
 
     @classmethod
     def create_many_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, ApiAvailableInstanceTypesResponse]:
+    ) -> Dict[str, ApimodelsResponseDeleteBulkPartySessions]:
         return (
             {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
             if dict_
@@ -112,7 +113,7 @@ class ApiAvailableInstanceTypesResponse(Model):
     @classmethod
     def create_many_from_list(
         cls, list_: list, include_empty: bool = False
-    ) -> List[ApiAvailableInstanceTypesResponse]:
+    ) -> List[ApimodelsResponseDeleteBulkPartySessions]:
         return (
             [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
             if list_
@@ -123,9 +124,9 @@ class ApiAvailableInstanceTypesResponse(Model):
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
     ) -> Union[
-        ApiAvailableInstanceTypesResponse,
-        List[ApiAvailableInstanceTypesResponse],
-        Dict[Any, ApiAvailableInstanceTypesResponse],
+        ApimodelsResponseDeleteBulkPartySessions,
+        List[ApimodelsResponseDeleteBulkPartySessions],
+        Dict[Any, ApimodelsResponseDeleteBulkPartySessions],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -140,13 +141,15 @@ class ApiAvailableInstanceTypesResponse(Model):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "availableInstanceTypes": "available_instance_types",
+            "error": "error",
+            "id": "id_",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "availableInstanceTypes": True,
+            "error": True,
+            "id": True,
         }
 
     # endregion static methods

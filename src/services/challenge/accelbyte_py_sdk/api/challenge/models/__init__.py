@@ -25,6 +25,11 @@ from .model_challenge_response import (
 )
 from .model_challenge_response import RotationEnum as ModelChallengeResponseRotationEnum
 from .model_challenge_response import StatusEnum as ModelChallengeResponseStatusEnum
+from .model_claimable_user_reward import ModelClaimableUserReward
+from .model_claimable_user_reward import (
+    StatusEnum as ModelClaimableUserRewardStatusEnum,
+)
+from .model_claimable_user_reward import TypeEnum as ModelClaimableUserRewardTypeEnum
 from .model_claim_user_rewards_by_goal_code_request import (
     ModelClaimUserRewardsByGoalCodeRequest,
 )

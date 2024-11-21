@@ -38,6 +38,7 @@ class PublicConsumeMyItem(Operation):
     """To consume item (PublicConsumeMyItem)
 
     Consume user's own item.
+    Client should pass item ID in options if item type is OPTIONBOX
 
     Properties:
         url: /inventory/v1/public/namespaces/{namespace}/users/me/inventories/{inventoryId}/consume

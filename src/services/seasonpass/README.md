@@ -6,7 +6,7 @@ This is a service module for the [AccelByte Modular Python SDK](https://github.c
 
 ```text
 AccelByte Gaming Services Seasonpass Service
-* Version: 1.22.6
+* Version: 1.23.0
 ```
 
 ## Setup

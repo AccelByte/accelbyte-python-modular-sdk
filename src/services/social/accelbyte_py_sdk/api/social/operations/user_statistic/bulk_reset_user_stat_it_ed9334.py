@@ -55,7 +55,7 @@ class BulkResetUserStatItemValues(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[ADTOObjectForResettingUserStatItems] in body
+        body: (body) REQUIRED List[ADTOObjectForResettingUserStatItems] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -90,7 +90,7 @@ class BulkResetUserStatItemValues(Operation):
 
     service_name: Optional[str] = "social"
 
-    body: List[ADTOObjectForResettingUserStatItems]  # OPTIONAL in [body]
+    body: List[ADTOObjectForResettingUserStatItems]  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
     additional_key: str  # OPTIONAL in [query]
@@ -279,17 +279,16 @@ class BulkResetUserStatItemValues(Operation):
     @classmethod
     def create(
         cls,
+        body: List[ADTOObjectForResettingUserStatItems],
         namespace: str,
         user_id: str,
-        body: Optional[List[ADTOObjectForResettingUserStatItems]] = None,
         additional_key: Optional[str] = None,
         **kwargs,
     ) -> BulkResetUserStatItemValues:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
         instance.user_id = user_id
-        if body is not None:
-            instance.body = body
         if additional_key is not None:
             instance.additional_key = additional_key
         if x_flight_id := kwargs.get("x_flight_id", None):
@@ -336,7 +335,7 @@ class BulkResetUserStatItemValues(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "namespace": True,
             "userId": True,
             "additionalKey": False,

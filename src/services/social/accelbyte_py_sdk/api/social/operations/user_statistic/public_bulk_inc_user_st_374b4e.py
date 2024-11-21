@@ -55,7 +55,7 @@ class PublicBulkIncUserStatItemValue(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkUserStatItemInc] in body
+        body: (body) REQUIRED List[BulkUserStatItemInc] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -86,7 +86,7 @@ class PublicBulkIncUserStatItemValue(Operation):
 
     service_name: Optional[str] = "social"
 
-    body: List[BulkUserStatItemInc]  # OPTIONAL in [body]
+    body: List[BulkUserStatItemInc]  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
 
     # endregion fields
@@ -247,12 +247,11 @@ class PublicBulkIncUserStatItemValue(Operation):
 
     @classmethod
     def create(
-        cls, namespace: str, body: Optional[List[BulkUserStatItemInc]] = None, **kwargs
+        cls, body: List[BulkUserStatItemInc], namespace: str, **kwargs
     ) -> PublicBulkIncUserStatItemValue:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
-        if body is not None:
-            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -285,7 +284,7 @@ class PublicBulkIncUserStatItemValue(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "namespace": True,
         }
 

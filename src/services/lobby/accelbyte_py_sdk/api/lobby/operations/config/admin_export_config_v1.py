@@ -61,7 +61,8 @@ class AdminExportConfigV1(Operation):
     "allowInviteNonConnectedUser",
     "keepPresenceActivityOnDisconnect",
     "maxDSWaitTime",
-    "maxFriendsLimit"
+    "maxFriendsLimit",
+    "requestMetadataMaxSize"
     ],
     "properties": {
     "allowInviteNonConnectedUser": {
@@ -137,6 +138,10 @@ class AdminExportConfigV1(Operation):
     "type": "integer",
     "format": "int64"
     },
+    "requestMetadataMaxSize": {
+    "type": "integer",
+    "format": "int32"
+    },
     "unregisterDelay": {
     "type": "integer",
     "format": "int64"
@@ -185,7 +190,8 @@ class AdminExportConfigV1(Operation):
               "allowInviteNonConnectedUser",
               "keepPresenceActivityOnDisconnect",
               "maxDSWaitTime",
-              "maxFriendsLimit"
+              "maxFriendsLimit",
+              "requestMetadataMaxSize"
              ],
              "properties": {
               "allowInviteNonConnectedUser": {
@@ -260,6 +266,10 @@ class AdminExportConfigV1(Operation):
               "readyConsentTimeout": {
                "type": "integer",
                "format": "int64"
+              },
+              "requestMetadataMaxSize": {
+               "type": "integer",
+               "format": "int32"
               },
               "unregisterDelay": {
                "type": "integer",
@@ -404,7 +414,8 @@ class AdminExportConfigV1(Operation):
           "allowInviteNonConnectedUser",
           "keepPresenceActivityOnDisconnect",
           "maxDSWaitTime",
-          "maxFriendsLimit"
+          "maxFriendsLimit",
+          "requestMetadataMaxSize"
          ],
          "properties": {
           "allowInviteNonConnectedUser": {
@@ -479,6 +490,10 @@ class AdminExportConfigV1(Operation):
           "readyConsentTimeout": {
            "type": "integer",
            "format": "int64"
+          },
+          "requestMetadataMaxSize": {
+           "type": "integer",
+           "format": "int32"
           },
           "unregisterDelay": {
            "type": "integer",

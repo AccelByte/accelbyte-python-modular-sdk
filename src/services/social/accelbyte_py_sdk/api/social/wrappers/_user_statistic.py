@@ -245,8 +245,8 @@ async def admin_list_users_stat_items_async(
 
 @same_doc_as(BulkCreateUserStatItems)
 def bulk_create_user_stat_items(
+    body: List[BulkStatItemCreate],
     user_id: str,
-    body: Optional[List[BulkStatItemCreate]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -270,7 +270,7 @@ def bulk_create_user_stat_items(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkStatItemCreate] in body
+        body: (body) REQUIRED List[BulkStatItemCreate] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -294,8 +294,8 @@ def bulk_create_user_stat_items(
         if error:
             return None, error
     request = BulkCreateUserStatItems.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -303,8 +303,8 @@ def bulk_create_user_stat_items(
 
 @same_doc_as(BulkCreateUserStatItems)
 async def bulk_create_user_stat_items_async(
+    body: List[BulkStatItemCreate],
     user_id: str,
-    body: Optional[List[BulkStatItemCreate]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -328,7 +328,7 @@ async def bulk_create_user_stat_items_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkStatItemCreate] in body
+        body: (body) REQUIRED List[BulkStatItemCreate] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -352,8 +352,8 @@ async def bulk_create_user_stat_items_async(
         if error:
             return None, error
     request = BulkCreateUserStatItems.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return await run_request_async(
@@ -835,9 +835,9 @@ async def bulk_fetch_stat_items_1_async(
 
 @same_doc_as(BulkGetOrDefaultByUserId)
 def bulk_get_or_default_by_user_id(
+    body: BulkUserStatItemByStatCodes,
     user_id: str,
     additional_key: Optional[str] = None,
-    body: Optional[BulkUserStatItemByStatCodes] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -864,7 +864,7 @@ def bulk_get_or_default_by_user_id(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL BulkUserStatItemByStatCodes in body
+        body: (body) REQUIRED BulkUserStatItemByStatCodes in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -888,9 +888,9 @@ def bulk_get_or_default_by_user_id(
         if error:
             return None, error
     request = BulkGetOrDefaultByUserId.create(
+        body=body,
         user_id=user_id,
         additional_key=additional_key,
-        body=body,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -898,9 +898,9 @@ def bulk_get_or_default_by_user_id(
 
 @same_doc_as(BulkGetOrDefaultByUserId)
 async def bulk_get_or_default_by_user_id_async(
+    body: BulkUserStatItemByStatCodes,
     user_id: str,
     additional_key: Optional[str] = None,
-    body: Optional[BulkUserStatItemByStatCodes] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -927,7 +927,7 @@ async def bulk_get_or_default_by_user_id_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL BulkUserStatItemByStatCodes in body
+        body: (body) REQUIRED BulkUserStatItemByStatCodes in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -951,9 +951,9 @@ async def bulk_get_or_default_by_user_id_async(
         if error:
             return None, error
     request = BulkGetOrDefaultByUserId.create(
+        body=body,
         user_id=user_id,
         additional_key=additional_key,
-        body=body,
         namespace=namespace,
     )
     return await run_request_async(
@@ -963,7 +963,7 @@ async def bulk_get_or_default_by_user_id_async(
 
 @same_doc_as(BulkIncUserStatItem)
 def bulk_inc_user_stat_item(
-    body: Optional[List[BulkUserStatItemInc]] = None,
+    body: List[BulkUserStatItemInc],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -987,7 +987,7 @@ def bulk_inc_user_stat_item(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkUserStatItemInc] in body
+        body: (body) REQUIRED List[BulkUserStatItemInc] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1017,7 +1017,7 @@ def bulk_inc_user_stat_item(
 
 @same_doc_as(BulkIncUserStatItem)
 async def bulk_inc_user_stat_item_async(
-    body: Optional[List[BulkUserStatItemInc]] = None,
+    body: List[BulkUserStatItemInc],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1041,7 +1041,7 @@ async def bulk_inc_user_stat_item_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkUserStatItemInc] in body
+        body: (body) REQUIRED List[BulkUserStatItemInc] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1073,8 +1073,8 @@ async def bulk_inc_user_stat_item_async(
 
 @same_doc_as(BulkIncUserStatItem1)
 def bulk_inc_user_stat_item_1(
+    body: List[BulkStatItemInc],
     user_id: str,
-    body: Optional[List[BulkStatItemInc]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1098,7 +1098,7 @@ def bulk_inc_user_stat_item_1(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkStatItemInc] in body
+        body: (body) REQUIRED List[BulkStatItemInc] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1122,8 +1122,8 @@ def bulk_inc_user_stat_item_1(
         if error:
             return None, error
     request = BulkIncUserStatItem1.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -1131,8 +1131,8 @@ def bulk_inc_user_stat_item_1(
 
 @same_doc_as(BulkIncUserStatItem1)
 async def bulk_inc_user_stat_item_1_async(
+    body: List[BulkStatItemInc],
     user_id: str,
-    body: Optional[List[BulkStatItemInc]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1156,7 +1156,7 @@ async def bulk_inc_user_stat_item_1_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkStatItemInc] in body
+        body: (body) REQUIRED List[BulkStatItemInc] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1180,8 +1180,8 @@ async def bulk_inc_user_stat_item_1_async(
         if error:
             return None, error
     request = BulkIncUserStatItem1.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return await run_request_async(
@@ -1191,7 +1191,7 @@ async def bulk_inc_user_stat_item_1_async(
 
 @same_doc_as(BulkIncUserStatItemValue)
 def bulk_inc_user_stat_item_value(
-    body: Optional[List[BulkUserStatItemInc]] = None,
+    body: List[BulkUserStatItemInc],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1213,7 +1213,7 @@ def bulk_inc_user_stat_item_value(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkUserStatItemInc] in body
+        body: (body) REQUIRED List[BulkUserStatItemInc] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1243,7 +1243,7 @@ def bulk_inc_user_stat_item_value(
 
 @same_doc_as(BulkIncUserStatItemValue)
 async def bulk_inc_user_stat_item_value_async(
-    body: Optional[List[BulkUserStatItemInc]] = None,
+    body: List[BulkUserStatItemInc],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1265,7 +1265,7 @@ async def bulk_inc_user_stat_item_value_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkUserStatItemInc] in body
+        body: (body) REQUIRED List[BulkUserStatItemInc] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1297,8 +1297,8 @@ async def bulk_inc_user_stat_item_value_async(
 
 @same_doc_as(BulkIncUserStatItemValue1)
 def bulk_inc_user_stat_item_value_1(
+    body: List[BulkStatItemInc],
     user_id: str,
-    body: Optional[List[BulkStatItemInc]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1322,7 +1322,7 @@ def bulk_inc_user_stat_item_value_1(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkStatItemInc] in body
+        body: (body) REQUIRED List[BulkStatItemInc] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1346,8 +1346,8 @@ def bulk_inc_user_stat_item_value_1(
         if error:
             return None, error
     request = BulkIncUserStatItemValue1.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -1355,8 +1355,8 @@ def bulk_inc_user_stat_item_value_1(
 
 @same_doc_as(BulkIncUserStatItemValue1)
 async def bulk_inc_user_stat_item_value_1_async(
+    body: List[BulkStatItemInc],
     user_id: str,
-    body: Optional[List[BulkStatItemInc]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1380,7 +1380,7 @@ async def bulk_inc_user_stat_item_value_1_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkStatItemInc] in body
+        body: (body) REQUIRED List[BulkStatItemInc] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1404,8 +1404,8 @@ async def bulk_inc_user_stat_item_value_1_async(
         if error:
             return None, error
     request = BulkIncUserStatItemValue1.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return await run_request_async(
@@ -1415,8 +1415,8 @@ async def bulk_inc_user_stat_item_value_1_async(
 
 @same_doc_as(BulkIncUserStatItemValue2)
 def bulk_inc_user_stat_item_value_2(
+    body: List[BulkStatItemInc],
     user_id: str,
-    body: Optional[List[BulkStatItemInc]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1440,7 +1440,7 @@ def bulk_inc_user_stat_item_value_2(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkStatItemInc] in body
+        body: (body) REQUIRED List[BulkStatItemInc] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1464,8 +1464,8 @@ def bulk_inc_user_stat_item_value_2(
         if error:
             return None, error
     request = BulkIncUserStatItemValue2.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -1473,8 +1473,8 @@ def bulk_inc_user_stat_item_value_2(
 
 @same_doc_as(BulkIncUserStatItemValue2)
 async def bulk_inc_user_stat_item_value_2_async(
+    body: List[BulkStatItemInc],
     user_id: str,
-    body: Optional[List[BulkStatItemInc]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1498,7 +1498,7 @@ async def bulk_inc_user_stat_item_value_2_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkStatItemInc] in body
+        body: (body) REQUIRED List[BulkStatItemInc] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1522,8 +1522,8 @@ async def bulk_inc_user_stat_item_value_2_async(
         if error:
             return None, error
     request = BulkIncUserStatItemValue2.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return await run_request_async(
@@ -1533,7 +1533,7 @@ async def bulk_inc_user_stat_item_value_2_async(
 
 @same_doc_as(BulkResetUserStatItem)
 def bulk_reset_user_stat_item(
-    body: Optional[List[BulkUserStatItemReset]] = None,
+    body: List[BulkUserStatItemReset],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1559,7 +1559,7 @@ def bulk_reset_user_stat_item(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkUserStatItemReset] in body
+        body: (body) REQUIRED List[BulkUserStatItemReset] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1589,7 +1589,7 @@ def bulk_reset_user_stat_item(
 
 @same_doc_as(BulkResetUserStatItem)
 async def bulk_reset_user_stat_item_async(
-    body: Optional[List[BulkUserStatItemReset]] = None,
+    body: List[BulkUserStatItemReset],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1615,7 +1615,7 @@ async def bulk_reset_user_stat_item_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkUserStatItemReset] in body
+        body: (body) REQUIRED List[BulkUserStatItemReset] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1647,8 +1647,8 @@ async def bulk_reset_user_stat_item_async(
 
 @same_doc_as(BulkResetUserStatItem1)
 def bulk_reset_user_stat_item_1(
+    body: List[BulkStatItemReset],
     user_id: str,
-    body: Optional[List[BulkStatItemReset]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1672,7 +1672,7 @@ def bulk_reset_user_stat_item_1(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkStatItemReset] in body
+        body: (body) REQUIRED List[BulkStatItemReset] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1696,8 +1696,8 @@ def bulk_reset_user_stat_item_1(
         if error:
             return None, error
     request = BulkResetUserStatItem1.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -1705,8 +1705,8 @@ def bulk_reset_user_stat_item_1(
 
 @same_doc_as(BulkResetUserStatItem1)
 async def bulk_reset_user_stat_item_1_async(
+    body: List[BulkStatItemReset],
     user_id: str,
-    body: Optional[List[BulkStatItemReset]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1730,7 +1730,7 @@ async def bulk_reset_user_stat_item_1_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkStatItemReset] in body
+        body: (body) REQUIRED List[BulkStatItemReset] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1754,8 +1754,8 @@ async def bulk_reset_user_stat_item_1_async(
         if error:
             return None, error
     request = BulkResetUserStatItem1.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return await run_request_async(
@@ -1765,7 +1765,7 @@ async def bulk_reset_user_stat_item_1_async(
 
 @same_doc_as(BulkResetUserStatItem2)
 def bulk_reset_user_stat_item_2(
-    body: Optional[List[BulkUserStatItemReset]] = None,
+    body: List[BulkUserStatItemReset],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1791,7 +1791,7 @@ def bulk_reset_user_stat_item_2(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkUserStatItemReset] in body
+        body: (body) REQUIRED List[BulkUserStatItemReset] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1821,7 +1821,7 @@ def bulk_reset_user_stat_item_2(
 
 @same_doc_as(BulkResetUserStatItem2)
 async def bulk_reset_user_stat_item_2_async(
-    body: Optional[List[BulkUserStatItemReset]] = None,
+    body: List[BulkUserStatItemReset],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1847,7 +1847,7 @@ async def bulk_reset_user_stat_item_2_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkUserStatItemReset] in body
+        body: (body) REQUIRED List[BulkUserStatItemReset] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1879,8 +1879,8 @@ async def bulk_reset_user_stat_item_2_async(
 
 @same_doc_as(BulkResetUserStatItem3)
 def bulk_reset_user_stat_item_3(
+    body: List[BulkStatItemReset],
     user_id: str,
-    body: Optional[List[BulkStatItemReset]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1904,7 +1904,7 @@ def bulk_reset_user_stat_item_3(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkStatItemReset] in body
+        body: (body) REQUIRED List[BulkStatItemReset] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1928,8 +1928,8 @@ def bulk_reset_user_stat_item_3(
         if error:
             return None, error
     request = BulkResetUserStatItem3.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -1937,8 +1937,8 @@ def bulk_reset_user_stat_item_3(
 
 @same_doc_as(BulkResetUserStatItem3)
 async def bulk_reset_user_stat_item_3_async(
+    body: List[BulkStatItemReset],
     user_id: str,
-    body: Optional[List[BulkStatItemReset]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1962,7 +1962,7 @@ async def bulk_reset_user_stat_item_3_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkStatItemReset] in body
+        body: (body) REQUIRED List[BulkStatItemReset] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1986,8 +1986,8 @@ async def bulk_reset_user_stat_item_3_async(
         if error:
             return None, error
     request = BulkResetUserStatItem3.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return await run_request_async(
@@ -1997,9 +1997,9 @@ async def bulk_reset_user_stat_item_3_async(
 
 @same_doc_as(BulkResetUserStatItemValues)
 def bulk_reset_user_stat_item_values(
+    body: List[ADTOObjectForResettingUserStatItems],
     user_id: str,
     additional_key: Optional[str] = None,
-    body: Optional[List[ADTOObjectForResettingUserStatItems]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2023,7 +2023,7 @@ def bulk_reset_user_stat_item_values(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[ADTOObjectForResettingUserStatItems] in body
+        body: (body) REQUIRED List[ADTOObjectForResettingUserStatItems] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2049,9 +2049,9 @@ def bulk_reset_user_stat_item_values(
         if error:
             return None, error
     request = BulkResetUserStatItemValues.create(
+        body=body,
         user_id=user_id,
         additional_key=additional_key,
-        body=body,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -2059,9 +2059,9 @@ def bulk_reset_user_stat_item_values(
 
 @same_doc_as(BulkResetUserStatItemValues)
 async def bulk_reset_user_stat_item_values_async(
+    body: List[ADTOObjectForResettingUserStatItems],
     user_id: str,
     additional_key: Optional[str] = None,
-    body: Optional[List[ADTOObjectForResettingUserStatItems]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2085,7 +2085,7 @@ async def bulk_reset_user_stat_item_values_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[ADTOObjectForResettingUserStatItems] in body
+        body: (body) REQUIRED List[ADTOObjectForResettingUserStatItems] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2111,9 +2111,9 @@ async def bulk_reset_user_stat_item_values_async(
         if error:
             return None, error
     request = BulkResetUserStatItemValues.create(
+        body=body,
         user_id=user_id,
         additional_key=additional_key,
-        body=body,
         namespace=namespace,
     )
     return await run_request_async(
@@ -2123,9 +2123,9 @@ async def bulk_reset_user_stat_item_values_async(
 
 @same_doc_as(BulkUpdateUserStatItem)
 def bulk_update_user_stat_item(
+    body: List[BulkStatItemUpdate],
     user_id: str,
     additional_key: Optional[str] = None,
-    body: Optional[List[BulkStatItemUpdate]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2158,7 +2158,7 @@ def bulk_update_user_stat_item(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkStatItemUpdate] in body
+        body: (body) REQUIRED List[BulkStatItemUpdate] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2184,9 +2184,9 @@ def bulk_update_user_stat_item(
         if error:
             return None, error
     request = BulkUpdateUserStatItem.create(
+        body=body,
         user_id=user_id,
         additional_key=additional_key,
-        body=body,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -2194,9 +2194,9 @@ def bulk_update_user_stat_item(
 
 @same_doc_as(BulkUpdateUserStatItem)
 async def bulk_update_user_stat_item_async(
+    body: List[BulkStatItemUpdate],
     user_id: str,
     additional_key: Optional[str] = None,
-    body: Optional[List[BulkStatItemUpdate]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2229,7 +2229,7 @@ async def bulk_update_user_stat_item_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkStatItemUpdate] in body
+        body: (body) REQUIRED List[BulkStatItemUpdate] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2255,9 +2255,9 @@ async def bulk_update_user_stat_item_async(
         if error:
             return None, error
     request = BulkUpdateUserStatItem.create(
+        body=body,
         user_id=user_id,
         additional_key=additional_key,
-        body=body,
         namespace=namespace,
     )
     return await run_request_async(
@@ -2267,7 +2267,7 @@ async def bulk_update_user_stat_item_async(
 
 @same_doc_as(BulkUpdateUserStatItem1)
 def bulk_update_user_stat_item_1(
-    body: Optional[List[BulkUserStatItemUpdate]] = None,
+    body: List[BulkUserStatItemUpdate],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2297,7 +2297,7 @@ def bulk_update_user_stat_item_1(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkUserStatItemUpdate] in body
+        body: (body) REQUIRED List[BulkUserStatItemUpdate] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2327,7 +2327,7 @@ def bulk_update_user_stat_item_1(
 
 @same_doc_as(BulkUpdateUserStatItem1)
 async def bulk_update_user_stat_item_1_async(
-    body: Optional[List[BulkUserStatItemUpdate]] = None,
+    body: List[BulkUserStatItemUpdate],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2357,7 +2357,7 @@ async def bulk_update_user_stat_item_1_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkUserStatItemUpdate] in body
+        body: (body) REQUIRED List[BulkUserStatItemUpdate] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2389,9 +2389,9 @@ async def bulk_update_user_stat_item_1_async(
 
 @same_doc_as(BulkUpdateUserStatItem2)
 def bulk_update_user_stat_item_2(
+    body: List[BulkStatItemUpdate],
     user_id: str,
     additional_key: Optional[str] = None,
-    body: Optional[List[BulkStatItemUpdate]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2424,7 +2424,7 @@ def bulk_update_user_stat_item_2(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkStatItemUpdate] in body
+        body: (body) REQUIRED List[BulkStatItemUpdate] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2450,9 +2450,9 @@ def bulk_update_user_stat_item_2(
         if error:
             return None, error
     request = BulkUpdateUserStatItem2.create(
+        body=body,
         user_id=user_id,
         additional_key=additional_key,
-        body=body,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -2460,9 +2460,9 @@ def bulk_update_user_stat_item_2(
 
 @same_doc_as(BulkUpdateUserStatItem2)
 async def bulk_update_user_stat_item_2_async(
+    body: List[BulkStatItemUpdate],
     user_id: str,
     additional_key: Optional[str] = None,
-    body: Optional[List[BulkStatItemUpdate]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2495,7 +2495,7 @@ async def bulk_update_user_stat_item_2_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkStatItemUpdate] in body
+        body: (body) REQUIRED List[BulkStatItemUpdate] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2521,9 +2521,9 @@ async def bulk_update_user_stat_item_2_async(
         if error:
             return None, error
     request = BulkUpdateUserStatItem2.create(
+        body=body,
         user_id=user_id,
         additional_key=additional_key,
-        body=body,
         namespace=namespace,
     )
     return await run_request_async(
@@ -2533,7 +2533,7 @@ async def bulk_update_user_stat_item_2_async(
 
 @same_doc_as(BulkUpdateUserStatItemV2)
 def bulk_update_user_stat_item_v2(
-    body: Optional[List[BulkUserStatItemUpdate]] = None,
+    body: List[BulkUserStatItemUpdate],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2563,7 +2563,7 @@ def bulk_update_user_stat_item_v2(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkUserStatItemUpdate] in body
+        body: (body) REQUIRED List[BulkUserStatItemUpdate] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -2593,7 +2593,7 @@ def bulk_update_user_stat_item_v2(
 
 @same_doc_as(BulkUpdateUserStatItemV2)
 async def bulk_update_user_stat_item_v2_async(
-    body: Optional[List[BulkUserStatItemUpdate]] = None,
+    body: List[BulkUserStatItemUpdate],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -2623,7 +2623,7 @@ async def bulk_update_user_stat_item_v2_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkUserStatItemUpdate] in body
+        body: (body) REQUIRED List[BulkUserStatItemUpdate] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3429,9 +3429,9 @@ async def get_user_stat_items_async(
 
 @same_doc_as(IncUserStatItemValue)
 def inc_user_stat_item_value(
+    body: StatItemInc,
     stat_code: str,
     user_id: str,
-    body: Optional[StatItemInc] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3455,7 +3455,7 @@ def inc_user_stat_item_value(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StatItemInc in body
+        body: (body) REQUIRED StatItemInc in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3485,9 +3485,9 @@ def inc_user_stat_item_value(
         if error:
             return None, error
     request = IncUserStatItemValue.create(
+        body=body,
         stat_code=stat_code,
         user_id=user_id,
-        body=body,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -3495,9 +3495,9 @@ def inc_user_stat_item_value(
 
 @same_doc_as(IncUserStatItemValue)
 async def inc_user_stat_item_value_async(
+    body: StatItemInc,
     stat_code: str,
     user_id: str,
-    body: Optional[StatItemInc] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3521,7 +3521,7 @@ async def inc_user_stat_item_value_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StatItemInc in body
+        body: (body) REQUIRED StatItemInc in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3551,9 +3551,9 @@ async def inc_user_stat_item_value_async(
         if error:
             return None, error
     request = IncUserStatItemValue.create(
+        body=body,
         stat_code=stat_code,
         user_id=user_id,
-        body=body,
         namespace=namespace,
     )
     return await run_request_async(
@@ -3563,8 +3563,8 @@ async def inc_user_stat_item_value_async(
 
 @same_doc_as(PublicBulkCreateUserStatItems)
 def public_bulk_create_user_stat_items(
+    body: List[BulkStatItemCreate],
     user_id: str,
-    body: Optional[List[BulkStatItemCreate]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3588,7 +3588,7 @@ def public_bulk_create_user_stat_items(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkStatItemCreate] in body
+        body: (body) REQUIRED List[BulkStatItemCreate] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3612,8 +3612,8 @@ def public_bulk_create_user_stat_items(
         if error:
             return None, error
     request = PublicBulkCreateUserStatItems.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -3621,8 +3621,8 @@ def public_bulk_create_user_stat_items(
 
 @same_doc_as(PublicBulkCreateUserStatItems)
 async def public_bulk_create_user_stat_items_async(
+    body: List[BulkStatItemCreate],
     user_id: str,
-    body: Optional[List[BulkStatItemCreate]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3646,7 +3646,7 @@ async def public_bulk_create_user_stat_items_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkStatItemCreate] in body
+        body: (body) REQUIRED List[BulkStatItemCreate] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3670,8 +3670,8 @@ async def public_bulk_create_user_stat_items_async(
         if error:
             return None, error
     request = PublicBulkCreateUserStatItems.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return await run_request_async(
@@ -3681,7 +3681,7 @@ async def public_bulk_create_user_stat_items_async(
 
 @same_doc_as(PublicBulkIncUserStatItem)
 def public_bulk_inc_user_stat_item(
-    body: Optional[List[BulkUserStatItemInc]] = None,
+    body: List[BulkUserStatItemInc],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3705,7 +3705,7 @@ def public_bulk_inc_user_stat_item(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkUserStatItemInc] in body
+        body: (body) REQUIRED List[BulkUserStatItemInc] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3735,7 +3735,7 @@ def public_bulk_inc_user_stat_item(
 
 @same_doc_as(PublicBulkIncUserStatItem)
 async def public_bulk_inc_user_stat_item_async(
-    body: Optional[List[BulkUserStatItemInc]] = None,
+    body: List[BulkUserStatItemInc],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3759,7 +3759,7 @@ async def public_bulk_inc_user_stat_item_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkUserStatItemInc] in body
+        body: (body) REQUIRED List[BulkUserStatItemInc] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3791,8 +3791,8 @@ async def public_bulk_inc_user_stat_item_async(
 
 @same_doc_as(PublicBulkIncUserStatItem1)
 def public_bulk_inc_user_stat_item_1(
+    body: List[BulkStatItemInc],
     user_id: str,
-    body: Optional[List[BulkStatItemInc]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3816,7 +3816,7 @@ def public_bulk_inc_user_stat_item_1(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkStatItemInc] in body
+        body: (body) REQUIRED List[BulkStatItemInc] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3840,8 +3840,8 @@ def public_bulk_inc_user_stat_item_1(
         if error:
             return None, error
     request = PublicBulkIncUserStatItem1.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -3849,8 +3849,8 @@ def public_bulk_inc_user_stat_item_1(
 
 @same_doc_as(PublicBulkIncUserStatItem1)
 async def public_bulk_inc_user_stat_item_1_async(
+    body: List[BulkStatItemInc],
     user_id: str,
-    body: Optional[List[BulkStatItemInc]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3874,7 +3874,7 @@ async def public_bulk_inc_user_stat_item_1_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkStatItemInc] in body
+        body: (body) REQUIRED List[BulkStatItemInc] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3898,8 +3898,8 @@ async def public_bulk_inc_user_stat_item_1_async(
         if error:
             return None, error
     request = PublicBulkIncUserStatItem1.create(
-        user_id=user_id,
         body=body,
+        user_id=user_id,
         namespace=namespace,
     )
     return await run_request_async(
@@ -3909,7 +3909,7 @@ async def public_bulk_inc_user_stat_item_1_async(
 
 @same_doc_as(PublicBulkIncUserStatItemValue)
 def public_bulk_inc_user_stat_item_value(
-    body: Optional[List[BulkUserStatItemInc]] = None,
+    body: List[BulkUserStatItemInc],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3933,7 +3933,7 @@ def public_bulk_inc_user_stat_item_value(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkUserStatItemInc] in body
+        body: (body) REQUIRED List[BulkUserStatItemInc] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -3963,7 +3963,7 @@ def public_bulk_inc_user_stat_item_value(
 
 @same_doc_as(PublicBulkIncUserStatItemValue)
 async def public_bulk_inc_user_stat_item_value_async(
-    body: Optional[List[BulkUserStatItemInc]] = None,
+    body: List[BulkUserStatItemInc],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -3987,7 +3987,7 @@ async def public_bulk_inc_user_stat_item_value_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL List[BulkUserStatItemInc] in body
+        body: (body) REQUIRED List[BulkUserStatItemInc] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4141,9 +4141,9 @@ async def public_create_user_stat_item_async(
 
 @same_doc_as(PublicIncUserStatItem)
 def public_inc_user_stat_item(
+    body: StatItemInc,
     stat_code: str,
     user_id: str,
-    body: Optional[StatItemInc] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -4167,7 +4167,7 @@ def public_inc_user_stat_item(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StatItemInc in body
+        body: (body) REQUIRED StatItemInc in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4197,9 +4197,9 @@ def public_inc_user_stat_item(
         if error:
             return None, error
     request = PublicIncUserStatItem.create(
+        body=body,
         stat_code=stat_code,
         user_id=user_id,
-        body=body,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -4207,9 +4207,9 @@ def public_inc_user_stat_item(
 
 @same_doc_as(PublicIncUserStatItem)
 async def public_inc_user_stat_item_async(
+    body: StatItemInc,
     stat_code: str,
     user_id: str,
-    body: Optional[StatItemInc] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -4233,7 +4233,7 @@ async def public_inc_user_stat_item_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StatItemInc in body
+        body: (body) REQUIRED StatItemInc in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4263,9 +4263,9 @@ async def public_inc_user_stat_item_async(
         if error:
             return None, error
     request = PublicIncUserStatItem.create(
+        body=body,
         stat_code=stat_code,
         user_id=user_id,
-        body=body,
         namespace=namespace,
     )
     return await run_request_async(
@@ -4275,9 +4275,9 @@ async def public_inc_user_stat_item_async(
 
 @same_doc_as(PublicIncUserStatItemValue)
 def public_inc_user_stat_item_value(
+    body: StatItemInc,
     stat_code: str,
     user_id: str,
-    body: Optional[StatItemInc] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -4301,7 +4301,7 @@ def public_inc_user_stat_item_value(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StatItemInc in body
+        body: (body) REQUIRED StatItemInc in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4331,9 +4331,9 @@ def public_inc_user_stat_item_value(
         if error:
             return None, error
     request = PublicIncUserStatItemValue.create(
+        body=body,
         stat_code=stat_code,
         user_id=user_id,
-        body=body,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -4341,9 +4341,9 @@ def public_inc_user_stat_item_value(
 
 @same_doc_as(PublicIncUserStatItemValue)
 async def public_inc_user_stat_item_value_async(
+    body: StatItemInc,
     stat_code: str,
     user_id: str,
-    body: Optional[StatItemInc] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -4367,7 +4367,7 @@ async def public_inc_user_stat_item_value_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StatItemInc in body
+        body: (body) REQUIRED StatItemInc in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -4397,9 +4397,9 @@ async def public_inc_user_stat_item_value_async(
         if error:
             return None, error
     request = PublicIncUserStatItemValue.create(
+        body=body,
         stat_code=stat_code,
         user_id=user_id,
-        body=body,
         namespace=namespace,
     )
     return await run_request_async(
@@ -5109,10 +5109,10 @@ async def public_query_user_stat_items_2_async(
 
 @same_doc_as(ResetUserStatItemValue)
 def reset_user_stat_item_value(
+    body: StatResetInfo,
     stat_code: str,
     user_id: str,
     additional_key: Optional[str] = None,
-    body: Optional[StatResetInfo] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -5138,7 +5138,7 @@ def reset_user_stat_item_value(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StatResetInfo in body
+        body: (body) REQUIRED StatResetInfo in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5168,10 +5168,10 @@ def reset_user_stat_item_value(
         if error:
             return None, error
     request = ResetUserStatItemValue.create(
+        body=body,
         stat_code=stat_code,
         user_id=user_id,
         additional_key=additional_key,
-        body=body,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -5179,10 +5179,10 @@ def reset_user_stat_item_value(
 
 @same_doc_as(ResetUserStatItemValue)
 async def reset_user_stat_item_value_async(
+    body: StatResetInfo,
     stat_code: str,
     user_id: str,
     additional_key: Optional[str] = None,
-    body: Optional[StatResetInfo] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -5208,7 +5208,7 @@ async def reset_user_stat_item_value_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StatResetInfo in body
+        body: (body) REQUIRED StatResetInfo in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5238,10 +5238,10 @@ async def reset_user_stat_item_value_async(
         if error:
             return None, error
     request = ResetUserStatItemValue.create(
+        body=body,
         stat_code=stat_code,
         user_id=user_id,
         additional_key=additional_key,
-        body=body,
         namespace=namespace,
     )
     return await run_request_async(
@@ -5377,10 +5377,10 @@ async def reset_user_stat_item_value_1_async(
 
 @same_doc_as(UpdateUserStatItemValue)
 def update_user_stat_item_value(
+    body: StatItemUpdate,
     stat_code: str,
     user_id: str,
     additional_key: Optional[str] = None,
-    body: Optional[StatItemUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -5413,7 +5413,7 @@ def update_user_stat_item_value(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StatItemUpdate in body
+        body: (body) REQUIRED StatItemUpdate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5445,10 +5445,10 @@ def update_user_stat_item_value(
         if error:
             return None, error
     request = UpdateUserStatItemValue.create(
+        body=body,
         stat_code=stat_code,
         user_id=user_id,
         additional_key=additional_key,
-        body=body,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -5456,10 +5456,10 @@ def update_user_stat_item_value(
 
 @same_doc_as(UpdateUserStatItemValue)
 async def update_user_stat_item_value_async(
+    body: StatItemUpdate,
     stat_code: str,
     user_id: str,
     additional_key: Optional[str] = None,
-    body: Optional[StatItemUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -5492,7 +5492,7 @@ async def update_user_stat_item_value_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StatItemUpdate in body
+        body: (body) REQUIRED StatItemUpdate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5524,10 +5524,10 @@ async def update_user_stat_item_value_async(
         if error:
             return None, error
     request = UpdateUserStatItemValue.create(
+        body=body,
         stat_code=stat_code,
         user_id=user_id,
         additional_key=additional_key,
-        body=body,
         namespace=namespace,
     )
     return await run_request_async(
@@ -5537,10 +5537,10 @@ async def update_user_stat_item_value_async(
 
 @same_doc_as(UpdateUserStatItemValue1)
 def update_user_stat_item_value_1(
+    body: StatItemUpdate,
     stat_code: str,
     user_id: str,
     additional_key: Optional[str] = None,
-    body: Optional[StatItemUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -5573,7 +5573,7 @@ def update_user_stat_item_value_1(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StatItemUpdate in body
+        body: (body) REQUIRED StatItemUpdate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5605,10 +5605,10 @@ def update_user_stat_item_value_1(
         if error:
             return None, error
     request = UpdateUserStatItemValue1.create(
+        body=body,
         stat_code=stat_code,
         user_id=user_id,
         additional_key=additional_key,
-        body=body,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -5616,10 +5616,10 @@ def update_user_stat_item_value_1(
 
 @same_doc_as(UpdateUserStatItemValue1)
 async def update_user_stat_item_value_1_async(
+    body: StatItemUpdate,
     stat_code: str,
     user_id: str,
     additional_key: Optional[str] = None,
-    body: Optional[StatItemUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -5652,7 +5652,7 @@ async def update_user_stat_item_value_1_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StatItemUpdate in body
+        body: (body) REQUIRED StatItemUpdate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -5684,10 +5684,10 @@ async def update_user_stat_item_value_1_async(
         if error:
             return None, error
     request = UpdateUserStatItemValue1.create(
+        body=body,
         stat_code=stat_code,
         user_id=user_id,
         additional_key=additional_key,
-        body=body,
         namespace=namespace,
     )
     return await run_request_async(

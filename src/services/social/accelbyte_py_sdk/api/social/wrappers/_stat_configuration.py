@@ -63,7 +63,7 @@ from ..models import StatUpdateGlobalAggregationMethodEnum, StatUpdateVisibility
 
 @same_doc_as(CreateStat)
 def create_stat(
-    body: Optional[StatCreate] = None,
+    body: StatCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -90,7 +90,7 @@ def create_stat(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StatCreate in body
+        body: (body) REQUIRED StatCreate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -124,7 +124,7 @@ def create_stat(
 
 @same_doc_as(CreateStat)
 async def create_stat_async(
-    body: Optional[StatCreate] = None,
+    body: StatCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -151,7 +151,7 @@ async def create_stat_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StatCreate in body
+        body: (body) REQUIRED StatCreate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -187,7 +187,7 @@ async def create_stat_async(
 
 @same_doc_as(CreateStat1)
 def create_stat_1(
-    body: Optional[StatCreate] = None,
+    body: StatCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -214,7 +214,7 @@ def create_stat_1(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StatCreate in body
+        body: (body) REQUIRED StatCreate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -248,7 +248,7 @@ def create_stat_1(
 
 @same_doc_as(CreateStat1)
 async def create_stat_1_async(
-    body: Optional[StatCreate] = None,
+    body: StatCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -275,7 +275,7 @@ async def create_stat_1_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StatCreate in body
+        body: (body) REQUIRED StatCreate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1093,8 +1093,8 @@ async def query_stats_async(
 
 @same_doc_as(UpdateStat)
 def update_stat(
+    body: StatUpdate,
     stat_code: str,
-    body: Optional[StatUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1121,7 +1121,7 @@ def update_stat(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StatUpdate in body
+        body: (body) REQUIRED StatUpdate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1138,6 +1138,8 @@ def update_stat(
 
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}] | 12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
 
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
@@ -1145,8 +1147,8 @@ def update_stat(
         if error:
             return None, error
     request = UpdateStat.create(
-        stat_code=stat_code,
         body=body,
+        stat_code=stat_code,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -1154,8 +1156,8 @@ def update_stat(
 
 @same_doc_as(UpdateStat)
 async def update_stat_async(
+    body: StatUpdate,
     stat_code: str,
-    body: Optional[StatUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1182,7 +1184,7 @@ async def update_stat_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StatUpdate in body
+        body: (body) REQUIRED StatUpdate in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1199,6 +1201,8 @@ async def update_stat_async(
 
         404: Not Found - ErrorEntity (12241: Stat [{statCode}] cannot be found in namespace [{namespace}] | 12245: Stat cycle [{id}] cannot be found in namespace [{namespace}])
 
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
@@ -1206,8 +1210,8 @@ async def update_stat_async(
         if error:
             return None, error
     request = UpdateStat.create(
-        stat_code=stat_code,
         body=body,
+        stat_code=stat_code,
         namespace=namespace,
     )
     return await run_request_async(

@@ -71,6 +71,7 @@
 | iam.ErrorResponse | [IamErrorResponse](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/iam_error_response.py) |
 | iam.Permission | [IamPermission](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/iam_permission.py) |
 | model.ChallengeResponse | [ModelChallengeResponse](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_challenge_response.py) |
+| model.ClaimableUserReward | [ModelClaimableUserReward](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_claimable_user_reward.py) |
 | model.ClaimUserRewardsByGoalCodeRequest | [ModelClaimUserRewardsByGoalCodeRequest](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_claim_user_rewards_by_goal_code_request.py) |
 | model.ClaimUserRewardsReq | [ModelClaimUserRewardsReq](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_claim_user_rewards_req.py) |
 | model.ClaimUsersRewardsRequest | [ModelClaimUsersRewardsRequest](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_claim_users_rewards_request.py) |

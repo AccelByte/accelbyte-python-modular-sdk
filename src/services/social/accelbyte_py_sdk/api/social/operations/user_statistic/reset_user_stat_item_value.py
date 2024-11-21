@@ -57,7 +57,7 @@ class ResetUserStatItemValue(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) OPTIONAL StatResetInfo in body
+        body: (body) REQUIRED StatResetInfo in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -96,7 +96,7 @@ class ResetUserStatItemValue(Operation):
 
     service_name: Optional[str] = "social"
 
-    body: StatResetInfo  # OPTIONAL in [body]
+    body: StatResetInfo  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
     stat_code: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
@@ -296,19 +296,18 @@ class ResetUserStatItemValue(Operation):
     @classmethod
     def create(
         cls,
+        body: StatResetInfo,
         namespace: str,
         stat_code: str,
         user_id: str,
-        body: Optional[StatResetInfo] = None,
         additional_key: Optional[str] = None,
         **kwargs,
     ) -> ResetUserStatItemValue:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
         instance.stat_code = stat_code
         instance.user_id = user_id
-        if body is not None:
-            instance.body = body
         if additional_key is not None:
             instance.additional_key = additional_key
         if x_flight_id := kwargs.get("x_flight_id", None):
@@ -357,7 +356,7 @@ class ResetUserStatItemValue(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "body": False,
+            "body": True,
             "namespace": True,
             "statCode": True,
             "userId": True,

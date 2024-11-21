@@ -675,7 +675,7 @@ def update_policy(
 ):
     """Update Country-Specific Policy (updatePolicy)
 
-    Update country-specific policy.
+    Update country-specific and country-group policy.
 
     Properties:
         url: /agreement/admin/policies/{policyId}
@@ -715,7 +715,7 @@ async def update_policy_async(
 ):
     """Update Country-Specific Policy (updatePolicy)
 
-    Update country-specific policy.
+    Update country-specific and country-group policy.
 
     Properties:
         url: /agreement/admin/policies/{policyId}

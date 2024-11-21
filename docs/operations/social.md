@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Statistics Service Index (2.18.1)
+# AccelByte Gaming Services Statistics Service Index (2.18.3)
 
 
 ## Operations
@@ -157,6 +157,8 @@
 | BulkUserStatItemInc | [BulkUserStatItemInc](../../src/services/social/accelbyte_py_sdk/api/social/models/bulk_user_stat_item_inc.py) |
 | BulkUserStatItemReset | [BulkUserStatItemReset](../../src/services/social/accelbyte_py_sdk/api/social/models/bulk_user_stat_item_reset.py) |
 | BulkUserStatItemUpdate | [BulkUserStatItemUpdate](../../src/services/social/accelbyte_py_sdk/api/social/models/bulk_user_stat_item_update.py) |
+| CycleOverride | [CycleOverride](../../src/services/social/accelbyte_py_sdk/api/social/models/cycle_override.py) |
+| CycleOverrideRequest | [CycleOverrideRequest](../../src/services/social/accelbyte_py_sdk/api/social/models/cycle_override_request.py) |
 | ErrorEntity | [ErrorEntity](../../src/services/social/accelbyte_py_sdk/api/social/models/error_entity.py) |
 | FieldValidationError | [FieldValidationError](../../src/services/social/accelbyte_py_sdk/api/social/models/field_validation_error.py) |
 | GameProfileHeader | [GameProfileHeader](../../src/services/social/accelbyte_py_sdk/api/social/models/game_profile_header.py) |

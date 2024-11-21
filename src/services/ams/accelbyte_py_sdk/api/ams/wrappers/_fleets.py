@@ -601,6 +601,9 @@ async def fleet_get_async(
 
 @same_doc_as(FleetList)
 def fleet_list(
+    active: Optional[bool] = None,
+    name: Optional[str] = None,
+    region: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -624,6 +627,12 @@ def fleet_list(
 
         namespace: (namespace) REQUIRED str in path
 
+        active: (active) OPTIONAL bool in query
+
+        name: (name) OPTIONAL str in query
+
+        region: (region) OPTIONAL str in query
+
     Responses:
         200: OK - ApiFleetListResponse (success)
 
@@ -634,6 +643,9 @@ def fleet_list(
         if error:
             return None, error
     request = FleetList.create(
+        active=active,
+        name=name,
+        region=region,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -641,6 +653,9 @@ def fleet_list(
 
 @same_doc_as(FleetList)
 async def fleet_list_async(
+    active: Optional[bool] = None,
+    name: Optional[str] = None,
+    region: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -664,6 +679,12 @@ async def fleet_list_async(
 
         namespace: (namespace) REQUIRED str in path
 
+        active: (active) OPTIONAL bool in query
+
+        name: (name) OPTIONAL str in query
+
+        region: (region) OPTIONAL str in query
+
     Responses:
         200: OK - ApiFleetListResponse (success)
 
@@ -674,6 +695,9 @@ async def fleet_list_async(
         if error:
             return None, error
     request = FleetList.create(
+        active=active,
+        name=name,
+        region=region,
         namespace=namespace,
     )
     return await run_request_async(

@@ -30,8 +30,8 @@ from accelbyte_py_sdk.core import Model
 from ..models.api_capacity import ApiCapacity
 
 
-class ApiAvailableInstanceType(Model):
-    """Api available instance type (api.AvailableInstanceType)
+class ApiInstanceTypeForNamespaceResponse(Model):
+    """Api instance type for namespace response (api.InstanceTypeForNamespaceResponse)
 
     Properties:
         capacity: (capacity) REQUIRED List[ApiCapacity]
@@ -69,39 +69,41 @@ class ApiAvailableInstanceType(Model):
 
     # region with_x methods
 
-    def with_capacity(self, value: List[ApiCapacity]) -> ApiAvailableInstanceType:
+    def with_capacity(
+        self, value: List[ApiCapacity]
+    ) -> ApiInstanceTypeForNamespaceResponse:
         self.capacity = value
         return self
 
-    def with_description(self, value: str) -> ApiAvailableInstanceType:
+    def with_description(self, value: str) -> ApiInstanceTypeForNamespaceResponse:
         self.description = value
         return self
 
-    def with_id(self, value: str) -> ApiAvailableInstanceType:
+    def with_id(self, value: str) -> ApiInstanceTypeForNamespaceResponse:
         self.id_ = value
         return self
 
-    def with_memory_gi_b(self, value: float) -> ApiAvailableInstanceType:
+    def with_memory_gi_b(self, value: float) -> ApiInstanceTypeForNamespaceResponse:
         self.memory_gi_b = value
         return self
 
-    def with_min_speed(self, value: str) -> ApiAvailableInstanceType:
+    def with_min_speed(self, value: str) -> ApiInstanceTypeForNamespaceResponse:
         self.min_speed = value
         return self
 
-    def with_name(self, value: str) -> ApiAvailableInstanceType:
+    def with_name(self, value: str) -> ApiInstanceTypeForNamespaceResponse:
         self.name = value
         return self
 
-    def with_owner_account_id(self, value: str) -> ApiAvailableInstanceType:
+    def with_owner_account_id(self, value: str) -> ApiInstanceTypeForNamespaceResponse:
         self.owner_account_id = value
         return self
 
-    def with_provider(self, value: str) -> ApiAvailableInstanceType:
+    def with_provider(self, value: str) -> ApiInstanceTypeForNamespaceResponse:
         self.provider = value
         return self
 
-    def with_virtual_cpu(self, value: int) -> ApiAvailableInstanceType:
+    def with_virtual_cpu(self, value: int) -> ApiInstanceTypeForNamespaceResponse:
         self.virtual_cpu = value
         return self
 
@@ -168,7 +170,7 @@ class ApiAvailableInstanceType(Model):
         provider: str,
         virtual_cpu: int,
         **kwargs,
-    ) -> ApiAvailableInstanceType:
+    ) -> ApiInstanceTypeForNamespaceResponse:
         instance = cls()
         instance.capacity = capacity
         instance.description = description
@@ -184,7 +186,7 @@ class ApiAvailableInstanceType(Model):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> ApiAvailableInstanceType:
+    ) -> ApiInstanceTypeForNamespaceResponse:
         instance = cls()
         if not dict_:
             return instance
@@ -232,7 +234,7 @@ class ApiAvailableInstanceType(Model):
     @classmethod
     def create_many_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, ApiAvailableInstanceType]:
+    ) -> Dict[str, ApiInstanceTypeForNamespaceResponse]:
         return (
             {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
             if dict_
@@ -242,7 +244,7 @@ class ApiAvailableInstanceType(Model):
     @classmethod
     def create_many_from_list(
         cls, list_: list, include_empty: bool = False
-    ) -> List[ApiAvailableInstanceType]:
+    ) -> List[ApiInstanceTypeForNamespaceResponse]:
         return (
             [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
             if list_
@@ -253,9 +255,9 @@ class ApiAvailableInstanceType(Model):
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
     ) -> Union[
-        ApiAvailableInstanceType,
-        List[ApiAvailableInstanceType],
-        Dict[Any, ApiAvailableInstanceType],
+        ApiInstanceTypeForNamespaceResponse,
+        List[ApiInstanceTypeForNamespaceResponse],
+        Dict[Any, ApiInstanceTypeForNamespaceResponse],
     ]:
         if many:
             if isinstance(any_, dict):

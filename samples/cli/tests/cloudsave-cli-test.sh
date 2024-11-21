@@ -30,107 +30,108 @@ if [ "$BATCH" = true ] ; then
 
 $PYTHON -m $MODULE 'start-interactive-session' --continue_on_error '--writer=tap' << END
 cloudsave-admin-list-admin-game-record-v1 --login_with_auth "Bearer foo"
-cloudsave-admin-bulk-get-admin-game-record-v1 '{"keys": ["i2kHFOBH", "RNMxPDHq", "aZzIH94H"]}' --login_with_auth "Bearer foo"
-cloudsave-admin-get-admin-game-record-v1 'YcJvJgZy' --login_with_auth "Bearer foo"
-cloudsave-admin-put-admin-game-record-v1 '{}' 'UgFPBLLR' --login_with_auth "Bearer foo"
-cloudsave-admin-post-admin-game-record-v1 '{}' '5OzTstt9' --login_with_auth "Bearer foo"
-cloudsave-admin-delete-admin-game-record-v1 'KeSiBdUw' --login_with_auth "Bearer foo"
+cloudsave-admin-bulk-get-admin-game-record-v1 '{"keys": ["np727tio", "xwZNjWIl", "9KFfCyQZ"]}' --login_with_auth "Bearer foo"
+cloudsave-admin-get-admin-game-record-v1 '1yOApKm5' --login_with_auth "Bearer foo"
+cloudsave-admin-put-admin-game-record-v1 '{}' 'vVcDG4aB' --login_with_auth "Bearer foo"
+cloudsave-admin-post-admin-game-record-v1 '{}' 'KX7gkUEf' --login_with_auth "Bearer foo"
+cloudsave-admin-delete-admin-game-record-v1 'yYWZwH7Q' --login_with_auth "Bearer foo"
+cloudsave-delete-admin-game-record-ttl-config 'H95t1smg' --login_with_auth "Bearer foo"
 cloudsave-admin-list-game-binary-records-v1 --login_with_auth "Bearer foo"
-cloudsave-admin-post-game-binary-record-v1 '{"file_type": "FqfI6n2A", "key": "GVNRpEjJ", "set_by": "CLIENT", "ttl_config": {"action": "DELETE", "expires_at": "1984-02-17T00:00:00Z"}}' --login_with_auth "Bearer foo"
-cloudsave-admin-get-game-binary-record-v1 'bWIrJiCE' --login_with_auth "Bearer foo"
-cloudsave-admin-put-game-binary-record-v1 '{"content_type": "4E0Qi3ca", "file_location": "BQqBBIgy"}' 'qDXrMypM' --login_with_auth "Bearer foo"
-cloudsave-admin-delete-game-binary-record-v1 '0Nq7noXp' --login_with_auth "Bearer foo"
-cloudsave-admin-put-game-binary-recor-metadata-v1 '{"set_by": "CLIENT", "tags": ["BvNKhpxB", "xKdEdOXF", "qphaAPlt"], "ttl_config": {"action": "DELETE", "expires_at": "1979-10-16T00:00:00Z"}}' 'ncRyVC1k' --login_with_auth "Bearer foo"
-cloudsave-admin-post-game-binary-presigned-urlv1 '{"file_type": "DX98PcLo"}' 'VtwwodxW' --login_with_auth "Bearer foo"
-cloudsave-delete-game-binary-record-ttl-config 'djaoyLX7' --login_with_auth "Bearer foo"
-cloudsave-admin-put-admin-game-record-concurrent-handler-v1 '{"tags": ["gtJdDEYd", "vtSbE5zM", "mBoeskUc"], "updatedAt": "1996-03-21T00:00:00Z", "value": {"iMnfELB4": {}, "dSDokdmU": {}, "IVTAFiJi": {}}}' 'Yz6UlZd2' --login_with_auth "Bearer foo"
-cloudsave-admin-put-game-record-concurrent-handler-v1 '{"set_by": "SERVER", "tags": ["weaSaqFj", "Kh91qwjT", "qDioxeJt"], "ttl_config": {"action": "DELETE", "expires_at": "1985-04-03T00:00:00Z"}, "updatedAt": "1991-08-28T00:00:00Z", "value": {"tDk2o1UR": {}, "cWfo7nCu": {}, "uasG4P3P": {}}}' 'a8BuHtMY' --login_with_auth "Bearer foo"
+cloudsave-admin-post-game-binary-record-v1 '{"file_type": "Z10X6LXc", "key": "qfQ8IWAZ", "set_by": "SERVER", "ttl_config": {"action": "DELETE", "expires_at": "1987-03-20T00:00:00Z"}}' --login_with_auth "Bearer foo"
+cloudsave-admin-get-game-binary-record-v1 'voxN0flc' --login_with_auth "Bearer foo"
+cloudsave-admin-put-game-binary-record-v1 '{"content_type": "REgaXrgc", "file_location": "jboTJvJp"}' '1y5UDi9J' --login_with_auth "Bearer foo"
+cloudsave-admin-delete-game-binary-record-v1 'VPdUwn8G' --login_with_auth "Bearer foo"
+cloudsave-admin-put-game-binary-recor-metadata-v1 '{"set_by": "SERVER", "tags": ["snkoXZ0x", "ES4UDDMS", "Od94NmV6"], "ttl_config": {"action": "DELETE", "expires_at": "1994-04-29T00:00:00Z"}}' '5ulWeiNP' --login_with_auth "Bearer foo"
+cloudsave-admin-post-game-binary-presigned-urlv1 '{"file_type": "kWff5cnV"}' 'rkcotH1H' --login_with_auth "Bearer foo"
+cloudsave-delete-game-binary-record-ttl-config 'YJZdjFJa' --login_with_auth "Bearer foo"
+cloudsave-admin-put-admin-game-record-concurrent-handler-v1 '{"tags": ["qqUrGboI", "ceXU9mqb", "kkQzQU0s"], "ttl_config": {"action": "DELETE", "expires_at": "1992-05-04T00:00:00Z"}, "updatedAt": "1990-11-24T00:00:00Z", "value": {"lY4LQzLr": {}, "um4Jd0E1": {}, "Yhe2pg73": {}}}' 'aYDa4KuZ' --login_with_auth "Bearer foo"
+cloudsave-admin-put-game-record-concurrent-handler-v1 '{"set_by": "SERVER", "tags": ["SBFm7cbw", "l1PMWvRD", "wXoHF6ge"], "ttl_config": {"action": "DELETE", "expires_at": "1997-02-12T00:00:00Z"}, "updatedAt": "1996-07-15T00:00:00Z", "value": {"jmY6X20r": {}, "vj2Qnh8J": {}, "5sYUWB3c": {}}}' '6AmQwvGp' --login_with_auth "Bearer foo"
 cloudsave-get-plugin-config --login_with_auth "Bearer foo"
-cloudsave-create-plugin-config '{"appConfig": {"appName": "zYXGolyD"}, "customConfig": {"GRPCAddress": "8q4a7shO"}, "customFunction": {"afterBulkReadGameBinaryRecord": false, "afterBulkReadGameRecord": false, "afterBulkReadPlayerBinaryRecord": true, "afterBulkReadPlayerRecord": false, "afterReadGameBinaryRecord": false, "afterReadGameRecord": true, "afterReadPlayerBinaryRecord": true, "afterReadPlayerRecord": true, "beforeWriteAdminGameRecord": false, "beforeWriteAdminPlayerRecord": true, "beforeWriteGameBinaryRecord": false, "beforeWriteGameRecord": false, "beforeWritePlayerBinaryRecord": true, "beforeWritePlayerRecord": true}, "extendType": "CUSTOM"}' --login_with_auth "Bearer foo"
+cloudsave-create-plugin-config '{"appConfig": {"appName": "F5rhLvUN"}, "customConfig": {"GRPCAddress": "9fLoDb8a"}, "customFunction": {"afterBulkReadGameBinaryRecord": true, "afterBulkReadGameRecord": false, "afterBulkReadPlayerBinaryRecord": true, "afterBulkReadPlayerRecord": true, "afterReadGameBinaryRecord": true, "afterReadGameRecord": false, "afterReadPlayerBinaryRecord": true, "afterReadPlayerRecord": true, "beforeWriteAdminGameRecord": true, "beforeWriteAdminPlayerRecord": true, "beforeWriteGameBinaryRecord": false, "beforeWriteGameRecord": true, "beforeWritePlayerBinaryRecord": true, "beforeWritePlayerRecord": false}, "extendType": "APP"}' --login_with_auth "Bearer foo"
 cloudsave-delete-plugin-config --login_with_auth "Bearer foo"
-cloudsave-update-plugin-config '{"appConfig": {"appName": "D0GXj74W"}, "customConfig": {"GRPCAddress": "wJG6AYmP"}, "customFunction": {"afterBulkReadGameBinaryRecord": true, "afterBulkReadGameRecord": false, "afterBulkReadPlayerBinaryRecord": false, "afterBulkReadPlayerRecord": true, "afterReadGameBinaryRecord": false, "afterReadGameRecord": true, "afterReadPlayerBinaryRecord": false, "afterReadPlayerRecord": false, "beforeWriteAdminGameRecord": false, "beforeWriteAdminPlayerRecord": false, "beforeWriteGameBinaryRecord": false, "beforeWriteGameRecord": true, "beforeWritePlayerBinaryRecord": false, "beforeWritePlayerRecord": true}, "extendType": "APP"}' --login_with_auth "Bearer foo"
-cloudsave-list-game-records-handler-v1 '9' '55' --login_with_auth "Bearer foo"
-cloudsave-admin-get-game-record-handler-v1 'Ivpn9L2x' --login_with_auth "Bearer foo"
-cloudsave-admin-put-game-record-handler-v1 '{}' 'CFNOSwla' --login_with_auth "Bearer foo"
-cloudsave-admin-post-game-record-handler-v1 '{}' 'Fu2v8g7a' --login_with_auth "Bearer foo"
-cloudsave-admin-delete-game-record-handler-v1 'UD3LmMGl' --login_with_auth "Bearer foo"
-cloudsave-delete-game-record-ttl-config 'SrsbGstY' --login_with_auth "Bearer foo"
+cloudsave-update-plugin-config '{"appConfig": {"appName": "b4vqgwDn"}, "customConfig": {"GRPCAddress": "CUunp3fE"}, "customFunction": {"afterBulkReadGameBinaryRecord": false, "afterBulkReadGameRecord": true, "afterBulkReadPlayerBinaryRecord": false, "afterBulkReadPlayerRecord": false, "afterReadGameBinaryRecord": false, "afterReadGameRecord": true, "afterReadPlayerBinaryRecord": false, "afterReadPlayerRecord": false, "beforeWriteAdminGameRecord": true, "beforeWriteAdminPlayerRecord": false, "beforeWriteGameBinaryRecord": true, "beforeWriteGameRecord": true, "beforeWritePlayerBinaryRecord": true, "beforeWritePlayerRecord": true}, "extendType": "CUSTOM"}' --login_with_auth "Bearer foo"
+cloudsave-list-game-records-handler-v1 '7' '76' --login_with_auth "Bearer foo"
+cloudsave-admin-get-game-record-handler-v1 'PVDmsbJU' --login_with_auth "Bearer foo"
+cloudsave-admin-put-game-record-handler-v1 '{}' 'oJ5cLLZK' --login_with_auth "Bearer foo"
+cloudsave-admin-post-game-record-handler-v1 '{}' '3FwUtVe9' --login_with_auth "Bearer foo"
+cloudsave-admin-delete-game-record-handler-v1 'H0YCTd1J' --login_with_auth "Bearer foo"
+cloudsave-delete-game-record-ttl-config 'Tr7n6kwQ' --login_with_auth "Bearer foo"
 cloudsave-admin-list-tags-handler-v1 --login_with_auth "Bearer foo"
-cloudsave-admin-post-tag-handler-v1 '{"tag": "bdetX7oZ"}' --login_with_auth "Bearer foo"
-cloudsave-admin-delete-tag-handler-v1 'QSIOQl6m' --login_with_auth "Bearer foo"
-cloudsave-bulk-get-admin-player-record-by-user-ids-v1 '{"userIds": ["ecjELF97", "VtS8k2v8", "xv6cBtam"]}' 'LAi2ZaWB' --login_with_auth "Bearer foo"
-cloudsave-bulk-get-player-record-size-handler-v1 '{"data": [{"keys": ["Zpy03Cmj", "suRcGT0b", "I4Wrfpy9"], "user_id": "9zPg9TE8"}, {"keys": ["A1ffwcUP", "g0ZF4EXc", "bBGDVFEm"], "user_id": "WclWuqXt"}, {"keys": ["A3pqbfCY", "qBIVKTZK", "ldnZUUx4"], "user_id": "37vYidhC"}]}' --login_with_auth "Bearer foo"
-cloudsave-admin-bulk-put-player-records-by-key-handler-v1 '{"data": [{"user_id": "B5AOA7Zo", "value": {"IOoJJPoo": {}, "CQ3mCY4r": {}, "GsrZ9pNR": {}}}, {"user_id": "1Ba0x10i", "value": {"1ZDOGsQh": {}, "JQhwRseW": {}, "Wy42QqMd": {}}}, {"user_id": "aJn7Amrr", "value": {"3vlRtTiN": {}, "ed2vkfYi": {}, "hofydYYl": {}}}]}' 'v77jTg7g' --login_with_auth "Bearer foo"
-cloudsave-admin-bulk-get-player-records-by-user-i-ds-handler-v1 '{"userIds": ["lcWmG2pB", "MaWBDmaA", "xmT36N3N"]}' '1GWRotoF' --login_with_auth "Bearer foo"
-cloudsave-admin-list-admin-user-records-v1 'VHg841B9' --login_with_auth "Bearer foo"
-cloudsave-admin-bulk-get-admin-player-record-v1 '{"keys": ["TTqH3C5J", "yKEAzPlz", "SQApungm"]}' '4p2uRURZ' --login_with_auth "Bearer foo"
-cloudsave-admin-get-admin-player-record-v1 'qjqwc02s' 'Zyr04d1p' --login_with_auth "Bearer foo"
-cloudsave-admin-put-admin-player-record-v1 '{}' 'VmaSXcrn' 'jzQqtKvo' --login_with_auth "Bearer foo"
-cloudsave-admin-post-player-admin-record-v1 '{}' 'Yy5ekfM5' '7b8kAxoC' --login_with_auth "Bearer foo"
-cloudsave-admin-delete-admin-player-record-v1 'LRtJSpB8' '15WLiaYw' --login_with_auth "Bearer foo"
-cloudsave-admin-list-player-binary-records-v1 '826MLIzr' --login_with_auth "Bearer foo"
-cloudsave-admin-post-player-binary-record-v1 '{"file_type": "HKlbLhWi", "is_public": true, "key": "fuVhc3pa", "set_by": "SERVER"}' 'dAvvxF0F' --login_with_auth "Bearer foo"
-cloudsave-admin-get-player-binary-record-v1 'NND4gqa4' 'KMKc91C8' --login_with_auth "Bearer foo"
-cloudsave-admin-put-player-binary-record-v1 '{"content_type": "pN37BLSP", "file_location": "taxpaQK8"}' 'B9WO2R96' 'tBbtjNYL' --login_with_auth "Bearer foo"
-cloudsave-admin-delete-player-binary-record-v1 'wz6LwZlY' 'OkFePcgn' --login_with_auth "Bearer foo"
-cloudsave-admin-put-player-binary-recor-metadata-v1 '{"is_public": false, "set_by": "CLIENT", "tags": ["LMDQEzrG", "G0bZeD6O", "3vuLBivp"]}' 'KBLcCW41' 'b9kKwqLH' --login_with_auth "Bearer foo"
-cloudsave-admin-post-player-binary-presigned-urlv1 '{"file_type": "1DLvObAo"}' 'v4pt8huM' '8lNLCEC3' --login_with_auth "Bearer foo"
-cloudsave-admin-put-admin-player-record-concurrent-handler-v1 '{"tags": ["gIGP0GZ2", "AykzsJVx", "MLV6Lf4w"], "updatedAt": "1980-01-08T00:00:00Z", "value": {"xAlOx8li": {}, "oQSwnJxc": {}, "MTiBElxW": {}}}' 'N8R71Mvw' 'SQOV55T4' --login_with_auth "Bearer foo"
-cloudsave-admin-put-player-record-concurrent-handler-v1 '{"set_by": "SERVER", "tags": ["tIwL4Dqb", "oPJDwD19", "SOT6Zj2M"], "ttl_config": {"action": "DELETE", "expires_at": "1987-02-12T00:00:00Z"}, "updatedAt": "1993-04-01T00:00:00Z", "value": {"MHTvCp9Z": {}, "SAyMRNy9": {}, "j7n4et4e": {}}}' 'X88mrcZY' 'oytAqhnX' --login_with_auth "Bearer foo"
-cloudsave-admin-put-player-public-record-concurrent-handler-v1 '{"set_by": "SERVER", "tags": ["TyykA9E8", "iCHUTqY4", "Ugo2lDpC"], "ttl_config": {"action": "DELETE", "expires_at": "1997-02-03T00:00:00Z"}, "updatedAt": "1980-03-31T00:00:00Z", "value": {"pJwK1rlb": {}, "0OLpJR0I": {}, "KO9keVeU": {}}}' '7jAOQYkl' 'rbg7hkaj' --login_with_auth "Bearer foo"
-cloudsave-admin-retrieve-player-records 'P3zd759u' --login_with_auth "Bearer foo"
-cloudsave-admin-put-player-records-handler-v1 '{"data": [{"key": "tG3YNzVC", "value": {"eQt9C47X": {}, "Dt9LjaZB": {}, "Oz0YwiDk": {}}}, {"key": "fQTT0xBO", "value": {"yjrzusog": {}, "jPh6S0oL": {}, "6wEhLYST": {}}}, {"key": "14RRvmQ5", "value": {"fL33fRZX": {}, "V5kKNxtS": {}, "sDAAtINR": {}}}]}' 'TW5xdraa' --login_with_auth "Bearer foo"
-cloudsave-admin-get-player-records-handler-v1 '{"keys": ["YGTu8k9X", "zFSorwGh", "LgOWqYDp"]}' 'xAftSl9w' --login_with_auth "Bearer foo"
-cloudsave-admin-get-player-record-handler-v1 'hK137P1i' 'IGGLUTBV' --login_with_auth "Bearer foo"
-cloudsave-admin-put-player-record-handler-v1 '{}' 'F7o7ZeRf' '34VRY2Zq' --login_with_auth "Bearer foo"
-cloudsave-admin-post-player-record-handler-v1 '{}' 'T3eVftDb' 't8I12r9I' --login_with_auth "Bearer foo"
-cloudsave-admin-delete-player-record-handler-v1 'zTlQB8ge' 'iQl8AZW0' --login_with_auth "Bearer foo"
-cloudsave-admin-get-player-public-record-handler-v1 'JwnSQ2OR' 'j9HBSBhz' --login_with_auth "Bearer foo"
-cloudsave-admin-put-player-public-record-handler-v1 '{}' '9qzVF2le' '42uOB0dZ' --login_with_auth "Bearer foo"
-cloudsave-admin-post-player-public-record-handler-v1 '{}' 't9u5ssNB' 'P9TBiMlW' --login_with_auth "Bearer foo"
-cloudsave-admin-delete-player-public-record-handler-v1 '1JNO3KQE' 'iSSzhTXk' --login_with_auth "Bearer foo"
-cloudsave-admin-get-player-record-size-handler-v1 '9jlw4vu5' 'U0VxIlaR' --login_with_auth "Bearer foo"
+cloudsave-admin-post-tag-handler-v1 '{"tag": "35tF9ogb"}' --login_with_auth "Bearer foo"
+cloudsave-admin-delete-tag-handler-v1 'GqbtT5ph' --login_with_auth "Bearer foo"
+cloudsave-bulk-get-admin-player-record-by-user-ids-v1 '{"userIds": ["qHP3BJyT", "sqV8bSBC", "gzDY13Nl"]}' 'G0tEorfa' --login_with_auth "Bearer foo"
+cloudsave-bulk-get-player-record-size-handler-v1 '{"data": [{"keys": ["m4aIu8mi", "QMmYSG5a", "cRDLyJfh"], "user_id": "gXh2GmNa"}, {"keys": ["GBHZvPdV", "060uaSdQ", "ulOwxk8x"], "user_id": "XM1IXF5Z"}, {"keys": ["Ir5QMEr3", "wlkuhxzB", "Ro1VuwYZ"], "user_id": "YGpW0MND"}]}' --login_with_auth "Bearer foo"
+cloudsave-admin-bulk-put-player-records-by-key-handler-v1 '{"data": [{"user_id": "u89yVUQz", "value": {"BAGTyX3u": {}, "JCUDaQEI": {}, "rdwJiN1Z": {}}}, {"user_id": "DvBGKJpO", "value": {"oDudqsam": {}, "HnRZQdHr": {}, "xpjnxnz3": {}}}, {"user_id": "Wcls44eE", "value": {"WUaA85eT": {}, "9XLer2p8": {}, "PInaboTt": {}}}]}' 'I4qaGZR5' --login_with_auth "Bearer foo"
+cloudsave-admin-bulk-get-player-records-by-user-i-ds-handler-v1 '{"userIds": ["AJf2c5wK", "3au9Xj2G", "vSE2IXzw"]}' 'zOfTO2ZE' --login_with_auth "Bearer foo"
+cloudsave-admin-list-admin-user-records-v1 'Cb6T3pGY' --login_with_auth "Bearer foo"
+cloudsave-admin-bulk-get-admin-player-record-v1 '{"keys": ["DWxwe1SS", "3DHu4Wnp", "6QXvJefT"]}' 'VM8JOV8H' --login_with_auth "Bearer foo"
+cloudsave-admin-get-admin-player-record-v1 'F2lcN7FF' 'nIz8QcmW' --login_with_auth "Bearer foo"
+cloudsave-admin-put-admin-player-record-v1 '{}' 'CFkt2mIn' 'APL8eU7b' --login_with_auth "Bearer foo"
+cloudsave-admin-post-player-admin-record-v1 '{}' '86prhv9a' 'cgWc2k6T' --login_with_auth "Bearer foo"
+cloudsave-admin-delete-admin-player-record-v1 '5nTUxE5c' 'Ean9kyqc' --login_with_auth "Bearer foo"
+cloudsave-admin-list-player-binary-records-v1 'cXXkWqRk' --login_with_auth "Bearer foo"
+cloudsave-admin-post-player-binary-record-v1 '{"file_type": "UaUVsx1T", "is_public": true, "key": "0LTSSuVs", "set_by": "CLIENT"}' 'USrG8A5e' --login_with_auth "Bearer foo"
+cloudsave-admin-get-player-binary-record-v1 'sZyEHNjU' 'yucp63d1' --login_with_auth "Bearer foo"
+cloudsave-admin-put-player-binary-record-v1 '{"content_type": "gcE8QVOd", "file_location": "FDFXHugV"}' 'vbOCKOhZ' 'SeNbP5WE' --login_with_auth "Bearer foo"
+cloudsave-admin-delete-player-binary-record-v1 'f6MAEhpp' 'bgEciDhA' --login_with_auth "Bearer foo"
+cloudsave-admin-put-player-binary-recor-metadata-v1 '{"is_public": true, "set_by": "CLIENT", "tags": ["Q2Q0x5EI", "qWImLiZQ", "4kWc9sqV"]}' 'gbpvjGUu' 'MSTHg4ah' --login_with_auth "Bearer foo"
+cloudsave-admin-post-player-binary-presigned-urlv1 '{"file_type": "7bU0BZyU"}' '78scrF18' 'O1UtrD98' --login_with_auth "Bearer foo"
+cloudsave-admin-put-admin-player-record-concurrent-handler-v1 '{"tags": ["Sb3IsGuu", "jwBZzmgx", "5PRn1ZRJ"], "updatedAt": "1974-06-30T00:00:00Z", "value": {"34qQQYKF": {}, "ncLECrj8": {}, "HuSiPYoF": {}}}' 'nUpCRith' 'vzUapxP5' --login_with_auth "Bearer foo"
+cloudsave-admin-put-player-record-concurrent-handler-v1 '{"set_by": "CLIENT", "tags": ["b5sdQFzy", "JMbtcCuS", "6Eh6txlZ"], "ttl_config": {"action": "DELETE", "expires_at": "1998-12-03T00:00:00Z"}, "updatedAt": "1977-10-26T00:00:00Z", "value": {"mjWqLwON": {}, "xYj7XQ84": {}, "IhuhJRhV": {}}}' 'mwi4Cnmg' '2e5LtK2I' --login_with_auth "Bearer foo"
+cloudsave-admin-put-player-public-record-concurrent-handler-v1 '{"set_by": "CLIENT", "tags": ["MtxDaKRp", "ZsHAsy6U", "z3VBOUIf"], "ttl_config": {"action": "DELETE", "expires_at": "1972-06-23T00:00:00Z"}, "updatedAt": "1995-07-03T00:00:00Z", "value": {"WJft5euE": {}, "RSgf27GG": {}, "pNC7eVUK": {}}}' 'Vjyd3nD3' 'qZVtY5Ln' --login_with_auth "Bearer foo"
+cloudsave-admin-retrieve-player-records 'xgoSIS2n' --login_with_auth "Bearer foo"
+cloudsave-admin-put-player-records-handler-v1 '{"data": [{"key": "vq3FzYn9", "value": {"PkW4aIqq": {}, "4udjzeft": {}, "oMu2QPXo": {}}}, {"key": "yTopRVsZ", "value": {"n9udkvA6": {}, "becPh9Xp": {}, "SpGPqoUn": {}}}, {"key": "iRbB3oq2", "value": {"X2aVXqk1": {}, "93q4TGzQ": {}, "aS8jEvsd": {}}}]}' '0GM9agVi' --login_with_auth "Bearer foo"
+cloudsave-admin-get-player-records-handler-v1 '{"keys": ["qCvHKexW", "jbX6SlyK", "MXhrpOVS"]}' '1GzhNejG' --login_with_auth "Bearer foo"
+cloudsave-admin-get-player-record-handler-v1 'OJT5oZDU' 'rQKNFBJu' --login_with_auth "Bearer foo"
+cloudsave-admin-put-player-record-handler-v1 '{}' 'yxrC4gNm' 'sZziEwAO' --login_with_auth "Bearer foo"
+cloudsave-admin-post-player-record-handler-v1 '{}' 'sfqMrkhu' 'NFa1BGHz' --login_with_auth "Bearer foo"
+cloudsave-admin-delete-player-record-handler-v1 'Cad1L4tM' 'xzAsC4QW' --login_with_auth "Bearer foo"
+cloudsave-admin-get-player-public-record-handler-v1 '94ikaJRa' 'hx6Vlp0g' --login_with_auth "Bearer foo"
+cloudsave-admin-put-player-public-record-handler-v1 '{}' 'RczQ7gQM' 'ICEFoqnV' --login_with_auth "Bearer foo"
+cloudsave-admin-post-player-public-record-handler-v1 '{}' 'kHdLrFl7' 'WmV2fALs' --login_with_auth "Bearer foo"
+cloudsave-admin-delete-player-public-record-handler-v1 'iR3rkGLG' 'bIS8rolh' --login_with_auth "Bearer foo"
+cloudsave-admin-get-player-record-size-handler-v1 'APoV8Bns' 'RGYAeQJj' --login_with_auth "Bearer foo"
 cloudsave-list-game-binary-records-v1 --login_with_auth "Bearer foo"
-cloudsave-post-game-binary-record-v1 '{"file_type": "lc7QkMC7", "key": "PX1e7sug"}' --login_with_auth "Bearer foo"
-cloudsave-bulk-get-game-binary-record-v1 '{"keys": ["dB4j0AqA", "2Ef3xPho", "HuJ3Jn8Z"]}' --login_with_auth "Bearer foo"
-cloudsave-get-game-binary-record-v1 'FYBXFUFb' --login_with_auth "Bearer foo"
-cloudsave-put-game-binary-record-v1 '{"content_type": "3aFEYdBi", "file_location": "cv81MoNV"}' 'HIABQvee' --login_with_auth "Bearer foo"
-cloudsave-delete-game-binary-record-v1 'IB7QkgIN' --login_with_auth "Bearer foo"
-cloudsave-post-game-binary-presigned-urlv1 '{"file_type": "PifapaL8"}' 'aQrma1aB' --login_with_auth "Bearer foo"
-cloudsave-put-game-record-concurrent-handler-v1 '{"updatedAt": "1999-08-06T00:00:00Z", "value": {"Cu4RMYBV": {}, "s2XPd3E8": {}, "Rapoyuuv": {}}}' 'oSGpqkhi' --login_with_auth "Bearer foo"
-cloudsave-get-game-records-bulk '{"keys": ["YqQQnPvk", "Jhez3cEe", "mFWAfdrd"]}' --login_with_auth "Bearer foo"
-cloudsave-get-game-record-handler-v1 'nT400o5h' --login_with_auth "Bearer foo"
-cloudsave-put-game-record-handler-v1 '{}' 'MISayLKQ' --login_with_auth "Bearer foo"
-cloudsave-post-game-record-handler-v1 '{}' 'hykbzQ4R' --login_with_auth "Bearer foo"
-cloudsave-delete-game-record-handler-v1 '4wOTKubA' --login_with_auth "Bearer foo"
+cloudsave-post-game-binary-record-v1 '{"file_type": "keGmzR8r", "key": "SVjXFk53"}' --login_with_auth "Bearer foo"
+cloudsave-bulk-get-game-binary-record-v1 '{"keys": ["OOXlnmf6", "dBZnOeVQ", "Karg21M9"]}' --login_with_auth "Bearer foo"
+cloudsave-get-game-binary-record-v1 'jpdjBtNo' --login_with_auth "Bearer foo"
+cloudsave-put-game-binary-record-v1 '{"content_type": "GckDHArB", "file_location": "Ha3tMsvj"}' 'sJ5xYUhX' --login_with_auth "Bearer foo"
+cloudsave-delete-game-binary-record-v1 'ryV5fVie' --login_with_auth "Bearer foo"
+cloudsave-post-game-binary-presigned-urlv1 '{"file_type": "cwZaXxUu"}' 'G3fvnbYw' --login_with_auth "Bearer foo"
+cloudsave-put-game-record-concurrent-handler-v1 '{"updatedAt": "1972-06-20T00:00:00Z", "value": {"LVKNZ4Tl": {}, "s7w5No9R": {}, "BZy4mhzY": {}}}' 'dqV5v7yD' --login_with_auth "Bearer foo"
+cloudsave-get-game-records-bulk '{"keys": ["rcuL6pIH", "eeq22fL4", "pwgjw9cS"]}' --login_with_auth "Bearer foo"
+cloudsave-get-game-record-handler-v1 '5TPZbpzc' --login_with_auth "Bearer foo"
+cloudsave-put-game-record-handler-v1 '{}' 'YnEva551' --login_with_auth "Bearer foo"
+cloudsave-post-game-record-handler-v1 '{}' 'Uc74jTYE' --login_with_auth "Bearer foo"
+cloudsave-delete-game-record-handler-v1 'E1expkDJ' --login_with_auth "Bearer foo"
 cloudsave-public-list-tags-handler-v1 --login_with_auth "Bearer foo"
-cloudsave-bulk-get-player-public-binary-records-v1 '{"userIds": ["57MmvNFC", "wS9RkLRT", "7IA9PFxp"]}' 'NdBIo6lZ' --login_with_auth "Bearer foo"
-cloudsave-bulk-get-player-public-record-handler-v1 '{"userIds": ["cN1rhi8w", "GVMqVEW3", "shHMf2bK"]}' 'nyku4uhq' --login_with_auth "Bearer foo"
+cloudsave-bulk-get-player-public-binary-records-v1 '{"userIds": ["0z9GHtqT", "rriiCwgL", "B37LQKSD"]}' '6hMT7h4E' --login_with_auth "Bearer foo"
+cloudsave-bulk-get-player-public-record-handler-v1 '{"userIds": ["UxD2qvVC", "vW0DZNL9", "4h6v2Kwh"]}' 'y6KiLzf4' --login_with_auth "Bearer foo"
 cloudsave-list-my-binary-records-v1 --login_with_auth "Bearer foo"
-cloudsave-bulk-get-my-binary-record-v1 '{"keys": ["7GZTtg2Y", "nlPBfo0t", "FaA88V3v"]}' --login_with_auth "Bearer foo"
+cloudsave-bulk-get-my-binary-record-v1 '{"keys": ["o7LnioIO", "9OwjRGP8", "ZvvwfEv3"]}' --login_with_auth "Bearer foo"
 cloudsave-retrieve-player-records --login_with_auth "Bearer foo"
-cloudsave-get-player-records-bulk-handler-v1 '{"keys": ["adK9wpN2", "n6oXaJiD", "AolzJP87"]}' --login_with_auth "Bearer foo"
-cloudsave-public-delete-player-public-record-handler-v1 'WYsdgLID' --login_with_auth "Bearer foo"
-cloudsave-post-player-binary-record-v1 '{"file_type": "uuCtLGMb", "is_public": true, "key": "S6zLjXjT"}' 'Ln8jMdtZ' --login_with_auth "Bearer foo"
-cloudsave-list-other-player-public-binary-records-v1 'CggBJvGn' --login_with_auth "Bearer foo"
-cloudsave-bulk-get-other-player-public-binary-records-v1 '{"keys": ["IjxCfYMv", "qLaRvT1L", "nP92kJ9C"]}' 'axYyaQLs' --login_with_auth "Bearer foo"
-cloudsave-get-player-binary-record-v1 'ov2QVbCm' 'VcJ1cpTI' --login_with_auth "Bearer foo"
-cloudsave-put-player-binary-record-v1 '{"content_type": "PYNd42PX", "file_location": "SMdeNcbN"}' 'I4EBkT08' '8XktmYYU' --login_with_auth "Bearer foo"
-cloudsave-delete-player-binary-record-v1 'gBmI7zn1' 'vr1vwRHA' --login_with_auth "Bearer foo"
-cloudsave-put-player-binary-recor-metadata-v1 '{"is_public": false}' 'VYkg5vET' 'LLVHAFoL' --login_with_auth "Bearer foo"
-cloudsave-post-player-binary-presigned-urlv1 '{"file_type": "sjqtxran"}' 'SvnvYCC5' 'e6VqZ5bn' --login_with_auth "Bearer foo"
-cloudsave-get-player-public-binary-records-v1 'wxxAZkGI' 'rx8sqNol' --login_with_auth "Bearer foo"
-cloudsave-put-player-record-concurrent-handler-v1 '{"updatedAt": "1974-02-05T00:00:00Z", "value": {"pIbyQoHj": {}, "KIJfgzq6": {}, "K2h3s7uh": {}}}' 'BrfHNYV5' 'yoo1fLs1' --login_with_auth "Bearer foo"
-cloudsave-put-player-public-record-concurrent-handler-v1 '{"updatedAt": "1992-12-05T00:00:00Z", "value": {"nfk5PvFs": {}, "xb0sNXdq": {}, "AYMfh70B": {}}}' 'TsvZtXrw' 'aVRAP1Nl' --login_with_auth "Bearer foo"
-cloudsave-get-other-player-public-record-key-handler-v1 'w6iFTlu0' --login_with_auth "Bearer foo"
-cloudsave-get-other-player-public-record-handler-v1 '{"keys": ["515chns4", "6GSmSkkK", "7U7egtJD"]}' 'XzBIUoHc' --login_with_auth "Bearer foo"
-cloudsave-get-player-record-handler-v1 'sf8Eq8Lv' '1HlrgO1u' --login_with_auth "Bearer foo"
-cloudsave-put-player-record-handler-v1 '{}' 'PKoOvjtT' '80t0xe9I' --login_with_auth "Bearer foo"
-cloudsave-post-player-record-handler-v1 '{}' 'TfMxUv0P' 'pPQRQZix' --login_with_auth "Bearer foo"
-cloudsave-delete-player-record-handler-v1 'sPOfWXK0' 'IuYnFbJg' --login_with_auth "Bearer foo"
-cloudsave-get-player-public-record-handler-v1 'AuXTb63A' 'PAnpfj4q' --login_with_auth "Bearer foo"
-cloudsave-put-player-public-record-handler-v1 '{}' 'a66aBp4S' 'dMMQGTsf' --login_with_auth "Bearer foo"
-cloudsave-post-player-public-record-handler-v1 '{}' '0vrxZaed' '4bziVuuS' --login_with_auth "Bearer foo"
+cloudsave-get-player-records-bulk-handler-v1 '{"keys": ["7vOITkqj", "3OaS7ucD", "cyHCPz28"]}' --login_with_auth "Bearer foo"
+cloudsave-public-delete-player-public-record-handler-v1 'xV2uPPL3' --login_with_auth "Bearer foo"
+cloudsave-post-player-binary-record-v1 '{"file_type": "xep289Cm", "is_public": false, "key": "oTYJk7jz"}' 'sWBvTT7v' --login_with_auth "Bearer foo"
+cloudsave-list-other-player-public-binary-records-v1 'T2dcGuBJ' --login_with_auth "Bearer foo"
+cloudsave-bulk-get-other-player-public-binary-records-v1 '{"keys": ["OrKf6sc3", "kdbOHpPC", "pIhrktYi"]}' 'rwvrG8Hg' --login_with_auth "Bearer foo"
+cloudsave-get-player-binary-record-v1 'SkdJ0Nlw' 'p4oGuSMG' --login_with_auth "Bearer foo"
+cloudsave-put-player-binary-record-v1 '{"content_type": "qcB5oqHD", "file_location": "YBdhlvBD"}' 'tTKx4YDZ' 'YATTUjVH' --login_with_auth "Bearer foo"
+cloudsave-delete-player-binary-record-v1 'uO5HF3vy' 'KxHKmoX9' --login_with_auth "Bearer foo"
+cloudsave-put-player-binary-recor-metadata-v1 '{"is_public": false}' '2aJKt5ci' 'CJCA9q3O' --login_with_auth "Bearer foo"
+cloudsave-post-player-binary-presigned-urlv1 '{"file_type": "SmrRdn8F"}' 'pJoaJ8su' 'mZh4q9GD' --login_with_auth "Bearer foo"
+cloudsave-get-player-public-binary-records-v1 'JUukEHTb' 'yDHSEDXl' --login_with_auth "Bearer foo"
+cloudsave-put-player-record-concurrent-handler-v1 '{"updatedAt": "1982-09-17T00:00:00Z", "value": {"Epm3Hthv": {}, "e8mJYgWU": {}, "7PWs6ZbN": {}}}' '9fLUbG7W' 'KvcEjIes' --login_with_auth "Bearer foo"
+cloudsave-put-player-public-record-concurrent-handler-v1 '{"updatedAt": "1976-01-28T00:00:00Z", "value": {"cZzYJDKa": {}, "Mi0diSoi": {}, "mgbAJLr0": {}}}' 'jUDCUYTX' 'iXZohRFc' --login_with_auth "Bearer foo"
+cloudsave-get-other-player-public-record-key-handler-v1 'cs4uGTwI' --login_with_auth "Bearer foo"
+cloudsave-get-other-player-public-record-handler-v1 '{"keys": ["FIYj2FBG", "sn9L9TdJ", "JjSCT6wJ"]}' 'Ik5DPFFL' --login_with_auth "Bearer foo"
+cloudsave-get-player-record-handler-v1 'cPyNwKEK' 'QAkAd37B' --login_with_auth "Bearer foo"
+cloudsave-put-player-record-handler-v1 '{}' 'ztYh5AKP' 'UxcfLAc8' --login_with_auth "Bearer foo"
+cloudsave-post-player-record-handler-v1 '{}' 'fVg2Goky' 'Xbh56M7B' --login_with_auth "Bearer foo"
+cloudsave-delete-player-record-handler-v1 'ixCpjoiU' 'TrLvYQj3' --login_with_auth "Bearer foo"
+cloudsave-get-player-public-record-handler-v1 'OBZj2EtL' 'pENBywqV' --login_with_auth "Bearer foo"
+cloudsave-put-player-public-record-handler-v1 '{}' 'GTS6QVA5' 'x7saCWkY' --login_with_auth "Bearer foo"
+cloudsave-post-player-public-record-handler-v1 '{}' 'V92X8EDQ' 'xAL6M64B' --login_with_auth "Bearer foo"
 exit()
 END
 
@@ -150,7 +151,7 @@ eval_tap() {
 }
 
 echo "TAP version 13"
-echo "1..104"
+echo "1..105"
 
 #- 1 Login
 eval_tap 0 1 'Login # SKIP not tested' test.out
@@ -167,14 +168,14 @@ eval_tap $? 2 'AdminListAdminGameRecordV1' test.out
 
 #- 3 AdminBulkGetAdminGameRecordV1
 $PYTHON -m $MODULE 'cloudsave-admin-bulk-get-admin-game-record-v1' \
-    '{"keys": ["ULL6Vhss", "9xB4huiq", "joJqMphA"]}' \
+    '{"keys": ["t8QZL1oM", "maXl40m1", "JMMarDc5"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 3 'AdminBulkGetAdminGameRecordV1' test.out
 
 #- 4 AdminGetAdminGameRecordV1
 $PYTHON -m $MODULE 'cloudsave-admin-get-admin-game-record-v1' \
-    'IN4YnypX' \
+    'Ngbusp91' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 4 'AdminGetAdminGameRecordV1' test.out
@@ -182,7 +183,7 @@ eval_tap $? 4 'AdminGetAdminGameRecordV1' test.out
 #- 5 AdminPutAdminGameRecordV1
 $PYTHON -m $MODULE 'cloudsave-admin-put-admin-game-record-v1' \
     '{}' \
-    'D5SjNEJK' \
+    'TYHLZxqL' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 5 'AdminPutAdminGameRecordV1' test.out
@@ -190,766 +191,773 @@ eval_tap $? 5 'AdminPutAdminGameRecordV1' test.out
 #- 6 AdminPostAdminGameRecordV1
 $PYTHON -m $MODULE 'cloudsave-admin-post-admin-game-record-v1' \
     '{}' \
-    'mFW2NwIw' \
+    'add4MLDI' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 6 'AdminPostAdminGameRecordV1' test.out
 
 #- 7 AdminDeleteAdminGameRecordV1
 $PYTHON -m $MODULE 'cloudsave-admin-delete-admin-game-record-v1' \
-    'NgR8qyvk' \
+    '77unQGXm' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 7 'AdminDeleteAdminGameRecordV1' test.out
 
-#- 8 AdminListGameBinaryRecordsV1
+#- 8 DeleteAdminGameRecordTTLConfig
+$PYTHON -m $MODULE 'cloudsave-delete-admin-game-record-ttl-config' \
+    'txKLhO2H' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 8 'DeleteAdminGameRecordTTLConfig' test.out
+
+#- 9 AdminListGameBinaryRecordsV1
 $PYTHON -m $MODULE 'cloudsave-admin-list-game-binary-records-v1' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 8 'AdminListGameBinaryRecordsV1' test.out
+eval_tap $? 9 'AdminListGameBinaryRecordsV1' test.out
 
-#- 9 AdminPostGameBinaryRecordV1
+#- 10 AdminPostGameBinaryRecordV1
 $PYTHON -m $MODULE 'cloudsave-admin-post-game-binary-record-v1' \
-    '{"file_type": "VirSGeLI", "key": "XVsBStPE", "set_by": "SERVER", "ttl_config": {"action": "DELETE", "expires_at": "1984-03-29T00:00:00Z"}}' \
+    '{"file_type": "zzjzNHA1", "key": "kNVkCknD", "set_by": "CLIENT", "ttl_config": {"action": "DELETE", "expires_at": "1972-09-27T00:00:00Z"}}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 9 'AdminPostGameBinaryRecordV1' test.out
+eval_tap $? 10 'AdminPostGameBinaryRecordV1' test.out
 
-#- 10 AdminGetGameBinaryRecordV1
+#- 11 AdminGetGameBinaryRecordV1
 $PYTHON -m $MODULE 'cloudsave-admin-get-game-binary-record-v1' \
-    'Rnv29son' \
+    '3z6JyvWJ' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 10 'AdminGetGameBinaryRecordV1' test.out
+eval_tap $? 11 'AdminGetGameBinaryRecordV1' test.out
 
-#- 11 AdminPutGameBinaryRecordV1
+#- 12 AdminPutGameBinaryRecordV1
 $PYTHON -m $MODULE 'cloudsave-admin-put-game-binary-record-v1' \
-    '{"content_type": "QenluIOQ", "file_location": "g5d63L7I"}' \
-    'pyr1Udfp' \
+    '{"content_type": "ncP8GSQn", "file_location": "1uZEa2Bv"}' \
+    'sNYxt3Uv' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 11 'AdminPutGameBinaryRecordV1' test.out
+eval_tap $? 12 'AdminPutGameBinaryRecordV1' test.out
 
-#- 12 AdminDeleteGameBinaryRecordV1
+#- 13 AdminDeleteGameBinaryRecordV1
 $PYTHON -m $MODULE 'cloudsave-admin-delete-game-binary-record-v1' \
-    'KwQQ2xof' \
+    '7MRIpSd9' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 12 'AdminDeleteGameBinaryRecordV1' test.out
+eval_tap $? 13 'AdminDeleteGameBinaryRecordV1' test.out
 
-#- 13 AdminPutGameBinaryRecorMetadataV1
+#- 14 AdminPutGameBinaryRecorMetadataV1
 $PYTHON -m $MODULE 'cloudsave-admin-put-game-binary-recor-metadata-v1' \
-    '{"set_by": "SERVER", "tags": ["9yJAcTaf", "YyaNTfXI", "0T5xKRSX"], "ttl_config": {"action": "DELETE", "expires_at": "1996-09-01T00:00:00Z"}}' \
-    'GUR1J1RI' \
+    '{"set_by": "SERVER", "tags": ["MwRw8MF0", "YdkOyW8e", "TOFZrOYC"], "ttl_config": {"action": "DELETE", "expires_at": "1995-06-16T00:00:00Z"}}' \
+    'wEiKzm7M' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 13 'AdminPutGameBinaryRecorMetadataV1' test.out
+eval_tap $? 14 'AdminPutGameBinaryRecorMetadataV1' test.out
 
-#- 14 AdminPostGameBinaryPresignedURLV1
+#- 15 AdminPostGameBinaryPresignedURLV1
 $PYTHON -m $MODULE 'cloudsave-admin-post-game-binary-presigned-urlv1' \
-    '{"file_type": "uJRnHEND"}' \
-    'JdHX6JiC' \
+    '{"file_type": "rgMttsHW"}' \
+    'nfhzGaJ1' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 14 'AdminPostGameBinaryPresignedURLV1' test.out
+eval_tap $? 15 'AdminPostGameBinaryPresignedURLV1' test.out
 
-#- 15 DeleteGameBinaryRecordTTLConfig
+#- 16 DeleteGameBinaryRecordTTLConfig
 $PYTHON -m $MODULE 'cloudsave-delete-game-binary-record-ttl-config' \
-    'msRZVRpm' \
+    'pt4KfjjC' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 15 'DeleteGameBinaryRecordTTLConfig' test.out
+eval_tap $? 16 'DeleteGameBinaryRecordTTLConfig' test.out
 
-#- 16 AdminPutAdminGameRecordConcurrentHandlerV1
+#- 17 AdminPutAdminGameRecordConcurrentHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-put-admin-game-record-concurrent-handler-v1' \
-    '{"tags": ["qaYtYplb", "BwQWfDN4", "ZTbHHf5B"], "updatedAt": "1976-09-15T00:00:00Z", "value": {"5w1StEVk": {}, "Z3tCDR3P": {}, "HHxibUWd": {}}}' \
-    '1mazNNN6' \
+    '{"tags": ["X3zZmQft", "GAVfJoSo", "EG2JAnyt"], "ttl_config": {"action": "DELETE", "expires_at": "1989-05-24T00:00:00Z"}, "updatedAt": "1976-11-21T00:00:00Z", "value": {"byT7vPFw": {}, "PMbLJCfY": {}, "YqymmSLR": {}}}' \
+    'XBbEPXby' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 16 'AdminPutAdminGameRecordConcurrentHandlerV1' test.out
+eval_tap $? 17 'AdminPutAdminGameRecordConcurrentHandlerV1' test.out
 
-#- 17 AdminPutGameRecordConcurrentHandlerV1
+#- 18 AdminPutGameRecordConcurrentHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-put-game-record-concurrent-handler-v1' \
-    '{"set_by": "CLIENT", "tags": ["aeLJJ7li", "lDynO7aT", "MebqFfg7"], "ttl_config": {"action": "DELETE", "expires_at": "1989-01-02T00:00:00Z"}, "updatedAt": "1985-11-16T00:00:00Z", "value": {"KJfOhWgN": {}, "JJjqhZYS": {}, "m7e4j7kJ": {}}}' \
-    'RgAv1v2g' \
+    '{"set_by": "CLIENT", "tags": ["i3Y019tz", "EflQeQqS", "pUUNSE6p"], "ttl_config": {"action": "DELETE", "expires_at": "1974-02-28T00:00:00Z"}, "updatedAt": "1999-08-22T00:00:00Z", "value": {"OqjpOPGy": {}, "npMA9zlV": {}, "iX3EzB7N": {}}}' \
+    '8irk7J1e' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 17 'AdminPutGameRecordConcurrentHandlerV1' test.out
+eval_tap $? 18 'AdminPutGameRecordConcurrentHandlerV1' test.out
 
-#- 18 GetPluginConfig
+#- 19 GetPluginConfig
 $PYTHON -m $MODULE 'cloudsave-get-plugin-config' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 18 'GetPluginConfig' test.out
+eval_tap $? 19 'GetPluginConfig' test.out
 
-#- 19 CreatePluginConfig
+#- 20 CreatePluginConfig
 $PYTHON -m $MODULE 'cloudsave-create-plugin-config' \
-    '{"appConfig": {"appName": "4BDtzZhV"}, "customConfig": {"GRPCAddress": "Ea14QnUH"}, "customFunction": {"afterBulkReadGameBinaryRecord": true, "afterBulkReadGameRecord": false, "afterBulkReadPlayerBinaryRecord": false, "afterBulkReadPlayerRecord": true, "afterReadGameBinaryRecord": false, "afterReadGameRecord": true, "afterReadPlayerBinaryRecord": true, "afterReadPlayerRecord": true, "beforeWriteAdminGameRecord": true, "beforeWriteAdminPlayerRecord": true, "beforeWriteGameBinaryRecord": true, "beforeWriteGameRecord": true, "beforeWritePlayerBinaryRecord": true, "beforeWritePlayerRecord": true}, "extendType": "APP"}' \
+    '{"appConfig": {"appName": "46bRyJws"}, "customConfig": {"GRPCAddress": "VJX8DUwK"}, "customFunction": {"afterBulkReadGameBinaryRecord": false, "afterBulkReadGameRecord": false, "afterBulkReadPlayerBinaryRecord": true, "afterBulkReadPlayerRecord": false, "afterReadGameBinaryRecord": false, "afterReadGameRecord": false, "afterReadPlayerBinaryRecord": true, "afterReadPlayerRecord": false, "beforeWriteAdminGameRecord": false, "beforeWriteAdminPlayerRecord": false, "beforeWriteGameBinaryRecord": false, "beforeWriteGameRecord": true, "beforeWritePlayerBinaryRecord": false, "beforeWritePlayerRecord": false}, "extendType": "CUSTOM"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 19 'CreatePluginConfig' test.out
+eval_tap $? 20 'CreatePluginConfig' test.out
 
-#- 20 DeletePluginConfig
+#- 21 DeletePluginConfig
 $PYTHON -m $MODULE 'cloudsave-delete-plugin-config' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 20 'DeletePluginConfig' test.out
+eval_tap $? 21 'DeletePluginConfig' test.out
 
-#- 21 UpdatePluginConfig
+#- 22 UpdatePluginConfig
 $PYTHON -m $MODULE 'cloudsave-update-plugin-config' \
-    '{"appConfig": {"appName": "Bf66aGfi"}, "customConfig": {"GRPCAddress": "yYCZ5ExJ"}, "customFunction": {"afterBulkReadGameBinaryRecord": true, "afterBulkReadGameRecord": false, "afterBulkReadPlayerBinaryRecord": true, "afterBulkReadPlayerRecord": false, "afterReadGameBinaryRecord": false, "afterReadGameRecord": false, "afterReadPlayerBinaryRecord": true, "afterReadPlayerRecord": false, "beforeWriteAdminGameRecord": false, "beforeWriteAdminPlayerRecord": true, "beforeWriteGameBinaryRecord": true, "beforeWriteGameRecord": false, "beforeWritePlayerBinaryRecord": false, "beforeWritePlayerRecord": true}, "extendType": "CUSTOM"}' \
+    '{"appConfig": {"appName": "8h8FeNfK"}, "customConfig": {"GRPCAddress": "q7uDSw5T"}, "customFunction": {"afterBulkReadGameBinaryRecord": false, "afterBulkReadGameRecord": true, "afterBulkReadPlayerBinaryRecord": false, "afterBulkReadPlayerRecord": true, "afterReadGameBinaryRecord": true, "afterReadGameRecord": true, "afterReadPlayerBinaryRecord": false, "afterReadPlayerRecord": true, "beforeWriteAdminGameRecord": true, "beforeWriteAdminPlayerRecord": false, "beforeWriteGameBinaryRecord": true, "beforeWriteGameRecord": false, "beforeWritePlayerBinaryRecord": true, "beforeWritePlayerRecord": false}, "extendType": "APP"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 21 'UpdatePluginConfig' test.out
+eval_tap $? 22 'UpdatePluginConfig' test.out
 
-#- 22 ListGameRecordsHandlerV1
+#- 23 ListGameRecordsHandlerV1
 $PYTHON -m $MODULE 'cloudsave-list-game-records-handler-v1' \
-    '36' \
-    '73' \
+    '1' \
+    '49' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 22 'ListGameRecordsHandlerV1' test.out
+eval_tap $? 23 'ListGameRecordsHandlerV1' test.out
 
-#- 23 AdminGetGameRecordHandlerV1
+#- 24 AdminGetGameRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-get-game-record-handler-v1' \
-    'L0ENPX6c' \
+    'LX3Vh6YJ' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 23 'AdminGetGameRecordHandlerV1' test.out
+eval_tap $? 24 'AdminGetGameRecordHandlerV1' test.out
 
-#- 24 AdminPutGameRecordHandlerV1
+#- 25 AdminPutGameRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-put-game-record-handler-v1' \
     '{}' \
-    'AgHwk3zv' \
+    'RmjD42Bn' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 24 'AdminPutGameRecordHandlerV1' test.out
+eval_tap $? 25 'AdminPutGameRecordHandlerV1' test.out
 
-#- 25 AdminPostGameRecordHandlerV1
+#- 26 AdminPostGameRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-post-game-record-handler-v1' \
     '{}' \
-    '06DKh1gm' \
+    'wC3a3Kgq' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 25 'AdminPostGameRecordHandlerV1' test.out
+eval_tap $? 26 'AdminPostGameRecordHandlerV1' test.out
 
-#- 26 AdminDeleteGameRecordHandlerV1
+#- 27 AdminDeleteGameRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-delete-game-record-handler-v1' \
-    'fKd8yfgl' \
+    'saIfXnGu' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 26 'AdminDeleteGameRecordHandlerV1' test.out
+eval_tap $? 27 'AdminDeleteGameRecordHandlerV1' test.out
 
-#- 27 DeleteGameRecordTTLConfig
+#- 28 DeleteGameRecordTTLConfig
 $PYTHON -m $MODULE 'cloudsave-delete-game-record-ttl-config' \
-    'cXyB5Hp8' \
+    'Y3j4UehS' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 27 'DeleteGameRecordTTLConfig' test.out
+eval_tap $? 28 'DeleteGameRecordTTLConfig' test.out
 
-#- 28 AdminListTagsHandlerV1
+#- 29 AdminListTagsHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-list-tags-handler-v1' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 28 'AdminListTagsHandlerV1' test.out
+eval_tap $? 29 'AdminListTagsHandlerV1' test.out
 
-#- 29 AdminPostTagHandlerV1
+#- 30 AdminPostTagHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-post-tag-handler-v1' \
-    '{"tag": "qs6p6J1h"}' \
+    '{"tag": "mhZHF97n"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 29 'AdminPostTagHandlerV1' test.out
+eval_tap $? 30 'AdminPostTagHandlerV1' test.out
 
-#- 30 AdminDeleteTagHandlerV1
+#- 31 AdminDeleteTagHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-delete-tag-handler-v1' \
-    'P7FS6WHt' \
+    'YQ4R3Lqf' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 30 'AdminDeleteTagHandlerV1' test.out
+eval_tap $? 31 'AdminDeleteTagHandlerV1' test.out
 
-#- 31 BulkGetAdminPlayerRecordByUserIdsV1
+#- 32 BulkGetAdminPlayerRecordByUserIdsV1
 $PYTHON -m $MODULE 'cloudsave-bulk-get-admin-player-record-by-user-ids-v1' \
-    '{"userIds": ["FlzIvFh3", "T3XmrsOL", "EDpTnwda"]}' \
-    'oC2cRBaa' \
+    '{"userIds": ["LazRcA2p", "rcKYt46c", "GyTANf6X"]}' \
+    'lrcDbMu0' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 31 'BulkGetAdminPlayerRecordByUserIdsV1' test.out
+eval_tap $? 32 'BulkGetAdminPlayerRecordByUserIdsV1' test.out
 
-#- 32 BulkGetPlayerRecordSizeHandlerV1
+#- 33 BulkGetPlayerRecordSizeHandlerV1
 $PYTHON -m $MODULE 'cloudsave-bulk-get-player-record-size-handler-v1' \
-    '{"data": [{"keys": ["hwJQ7zWC", "gH0nmcwx", "Gn2aI6Sb"], "user_id": "AWiaKzKA"}, {"keys": ["UCAoIFjT", "21pO1kJB", "CWanwTsH"], "user_id": "kJCpXeOv"}, {"keys": ["ZGYIN0mP", "76mpsQfm", "xVATrehT"], "user_id": "3qi7JF2Q"}]}' \
+    '{"data": [{"keys": ["n7aJa9ay", "GwJa7Xl7", "vy6TgIEa"], "user_id": "ZwpLojT4"}, {"keys": ["rMPq2R6J", "srt9zUrI", "vo2mBdtv"], "user_id": "QaQd1XPF"}, {"keys": ["bHODiyJ0", "2eEXo1aI", "zYOc0n8P"], "user_id": "ZFjq4bmW"}]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 32 'BulkGetPlayerRecordSizeHandlerV1' test.out
+eval_tap $? 33 'BulkGetPlayerRecordSizeHandlerV1' test.out
 
-#- 33 ListPlayerRecordHandlerV1
-eval_tap 0 33 'ListPlayerRecordHandlerV1 # SKIP deprecated' test.out
+#- 34 ListPlayerRecordHandlerV1
+eval_tap 0 34 'ListPlayerRecordHandlerV1 # SKIP deprecated' test.out
 
-#- 34 AdminBulkPutPlayerRecordsByKeyHandlerV1
+#- 35 AdminBulkPutPlayerRecordsByKeyHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-bulk-put-player-records-by-key-handler-v1' \
-    '{"data": [{"user_id": "zTBKS7t9", "value": {"i3FTElYi": {}, "CDgfWitg": {}, "hBTyoLvs": {}}}, {"user_id": "QVTBp6SB", "value": {"BdnNUET0": {}, "tSvyAQej": {}, "0rt8KKsr": {}}}, {"user_id": "yx3UAj4d", "value": {"jVBgFYLe": {}, "6ZCgLEdZ": {}, "p0X9Aypj": {}}}]}' \
-    'EcEqzeag' \
+    '{"data": [{"user_id": "APrISQBZ", "value": {"Dns6Mwk0": {}, "JSuC8a00": {}, "S7fMbSUU": {}}}, {"user_id": "f6UqKwmi", "value": {"1CMYWYkj": {}, "u42ve9eC": {}, "To6tPXbw": {}}}, {"user_id": "QbJdFn8M", "value": {"ZaGrRkN7": {}, "qxDUSukv": {}, "hDWmYLHq": {}}}]}' \
+    'sNjXRUOl' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 34 'AdminBulkPutPlayerRecordsByKeyHandlerV1' test.out
+eval_tap $? 35 'AdminBulkPutPlayerRecordsByKeyHandlerV1' test.out
 
-#- 35 AdminBulkGetPlayerRecordsByUserIDsHandlerV1
+#- 36 AdminBulkGetPlayerRecordsByUserIDsHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-bulk-get-player-records-by-user-i-ds-handler-v1' \
-    '{"userIds": ["Dv34er0j", "jQcv8YA5", "Qj2NU8dx"]}' \
-    'u1MlVHd1' \
+    '{"userIds": ["EPahFPtf", "VXhFBZX1", "lKQn6Vve"]}' \
+    '85oTibRF' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 35 'AdminBulkGetPlayerRecordsByUserIDsHandlerV1' test.out
+eval_tap $? 36 'AdminBulkGetPlayerRecordsByUserIDsHandlerV1' test.out
 
-#- 36 AdminListAdminUserRecordsV1
+#- 37 AdminListAdminUserRecordsV1
 $PYTHON -m $MODULE 'cloudsave-admin-list-admin-user-records-v1' \
-    'e1CcFRaR' \
+    'PTmqNqmz' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 36 'AdminListAdminUserRecordsV1' test.out
+eval_tap $? 37 'AdminListAdminUserRecordsV1' test.out
 
-#- 37 AdminBulkGetAdminPlayerRecordV1
+#- 38 AdminBulkGetAdminPlayerRecordV1
 $PYTHON -m $MODULE 'cloudsave-admin-bulk-get-admin-player-record-v1' \
-    '{"keys": ["EUw4DM83", "aQkfbo1h", "ppkcpIGv"]}' \
-    'TJqlueWt' \
+    '{"keys": ["ATbYav4O", "pzcZoB9f", "53V5cSzO"]}' \
+    '0vMclnj7' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 37 'AdminBulkGetAdminPlayerRecordV1' test.out
+eval_tap $? 38 'AdminBulkGetAdminPlayerRecordV1' test.out
 
-#- 38 AdminGetAdminPlayerRecordV1
+#- 39 AdminGetAdminPlayerRecordV1
 $PYTHON -m $MODULE 'cloudsave-admin-get-admin-player-record-v1' \
-    'hC7xbuYH' \
-    'hdStPof7' \
+    'yEeCwfeg' \
+    'gnBOrOJc' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 38 'AdminGetAdminPlayerRecordV1' test.out
+eval_tap $? 39 'AdminGetAdminPlayerRecordV1' test.out
 
-#- 39 AdminPutAdminPlayerRecordV1
+#- 40 AdminPutAdminPlayerRecordV1
 $PYTHON -m $MODULE 'cloudsave-admin-put-admin-player-record-v1' \
     '{}' \
-    'CCDXFxZ1' \
-    'MSgJp9AE' \
+    'dm6xm4fN' \
+    'WgzATmy6' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 39 'AdminPutAdminPlayerRecordV1' test.out
+eval_tap $? 40 'AdminPutAdminPlayerRecordV1' test.out
 
-#- 40 AdminPostPlayerAdminRecordV1
+#- 41 AdminPostPlayerAdminRecordV1
 $PYTHON -m $MODULE 'cloudsave-admin-post-player-admin-record-v1' \
     '{}' \
-    'uepnduyn' \
-    'HpYbDJkk' \
+    'iPfXfcOP' \
+    'vTMO5ugt' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 40 'AdminPostPlayerAdminRecordV1' test.out
+eval_tap $? 41 'AdminPostPlayerAdminRecordV1' test.out
 
-#- 41 AdminDeleteAdminPlayerRecordV1
+#- 42 AdminDeleteAdminPlayerRecordV1
 $PYTHON -m $MODULE 'cloudsave-admin-delete-admin-player-record-v1' \
-    '873y4cHk' \
-    '2tL0UsTY' \
+    'UGQf08kv' \
+    'E0s8oW5I' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 41 'AdminDeleteAdminPlayerRecordV1' test.out
+eval_tap $? 42 'AdminDeleteAdminPlayerRecordV1' test.out
 
-#- 42 AdminListPlayerBinaryRecordsV1
+#- 43 AdminListPlayerBinaryRecordsV1
 $PYTHON -m $MODULE 'cloudsave-admin-list-player-binary-records-v1' \
-    'vW0sKTmj' \
+    'ymRsFebt' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 42 'AdminListPlayerBinaryRecordsV1' test.out
+eval_tap $? 43 'AdminListPlayerBinaryRecordsV1' test.out
 
-#- 43 AdminPostPlayerBinaryRecordV1
+#- 44 AdminPostPlayerBinaryRecordV1
 $PYTHON -m $MODULE 'cloudsave-admin-post-player-binary-record-v1' \
-    '{"file_type": "obNaaHOz", "is_public": true, "key": "8XQQdXgG", "set_by": "SERVER"}' \
-    'GLTGOuw8' \
+    '{"file_type": "0Tq3Mr98", "is_public": true, "key": "LxbPnLwT", "set_by": "CLIENT"}' \
+    '6PWEXpNl' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 43 'AdminPostPlayerBinaryRecordV1' test.out
+eval_tap $? 44 'AdminPostPlayerBinaryRecordV1' test.out
 
-#- 44 AdminGetPlayerBinaryRecordV1
+#- 45 AdminGetPlayerBinaryRecordV1
 $PYTHON -m $MODULE 'cloudsave-admin-get-player-binary-record-v1' \
-    'vGDdNzVh' \
-    'zh8QpTCu' \
+    'Z5tz39vl' \
+    'lrnSnLbb' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 44 'AdminGetPlayerBinaryRecordV1' test.out
+eval_tap $? 45 'AdminGetPlayerBinaryRecordV1' test.out
 
-#- 45 AdminPutPlayerBinaryRecordV1
+#- 46 AdminPutPlayerBinaryRecordV1
 $PYTHON -m $MODULE 'cloudsave-admin-put-player-binary-record-v1' \
-    '{"content_type": "IP8W8VD3", "file_location": "q12v46R2"}' \
-    '1NpOtn3H' \
-    'aqcu0Lx1' \
+    '{"content_type": "MrMPqqMD", "file_location": "SqcAoxPO"}' \
+    'o6bqPzfx' \
+    'uLL6pRwA' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 45 'AdminPutPlayerBinaryRecordV1' test.out
+eval_tap $? 46 'AdminPutPlayerBinaryRecordV1' test.out
 
-#- 46 AdminDeletePlayerBinaryRecordV1
+#- 47 AdminDeletePlayerBinaryRecordV1
 $PYTHON -m $MODULE 'cloudsave-admin-delete-player-binary-record-v1' \
-    'lPCgLIzS' \
-    'GM1j2Yl5' \
+    'mRZ1Xdn3' \
+    'Vk1yNMAl' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 46 'AdminDeletePlayerBinaryRecordV1' test.out
+eval_tap $? 47 'AdminDeletePlayerBinaryRecordV1' test.out
 
-#- 47 AdminPutPlayerBinaryRecorMetadataV1
+#- 48 AdminPutPlayerBinaryRecorMetadataV1
 $PYTHON -m $MODULE 'cloudsave-admin-put-player-binary-recor-metadata-v1' \
-    '{"is_public": false, "set_by": "SERVER", "tags": ["jG6NNrYS", "eGoAjt5D", "iC1GPOeV"]}' \
-    'w5m84gPi' \
-    '31usr1UJ' \
+    '{"is_public": true, "set_by": "CLIENT", "tags": ["7rAS2KVV", "s0gfPaFx", "ygTeGyVY"]}' \
+    '8vigDxsR' \
+    'Ddh6lBw3' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 47 'AdminPutPlayerBinaryRecorMetadataV1' test.out
+eval_tap $? 48 'AdminPutPlayerBinaryRecorMetadataV1' test.out
 
-#- 48 AdminPostPlayerBinaryPresignedURLV1
+#- 49 AdminPostPlayerBinaryPresignedURLV1
 $PYTHON -m $MODULE 'cloudsave-admin-post-player-binary-presigned-urlv1' \
-    '{"file_type": "3yfFrye3"}' \
-    'rabJbGSB' \
-    'DMIXF8M6' \
+    '{"file_type": "aqgTZwB0"}' \
+    'al6qS1CU' \
+    'P6bHwVTa' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 48 'AdminPostPlayerBinaryPresignedURLV1' test.out
+eval_tap $? 49 'AdminPostPlayerBinaryPresignedURLV1' test.out
 
-#- 49 AdminPutAdminPlayerRecordConcurrentHandlerV1
+#- 50 AdminPutAdminPlayerRecordConcurrentHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-put-admin-player-record-concurrent-handler-v1' \
-    '{"tags": ["XUOSEo7h", "Qqhc4w07", "YtfhoyAk"], "updatedAt": "1991-05-05T00:00:00Z", "value": {"nMyio9K9": {}, "YlMcOd6R": {}, "3qvmkJFo": {}}}' \
-    'PZc1WD7x' \
-    'SmR6GFzR' \
+    '{"tags": ["gZN2n0lh", "dSj75DnG", "cW1zh9uM"], "updatedAt": "1986-09-27T00:00:00Z", "value": {"3AMwpGKL": {}, "6bTwQybF": {}, "r5m3ltR9": {}}}' \
+    'PHUzBLUx' \
+    'vkVEVza4' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 49 'AdminPutAdminPlayerRecordConcurrentHandlerV1' test.out
+eval_tap $? 50 'AdminPutAdminPlayerRecordConcurrentHandlerV1' test.out
 
-#- 50 AdminPutPlayerRecordConcurrentHandlerV1
+#- 51 AdminPutPlayerRecordConcurrentHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-put-player-record-concurrent-handler-v1' \
-    '{"set_by": "CLIENT", "tags": ["qb12mvcK", "DglEWeRo", "0uw7oEII"], "ttl_config": {"action": "DELETE", "expires_at": "1975-05-31T00:00:00Z"}, "updatedAt": "1987-07-08T00:00:00Z", "value": {"0T4kVyzF": {}, "0E1fwTnj": {}, "9j2DQUYS": {}}}' \
-    'fJSndzUV' \
-    '9UOYadr0' \
+    '{"set_by": "CLIENT", "tags": ["Lw4oqixz", "vDGX6je8", "yaphXK0A"], "ttl_config": {"action": "DELETE", "expires_at": "1977-06-24T00:00:00Z"}, "updatedAt": "1980-06-08T00:00:00Z", "value": {"1BfszXlA": {}, "h2mZhwz9": {}, "2lLQPQoM": {}}}' \
+    'ArTPswZv' \
+    'P4Z5tBv6' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 50 'AdminPutPlayerRecordConcurrentHandlerV1' test.out
+eval_tap $? 51 'AdminPutPlayerRecordConcurrentHandlerV1' test.out
 
-#- 51 AdminPutPlayerPublicRecordConcurrentHandlerV1
+#- 52 AdminPutPlayerPublicRecordConcurrentHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-put-player-public-record-concurrent-handler-v1' \
-    '{"set_by": "CLIENT", "tags": ["NoXVQKk1", "MNNscn7d", "zHPfLpwy"], "ttl_config": {"action": "DELETE", "expires_at": "1992-08-03T00:00:00Z"}, "updatedAt": "1979-11-10T00:00:00Z", "value": {"Rpc3YNWi": {}, "y6Nz8byd": {}, "bawBFx8x": {}}}' \
-    'l62RKz5e' \
-    '7Ezt0fw2' \
+    '{"set_by": "SERVER", "tags": ["0a6Ca8b8", "cNjeYtDP", "1wqjMvz4"], "ttl_config": {"action": "DELETE", "expires_at": "1996-03-09T00:00:00Z"}, "updatedAt": "1989-08-07T00:00:00Z", "value": {"jMdN2Nrt": {}, "LZyAIfl4": {}, "OyFCim5l": {}}}' \
+    'QYHIle0d' \
+    'NdsQ5DWN' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 51 'AdminPutPlayerPublicRecordConcurrentHandlerV1' test.out
+eval_tap $? 52 'AdminPutPlayerPublicRecordConcurrentHandlerV1' test.out
 
-#- 52 AdminRetrievePlayerRecords
+#- 53 AdminRetrievePlayerRecords
 $PYTHON -m $MODULE 'cloudsave-admin-retrieve-player-records' \
-    'o0mbIOQV' \
+    'Y5ysXUs4' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 52 'AdminRetrievePlayerRecords' test.out
+eval_tap $? 53 'AdminRetrievePlayerRecords' test.out
 
-#- 53 AdminPutPlayerRecordsHandlerV1
+#- 54 AdminPutPlayerRecordsHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-put-player-records-handler-v1' \
-    '{"data": [{"key": "b7Ar4ust", "value": {"JqSKMeRV": {}, "YBJFay9g": {}, "GqnpvuHg": {}}}, {"key": "HMNSRjrA", "value": {"6hH8oY1O": {}, "RD1ypayV": {}, "6fTp3S8l": {}}}, {"key": "Bp5d2DF3", "value": {"W2GtEPWI": {}, "qbAW1155": {}, "7cG8d2W0": {}}}]}' \
-    'ipqRxnxR' \
+    '{"data": [{"key": "DNpb4Arh", "value": {"nZCMtWDS": {}, "H6rIV8yK": {}, "4M3fF1PB": {}}}, {"key": "3ixYTUgB", "value": {"mkuCsM2G": {}, "vbTFlAV8": {}, "ppbgGnp6": {}}}, {"key": "uOaExooJ", "value": {"1VwReN7f": {}, "kwfbFl1f": {}, "FpeGMpCI": {}}}]}' \
+    'Ap6HgWHe' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 53 'AdminPutPlayerRecordsHandlerV1' test.out
+eval_tap $? 54 'AdminPutPlayerRecordsHandlerV1' test.out
 
-#- 54 AdminGetPlayerRecordsHandlerV1
+#- 55 AdminGetPlayerRecordsHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-get-player-records-handler-v1' \
-    '{"keys": ["5aCUfTMR", "acJxdJ2b", "weKuPbax"]}' \
-    'wgTAVHNq' \
+    '{"keys": ["IBxAVnYS", "RsOGiRet", "uF1ReDV4"]}' \
+    'ynrv5tf3' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 54 'AdminGetPlayerRecordsHandlerV1' test.out
+eval_tap $? 55 'AdminGetPlayerRecordsHandlerV1' test.out
 
-#- 55 AdminGetPlayerRecordHandlerV1
+#- 56 AdminGetPlayerRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-get-player-record-handler-v1' \
-    'hCKBxf78' \
-    '1l5ySMUy' \
+    'lE51acDg' \
+    'zZzvDLx5' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 55 'AdminGetPlayerRecordHandlerV1' test.out
+eval_tap $? 56 'AdminGetPlayerRecordHandlerV1' test.out
 
-#- 56 AdminPutPlayerRecordHandlerV1
+#- 57 AdminPutPlayerRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-put-player-record-handler-v1' \
     '{}' \
-    '9XmUx1sG' \
-    'zmwzupvR' \
+    'jW8vRlCY' \
+    'b6xpH3iJ' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 56 'AdminPutPlayerRecordHandlerV1' test.out
+eval_tap $? 57 'AdminPutPlayerRecordHandlerV1' test.out
 
-#- 57 AdminPostPlayerRecordHandlerV1
+#- 58 AdminPostPlayerRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-post-player-record-handler-v1' \
     '{}' \
-    '4tc68zZn' \
-    'BImEeBgU' \
+    '2xmF3fFi' \
+    'zy63gSCs' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 57 'AdminPostPlayerRecordHandlerV1' test.out
+eval_tap $? 58 'AdminPostPlayerRecordHandlerV1' test.out
 
-#- 58 AdminDeletePlayerRecordHandlerV1
+#- 59 AdminDeletePlayerRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-delete-player-record-handler-v1' \
-    'tPU7kHXF' \
-    'YeepapDw' \
+    'I4SNNHA5' \
+    'oYUyb8FG' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 58 'AdminDeletePlayerRecordHandlerV1' test.out
+eval_tap $? 59 'AdminDeletePlayerRecordHandlerV1' test.out
 
-#- 59 AdminGetPlayerPublicRecordHandlerV1
+#- 60 AdminGetPlayerPublicRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-get-player-public-record-handler-v1' \
-    'bVsLjoIh' \
-    '0okEefEu' \
+    'rvOWN4Z8' \
+    'emAgD9Hb' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 59 'AdminGetPlayerPublicRecordHandlerV1' test.out
+eval_tap $? 60 'AdminGetPlayerPublicRecordHandlerV1' test.out
 
-#- 60 AdminPutPlayerPublicRecordHandlerV1
+#- 61 AdminPutPlayerPublicRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-put-player-public-record-handler-v1' \
     '{}' \
-    'ZWNrv5NY' \
-    'dSFtOYOm' \
+    'bXgMtCn0' \
+    'COcGK6E7' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 60 'AdminPutPlayerPublicRecordHandlerV1' test.out
+eval_tap $? 61 'AdminPutPlayerPublicRecordHandlerV1' test.out
 
-#- 61 AdminPostPlayerPublicRecordHandlerV1
+#- 62 AdminPostPlayerPublicRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-post-player-public-record-handler-v1' \
     '{}' \
-    'KWjwLBR8' \
-    'GAc5wFJP' \
+    'Vs5Rcuq0' \
+    'ARN70KvW' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 61 'AdminPostPlayerPublicRecordHandlerV1' test.out
+eval_tap $? 62 'AdminPostPlayerPublicRecordHandlerV1' test.out
 
-#- 62 AdminDeletePlayerPublicRecordHandlerV1
+#- 63 AdminDeletePlayerPublicRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-delete-player-public-record-handler-v1' \
-    'wzleZILY' \
-    'P8UIHVfz' \
+    'Cy1q545T' \
+    'ai6ORlLD' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 62 'AdminDeletePlayerPublicRecordHandlerV1' test.out
+eval_tap $? 63 'AdminDeletePlayerPublicRecordHandlerV1' test.out
 
-#- 63 AdminGetPlayerRecordSizeHandlerV1
+#- 64 AdminGetPlayerRecordSizeHandlerV1
 $PYTHON -m $MODULE 'cloudsave-admin-get-player-record-size-handler-v1' \
-    'xJvmdhtv' \
-    '1L6tOIVe' \
+    'riZkgT7G' \
+    'ekw773Jk' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 63 'AdminGetPlayerRecordSizeHandlerV1' test.out
+eval_tap $? 64 'AdminGetPlayerRecordSizeHandlerV1' test.out
 
-#- 64 ListGameBinaryRecordsV1
+#- 65 ListGameBinaryRecordsV1
 $PYTHON -m $MODULE 'cloudsave-list-game-binary-records-v1' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 64 'ListGameBinaryRecordsV1' test.out
+eval_tap $? 65 'ListGameBinaryRecordsV1' test.out
 
-#- 65 PostGameBinaryRecordV1
+#- 66 PostGameBinaryRecordV1
 $PYTHON -m $MODULE 'cloudsave-post-game-binary-record-v1' \
-    '{"file_type": "OHPp2rNo", "key": "1djgN286"}' \
+    '{"file_type": "CeNqpyWW", "key": "AsucsZeI"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 65 'PostGameBinaryRecordV1' test.out
+eval_tap $? 66 'PostGameBinaryRecordV1' test.out
 
-#- 66 BulkGetGameBinaryRecordV1
+#- 67 BulkGetGameBinaryRecordV1
 $PYTHON -m $MODULE 'cloudsave-bulk-get-game-binary-record-v1' \
-    '{"keys": ["0hL9LAH3", "qbfTdtwG", "jpQJTsXx"]}' \
+    '{"keys": ["E5Rr6ZFr", "WmsFzJdu", "B5aNo6D4"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 66 'BulkGetGameBinaryRecordV1' test.out
+eval_tap $? 67 'BulkGetGameBinaryRecordV1' test.out
 
-#- 67 GetGameBinaryRecordV1
+#- 68 GetGameBinaryRecordV1
 $PYTHON -m $MODULE 'cloudsave-get-game-binary-record-v1' \
-    'wdNmroqa' \
+    'w78QKcSe' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 67 'GetGameBinaryRecordV1' test.out
+eval_tap $? 68 'GetGameBinaryRecordV1' test.out
 
-#- 68 PutGameBinaryRecordV1
+#- 69 PutGameBinaryRecordV1
 $PYTHON -m $MODULE 'cloudsave-put-game-binary-record-v1' \
-    '{"content_type": "IGFlEJ1S", "file_location": "FfV9Hmp6"}' \
-    'GenpCI0z' \
+    '{"content_type": "dKI1bHxF", "file_location": "tHe9iN58"}' \
+    's3aeBuns' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 68 'PutGameBinaryRecordV1' test.out
+eval_tap $? 69 'PutGameBinaryRecordV1' test.out
 
-#- 69 DeleteGameBinaryRecordV1
+#- 70 DeleteGameBinaryRecordV1
 $PYTHON -m $MODULE 'cloudsave-delete-game-binary-record-v1' \
-    'svnJoRZq' \
+    'gRsRtiyk' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 69 'DeleteGameBinaryRecordV1' test.out
+eval_tap $? 70 'DeleteGameBinaryRecordV1' test.out
 
-#- 70 PostGameBinaryPresignedURLV1
+#- 71 PostGameBinaryPresignedURLV1
 $PYTHON -m $MODULE 'cloudsave-post-game-binary-presigned-urlv1' \
-    '{"file_type": "gw0ZmotH"}' \
-    '9QPpofUp' \
+    '{"file_type": "Ne9ZoKDz"}' \
+    '3AHitrYX' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 70 'PostGameBinaryPresignedURLV1' test.out
+eval_tap $? 71 'PostGameBinaryPresignedURLV1' test.out
 
-#- 71 PutGameRecordConcurrentHandlerV1
+#- 72 PutGameRecordConcurrentHandlerV1
 $PYTHON -m $MODULE 'cloudsave-put-game-record-concurrent-handler-v1' \
-    '{"updatedAt": "1978-04-25T00:00:00Z", "value": {"8yhWuLqA": {}, "fuV7so10": {}, "Kkg7v3oX": {}}}' \
-    'z2mLY4T5' \
+    '{"updatedAt": "1993-07-17T00:00:00Z", "value": {"whrnW7Ym": {}, "9uJTsWU4": {}, "pNyTyoPx": {}}}' \
+    'y8ac6Xt5' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 71 'PutGameRecordConcurrentHandlerV1' test.out
+eval_tap $? 72 'PutGameRecordConcurrentHandlerV1' test.out
 
-#- 72 GetGameRecordsBulk
+#- 73 GetGameRecordsBulk
 $PYTHON -m $MODULE 'cloudsave-get-game-records-bulk' \
-    '{"keys": ["5LoXGJiq", "bJUMlIn3", "9C7F9vbT"]}' \
+    '{"keys": ["fuatpeZJ", "HCbnGKV9", "Wrcsb79e"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 72 'GetGameRecordsBulk' test.out
+eval_tap $? 73 'GetGameRecordsBulk' test.out
 
-#- 73 GetGameRecordHandlerV1
+#- 74 GetGameRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-get-game-record-handler-v1' \
-    'Ur7NwhJD' \
+    'PagYKSch' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 73 'GetGameRecordHandlerV1' test.out
+eval_tap $? 74 'GetGameRecordHandlerV1' test.out
 
-#- 74 PutGameRecordHandlerV1
+#- 75 PutGameRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-put-game-record-handler-v1' \
     '{}' \
-    'Iae9WH2k' \
+    'li98CpBZ' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 74 'PutGameRecordHandlerV1' test.out
+eval_tap $? 75 'PutGameRecordHandlerV1' test.out
 
-#- 75 PostGameRecordHandlerV1
+#- 76 PostGameRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-post-game-record-handler-v1' \
     '{}' \
-    'l5B7jqyo' \
+    '0wQFfRGd' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 75 'PostGameRecordHandlerV1' test.out
+eval_tap $? 76 'PostGameRecordHandlerV1' test.out
 
-#- 76 DeleteGameRecordHandlerV1
+#- 77 DeleteGameRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-delete-game-record-handler-v1' \
-    'fTLxmS9D' \
+    'FAxWsG2t' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 76 'DeleteGameRecordHandlerV1' test.out
+eval_tap $? 77 'DeleteGameRecordHandlerV1' test.out
 
-#- 77 PublicListTagsHandlerV1
+#- 78 PublicListTagsHandlerV1
 $PYTHON -m $MODULE 'cloudsave-public-list-tags-handler-v1' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 77 'PublicListTagsHandlerV1' test.out
+eval_tap $? 78 'PublicListTagsHandlerV1' test.out
 
-#- 78 BulkGetPlayerPublicBinaryRecordsV1
+#- 79 BulkGetPlayerPublicBinaryRecordsV1
 $PYTHON -m $MODULE 'cloudsave-bulk-get-player-public-binary-records-v1' \
-    '{"userIds": ["TUOOIaXV", "sOiluCNE", "wwpkSOUa"]}' \
-    'KFKeVU9c' \
+    '{"userIds": ["mNH0YzvK", "OlEMLhAt", "6hJfmry8"]}' \
+    '50IZDlkB' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 78 'BulkGetPlayerPublicBinaryRecordsV1' test.out
+eval_tap $? 79 'BulkGetPlayerPublicBinaryRecordsV1' test.out
 
-#- 79 BulkGetPlayerPublicRecordHandlerV1
+#- 80 BulkGetPlayerPublicRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-bulk-get-player-public-record-handler-v1' \
-    '{"userIds": ["t0gnOFlb", "eUwMg1JW", "Ekq5S9PC"]}' \
-    '1U14rXp8' \
+    '{"userIds": ["6BXDt8db", "RmmfWnD4", "l2uRF0bE"]}' \
+    '4AC05JOO' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 79 'BulkGetPlayerPublicRecordHandlerV1' test.out
+eval_tap $? 80 'BulkGetPlayerPublicRecordHandlerV1' test.out
 
-#- 80 ListMyBinaryRecordsV1
+#- 81 ListMyBinaryRecordsV1
 $PYTHON -m $MODULE 'cloudsave-list-my-binary-records-v1' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 80 'ListMyBinaryRecordsV1' test.out
+eval_tap $? 81 'ListMyBinaryRecordsV1' test.out
 
-#- 81 BulkGetMyBinaryRecordV1
+#- 82 BulkGetMyBinaryRecordV1
 $PYTHON -m $MODULE 'cloudsave-bulk-get-my-binary-record-v1' \
-    '{"keys": ["7p2riprq", "IM46yQwK", "pP0fPNCI"]}' \
+    '{"keys": ["kfvxGNAL", "49csOrPU", "GiCLAm56"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 81 'BulkGetMyBinaryRecordV1' test.out
+eval_tap $? 82 'BulkGetMyBinaryRecordV1' test.out
 
-#- 82 RetrievePlayerRecords
+#- 83 RetrievePlayerRecords
 $PYTHON -m $MODULE 'cloudsave-retrieve-player-records' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 82 'RetrievePlayerRecords' test.out
+eval_tap $? 83 'RetrievePlayerRecords' test.out
 
-#- 83 GetPlayerRecordsBulkHandlerV1
+#- 84 GetPlayerRecordsBulkHandlerV1
 $PYTHON -m $MODULE 'cloudsave-get-player-records-bulk-handler-v1' \
-    '{"keys": ["EEO2uWHd", "tlf5vv0v", "Q1XyF9Om"]}' \
+    '{"keys": ["0NNM7Njc", "ivjsR4mt", "9Zda53L7"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 83 'GetPlayerRecordsBulkHandlerV1' test.out
+eval_tap $? 84 'GetPlayerRecordsBulkHandlerV1' test.out
 
-#- 84 PublicDeletePlayerPublicRecordHandlerV1
+#- 85 PublicDeletePlayerPublicRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-public-delete-player-public-record-handler-v1' \
-    '4Rg2SHYd' \
+    '2EThytwu' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 84 'PublicDeletePlayerPublicRecordHandlerV1' test.out
+eval_tap $? 85 'PublicDeletePlayerPublicRecordHandlerV1' test.out
 
-#- 85 PostPlayerBinaryRecordV1
+#- 86 PostPlayerBinaryRecordV1
 $PYTHON -m $MODULE 'cloudsave-post-player-binary-record-v1' \
-    '{"file_type": "P8XNiqwJ", "is_public": false, "key": "cLllrVyg"}' \
-    'DHsy57w3' \
+    '{"file_type": "tYydp7eG", "is_public": true, "key": "bR5DUat3"}' \
+    'KZgUSOKt' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 85 'PostPlayerBinaryRecordV1' test.out
+eval_tap $? 86 'PostPlayerBinaryRecordV1' test.out
 
-#- 86 ListOtherPlayerPublicBinaryRecordsV1
+#- 87 ListOtherPlayerPublicBinaryRecordsV1
 $PYTHON -m $MODULE 'cloudsave-list-other-player-public-binary-records-v1' \
-    '0lyMlhpk' \
+    'RmGcMmD9' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 86 'ListOtherPlayerPublicBinaryRecordsV1' test.out
+eval_tap $? 87 'ListOtherPlayerPublicBinaryRecordsV1' test.out
 
-#- 87 BulkGetOtherPlayerPublicBinaryRecordsV1
+#- 88 BulkGetOtherPlayerPublicBinaryRecordsV1
 $PYTHON -m $MODULE 'cloudsave-bulk-get-other-player-public-binary-records-v1' \
-    '{"keys": ["k1slFx3B", "IGPz2DRj", "i6gzvQIM"]}' \
-    'pCDVTApg' \
+    '{"keys": ["kXfhNp2i", "ZJJa0hQj", "qpK4XvxE"]}' \
+    'VZ5aXzaI' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 87 'BulkGetOtherPlayerPublicBinaryRecordsV1' test.out
+eval_tap $? 88 'BulkGetOtherPlayerPublicBinaryRecordsV1' test.out
 
-#- 88 GetPlayerBinaryRecordV1
+#- 89 GetPlayerBinaryRecordV1
 $PYTHON -m $MODULE 'cloudsave-get-player-binary-record-v1' \
-    'X3tkRit2' \
-    'acVATUNI' \
+    'j0zsbnIo' \
+    'GvVXM7Qz' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 88 'GetPlayerBinaryRecordV1' test.out
+eval_tap $? 89 'GetPlayerBinaryRecordV1' test.out
 
-#- 89 PutPlayerBinaryRecordV1
+#- 90 PutPlayerBinaryRecordV1
 $PYTHON -m $MODULE 'cloudsave-put-player-binary-record-v1' \
-    '{"content_type": "IHqM08rf", "file_location": "NxwRJJhg"}' \
-    'aCIQ7Jkh' \
-    'WKijtiWo' \
+    '{"content_type": "OxctIJIP", "file_location": "I6AJGWKn"}' \
+    'ojf8GmTT' \
+    'qfu0fiUM' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 89 'PutPlayerBinaryRecordV1' test.out
+eval_tap $? 90 'PutPlayerBinaryRecordV1' test.out
 
-#- 90 DeletePlayerBinaryRecordV1
+#- 91 DeletePlayerBinaryRecordV1
 $PYTHON -m $MODULE 'cloudsave-delete-player-binary-record-v1' \
-    'LXT1fryi' \
-    'P45uqksp' \
+    'qsHTFKXO' \
+    '5DaVwA5R' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 90 'DeletePlayerBinaryRecordV1' test.out
+eval_tap $? 91 'DeletePlayerBinaryRecordV1' test.out
 
-#- 91 PutPlayerBinaryRecorMetadataV1
+#- 92 PutPlayerBinaryRecorMetadataV1
 $PYTHON -m $MODULE 'cloudsave-put-player-binary-recor-metadata-v1' \
-    '{"is_public": true}' \
-    'GpbKXEdI' \
-    '3nSQ7dht' \
+    '{"is_public": false}' \
+    'w9shWMHg' \
+    'mW3aOVMO' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 91 'PutPlayerBinaryRecorMetadataV1' test.out
+eval_tap $? 92 'PutPlayerBinaryRecorMetadataV1' test.out
 
-#- 92 PostPlayerBinaryPresignedURLV1
+#- 93 PostPlayerBinaryPresignedURLV1
 $PYTHON -m $MODULE 'cloudsave-post-player-binary-presigned-urlv1' \
-    '{"file_type": "tcSPrIlO"}' \
-    'vLyAdKv3' \
-    'Osm8r0pj' \
+    '{"file_type": "mm3D6Kql"}' \
+    'po7L8fia' \
+    'I53t3tWr' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 92 'PostPlayerBinaryPresignedURLV1' test.out
+eval_tap $? 93 'PostPlayerBinaryPresignedURLV1' test.out
 
-#- 93 GetPlayerPublicBinaryRecordsV1
+#- 94 GetPlayerPublicBinaryRecordsV1
 $PYTHON -m $MODULE 'cloudsave-get-player-public-binary-records-v1' \
-    'SSCuAQUn' \
-    'YzjQST6c' \
+    'HCEgnOu1' \
+    'btp2ksCC' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 93 'GetPlayerPublicBinaryRecordsV1' test.out
+eval_tap $? 94 'GetPlayerPublicBinaryRecordsV1' test.out
 
-#- 94 PutPlayerRecordConcurrentHandlerV1
+#- 95 PutPlayerRecordConcurrentHandlerV1
 $PYTHON -m $MODULE 'cloudsave-put-player-record-concurrent-handler-v1' \
-    '{"updatedAt": "1973-05-21T00:00:00Z", "value": {"fBCL0qMb": {}, "3PnVEw7U": {}, "4kHzL6q2": {}}}' \
-    '0IU8a0sg' \
-    '4Wx6Kgs8' \
+    '{"updatedAt": "1998-02-11T00:00:00Z", "value": {"Mwmnv6kS": {}, "QG4bYNyr": {}, "qHQMXTlV": {}}}' \
+    'hMMlvZEY' \
+    'L1h9dZR2' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 94 'PutPlayerRecordConcurrentHandlerV1' test.out
+eval_tap $? 95 'PutPlayerRecordConcurrentHandlerV1' test.out
 
-#- 95 PutPlayerPublicRecordConcurrentHandlerV1
+#- 96 PutPlayerPublicRecordConcurrentHandlerV1
 $PYTHON -m $MODULE 'cloudsave-put-player-public-record-concurrent-handler-v1' \
-    '{"updatedAt": "1979-03-05T00:00:00Z", "value": {"qmF0C7mz": {}, "SsNCauZo": {}, "UnTiangE": {}}}' \
-    '0dJrRBjR' \
-    'PCIKWccW' \
+    '{"updatedAt": "1978-04-16T00:00:00Z", "value": {"8sepdbgA": {}, "646E9ASu": {}, "PRuh1AmQ": {}}}' \
+    'OZgdRamX' \
+    'gXxpzV9f' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 95 'PutPlayerPublicRecordConcurrentHandlerV1' test.out
+eval_tap $? 96 'PutPlayerPublicRecordConcurrentHandlerV1' test.out
 
-#- 96 GetOtherPlayerPublicRecordKeyHandlerV1
+#- 97 GetOtherPlayerPublicRecordKeyHandlerV1
 $PYTHON -m $MODULE 'cloudsave-get-other-player-public-record-key-handler-v1' \
-    '1efuQARm' \
+    'PDWL6K2p' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 96 'GetOtherPlayerPublicRecordKeyHandlerV1' test.out
+eval_tap $? 97 'GetOtherPlayerPublicRecordKeyHandlerV1' test.out
 
-#- 97 GetOtherPlayerPublicRecordHandlerV1
+#- 98 GetOtherPlayerPublicRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-get-other-player-public-record-handler-v1' \
-    '{"keys": ["uLDf8HRE", "4WJy6gqn", "rFSuKxDF"]}' \
-    'xZVFk0Am' \
+    '{"keys": ["WuMWOJvG", "Wx01cKlK", "4M3k2d4T"]}' \
+    '6KSLKiJk' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 97 'GetOtherPlayerPublicRecordHandlerV1' test.out
+eval_tap $? 98 'GetOtherPlayerPublicRecordHandlerV1' test.out
 
-#- 98 GetPlayerRecordHandlerV1
+#- 99 GetPlayerRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-get-player-record-handler-v1' \
-    'W8deW1lr' \
-    'agLNSBvU' \
+    'dKc0Svga' \
+    'ZdzqEL7B' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 98 'GetPlayerRecordHandlerV1' test.out
+eval_tap $? 99 'GetPlayerRecordHandlerV1' test.out
 
-#- 99 PutPlayerRecordHandlerV1
+#- 100 PutPlayerRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-put-player-record-handler-v1' \
     '{}' \
-    'NjXkcIqQ' \
-    'njQuYwlc' \
+    '9gGXMGvc' \
+    'LMB9QF4N' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 99 'PutPlayerRecordHandlerV1' test.out
+eval_tap $? 100 'PutPlayerRecordHandlerV1' test.out
 
-#- 100 PostPlayerRecordHandlerV1
+#- 101 PostPlayerRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-post-player-record-handler-v1' \
     '{}' \
-    'C0c7RNRq' \
-    '7tAQyykS' \
+    'UBoRkfzI' \
+    'AjNr5vyK' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 100 'PostPlayerRecordHandlerV1' test.out
+eval_tap $? 101 'PostPlayerRecordHandlerV1' test.out
 
-#- 101 DeletePlayerRecordHandlerV1
+#- 102 DeletePlayerRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-delete-player-record-handler-v1' \
-    'sUfTvns0' \
-    'ir6neLZ4' \
+    'ax4HFLKk' \
+    '1VkBY6c7' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 101 'DeletePlayerRecordHandlerV1' test.out
+eval_tap $? 102 'DeletePlayerRecordHandlerV1' test.out
 
-#- 102 GetPlayerPublicRecordHandlerV1
+#- 103 GetPlayerPublicRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-get-player-public-record-handler-v1' \
-    '1xFa2GXg' \
-    'g662k0uC' \
+    'VYwPncd1' \
+    'VEehDbnP' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 102 'GetPlayerPublicRecordHandlerV1' test.out
+eval_tap $? 103 'GetPlayerPublicRecordHandlerV1' test.out
 
-#- 103 PutPlayerPublicRecordHandlerV1
+#- 104 PutPlayerPublicRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-put-player-public-record-handler-v1' \
     '{}' \
-    'qqkJDVzi' \
-    'LngRj25b' \
+    'ubatFtbd' \
+    'whO4Ee44' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 103 'PutPlayerPublicRecordHandlerV1' test.out
+eval_tap $? 104 'PutPlayerPublicRecordHandlerV1' test.out
 
-#- 104 PostPlayerPublicRecordHandlerV1
+#- 105 PostPlayerPublicRecordHandlerV1
 $PYTHON -m $MODULE 'cloudsave-post-player-public-record-handler-v1' \
     '{}' \
-    '4OwOHzbX' \
-    'KJXNV7Vf' \
+    'JXFjsjoY' \
+    'UoVy9BLw' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 104 'PostPlayerPublicRecordHandlerV1' test.out
+eval_tap $? 105 'PostPlayerPublicRecordHandlerV1' test.out
 
 
 fi

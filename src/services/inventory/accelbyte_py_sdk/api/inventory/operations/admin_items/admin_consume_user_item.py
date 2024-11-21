@@ -38,7 +38,7 @@ class AdminConsumeUserItem(Operation):
     """To consume item (AdminConsumeUserItem)
 
     Consume user's own item
-
+    Client should pass item ID in options if item type is OPTIONBOX
     Permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY:ITEM [UPDATE]
 
     Properties:

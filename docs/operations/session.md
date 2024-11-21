@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Session Service Index (3.19.0)
+# AccelByte Gaming Services Session Service Index (3.20.0)
 
 
 ## Operations
@@ -10,7 +10,7 @@
 ### Certificate
 | Endpoint | Method | ID | Deprecated | Class | Wrapper | Example |
 |---|---|---|---|---|---|---|
-| /session/v1/admin/namespaces/{namespace}/certificates/pfx/platforms/xbl | PUT | HandleUploadXboxPFXCertificate | `false` | [HandleUploadXboxPFXCertificate](../../src/services/session/accelbyte_py_sdk/api/session/operations/certificate/handle_upload_xbox_pfx__ac7973.py) | [handle_upload_xbox_pfx_certificate](../../src/services/session/accelbyte_py_sdk/api/session/wrappers/_certificate.py) | [accelbyte_py_sdk_cli session-handle-upload-xbox-pfx-certificate](../../samples/cli/accelbyte_py_sdk_cli/session/_handle_upload_xbox_pfx_certificate.py) |
+| /session/v1/admin/namespaces/{namespace}/certificates/pfx/platforms/xbl | PUT | adminUploadXBoxCertificate | `true` | [AdminUploadXBoxCertificate](../../src/services/session/accelbyte_py_sdk/api/session/operations/certificate/admin_upload_x_box_certificate.py) | [admin_upload_x_box_certificate](../../src/services/session/accelbyte_py_sdk/api/session/wrappers/_certificate.py) | [accelbyte_py_sdk_cli session-admin-upload-x-box-certificate](../../samples/cli/accelbyte_py_sdk_cli/session/_admin_upload_x_box_certificate.py) |
 
 ### Config
 | Endpoint | Method | ID | Deprecated | Class | Wrapper | Example |
@@ -101,6 +101,7 @@
 ### Party
 | Endpoint | Method | ID | Deprecated | Class | Wrapper | Example |
 |---|---|---|---|---|---|---|
+| /session/v1/admin/namespaces/{namespace}/parties/bulk | DELETE | adminDeleteBulkParties | `false` | [AdminDeleteBulkParties](../../src/services/session/accelbyte_py_sdk/api/session/operations/party/admin_delete_bulk_parties.py) | [admin_delete_bulk_parties](../../src/services/session/accelbyte_py_sdk/api/session/wrappers/_party.py) | [accelbyte_py_sdk_cli session-admin-delete-bulk-parties](../../samples/cli/accelbyte_py_sdk_cli/session/_admin_delete_bulk_parties.py) |
 | /session/v1/admin/namespaces/{namespace}/parties | GET | adminQueryParties | `false` | [AdminQueryParties](../../src/services/session/accelbyte_py_sdk/api/session/operations/party/admin_query_parties.py) | [admin_query_parties](../../src/services/session/accelbyte_py_sdk/api/session/wrappers/_party.py) | [accelbyte_py_sdk_cli session-admin-query-parties](../../samples/cli/accelbyte_py_sdk_cli/session/_admin_query_parties.py) |
 | /session/v1/admin/namespaces/{namespace}/users/{userId}/native-sync | POST | adminSyncNativeSession | `false` | [AdminSyncNativeSession](../../src/services/session/accelbyte_py_sdk/api/session/operations/party/admin_sync_native_session.py) | [admin_sync_native_session](../../src/services/session/accelbyte_py_sdk/api/session/wrappers/_party.py) | [accelbyte_py_sdk_cli session-admin-sync-native-session](../../samples/cli/accelbyte_py_sdk_cli/session/_admin_sync_native_session.py) |
 | /session/v1/public/namespaces/{namespace}/party | POST | publicCreateParty | `false` | [PublicCreateParty](../../src/services/session/accelbyte_py_sdk/api/session/operations/party/public_create_party.py) | [public_create_party](../../src/services/session/accelbyte_py_sdk/api/session/wrappers/_party.py) | [accelbyte_py_sdk_cli session-public-create-party](../../samples/cli/accelbyte_py_sdk_cli/session/_public_create_party.py) |
@@ -123,7 +124,9 @@
 | Endpoint | Method | ID | Deprecated | Class | Wrapper | Example |
 |---|---|---|---|---|---|---|
 | /session/v1/admin/namespaces/{namespace}/platform-credentials | DELETE | adminDeletePlatformCredentials | `false` | [AdminDeletePlatformCredentials](../../src/services/session/accelbyte_py_sdk/api/session/operations/platform_credential/admin_delete_platform_c_b8f2c5.py) | [admin_delete_platform_credentials](../../src/services/session/accelbyte_py_sdk/api/session/wrappers/_platform_credential.py) | [accelbyte_py_sdk_cli session-admin-delete-platform-credentials](../../samples/cli/accelbyte_py_sdk_cli/session/_admin_delete_platform_credentials.py) |
+| /session/v1/admin/namespaces/{namespace}/platform-credentials/{platformId} | DELETE | adminDeletePlatformCredentialsByPlatformId | `false` | [AdminDeletePlatformCredentialsByPlatformId](../../src/services/session/accelbyte_py_sdk/api/session/operations/platform_credential/admin_delete_platform_c_78003c.py) | [admin_delete_platform_credentials_by_platform_id](../../src/services/session/accelbyte_py_sdk/api/session/wrappers/_platform_credential.py) | [accelbyte_py_sdk_cli session-admin-delete-platform-credentials-by-platform-id](../../samples/cli/accelbyte_py_sdk_cli/session/_admin_delete_platform_credentials_by_platform_id.py) |
 | /session/v1/admin/namespaces/{namespace}/platform-credentials | GET | adminGetPlatformCredentials | `false` | [AdminGetPlatformCredentials](../../src/services/session/accelbyte_py_sdk/api/session/operations/platform_credential/admin_get_platform_credentials.py) | [admin_get_platform_credentials](../../src/services/session/accelbyte_py_sdk/api/session/wrappers/_platform_credential.py) | [accelbyte_py_sdk_cli session-admin-get-platform-credentials](../../samples/cli/accelbyte_py_sdk_cli/session/_admin_get_platform_credentials.py) |
+| /session/v1/admin/namespaces/{namespace}/platform-credentials/{platformId}/sync | PUT | adminSyncPlatformCredentials | `false` | [AdminSyncPlatformCredentials](../../src/services/session/accelbyte_py_sdk/api/session/operations/platform_credential/admin_sync_platform_cre_f4389d.py) | [admin_sync_platform_credentials](../../src/services/session/accelbyte_py_sdk/api/session/wrappers/_platform_credential.py) | [accelbyte_py_sdk_cli session-admin-sync-platform-credentials](../../samples/cli/accelbyte_py_sdk_cli/session/_admin_sync_platform_credentials.py) |
 | /session/v1/admin/namespaces/{namespace}/platform-credentials | PUT | adminUpdatePlatformCredentials | `false` | [AdminUpdatePlatformCredentials](../../src/services/session/accelbyte_py_sdk/api/session/operations/platform_credential/admin_update_platform_c_5be87f.py) | [admin_update_platform_credentials](../../src/services/session/accelbyte_py_sdk/api/session/wrappers/_platform_credential.py) | [accelbyte_py_sdk_cli session-admin-update-platform-credentials](../../samples/cli/accelbyte_py_sdk_cli/session/_admin_update_platform_credentials.py) |
 
 ### Player
@@ -167,6 +170,8 @@
 | apimodels.CreatePartyRequest | [ApimodelsCreatePartyRequest](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_create_party_request.py) |
 | apimodels.DeleteBulkGameSessionRequest | [ApimodelsDeleteBulkGameSessionRequest](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_delete_bulk_game_session_request.py) |
 | apimodels.DeleteBulkGameSessionsAPIResponse | [ApimodelsDeleteBulkGameSessionsAPIResponse](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_delete_bulk_game_sessions_api_response.py) |
+| apimodels.DeleteBulkPartySessionRequest | [ApimodelsDeleteBulkPartySessionRequest](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_delete_bulk_party_session_request.py) |
+| apimodels.DeleteBulkPartySessionsAPIResponse | [ApimodelsDeleteBulkPartySessionsAPIResponse](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_delete_bulk_party_sessions_api_response.py) |
 | apimodels.DSInformationResponse | [ApimodelsDSInformationResponse](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_ds_information_response.py) |
 | apimodels.EnvironmentVariableListResponse | [ApimodelsEnvironmentVariableListResponse](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_environment_variable_list_response.py) |
 | apimodels.EnvironmentVariableResponse | [ApimodelsEnvironmentVariableResponse](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_environment_variable_response.py) |
@@ -185,11 +190,13 @@
 | apimodels.PlayersCurrentPlatformRequest | [ApimodelsPlayersCurrentPlatformRequest](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_players_current_platform_request.py) |
 | apimodels.PlayersCurrentPlatformResponse | [ApimodelsPlayersCurrentPlatformResponse](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_players_current_platform_response.py) |
 | apimodels.PromoteLeaderRequest | [ApimodelsPromoteLeaderRequest](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_promote_leader_request.py) |
+| apimodels.PSNAppServerCredentialRecord | [ApimodelsPSNAppServerCredentialRecord](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_psn_app_server_credential_record.py) |
 | apimodels.PublicConfiguration | [ApimodelsPublicConfiguration](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_public_configuration.py) |
 | apimodels.PutGlobalConfigurationRequest | [ApimodelsPutGlobalConfigurationRequest](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_put_global_configuration_request.py) |
 | apimodels.PutPlatformCredentialsRequest | [ApimodelsPutPlatformCredentialsRequest](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_put_platform_credentials_request.py) |
 | apimodels.RequestMember | [ApimodelsRequestMember](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_request_member.py) |
 | apimodels.ResponseDeleteBulkGameSessions | [ApimodelsResponseDeleteBulkGameSessions](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_response_delete_bulk_game_sessions.py) |
+| apimodels.ResponseDeleteBulkPartySessions | [ApimodelsResponseDeleteBulkPartySessions](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_response_delete_bulk_party_sessions.py) |
 | apimodels.ServerSecret | [ApimodelsServerSecret](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_server_secret.py) |
 | apimodels.SessionInviteRequest | [ApimodelsSessionInviteRequest](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_session_invite_request.py) |
 | apimodels.SessionInviteResponse | [ApimodelsSessionInviteResponse](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_session_invite_response.py) |
@@ -201,6 +208,7 @@
 | apimodels.UpdateGameSessionRequest | [ApimodelsUpdateGameSessionRequest](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_update_game_session_request.py) |
 | apimodels.UpdatePartyRequest | [ApimodelsUpdatePartyRequest](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_update_party_request.py) |
 | apimodels.UserResponse | [ApimodelsUserResponse](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_user_response.py) |
+| apimodels.XblCertificateResponseBody | [ApimodelsXblCertificateResponseBody](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_xbl_certificate_response_body.py) |
 | logconfig.Configuration | [LogconfigConfiguration](../../src/services/session/accelbyte_py_sdk/api/session/models/logconfig_configuration.py) |
 | model.NativeSession | [ModelNativeSession](../../src/services/session/accelbyte_py_sdk/api/session/models/model_native_session.py) |
 | model.NativeSessionMember | [ModelNativeSessionMember](../../src/services/session/accelbyte_py_sdk/api/session/models/model_native_session_member.py) |
@@ -219,4 +227,5 @@
 | models.Team | [ModelsTeam](../../src/services/session/accelbyte_py_sdk/api/session/models/models_team.py) |
 | models.UserInfoResponse | [ModelsUserInfoResponse](../../src/services/session/accelbyte_py_sdk/api/session/models/models_user_info_response.py) |
 | models.UserPlatformInfo | [ModelsUserPlatformInfo](../../src/services/session/accelbyte_py_sdk/api/session/models/models_user_platform_info.py) |
+| models.XBLCertificateCredential | [ModelsXBLCertificateCredential](../../src/services/session/accelbyte_py_sdk/api/session/models/models_xbl_certificate_credential.py) |
 | response.Error | [ResponseError](../../src/services/session/accelbyte_py_sdk/api/session/models/response_error.py) |

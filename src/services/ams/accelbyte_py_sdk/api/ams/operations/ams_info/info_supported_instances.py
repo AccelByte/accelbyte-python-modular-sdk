@@ -29,7 +29,7 @@ from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 
-from ...models import ApiAvailableInstanceTypesResponse
+from ...models import ApiInstanceTypesForNamespaceResponse
 from ...models import ResponseErrorResponse
 
 
@@ -54,7 +54,7 @@ class InfoSupportedInstances(Operation):
         namespace: (namespace) REQUIRED str in path
 
     Responses:
-        200: OK - ApiAvailableInstanceTypesResponse (success)
+        200: OK - ApiInstanceTypesForNamespaceResponse (success)
 
         401: Unauthorized - ResponseErrorResponse (no authorization provided)
 
@@ -165,12 +165,12 @@ class InfoSupportedInstances(Operation):
     def parse_response(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
-        Union[None, ApiAvailableInstanceTypesResponse],
+        Union[None, ApiInstanceTypesForNamespaceResponse],
         Union[None, HttpResponse, ResponseErrorResponse],
     ]:
         """Parse the given response.
 
-        200: OK - ApiAvailableInstanceTypesResponse (success)
+        200: OK - ApiInstanceTypesForNamespaceResponse (success)
 
         401: Unauthorized - ResponseErrorResponse (no authorization provided)
 
@@ -192,7 +192,7 @@ class InfoSupportedInstances(Operation):
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return ApiAvailableInstanceTypesResponse.create_from_dict(content), None
+            return ApiInstanceTypesForNamespaceResponse.create_from_dict(content), None
         if code == 401:
             return None, ResponseErrorResponse.create_from_dict(content)
         if code == 403:

@@ -28,41 +28,49 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import StrEnum
 
-from ...models import ModelsPlatformCredentials
+from ...models import ApimodelsXblCertificateResponseBody
 from ...models import ResponseError
 
 
-class HandleUploadXboxPFXCertificate(Operation):
-    """Upload certificates for xbox. (HandleUploadXboxPFXCertificate)
+class PlatformIdEnum(StrEnum):
+    XBOX = "XBOX"
 
-    Upload certificates for xbox. Certificate must be in the valid form of PFX format.
+
+class AdminSyncPlatformCredentials(Operation):
+    """Sync Platform Credentials. (adminSyncPlatformCredentials)
+
+    Sync Platform Credentials.
+
+    Supported Platforms:
+    1. XBOX
+    With this method, we will be performing sync to Platform Service to retrieve the existing PFX certificate which uploaded through IAP.
+    If the API returns Not Found, alternatively what you can do is either:
+    a. upload PFX file to IAP. You can access it from Admin Portal {BASE_URL}/admin/namespaces/{NAMESPACE}/in-app-purchase/xbox, or directly through API /platform/admin/namespaces/{NAMESPACE}/iap/config/xbl/cert.
+    b. upload PFX file through Session API /session/v1/admin/namespaces/{namespace}/certificates/pfx/platforms/xbl
+    We recommend approach #a, since you need to only upload the file once, and the service will do the sync.
+    If you set the PFX through Session service, when this API is invoked, we will sync and replace the existing PFX file with the one from Platform (IAP).
 
     Properties:
-        url: /session/v1/admin/namespaces/{namespace}/certificates/pfx/platforms/xbl
+        url: /session/v1/admin/namespaces/{namespace}/platform-credentials/{platformId}/sync
 
         method: PUT
 
-        tags: ["Certificate"]
+        tags: ["Platform Credential"]
 
-        consumes: ["multipart/form-data"]
+        consumes: []
 
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
 
-        description: (description) OPTIONAL str in form_data
-
-        certname: (certname) REQUIRED str in form_data
-
-        file: (file) REQUIRED Any in form_data
-
-        password: (password) REQUIRED str in form_data
-
         namespace: (namespace) REQUIRED str in path
 
+        platform_id: (platformId) REQUIRED Union[str, PlatformIdEnum] in path
+
     Responses:
-        200: OK - ModelsPlatformCredentials (OK)
+        200: OK - ApimodelsXblCertificateResponseBody (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -77,26 +85,19 @@ class HandleUploadXboxPFXCertificate(Operation):
 
     # region fields
 
-    _url: str = (
-        "/session/v1/admin/namespaces/{namespace}/certificates/pfx/platforms/xbl"
-    )
-    _path: str = (
-        "/session/v1/admin/namespaces/{namespace}/certificates/pfx/platforms/xbl"
-    )
+    _url: str = "/session/v1/admin/namespaces/{namespace}/platform-credentials/{platformId}/sync"
+    _path: str = "/session/v1/admin/namespaces/{namespace}/platform-credentials/{platformId}/sync"
     _base_path: str = ""
     _method: str = "PUT"
-    _consumes: List[str] = ["multipart/form-data"]
+    _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     service_name: Optional[str] = "session"
 
-    description: str  # OPTIONAL in [form_data]
-    certname: str  # REQUIRED in [form_data]
-    file: Any  # REQUIRED in [form_data]
-    password: str  # REQUIRED in [form_data]
     namespace: str  # REQUIRED in [path]
+    platform_id: Union[str, PlatformIdEnum]  # REQUIRED in [path]
 
     # endregion fields
 
@@ -144,26 +145,15 @@ class HandleUploadXboxPFXCertificate(Operation):
 
     def get_all_params(self) -> dict:
         return {
-            "form_data": self.get_form_data_params(),
             "path": self.get_path_params(),
         }
-
-    def get_form_data_params(self) -> dict:
-        result = {}
-        if hasattr(self, "description"):
-            result["description"] = self.description
-        if hasattr(self, "certname"):
-            result["certname"] = self.certname
-        if hasattr(self, "file"):
-            result[("file", "file")] = self.file
-        if hasattr(self, "password"):
-            result["password"] = self.password
-        return result
 
     def get_path_params(self) -> dict:
         result = {}
         if hasattr(self, "namespace"):
             result["namespace"] = self.namespace
+        if hasattr(self, "platform_id"):
+            result["platformId"] = self.platform_id
         return result
 
     # endregion get_x_params methods
@@ -174,24 +164,14 @@ class HandleUploadXboxPFXCertificate(Operation):
 
     # region with_x methods
 
-    def with_description(self, value: str) -> HandleUploadXboxPFXCertificate:
-        self.description = value
-        return self
-
-    def with_certname(self, value: str) -> HandleUploadXboxPFXCertificate:
-        self.certname = value
-        return self
-
-    def with_file(self, value: Any) -> HandleUploadXboxPFXCertificate:
-        self.file = value
-        return self
-
-    def with_password(self, value: str) -> HandleUploadXboxPFXCertificate:
-        self.password = value
-        return self
-
-    def with_namespace(self, value: str) -> HandleUploadXboxPFXCertificate:
+    def with_namespace(self, value: str) -> AdminSyncPlatformCredentials:
         self.namespace = value
+        return self
+
+    def with_platform_id(
+        self, value: Union[str, PlatformIdEnum]
+    ) -> AdminSyncPlatformCredentials:
+        self.platform_id = value
         return self
 
     # endregion with_x methods
@@ -200,26 +180,14 @@ class HandleUploadXboxPFXCertificate(Operation):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "description") and self.description:
-            result["description"] = str(self.description)
-        elif include_empty:
-            result["description"] = ""
-        if hasattr(self, "certname") and self.certname:
-            result["certname"] = str(self.certname)
-        elif include_empty:
-            result["certname"] = ""
-        if hasattr(self, "file") and self.file:
-            result["file"] = Any(self.file)
-        elif include_empty:
-            result["file"] = Any()
-        if hasattr(self, "password") and self.password:
-            result["password"] = str(self.password)
-        elif include_empty:
-            result["password"] = ""
         if hasattr(self, "namespace") and self.namespace:
             result["namespace"] = str(self.namespace)
         elif include_empty:
             result["namespace"] = ""
+        if hasattr(self, "platform_id") and self.platform_id:
+            result["platformId"] = str(self.platform_id)
+        elif include_empty:
+            result["platformId"] = Union[str, PlatformIdEnum]()
         return result
 
     # endregion to methods
@@ -230,11 +198,12 @@ class HandleUploadXboxPFXCertificate(Operation):
     def parse_response(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
-        Union[None, ModelsPlatformCredentials], Union[None, HttpResponse, ResponseError]
+        Union[None, ApimodelsXblCertificateResponseBody],
+        Union[None, HttpResponse, ResponseError],
     ]:
         """Parse the given response.
 
-        200: OK - ModelsPlatformCredentials (OK)
+        200: OK - ApimodelsXblCertificateResponseBody (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -260,7 +229,7 @@ class HandleUploadXboxPFXCertificate(Operation):
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return ModelsPlatformCredentials.create_from_dict(content), None
+            return ApimodelsXblCertificateResponseBody.create_from_dict(content), None
         if code == 400:
             return None, ResponseError.create_from_dict(content)
         if code == 401:
@@ -282,21 +251,11 @@ class HandleUploadXboxPFXCertificate(Operation):
 
     @classmethod
     def create(
-        cls,
-        certname: str,
-        file: Any,
-        password: str,
-        namespace: str,
-        description: Optional[str] = None,
-        **kwargs,
-    ) -> HandleUploadXboxPFXCertificate:
+        cls, namespace: str, platform_id: Union[str, PlatformIdEnum], **kwargs
+    ) -> AdminSyncPlatformCredentials:
         instance = cls()
-        instance.certname = certname
-        instance.file = file
-        instance.password = password
         instance.namespace = namespace
-        if description is not None:
-            instance.description = description
+        instance.platform_id = platform_id
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -304,48 +263,36 @@ class HandleUploadXboxPFXCertificate(Operation):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> HandleUploadXboxPFXCertificate:
+    ) -> AdminSyncPlatformCredentials:
         instance = cls()
-        if "description" in dict_ and dict_["description"] is not None:
-            instance.description = str(dict_["description"])
-        elif include_empty:
-            instance.description = ""
-        if "certname" in dict_ and dict_["certname"] is not None:
-            instance.certname = str(dict_["certname"])
-        elif include_empty:
-            instance.certname = ""
-        if "file" in dict_ and dict_["file"] is not None:
-            instance.file = Any(dict_["file"])
-        elif include_empty:
-            instance.file = Any()
-        if "password" in dict_ and dict_["password"] is not None:
-            instance.password = str(dict_["password"])
-        elif include_empty:
-            instance.password = ""
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
             instance.namespace = ""
+        if "platformId" in dict_ and dict_["platformId"] is not None:
+            instance.platform_id = str(dict_["platformId"])
+        elif include_empty:
+            instance.platform_id = Union[str, PlatformIdEnum]()
         return instance
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "description": "description",
-            "certname": "certname",
-            "file": "file",
-            "password": "password",
             "namespace": "namespace",
+            "platformId": "platform_id",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "description": False,
-            "certname": True,
-            "file": True,
-            "password": True,
             "namespace": True,
+            "platformId": True,
+        }
+
+    @staticmethod
+    def get_enum_map() -> Dict[str, List[Any]]:
+        return {
+            "platformId": ["XBOX"],  # in path
         }
 
     # endregion static methods
