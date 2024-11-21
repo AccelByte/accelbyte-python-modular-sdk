@@ -15,5 +15,5 @@ dependencies = [
     "PyJWT[crypto]",
     "PyYAML",
     "requests",
-    "websockets",
+    "websockets==13.1",
 ]
