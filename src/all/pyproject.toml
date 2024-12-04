@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "accelbyte-py-sdk-all"
 readme = "README.md"
-version = "0.7.0"
+version = "0.8.0"
 description = "AccelByte Python SDK - All"
 requires-python = ">=3.9"
 dependencies = [
@@ -22,6 +22,7 @@ dependencies = [
     "accelbyte-py-sdk-service-challenge",
     "accelbyte-py-sdk-service-chat",
     "accelbyte-py-sdk-service-cloudsave",
+    "accelbyte-py-sdk-service-csm",
     "accelbyte-py-sdk-service-dsartifact",
     "accelbyte-py-sdk-service-dslogmanager",
     "accelbyte-py-sdk-service-dsmc",
