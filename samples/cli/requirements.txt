@@ -13,6 +13,7 @@ click
 ../../src/services/challenge
 ../../src/services/chat
 ../../src/services/cloudsave
+../../src/services/csm
 ../../src/services/dsartifact
 ../../src/services/dslogmanager
 ../../src/services/dsmc
