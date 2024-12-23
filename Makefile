@@ -81,7 +81,7 @@ test_cli:
 	trap "docker stop --time 1 justice-codegen-sdk-mock-server justice-codegen-sdk-ws-mock-server" EXIT && \
 		echo "[info] running mock-server" && \
 			(bash "$(SDK_MOCK_SERVER_PATH)/mock-server.sh" -s /data/spec -t "-" --save_files y &) && \
-			(for i in $$(seq 1 10); do echo "[info] pinging mock-server" && curl http://localhost:8080/ 2>/dev/null && exit 0 || sleep 10; done; echo "[erro] can't connect to mock-server"; exit 1) && \
+			(for i in $$(seq 1 30); do echo "[info] pinging mock-server" && curl http://localhost:8080/ 2>/dev/null && exit 0 || sleep 10; done; echo "[erro] can't connect to mock-server"; exit 1) && \
 			echo "[info] mock-server ready" && \
 		echo "[info] running ws-mock-server" && \
 			(SPEC_DIR=/data/spec bash "$(SDK_MOCK_SERVER_PATH)/ws/ws-mock-server.sh" &) && \
