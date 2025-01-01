@@ -25,9 +25,11 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ModelsGetSessionHistorySearchResponseV2
 from ...models import ResponseError
@@ -35,7 +37,7 @@ from ...models import RestapiErrorV1
 
 
 class AdminSearchSessionsV2(Operation):
-    """Search sessions (AdminSearchSessionsV2)
+    """[DEPRECATED] Search sessions (AdminSearchSessionsV2)
 
     Search sessions. Optimize the query by differentiating query with filter namespace only and filter with namespace & other filter (partyID, userID, matchID).
     Query with filter namespace only will not group whole session data while query with filter namespace & other filter will include session data.
@@ -287,8 +289,122 @@ class AdminSearchSessionsV2(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_200: Optional[ModelsGetSessionHistorySearchResponseV2] = None
+        error_400: Optional[RestapiErrorV1] = None
+        error_401: Optional[RestapiErrorV1] = None
+        error_403: Optional[RestapiErrorV1] = None
+        error_500: Optional[ResponseError] = None
+
+        def ok(self) -> AdminSearchSessionsV2.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_401 is not None:
+                err = self.error_401.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_403 is not None:
+                err = self.error_403.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_500 is not None:
+                err = self.error_500.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_200 is not None:
+                yield self.data_200
+                yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
+            elif self.error_401 is not None:
+                yield None
+                yield self.error_401
+            elif self.error_403 is not None:
+                yield None
+                yield self.error_403
+            elif self.error_500 is not None:
+                yield None
+                yield self.error_500
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        200: OK - ModelsGetSessionHistorySearchResponseV2 (Operation succeeded)
+
+        400: Bad Request - RestapiErrorV1 (20002: validation error | 20019: unable to parse request body)
+
+        401: Unauthorized - RestapiErrorV1 (20001: unauthorized access)
+
+        403: Forbidden - RestapiErrorV1 (20013: insufficient permissions | 20014: invalid audience | 20015: insufficient scope)
+
+        500: Internal Server Error - ResponseError (20000: internal server error)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = AdminSearchSessionsV2.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 200:
+                result.data_200 = (
+                    ModelsGetSessionHistorySearchResponseV2.create_from_dict(content)
+                )
+            elif code == 400:
+                result.error_400 = RestapiErrorV1.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
+            elif code == 401:
+                result.error_401 = RestapiErrorV1.create_from_dict(content)
+                result.error = result.error_401.translate_to_api_error()
+            elif code == 403:
+                result.error_403 = RestapiErrorV1.create_from_dict(content)
+                result.error = result.error_403.translate_to_api_error()
+            elif code == 500:
+                result.error_500 = ResponseError.create_from_dict(content)
+                result.error = result.error_500.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, ModelsGetSessionHistorySearchResponseV2],

@@ -31,48 +31,48 @@ if [ "$BATCH" = true ] ; then
 $PYTHON -m $MODULE 'start-interactive-session' --continue_on_error '--writer=tap' << END
 seasonpass-export-season --login_with_auth "Bearer foo"
 seasonpass-query-seasons --login_with_auth "Bearer foo"
-seasonpass-create-season --body '{"autoClaim": true, "defaultLanguage": "URzmX6zK", "defaultRequiredExp": 76, "draftStoreId": "OfO9WfJZ", "end": "1995-12-14T00:00:00Z", "excessStrategy": {"currency": "zbQ8YZEo", "method": "NONE", "percentPerExp": 84}, "images": [{"as": "urIqvbbp", "caption": "GQakqMm3", "height": 7, "imageUrl": "iCtP3O4y", "smallImageUrl": "6mV4M191", "width": 8}, {"as": "MDuv9k5w", "caption": "OFmxk8CB", "height": 27, "imageUrl": "O8BsA4Uv", "smallImageUrl": "xdzw1s0D", "width": 26}, {"as": "TPmjMsIE", "caption": "VY5WXl7j", "height": 62, "imageUrl": "XNr7ivcm", "smallImageUrl": "uCSMayaD", "width": 93}], "localizations": {"ovBaSqyz": {"description": "b04b61HB", "title": "5svOcG04"}, "ndOTJTuP": {"description": "Z72ddz0g", "title": "BIHNI8ai"}, "WAaEd90c": {"description": "Sl1XcXkU", "title": "updhJMoY"}}, "name": "qRc3YLvt", "start": "1982-01-03T00:00:00Z", "tierItemId": "JCYZXaRu"}' --login_with_auth "Bearer foo"
+seasonpass-create-season --body '{"autoClaim": true, "defaultLanguage": "DiROHCRK", "defaultRequiredExp": 61, "draftStoreId": "WYtHj4Wv", "end": "1972-11-17T00:00:00Z", "excessStrategy": {"currency": "2ATF5kJB", "method": "NONE", "percentPerExp": 72}, "images": [{"as": "TDLZwgvr", "caption": "sQschTLx", "height": 86, "imageUrl": "jXzvk0Qn", "smallImageUrl": "vsjI29fb", "width": 64}, {"as": "yBtZwv8k", "caption": "6qWYlnSl", "height": 11, "imageUrl": "UAkNxc81", "smallImageUrl": "xv0mxW8R", "width": 79}, {"as": "ezmjROMQ", "caption": "QFmcfNHB", "height": 11, "imageUrl": "CfTxwh0W", "smallImageUrl": "pX1WOeZU", "width": 52}], "localizations": {"bxG2cc0X": {"description": "NNjM5zaa", "title": "BfWdz3jE"}, "XTMj5imJ": {"description": "1P6W0uQJ", "title": "d0s14bL1"}, "LFait4zX": {"description": "Kw10JqiN", "title": "B7yEoztS"}}, "name": "eCab6Jcs", "start": "1990-07-12T00:00:00Z", "tierItemId": "Yb4Z5H85"}' --login_with_auth "Bearer foo"
 seasonpass-get-current-season --login_with_auth "Bearer foo"
-seasonpass-bulk-get-user-season-progression --body '{"userIds": ["iMkLW07m", "uK8UYFdy", "BbZ8mTTD"]}' --login_with_auth "Bearer foo"
-seasonpass-get-season 'TMKnf6SD' --login_with_auth "Bearer foo"
-seasonpass-delete-season 'KlwkYVUg' --login_with_auth "Bearer foo"
-seasonpass-update-season 'mLRMgTaY' --body '{"autoClaim": false, "defaultLanguage": "TZD1TnEX", "defaultRequiredExp": 79, "draftStoreId": "P9VwtuDs", "end": "1988-08-03T00:00:00Z", "excessStrategy": {"currency": "QWTzhWuu", "method": "CURRENCY", "percentPerExp": 34}, "images": [{"as": "5jdkFO4s", "caption": "1e7g4x6v", "height": 2, "imageUrl": "vgDSgHo2", "smallImageUrl": "rKNrs1ZA", "width": 27}, {"as": "Z1Rz0UVJ", "caption": "b4RbnQdy", "height": 76, "imageUrl": "FWLJwywj", "smallImageUrl": "MYejmyhk", "width": 76}, {"as": "LTlSiR56", "caption": "YQTBja63", "height": 81, "imageUrl": "ckHc9xrm", "smallImageUrl": "kQpwkj1T", "width": 31}], "localizations": {"Hh0A7rc0": {"description": "UuvfzQf8", "title": "QxdkS403"}, "UPuzHbfB": {"description": "RgWAV7xQ", "title": "03diJBW5"}, "1owMZaRk": {"description": "2tclyzHB", "title": "cbs0Elsd"}}, "name": "IKQLkzfk", "start": "1998-10-23T00:00:00Z", "tierItemId": "CRzTpTVp"}' --login_with_auth "Bearer foo"
-seasonpass-clone-season 'G0hUbcd9' --body '{"end": "1988-08-27T00:00:00Z", "name": "JxeoBjTd", "start": "1977-12-23T00:00:00Z"}' --login_with_auth "Bearer foo"
-seasonpass-get-full-season 'bjGjQqit' --login_with_auth "Bearer foo"
-seasonpass-query-passes 'hmpmIkrq' --login_with_auth "Bearer foo"
-seasonpass-create-pass 'rsJsEAK7' --body '{"autoEnroll": false, "code": "HTLChrDu", "displayOrder": 20, "images": [{"as": "zROAQg0T", "caption": "SWa7LAnT", "height": 37, "imageUrl": "eOB1dPJL", "smallImageUrl": "HyCij8HL", "width": 37}, {"as": "Q0FMfXNG", "caption": "22aDidIO", "height": 37, "imageUrl": "AubCOQxH", "smallImageUrl": "cfRDZTMN", "width": 0}, {"as": "YYFbJ2iD", "caption": "f5viW8gD", "height": 36, "imageUrl": "aV2bn2GG", "smallImageUrl": "21Pm3h2u", "width": 66}], "localizations": {"WcRZBbiZ": {"description": "Ra7EUwZs", "title": "ErbYFDka"}, "CxXvmMqM": {"description": "lW4r5nhf", "title": "fxwDb8DB"}, "QDNo0Xpo": {"description": "zJEiN0jU", "title": "AKkcF671"}}, "passItemId": "U22xr7sv"}' --login_with_auth "Bearer foo"
-seasonpass-get-pass 'o8sOe34u' 'QiMgkF13' --login_with_auth "Bearer foo"
-seasonpass-delete-pass 'AgRGYWs3' 'KinGpUkz' --login_with_auth "Bearer foo"
-seasonpass-update-pass '0YHRvlCF' 'DFwtnVp8' --body '{"autoEnroll": true, "displayOrder": 44, "images": [{"as": "nupwQ7Ye", "caption": "IE6fh4az", "height": 84, "imageUrl": "eEvpZgJp", "smallImageUrl": "izftfv8H", "width": 93}, {"as": "q7zBMK3T", "caption": "SJgcH5qp", "height": 42, "imageUrl": "ThmtBBbX", "smallImageUrl": "eTx1o7tf", "width": 89}, {"as": "YSr9Tp0G", "caption": "H6NMmzwU", "height": 76, "imageUrl": "VZ5Cp26c", "smallImageUrl": "lgLM9vV1", "width": 88}], "localizations": {"IQWz0UsS": {"description": "Gxp9YOt2", "title": "uOQZmDjM"}, "qit69sia": {"description": "j0t3yBOq", "title": "jNTEuUOG"}, "3RUg58Bi": {"description": "FNv2af5b", "title": "zEqK1fW7"}}, "passItemId": "7zsmsuf9"}' --login_with_auth "Bearer foo"
-seasonpass-publish-season 'Q02ZhwlX' --login_with_auth "Bearer foo"
-seasonpass-retire-season 'P4CqdHwN' --login_with_auth "Bearer foo"
-seasonpass-query-rewards 'J2nD0QJf' --login_with_auth "Bearer foo"
-seasonpass-create-reward '06JQwDQQ' --body '{"code": "oyfNpVEO", "currency": {"currencyCode": "RfTBfjga", "namespace": "34kkkPxG"}, "image": {"as": "hEwPPlB4", "caption": "64irqBXO", "height": 55, "imageUrl": "tahmZfar", "smallImageUrl": "VdXi76uX", "width": 89}, "itemId": "HG12hGHQ", "quantity": 38, "type": "CURRENCY"}' --login_with_auth "Bearer foo"
-seasonpass-get-reward 'S9ZvZJRp' 'uXH1lJgw' --login_with_auth "Bearer foo"
-seasonpass-delete-reward 'egGzLsSm' 'JTgGhkcg' --login_with_auth "Bearer foo"
-seasonpass-update-reward 'LhnvVFnB' '5IaFNCWc' --body '{"currency": {"currencyCode": "3jkFoCpL", "namespace": "TQEGjO0n"}, "image": {"as": "3UGdav2s", "caption": "J249KuX0", "height": 9, "imageUrl": "00SFA9zI", "smallImageUrl": "rT4iqAK1", "width": 89}, "itemId": "CqUVgUH2", "nullFields": ["XF3TbW24", "PWdSZ9Pq", "29Mpi3On"], "quantity": 15, "type": "CURRENCY"}' --login_with_auth "Bearer foo"
-seasonpass-query-tiers '9UW9Mb0N' --login_with_auth "Bearer foo"
-seasonpass-create-tier 'rGBmS7io' --body '{"index": 66, "quantity": 97, "tier": {"requiredExp": 28, "rewards": {"iBLDOIvm": ["6RH7iOXP", "0u3TFwVU", "mpel1RVy"], "7bjyxARQ": ["YvCduxUN", "l5MxVpTY", "JHHNAxTS"], "KwOZdYg2": ["QKk90qBP", "uABMe4Gg", "nMVhLFX1"]}}}' --login_with_auth "Bearer foo"
-seasonpass-update-tier '1XcaP1NS' '2uIiVYw3' --body '{"requiredExp": 43, "rewards": {"d8P2VHSW": ["MTBhppHa", "UzIGVnSd", "GUKJo7xA"], "TiU9kQly": ["UjATDX3m", "FYvqmmeu", "9LKHeqJ5"], "eBVjrySQ": ["M56lPUMc", "QMgvmkMO", "2sclV08p"]}}' --login_with_auth "Bearer foo"
-seasonpass-delete-tier '3ElGWFXO' '44v2VLAl' --login_with_auth "Bearer foo"
-seasonpass-reorder-tier 'DgpDjrFw' 'MACksise' --body '{"newIndex": 49}' --login_with_auth "Bearer foo"
-seasonpass-unpublish-season 'GbEjiSoy' --login_with_auth "Bearer foo"
-seasonpass-get-user-participated-seasons 'sAdBSi6j' --login_with_auth "Bearer foo"
-seasonpass-grant-user-exp '5jSZxef3' --body '{"exp": 20, "source": "PAID_FOR", "tags": ["3A6LvAon", "klPlASr8", "gGKyHSog"]}' --login_with_auth "Bearer foo"
-seasonpass-grant-user-pass 'maNvPxRo' --body '{"passCode": "J6JOunHi", "passItemId": "gbsfz62C"}' --login_with_auth "Bearer foo"
-seasonpass-exists-any-pass-by-pass-codes '8i3YashW' --login_with_auth "Bearer foo"
-seasonpass-get-current-user-season-progression 'Ji7W0rl5' --login_with_auth "Bearer foo"
-seasonpass-check-season-purchasable 'C1Pl12h2' --body '{"passItemId": "IEVWSiCn", "tierItemCount": 32, "tierItemId": "lpGqegkB"}' --login_with_auth "Bearer foo"
-seasonpass-reset-user-season 'hltvR6De' --login_with_auth "Bearer foo"
-seasonpass-grant-user-tier 'VMea2cun' --body '{"count": 49, "source": "PAID_FOR", "tags": ["utywX25y", "Z5lZJRsj", "uhhW80tP"]}' --login_with_auth "Bearer foo"
-seasonpass-query-user-exp-grant-history 'LmBIVa0K' --login_with_auth "Bearer foo"
-seasonpass-query-user-exp-grant-history-tag 'N6zTG2Bc' --login_with_auth "Bearer foo"
-seasonpass-get-user-season 'VIQAHRMT' 'aB1JDX8H' --login_with_auth "Bearer foo"
+seasonpass-bulk-get-user-season-progression --body '{"userIds": ["NvnqcHRe", "3l747HF4", "ga6Gibdk"]}' --login_with_auth "Bearer foo"
+seasonpass-get-season 'tTiYigLG' --login_with_auth "Bearer foo"
+seasonpass-delete-season 'uGaf3yDA' --login_with_auth "Bearer foo"
+seasonpass-update-season '4gDkuJkD' --body '{"autoClaim": false, "defaultLanguage": "dLoYgRCt", "defaultRequiredExp": 0, "draftStoreId": "GUypvZEl", "end": "1996-01-18T00:00:00Z", "excessStrategy": {"currency": "Nfh15Vqa", "method": "CURRENCY", "percentPerExp": 90}, "images": [{"as": "Rw3m101p", "caption": "FvN37AcR", "height": 20, "imageUrl": "GeyPc1GH", "smallImageUrl": "pEPGMIcT", "width": 24}, {"as": "IcSFGPdV", "caption": "bEvFiFyO", "height": 79, "imageUrl": "GvdSGcP7", "smallImageUrl": "kEX0VJIZ", "width": 51}, {"as": "IALtHJB9", "caption": "Wt6fSx3u", "height": 78, "imageUrl": "NZEnwKYm", "smallImageUrl": "ei6V9fxv", "width": 87}], "localizations": {"Vy8AbYAc": {"description": "P5pLlhyj", "title": "bpNr6k51"}, "u22Sqecd": {"description": "IeQXKRnQ", "title": "0dvjde1P"}, "eGKnff27": {"description": "rAjBmGcw", "title": "Na0xQ4Lg"}}, "name": "vL4llipz", "start": "1980-05-06T00:00:00Z", "tierItemId": "xnTKT258"}' --login_with_auth "Bearer foo"
+seasonpass-clone-season 'H1SiKQCt' --body '{"end": "1976-10-27T00:00:00Z", "name": "WGLACNDY", "start": "1976-01-21T00:00:00Z"}' --login_with_auth "Bearer foo"
+seasonpass-get-full-season 'fqKTcEmk' --login_with_auth "Bearer foo"
+seasonpass-query-passes 'puvxqMi1' --login_with_auth "Bearer foo"
+seasonpass-create-pass 'cXTtnVuq' --body '{"autoEnroll": true, "code": "PHEltGSV", "displayOrder": 83, "images": [{"as": "Yynldn47", "caption": "f61FO3OD", "height": 60, "imageUrl": "1V82Ik43", "smallImageUrl": "WVOmuusJ", "width": 2}, {"as": "ZQxTiDfm", "caption": "vZttg8Ts", "height": 12, "imageUrl": "fxZq7wTe", "smallImageUrl": "kDu2zY72", "width": 43}, {"as": "7dr9ZfPK", "caption": "oa3Hoxon", "height": 52, "imageUrl": "IwOe00RP", "smallImageUrl": "36SiyZp8", "width": 71}], "localizations": {"oTaMKkKU": {"description": "OjBB3rjT", "title": "keTUB64u"}, "6pFZoJOx": {"description": "p1RFPUbN", "title": "p0OM8xPR"}, "d2eQaUgc": {"description": "yoowF9TI", "title": "Nn62TpzO"}}, "passItemId": "5elfQVqk"}' --login_with_auth "Bearer foo"
+seasonpass-get-pass 'wTIZnpPX' 'zbifGGt9' --login_with_auth "Bearer foo"
+seasonpass-delete-pass 'VGSbINqi' 'FcJKn2Oh' --login_with_auth "Bearer foo"
+seasonpass-update-pass 'ObvbLyu8' 'VnATtCb7' --body '{"autoEnroll": false, "displayOrder": 64, "images": [{"as": "AdnZI8un", "caption": "yljDTPcv", "height": 86, "imageUrl": "oDPlf0Tu", "smallImageUrl": "9FfitIpU", "width": 85}, {"as": "w3MKcjPn", "caption": "dBkjStFw", "height": 1, "imageUrl": "G2JZdnNG", "smallImageUrl": "koWyQ7AE", "width": 33}, {"as": "DgZZuzRq", "caption": "A1vEfrjZ", "height": 51, "imageUrl": "ZoEGvSKZ", "smallImageUrl": "eDdZrQcy", "width": 61}], "localizations": {"QCLOfmfq": {"description": "efWXj1SC", "title": "o6SgwOdh"}, "MqF5Mad7": {"description": "M9DmrWlq", "title": "uvN72qVM"}, "OiGNhskJ": {"description": "99AFhd8b", "title": "QWXrfcOS"}}, "passItemId": "fTpjBVuX"}' --login_with_auth "Bearer foo"
+seasonpass-publish-season 'AQweMfQ7' --login_with_auth "Bearer foo"
+seasonpass-retire-season 'rqXXF7mV' --login_with_auth "Bearer foo"
+seasonpass-query-rewards 'KXAWTFiz' --login_with_auth "Bearer foo"
+seasonpass-create-reward 'pMtPVJJC' --body '{"code": "BuSlfiG6", "currency": {"currencyCode": "JwYc8Buo", "namespace": "xDJR1Mzp"}, "image": {"as": "9mnzQKMk", "caption": "xdW0NCNT", "height": 100, "imageUrl": "IHIAtux8", "smallImageUrl": "ReSOSYWt", "width": 22}, "itemId": "uLPrOFUm", "quantity": 37, "type": "CURRENCY"}' --login_with_auth "Bearer foo"
+seasonpass-get-reward 'zkNwwgnH' 'vb0rvJ0r' --login_with_auth "Bearer foo"
+seasonpass-delete-reward 'YewJOaHp' '6drAhPMa' --login_with_auth "Bearer foo"
+seasonpass-update-reward 'UmcNEkIR' 'jvgThk8z' --body '{"currency": {"currencyCode": "bCTgJLwT", "namespace": "VeY3t5vR"}, "image": {"as": "I5fqFVWy", "caption": "PrqYWdRX", "height": 40, "imageUrl": "Od15J8LG", "smallImageUrl": "I24zsSLn", "width": 97}, "itemId": "RF6gFfop", "nullFields": ["8llc1S5t", "XVZE4C4o", "0nafiZxI"], "quantity": 53, "type": "ITEM"}' --login_with_auth "Bearer foo"
+seasonpass-query-tiers 'TnYtyTZn' --login_with_auth "Bearer foo"
+seasonpass-create-tier 'SmjaqRe4' --body '{"index": 93, "quantity": 57, "tier": {"requiredExp": 2, "rewards": {"kIhQ0klQ": ["6IJRP6cX", "7qtkJuI3", "bbhljQY4"], "GyVTtCLG": ["gGUNCAmn", "Wt56cspN", "sRR58RkJ"], "Xf8iwp5G": ["DK7zXJcm", "ibmRimAL", "RLUdUJkY"]}}}' --login_with_auth "Bearer foo"
+seasonpass-update-tier 'g4j5v52j' 'tC8VEsRZ' --body '{"requiredExp": 3, "rewards": {"MVvbHv8v": ["YrXLcUp5", "7WcjJdTB", "JjAX10yN"], "59lPPKCH": ["sKOBFoct", "vtrxs6zQ", "1eofD9cP"], "R28lFKH2": ["mwQ5lWGK", "oXcRVOYp", "HOlgwBzJ"]}}' --login_with_auth "Bearer foo"
+seasonpass-delete-tier 'ieFkGtaw' 'q1KcvTx9' --login_with_auth "Bearer foo"
+seasonpass-reorder-tier 'NBuz6SE2' 'tm2mLfs0' --body '{"newIndex": 92}' --login_with_auth "Bearer foo"
+seasonpass-unpublish-season 'UtinAYOJ' --login_with_auth "Bearer foo"
+seasonpass-get-user-participated-seasons 'jbHJtBVl' --login_with_auth "Bearer foo"
+seasonpass-grant-user-exp 'jJ6jlzB1' --body '{"exp": 23, "source": "PAID_FOR", "tags": ["QIPEzyof", "bzGLiFWW", "TMiHjBlS"]}' --login_with_auth "Bearer foo"
+seasonpass-grant-user-pass 'PkmRDfLE' --body '{"passCode": "nXfN2HvK", "passItemId": "w5tTdwej"}' --login_with_auth "Bearer foo"
+seasonpass-exists-any-pass-by-pass-codes 'kD4n3WyQ' --login_with_auth "Bearer foo"
+seasonpass-get-current-user-season-progression '2YMho2fW' --login_with_auth "Bearer foo"
+seasonpass-check-season-purchasable 'rxXZZn7w' --body '{"passItemId": "c1Gt606D", "tierItemCount": 23, "tierItemId": "wcdwPA64"}' --login_with_auth "Bearer foo"
+seasonpass-reset-user-season 'L7uuE90E' --login_with_auth "Bearer foo"
+seasonpass-grant-user-tier 'meE0SBPG' --body '{"count": 16, "source": "PAID_FOR", "tags": ["BKA53JJN", "O2No2Mu5", "b10B7PXl"]}' --login_with_auth "Bearer foo"
+seasonpass-query-user-exp-grant-history 'mwpdjeOi' --login_with_auth "Bearer foo"
+seasonpass-query-user-exp-grant-history-tag '3zNqZzjw' --login_with_auth "Bearer foo"
+seasonpass-get-user-season 'llVbIMp7' 'bEy7VloQ' --login_with_auth "Bearer foo"
 seasonpass-public-get-current-season --login_with_auth "Bearer foo"
-seasonpass-public-get-current-user-season 'D0cEMKz5' --login_with_auth "Bearer foo"
-seasonpass-public-claim-user-reward 'DpYNCjRZ' --body '{"passCode": "vbeFKKRQ", "rewardCode": "Y8PxhoQq", "tierIndex": 16}' --login_with_auth "Bearer foo"
-seasonpass-public-bulk-claim-user-rewards 'GkTltWR9' --login_with_auth "Bearer foo"
-seasonpass-public-get-user-season 'oxa7XnXJ' 'HMGN0VfT' --login_with_auth "Bearer foo"
+seasonpass-public-get-current-user-season 'Ph8nRJdg' --login_with_auth "Bearer foo"
+seasonpass-public-claim-user-reward 'fVnNDmOs' --body '{"passCode": "7a7JaJtS", "rewardCode": "xzl47C5z", "tierIndex": 91}' --login_with_auth "Bearer foo"
+seasonpass-public-bulk-claim-user-rewards '7Y1hWmpe' --login_with_auth "Bearer foo"
+seasonpass-public-get-user-season 'hv4cnKPs' 'hIQD1e2u' --login_with_auth "Bearer foo"
 exit()
 END
 
@@ -115,7 +115,7 @@ eval_tap $? 3 'QuerySeasons' test.out
 
 #- 4 CreateSeason
 $PYTHON -m $MODULE 'seasonpass-create-season' \
-    --body '{"autoClaim": true, "defaultLanguage": "fVCkmGWy", "defaultRequiredExp": 100, "draftStoreId": "L4hkzo8Q", "end": "1999-11-11T00:00:00Z", "excessStrategy": {"currency": "4MkBM9Pc", "method": "NONE", "percentPerExp": 8}, "images": [{"as": "MfETMUqu", "caption": "nRFerFuB", "height": 59, "imageUrl": "ieVboNsL", "smallImageUrl": "hPyWvPKt", "width": 89}, {"as": "iZmcjKul", "caption": "JPtkko8G", "height": 87, "imageUrl": "Uy4d3IHG", "smallImageUrl": "wbyHjSgf", "width": 88}, {"as": "BK0JRHr8", "caption": "zQUS5l25", "height": 57, "imageUrl": "VBUCrWZh", "smallImageUrl": "VWMW8mZ0", "width": 31}], "localizations": {"uCZCvOsk": {"description": "aC4FeKl4", "title": "0xvNaUci"}, "04j6xbdB": {"description": "tES28Qug", "title": "Krl9d2Pg"}, "yuVNp2IU": {"description": "fMz09lpw", "title": "LV7PCn45"}}, "name": "rN3FLY5q", "start": "1974-02-21T00:00:00Z", "tierItemId": "wo597Bdc"}' \
+    --body '{"autoClaim": false, "defaultLanguage": "g8GggWBt", "defaultRequiredExp": 42, "draftStoreId": "97st6Z5q", "end": "1980-04-18T00:00:00Z", "excessStrategy": {"currency": "rfbVdehY", "method": "CURRENCY", "percentPerExp": 98}, "images": [{"as": "8t1MQ2IA", "caption": "Ho3T67x8", "height": 68, "imageUrl": "Sgw2Klrw", "smallImageUrl": "cIVR54P3", "width": 70}, {"as": "UfPK8SA1", "caption": "cWd6ja5B", "height": 6, "imageUrl": "O3uWyeUA", "smallImageUrl": "8frYuGIL", "width": 43}, {"as": "WaLf9WTS", "caption": "7ctZMJ4G", "height": 35, "imageUrl": "kv87ETeL", "smallImageUrl": "uql1cI6S", "width": 26}], "localizations": {"YmcuZPF7": {"description": "RVZ1H5lo", "title": "6TXsKlut"}, "2XMpnkAh": {"description": "r5ZtLFQq", "title": "GfEz3VO2"}, "VmrBqIcq": {"description": "8pngJS3h", "title": "k1TcqFSw"}}, "name": "5xqGUjuC", "start": "1987-06-28T00:00:00Z", "tierItemId": "cpHDIQOi"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 4 'CreateSeason' test.out
@@ -128,268 +128,268 @@ eval_tap $? 5 'GetCurrentSeason' test.out
 
 #- 6 BulkGetUserSeasonProgression
 $PYTHON -m $MODULE 'seasonpass-bulk-get-user-season-progression' \
-    --body '{"userIds": ["lkEytiSA", "grXu3PYx", "smI9CdWB"]}' \
+    --body '{"userIds": ["UMl6G6m3", "9fiBPXH3", "HBO7YYZU"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 6 'BulkGetUserSeasonProgression' test.out
 
 #- 7 GetSeason
 $PYTHON -m $MODULE 'seasonpass-get-season' \
-    'bzYfXNjz' \
+    'tbbuWD7G' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 7 'GetSeason' test.out
 
 #- 8 DeleteSeason
 $PYTHON -m $MODULE 'seasonpass-delete-season' \
-    'GtVrEaUR' \
+    'd06gRQ4L' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 8 'DeleteSeason' test.out
 
 #- 9 UpdateSeason
 $PYTHON -m $MODULE 'seasonpass-update-season' \
-    'Lb3tXhcp' \
-    --body '{"autoClaim": false, "defaultLanguage": "OgtMF2qw", "defaultRequiredExp": 49, "draftStoreId": "B7z9lSHy", "end": "1980-10-30T00:00:00Z", "excessStrategy": {"currency": "CIE9vhuR", "method": "CURRENCY", "percentPerExp": 79}, "images": [{"as": "kGy5gocC", "caption": "h6feDioG", "height": 25, "imageUrl": "ACJu4U21", "smallImageUrl": "QbjiKgi0", "width": 80}, {"as": "AwAvfuuu", "caption": "84WLOWJT", "height": 93, "imageUrl": "4inlgtAZ", "smallImageUrl": "Wxdm23aO", "width": 41}, {"as": "BhjijLJx", "caption": "tw7zwH04", "height": 64, "imageUrl": "YATd52ji", "smallImageUrl": "qt0COH37", "width": 40}], "localizations": {"F1Qsgnt7": {"description": "3fuQ4bsw", "title": "lkOiGRU0"}, "sW1hC6yz": {"description": "GemnrsxY", "title": "oL9rlVR1"}, "IxLQmenI": {"description": "UUH3vXUo", "title": "vd7gMMmN"}}, "name": "HoorRoPb", "start": "1998-08-08T00:00:00Z", "tierItemId": "gGcsBOBk"}' \
+    'KaEHQF6q' \
+    --body '{"autoClaim": false, "defaultLanguage": "TlFxDXwc", "defaultRequiredExp": 93, "draftStoreId": "qsxgWxk1", "end": "1978-09-03T00:00:00Z", "excessStrategy": {"currency": "XMFVQJ42", "method": "NONE", "percentPerExp": 64}, "images": [{"as": "OKBIn2kI", "caption": "5BlZZyZj", "height": 41, "imageUrl": "swhnBWj7", "smallImageUrl": "Lq2id8sP", "width": 92}, {"as": "ozD5yHWU", "caption": "d3I8nU2f", "height": 73, "imageUrl": "yjAPcOM1", "smallImageUrl": "sVqaemdL", "width": 12}, {"as": "KhjZ2gze", "caption": "VgL2xXqA", "height": 63, "imageUrl": "VmW1KKMz", "smallImageUrl": "bPc4Dvmb", "width": 28}], "localizations": {"QuAEelM3": {"description": "KnvYJXYN", "title": "fE9xTs5h"}, "HIiqHYlS": {"description": "C6doB3Mz", "title": "nGjWVWqX"}, "Jekh2uRM": {"description": "MOOrDkvY", "title": "ZujOk115"}}, "name": "qugwcRSk", "start": "1976-07-11T00:00:00Z", "tierItemId": "kD2PBy7H"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 9 'UpdateSeason' test.out
 
 #- 10 CloneSeason
 $PYTHON -m $MODULE 'seasonpass-clone-season' \
-    'zzlhKSLc' \
-    --body '{"end": "1992-11-28T00:00:00Z", "name": "XM7s4W6C", "start": "1998-02-03T00:00:00Z"}' \
+    'GXD7mCy2' \
+    --body '{"end": "1974-11-10T00:00:00Z", "name": "WHQSsCvJ", "start": "1979-12-09T00:00:00Z"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 10 'CloneSeason' test.out
 
 #- 11 GetFullSeason
 $PYTHON -m $MODULE 'seasonpass-get-full-season' \
-    'sgoeRvsM' \
+    'kuJDCKZt' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 11 'GetFullSeason' test.out
 
 #- 12 QueryPasses
 $PYTHON -m $MODULE 'seasonpass-query-passes' \
-    'jz3WBqzO' \
+    'SXYI371b' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 12 'QueryPasses' test.out
 
 #- 13 CreatePass
 $PYTHON -m $MODULE 'seasonpass-create-pass' \
-    'Pkj52q4j' \
-    --body '{"autoEnroll": true, "code": "eJVRwamU", "displayOrder": 6, "images": [{"as": "8iN2rGWB", "caption": "Qf6BrTk7", "height": 55, "imageUrl": "TIOnZzhI", "smallImageUrl": "hlXGHIGT", "width": 11}, {"as": "CnGSzVkv", "caption": "nAtq0dOh", "height": 6, "imageUrl": "nYqQkmsK", "smallImageUrl": "n59B6CWk", "width": 67}, {"as": "QOAtlKMX", "caption": "ZvgKiQeu", "height": 45, "imageUrl": "8eHIaD1P", "smallImageUrl": "Lj2qe7iX", "width": 13}], "localizations": {"p2OPWbaU": {"description": "cmlsEGCK", "title": "XZiAiTPW"}, "7k5HKKEL": {"description": "zSJoED2c", "title": "7EB6ulJU"}, "gySckTt0": {"description": "2OT7Xo13", "title": "8D3KEtlb"}}, "passItemId": "xW7T3kDQ"}' \
+    'nzoer9mu' \
+    --body '{"autoEnroll": true, "code": "tHJjCZeZ", "displayOrder": 95, "images": [{"as": "u3izhKqE", "caption": "tR2QYMyb", "height": 7, "imageUrl": "H66B7RwU", "smallImageUrl": "thY5md5j", "width": 3}, {"as": "Cz3gHuA1", "caption": "4DvPHejW", "height": 61, "imageUrl": "S93o5YmP", "smallImageUrl": "8ipFJgSW", "width": 30}, {"as": "fKwyVhMQ", "caption": "ncL3huOo", "height": 93, "imageUrl": "cfutUUUt", "smallImageUrl": "sk3Fdtod", "width": 9}], "localizations": {"koeKi7Ee": {"description": "zo8Tmj6w", "title": "Ss1KovQp"}, "lO1uv1ak": {"description": "s6MqjOgM", "title": "jjym6zqK"}, "yc2Q21eU": {"description": "Kh4gdMNg", "title": "5Wz627wu"}}, "passItemId": "JbUXQmzs"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 13 'CreatePass' test.out
 
 #- 14 GetPass
 $PYTHON -m $MODULE 'seasonpass-get-pass' \
-    'UTTFHF05' \
-    'xtrp8xbl' \
+    '5uRoBWor' \
+    'rn0eiClB' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 14 'GetPass' test.out
 
 #- 15 DeletePass
 $PYTHON -m $MODULE 'seasonpass-delete-pass' \
-    'JT5oa7po' \
-    'BNdDCEZl' \
+    'YLU5WHDZ' \
+    'SSzZ1cZW' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 15 'DeletePass' test.out
 
 #- 16 UpdatePass
 $PYTHON -m $MODULE 'seasonpass-update-pass' \
-    '4KzvqXLJ' \
-    'Ga5jL4cO' \
-    --body '{"autoEnroll": false, "displayOrder": 51, "images": [{"as": "wsAD2Pn5", "caption": "R2aorf6w", "height": 76, "imageUrl": "l4igXjlL", "smallImageUrl": "AKw8FjuC", "width": 68}, {"as": "3nQidi8J", "caption": "YsoVb6GZ", "height": 8, "imageUrl": "2nSRs5wK", "smallImageUrl": "nnAq99uV", "width": 71}, {"as": "xstaKxPZ", "caption": "zDIx72kT", "height": 48, "imageUrl": "UiMyknbj", "smallImageUrl": "lqcN3u1S", "width": 16}], "localizations": {"0NXESish": {"description": "GlEQaJgk", "title": "lIB3zsRH"}, "95FLb0jw": {"description": "e4Uga5qi", "title": "KsTh30aZ"}, "Uu6hmR62": {"description": "kFxyHQJg", "title": "5Jftiwtw"}}, "passItemId": "FmfoAXQK"}' \
+    'fz6SFx2M' \
+    'tbzCIraJ' \
+    --body '{"autoEnroll": true, "displayOrder": 86, "images": [{"as": "DNa6zW7j", "caption": "RcLaX0Pc", "height": 2, "imageUrl": "Mh8pjPh5", "smallImageUrl": "XlS81Vc8", "width": 14}, {"as": "apde5bzB", "caption": "slfUarrL", "height": 61, "imageUrl": "zSX8ginK", "smallImageUrl": "wwR8fp2I", "width": 38}, {"as": "XRF81CmY", "caption": "sIWBMb6K", "height": 24, "imageUrl": "ODKwIq6d", "smallImageUrl": "uSKrDWHp", "width": 61}], "localizations": {"5NOMOEbR": {"description": "7t4HU68k", "title": "nFbN0pXp"}, "uIxoEfZb": {"description": "lsG7Pp7P", "title": "Mp2b5orI"}, "e5KQgee3": {"description": "Ef37x6aQ", "title": "hy3uyi5F"}}, "passItemId": "gtvDhsJz"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 16 'UpdatePass' test.out
 
 #- 17 PublishSeason
 $PYTHON -m $MODULE 'seasonpass-publish-season' \
-    'l9I8j7V8' \
+    'Yzw2gjKa' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 17 'PublishSeason' test.out
 
 #- 18 RetireSeason
 $PYTHON -m $MODULE 'seasonpass-retire-season' \
-    'oXe46McA' \
+    'zWLGtiGI' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 18 'RetireSeason' test.out
 
 #- 19 QueryRewards
 $PYTHON -m $MODULE 'seasonpass-query-rewards' \
-    'vtqFznni' \
+    'zyFKqAKX' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 19 'QueryRewards' test.out
 
 #- 20 CreateReward
 $PYTHON -m $MODULE 'seasonpass-create-reward' \
-    'TBXUyErP' \
-    --body '{"code": "lPAfgEFk", "currency": {"currencyCode": "nD3NrySI", "namespace": "HatYcLR2"}, "image": {"as": "RyzqXc33", "caption": "fv6chSAJ", "height": 91, "imageUrl": "TFTXwshB", "smallImageUrl": "Dvibab5p", "width": 82}, "itemId": "NqDkcbVy", "quantity": 4, "type": "CURRENCY"}' \
+    'Vu5nNBJS' \
+    --body '{"code": "1inxpHgm", "currency": {"currencyCode": "NDiT6oG0", "namespace": "Ptc0m5kv"}, "image": {"as": "Ua5LLp5l", "caption": "ec1c7Yws", "height": 9, "imageUrl": "9du8VprY", "smallImageUrl": "GSUTQ8XI", "width": 12}, "itemId": "yBh9Ugzn", "quantity": 52, "type": "CURRENCY"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 20 'CreateReward' test.out
 
 #- 21 GetReward
 $PYTHON -m $MODULE 'seasonpass-get-reward' \
-    'qYAN8HUj' \
-    'vFWVKc01' \
+    'NuvTrc4O' \
+    'XN4gIICw' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 21 'GetReward' test.out
 
 #- 22 DeleteReward
 $PYTHON -m $MODULE 'seasonpass-delete-reward' \
-    'V8zZwVPB' \
-    'dFO2FWXf' \
+    '6cXqVRC9' \
+    'OKlOEe65' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 22 'DeleteReward' test.out
 
 #- 23 UpdateReward
 $PYTHON -m $MODULE 'seasonpass-update-reward' \
-    '60B5KpHd' \
-    'vi9cRHoC' \
-    --body '{"currency": {"currencyCode": "2abIcBJe", "namespace": "5ODXOq83"}, "image": {"as": "fdUnfyxu", "caption": "7DWvp00w", "height": 34, "imageUrl": "M6jFlsJ8", "smallImageUrl": "X0RfcS4I", "width": 78}, "itemId": "KLyqIClw", "nullFields": ["nsK6C0lE", "GI6ZdH9x", "2AIAqFtt"], "quantity": 93, "type": "CURRENCY"}' \
+    'PlxyPyLz' \
+    'niy1MXPc' \
+    --body '{"currency": {"currencyCode": "885w3m6z", "namespace": "2xmx1kGr"}, "image": {"as": "sJBsVICb", "caption": "LAkftBCA", "height": 8, "imageUrl": "AXmtqLZX", "smallImageUrl": "AVVN7G4k", "width": 76}, "itemId": "yMxkXURv", "nullFields": ["GYfvS8sD", "J27u1Zs8", "HZXpszsz"], "quantity": 47, "type": "ITEM"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 23 'UpdateReward' test.out
 
 #- 24 QueryTiers
 $PYTHON -m $MODULE 'seasonpass-query-tiers' \
-    'CAokQIbM' \
+    'xKHrifaE' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 24 'QueryTiers' test.out
 
 #- 25 CreateTier
 $PYTHON -m $MODULE 'seasonpass-create-tier' \
-    'HzZQTXHs' \
-    --body '{"index": 58, "quantity": 15, "tier": {"requiredExp": 98, "rewards": {"bbJLpfy4": ["7YPZ5wGo", "87SOjUb5", "4tF0gKol"], "UvGTVzLx": ["BgUEbdjo", "GizuvftD", "r9QZuTMx"], "kuC4S1yH": ["IeRZQ78c", "6UXiX5c3", "bRgIXTSn"]}}}' \
+    'RexYERVW' \
+    --body '{"index": 21, "quantity": 40, "tier": {"requiredExp": 41, "rewards": {"UNQxqDRn": ["J7Gbi44c", "fWUfehHy", "smB83n9S"], "l26b6Hps": ["w2FUfgWb", "vfMpx2eQ", "VYxqjzEA"], "ZnpoWtL3": ["Q3ECDcF6", "9WpCeQsF", "VFDdej7n"]}}}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 25 'CreateTier' test.out
 
 #- 26 UpdateTier
 $PYTHON -m $MODULE 'seasonpass-update-tier' \
-    '0GqpoUJA' \
-    'jzyJ8InN' \
-    --body '{"requiredExp": 94, "rewards": {"UKGY4fWY": ["u9nuhJsX", "fLCOFnj9", "7LccGQtF"], "JzVBLV3v": ["BQ7gDnI8", "VaWCILuX", "mf2WPANJ"], "g8gKOoxc": ["P7j2K2oR", "hkhydqUn", "ZSyfqtwZ"]}}' \
+    'A7vHbO9F' \
+    'PGG1VRfo' \
+    --body '{"requiredExp": 88, "rewards": {"VBrvXP7t": ["ISao4C7k", "2Gl1w6Yv", "0T9YDU2x"], "oVgkUVM7": ["55Hw8AQB", "S4C6Hvmw", "cOaYRFd4"], "WDITMR0W": ["W3IM8OgD", "SgxMUk5S", "gYuWQSSn"]}}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 26 'UpdateTier' test.out
 
 #- 27 DeleteTier
 $PYTHON -m $MODULE 'seasonpass-delete-tier' \
-    'oHxcnzPQ' \
-    'Z7dFLsYS' \
+    'hfkFg9yQ' \
+    'uazvfi4A' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 27 'DeleteTier' test.out
 
 #- 28 ReorderTier
 $PYTHON -m $MODULE 'seasonpass-reorder-tier' \
-    'Pgj5IjbH' \
-    'ijSsF2n2' \
-    --body '{"newIndex": 56}' \
+    'Mvidsd93' \
+    'GTTOfvg4' \
+    --body '{"newIndex": 48}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 28 'ReorderTier' test.out
 
 #- 29 UnpublishSeason
 $PYTHON -m $MODULE 'seasonpass-unpublish-season' \
-    'wNl0mkX7' \
+    '8apln8sk' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 29 'UnpublishSeason' test.out
 
 #- 30 GetUserParticipatedSeasons
 $PYTHON -m $MODULE 'seasonpass-get-user-participated-seasons' \
-    'nt4ziExN' \
+    'CSYw59cB' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 30 'GetUserParticipatedSeasons' test.out
 
 #- 31 GrantUserExp
 $PYTHON -m $MODULE 'seasonpass-grant-user-exp' \
-    'pI8aep1t' \
-    --body '{"exp": 7, "source": "SWEAT", "tags": ["UMuEMRGE", "MRPojuiM", "0vDDFkqN"]}' \
+    'QRy5pFzB' \
+    --body '{"exp": 61, "source": "SWEAT", "tags": ["60ru1f3j", "iYNWOb80", "CT6xeKzR"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 31 'GrantUserExp' test.out
 
 #- 32 GrantUserPass
 $PYTHON -m $MODULE 'seasonpass-grant-user-pass' \
-    'uSjk1wDY' \
-    --body '{"passCode": "tyVc0EQW", "passItemId": "434WidKm"}' \
+    'yqSTNgKd' \
+    --body '{"passCode": "5eeDzQkF", "passItemId": "0FKW39j7"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 32 'GrantUserPass' test.out
 
 #- 33 ExistsAnyPassByPassCodes
 $PYTHON -m $MODULE 'seasonpass-exists-any-pass-by-pass-codes' \
-    'iLsfXXMI' \
+    'bM9w6dS8' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 33 'ExistsAnyPassByPassCodes' test.out
 
 #- 34 GetCurrentUserSeasonProgression
 $PYTHON -m $MODULE 'seasonpass-get-current-user-season-progression' \
-    'mf4W7vo1' \
+    'YCKYhl7e' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 34 'GetCurrentUserSeasonProgression' test.out
 
 #- 35 CheckSeasonPurchasable
 $PYTHON -m $MODULE 'seasonpass-check-season-purchasable' \
-    'pD4kUFIQ' \
-    --body '{"passItemId": "TDDe1KY8", "tierItemCount": 50, "tierItemId": "OAoAWSYV"}' \
+    '63pbh0eo' \
+    --body '{"passItemId": "KrI0hen3", "tierItemCount": 41, "tierItemId": "JIMSdVWL"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 35 'CheckSeasonPurchasable' test.out
 
 #- 36 ResetUserSeason
 $PYTHON -m $MODULE 'seasonpass-reset-user-season' \
-    'bFXiQsHt' \
+    'QBOEr3yY' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 36 'ResetUserSeason' test.out
 
 #- 37 GrantUserTier
 $PYTHON -m $MODULE 'seasonpass-grant-user-tier' \
-    'l7wx16sC' \
-    --body '{"count": 15, "source": "SWEAT", "tags": ["vQY5SRpA", "0K9Yubjy", "N995XilM"]}' \
+    'MWy5kUvi' \
+    --body '{"count": 24, "source": "PAID_FOR", "tags": ["3WywJkgq", "XyPpg725", "UMK3Cbg8"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 37 'GrantUserTier' test.out
 
 #- 38 QueryUserExpGrantHistory
 $PYTHON -m $MODULE 'seasonpass-query-user-exp-grant-history' \
-    'yRYnrmgG' \
+    'PeHG6MVP' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 38 'QueryUserExpGrantHistory' test.out
 
 #- 39 QueryUserExpGrantHistoryTag
 $PYTHON -m $MODULE 'seasonpass-query-user-exp-grant-history-tag' \
-    'DFSMq5Tu' \
+    'a8fqDROA' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 39 'QueryUserExpGrantHistoryTag' test.out
 
 #- 40 GetUserSeason
 $PYTHON -m $MODULE 'seasonpass-get-user-season' \
-    'G6ZN3gdT' \
-    'L8KGCVYA' \
+    'sOKXnz4i' \
+    'vMf6ZPNz' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 40 'GetUserSeason' test.out
@@ -402,30 +402,30 @@ eval_tap $? 41 'PublicGetCurrentSeason' test.out
 
 #- 42 PublicGetCurrentUserSeason
 $PYTHON -m $MODULE 'seasonpass-public-get-current-user-season' \
-    'Yv0lte0G' \
+    's8YSneJ8' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 42 'PublicGetCurrentUserSeason' test.out
 
 #- 43 PublicClaimUserReward
 $PYTHON -m $MODULE 'seasonpass-public-claim-user-reward' \
-    'sB1lvwN7' \
-    --body '{"passCode": "QEk8ln6Z", "rewardCode": "C2RliAy9", "tierIndex": 82}' \
+    'dmvIOBqw' \
+    --body '{"passCode": "uckN1sC8", "rewardCode": "93OjpFOq", "tierIndex": 44}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 43 'PublicClaimUserReward' test.out
 
 #- 44 PublicBulkClaimUserRewards
 $PYTHON -m $MODULE 'seasonpass-public-bulk-claim-user-rewards' \
-    '2AkwxPTG' \
+    'Zi4GlsfY' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 44 'PublicBulkClaimUserRewards' test.out
 
 #- 45 PublicGetUserSeason
 $PYTHON -m $MODULE 'seasonpass-public-get-user-season' \
-    'dFCjOGAW' \
-    '5ES5p15L' \
+    'Q6XWIlqf' \
+    'DZgpK3ip' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 45 'PublicGetUserSeason' test.out

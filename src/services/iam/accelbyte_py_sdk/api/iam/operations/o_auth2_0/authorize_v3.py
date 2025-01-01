@@ -25,10 +25,12 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 from accelbyte_py_sdk.core import StrEnum
+from accelbyte_py_sdk.core import deprecated
 
 
 class CodeChallengeMethodEnum(StrEnum):
@@ -87,11 +89,17 @@ class AuthorizeV3(Operation):
         location query: request_id
 
 
+        blocked_platform_id: (blockedPlatformId) OPTIONAL str in query
+
         code_challenge: (code_challenge) OPTIONAL str in query
 
         code_challenge_method: (code_challenge_method) OPTIONAL Union[str, CodeChallengeMethodEnum] in query
 
         create_headless: (createHeadless) OPTIONAL bool in query
+
+        login_web_based: (loginWebBased) OPTIONAL bool in query
+
+        nonce: (nonce) OPTIONAL str in query
 
         one_time_link_code: (oneTimeLinkCode) OPTIONAL str in query
 
@@ -126,9 +134,12 @@ class AuthorizeV3(Operation):
 
     service_name: Optional[str] = "iam"
 
+    blocked_platform_id: str  # OPTIONAL in [query]
     code_challenge: str  # OPTIONAL in [query]
     code_challenge_method: Union[str, CodeChallengeMethodEnum]  # OPTIONAL in [query]
     create_headless: bool  # OPTIONAL in [query]
+    login_web_based: bool  # OPTIONAL in [query]
+    nonce: str  # OPTIONAL in [query]
     one_time_link_code: str  # OPTIONAL in [query]
     redirect_uri: str  # OPTIONAL in [query]
     scope: str  # OPTIONAL in [query]
@@ -189,12 +200,18 @@ class AuthorizeV3(Operation):
 
     def get_query_params(self) -> dict:
         result = {}
+        if hasattr(self, "blocked_platform_id"):
+            result["blockedPlatformId"] = self.blocked_platform_id
         if hasattr(self, "code_challenge"):
             result["code_challenge"] = self.code_challenge
         if hasattr(self, "code_challenge_method"):
             result["code_challenge_method"] = self.code_challenge_method
         if hasattr(self, "create_headless"):
             result["createHeadless"] = self.create_headless
+        if hasattr(self, "login_web_based"):
+            result["loginWebBased"] = self.login_web_based
+        if hasattr(self, "nonce"):
+            result["nonce"] = self.nonce
         if hasattr(self, "one_time_link_code"):
             result["oneTimeLinkCode"] = self.one_time_link_code
         if hasattr(self, "redirect_uri"):
@@ -231,6 +248,10 @@ class AuthorizeV3(Operation):
 
     # region with_x methods
 
+    def with_blocked_platform_id(self, value: str) -> AuthorizeV3:
+        self.blocked_platform_id = value
+        return self
+
     def with_code_challenge(self, value: str) -> AuthorizeV3:
         self.code_challenge = value
         return self
@@ -243,6 +264,14 @@ class AuthorizeV3(Operation):
 
     def with_create_headless(self, value: bool) -> AuthorizeV3:
         self.create_headless = value
+        return self
+
+    def with_login_web_based(self, value: bool) -> AuthorizeV3:
+        self.login_web_based = value
+        return self
+
+    def with_nonce(self, value: str) -> AuthorizeV3:
+        self.nonce = value
         return self
 
     def with_one_time_link_code(self, value: str) -> AuthorizeV3:
@@ -285,6 +314,10 @@ class AuthorizeV3(Operation):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
+        if hasattr(self, "blocked_platform_id") and self.blocked_platform_id:
+            result["blockedPlatformId"] = str(self.blocked_platform_id)
+        elif include_empty:
+            result["blockedPlatformId"] = ""
         if hasattr(self, "code_challenge") and self.code_challenge:
             result["code_challenge"] = str(self.code_challenge)
         elif include_empty:
@@ -297,6 +330,14 @@ class AuthorizeV3(Operation):
             result["createHeadless"] = bool(self.create_headless)
         elif include_empty:
             result["createHeadless"] = False
+        if hasattr(self, "login_web_based") and self.login_web_based:
+            result["loginWebBased"] = bool(self.login_web_based)
+        elif include_empty:
+            result["loginWebBased"] = False
+        if hasattr(self, "nonce") and self.nonce:
+            result["nonce"] = str(self.nonce)
+        elif include_empty:
+            result["nonce"] = ""
         if hasattr(self, "one_time_link_code") and self.one_time_link_code:
             result["oneTimeLinkCode"] = str(self.one_time_link_code)
         elif include_empty:
@@ -340,8 +381,64 @@ class AuthorizeV3(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_302: Optional[HttpResponse] = None
+
+        def ok(self) -> AuthorizeV3.Response:
+            return self
+
+        def __iter__(self):
+            if self.data_302 is not None:
+                yield self.data_302
+                yield None
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        302: Found - (Found. Redirected to login page with either request_id or error.)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = AuthorizeV3.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 302:
+                result.data_302 = HttpResponse.create_redirect(code, content)
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[Union[None, HttpResponse], Union[None, HttpResponse]]:
         """Parse the given response.
@@ -377,9 +474,12 @@ class AuthorizeV3(Operation):
         cls,
         client_id: str,
         response_type: Union[str, ResponseTypeEnum],
+        blocked_platform_id: Optional[str] = None,
         code_challenge: Optional[str] = None,
         code_challenge_method: Optional[Union[str, CodeChallengeMethodEnum]] = None,
         create_headless: Optional[bool] = None,
+        login_web_based: Optional[bool] = None,
+        nonce: Optional[str] = None,
         one_time_link_code: Optional[str] = None,
         redirect_uri: Optional[str] = None,
         scope: Optional[str] = None,
@@ -391,12 +491,18 @@ class AuthorizeV3(Operation):
         instance = cls()
         instance.client_id = client_id
         instance.response_type = response_type
+        if blocked_platform_id is not None:
+            instance.blocked_platform_id = blocked_platform_id
         if code_challenge is not None:
             instance.code_challenge = code_challenge
         if code_challenge_method is not None:
             instance.code_challenge_method = code_challenge_method
         if create_headless is not None:
             instance.create_headless = create_headless
+        if login_web_based is not None:
+            instance.login_web_based = login_web_based
+        if nonce is not None:
+            instance.nonce = nonce
         if one_time_link_code is not None:
             instance.one_time_link_code = one_time_link_code
         if redirect_uri is not None:
@@ -418,6 +524,10 @@ class AuthorizeV3(Operation):
     @classmethod
     def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> AuthorizeV3:
         instance = cls()
+        if "blockedPlatformId" in dict_ and dict_["blockedPlatformId"] is not None:
+            instance.blocked_platform_id = str(dict_["blockedPlatformId"])
+        elif include_empty:
+            instance.blocked_platform_id = ""
         if "code_challenge" in dict_ and dict_["code_challenge"] is not None:
             instance.code_challenge = str(dict_["code_challenge"])
         elif include_empty:
@@ -433,6 +543,14 @@ class AuthorizeV3(Operation):
             instance.create_headless = bool(dict_["createHeadless"])
         elif include_empty:
             instance.create_headless = False
+        if "loginWebBased" in dict_ and dict_["loginWebBased"] is not None:
+            instance.login_web_based = bool(dict_["loginWebBased"])
+        elif include_empty:
+            instance.login_web_based = False
+        if "nonce" in dict_ and dict_["nonce"] is not None:
+            instance.nonce = str(dict_["nonce"])
+        elif include_empty:
+            instance.nonce = ""
         if "oneTimeLinkCode" in dict_ and dict_["oneTimeLinkCode"] is not None:
             instance.one_time_link_code = str(dict_["oneTimeLinkCode"])
         elif include_empty:
@@ -475,9 +593,12 @@ class AuthorizeV3(Operation):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
+            "blockedPlatformId": "blocked_platform_id",
             "code_challenge": "code_challenge",
             "code_challenge_method": "code_challenge_method",
             "createHeadless": "create_headless",
+            "loginWebBased": "login_web_based",
+            "nonce": "nonce",
             "oneTimeLinkCode": "one_time_link_code",
             "redirect_uri": "redirect_uri",
             "scope": "scope",
@@ -491,9 +612,12 @@ class AuthorizeV3(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
+            "blockedPlatformId": False,
             "code_challenge": False,
             "code_challenge_method": False,
             "createHeadless": False,
+            "loginWebBased": False,
+            "nonce": False,
             "oneTimeLinkCode": False,
             "redirect_uri": False,
             "scope": False,

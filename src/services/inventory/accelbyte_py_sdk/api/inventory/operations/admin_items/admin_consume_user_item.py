@@ -25,9 +25,11 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ApimodelsConsumeItemReq
 from ...models import ApimodelsErrorResponse
@@ -62,6 +64,8 @@ class AdminConsumeUserItem(Operation):
 
         user_id: (userId) REQUIRED str in path
 
+        date_range_validation: (dateRangeValidation) OPTIONAL str in query
+
     Responses:
         200: OK - ApimodelsItemResp (OK)
 
@@ -89,6 +93,7 @@ class AdminConsumeUserItem(Operation):
     inventory_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
     user_id: str  # REQUIRED in [path]
+    date_range_validation: str  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -138,6 +143,7 @@ class AdminConsumeUserItem(Operation):
         return {
             "body": self.get_body_params(),
             "path": self.get_path_params(),
+            "query": self.get_query_params(),
         }
 
     def get_body_params(self) -> Any:
@@ -153,6 +159,12 @@ class AdminConsumeUserItem(Operation):
             result["namespace"] = self.namespace
         if hasattr(self, "user_id"):
             result["userId"] = self.user_id
+        return result
+
+    def get_query_params(self) -> dict:
+        result = {}
+        if hasattr(self, "date_range_validation"):
+            result["dateRangeValidation"] = self.date_range_validation
         return result
 
     # endregion get_x_params methods
@@ -179,6 +191,10 @@ class AdminConsumeUserItem(Operation):
         self.user_id = value
         return self
 
+    def with_date_range_validation(self, value: str) -> AdminConsumeUserItem:
+        self.date_range_validation = value
+        return self
+
     # endregion with_x methods
 
     # region to methods
@@ -201,14 +217,116 @@ class AdminConsumeUserItem(Operation):
             result["userId"] = str(self.user_id)
         elif include_empty:
             result["userId"] = ""
+        if hasattr(self, "date_range_validation") and self.date_range_validation:
+            result["dateRangeValidation"] = str(self.date_range_validation)
+        elif include_empty:
+            result["dateRangeValidation"] = ""
         return result
 
     # endregion to methods
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_200: Optional[ApimodelsItemResp] = None
+        error_400: Optional[ApimodelsErrorResponse] = None
+        error_404: Optional[ApimodelsErrorResponse] = None
+        error_500: Optional[ApimodelsErrorResponse] = None
+
+        def ok(self) -> AdminConsumeUserItem.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_404 is not None:
+                err = self.error_404.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_500 is not None:
+                err = self.error_500.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_200 is not None:
+                yield self.data_200
+                yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
+            elif self.error_404 is not None:
+                yield None
+                yield self.error_404
+            elif self.error_500 is not None:
+                yield None
+                yield self.error_500
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        200: OK - ApimodelsItemResp (OK)
+
+        400: Bad Request - ApimodelsErrorResponse (Bad Request)
+
+        404: Not Found - ApimodelsErrorResponse (Not Found)
+
+        500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = AdminConsumeUserItem.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 200:
+                result.data_200 = ApimodelsItemResp.create_from_dict(content)
+            elif code == 400:
+                result.error_400 = ApimodelsErrorResponse.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
+            elif code == 404:
+                result.error_404 = ApimodelsErrorResponse.create_from_dict(content)
+                result.error = result.error_404.translate_to_api_error()
+            elif code == 500:
+                result.error_500 = ApimodelsErrorResponse.create_from_dict(content)
+                result.error = result.error_500.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, ApimodelsItemResp],
@@ -261,6 +379,7 @@ class AdminConsumeUserItem(Operation):
         inventory_id: str,
         namespace: str,
         user_id: str,
+        date_range_validation: Optional[str] = None,
         **kwargs,
     ) -> AdminConsumeUserItem:
         instance = cls()
@@ -268,6 +387,8 @@ class AdminConsumeUserItem(Operation):
         instance.inventory_id = inventory_id
         instance.namespace = namespace
         instance.user_id = user_id
+        if date_range_validation is not None:
+            instance.date_range_validation = date_range_validation
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -295,6 +416,10 @@ class AdminConsumeUserItem(Operation):
             instance.user_id = str(dict_["userId"])
         elif include_empty:
             instance.user_id = ""
+        if "dateRangeValidation" in dict_ and dict_["dateRangeValidation"] is not None:
+            instance.date_range_validation = str(dict_["dateRangeValidation"])
+        elif include_empty:
+            instance.date_range_validation = ""
         return instance
 
     @staticmethod
@@ -304,6 +429,7 @@ class AdminConsumeUserItem(Operation):
             "inventoryId": "inventory_id",
             "namespace": "namespace",
             "userId": "user_id",
+            "dateRangeValidation": "date_range_validation",
         }
 
     @staticmethod
@@ -313,6 +439,7 @@ class AdminConsumeUserItem(Operation):
             "inventoryId": True,
             "namespace": True,
             "userId": True,
+            "dateRangeValidation": False,
         }
 
     # endregion static methods

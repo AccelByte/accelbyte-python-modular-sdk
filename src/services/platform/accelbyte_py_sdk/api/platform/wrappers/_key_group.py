@@ -67,8 +67,7 @@ def create_key_group(
 
     Create key group.
     Other detail info:
-
-      * Returns : created key group
+                  * Returns : created key group
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups
@@ -116,8 +115,7 @@ async def create_key_group_async(
 
     Create key group.
     Other detail info:
-
-      * Returns : created key group
+                  * Returns : created key group
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups
@@ -167,8 +165,7 @@ def get_key_group(
 
     Get key group.
     Other detail info:
-
-      * Returns : key group info
+                  * Returns : key group info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}
@@ -214,8 +211,7 @@ async def get_key_group_async(
 
     Get key group.
     Other detail info:
-
-      * Returns : key group info
+                  * Returns : key group info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}
@@ -264,8 +260,7 @@ def get_key_group_by_booth_name(
 
     Get key group.
     Other detail info:
-
-      * Returns : key group info
+                  * Returns : key group info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/byBoothName
@@ -312,8 +307,7 @@ async def get_key_group_by_booth_name_async(
 
     Get key group.
     Other detail info:
-
-      * Returns : key group info
+                  * Returns : key group info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/byBoothName
@@ -361,8 +355,7 @@ def get_key_group_dynamic(
 
     Get key group dynamic.
     Other detail info:
-
-      * Returns : key group info
+                  * Returns : key group info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}/dynamic
@@ -408,8 +401,7 @@ async def get_key_group_dynamic_async(
 
     Get key group dynamic.
     Other detail info:
-
-      * Returns : key group info
+                  * Returns : key group info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}/dynamic
@@ -460,8 +452,7 @@ def list_keys(
 
     This API is used to list keys of a key group.
     Other detail info:
-
-      * Returns : keys
+                  * Returns : keys
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}/keys
@@ -517,8 +508,7 @@ async def list_keys_async(
 
     This API is used to list keys of a key group.
     Other detail info:
-
-      * Returns : keys
+                  * Returns : keys
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}/keys
@@ -576,8 +566,7 @@ def query_key_groups(
 
     Query key groups, if name is presented, it's fuzzy match.
     Other detail info:
-
-      * Returns : slice of key group
+                  * Returns : slice of key group
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups
@@ -633,8 +622,7 @@ async def query_key_groups_async(
 
     Query key groups, if name is presented, it's fuzzy match.
     Other detail info:
-
-      * Returns : slice of key group
+                  * Returns : slice of key group
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups
@@ -690,8 +678,7 @@ def update_key_group(
 
     Update key group.
     Other detail info:
-
-      * Returns : updated key group
+                  * Returns : updated key group
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}
@@ -745,8 +732,7 @@ async def update_key_group_async(
 
     Update key group.
     Other detail info:
-
-      * Returns : updated key group
+                  * Returns : updated key group
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}
@@ -803,8 +789,7 @@ def upload_keys(
     This API is used to upload keys with csv format to a key group.
 
     Other detail info:
-
-      * Returns : item data
+                  * Returns : item data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}/keys
@@ -857,8 +842,7 @@ async def upload_keys_async(
     This API is used to upload keys with csv format to a key group.
 
     Other detail info:
-
-      * Returns : item data
+                  * Returns : item data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}/keys

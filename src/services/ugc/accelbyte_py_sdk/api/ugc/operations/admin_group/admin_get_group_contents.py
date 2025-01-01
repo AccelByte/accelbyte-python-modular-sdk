@@ -25,9 +25,11 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ModelsPaginatedContentDownloadResponse
 from ...models import ResponseError
@@ -224,8 +226,122 @@ class AdminGetGroupContents(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_200: Optional[ModelsPaginatedContentDownloadResponse] = None
+        error_400: Optional[ResponseError] = None
+        error_401: Optional[ResponseError] = None
+        error_404: Optional[ResponseError] = None
+        error_500: Optional[ResponseError] = None
+
+        def ok(self) -> AdminGetGroupContents.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_401 is not None:
+                err = self.error_401.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_404 is not None:
+                err = self.error_404.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_500 is not None:
+                err = self.error_500.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_200 is not None:
+                yield self.data_200
+                yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
+            elif self.error_401 is not None:
+                yield None
+                yield self.error_401
+            elif self.error_404 is not None:
+                yield None
+                yield self.error_404
+            elif self.error_500 is not None:
+                yield None
+                yield self.error_500
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        200: OK - ModelsPaginatedContentDownloadResponse (Get content belong to a group)
+
+        400: Bad Request - ResponseError (773101: invalid paging parameter)
+
+        401: Unauthorized - ResponseError (20001: unauthorized access)
+
+        404: Not Found - ResponseError (773103: No group content was found)
+
+        500: Internal Server Error - ResponseError (773102: Unable to get ugc content: database error | 770901: Unable to get ugc content: database error/Unable to get creator | 770903: Failed generate download URL)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = AdminGetGroupContents.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 200:
+                result.data_200 = (
+                    ModelsPaginatedContentDownloadResponse.create_from_dict(content)
+                )
+            elif code == 400:
+                result.error_400 = ResponseError.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
+            elif code == 401:
+                result.error_401 = ResponseError.create_from_dict(content)
+                result.error = result.error_401.translate_to_api_error()
+            elif code == 404:
+                result.error_404 = ResponseError.create_from_dict(content)
+                result.error = result.error_404.translate_to_api_error()
+            elif code == 500:
+                result.error_500 = ResponseError.create_from_dict(content)
+                result.error = result.error_500.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, ModelsPaginatedContentDownloadResponse],

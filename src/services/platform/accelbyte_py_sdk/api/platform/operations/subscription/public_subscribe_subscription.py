@@ -25,9 +25,11 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ErrorEntity
 from ...models import SubscribeRequest
@@ -204,8 +206,134 @@ class PublicSubscribeSubscription(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_201: Optional[str] = None
+        error_400: Optional[ErrorEntity] = None
+        error_403: Optional[ErrorEntity] = None
+        error_404: Optional[ErrorEntity] = None
+        error_409: Optional[ErrorEntity] = None
+        error_422: Optional[ValidationErrorEntity] = None
+
+        def ok(self) -> PublicSubscribeSubscription.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_403 is not None:
+                err = self.error_403.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_404 is not None:
+                err = self.error_404.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_409 is not None:
+                err = self.error_409.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_422 is not None:
+                err = self.error_422.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_201 is not None:
+                yield self.data_201
+                yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
+            elif self.error_403 is not None:
+                yield None
+                yield self.error_403
+            elif self.error_404 is not None:
+                yield None
+                yield self.error_404
+            elif self.error_409 is not None:
+                yield None
+                yield self.error_409
+            elif self.error_422 is not None:
+                yield None
+                yield self.error_422
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        201: Created - (subscribe request processed)
+
+        400: Bad Request - ErrorEntity (40121: Item type [{itemType}] does not support | 40122: Subscription already been subscribed by user | 40123: Currency [{currencyCode}] does not support | 35123: Wallet [{walletId}] is inactive | 35124: Wallet [{currencyCode}] has insufficient balance)
+
+        403: Forbidden - ErrorEntity (20016: action is banned)
+
+        404: Not Found - ErrorEntity (30341: Item [{itemId}] does not exist in namespace [{namespace}] | 36141: Currency [{currencyCode}] does not exist in namespace [{namespace}])
+
+        409: Conflict - ErrorEntity (20006: optimistic lock | 40172: Subscription [{subscriptionId}] is charging, waiting for payment notification | 40173: Subscription [{subscriptionId}] current currency [{currentCurrency}] not match request currency [{requestCurrency}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = PublicSubscribeSubscription.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 201:
+                result.data_201 = content
+            elif code == 400:
+                result.error_400 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
+            elif code == 403:
+                result.error_403 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_403.translate_to_api_error()
+            elif code == 404:
+                result.error_404 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_404.translate_to_api_error()
+            elif code == 409:
+                result.error_409 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_409.translate_to_api_error()
+            elif code == 422:
+                result.error_422 = ValidationErrorEntity.create_from_dict(content)
+                result.error = result.error_422.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, Optional[str]],
@@ -239,7 +367,7 @@ class PublicSubscribeSubscription(Operation):
         code, content_type, content = pre_processed_response
 
         if code == 201:
-            return HttpResponse.create(code, "Created"), None
+            return content, None
         if code == 400:
             return None, ErrorEntity.create_from_dict(content)
         if code == 403:

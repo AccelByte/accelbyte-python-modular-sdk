@@ -26,6 +26,7 @@ from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
+from accelbyte_py_sdk.core import ApiError
 
 from ..models.apimodels_error_response import ApimodelsErrorResponse
 
@@ -97,6 +98,12 @@ class ApimodelsChainingOperationResp(Model):
         elif include_empty:
             result["requestId"] = ""
         return result
+
+    def translate_to_api_error(self) -> ApiError:
+        return ApiError(
+            code=str(self.error_details) if self.error_details else "",
+            message=str(self.message) if self.message else "",
+        )
 
     # endregion to methods
 

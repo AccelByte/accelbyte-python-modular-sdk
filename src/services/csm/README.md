@@ -6,7 +6,7 @@ This is a service module for the [AccelByte Modular Python SDK](https://github.c
 
 ```text
 Custom Service Manager
-* Version: 1.19.1
+* Version: 1.20.0
 ```
 
 ## Setup

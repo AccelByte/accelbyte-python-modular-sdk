@@ -115,28 +115,24 @@ def create_payment_provider_config(
     [Not supported yet in AGS Shared Cloud] Create payment provider config.
 
 
+                                                     Request Body Parameters:
 
-         Request Body Parameters:
-
-
-         Parameter | Type   | Required | Description
-        -----------|--------|----------|-----------------------------------------------------------
-        namespace  | String | Yes      | namespace, * indicates all namespace
-        region     | String | Yes      | region, * indicates all regions
-        aggregate  | String | No       | aggregate payment provider, such as XSOLLA, ADYEN, STRIPE
-        specials   | List   | No       | special payment provider, such as ALIPAY, WXPAY
+                             Parameter | Type   | Required | Description
+                            -----------|--------|----------|-----------------------------------------------------------
+                            namespace  | String | Yes      | namespace, * indicates all namespace
+                            region     | String | Yes      | region, * indicates all regions
+                            aggregate  | String | No       | aggregate payment provider, such as XSOLLA, ADYEN, STRIPE
+                            specials   | List   | No       | special payment provider, such as ALIPAY, WXPAY
 
 
 
     payment provider applied has priority:
-
-      1. namespace and region match
-      2. namespace matches and region is *
-      3. region matches and namespace is *
-      4. namespace and region are *
-
+                  1. namespace and region match
+                  2. namespace matches and region is *
+                  3. region matches and namespace is *
+                  4. namespace and region are *
     Other detail info:
-      * Returns : payment provider config
+                  * Returns : payment provider config
 
     Properties:
         url: /platform/admin/payment/config/provider
@@ -179,28 +175,24 @@ async def create_payment_provider_config_async(
     [Not supported yet in AGS Shared Cloud] Create payment provider config.
 
 
+                                                     Request Body Parameters:
 
-         Request Body Parameters:
-
-
-         Parameter | Type   | Required | Description
-        -----------|--------|----------|-----------------------------------------------------------
-        namespace  | String | Yes      | namespace, * indicates all namespace
-        region     | String | Yes      | region, * indicates all regions
-        aggregate  | String | No       | aggregate payment provider, such as XSOLLA, ADYEN, STRIPE
-        specials   | List   | No       | special payment provider, such as ALIPAY, WXPAY
+                             Parameter | Type   | Required | Description
+                            -----------|--------|----------|-----------------------------------------------------------
+                            namespace  | String | Yes      | namespace, * indicates all namespace
+                            region     | String | Yes      | region, * indicates all regions
+                            aggregate  | String | No       | aggregate payment provider, such as XSOLLA, ADYEN, STRIPE
+                            specials   | List   | No       | special payment provider, such as ALIPAY, WXPAY
 
 
 
     payment provider applied has priority:
-
-      1. namespace and region match
-      2. namespace matches and region is *
-      3. region matches and namespace is *
-      4. namespace and region are *
-
+                  1. namespace and region match
+                  2. namespace matches and region is *
+                  3. region matches and namespace is *
+                  4. namespace and region are *
     Other detail info:
-      * Returns : payment provider config
+                  * Returns : payment provider config
 
     Properties:
         url: /platform/admin/payment/config/provider
@@ -245,8 +237,7 @@ def debug_matched_payment_merchant_config(
 
     [Not supported yet in AGS Shared Cloud] Debug matched payment merchant config.
     Other detail info:
-
-      * Returns : payment merchant config info
+                  * Returns : payment merchant config info
 
     Properties:
         url: /platform/admin/payment/config/merchant/matched
@@ -288,8 +279,7 @@ async def debug_matched_payment_merchant_config_async(
 
     [Not supported yet in AGS Shared Cloud] Debug matched payment merchant config.
     Other detail info:
-
-      * Returns : payment merchant config info
+                  * Returns : payment merchant config info
 
     Properties:
         url: /platform/admin/payment/config/merchant/matched
@@ -333,8 +323,7 @@ def debug_matched_payment_provider_config(
 
     [Not supported yet in AGS Shared Cloud] Debug matched payment provider config.
     Other detail info:
-
-      * Returns : payment provider config
+                  * Returns : payment provider config
 
     Properties:
         url: /platform/admin/payment/config/provider/matched
@@ -376,8 +365,7 @@ async def debug_matched_payment_provider_config_async(
 
     [Not supported yet in AGS Shared Cloud] Debug matched payment provider config.
     Other detail info:
-
-      * Returns : payment provider config
+                  * Returns : payment provider config
 
     Properties:
         url: /platform/admin/payment/config/provider/matched
@@ -418,8 +406,7 @@ def delete_payment_provider_config(
 
     [Not supported yet in AGS Shared Cloud] Delete payment provider config.
     Other detail info:
-
-      * Returns : payment provider config
+                  * Returns : payment provider config
 
     Properties:
         url: /platform/admin/payment/config/provider/{id}
@@ -455,8 +442,7 @@ async def delete_payment_provider_config_async(
 
     [Not supported yet in AGS Shared Cloud] Delete payment provider config.
     Other detail info:
-
-      * Returns : payment provider config
+                  * Returns : payment provider config
 
     Properties:
         url: /platform/admin/payment/config/provider/{id}
@@ -494,8 +480,7 @@ def get_aggregate_payment_providers(
 
     [Not supported yet in AGS Shared Cloud] Get aggregate payment providers, such as XSOLLA, ADYEN.
     Other detail info:
-
-      * Returns : payment provider list
+                  * Returns : payment provider list
 
     Properties:
         url: /platform/admin/payment/config/provider/aggregate
@@ -525,8 +510,7 @@ async def get_aggregate_payment_providers_async(
 
     [Not supported yet in AGS Shared Cloud] Get aggregate payment providers, such as XSOLLA, ADYEN.
     Other detail info:
-
-      * Returns : payment provider list
+                  * Returns : payment provider list
 
     Properties:
         url: /platform/admin/payment/config/provider/aggregate
@@ -560,8 +544,7 @@ def get_payment_merchant_config(
 
     [Not supported yet in AGS Shared Cloud] Get payment domain whitelist config by namespace.
     Other detail info:
-
-      * Returns : payment domain whitelist config info
+                  * Returns : payment domain whitelist config info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/config/domains
@@ -601,8 +584,7 @@ async def get_payment_merchant_config_async(
 
     [Not supported yet in AGS Shared Cloud] Get payment domain whitelist config by namespace.
     Other detail info:
-
-      * Returns : payment domain whitelist config info
+                  * Returns : payment domain whitelist config info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/config/domains
@@ -642,8 +624,7 @@ def get_payment_merchant_config_1(
 
     [Not supported yet in AGS Shared Cloud] Get payment merchant config by id.
     Other detail info:
-
-      * Returns : payment merchant config info
+                  * Returns : payment merchant config info
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}
@@ -679,8 +660,7 @@ async def get_payment_merchant_config_1_async(
 
     [Not supported yet in AGS Shared Cloud] Get payment merchant config by id.
     Other detail info:
-
-      * Returns : payment merchant config info
+                  * Returns : payment merchant config info
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}
@@ -718,8 +698,7 @@ def get_payment_tax_config(
 
     [Not supported yet in AGS Shared Cloud] Get payment global tax config.
     Other detail info:
-
-      * Returns : payment provider list
+                  * Returns : payment provider list
 
     Properties:
         url: /platform/admin/payment/config/tax
@@ -749,8 +728,7 @@ async def get_payment_tax_config_async(
 
     [Not supported yet in AGS Shared Cloud] Get payment global tax config.
     Other detail info:
-
-      * Returns : payment provider list
+                  * Returns : payment provider list
 
     Properties:
         url: /platform/admin/payment/config/tax
@@ -782,8 +760,7 @@ def get_special_payment_providers(
 
     [Not supported yet in AGS Shared Cloud] Get special payment providers, such as ALIPAY, WXPAY.
     Other detail info:
-
-      * Returns : payment provider list
+                  * Returns : payment provider list
 
     Properties:
         url: /platform/admin/payment/config/provider/special
@@ -813,8 +790,7 @@ async def get_special_payment_providers_async(
 
     [Not supported yet in AGS Shared Cloud] Get special payment providers, such as ALIPAY, WXPAY.
     Other detail info:
-
-      * Returns : payment provider list
+                  * Returns : payment provider list
 
     Properties:
         url: /platform/admin/payment/config/provider/special
@@ -851,8 +827,7 @@ def query_payment_provider_config(
 
     [Not supported yet in AGS Shared Cloud] Query payment provider config.
     Other detail info:
-
-      * Returns : payment provider config list
+                  * Returns : payment provider config list
 
     Properties:
         url: /platform/admin/payment/config/provider
@@ -900,8 +875,7 @@ async def query_payment_provider_config_async(
 
     [Not supported yet in AGS Shared Cloud] Query payment provider config.
     Other detail info:
-
-      * Returns : payment provider config list
+                  * Returns : payment provider config list
 
     Properties:
         url: /platform/admin/payment/config/provider
@@ -951,23 +925,20 @@ def test_adyen_config(
 
     #### Check List:
 
-      * apiKey
-      * merchantAccount
-
-
+                  * apiKey
+                  * merchantAccount
 
     #### Non-check list:
 
-      * notificationHmacKey
-      * notificationUsername
-      * notificationPassword
-      * liveEndpointUrlPrefix
-      * allowedPaymentMethods
-      * blockedPaymentMethods
-      * settings
-
+                  * notificationHmacKey
+                  * notificationUsername
+                  * notificationPassword
+                  * liveEndpointUrlPrefix
+                  * allowedPaymentMethods
+                  * blockedPaymentMethods
+                  * settings
     Other detail info:
-      * Returns : test adyen config
+                  * Returns : test adyen config
 
     Properties:
         url: /platform/admin/payment/config/merchant/adyenconfig/test
@@ -1009,23 +980,20 @@ async def test_adyen_config_async(
 
     #### Check List:
 
-      * apiKey
-      * merchantAccount
-
-
+                  * apiKey
+                  * merchantAccount
 
     #### Non-check list:
 
-      * notificationHmacKey
-      * notificationUsername
-      * notificationPassword
-      * liveEndpointUrlPrefix
-      * allowedPaymentMethods
-      * blockedPaymentMethods
-      * settings
-
+                  * notificationHmacKey
+                  * notificationUsername
+                  * notificationPassword
+                  * liveEndpointUrlPrefix
+                  * allowedPaymentMethods
+                  * blockedPaymentMethods
+                  * settings
     Other detail info:
-      * Returns : test adyen config
+                  * Returns : test adyen config
 
     Properties:
         url: /platform/admin/payment/config/merchant/adyenconfig/test
@@ -1066,8 +1034,7 @@ def test_adyen_config_by_id(
     """Test adyen configuration by id (testAdyenConfigById)
 
     [Not supported yet in AGS Shared Cloud] Test adyen configuration in payment merchant config. Other detail info:
-
-      * Returns : test adyen config
+                  * Returns : test adyen config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/adyenconfig/test
@@ -1108,8 +1075,7 @@ async def test_adyen_config_by_id_async(
     """Test adyen configuration by id (testAdyenConfigById)
 
     [Not supported yet in AGS Shared Cloud] Test adyen configuration in payment merchant config. Other detail info:
-
-      * Returns : test adyen config
+                  * Returns : test adyen config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/adyenconfig/test
@@ -1153,8 +1119,7 @@ def test_ali_pay_config(
 
     [Not supported yet in AGS Shared Cloud] Test AliPay configuration.Reference: [Alipay Document](https://docs.open.alipay.com/270/alipay.trade.page.pay).
     Other detail info:
-
-      * Returns : test result
+                  * Returns : test result
 
     Properties:
         url: /platform/admin/payment/config/merchant/alipayconfig/test
@@ -1194,8 +1159,7 @@ async def test_ali_pay_config_async(
 
     [Not supported yet in AGS Shared Cloud] Test AliPay configuration.Reference: [Alipay Document](https://docs.open.alipay.com/270/alipay.trade.page.pay).
     Other detail info:
-
-      * Returns : test result
+                  * Returns : test result
 
     Properties:
         url: /platform/admin/payment/config/merchant/alipayconfig/test
@@ -1237,8 +1201,7 @@ def test_ali_pay_config_by_id(
 
     [Not supported yet in AGS Shared Cloud] Test AliPay configuration in payment merchant config. Reference: [Alipay Document](https://docs.open.alipay.com/270/alipay.trade.page.pay).
     Other detail info:
-
-      * Returns : test alipay config
+                  * Returns : test alipay config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/alipayconfig/test
@@ -1280,8 +1243,7 @@ async def test_ali_pay_config_by_id_async(
 
     [Not supported yet in AGS Shared Cloud] Test AliPay configuration in payment merchant config. Reference: [Alipay Document](https://docs.open.alipay.com/270/alipay.trade.page.pay).
     Other detail info:
-
-      * Returns : test alipay config
+                  * Returns : test alipay config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/alipayconfig/test
@@ -1327,11 +1289,10 @@ def test_checkout_config(
 
     #### Check List:
 
-      * publicKey
-      * secretKey
-
+                  * publicKey
+                  * secretKey
     Other detail info:
-      * Returns : test result
+                  * Returns : test result
 
     Properties:
         url: /platform/admin/payment/config/merchant/checkoutconfig/test
@@ -1373,11 +1334,10 @@ async def test_checkout_config_async(
 
     #### Check List:
 
-      * publicKey
-      * secretKey
-
+                  * publicKey
+                  * secretKey
     Other detail info:
-      * Returns : test result
+                  * Returns : test result
 
     Properties:
         url: /platform/admin/payment/config/merchant/checkoutconfig/test
@@ -1418,8 +1378,7 @@ def test_checkout_config_by_id(
     """Test checkout.com configuration by id (testCheckoutConfigById)
 
     [Not supported yet in AGS Shared Cloud] Test checkout.com configuration in payment merchant config. Other detail info:
-
-      * Returns : test result
+                  * Returns : test result
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/checkoutconfig/test
@@ -1460,8 +1419,7 @@ async def test_checkout_config_by_id_async(
     """Test checkout.com configuration by id (testCheckoutConfigById)
 
     [Not supported yet in AGS Shared Cloud] Test checkout.com configuration in payment merchant config. Other detail info:
-
-      * Returns : test result
+                  * Returns : test result
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/checkoutconfig/test
@@ -1507,11 +1465,10 @@ def test_neon_pay_config(
 
     #### Check List:
 
-      * apiKey
-      * webhookSecretKey
-
+                  * apiKey
+                  * webhookSecretKey
     Other detail info:
-      * Returns : test result
+                  * Returns : test result
 
     Properties:
         url: /platform/admin/payment/config/merchant/neonpayconfig/test
@@ -1553,11 +1510,10 @@ async def test_neon_pay_config_async(
 
     #### Check List:
 
-      * apiKey
-      * webhookSecretKey
-
+                  * apiKey
+                  * webhookSecretKey
     Other detail info:
-      * Returns : test result
+                  * Returns : test result
 
     Properties:
         url: /platform/admin/payment/config/merchant/neonpayconfig/test
@@ -1598,8 +1554,7 @@ def test_neon_pay_config_by_id(
     """Test Neon Pay configuration by id (testNeonPayConfigById)
 
     [Not supported yet in AGS Shared Cloud] Test Neon Pay configuration in payment merchant config. Other detail info:
-
-      * Returns : test result
+                  * Returns : test result
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/neonpayconfig/test
@@ -1640,8 +1595,7 @@ async def test_neon_pay_config_by_id_async(
     """Test Neon Pay configuration by id (testNeonPayConfigById)
 
     [Not supported yet in AGS Shared Cloud] Test Neon Pay configuration in payment merchant config. Other detail info:
-
-      * Returns : test result
+                  * Returns : test result
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/neonpayconfig/test
@@ -1687,17 +1641,14 @@ def test_pay_pal_config(
 
     #### Check List:
 
-      * clientID
-      * clientSecret
-
-
+                  * clientID
+                  * clientSecret
 
     #### Non-check list:
 
-      * webHookId
-
+                  * webHookId
     Other detail info:
-      * Returns : test result
+                  * Returns : test result
 
     Properties:
         url: /platform/admin/payment/config/merchant/paypalconfig/test
@@ -1739,17 +1690,14 @@ async def test_pay_pal_config_async(
 
     #### Check List:
 
-      * clientID
-      * clientSecret
-
-
+                  * clientID
+                  * clientSecret
 
     #### Non-check list:
 
-      * webHookId
-
+                  * webHookId
     Other detail info:
-      * Returns : test result
+                  * Returns : test result
 
     Properties:
         url: /platform/admin/payment/config/merchant/paypalconfig/test
@@ -1790,8 +1738,7 @@ def test_pay_pal_config_by_id(
     """Test PayPal configuration by id (testPayPalConfigById)
 
     [Not supported yet in AGS Shared Cloud] Test PayPal configuration in payment merchant config. Other detail info:
-
-      * Returns : test result
+                  * Returns : test result
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/paypalconfig/test
@@ -1832,8 +1779,7 @@ async def test_pay_pal_config_by_id_async(
     """Test PayPal configuration by id (testPayPalConfigById)
 
     [Not supported yet in AGS Shared Cloud] Test PayPal configuration in payment merchant config. Other detail info:
-
-      * Returns : test result
+                  * Returns : test result
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/paypalconfig/test
@@ -1879,18 +1825,15 @@ def test_stripe_config(
 
     #### Check List:
 
-      * secretKey
-      * allowedPaymentMethodTypes
-
-
+                  * secretKey
+                  * allowedPaymentMethodTypes
 
     #### Non-check list:
 
-      * publishableKey
-      * webhookSecret
-
+                  * publishableKey
+                  * webhookSecret
     Other detail info:
-      * Returns : test adyen config
+                  * Returns : test adyen config
 
     Properties:
         url: /platform/admin/payment/config/merchant/stripeconfig/test
@@ -1932,18 +1875,15 @@ async def test_stripe_config_async(
 
     #### Check List:
 
-      * secretKey
-      * allowedPaymentMethodTypes
-
-
+                  * secretKey
+                  * allowedPaymentMethodTypes
 
     #### Non-check list:
 
-      * publishableKey
-      * webhookSecret
-
+                  * publishableKey
+                  * webhookSecret
     Other detail info:
-      * Returns : test adyen config
+                  * Returns : test adyen config
 
     Properties:
         url: /platform/admin/payment/config/merchant/stripeconfig/test
@@ -1984,8 +1924,7 @@ def test_stripe_config_by_id(
     """Test stripe configuration by id (testStripeConfigById)
 
     [Not supported yet in AGS Shared Cloud] Test stripe configuration in payment merchant config. Other detail info:
-
-      * Returns : test adyen config
+                  * Returns : test adyen config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/stripeconfig/test
@@ -2026,8 +1965,7 @@ async def test_stripe_config_by_id_async(
     """Test stripe configuration by id (testStripeConfigById)
 
     [Not supported yet in AGS Shared Cloud] Test stripe configuration in payment merchant config. Other detail info:
-
-      * Returns : test adyen config
+                  * Returns : test adyen config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/stripeconfig/test
@@ -2070,8 +2008,7 @@ def test_wx_pay_config(
 
     [Not supported yet in AGS Shared Cloud] Test WxPay configuration. Reference: [WxPay Document](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1).
     Other detail info:
-
-      * Returns : test WxPay config
+                  * Returns : test WxPay config
 
     Properties:
         url: /platform/admin/payment/config/merchant/wxpayconfig/test
@@ -2107,8 +2044,7 @@ async def test_wx_pay_config_async(
 
     [Not supported yet in AGS Shared Cloud] Test WxPay configuration. Reference: [WxPay Document](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1).
     Other detail info:
-
-      * Returns : test WxPay config
+                  * Returns : test WxPay config
 
     Properties:
         url: /platform/admin/payment/config/merchant/wxpayconfig/test
@@ -2144,8 +2080,7 @@ def test_wx_pay_config_by_id(
 
     [Not supported yet in AGS Shared Cloud] Test WxPay configuration in payment merchant config. Reference: [WxPay Document](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1).
     Other detail info:
-
-      * Returns : test WxPay config
+                  * Returns : test WxPay config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/wxpayconfig/test
@@ -2181,8 +2116,7 @@ async def test_wx_pay_config_by_id_async(
 
     [Not supported yet in AGS Shared Cloud] Test WxPay configuration in payment merchant config. Reference: [WxPay Document](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1).
     Other detail info:
-
-      * Returns : test WxPay config
+                  * Returns : test WxPay config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/wxpayconfig/test
@@ -2222,18 +2156,15 @@ def test_xsolla_config(
 
     #### Check List:
 
-      * merchantId
-      * projectId
-      * apiKey
-
-
+                  * merchantId
+                  * projectId
+                  * apiKey
 
     #### Non-check list:
 
-      * projectSecretKey
-
+                  * projectSecretKey
     Other detail info:
-      * Returns : test result
+                  * Returns : test result
 
     Properties:
         url: /platform/admin/payment/config/merchant/xsollaconfig/test
@@ -2269,18 +2200,15 @@ async def test_xsolla_config_async(
 
     #### Check List:
 
-      * merchantId
-      * projectId
-      * apiKey
-
-
+                  * merchantId
+                  * projectId
+                  * apiKey
 
     #### Non-check list:
 
-      * projectSecretKey
-
+                  * projectSecretKey
     Other detail info:
-      * Returns : test result
+                  * Returns : test result
 
     Properties:
         url: /platform/admin/payment/config/merchant/xsollaconfig/test
@@ -2316,8 +2244,7 @@ def test_xsolla_config_by_id(
 
     [Not supported yet in AGS Shared Cloud] Test xsolla configuration in payment merchant config. Reference: [Xsolla Document](https://developers.xsolla.com/?#simple-checkout).
     Other detail info:
-
-      * Returns : test xsolla config
+                  * Returns : test xsolla config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/xsollaconfig/test
@@ -2353,8 +2280,7 @@ async def test_xsolla_config_by_id_async(
 
     [Not supported yet in AGS Shared Cloud] Test xsolla configuration in payment merchant config. Reference: [Xsolla Document](https://developers.xsolla.com/?#simple-checkout).
     Other detail info:
-
-      * Returns : test xsolla config
+                  * Returns : test xsolla config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/xsollaconfig/test
@@ -2397,8 +2323,7 @@ def update_adyen_config(
 
     [Not supported yet in AGS Shared Cloud] Update adyen config.
     Other detail info:
-
-      * Returns : updated payment merchant config
+                  * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/adyenconfig
@@ -2448,8 +2373,7 @@ async def update_adyen_config_async(
 
     [Not supported yet in AGS Shared Cloud] Update adyen config.
     Other detail info:
-
-      * Returns : updated payment merchant config
+                  * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/adyenconfig
@@ -2501,8 +2425,7 @@ def update_ali_pay_config(
 
     [Not supported yet in AGS Shared Cloud] Update alipay configuration.
     Other detail info:
-
-      * Returns : updated payment merchant config
+                  * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/alipayconfig
@@ -2552,8 +2475,7 @@ async def update_ali_pay_config_async(
 
     [Not supported yet in AGS Shared Cloud] Update alipay configuration.
     Other detail info:
-
-      * Returns : updated payment merchant config
+                  * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/alipayconfig
@@ -2605,8 +2527,7 @@ def update_checkout_config(
 
     [Not supported yet in AGS Shared Cloud] Update checkout.com config.
     Other detail info:
-
-      * Returns : updated payment merchant config
+                  * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/checkoutconfig
@@ -2656,8 +2577,7 @@ async def update_checkout_config_async(
 
     [Not supported yet in AGS Shared Cloud] Update checkout.com config.
     Other detail info:
-
-      * Returns : updated payment merchant config
+                  * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/checkoutconfig
@@ -2709,8 +2629,7 @@ def update_neon_pay_config(
 
     [Not supported yet in AGS Shared Cloud] Update Neon Pay config.
     Other detail info:
-
-      * Returns : updated payment merchant config
+                  * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/neonpayconfig
@@ -2760,8 +2679,7 @@ async def update_neon_pay_config_async(
 
     [Not supported yet in AGS Shared Cloud] Update Neon Pay config.
     Other detail info:
-
-      * Returns : updated payment merchant config
+                  * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/neonpayconfig
@@ -2812,20 +2730,17 @@ def update_payment_domain_whitelist_config(
     [Not supported yet in AGS Shared Cloud] Update payment provider config by namespace.
 
 
+                                                     Request Body Parameters:
 
-         Request Body Parameters:
-
-
-         Parameter | Type   | Required | Description
-        -----------|--------|----------|--------------------------------------------------
-        domains    | String | Yes      | list of domains to whitelist for the return URL.
+                             Parameter | Type   | Required | Description
+                            -----------|--------|----------|--------------------------------------------------
+                            domains    | String | Yes      | list of domains to whitelist for the return URL.
 
 
 
     Other detail info:
-
-      * Validation : the domain should include the protocol (http/https), but the whitelist check will only compare the host part (www.example.com)
-      *  Returns : payment domain whitelist config
+                  * Validation : the domain should include the protocol (http/https), but the whitelist check will only compare the host part (www.example.com)
+                  *  Returns : payment domain whitelist config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/config/domains
@@ -2872,20 +2787,17 @@ async def update_payment_domain_whitelist_config_async(
     [Not supported yet in AGS Shared Cloud] Update payment provider config by namespace.
 
 
+                                                     Request Body Parameters:
 
-         Request Body Parameters:
-
-
-         Parameter | Type   | Required | Description
-        -----------|--------|----------|--------------------------------------------------
-        domains    | String | Yes      | list of domains to whitelist for the return URL.
+                             Parameter | Type   | Required | Description
+                            -----------|--------|----------|--------------------------------------------------
+                            domains    | String | Yes      | list of domains to whitelist for the return URL.
 
 
 
     Other detail info:
-
-      * Validation : the domain should include the protocol (http/https), but the whitelist check will only compare the host part (www.example.com)
-      *  Returns : payment domain whitelist config
+                  * Validation : the domain should include the protocol (http/https), but the whitelist check will only compare the host part (www.example.com)
+                  *  Returns : payment domain whitelist config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/config/domains
@@ -2934,28 +2846,24 @@ def update_payment_provider_config(
     [Not supported yet in AGS Shared Cloud] Update payment provider config.
 
 
+                                                     Request Body Parameters:
 
-         Request Body Parameters:
-
-
-         Parameter | Type   | Required | Description
-        -----------|--------|----------|-----------------------------------------------------------
-        namespace  | String | Yes      | namespace, * indicates all namespace
-        region     | String | Yes      | region, * indicates all regions
-        aggregate  | String | No       | aggregate payment provider, such as XSOLLA, ADYEN, STRIPE
-        specials   | List   | No       | special payment provider, such as ALIPAY, WXPAY
+                             Parameter | Type   | Required | Description
+                            -----------|--------|----------|-----------------------------------------------------------
+                            namespace  | String | Yes      | namespace, * indicates all namespace
+                            region     | String | Yes      | region, * indicates all regions
+                            aggregate  | String | No       | aggregate payment provider, such as XSOLLA, ADYEN, STRIPE
+                            specials   | List   | No       | special payment provider, such as ALIPAY, WXPAY
 
 
 
     payment provider applied has priority:
-
-      1. namespace and region match
-      2. namespace matches and region is *
-      3. region matches and namespace is *
-      4. namespace and region are *
-
+                  1. namespace and region match
+                  2. namespace matches and region is *
+                  3. region matches and namespace is *
+                  4. namespace and region are *
     Other detail info:
-      * Returns : payment provider config
+                  * Returns : payment provider config
 
     Properties:
         url: /platform/admin/payment/config/provider/{id}
@@ -3004,28 +2912,24 @@ async def update_payment_provider_config_async(
     [Not supported yet in AGS Shared Cloud] Update payment provider config.
 
 
+                                                     Request Body Parameters:
 
-         Request Body Parameters:
-
-
-         Parameter | Type   | Required | Description
-        -----------|--------|----------|-----------------------------------------------------------
-        namespace  | String | Yes      | namespace, * indicates all namespace
-        region     | String | Yes      | region, * indicates all regions
-        aggregate  | String | No       | aggregate payment provider, such as XSOLLA, ADYEN, STRIPE
-        specials   | List   | No       | special payment provider, such as ALIPAY, WXPAY
+                             Parameter | Type   | Required | Description
+                            -----------|--------|----------|-----------------------------------------------------------
+                            namespace  | String | Yes      | namespace, * indicates all namespace
+                            region     | String | Yes      | region, * indicates all regions
+                            aggregate  | String | No       | aggregate payment provider, such as XSOLLA, ADYEN, STRIPE
+                            specials   | List   | No       | special payment provider, such as ALIPAY, WXPAY
 
 
 
     payment provider applied has priority:
-
-      1. namespace and region match
-      2. namespace matches and region is *
-      3. region matches and namespace is *
-      4. namespace and region are *
-
+                  1. namespace and region match
+                  2. namespace matches and region is *
+                  3. region matches and namespace is *
+                  4. namespace and region are *
     Other detail info:
-      * Returns : payment provider config
+                  * Returns : payment provider config
 
     Properties:
         url: /platform/admin/payment/config/provider/{id}
@@ -3075,21 +2979,19 @@ def update_payment_tax_config(
     [Not supported yet in AGS Shared Cloud] Update payment tax config.
 
 
+                                                     Request Body Parameters:
 
-         Request Body Parameters:
-
-
-         Parameter                | Type    | Required | Description
-        --------------------------|---------|----------|---------------------------------------------------------------------
-        taxJarEnabled             | Boolean | false
-        taxJarApiToken            | String  | false    | required, when taxJarEnabled is true and there is no existing token
-        sandboxTaxJarApiToken     | String  | false    | optional
-        taxJarProductCodesMapping | Map     | No       | key is item type(APP                                                |COINS |INGAMEITEM |BUNDLE |CODE |SUBSCRIPTION) and value is product tax code: https://developers.taxjar.com/api/reference/?ruby#get-list-tax-categories
+                             Parameter                | Type    | Required | Description
+                            --------------------------|---------|----------|---------------------------------------------------------------------
+                            taxJarEnabled             | Boolean | false
+                            taxJarApiToken            | String  | false    | required, when taxJarEnabled is true and there is no existing token
+                            sandboxTaxJarApiToken     | String  | false    | optional
+                            taxJarProductCodesMapping | Map     | No       | key is item type(APP                                                |COINS |INGAMEITEM |BUNDLE |CODE |SUBSCRIPTION) and value is product tax code: https://developers.taxjar.com/api/reference/?ruby#get-list-tax-categories
 
 
 
     Other detail info:
-      * Returns : payment global tax config
+                * Returns : payment global tax config
 
     Properties:
         url: /platform/admin/payment/config/tax
@@ -3130,21 +3032,19 @@ async def update_payment_tax_config_async(
     [Not supported yet in AGS Shared Cloud] Update payment tax config.
 
 
+                                                     Request Body Parameters:
 
-         Request Body Parameters:
-
-
-         Parameter                | Type    | Required | Description
-        --------------------------|---------|----------|---------------------------------------------------------------------
-        taxJarEnabled             | Boolean | false
-        taxJarApiToken            | String  | false    | required, when taxJarEnabled is true and there is no existing token
-        sandboxTaxJarApiToken     | String  | false    | optional
-        taxJarProductCodesMapping | Map     | No       | key is item type(APP                                                |COINS |INGAMEITEM |BUNDLE |CODE |SUBSCRIPTION) and value is product tax code: https://developers.taxjar.com/api/reference/?ruby#get-list-tax-categories
+                             Parameter                | Type    | Required | Description
+                            --------------------------|---------|----------|---------------------------------------------------------------------
+                            taxJarEnabled             | Boolean | false
+                            taxJarApiToken            | String  | false    | required, when taxJarEnabled is true and there is no existing token
+                            sandboxTaxJarApiToken     | String  | false    | optional
+                            taxJarProductCodesMapping | Map     | No       | key is item type(APP                                                |COINS |INGAMEITEM |BUNDLE |CODE |SUBSCRIPTION) and value is product tax code: https://developers.taxjar.com/api/reference/?ruby#get-list-tax-categories
 
 
 
     Other detail info:
-      * Returns : payment global tax config
+                * Returns : payment global tax config
 
     Properties:
         url: /platform/admin/payment/config/tax
@@ -3189,8 +3089,7 @@ def update_pay_pal_config(
 
     [Not supported yet in AGS Shared Cloud] Update PayPal config.
     Other detail info:
-
-      * Returns : updated payment merchant config
+                * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/paypalconfig
@@ -3240,8 +3139,7 @@ async def update_pay_pal_config_async(
 
     [Not supported yet in AGS Shared Cloud] Update PayPal config.
     Other detail info:
-
-      * Returns : updated payment merchant config
+                * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/paypalconfig
@@ -3293,8 +3191,7 @@ def update_stripe_config(
 
     [Not supported yet in AGS Shared Cloud] Update stripe config.
     Other detail info:
-
-      * Returns : updated payment merchant config
+                * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/stripeconfig
@@ -3344,8 +3241,7 @@ async def update_stripe_config_async(
 
     [Not supported yet in AGS Shared Cloud] Update stripe config.
     Other detail info:
-
-      * Returns : updated payment merchant config
+                * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/stripeconfig
@@ -3396,8 +3292,7 @@ def update_wx_pay_config(
 
     [Not supported yet in AGS Shared Cloud] Update wxpay configuration.
     Other detail info:
-
-      * Returns : updated payment merchant config
+                * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/wxpayconfig
@@ -3443,8 +3338,7 @@ async def update_wx_pay_config_async(
 
     [Not supported yet in AGS Shared Cloud] Update wxpay configuration.
     Other detail info:
-
-      * Returns : updated payment merchant config
+                * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/wxpayconfig
@@ -3491,8 +3385,7 @@ def update_wx_pay_config_cert(
 
     [Not supported yet in AGS Shared Cloud] Upload wxpay cert file.
     Other detail info:
-
-      * Returns : updated payment merchant config
+                * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/wxpayconfig/cert
@@ -3534,8 +3427,7 @@ async def update_wx_pay_config_cert_async(
 
     [Not supported yet in AGS Shared Cloud] Upload wxpay cert file.
     Other detail info:
-
-      * Returns : updated payment merchant config
+                * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/wxpayconfig/cert
@@ -3580,8 +3472,7 @@ def update_xsolla_config(
 
     [Not supported yet in AGS Shared Cloud] Update xsolla configuration. Reference: [Xsolla Document](https://developers.xsolla.com/?#simple-checkout).
     Other detail info:
-
-      * Returns : updated payment merchant config
+                * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/xsollaconfig
@@ -3627,8 +3518,7 @@ async def update_xsolla_config_async(
 
     [Not supported yet in AGS Shared Cloud] Update xsolla configuration. Reference: [Xsolla Document](https://developers.xsolla.com/?#simple-checkout).
     Other detail info:
-
-      * Returns : updated payment merchant config
+                * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/xsollaconfig
@@ -3675,8 +3565,7 @@ def update_xsolla_ui_config(
 
     [Not supported yet in AGS Shared Cloud] Update xsolla UI configuration.Reference: [Xsolla Document](https://developers.xsolla.com/api.html#ui-integrations).
     Other detail info:
-
-      * Returns : updated payment merchant config
+                * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/xsollauiconfig
@@ -3718,8 +3607,7 @@ async def update_xsolla_ui_config_async(
 
     [Not supported yet in AGS Shared Cloud] Update xsolla UI configuration.Reference: [Xsolla Document](https://developers.xsolla.com/api.html#ui-integrations).
     Other detail info:
-
-      * Returns : updated payment merchant config
+                * Returns : updated payment merchant config
 
     Properties:
         url: /platform/admin/payment/config/merchant/{id}/xsollauiconfig

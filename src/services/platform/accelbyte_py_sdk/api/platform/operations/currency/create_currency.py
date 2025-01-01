@@ -25,9 +25,11 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import CurrencyCreate
 from ...models import CurrencyInfo
@@ -181,8 +183,92 @@ class CreateCurrency(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_200: Optional[CurrencyInfo] = None
+        error_409: Optional[ErrorEntity] = None
+        error_422: Optional[ValidationErrorEntity] = None
+
+        def ok(self) -> CreateCurrency.Response:
+            if self.error_409 is not None:
+                err = self.error_409.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_422 is not None:
+                err = self.error_422.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_200 is not None:
+                yield self.data_200
+                yield None
+            elif self.error_409 is not None:
+                yield None
+                yield self.error_409
+            elif self.error_422 is not None:
+                yield None
+                yield self.error_422
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        200: OK - CurrencyInfo (successful operation)
+
+        409: Conflict - ErrorEntity (36171: Currency [{currencyCode}] already exists in namespace [{namespace}] | 36172: Real Currency [{currencyCode}] not allowed in game namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = CreateCurrency.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 200:
+                result.data_200 = CurrencyInfo.create_from_dict(content)
+            elif code == 409:
+                result.error_409 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_409.translate_to_api_error()
+            elif code == 422:
+                result.error_422 = ValidationErrorEntity.create_from_dict(content)
+                result.error = result.error_422.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, CurrencyInfo],

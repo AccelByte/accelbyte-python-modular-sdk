@@ -70,8 +70,7 @@ def check_event_condition(
     """Check if event payload match reward condition (checkEventCondition)
 
     [TEST FACILITY ONLY] Forbidden in live environment. Other detail info:
-
-      * Returns : match result
+                * Returns : match result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/rewards/{rewardId}/match
@@ -120,8 +119,7 @@ async def check_event_condition_async(
     """Check if event payload match reward condition (checkEventCondition)
 
     [TEST FACILITY ONLY] Forbidden in live environment. Other detail info:
-
-      * Returns : match result
+                * Returns : match result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/rewards/{rewardId}/match
@@ -172,9 +170,8 @@ def create_reward(
 
     This API is used to create a reward.
     Other detail info:
-
-      * Returns : created reward data
-      *  Acceptable values for rewardItem's identityType are : ITEM_ID or ITEM_SKU
+                * Returns : created reward data
+                *  Acceptable values for rewardItem's identityType are : ITEM_ID or ITEM_SKU
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/rewards
@@ -226,9 +223,8 @@ async def create_reward_async(
 
     This API is used to create a reward.
     Other detail info:
-
-      * Returns : created reward data
-      *  Acceptable values for rewardItem's identityType are : ITEM_ID or ITEM_SKU
+                * Returns : created reward data
+                *  Acceptable values for rewardItem's identityType are : ITEM_ID or ITEM_SKU
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/rewards
@@ -283,8 +279,7 @@ def delete_reward(
     This API is used to delete a reward by reward Id.
 
     Other detail info:
-
-      * Returns : the deleted reward data
+                * Returns : the deleted reward data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/rewards/{rewardId}
@@ -331,8 +326,7 @@ async def delete_reward_async(
     This API is used to delete a reward by reward Id.
 
     Other detail info:
-
-      * Returns : the deleted reward data
+                * Returns : the deleted reward data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/rewards/{rewardId}
@@ -382,8 +376,7 @@ def delete_reward_condition_record(
     [TEST FACILITY ONLY] Forbidden in live environment. This API is used to delete a reward condition record by reward Id and condition Name (optional).
 
     Other detail info:
-
-      * Returns : 204 No Content
+                * Returns : 204 No Content
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/rewards/{rewardId}/record
@@ -432,8 +425,7 @@ async def delete_reward_condition_record_async(
     [TEST FACILITY ONLY] Forbidden in live environment. This API is used to delete a reward condition record by reward Id and condition Name (optional).
 
     Other detail info:
-
-      * Returns : 204 No Content
+                * Returns : 204 No Content
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/rewards/{rewardId}/record
@@ -560,8 +552,7 @@ def get_reward(
 
     This API is used to get reward by reward Id.
     Other detail info:
-
-      * Returns : reward instance
+                * Returns : reward instance
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/rewards/{rewardId}
@@ -607,8 +598,7 @@ async def get_reward_async(
 
     This API is used to get reward by reward Id.
     Other detail info:
-
-      * Returns : reward instance
+                * Returns : reward instance
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/rewards/{rewardId}
@@ -656,8 +646,7 @@ def get_reward_1(
 
     This API is used to get reward by reward Id.
     Other detail info:
-
-      * Returns : reward instance
+                * Returns : reward instance
 
     Properties:
         url: /platform/public/namespaces/{namespace}/rewards/{rewardId}
@@ -703,8 +692,7 @@ async def get_reward_1_async(
 
     This API is used to get reward by reward Id.
     Other detail info:
-
-      * Returns : reward instance
+                * Returns : reward instance
 
     Properties:
         url: /platform/public/namespaces/{namespace}/rewards/{rewardId}
@@ -752,8 +740,7 @@ def get_reward_by_code(
 
     This API is used to get reward by reward code.
     Other detail info:
-
-      * Returns : reward instance
+                * Returns : reward instance
 
     Properties:
         url: /platform/public/namespaces/{namespace}/rewards/byCode
@@ -799,8 +786,7 @@ async def get_reward_by_code_async(
 
     This API is used to get reward by reward code.
     Other detail info:
-
-      * Returns : reward instance
+                * Returns : reward instance
 
     Properties:
         url: /platform/public/namespaces/{namespace}/rewards/byCode
@@ -954,8 +940,7 @@ def query_rewards(
     This API is used to query rewards by criteria.
 
     Other detail info:
-
-      * Returns : the list of rewards
+                * Returns : the list of rewards
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/rewards/byCriteria
@@ -1014,8 +999,7 @@ async def query_rewards_async(
     This API is used to query rewards by criteria.
 
     Other detail info:
-
-      * Returns : the list of rewards
+                * Returns : the list of rewards
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/rewards/byCriteria
@@ -1076,8 +1060,7 @@ def query_rewards_1(
     This API is used to query rewards by criteria.
 
     Other detail info:
-
-      * Returns : the list of rewards
+                * Returns : the list of rewards
 
     Properties:
         url: /platform/public/namespaces/{namespace}/rewards/byCriteria
@@ -1136,8 +1119,7 @@ async def query_rewards_1_async(
     This API is used to query rewards by criteria.
 
     Other detail info:
-
-      * Returns : the list of rewards
+                * Returns : the list of rewards
 
     Properties:
         url: /platform/public/namespaces/{namespace}/rewards/byCriteria
@@ -1195,9 +1177,8 @@ def update_reward(
 
     This API is used to update a reward.
     Other detail info:
-
-      * Returns : reward instance
-      *  Acceptable values for rewardItem's identityType are : ITEM_ID or ITEM_SKU
+                * Returns : reward instance
+                *  Acceptable values for rewardItem's identityType are : ITEM_ID or ITEM_SKU
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/rewards/{rewardId}
@@ -1251,9 +1232,8 @@ async def update_reward_async(
 
     This API is used to update a reward.
     Other detail info:
-
-      * Returns : reward instance
-      *  Acceptable values for rewardItem's identityType are : ITEM_ID or ITEM_SKU
+                * Returns : reward instance
+                *  Acceptable values for rewardItem's identityType are : ITEM_ID or ITEM_SKU
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/rewards/{rewardId}

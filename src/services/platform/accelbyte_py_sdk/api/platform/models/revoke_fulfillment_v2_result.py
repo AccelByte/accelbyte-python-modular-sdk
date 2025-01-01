@@ -26,6 +26,7 @@ from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
+from accelbyte_py_sdk.core import ApiError
 from accelbyte_py_sdk.core import StrEnum
 
 from ..models.credit_revocation import CreditRevocation
@@ -187,6 +188,12 @@ class RevokeFulfillmentV2Result(Model):
         elif include_empty:
             result["itemRevocations"] = []
         return result
+
+    def translate_to_api_error(self) -> ApiError:
+        return ApiError(
+            code="",
+            message="",
+        )
 
     # endregion to methods
 

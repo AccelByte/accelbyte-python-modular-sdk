@@ -25,9 +25,11 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ModelsMatchmakingResult
 from ...models import ResponseError
@@ -35,7 +37,7 @@ from ...models import ResponseErrorV1
 
 
 class BulkGetSessions(Operation):
-    """Bulk get sessions (BulkGetSessions)
+    """[DEPRECATED] Bulk get sessions (BulkGetSessions)
 
     Bulk get sessions.
 
@@ -188,8 +190,136 @@ class BulkGetSessions(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_200: Optional[List[ModelsMatchmakingResult]] = None
+        error_400: Optional[ResponseErrorV1] = None
+        error_401: Optional[ResponseErrorV1] = None
+        error_403: Optional[ResponseErrorV1] = None
+        error_404: Optional[ResponseErrorV1] = None
+        error_500: Optional[ResponseError] = None
+
+        def ok(self) -> BulkGetSessions.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_401 is not None:
+                err = self.error_401.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_403 is not None:
+                err = self.error_403.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_404 is not None:
+                err = self.error_404.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_500 is not None:
+                err = self.error_500.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_200 is not None:
+                yield self.data_200
+                yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
+            elif self.error_401 is not None:
+                yield None
+                yield self.error_401
+            elif self.error_403 is not None:
+                yield None
+                yield self.error_403
+            elif self.error_404 is not None:
+                yield None
+                yield self.error_404
+            elif self.error_500 is not None:
+                yield None
+                yield self.error_500
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        200: OK - List[ModelsMatchmakingResult] (Operation succeeded)
+
+        400: Bad Request - ResponseErrorV1 (20002: validation error | 20019: unable to parse request body)
+
+        401: Unauthorized - ResponseErrorV1 (20001: unauthorized access)
+
+        403: Forbidden - ResponseErrorV1 (20013: insufficient permissions | 20014: invalid audience | 20015: insufficient scope)
+
+        404: Not Found - ResponseErrorV1 (510110: channel not found)
+
+        500: Internal Server Error - ResponseError (20000: internal server error)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = BulkGetSessions.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 200:
+                result.data_200 = [
+                    ModelsMatchmakingResult.create_from_dict(i) for i in content
+                ]
+            elif code == 400:
+                result.error_400 = ResponseErrorV1.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
+            elif code == 401:
+                result.error_401 = ResponseErrorV1.create_from_dict(content)
+                result.error = result.error_401.translate_to_api_error()
+            elif code == 403:
+                result.error_403 = ResponseErrorV1.create_from_dict(content)
+                result.error = result.error_403.translate_to_api_error()
+            elif code == 404:
+                result.error_404 = ResponseErrorV1.create_from_dict(content)
+                result.error = result.error_404.translate_to_api_error()
+            elif code == 500:
+                result.error_500 = ResponseError.create_from_dict(content)
+                result.error = result.error_500.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, List[ModelsMatchmakingResult]],

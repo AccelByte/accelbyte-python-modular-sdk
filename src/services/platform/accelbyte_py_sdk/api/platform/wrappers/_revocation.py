@@ -139,8 +139,7 @@ def do_revocation(
 
     Do revocation.
     Other detail info:
-
-      * Returns : revocation results
+                * Returns : revocation results
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/revocation
@@ -163,6 +162,8 @@ def do_revocation(
 
     Responses:
         200: OK - RevocationResult (successful operation)
+
+        409: Conflict - ErrorEntity (41171: Request has different payload on previous call | 41172: Request has different user id on previous call)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -188,8 +189,7 @@ async def do_revocation_async(
 
     Do revocation.
     Other detail info:
-
-      * Returns : revocation results
+                * Returns : revocation results
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/revocation
@@ -212,6 +212,8 @@ async def do_revocation_async(
 
     Responses:
         200: OK - RevocationResult (successful operation)
+
+        409: Conflict - ErrorEntity (41171: Request has different payload on previous call | 41172: Request has different user id on previous call)
     """
     if namespace is None:
         namespace, error = get_services_namespace()
@@ -237,8 +239,7 @@ def get_revocation_config(
 
     Get revocation configuration.
     Other detail info:
-
-      * Returns : Revocation config
+                * Returns : Revocation config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/revocation/config
@@ -280,8 +281,7 @@ async def get_revocation_config_async(
 
     Get revocation configuration.
     Other detail info:
-
-      * Returns : Revocation config
+                * Returns : Revocation config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/revocation/config
@@ -333,8 +333,7 @@ def query_revocation_histories(
 
     Query revocation histories in a namespace.
     Other detail info:
-
-      * Returns : query revocation history
+                * Returns : query revocation history
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/revocation/history
@@ -406,8 +405,7 @@ async def query_revocation_histories_async(
 
     Query revocation histories in a namespace.
     Other detail info:
-
-      * Returns : query revocation history
+                * Returns : query revocation history
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/revocation/history
@@ -474,8 +472,7 @@ def update_revocation_config(
 
     Update revocation configuration.
     Other detail info:
-
-      * Returns : Revocation config
+                * Returns : Revocation config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/revocation/config
@@ -519,8 +516,7 @@ async def update_revocation_config_async(
 
     Update revocation configuration.
     Other detail info:
-
-      * Returns : Revocation config
+                * Returns : Revocation config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/revocation/config

@@ -80,8 +80,7 @@ def get_statistic(
     This API is used to query catalog changes statistics .
 
     Other detail info:
-
-      * Returns : catalog changes statistics changes
+                * Returns : catalog changes statistics changes
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/statistics
@@ -150,8 +149,7 @@ async def get_statistic_async(
     This API is used to query catalog changes statistics .
 
     Other detail info:
-
-      * Returns : catalog changes statistics changes
+                * Returns : catalog changes statistics changes
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/statistics
@@ -216,8 +214,7 @@ def publish_all(
     This API is used to publish all unpublished changes.
 
     Other detail info:
-
-      * Returns : no content
+                * Returns : no content
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/publishAll
@@ -266,8 +263,7 @@ async def publish_all_async(
     This API is used to publish all unpublished changes.
 
     Other detail info:
-
-      * Returns : no content
+                * Returns : no content
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/publishAll
@@ -318,8 +314,7 @@ def publish_selected(
     This API is used to publish selected unpublished changes.
 
     Other detail info:
-
-      * Returns : no content
+                * Returns : no content
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/publishSelected
@@ -370,8 +365,7 @@ async def publish_selected_async(
     This API is used to publish selected unpublished changes.
 
     Other detail info:
-
-      * Returns : no content
+                * Returns : no content
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/publishSelected
@@ -436,8 +430,7 @@ def query_changes(
     This API is used to query changes .
 
     Other detail info:
-
-      * Returns : the pagination of changes
+                * Returns : the pagination of changes
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/byCriteria
@@ -530,8 +523,7 @@ async def query_changes_async(
     This API is used to query changes .
 
     Other detail info:
-
-      * Returns : the pagination of changes
+                * Returns : the pagination of changes
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/byCriteria

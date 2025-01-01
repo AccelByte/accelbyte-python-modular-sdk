@@ -8,6 +8,6 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Session History Service."""
 
-__version__ = "1.12.3"
+__version__ = "1.12.6"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"

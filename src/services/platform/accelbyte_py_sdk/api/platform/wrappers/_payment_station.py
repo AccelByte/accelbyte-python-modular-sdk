@@ -86,8 +86,7 @@ def get_payment_customization(
 
     [Not supported yet in AGS Shared Cloud] Get payment provider customization, at current only Adyen provide customization. This api has been deprecated, pls use /public/namespaces/{namespace}/payment/publicconfig to get adyen config
     Other detail info:
-
-      * Returns : customization
+                * Returns : customization
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/customization
@@ -141,8 +140,7 @@ async def get_payment_customization_async(
 
     [Not supported yet in AGS Shared Cloud] Get payment provider customization, at current only Adyen provide customization. This api has been deprecated, pls use /public/namespaces/{namespace}/payment/publicconfig to get adyen config
     Other detail info:
-
-      * Returns : customization
+                * Returns : customization
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/customization
@@ -197,8 +195,7 @@ def get_payment_public_config(
 
     [Not supported yet in AGS Shared Cloud] Get payment provider public config, at current only Strip provide public config.
     Other detail info:
-
-      * Returns : Public config
+                * Returns : Public config
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/publicconfig
@@ -251,8 +248,7 @@ async def get_payment_public_config_async(
 
     [Not supported yet in AGS Shared Cloud] Get payment provider public config, at current only Strip provide public config.
     Other detail info:
-
-      * Returns : Public config
+                * Returns : Public config
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/publicconfig
@@ -307,8 +303,7 @@ def get_payment_tax_value(
 
     [Not supported yet in AGS Shared Cloud] Check and get a payment order's should pay tax.
     Other detail info:
-
-      * Returns : tax result
+                * Returns : tax result
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/tax
@@ -365,8 +360,7 @@ async def get_payment_tax_value_async(
 
     [Not supported yet in AGS Shared Cloud] Check and get a payment order's should pay tax.
     Other detail info:
-
-      * Returns : tax result
+                * Returns : tax result
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/tax
@@ -426,8 +420,7 @@ def pay(
 
     [Not supported yet in AGS Shared Cloud] Do payment(For now, this only support checkout.com).
     Other detail info:
-
-      * Returns : Payment process result
+                * Returns : Payment process result
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/orders/{paymentOrderNo}/pay
@@ -490,8 +483,7 @@ async def pay_async(
 
     [Not supported yet in AGS Shared Cloud] Do payment(For now, this only support checkout.com).
     Other detail info:
-
-      * Returns : Payment process result
+                * Returns : Payment process result
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/orders/{paymentOrderNo}/pay
@@ -553,8 +545,7 @@ def public_check_payment_order_paid_status(
 
     [Not supported yet in AGS Shared Cloud] Check payment order paid status.
     Other detail info:
-
-      * Returns : Payment order paid result
+                * Returns : Payment order paid result
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/orders/{paymentOrderNo}/status
@@ -601,8 +592,7 @@ async def public_check_payment_order_paid_status_async(
 
     [Not supported yet in AGS Shared Cloud] Check payment order paid status.
     Other detail info:
-
-      * Returns : Payment order paid result
+                * Returns : Payment order paid result
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/orders/{paymentOrderNo}/status
@@ -651,8 +641,7 @@ def public_get_payment_methods(
 
     [Not supported yet in AGS Shared Cloud] Get payment methods.
     Other detail info:
-
-      * Returns : Payment method list
+                * Returns : Payment method list
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/methods
@@ -699,8 +688,7 @@ async def public_get_payment_methods_async(
 
     [Not supported yet in AGS Shared Cloud] Get payment methods.
     Other detail info:
-
-      * Returns : Payment method list
+                * Returns : Payment method list
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/methods
@@ -749,9 +737,8 @@ def public_get_payment_url(
 
     [Not supported yet in AGS Shared Cloud] Get payment url.
     Other detail info:
-
-      * For Neon Pay payment provider, the 'neonPayConfig' field can be used to provide success and cancel URL. If 'neonPayConfig' field is not present, the 'returnUrl' will be used for both success and cancel URL.
-      *  Returns : Get payment link
+                * For Neon Pay payment provider, the 'neonPayConfig' field can be used to provide success and cancel URL. If 'neonPayConfig' field is not present, the 'returnUrl' will be used for both success and cancel URL.
+                *  Returns : Get payment link
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/link
@@ -802,9 +789,8 @@ async def public_get_payment_url_async(
 
     [Not supported yet in AGS Shared Cloud] Get payment url.
     Other detail info:
-
-      * For Neon Pay payment provider, the 'neonPayConfig' field can be used to provide success and cancel URL. If 'neonPayConfig' field is not present, the 'returnUrl' will be used for both success and cancel URL.
-      *  Returns : Get payment link
+                * For Neon Pay payment provider, the 'neonPayConfig' field can be used to provide success and cancel URL. If 'neonPayConfig' field is not present, the 'returnUrl' will be used for both success and cancel URL.
+                *  Returns : Get payment link
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/link
@@ -857,8 +843,7 @@ def public_get_qr_code(
 
     [Not supported yet in AGS Shared Cloud] Get qrcode.
     Other detail info:
-
-      * Returns : QRCode image stream
+                * Returns : QRCode image stream
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/qrcode
@@ -903,8 +888,7 @@ async def public_get_qr_code_async(
 
     [Not supported yet in AGS Shared Cloud] Get qrcode.
     Other detail info:
-
-      * Returns : QRCode image stream
+                * Returns : QRCode image stream
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/qrcode
@@ -951,8 +935,7 @@ def public_get_unpaid_payment_order(
 
     [Not supported yet in AGS Shared Cloud] Get payment order info.
     Other detail info:
-
-      * Returns : Payment order details
+                * Returns : Payment order details
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/orders/{paymentOrderNo}/info
@@ -1001,8 +984,7 @@ async def public_get_unpaid_payment_order_async(
 
     [Not supported yet in AGS Shared Cloud] Get payment order info.
     Other detail info:
-
-      * Returns : Payment order details
+                * Returns : Payment order details
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/orders/{paymentOrderNo}/info
@@ -1066,27 +1048,23 @@ def public_normalize_payment_return_url(
     """Normalize payment return url (publicNormalizePaymentReturnUrl)
 
     [Not supported yet in AGS Shared Cloud] Normalize payment return url for payment provider
-    Field                                                                                                                                                        | Type   | Required | Description
-    -------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|----------|-----------------------
-    orderNo                                                                                                                                                      | String | Yes      | order no
-    paymentStatus                                                                                                                                                | String | Yes      |
-
-      * DONE: The payment was successfully completed.
-      * CANCELLED: The payment was cancelled by the shopper before completion, or the shopper returned to the merchant's site before completing the transaction.
-      * PENDING: Inform the shopper that you've received their order, and are waiting for the payment to be completed.
+    Field                                                                                                                                                                  | Type   | Required | Description
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|----------|-----------------------
+    orderNo                                                                                                                                                                | String | Yes      | order no
+    paymentStatus                                                                                                                                                          | String | Yes      |
+                * DONE: The payment was successfully completed.
+                * CANCELLED: The payment was cancelled by the shopper before completion, or the shopper returned to the merchant's site before completing the transaction.
+                * PENDING: Inform the shopper that you've received their order, and are waiting for the payment to be completed.
 
     When the shopper has completed the payment you will receive a successful AUTHORISATION.
-      * RECEIVED: Inform the shopper that you've received their order, and are waiting for the payment to clear.
-      * UNKNOWN: An error occurred during the payment processing.
-      * FAILED: Shopper paid failed because of various reasons.
-
-
-    reason                                                                                                                                                       | String | No       | payment status reason
+                * RECEIVED: Inform the shopper that you've received their order, and are waiting for the payment to clear.
+                * UNKNOWN: An error occurred during the payment processing.
+                * FAILED: Shopper paid failed because of various reasons.
+    reason                                                                                                                                                                 | String | No       | payment status reason
 
     Other detail info:
-
-      * xsolla : parameters 'user_id', 'foreinginvoice', 'invoice_id' and 'status' will be automatically added to the link
-      *  adyen : https://docs.adyen.com/developers/checkout/web-sdk
+                * xsolla : parameters 'user_id', 'foreinginvoice', 'invoice_id' and 'status' will be automatically added to the link
+                *  adyen : https://docs.adyen.com/developers/checkout/web-sdk
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/returnurl
@@ -1188,27 +1166,23 @@ async def public_normalize_payment_return_url_async(
     """Normalize payment return url (publicNormalizePaymentReturnUrl)
 
     [Not supported yet in AGS Shared Cloud] Normalize payment return url for payment provider
-    Field                                                                                                                                                        | Type   | Required | Description
-    -------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|----------|-----------------------
-    orderNo                                                                                                                                                      | String | Yes      | order no
-    paymentStatus                                                                                                                                                | String | Yes      |
-
-      * DONE: The payment was successfully completed.
-      * CANCELLED: The payment was cancelled by the shopper before completion, or the shopper returned to the merchant's site before completing the transaction.
-      * PENDING: Inform the shopper that you've received their order, and are waiting for the payment to be completed.
+    Field                                                                                                                                                                  | Type   | Required | Description
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|----------|-----------------------
+    orderNo                                                                                                                                                                | String | Yes      | order no
+    paymentStatus                                                                                                                                                          | String | Yes      |
+                * DONE: The payment was successfully completed.
+                * CANCELLED: The payment was cancelled by the shopper before completion, or the shopper returned to the merchant's site before completing the transaction.
+                * PENDING: Inform the shopper that you've received their order, and are waiting for the payment to be completed.
 
     When the shopper has completed the payment you will receive a successful AUTHORISATION.
-      * RECEIVED: Inform the shopper that you've received their order, and are waiting for the payment to clear.
-      * UNKNOWN: An error occurred during the payment processing.
-      * FAILED: Shopper paid failed because of various reasons.
-
-
-    reason                                                                                                                                                       | String | No       | payment status reason
+                * RECEIVED: Inform the shopper that you've received their order, and are waiting for the payment to clear.
+                * UNKNOWN: An error occurred during the payment processing.
+                * FAILED: Shopper paid failed because of various reasons.
+    reason                                                                                                                                                                 | String | No       | payment status reason
 
     Other detail info:
-
-      * xsolla : parameters 'user_id', 'foreinginvoice', 'invoice_id' and 'status' will be automatically added to the link
-      *  adyen : https://docs.adyen.com/developers/checkout/web-sdk
+                * xsolla : parameters 'user_id', 'foreinginvoice', 'invoice_id' and 'status' will be automatically added to the link
+                *  adyen : https://docs.adyen.com/developers/checkout/web-sdk
 
     Properties:
         url: /platform/public/namespaces/{namespace}/payment/returnurl

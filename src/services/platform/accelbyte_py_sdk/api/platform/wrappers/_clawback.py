@@ -234,8 +234,7 @@ def query_iap_clawback_history(
 
     Query clawback history.
     Other detail info:
-
-      * Returns : paginated clawback history
+                  * Returns : paginated clawback history
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/clawback/histories
@@ -307,8 +306,7 @@ async def query_iap_clawback_history_async(
 
     Query clawback history.
     Other detail info:
-
-      * Returns : paginated clawback history
+                  * Returns : paginated clawback history
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/clawback/histories

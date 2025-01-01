@@ -25,9 +25,11 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ErrorEntity
 from ...models import PlatformSubscribeRequest
@@ -200,8 +202,114 @@ class PlatformSubscribeSubscription(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_200: Optional[SubscriptionInfo] = None
+        data_201: Optional[str] = None
+        error_400: Optional[ErrorEntity] = None
+        error_404: Optional[ErrorEntity] = None
+        error_422: Optional[ValidationErrorEntity] = None
+
+        def ok(self) -> PlatformSubscribeSubscription.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_404 is not None:
+                err = self.error_404.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_422 is not None:
+                err = self.error_422.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_200 is not None:
+                yield self.data_200
+                yield None
+            elif self.data_201 is not None:
+                yield self.data_201
+                yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
+            elif self.error_404 is not None:
+                yield None
+                yield self.error_404
+            elif self.error_422 is not None:
+                yield None
+                yield self.error_422
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        200: OK - SubscriptionInfo (successful operation)
+
+        201: Created - (platform subscribe request processed)
+
+        400: Bad Request - ErrorEntity (40121: Item type [{itemType}] does not support)
+
+        404: Not Found - ErrorEntity (30341: Item [{itemId}] does not exist in namespace [{namespace}] | 20008: user [{userId}] does not exist in namespace [{namespace}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = PlatformSubscribeSubscription.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 200:
+                result.data_200 = SubscriptionInfo.create_from_dict(content)
+            elif code == 201:
+                result.data_201 = content
+            elif code == 400:
+                result.error_400 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
+            elif code == 404:
+                result.error_404 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_404.translate_to_api_error()
+            elif code == 422:
+                result.error_422 = ValidationErrorEntity.create_from_dict(content)
+                result.error = result.error_422.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, Optional[str], SubscriptionInfo],
@@ -235,7 +343,7 @@ class PlatformSubscribeSubscription(Operation):
         if code == 200:
             return SubscriptionInfo.create_from_dict(content), None
         if code == 201:
-            return HttpResponse.create(code, "Created"), None
+            return content, None
         if code == 400:
             return None, ErrorEntity.create_from_dict(content)
         if code == 404:

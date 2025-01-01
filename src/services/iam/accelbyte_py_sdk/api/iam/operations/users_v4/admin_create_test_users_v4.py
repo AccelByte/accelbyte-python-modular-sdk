@@ -25,9 +25,11 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import AccountCreateTestUsersRequestV4
 from ...models import AccountCreateTestUsersResponseV4
@@ -185,8 +187,108 @@ class AdminCreateTestUsersV4(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_201: Optional[AccountCreateTestUsersResponseV4] = None
+        error_400: Optional[RestErrorResponse] = None
+        error_500: Optional[RestErrorResponse] = None
+        error_501: Optional[RestErrorResponse] = None
+
+        def ok(self) -> AdminCreateTestUsersV4.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_500 is not None:
+                err = self.error_500.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_501 is not None:
+                err = self.error_501.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_201 is not None:
+                yield self.data_201
+                yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
+            elif self.error_500 is not None:
+                yield None
+                yield self.error_500
+            elif self.error_501 is not None:
+                yield None
+                yield self.error_501
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        201: Created - AccountCreateTestUsersResponseV4 (Created)
+
+        400: Bad Request - RestErrorResponse (20019: unable to parse request body | 20002: validation error)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+
+        501: Not Implemented - RestErrorResponse (20024: not implemented)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = AdminCreateTestUsersV4.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 201:
+                result.data_201 = AccountCreateTestUsersResponseV4.create_from_dict(
+                    content
+                )
+            elif code == 400:
+                result.error_400 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
+            elif code == 500:
+                result.error_500 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_500.translate_to_api_error()
+            elif code == 501:
+                result.error_501 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_501.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, AccountCreateTestUsersResponseV4],

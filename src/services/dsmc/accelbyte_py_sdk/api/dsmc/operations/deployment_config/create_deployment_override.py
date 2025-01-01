@@ -25,9 +25,11 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ModelsCreateDeploymentOverrideRequest
 from ...models import ModelsDeploymentWithOverride
@@ -215,8 +217,134 @@ class CreateDeploymentOverride(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_201: Optional[ModelsDeploymentWithOverride] = None
+        error_400: Optional[ResponseError] = None
+        error_401: Optional[ResponseError] = None
+        error_404: Optional[ResponseError] = None
+        error_409: Optional[ResponseError] = None
+        error_500: Optional[ResponseError] = None
+
+        def ok(self) -> CreateDeploymentOverride.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_401 is not None:
+                err = self.error_401.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_404 is not None:
+                err = self.error_404.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_409 is not None:
+                err = self.error_409.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_500 is not None:
+                err = self.error_500.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_201 is not None:
+                yield self.data_201
+                yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
+            elif self.error_401 is not None:
+                yield None
+                yield self.error_401
+            elif self.error_404 is not None:
+                yield None
+                yield self.error_404
+            elif self.error_409 is not None:
+                yield None
+                yield self.error_409
+            elif self.error_500 is not None:
+                yield None
+                yield self.error_500
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        201: Created - ModelsDeploymentWithOverride (deployment override created)
+
+        400: Bad Request - ResponseError (malformed request)
+
+        401: Unauthorized - ResponseError (Unauthorized)
+
+        404: Not Found - ResponseError (deployment not found)
+
+        409: Conflict - ResponseError (deployment override already exists)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = CreateDeploymentOverride.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 201:
+                result.data_201 = ModelsDeploymentWithOverride.create_from_dict(content)
+            elif code == 400:
+                result.error_400 = ResponseError.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
+            elif code == 401:
+                result.error_401 = ResponseError.create_from_dict(content)
+                result.error = result.error_401.translate_to_api_error()
+            elif code == 404:
+                result.error_404 = ResponseError.create_from_dict(content)
+                result.error = result.error_404.translate_to_api_error()
+            elif code == 409:
+                result.error_409 = ResponseError.create_from_dict(content)
+                result.error = result.error_409.translate_to_api_error()
+            elif code == 500:
+                result.error_500 = ResponseError.create_from_dict(content)
+                result.error = result.error_500.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, ModelsDeploymentWithOverride],

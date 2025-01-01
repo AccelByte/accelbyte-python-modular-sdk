@@ -25,16 +25,20 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ErrorEntity
 from ...models import PaymentCallbackConfigInfo
 
 
 class GetPaymentCallbackConfig(Operation):
-    """Get payment callback configuration (getPaymentCallbackConfig)
+    """[DEPRECATED] Get payment callback configuration (getPaymentCallbackConfig)
+
+    ### The endpoint is going to be deprecated
 
     [Not supported yet in AGS Shared Cloud] Get payment callback configuration.
     Other detail info:
@@ -160,8 +164,78 @@ class GetPaymentCallbackConfig(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_200: Optional[PaymentCallbackConfigInfo] = None
+        error_404: Optional[ErrorEntity] = None
+
+        def ok(self) -> GetPaymentCallbackConfig.Response:
+            if self.error_404 is not None:
+                err = self.error_404.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_200 is not None:
+                yield self.data_200
+                yield None
+            elif self.error_404 is not None:
+                yield None
+                yield self.error_404
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        200: OK - PaymentCallbackConfigInfo (successful operation)
+
+        404: Not Found - ErrorEntity (33243: Payment callback config for [{namespace}] does not exist)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = GetPaymentCallbackConfig.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 200:
+                result.data_200 = PaymentCallbackConfigInfo.create_from_dict(content)
+            elif code == 404:
+                result.error_404 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_404.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, PaymentCallbackConfigInfo], Union[None, ErrorEntity, HttpResponse]

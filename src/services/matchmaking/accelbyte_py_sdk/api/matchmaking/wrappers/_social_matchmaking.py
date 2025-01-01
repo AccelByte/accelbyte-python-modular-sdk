@@ -27,6 +27,7 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import get_namespace as get_services_namespace
 from accelbyte_py_sdk.core import run_request
 from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import deprecated
 from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ModelsUpdatePlayerPlaytimeWeightResponse
@@ -37,6 +38,7 @@ from ..models import ResponseErrorV1
 from ..operations.social_matchmaking import UpdatePlayTimeWeight
 
 
+@deprecated
 @same_doc_as(UpdatePlayTimeWeight)
 def update_play_time_weight(
     body: ModelsUpdatePlayTimeWeightRequest,
@@ -91,6 +93,7 @@ def update_play_time_weight(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(UpdatePlayTimeWeight)
 async def update_play_time_weight_async(
     body: ModelsUpdatePlayTimeWeightRequest,

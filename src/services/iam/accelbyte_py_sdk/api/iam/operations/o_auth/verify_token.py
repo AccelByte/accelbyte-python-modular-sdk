@@ -25,6 +25,7 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
@@ -162,8 +163,78 @@ class VerifyToken(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_200: Optional[OauthmodelTokenResponse] = None
+        error_400: Optional[HttpResponse] = None
+
+        def ok(self) -> VerifyToken.Response:
+            if self.error_400 is not None:
+                err = ApiError.create_from_http_response(self.error_400)
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_200 is not None:
+                yield self.data_200
+                yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        200: OK - OauthmodelTokenResponse (Access Token verified)
+
+        400: Bad Request - (Access Token not exist or expired)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = VerifyToken.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 200:
+                result.data_200 = OauthmodelTokenResponse.create_from_dict(content)
+            elif code == 400:
+                result.error_400 = HttpResponse.create(code, content)
+                result.error = ApiError.create_from_http_response(result.error_400)
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[Union[None, OauthmodelTokenResponse], Union[None, HttpResponse]]:
         """Parse the given response.

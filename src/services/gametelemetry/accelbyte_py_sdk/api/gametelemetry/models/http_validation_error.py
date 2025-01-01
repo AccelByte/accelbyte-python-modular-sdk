@@ -26,6 +26,7 @@ from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
+from accelbyte_py_sdk.core import ApiError
 
 from ..models.validation_error import ValidationError
 
@@ -62,6 +63,12 @@ class HTTPValidationError(Model):
         elif include_empty:
             result["detail"] = []
         return result
+
+    def translate_to_api_error(self) -> ApiError:
+        return ApiError(
+            code="",
+            message="",
+        )
 
     # endregion to methods
 

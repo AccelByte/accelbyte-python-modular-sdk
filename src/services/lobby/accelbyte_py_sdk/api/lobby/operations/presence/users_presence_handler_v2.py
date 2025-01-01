@@ -25,9 +25,11 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import HandlersGetUsersPresenceResponse
 from ...models import ModelRequestUserPresence
@@ -197,8 +199,108 @@ class UsersPresenceHandlerV2(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_200: Optional[HandlersGetUsersPresenceResponse] = None
+        error_400: Optional[RestapiErrorResponseBody] = None
+        error_401: Optional[RestapiErrorResponseBody] = None
+        error_500: Optional[RestapiErrorResponseBody] = None
+
+        def ok(self) -> UsersPresenceHandlerV2.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_401 is not None:
+                err = self.error_401.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_500 is not None:
+                err = self.error_500.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_200 is not None:
+                yield self.data_200
+                yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
+            elif self.error_401 is not None:
+                yield None
+                yield self.error_401
+            elif self.error_500 is not None:
+                yield None
+                yield self.error_500
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        200: OK - HandlersGetUsersPresenceResponse (OK)
+
+        400: Bad Request - RestapiErrorResponseBody (Bad Request)
+
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = UsersPresenceHandlerV2.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 200:
+                result.data_200 = HandlersGetUsersPresenceResponse.create_from_dict(
+                    content
+                )
+            elif code == 400:
+                result.error_400 = RestapiErrorResponseBody.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
+            elif code == 401:
+                result.error_401 = RestapiErrorResponseBody.create_from_dict(content)
+                result.error = result.error_401.translate_to_api_error()
+            elif code == 500:
+                result.error_500 = RestapiErrorResponseBody.create_from_dict(content)
+                result.error = result.error_500.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, HandlersGetUsersPresenceResponse],

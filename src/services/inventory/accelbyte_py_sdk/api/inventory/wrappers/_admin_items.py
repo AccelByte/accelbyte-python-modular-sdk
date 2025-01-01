@@ -602,6 +602,7 @@ def admin_consume_user_item(
     body: ApimodelsConsumeItemReq,
     inventory_id: str,
     user_id: str,
+    date_range_validation: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -633,6 +634,8 @@ def admin_consume_user_item(
 
         user_id: (userId) REQUIRED str in path
 
+        date_range_validation: (dateRangeValidation) OPTIONAL str in query
+
     Responses:
         200: OK - ApimodelsItemResp (OK)
 
@@ -650,6 +653,7 @@ def admin_consume_user_item(
         body=body,
         inventory_id=inventory_id,
         user_id=user_id,
+        date_range_validation=date_range_validation,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -660,6 +664,7 @@ async def admin_consume_user_item_async(
     body: ApimodelsConsumeItemReq,
     inventory_id: str,
     user_id: str,
+    date_range_validation: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -691,6 +696,8 @@ async def admin_consume_user_item_async(
 
         user_id: (userId) REQUIRED str in path
 
+        date_range_validation: (dateRangeValidation) OPTIONAL str in query
+
     Responses:
         200: OK - ApimodelsItemResp (OK)
 
@@ -708,6 +715,7 @@ async def admin_consume_user_item_async(
         body=body,
         inventory_id=inventory_id,
         user_id=user_id,
+        date_range_validation=date_range_validation,
         namespace=namespace,
     )
     return await run_request_async(

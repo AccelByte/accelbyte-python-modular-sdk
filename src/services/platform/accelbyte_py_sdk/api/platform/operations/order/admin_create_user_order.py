@@ -25,9 +25,11 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import AdminOrderCreate
 from ...models import ErrorEntity
@@ -221,8 +223,134 @@ class AdminCreateUserOrder(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_201: Optional[OrderInfo] = None
+        error_400: Optional[ErrorEntity] = None
+        error_403: Optional[ErrorEntity] = None
+        error_404: Optional[ErrorEntity] = None
+        error_409: Optional[ErrorEntity] = None
+        error_422: Optional[ValidationErrorEntity] = None
+
+        def ok(self) -> AdminCreateUserOrder.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_403 is not None:
+                err = self.error_403.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_404 is not None:
+                err = self.error_404.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_409 is not None:
+                err = self.error_409.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_422 is not None:
+                err = self.error_422.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_201 is not None:
+                yield self.data_201
+                yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
+            elif self.error_403 is not None:
+                yield None
+                yield self.error_403
+            elif self.error_404 is not None:
+                yield None
+                yield self.error_404
+            elif self.error_409 is not None:
+                yield None
+                yield self.error_409
+            elif self.error_422 is not None:
+                yield None
+                yield self.error_422
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        201: Created - OrderInfo (successful operation)
+
+        400: Bad Request - ErrorEntity (20018: ecommerce item type not supported | 32121: Order price mismatch | 32122: Item type [{itemType}] does not support | 32123: Item is not purchasable | 35123: Wallet [{walletId}] is inactive | 35124: Wallet [{currencyCode}] has insufficient balance | 32126: Section ID is required for placing this order | 38121: Duplicate permanent item exists | 32124: Invalid currency namespace | 32127: Discount code [{code}] can't be used on this item: {tips} | 32128: Discount code [{code}] can not be used with other code together | 32129: Can't use discount code on free order | 32130: The total discount amount cannot exceed the order price)
+
+        403: Forbidden - ErrorEntity (20016: action is banned)
+
+        404: Not Found - ErrorEntity (30341: Item [{itemId}] does not exist in namespace [{namespace}] | 30142: Published store does not exist in namespace [{namespace}] | 36141: Currency [{currencyCode}] does not exist in namespace [{namespace}] | 49147: Published season does not exist | 1100001: record not found: inventory | 37142: Code [{code}] does not exist in namespace [{namespace}])
+
+        409: Conflict - ErrorEntity (20024: insufficient inventory capacity (max. slots) | 32175: Exceed item [{itemId}] max count [{maxCount}] per user | 32176: Exceed item [{itemId}] max count [{maxCount}] | 32178: User [{userId}] already owned all durable items in flexible bundle [{bundleId}], namespace: [{namespace}] | 31177: Permanent item already owned | 49183: Pass item does not match published season pass | 49184: Tier item does not match published season tier | 49185: Season has not started | 49186: Pass already owned | 49187: Exceed max tier count | 20006: optimistic lock | 37172: Campaign [{campaignId}] is inactive in namespace [{namespace}] | 37173: Code [{code}] is inactive in namespace [{namespace}] | 37174: Exceeded max redeem count per code [{maxCount}] | 37175: Exceeded max redeem count per code per user [{maxCount}] | 37177: Code redemption not started | 37178: Code redemption already ended | 37179: Exceeded max redeem count per campaign per user [{maxCount}] | 30771: Item [{itemId}] not found in User Section [{sectionId}], UserId [{userId}], Namespace [{namespace}] | 30772: Section [{sectionId}] is not available or expired)
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = AdminCreateUserOrder.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 201:
+                result.data_201 = OrderInfo.create_from_dict(content)
+            elif code == 400:
+                result.error_400 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
+            elif code == 403:
+                result.error_403 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_403.translate_to_api_error()
+            elif code == 404:
+                result.error_404 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_404.translate_to_api_error()
+            elif code == 409:
+                result.error_409 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_409.translate_to_api_error()
+            elif code == 422:
+                result.error_422 = ValidationErrorEntity.create_from_dict(content)
+                result.error = result.error_422.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, OrderInfo],

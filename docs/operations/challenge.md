@@ -64,6 +64,14 @@
 | /challenge/v1/admin/namespaces/{namespace}/plugins/assignment | GET | adminGetAssignmentPlugin | `false` | [AdminGetAssignmentPlugin](../../src/services/challenge/accelbyte_py_sdk/api/challenge/operations/plugins/admin_get_assignment_plugin.py) | [admin_get_assignment_plugin](../../src/services/challenge/accelbyte_py_sdk/api/challenge/wrappers/_plugins.py) | [accelbyte_py_sdk_cli challenge-admin-get-assignment-plugin](../../samples/cli/accelbyte_py_sdk_cli/challenge/_admin_get_assignment_plugin.py) |
 | /challenge/v1/admin/namespaces/{namespace}/plugins/assignment | PUT | adminUpdateAssignmentPlugin | `false` | [AdminUpdateAssignmentPlugin](../../src/services/challenge/accelbyte_py_sdk/api/challenge/operations/plugins/admin_update_assignment_plugin.py) | [admin_update_assignment_plugin](../../src/services/challenge/accelbyte_py_sdk/api/challenge/wrappers/_plugins.py) | [accelbyte_py_sdk_cli challenge-admin-update-assignment-plugin](../../samples/cli/accelbyte_py_sdk_cli/challenge/_admin_update_assignment_plugin.py) |
 
+### Schedules
+| Endpoint | Method | ID | Deprecated | Class | Wrapper | Example |
+|---|---|---|---|---|---|---|
+| /challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/schedules | GET | adminListSchedules | `false` | [AdminListSchedules](../../src/services/challenge/accelbyte_py_sdk/api/challenge/operations/schedules/admin_list_schedules.py) | [admin_list_schedules](../../src/services/challenge/accelbyte_py_sdk/api/challenge/wrappers/_schedules.py) | [accelbyte_py_sdk_cli challenge-admin-list-schedules](../../samples/cli/accelbyte_py_sdk_cli/challenge/_admin_list_schedules.py) |
+| /challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/goals/{code}/schedules | GET | adminListSchedulesByGoal | `false` | [AdminListSchedulesByGoal](../../src/services/challenge/accelbyte_py_sdk/api/challenge/operations/schedules/admin_list_schedules_by_goal.py) | [admin_list_schedules_by_goal](../../src/services/challenge/accelbyte_py_sdk/api/challenge/wrappers/_schedules.py) | [accelbyte_py_sdk_cli challenge-admin-list-schedules-by-goal](../../samples/cli/accelbyte_py_sdk_cli/challenge/_admin_list_schedules_by_goal.py) |
+| /challenge/v1/public/namespaces/{namespace}/challenges/{challengeCode}/schedules | GET | publicListSchedules | `false` | [PublicListSchedules](../../src/services/challenge/accelbyte_py_sdk/api/challenge/operations/schedules/public_list_schedules.py) | [public_list_schedules](../../src/services/challenge/accelbyte_py_sdk/api/challenge/wrappers/_schedules.py) | [accelbyte_py_sdk_cli challenge-public-list-schedules](../../samples/cli/accelbyte_py_sdk_cli/challenge/_public_list_schedules.py) |
+| /challenge/v1/public/namespaces/{namespace}/challenges/{challengeCode}/goals/{code}/schedules | GET | publicListSchedulesByGoal | `false` | [PublicListSchedulesByGoal](../../src/services/challenge/accelbyte_py_sdk/api/challenge/operations/schedules/public_list_schedules_by_goal.py) | [public_list_schedules_by_goal](../../src/services/challenge/accelbyte_py_sdk/api/challenge/wrappers/_schedules.py) | [accelbyte_py_sdk_cli challenge-public-list-schedules-by-goal](../../samples/cli/accelbyte_py_sdk_cli/challenge/_public_list_schedules_by_goal.py) |
+
 
 ## Models
 | Model | Class |
@@ -80,6 +88,7 @@
 | model.CreateGoalRequest | [ModelCreateGoalRequest](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_create_goal_request.py) |
 | model.EvaluatePlayerProgressionRequest | [ModelEvaluatePlayerProgressionRequest](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_evaluate_player_progression_request.py) |
 | model.GetGoalsResponse | [ModelGetGoalsResponse](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_get_goals_response.py) |
+| model.GoalInSchedulesResponse | [ModelGoalInSchedulesResponse](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_goal_in_schedules_response.py) |
 | model.GoalMeta | [ModelGoalMeta](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_goal_meta.py) |
 | model.GoalOrder | [ModelGoalOrder](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_goal_order.py) |
 | model.GoalProgressionResponse | [ModelGoalProgressionResponse](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_goal_progression_response.py) |
@@ -87,6 +96,8 @@
 | model.GoalSchedule | [ModelGoalSchedule](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_goal_schedule.py) |
 | model.ListChallengeResponse | [ModelListChallengeResponse](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_list_challenge_response.py) |
 | model.ListPeriodsResponse | [ModelListPeriodsResponse](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_list_periods_response.py) |
+| model.ListScheduleByGoalResponse | [ModelListScheduleByGoalResponse](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_list_schedule_by_goal_response.py) |
+| model.ListSchedulesResponse | [ModelListSchedulesResponse](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_list_schedules_response.py) |
 | model.ListUserRewardsResponse | [ModelListUserRewardsResponse](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_list_user_rewards_response.py) |
 | model.Pagination | [ModelPagination](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_pagination.py) |
 | model.PluginAsignmentAppConfig | [ModelPluginAsignmentAppConfig](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_plugin_asignment_app_config.py) |
@@ -99,6 +110,8 @@
 | model.ResetConfig | [ModelResetConfig](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_reset_config.py) |
 | model.Reward | [ModelReward](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_reward.py) |
 | model.Schedule | [ModelSchedule](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_schedule.py) |
+| model.ScheduleByGoalResponse | [ModelScheduleByGoalResponse](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_schedule_by_goal_response.py) |
+| model.ScheduleResponse | [ModelScheduleResponse](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_schedule_response.py) |
 | model.UpdateChallengeRequest | [ModelUpdateChallengeRequest](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_update_challenge_request.py) |
 | model.UpdateChallengeScheduleRequest | [ModelUpdateChallengeScheduleRequest](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_update_challenge_schedule_request.py) |
 | model.UpdateGoalRequest | [ModelUpdateGoalRequest](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_update_goal_request.py) |

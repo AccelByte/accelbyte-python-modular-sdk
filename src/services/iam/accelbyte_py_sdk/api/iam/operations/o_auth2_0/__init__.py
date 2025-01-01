@@ -8,7 +8,7 @@
 
 """Auto-generated package that contains models used by the AccelByte Gaming Services Iam Service."""
 
-__version__ = "7.24.2"
+__version__ = "7.25.3"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"
 
@@ -39,4 +39,5 @@ from .token_grant_v3 import (
 from .token_introspection_v3 import TokenIntrospectionV3
 from .token_revocation_v3 import TokenRevocationV3
 from .verify2fa_code import Verify2faCode
+from .verify2fa_code_forward import Verify2faCodeForward
 from .verify_token_v3 import VerifyTokenV3

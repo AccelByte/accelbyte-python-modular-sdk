@@ -27,6 +27,7 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import get_namespace as get_services_namespace
 from accelbyte_py_sdk.core import run_request
 from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import deprecated
 from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ErrorEntity
@@ -44,6 +45,7 @@ from ..models import RewardsRequest
 
 from ..operations.fulfillment import FulfillItem
 from ..operations.fulfillment import FulfillItems
+from ..operations.fulfillment import FulfillItemsV3
 from ..operations.fulfillment import FulfillRewards
 from ..operations.fulfillment import FulfillRewardsV2
 from ..operations.fulfillment import PreCheckFulfillItem
@@ -58,7 +60,9 @@ from ..operations.fulfillment import (
 )
 from ..operations.fulfillment import RedeemCode
 from ..operations.fulfillment import RetryFulfillItems
+from ..operations.fulfillment import RetryFulfillItemsV3
 from ..operations.fulfillment import RevokeItems
+from ..operations.fulfillment import RevokeItemsV3
 from ..models import FulfillmentItemItemTypeEnum
 from ..models import (
     FulfillmentRequestEntitlementOriginEnum,
@@ -186,6 +190,7 @@ async def fulfill_item_async(
     )
 
 
+@deprecated
 @same_doc_as(FulfillItems)
 def fulfill_items(
     body: FulfillmentV2Request,
@@ -197,11 +202,18 @@ def fulfill_items(
 ):
     """Fulfill items by transactionId (fulfillItems)
 
-    [Not supported yet in AGS Shared Cloud] Fulfill items by transactionId.
-    Other detail info:
+    ### The endpoint is going to be deprecated
 
-      * Request body : storeId, region, language, and entitlementCollectionId can be ignored.
+    Description: this endpoint is Not supported yet in AGS Shared Cloud and it's used to fulfill items by transaction id.
+
+      *  Request body : storeId, region, language, and entitlementCollectionId can be ignored.
       *  Returns : fulfillment v2 result, storeId field can be ignored.
+
+
+
+    ### Endpoint migration guide
+
+      *  Substitute endpoint: /v3/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId} [PUT]
 
     Properties:
         url: /platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}
@@ -246,6 +258,7 @@ def fulfill_items(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(FulfillItems)
 async def fulfill_items_async(
     body: FulfillmentV2Request,
@@ -257,11 +270,18 @@ async def fulfill_items_async(
 ):
     """Fulfill items by transactionId (fulfillItems)
 
-    [Not supported yet in AGS Shared Cloud] Fulfill items by transactionId.
-    Other detail info:
+    ### The endpoint is going to be deprecated
 
-      * Request body : storeId, region, language, and entitlementCollectionId can be ignored.
+    Description: this endpoint is Not supported yet in AGS Shared Cloud and it's used to fulfill items by transaction id.
+
+      *  Request body : storeId, region, language, and entitlementCollectionId can be ignored.
       *  Returns : fulfillment v2 result, storeId field can be ignored.
+
+
+
+    ### Endpoint migration guide
+
+      *  Substitute endpoint: /v3/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId} [PUT]
 
     Properties:
         url: /platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}
@@ -308,6 +328,122 @@ async def fulfill_items_async(
     )
 
 
+@same_doc_as(FulfillItemsV3)
+def fulfill_items_v3(
+    body: FulfillmentV2Request,
+    transaction_id: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Fulfill items by transactionId (fulfillItemsV3)
+
+    [Not supported yet in AGS Shared Cloud] Fulfill items by transactionId.
+    Other detail info:
+          * Request body : storeId, region, language, and entitlementCollectionId can be ignored.
+          *  Returns : fulfillment v2 result, storeId field can be ignored.
+
+    Properties:
+        url: /platform/v3/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}
+
+        method: PUT
+
+        tags: ["Fulfillment"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED FulfillmentV2Request in body
+
+        namespace: (namespace) REQUIRED str in path
+
+        transaction_id: (transactionId) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+    Responses:
+        200: OK - FulfillmentV2Result (successful operation)
+
+        400: Bad Request - ErrorEntity (35123: Wallet [{walletId}] is inactive | 38121: Duplicate permanent item exists | 38122: Subscription endDate required | 38128: Cannot retry fulfillment with different payload. Please check the items list. | 38129: Cannot combine same item [{itemId}] with different [{fieldName}] value | 38130: Cannot fulfill item with type [{itemType}] in item [{itemIdentity}])
+
+        404: Not Found - ErrorEntity (30341: Item [{itemId}] does not exist in namespace [{namespace}] | 30343: Item of sku [{sku}] does not exist)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = FulfillItemsV3.create(
+        body=body,
+        transaction_id=transaction_id,
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(FulfillItemsV3)
+async def fulfill_items_v3_async(
+    body: FulfillmentV2Request,
+    transaction_id: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Fulfill items by transactionId (fulfillItemsV3)
+
+    [Not supported yet in AGS Shared Cloud] Fulfill items by transactionId.
+    Other detail info:
+          * Request body : storeId, region, language, and entitlementCollectionId can be ignored.
+          *  Returns : fulfillment v2 result, storeId field can be ignored.
+
+    Properties:
+        url: /platform/v3/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}
+
+        method: PUT
+
+        tags: ["Fulfillment"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED FulfillmentV2Request in body
+
+        namespace: (namespace) REQUIRED str in path
+
+        transaction_id: (transactionId) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+    Responses:
+        200: OK - FulfillmentV2Result (successful operation)
+
+        400: Bad Request - ErrorEntity (35123: Wallet [{walletId}] is inactive | 38121: Duplicate permanent item exists | 38122: Subscription endDate required | 38128: Cannot retry fulfillment with different payload. Please check the items list. | 38129: Cannot combine same item [{itemId}] with different [{fieldName}] value | 38130: Cannot fulfill item with type [{itemType}] in item [{itemIdentity}])
+
+        404: Not Found - ErrorEntity (30341: Item [{itemId}] does not exist in namespace [{namespace}] | 30343: Item of sku [{sku}] does not exist)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = FulfillItemsV3.create(
+        body=body,
+        transaction_id=transaction_id,
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(FulfillRewards)
 def fulfill_rewards(
     body: RewardsRequest,
@@ -320,8 +456,7 @@ def fulfill_rewards(
 
     [SERVICE COMMUNICATION ONLY] Fulfill rewards.
     Other detail info:
-
-      * Returns : fulfillment result
+          * Returns : fulfillment result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/fulfillment/rewards
@@ -375,8 +510,7 @@ async def fulfill_rewards_async(
 
     [SERVICE COMMUNICATION ONLY] Fulfill rewards.
     Other detail info:
-
-      * Returns : fulfillment result
+          * Returns : fulfillment result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/fulfillment/rewards
@@ -432,9 +566,8 @@ def fulfill_rewards_v2(
 
     [SERVICE COMMUNICATION ONLY] Fulfill rewards.
     Other detail info:
-
-      * Returns : fulfillment result
-      *  rewards Item unsupported Type : SUBSCRIPTION
+          * Returns : fulfillment result
+          *  rewards Item unsupported Type : SUBSCRIPTION
 
     Properties:
         url: /platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillment/rewards
@@ -488,9 +621,8 @@ async def fulfill_rewards_v2_async(
 
     [SERVICE COMMUNICATION ONLY] Fulfill rewards.
     Other detail info:
-
-      * Returns : fulfillment result
-      *  rewards Item unsupported Type : SUBSCRIPTION
+          * Returns : fulfillment result
+          *  rewards Item unsupported Type : SUBSCRIPTION
 
     Properties:
         url: /platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillment/rewards
@@ -546,8 +678,7 @@ def pre_check_fulfill_item(
 
     Retrieve and check fulfillment items based on the provided request.
     Other detail info:
-
-      * Returns : list of fulfillment items
+          * Returns : list of fulfillment items
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/fulfillment/preCheck
@@ -599,8 +730,7 @@ async def pre_check_fulfill_item_async(
 
     Retrieve and check fulfillment items based on the provided request.
     Other detail info:
-
-      * Returns : list of fulfillment items
+          * Returns : list of fulfillment items
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/fulfillment/preCheck
@@ -654,8 +784,7 @@ def public_redeem_code(
 
     Redeem campaign code, this api have rate limit, default: only allow request once per user in 2 seconds
     Other detail info:
-
-      * Returns : fulfillment result
+          * Returns : fulfillment result
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/fulfillment/code
@@ -711,8 +840,7 @@ async def public_redeem_code_async(
 
     Redeem campaign code, this api have rate limit, default: only allow request once per user in 2 seconds
     Other detail info:
-
-      * Returns : fulfillment result
+          * Returns : fulfillment result
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/fulfillment/code
@@ -772,8 +900,7 @@ def query_fulfillment_histories(
 
     Query fulfillment histories in a namespace.
     Other detail info:
-
-      * Returns : query fulfillment history
+          * Returns : query fulfillment history
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/fulfillment/history
@@ -829,8 +956,7 @@ async def query_fulfillment_histories_async(
 
     Query fulfillment histories in a namespace.
     Other detail info:
-
-      * Returns : query fulfillment history
+          * Returns : query fulfillment history
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/fulfillment/history
@@ -891,10 +1017,9 @@ def query_fulfillments(
 
     [Not supported yet in AGS Shared Cloud] Query fulfillments in a namespace.
     Other detail info:
-
-      * Returns : list of fulfillment info:
-        * storeId in items can be ignored
-        * error in successList will always be null
+          * Returns : list of fulfillment info:
+            * storeId in items can be ignored
+            * error in successList will always be null
 
     Properties:
         url: /platform/v2/admin/namespaces/{namespace}/fulfillments
@@ -962,10 +1087,9 @@ async def query_fulfillments_async(
 
     [Not supported yet in AGS Shared Cloud] Query fulfillments in a namespace.
     Other detail info:
-
-      * Returns : list of fulfillment info:
-        * storeId in items can be ignored
-        * error in successList will always be null
+          * Returns : list of fulfillment info:
+            * storeId in items can be ignored
+            * error in successList will always be null
 
     Properties:
         url: /platform/v2/admin/namespaces/{namespace}/fulfillments
@@ -1030,8 +1154,7 @@ def redeem_code(
 
     Redeem campaign code.
     Other detail info:
-
-      * Returns : fulfillment result
+          * Returns : fulfillment result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/fulfillment/code
@@ -1085,8 +1208,7 @@ async def redeem_code_async(
 
     Redeem campaign code.
     Other detail info:
-
-      * Returns : fulfillment result
+          * Returns : fulfillment result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/fulfillment/code
@@ -1130,6 +1252,7 @@ async def redeem_code_async(
     )
 
 
+@deprecated
 @same_doc_as(RetryFulfillItems)
 def retry_fulfill_items(
     transaction_id: str,
@@ -1140,10 +1263,15 @@ def retry_fulfill_items(
 ):
     """Retry fulfill items by transactionId (retryFulfillItems)
 
+    ### The endpoint is going to be deprecated
+
     [Not supported yet in AGS Shared Cloud] Retry fulfill items by transactionId without sending the original payload.
     Other detail info:
+          * Returns : fulfillment v2 result, storeId field can be ignored.
 
-      * Returns : fulfillment v2 result, storeId field can be ignored.
+    ### Endpoint migration guide
+
+          *  Substitute endpoint: /v3/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}/retry [PUT]
 
     Properties:
         url: /platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}/retry
@@ -1183,6 +1311,7 @@ def retry_fulfill_items(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(RetryFulfillItems)
 async def retry_fulfill_items_async(
     transaction_id: str,
@@ -1193,10 +1322,15 @@ async def retry_fulfill_items_async(
 ):
     """Retry fulfill items by transactionId (retryFulfillItems)
 
+    ### The endpoint is going to be deprecated
+
     [Not supported yet in AGS Shared Cloud] Retry fulfill items by transactionId without sending the original payload.
     Other detail info:
+          * Returns : fulfillment v2 result, storeId field can be ignored.
 
-      * Returns : fulfillment v2 result, storeId field can be ignored.
+    ### Endpoint migration guide
+
+          *  Substitute endpoint: /v3/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}/retry [PUT]
 
     Properties:
         url: /platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}/retry
@@ -1238,6 +1372,109 @@ async def retry_fulfill_items_async(
     )
 
 
+@same_doc_as(RetryFulfillItemsV3)
+def retry_fulfill_items_v3(
+    transaction_id: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Retry fulfill items by transactionId (retryFulfillItemsV3)
+
+    [Not supported yet in AGS Shared Cloud] Retry fulfill items by transactionId without sending the original payload.
+    Other detail info:
+              * Returns : fulfillment v2 result, storeId field can be ignored.
+
+    Properties:
+        url: /platform/v3/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}/retry
+
+        method: PUT
+
+        tags: ["Fulfillment"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        transaction_id: (transactionId) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+    Responses:
+        200: OK - FulfillmentV2Result (successful operation)
+
+        404: Not Found - ErrorEntity (38145: Fulfillment with transactionId [{transactionId}] does not exist)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = RetryFulfillItemsV3.create(
+        transaction_id=transaction_id,
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(RetryFulfillItemsV3)
+async def retry_fulfill_items_v3_async(
+    transaction_id: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Retry fulfill items by transactionId (retryFulfillItemsV3)
+
+    [Not supported yet in AGS Shared Cloud] Retry fulfill items by transactionId without sending the original payload.
+    Other detail info:
+              * Returns : fulfillment v2 result, storeId field can be ignored.
+
+    Properties:
+        url: /platform/v3/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}/retry
+
+        method: PUT
+
+        tags: ["Fulfillment"]
+
+        consumes: []
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        transaction_id: (transactionId) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+    Responses:
+        200: OK - FulfillmentV2Result (successful operation)
+
+        404: Not Found - ErrorEntity (38145: Fulfillment with transactionId [{transactionId}] does not exist)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = RetryFulfillItemsV3.create(
+        transaction_id=transaction_id,
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@deprecated
 @same_doc_as(RevokeItems)
 def revoke_items(
     transaction_id: str,
@@ -1248,10 +1485,15 @@ def revoke_items(
 ):
     """Revoke items by transactionId (revokeItems)
 
+    ### The endpoint is going to be deprecated
+
     [Not supported yet in AGS Shared Cloud] Revoke items by transactionId.
     Other detail info:
+              * Returns : revoke fulfillment v2 result, storeId field can be ignored.
 
-      * Returns : revoke fulfillment v2 result, storeId field can be ignored.
+    ### Endpoint migration guide
+
+              *  Substitute endpoint: /v3/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}/revoke [PUT]
 
     Properties:
         url: /platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}/revoke
@@ -1291,6 +1533,7 @@ def revoke_items(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(RevokeItems)
 async def revoke_items_async(
     transaction_id: str,
@@ -1301,10 +1544,15 @@ async def revoke_items_async(
 ):
     """Revoke items by transactionId (revokeItems)
 
+    ### The endpoint is going to be deprecated
+
     [Not supported yet in AGS Shared Cloud] Revoke items by transactionId.
     Other detail info:
+              * Returns : revoke fulfillment v2 result, storeId field can be ignored.
 
-      * Returns : revoke fulfillment v2 result, storeId field can be ignored.
+    ### Endpoint migration guide
+
+              *  Substitute endpoint: /v3/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}/revoke [PUT]
 
     Properties:
         url: /platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}/revoke
@@ -1337,6 +1585,108 @@ async def revoke_items_async(
         if error:
             return None, error
     request = RevokeItems.create(
+        transaction_id=transaction_id,
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(RevokeItemsV3)
+def revoke_items_v3(
+    transaction_id: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Revoke items by transactionId (revokeItemsV3)
+
+    [Not supported yet in AGS Shared Cloud] Revoke items by transactionId.
+    Other detail info:
+                  * Returns : revoke fulfillment v2 result, storeId field can be ignored.
+
+    Properties:
+        url: /platform/v3/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}/revoke
+
+        method: PUT
+
+        tags: ["Fulfillment"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        transaction_id: (transactionId) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+    Responses:
+        200: OK - RevokeFulfillmentV2Result (successful operation)
+
+        404: Not Found - ErrorEntity (38145: Fulfillment with transactionId [{transactionId}] does not exist)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = RevokeItemsV3.create(
+        transaction_id=transaction_id,
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(RevokeItemsV3)
+async def revoke_items_v3_async(
+    transaction_id: str,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs
+):
+    """Revoke items by transactionId (revokeItemsV3)
+
+    [Not supported yet in AGS Shared Cloud] Revoke items by transactionId.
+    Other detail info:
+                  * Returns : revoke fulfillment v2 result, storeId field can be ignored.
+
+    Properties:
+        url: /platform/v3/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}/revoke
+
+        method: PUT
+
+        tags: ["Fulfillment"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        transaction_id: (transactionId) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+    Responses:
+        200: OK - RevokeFulfillmentV2Result (successful operation)
+
+        404: Not Found - ErrorEntity (38145: Fulfillment with transactionId [{transactionId}] does not exist)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace()
+        if error:
+            return None, error
+    request = RevokeItemsV3.create(
         transaction_id=transaction_id,
         user_id=user_id,
         namespace=namespace,

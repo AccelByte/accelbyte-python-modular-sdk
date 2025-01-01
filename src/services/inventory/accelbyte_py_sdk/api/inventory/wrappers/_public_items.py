@@ -632,6 +632,8 @@ def public_move_my_items(
 
     Move items between inventories that is owned by the same user.
 
+    For Ecommerce items, the *qty* is *useCount*. For example, moving 2 of an item's *qty* will move 2 of the entitlement's *useCount*.
+
     Properties:
         url: /inventory/v1/public/namespaces/{namespace}/users/me/inventories/{inventoryId}/items/movement
 
@@ -681,6 +683,8 @@ async def public_move_my_items_async(
     """To move items between my inventories (PublicMoveMyItems)
 
     Move items between inventories that is owned by the same user.
+
+    For Ecommerce items, the *qty* is *useCount*. For example, moving 2 of an item's *qty* will move 2 of the entitlement's *useCount*.
 
     Properties:
         url: /inventory/v1/public/namespaces/{namespace}/users/me/inventories/{inventoryId}/items/movement

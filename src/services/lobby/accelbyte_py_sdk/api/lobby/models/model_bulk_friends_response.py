@@ -26,6 +26,7 @@ from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
+from accelbyte_py_sdk.core import ApiError
 
 
 class ModelBulkFriendsResponse(Model):
@@ -58,6 +59,12 @@ class ModelBulkFriendsResponse(Model):
         elif include_empty:
             result["rowsAffected"] = 0
         return result
+
+    def translate_to_api_error(self) -> ApiError:
+        return ApiError(
+            code="",
+            message="",
+        )
 
     # endregion to methods
 

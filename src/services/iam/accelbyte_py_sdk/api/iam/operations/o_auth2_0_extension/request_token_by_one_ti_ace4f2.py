@@ -25,19 +25,20 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import OauthmodelTokenResponseV3
 
 
 class RequestTokenByOneTimeLinkCodeResponseV3(Operation):
-    """Generate publisher token by headless account's one time link code (RequestTokenByOneTimeLinkCodeResponseV3)
+    """Generate token by headless account's one time link code (RequestTokenByOneTimeLinkCodeResponseV3)
 
     This endpoint is being used to generate user's token by one time link code.
-    It require publisher ClientID
-    It required a code which can be generated from `/iam/v3/link/code/request`.
+    It requires a code which can be generated from `/iam/v3/link/code/request` or `/iam/v3/public/users/me/link/forward`.
 
     This endpoint support creating transient token by utilizing **isTransient** param:
     **isTransient=true** will generate a transient token with a short Time Expiration and without a refresh token
@@ -204,8 +205,64 @@ class RequestTokenByOneTimeLinkCodeResponseV3(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_200: Optional[OauthmodelTokenResponseV3] = None
+
+        def ok(self) -> RequestTokenByOneTimeLinkCodeResponseV3.Response:
+            return self
+
+        def __iter__(self):
+            if self.data_200 is not None:
+                yield self.data_200
+                yield None
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        200: OK - OauthmodelTokenResponseV3 (Succeed to generate user token by one time link code.)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = RequestTokenByOneTimeLinkCodeResponseV3.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 200:
+                result.data_200 = OauthmodelTokenResponseV3.create_from_dict(content)
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[Union[None, OauthmodelTokenResponseV3], Union[None, HttpResponse]]:
         """Parse the given response.

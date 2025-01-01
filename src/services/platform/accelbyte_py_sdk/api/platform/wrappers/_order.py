@@ -99,13 +99,10 @@ def admin_create_user_order(
 
     Admin Create an order. The result contains the checkout link and payment token. User with permission SANDBOX will create sandbox order that not real paid for xsolla/alipay and not validate price for wxpay.
     Other detail info:
-
-      * It will be forbidden while the user is banned: ORDER_INITIATE or ORDER_AND_PAYMENT
-      * sandbox default value is false
-      * platform default value is Other
-      *  Returns : created order
-
-
+                  * It will be forbidden while the user is banned: ORDER_INITIATE or ORDER_AND_PAYMENT
+                  * sandbox default value is false
+                  * platform default value is Other
+                  *  Returns : created order
 
     ## Restrictions for ext field
 
@@ -113,15 +110,13 @@ def admin_create_user_order(
     1. Cannot use "." as the key name
     -
 
-
-        { "data.2": "value" }
+                                                    { "data.2": "value" }
 
 
     2. Cannot use "$" as the prefix in key names
     -
 
-
-        { "$data": "value" }
+                                                    { "$data": "value" }
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders
@@ -179,13 +174,10 @@ async def admin_create_user_order_async(
 
     Admin Create an order. The result contains the checkout link and payment token. User with permission SANDBOX will create sandbox order that not real paid for xsolla/alipay and not validate price for wxpay.
     Other detail info:
-
-      * It will be forbidden while the user is banned: ORDER_INITIATE or ORDER_AND_PAYMENT
-      * sandbox default value is false
-      * platform default value is Other
-      *  Returns : created order
-
-
+                  * It will be forbidden while the user is banned: ORDER_INITIATE or ORDER_AND_PAYMENT
+                  * sandbox default value is false
+                  * platform default value is Other
+                  *  Returns : created order
 
     ## Restrictions for ext field
 
@@ -193,15 +185,13 @@ async def admin_create_user_order_async(
     1. Cannot use "." as the key name
     -
 
-
-        { "data.2": "value" }
+                                                    { "data.2": "value" }
 
 
     2. Cannot use "$" as the prefix in key names
     -
 
-
-        { "$data": "value" }
+                                                    { "$data": "value" }
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders
@@ -261,8 +251,7 @@ def count_of_purchased_item(
 
     This API is used to get the count of purchased item which is the order target.
     Other detail info:
-
-      * Returns : Item purchased count
+                  * Returns : Item purchased count
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders/countOfItem
@@ -310,8 +299,7 @@ async def count_of_purchased_item_async(
 
     This API is used to get the count of purchased item which is the order target.
     Other detail info:
-
-      * Returns : Item purchased count
+                  * Returns : Item purchased count
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders/countOfItem
@@ -361,8 +349,7 @@ def download_user_order_receipt(
 
     Download user order receipt by orderNo.
     Other detail info:
-
-      * Returns : order receipt pdf
+                  * Returns : order receipt pdf
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/receipt.pdf
@@ -414,8 +401,7 @@ async def download_user_order_receipt_async(
 
     Download user order receipt by orderNo.
     Other detail info:
-
-      * Returns : order receipt pdf
+                  * Returns : order receipt pdf
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/receipt.pdf
@@ -469,8 +455,7 @@ def fulfill_user_order(
 
     Fulfill an order if the order is charged but fulfill failed.
     Other detail info:
-
-      * Returns : fulfilled order
+                  * Returns : fulfilled order
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/fulfill
@@ -524,8 +509,7 @@ async def fulfill_user_order_async(
 
     Fulfill an order if the order is charged but fulfill failed.
     Other detail info:
-
-      * Returns : fulfilled order
+                  * Returns : fulfilled order
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/fulfill
@@ -580,8 +564,7 @@ def get_order(
 
     Get order by orderNo.
     Other detail info:
-
-      * Returns : order instance
+                  * Returns : order instance
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/orders/{orderNo}
@@ -627,8 +610,7 @@ async def get_order_async(
 
     Get order by orderNo.
     Other detail info:
-
-      * Returns : order instance
+                  * Returns : order instance
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/orders/{orderNo}
@@ -675,8 +657,7 @@ def get_order_statistics(
 
     Get Order Statistics.
     Other detail info:
-
-      * Returns : order statistics
+                  * Returns : order statistics
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/orders/stats
@@ -716,8 +697,7 @@ async def get_order_statistics_async(
 
     Get Order Statistics.
     Other detail info:
-
-      * Returns : order statistics
+                  * Returns : order statistics
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/orders/stats
@@ -761,8 +741,7 @@ def get_user_order(
 
     Get an order.
     Other detail info:
-
-      * Returns : get order
+                  * Returns : get order
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}
@@ -812,8 +791,7 @@ async def get_user_order_async(
 
     Get an order.
     Other detail info:
-
-      * Returns : get order
+                  * Returns : get order
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}
@@ -866,8 +844,7 @@ def get_user_order_grant(
 
     Get user order grant that fulfilled by this order.
     Other detail info:
-
-      * Returns : get order grant
+                  * Returns : get order grant
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/grant
@@ -916,8 +893,7 @@ async def get_user_order_grant_async(
 
     Get user order grant that fulfilled by this order.
     Other detail info:
-
-      * Returns : get order grant
+                  * Returns : get order grant
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/grant
@@ -967,8 +943,7 @@ def get_user_order_histories(
 
     Get user order history.
     Other detail info:
-
-      * Returns : get order history
+                  * Returns : get order history
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/history
@@ -1016,8 +991,7 @@ async def get_user_order_histories_async(
 
     Get user order history.
     Other detail info:
-
-      * Returns : get order history
+                  * Returns : get order history
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/history
@@ -1068,8 +1042,7 @@ def process_user_order_notification(
 
     [SERVICE COMMUNICATION ONLY] This API is used as a web hook for payment notification from justice payment service.
     Other detail info:
-
-      * Returns : Process result
+                  * Returns : Process result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/notifications
@@ -1123,8 +1096,7 @@ async def process_user_order_notification_async(
 
     [SERVICE COMMUNICATION ONLY] This API is used as a web hook for payment notification from justice payment service.
     Other detail info:
-
-      * Returns : Process result
+                  * Returns : Process result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/notifications
@@ -1179,8 +1151,7 @@ def public_cancel_user_order(
 
     Cancel user order.
     Other detail info:
-
-      * Returns : cancelled order
+                  * Returns : cancelled order
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/orders/{orderNo}/cancel
@@ -1232,8 +1203,7 @@ async def public_cancel_user_order_async(
 
     Cancel user order.
     Other detail info:
-
-      * Returns : cancelled order
+                  * Returns : cancelled order
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/orders/{orderNo}/cancel
@@ -1287,12 +1257,9 @@ def public_create_user_order(
 
     Create an order. The result contains the checkout link and payment token. User with permission SANDBOX will create sandbox order that not real paid for xsolla/alipay and not validate price for wxpay.
     Other detail info:
-
-      * Optional permission(user with this permission will create sandbox order) : resource="SANDBOX", action=1 (CREATE)
-      * It will be forbidden while the user is banned: ORDER_INITIATE or ORDER_AND_PAYMENT
-      *  Returns : created order
-
-
+                  * Optional permission(user with this permission will create sandbox order) : resource="SANDBOX", action=1 (CREATE)
+                  * It will be forbidden while the user is banned: ORDER_INITIATE or ORDER_AND_PAYMENT
+                  *  Returns : created order
 
     ## Restrictions for ext field
 
@@ -1300,15 +1267,13 @@ def public_create_user_order(
     1. Cannot use "." as the key name
     -
 
-
-        { "data.2": "value" }
+                                                    { "data.2": "value" }
 
 
     2. Cannot use "$" as the prefix in key names
     -
 
-
-        { "$data": "value" }
+                                                    { "$data": "value" }
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/orders
@@ -1366,12 +1331,9 @@ async def public_create_user_order_async(
 
     Create an order. The result contains the checkout link and payment token. User with permission SANDBOX will create sandbox order that not real paid for xsolla/alipay and not validate price for wxpay.
     Other detail info:
-
-      * Optional permission(user with this permission will create sandbox order) : resource="SANDBOX", action=1 (CREATE)
-      * It will be forbidden while the user is banned: ORDER_INITIATE or ORDER_AND_PAYMENT
-      *  Returns : created order
-
-
+                  * Optional permission(user with this permission will create sandbox order) : resource="SANDBOX", action=1 (CREATE)
+                  * It will be forbidden while the user is banned: ORDER_INITIATE or ORDER_AND_PAYMENT
+                  *  Returns : created order
 
     ## Restrictions for ext field
 
@@ -1379,15 +1341,13 @@ async def public_create_user_order_async(
     1. Cannot use "." as the key name
     -
 
-
-        { "data.2": "value" }
+                                                    { "data.2": "value" }
 
 
     2. Cannot use "$" as the prefix in key names
     -
 
-
-        { "$data": "value" }
+                                                    { "$data": "value" }
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/orders
@@ -1447,8 +1407,7 @@ def public_download_user_order_receipt(
 
     Download user order receipt by orderNo.
     Other detail info:
-
-      * Returns : order receipt pdf
+                  * Returns : order receipt pdf
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/orders/{orderNo}/receipt.pdf
@@ -1500,8 +1459,7 @@ async def public_download_user_order_receipt_async(
 
     Download user order receipt by orderNo.
     Other detail info:
-
-      * Returns : order receipt pdf
+                  * Returns : order receipt pdf
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/orders/{orderNo}/receipt.pdf
@@ -1555,8 +1513,7 @@ def public_get_user_order(
 
     Get user order.
     Other detail info:
-
-      * Returns : get order
+                  * Returns : get order
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/orders/{orderNo}
@@ -1606,8 +1563,7 @@ async def public_get_user_order_async(
 
     Get user order.
     Other detail info:
-
-      * Returns : get order
+                  * Returns : get order
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/orders/{orderNo}
@@ -1659,8 +1615,7 @@ def public_get_user_order_histories(
 
     Get user order histories.
     Other detail info:
-
-      * Returns : get order history
+                  * Returns : get order history
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/orders/{orderNo}/history
@@ -1708,8 +1663,7 @@ async def public_get_user_order_histories_async(
 
     Get user order histories.
     Other detail info:
-
-      * Returns : get order history
+                  * Returns : get order history
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/orders/{orderNo}/history
@@ -1758,7 +1712,7 @@ def public_preview_order_price(
     """Preview order price with discount code. (publicPreviewOrderPrice)
 
     Preview order price with discount code, this api is used to auto calc order price with discount code.Notes: this api don't do full order validation, only check discount code and calc final order price.Other detail info:
-      * Returns : previewed order
+                  * Returns : previewed order
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/orders/discount/preview
@@ -1815,7 +1769,7 @@ async def public_preview_order_price_async(
     """Preview order price with discount code. (publicPreviewOrderPrice)
 
     Preview order price with discount code, this api is used to auto calc order price with discount code.Notes: this api don't do full order validation, only check discount code and calc final order price.Other detail info:
-      * Returns : previewed order
+                  * Returns : previewed order
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/orders/discount/preview
@@ -1879,8 +1833,7 @@ def public_query_user_orders(
 
     Query user orders.
     Other detail info:
-
-      * Returns : get order
+                  * Returns : get order
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/orders
@@ -1944,8 +1897,7 @@ async def public_query_user_orders_async(
 
     Query user orders.
     Other detail info:
-
-      * Returns : get order
+                  * Returns : get order
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/orders
@@ -2013,8 +1965,7 @@ def query_orders(
 
     Query orders.
     Other detail info:
-
-      * Returns : query orders
+                  * Returns : query orders
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/orders
@@ -2088,8 +2039,7 @@ async def query_orders_async(
 
     Query orders.
     Other detail info:
-
-      * Returns : query orders
+                  * Returns : query orders
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/orders
@@ -2163,8 +2113,7 @@ def query_user_orders(
 
     Query user orders.
     Other detail info:
-
-      * Returns : get order
+                  * Returns : get order
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders
@@ -2228,8 +2177,7 @@ async def query_user_orders_async(
 
     Query user orders.
     Other detail info:
-
-      * Returns : get order
+                  * Returns : get order
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders
@@ -2398,8 +2346,7 @@ def update_user_order_status(
 
     Update order status.
     Other detail info:
-
-      * Returns : updated order
+                  * Returns : updated order
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}
@@ -2457,8 +2404,7 @@ async def update_user_order_status_async(
 
     Update order status.
     Other detail info:
-
-      * Returns : updated order
+                  * Returns : updated order
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}

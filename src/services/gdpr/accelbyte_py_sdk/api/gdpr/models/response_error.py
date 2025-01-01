@@ -26,6 +26,7 @@ from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
+from accelbyte_py_sdk.core import ApiError
 
 
 class ResponseError(Model):
@@ -35,12 +36,15 @@ class ResponseError(Model):
         error_code: (errorCode) REQUIRED int
 
         error_message: (errorMessage) REQUIRED str
+
+        message_variables: (messageVariables) OPTIONAL Dict[str, str]
     """
 
     # region fields
 
     error_code: int  # REQUIRED
     error_message: str  # REQUIRED
+    message_variables: Dict[str, str]  # OPTIONAL
 
     # endregion fields
 
@@ -52,6 +56,10 @@ class ResponseError(Model):
 
     def with_error_message(self, value: str) -> ResponseError:
         self.error_message = value
+        return self
+
+    def with_message_variables(self, value: Dict[str, str]) -> ResponseError:
+        self.message_variables = value
         return self
 
     # endregion with_x methods
@@ -68,17 +76,37 @@ class ResponseError(Model):
             result["errorMessage"] = str(self.error_message)
         elif include_empty:
             result["errorMessage"] = ""
+        if hasattr(self, "message_variables"):
+            result["messageVariables"] = {
+                str(k0): str(v0) for k0, v0 in self.message_variables.items()
+            }
+        elif include_empty:
+            result["messageVariables"] = {}
         return result
+
+    def translate_to_api_error(self) -> ApiError:
+        return ApiError(
+            code=str(self.error_code) if self.error_code else "",
+            message=str(self.error_message) if self.error_message else "",
+        )
 
     # endregion to methods
 
     # region static methods
 
     @classmethod
-    def create(cls, error_code: int, error_message: str, **kwargs) -> ResponseError:
+    def create(
+        cls,
+        error_code: int,
+        error_message: str,
+        message_variables: Optional[Dict[str, str]] = None,
+        **kwargs,
+    ) -> ResponseError:
         instance = cls()
         instance.error_code = error_code
         instance.error_message = error_message
+        if message_variables is not None:
+            instance.message_variables = message_variables
         return instance
 
     @classmethod
@@ -96,6 +124,12 @@ class ResponseError(Model):
             instance.error_message = str(dict_["errorMessage"])
         elif include_empty:
             instance.error_message = ""
+        if "messageVariables" in dict_ and dict_["messageVariables"] is not None:
+            instance.message_variables = {
+                str(k0): str(v0) for k0, v0 in dict_["messageVariables"].items()
+            }
+        elif include_empty:
+            instance.message_variables = {}
         return instance
 
     @classmethod
@@ -137,6 +171,7 @@ class ResponseError(Model):
         return {
             "errorCode": "error_code",
             "errorMessage": "error_message",
+            "messageVariables": "message_variables",
         }
 
     @staticmethod
@@ -144,6 +179,7 @@ class ResponseError(Model):
         return {
             "errorCode": True,
             "errorMessage": True,
+            "messageVariables": False,
         }
 
     # endregion static methods

@@ -6,7 +6,7 @@ This is a service module for the [AccelByte Modular Python SDK](https://github.c
 
 ```text
 AccelByte Gaming Services Session Browser Service
-* Version: 1.18.9
+* Version: 1.18.10
 ```
 
 ## Setup

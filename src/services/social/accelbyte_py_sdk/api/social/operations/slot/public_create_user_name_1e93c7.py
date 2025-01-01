@@ -25,6 +25,7 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
@@ -252,8 +253,92 @@ class PublicCreateUserNamespaceSlot(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_201: Optional[str] = None
+        error_400: Optional[ErrorEntity] = None
+        error_409: Optional[ErrorEntity] = None
+
+        def ok(self) -> PublicCreateUserNamespaceSlot.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_409 is not None:
+                err = self.error_409.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_201 is not None:
+                yield self.data_201
+                yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
+            elif self.error_409 is not None:
+                yield None
+                yield self.error_409
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        201: Created - (Successful create of a slot)
+
+        400: Bad Request - ErrorEntity (12121: Checksum mismatch for [{filename}] | 12122: [{filename}] exceeds the upload limit size of [{sizeLimit}] bytes)
+
+        409: Conflict - ErrorEntity (12171: User [{userId}] exceed max slot count [{maxCount}] in namespace [{namespace}])
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = PublicCreateUserNamespaceSlot.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 201:
+                result.data_201 = content
+            elif code == 400:
+                result.error_400 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
+            elif code == 409:
+                result.error_409 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_409.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[Union[None, Optional[str]], Union[None, ErrorEntity, HttpResponse]]:
         """Parse the given response.
@@ -278,7 +363,7 @@ class PublicCreateUserNamespaceSlot(Operation):
         code, content_type, content = pre_processed_response
 
         if code == 201:
-            return HttpResponse.create(code, "Created"), None
+            return content, None
         if code == 400:
             return None, ErrorEntity.create_from_dict(content)
         if code == 409:

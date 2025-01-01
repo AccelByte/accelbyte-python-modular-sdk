@@ -27,6 +27,7 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import get_namespace as get_services_namespace
 from accelbyte_py_sdk.core import run_request
 from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import deprecated
 from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import LogAppMessageDeclaration
@@ -148,6 +149,7 @@ async def handler_v3_healthz_async(
     )
 
 
+@deprecated
 @same_doc_as(PublicGetMessages)
 def public_get_messages(
     x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
@@ -178,6 +180,7 @@ def public_get_messages(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(PublicGetMessages)
 async def public_get_messages_async(
     x_additional_headers: Optional[Dict[str, str]] = None, **kwargs

@@ -16,6 +16,7 @@ __email__ = "dev@accelbyte.net"
 
 from .get_challenges import GetChallenges
 from .get_challenges import (
+    SortByEnum as GetChallengesSortByEnum,
     StatusEnum as GetChallengesStatusEnum,
 )
 from .public_get_scheduled_goals import PublicGetScheduledGoals

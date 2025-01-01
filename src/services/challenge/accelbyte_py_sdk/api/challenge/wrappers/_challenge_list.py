@@ -36,6 +36,7 @@ from ..models import ResponseError
 
 from ..operations.challenge_list import GetChallenges
 from ..operations.challenge_list import (
+    GetChallengesSortByEnum,
     GetChallengesStatusEnum,
 )
 from ..operations.challenge_list import PublicGetScheduledGoals
@@ -45,7 +46,7 @@ from ..operations.challenge_list import PublicGetScheduledGoals
 def get_challenges(
     limit: Optional[int] = None,
     offset: Optional[int] = None,
-    sort_by: Optional[str] = None,
+    sort_by: Optional[Union[str, GetChallengesSortByEnum]] = None,
     status: Optional[Union[str, GetChallengesStatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
@@ -53,7 +54,7 @@ def get_challenges(
 ):
     """List Challenges (GetChallenges)
 
-    * Required permission: NAMESPACE:{namespace}:CHALLENGE [READ]
+    - Required permission: NAMESPACE:{namespace}:CHALLENGE [READ]
 
     Properties:
         url: /challenge/v1/public/namespaces/{namespace}/challenges
@@ -74,7 +75,7 @@ def get_challenges(
 
         offset: (offset) OPTIONAL int in query
 
-        sort_by: (sortBy) OPTIONAL str in query
+        sort_by: (sortBy) OPTIONAL Union[str, SortByEnum] in query
 
         status: (status) OPTIONAL Union[str, StatusEnum] in query
 
@@ -105,7 +106,7 @@ def get_challenges(
 async def get_challenges_async(
     limit: Optional[int] = None,
     offset: Optional[int] = None,
-    sort_by: Optional[str] = None,
+    sort_by: Optional[Union[str, GetChallengesSortByEnum]] = None,
     status: Optional[Union[str, GetChallengesStatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
@@ -113,7 +114,7 @@ async def get_challenges_async(
 ):
     """List Challenges (GetChallenges)
 
-    * Required permission: NAMESPACE:{namespace}:CHALLENGE [READ]
+    - Required permission: NAMESPACE:{namespace}:CHALLENGE [READ]
 
     Properties:
         url: /challenge/v1/public/namespaces/{namespace}/challenges
@@ -134,7 +135,7 @@ async def get_challenges_async(
 
         offset: (offset) OPTIONAL int in query
 
-        sort_by: (sortBy) OPTIONAL str in query
+        sort_by: (sortBy) OPTIONAL Union[str, SortByEnum] in query
 
         status: (status) OPTIONAL Union[str, StatusEnum] in query
 
@@ -175,7 +176,7 @@ def public_get_scheduled_goals(
 ):
     """List Goals of a Challenge (publicGetScheduledGoals)
 
-    * Required permission: NAMESPACE:{namespace}:CHALLENGE [READ]
+    - Required permission: NAMESPACE:{namespace}:CHALLENGE [READ]
 
     Properties:
         url: /challenge/v1/public/namespaces/{namespace}/challenges/{challengeCode}/goals
@@ -237,7 +238,7 @@ async def public_get_scheduled_goals_async(
 ):
     """List Goals of a Challenge (publicGetScheduledGoals)
 
-    * Required permission: NAMESPACE:{namespace}:CHALLENGE [READ]
+    - Required permission: NAMESPACE:{namespace}:CHALLENGE [READ]
 
     Properties:
         url: /challenge/v1/public/namespaces/{namespace}/challenges/{challengeCode}/goals

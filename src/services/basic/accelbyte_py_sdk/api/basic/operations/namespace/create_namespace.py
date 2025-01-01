@@ -25,9 +25,11 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ErrorEntity
 from ...models import NamespaceCreate
@@ -179,8 +181,120 @@ class CreateNamespace(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_201: Optional[NamespaceInfo] = None
+        error_400: Optional[ValidationErrorEntity] = None
+        error_401: Optional[ErrorEntity] = None
+        error_403: Optional[ErrorEntity] = None
+        error_409: Optional[ErrorEntity] = None
+
+        def ok(self) -> CreateNamespace.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_401 is not None:
+                err = self.error_401.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_403 is not None:
+                err = self.error_403.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_409 is not None:
+                err = self.error_409.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_201 is not None:
+                yield self.data_201
+                yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
+            elif self.error_401 is not None:
+                yield None
+                yield self.error_401
+            elif self.error_403 is not None:
+                yield None
+                yield self.error_403
+            elif self.error_409 is not None:
+                yield None
+                yield self.error_409
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        201: Created - NamespaceInfo (Successful operation)
+
+        400: Bad Request - ValidationErrorEntity (20002: validation error | 20019: unable to parse request body | 11338: Unable to {action}: Namespace contains invalid character(s) | 11339: Unable to {action}: Display name contains invalid character(s) | 11340: Unable to {action}: The maximum number of games namespace for studio:{studio} has been exceeded)
+
+        401: Unauthorized - ErrorEntity (20001: unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        409: Conflict - ErrorEntity (11336: Unable to {action}: Namespace already exists)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = CreateNamespace.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 201:
+                result.data_201 = NamespaceInfo.create_from_dict(content)
+            elif code == 400:
+                result.error_400 = ValidationErrorEntity.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
+            elif code == 401:
+                result.error_401 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_401.translate_to_api_error()
+            elif code == 403:
+                result.error_403 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_403.translate_to_api_error()
+            elif code == 409:
+                result.error_409 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_409.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, NamespaceInfo],

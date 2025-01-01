@@ -52,8 +52,7 @@ def public_delete_payment_account(
 
     [Not supported yet in AGS Shared Cloud] Delete payment account.
     Other detail info:
-
-      * Returns :
+                * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/payment/accounts/{type}/{id}
@@ -105,8 +104,7 @@ async def public_delete_payment_account_async(
 
     [Not supported yet in AGS Shared Cloud] Delete payment account.
     Other detail info:
-
-      * Returns :
+                * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/payment/accounts/{type}/{id}
@@ -158,8 +156,7 @@ def public_get_payment_accounts(
 
     [Not supported yet in AGS Shared Cloud] Get payment accounts.
     Other detail info:
-
-      * Returns : Payment account list
+                * Returns : Payment account list
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/payment/accounts
@@ -203,8 +200,7 @@ async def public_get_payment_accounts_async(
 
     [Not supported yet in AGS Shared Cloud] Get payment accounts.
     Other detail info:
-
-      * Returns : Payment account list
+                * Returns : Payment account list
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/payment/accounts

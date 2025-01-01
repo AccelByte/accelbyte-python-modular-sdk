@@ -25,19 +25,31 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import StrEnum
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import IamErrorResponse
 from ...models import ModelGetGoalsResponse
 from ...models import ResponseError
 
 
+class SortByEnum(StrEnum):
+    CREATEDAT = "createdAt"
+    CREATEDAT_ASC = "createdAt:asc"
+    CREATEDAT_DESC = "createdAt:desc"
+    UPDATEDAT = "updatedAt"
+    UPDATEDAT_ASC = "updatedAt:asc"
+    UPDATEDAT_DESC = "updatedAt:desc"
+
+
 class AdminGetGoals(Operation):
     """List Goals of a Challenge (adminGetGoals)
 
-    * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [READ]
+    - Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [READ]
 
     Properties:
         url: /challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/goals
@@ -60,7 +72,7 @@ class AdminGetGoals(Operation):
 
         offset: (offset) OPTIONAL int in query
 
-        sort_by: (sortBy) OPTIONAL str in query
+        sort_by: (sortBy) OPTIONAL Union[str, SortByEnum] in query
 
     Responses:
         200: OK - ModelGetGoalsResponse (OK)
@@ -95,7 +107,7 @@ class AdminGetGoals(Operation):
     namespace: str  # REQUIRED in [path]
     limit: int  # OPTIONAL in [query]
     offset: int  # OPTIONAL in [query]
-    sort_by: str  # OPTIONAL in [query]
+    sort_by: Union[str, SortByEnum]  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -189,7 +201,7 @@ class AdminGetGoals(Operation):
         self.offset = value
         return self
 
-    def with_sort_by(self, value: str) -> AdminGetGoals:
+    def with_sort_by(self, value: Union[str, SortByEnum]) -> AdminGetGoals:
         self.sort_by = value
         return self
 
@@ -218,15 +230,127 @@ class AdminGetGoals(Operation):
         if hasattr(self, "sort_by") and self.sort_by:
             result["sortBy"] = str(self.sort_by)
         elif include_empty:
-            result["sortBy"] = ""
+            result["sortBy"] = Union[str, SortByEnum]()
         return result
 
     # endregion to methods
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_200: Optional[ModelGetGoalsResponse] = None
+        error_401: Optional[IamErrorResponse] = None
+        error_403: Optional[IamErrorResponse] = None
+        error_404: Optional[ResponseError] = None
+        error_500: Optional[ResponseError] = None
+
+        def ok(self) -> AdminGetGoals.Response:
+            if self.error_401 is not None:
+                err = self.error_401.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_403 is not None:
+                err = self.error_403.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_404 is not None:
+                err = self.error_404.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_500 is not None:
+                err = self.error_500.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_200 is not None:
+                yield self.data_200
+                yield None
+            elif self.error_401 is not None:
+                yield None
+                yield self.error_401
+            elif self.error_403 is not None:
+                yield None
+                yield self.error_403
+            elif self.error_404 is not None:
+                yield None
+                yield self.error_404
+            elif self.error_500 is not None:
+                yield None
+                yield self.error_500
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        200: OK - ModelGetGoalsResponse (OK)
+
+        401: Unauthorized - IamErrorResponse (20001: unauthorized access)
+
+        403: Forbidden - IamErrorResponse (20013: insufficient permission)
+
+        404: Not Found - ResponseError (20029: not found)
+
+        500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = AdminGetGoals.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 200:
+                result.data_200 = ModelGetGoalsResponse.create_from_dict(content)
+            elif code == 401:
+                result.error_401 = IamErrorResponse.create_from_dict(content)
+                result.error = result.error_401.translate_to_api_error()
+            elif code == 403:
+                result.error_403 = IamErrorResponse.create_from_dict(content)
+                result.error = result.error_403.translate_to_api_error()
+            elif code == 404:
+                result.error_404 = ResponseError.create_from_dict(content)
+                result.error = result.error_404.translate_to_api_error()
+            elif code == 500:
+                result.error_500 = ResponseError.create_from_dict(content)
+                result.error = result.error_500.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, ModelGetGoalsResponse],
@@ -283,7 +407,7 @@ class AdminGetGoals(Operation):
         namespace: str,
         limit: Optional[int] = None,
         offset: Optional[int] = None,
-        sort_by: Optional[str] = None,
+        sort_by: Optional[Union[str, SortByEnum]] = None,
         **kwargs,
     ) -> AdminGetGoals:
         instance = cls()
@@ -323,7 +447,7 @@ class AdminGetGoals(Operation):
         if "sortBy" in dict_ and dict_["sortBy"] is not None:
             instance.sort_by = str(dict_["sortBy"])
         elif include_empty:
-            instance.sort_by = ""
+            instance.sort_by = Union[str, SortByEnum]()
         return instance
 
     @staticmethod
@@ -344,6 +468,19 @@ class AdminGetGoals(Operation):
             "limit": False,
             "offset": False,
             "sortBy": False,
+        }
+
+    @staticmethod
+    def get_enum_map() -> Dict[str, List[Any]]:
+        return {
+            "sortBy": [
+                "createdAt",
+                "createdAt:asc",
+                "createdAt:desc",
+                "updatedAt",
+                "updatedAt:asc",
+                "updatedAt:desc",
+            ],  # in query
         }
 
     # endregion static methods

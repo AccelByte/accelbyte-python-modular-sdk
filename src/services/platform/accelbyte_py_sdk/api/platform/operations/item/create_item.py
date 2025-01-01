@@ -25,9 +25,11 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ErrorEntity
 from ...models import FullItemInfo
@@ -435,8 +437,120 @@ class CreateItem(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_201: Optional[FullItemInfo] = None
+        error_400: Optional[ErrorEntity] = None
+        error_404: Optional[ErrorEntity] = None
+        error_409: Optional[ErrorEntity] = None
+        error_422: Optional[ValidationErrorEntity] = None
+
+        def ok(self) -> CreateItem.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_404 is not None:
+                err = self.error_404.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_409 is not None:
+                err = self.error_409.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_422 is not None:
+                err = self.error_422.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_201 is not None:
+                yield self.data_201
+                yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
+            elif self.error_404 is not None:
+                yield None
+                yield self.error_404
+            elif self.error_409 is not None:
+                yield None
+                yield self.error_409
+            elif self.error_422 is not None:
+                yield None
+                yield self.error_422
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        201: Created - FullItemInfo (successful operation)
+
+        400: Bad Request - ErrorEntity (20024: unsupported operation | 30301: Unsupported Item Type [{itemType}] for box item [{itemId}] with expiration | 30322: Bundle item [{itemId}] can't be bundled | 30325: Code item [{itemId}] can't be bundled | 30326: Subscription item [{itemId}] can't be bundled | 30329: Invalid bundled item [{itemId}] quantity | 30021: Default language [{language}] required | 30321: Invalid item discount amount | 30022: Default region [{region}] is required | 30323: Target namespace is required | 30327: Invalid item trial price | 30330: Invalid item region price currency namespace [{namespace}] | 30332: Invalid option box item [{itemId}] quantity | 30333: Item [{itemId}] item type [{itemType}] can't be bundled into option box | 30334: Option box item [{itemId}] can't be bundled | 30337: Invalid loot box item [{itemId}] quantity | 30338: Item [{itemId}] item type [{itemType}] can't be bundled into loot box | 30339: Loot box item [{itemId}] can't be bundled)
+
+        404: Not Found - ErrorEntity (30241: Category [{categoryPath}] does not exist in namespace [{namespace}] | 36141: Currency [{currencyCode}] does not exist in namespace [{namespace}] | 30141: Store [{storeId}] does not exist in namespace [{namespace}])
+
+        409: Conflict - ErrorEntity (30173: Published store can't modify content | 30175: Duplicated currencyCode [{currencyCode}] in Region [{region}] | 30373: ItemType [{itemType}] is not allowed in namespace [{namespace}] | 30376: Publisher namespace don’t allow sellback item | 30377: This item type [{itemType}] don’t allow sellback | 30378: Sale price don’t allow real currency [{currencyCode}] | 30380: Box item [{itemId}] duration and end date can’t be set at the same time | 30381: Currency [{currency}] is not set for bundle Item [{itemId}] in region [{region}] | 30383: Item app id [{appId}] already exists in namespace [{namespace}] item [{itemId}])
+
+        422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = CreateItem.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 201:
+                result.data_201 = FullItemInfo.create_from_dict(content)
+            elif code == 400:
+                result.error_400 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
+            elif code == 404:
+                result.error_404 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_404.translate_to_api_error()
+            elif code == 409:
+                result.error_409 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_409.translate_to_api_error()
+            elif code == 422:
+                result.error_422 = ValidationErrorEntity.create_from_dict(content)
+                result.error = result.error_422.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, FullItemInfo],

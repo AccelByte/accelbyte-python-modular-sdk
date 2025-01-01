@@ -25,9 +25,11 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ModelInviteUserResponseV3
 from ...models import ModelPublicInviteUserRequestV4
@@ -174,8 +176,134 @@ class PublicInviteUserV4(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_201: Optional[ModelInviteUserResponseV3] = None
+        error_400: Optional[RestErrorResponse] = None
+        error_409: Optional[RestErrorResponse] = None
+        error_422: Optional[RestErrorResponse] = None
+        error_429: Optional[RestErrorResponse] = None
+        error_500: Optional[RestErrorResponse] = None
+
+        def ok(self) -> PublicInviteUserV4.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_409 is not None:
+                err = self.error_409.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_422 is not None:
+                err = self.error_422.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_429 is not None:
+                err = self.error_429.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_500 is not None:
+                err = self.error_500.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_201 is not None:
+                yield self.data_201
+                yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
+            elif self.error_409 is not None:
+                yield None
+                yield self.error_409
+            elif self.error_422 is not None:
+                yield None
+                yield self.error_422
+            elif self.error_429 is not None:
+                yield None
+                yield self.error_429
+            elif self.error_500 is not None:
+                yield None
+                yield self.error_500
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        201: Created - ModelInviteUserResponseV3 (Created)
+
+        400: Bad Request - RestErrorResponse (20019: unable to parse request body | 20002: validation error)
+
+        409: Conflict - RestErrorResponse (10133: email already used | 10207: user namespace is not available)
+
+        422: Unprocessable Entity - RestErrorResponse (10183: unprocessable entity)
+
+        429: Too Many Requests - RestErrorResponse (20007: too many requests)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = PublicInviteUserV4.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 201:
+                result.data_201 = ModelInviteUserResponseV3.create_from_dict(content)
+            elif code == 400:
+                result.error_400 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
+            elif code == 409:
+                result.error_409 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_409.translate_to_api_error()
+            elif code == 422:
+                result.error_422 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_422.translate_to_api_error()
+            elif code == 429:
+                result.error_429 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_429.translate_to_api_error()
+            elif code == 500:
+                result.error_500 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_500.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, ModelInviteUserResponseV3],

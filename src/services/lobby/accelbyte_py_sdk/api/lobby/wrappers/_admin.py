@@ -27,6 +27,7 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import get_namespace as get_services_namespace
 from accelbyte_py_sdk.core import run_request
 from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import deprecated
 from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ModelCreateTemplateRequest
@@ -55,6 +56,7 @@ from ..operations.admin import PublishTemplate
 from ..operations.admin import UpdateLocalizationTemplate
 
 
+@deprecated
 @same_doc_as(AdminDeleteGlobalConfig)
 def admin_delete_global_config(
     x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
@@ -87,6 +89,7 @@ def admin_delete_global_config(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(AdminDeleteGlobalConfig)
 async def admin_delete_global_config_async(
     x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
@@ -121,6 +124,7 @@ async def admin_delete_global_config_async(
     )
 
 
+@deprecated
 @same_doc_as(AdminGetGlobalConfig)
 def admin_get_global_config(
     x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
@@ -159,6 +163,7 @@ def admin_get_global_config(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(AdminGetGlobalConfig)
 async def admin_get_global_config_async(
     x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
@@ -199,6 +204,7 @@ async def admin_get_global_config_async(
     )
 
 
+@deprecated
 @same_doc_as(AdminUpdateGlobalConfig)
 def admin_update_global_config(
     body: ModelPutGlobalConfigurationRequest,
@@ -237,6 +243,7 @@ def admin_update_global_config(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(AdminUpdateGlobalConfig)
 async def admin_update_global_config_async(
     body: ModelPutGlobalConfigurationRequest,

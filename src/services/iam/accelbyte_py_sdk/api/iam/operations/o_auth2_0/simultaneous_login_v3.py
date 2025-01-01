@@ -25,10 +25,12 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 from accelbyte_py_sdk.core import StrEnum
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import OauthmodelTokenResponseV3
 from ...models import RestErrorResponse
@@ -235,8 +237,120 @@ class SimultaneousLoginV3(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_200: Optional[OauthmodelTokenResponseV3] = None
+        error_400: Optional[RestErrorResponse] = None
+        error_401: Optional[RestErrorResponse] = None
+        error_409: Optional[RestErrorResponse] = None
+        error_500: Optional[RestErrorResponse] = None
+
+        def ok(self) -> SimultaneousLoginV3.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_401 is not None:
+                err = self.error_401.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_409 is not None:
+                err = self.error_409.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_500 is not None:
+                err = self.error_500.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_200 is not None:
+                yield self.data_200
+                yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
+            elif self.error_401 is not None:
+                yield None
+                yield self.error_401
+            elif self.error_409 is not None:
+                yield None
+                yield self.error_409
+            elif self.error_500 is not None:
+                yield None
+                yield self.error_500
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        200: OK - OauthmodelTokenResponseV3 (Token returned.)
+
+        400: Bad Request - RestErrorResponse (10216: Native ticket is required)
+
+        401: Unauthorized - RestErrorResponse (20001: unauthorized access)
+
+        409: Conflict - RestErrorResponse (10215: Simultaneous ticket is required | 10220: Native ticket's account linked AGS account is different with the one which simultaneous ticket's linked to | 10219: Native ticket's account linked AGS is already linked simultaneous but different with the input simultaneous ticket's | 10217: Native ticket's account linked AGS account has different linking history with input simultaneous ticket's | 10221: Simultaneous ticket's account linked AGS is already linked native but different with the input native ticket's | 10218: Simultaneous ticket's account linked AGS account has different linking history with input native ticket's)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = SimultaneousLoginV3.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 200:
+                result.data_200 = OauthmodelTokenResponseV3.create_from_dict(content)
+            elif code == 400:
+                result.error_400 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
+            elif code == 401:
+                result.error_401 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_401.translate_to_api_error()
+            elif code == 409:
+                result.error_409 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_409.translate_to_api_error()
+            elif code == 500:
+                result.error_500 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_500.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, OauthmodelTokenResponseV3],

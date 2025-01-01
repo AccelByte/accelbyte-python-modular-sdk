@@ -56,8 +56,7 @@ def query_third_party_notifications(
 
     Query third party notifications.
     Other detail info:
-
-      * Returns : Third Party Platform notifications
+                  * Returns : Third Party Platform notifications
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/notifications
@@ -129,8 +128,7 @@ async def query_third_party_notifications_async(
 
     Query third party notifications.
     Other detail info:
-
-      * Returns : Third Party Platform notifications
+                  * Returns : Third Party Platform notifications
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/notifications

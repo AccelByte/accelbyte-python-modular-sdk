@@ -25,9 +25,11 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ApimodelsErrorResponse
 from ...models import ApimodelsMoveItemsReq
@@ -38,6 +40,8 @@ class PublicMoveMyItems(Operation):
     """To move items between my inventories (PublicMoveMyItems)
 
     Move items between inventories that is owned by the same user.
+
+    For Ecommerce items, the *qty* is *useCount*. For example, moving 2 of an item's *qty* will move 2 of the entitlement's *useCount*.
 
     Properties:
         url: /inventory/v1/public/namespaces/{namespace}/users/me/inventories/{inventoryId}/items/movement
@@ -190,8 +194,92 @@ class PublicMoveMyItems(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_200: Optional[ApimodelsMoveItemsResp] = None
+        error_400: Optional[ApimodelsErrorResponse] = None
+        error_500: Optional[ApimodelsErrorResponse] = None
+
+        def ok(self) -> PublicMoveMyItems.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_500 is not None:
+                err = self.error_500.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_200 is not None:
+                yield self.data_200
+                yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
+            elif self.error_500 is not None:
+                yield None
+                yield self.error_500
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        200: OK - ApimodelsMoveItemsResp (OK)
+
+        400: Bad Request - ApimodelsErrorResponse (Bad Request)
+
+        500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = PublicMoveMyItems.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 200:
+                result.data_200 = ApimodelsMoveItemsResp.create_from_dict(content)
+            elif code == 400:
+                result.error_400 = ApimodelsErrorResponse.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
+            elif code == 500:
+                result.error_500 = ApimodelsErrorResponse.create_from_dict(content)
+                result.error = result.error_500.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, ApimodelsMoveItemsResp],

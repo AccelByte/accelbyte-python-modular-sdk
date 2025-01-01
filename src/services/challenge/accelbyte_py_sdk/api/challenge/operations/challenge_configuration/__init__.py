@@ -21,6 +21,7 @@ from .admin_get_active_challenges import AdminGetActiveChallenges
 from .admin_get_challenge import AdminGetChallenge
 from .admin_get_challenges import AdminGetChallenges
 from .admin_get_challenges import (
+    SortByEnum as AdminGetChallengesSortByEnum,
     StatusEnum as AdminGetChallengesStatusEnum,
 )
 from .admin_get_periods import AdminGetPeriods

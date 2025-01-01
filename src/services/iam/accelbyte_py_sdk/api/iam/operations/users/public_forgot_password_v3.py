@@ -25,9 +25,11 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ModelForgotPasswordRequestV3
 from ...models import RestErrorResponse
@@ -182,8 +184,106 @@ class PublicForgotPasswordV3(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_204: Optional[HttpResponse] = None
+        error_400: Optional[RestErrorResponse] = None
+        error_404: Optional[RestErrorResponse] = None
+        error_429: Optional[RestErrorResponse] = None
+
+        def ok(self) -> PublicForgotPasswordV3.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_404 is not None:
+                err = self.error_404.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_429 is not None:
+                err = self.error_429.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_204 is not None:
+                yield self.data_204
+                yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
+            elif self.error_404 is not None:
+                yield None
+                yield self.error_404
+            elif self.error_429 is not None:
+                yield None
+                yield self.error_429
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        204: No Content - (Operation succeeded)
+
+        400: Bad Request - RestErrorResponse (20002: validation error | 20019: unable to parse request body)
+
+        404: Not Found - RestErrorResponse (20008: user not found)
+
+        429: Too Many Requests - RestErrorResponse (20007: too many requests)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = PublicForgotPasswordV3.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 204:
+                result.data_204 = None
+            elif code == 400:
+                result.error_400 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
+            elif code == 404:
+                result.error_404 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_404.translate_to_api_error()
+            elif code == 429:
+                result.error_429 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_429.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[None, Union[None, HttpResponse, RestErrorResponse]]:
         """Parse the given response.

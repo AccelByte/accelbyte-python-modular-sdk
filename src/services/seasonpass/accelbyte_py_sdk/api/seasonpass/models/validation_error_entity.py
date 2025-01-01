@@ -26,6 +26,7 @@ from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
+from accelbyte_py_sdk.core import ApiError
 
 from ..models.field_validation_error import FieldValidationError
 
@@ -84,6 +85,12 @@ class ValidationErrorEntity(Model):
         elif include_empty:
             result["errors"] = []
         return result
+
+    def translate_to_api_error(self) -> ApiError:
+        return ApiError(
+            code=str(self.error_code) if self.error_code else "",
+            message=str(self.error_message) if self.error_message else "",
+        )
 
     # endregion to methods
 

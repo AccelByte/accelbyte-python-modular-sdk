@@ -25,9 +25,11 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
+from accelbyte_py_sdk.core import deprecated
 
 from ...models import ModelBulkFriendsRequest
 from ...models import ModelBulkFriendsResponse
@@ -194,8 +196,120 @@ class BulkDeleteFriends(Operation):
 
     # region response methods
 
+    class Response(ApiResponse):
+        data_200: Optional[ModelBulkFriendsResponse] = None
+        error_400: Optional[RestapiErrorResponseV1] = None
+        error_401: Optional[RestapiErrorResponseV1] = None
+        error_403: Optional[RestapiErrorResponseV1] = None
+        error_500: Optional[ModelBulkFriendsResponse] = None
+
+        def ok(self) -> BulkDeleteFriends.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_401 is not None:
+                err = self.error_401.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_403 is not None:
+                err = self.error_403.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_500 is not None:
+                err = self.error_500.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            return self
+
+        def __iter__(self):
+            if self.data_200 is not None:
+                yield self.data_200
+                yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
+            elif self.error_401 is not None:
+                yield None
+                yield self.error_401
+            elif self.error_403 is not None:
+                yield None
+                yield self.error_403
+            elif self.error_500 is not None:
+                yield None
+                yield self.error_500
+            else:
+                yield None
+                yield self.error
+
     # noinspection PyMethodMayBeStatic
-    def parse_response(
+    def parse_response(self, code: int, content_type: str, content: Any) -> Response:
+        """Parse the given response.
+
+        200: OK - ModelBulkFriendsResponse (number of deleted items (one friendship consists of 2 items))
+
+        400: Bad Request - RestapiErrorResponseV1 (Bad Request)
+
+        401: Unauthorized - RestapiErrorResponseV1 (Unauthorized)
+
+        403: Forbidden - RestapiErrorResponseV1 (Forbidden)
+
+        500: Internal Server Error - ModelBulkFriendsResponse (Internal Server Error)
+
+        ---: HttpResponse (Undocumented Response)
+
+        ---: HttpResponse (Unexpected Content-Type Error)
+
+        ---: HttpResponse (Unhandled Error)
+        """
+        result = BulkDeleteFriends.Response()
+
+        pre_processed_response, error = self.pre_process_response(
+            code=code, content_type=content_type, content=content
+        )
+
+        if error is not None:
+            if not error.is_no_content():
+                result.error = ApiError.create_from_http_response(error)
+        else:
+            code, content_type, content = pre_processed_response
+
+            if code == 200:
+                result.data_200 = ModelBulkFriendsResponse.create_from_dict(content)
+            elif code == 400:
+                result.error_400 = RestapiErrorResponseV1.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
+            elif code == 401:
+                result.error_401 = RestapiErrorResponseV1.create_from_dict(content)
+                result.error = result.error_401.translate_to_api_error()
+            elif code == 403:
+                result.error_403 = RestapiErrorResponseV1.create_from_dict(content)
+                result.error = result.error_403.translate_to_api_error()
+            elif code == 500:
+                result.error_500 = ModelBulkFriendsResponse.create_from_dict(content)
+                result.error = result.error_500.translate_to_api_error()
+            else:
+                result.error = ApiError.create_from_http_response(
+                    HttpResponse.create_undocumented_response(
+                        code=code, content_type=content_type, content=content
+                    )
+                )
+
+        result.status_code = str(code)
+        result.content_type = content_type
+
+        if 400 <= code <= 599 or result.error is not None:
+            result.is_success = False
+
+        return result
+
+    # noinspection PyMethodMayBeStatic
+    @deprecated
+    def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
         Union[None, ModelBulkFriendsResponse],

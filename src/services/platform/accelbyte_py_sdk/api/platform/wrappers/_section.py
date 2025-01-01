@@ -62,10 +62,7 @@ def create_section(
     This API is used to create a section.
 
     Other detail info:
-
-      * Returns : created a section
-
-
+                * Returns : created a section
 
     ## Restrictions for section extension and localization extension
 
@@ -73,15 +70,13 @@ def create_section(
     1. Cannot use "." as the key name
     -
 
-
-        { "data.2": "value" }
+                                            { "data.2": "value" }
 
 
     2. Cannot use "$" as the prefix in key names
     -
 
-
-        { "$data": "value" }
+                                            { "$data": "value" }
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/sections
@@ -138,10 +133,7 @@ async def create_section_async(
     This API is used to create a section.
 
     Other detail info:
-
-      * Returns : created a section
-
-
+                * Returns : created a section
 
     ## Restrictions for section extension and localization extension
 
@@ -149,15 +141,13 @@ async def create_section_async(
     1. Cannot use "." as the key name
     -
 
-
-        { "data.2": "value" }
+                                            { "data.2": "value" }
 
 
     2. Cannot use "$" as the prefix in key names
     -
 
-
-        { "$data": "value" }
+                                            { "$data": "value" }
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/sections
@@ -318,8 +308,7 @@ def get_section(
     This API is used to get a section.
 
     Other detail info:
-
-      * Returns : section data
+                * Returns : section data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/sections/{sectionId}
@@ -370,8 +359,7 @@ async def get_section_async(
     This API is used to get a section.
 
     Other detail info:
-
-      * Returns : section data
+                * Returns : section data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/sections/{sectionId}
@@ -428,10 +416,9 @@ def public_list_active_sections(
     This API is used to list active section contents.
 
     Other detail info:
-
-      * Optional permission : resource="PREVIEW", action=1(CREATE) (user with this permission can view draft store sections)
-      *  Optional permission : resource="SANDBOX", action=1(CREATE) (user with this permission can view draft store sections)
-      *  Returns : active section contents
+                * Optional permission : resource="PREVIEW", action=1(CREATE) (user with this permission can view draft store sections)
+                *  Optional permission : resource="SANDBOX", action=1(CREATE) (user with this permission can view draft store sections)
+                *  Returns : active section contents
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/sections
@@ -498,10 +485,9 @@ async def public_list_active_sections_async(
     This API is used to list active section contents.
 
     Other detail info:
-
-      * Optional permission : resource="PREVIEW", action=1(CREATE) (user with this permission can view draft store sections)
-      *  Optional permission : resource="SANDBOX", action=1(CREATE) (user with this permission can view draft store sections)
-      *  Returns : active section contents
+                * Optional permission : resource="PREVIEW", action=1(CREATE) (user with this permission can view draft store sections)
+                *  Optional permission : resource="SANDBOX", action=1(CREATE) (user with this permission can view draft store sections)
+                *  Returns : active section contents
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/sections
@@ -660,8 +646,7 @@ def query_sections(
     This API is used to query sections.
 
     Other detail info:
-
-      * Returns : paginated sections
+                * Returns : paginated sections
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/sections
@@ -730,8 +715,7 @@ async def query_sections_async(
     This API is used to query sections.
 
     Other detail info:
-
-      * Returns : paginated sections
+                * Returns : paginated sections
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/sections
@@ -799,10 +783,7 @@ def update_section(
     This API is used to update s section.
 
     Other detail info:
-
-      * Returns : updated section data
-
-
+                * Returns : updated section data
 
     ## Restrictions for section extension and localization extension
 
@@ -810,15 +791,13 @@ def update_section(
     1. Cannot use "." as the key name
     -
 
-
-        { "data.2": "value" }
+                                            { "data.2": "value" }
 
 
     2. Cannot use "$" as the prefix in key names
     -
 
-
-        { "$data": "value" }
+                                            { "$data": "value" }
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/sections/{sectionId}
@@ -879,10 +858,7 @@ async def update_section_async(
     This API is used to update s section.
 
     Other detail info:
-
-      * Returns : updated section data
-
-
+                * Returns : updated section data
 
     ## Restrictions for section extension and localization extension
 
@@ -890,15 +866,13 @@ async def update_section_async(
     1. Cannot use "." as the key name
     -
 
-
-        { "data.2": "value" }
+                                            { "data.2": "value" }
 
 
     2. Cannot use "$" as the prefix in key names
     -
 
-
-        { "$data": "value" }
+                                            { "$data": "value" }
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/sections/{sectionId}

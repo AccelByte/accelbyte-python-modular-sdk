@@ -27,6 +27,7 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import get_namespace as get_services_namespace
 from accelbyte_py_sdk.core import run_request
 from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import deprecated
 from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ErrorEntity
@@ -37,6 +38,7 @@ from ..operations.payment_callback_config import GetPaymentCallbackConfig
 from ..operations.payment_callback_config import UpdatePaymentCallbackConfig
 
 
+@deprecated
 @same_doc_as(GetPaymentCallbackConfig)
 def get_payment_callback_config(
     namespace: Optional[str] = None,
@@ -45,10 +47,11 @@ def get_payment_callback_config(
 ):
     """Get payment callback configuration (getPaymentCallbackConfig)
 
+    ### The endpoint is going to be deprecated
+
     [Not supported yet in AGS Shared Cloud] Get payment callback configuration.
     Other detail info:
-
-      * Returns : Payment callback config
+                  * Returns : Payment callback config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/config/callback
@@ -80,6 +83,7 @@ def get_payment_callback_config(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(GetPaymentCallbackConfig)
 async def get_payment_callback_config_async(
     namespace: Optional[str] = None,
@@ -88,10 +92,11 @@ async def get_payment_callback_config_async(
 ):
     """Get payment callback configuration (getPaymentCallbackConfig)
 
+    ### The endpoint is going to be deprecated
+
     [Not supported yet in AGS Shared Cloud] Get payment callback configuration.
     Other detail info:
-
-      * Returns : Payment callback config
+                  * Returns : Payment callback config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/config/callback
@@ -125,6 +130,7 @@ async def get_payment_callback_config_async(
     )
 
 
+@deprecated
 @same_doc_as(UpdatePaymentCallbackConfig)
 def update_payment_callback_config(
     body: PaymentCallbackConfigUpdate,
@@ -134,10 +140,11 @@ def update_payment_callback_config(
 ):
     """Update payment callback configuration (updatePaymentCallbackConfig)
 
+    ### The endpoint is going to be deprecated
+
     [Not supported yet in AGS Shared Cloud] Update payment callback configuration.
     Other detail info:
-
-      * Returns : Payment callback config
+                  * Returns : Payment callback config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/config/callback
@@ -170,6 +177,7 @@ def update_payment_callback_config(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(UpdatePaymentCallbackConfig)
 async def update_payment_callback_config_async(
     body: PaymentCallbackConfigUpdate,
@@ -179,10 +187,11 @@ async def update_payment_callback_config_async(
 ):
     """Update payment callback configuration (updatePaymentCallbackConfig)
 
+    ### The endpoint is going to be deprecated
+
     [Not supported yet in AGS Shared Cloud] Update payment callback configuration.
     Other detail info:
-
-      * Returns : Payment callback config
+                  * Returns : Payment callback config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/config/callback

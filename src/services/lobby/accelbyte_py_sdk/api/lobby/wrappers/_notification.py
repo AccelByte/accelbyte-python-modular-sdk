@@ -27,6 +27,7 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import get_namespace as get_services_namespace
 from accelbyte_py_sdk.core import run_request
 from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import deprecated
 from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ModelBulkUsersFreeFormNotificationRequestV1
@@ -2226,6 +2227,7 @@ async def send_multiple_users_freeform_notification_v1_admin_async(
     )
 
 
+@deprecated
 @same_doc_as(SendPartyFreeformNotificationV1Admin)
 def send_party_freeform_notification_v1_admin(
     body: ModelFreeFormNotificationRequestV1,
@@ -2280,6 +2282,7 @@ def send_party_freeform_notification_v1_admin(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(SendPartyFreeformNotificationV1Admin)
 async def send_party_freeform_notification_v1_admin_async(
     body: ModelFreeFormNotificationRequestV1,
@@ -2336,6 +2339,7 @@ async def send_party_freeform_notification_v1_admin_async(
     )
 
 
+@deprecated
 @same_doc_as(SendPartyTemplatedNotificationV1Admin)
 def send_party_templated_notification_v1_admin(
     body: ModelNotificationWithTemplateRequestV1,
@@ -2395,6 +2399,7 @@ def send_party_templated_notification_v1_admin(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(SendPartyTemplatedNotificationV1Admin)
 async def send_party_templated_notification_v1_admin_async(
     body: ModelNotificationWithTemplateRequestV1,
