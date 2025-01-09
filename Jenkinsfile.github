@@ -69,10 +69,9 @@ pipeline {
           }
 
           sh "git checkout ${params.RELEASE_BRANCH}"
+
           sshagent(credentials: [githubSsh])
           {
-            if (params.RELEASE_BRANCH == "master") {
-              
               echo "Check if tag `ags/v${params.AGS_VERSION}` is exists"
               def tagCheck = sh(script: "git tag | grep 'ags/v${params.AGS_VERSION}'", returnStdout: true, returnStatus: true)
               if (tagCheck == "") {
@@ -80,13 +79,19 @@ pipeline {
                 sh 'false' // Fail this job
               }
 
-              echo 'Push bitbucket master to github main'
-              sh "git push ${githubUrl} HEAD:main"
+              if (params.RELEASE_BRANCH == "master") {
+                echo 'Push bitbucket master to github main'
+                sh "git push ${githubUrl} HEAD:main"
+              }
+              else {
+                echo "Push bitbucket '${params.RELEASE_BRANCH}' to github"
+                sh "git push ${githubUrl} HEAD:${params.RELEASE_BRANCH}"
+              }
 
-              echo "Tag github main with ags version"
+              echo "Tag github with ags version"
               sh "git push ${githubUrl} 'ags/v${params.AGS_VERSION}'"
 
-              echo "Get all tags related to `ags/v${params.AGS_VERSION}` and push them"
+              echo "Get all tags related to 'ags/v${params.AGS_VERSION}' and push them"
               sh "git tag --contains \$(git rev-list -n 1 'ags/v${params.AGS_VERSION}') | grep -v 'ags/v${params.AGS_VERSION}' | xargs -I{} sh -c 'git push ${githubUrl} '{}' || exit 255'"
 
               releaseName = "AccelByte Python Extend Modular SDK for AGS v${params.AGS_VERSION}"
@@ -96,11 +101,6 @@ pipeline {
                 sh "sudo apt install -y jq"
                 sh 'make build_all upload_all PYPIRC_PATH=$PYPIRC_PATH'
               }
-            }
-            else {
-              sh "git push ${githubUrl} HEAD:${params.RELEASE_BRANCH}"
-              //Point release will be implemented later.
-            }
           }
         }
       }
