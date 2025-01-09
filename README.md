@@ -561,6 +561,89 @@ if __name__ == "__main__":
 
 ```
 
+### Working with ApiResponse
+
+:bulb: As of the release of `ags/v3.80.0` all operations and their wrapper functions now return an instance of subclass [ApiResponse](src/core/accelbyte_py_sdk/core/_api_response.py) specific to the operation.
+
+```python
+from accelbyte_py_sdk.api.iam import public_create_user_v3
+
+
+def main():
+    # The wrapper 'public_create_user_v3' wraps around
+    # the `PublicCreateUserV3` operation which returns
+    # an instance of `PublicCreateUserV3.Response` which is a
+    # subclass of `ApiResponse`.
+    # 
+    # The class `PublicCreateUserV3.Response` also implements the
+    # '__iter__' dunder method that allows it to be unpacked into
+    # `result, error` maintaining the previous syntax.
+    # 
+    # class PublicCreateUserV3(Operation):
+    #     class Response(ApiResponse):
+    #         def __iter__(self):
+    #             yield data
+    #             yield error
+    response = public_create_user_v3(...)
+    result, error = response
+    if error:
+       exit(1)
+ 
+
+if __name__ == "__main__":
+    main()
+
+```
+
+:bulb: You can also use the `ok()` method in the `ApiResponse` object to raise an `Exception` if the response is not successful.
+
+```python
+from accelbyte_py_sdk.api.iam import public_create_user_v3
+
+
+def main():
+    response = public_create_user_v3(...).ok()
+    # or
+    # result, error = public_create_user_v3(...).ok()
+
+if __name__ == "__main__":
+    main()
+
+```
+
+:bulb: You can also compare the error from the `ApiResponse` object against known errors in the service.
+
+```python
+from accelbyte_py_sdk.api.iam import public_create_user_v3
+from accelbyte_py_sdk.api.iam.errors import ERROR_10153, ERROR_10154  # known errors for the IAM service
+
+
+def main():
+    response = public_create_user_v3(...)
+    if response.error:
+        # get error code
+        error_code = response.error.code
+        
+        # get error message
+        error_message = response.error.message
+       
+        # handle errors depending on the code
+        # - ERROR_10153 = ApiError(code="10153", message="user exist")
+        # - ERROR_10154 = ApiError(code="10154", message="country not found")
+        if response.error.code == ERROR_10153.code:
+            do_something()
+        elif response.error.code == ERROR_10154.code:
+            do_something_else()
+            
+         # raise an exception
+        raise response.error.to_exception()
+
+
+if __name__ == "__main__":
+    main()
+
+```
+
 ---
 
 ## Configuring HTTP Retry
