@@ -44,10 +44,12 @@ from ..operations.challenge_list import PublicGetScheduledGoals
 
 @same_doc_as(GetChallenges)
 def get_challenges(
+    keyword: Optional[str] = None,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     sort_by: Optional[Union[str, GetChallengesSortByEnum]] = None,
     status: Optional[Union[str, GetChallengesStatusEnum]] = None,
+    tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -71,6 +73,8 @@ def get_challenges(
 
         namespace: (namespace) REQUIRED str in path
 
+        keyword: (keyword) OPTIONAL str in query
+
         limit: (limit) OPTIONAL int in query
 
         offset: (offset) OPTIONAL int in query
@@ -79,8 +83,12 @@ def get_challenges(
 
         status: (status) OPTIONAL Union[str, StatusEnum] in query
 
+        tags: (tags) OPTIONAL List[str] in query
+
     Responses:
         200: OK - ModelListChallengeResponse (OK)
+
+        400: Bad Request - ResponseError (20018: bad request: {{message}})
 
         401: Unauthorized - IamErrorResponse (20001: unauthorized access)
 
@@ -93,10 +101,12 @@ def get_challenges(
         if error:
             return None, error
     request = GetChallenges.create(
+        keyword=keyword,
         limit=limit,
         offset=offset,
         sort_by=sort_by,
         status=status,
+        tags=tags,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -104,10 +114,12 @@ def get_challenges(
 
 @same_doc_as(GetChallenges)
 async def get_challenges_async(
+    keyword: Optional[str] = None,
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     sort_by: Optional[Union[str, GetChallengesSortByEnum]] = None,
     status: Optional[Union[str, GetChallengesStatusEnum]] = None,
+    tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -131,6 +143,8 @@ async def get_challenges_async(
 
         namespace: (namespace) REQUIRED str in path
 
+        keyword: (keyword) OPTIONAL str in query
+
         limit: (limit) OPTIONAL int in query
 
         offset: (offset) OPTIONAL int in query
@@ -139,8 +153,12 @@ async def get_challenges_async(
 
         status: (status) OPTIONAL Union[str, StatusEnum] in query
 
+        tags: (tags) OPTIONAL List[str] in query
+
     Responses:
         200: OK - ModelListChallengeResponse (OK)
+
+        400: Bad Request - ResponseError (20018: bad request: {{message}})
 
         401: Unauthorized - IamErrorResponse (20001: unauthorized access)
 
@@ -153,10 +171,12 @@ async def get_challenges_async(
         if error:
             return None, error
     request = GetChallenges.create(
+        keyword=keyword,
         limit=limit,
         offset=offset,
         sort_by=sort_by,
         status=status,
+        tags=tags,
         namespace=namespace,
     )
     return await run_request_async(

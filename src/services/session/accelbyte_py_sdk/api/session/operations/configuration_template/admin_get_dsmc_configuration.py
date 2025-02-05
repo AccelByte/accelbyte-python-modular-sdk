@@ -36,7 +36,7 @@ from ...models import ResponseError
 
 
 class AdminGetDSMCConfiguration(Operation):
-    """Get dsmc configuration . (adminGetDSMCConfiguration)
+    """[DEPRECATED] Get dsmc configuration . (adminGetDSMCConfiguration)
 
     Get a dsmc configuration.
 

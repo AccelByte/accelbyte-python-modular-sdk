@@ -36,7 +36,7 @@ from ...models import ResponseError
 
 
 class AdminSyncDSMCConfiguration(Operation):
-    """sync dsmc configuration. (adminSyncDSMCConfiguration)
+    """[DEPRECATED] sync dsmc configuration. (adminSyncDSMCConfiguration)
 
     sync dsmc configuration.
 

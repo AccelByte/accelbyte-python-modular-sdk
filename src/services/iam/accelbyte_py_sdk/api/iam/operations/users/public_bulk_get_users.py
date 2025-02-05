@@ -37,7 +37,7 @@ from ...models import RestErrorResponse
 
 
 class PublicBulkGetUsers(Operation):
-    """Bulk get users' basic info by user Id (PublicBulkGetUsers)
+    """[DEPRECATED] Bulk get users' basic info by user Id (PublicBulkGetUsers)
 
     Notes:
     - This endpoint bulk get users' basic info by userId, max allowed 100 at a time

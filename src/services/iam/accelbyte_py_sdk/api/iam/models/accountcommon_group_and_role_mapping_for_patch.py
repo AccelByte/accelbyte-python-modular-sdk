@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# Fleet Commander
+# AccelByte Gaming Services Iam Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -27,30 +27,40 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
 
-from ..models.api_instance_type_for_namespace_response import (
-    ApiInstanceTypeForNamespaceResponse,
-)
 
-
-class ApiInstanceTypesForNamespaceResponse(Model):
-    """Api instance types for namespace response (api.InstanceTypesForNamespaceResponse)
+class AccountcommonGroupAndRoleMappingForPatch(Model):
+    """Accountcommon group and role mapping for patch (accountcommon.GroupAndRoleMappingForPatch)
 
     Properties:
-        available_instance_types: (availableInstanceTypes) REQUIRED List[ApiInstanceTypeForNamespaceResponse]
+        group: (group) REQUIRED str
+
+        assign_namespaces: (assignNamespaces) OPTIONAL List[str]
+
+        role_id: (roleId) OPTIONAL str
     """
 
     # region fields
 
-    available_instance_types: List[ApiInstanceTypeForNamespaceResponse]  # REQUIRED
+    group: str  # REQUIRED
+    assign_namespaces: List[str]  # OPTIONAL
+    role_id: str  # OPTIONAL
 
     # endregion fields
 
     # region with_x methods
 
-    def with_available_instance_types(
-        self, value: List[ApiInstanceTypeForNamespaceResponse]
-    ) -> ApiInstanceTypesForNamespaceResponse:
-        self.available_instance_types = value
+    def with_group(self, value: str) -> AccountcommonGroupAndRoleMappingForPatch:
+        self.group = value
+        return self
+
+    def with_assign_namespaces(
+        self, value: List[str]
+    ) -> AccountcommonGroupAndRoleMappingForPatch:
+        self.assign_namespaces = value
+        return self
+
+    def with_role_id(self, value: str) -> AccountcommonGroupAndRoleMappingForPatch:
+        self.role_id = value
         return self
 
     # endregion with_x methods
@@ -59,13 +69,18 @@ class ApiInstanceTypesForNamespaceResponse(Model):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "available_instance_types"):
-            result["availableInstanceTypes"] = [
-                i0.to_dict(include_empty=include_empty)
-                for i0 in self.available_instance_types
-            ]
+        if hasattr(self, "group"):
+            result["group"] = str(self.group)
         elif include_empty:
-            result["availableInstanceTypes"] = []
+            result["group"] = ""
+        if hasattr(self, "assign_namespaces"):
+            result["assignNamespaces"] = [str(i0) for i0 in self.assign_namespaces]
+        elif include_empty:
+            result["assignNamespaces"] = []
+        if hasattr(self, "role_id"):
+            result["roleId"] = str(self.role_id)
+        elif include_empty:
+            result["roleId"] = ""
         return result
 
     # endregion to methods
@@ -75,38 +90,44 @@ class ApiInstanceTypesForNamespaceResponse(Model):
     @classmethod
     def create(
         cls,
-        available_instance_types: List[ApiInstanceTypeForNamespaceResponse],
+        group: str,
+        assign_namespaces: Optional[List[str]] = None,
+        role_id: Optional[str] = None,
         **kwargs,
-    ) -> ApiInstanceTypesForNamespaceResponse:
+    ) -> AccountcommonGroupAndRoleMappingForPatch:
         instance = cls()
-        instance.available_instance_types = available_instance_types
+        instance.group = group
+        if assign_namespaces is not None:
+            instance.assign_namespaces = assign_namespaces
+        if role_id is not None:
+            instance.role_id = role_id
         return instance
 
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> ApiInstanceTypesForNamespaceResponse:
+    ) -> AccountcommonGroupAndRoleMappingForPatch:
         instance = cls()
         if not dict_:
             return instance
-        if (
-            "availableInstanceTypes" in dict_
-            and dict_["availableInstanceTypes"] is not None
-        ):
-            instance.available_instance_types = [
-                ApiInstanceTypeForNamespaceResponse.create_from_dict(
-                    i0, include_empty=include_empty
-                )
-                for i0 in dict_["availableInstanceTypes"]
-            ]
+        if "group" in dict_ and dict_["group"] is not None:
+            instance.group = str(dict_["group"])
         elif include_empty:
-            instance.available_instance_types = []
+            instance.group = ""
+        if "assignNamespaces" in dict_ and dict_["assignNamespaces"] is not None:
+            instance.assign_namespaces = [str(i0) for i0 in dict_["assignNamespaces"]]
+        elif include_empty:
+            instance.assign_namespaces = []
+        if "roleId" in dict_ and dict_["roleId"] is not None:
+            instance.role_id = str(dict_["roleId"])
+        elif include_empty:
+            instance.role_id = ""
         return instance
 
     @classmethod
     def create_many_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, ApiInstanceTypesForNamespaceResponse]:
+    ) -> Dict[str, AccountcommonGroupAndRoleMappingForPatch]:
         return (
             {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
             if dict_
@@ -116,7 +137,7 @@ class ApiInstanceTypesForNamespaceResponse(Model):
     @classmethod
     def create_many_from_list(
         cls, list_: list, include_empty: bool = False
-    ) -> List[ApiInstanceTypesForNamespaceResponse]:
+    ) -> List[AccountcommonGroupAndRoleMappingForPatch]:
         return (
             [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
             if list_
@@ -127,9 +148,9 @@ class ApiInstanceTypesForNamespaceResponse(Model):
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
     ) -> Union[
-        ApiInstanceTypesForNamespaceResponse,
-        List[ApiInstanceTypesForNamespaceResponse],
-        Dict[Any, ApiInstanceTypesForNamespaceResponse],
+        AccountcommonGroupAndRoleMappingForPatch,
+        List[AccountcommonGroupAndRoleMappingForPatch],
+        Dict[Any, AccountcommonGroupAndRoleMappingForPatch],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -144,13 +165,17 @@ class ApiInstanceTypesForNamespaceResponse(Model):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "availableInstanceTypes": "available_instance_types",
+            "group": "group",
+            "assignNamespaces": "assign_namespaces",
+            "roleId": "role_id",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "availableInstanceTypes": True,
+            "group": True,
+            "assignNamespaces": False,
+            "roleId": False,
         }
 
     # endregion static methods

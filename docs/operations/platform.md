@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Platform Service Index (6.1.1)
+# AccelByte Gaming Services Platform Service Index (6.3.0)
 
 
 ## Operations
@@ -631,6 +631,7 @@
 | /platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config | GET | getPlatformWalletConfig | `false` | [GetPlatformWalletConfig](../../src/services/platform/accelbyte_py_sdk/api/platform/operations/wallet/get_platform_wallet_config.py) | [get_platform_wallet_config](../../src/services/platform/accelbyte_py_sdk/api/platform/wrappers/_wallet.py) | [accelbyte_py_sdk_cli platform-get-platform-wallet-config](../../samples/cli/accelbyte_py_sdk_cli/platform/_get_platform_wallet_config.py) |
 | /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId} | GET | getUserWallet | `true` | [GetUserWallet](../../src/services/platform/accelbyte_py_sdk/api/platform/operations/wallet/get_user_wallet.py) | [get_user_wallet](../../src/services/platform/accelbyte_py_sdk/api/platform/wrappers/_wallet.py) | [accelbyte_py_sdk_cli platform-get-user-wallet](../../samples/cli/accelbyte_py_sdk_cli/platform/_get_user_wallet.py) |
 | /platform/admin/namespaces/{namespace}/wallets/{walletId} | GET | getWallet | `true` | [GetWallet](../../src/services/platform/accelbyte_py_sdk/api/platform/operations/wallet/get_wallet.py) | [get_wallet](../../src/services/platform/accelbyte_py_sdk/api/platform/wrappers/_wallet.py) | [accelbyte_py_sdk_cli platform-get-wallet](../../samples/cli/accelbyte_py_sdk_cli/platform/_get_wallet.py) |
+| /platform/admin/namespaces/{namespace}/wallet/config | GET | getWalletConfig | `false` | [GetWalletConfig](../../src/services/platform/accelbyte_py_sdk/api/platform/operations/wallet/get_wallet_config.py) | [get_wallet_config](../../src/services/platform/accelbyte_py_sdk/api/platform/wrappers/_wallet.py) | [accelbyte_py_sdk_cli platform-get-wallet-config](../../samples/cli/accelbyte_py_sdk_cli/platform/_get_wallet_config.py) |
 | /platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/{currencyCode}/transactions | GET | listUserCurrencyTransactions | `false` | [ListUserCurrencyTransactions](../../src/services/platform/accelbyte_py_sdk/api/platform/operations/wallet/list_user_currency_tran_bb67cf.py) | [list_user_currency_transactions](../../src/services/platform/accelbyte_py_sdk/api/platform/wrappers/_wallet.py) | [accelbyte_py_sdk_cli platform-list-user-currency-transactions](../../samples/cli/accelbyte_py_sdk_cli/platform/_list_user_currency_transactions.py) |
 | /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/transactions | GET | listUserWalletTransactions | `true` | [ListUserWalletTransactions](../../src/services/platform/accelbyte_py_sdk/api/platform/operations/wallet/list_user_wallet_transactions.py) | [list_user_wallet_transactions](../../src/services/platform/accelbyte_py_sdk/api/platform/wrappers/_wallet.py) | [accelbyte_py_sdk_cli platform-list-user-wallet-transactions](../../samples/cli/accelbyte_py_sdk_cli/platform/_list_user_wallet_transactions.py) |
 | /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/payment | PUT | payWithUserWallet | `false` | [PayWithUserWallet](../../src/services/platform/accelbyte_py_sdk/api/platform/operations/wallet/pay_with_user_wallet.py) | [pay_with_user_wallet](../../src/services/platform/accelbyte_py_sdk/api/platform/wrappers/_wallet.py) | [accelbyte_py_sdk_cli platform-pay-with-user-wallet](../../samples/cli/accelbyte_py_sdk_cli/platform/_pay_with_user_wallet.py) |
@@ -641,6 +642,7 @@
 | /platform/admin/namespaces/{namespace}/wallets | GET | queryWallets | `true` | [QueryWallets](../../src/services/platform/accelbyte_py_sdk/api/platform/operations/wallet/query_wallets.py) | [query_wallets](../../src/services/platform/accelbyte_py_sdk/api/platform/wrappers/_wallet.py) | [accelbyte_py_sdk_cli platform-query-wallets](../../samples/cli/accelbyte_py_sdk_cli/platform/_query_wallets.py) |
 | /platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config/reset | PUT | resetPlatformWalletConfig | `false` | [ResetPlatformWalletConfig](../../src/services/platform/accelbyte_py_sdk/api/platform/operations/wallet/reset_platform_wallet_config.py) | [reset_platform_wallet_config](../../src/services/platform/accelbyte_py_sdk/api/platform/wrappers/_wallet.py) | [accelbyte_py_sdk_cli platform-reset-platform-wallet-config](../../samples/cli/accelbyte_py_sdk_cli/platform/_reset_platform_wallet_config.py) |
 | /platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config | PUT | updatePlatformWalletConfig | `false` | [UpdatePlatformWalletConfig](../../src/services/platform/accelbyte_py_sdk/api/platform/operations/wallet/update_platform_wallet_config.py) | [update_platform_wallet_config](../../src/services/platform/accelbyte_py_sdk/api/platform/wrappers/_wallet.py) | [accelbyte_py_sdk_cli platform-update-platform-wallet-config](../../samples/cli/accelbyte_py_sdk_cli/platform/_update_platform_wallet_config.py) |
+| /platform/admin/namespaces/{namespace}/wallet/config | PUT | updateWalletConfig | `false` | [UpdateWalletConfig](../../src/services/platform/accelbyte_py_sdk/api/platform/operations/wallet/update_wallet_config.py) | [update_wallet_config](../../src/services/platform/accelbyte_py_sdk/api/platform/wrappers/_wallet.py) | [accelbyte_py_sdk_cli platform-update-wallet-config](../../samples/cli/accelbyte_py_sdk_cli/platform/_update_wallet_config.py) |
 
 
 ## Models
@@ -1093,6 +1095,8 @@
 | ViewCreate | [ViewCreate](../../src/services/platform/accelbyte_py_sdk/api/platform/models/view_create.py) |
 | ViewInfo | [ViewInfo](../../src/services/platform/accelbyte_py_sdk/api/platform/models/view_info.py) |
 | ViewUpdate | [ViewUpdate](../../src/services/platform/accelbyte_py_sdk/api/platform/models/view_update.py) |
+| WalletConfigInfo | [WalletConfigInfo](../../src/services/platform/accelbyte_py_sdk/api/platform/models/wallet_config_info.py) |
+| WalletConfigUpdate | [WalletConfigUpdate](../../src/services/platform/accelbyte_py_sdk/api/platform/models/wallet_config_update.py) |
 | WalletInfo | [WalletInfo](../../src/services/platform/accelbyte_py_sdk/api/platform/models/wallet_info.py) |
 | WalletPagingSlicedResult | [WalletPagingSlicedResult](../../src/services/platform/accelbyte_py_sdk/api/platform/models/wallet_paging_sliced_result.py) |
 | WalletRevocationConfig | [WalletRevocationConfig](../../src/services/platform/accelbyte_py_sdk/api/platform/models/wallet_revocation_config.py) |

@@ -94,6 +94,7 @@
 | model.GoalProgressionResponse | [ModelGoalProgressionResponse](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_goal_progression_response.py) |
 | model.GoalResponse | [ModelGoalResponse](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_goal_response.py) |
 | model.GoalSchedule | [ModelGoalSchedule](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_goal_schedule.py) |
+| model.GoalScheduleRequest | [ModelGoalScheduleRequest](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_goal_schedule_request.py) |
 | model.ListChallengeResponse | [ModelListChallengeResponse](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_list_challenge_response.py) |
 | model.ListPeriodsResponse | [ModelListPeriodsResponse](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_list_periods_response.py) |
 | model.ListScheduleByGoalResponse | [ModelListScheduleByGoalResponse](../../src/services/challenge/accelbyte_py_sdk/api/challenge/models/model_list_schedule_by_goal_response.py) |

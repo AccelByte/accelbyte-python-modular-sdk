@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Match Service V2 Index (2.30.0)
+# AccelByte Gaming Services Match Service V2 Index (2.31.0)
 
 
 ## Operations
@@ -49,6 +49,7 @@
 | /match2/v1/namespaces/{namespace}/match-pools/{pool} | GET | MatchPoolDetails | `false` | [MatchPoolDetails](../../src/services/match2/accelbyte_py_sdk/api/match2/operations/match_pools/match_pool_details.py) | [match_pool_details](../../src/services/match2/accelbyte_py_sdk/api/match2/wrappers/_match_pools.py) | [accelbyte_py_sdk_cli match2-match-pool-details](../../samples/cli/accelbyte_py_sdk_cli/match2/_match_pool_details.py) |
 | /match2/v1/namespaces/{namespace}/match-pools | GET | MatchPoolList | `false` | [MatchPoolList](../../src/services/match2/accelbyte_py_sdk/api/match2/operations/match_pools/match_pool_list.py) | [match_pool_list](../../src/services/match2/accelbyte_py_sdk/api/match2/wrappers/_match_pools.py) | [accelbyte_py_sdk_cli match2-match-pool-list](../../samples/cli/accelbyte_py_sdk_cli/match2/_match_pool_list.py) |
 | /match2/v1/namespaces/{namespace}/match-pools/{pool}/metrics | GET | MatchPoolMetric | `false` | [MatchPoolMetric](../../src/services/match2/accelbyte_py_sdk/api/match2/operations/match_pools/match_pool_metric.py) | [match_pool_metric](../../src/services/match2/accelbyte_py_sdk/api/match2/wrappers/_match_pools.py) | [accelbyte_py_sdk_cli match2-match-pool-metric](../../samples/cli/accelbyte_py_sdk_cli/match2/_match_pool_metric.py) |
+| /match2/v1/namespaces/{namespace}/match-pools/{pool}/metrics/external-failure | POST | PostMatchErrorMetric | `false` | [PostMatchErrorMetric](../../src/services/match2/accelbyte_py_sdk/api/match2/operations/match_pools/post_match_error_metric.py) | [post_match_error_metric](../../src/services/match2/accelbyte_py_sdk/api/match2/wrappers/_match_pools.py) | [accelbyte_py_sdk_cli match2-post-match-error-metric](../../samples/cli/accelbyte_py_sdk_cli/match2/_post_match_error_metric.py) |
 | /match2/v1/public/namespaces/{namespace}/match-pools/{pool}/metrics/player | GET | PublicGetPlayerMetric | `false` | [PublicGetPlayerMetric](../../src/services/match2/accelbyte_py_sdk/api/match2/operations/match_pools/public_get_player_metric.py) | [public_get_player_metric](../../src/services/match2/accelbyte_py_sdk/api/match2/wrappers/_match_pools.py) | [accelbyte_py_sdk_cli match2-public-get-player-metric](../../samples/cli/accelbyte_py_sdk_cli/match2/_public_get_player_metric.py) |
 | /match2/v1/namespaces/{namespace}/match-pools/{pool} | PUT | UpdateMatchPool | `false` | [UpdateMatchPool](../../src/services/match2/accelbyte_py_sdk/api/match2/operations/match_pools/update_match_pool.py) | [update_match_pool](../../src/services/match2/accelbyte_py_sdk/api/match2/wrappers/_match_pools.py) | [accelbyte_py_sdk_cli match2-update-match-pool](../../samples/cli/accelbyte_py_sdk_cli/match2/_update_match_pool.py) |
 
@@ -86,6 +87,7 @@
 | api.BackfillGetResponse | [ApiBackfillGetResponse](../../src/services/match2/accelbyte_py_sdk/api/match2/models/api_backfill_get_response.py) |
 | api.BackfillProposalResponse | [ApiBackfillProposalResponse](../../src/services/match2/accelbyte_py_sdk/api/match2/models/api_backfill_proposal_response.py) |
 | api.backFillRejectRequest | [ApiBackFillRejectRequest](../../src/services/match2/accelbyte_py_sdk/api/match2/models/api_back_fill_reject_request.py) |
+| api.ExternalFailureMetricRecord | [ApiExternalFailureMetricRecord](../../src/services/match2/accelbyte_py_sdk/api/match2/models/api_external_failure_metric_record.py) |
 | api.ListEnvironmentVariablesResponse | [ApiListEnvironmentVariablesResponse](../../src/services/match2/accelbyte_py_sdk/api/match2/models/api_list_environment_variables_response.py) |
 | api.ListMatchFunctionsResponse | [ApiListMatchFunctionsResponse](../../src/services/match2/accelbyte_py_sdk/api/match2/models/api_list_match_functions_response.py) |
 | api.ListMatchPoolsResponse | [ApiListMatchPoolsResponse](../../src/services/match2/accelbyte_py_sdk/api/match2/models/api_list_match_pools_response.py) |

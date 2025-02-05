@@ -6,7 +6,7 @@ This is a service module for the [AccelByte Modular Python SDK](https://github.c
 
 ```text
 Fleet Commander
-* Version: 1.31.1
+* Version: 1.32.0
 ```
 
 ## Setup

@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# Analytics Game Telemetry Index (1.29.1)
+# Analytics Game Telemetry Index (1.31.0)
 
 
 ## Operations

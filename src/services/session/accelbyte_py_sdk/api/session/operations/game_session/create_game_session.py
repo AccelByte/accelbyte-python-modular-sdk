@@ -58,7 +58,6 @@ class CreateGameSession(Operation):
     - textChat
     - autoJoin
     - requestedRegions
-    - dsSource
     - preferredClaimKeys
     - fallbackClaimKeys
     - customURLGRPC

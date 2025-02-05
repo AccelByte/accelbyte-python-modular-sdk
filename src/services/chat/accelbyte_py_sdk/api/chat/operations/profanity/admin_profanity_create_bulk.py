@@ -31,7 +31,6 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 from accelbyte_py_sdk.core import deprecated
 
-from ...models import ModelsDictionary
 from ...models import ModelsDictionaryInsertBulkRequest
 from ...models import RestapiErrorResponseBody
 
@@ -59,7 +58,7 @@ class AdminProfanityCreateBulk(Operation):
         namespace: (namespace) REQUIRED str in path
 
     Responses:
-        204: No Content - ModelsDictionary (No Content)
+        204: No Content - (No Content)
 
         400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
@@ -250,7 +249,7 @@ class AdminProfanityCreateBulk(Operation):
     def parse_response(self, code: int, content_type: str, content: Any) -> Response:
         """Parse the given response.
 
-        204: No Content - ModelsDictionary (No Content)
+        204: No Content - (No Content)
 
         400: Bad Request - RestapiErrorResponseBody (Bad Request)
 
@@ -319,7 +318,7 @@ class AdminProfanityCreateBulk(Operation):
     ) -> Tuple[None, Union[None, HttpResponse, RestapiErrorResponseBody]]:
         """Parse the given response.
 
-        204: No Content - ModelsDictionary (No Content)
+        204: No Content - (No Content)
 
         400: Bad Request - RestapiErrorResponseBody (Bad Request)
 

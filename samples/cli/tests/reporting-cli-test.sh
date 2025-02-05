@@ -30,40 +30,40 @@ if [ "$BATCH" = true ] ; then
 
 $PYTHON -m $MODULE 'start-interactive-session' --continue_on_error '--writer=tap' << END
 reporting-admin-find-action-list --login_with_auth "Bearer foo"
-reporting-admin-create-mod-action '{"actionId": "SC0QF8kO", "actionName": "lUb5bhtg", "eventName": "61koZ8pU"}' --login_with_auth "Bearer foo"
+reporting-admin-create-mod-action '{"actionId": "50cjFV8J", "actionName": "ap7lEjSq", "eventName": "GWYRM7tN"}' --login_with_auth "Bearer foo"
 reporting-admin-find-extension-category-list --login_with_auth "Bearer foo"
-reporting-admin-create-extension-category '{"extensionCategory": "rEey2QHt", "extensionCategoryName": "Ttf25jZF", "serviceSource": "QaOoKibx"}' --login_with_auth "Bearer foo"
+reporting-admin-create-extension-category '{"extensionCategory": "IUO8rx4U", "extensionCategoryName": "pg9irz8L", "serviceSource": "IfRS4rRq"}' --login_with_auth "Bearer foo"
 reporting-get --login_with_auth "Bearer foo"
-reporting-upsert '{"categoryLimits": [{"extensionCategory": "HAQ5v7cV", "maxReportPerTicket": 1, "name": "L9xqVLfo"}, {"extensionCategory": "MyjD98YC", "maxReportPerTicket": 12, "name": "bli4hz1l"}, {"extensionCategory": "6qCYeoNN", "maxReportPerTicket": 95, "name": "PVeObTRP"}], "timeInterval": 9, "userMaxReportPerTimeInterval": 47}' --login_with_auth "Bearer foo"
+reporting-upsert '{"categoryLimits": [{"extensionCategory": "dYTvn67A", "maxReportPerTicket": 10, "name": "3ugJJDxu"}, {"extensionCategory": "EBAv71Je", "maxReportPerTicket": 79, "name": "XoTaAzNb"}, {"extensionCategory": "FQsJFhcC", "maxReportPerTicket": 72, "name": "p3KQYg1F"}], "timeInterval": 5, "userMaxReportPerTimeInterval": 77}' --login_with_auth "Bearer foo"
 reporting-admin-list-reason-groups --login_with_auth "Bearer foo"
-reporting-create-reason-group '{"reasonIds": ["7uscD0YC", "qgksPGuU", "JLoUzKBX"], "title": "PNnL2h2R"}' --login_with_auth "Bearer foo"
-reporting-get-reason-group 'asJaUbZx' --login_with_auth "Bearer foo"
-reporting-delete-reason-group 'cqqp7Juj' --login_with_auth "Bearer foo"
-reporting-update-reason-group '{"reasonIds": ["09ccxtKJ", "LYXCAqhX", "aOT30ATv"], "title": "eymSi9EG"}' 'TArN8TwC' --login_with_auth "Bearer foo"
+reporting-create-reason-group '{"reasonIds": ["O9IMBK8L", "YRbtBpv7", "wKMVPdKA"], "title": "agzXkofP"}' --login_with_auth "Bearer foo"
+reporting-get-reason-group 'K9lkdW93' --login_with_auth "Bearer foo"
+reporting-delete-reason-group 'WxuZMvHu' --login_with_auth "Bearer foo"
+reporting-update-reason-group '{"reasonIds": ["revGRXwq", "8pzze1Hb", "WO8jdnJP"], "title": "Snka0zqC"}' 'oehzLtgw' --login_with_auth "Bearer foo"
 reporting-admin-get-reasons --login_with_auth "Bearer foo"
-reporting-create-reason '{"description": "up4tKA7C", "groupIds": ["ihDQ06wj", "hXcHPhwL", "FR9ZXGZV"], "title": "UUEMjxsZ"}' --login_with_auth "Bearer foo"
+reporting-create-reason '{"description": "F39T4iTq", "groupIds": ["01LbTEAg", "FdSvgLMP", "OrFAhOIi"], "title": "P5KKqnCS"}' --login_with_auth "Bearer foo"
 reporting-admin-get-all-reasons --login_with_auth "Bearer foo"
-reporting-admin-get-unused-reasons 'GUj3ULGQ' --login_with_auth "Bearer foo"
-reporting-admin-get-reason 'ICzdomSM' --login_with_auth "Bearer foo"
-reporting-delete-reason 'eAu7z220' --login_with_auth "Bearer foo"
-reporting-update-reason '{"description": "0LFSsZXw", "groupIds": ["SrmWvjhx", "0YDsFYwm", "xCJgZs96"], "title": "nyLAMLDT"}' 'IYwB6Vs8' --login_with_auth "Bearer foo"
+reporting-admin-get-unused-reasons 'uScpNXe5' --login_with_auth "Bearer foo"
+reporting-admin-get-reason 'DkJIbWmf' --login_with_auth "Bearer foo"
+reporting-delete-reason 'XzuBDgTa' --login_with_auth "Bearer foo"
+reporting-update-reason '{"description": "vrbwlboK", "groupIds": ["X5Sw9mDd", "1slSDLId", "mqr1cpII"], "title": "3qyQjhbn"}' 'pq66SdYm' --login_with_auth "Bearer foo"
 reporting-list-reports --login_with_auth "Bearer foo"
-reporting-admin-submit-report '{"additionalInfo": {"wsWx4X1F": {}, "R2J4Kri5": {}, "aDxJsC7J": {}}, "category": "UGC", "comment": "FXCFeaLO", "extensionCategory": "CHK6jEC4", "objectId": "ugi5TymC", "objectType": "SHLRJtEM", "reason": "B7l8HhiQ", "userId": "AG0AIJ94"}' --login_with_auth "Bearer foo"
-reporting-create-moderation-rule '{"action": "HideContent", "actions": {"banAccount": {"comment": "icT3ga1B", "duration": 56, "reason": "NCqywrDH", "skipNotif": false, "type": "IxwRTDDw"}, "deleteChat": false, "extensionActionIds": ["gHb5JMwK", "DM4Ac3mA", "z36iTOQU"], "hideContent": true}, "active": true, "category": "CHAT", "extensionCategory": "KIJhi4FK", "reason": "EiQ1wGYR", "threshold": 60}' --login_with_auth "Bearer foo"
-reporting-update-moderation-rule '{"action": "HideContent", "actions": {"banAccount": {"comment": "NMjJfhCl", "duration": 85, "reason": "vdNogy6c", "skipNotif": true, "type": "ioiTp2Um"}, "deleteChat": true, "extensionActionIds": ["ux57KV1Y", "OAQXX5kF", "1tEzOL2d"], "hideContent": true}, "active": true, "category": "CHAT", "extensionCategory": "BvDH7JBE", "reason": "Jm0gtWgO", "threshold": 30}' 'oL3edkjb' --login_with_auth "Bearer foo"
-reporting-delete-moderation-rule '0oUraHjp' --login_with_auth "Bearer foo"
-reporting-update-moderation-rule-status '{"active": true}' 'm0JymL09' --login_with_auth "Bearer foo"
+reporting-admin-submit-report '{"additionalInfo": {"KL9CzI5n": {}, "tOoDzvSC": {}, "N9gtuk2F": {}}, "category": "CHAT", "comment": "yfIrldE3", "extensionCategory": "0EhO4P4n", "objectId": "rhhRcE22", "objectType": "uNQorIrA", "reason": "zbYZUUF7", "userId": "ALAMKr5z"}' --login_with_auth "Bearer foo"
+reporting-create-moderation-rule '{"action": "HideContent", "actions": {"banAccount": {"comment": "omm7MvOQ", "duration": 98, "reason": "SyrnpA7f", "skipNotif": false, "type": "uHLKqtlt"}, "deleteChat": true, "extensionActionIds": ["iUdMPbUk", "CwdKGBcv", "1mmtgHMm"], "hideContent": true}, "active": false, "category": "CHAT", "extensionCategory": "D3g2k83J", "reason": "fKNV4fKZ", "threshold": 47}' --login_with_auth "Bearer foo"
+reporting-update-moderation-rule '{"action": "HideContent", "actions": {"banAccount": {"comment": "IB122IQL", "duration": 99, "reason": "rUVfq3rH", "skipNotif": true, "type": "Tm4iYwAu"}, "deleteChat": false, "extensionActionIds": ["XQd2r999", "6CEMuDcj", "HwitfDnY"], "hideContent": false}, "active": false, "category": "UGC", "extensionCategory": "rCF7vY5g", "reason": "7XXjsFfG", "threshold": 9}' 'vWNGC97r' --login_with_auth "Bearer foo"
+reporting-delete-moderation-rule 'EKJhnLVw' --login_with_auth "Bearer foo"
+reporting-update-moderation-rule-status '{"active": true}' 'ioGyaYlW' --login_with_auth "Bearer foo"
 reporting-get-moderation-rules --login_with_auth "Bearer foo"
-reporting-get-moderation-rule-details 'JtWYDoch' --login_with_auth "Bearer foo"
+reporting-get-moderation-rule-details '6QhJ7iLS' --login_with_auth "Bearer foo"
 reporting-list-tickets --login_with_auth "Bearer foo"
-reporting-ticket-statistic 'mEh6tnSv' --login_with_auth "Bearer foo"
-reporting-get-ticket-detail 'rzcGoG3t' --login_with_auth "Bearer foo"
-reporting-delete-ticket 'w6l0oMoe' --login_with_auth "Bearer foo"
-reporting-get-reports-by-ticket 'Jx7rFX4Y' --login_with_auth "Bearer foo"
-reporting-update-ticket-resolutions '{"notes": "LppyT7EC", "status": "UNKNOWN"}' 'Hd6tiiiE' --login_with_auth "Bearer foo"
+reporting-ticket-statistic 'Rt7Lble8' --login_with_auth "Bearer foo"
+reporting-get-ticket-detail 'TUmHLhMI' --login_with_auth "Bearer foo"
+reporting-delete-ticket 'ZwuqqOzT' --login_with_auth "Bearer foo"
+reporting-get-reports-by-ticket 'WW4w1vr5' --login_with_auth "Bearer foo"
+reporting-update-ticket-resolutions '{"notes": "I5NGozqd", "status": "CLOSED"}' 'FDG59asW' --login_with_auth "Bearer foo"
 reporting-public-list-reason-groups --login_with_auth "Bearer foo"
 reporting-public-get-reasons --login_with_auth "Bearer foo"
-reporting-submit-report '{"additionalInfo": {"M43AbEHJ": {}, "R38Y50xc": {}, "cz69Dg2D": {}}, "category": "CHAT", "comment": "bR5QklOz", "extensionCategory": "jXJcwVp7", "objectId": "M5UeWuOd", "objectType": "mmaJnq7i", "reason": "wt5j1r9k", "userId": "522qV7pZ"}' --login_with_auth "Bearer foo"
+reporting-submit-report '{"additionalInfo": {"lMHp4jWE": {}, "gLAZkJAn": {}, "SOE8QvfG": {}}, "category": "UGC", "comment": "AYtcfaP1", "extensionCategory": "bTweOJEV", "objectId": "oqPwY8Dp", "objectType": "G3LHrjRC", "reason": "MeyZvS2B", "userId": "nF3pFvLy"}' --login_with_auth "Bearer foo"
 exit()
 END
 
@@ -100,7 +100,7 @@ eval_tap $? 2 'AdminFindActionList' test.out
 
 #- 3 AdminCreateModAction
 $PYTHON -m $MODULE 'reporting-admin-create-mod-action' \
-    '{"actionId": "VtGbrJRz", "actionName": "m2ZoVbTn", "eventName": "UONTnKYW"}' \
+    '{"actionId": "xLCrBHO7", "actionName": "eBQQPEPQ", "eventName": "87QnsroQ"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 3 'AdminCreateModAction' test.out
@@ -113,7 +113,7 @@ eval_tap $? 4 'AdminFindExtensionCategoryList' test.out
 
 #- 5 AdminCreateExtensionCategory
 $PYTHON -m $MODULE 'reporting-admin-create-extension-category' \
-    '{"extensionCategory": "mzpn4aWT", "extensionCategoryName": "ovm3RNBL", "serviceSource": "tpLgLqdY"}' \
+    '{"extensionCategory": "mttrNrVY", "extensionCategoryName": "KJTS75r9", "serviceSource": "bYOvKNik"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 5 'AdminCreateExtensionCategory' test.out
@@ -126,7 +126,7 @@ eval_tap $? 6 'Get' test.out
 
 #- 7 Upsert
 $PYTHON -m $MODULE 'reporting-upsert' \
-    '{"categoryLimits": [{"extensionCategory": "cQruZvBG", "maxReportPerTicket": 51, "name": "cXWMAHmW"}, {"extensionCategory": "Ei6oGdBn", "maxReportPerTicket": 16, "name": "LQJyuz2N"}, {"extensionCategory": "HTcYbrio", "maxReportPerTicket": 17, "name": "M0S0LhYe"}], "timeInterval": 37, "userMaxReportPerTimeInterval": 75}' \
+    '{"categoryLimits": [{"extensionCategory": "whi0CJJq", "maxReportPerTicket": 15, "name": "rjduvTRa"}, {"extensionCategory": "dYuFKoNI", "maxReportPerTicket": 6, "name": "ShqMV6rT"}, {"extensionCategory": "ueYglbH4", "maxReportPerTicket": 47, "name": "75qzrQWy"}], "timeInterval": 94, "userMaxReportPerTimeInterval": 27}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 7 'Upsert' test.out
@@ -139,29 +139,29 @@ eval_tap $? 8 'AdminListReasonGroups' test.out
 
 #- 9 CreateReasonGroup
 $PYTHON -m $MODULE 'reporting-create-reason-group' \
-    '{"reasonIds": ["w8q6sgae", "StQ5GVk7", "1pOnfrpf"], "title": "kFfqIRhI"}' \
+    '{"reasonIds": ["oKD619xN", "cc990CUS", "YJ5ElPve"], "title": "fdEzNkj3"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 9 'CreateReasonGroup' test.out
 
 #- 10 GetReasonGroup
 $PYTHON -m $MODULE 'reporting-get-reason-group' \
-    'CQW55bIy' \
+    'vLQs1bas' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 10 'GetReasonGroup' test.out
 
 #- 11 DeleteReasonGroup
 $PYTHON -m $MODULE 'reporting-delete-reason-group' \
-    'l8VntClm' \
+    '2hL6KOaY' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 11 'DeleteReasonGroup' test.out
 
 #- 12 UpdateReasonGroup
 $PYTHON -m $MODULE 'reporting-update-reason-group' \
-    '{"reasonIds": ["sysdtFwx", "ovzCsuHv", "bsNNNAf0"], "title": "PI4C4Eao"}' \
-    'fstJdFrM' \
+    '{"reasonIds": ["c3saUM5k", "EqFwqjqY", "K0VulA14"], "title": "e6fUtHBv"}' \
+    '5Xp3JJ8F' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 12 'UpdateReasonGroup' test.out
@@ -174,7 +174,7 @@ eval_tap $? 13 'AdminGetReasons' test.out
 
 #- 14 CreateReason
 $PYTHON -m $MODULE 'reporting-create-reason' \
-    '{"description": "uP32vWT4", "groupIds": ["zGmP0I5k", "VvY4XZD2", "GiczgEM0"], "title": "eTsDBmiO"}' \
+    '{"description": "HwXmg32m", "groupIds": ["TRmc5C90", "VGHRTDQj", "crVcQ5qq"], "title": "0sJwJEgj"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 14 'CreateReason' test.out
@@ -187,29 +187,29 @@ eval_tap $? 15 'AdminGetAllReasons' test.out
 
 #- 16 AdminGetUnusedReasons
 $PYTHON -m $MODULE 'reporting-admin-get-unused-reasons' \
-    'KLApr84z' \
+    'eWdjKOLp' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 16 'AdminGetUnusedReasons' test.out
 
 #- 17 AdminGetReason
 $PYTHON -m $MODULE 'reporting-admin-get-reason' \
-    'whBrY1ht' \
+    'yFZip0z7' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 17 'AdminGetReason' test.out
 
 #- 18 DeleteReason
 $PYTHON -m $MODULE 'reporting-delete-reason' \
-    'sM6oscOF' \
+    'WGECFBC7' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 18 'DeleteReason' test.out
 
 #- 19 UpdateReason
 $PYTHON -m $MODULE 'reporting-update-reason' \
-    '{"description": "JzW5GXmt", "groupIds": ["eFpeJa57", "ALwJ1aSq", "YPf5TsyY"], "title": "v9oczgqU"}' \
-    'DfLVncML' \
+    '{"description": "1QZewfgJ", "groupIds": ["Jd26xF5B", "imZI7v1N", "thNc7Tzu"], "title": "F6hizjEr"}' \
+    'Atly60KY' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 19 'UpdateReason' test.out
@@ -222,37 +222,37 @@ eval_tap $? 20 'ListReports' test.out
 
 #- 21 AdminSubmitReport
 $PYTHON -m $MODULE 'reporting-admin-submit-report' \
-    '{"additionalInfo": {"DYkWEmkt": {}, "bcDqF2LJ": {}, "gWS9tQMw": {}}, "category": "CHAT", "comment": "MlL7x8vL", "extensionCategory": "5u6asrGn", "objectId": "CUjVddgG", "objectType": "mYPU87uW", "reason": "f812BT61", "userId": "SZseFfEP"}' \
+    '{"additionalInfo": {"j2wJ6FRl": {}, "rG9uv4nw": {}, "t3RAqR0N": {}}, "category": "USER", "comment": "spsCq0fe", "extensionCategory": "NxT1daNn", "objectId": "qfaQ8Z8a", "objectType": "r8AF210l", "reason": "2UlcRTyo", "userId": "0YBssi58"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 21 'AdminSubmitReport' test.out
 
 #- 22 CreateModerationRule
 $PYTHON -m $MODULE 'reporting-create-moderation-rule' \
-    '{"action": "HideContent", "actions": {"banAccount": {"comment": "BZus1KL4", "duration": 33, "reason": "X3hYQHP6", "skipNotif": false, "type": "cTxvraiP"}, "deleteChat": true, "extensionActionIds": ["prVDrutq", "NPLq6CRx", "ViHPlPzq"], "hideContent": true}, "active": false, "category": "EXTENSION", "extensionCategory": "Y94wYAnB", "reason": "w3IsX1LP", "threshold": 4}' \
+    '{"action": "HideContent", "actions": {"banAccount": {"comment": "EsAHYtxo", "duration": 19, "reason": "BZ6pY9xt", "skipNotif": true, "type": "GKmhNvZo"}, "deleteChat": true, "extensionActionIds": ["DYDdzSh1", "6hxBhtI9", "vbA9isb6"], "hideContent": false}, "active": true, "category": "USER", "extensionCategory": "JdHlinbv", "reason": "not6wRDc", "threshold": 74}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 22 'CreateModerationRule' test.out
 
 #- 23 UpdateModerationRule
 $PYTHON -m $MODULE 'reporting-update-moderation-rule' \
-    '{"action": "HideContent", "actions": {"banAccount": {"comment": "ardQon3v", "duration": 44, "reason": "QdHKyfQ3", "skipNotif": true, "type": "Us1CPHWh"}, "deleteChat": false, "extensionActionIds": ["74klNhfI", "84njbnll", "a9PowJpz"], "hideContent": false}, "active": false, "category": "CHAT", "extensionCategory": "NoSRb6RL", "reason": "MQdx362G", "threshold": 46}' \
-    '2xRIKQbg' \
+    '{"action": "HideContent", "actions": {"banAccount": {"comment": "PAoDCVSy", "duration": 3, "reason": "G3ZTyQRS", "skipNotif": false, "type": "uOyf0Byp"}, "deleteChat": false, "extensionActionIds": ["Uakt6WOB", "mvapRkxE", "YbQWb7Zl"], "hideContent": true}, "active": true, "category": "EXTENSION", "extensionCategory": "lTrDfMS6", "reason": "vXAVhNXI", "threshold": 77}' \
+    'p3duHrji' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 23 'UpdateModerationRule' test.out
 
 #- 24 DeleteModerationRule
 $PYTHON -m $MODULE 'reporting-delete-moderation-rule' \
-    '2wbMSbJG' \
+    'rvQ4dd7V' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 24 'DeleteModerationRule' test.out
 
 #- 25 UpdateModerationRuleStatus
 $PYTHON -m $MODULE 'reporting-update-moderation-rule-status' \
-    '{"active": false}' \
-    '744cMI2q' \
+    '{"active": true}' \
+    '9C6OR8Vc' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 25 'UpdateModerationRuleStatus' test.out
@@ -265,7 +265,7 @@ eval_tap $? 26 'GetModerationRules' test.out
 
 #- 27 GetModerationRuleDetails
 $PYTHON -m $MODULE 'reporting-get-moderation-rule-details' \
-    'lGC9XkpR' \
+    'nY1Xmw5W' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 27 'GetModerationRuleDetails' test.out
@@ -278,36 +278,36 @@ eval_tap $? 28 'ListTickets' test.out
 
 #- 29 TicketStatistic
 $PYTHON -m $MODULE 'reporting-ticket-statistic' \
-    '56dp3e9f' \
+    'NMYQMqYk' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 29 'TicketStatistic' test.out
 
 #- 30 GetTicketDetail
 $PYTHON -m $MODULE 'reporting-get-ticket-detail' \
-    'AcV4V7RI' \
+    'YtYzyhRh' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 30 'GetTicketDetail' test.out
 
 #- 31 DeleteTicket
 $PYTHON -m $MODULE 'reporting-delete-ticket' \
-    'CRKusN9Z' \
+    '6V1nCBw5' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 31 'DeleteTicket' test.out
 
 #- 32 GetReportsByTicket
 $PYTHON -m $MODULE 'reporting-get-reports-by-ticket' \
-    '2FNr1alQ' \
+    'xAV7L0tf' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 32 'GetReportsByTicket' test.out
 
 #- 33 UpdateTicketResolutions
 $PYTHON -m $MODULE 'reporting-update-ticket-resolutions' \
-    '{"notes": "HEXKXi68", "status": "UNKNOWN"}' \
-    '4Res9s5h' \
+    '{"notes": "bs8j2Mnc", "status": "OPEN"}' \
+    'AYJPEEOn' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 33 'UpdateTicketResolutions' test.out
@@ -326,7 +326,7 @@ eval_tap $? 35 'PublicGetReasons' test.out
 
 #- 36 SubmitReport
 $PYTHON -m $MODULE 'reporting-submit-report' \
-    '{"additionalInfo": {"2xWWQ9Ti": {}, "HD1POLbG": {}, "71jdz76n": {}}, "category": "UGC", "comment": "EJidneec", "extensionCategory": "DiFrIkHN", "objectId": "DlTuI1D7", "objectType": "qgV9rIPt", "reason": "rK46dogQ", "userId": "Z5OLLYgP"}' \
+    '{"additionalInfo": {"leq7oCQ7": {}, "tx88NPCg": {}, "RQU7Ux5I": {}}, "category": "CHAT", "comment": "Bj69Pfb7", "extensionCategory": "n9IOLwS2", "objectId": "it1sgwrm", "objectType": "SDTwOoQo", "reason": "kHmrgZ5o", "userId": "xiXtsdRZ"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 36 'SubmitReport' test.out

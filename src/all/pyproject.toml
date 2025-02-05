@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "accelbyte-py-sdk-all"
 readme = "README.md"
-version = "0.8.0"
+version = "0.9.0"
 description = "AccelByte Python SDK - All"
 requires-python = ">=3.9"
 dependencies = [
@@ -34,6 +34,7 @@ dependencies = [
     "accelbyte-py-sdk-service-leaderboard",
     "accelbyte-py-sdk-service-legal",
     "accelbyte-py-sdk-service-lobby",
+    "accelbyte-py-sdk-service-loginqueue",
     "accelbyte-py-sdk-service-match2",
     "accelbyte-py-sdk-service-matchmaking",
     "accelbyte-py-sdk-service-platform",

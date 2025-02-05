@@ -25,6 +25,7 @@ click
 ../../src/services/leaderboard
 ../../src/services/legal
 ../../src/services/lobby
+../../src/services/loginqueue
 ../../src/services/match2
 ../../src/services/matchmaking
 ../../src/services/platform
