@@ -87,7 +87,7 @@ def get_slot_data(
         404: Not Found - ErrorEntity (12141: Slot [{slotId}] not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetSlotData.create(
@@ -141,7 +141,7 @@ async def get_slot_data_async(
         404: Not Found - ErrorEntity (12141: Slot [{slotId}] not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetSlotData.create(
@@ -192,7 +192,7 @@ def get_user_namespace_slots(
         200: OK - List[SlotInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserNamespaceSlots.create(
@@ -240,7 +240,7 @@ async def get_user_namespace_slots_async(
         200: OK - List[SlotInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserNamespaceSlots.create(
@@ -309,7 +309,7 @@ def public_create_user_namespace_slot(
         409: Conflict - ErrorEntity (12171: User [{userId}] exceed max slot count [{maxCount}] in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicCreateUserNamespaceSlot.create(
@@ -381,7 +381,7 @@ async def public_create_user_namespace_slot_async(
         409: Conflict - ErrorEntity (12171: User [{userId}] exceed max slot count [{maxCount}] in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicCreateUserNamespaceSlot.create(
@@ -440,7 +440,7 @@ def public_delete_user_namespace_slot(
         404: Not Found - ErrorEntity (12141: Slot [{slotId}] not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicDeleteUserNamespaceSlot.create(
@@ -493,7 +493,7 @@ async def public_delete_user_namespace_slot_async(
         404: Not Found - ErrorEntity (12141: Slot [{slotId}] not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicDeleteUserNamespaceSlot.create(
@@ -549,7 +549,7 @@ def public_get_slot_data(
         404: Not Found - ErrorEntity (12141: Slot [{slotId}] not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetSlotData.create(
@@ -603,7 +603,7 @@ async def public_get_slot_data_async(
         404: Not Found - ErrorEntity (12141: Slot [{slotId}] not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetSlotData.create(
@@ -654,7 +654,7 @@ def public_get_user_namespace_slots(
         200: OK - List[SlotInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserNamespaceSlots.create(
@@ -702,7 +702,7 @@ async def public_get_user_namespace_slots_async(
         200: OK - List[SlotInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserNamespaceSlots.create(
@@ -774,7 +774,7 @@ def public_update_user_namespace_slot(
         404: Not Found - ErrorEntity (12141: Slot [{slotId}] not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicUpdateUserNamespaceSlot.create(
@@ -850,7 +850,7 @@ async def public_update_user_namespace_slot_async(
         404: Not Found - ErrorEntity (12141: Slot [{slotId}] not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicUpdateUserNamespaceSlot.create(
@@ -914,7 +914,7 @@ def public_update_user_namespace_slot_metadata(
         404: Not Found - ErrorEntity (12141: Slot [{slotId}] not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicUpdateUserNamespaceSlotMetadata.create(
@@ -972,7 +972,7 @@ async def public_update_user_namespace_slot_metadata_async(
         404: Not Found - ErrorEntity (12141: Slot [{slotId}] not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicUpdateUserNamespaceSlotMetadata.create(

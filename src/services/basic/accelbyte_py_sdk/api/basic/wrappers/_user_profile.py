@@ -115,7 +115,7 @@ def admin_get_user_profile_public_info_by_ids(
         400: Bad Request - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminGetUserProfilePublicInfoByIds.create(
@@ -164,7 +164,7 @@ async def admin_get_user_profile_public_info_by_ids_async(
         400: Bad Request - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminGetUserProfilePublicInfoByIds.create(
@@ -229,7 +229,7 @@ def create_my_profile(
         409: Conflict - ErrorEntity (11441: Unable to {action}: User profile already exists)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = CreateMyProfile.create(
@@ -292,7 +292,7 @@ async def create_my_profile_async(
         409: Conflict - ErrorEntity (11441: Unable to {action}: User profile already exists)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = CreateMyProfile.create(
@@ -348,7 +348,7 @@ def delete_user_profile(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteUserProfile.create(
@@ -402,7 +402,7 @@ async def delete_user_profile_async(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteUserProfile.create(
@@ -456,7 +456,7 @@ def get_custom_attributes_info(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetCustomAttributesInfo.create(
@@ -508,7 +508,7 @@ async def get_custom_attributes_info_async(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetCustomAttributesInfo.create(
@@ -559,7 +559,7 @@ def get_my_private_custom_attributes_info(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetMyPrivateCustomAttributesInfo.create(
@@ -607,7 +607,7 @@ async def get_my_private_custom_attributes_info_async(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetMyPrivateCustomAttributesInfo.create(
@@ -665,7 +665,7 @@ def get_my_profile_info(
         404: Not Found - ErrorEntity (20008: user not found | 20017: user not linked | 11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetMyProfileInfo.create(
@@ -721,7 +721,7 @@ async def get_my_profile_info_async(
         404: Not Found - ErrorEntity (20008: user not found | 20017: user not linked | 11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetMyProfileInfo.create(
@@ -769,7 +769,7 @@ def get_my_zip_code(
         403: Forbidden - ErrorEntity (20013: insufficient permission)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetMyZipCode.create(
@@ -815,7 +815,7 @@ async def get_my_zip_code_async(
         403: Forbidden - ErrorEntity (20013: insufficient permission)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetMyZipCode.create(
@@ -868,7 +868,7 @@ def get_private_custom_attributes_info(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetPrivateCustomAttributesInfo.create(
@@ -920,7 +920,7 @@ async def get_private_custom_attributes_info_async(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetPrivateCustomAttributesInfo.create(
@@ -976,7 +976,7 @@ def get_user_profile_info(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserProfileInfo.create(
@@ -1030,7 +1030,7 @@ async def get_user_profile_info_async(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserProfileInfo.create(
@@ -1085,7 +1085,7 @@ def get_user_profile_info_by_public_id(
         404: Not Found - ErrorEntity (11469: User profile with publicId [{publicId}] not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserProfileInfoByPublicId.create(
@@ -1138,7 +1138,7 @@ async def get_user_profile_info_by_public_id_async(
         404: Not Found - ErrorEntity (11469: User profile with publicId [{publicId}] not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserProfileInfoByPublicId.create(
@@ -1188,7 +1188,7 @@ def public_bulk_get_user_profile_public_info(
         400: Bad Request - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicBulkGetUserProfilePublicInfo.create(
@@ -1236,7 +1236,7 @@ async def public_bulk_get_user_profile_public_info_async(
         400: Bad Request - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicBulkGetUserProfilePublicInfo.create(
@@ -1297,7 +1297,7 @@ def public_create_user_profile(
         409: Conflict - ErrorEntity (11441: Unable to {action}: User profile already exists)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicCreateUserProfile.create(
@@ -1357,7 +1357,7 @@ async def public_create_user_profile_async(
         409: Conflict - ErrorEntity (11441: Unable to {action}: User profile already exists)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicCreateUserProfile.create(
@@ -1409,7 +1409,7 @@ def public_get_custom_attributes_info(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetCustomAttributesInfo.create(
@@ -1458,7 +1458,7 @@ async def public_get_custom_attributes_info_async(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetCustomAttributesInfo.create(
@@ -1514,7 +1514,7 @@ def public_get_user_profile_info(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserProfileInfo.create(
@@ -1568,7 +1568,7 @@ async def public_get_user_profile_info_async(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserProfileInfo.create(
@@ -1620,7 +1620,7 @@ def public_get_user_profile_info_by_public_id(
         404: Not Found - ErrorEntity (11469: User profile with publicId [{publicId}] not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserProfileInfoByPublicId.create(
@@ -1670,7 +1670,7 @@ async def public_get_user_profile_info_by_public_id_async(
         404: Not Found - ErrorEntity (11469: User profile with publicId [{publicId}] not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserProfileInfoByPublicId.create(
@@ -1723,7 +1723,7 @@ def public_get_user_profile_public_info(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserProfilePublicInfo.create(
@@ -1774,7 +1774,7 @@ async def public_get_user_profile_public_info_async(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserProfilePublicInfo.create(
@@ -1825,7 +1825,7 @@ def public_get_user_profile_public_info_by_ids(
         400: Bad Request - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserProfilePublicInfoByIds.create(
@@ -1874,7 +1874,7 @@ async def public_get_user_profile_public_info_by_ids_async(
         400: Bad Request - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserProfilePublicInfoByIds.create(
@@ -1934,7 +1934,7 @@ def public_update_custom_attributes_partially(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicUpdateCustomAttributesPartially.create(
@@ -1993,7 +1993,7 @@ async def public_update_custom_attributes_partially_async(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicUpdateCustomAttributesPartially.create(
@@ -2055,7 +2055,7 @@ def public_update_user_profile(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicUpdateUserProfile.create(
@@ -2115,7 +2115,7 @@ async def public_update_user_profile_async(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicUpdateUserProfile.create(
@@ -2175,7 +2175,7 @@ def public_update_user_profile_status(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicUpdateUserProfileStatus.create(
@@ -2233,7 +2233,7 @@ async def public_update_user_profile_status_async(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicUpdateUserProfileStatus.create(
@@ -2294,7 +2294,7 @@ def update_custom_attributes_partially(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateCustomAttributesPartially.create(
@@ -2353,7 +2353,7 @@ async def update_custom_attributes_partially_async(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateCustomAttributesPartially.create(
@@ -2411,7 +2411,7 @@ def update_my_private_custom_attributes_partially(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateMyPrivateCustomAttributesPartially.create(
@@ -2466,7 +2466,7 @@ async def update_my_private_custom_attributes_partially_async(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateMyPrivateCustomAttributesPartially.create(
@@ -2528,7 +2528,7 @@ def update_my_profile(
         404: Not Found - ErrorEntity (20008: user not found | 20017: user not linked | 11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateMyProfile.create(
@@ -2588,7 +2588,7 @@ async def update_my_profile_async(
         404: Not Found - ErrorEntity (20008: user not found | 20017: user not linked | 11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateMyProfile.create(
@@ -2642,7 +2642,7 @@ def update_my_zip_code(
         403: Forbidden - ErrorEntity (20013: insufficient permission)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateMyZipCode.create(
@@ -2694,7 +2694,7 @@ async def update_my_zip_code_async(
         403: Forbidden - ErrorEntity (20013: insufficient permission)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateMyZipCode.create(
@@ -2754,7 +2754,7 @@ def update_private_custom_attributes_partially(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdatePrivateCustomAttributesPartially.create(
@@ -2813,7 +2813,7 @@ async def update_private_custom_attributes_partially_async(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdatePrivateCustomAttributesPartially.create(
@@ -2873,7 +2873,7 @@ def update_user_profile(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateUserProfile.create(
@@ -2931,7 +2931,7 @@ async def update_user_profile_async(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateUserProfile.create(
@@ -2991,7 +2991,7 @@ def update_user_profile_status(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateUserProfileStatus.create(
@@ -3049,7 +3049,7 @@ async def update_user_profile_status_async(
         404: Not Found - ErrorEntity (11440: Unable to {action}: User profile not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateUserProfileStatus.create(

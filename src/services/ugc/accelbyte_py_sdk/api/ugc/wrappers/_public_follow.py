@@ -83,7 +83,7 @@ def get_followed_content(
         500: Internal Server Error - ResponseError (771310: Unable to get ugc content: database error | 770801: Unable to get ugc content: database/Unable to get creator | 770803: Failed generate download URL)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetFollowedContent.create(
@@ -135,7 +135,7 @@ async def get_followed_content_async(
         500: Internal Server Error - ResponseError (771310: Unable to get ugc content: database error | 770801: Unable to get ugc content: database/Unable to get creator | 770803: Failed generate download URL)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetFollowedContent.create(
@@ -189,7 +189,7 @@ def get_followed_users(
         500: Internal Server Error - ResponseError (771300: Unable to get creators: database error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetFollowedUsers.create(
@@ -241,7 +241,7 @@ async def get_followed_users_async(
         500: Internal Server Error - ResponseError (771300: Unable to get creators: database error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetFollowedUsers.create(
@@ -297,7 +297,7 @@ def get_public_followers(
         500: Internal Server Error - ResponseError (771303: Unable to get creators: database error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetPublicFollowers.create(
@@ -352,7 +352,7 @@ async def get_public_followers_async(
         500: Internal Server Error - ResponseError (771303: Unable to get creators: database error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetPublicFollowers.create(
@@ -409,7 +409,7 @@ def get_public_following(
         500: Internal Server Error - ResponseError (771303: Unable to get creators: database error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetPublicFollowing.create(
@@ -464,7 +464,7 @@ async def get_public_following_async(
         500: Internal Server Error - ResponseError (771303: Unable to get creators: database error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetPublicFollowing.create(
@@ -519,7 +519,7 @@ def update_user_follow_status(
         500: Internal Server Error - ResponseError (771201: Unable to update follow status: database error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateUserFollowStatus.create(
@@ -571,7 +571,7 @@ async def update_user_follow_status_async(
         500: Internal Server Error - ResponseError (771201: Unable to update follow status: database error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateUserFollowStatus.create(

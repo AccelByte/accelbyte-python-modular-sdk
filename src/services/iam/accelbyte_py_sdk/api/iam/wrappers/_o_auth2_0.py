@@ -130,7 +130,7 @@ def admin_retrieve_user_third_party_platform_token_v3(
         404: Not Found - OauthmodelErrorResponse (Platform Token Not Found)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminRetrieveUserThirdPartyPlatformTokenV3.create(
@@ -204,7 +204,7 @@ async def admin_retrieve_user_third_party_platform_token_v3_async(
         404: Not Found - OauthmodelErrorResponse (Platform Token Not Found)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminRetrieveUserThirdPartyPlatformTokenV3.create(
@@ -1197,7 +1197,7 @@ def retrieve_user_third_party_platform_token_v3(
         404: Not Found - OauthmodelErrorResponse (Platform Token Not Found)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RetrieveUserThirdPartyPlatformTokenV3.create(
@@ -1269,7 +1269,7 @@ async def retrieve_user_third_party_platform_token_v3_async(
         404: Not Found - OauthmodelErrorResponse (Platform Token Not Found)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RetrieveUserThirdPartyPlatformTokenV3.create(
@@ -1326,7 +1326,7 @@ def revoke_user_v3(
         403: Forbidden - OauthmodelErrorResponse (insufficient permission)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RevokeUserV3.create(
@@ -1381,7 +1381,7 @@ async def revoke_user_v3_async(
         403: Forbidden - OauthmodelErrorResponse (insufficient permission)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RevokeUserV3.create(

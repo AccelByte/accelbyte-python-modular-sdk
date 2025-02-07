@@ -98,7 +98,7 @@ def add_country_group(
         409: Conflict - ErrorEntity (11235: Unable to {action}: Country group with specified code is already exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AddCountryGroup.create(
@@ -153,7 +153,7 @@ async def add_country_group_async(
         409: Conflict - ErrorEntity (11235: Unable to {action}: Country group with specified code is already exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AddCountryGroup.create(
@@ -205,7 +205,7 @@ def delete_country_group(
         404: Not Found - ErrorEntity (11233: Unable to {action}: Country group with code [{countryGroupCode}] is not found)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteCountryGroup.create(
@@ -255,7 +255,7 @@ async def delete_country_group_async(
         404: Not Found - ErrorEntity (11233: Unable to {action}: Country group with code [{countryGroupCode}] is not found)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteCountryGroup.create(
@@ -308,7 +308,7 @@ def get_countries(
         401: Unauthorized - ErrorEntity (20001: unauthorized)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetCountries.create(
@@ -359,7 +359,7 @@ async def get_countries_async(
         401: Unauthorized - ErrorEntity (20001: unauthorized)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetCountries.create(
@@ -415,7 +415,7 @@ def get_country_groups(
         404: Not Found - ErrorEntity (11233: Unable to {action}: Country group with code [{countryGroupCode}] is not found)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetCountryGroups.create(
@@ -469,7 +469,7 @@ async def get_country_groups_async(
         404: Not Found - ErrorEntity (11233: Unable to {action}: Country group with code [{countryGroupCode}] is not found)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetCountryGroups.create(
@@ -518,7 +518,7 @@ def get_languages(
         401: Unauthorized - ErrorEntity (20001: unauthorized)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetLanguages.create(
@@ -564,7 +564,7 @@ async def get_languages_async(
         401: Unauthorized - ErrorEntity (20001: unauthorized)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetLanguages.create(
@@ -612,7 +612,7 @@ def get_time_zones(
         401: Unauthorized - ErrorEntity (20001: unauthorized)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetTimeZones.create(
@@ -658,7 +658,7 @@ async def get_time_zones_async(
         401: Unauthorized - ErrorEntity (20001: unauthorized)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetTimeZones.create(
@@ -708,7 +708,7 @@ def public_get_countries(
         400: Bad Request - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetCountries.create(
@@ -757,7 +757,7 @@ async def public_get_countries_async(
         400: Bad Request - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetCountries.create(
@@ -804,7 +804,7 @@ def public_get_languages(
         400: Bad Request - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetLanguages.create(
@@ -848,7 +848,7 @@ async def public_get_languages_async(
         400: Bad Request - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetLanguages.create(
@@ -952,7 +952,7 @@ def public_get_time_zones(
         400: Bad Request - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetTimeZones.create(
@@ -996,7 +996,7 @@ async def public_get_time_zones_async(
         400: Bad Request - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetTimeZones.create(
@@ -1057,7 +1057,7 @@ def update_country_group(
         404: Not Found - ErrorEntity (11233: Unable to {action}: Country group with code [{countryGroupCode}] is not found)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateCountryGroup.create(
@@ -1118,7 +1118,7 @@ async def update_country_group_async(
         404: Not Found - ErrorEntity (11233: Unable to {action}: Country group with code [{countryGroupCode}] is not found)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateCountryGroup.create(

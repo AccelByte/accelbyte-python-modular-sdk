@@ -121,7 +121,7 @@ def get_subscription_history(
         200: OK - ThirdPartySubscriptionTransactionHistoryPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetSubscriptionHistory.create(
@@ -175,7 +175,7 @@ async def get_subscription_history_async(
         200: OK - ThirdPartySubscriptionTransactionHistoryPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetSubscriptionHistory.create(
@@ -230,7 +230,7 @@ def get_third_party_platform_subscription_ownership_by_group_id(
         200: OK - ThirdPartySubscriptionOwnership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetThirdPartyPlatformSubscriptionOwnershipByGroupId.create(
@@ -282,7 +282,7 @@ async def get_third_party_platform_subscription_ownership_by_group_id_async(
         200: OK - ThirdPartySubscriptionOwnership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetThirdPartyPlatformSubscriptionOwnershipByGroupId.create(
@@ -336,7 +336,7 @@ def get_third_party_platform_subscription_ownership_by_product_id(
         200: OK - ThirdPartySubscriptionOwnership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetThirdPartyPlatformSubscriptionOwnershipByProductId.create(
@@ -388,7 +388,7 @@ async def get_third_party_platform_subscription_ownership_by_product_id_async(
         200: OK - ThirdPartySubscriptionOwnership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetThirdPartyPlatformSubscriptionOwnershipByProductId.create(
@@ -440,7 +440,7 @@ def get_third_party_subscription_details(
         404: Not Found - ErrorEntity (39149: Third Party Subscription [{id}] not found for user [{userId}] in the namespace [{namespace}].)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetThirdPartySubscriptionDetails.create(
@@ -489,7 +489,7 @@ async def get_third_party_subscription_details_async(
         404: Not Found - ErrorEntity (39149: Third Party Subscription [{id}] not found for user [{userId}] in the namespace [{namespace}].)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetThirdPartySubscriptionDetails.create(
@@ -540,7 +540,7 @@ def get_third_party_user_subscription_details(
         404: Not Found - ErrorEntity (39149: Third Party User Subscription [{id}] not found for user [{userId}] in the namespace [{namespace}].)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetThirdPartyUserSubscriptionDetails.create(
@@ -589,7 +589,7 @@ async def get_third_party_user_subscription_details_async(
         404: Not Found - ErrorEntity (39149: Third Party User Subscription [{id}] not found for user [{userId}] in the namespace [{namespace}].)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetThirdPartyUserSubscriptionDetails.create(
@@ -653,7 +653,7 @@ def public_query_user_third_party_subscription(
         200: OK - ThirdPartyUserSubscriptionPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicQueryUserThirdPartySubscription.create(
@@ -720,7 +720,7 @@ async def public_query_user_third_party_subscription_async(
         200: OK - ThirdPartyUserSubscriptionPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicQueryUserThirdPartySubscription.create(
@@ -789,7 +789,7 @@ def query_third_party_subscription(
         200: OK - ThirdPartyUserSubscriptionPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryThirdPartySubscription.create(
@@ -856,7 +856,7 @@ async def query_third_party_subscription_async(
         200: OK - ThirdPartyUserSubscriptionPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryThirdPartySubscription.create(
@@ -925,7 +925,7 @@ def query_user_third_party_subscription(
         200: OK - ThirdPartyUserSubscriptionPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryUserThirdPartySubscription.create(
@@ -992,7 +992,7 @@ async def query_user_third_party_subscription_async(
         200: OK - ThirdPartyUserSubscriptionPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryUserThirdPartySubscription.create(
@@ -1063,7 +1063,7 @@ def query_user_third_party_subscription_transactions(
         200: OK - ThirdPartySubscriptionTransactionPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryUserThirdPartySubscriptionTransactions.create(
@@ -1132,7 +1132,7 @@ async def query_user_third_party_subscription_transactions_async(
         200: OK - ThirdPartySubscriptionTransactionPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryUserThirdPartySubscriptionTransactions.create(
@@ -1189,7 +1189,7 @@ def sync_subscription(
         404: Not Found - ErrorEntity (39149: Third Party Subscription Transaction [{id}] not found for user [{userId}] in the namespace [{namespace}]. | 39150: Third Party User Subscription [{id}] not found for user [{userId}] in the namespace [{namespace}]..)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SyncSubscription.create(
@@ -1239,7 +1239,7 @@ async def sync_subscription_async(
         404: Not Found - ErrorEntity (39149: Third Party Subscription Transaction [{id}] not found for user [{userId}] in the namespace [{namespace}]. | 39150: Third Party User Subscription [{id}] not found for user [{userId}] in the namespace [{namespace}]..)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SyncSubscription.create(
@@ -1291,7 +1291,7 @@ def sync_subscription_transaction(
         404: Not Found - ErrorEntity (39149: Third Party Subscription Transaction [{id}] not found for user [{userId}] in the namespace [{namespace}].)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SyncSubscriptionTransaction.create(
@@ -1341,7 +1341,7 @@ async def sync_subscription_transaction_async(
         404: Not Found - ErrorEntity (39149: Third Party Subscription Transaction [{id}] not found for user [{userId}] in the namespace [{namespace}].)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SyncSubscriptionTransaction.create(

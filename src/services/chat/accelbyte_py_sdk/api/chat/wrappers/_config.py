@@ -169,7 +169,7 @@ def admin_get_config_v1(
         500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminGetConfigV1.create(
@@ -217,7 +217,7 @@ async def admin_get_config_v1_async(
         500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminGetConfigV1.create(
@@ -420,7 +420,7 @@ def admin_update_config_v1(
         500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminUpdateConfigV1.create(
@@ -474,7 +474,7 @@ async def admin_update_config_v1_async(
         500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminUpdateConfigV1.create(
@@ -521,7 +521,7 @@ def export_config(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ExportConfig.create(
@@ -565,7 +565,7 @@ async def export_config_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ExportConfig.create(
@@ -615,7 +615,7 @@ def import_config(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ImportConfig.create(
@@ -664,7 +664,7 @@ async def import_config_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ImportConfig.create(
@@ -715,7 +715,7 @@ def public_get_config_v1(
         500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetConfigV1.create(
@@ -763,7 +763,7 @@ async def public_get_config_v1_async(
         500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetConfigV1.create(

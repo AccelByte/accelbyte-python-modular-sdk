@@ -76,7 +76,7 @@ def delete_namespace_slot_config(
         204: No Content - (Successful delete of namespace slot config)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteNamespaceSlotConfig.create(
@@ -119,7 +119,7 @@ async def delete_namespace_slot_config_async(
         204: No Content - (Successful delete of namespace slot config)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteNamespaceSlotConfig.create(
@@ -167,7 +167,7 @@ def delete_user_slot_config(
         204: No Content - (Successful delete of user/namespace slot config)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteUserSlotConfig.create(
@@ -214,7 +214,7 @@ async def delete_user_slot_config_async(
         204: No Content - (Successful delete of user/namespace slot config)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteUserSlotConfig.create(
@@ -261,7 +261,7 @@ def get_namespace_slot_config(
         200: OK - NamespaceSlotConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetNamespaceSlotConfig.create(
@@ -305,7 +305,7 @@ async def get_namespace_slot_config_async(
         200: OK - NamespaceSlotConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetNamespaceSlotConfig.create(
@@ -354,7 +354,7 @@ def get_user_slot_config(
         200: OK - UserSlotConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserSlotConfig.create(
@@ -402,7 +402,7 @@ async def get_user_slot_config_async(
         200: OK - UserSlotConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserSlotConfig.create(
@@ -452,7 +452,7 @@ def update_namespace_slot_config(
         200: OK - NamespaceSlotConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateNamespaceSlotConfig.create(
@@ -500,7 +500,7 @@ async def update_namespace_slot_config_async(
         200: OK - NamespaceSlotConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateNamespaceSlotConfig.create(
@@ -553,7 +553,7 @@ def update_user_slot_config(
         200: OK - UserSlotConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateUserSlotConfig.create(
@@ -605,7 +605,7 @@ async def update_user_slot_config_async(
         200: OK - UserSlotConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateUserSlotConfig.create(

@@ -122,7 +122,7 @@ def bulk_get_user_season_progression(
         404: Not Found - ErrorEntity (49147: Published season does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = BulkGetUserSeasonProgression.create(
@@ -172,7 +172,7 @@ async def bulk_get_user_season_progression_async(
         404: Not Found - ErrorEntity (49147: Published season does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = BulkGetUserSeasonProgression.create(
@@ -225,7 +225,7 @@ def check_season_purchasable(
         409: Conflict - ErrorEntity (49183: Pass item does not match published season pass | 49184: Tier item does not match published season tier | 49185: Season has not started | 49186: Pass already owned | 49187: Exceed max tier count)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = CheckSeasonPurchasable.create(
@@ -277,7 +277,7 @@ async def check_season_purchasable_async(
         409: Conflict - ErrorEntity (49183: Pass item does not match published season pass | 49184: Tier item does not match published season tier | 49185: Season has not started | 49186: Pass already owned | 49187: Exceed max tier count)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = CheckSeasonPurchasable.create(
@@ -335,7 +335,7 @@ def clone_season(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = CloneSeason.create(
@@ -391,7 +391,7 @@ async def clone_season_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = CloneSeason.create(
@@ -446,7 +446,7 @@ def create_season(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = CreateSeason.create(
@@ -498,7 +498,7 @@ async def create_season_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = CreateSeason.create(
@@ -548,7 +548,7 @@ def delete_season(
         409: Conflict - ErrorEntity (49171: Invalid season status [{status}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteSeason.create(
@@ -596,7 +596,7 @@ async def delete_season_async(
         409: Conflict - ErrorEntity (49171: Invalid season status [{status}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteSeason.create(
@@ -649,7 +649,7 @@ def exists_any_pass_by_pass_codes(
         400: Bad Request - ErrorEntity (20026: publisher namespace not allowed)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ExistsAnyPassByPassCodes.create(
@@ -701,7 +701,7 @@ async def exists_any_pass_by_pass_codes_async(
         400: Bad Request - ErrorEntity (20026: publisher namespace not allowed)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ExistsAnyPassByPassCodes.create(
@@ -751,7 +751,7 @@ def get_current_season(
         404: Not Found - ErrorEntity (49147: Published season does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetCurrentSeason.create(
@@ -797,7 +797,7 @@ async def get_current_season_async(
         404: Not Found - ErrorEntity (49147: Published season does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetCurrentSeason.create(
@@ -848,7 +848,7 @@ def get_current_user_season_progression(
         404: Not Found - ErrorEntity (49147: Published season does not exist | 49148: User season does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetCurrentUserSeasonProgression.create(
@@ -898,7 +898,7 @@ async def get_current_user_season_progression_async(
         404: Not Found - ErrorEntity (49147: Published season does not exist | 49148: User season does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetCurrentUserSeasonProgression.create(
@@ -950,7 +950,7 @@ def get_full_season(
         404: Not Found - ErrorEntity (49143: Season [{seasonId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetFullSeason.create(
@@ -1000,7 +1000,7 @@ async def get_full_season_async(
         404: Not Found - ErrorEntity (49143: Season [{seasonId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetFullSeason.create(
@@ -1052,7 +1052,7 @@ def get_season(
         404: Not Found - ErrorEntity (49143: Season [{seasonId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetSeason.create(
@@ -1102,7 +1102,7 @@ async def get_season_async(
         404: Not Found - ErrorEntity (49143: Season [{seasonId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetSeason.create(
@@ -1158,7 +1158,7 @@ def get_user_participated_seasons(
         400: Bad Request - ErrorEntity (20026: publisher namespace not allowed)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserParticipatedSeasons.create(
@@ -1214,7 +1214,7 @@ async def get_user_participated_seasons_async(
         400: Bad Request - ErrorEntity (20026: publisher namespace not allowed)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserParticipatedSeasons.create(
@@ -1271,7 +1271,7 @@ def get_user_season(
         404: Not Found - ErrorEntity (49148: User season does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserSeason.create(
@@ -1325,7 +1325,7 @@ async def get_user_season_async(
         404: Not Found - ErrorEntity (49148: User season does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserSeason.create(
@@ -1379,7 +1379,7 @@ def public_get_current_season(
         404: Not Found - ErrorEntity (49147: Published season does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetCurrentSeason.create(
@@ -1430,7 +1430,7 @@ async def public_get_current_season_async(
         404: Not Found - ErrorEntity (49147: Published season does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetCurrentSeason.create(
@@ -1482,7 +1482,7 @@ def public_get_current_user_season(
         404: Not Found - ErrorEntity (49148: User season does not exist | 49147: Published season does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetCurrentUserSeason.create(
@@ -1532,7 +1532,7 @@ async def public_get_current_user_season_async(
         404: Not Found - ErrorEntity (49148: User season does not exist | 49147: Published season does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetCurrentUserSeason.create(
@@ -1587,7 +1587,7 @@ def public_get_user_season(
         404: Not Found - ErrorEntity (49148: User season does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserSeason.create(
@@ -1641,7 +1641,7 @@ async def public_get_user_season_async(
         404: Not Found - ErrorEntity (49148: User season does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserSeason.create(
@@ -1696,7 +1696,7 @@ def publish_season(
         409: Conflict - ErrorEntity (49171: Invalid season status [{status}] | 49172: Season is already ended | 49175: Published season already exists in namespace [{namespace}] | 49176: Rewards are not provided | 49177: Passes are not provided | 49178: Tiers are not provided | 49189: Duplicate season name [{name}] for publishing in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublishSeason.create(
@@ -1748,7 +1748,7 @@ async def publish_season_async(
         409: Conflict - ErrorEntity (49171: Invalid season status [{status}] | 49172: Season is already ended | 49175: Published season already exists in namespace [{namespace}] | 49176: Rewards are not provided | 49177: Passes are not provided | 49178: Tiers are not provided | 49189: Duplicate season name [{name}] for publishing in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublishSeason.create(
@@ -1804,7 +1804,7 @@ def query_seasons(
         400: Bad Request - ErrorEntity (20026: publisher namespace not allowed)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QuerySeasons.create(
@@ -1860,7 +1860,7 @@ async def query_seasons_async(
         400: Bad Request - ErrorEntity (20026: publisher namespace not allowed)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QuerySeasons.create(
@@ -1934,7 +1934,7 @@ def query_user_exp_grant_history(
         400: Bad Request - ErrorEntity (20026: publisher namespace not allowed)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryUserExpGrantHistory.create(
@@ -2011,7 +2011,7 @@ async def query_user_exp_grant_history_async(
         400: Bad Request - ErrorEntity (20026: publisher namespace not allowed)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryUserExpGrantHistory.create(
@@ -2072,7 +2072,7 @@ def query_user_exp_grant_history_tag(
         400: Bad Request - ErrorEntity (20026: publisher namespace not allowed)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryUserExpGrantHistoryTag.create(
@@ -2125,7 +2125,7 @@ async def query_user_exp_grant_history_tag_async(
         400: Bad Request - ErrorEntity (20026: publisher namespace not allowed)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryUserExpGrantHistoryTag.create(
@@ -2172,7 +2172,7 @@ def reset_user_season(
         400: Bad Request - ErrorEntity (20026: publisher namespace not allowed)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ResetUserSeason.create(
@@ -2216,7 +2216,7 @@ async def reset_user_season_async(
         400: Bad Request - ErrorEntity (20026: publisher namespace not allowed)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ResetUserSeason.create(
@@ -2273,7 +2273,7 @@ def retire_season(
         409: Conflict - ErrorEntity (49171: Invalid season status [{status}] | 49181: Season has not ended)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RetireSeason.create(
@@ -2329,7 +2329,7 @@ async def retire_season_async(
         409: Conflict - ErrorEntity (49171: Invalid season status [{status}] | 49181: Season has not ended)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RetireSeason.create(
@@ -2387,7 +2387,7 @@ def unpublish_season(
         409: Conflict - ErrorEntity (49171: Invalid season status [{status}] | 49180: Season is already started)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UnpublishSeason.create(
@@ -2443,7 +2443,7 @@ async def unpublish_season_async(
         409: Conflict - ErrorEntity (49171: Invalid season status [{status}] | 49180: Season is already started)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UnpublishSeason.create(
@@ -2503,7 +2503,7 @@ def update_season(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateSeason.create(
@@ -2561,7 +2561,7 @@ async def update_season_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateSeason.create(

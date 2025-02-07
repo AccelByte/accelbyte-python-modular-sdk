@@ -111,7 +111,7 @@ def create_category(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = CreateCategory.create(
@@ -180,7 +180,7 @@ async def create_category_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = CreateCategory.create(
@@ -236,7 +236,7 @@ def delete_category(
         409: Conflict - ErrorEntity (30272: Category [{categoryPath}] is not empty in namespace [{namespace}] | 30173: Published store can't modify content)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteCategory.create(
@@ -290,7 +290,7 @@ async def delete_category_async(
         409: Conflict - ErrorEntity (30272: Category [{categoryPath}] is not empty in namespace [{namespace}] | 30173: Published store can't modify content)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteCategory.create(
@@ -347,7 +347,7 @@ def download_categories(
         404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DownloadCategories.create(
@@ -402,7 +402,7 @@ async def download_categories_async(
         404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DownloadCategories.create(
@@ -456,7 +456,7 @@ def get_category(
         404: Not Found - ErrorEntity (30241: Category [{categoryPath}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetCategory.create(
@@ -508,7 +508,7 @@ async def get_category_async(
         404: Not Found - ErrorEntity (30241: Category [{categoryPath}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetCategory.create(
@@ -560,7 +560,7 @@ def get_child_categories(
         200: OK - List[FullCategoryInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetChildCategories.create(
@@ -610,7 +610,7 @@ async def get_child_categories_async(
         200: OK - List[FullCategoryInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetChildCategories.create(
@@ -662,7 +662,7 @@ def get_descendant_categories(
         200: OK - List[FullCategoryInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetDescendantCategories.create(
@@ -712,7 +712,7 @@ async def get_descendant_categories_async(
         200: OK - List[FullCategoryInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetDescendantCategories.create(
@@ -761,7 +761,7 @@ def get_root_categories(
         200: OK - List[FullCategoryInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetRootCategories.create(
@@ -807,7 +807,7 @@ async def get_root_categories_async(
         200: OK - List[FullCategoryInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetRootCategories.create(
@@ -855,7 +855,7 @@ def list_categories_basic(
         200: OK - List[BasicCategoryInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ListCategoriesBasic.create(
@@ -901,7 +901,7 @@ async def list_categories_basic_async(
         200: OK - List[BasicCategoryInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ListCategoriesBasic.create(
@@ -960,7 +960,7 @@ def public_get_category(
         404: Not Found - ErrorEntity (30241: Category [{categoryPath}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetCategory.create(
@@ -1019,7 +1019,7 @@ async def public_get_category_async(
         404: Not Found - ErrorEntity (30241: Category [{categoryPath}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetCategory.create(
@@ -1078,7 +1078,7 @@ def public_get_child_categories(
         200: OK - List[CategoryInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetChildCategories.create(
@@ -1135,7 +1135,7 @@ async def public_get_child_categories_async(
         200: OK - List[CategoryInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetChildCategories.create(
@@ -1194,7 +1194,7 @@ def public_get_descendant_categories(
         200: OK - List[CategoryInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetDescendantCategories.create(
@@ -1251,7 +1251,7 @@ async def public_get_descendant_categories_async(
         200: OK - List[CategoryInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetDescendantCategories.create(
@@ -1307,7 +1307,7 @@ def public_get_root_categories(
         200: OK - List[CategoryInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetRootCategories.create(
@@ -1360,7 +1360,7 @@ async def public_get_root_categories_async(
         200: OK - List[CategoryInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetRootCategories.create(
@@ -1434,7 +1434,7 @@ def update_category(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateCategory.create(
@@ -1507,7 +1507,7 @@ async def update_category_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateCategory.create(

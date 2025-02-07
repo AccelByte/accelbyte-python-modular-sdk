@@ -86,7 +86,7 @@ def admin_delete_platform_credentials(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminDeletePlatformCredentials.create(
@@ -134,7 +134,7 @@ async def admin_delete_platform_credentials_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminDeletePlatformCredentials.create(
@@ -187,7 +187,7 @@ def admin_delete_platform_credentials_by_platform_id(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminDeletePlatformCredentialsByPlatformId.create(
@@ -239,7 +239,7 @@ async def admin_delete_platform_credentials_by_platform_id_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminDeletePlatformCredentialsByPlatformId.create(
@@ -302,7 +302,7 @@ def admin_get_platform_credentials(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminGetPlatformCredentials.create(
@@ -362,7 +362,7 @@ async def admin_get_platform_credentials_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminGetPlatformCredentials.create(
@@ -424,7 +424,7 @@ def admin_sync_platform_credentials(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminSyncPlatformCredentials.create(
@@ -485,7 +485,7 @@ async def admin_sync_platform_credentials_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminSyncPlatformCredentials.create(
@@ -544,7 +544,7 @@ def admin_update_platform_credentials(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminUpdatePlatformCredentials.create(
@@ -601,7 +601,7 @@ async def admin_update_platform_credentials_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminUpdatePlatformCredentials.create(

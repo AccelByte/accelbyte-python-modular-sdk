@@ -98,7 +98,7 @@ def admin_change_role_override_config_status_v3(
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminChangeRoleOverrideConfigStatusV3.create(
@@ -152,7 +152,7 @@ async def admin_change_role_override_config_status_v3_async(
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminChangeRoleOverrideConfigStatusV3.create(
@@ -205,7 +205,7 @@ def admin_get_role_namespace_permission_v3(
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminGetRoleNamespacePermissionV3.create(
@@ -255,7 +255,7 @@ async def admin_get_role_namespace_permission_v3_async(
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminGetRoleNamespacePermissionV3.create(
@@ -308,7 +308,7 @@ def admin_get_role_override_config_v3(
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminGetRoleOverrideConfigV3.create(
@@ -359,7 +359,7 @@ async def admin_get_role_override_config_v3_async(
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminGetRoleOverrideConfigV3.create(
@@ -413,7 +413,7 @@ def admin_get_role_source_v3(
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminGetRoleSourceV3.create(
@@ -465,7 +465,7 @@ async def admin_get_role_source_v3_async(
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminGetRoleSourceV3.create(
@@ -522,7 +522,7 @@ def admin_update_role_override_config_v3(
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminUpdateRoleOverrideConfigV3.create(
@@ -578,7 +578,7 @@ async def admin_update_role_override_config_v3_async(
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminUpdateRoleOverrideConfigV3.create(

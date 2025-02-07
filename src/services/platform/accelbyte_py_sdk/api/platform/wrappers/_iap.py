@@ -178,7 +178,7 @@ def delete_apple_iap_config(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteAppleIAPConfig.create(
@@ -216,7 +216,7 @@ async def delete_apple_iap_config_async(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteAppleIAPConfig.create(
@@ -256,7 +256,7 @@ def delete_epic_games_iap_config(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteEpicGamesIAPConfig.create(
@@ -294,7 +294,7 @@ async def delete_epic_games_iap_config_async(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteEpicGamesIAPConfig.create(
@@ -334,7 +334,7 @@ def delete_google_iap_config(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteGoogleIAPConfig.create(
@@ -372,7 +372,7 @@ async def delete_google_iap_config_async(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteGoogleIAPConfig.create(
@@ -412,7 +412,7 @@ def delete_iap_item_config(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteIAPItemConfig.create(
@@ -450,7 +450,7 @@ async def delete_iap_item_config_async(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteIAPItemConfig.create(
@@ -490,7 +490,7 @@ def delete_oculus_iap_config(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteOculusIAPConfig.create(
@@ -528,7 +528,7 @@ async def delete_oculus_iap_config_async(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteOculusIAPConfig.create(
@@ -568,7 +568,7 @@ def delete_playstation_iap_config(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeletePlaystationIAPConfig.create(
@@ -606,7 +606,7 @@ async def delete_playstation_iap_config_async(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeletePlaystationIAPConfig.create(
@@ -646,7 +646,7 @@ def delete_steam_iap_config(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteSteamIAPConfig.create(
@@ -684,7 +684,7 @@ async def delete_steam_iap_config_async(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteSteamIAPConfig.create(
@@ -724,7 +724,7 @@ def delete_twitch_iap_config(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteTwitchIAPConfig.create(
@@ -762,7 +762,7 @@ async def delete_twitch_iap_config_async(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteTwitchIAPConfig.create(
@@ -802,7 +802,7 @@ def delete_xbl_ap_config(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteXblAPConfig.create(
@@ -840,7 +840,7 @@ async def delete_xbl_ap_config_async(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteXblAPConfig.create(
@@ -882,7 +882,7 @@ def get_apple_config_version(
         404: Not Found - ErrorEntity (39142: Apple IAP config not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetAppleConfigVersion.create(
@@ -922,7 +922,7 @@ async def get_apple_config_version_async(
         404: Not Found - ErrorEntity (39142: Apple IAP config not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetAppleConfigVersion.create(
@@ -964,7 +964,7 @@ def get_apple_iap_config(
         200: OK - AppleIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetAppleIAPConfig.create(
@@ -1004,7 +1004,7 @@ async def get_apple_iap_config_async(
         200: OK - AppleIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetAppleIAPConfig.create(
@@ -1046,7 +1046,7 @@ def get_epic_games_iap_config(
         200: OK - EpicGamesIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetEpicGamesIAPConfig.create(
@@ -1086,7 +1086,7 @@ async def get_epic_games_iap_config_async(
         200: OK - EpicGamesIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetEpicGamesIAPConfig.create(
@@ -1128,7 +1128,7 @@ def get_google_iap_config(
         200: OK - GoogleIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetGoogleIAPConfig.create(
@@ -1168,7 +1168,7 @@ async def get_google_iap_config_async(
         200: OK - GoogleIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetGoogleIAPConfig.create(
@@ -1210,7 +1210,7 @@ def get_iap_item_config(
         404: Not Found - ErrorEntity (39341: IAP item config cannot be found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetIAPItemConfig.create(
@@ -1250,7 +1250,7 @@ async def get_iap_item_config_async(
         404: Not Found - ErrorEntity (39341: IAP item config cannot be found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetIAPItemConfig.create(
@@ -1295,7 +1295,7 @@ def get_iap_item_mapping(
         404: Not Found - ErrorEntity (39341: IAP item config cannot be found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetIAPItemMapping.create(
@@ -1339,7 +1339,7 @@ async def get_iap_item_mapping_async(
         404: Not Found - ErrorEntity (39341: IAP item config cannot be found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetIAPItemMapping.create(
@@ -1383,7 +1383,7 @@ def get_iap_order_consume_details(
         200: OK - List[IAPOrderConsumeDetailInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetIAPOrderConsumeDetails.create(
@@ -1425,7 +1425,7 @@ async def get_iap_order_consume_details_async(
         200: OK - List[IAPOrderConsumeDetailInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetIAPOrderConsumeDetails.create(
@@ -1468,7 +1468,7 @@ def get_oculus_iap_config(
         200: OK - OculusIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetOculusIAPConfig.create(
@@ -1508,7 +1508,7 @@ async def get_oculus_iap_config_async(
         200: OK - OculusIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetOculusIAPConfig.create(
@@ -1550,7 +1550,7 @@ def get_play_station_iap_config(
         200: OK - PlayStationIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetPlayStationIAPConfig.create(
@@ -1590,7 +1590,7 @@ async def get_play_station_iap_config_async(
         200: OK - PlayStationIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetPlayStationIAPConfig.create(
@@ -1632,7 +1632,7 @@ def get_steam_iap_config(
         200: OK - SteamIAPConfig (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetSteamIAPConfig.create(
@@ -1672,7 +1672,7 @@ async def get_steam_iap_config_async(
         200: OK - SteamIAPConfig (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetSteamIAPConfig.create(
@@ -1714,7 +1714,7 @@ def get_twitch_iap_config(
         200: OK - TwitchIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetTwitchIAPConfig.create(
@@ -1754,7 +1754,7 @@ async def get_twitch_iap_config_async(
         200: OK - TwitchIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetTwitchIAPConfig.create(
@@ -1796,7 +1796,7 @@ def get_xbl_iap_config(
         200: OK - XblIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetXblIAPConfig.create(
@@ -1836,7 +1836,7 @@ async def get_xbl_iap_config_async(
         200: OK - XblIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetXblIAPConfig.create(
@@ -1889,7 +1889,7 @@ def mock_fulfill_iap_item(
         409: Conflict - ErrorEntity (20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = MockFulfillIAPItem.create(
@@ -1942,7 +1942,7 @@ async def mock_fulfill_iap_item_async(
         409: Conflict - ErrorEntity (20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = MockFulfillIAPItem.create(
@@ -1997,7 +1997,7 @@ def public_fulfill_apple_iap_item(
         409: Conflict - ErrorEntity (39171: The bundle id in namespace [{namespace}] expect [{expected}] but was [{actual}] | 20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicFulfillAppleIAPItem.create(
@@ -2050,7 +2050,7 @@ async def public_fulfill_apple_iap_item_async(
         409: Conflict - ErrorEntity (39171: The bundle id in namespace [{namespace}] expect [{expected}] but was [{actual}] | 20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicFulfillAppleIAPItem.create(
@@ -2105,7 +2105,7 @@ def public_fulfill_google_iap_item(
         409: Conflict - ErrorEntity (39172: The order id in namespace [{namespace}] expect [{expected}] but was [{actual}] | 39173: The purchase status of google play order [{orderId}] in namespace [{namespace}] expect [{expected}] but was [{actual}] | 39174: The google iap purchase time of order [{orderId}] in namespace [{namespace}] expect [{expected}] but was [{actual}] | 20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicFulfillGoogleIAPItem.create(
@@ -2158,7 +2158,7 @@ async def public_fulfill_google_iap_item_async(
         409: Conflict - ErrorEntity (39172: The order id in namespace [{namespace}] expect [{expected}] but was [{actual}] | 39173: The purchase status of google play order [{orderId}] in namespace [{namespace}] expect [{expected}] but was [{actual}] | 39174: The google iap purchase time of order [{orderId}] in namespace [{namespace}] expect [{expected}] but was [{actual}] | 20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicFulfillGoogleIAPItem.create(
@@ -2211,7 +2211,7 @@ def public_reconcile_play_station_store(
         404: Not Found - ErrorEntity (39143: PlayStation IAP config not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicReconcilePlayStationStore.create(
@@ -2262,7 +2262,7 @@ async def public_reconcile_play_station_store_async(
         404: Not Found - ErrorEntity (39143: PlayStation IAP config not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicReconcilePlayStationStore.create(
@@ -2315,7 +2315,7 @@ def public_reconcile_play_station_store_with_multiple_service_labels(
         404: Not Found - ErrorEntity (39143: PlayStation IAP config not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicReconcilePlayStationStoreWithMultipleServiceLabels.create(
@@ -2366,7 +2366,7 @@ async def public_reconcile_play_station_store_with_multiple_service_labels_async
         404: Not Found - ErrorEntity (39143: PlayStation IAP config not found in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicReconcilePlayStationStoreWithMultipleServiceLabels.create(
@@ -2413,7 +2413,7 @@ def query_all_user_iap_orders(
         200: OK - IAPOrderPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryAllUserIAPOrders.create(
@@ -2457,7 +2457,7 @@ async def query_all_user_iap_orders_async(
         200: OK - IAPOrderPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryAllUserIAPOrders.create(
@@ -2521,7 +2521,7 @@ def query_user_iap_consume_history(
         200: OK - IAPConsumeHistoryPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryUserIAPConsumeHistory.create(
@@ -2589,7 +2589,7 @@ async def query_user_iap_consume_history_async(
         200: OK - IAPConsumeHistoryPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryUserIAPConsumeHistory.create(
@@ -2662,7 +2662,7 @@ def query_user_iap_orders(
         200: OK - IAPOrderPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryUserIAPOrders.create(
@@ -2734,7 +2734,7 @@ async def query_user_iap_orders_async(
         200: OK - IAPOrderPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryUserIAPOrders.create(
@@ -2793,7 +2793,7 @@ def sync_epic_games_inventory(
         404: Not Found - ErrorEntity (39147: Epic IAP config not found in namespace [{namespace}].)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SyncEpicGamesInventory.create(
@@ -2844,7 +2844,7 @@ async def sync_epic_games_inventory_async(
         404: Not Found - ErrorEntity (39147: Epic IAP config not found in namespace [{namespace}].)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SyncEpicGamesInventory.create(
@@ -2894,7 +2894,7 @@ def sync_oculus_consumable_entitlements(
         404: Not Found - ErrorEntity (39146: Oculus IAP config not found in namespace [{namespace}].)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SyncOculusConsumableEntitlements.create(
@@ -2941,7 +2941,7 @@ async def sync_oculus_consumable_entitlements_async(
         404: Not Found - ErrorEntity (39146: Oculus IAP config not found in namespace [{namespace}].)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SyncOculusConsumableEntitlements.create(
@@ -2993,7 +2993,7 @@ def sync_steam_inventory(
         404: Not Found - ErrorEntity (39144: Steam IAP config not found in namespace [{namespace}].)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SyncSteamInventory.create(
@@ -3044,7 +3044,7 @@ async def sync_steam_inventory_async(
         404: Not Found - ErrorEntity (39144: Steam IAP config not found in namespace [{namespace}].)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SyncSteamInventory.create(
@@ -3091,7 +3091,7 @@ def sync_twitch_drops_entitlement(
         400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SyncTwitchDropsEntitlement.create(
@@ -3135,7 +3135,7 @@ async def sync_twitch_drops_entitlement_async(
         400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SyncTwitchDropsEntitlement.create(
@@ -3185,7 +3185,7 @@ def sync_twitch_drops_entitlement_1(
         400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SyncTwitchDropsEntitlement1.create(
@@ -3234,7 +3234,7 @@ async def sync_twitch_drops_entitlement_1_async(
         400: Bad Request - ErrorEntity (39125: Invalid platform [{platformId}] user token | 39126: User id [{}] in namespace [{}] doesn't link platform [{}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SyncTwitchDropsEntitlement1.create(
@@ -3287,7 +3287,7 @@ def sync_xbox_inventory(
         404: Not Found - ErrorEntity (39145: XBox IAP config not found in namespace [{namespace}].)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SyncXboxInventory.create(
@@ -3338,7 +3338,7 @@ async def sync_xbox_inventory_async(
         404: Not Found - ErrorEntity (39145: XBox IAP config not found in namespace [{namespace}].)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SyncXboxInventory.create(
@@ -3384,7 +3384,7 @@ def update_apple_iap_config(
         200: OK - AppleIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateAppleIAPConfig.create(
@@ -3427,7 +3427,7 @@ async def update_apple_iap_config_async(
         200: OK - AppleIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateAppleIAPConfig.create(
@@ -3473,7 +3473,7 @@ def update_apple_p8_file(
         200: OK - AppleIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateAppleP8File.create(
@@ -3517,7 +3517,7 @@ async def update_apple_p8_file_async(
         200: OK - AppleIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateAppleP8File.create(
@@ -3562,7 +3562,7 @@ def update_epic_games_iap_config(
         200: OK - EpicGamesIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateEpicGamesIAPConfig.create(
@@ -3605,7 +3605,7 @@ async def update_epic_games_iap_config_async(
         200: OK - EpicGamesIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateEpicGamesIAPConfig.create(
@@ -3650,7 +3650,7 @@ def update_google_iap_config(
         200: OK - GoogleIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateGoogleIAPConfig.create(
@@ -3693,7 +3693,7 @@ async def update_google_iap_config_async(
         200: OK - GoogleIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateGoogleIAPConfig.create(
@@ -3739,7 +3739,7 @@ def update_google_p12_file(
         200: OK - GoogleIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateGoogleP12File.create(
@@ -3783,7 +3783,7 @@ async def update_google_p12_file_async(
         200: OK - GoogleIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateGoogleP12File.create(
@@ -3834,7 +3834,7 @@ def update_iap_item_config(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateIAPItemConfig.create(
@@ -3883,7 +3883,7 @@ async def update_iap_item_config_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateIAPItemConfig.create(
@@ -3928,7 +3928,7 @@ def update_oculus_iap_config(
         200: OK - OculusIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateOculusIAPConfig.create(
@@ -3971,7 +3971,7 @@ async def update_oculus_iap_config_async(
         200: OK - OculusIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateOculusIAPConfig.create(
@@ -4018,7 +4018,7 @@ def update_playstation_iap_config(
         400: Bad Request - ErrorEntity (39130: Invalid playstation config: [{message}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdatePlaystationIAPConfig.create(
@@ -4063,7 +4063,7 @@ async def update_playstation_iap_config_async(
         400: Bad Request - ErrorEntity (39130: Invalid playstation config: [{message}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdatePlaystationIAPConfig.create(
@@ -4110,7 +4110,7 @@ def update_steam_iap_config(
         400: Bad Request - ErrorEntity (39128: Steam publisher key is invalid | 39129: Steam app id is invalid)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateSteamIAPConfig.create(
@@ -4155,7 +4155,7 @@ async def update_steam_iap_config_async(
         400: Bad Request - ErrorEntity (39128: Steam publisher key is invalid | 39129: Steam app id is invalid)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateSteamIAPConfig.create(
@@ -4200,7 +4200,7 @@ def update_twitch_iap_config(
         200: OK - TwitchIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateTwitchIAPConfig.create(
@@ -4243,7 +4243,7 @@ async def update_twitch_iap_config_async(
         200: OK - TwitchIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateTwitchIAPConfig.create(
@@ -4294,7 +4294,7 @@ def update_xbl_bp_cert_file(
         400: Bad Request - ErrorEntity (39221: Invalid Xbox Business Partner Certificate or password: [{message}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateXblBPCertFile.create(
@@ -4344,7 +4344,7 @@ async def update_xbl_bp_cert_file_async(
         400: Bad Request - ErrorEntity (39221: Invalid Xbox Business Partner Certificate or password: [{message}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateXblBPCertFile.create(
@@ -4390,7 +4390,7 @@ def update_xbl_iap_config(
         200: OK - XblIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateXblIAPConfig.create(
@@ -4433,7 +4433,7 @@ async def update_xbl_iap_config_async(
         200: OK - XblIAPConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateXblIAPConfig.create(
@@ -4487,7 +4487,7 @@ def v2_public_fulfill_apple_iap_item(
         409: Conflict - ErrorEntity (39171: The bundle id in namespace [{namespace}] expect [{expected}] but was [{actual}] | 20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = V2PublicFulfillAppleIAPItem.create(
@@ -4540,7 +4540,7 @@ async def v2_public_fulfill_apple_iap_item_async(
         409: Conflict - ErrorEntity (39171: The bundle id in namespace [{namespace}] expect [{expected}] but was [{actual}] | 20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = V2PublicFulfillAppleIAPItem.create(
@@ -4583,7 +4583,7 @@ def validate_existed_playstation_iap_config(
         200: OK - TestResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ValidateExistedPlaystationIAPConfig.create(
@@ -4622,7 +4622,7 @@ async def validate_existed_playstation_iap_config_async(
         200: OK - TestResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ValidateExistedPlaystationIAPConfig.create(
@@ -4666,7 +4666,7 @@ def validate_playstation_iap_config(
         200: OK - TestResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ValidatePlaystationIAPConfig.create(
@@ -4709,7 +4709,7 @@ async def validate_playstation_iap_config_async(
         200: OK - TestResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ValidatePlaystationIAPConfig.create(

@@ -86,7 +86,7 @@ def admin_create_tag(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminCreateTag.create(
@@ -138,7 +138,7 @@ async def admin_create_tag_async(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminCreateTag.create(
@@ -189,7 +189,7 @@ def admin_delete_tag(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminDeleteTag.create(
@@ -238,7 +238,7 @@ async def admin_delete_tag_async(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminDeleteTag.create(
@@ -298,7 +298,7 @@ def admin_list_tags(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminListTags.create(
@@ -359,7 +359,7 @@ async def admin_list_tags_async(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminListTags.create(

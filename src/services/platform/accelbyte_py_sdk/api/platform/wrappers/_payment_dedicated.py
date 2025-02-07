@@ -247,7 +247,7 @@ def create_payment_order_by_dedicated(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = CreatePaymentOrderByDedicated.create(
@@ -459,7 +459,7 @@ async def create_payment_order_by_dedicated_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = CreatePaymentOrderByDedicated.create(
@@ -647,7 +647,7 @@ def refund_payment_order_by_dedicated(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RefundPaymentOrderByDedicated.create(
@@ -834,7 +834,7 @@ async def refund_payment_order_by_dedicated_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RefundPaymentOrderByDedicated.create(

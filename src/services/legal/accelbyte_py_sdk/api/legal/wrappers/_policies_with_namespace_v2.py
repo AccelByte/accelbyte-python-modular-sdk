@@ -92,7 +92,7 @@ def retrieve_latest_policies_by_namespace_and_country_public_1(
         200: OK - List[RetrieveSimplePolicyPublicResponseV2] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RetrieveLatestPoliciesByNamespaceAndCountryPublic1.create(
@@ -159,7 +159,7 @@ async def retrieve_latest_policies_by_namespace_and_country_public_1_async(
         200: OK - List[RetrieveSimplePolicyPublicResponseV2] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RetrieveLatestPoliciesByNamespaceAndCountryPublic1.create(

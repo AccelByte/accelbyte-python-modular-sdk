@@ -279,7 +279,7 @@ def consume_user_entitlement(
         409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31173: Entitlement [{entitlementId}] is not consumable | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31178: Entitlement [{entitlementId}] out of time range | 31180: Duplicate request id: [{requestId}] | 31183: Entitlement [{entitlementId}] origin [{origin}] not allowed be operated at [{platform}] | 20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ConsumeUserEntitlement.create(
@@ -338,7 +338,7 @@ async def consume_user_entitlement_async(
         409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31173: Entitlement [{entitlementId}] is not consumable | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31178: Entitlement [{entitlementId}] out of time range | 31180: Duplicate request id: [{requestId}] | 31183: Entitlement [{entitlementId}] origin [{origin}] not allowed be operated at [{platform}] | 20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ConsumeUserEntitlement.create(
@@ -395,7 +395,7 @@ def disable_user_entitlement(
         409: Conflict - ErrorEntity (31172: Entitlement [{entitlementId}] not active | 20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DisableUserEntitlement.create(
@@ -449,7 +449,7 @@ async def disable_user_entitlement_async(
         409: Conflict - ErrorEntity (31172: Entitlement [{entitlementId}] not active | 20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DisableUserEntitlement.create(
@@ -494,7 +494,7 @@ def enable_entitlement_origin_feature(
         200: OK - EntitlementConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = EnableEntitlementOriginFeature.create(
@@ -535,7 +535,7 @@ async def enable_entitlement_origin_feature_async(
         200: OK - EntitlementConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = EnableEntitlementOriginFeature.create(
@@ -588,7 +588,7 @@ def enable_user_entitlement(
         409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31174: Entitlement [{entitlementId}] already consumed | 31177: Permanent item already owned | 31179: Duplicate entitlement exists | 20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = EnableUserEntitlement.create(
@@ -641,7 +641,7 @@ async def enable_user_entitlement_async(
         409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31174: Entitlement [{entitlementId}] already consumed | 31177: Permanent item already owned | 31179: Duplicate entitlement exists | 20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = EnableUserEntitlement.create(
@@ -698,7 +698,7 @@ def exists_any_user_active_entitlement(
         200: OK - Ownership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ExistsAnyUserActiveEntitlement.create(
@@ -756,7 +756,7 @@ async def exists_any_user_active_entitlement_async(
         200: OK - Ownership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ExistsAnyUserActiveEntitlement.create(
@@ -810,7 +810,7 @@ def exists_any_user_active_entitlement_by_item_ids(
         200: OK - Ownership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ExistsAnyUserActiveEntitlementByItemIds.create(
@@ -860,7 +860,7 @@ async def exists_any_user_active_entitlement_by_item_ids_async(
         200: OK - Ownership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ExistsAnyUserActiveEntitlementByItemIds.create(
@@ -912,7 +912,7 @@ def get_entitlement(
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetEntitlement.create(
@@ -960,7 +960,7 @@ async def get_entitlement_async(
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetEntitlement.create(
@@ -1007,7 +1007,7 @@ def get_entitlement_config_info(
         200: OK - EntitlementConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetEntitlementConfigInfo.create(
@@ -1052,7 +1052,7 @@ async def get_entitlement_config_info_async(
         200: OK - EntitlementConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetEntitlementConfigInfo.create(
@@ -1099,7 +1099,7 @@ def get_platform_entitlement_config(
         200: OK - EntitlementPlatformConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetPlatformEntitlementConfig.create(
@@ -1144,7 +1144,7 @@ async def get_platform_entitlement_config_async(
         200: OK - EntitlementPlatformConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetPlatformEntitlementConfig.create(
@@ -1194,7 +1194,7 @@ def get_user_active_entitlements_by_item_ids(
         200: OK - List[EntitlementInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserActiveEntitlementsByItemIds.create(
@@ -1244,7 +1244,7 @@ async def get_user_active_entitlements_by_item_ids_async(
         200: OK - List[EntitlementInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserActiveEntitlementsByItemIds.create(
@@ -1298,7 +1298,7 @@ def get_user_app_entitlement_by_app_id(
         404: Not Found - ErrorEntity (31142: Entitlement with appId [{appId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserAppEntitlementByAppId.create(
@@ -1350,7 +1350,7 @@ async def get_user_app_entitlement_by_app_id_async(
         404: Not Found - ErrorEntity (31142: Entitlement with appId [{appId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserAppEntitlementByAppId.create(
@@ -1399,7 +1399,7 @@ def get_user_app_entitlement_ownership_by_app_id(
         200: OK - Ownership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserAppEntitlementOwnershipByAppId.create(
@@ -1445,7 +1445,7 @@ async def get_user_app_entitlement_ownership_by_app_id_async(
         200: OK - Ownership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserAppEntitlementOwnershipByAppId.create(
@@ -1499,7 +1499,7 @@ def get_user_entitlement(
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserEntitlement.create(
@@ -1551,7 +1551,7 @@ async def get_user_entitlement_async(
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserEntitlement.create(
@@ -1612,7 +1612,7 @@ def get_user_entitlement_by_item_id(
         404: Not Found - ErrorEntity (31144: Entitlement with itemId [{itemId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserEntitlementByItemId.create(
@@ -1674,7 +1674,7 @@ async def get_user_entitlement_by_item_id_async(
         404: Not Found - ErrorEntity (31144: Entitlement with itemId [{itemId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserEntitlementByItemId.create(
@@ -1738,7 +1738,7 @@ def get_user_entitlement_by_sku(
         404: Not Found - ErrorEntity (31143: Entitlement with sku [{sku}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserEntitlementBySku.create(
@@ -1800,7 +1800,7 @@ async def get_user_entitlement_by_sku_async(
         404: Not Found - ErrorEntity (31143: Entitlement with sku [{sku}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserEntitlementBySku.create(
@@ -1855,7 +1855,7 @@ def get_user_entitlement_histories(
         200: OK - List[EntitlementHistoryInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserEntitlementHistories.create(
@@ -1905,7 +1905,7 @@ async def get_user_entitlement_histories_async(
         200: OK - List[EntitlementHistoryInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserEntitlementHistories.create(
@@ -1961,7 +1961,7 @@ def get_user_entitlement_ownership_by_item_id(
         200: OK - TimedOwnership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserEntitlementOwnershipByItemId.create(
@@ -2017,7 +2017,7 @@ async def get_user_entitlement_ownership_by_item_id_async(
         200: OK - TimedOwnership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserEntitlementOwnershipByItemId.create(
@@ -2070,7 +2070,7 @@ def get_user_entitlement_ownership_by_item_ids(
         200: OK - List[EntitlementOwnership] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserEntitlementOwnershipByItemIds.create(
@@ -2120,7 +2120,7 @@ async def get_user_entitlement_ownership_by_item_ids_async(
         200: OK - List[EntitlementOwnership] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserEntitlementOwnershipByItemIds.create(
@@ -2177,7 +2177,7 @@ def get_user_entitlement_ownership_by_sku(
         200: OK - TimedOwnership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserEntitlementOwnershipBySku.create(
@@ -2233,7 +2233,7 @@ async def get_user_entitlement_ownership_by_sku_async(
         200: OK - TimedOwnership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserEntitlementOwnershipBySku.create(
@@ -2287,7 +2287,7 @@ def get_user_entitlements_by_ids(
         200: OK - List[EntitlementInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserEntitlementsByIds.create(
@@ -2337,7 +2337,7 @@ async def get_user_entitlements_by_ids_async(
         200: OK - List[EntitlementInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserEntitlementsByIds.create(
@@ -2399,7 +2399,7 @@ def grant_entitlements(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GrantEntitlements.create(
@@ -2458,7 +2458,7 @@ async def grant_entitlements_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GrantEntitlements.create(
@@ -2526,7 +2526,7 @@ def grant_user_entitlement(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GrantUserEntitlement.create(
@@ -2593,7 +2593,7 @@ async def grant_user_entitlement_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GrantUserEntitlement.create(
@@ -2649,7 +2649,7 @@ def pre_check_revoke_user_entitlement_by_use_count(
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PreCheckRevokeUserEntitlementByUseCount.create(
@@ -2704,7 +2704,7 @@ async def pre_check_revoke_user_entitlement_by_use_count_async(
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PreCheckRevokeUserEntitlementByUseCount.create(
@@ -2765,7 +2765,7 @@ def public_consume_user_entitlement(
         409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31173: Entitlement [{entitlementId}] is not consumable | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31178: Entitlement [{entitlementId}] out of time range | 31180: Duplicate request id: [{requestId}] | 20006: optimistic lock | 31183: Entitlement [{entitlementId}] origin [{origin}] not allowed be operated at [{platform}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicConsumeUserEntitlement.create(
@@ -2824,7 +2824,7 @@ async def public_consume_user_entitlement_async(
         409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31173: Entitlement [{entitlementId}] is not consumable | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31178: Entitlement [{entitlementId}] out of time range | 31180: Duplicate request id: [{requestId}] | 20006: optimistic lock | 31183: Entitlement [{entitlementId}] origin [{origin}] not allowed be operated at [{platform}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicConsumeUserEntitlement.create(
@@ -2876,7 +2876,7 @@ def public_exists_any_my_active_entitlement(
         200: OK - Ownership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicExistsAnyMyActiveEntitlement.create(
@@ -2926,7 +2926,7 @@ async def public_exists_any_my_active_entitlement_async(
         200: OK - Ownership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicExistsAnyMyActiveEntitlement.create(
@@ -2981,7 +2981,7 @@ def public_exists_any_user_active_entitlement(
         200: OK - Ownership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicExistsAnyUserActiveEntitlement.create(
@@ -3035,7 +3035,7 @@ async def public_exists_any_user_active_entitlement_async(
         200: OK - Ownership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicExistsAnyUserActiveEntitlement.create(
@@ -3162,7 +3162,7 @@ def public_get_entitlement_ownership_token(
         200: OK - OwnershipToken (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetEntitlementOwnershipToken.create(
@@ -3286,7 +3286,7 @@ async def public_get_entitlement_ownership_token_async(
         200: OK - OwnershipToken (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetEntitlementOwnershipToken.create(
@@ -3337,7 +3337,7 @@ def public_get_my_app_entitlement_ownership_by_app_id(
         200: OK - Ownership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetMyAppEntitlementOwnershipByAppId.create(
@@ -3384,7 +3384,7 @@ async def public_get_my_app_entitlement_ownership_by_app_id_async(
         200: OK - Ownership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetMyAppEntitlementOwnershipByAppId.create(
@@ -3439,7 +3439,7 @@ def public_get_my_entitlement_ownership_by_item_id(
         200: OK - TimedOwnership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetMyEntitlementOwnershipByItemId.create(
@@ -3493,7 +3493,7 @@ async def public_get_my_entitlement_ownership_by_item_id_async(
         200: OK - TimedOwnership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetMyEntitlementOwnershipByItemId.create(
@@ -3549,7 +3549,7 @@ def public_get_my_entitlement_ownership_by_sku(
         200: OK - TimedOwnership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetMyEntitlementOwnershipBySku.create(
@@ -3603,7 +3603,7 @@ async def public_get_my_entitlement_ownership_by_sku_async(
         200: OK - TimedOwnership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetMyEntitlementOwnershipBySku.create(
@@ -3653,7 +3653,7 @@ def public_get_user_app_entitlement_by_app_id(
         404: Not Found - ErrorEntity (31142: Entitlement with appId [{appId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserAppEntitlementByAppId.create(
@@ -3701,7 +3701,7 @@ async def public_get_user_app_entitlement_by_app_id_async(
         404: Not Found - ErrorEntity (31142: Entitlement with appId [{appId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserAppEntitlementByAppId.create(
@@ -3749,7 +3749,7 @@ def public_get_user_app_entitlement_ownership_by_app_id(
         200: OK - Ownership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserAppEntitlementOwnershipByAppId.create(
@@ -3795,7 +3795,7 @@ async def public_get_user_app_entitlement_ownership_by_app_id_async(
         200: OK - Ownership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserAppEntitlementOwnershipByAppId.create(
@@ -3849,7 +3849,7 @@ def public_get_user_entitlement(
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserEntitlement.create(
@@ -3901,7 +3901,7 @@ async def public_get_user_entitlement_async(
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserEntitlement.create(
@@ -3957,7 +3957,7 @@ def public_get_user_entitlement_by_item_id(
         404: Not Found - ErrorEntity (31144: Entitlement with itemId [{itemId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserEntitlementByItemId.create(
@@ -4012,7 +4012,7 @@ async def public_get_user_entitlement_by_item_id_async(
         404: Not Found - ErrorEntity (31144: Entitlement with itemId [{itemId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserEntitlementByItemId.create(
@@ -4069,7 +4069,7 @@ def public_get_user_entitlement_by_sku(
         404: Not Found - ErrorEntity (31143: Entitlement with sku [{sku}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserEntitlementBySku.create(
@@ -4124,7 +4124,7 @@ async def public_get_user_entitlement_by_sku_async(
         404: Not Found - ErrorEntity (31143: Entitlement with sku [{sku}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserEntitlementBySku.create(
@@ -4178,7 +4178,7 @@ def public_get_user_entitlement_ownership_by_item_id(
         200: OK - TimedOwnership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserEntitlementOwnershipByItemId.create(
@@ -4230,7 +4230,7 @@ async def public_get_user_entitlement_ownership_by_item_id_async(
         200: OK - TimedOwnership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserEntitlementOwnershipByItemId.create(
@@ -4279,7 +4279,7 @@ def public_get_user_entitlement_ownership_by_item_ids(
         200: OK - List[EntitlementOwnership] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserEntitlementOwnershipByItemIds.create(
@@ -4325,7 +4325,7 @@ async def public_get_user_entitlement_ownership_by_item_ids_async(
         200: OK - List[EntitlementOwnership] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserEntitlementOwnershipByItemIds.create(
@@ -4378,7 +4378,7 @@ def public_get_user_entitlement_ownership_by_sku(
         200: OK - TimedOwnership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserEntitlementOwnershipBySku.create(
@@ -4430,7 +4430,7 @@ async def public_get_user_entitlement_ownership_by_sku_async(
         200: OK - TimedOwnership (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserEntitlementOwnershipBySku.create(
@@ -4486,7 +4486,7 @@ def public_get_user_entitlements_by_ids(
         200: OK - List[EntitlementInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserEntitlementsByIds.create(
@@ -4540,7 +4540,7 @@ async def public_get_user_entitlements_by_ids_async(
         200: OK - List[EntitlementInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserEntitlementsByIds.create(
@@ -4613,7 +4613,7 @@ def public_query_user_entitlements(
         200: OK - EntitlementPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicQueryUserEntitlements.create(
@@ -4689,7 +4689,7 @@ async def public_query_user_entitlements_async(
         200: OK - EntitlementPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicQueryUserEntitlements.create(
@@ -4753,7 +4753,7 @@ def public_query_user_entitlements_by_app_type(
         200: OK - AppEntitlementPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicQueryUserEntitlementsByAppType.create(
@@ -4811,7 +4811,7 @@ async def public_query_user_entitlements_by_app_type_async(
         200: OK - AppEntitlementPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicQueryUserEntitlementsByAppType.create(
@@ -4869,7 +4869,7 @@ def public_sell_user_entitlement(
         409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31178: Entitlement [{entitlementId}] out of time range | 31180: Duplicate request id: [{requestId}] | 31181: Entitlement [{entitlementId}] is not sellable | 31182: Entitlement [{entitlementId}] already sold | 20006: optimistic lock | 31183: Entitlement [{entitlementId}] origin [{origin}] not allowed be operated at [{platform}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicSellUserEntitlement.create(
@@ -4924,7 +4924,7 @@ async def public_sell_user_entitlement_async(
         409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31178: Entitlement [{entitlementId}] out of time range | 31180: Duplicate request id: [{requestId}] | 31181: Entitlement [{entitlementId}] is not sellable | 31182: Entitlement [{entitlementId}] already sold | 20006: optimistic lock | 31183: Entitlement [{entitlementId}] origin [{origin}] not allowed be operated at [{platform}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicSellUserEntitlement.create(
@@ -4981,7 +4981,7 @@ def public_split_user_entitlement(
         409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31178: Entitlement [{entitlementId}] out of time range | 31182: Entitlement [{entitlementId}] already sold | 31183: Entitlement [{entitlementId}] origin [{origin}] not allowed be operated at [{platform}] | 20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicSplitUserEntitlement.create(
@@ -5036,7 +5036,7 @@ async def public_split_user_entitlement_async(
         409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31178: Entitlement [{entitlementId}] out of time range | 31182: Entitlement [{entitlementId}] already sold | 31183: Entitlement [{entitlementId}] origin [{origin}] not allowed be operated at [{platform}] | 20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicSplitUserEntitlement.create(
@@ -5093,7 +5093,7 @@ def public_transfer_user_entitlement(
         409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31178: Entitlement [{entitlementId}] out of time range | 31182: Entitlement [{entitlementId}] already sold | 31183: Entitlement [{entitlementId}] origin [{origin}] not allowed be operated at [{platform}] | 31184: Source entitlement [{sourceEntitlementId}] and target entitlement [{targetEntitlementId}] should have same collectionId, timeRange, origin and itemId | 31185: Transferred source entitlement [{sourceEntitlementId}] and target entitlement [{targetEntitlementId}] can not be set to same | 20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicTransferUserEntitlement.create(
@@ -5148,7 +5148,7 @@ async def public_transfer_user_entitlement_async(
         409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31178: Entitlement [{entitlementId}] out of time range | 31182: Entitlement [{entitlementId}] already sold | 31183: Entitlement [{entitlementId}] origin [{origin}] not allowed be operated at [{platform}] | 31184: Source entitlement [{sourceEntitlementId}] and target entitlement [{targetEntitlementId}] should have same collectionId, timeRange, origin and itemId | 31185: Transferred source entitlement [{sourceEntitlementId}] and target entitlement [{targetEntitlementId}] can not be set to same | 20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicTransferUserEntitlement.create(
@@ -5215,7 +5215,7 @@ def public_user_entitlement_history(
         200: OK - List[UserEntitlementHistoryPagingSlicedResult] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicUserEntitlementHistory.create(
@@ -5283,7 +5283,7 @@ async def public_user_entitlement_history_async(
         200: OK - List[UserEntitlementHistoryPagingSlicedResult] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicUserEntitlementHistory.create(
@@ -5345,7 +5345,7 @@ def query_entitlements(
         200: OK - EntitlementPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryEntitlements.create(
@@ -5403,7 +5403,7 @@ async def query_entitlements_async(
         200: OK - EntitlementPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryEntitlements.create(
@@ -5480,7 +5480,7 @@ def query_entitlements_1(
         200: OK - EntitlementPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryEntitlements1.create(
@@ -5560,7 +5560,7 @@ async def query_entitlements_1_async(
         200: OK - EntitlementPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryEntitlements1.create(
@@ -5654,7 +5654,7 @@ def query_user_entitlements(
         200: OK - EntitlementPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryUserEntitlements.create(
@@ -5750,7 +5750,7 @@ async def query_user_entitlements_async(
         200: OK - EntitlementPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryUserEntitlements.create(
@@ -5822,7 +5822,7 @@ def query_user_entitlements_by_app_type(
         200: OK - AppEntitlementPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryUserEntitlementsByAppType.create(
@@ -5884,7 +5884,7 @@ async def query_user_entitlements_by_app_type_async(
         200: OK - AppEntitlementPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryUserEntitlementsByAppType.create(
@@ -5935,7 +5935,7 @@ def revoke_all_entitlements(
         200: OK - BulkOperationResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RevokeAllEntitlements.create(
@@ -5980,7 +5980,7 @@ async def revoke_all_entitlements_async(
         200: OK - BulkOperationResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RevokeAllEntitlements.create(
@@ -6029,7 +6029,7 @@ def revoke_entitlements(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RevokeEntitlements.create(
@@ -6076,7 +6076,7 @@ async def revoke_entitlements_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RevokeEntitlements.create(
@@ -6132,7 +6132,7 @@ def revoke_use_count(
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RevokeUseCount.create(
@@ -6188,7 +6188,7 @@ async def revoke_use_count_async(
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RevokeUseCount.create(
@@ -6245,7 +6245,7 @@ def revoke_user_entitlement(
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RevokeUserEntitlement.create(
@@ -6300,7 +6300,7 @@ async def revoke_user_entitlement_async(
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RevokeUserEntitlement.create(
@@ -6357,7 +6357,7 @@ def revoke_user_entitlement_by_use_count(
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RevokeUserEntitlementByUseCount.create(
@@ -6412,7 +6412,7 @@ async def revoke_user_entitlement_by_use_count_async(
         404: Not Found - ErrorEntity (31141: Entitlement [{entitlementId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RevokeUserEntitlementByUseCount.create(
@@ -6464,7 +6464,7 @@ def revoke_user_entitlements(
         200: OK - BulkOperationResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RevokeUserEntitlements.create(
@@ -6513,7 +6513,7 @@ async def revoke_user_entitlements_async(
         200: OK - BulkOperationResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RevokeUserEntitlements.create(
@@ -6569,7 +6569,7 @@ def sell_user_entitlement(
         409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31178: Entitlement [{entitlementId}] out of time range | 31180: Duplicate request id: [{requestId}] | 31181: Entitlement [{entitlementId}] is not sellable | 31182: Entitlement [{entitlementId}] already sold | 31183: Entitlement [{entitlementId}] origin [{origin}] not allowed be operated at [{platform}] | 20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SellUserEntitlement.create(
@@ -6624,7 +6624,7 @@ async def sell_user_entitlement_async(
         409: Conflict - ErrorEntity (31171: Entitlement [{entitlementId}] already revoked | 31172: Entitlement [{entitlementId}] not active | 31174: Entitlement [{entitlementId}] already consumed | 31176: Entitlement [{entitlementId}] use count is insufficient | 31178: Entitlement [{entitlementId}] out of time range | 31180: Duplicate request id: [{requestId}] | 31181: Entitlement [{entitlementId}] is not sellable | 31182: Entitlement [{entitlementId}] already sold | 31183: Entitlement [{entitlementId}] origin [{origin}] not allowed be operated at [{platform}] | 20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SellUserEntitlement.create(
@@ -6678,7 +6678,7 @@ def update_platform_entitlement_config(
         404: Not Found - ErrorEntity (31147: Origin [Steam] and System need exist in allowPlatformOrigin)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdatePlatformEntitlementConfig.create(
@@ -6729,7 +6729,7 @@ async def update_platform_entitlement_config_async(
         404: Not Found - ErrorEntity (31147: Origin [Steam] and System need exist in allowPlatformOrigin)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdatePlatformEntitlementConfig.create(
@@ -6789,7 +6789,7 @@ def update_user_entitlement(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateUserEntitlement.create(
@@ -6848,7 +6848,7 @@ async def update_user_entitlement_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateUserEntitlement.create(

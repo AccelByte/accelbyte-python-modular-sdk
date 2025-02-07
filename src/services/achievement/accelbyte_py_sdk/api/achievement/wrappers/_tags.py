@@ -92,7 +92,7 @@ def admin_list_tags(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminListTags.create(
@@ -155,7 +155,7 @@ async def admin_list_tags_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminListTags.create(
@@ -220,7 +220,7 @@ def public_list_tags(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicListTags.create(
@@ -283,7 +283,7 @@ async def public_list_tags_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicListTags.create(

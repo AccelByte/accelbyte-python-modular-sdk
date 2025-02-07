@@ -137,7 +137,7 @@ def add_user_into_session_in_channel(
         500: Internal Server Error - ResponseError (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AddUserIntoSessionInChannel.create(
@@ -198,7 +198,7 @@ async def add_user_into_session_in_channel_async(
         500: Internal Server Error - ResponseError (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AddUserIntoSessionInChannel.create(
@@ -255,7 +255,7 @@ def bulk_get_sessions(
         500: Internal Server Error - ResponseError (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = BulkGetSessions.create(
@@ -308,7 +308,7 @@ async def bulk_get_sessions_async(
         500: Internal Server Error - ResponseError (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = BulkGetSessions.create(
@@ -376,7 +376,7 @@ def create_channel_handler(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = CreateChannelHandler.create(
@@ -442,7 +442,7 @@ async def create_channel_handler_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = CreateChannelHandler.create(
@@ -496,7 +496,7 @@ def delete_channel_handler(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteChannelHandler.create(
@@ -548,7 +548,7 @@ async def delete_channel_handler_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteChannelHandler.create(
@@ -606,7 +606,7 @@ def delete_session_in_channel(
         500: Internal Server Error - ResponseError (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteSessionInChannel.create(
@@ -663,7 +663,7 @@ async def delete_session_in_channel_async(
         500: Internal Server Error - ResponseError (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteSessionInChannel.create(
@@ -727,7 +727,7 @@ def delete_user_from_session_in_channel(
         500: Internal Server Error - ResponseError (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteUserFromSessionInChannel.create(
@@ -790,7 +790,7 @@ async def delete_user_from_session_in_channel_async(
         500: Internal Server Error - ResponseError (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteUserFromSessionInChannel.create(
@@ -850,7 +850,7 @@ def dequeue_session_handler(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DequeueSessionHandler.create(
@@ -906,7 +906,7 @@ async def dequeue_session_handler_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DequeueSessionHandler.create(
@@ -956,7 +956,7 @@ def export_channels(
         500: Internal Server Error - ResponseErrorV1 (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ExportChannels.create(
@@ -1003,7 +1003,7 @@ async def export_channels_async(
         500: Internal Server Error - ResponseErrorV1 (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ExportChannels.create(
@@ -1060,7 +1060,7 @@ def get_all_channels_handler(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetAllChannelsHandler.create(
@@ -1117,7 +1117,7 @@ async def get_all_channels_handler_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetAllChannelsHandler.create(
@@ -1170,7 +1170,7 @@ def get_all_party_in_all_channel(
         500: Internal Server Error - ResponseErrorV1 (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetAllPartyInAllChannel.create(
@@ -1219,7 +1219,7 @@ async def get_all_party_in_all_channel_async(
         500: Internal Server Error - ResponseErrorV1 (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetAllPartyInAllChannel.create(
@@ -1273,7 +1273,7 @@ def get_all_party_in_channel(
         500: Internal Server Error - ResponseError (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetAllPartyInChannel.create(
@@ -1326,7 +1326,7 @@ async def get_all_party_in_channel_async(
         500: Internal Server Error - ResponseError (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetAllPartyInChannel.create(
@@ -1383,7 +1383,7 @@ def get_all_sessions_in_channel(
         500: Internal Server Error - ResponseError (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetAllSessionsInChannel.create(
@@ -1438,7 +1438,7 @@ async def get_all_sessions_in_channel_async(
         500: Internal Server Error - ResponseError (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetAllSessionsInChannel.create(
@@ -1493,7 +1493,7 @@ def get_match_pool_metric(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetMatchPoolMetric.create(
@@ -1546,7 +1546,7 @@ async def get_match_pool_metric_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetMatchPoolMetric.create(
@@ -1619,7 +1619,7 @@ def get_session_history_detailed(
         500: Internal Server Error - ResponseError (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetSessionHistoryDetailed.create(
@@ -1690,7 +1690,7 @@ async def get_session_history_detailed_async(
         500: Internal Server Error - ResponseError (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetSessionHistoryDetailed.create(
@@ -1747,7 +1747,7 @@ def get_single_matchmaking_channel(
         500: Internal Server Error - ResponseErrorV1 (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetSingleMatchmakingChannel.create(
@@ -1802,7 +1802,7 @@ async def get_single_matchmaking_channel_async(
         500: Internal Server Error - ResponseErrorV1 (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetSingleMatchmakingChannel.create(
@@ -1858,7 +1858,7 @@ def get_stat_data(
         500: Internal Server Error - ResponseErrorV1 (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetStatData.create(
@@ -1912,7 +1912,7 @@ async def get_stat_data_async(
         500: Internal Server Error - ResponseErrorV1 (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetStatData.create(
@@ -1973,7 +1973,7 @@ def import_channels(
         500: Internal Server Error - ResponseErrorV1 (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ImportChannels.create(
@@ -2033,7 +2033,7 @@ async def import_channels_async(
         500: Internal Server Error - ResponseErrorV1 (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ImportChannels.create(
@@ -2086,7 +2086,7 @@ def public_get_all_matchmaking_channel(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetAllMatchmakingChannel.create(
@@ -2135,7 +2135,7 @@ async def public_get_all_matchmaking_channel_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetAllMatchmakingChannel.create(
@@ -2189,7 +2189,7 @@ def public_get_single_matchmaking_channel(
         500: Internal Server Error - ResponseErrorV1 (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetSingleMatchmakingChannel.create(
@@ -2242,7 +2242,7 @@ async def public_get_single_matchmaking_channel_async(
         500: Internal Server Error - ResponseErrorV1 (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetSingleMatchmakingChannel.create(
@@ -2303,7 +2303,7 @@ def query_session_handler(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QuerySessionHandler.create(
@@ -2362,7 +2362,7 @@ async def query_session_handler_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QuerySessionHandler.create(
@@ -2425,7 +2425,7 @@ def queue_session_handler(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueueSessionHandler.create(
@@ -2486,7 +2486,7 @@ async def queue_session_handler_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueueSessionHandler.create(
@@ -2545,7 +2545,7 @@ def rebalance(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = Rebalance.create(
@@ -2602,7 +2602,7 @@ async def rebalance_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = Rebalance.create(
@@ -2691,7 +2691,7 @@ def search_sessions(
         500: Internal Server Error - ResponseError (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SearchSessions.create(
@@ -2784,7 +2784,7 @@ async def search_sessions_async(
         500: Internal Server Error - ResponseError (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SearchSessions.create(
@@ -2880,7 +2880,7 @@ def search_sessions_v2(
         500: Internal Server Error - ResponseError (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SearchSessionsV2.create(
@@ -2974,7 +2974,7 @@ async def search_sessions_v2_async(
         500: Internal Server Error - ResponseError (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = SearchSessionsV2.create(
@@ -3035,7 +3035,7 @@ def store_match_results(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = StoreMatchResults.create(
@@ -3088,7 +3088,7 @@ async def store_match_results_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = StoreMatchResults.create(
@@ -3148,7 +3148,7 @@ def update_matchmaking_channel(
         500: Internal Server Error - ResponseError (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateMatchmakingChannel.create(
@@ -3207,7 +3207,7 @@ async def update_matchmaking_channel_async(
         500: Internal Server Error - ResponseError (20000: internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateMatchmakingChannel.create(

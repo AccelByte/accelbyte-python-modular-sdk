@@ -78,7 +78,7 @@ def delete_revocation_config(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteRevocationConfig.create(
@@ -116,7 +116,7 @@ async def delete_revocation_config_async(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteRevocationConfig.create(
@@ -166,7 +166,7 @@ def do_revocation(
         409: Conflict - ErrorEntity (41171: Request has different payload on previous call | 41172: Request has different user id on previous call)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DoRevocation.create(
@@ -216,7 +216,7 @@ async def do_revocation_async(
         409: Conflict - ErrorEntity (41171: Request has different payload on previous call | 41172: Request has different user id on previous call)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DoRevocation.create(
@@ -262,7 +262,7 @@ def get_revocation_config(
         404: Not Found - ErrorEntity (33243: Payment callback config for [{namespace}] does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetRevocationConfig.create(
@@ -304,7 +304,7 @@ async def get_revocation_config_async(
         404: Not Found - ErrorEntity (33243: Payment callback config for [{namespace}] does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetRevocationConfig.create(
@@ -370,7 +370,7 @@ def query_revocation_histories(
         200: OK - RevocationHistoryPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryRevocationHistories.create(
@@ -442,7 +442,7 @@ async def query_revocation_histories_async(
         200: OK - RevocationHistoryPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryRevocationHistories.create(
@@ -495,7 +495,7 @@ def update_revocation_config(
         200: OK - RevocationConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateRevocationConfig.create(
@@ -539,7 +539,7 @@ async def update_revocation_config_async(
         200: OK - RevocationConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateRevocationConfig.create(

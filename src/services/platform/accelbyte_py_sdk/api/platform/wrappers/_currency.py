@@ -94,7 +94,7 @@ def create_currency(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = CreateCurrency.create(
@@ -143,7 +143,7 @@ async def create_currency_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = CreateCurrency.create(
@@ -192,7 +192,7 @@ def delete_currency(
         404: Not Found - ErrorEntity (36141: Currency [{currencyCode}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteCurrency.create(
@@ -239,7 +239,7 @@ async def delete_currency_async(
         404: Not Found - ErrorEntity (36141: Currency [{currencyCode}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteCurrency.create(
@@ -288,7 +288,7 @@ def get_currency_config(
         404: Not Found - ErrorEntity (36141: Currency [{currencyCode}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetCurrencyConfig.create(
@@ -335,7 +335,7 @@ async def get_currency_config_async(
         404: Not Found - ErrorEntity (36141: Currency [{currencyCode}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetCurrencyConfig.create(
@@ -384,7 +384,7 @@ def get_currency_summary(
         404: Not Found - ErrorEntity (36141: Currency [{currencyCode}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetCurrencySummary.create(
@@ -431,7 +431,7 @@ async def get_currency_summary_async(
         404: Not Found - ErrorEntity (36141: Currency [{currencyCode}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetCurrencySummary.create(
@@ -478,7 +478,7 @@ def list_currencies(
         200: OK - List[CurrencyInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ListCurrencies.create(
@@ -523,7 +523,7 @@ async def list_currencies_async(
         200: OK - List[CurrencyInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ListCurrencies.create(
@@ -571,7 +571,7 @@ def public_list_currencies(
         200: OK - List[CurrencyInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicListCurrencies.create(
@@ -617,7 +617,7 @@ async def public_list_currencies_async(
         200: OK - List[CurrencyInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicListCurrencies.create(
@@ -671,7 +671,7 @@ def update_currency(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateCurrency.create(
@@ -724,7 +724,7 @@ async def update_currency_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateCurrency.create(

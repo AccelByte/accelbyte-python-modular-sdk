@@ -127,7 +127,7 @@ def admin_create_goal(
         500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminCreateGoal.create(
@@ -219,7 +219,7 @@ async def admin_create_goal_async(
         500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminCreateGoal.create(
@@ -273,7 +273,7 @@ def admin_delete_goal(
         500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminDeleteGoal.create(
@@ -325,7 +325,7 @@ async def admin_delete_goal_async(
         500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminDeleteGoal.create(
@@ -381,7 +381,7 @@ def admin_get_goal(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminGetGoal.create(
@@ -435,7 +435,7 @@ async def admin_get_goal_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminGetGoal.create(
@@ -497,7 +497,7 @@ def admin_get_goals(
         500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminGetGoals.create(
@@ -559,7 +559,7 @@ async def admin_get_goals_async(
         500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminGetGoals.create(
@@ -648,7 +648,7 @@ def admin_update_goals(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminUpdateGoals.create(
@@ -734,7 +734,7 @@ async def admin_update_goals_async(
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminUpdateGoals.create(

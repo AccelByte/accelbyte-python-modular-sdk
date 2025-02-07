@@ -114,7 +114,7 @@ def bulk_add_stats(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = BulkAddStats.create(
@@ -172,7 +172,7 @@ async def bulk_add_stats_async(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = BulkAddStats.create(
@@ -229,7 +229,7 @@ def bulk_get_stat_cycle(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = BulkGetStatCycle.create(
@@ -283,7 +283,7 @@ async def bulk_get_stat_cycle_async(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = BulkGetStatCycle.create(
@@ -339,7 +339,7 @@ def bulk_get_stat_cycle_1(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = BulkGetStatCycle1.create(
@@ -393,7 +393,7 @@ async def bulk_get_stat_cycle_1_async(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = BulkGetStatCycle1.create(
@@ -461,7 +461,7 @@ def create_stat_cycle(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = CreateStatCycle.create(
@@ -527,7 +527,7 @@ async def create_stat_cycle_async(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = CreateStatCycle.create(
@@ -579,7 +579,7 @@ def delete_stat_cycle(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteStatCycle.create(
@@ -629,7 +629,7 @@ async def delete_stat_cycle_async(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteStatCycle.create(
@@ -676,7 +676,7 @@ def export_stat_cycle(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ExportStatCycle.create(
@@ -720,7 +720,7 @@ async def export_stat_cycle_async(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ExportStatCycle.create(
@@ -773,7 +773,7 @@ def get_stat_cycle(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetStatCycle.create(
@@ -825,7 +825,7 @@ async def get_stat_cycle_async(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetStatCycle.create(
@@ -879,7 +879,7 @@ def get_stat_cycle_1(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetStatCycle1.create(
@@ -931,7 +931,7 @@ async def get_stat_cycle_1_async(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetStatCycle1.create(
@@ -998,7 +998,7 @@ def get_stat_cycles(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetStatCycles.create(
@@ -1068,7 +1068,7 @@ async def get_stat_cycles_async(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetStatCycles.create(
@@ -1140,7 +1140,7 @@ def get_stat_cycles_1(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetStatCycles1.create(
@@ -1210,7 +1210,7 @@ async def get_stat_cycles_1_async(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetStatCycles1.create(
@@ -1270,7 +1270,7 @@ def import_stat_cycle(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ImportStatCycle.create(
@@ -1324,7 +1324,7 @@ async def import_stat_cycle_async(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ImportStatCycle.create(
@@ -1381,7 +1381,7 @@ def stop_stat_cycle(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = StopStatCycle.create(
@@ -1435,7 +1435,7 @@ async def stop_stat_cycle_async(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = StopStatCycle.create(
@@ -1498,7 +1498,7 @@ def update_stat_cycle(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateStatCycle.create(
@@ -1560,7 +1560,7 @@ async def update_stat_cycle_async(
         500: Internal Server Error - ErrorEntity (20000: Internal server error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateStatCycle.create(

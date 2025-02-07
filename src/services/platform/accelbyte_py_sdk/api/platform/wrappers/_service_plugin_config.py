@@ -95,7 +95,7 @@ def delete_loot_box_plugin_config(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteLootBoxPluginConfig.create(
@@ -133,7 +133,7 @@ async def delete_loot_box_plugin_config_async(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteLootBoxPluginConfig.create(
@@ -173,7 +173,7 @@ def delete_revocation_plugin_config(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteRevocationPluginConfig.create(
@@ -211,7 +211,7 @@ async def delete_revocation_plugin_config_async(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteRevocationPluginConfig.create(
@@ -251,7 +251,7 @@ def delete_section_plugin_config(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteSectionPluginConfig.create(
@@ -289,7 +289,7 @@ async def delete_section_plugin_config_async(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteSectionPluginConfig.create(
@@ -330,7 +330,7 @@ def delete_service_plugin_config(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteServicePluginConfig.create(
@@ -369,7 +369,7 @@ async def delete_service_plugin_config_async(
         204: No Content - (Delete successfully)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DeleteServicePluginConfig.create(
@@ -412,7 +412,7 @@ def get_loot_box_grpc_info(
         200: OK - GrpcServerInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetLootBoxGrpcInfo.create(
@@ -454,7 +454,7 @@ async def get_loot_box_grpc_info_async(
         200: OK - GrpcServerInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetLootBoxGrpcInfo.create(
@@ -495,7 +495,7 @@ def get_loot_box_plugin_config(
         200: OK - LootBoxPluginConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetLootBoxPluginConfig.create(
@@ -533,7 +533,7 @@ async def get_loot_box_plugin_config_async(
         200: OK - LootBoxPluginConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetLootBoxPluginConfig.create(
@@ -573,7 +573,7 @@ def get_revocation_plugin_config(
         200: OK - RevocationPluginConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetRevocationPluginConfig.create(
@@ -611,7 +611,7 @@ async def get_revocation_plugin_config_async(
         200: OK - RevocationPluginConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetRevocationPluginConfig.create(
@@ -651,7 +651,7 @@ def get_section_plugin_config(
         200: OK - SectionPluginConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetSectionPluginConfig.create(
@@ -689,7 +689,7 @@ async def get_section_plugin_config_async(
         200: OK - SectionPluginConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetSectionPluginConfig.create(
@@ -730,7 +730,7 @@ def get_service_plugin_config(
         200: OK - ServicePluginConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetServicePluginConfig.create(
@@ -769,7 +769,7 @@ async def get_service_plugin_config_async(
         200: OK - ServicePluginConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetServicePluginConfig.create(
@@ -815,7 +815,7 @@ def update_loot_box_plugin_config(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateLootBoxPluginConfig.create(
@@ -860,7 +860,7 @@ async def update_loot_box_plugin_config_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateLootBoxPluginConfig.create(
@@ -907,7 +907,7 @@ def update_revocation_plugin_config(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateRevocationPluginConfig.create(
@@ -952,7 +952,7 @@ async def update_revocation_plugin_config_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateRevocationPluginConfig.create(
@@ -999,7 +999,7 @@ def update_section_plugin_config(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateSectionPluginConfig.create(
@@ -1044,7 +1044,7 @@ async def update_section_plugin_config_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateSectionPluginConfig.create(
@@ -1092,7 +1092,7 @@ def update_service_plugin_config(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateServicePluginConfig.create(
@@ -1138,7 +1138,7 @@ async def update_service_plugin_config_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateServicePluginConfig.create(
@@ -1185,7 +1185,7 @@ def upload_revocation_plugin_config_cert(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UploadRevocationPluginConfigCert.create(
@@ -1230,7 +1230,7 @@ async def upload_revocation_plugin_config_cert_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UploadRevocationPluginConfigCert.create(
@@ -1277,7 +1277,7 @@ def upload_section_plugin_config_cert(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UploadSectionPluginConfigCert.create(
@@ -1322,7 +1322,7 @@ async def upload_section_plugin_config_cert_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UploadSectionPluginConfigCert.create(
@@ -1369,7 +1369,7 @@ def uplod_loot_box_plugin_config_cert(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UplodLootBoxPluginConfigCert.create(
@@ -1414,7 +1414,7 @@ async def uplod_loot_box_plugin_config_cert_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UplodLootBoxPluginConfigCert.create(

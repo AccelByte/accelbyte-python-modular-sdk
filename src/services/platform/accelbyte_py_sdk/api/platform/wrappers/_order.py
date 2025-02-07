@@ -151,7 +151,7 @@ def admin_create_user_order(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminCreateUserOrder.create(
@@ -226,7 +226,7 @@ async def admin_create_user_order_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminCreateUserOrder.create(
@@ -276,7 +276,7 @@ def count_of_purchased_item(
         200: OK - PurchasedItemCount (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = CountOfPurchasedItem.create(
@@ -324,7 +324,7 @@ async def count_of_purchased_item_async(
         200: OK - PurchasedItemCount (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = CountOfPurchasedItem.create(
@@ -378,7 +378,7 @@ def download_user_order_receipt(
         409: Conflict - ErrorEntity (32173: Receipt of order [{orderNo}] is not downloadable)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DownloadUserOrderReceipt.create(
@@ -430,7 +430,7 @@ async def download_user_order_receipt_async(
         409: Conflict - ErrorEntity (32173: Receipt of order [{orderNo}] is not downloadable)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = DownloadUserOrderReceipt.create(
@@ -486,7 +486,7 @@ def fulfill_user_order(
         409: Conflict - ErrorEntity (32172: Invalid order status [{status}] for order [{orderNo}] | 20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = FulfillUserOrder.create(
@@ -540,7 +540,7 @@ async def fulfill_user_order_async(
         409: Conflict - ErrorEntity (32172: Invalid order status [{status}] for order [{orderNo}] | 20006: optimistic lock)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = FulfillUserOrder.create(
@@ -589,7 +589,7 @@ def get_order(
         404: Not Found - ErrorEntity (32141: Order [{orderNo}] does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetOrder.create(
@@ -635,7 +635,7 @@ async def get_order_async(
         404: Not Found - ErrorEntity (32141: Order [{orderNo}] does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetOrder.create(
@@ -678,7 +678,7 @@ def get_order_statistics(
         200: OK - OrderStatistics (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetOrderStatistics.create(
@@ -718,7 +718,7 @@ async def get_order_statistics_async(
         200: OK - OrderStatistics (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetOrderStatistics.create(
@@ -768,7 +768,7 @@ def get_user_order(
         404: Not Found - ErrorEntity (32141: Order [{orderNo}] does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserOrder.create(
@@ -818,7 +818,7 @@ async def get_user_order_async(
         404: Not Found - ErrorEntity (32141: Order [{orderNo}] does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserOrder.create(
@@ -869,7 +869,7 @@ def get_user_order_grant(
         200: OK - OrderGrantInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserOrderGrant.create(
@@ -918,7 +918,7 @@ async def get_user_order_grant_async(
         200: OK - OrderGrantInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserOrderGrant.create(
@@ -968,7 +968,7 @@ def get_user_order_histories(
         200: OK - List[OrderHistoryInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserOrderHistories.create(
@@ -1016,7 +1016,7 @@ async def get_user_order_histories_async(
         200: OK - List[OrderHistoryInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetUserOrderHistories.create(
@@ -1071,7 +1071,7 @@ def process_user_order_notification(
         400: Bad Request - (process failed)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ProcessUserOrderNotification.create(
@@ -1125,7 +1125,7 @@ async def process_user_order_notification_async(
         400: Bad Request - (process failed)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = ProcessUserOrderNotification.create(
@@ -1180,7 +1180,7 @@ def public_cancel_user_order(
         409: Conflict - ErrorEntity (32177: Order [{orderNo}] is not cancelable)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicCancelUserOrder.create(
@@ -1232,7 +1232,7 @@ async def public_cancel_user_order_async(
         409: Conflict - ErrorEntity (32177: Order [{orderNo}] is not cancelable)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicCancelUserOrder.create(
@@ -1308,7 +1308,7 @@ def public_create_user_order(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicCreateUserOrder.create(
@@ -1382,7 +1382,7 @@ async def public_create_user_order_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicCreateUserOrder.create(
@@ -1436,7 +1436,7 @@ def public_download_user_order_receipt(
         409: Conflict - ErrorEntity (32173: Receipt of order [{orderNo}] is not downloadable)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicDownloadUserOrderReceipt.create(
@@ -1488,7 +1488,7 @@ async def public_download_user_order_receipt_async(
         409: Conflict - ErrorEntity (32173: Receipt of order [{orderNo}] is not downloadable)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicDownloadUserOrderReceipt.create(
@@ -1540,7 +1540,7 @@ def public_get_user_order(
         404: Not Found - ErrorEntity (32141: Order [{orderNo}] does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserOrder.create(
@@ -1590,7 +1590,7 @@ async def public_get_user_order_async(
         404: Not Found - ErrorEntity (32141: Order [{orderNo}] does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserOrder.create(
@@ -1640,7 +1640,7 @@ def public_get_user_order_histories(
         200: OK - List[OrderHistoryInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserOrderHistories.create(
@@ -1688,7 +1688,7 @@ async def public_get_user_order_histories_async(
         200: OK - List[OrderHistoryInfo] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUserOrderHistories.create(
@@ -1747,7 +1747,7 @@ def public_preview_order_price(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicPreviewOrderPrice.create(
@@ -1804,7 +1804,7 @@ async def public_preview_order_price_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicPreviewOrderPrice.create(
@@ -1866,7 +1866,7 @@ def public_query_user_orders(
         200: OK - OrderPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicQueryUserOrders.create(
@@ -1930,7 +1930,7 @@ async def public_query_user_orders_async(
         200: OK - OrderPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicQueryUserOrders.create(
@@ -2004,7 +2004,7 @@ def query_orders(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryOrders.create(
@@ -2078,7 +2078,7 @@ async def query_orders_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryOrders.create(
@@ -2146,7 +2146,7 @@ def query_user_orders(
         200: OK - OrderPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryUserOrders.create(
@@ -2210,7 +2210,7 @@ async def query_user_orders_async(
         200: OK - OrderPagingSlicedResult (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = QueryUserOrders.create(
@@ -2268,7 +2268,7 @@ def refund_order(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RefundOrder.create(
@@ -2320,7 +2320,7 @@ async def refund_order_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = RefundOrder.create(
@@ -2379,7 +2379,7 @@ def update_user_order_status(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateUserOrderStatus.create(
@@ -2437,7 +2437,7 @@ async def update_user_order_status_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdateUserOrderStatus.create(

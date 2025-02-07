@@ -97,7 +97,7 @@ def get_challenges(
         500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetChallenges.create(
@@ -167,7 +167,7 @@ async def get_challenges_async(
         500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetChallenges.create(
@@ -233,7 +233,7 @@ def public_get_scheduled_goals(
         500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetScheduledGoals.create(
@@ -295,7 +295,7 @@ async def public_get_scheduled_goals_async(
         500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetScheduledGoals.create(

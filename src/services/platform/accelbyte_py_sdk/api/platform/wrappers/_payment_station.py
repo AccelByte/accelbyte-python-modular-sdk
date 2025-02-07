@@ -114,7 +114,7 @@ def get_payment_customization(
         200: OK - Customization (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetPaymentCustomization.create(
@@ -168,7 +168,7 @@ async def get_payment_customization_async(
         200: OK - Customization (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetPaymentCustomization.create(
@@ -223,7 +223,7 @@ def get_payment_public_config(
         200: OK - Dict[str, Any] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetPaymentPublicConfig.create(
@@ -276,7 +276,7 @@ async def get_payment_public_config_async(
         200: OK - Dict[str, Any] (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetPaymentPublicConfig.create(
@@ -335,7 +335,7 @@ def get_payment_tax_value(
         404: Not Found - ErrorEntity (33141: Payment Order [{paymentOrderNo}] does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetPaymentTaxValue.create(
@@ -392,7 +392,7 @@ async def get_payment_tax_value_async(
         404: Not Found - ErrorEntity (33141: Payment Order [{paymentOrderNo}] does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetPaymentTaxValue.create(
@@ -456,7 +456,7 @@ def pay(
         409: Conflict - ErrorEntity (33171: Invalid payment order status [{status}] for payment order [{paymentOrderNo}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = Pay.create(
@@ -519,7 +519,7 @@ async def pay_async(
         409: Conflict - ErrorEntity (33171: Invalid payment order status [{status}] for payment order [{paymentOrderNo}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = Pay.create(
@@ -571,7 +571,7 @@ def public_check_payment_order_paid_status(
         404: Not Found - ErrorEntity (33141: Payment Order [{paymentOrderNo}] does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicCheckPaymentOrderPaidStatus.create(
@@ -618,7 +618,7 @@ async def public_check_payment_order_paid_status_async(
         404: Not Found - ErrorEntity (33141: Payment Order [{paymentOrderNo}] does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicCheckPaymentOrderPaidStatus.create(
@@ -667,7 +667,7 @@ def public_get_payment_methods(
         404: Not Found - ErrorEntity (33141: Payment Order [{paymentOrderNo}] does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetPaymentMethods.create(
@@ -714,7 +714,7 @@ async def public_get_payment_methods_async(
         404: Not Found - ErrorEntity (33141: Payment Order [{paymentOrderNo}] does not exist)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetPaymentMethods.create(
@@ -768,7 +768,7 @@ def public_get_payment_url(
         404: Not Found - ErrorEntity (33141: Payment Order [{paymentOrderNo}] does not exist | 20008: user [{userId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetPaymentUrl.create(
@@ -820,7 +820,7 @@ async def public_get_payment_url_async(
         404: Not Found - ErrorEntity (33141: Payment Order [{paymentOrderNo}] does not exist | 20008: user [{userId}] does not exist in namespace [{namespace}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetPaymentUrl.create(
@@ -867,7 +867,7 @@ def public_get_qr_code(
         200: OK - BinarySchema (Successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetQRCode.create(
@@ -912,7 +912,7 @@ async def public_get_qr_code_async(
         200: OK - BinarySchema (Successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetQRCode.create(
@@ -963,7 +963,7 @@ def public_get_unpaid_payment_order(
         409: Conflict - ErrorEntity (33171: Invalid payment order status [{status}] for payment order [{paymentOrderNo}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUnpaidPaymentOrder.create(
@@ -1012,7 +1012,7 @@ async def public_get_unpaid_payment_order_async(
         409: Conflict - ErrorEntity (33171: Invalid payment order status [{status}] for payment order [{paymentOrderNo}])
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicGetUnpaidPaymentOrder.create(
@@ -1118,7 +1118,7 @@ def public_normalize_payment_return_url(
         307: Temporary Redirect - (successful operation.(if query param 'returnUrl' is not empty))
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicNormalizePaymentReturnUrl.create(
@@ -1236,7 +1236,7 @@ async def public_normalize_payment_return_url_async(
         307: Temporary Redirect - (successful operation.(if query param 'returnUrl' is not empty))
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = PublicNormalizePaymentReturnUrl.create(

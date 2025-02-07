@@ -95,7 +95,7 @@ def admin_create_integration_configuration(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminCreateIntegrationConfiguration.create(
@@ -146,7 +146,7 @@ async def admin_create_integration_configuration_async(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminCreateIntegrationConfiguration.create(
@@ -203,7 +203,7 @@ def admin_list_integration_configurations(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminListIntegrationConfigurations.create(
@@ -260,7 +260,7 @@ async def admin_list_integration_configurations_async(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminListIntegrationConfigurations.create(
@@ -320,7 +320,7 @@ def admin_update_integration_configuration(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminUpdateIntegrationConfiguration.create(
@@ -377,7 +377,7 @@ async def admin_update_integration_configuration_async(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminUpdateIntegrationConfiguration.create(
@@ -436,7 +436,7 @@ def admin_update_status_integration_configuration(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminUpdateStatusIntegrationConfiguration.create(
@@ -493,7 +493,7 @@ async def admin_update_status_integration_configuration_async(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminUpdateStatusIntegrationConfiguration.create(

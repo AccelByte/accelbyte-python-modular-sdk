@@ -103,7 +103,7 @@ def admin_bulk_remove_items(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminBulkRemoveItems.create(
@@ -161,7 +161,7 @@ async def admin_bulk_remove_items_async(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminBulkRemoveItems.create(
@@ -240,7 +240,7 @@ def admin_bulk_save_item(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminBulkSaveItem.create(
@@ -316,7 +316,7 @@ async def admin_bulk_save_item_async(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminBulkSaveItem.create(
@@ -390,7 +390,7 @@ def admin_bulk_save_item_to_inventory(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminBulkSaveItemToInventory.create(
@@ -463,7 +463,7 @@ async def admin_bulk_save_item_to_inventory_async(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminBulkSaveItemToInventory.create(
@@ -524,7 +524,7 @@ def admin_bulk_update_my_items(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminBulkUpdateMyItems.create(
@@ -583,7 +583,7 @@ async def admin_bulk_update_my_items_async(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminBulkUpdateMyItems.create(
@@ -646,7 +646,7 @@ def admin_consume_user_item(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminConsumeUserItem.create(
@@ -708,7 +708,7 @@ async def admin_consume_user_item_async(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminConsumeUserItem.create(
@@ -769,7 +769,7 @@ def admin_get_inventory_item(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminGetInventoryItem.create(
@@ -827,7 +827,7 @@ async def admin_get_inventory_item_async(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminGetInventoryItem.create(
@@ -895,7 +895,7 @@ def admin_list_items(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminListItems.create(
@@ -964,7 +964,7 @@ async def admin_list_items_async(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminListItems.create(
@@ -1032,7 +1032,7 @@ def admin_save_item(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminSaveItem.create(
@@ -1094,7 +1094,7 @@ async def admin_save_item_async(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminSaveItem.create(
@@ -1165,7 +1165,7 @@ def admin_save_item_to_inventory(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminSaveItemToInventory.create(
@@ -1235,7 +1235,7 @@ async def admin_save_item_to_inventory_async(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminSaveItemToInventory.create(
@@ -1293,7 +1293,7 @@ def admin_sync_user_entitlements(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminSyncUserEntitlements.create(
@@ -1347,7 +1347,7 @@ async def admin_sync_user_entitlements_async(
         500: Internal Server Error - ApimodelsErrorResponse (Internal Server Error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = AdminSyncUserEntitlements.create(

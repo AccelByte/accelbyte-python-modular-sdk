@@ -565,7 +565,7 @@ def get_payment_merchant_config(
         200: OK - PaymentDomainWhitelistConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetPaymentMerchantConfig.create(
@@ -605,7 +605,7 @@ async def get_payment_merchant_config_async(
         200: OK - PaymentDomainWhitelistConfigInfo (successful operation)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = GetPaymentMerchantConfig.create(
@@ -2765,7 +2765,7 @@ def update_payment_domain_whitelist_config(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdatePaymentDomainWhitelistConfig.create(
@@ -2822,7 +2822,7 @@ async def update_payment_domain_whitelist_config_async(
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
     """
     if namespace is None:
-        namespace, error = get_services_namespace()
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
         if error:
             return None, error
     request = UpdatePaymentDomainWhitelistConfig.create(
