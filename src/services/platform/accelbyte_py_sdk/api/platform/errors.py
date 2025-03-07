@@ -190,6 +190,14 @@ ERROR_30383 = ApiError(
     code="30383",
     message="Item app id [{appId}] already exists in namespace [{namespace}] item [{itemId}]",
 )
+ERROR_30386 = ApiError(
+    code="30386",
+    message="The item [{itemId}] is currently associated and cannot be deleted in namespace [{namespace}], Feature {featureName}, Module {moduleName}, and Reference ID {referenceId} are using this item ID",
+)
+ERROR_30387 = ApiError(
+    code="30387",
+    message="The item [{itemId}] is currently associated and cannot be disabled in namespace [{namespace}], Feature {featureName}, Module {moduleName}, and Reference ID {referenceId} are using this item ID",
+)
 ERROR_30541 = ApiError(code="30541", message="Item type config [{id}] doesn't exist")
 ERROR_30641 = ApiError(
     code="30641", message="View [{viewId}] does not exist in namespace [{namespace}]"
@@ -597,6 +605,10 @@ ERROR_39150 = ApiError(
     code="39150",
     message="Third Party User Subscription [{id}] not found for user [{userId}] in the namespace [{namespace}]..",
 )
+ERROR_39151 = ApiError(
+    code="39151",
+    message="IAP order no [{iapOrderNo}] not found in namespace [{namespace}].",
+)
 ERROR_39171 = ApiError(
     code="39171",
     message="The bundle id in namespace [{namespace}] expect [{expected}] but was [{actual}]",
@@ -616,6 +628,18 @@ ERROR_39174 = ApiError(
 ERROR_39175 = ApiError(
     code="39175",
     message="Duplicate IAP item mapping, IAPType: [{iapType}] and id: [{iapId}]",
+)
+ERROR_39183 = ApiError(
+    code="39183",
+    message="Steam transaction [{orderId}] is still pending or failed, status [{status}], please try it later",
+)
+ERROR_39184 = ApiError(
+    code="39184",
+    message="Steam api exception with error code [{errorCode}] and error message [{message}]",
+)
+ERROR_39185 = ApiError(
+    code="39185",
+    message="This endpoint only works on sync mode [{workSyncMode}], but current steam iap config sync mode is [{currentSyncMode}] under namespace [{namespace}]",
 )
 ERROR_39221 = ApiError(
     code="39221",
@@ -639,6 +663,10 @@ ERROR_39442 = ApiError(
 ERROR_39471 = ApiError(
     code="39471",
     message="Duplicated dlc reward id [{dlcRewardId}] in namespace [{namespace}] ",
+)
+ERROR_39621 = ApiError(
+    code="39621",
+    message="Steam api common exception with status code [statusCode] details: [details]",
 )
 ERROR_40121 = ApiError(code="40121", message="Item type [{itemType}] does not support")
 ERROR_40122 = ApiError(

@@ -37,7 +37,10 @@ from ...models import ValidationErrorEntity
 
 
 class PublicCreateProfile(Operation):
-    """Create a new profile for user (publicCreateProfile)
+    """[DEPRECATED] Create a new profile for user (publicCreateProfile)
+
+    ## The endpoint is going to be deprecated
+
 
     Create new profile for user.
     Other detail info:

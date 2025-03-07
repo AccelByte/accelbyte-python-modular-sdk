@@ -38,7 +38,10 @@ from ...models import ValidationErrorEntity
 
 
 class PublicUpdateProfile(Operation):
-    """Updates user game profile (publicUpdateProfile)
+    """[DEPRECATED] Updates user game profile (publicUpdateProfile)
+
+    ## The endpoint is going to be deprecated
+
 
     Updates user game profile, returns updated profile.
     Other detail info:

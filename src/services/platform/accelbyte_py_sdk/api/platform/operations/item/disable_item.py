@@ -31,6 +31,7 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 from accelbyte_py_sdk.core import deprecated
 
+from ...models import ChangeStatusItemRequest
 from ...models import ErrorEntity
 from ...models import FullItemInfo
 
@@ -56,6 +57,8 @@ class DisableItem(Operation):
 
         securities: [BEARER_AUTH]
 
+        body: (body) OPTIONAL ChangeStatusItemRequest in body
+
         item_id: (itemId) REQUIRED str in path
 
         namespace: (namespace) REQUIRED str in path
@@ -67,7 +70,7 @@ class DisableItem(Operation):
 
         404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30341: Item [{itemId}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (30173: Published store can't modify content)
+        409: Conflict - ErrorEntity (30173: Published store can't modify content | 30387: The item [{itemId}] is currently associated and cannot be disabled in namespace [{namespace}], Feature {featureName}, Module {moduleName}, and Reference ID {referenceId} are using this item ID)
     """
 
     # region fields
@@ -83,6 +86,7 @@ class DisableItem(Operation):
 
     service_name: Optional[str] = "platform"
 
+    body: ChangeStatusItemRequest  # OPTIONAL in [body]
     item_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
     store_id: str  # REQUIRED in [query]
@@ -133,9 +137,15 @@ class DisableItem(Operation):
 
     def get_all_params(self) -> dict:
         return {
+            "body": self.get_body_params(),
             "path": self.get_path_params(),
             "query": self.get_query_params(),
         }
+
+    def get_body_params(self) -> Any:
+        if not hasattr(self, "body") or self.body is None:
+            return None
+        return self.body.to_dict()
 
     def get_path_params(self) -> dict:
         result = {}
@@ -159,6 +169,10 @@ class DisableItem(Operation):
 
     # region with_x methods
 
+    def with_body(self, value: ChangeStatusItemRequest) -> DisableItem:
+        self.body = value
+        return self
+
     def with_item_id(self, value: str) -> DisableItem:
         self.item_id = value
         return self
@@ -177,6 +191,10 @@ class DisableItem(Operation):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
+        if hasattr(self, "body") and self.body:
+            result["body"] = self.body.to_dict(include_empty=include_empty)
+        elif include_empty:
+            result["body"] = ChangeStatusItemRequest()
         if hasattr(self, "item_id") and self.item_id:
             result["itemId"] = str(self.item_id)
         elif include_empty:
@@ -235,7 +253,7 @@ class DisableItem(Operation):
 
         404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30341: Item [{itemId}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (30173: Published store can't modify content)
+        409: Conflict - ErrorEntity (30173: Published store can't modify content | 30387: The item [{itemId}] is currently associated and cannot be disabled in namespace [{namespace}], Feature {featureName}, Module {moduleName}, and Reference ID {referenceId} are using this item ID)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -289,7 +307,7 @@ class DisableItem(Operation):
 
         404: Not Found - ErrorEntity (30141: Store [{storeId}] does not exist in namespace [{namespace}] | 30341: Item [{itemId}] does not exist in namespace [{namespace}])
 
-        409: Conflict - ErrorEntity (30173: Published store can't modify content)
+        409: Conflict - ErrorEntity (30173: Published store can't modify content | 30387: The item [{itemId}] is currently associated and cannot be disabled in namespace [{namespace}], Feature {featureName}, Module {moduleName}, and Reference ID {referenceId} are using this item ID)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -321,12 +339,19 @@ class DisableItem(Operation):
 
     @classmethod
     def create(
-        cls, item_id: str, namespace: str, store_id: str, **kwargs
+        cls,
+        item_id: str,
+        namespace: str,
+        store_id: str,
+        body: Optional[ChangeStatusItemRequest] = None,
+        **kwargs,
     ) -> DisableItem:
         instance = cls()
         instance.item_id = item_id
         instance.namespace = namespace
         instance.store_id = store_id
+        if body is not None:
+            instance.body = body
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -334,6 +359,12 @@ class DisableItem(Operation):
     @classmethod
     def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> DisableItem:
         instance = cls()
+        if "body" in dict_ and dict_["body"] is not None:
+            instance.body = ChangeStatusItemRequest.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
+        elif include_empty:
+            instance.body = ChangeStatusItemRequest()
         if "itemId" in dict_ and dict_["itemId"] is not None:
             instance.item_id = str(dict_["itemId"])
         elif include_empty:
@@ -351,6 +382,7 @@ class DisableItem(Operation):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
+            "body": "body",
             "itemId": "item_id",
             "namespace": "namespace",
             "storeId": "store_id",
@@ -359,6 +391,7 @@ class DisableItem(Operation):
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
+            "body": False,
             "itemId": True,
             "namespace": True,
             "storeId": True,

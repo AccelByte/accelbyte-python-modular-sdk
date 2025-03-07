@@ -36,14 +36,14 @@ from ...models import ApiFleetListResponse
 from ...models import ResponseErrorResponse
 
 
-class DescEnum(StrEnum):
-    ASC = "asc"
-    DESC = "desc"
-
-
 class SortByEnum(StrEnum):
     ACTIVE = "active"
     NAME = "name"
+
+
+class SortDirectionEnum(StrEnum):
+    ASC = "asc"
+    DESC = "desc"
 
 
 class FleetList(Operation):
@@ -70,8 +70,6 @@ class FleetList(Operation):
 
         count: (count) OPTIONAL int in query
 
-        desc: (desc) OPTIONAL Union[str, DescEnum] in query
-
         name: (name) OPTIONAL str in query
 
         offset: (offset) OPTIONAL int in query
@@ -79,6 +77,8 @@ class FleetList(Operation):
         region: (region) OPTIONAL str in query
 
         sort_by: (sortBy) OPTIONAL Union[str, SortByEnum] in query
+
+        sort_direction: (sortDirection) OPTIONAL Union[str, SortDirectionEnum] in query
 
     Responses:
         200: OK - ApiFleetListResponse (success)
@@ -102,11 +102,11 @@ class FleetList(Operation):
     namespace: str  # REQUIRED in [path]
     active: bool  # OPTIONAL in [query]
     count: int  # OPTIONAL in [query]
-    desc: Union[str, DescEnum]  # OPTIONAL in [query]
     name: str  # OPTIONAL in [query]
     offset: int  # OPTIONAL in [query]
     region: str  # OPTIONAL in [query]
     sort_by: Union[str, SortByEnum]  # OPTIONAL in [query]
+    sort_direction: Union[str, SortDirectionEnum]  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -170,8 +170,6 @@ class FleetList(Operation):
             result["active"] = self.active
         if hasattr(self, "count"):
             result["count"] = self.count
-        if hasattr(self, "desc"):
-            result["desc"] = self.desc
         if hasattr(self, "name"):
             result["name"] = self.name
         if hasattr(self, "offset"):
@@ -180,6 +178,8 @@ class FleetList(Operation):
             result["region"] = self.region
         if hasattr(self, "sort_by"):
             result["sortBy"] = self.sort_by
+        if hasattr(self, "sort_direction"):
+            result["sortDirection"] = self.sort_direction
         return result
 
     # endregion get_x_params methods
@@ -202,10 +202,6 @@ class FleetList(Operation):
         self.count = value
         return self
 
-    def with_desc(self, value: Union[str, DescEnum]) -> FleetList:
-        self.desc = value
-        return self
-
     def with_name(self, value: str) -> FleetList:
         self.name = value
         return self
@@ -220,6 +216,10 @@ class FleetList(Operation):
 
     def with_sort_by(self, value: Union[str, SortByEnum]) -> FleetList:
         self.sort_by = value
+        return self
+
+    def with_sort_direction(self, value: Union[str, SortDirectionEnum]) -> FleetList:
+        self.sort_direction = value
         return self
 
     # endregion with_x methods
@@ -240,10 +240,6 @@ class FleetList(Operation):
             result["count"] = int(self.count)
         elif include_empty:
             result["count"] = 0
-        if hasattr(self, "desc") and self.desc:
-            result["desc"] = str(self.desc)
-        elif include_empty:
-            result["desc"] = Union[str, DescEnum]()
         if hasattr(self, "name") and self.name:
             result["name"] = str(self.name)
         elif include_empty:
@@ -260,6 +256,10 @@ class FleetList(Operation):
             result["sortBy"] = str(self.sort_by)
         elif include_empty:
             result["sortBy"] = Union[str, SortByEnum]()
+        if hasattr(self, "sort_direction") and self.sort_direction:
+            result["sortDirection"] = str(self.sort_direction)
+        elif include_empty:
+            result["sortDirection"] = Union[str, SortDirectionEnum]()
         return result
 
     # endregion to methods
@@ -381,11 +381,11 @@ class FleetList(Operation):
         namespace: str,
         active: Optional[bool] = None,
         count: Optional[int] = None,
-        desc: Optional[Union[str, DescEnum]] = None,
         name: Optional[str] = None,
         offset: Optional[int] = None,
         region: Optional[str] = None,
         sort_by: Optional[Union[str, SortByEnum]] = None,
+        sort_direction: Optional[Union[str, SortDirectionEnum]] = None,
         **kwargs,
     ) -> FleetList:
         instance = cls()
@@ -394,8 +394,6 @@ class FleetList(Operation):
             instance.active = active
         if count is not None:
             instance.count = count
-        if desc is not None:
-            instance.desc = desc
         if name is not None:
             instance.name = name
         if offset is not None:
@@ -404,6 +402,8 @@ class FleetList(Operation):
             instance.region = region
         if sort_by is not None:
             instance.sort_by = sort_by
+        if sort_direction is not None:
+            instance.sort_direction = sort_direction
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -423,10 +423,6 @@ class FleetList(Operation):
             instance.count = int(dict_["count"])
         elif include_empty:
             instance.count = 0
-        if "desc" in dict_ and dict_["desc"] is not None:
-            instance.desc = str(dict_["desc"])
-        elif include_empty:
-            instance.desc = Union[str, DescEnum]()
         if "name" in dict_ and dict_["name"] is not None:
             instance.name = str(dict_["name"])
         elif include_empty:
@@ -443,6 +439,10 @@ class FleetList(Operation):
             instance.sort_by = str(dict_["sortBy"])
         elif include_empty:
             instance.sort_by = Union[str, SortByEnum]()
+        if "sortDirection" in dict_ and dict_["sortDirection"] is not None:
+            instance.sort_direction = str(dict_["sortDirection"])
+        elif include_empty:
+            instance.sort_direction = Union[str, SortDirectionEnum]()
         return instance
 
     @staticmethod
@@ -451,11 +451,11 @@ class FleetList(Operation):
             "namespace": "namespace",
             "active": "active",
             "count": "count",
-            "desc": "desc",
             "name": "name",
             "offset": "offset",
             "region": "region",
             "sortBy": "sort_by",
+            "sortDirection": "sort_direction",
         }
 
     @staticmethod
@@ -464,18 +464,18 @@ class FleetList(Operation):
             "namespace": True,
             "active": False,
             "count": False,
-            "desc": False,
             "name": False,
             "offset": False,
             "region": False,
             "sortBy": False,
+            "sortDirection": False,
         }
 
     @staticmethod
     def get_enum_map() -> Dict[str, List[Any]]:
         return {
-            "desc": ["asc", "desc"],  # in query
             "sortBy": ["active", "name"],  # in query
+            "sortDirection": ["asc", "desc"],  # in query
         }
 
     # endregion static methods

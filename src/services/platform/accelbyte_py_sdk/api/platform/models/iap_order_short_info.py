@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# Fleet Commander
+# AccelByte Gaming Services Platform Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -26,41 +26,42 @@ from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
+from accelbyte_py_sdk.core import StrEnum
 
-from ..models.time_location import TimeLocation
+
+class StatusEnum(StrEnum):
+    FAILED = "FAILED"
+    FULFILLED = "FULFILLED"
+    PARTIAL_REVOKED = "PARTIAL_REVOKED"
+    REVOKED = "REVOKED"
+    REVOKE_FAILED = "REVOKE_FAILED"
+    VERIFIED = "VERIFIED"
 
 
-class ApiTime(Model):
-    """Api time (api.Time)
+class IAPOrderShortInfo(Model):
+    """IAP order short info (IAPOrderShortInfo)
 
     Properties:
-        ext: (ext) REQUIRED int
+        iap_order_no: (iapOrderNo) OPTIONAL str
 
-        loc: (loc) REQUIRED TimeLocation
-
-        wall: (wall) REQUIRED int
+        status: (status) OPTIONAL Union[str, StatusEnum]
     """
 
     # region fields
 
-    ext: int  # REQUIRED
-    loc: TimeLocation  # REQUIRED
-    wall: int  # REQUIRED
+    iap_order_no: str  # OPTIONAL
+    status: Union[str, StatusEnum]  # OPTIONAL
 
     # endregion fields
 
     # region with_x methods
 
-    def with_ext(self, value: int) -> ApiTime:
-        self.ext = value
+    def with_iap_order_no(self, value: str) -> IAPOrderShortInfo:
+        self.iap_order_no = value
         return self
 
-    def with_loc(self, value: TimeLocation) -> ApiTime:
-        self.loc = value
-        return self
-
-    def with_wall(self, value: int) -> ApiTime:
-        self.wall = value
+    def with_status(self, value: Union[str, StatusEnum]) -> IAPOrderShortInfo:
+        self.status = value
         return self
 
     # endregion with_x methods
@@ -69,18 +70,14 @@ class ApiTime(Model):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "ext"):
-            result["ext"] = int(self.ext)
+        if hasattr(self, "iap_order_no"):
+            result["iapOrderNo"] = str(self.iap_order_no)
         elif include_empty:
-            result["ext"] = 0
-        if hasattr(self, "loc"):
-            result["loc"] = self.loc.to_dict(include_empty=include_empty)
+            result["iapOrderNo"] = ""
+        if hasattr(self, "status"):
+            result["status"] = str(self.status)
         elif include_empty:
-            result["loc"] = TimeLocation()
-        if hasattr(self, "wall"):
-            result["wall"] = int(self.wall)
-        elif include_empty:
-            result["wall"] = 0
+            result["status"] = Union[str, StatusEnum]()
         return result
 
     # endregion to methods
@@ -88,38 +85,40 @@ class ApiTime(Model):
     # region static methods
 
     @classmethod
-    def create(cls, ext: int, loc: TimeLocation, wall: int, **kwargs) -> ApiTime:
+    def create(
+        cls,
+        iap_order_no: Optional[str] = None,
+        status: Optional[Union[str, StatusEnum]] = None,
+        **kwargs,
+    ) -> IAPOrderShortInfo:
         instance = cls()
-        instance.ext = ext
-        instance.loc = loc
-        instance.wall = wall
+        if iap_order_no is not None:
+            instance.iap_order_no = iap_order_no
+        if status is not None:
+            instance.status = status
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> ApiTime:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> IAPOrderShortInfo:
         instance = cls()
         if not dict_:
             return instance
-        if "ext" in dict_ and dict_["ext"] is not None:
-            instance.ext = int(dict_["ext"])
+        if "iapOrderNo" in dict_ and dict_["iapOrderNo"] is not None:
+            instance.iap_order_no = str(dict_["iapOrderNo"])
         elif include_empty:
-            instance.ext = 0
-        if "loc" in dict_ and dict_["loc"] is not None:
-            instance.loc = TimeLocation.create_from_dict(
-                dict_["loc"], include_empty=include_empty
-            )
+            instance.iap_order_no = ""
+        if "status" in dict_ and dict_["status"] is not None:
+            instance.status = str(dict_["status"])
         elif include_empty:
-            instance.loc = TimeLocation()
-        if "wall" in dict_ and dict_["wall"] is not None:
-            instance.wall = int(dict_["wall"])
-        elif include_empty:
-            instance.wall = 0
+            instance.status = Union[str, StatusEnum]()
         return instance
 
     @classmethod
     def create_many_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, ApiTime]:
+    ) -> Dict[str, IAPOrderShortInfo]:
         return (
             {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
             if dict_
@@ -129,7 +128,7 @@ class ApiTime(Model):
     @classmethod
     def create_many_from_list(
         cls, list_: list, include_empty: bool = False
-    ) -> List[ApiTime]:
+    ) -> List[IAPOrderShortInfo]:
         return (
             [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
             if list_
@@ -139,7 +138,9 @@ class ApiTime(Model):
     @classmethod
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[ApiTime, List[ApiTime], Dict[Any, ApiTime]]:
+    ) -> Union[
+        IAPOrderShortInfo, List[IAPOrderShortInfo], Dict[Any, IAPOrderShortInfo]
+    ]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -153,17 +154,28 @@ class ApiTime(Model):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "ext": "ext",
-            "loc": "loc",
-            "wall": "wall",
+            "iapOrderNo": "iap_order_no",
+            "status": "status",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "ext": True,
-            "loc": True,
-            "wall": True,
+            "iapOrderNo": False,
+            "status": False,
+        }
+
+    @staticmethod
+    def get_enum_map() -> Dict[str, List[Any]]:
+        return {
+            "status": [
+                "FAILED",
+                "FULFILLED",
+                "PARTIAL_REVOKED",
+                "REVOKED",
+                "REVOKE_FAILED",
+                "VERIFIED",
+            ],
         }
 
     # endregion static methods

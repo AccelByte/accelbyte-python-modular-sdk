@@ -94,3 +94,6 @@ from ._schedules import public_list_schedules
 from ._schedules import public_list_schedules_async
 from ._schedules import public_list_schedules_by_goal
 from ._schedules import public_list_schedules_by_goal_async
+
+from ._utilities import admin_get_item_references
+from ._utilities import admin_get_item_references_async

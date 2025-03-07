@@ -101,3 +101,7 @@ from .wrappers import public_list_schedules
 from .wrappers import public_list_schedules_async
 from .wrappers import public_list_schedules_by_goal
 from .wrappers import public_list_schedules_by_goal_async
+
+# utilities
+from .wrappers import admin_get_item_references
+from .wrappers import admin_get_item_references_async

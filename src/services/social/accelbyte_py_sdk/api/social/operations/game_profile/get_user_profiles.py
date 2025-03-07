@@ -36,7 +36,10 @@ from ...models import GameProfileHeader
 
 
 class GetUserProfiles(Operation):
-    """Returns all profiles' header for a user (getUserProfiles)
+    """[DEPRECATED] Returns all profiles' header for a user (getUserProfiles)
+
+    ## The endpoint is going to be deprecated
+
 
     Returns all profiles' header for a user.
     Other detail info:

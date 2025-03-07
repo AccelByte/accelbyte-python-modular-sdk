@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# Fleet Commander
+# AccelByte Gaming Services Platform Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -28,37 +28,23 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from accelbyte_py_sdk.core import Model
 
 
-class TimeZone(Model):
-    """Time zone (time.zone)
+class SteamSyncByTransactionRequest(Model):
+    """Steam sync by transaction request (SteamSyncByTransactionRequest)
 
     Properties:
-        is_dst: (isDST) REQUIRED bool
-
-        name: (name) REQUIRED str
-
-        offset: (offset) REQUIRED int
+        order_id: (orderId) REQUIRED str
     """
 
     # region fields
 
-    is_dst: bool  # REQUIRED
-    name: str  # REQUIRED
-    offset: int  # REQUIRED
+    order_id: str  # REQUIRED
 
     # endregion fields
 
     # region with_x methods
 
-    def with_is_dst(self, value: bool) -> TimeZone:
-        self.is_dst = value
-        return self
-
-    def with_name(self, value: str) -> TimeZone:
-        self.name = value
-        return self
-
-    def with_offset(self, value: int) -> TimeZone:
-        self.offset = value
+    def with_order_id(self, value: str) -> SteamSyncByTransactionRequest:
+        self.order_id = value
         return self
 
     # endregion with_x methods
@@ -67,18 +53,10 @@ class TimeZone(Model):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "is_dst"):
-            result["isDST"] = bool(self.is_dst)
+        if hasattr(self, "order_id"):
+            result["orderId"] = str(self.order_id)
         elif include_empty:
-            result["isDST"] = False
-        if hasattr(self, "name"):
-            result["name"] = str(self.name)
-        elif include_empty:
-            result["name"] = ""
-        if hasattr(self, "offset"):
-            result["offset"] = int(self.offset)
-        elif include_empty:
-            result["offset"] = 0
+            result["orderId"] = ""
         return result
 
     # endregion to methods
@@ -86,36 +64,28 @@ class TimeZone(Model):
     # region static methods
 
     @classmethod
-    def create(cls, is_dst: bool, name: str, offset: int, **kwargs) -> TimeZone:
+    def create(cls, order_id: str, **kwargs) -> SteamSyncByTransactionRequest:
         instance = cls()
-        instance.is_dst = is_dst
-        instance.name = name
-        instance.offset = offset
+        instance.order_id = order_id
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> TimeZone:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> SteamSyncByTransactionRequest:
         instance = cls()
         if not dict_:
             return instance
-        if "isDST" in dict_ and dict_["isDST"] is not None:
-            instance.is_dst = bool(dict_["isDST"])
+        if "orderId" in dict_ and dict_["orderId"] is not None:
+            instance.order_id = str(dict_["orderId"])
         elif include_empty:
-            instance.is_dst = False
-        if "name" in dict_ and dict_["name"] is not None:
-            instance.name = str(dict_["name"])
-        elif include_empty:
-            instance.name = ""
-        if "offset" in dict_ and dict_["offset"] is not None:
-            instance.offset = int(dict_["offset"])
-        elif include_empty:
-            instance.offset = 0
+            instance.order_id = ""
         return instance
 
     @classmethod
     def create_many_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, TimeZone]:
+    ) -> Dict[str, SteamSyncByTransactionRequest]:
         return (
             {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
             if dict_
@@ -125,7 +95,7 @@ class TimeZone(Model):
     @classmethod
     def create_many_from_list(
         cls, list_: list, include_empty: bool = False
-    ) -> List[TimeZone]:
+    ) -> List[SteamSyncByTransactionRequest]:
         return (
             [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
             if list_
@@ -135,7 +105,11 @@ class TimeZone(Model):
     @classmethod
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[TimeZone, List[TimeZone], Dict[Any, TimeZone]]:
+    ) -> Union[
+        SteamSyncByTransactionRequest,
+        List[SteamSyncByTransactionRequest],
+        Dict[Any, SteamSyncByTransactionRequest],
+    ]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -149,17 +123,13 @@ class TimeZone(Model):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "isDST": "is_dst",
-            "name": "name",
-            "offset": "offset",
+            "orderId": "order_id",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "isDST": True,
-            "name": True,
-            "offset": True,
+            "orderId": True,
         }
 
     # endregion static methods

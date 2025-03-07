@@ -35,7 +35,10 @@ from ...models import ErrorEntity
 
 
 class PublicDeleteProfile(Operation):
-    """Deletes game profile (publicDeleteProfile)
+    """[DEPRECATED] Deletes game profile (publicDeleteProfile)
+
+    ## The endpoint is going to be deprecated
+
 
     Deletes game profile.
 

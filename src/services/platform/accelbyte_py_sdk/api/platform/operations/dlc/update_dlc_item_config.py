@@ -65,6 +65,8 @@ class UpdateDLCItemConfig(Operation):
 
         400: Bad Request - ErrorEntity (394721: Invalid platform DLC config namespace [{namespace}]: [{message}])
 
+        404: Not Found - ErrorEntity (30341: Item [{itemId}] does not exist in namespace [{namespace}] | 30343: Item of sku [{itemSku}] does not exist )
+
         409: Conflict - ErrorEntity (39471: Duplicated dlc reward id [{dlcRewardId}] in namespace [{namespace}] )
 
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
@@ -186,12 +188,18 @@ class UpdateDLCItemConfig(Operation):
     class Response(ApiResponse):
         data_200: Optional[DLCItemConfigInfo] = None
         error_400: Optional[ErrorEntity] = None
+        error_404: Optional[ErrorEntity] = None
         error_409: Optional[ErrorEntity] = None
         error_422: Optional[ValidationErrorEntity] = None
 
         def ok(self) -> UpdateDLCItemConfig.Response:
             if self.error_400 is not None:
                 err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_404 is not None:
+                err = self.error_404.translate_to_api_error()
                 exc = err.to_exception()
                 if exc is not None:
                     raise exc  # pylint: disable=raising-bad-type
@@ -214,6 +222,9 @@ class UpdateDLCItemConfig(Operation):
             elif self.error_400 is not None:
                 yield None
                 yield self.error_400
+            elif self.error_404 is not None:
+                yield None
+                yield self.error_404
             elif self.error_409 is not None:
                 yield None
                 yield self.error_409
@@ -231,6 +242,8 @@ class UpdateDLCItemConfig(Operation):
         200: OK - DLCItemConfigInfo (successful operation)
 
         400: Bad Request - ErrorEntity (394721: Invalid platform DLC config namespace [{namespace}]: [{message}])
+
+        404: Not Found - ErrorEntity (30341: Item [{itemId}] does not exist in namespace [{namespace}] | 30343: Item of sku [{itemSku}] does not exist )
 
         409: Conflict - ErrorEntity (39471: Duplicated dlc reward id [{dlcRewardId}] in namespace [{namespace}] )
 
@@ -259,6 +272,9 @@ class UpdateDLCItemConfig(Operation):
             elif code == 400:
                 result.error_400 = ErrorEntity.create_from_dict(content)
                 result.error = result.error_400.translate_to_api_error()
+            elif code == 404:
+                result.error_404 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_404.translate_to_api_error()
             elif code == 409:
                 result.error_409 = ErrorEntity.create_from_dict(content)
                 result.error = result.error_409.translate_to_api_error()
@@ -294,6 +310,8 @@ class UpdateDLCItemConfig(Operation):
 
         400: Bad Request - ErrorEntity (394721: Invalid platform DLC config namespace [{namespace}]: [{message}])
 
+        404: Not Found - ErrorEntity (30341: Item [{itemId}] does not exist in namespace [{namespace}] | 30343: Item of sku [{itemSku}] does not exist )
+
         409: Conflict - ErrorEntity (39471: Duplicated dlc reward id [{dlcRewardId}] in namespace [{namespace}] )
 
         422: Unprocessable Entity - ValidationErrorEntity (20002: validation error)
@@ -314,6 +332,8 @@ class UpdateDLCItemConfig(Operation):
         if code == 200:
             return DLCItemConfigInfo.create_from_dict(content), None
         if code == 400:
+            return None, ErrorEntity.create_from_dict(content)
+        if code == 404:
             return None, ErrorEntity.create_from_dict(content)
         if code == 409:
             return None, ErrorEntity.create_from_dict(content)

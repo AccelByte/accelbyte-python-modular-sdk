@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# Custom Service Manager Index (1.20.0)
+# Custom Service Manager Index (1.22.0)
 
 
 ## Operations

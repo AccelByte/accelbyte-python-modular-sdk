@@ -2,10 +2,18 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Iam Service Index (7.26.0)
+# AccelByte Gaming Services Iam Service Index (7.28.0)
 
 
 ## Operations
+
+### Account Idenfifier Tag
+| Endpoint | Method | ID | Deprecated | Class | Wrapper | Example |
+|---|---|---|---|---|---|---|
+| /iam/v3/admin/namespaces/{namespace}/tags | POST | AdminCreateTagV3 | `false` | [AdminCreateTagV3](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/account_idenfifier_tag/admin_create_tag_v3.py) | [admin_create_tag_v3](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_account_idenfifier_tag.py) | [accelbyte_py_sdk_cli iam-admin-create-tag-v3](../../samples/cli/accelbyte_py_sdk_cli/iam/_admin_create_tag_v3.py) |
+| /iam/v3/admin/namespaces/{namespace}/tags/{tagId} | DELETE | AdminDeleteTagV3 | `false` | [AdminDeleteTagV3](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/account_idenfifier_tag/admin_delete_tag_v3.py) | [admin_delete_tag_v3](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_account_idenfifier_tag.py) | [accelbyte_py_sdk_cli iam-admin-delete-tag-v3](../../samples/cli/accelbyte_py_sdk_cli/iam/_admin_delete_tag_v3.py) |
+| /iam/v3/admin/namespaces/{namespace}/tags | GET | AdminQueryTagV3 | `false` | [AdminQueryTagV3](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/account_idenfifier_tag/admin_query_tag_v3.py) | [admin_query_tag_v3](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_account_idenfifier_tag.py) | [accelbyte_py_sdk_cli iam-admin-query-tag-v3](../../samples/cli/accelbyte_py_sdk_cli/iam/_admin_query_tag_v3.py) |
+| /iam/v3/admin/namespaces/{namespace}/tags/{tagId} | PUT | AdminUpdateTagV3 | `false` | [AdminUpdateTagV3](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/account_idenfifier_tag/admin_update_tag_v3.py) | [admin_update_tag_v3](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_account_idenfifier_tag.py) | [accelbyte_py_sdk_cli iam-admin-update-tag-v3](../../samples/cli/accelbyte_py_sdk_cli/iam/_admin_update_tag_v3.py) |
 
 ### Bans
 | Endpoint | Method | ID | Deprecated | Class | Wrapper | Example |
@@ -592,6 +600,8 @@
 | accountcommon.SimpleUserPlatformInfoV3 | [AccountcommonSimpleUserPlatformInfoV3](../../src/services/iam/accelbyte_py_sdk/api/iam/models/accountcommon_simple_user_platform_info_v3.py) |
 | accountcommon.SsoConfig | [AccountcommonSsoConfig](../../src/services/iam/accelbyte_py_sdk/api/iam/models/accountcommon_sso_config.py) |
 | accountcommon.SsoConfigPatchReq | [AccountcommonSsoConfigPatchReq](../../src/services/iam/accelbyte_py_sdk/api/iam/models/accountcommon_sso_config_patch_req.py) |
+| accountcommon.TagResponse | [AccountcommonTagResponse](../../src/services/iam/accelbyte_py_sdk/api/iam/models/accountcommon_tag_response.py) |
+| accountcommon.TagsGetResponseV3 | [AccountcommonTagsGetResponseV3](../../src/services/iam/accelbyte_py_sdk/api/iam/models/accountcommon_tags_get_response_v3.py) |
 | accountcommon.UserInformationV3 | [AccountcommonUserInformationV3](../../src/services/iam/accelbyte_py_sdk/api/iam/models/accountcommon_user_information_v3.py) |
 | accountcommon.UserLinkedPlatform | [AccountcommonUserLinkedPlatform](../../src/services/iam/accelbyte_py_sdk/api/iam/models/accountcommon_user_linked_platform.py) |
 | accountcommon.UserLinkedPlatformsResponseV3 | [AccountcommonUserLinkedPlatformsResponseV3](../../src/services/iam/accelbyte_py_sdk/api/iam/models/accountcommon_user_linked_platforms_response_v3.py) |
@@ -771,6 +781,8 @@
 | model.SimpleUserBan | [ModelSimpleUserBan](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_simple_user_ban.py) |
 | model.SSOPlatformCredentialRequest | [ModelSSOPlatformCredentialRequest](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_sso_platform_credential_request.py) |
 | model.SSOPlatformCredentialResponse | [ModelSSOPlatformCredentialResponse](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_sso_platform_credential_response.py) |
+| model.TagCreateRequestV3 | [ModelTagCreateRequestV3](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_tag_create_request_v3.py) |
+| model.TagUpdateRequestV3 | [ModelTagUpdateRequestV3](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_tag_update_request_v3.py) |
 | model.ThirdPartyLoginPlatformCredentialRequest | [ModelThirdPartyLoginPlatformCredentialRequest](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_third_party_login_platform_credential_request.py) |
 | model.ThirdPartyLoginPlatformCredentialResponse | [ModelThirdPartyLoginPlatformCredentialResponse](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_third_party_login_platform_credential_response.py) |
 | model.TokenThirdPartyLinkStatusResponse | [ModelTokenThirdPartyLinkStatusResponse](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_token_third_party_link_status_response.py) |

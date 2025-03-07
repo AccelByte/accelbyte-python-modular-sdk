@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# Fleet Commander
+# AccelByte Gaming Services Iam Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -27,45 +27,38 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
 
+from ..models.accountcommon_pagination_v3 import AccountcommonPaginationV3
+from ..models.accountcommon_tag_response import AccountcommonTagResponse
 
-class TimeZoneTrans(Model):
-    """Time zone trans (time.zoneTrans)
+
+class AccountcommonTagsGetResponseV3(Model):
+    """Accountcommon tags get response V3 (accountcommon.TagsGetResponseV3)
 
     Properties:
-        index: (index) REQUIRED int
+        data: (data) REQUIRED List[AccountcommonTagResponse]
 
-        isstd: (isstd) REQUIRED bool
-
-        isutc: (isutc) REQUIRED bool
-
-        when: (when) REQUIRED int
+        paging: (paging) REQUIRED AccountcommonPaginationV3
     """
 
     # region fields
 
-    index: int  # REQUIRED
-    isstd: bool  # REQUIRED
-    isutc: bool  # REQUIRED
-    when: int  # REQUIRED
+    data: List[AccountcommonTagResponse]  # REQUIRED
+    paging: AccountcommonPaginationV3  # REQUIRED
 
     # endregion fields
 
     # region with_x methods
 
-    def with_index(self, value: int) -> TimeZoneTrans:
-        self.index = value
+    def with_data(
+        self, value: List[AccountcommonTagResponse]
+    ) -> AccountcommonTagsGetResponseV3:
+        self.data = value
         return self
 
-    def with_isstd(self, value: bool) -> TimeZoneTrans:
-        self.isstd = value
-        return self
-
-    def with_isutc(self, value: bool) -> TimeZoneTrans:
-        self.isutc = value
-        return self
-
-    def with_when(self, value: int) -> TimeZoneTrans:
-        self.when = value
+    def with_paging(
+        self, value: AccountcommonPaginationV3
+    ) -> AccountcommonTagsGetResponseV3:
+        self.paging = value
         return self
 
     # endregion with_x methods
@@ -74,22 +67,16 @@ class TimeZoneTrans(Model):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "index"):
-            result["index"] = int(self.index)
+        if hasattr(self, "data"):
+            result["data"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.data
+            ]
         elif include_empty:
-            result["index"] = 0
-        if hasattr(self, "isstd"):
-            result["isstd"] = bool(self.isstd)
+            result["data"] = []
+        if hasattr(self, "paging"):
+            result["paging"] = self.paging.to_dict(include_empty=include_empty)
         elif include_empty:
-            result["isstd"] = False
-        if hasattr(self, "isutc"):
-            result["isutc"] = bool(self.isutc)
-        elif include_empty:
-            result["isutc"] = False
-        if hasattr(self, "when"):
-            result["when"] = int(self.when)
-        elif include_empty:
-            result["when"] = 0
+            result["paging"] = AccountcommonPaginationV3()
         return result
 
     # endregion to methods
@@ -98,44 +85,44 @@ class TimeZoneTrans(Model):
 
     @classmethod
     def create(
-        cls, index: int, isstd: bool, isutc: bool, when: int, **kwargs
-    ) -> TimeZoneTrans:
+        cls,
+        data: List[AccountcommonTagResponse],
+        paging: AccountcommonPaginationV3,
+        **kwargs,
+    ) -> AccountcommonTagsGetResponseV3:
         instance = cls()
-        instance.index = index
-        instance.isstd = isstd
-        instance.isutc = isutc
-        instance.when = when
+        instance.data = data
+        instance.paging = paging
         return instance
 
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> TimeZoneTrans:
+    ) -> AccountcommonTagsGetResponseV3:
         instance = cls()
         if not dict_:
             return instance
-        if "index" in dict_ and dict_["index"] is not None:
-            instance.index = int(dict_["index"])
+        if "data" in dict_ and dict_["data"] is not None:
+            instance.data = [
+                AccountcommonTagResponse.create_from_dict(
+                    i0, include_empty=include_empty
+                )
+                for i0 in dict_["data"]
+            ]
         elif include_empty:
-            instance.index = 0
-        if "isstd" in dict_ and dict_["isstd"] is not None:
-            instance.isstd = bool(dict_["isstd"])
+            instance.data = []
+        if "paging" in dict_ and dict_["paging"] is not None:
+            instance.paging = AccountcommonPaginationV3.create_from_dict(
+                dict_["paging"], include_empty=include_empty
+            )
         elif include_empty:
-            instance.isstd = False
-        if "isutc" in dict_ and dict_["isutc"] is not None:
-            instance.isutc = bool(dict_["isutc"])
-        elif include_empty:
-            instance.isutc = False
-        if "when" in dict_ and dict_["when"] is not None:
-            instance.when = int(dict_["when"])
-        elif include_empty:
-            instance.when = 0
+            instance.paging = AccountcommonPaginationV3()
         return instance
 
     @classmethod
     def create_many_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, TimeZoneTrans]:
+    ) -> Dict[str, AccountcommonTagsGetResponseV3]:
         return (
             {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
             if dict_
@@ -145,7 +132,7 @@ class TimeZoneTrans(Model):
     @classmethod
     def create_many_from_list(
         cls, list_: list, include_empty: bool = False
-    ) -> List[TimeZoneTrans]:
+    ) -> List[AccountcommonTagsGetResponseV3]:
         return (
             [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
             if list_
@@ -155,7 +142,11 @@ class TimeZoneTrans(Model):
     @classmethod
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[TimeZoneTrans, List[TimeZoneTrans], Dict[Any, TimeZoneTrans]]:
+    ) -> Union[
+        AccountcommonTagsGetResponseV3,
+        List[AccountcommonTagsGetResponseV3],
+        Dict[Any, AccountcommonTagsGetResponseV3],
+    ]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -169,19 +160,15 @@ class TimeZoneTrans(Model):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "index": "index",
-            "isstd": "isstd",
-            "isutc": "isutc",
-            "when": "when",
+            "data": "data",
+            "paging": "paging",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "index": True,
-            "isstd": True,
-            "isutc": True,
-            "when": True,
+            "data": True,
+            "paging": True,
         }
 
     # endregion static methods

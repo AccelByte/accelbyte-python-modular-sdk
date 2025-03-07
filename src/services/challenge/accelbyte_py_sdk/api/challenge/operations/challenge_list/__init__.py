@@ -20,3 +20,6 @@ from .get_challenges import (
     StatusEnum as GetChallengesStatusEnum,
 )
 from .public_get_scheduled_goals import PublicGetScheduledGoals
+from .public_get_scheduled_goals import (
+    SortByEnum as PublicGetScheduledGoalsSortByEnum,
+)

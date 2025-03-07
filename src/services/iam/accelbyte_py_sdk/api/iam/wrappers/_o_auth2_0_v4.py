@@ -905,6 +905,7 @@ def token_grant_v4(
     password: Optional[str] = None,
     redirect_uri: Optional[str] = None,
     refresh_token: Optional[str] = None,
+    scope: Optional[str] = None,
     username: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1007,6 +1008,8 @@ def token_grant_v4(
 
         refresh_token: (refresh_token) OPTIONAL str in form_data
 
+        scope: (scope) OPTIONAL str in form_data
+
         username: (username) OPTIONAL str in form_data
 
         grant_type: (grant_type) REQUIRED Union[str, GrantTypeEnum] in form_data
@@ -1045,6 +1048,7 @@ def token_grant_v4(
         password=password,
         redirect_uri=redirect_uri,
         refresh_token=refresh_token,
+        scope=scope,
         username=username,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -1070,6 +1074,7 @@ async def token_grant_v4_async(
     password: Optional[str] = None,
     redirect_uri: Optional[str] = None,
     refresh_token: Optional[str] = None,
+    scope: Optional[str] = None,
     username: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs
@@ -1172,6 +1177,8 @@ async def token_grant_v4_async(
 
         refresh_token: (refresh_token) OPTIONAL str in form_data
 
+        scope: (scope) OPTIONAL str in form_data
+
         username: (username) OPTIONAL str in form_data
 
         grant_type: (grant_type) REQUIRED Union[str, GrantTypeEnum] in form_data
@@ -1210,6 +1217,7 @@ async def token_grant_v4_async(
         password=password,
         redirect_uri=redirect_uri,
         refresh_token=refresh_token,
+        scope=scope,
         username=username,
     )
     return await run_request_async(

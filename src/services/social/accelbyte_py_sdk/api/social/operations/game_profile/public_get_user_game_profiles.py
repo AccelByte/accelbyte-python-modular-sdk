@@ -36,7 +36,10 @@ from ...models import UserGameProfiles
 
 
 class PublicGetUserGameProfiles(Operation):
-    """Returns all profiles for specified users (publicGetUserGameProfiles)
+    """[DEPRECATED] Returns all profiles for specified users (publicGetUserGameProfiles)
+
+    ## The endpoint is going to be deprecated
+
 
     Returns all profiles for specified users.
     Other detail info:

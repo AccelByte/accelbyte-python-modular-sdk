@@ -36,7 +36,10 @@ from ...models import ErrorEntity
 
 
 class PublicGetProfileAttribute(Operation):
-    """Returns game profile attribute (publicGetProfileAttribute)
+    """[DEPRECATED] Returns game profile attribute (publicGetProfileAttribute)
+
+    ## The endpoint is going to be deprecated
+
 
     Returns game profile attribute.
     Other detail info:

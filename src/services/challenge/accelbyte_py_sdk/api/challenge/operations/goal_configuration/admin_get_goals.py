@@ -74,6 +74,8 @@ class AdminGetGoals(Operation):
 
         sort_by: (sortBy) OPTIONAL Union[str, SortByEnum] in query
 
+        tags: (tags) OPTIONAL List[str] in query
+
     Responses:
         200: OK - ModelGetGoalsResponse (OK)
 
@@ -108,6 +110,7 @@ class AdminGetGoals(Operation):
     limit: int  # OPTIONAL in [query]
     offset: int  # OPTIONAL in [query]
     sort_by: Union[str, SortByEnum]  # OPTIONAL in [query]
+    tags: List[str]  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -175,6 +178,8 @@ class AdminGetGoals(Operation):
             result["offset"] = self.offset
         if hasattr(self, "sort_by"):
             result["sortBy"] = self.sort_by
+        if hasattr(self, "tags"):
+            result["tags"] = self.tags
         return result
 
     # endregion get_x_params methods
@@ -205,6 +210,10 @@ class AdminGetGoals(Operation):
         self.sort_by = value
         return self
 
+    def with_tags(self, value: List[str]) -> AdminGetGoals:
+        self.tags = value
+        return self
+
     # endregion with_x methods
 
     # region to methods
@@ -231,6 +240,10 @@ class AdminGetGoals(Operation):
             result["sortBy"] = str(self.sort_by)
         elif include_empty:
             result["sortBy"] = Union[str, SortByEnum]()
+        if hasattr(self, "tags") and self.tags:
+            result["tags"] = [str(i0) for i0 in self.tags]
+        elif include_empty:
+            result["tags"] = []
         return result
 
     # endregion to methods
@@ -408,6 +421,7 @@ class AdminGetGoals(Operation):
         limit: Optional[int] = None,
         offset: Optional[int] = None,
         sort_by: Optional[Union[str, SortByEnum]] = None,
+        tags: Optional[List[str]] = None,
         **kwargs,
     ) -> AdminGetGoals:
         instance = cls()
@@ -419,6 +433,8 @@ class AdminGetGoals(Operation):
             instance.offset = offset
         if sort_by is not None:
             instance.sort_by = sort_by
+        if tags is not None:
+            instance.tags = tags
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -448,6 +464,10 @@ class AdminGetGoals(Operation):
             instance.sort_by = str(dict_["sortBy"])
         elif include_empty:
             instance.sort_by = Union[str, SortByEnum]()
+        if "tags" in dict_ and dict_["tags"] is not None:
+            instance.tags = [str(i0) for i0 in dict_["tags"]]
+        elif include_empty:
+            instance.tags = []
         return instance
 
     @staticmethod
@@ -458,6 +478,7 @@ class AdminGetGoals(Operation):
             "limit": "limit",
             "offset": "offset",
             "sortBy": "sort_by",
+            "tags": "tags",
         }
 
     @staticmethod
@@ -468,6 +489,13 @@ class AdminGetGoals(Operation):
             "limit": False,
             "offset": False,
             "sortBy": False,
+            "tags": False,
+        }
+
+    @staticmethod
+    def get_collection_format_map() -> Dict[str, Union[None, str]]:
+        return {
+            "tags": "csv",  # in query
         }
 
     @staticmethod
