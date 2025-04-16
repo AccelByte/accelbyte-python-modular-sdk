@@ -13,19 +13,16 @@ def test_admin_create_new_achievement(self):
     from accelbyte_py_sdk.api.achievement import admin_create_new_achievement
     from accelbyte_py_sdk.api.achievement import admin_delete_achievement
 
-    # arrange
     _, error = admin_delete_achievement(
         achievement_code=self.models_achievement_request.achievement_code
     )
     self.exist = error is not None
 
-    # act
     result, error = admin_create_new_achievement(
         body=self.models_achievement_request
     )
     self.exist = error is None
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Admin Delete Achievement
@@ -35,7 +32,6 @@ def test_admin_delete_achievement(self):
     from accelbyte_py_sdk.api.achievement import admin_create_new_achievement
     from accelbyte_py_sdk.api.achievement import admin_delete_achievement
 
-    # arrange
     _, error = admin_create_new_achievement(body=self.models_achievement_request)
     self.log_warning(
         msg=f"Failed to set up achievement. {str(error)}",
@@ -43,13 +39,11 @@ def test_admin_delete_achievement(self):
     )
     self.exist = error is None
 
-    # act
     result, error = admin_delete_achievement(
         achievement_code=self.models_achievement_request.achievement_code
     )
     self.exist = error is not None
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Admin Get Achievement
@@ -59,7 +53,6 @@ def test_admin_get_achievement(self):
     from accelbyte_py_sdk.api.achievement import admin_create_new_achievement
     from accelbyte_py_sdk.api.achievement import admin_get_achievement
 
-    # arrange
     _, error = admin_create_new_achievement(body=self.models_achievement_request)
     self.log_warning(
         msg=f"Failed to set up achievement. {str(error)}",
@@ -67,12 +60,10 @@ def test_admin_get_achievement(self):
     )
     self.exist = error is None
 
-    # act
     _, error = admin_get_achievement(
         achievement_code=self.models_achievement_request.achievement_code
     )
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Export Achievements
@@ -81,17 +72,14 @@ def test_admin_get_achievement(self):
 def test_export_achievements(self):
     from accelbyte_py_sdk.api.achievement import export_achievements
 
-    # arrange
     exported_file_path = Path(self.exported_filename)
     exported_file_path.unlink(missing_ok=True)
 
-    # act
     result, error = export_achievements()
 
     if result is not None:
         exported_file_path.write_bytes(result)
 
-    # assert
     self.assertIsNone(error, error)
     self.assertTrue(exported_file_path.exists())
     self.assertGreater(exported_file_path.stat().st_size, 0)
@@ -103,7 +91,6 @@ def test_admin_list_achievements(self):
     from accelbyte_py_sdk.api.achievement import admin_create_new_achievement
     from accelbyte_py_sdk.api.achievement import admin_list_achievements
 
-    # arrange
     _, error = admin_create_new_achievement(body=self.models_achievement_request)
     self.log_warning(
         msg=f"Failed to set up achievement. {str(error)}",
@@ -111,10 +98,8 @@ def test_admin_list_achievements(self):
     )
     self.exist = error is None
 
-    # act
     _, error = admin_list_achievements()
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Admin Update Achievement
@@ -127,7 +112,6 @@ def test_admin_update_achievement(self):
         ModelsAchievementUpdateRequest,
     )
 
-    # arrange
     _, error = admin_create_new_achievement(body=self.models_achievement_request)
     self.log_warning(
         msg=f"Failed to set up achievement. {str(error)}",
@@ -135,7 +119,6 @@ def test_admin_update_achievement(self):
     )
     self.exist = error is None
 
-    # act
     result, error = admin_update_achievement(
         achievement_code=self.models_achievement_request.achievement_code,
         body=ModelsAchievementUpdateRequest.create(
@@ -152,7 +135,6 @@ def test_admin_update_achievement(self):
         ),
     )
 
-    # assert
     self.assertIsNone(error, error)
     self.assertIn("ID", result.name)
     self.assertEqual("NAMA", result.name["ID"])
@@ -167,12 +149,9 @@ Source: [ams.py](../tests/integration/api/ams.py)
 def test_info_regions(self):
     from accelbyte_py_sdk.api.ams import info_regions
 
-    # arrange
 
-    # act
     _, error = info_regions()
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Info Supported Instances
@@ -181,12 +160,9 @@ def test_info_regions(self):
 def test_info_supported_instances(self):
     from accelbyte_py_sdk.api.ams import info_supported_instances
 
-    # arrange
 
-    # act
     _, error = info_supported_instances()
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Image List
@@ -195,12 +171,9 @@ def test_info_supported_instances(self):
 def test_image_list(self):
     from accelbyte_py_sdk.api.ams import image_list
 
-    # arrange
 
-    # act
     _, error = image_list()
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ## Basic
@@ -211,13 +184,10 @@ Source: [basic.py](../tests/integration/api/basic.py)
 
 ```python
 def test_create_my_profile(self):
-    # arrange
     self.login_user()  # force re-login: token is revoked
 
-    # act
     _, error = self.do_create_my_profile(body=self.user_profile_private_create)
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Delete User Profile
@@ -226,17 +196,14 @@ def test_create_my_profile(self):
 def test_delete_user_profile(self):
     from accelbyte_py_sdk.api.basic import delete_user_profile
 
-    # arrange
     result, error = self.do_create_my_profile(body=self.user_profile_private_create)
     if error:
         self.skipTest(reason=f"Failed to set up user profile. {str(error)}")
         return
     user_id = result.user_id
 
-    # act
     result, error = delete_user_profile(user_id=user_id)
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Get User Profile
@@ -245,17 +212,14 @@ def test_delete_user_profile(self):
 def test_get_user_profile(self):
     from accelbyte_py_sdk.api.basic import public_get_user_profile_info
 
-    # arrange
     result, error = self.do_create_my_profile(body=self.user_profile_private_create)
     if error:
         self.skipTest(reason=f"Failed to set up user profile. {str(error)}")
         return
     user_id = result.user_id
 
-    # act
     result, error = public_get_user_profile_info(user_id=user_id)
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Public Update User Profile
@@ -265,20 +229,17 @@ def test_public_update_user_profile(self):
     from accelbyte_py_sdk.api.basic import public_update_user_profile
     from accelbyte_py_sdk.api.basic.models import UserProfileUpdate
 
-    # arrange
     result, error = self.do_create_my_profile(body=self.user_profile_private_create)
     if error:
         self.skipTest(reason=f"Failed to set up user profile. {str(error)}")
         return
     user_id = result.user_id
 
-    # act
     result, error = public_update_user_profile(
         user_id=user_id,
         body=UserProfileUpdate.create(first_name="Pertama", last_name="Terakhir"),
     )
 
-    # assert
     self.assertIsNone(error, error)
     self.assertEqual("Pertama", result.first_name)
     self.assertEqual("Terakhir", result.last_name)
@@ -293,12 +254,9 @@ Source: [challenge.py](../tests/integration/api/challenge.py)
 def test_get_challenges(self):
     from accelbyte_py_sdk.api.challenge import get_challenges
 
-    # arrange
 
-    # act
     response, error = get_challenges()
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Public Get User Rewards
@@ -307,12 +265,9 @@ def test_get_challenges(self):
 def test_public_get_user_rewards(self):
     from accelbyte_py_sdk.api.challenge import public_get_user_rewards
 
-    # arrange
 
-    # act
     response, error = public_get_user_rewards()
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Challenge And Goal
@@ -363,13 +318,10 @@ Source: [chat.py](../tests/integration/api/chat.py)
 
 ```python
 def test_admin_profanity_create(self):
-    # arrange
 
-    # act
     _, error, profanity_id = self.do_create_profanity(body=self.dict_insert_request)
     self.profanity_id = profanity_id
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Admin Profanity Query
@@ -378,7 +330,6 @@ def test_admin_profanity_create(self):
 def test_admin_profanity_query(self):
     from accelbyte_py_sdk.api.chat import admin_profanity_query
 
-    # arrange
     result, error, profanity_id = self.do_create_profanity(
         body=self.dict_insert_request
     )
@@ -386,10 +337,8 @@ def test_admin_profanity_query(self):
         self.skipTest(reason=f"Failed to set up profanity. {error}")
     self.profanity_id = profanity_id
 
-    # act
     _, error = admin_profanity_query(start_with=self.profanity_prefix)
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Admin Profanity Delete
@@ -398,7 +347,6 @@ def test_admin_profanity_query(self):
 def test_admin_profanity_delete(self):
     from accelbyte_py_sdk.api.chat import admin_profanity_delete
 
-    # arrange
     result, error, profanity_id = self.do_create_profanity(
         body=self.dict_insert_request
     )
@@ -406,10 +354,8 @@ def test_admin_profanity_delete(self):
         self.skipTest(reason=f"Failed to set up profanity. {error}")
     self.profanity_id = profanity_id
 
-    # act
     _, error = admin_profanity_delete(id_=self.profanity_id)
 
-    # assert
     self.assertIsNone(error, error)
     self.profanity_id = None
 ```
@@ -420,7 +366,6 @@ def test_admin_profanity_update(self):
     from accelbyte_py_sdk.api.chat import admin_profanity_update
     from accelbyte_py_sdk.api.chat.models import ModelsDictionaryUpdateRequest
 
-    # arrange
     result, error, profanity_id = self.do_create_profanity(
         body=self.dict_insert_request
     )
@@ -428,7 +373,6 @@ def test_admin_profanity_update(self):
         self.skipTest(reason=f"Failed to set up profanity. {error}")
     self.profanity_id = profanity_id
 
-    # act
     _, error = admin_profanity_update(
         body=ModelsDictionaryUpdateRequest.create_from_dict(
             {
@@ -441,7 +385,6 @@ def test_admin_profanity_update(self):
         id_=self.profanity_id,
     )
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ## Cloud Save
@@ -455,7 +398,6 @@ def test_delete_game_record_handler_v1(self):
     from accelbyte_py_sdk.api.cloudsave import delete_game_record_handler_v1
     from accelbyte_py_sdk.api.cloudsave import post_game_record_handler_v1
 
-    # arrange
     _, error = post_game_record_handler_v1(
         body=self.models_game_record_request, key=self.post_game_record_handler_key
     )
@@ -464,10 +406,8 @@ def test_delete_game_record_handler_v1(self):
         condition=error is not None,
     )
 
-    # act
     _, error = delete_game_record_handler_v1(key=self.post_game_record_handler_key)
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Get Game Record Handler V1
@@ -477,7 +417,6 @@ def test_get_game_record_handler_v1(self):
     from accelbyte_py_sdk.api.cloudsave import get_game_record_handler_v1
     from accelbyte_py_sdk.api.cloudsave import post_game_record_handler_v1
 
-    # arrange
     _, error = post_game_record_handler_v1(
         body=self.models_game_record_request, key=self.post_game_record_handler_key
     )
@@ -486,10 +425,8 @@ def test_get_game_record_handler_v1(self):
         condition=error is not None,
     )
 
-    # act
     _, error = get_game_record_handler_v1(key=self.post_game_record_handler_key)
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Post Game Record Handler V1
@@ -499,15 +436,12 @@ def test_post_game_record_handler_v1(self):
     from accelbyte_py_sdk.api.cloudsave import delete_game_record_handler_v1
     from accelbyte_py_sdk.api.cloudsave import post_game_record_handler_v1
 
-    # arrange
     _, _ = delete_game_record_handler_v1(key=self.post_game_record_handler_key)
 
-    # act
     _, error = post_game_record_handler_v1(
         body=self.models_game_record_request, key=self.post_game_record_handler_key
     )
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Put Game Record Handler V1
@@ -520,7 +454,6 @@ def test_put_game_record_handler_v1(self):
     from accelbyte_py_sdk.api.cloudsave.models import ModelsGameRecordRequest
     from accelbyte_py_sdk.api.cloudsave.models import ModelsGameRecordResponse
 
-    # arrange
     _, error = post_game_record_handler_v1(
         body=self.models_game_record_request, key=self.post_game_record_handler_key
     )
@@ -529,13 +462,11 @@ def test_put_game_record_handler_v1(self):
         condition=error is not None,
     )
 
-    # act
     _, error = put_game_record_handler_v1(
         body=ModelsGameRecordRequest.create(dict_={"foo": "baz"}),
         key=self.post_game_record_handler_key,
     )
 
-    # assert
     self.assertIsNone(error, error)
 
     result, error = get_game_record_handler_v1(
@@ -556,7 +487,6 @@ def test_delete_player_record_handler_v1(self):
 
     self.user_id = self.get_user_id()
 
-    # arrange
     _, error = post_player_record_handler_v1(
         body=self.models_player_record_request,
         key=self.post_player_record_handler_key,
@@ -567,12 +497,10 @@ def test_delete_player_record_handler_v1(self):
         condition=error is not None,
     )
 
-    # act
     _, error = delete_player_record_handler_v1(
         key=self.post_player_record_handler_key, user_id=self.user_id
     )
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Create Player Record Handler V1
@@ -583,7 +511,6 @@ def test_create_player_record_handler_v1(self):
 
     self.user_id = self.get_user_id()
 
-    # act
     _, error = post_player_record_handler_v1(
         body=self.models_player_record_request,
         key=self.post_player_record_handler_key,
@@ -594,7 +521,6 @@ def test_create_player_record_handler_v1(self):
         condition=error is not None,
     )
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Get Player Record Handler V1
@@ -606,7 +532,6 @@ def test_get_player_record_handler_v1(self):
 
     self.user_id = self.get_user_id()
 
-    # arrange
     _, error = post_player_record_handler_v1(
         body=self.models_player_record_request,
         key=self.post_player_record_handler_key,
@@ -617,12 +542,10 @@ def test_get_player_record_handler_v1(self):
         condition=error is not None,
     )
 
-    # act
     _, error = get_player_record_handler_v1(
         key=self.post_player_record_handler_key, user_id=self.user_id
     )
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Put Player Record Handler V1
@@ -637,7 +560,6 @@ def test_put_player_record_handler_v1(self):
 
     self.user_id = self.get_user_id()
 
-    # arrange
     _, error = post_player_record_handler_v1(
         body=self.models_player_record_request,
         key=self.post_player_record_handler_key,
@@ -648,14 +570,12 @@ def test_put_player_record_handler_v1(self):
         condition=error is not None,
     )
 
-    # act
     _, error = put_player_record_handler_v1(
         body=ModelsPlayerRecordRequest.create(dict_={"foo": "baz"}),
         key=self.post_player_record_handler_key,
         user_id=self.user_id,
     )
 
-    # assert
     self.assertIsNone(error, error)
 
     result, error = get_player_record_handler_v1(
@@ -852,18 +772,13 @@ Source: [gametelemetry.py](../tests/integration/api/gametelemetry.py)
 
 ```python
 def test_save_events_v1(self):
-    if self.using_ags_starter:
-        self.skipTest(reason="Test not applicable to AGS Starter.")
 
-    from datetime import datetime
     from accelbyte_py_sdk.api.gametelemetry import (
         protected_save_events_game_telemetry_v1_protected_events_post,
     )
     from accelbyte_py_sdk.api.gametelemetry.models import TelemetryBody
 
-    # arrange
 
-    # act
     result, error = protected_save_events_game_telemetry_v1_protected_events_post(
         body=[
             TelemetryBody.create(
@@ -874,7 +789,6 @@ def test_save_events_v1(self):
         ]
     )
 
-    # assert
     self.assertIsNone(error)
 ```
 ## GDPR
@@ -885,12 +799,9 @@ Source: [gdpr.py](../tests/integration/api/gdpr.py)
 
 ```python
 def test_admin_get_user_personal_data_requests(self):
-    if self.using_ags_starter:
-        self.skipTest(reason="Test not applicable to AGS Starter.")
 
     from accelbyte_py_sdk.api.gdpr import admin_get_user_personal_data_requests
 
-    # arrange
     _, error, user_id = self.do_create_user(
         body=self.model_user_create_request, namespace=self.user_namespace
     )
@@ -899,25 +810,20 @@ def test_admin_get_user_personal_data_requests(self):
 
     self.user_id = user_id
 
-    # act
     _, error = admin_get_user_personal_data_requests(
         user_id=self.user_id, namespace=self.user_namespace
     )
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Admin Submit User Account Deletion Request
 
 ```python
 def test_admin_submit_user_account_deletion_request(self):
-    if self.using_ags_starter:
-        self.skipTest(reason="Test not applicable to AGS Starter.")
 
     from accelbyte_py_sdk.api.gdpr import admin_submit_user_account_deletion_request
     from accelbyte_py_sdk.api.gdpr import admin_cancel_user_account_deletion_request
 
-    # arrange
     _, error, user_id = self.do_create_user(
         body=self.model_user_create_request, namespace=self.user_namespace
     )
@@ -926,12 +832,10 @@ def test_admin_submit_user_account_deletion_request(self):
 
     self.user_id = user_id
 
-    # act
     _, error = admin_submit_user_account_deletion_request(
         user_id=self.user_id, namespace=self.user_namespace
     )
 
-    # assert
     self.assertIsNone(error, error)
 
     # clean up
@@ -946,13 +850,10 @@ def test_admin_submit_user_account_deletion_request(self):
 
 ```python
 def test_delete_admin_email_configuration(self):
-    if self.using_ags_starter:
-        self.skipTest(reason="Test not applicable to AGS Starter.")
 
     from accelbyte_py_sdk.api.gdpr import delete_admin_email_configuration
     from accelbyte_py_sdk.api.gdpr import save_admin_email_configuration
 
-    # arrange
     _, error = save_admin_email_configuration(
         body=[self.model_user_create_request.email_address]
     )
@@ -962,12 +863,10 @@ def test_delete_admin_email_configuration(self):
     )
     self.did_configure = error is None
 
-    # act
     _, error = delete_admin_email_configuration(
         emails=[self.model_user_create_request.email_address]
     )
 
-    # assert
     self.assertIsNone(error, error)
     self.did_configure = error is not None
 ```
@@ -975,13 +874,10 @@ def test_delete_admin_email_configuration(self):
 
 ```python
 def test_get_admin_email_configuration(self):
-    if self.using_ags_starter:
-        self.skipTest(reason="Test not applicable to AGS Starter.")
 
     from accelbyte_py_sdk.api.gdpr import get_admin_email_configuration
     from accelbyte_py_sdk.api.gdpr import save_admin_email_configuration
 
-    # arrange
     _, error = save_admin_email_configuration(
         body=[self.model_user_create_request.email_address]
     )
@@ -991,47 +887,37 @@ def test_get_admin_email_configuration(self):
     )
     self.did_configure = error is None
 
-    # act
     _, error = get_admin_email_configuration()
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Save Admin Email Configuration
 
 ```python
 def test_save_admin_email_configuration(self):
-    if self.using_ags_starter:
-        self.skipTest(reason="Test not applicable to AGS Starter.")
 
     from accelbyte_py_sdk.api.gdpr import delete_admin_email_configuration
     from accelbyte_py_sdk.api.gdpr import save_admin_email_configuration
 
-    # arrange
     _, _ = delete_admin_email_configuration(
         emails=[self.model_user_create_request.email_address]
     )
 
-    # act
     _, error = save_admin_email_configuration(
         body=[self.model_user_create_request.email_address]
     )
     self.did_configure = error is None
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Update Admin Email Configuration
 
 ```python
 def test_update_admin_email_configuration(self):
-    if self.using_ags_starter:
-        self.skipTest(reason="Test not applicable to AGS Starter.")
 
     from accelbyte_py_sdk.api.gdpr import save_admin_email_configuration
     from accelbyte_py_sdk.api.gdpr import update_admin_email_configuration
 
-    # arrange
     _, error = save_admin_email_configuration(
         body=[self.model_user_create_request.email_address]
     )
@@ -1041,13 +927,11 @@ def test_update_admin_email_configuration(self):
     )
     self.did_configure = error is None
 
-    # act
     _, error = update_admin_email_configuration(
         body=[self.model_user_create_request.email_address]
     )
     self.did_configure = error is None
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ## Group
@@ -1058,16 +942,13 @@ Source: [group.py](../tests/integration/api/group.py)
 
 ```python
 def test_create_new_group_public_v1(self):
-    # arrange
 
-    # act
     _, error, group_id = self.do_create_new_group_public_v1(
         body=self.models_public_create_new_group_request_v1,
         namespace=self.group_namespace,
     )
     self.group_id = group_id
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Delete Group Public V1
@@ -1076,7 +957,6 @@ def test_create_new_group_public_v1(self):
 def test_delete_group_public_v1(self):
     from accelbyte_py_sdk.api.group import delete_group_public_v1
 
-    # arrange
     _, error, group_id = self.do_create_new_group_public_v1(
         body=self.models_public_create_new_group_request_v1,
         namespace=self.group_namespace,
@@ -1086,12 +966,10 @@ def test_delete_group_public_v1(self):
     )
     self.group_id = group_id
 
-    # act
     _, error = delete_group_public_v1(
         group_id=self.group_id, namespace=self.group_namespace
     )
 
-    # assert
     self.assertIsNone(error, error)
     self.group_id = None
 ```
@@ -1101,7 +979,6 @@ def test_delete_group_public_v1(self):
 def test_get_single_group_public_v1(self):
     from accelbyte_py_sdk.api.group import get_single_group_public_v1
 
-    # arrange
     _, error, group_id = self.do_create_new_group_public_v1(
         body=self.models_public_create_new_group_request_v1,
         namespace=self.group_namespace,
@@ -1111,12 +988,10 @@ def test_get_single_group_public_v1(self):
     )
     self.group_id = group_id
 
-    # act
     _, error = get_single_group_public_v1(
         group_id=self.group_id, namespace=self.group_namespace
     )
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Update Single Group V1
@@ -1129,7 +1004,6 @@ def test_update_single_group_v1(self):
         ModelsUpdateGroupRequestV1CustomAttributes,
     )
 
-    # arrange
     _, error, group_id = self.do_create_new_group_public_v1(
         body=self.models_public_create_new_group_request_v1,
         namespace=self.group_namespace,
@@ -1139,7 +1013,6 @@ def test_update_single_group_v1(self):
     )
     self.group_id = group_id
 
-    # act
     result, error = update_single_group_v1(
         body=ModelsUpdateGroupRequestV1.create(
             custom_attributes=ModelsUpdateGroupRequestV1CustomAttributes.create(
@@ -1155,7 +1028,6 @@ def test_update_single_group_v1(self):
         namespace=self.group_namespace,
     )
 
-    # assert
     self.assertIsNone(error, error)
     self.assertIsNotNone(result)
     self.assertIsInstance(result, ModelsGroupResponseV1)
@@ -1170,13 +1042,10 @@ Source: [iam.py](../tests/integration/api/iam.py)
 
 ```python
 def test_create_user(self):
-    # arrange
 
-    # act
     _, error, user_id = self.do_create_user(body=self.model_user_create_request)
     self.user_id = user_id
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Delete User
@@ -1185,17 +1054,14 @@ def test_create_user(self):
 def test_delete_user(self):
     from accelbyte_py_sdk.api.iam import admin_delete_user_information_v3
 
-    # arrange
     _, error, user_id = self.do_create_user(body=self.model_user_create_request)
     self.log_warning(
         msg=f"Failed to set up user. {str(error)}", condition=error is not None
     )
     self.user_id = user_id
 
-    # act
     _, error = admin_delete_user_information_v3(user_id=self.user_id)
 
-    # assert
     self.assertIsNone(error, error)
     self.user_id = None
 ```
@@ -1205,17 +1071,14 @@ def test_delete_user(self):
 def test_admin_get_user_by_user_id_v3(self):
     from accelbyte_py_sdk.api.iam import admin_get_user_by_user_id_v3
 
-    # arrange
     _, error, user_id = self.do_create_user(body=self.model_user_create_request)
     self.log_warning(
         msg=f"Failed to set up user. {str(error)}", condition=error is not None
     )
     self.user_id = user_id
 
-    # act
     _, error = admin_get_user_by_user_id_v3(user_id=self.user_id)
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Admin List Users V3
@@ -1224,17 +1087,14 @@ def test_admin_get_user_by_user_id_v3(self):
 def test_admin_list_users_v3(self):
     from accelbyte_py_sdk.api.iam import admin_list_users_v3
 
-    # arrange
     _, error, user_id = self.do_create_user(body=self.model_user_create_request)
     self.log_warning(
         msg=f"Failed to set up user. {str(error)}", condition=error is not None
     )
     self.user_id = user_id
 
-    # act
     result, error = admin_list_users_v3()
 
-    # assert
     self.assertIsNone(error, error)
     self.assertIsNotNone(result)
 ```
@@ -1247,19 +1107,16 @@ def test_admin_update_user_v4(self):
     from accelbyte_py_sdk.api.iam.models import ModelUserResponseV3
     from accelbyte_py_sdk.api.iam.models import ModelUserUpdateRequestV3
 
-    # arrange
     _, error, user_id = self.do_create_user(body=self.model_user_create_request)
     self.log_warning(
         msg=f"Failed to set up user. {str(error)}", condition=error is not None
     )
     self.user_id = user_id
 
-    # act
     result, error = admin_update_user_v4(
         body=ModelUserUpdateRequestV3.create(country="ID"), user_id=self.user_id
     )
 
-    # assert
     self.assertIsNone(error, error)
     self.assertIsNotNone(result)
     self.assertIsInstance(result, ModelUserResponseV3)
@@ -1276,7 +1133,6 @@ def test_token_grant_v3(self):
     from accelbyte_py_sdk.core import get_client_id
     from accelbyte_py_sdk.core import get_env_user_credentials
 
-    # arrange
     client_id, error = get_client_id()
     self.assertIsNone(error, error)
 
@@ -1307,7 +1163,6 @@ def test_token_grant_v3(self):
     self.assertIsNone(error, error)
     self.assertIsNotNone(code)
 
-    # act
     _, error = token_grant_v3(
         grant_type="authorization_code",
         code=code,
@@ -1315,7 +1170,6 @@ def test_token_grant_v3(self):
         redirect_uri="",
     )
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### User Authentication V3
@@ -1328,7 +1182,6 @@ def test_user_authentication_v3(self):
     from accelbyte_py_sdk.core import get_client_id
     from accelbyte_py_sdk.core import get_env_user_credentials
 
-    # arrange
     client_id, error = get_client_id()
     self.assertIsNone(error, error)
 
@@ -1350,7 +1203,6 @@ def test_user_authentication_v3(self):
 
     username, password = get_env_user_credentials()
 
-    # act
     _, error = user_authentication_v3(
         user_name=username,
         password=password,
@@ -1358,7 +1210,6 @@ def test_user_authentication_v3(self):
         client_id=client_id,
     )
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Authorize V3
@@ -1369,7 +1220,6 @@ def test_authorize_v3(self):
     from accelbyte_py_sdk.core import create_pkce_verifier_and_challenge_s256
     from accelbyte_py_sdk.core import get_client_id
 
-    # arrange
     client_id, error = get_client_id()
     self.assertIsNone(error, error)
 
@@ -1379,7 +1229,6 @@ def test_authorize_v3(self):
         code_challenge_method,
     ) = create_pkce_verifier_and_challenge_s256()
 
-    # act
     _, error = authorize_v3(
         response_type="code",
         client_id=client_id,
@@ -1388,24 +1237,19 @@ def test_authorize_v3(self):
         code_challenge_method=code_challenge_method,
     )
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Admin Download My Backup Codes V4
 
 ```python
 def test_admin_download_my_backup_codes_v4(self):
-    if self.using_ags_starter:
-        self.skipTest(reason="Test not applicable to AGS Starter.")
 
     from accelbyte_py_sdk.api.iam import admin_download_my_backup_codes_v4
     from accelbyte_py_sdk.api.iam.models import RestErrorResponse
 
-    # arrange
     exported_file_path = Path(self.exported_filename)
     exported_file_path.unlink(missing_ok=True)
 
-    # act
     result, error = admin_download_my_backup_codes_v4()
     if error and isinstance(error, RestErrorResponse):
         if error.error_code == 10191:  # email not verified
@@ -1416,7 +1260,6 @@ def test_admin_download_my_backup_codes_v4(self):
     if result is not None:
         exported_file_path.write_bytes(result)
 
-    # assert
     self.assertIsNone(error, error)
     self.assertTrue(exported_file_path.exists())
     self.assertGreater(exported_file_path.stat().st_size, 0)
@@ -1425,17 +1268,13 @@ def test_admin_download_my_backup_codes_v4(self):
 
 ```python
 def test_public_download_my_backup_codes_v4(self):
-    if self.using_ags_starter:
-        self.skipTest(reason="Test not applicable to AGS Starter.")
 
     from accelbyte_py_sdk.api.iam import public_download_my_backup_codes_v4
     from accelbyte_py_sdk.api.iam.models import RestErrorResponse
 
-    # arrange
     exported_file_path = Path(self.exported_filename)
     exported_file_path.unlink(missing_ok=True)
 
-    # act
     result, error = public_download_my_backup_codes_v4()
     if error and isinstance(error, RestErrorResponse):
         if error.error_code == 10191:  # email not verified
@@ -1446,7 +1285,6 @@ def test_public_download_my_backup_codes_v4(self):
     if result is not None:
         exported_file_path.write_bytes(result)
 
-    # assert
     self.assertIsNone(error, error)
     self.assertTrue(exported_file_path.exists())
     self.assertGreater(exported_file_path.stat().st_size, 0)
@@ -1455,13 +1293,10 @@ def test_public_download_my_backup_codes_v4(self):
 
 ```python
 def test_role_override(self):
-    if self.using_ags_starter:
-        self.skipTest(reason="Test not applicable to AGS Starter.")
 
     from accelbyte_py_sdk.api import iam as iam_service
     from accelbyte_py_sdk.api.iam import models as iam_models
 
-    # arrange
     role_identity_to_update: str = "USER"
     resource_to_check: str = "NAMESPACE:{namespace}:PROFILE"
     action_to_check: int = 7
@@ -1485,7 +1320,6 @@ def test_role_override(self):
 
         return result_action_
 
-    # act & assert
     result, error = iam_service.admin_get_roles_v4(admin_role=False)
     self.assertIsNone(error, error)
     self.assertTrue(result.data, result.data)
@@ -1519,7 +1353,6 @@ def test_role_override(self):
     )
     self.assertIsNone(error, error)
 
-    # activate role override
     result, error = iam_service.admin_change_role_override_config_status_v3(
         body=iam_models.ModelRoleOverrideStatsUpdateRequest.create(
             active=True,
@@ -1563,7 +1396,6 @@ Source: [inventory.py](../tests/integration/api/inventory.py)
 
 ```python
 def test_inventory_crud(self):
-    # arrange - inventory configuration
 
     inventory_config = self.do_create_inventory_config()
 
@@ -1573,7 +1405,6 @@ def test_inventory_crud(self):
     )
     self.user_id = user_id
 
-    # act - create inventory
 
     body = (
         ApimodelsCreateInventoryReq()
@@ -1582,12 +1413,10 @@ def test_inventory_crud(self):
     )
     result, error = admin_create_inventory(body=body, namespace=self.namespace)
 
-    # assert - create inventory
 
     self.assertIsNone(error, error)
     self.assertIsNotNone(result)
 
-    # act - update inventory
 
     inventory_id = result.id_
     body = ApimodelsUpdateInventoryReq().with_inc_max_slots(2)
@@ -1595,23 +1424,19 @@ def test_inventory_crud(self):
         body=body, inventory_id=inventory_id, namespace=self.namespace
     )
 
-    # assert - update inventory
 
     self.assertIsNone(error, error)
     self.assertIsNotNone(result)
 
-    # act - get inventory
 
     result, error = admin_get_inventory(
         inventory_id=inventory_id, namespace=self.namespace
     )
 
-    # assert - get inventory
 
     self.assertIsNone(error, error)
     self.assertIsNotNone(result)
 
-    # act - delete inventory
 
     _, error = delete_inventory(
         body=ApimodelsDeleteInventoryReq.create(message="deleting"),
@@ -1619,7 +1444,6 @@ def test_inventory_crud(self):
         namespace=self.namespace,
     )
 
-    # assert - delete inventory
 
     self.assertIsNone(error, error)
 
@@ -1638,15 +1462,12 @@ def test_create_leaderboard_configuration_admin_v1(self):
         create_leaderboard_configuration_admin_v1,
     )
 
-    # arrange
     self.init_leaderboard_config()
 
-    # act
     _, error = create_leaderboard_configuration_admin_v1(
         body=self.models_leaderboard_config_req
     )
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Delete Leaderboard Configuration Admin V1
@@ -1660,19 +1481,16 @@ def test_delete_leaderboard_configuration_admin_v1(self):
         delete_leaderboard_configuration_admin_v1,
     )
 
-    # arrange
     self.init_leaderboard_config()
     _, error = create_leaderboard_configuration_admin_v1(
         body=self.models_leaderboard_config_req
     )
     self.assertIsNone(error, error)
 
-    # act
     _, error = delete_leaderboard_configuration_admin_v1(
         leaderboard_code=self.models_leaderboard_config_req.leaderboard_code
     )
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Get Leaderboard Configuration Admin V1
@@ -1686,19 +1504,16 @@ def test_get_leaderboard_configuration_admin_v1(self):
         get_leaderboard_configuration_admin_v1,
     )
 
-    # arrange
     self.init_leaderboard_config()
     _, error = create_leaderboard_configuration_admin_v1(
         body=self.models_leaderboard_config_req
     )
     self.assertIsNone(error, error)
 
-    # act
     _, error = get_leaderboard_configuration_admin_v1(
         leaderboard_code=self.models_leaderboard_config_req.leaderboard_code
     )
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Update User
@@ -1718,14 +1533,12 @@ def test_update_user(self):
         ModelsUpdateLeaderboardConfigReq,
     )
 
-    # arrange
     self.init_leaderboard_config()
     _, error = create_leaderboard_configuration_admin_v1(
         body=self.models_leaderboard_config_req
     )
     self.assertIsNone(error, error)
 
-    # act
     result, error = update_leaderboard_configuration_admin_v1(
         body=ModelsUpdateLeaderboardConfigReq.create(
             daily=self.models_leaderboard_config_req.daily,
@@ -1741,7 +1554,6 @@ def test_update_user(self):
         leaderboard_code=self.models_leaderboard_config_req.leaderboard_code,
     )
 
-    # assert
     self.assertIsNone(error, error)
     self.assertIsNotNone(result)
     self.assertIsInstance(result, ModelsGetLeaderboardConfigResp)
@@ -1761,7 +1573,6 @@ def test_bulk_accept_versioned_policy(self):
     from accelbyte_py_sdk.api.legal.models import LocalizedPolicyVersionObject
     from accelbyte_py_sdk.api.legal.models import RetrieveAcceptedAgreementResponse
 
-    # arrange
     result, error = retrieve_agreements_public()
     self.assertIsNotNone(result)
     self.assertIsInstance(result, list)
@@ -1790,10 +1601,8 @@ def test_bulk_accept_versioned_policy(self):
         policy_version_id=policy_id,
     )
 
-    # act
     _, error = bulk_accept_versioned_policy(body=[accept_agreement_request])
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Change Preference Consent
@@ -1806,7 +1615,6 @@ def test_change_preference_consent(self):
     from accelbyte_py_sdk.api.legal.models import LocalizedPolicyVersionObject
     from accelbyte_py_sdk.api.legal.models import RetrieveAcceptedAgreementResponse
 
-    # arrange
     result, error = retrieve_agreements_public()
     self.assertIsNotNone(result)
     self.assertIsInstance(result, list)
@@ -1849,12 +1657,10 @@ def test_change_preference_consent(self):
     )
     self.user_id = user_id
 
-    # act
     _, error = change_preference_consent(
         user_id=self.user_id, body=[accept_agreement_request]
     )
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Retrieve Agreements Public
@@ -1863,13 +1669,10 @@ def test_change_preference_consent(self):
 def test_retrieve_agreements_public(self):
     from accelbyte_py_sdk.api.legal import retrieve_agreements_public
 
-    # arrange
 
-    # act
     result, error = retrieve_agreements_public()
     self.assertIsNone(error, error)
 
-    # assert
     self.assertIsNotNone(result)
     self.assertIsInstance(result, list)
 ```
@@ -2020,16 +1823,13 @@ def test_free_form_notification(self):
     from accelbyte_py_sdk.api.lobby import free_form_notification
     from accelbyte_py_sdk.api.lobby.models import ModelFreeFormNotificationRequest
 
-    # arrange
 
-    # act
     _, error = free_form_notification(
         body=ModelFreeFormNotificationRequest.create(
             message="MESSAGE", topic="TOPIC"
         )
     )
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Admin Export Config V1
@@ -2038,17 +1838,14 @@ def test_free_form_notification(self):
 def test_admin_export_config_v1(self):
     from accelbyte_py_sdk.api.lobby import admin_export_config_v1
 
-    # arrange
     exported_file_path = Path(self.exported_filename)
     exported_file_path.unlink(missing_ok=True)
 
-    # act
     result, error = admin_export_config_v1()
 
     if result is not None:
         exported_file_path.write_bytes(result)
 
-    # assert
     self.assertIsNone(error, error)
     self.assertTrue(exported_file_path.exists())
     self.assertGreater(exported_file_path.stat().st_size, 0)
@@ -2060,9 +1857,7 @@ async def test_send_and_receive_notifications(self):
     from accelbyte_py_sdk.api.lobby.wss_models import PartyCreateRequest
     from accelbyte_py_sdk.api.lobby.wss_models import parse_wsm
 
-    # arrange
 
-    # act
     party_create_request = PartyCreateRequest()
     party_create_request_wsm = party_create_request.to_wsm()
     await self.ws_client.send(party_create_request_wsm)
@@ -2086,7 +1881,6 @@ async def test_send_and_receive_notifications(self):
         if elapsed > timeout:
             break
 
-    # assert
     self.assertIsNotNone(wsm)
     self.assertIsNotNone(wsm_type)
     self.assertEqual("partyCreateResponse", wsm_type)
@@ -2099,7 +1893,6 @@ async def test_refresh_token_request(self):
     from accelbyte_py_sdk.services.auth import refresh_login_async
     from accelbyte_py_sdk.api.lobby.wss_models import parse_wsm
 
-    # arrange
     generate_user_result, error = self.generate_user()
     if error:
         self.skipTest(reason=f"unable to create user: {error}")
@@ -2126,7 +1919,6 @@ async def test_refresh_token_request(self):
     self.assertTrue(old_access_token)
     self.assertTrue(refresh_token)
 
-    # act
     result, error = await refresh_login_async(refresh_token, sdk=user_sdk)
     if error:
         self.fail(error)
@@ -2157,7 +1949,6 @@ async def test_refresh_token_request(self):
             )
             break
 
-    # assert
     self.assertTrue(new_access_token)
     self.assertNotEqual(old_access_token, new_access_token)
     self.assertIsNotNone(wsm)
@@ -2175,32 +1966,23 @@ Source: [loginqueue.py](../tests/integration/api/loginqueue.py)
 
 ```python
 def test_admin_get_configuration(self):
-    if self.using_ags_starter:
-        self.skipTest(reason="Test not applicable to AGS Starter.")
 
     from accelbyte_py_sdk.api.loginqueue import admin_get_configuration
 
-    # arrange
 
-    # act
     config, error = admin_get_configuration()
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Admin Update Configuration
 
 ```python
 def test_admin_update_configuration(self):
-    if self.using_ags_starter:
-        self.skipTest(reason="Test not applicable to AGS Starter.")
 
     from accelbyte_py_sdk.api.loginqueue import admin_update_configuration
     from accelbyte_py_sdk.api.loginqueue.models import ApimodelsConfigurationRequest
 
-    # arrange
 
-    # act
     config, error = admin_update_configuration(
         body=ApimodelsConfigurationRequest.create_from_dict(
             {
@@ -2209,7 +1991,6 @@ def test_admin_update_configuration(self):
         )
     )
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ## Match V2
@@ -2223,11 +2004,9 @@ def test_create_and_get_ruleset(self):
     from accelbyte_py_sdk.core import generate_id
     from accelbyte_py_sdk.api.match2 import rule_set_details
 
-    # arrange
     rid = generate_id(8)
     rule_set_name = f"python_sdk_ruleset_{rid}"
 
-    # act
     error = Match2TestCase.do_create_rule_set(rule_set_name=rule_set_name)
     if error:
         self.skipTest(reason=f"Unable to create rule set: {error}")
@@ -2237,7 +2016,6 @@ def test_create_and_get_ruleset(self):
 
     result, error = rule_set_details(ruleset=rule_set_name)
 
-    # assert
     self.assertIsNone(error, error)
     self.assertEqual(rule_set_name, result.name)
 ```
@@ -2248,13 +2026,11 @@ def test_create_and_get_match_pool(self):
     from accelbyte_py_sdk.core import generate_id
     from accelbyte_py_sdk.api.match2 import rule_set_details
 
-    # arrange
     rid = generate_id(8)
     match_pool_name = f"python_sdk_pool_{rid}"
     rule_set_name = f"python_sdk_ruleset_{rid}"
     session_template_name = f"python_sdk_template_{rid}"
 
-    # act
     pre_error, error = self.do_create_match_pool(
         match_pool_name=match_pool_name,
         rule_set_name=rule_set_name,
@@ -2269,7 +2045,6 @@ def test_create_and_get_match_pool(self):
 
     result, error = rule_set_details(ruleset=rule_set_name)
 
-    # assert
     self.assertIsNone(error, error)
     self.assertEqual(rule_set_name, result.name)
 ```
@@ -2280,13 +2055,11 @@ def test_create_match_pool(self):
     from accelbyte_py_sdk.core import generate_id
     from accelbyte_py_sdk.api.match2 import match_pool_details
 
-    # arrange
     rid = generate_id(8)
     match_pool_name = f"python_sdk_pool_{rid}"
     rule_set_name = f"python_sdk_ruleset_{rid}"
     session_template_name = f"python_sdk_template_{rid}"
 
-    # act
     pre_error, error = self.do_create_match_pool(
         match_pool_name=match_pool_name,
         rule_set_name=rule_set_name,
@@ -2301,7 +2074,6 @@ def test_create_match_pool(self):
 
     result, error = match_pool_details(pool=match_pool_name)
 
-    # assert
     self.assertIsNone(error, error)
     self.assertEqual(match_pool_name, result.name)
 ```
@@ -2312,7 +2084,6 @@ def test_delete_match_pool(self):
     from accelbyte_py_sdk.core import generate_id
     from accelbyte_py_sdk.api.match2 import delete_match_pool
 
-    # arrange
     rid = generate_id(8)
     match_pool_name = f"python_sdk_pool_{rid}"
     rule_set_name = f"python_sdk_ruleset_{rid}"
@@ -2331,12 +2102,10 @@ def test_delete_match_pool(self):
         self.rule_set_name = rule_set_name
         self.session_template_name = session_template_name
 
-    # act
     _, error = delete_match_pool(pool=match_pool_name)
     if error is None:
         self.match_pool_name = None
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Create Delete Match Ticket
@@ -2350,7 +2119,6 @@ def test_create_delete_match_ticket(self):
     import accelbyte_py_sdk.api.session as session_service
     import accelbyte_py_sdk.api.session.models as session_models
 
-    # arrange
     rid = generate_id(8)
     match_pool_name = f"python_sdk_pool_{rid}"
     rule_set_name = f"python_sdk_ruleset_{rid}"
@@ -2403,7 +2171,6 @@ def test_create_delete_match_ticket(self):
     if not (party_id := getattr(result, "id_", None)):
         self.skipTest(reason=f"unable to find party id: {error}")
 
-    # act & assert (create_match_ticket)
     result, error = match2_service.create_match_ticket(
         body=match2_models.ApiMatchTicketRequest.create_from_dict(
             {
@@ -2419,7 +2186,6 @@ def test_create_delete_match_ticket(self):
     if not (match_ticket_id := getattr(result, "match_ticket_id", None)):
         self.fail(msg="unable to find match ticket id")
 
-    # act & assert (delete_match_ticket)
     _, error = match2_service.delete_match_ticket(
         ticketid=match_ticket_id,
         sdk=user_sdk,
@@ -2427,7 +2193,6 @@ def test_create_delete_match_ticket(self):
 
     self.assertIsNone(error, error)
 
-    # act & assert (public_party_leave)
     _, error = session_service.public_party_leave(
         party_id=party_id,
         sdk=user_sdk,
@@ -2441,12 +2206,9 @@ def test_create_delete_match_ticket(self):
 def test_match_pool_list(self):
     from accelbyte_py_sdk.api.match2 import match_pool_list
 
-    # arrange
 
-    # act
     _, error = match_pool_list()
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Match Function List
@@ -2455,12 +2217,9 @@ def test_match_pool_list(self):
 def test_match_function_list(self):
     from accelbyte_py_sdk.api.match2 import match_function_list
 
-    # arrange
 
-    # act
     result, error = match_function_list()
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ## Platform
@@ -2471,13 +2230,10 @@ Source: [platformx.py](../tests/integration/api/platformx.py)
 
 ```python
 def test_create_store(self):
-    # arrange
 
-    # act
     _, error, store_id = self.do_create_store(body=self.store_create)
     self.store_id = store_id
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Delete Store
@@ -2486,17 +2242,14 @@ def test_create_store(self):
 def test_delete_store(self):
     from accelbyte_py_sdk.api.platform import delete_store
 
-    # arrange
     _, error, store_id = self.do_create_store(body=self.store_create)
     self.log_warning(
         msg=f"Failed to set up store. {str(error)}", condition=error is not None
     )
     self.store_id = store_id
 
-    # act
     _, error = delete_store(store_id=self.store_id)
 
-    # assert
     self.assertIsNone(error, error)
     self.store_id = None
 ```
@@ -2508,28 +2261,22 @@ def test_export_import_rewards(self):
     from accelbyte_py_sdk.api.platform import export_rewards
     from accelbyte_py_sdk.api.platform import import_rewards
 
-    # arrange 1
     exported_file_path = Path(self.exported_filename)
     exported_file_path.unlink(missing_ok=True)
 
-    # act 1
     result, error = export_rewards()
 
     if result is not None:
         exported_file_path.write_bytes(result)
 
-    # assert 1
     self.assertIsNone(error, error)
     self.assertTrue(exported_file_path.exists())
     self.assertGreater(exported_file_path.stat().st_size, 0)
 
-    # arrange 2
 
-    # act 2
     with open(file=str(exported_file_path)) as file:
         result, error = import_rewards(replace_existing=True, file=file)
 
-    # assert 3
     self.assertIsNone(error, error)
 ```
 ### Export Store
@@ -2540,7 +2287,6 @@ def test_export_store(self):
     from accelbyte_py_sdk.api.platform import export_store_1
     from accelbyte_py_sdk.api.platform.models import ExportStoreRequest
 
-    # arrange
     exported_file_path = Path(self.exported_filename)
     exported_file_path.unlink(missing_ok=True)
 
@@ -2549,13 +2295,11 @@ def test_export_store(self):
         self.skipTest(reason=f"Failed to create store. {str(error)}")
     self.store_id = store_id
 
-    # act
     result, error = export_store_1(store_id=store_id)
 
     if result is not None:
         exported_file_path.write_bytes(result)
 
-    # assert
     self.assertIsNone(error, error)
     self.assertTrue(exported_file_path.exists())
     self.assertGreater(exported_file_path.stat().st_size, 0)
@@ -2566,17 +2310,14 @@ def test_export_store(self):
 def test_get_store(self):
     from accelbyte_py_sdk.api.platform import get_store
 
-    # arrange
     _, error, store_id = self.do_create_store(body=self.store_create)
     self.log_warning(
         msg=f"Failed to set up store. {str(error)}", condition=error is not None
     )
     self.store_id = store_id
 
-    # act
     _, error = get_store(store_id=self.store_id)
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Import Store
@@ -2587,7 +2328,6 @@ def test_import_store(self):
     from accelbyte_py_sdk.api.platform import export_store_1
     from accelbyte_py_sdk.api.platform import import_store_1
 
-    # arrange
     exported_file_path = Path(self.exported_filename)
     exported_file_path.unlink(missing_ok=True)
 
@@ -2606,11 +2346,9 @@ def test_import_store(self):
     if not exported_file_path.exists():
         self.skipTest(reason="Failed to save exported store.")
 
-    # act
     with exported_file_path.open("rb") as exported_file:
         result, error = import_store_1(file=exported_file, store_id=store_id)
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Update Store
@@ -2621,19 +2359,16 @@ def test_update_store(self):
     from accelbyte_py_sdk.api.platform.models import StoreInfo
     from accelbyte_py_sdk.api.platform.models import StoreUpdate
 
-    # arrange
     _, error, store_id = self.do_create_store(body=self.store_create)
     self.log_warning(
         msg=f"Failed to set up store. {str(error)}", condition=error is not None
     )
     self.store_id = store_id
 
-    # act
     result, error = update_store(
         store_id=self.store_id, body=StoreUpdate.create(title="JUDUL")
     )
 
-    # assert
     self.assertIsNone(error, error)
     self.assertIsNotNone(result)
     self.assertIsInstance(result, StoreInfo)
@@ -2648,15 +2383,12 @@ Source: [seasonpass.py](../tests/integration/api/seasonpass.py)
 
 ```python
 def test_season_crud(self):
-    # arrange - store
 
     seasonStore = self.do_get_store()
 
-    # arrange - store tier item id
 
     seasonStoreItemTier = self.do_get_store_tier_item(seasonStore.store_id)
 
-    # act - create season
 
     seasonName = "PythonServerSDKTestSeason"
     seasonRequiredExp = 100
@@ -2675,12 +2407,10 @@ def test_season_crud(self):
     )
     result, error = create_season(namespace=self.namespace, body=body)
 
-    # assert - create season
 
     self.assertIsNone(error, error)
     self.assertIsNotNone(result)
 
-    # act - update season
 
     seasonId = result.id_
     updatedSeasonName = "UpdatedPythonServerSDKTestSeason"
@@ -2689,26 +2419,21 @@ def test_season_crud(self):
         namespace=self.namespace, season_id=seasonId, body=body
     )
 
-    # assert - update season
 
     self.assertIsNone(error, error)
     self.assertIsNotNone(result)
 
-    # act - get season
 
     result, error = get_season(namespace=self.namespace, season_id=seasonId)
 
-    # assert - get season
 
     self.assertIsNone(error, error)
     self.assertIsNotNone(result)
     self.assertEqual(updatedSeasonName, result.name)
 
-    # act - delete season
 
     result, error = delete_season(namespace=self.namespace, season_id=seasonId)
 
-    # assert - delete season
 
     self.assertIsNone(error, error)
 
@@ -2729,43 +2454,33 @@ def test_admin_create_configuration_template_v1(self):
         ApimodelsCreateConfigurationTemplateRequest,
     )
 
-    # arrange
     rid = generate_id(8)
     template_name = f"python_sdk_template_{rid}"
 
-    # act
     error = self.do_create_configuration_template(template_name=template_name)
     if error is None:
         self.template_name = template_name
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Admin Delete Configuration Template V1
 
 ```python
 def test_admin_delete_configuration_template_v1(self):
-    if self.using_ags_starter:
-        self.skipTest(
-            reason="Test is temporarily disabled in AGS Starter due to issue in session service."
-        )
 
     from accelbyte_py_sdk.core import generate_id
     from accelbyte_py_sdk.api.session import admin_delete_configuration_template_v1
 
-    # arrange
     rid = generate_id(8)
     template_name = f"python_sdk_template_{rid}"
     error = self.do_create_configuration_template(template_name=template_name)
     if error:
         self.skipTest(reason=f"unable to create configuration template: {error}")
 
-    # act
     _, error = admin_delete_configuration_template_v1(name=template_name)
     if error is None:
         self.template_name = None
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Public Query Game Sessions By Attributes
@@ -2776,12 +2491,9 @@ def test_public_query_game_sessions(self):
         public_query_game_sessions_by_attributes,
     )
 
-    # arrange
 
-    # act
     result, error = public_query_game_sessions_by_attributes(body={})
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Game Session Flow
@@ -2793,7 +2505,6 @@ def test_game_session_flow(self):
     import accelbyte_py_sdk.api.session.models as session_models
 
     try:
-        # arrange
         rid = generate_id(8)
         template_name = f"python_sdk_template_{rid}"
         error = self.do_create_configuration_template(template_name=template_name)
@@ -2836,7 +2547,6 @@ def test_game_session_flow(self):
         else:
             self.sdks.append(user_sdk2)
 
-        # act & assert (create_game_session)
         result, error = session_service.create_game_session(
             body=session_models.ApimodelsCreateGameSessionRequest.create_from_dict(
                 {
@@ -2850,14 +2560,12 @@ def test_game_session_flow(self):
         if not (game_session_id := getattr(result, "id_", None)):
             self.fail(msg=f"unable to find game session id")
 
-        # act & assert (join_game_sesion)
         result, error = session_service.join_game_session(
             session_id=game_session_id,
             sdk=user_sdk2,
         )
         self.assertIsNone(error, error)
 
-        # act & assert (get_game_session)
         result, error = session_service.get_game_session(
             session_id=game_session_id,
         )
@@ -2882,15 +2590,12 @@ def test_game_session_flow(self):
 
 ```python
 def test_party_flow(self):
-    if self.using_ags_starter:
-        self.skipTest(reason="Test not applicable to AGS Starter.")
 
     from accelbyte_py_sdk.core import SDK, generate_id
     import accelbyte_py_sdk.api.session as session_service
     import accelbyte_py_sdk.api.session.models as session_models
 
     try:
-        # arrange
         rid = generate_id(8)
         template_name = f"python_sdk_template_{rid}"
         error = self.do_create_configuration_template(template_name=template_name)
@@ -2933,7 +2638,6 @@ def test_party_flow(self):
         else:
             self.sdks.append(user_sdk2)
 
-        # act & assert (public_create_party)
         result, error = session_service.public_create_party(
             body=session_models.ApimodelsCreatePartyRequest.create_from_dict(
                 {
@@ -2955,13 +2659,11 @@ def test_party_flow(self):
         if not (party_code := getattr(result, "code", None)):
             self.fail(msg=f"unable to find party code")
 
-        # act & assert (public_get_party)
         result, error = session_service.public_get_party(
             party_id=party_id,
         )
         self.assertIsNone(error, error)
 
-        # act & assert (public_party_join_code)
         result, error = session_service.public_party_join_code(
             body=session_models.ApimodelsJoinByCodeRequest.create_from_dict(
                 {
@@ -2972,7 +2674,6 @@ def test_party_flow(self):
         )
         self.assertIsNone(error, error)
 
-        # act & assert (public_get_party)
         result, error = session_service.public_get_party(
             party_id=party_id,
             sdk=user_sdk1,
@@ -2983,7 +2684,6 @@ def test_party_flow(self):
         self.assertIn(user_id1, user_ids)
         self.assertIn(user_id2, user_ids)
 
-        # act & assert (admin_query_parties)
         result, error = session_service.admin_query_parties(
             leader_id=user_id1,
         )
@@ -3011,12 +2711,9 @@ Source: [sessionhistory.py](../tests/integration/api/sessionhistory.py)
 def test_admin_query_game_session_detail(self):
     from accelbyte_py_sdk.api.sessionhistory import admin_query_game_session_detail
 
-    # arrange
 
-    # act
     response, error = admin_query_game_session_detail()
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Admin Query Matchmaking Detail
@@ -3025,12 +2722,9 @@ def test_admin_query_game_session_detail(self):
 def test_admin_query_matchmaking_detail(self):
     from accelbyte_py_sdk.api.sessionhistory import admin_query_matchmaking_detail
 
-    # arrange
 
-    # act
     response, error = admin_query_matchmaking_detail()
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Admin Query Party Detail
@@ -3039,12 +2733,9 @@ def test_admin_query_matchmaking_detail(self):
 def test_admin_query_party_detail(self):
     from accelbyte_py_sdk.api.sessionhistory import admin_query_party_detail
 
-    # arrange
 
-    # act
     response, error = admin_query_party_detail()
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Query Total Matchmaking Match
@@ -3055,9 +2746,7 @@ def test_query_total_matchmaking_match(self):
 
     from accelbyte_py_sdk.api.sessionhistory import query_total_matchmaking_match
 
-    # arrange
 
-    # act
     fmt = "%Y-%m-%dT%H:%M:%SZ"
     now = datetime.utcnow()
     end_date = now.strftime(fmt)
@@ -3066,7 +2755,6 @@ def test_query_total_matchmaking_match(self):
         end_date=end_date, start_date=start_date
     )
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ## Social
@@ -3080,15 +2768,12 @@ def test_create_stat(self):
     from accelbyte_py_sdk.api.social import create_stat
     from accelbyte_py_sdk.api.social import delete_stat
 
-    # arrange
     _, error = delete_stat(stat_code=self.stat_create.stat_code)
     self.exist = error is not None
 
-    # act
     _, error = create_stat(body=self.stat_create)
     self.exist = error is None
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Delete Stat
@@ -3098,18 +2783,15 @@ def test_delete_stat(self):
     from accelbyte_py_sdk.api.social import create_stat
     from accelbyte_py_sdk.api.social import delete_stat
 
-    # arrange
     _, error = create_stat(body=self.stat_create)
     self.log_warning(
         msg=f"Failed to set up stat. {str(error)}", condition=error is not None
     )
     self.exist = error is None
 
-    # act
     _, error = delete_stat(stat_code=self.stat_create.stat_code)
     self.exist = error is not None
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Export Import Stat
@@ -3120,28 +2802,22 @@ def test_export_import_stats(self):
     from accelbyte_py_sdk.api.social import export_stats
     from accelbyte_py_sdk.api.social import import_stats
 
-    # arrange 1
     exported_file_path = Path(self.exported_filename)
     exported_file_path.unlink(missing_ok=True)
 
-    # act 1
     result, error = export_stats()
 
     if result is not None:
         exported_file_path.write_bytes(result)
 
-    # assert 1
     self.assertIsNone(error, error)
     self.assertTrue(exported_file_path.exists())
     self.assertGreater(exported_file_path.stat().st_size, 0)
 
-    # arrange 2
 
-    # act 2
     with open(file=str(exported_file_path)) as file:
         result, error = import_stats(file=file)
 
-    # assert 3
     self.assertIsNone(error, error)
 ```
 ### Get Stat
@@ -3151,17 +2827,14 @@ def test_get_stat(self):
     from accelbyte_py_sdk.api.social import create_stat
     from accelbyte_py_sdk.api.social import get_stat
 
-    # arrange
     _, error = create_stat(body=self.stat_create)
     self.log_warning(
         msg=f"Failed to set up stat. {str(error)}", condition=error is not None
     )
     self.exist = error is None
 
-    # act
     _, error = get_stat(stat_code=self.stat_create.stat_code)
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Get Stats
@@ -3170,12 +2843,9 @@ def test_get_stat(self):
 def test_get_stats(self):
     from accelbyte_py_sdk.api.social import get_stats
 
-    # arrange
 
-    # act
     result, error = get_stats()
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Query Stats
@@ -3184,12 +2854,9 @@ def test_get_stats(self):
 def test_query_stats(self):
     from accelbyte_py_sdk.api.social import query_stats
 
-    # arrange
 
-    # act
     result, error = query_stats(keyword="stat")
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Update Stat
@@ -3201,20 +2868,17 @@ def test_update_stat(self):
     from accelbyte_py_sdk.api.social.models import StatInfo
     from accelbyte_py_sdk.api.social.models import StatUpdate
 
-    # arrange
     _, error = create_stat(body=self.stat_create)
     self.log_warning(
         msg=f"Failed to set up stat. {str(error)}", condition=error is not None
     )
     self.exist = error is None
 
-    # act
     result, error = update_stat(
         stat_code=self.stat_create.stat_code,
         body=StatUpdate.create(name="KODE_STATUS"),
     )
 
-    # assert
     self.assertIsNone(error, error)
     self.assertIsNotNone(result)
     self.assertIsInstance(result, StatInfo)
@@ -3238,7 +2902,6 @@ def test_user_stat(self):
     )
     from accelbyte_py_sdk.api.social.models import StatItemInc
 
-    # arrange
     self.exist = False
     _, error = get_stat(stat_code=self.stat_create.stat_code)
     if error:
@@ -3258,42 +2921,34 @@ def test_user_stat(self):
         user_id=user_id,
     )
 
-    # act (create_user_stat_item)
     _, error = create_user_stat_item(
         stat_code=self.stat_create.stat_code,
         user_id=user_id,
     )
 
-    # assert (create_user_stat_item)
     self.assertIsNone(error, error)
 
-    # act (get_user_stat_items)
     result, error = get_user_stat_items(user_id=user_id)
 
-    # assert (get_user_stat_items)
     self.assertIsNone(error, error)
     self.assertGreater(len(result.data), 0)
     self.assertTrue(
         any(item.stat_code == self.stat_create.stat_code for item in result.data)
     )
 
-    # act (inc_user_stat_item_value)
     result, error = inc_user_stat_item_value(
         body=StatItemInc.create(inc=1),
         stat_code=self.stat_create.stat_code,
         user_id=user_id,
     )
 
-    # assert (inc_user_stat_item_value)
     self.assertIsNone(error, error)
 
-    # act (delete_user_stat_items)
     _, error = delete_user_stat_items(
         stat_code=self.stat_create.stat_code,
         user_id=user_id,
     )
 
-    # assert (delete_user_stat_items)
     self.assertIsNone(error, error)
 
     # clean-up
@@ -3311,13 +2966,10 @@ Source: [ugc.py](../tests/integration/api/ugc.py)
 
 ```python
 def test_admin_create_tag(self):
-    # arrange
 
-    # act
     _, error, tag_id = self.do_admin_create_tag(body=self.models_create_tag_request)
     self.tag_id = tag_id
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Admin Delete Tag
@@ -3326,17 +2978,14 @@ def test_admin_create_tag(self):
 def test_admin_delete_tag(self):
     from accelbyte_py_sdk.api.ugc import admin_delete_tag
 
-    # arrange
     _, error, tag_id = self.do_admin_create_tag(body=self.models_create_tag_request)
     self.log_warning(
         msg=f"Failed to set up tag. {str(error)}", condition=error is not None
     )
     self.tag_id = tag_id
 
-    # act
     _, error = admin_delete_tag(tag_id=self.tag_id)
 
-    # assert
     self.assertIsNone(error, error)
     self.tag_id = None
 ```
@@ -3346,17 +2995,14 @@ def test_admin_delete_tag(self):
 def test_admin_get_tag(self):
     from accelbyte_py_sdk.api.ugc import admin_get_tag
 
-    # arrange
     _, error, tag_id = self.do_admin_create_tag(body=self.models_create_tag_request)
     self.log_warning(
         msg=f"Failed to set up tag. {str(error)}", condition=error is not None
     )
     self.tag_id = tag_id
 
-    # act
     _, error = admin_get_tag()
 
-    # assert
     self.assertIsNone(error, error)
 ```
 ### Admin Update Tag
@@ -3366,19 +3012,16 @@ def test_admin_update_tag(self):
     from accelbyte_py_sdk.api.ugc import admin_update_tag
     from accelbyte_py_sdk.api.ugc.models import ModelsCreateTagResponse
 
-    # arrange
     _, error, tag_id = self.do_admin_create_tag(body=self.models_create_tag_request)
     self.log_warning(
         msg=f"Failed to set up tag. {str(error)}", condition=error is not None
     )
     self.tag_id = tag_id
 
-    # act
     result, error = admin_update_tag(
         body=ModelsCreateTagRequest.create(tag="MENANDAI"), tag_id=self.tag_id
     )
 
-    # assert
     self.assertIsNone(error, error)
     self.assertIsNotNone(result)
     self.assertIsInstance(result, ModelsCreateTagResponse)
