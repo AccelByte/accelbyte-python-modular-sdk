@@ -296,8 +296,10 @@ class IAMTestCase(IntegrationTestCase):
     # region test:admin_download_my_backup_codes_v4
 
     def test_admin_download_my_backup_codes_v4(self):
+        # REDACT(start)
         if self.using_ags_starter:
             self.skipTest(reason="Test not applicable to AGS Starter.")
+        # REDACT(end)
 
         from accelbyte_py_sdk.api.iam import admin_download_my_backup_codes_v4
         from accelbyte_py_sdk.api.iam.models import RestErrorResponse
@@ -327,8 +329,10 @@ class IAMTestCase(IntegrationTestCase):
     # region test:public_download_my_backup_codes_v4
 
     def test_public_download_my_backup_codes_v4(self):
+        # REDACT(start)
         if self.using_ags_starter:
             self.skipTest(reason="Test not applicable to AGS Starter.")
+        # REDACT(end)
 
         from accelbyte_py_sdk.api.iam import public_download_my_backup_codes_v4
         from accelbyte_py_sdk.api.iam.models import RestErrorResponse
@@ -358,8 +362,10 @@ class IAMTestCase(IntegrationTestCase):
     # region test:role_override
 
     def test_role_override(self):
+        # REDACT(start)
         if self.using_ags_starter:
             self.skipTest(reason="Test not applicable to AGS Starter.")
+        # REDACT(end)
 
         from accelbyte_py_sdk.api import iam as iam_service
         from accelbyte_py_sdk.api.iam import models as iam_models

@@ -82,10 +82,12 @@ class SessionTestCase(IntegrationTestCase):
     # region test:admin_delete_configuration_template_v1
 
     def test_admin_delete_configuration_template_v1(self):
+        # REDACT(start)
         if self.using_ags_starter:
             self.skipTest(
                 reason="Test is temporarily disabled in AGS Starter due to issue in session service."
             )
+        # REDACT(end)
 
         from accelbyte_py_sdk.core import generate_id
         from accelbyte_py_sdk.api.session import admin_delete_configuration_template_v1
@@ -222,8 +224,10 @@ class SessionTestCase(IntegrationTestCase):
     # region test:party_flow
 
     def test_party_flow(self):
+        # REDACT(start)
         if self.using_ags_starter:
             self.skipTest(reason="Test not applicable to AGS Starter.")
+        # REDACT(end)
 
         from accelbyte_py_sdk.core import SDK, generate_id
         import accelbyte_py_sdk.api.session as session_service

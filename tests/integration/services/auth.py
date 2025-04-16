@@ -111,8 +111,10 @@ class AuthServicesTestCase(IntegrationTestCase):
     # region test:login_platform
 
     def test_login_platform(self):
+        # REDACT(start)
         if self.using_ags_starter:
             self.skipTest(reason="Invalid for AGS.")
+        # REDACT(end)
 
         import os
         import requests
