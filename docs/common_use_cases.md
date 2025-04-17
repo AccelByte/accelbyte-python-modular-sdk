@@ -197,9 +197,6 @@ def test_delete_user_profile(self):
     from accelbyte_py_sdk.api.basic import delete_user_profile
 
     result, error = self.do_create_my_profile(body=self.user_profile_private_create)
-    if error:
-        self.skipTest(reason=f"Failed to set up user profile. {str(error)}")
-        return
     user_id = result.user_id
 
     result, error = delete_user_profile(user_id=user_id)
@@ -213,9 +210,6 @@ def test_get_user_profile(self):
     from accelbyte_py_sdk.api.basic import public_get_user_profile_info
 
     result, error = self.do_create_my_profile(body=self.user_profile_private_create)
-    if error:
-        self.skipTest(reason=f"Failed to set up user profile. {str(error)}")
-        return
     user_id = result.user_id
 
     result, error = public_get_user_profile_info(user_id=user_id)
@@ -230,9 +224,6 @@ def test_public_update_user_profile(self):
     from accelbyte_py_sdk.api.basic.models import UserProfileUpdate
 
     result, error = self.do_create_my_profile(body=self.user_profile_private_create)
-    if error:
-        self.skipTest(reason=f"Failed to set up user profile. {str(error)}")
-        return
     user_id = result.user_id
 
     result, error = public_update_user_profile(
@@ -333,8 +324,6 @@ def test_admin_profanity_query(self):
     result, error, profanity_id = self.do_create_profanity(
         body=self.dict_insert_request
     )
-    if error:
-        self.skipTest(reason=f"Failed to set up profanity. {error}")
     self.profanity_id = profanity_id
 
     _, error = admin_profanity_query(start_with=self.profanity_prefix)
@@ -350,8 +339,6 @@ def test_admin_profanity_delete(self):
     result, error, profanity_id = self.do_create_profanity(
         body=self.dict_insert_request
     )
-    if error:
-        self.skipTest(reason=f"Failed to set up profanity. {error}")
     self.profanity_id = profanity_id
 
     _, error = admin_profanity_delete(id_=self.profanity_id)
@@ -369,8 +356,6 @@ def test_admin_profanity_update(self):
     result, error, profanity_id = self.do_create_profanity(
         body=self.dict_insert_request
     )
-    if error:
-        self.skipTest(reason=f"Failed to set up profanity. {error}")
     self.profanity_id = profanity_id
 
     _, error = admin_profanity_update(
@@ -805,8 +790,6 @@ def test_admin_get_user_personal_data_requests(self):
     _, error, user_id = self.do_create_user(
         body=self.model_user_create_request, namespace=self.user_namespace
     )
-    if error is not None and not user_id:
-        self.skipTest(reason=f"Failed to set up user. {str(error)}")
 
     self.user_id = user_id
 
@@ -827,8 +810,6 @@ def test_admin_submit_user_account_deletion_request(self):
     _, error, user_id = self.do_create_user(
         body=self.model_user_create_request, namespace=self.user_namespace
     )
-    if error is not None and not user_id:
-        self.skipTest(reason=f"Failed to set up user. {str(error)}")
 
     self.user_id = user_id
 
@@ -1251,11 +1232,6 @@ def test_admin_download_my_backup_codes_v4(self):
     exported_file_path.unlink(missing_ok=True)
 
     result, error = admin_download_my_backup_codes_v4()
-    if error and isinstance(error, RestErrorResponse):
-        if error.error_code == 10191:  # email not verified
-            self.skipTest(reason=error.error_message)
-        if error.error_code == 10192:  # factor not enabled
-            self.skipTest(reason=error.error_message)
 
     if result is not None:
         exported_file_path.write_bytes(result)
@@ -1276,11 +1252,6 @@ def test_public_download_my_backup_codes_v4(self):
     exported_file_path.unlink(missing_ok=True)
 
     result, error = public_download_my_backup_codes_v4()
-    if error and isinstance(error, RestErrorResponse):
-        if error.error_code == 10191:  # email not verified
-            self.skipTest(reason=error.error_message)
-        if error.error_code == 10192:  # factor not enabled
-            self.skipTest(reason=error.error_message)
 
     if result is not None:
         exported_file_path.write_bytes(result)
@@ -1577,8 +1548,6 @@ def test_bulk_accept_versioned_policy(self):
     self.assertIsNotNone(result)
     self.assertIsInstance(result, list)
 
-    if len(result) == 0:
-        self.skipTest(reason="No policy to accept found.")
 
     accepted_agreement: RetrieveAcceptedAgreementResponse = result[0]
     self.assertIsInstance(accepted_agreement, RetrieveAcceptedAgreementResponse)
@@ -1619,8 +1588,6 @@ def test_change_preference_consent(self):
     self.assertIsNotNone(result)
     self.assertIsInstance(result, list)
 
-    if len(result) == 0:
-        self.skipTest(reason="No policy with 'Marketing Preference' type found.")
     accepted_agreement: RetrieveAcceptedAgreementResponse = next(
         (
             agreement
@@ -1630,8 +1597,6 @@ def test_change_preference_consent(self):
         ),
         None,
     )
-    if accepted_agreement is None:
-        self.skipTest(reason="No policy with 'Marketing Preference' type found.")
 
     policy_id: str = accepted_agreement.policy_id
     self.assertIsNotNone(policy_id)
@@ -1700,9 +1665,6 @@ def test_create_policy(self):
     base_policy_name: str = "Python Extend SDK Test Policy"
 
     result, error = retrieve_all_legal_policies()
-    if error:
-        self.skipTest(reason=f"Failed to get all legal policies: {error}")
-        return
 
     target_policy_id: str = ""
 
@@ -1715,9 +1677,6 @@ def test_create_policy(self):
 
     if not target_policy_id:
         result, error = retrieve_all_policy_types(limit=100, offset=0)
-        if error:
-            self.skipTest(reason=f"Failed to get all policy types: {error}")
-            return
 
         marketing_pref_policy_type_id: str = ""
 
@@ -1729,9 +1688,6 @@ def test_create_policy(self):
                 marketing_pref_policy_type_id = policy_type.id_
                 break
 
-        if not marketing_pref_policy_type_id:
-            self.skipTest(reason=f"Failed to find marketing policy type.")
-            return
 
         result, error = create_policy(
             body=CreateBasePolicyRequest.create(
@@ -1743,9 +1699,6 @@ def test_create_policy(self):
                 affected_countries=["ID"],
             ),
         )
-        if error:
-            self.skipTest(reason=f"Failed to create policy: {error}")
-            return
 
         target_policy_id = result.policy_id
 
@@ -1754,9 +1707,6 @@ def test_create_policy(self):
     result, error = retrieve_single_policy_version(
         policy_id=target_policy_id,
     )
-    if error:
-        self.skipTest(reason=f"Failed to get policy versions: {error}")
-        return
 
     target_policy_version_id: str = ""
 
@@ -1894,8 +1844,6 @@ async def test_refresh_token_request(self):
     from accelbyte_py_sdk.api.lobby.wss_models import parse_wsm
 
     generate_user_result, error = self.generate_user()
-    if error:
-        self.skipTest(reason=f"unable to create user: {error}")
 
     username, password, user_id = generate_user_result
     self.user_id = user_id
@@ -1905,10 +1853,6 @@ async def test_refresh_token_request(self):
         password=password,
         existing_sdk=SDK,
     )
-    if error:
-        self.skipTest(reason=f"unable to create user sdk: {error}")
-    else:
-        self.sdks.append(user_sdk)
 
     token_repo = user_sdk.get_token_repository()
 
@@ -1943,11 +1887,6 @@ async def test_refresh_token_request(self):
                 wsm_type = wsm.get_type()
                 if wsm_type == "refreshTokenResponse":
                     break
-        if elapsed > timeout:
-            self.skipTest(
-                reason=f"did not get 'refreshTokenResponse' message within {timeout} seconds"
-            )
-            break
 
     self.assertTrue(new_access_token)
     self.assertNotEqual(old_access_token, new_access_token)
@@ -2008,9 +1947,6 @@ def test_create_and_get_ruleset(self):
     rule_set_name = f"python_sdk_ruleset_{rid}"
 
     error = Match2TestCase.do_create_rule_set(rule_set_name=rule_set_name)
-    if error:
-        self.skipTest(reason=f"Unable to create rule set: {error}")
-        return
     if error is None:
         self.rule_set_name = rule_set_name
 
@@ -2036,8 +1972,6 @@ def test_create_and_get_match_pool(self):
         rule_set_name=rule_set_name,
         session_template_name=session_template_name,
     )
-    if pre_error:
-        self.skipTest(reason=pre_error)
     if error is None:
         self.match_pool_name = match_pool_name
         self.rule_set_name = rule_set_name
@@ -2065,8 +1999,6 @@ def test_create_match_pool(self):
         rule_set_name=rule_set_name,
         session_template_name=session_template_name,
     )
-    if pre_error:
-        self.skipTest(reason=pre_error)
     if error is None:
         self.match_pool_name = match_pool_name
         self.rule_set_name = rule_set_name
@@ -2093,14 +2025,9 @@ def test_delete_match_pool(self):
         rule_set_name=rule_set_name,
         session_template_name=session_template_name,
     )
-    if pre_error:
-        self.skipTest(reason=pre_error)
-    if error:
-        self.skipTest(reason=f"unable to create match pool: {error}")
-    else:
-        self.match_pool_name = match_pool_name
-        self.rule_set_name = rule_set_name
-        self.session_template_name = session_template_name
+    self.match_pool_name = match_pool_name
+    self.rule_set_name = rule_set_name
+    self.session_template_name = session_template_name
 
     _, error = delete_match_pool(pool=match_pool_name)
     if error is None:
@@ -2128,18 +2055,11 @@ def test_create_delete_match_ticket(self):
         rule_set_name=rule_set_name,
         session_template_name=session_template_name,
     )
-    if pre_error:
-        self.skipTest(reason=pre_error)
-    if error:
-        self.skipTest(reason=f"unable to create match pool: {error}")
-    else:
-        self.match_pool_name = match_pool_name
-        self.rule_set_name = rule_set_name
-        self.session_template_name = session_template_name
+    self.match_pool_name = match_pool_name
+    self.rule_set_name = rule_set_name
+    self.session_template_name = session_template_name
 
     generate_user_result, error = self.generate_user()
-    if error:
-        self.skipTest(reason=f"unable to create user: {error}")
 
     username, password, user_id = generate_user_result
     self.user_id = user_id
@@ -2149,10 +2069,6 @@ def test_create_delete_match_ticket(self):
         password=password,
         existing_sdk=SDK,
     )
-    if error:
-        self.skipTest(reason=f"unable to create user sdk: {error}")
-    else:
-        self.sdks.append(user_sdk)
 
     result, error = session_service.public_create_party(
         body=session_models.ApimodelsCreatePartyRequest.create_from_dict(
@@ -2165,11 +2081,6 @@ def test_create_delete_match_ticket(self):
         ),
         sdk=user_sdk,
     )
-    if error:
-        self.skipTest(reason=f"unable to create party: {error}")
-
-    if not (party_id := getattr(result, "id_", None)):
-        self.skipTest(reason=f"unable to find party id: {error}")
 
     result, error = match2_service.create_match_ticket(
         body=match2_models.ApiMatchTicketRequest.create_from_dict(
@@ -2291,8 +2202,6 @@ def test_export_store(self):
     exported_file_path.unlink(missing_ok=True)
 
     _, error, store_id = self.do_create_store(body=self.store_create)
-    if error is not None:
-        self.skipTest(reason=f"Failed to create store. {str(error)}")
     self.store_id = store_id
 
     result, error = export_store_1(store_id=store_id)
@@ -2332,19 +2241,11 @@ def test_import_store(self):
     exported_file_path.unlink(missing_ok=True)
 
     _, error, store_id = self.do_create_store(body=self.store_create)
-    if error is not None:
-        self.skipTest(reason=f"Failed to create store. {str(error)}")
     self.store_id = store_id
 
     result, error = export_store_1(store_id=self.store_id)
-    if error is not None:
-        self.skipTest(reason=f"Failed to export store. {str(error)}")
-    if result is None:
-        self.skipTest(reason="Exported store not found.")
 
     exported_file_path.write_bytes(result)
-    if not exported_file_path.exists():
-        self.skipTest(reason="Failed to save exported store.")
 
     with exported_file_path.open("rb") as exported_file:
         result, error = import_store_1(file=exported_file, store_id=store_id)
@@ -2474,8 +2375,6 @@ def test_admin_delete_configuration_template_v1(self):
     rid = generate_id(8)
     template_name = f"python_sdk_template_{rid}"
     error = self.do_create_configuration_template(template_name=template_name)
-    if error:
-        self.skipTest(reason=f"unable to create configuration template: {error}")
 
     _, error = admin_delete_configuration_template_v1(name=template_name)
     if error is None:
@@ -2508,22 +2407,12 @@ def test_game_session_flow(self):
         rid = generate_id(8)
         template_name = f"python_sdk_template_{rid}"
         error = self.do_create_configuration_template(template_name=template_name)
-        if error:
-            self.skipTest(
-                reason=f"unable to create configuration template: {error}"
-            )
-        else:
-            self.template_name = template_name
 
         generate_user1_result, error = self.generate_user()
-        if error:
-            self.skipTest(reason=f"unable to create user1: {error}")
         username1, password1, user_id1 = generate_user1_result
         self.user_ids.append(user_id1)
 
         generate_user2_result, error = self.generate_user()
-        if error:
-            self.skipTest(reason=f"unable to create user2: {error}")
         username2, password2, user_id2 = generate_user2_result
         self.user_ids.append(user_id2)
 
@@ -2532,20 +2421,12 @@ def test_game_session_flow(self):
             password=password1,
             existing_sdk=SDK,
         )
-        if error:
-            self.skipTest(reason=f"unable to create user1 sdk: {error}")
-        else:
-            self.sdks.append(user_sdk1)
 
         user_sdk2, error = self.create_user_sdk(
             username=username2,
             password=password2,
             existing_sdk=SDK,
         )
-        if error:
-            self.skipTest(reason=f"unable to create user2 sdk: {error}")
-        else:
-            self.sdks.append(user_sdk2)
 
         result, error = session_service.create_game_session(
             body=session_models.ApimodelsCreateGameSessionRequest.create_from_dict(
@@ -2599,12 +2480,6 @@ def test_party_flow(self):
         rid = generate_id(8)
         template_name = f"python_sdk_template_{rid}"
         error = self.do_create_configuration_template(template_name=template_name)
-        if error:
-            self.skipTest(
-                reason=f"unable to create configuration template: {error}"
-            )
-        else:
-            self.template_name = template_name
 
         generate_user1_result, error = self.generate_user()
         if error:
@@ -2613,8 +2488,6 @@ def test_party_flow(self):
         self.user_ids.append(user_id1)
 
         generate_user2_result, error = self.generate_user()
-        if error:
-            self.skipTest(reason=f"unable to create user2: {error}")
         username2, password2, user_id2 = generate_user2_result
         self.user_ids.append(user_id2)
 
@@ -2623,20 +2496,12 @@ def test_party_flow(self):
             password=password1,
             existing_sdk=SDK,
         )
-        if error:
-            self.skipTest(reason=f"unable to create user1 sdk: {error}")
-        else:
-            self.sdks.append(user_sdk1)
 
         user_sdk2, error = self.create_user_sdk(
             username=username2,
             password=password2,
             existing_sdk=SDK,
         )
-        if error:
-            self.skipTest(reason=f"unable to create user2 sdk: {error}")
-        else:
-            self.sdks.append(user_sdk2)
 
         result, error = session_service.public_create_party(
             body=session_models.ApimodelsCreatePartyRequest.create_from_dict(
@@ -2742,7 +2607,6 @@ def test_admin_query_party_detail(self):
 
 ```python
 def test_query_total_matchmaking_match(self):
-    self.skipTest(reason="Disabled")
 
     from accelbyte_py_sdk.api.sessionhistory import query_total_matchmaking_match
 
@@ -2910,8 +2774,6 @@ def test_user_stat(self):
     else:
         self.exist = True
 
-    if not self.exist:
-        self.skipTest(reason=f"Failed to set up stat.")
 
     user_id = self.get_user_id()
 
