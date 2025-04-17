@@ -41,8 +41,10 @@ class AuthServicesTestCase(IntegrationTestCase):
         self.logger.setLevel(logging.WARNING)
 
         client_id = os.environ.get("PUBLIC_AB_CLIENT_ID", None)
+        # REDACT(start)
         if client_id is None:
             self.skipTest(reason="Failed to get PUBLIC_AB_CLIENT_ID")
+        # REDACT(end)
 
         # act
         with self.assertLogs(logger=self.logger, level=logging.WARNING) as cm:
@@ -147,8 +149,10 @@ class AuthServicesTestCase(IntegrationTestCase):
                 }
             )
         )
+        # REDACT(start)
         if not response.ok:
             self.skipTest(reason=f"Failed to get PhantAuth Code ({phantauth_host}).")
+        # REDACT(end)
 
         phantauth_code = response.text
         self.assertTrue(phantauth_code)
@@ -167,8 +171,10 @@ class AuthServicesTestCase(IntegrationTestCase):
                 "code": phantauth_code,
             },
         )
+        # REDACT(start)
         if not response.ok:
             self.skipTest(reason=f"Failed to get PhantAuth Token ({phantauth_host}).")
+        # REDACT(end)
 
         phantauth_token = response.json()
         self.assertTrue(phantauth_token)

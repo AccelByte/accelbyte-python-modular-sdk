@@ -78,8 +78,10 @@ class GDPRTestCase(IntegrationTestCase):
         _, error, user_id = self.do_create_user(
             body=self.model_user_create_request, namespace=self.user_namespace
         )
+        # REDACT(start)
         if error is not None and not user_id:
             self.skipTest(reason=f"Failed to set up user. {str(error)}")
+        # REDACT(end)
 
         self.user_id = user_id
 
@@ -108,8 +110,10 @@ class GDPRTestCase(IntegrationTestCase):
         _, error, user_id = self.do_create_user(
             body=self.model_user_create_request, namespace=self.user_namespace
         )
+        # REDACT(start)
         if error is not None and not user_id:
             self.skipTest(reason=f"Failed to set up user. {str(error)}")
+        # REDACT(end)
 
         self.user_id = user_id
 
