@@ -101,8 +101,8 @@ class ApimodelsChainingOperationResp(Model):
 
     def translate_to_api_error(self) -> ApiError:
         return ApiError(
-            code=str(self.error_details) if self.error_details else "",
-            message=str(self.message) if self.message else "",
+            code=str(getattr(self, "error_details", "")) or "",
+            message=str(getattr(self, "message", "")) or "",
         )
 
     # endregion to methods

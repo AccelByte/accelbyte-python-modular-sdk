@@ -24,6 +24,7 @@
 
 from accelbyte_py_sdk.core import ApiError
 
+ERROR_20001 = ApiError(code="20001", message="Unauthorized")
 ERROR_20002 = ApiError(code="20002", message="validation error")
 ERROR_20026 = ApiError(code="20026", message="publisher namespace not allowed")
 ERROR_30141 = ApiError(

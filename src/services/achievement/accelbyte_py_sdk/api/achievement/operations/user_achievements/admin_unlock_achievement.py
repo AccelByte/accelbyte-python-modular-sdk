@@ -66,6 +66,8 @@ class AdminUnlockAchievement(Operation):
 
         401: Unauthorized - ResponseError (Unauthorized)
 
+        404: Not Found - ResponseError (Not Found)
+
         422: Unprocessable Entity - ResponseError (Unprocessable Entity)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
@@ -195,6 +197,7 @@ class AdminUnlockAchievement(Operation):
         data_204: Optional[HttpResponse] = None
         error_400: Optional[ResponseError] = None
         error_401: Optional[ResponseError] = None
+        error_404: Optional[ResponseError] = None
         error_422: Optional[ResponseError] = None
         error_500: Optional[ResponseError] = None
 
@@ -206,6 +209,11 @@ class AdminUnlockAchievement(Operation):
                     raise exc  # pylint: disable=raising-bad-type
             if self.error_401 is not None:
                 err = self.error_401.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_404 is not None:
+                err = self.error_404.translate_to_api_error()
                 exc = err.to_exception()
                 if exc is not None:
                     raise exc  # pylint: disable=raising-bad-type
@@ -231,6 +239,9 @@ class AdminUnlockAchievement(Operation):
             elif self.error_401 is not None:
                 yield None
                 yield self.error_401
+            elif self.error_404 is not None:
+                yield None
+                yield self.error_404
             elif self.error_422 is not None:
                 yield None
                 yield self.error_422
@@ -250,6 +261,8 @@ class AdminUnlockAchievement(Operation):
         400: Bad Request - ResponseError (Bad Request)
 
         401: Unauthorized - ResponseError (Unauthorized)
+
+        404: Not Found - ResponseError (Not Found)
 
         422: Unprocessable Entity - ResponseError (Unprocessable Entity)
 
@@ -281,6 +294,9 @@ class AdminUnlockAchievement(Operation):
             elif code == 401:
                 result.error_401 = ResponseError.create_from_dict(content)
                 result.error = result.error_401.translate_to_api_error()
+            elif code == 404:
+                result.error_404 = ResponseError.create_from_dict(content)
+                result.error = result.error_404.translate_to_api_error()
             elif code == 422:
                 result.error_422 = ResponseError.create_from_dict(content)
                 result.error = result.error_422.translate_to_api_error()
@@ -315,6 +331,8 @@ class AdminUnlockAchievement(Operation):
 
         401: Unauthorized - ResponseError (Unauthorized)
 
+        404: Not Found - ResponseError (Not Found)
+
         422: Unprocessable Entity - ResponseError (Unprocessable Entity)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
@@ -337,6 +355,8 @@ class AdminUnlockAchievement(Operation):
         if code == 400:
             return None, ResponseError.create_from_dict(content)
         if code == 401:
+            return None, ResponseError.create_from_dict(content)
+        if code == 404:
             return None, ResponseError.create_from_dict(content)
         if code == 422:
             return None, ResponseError.create_from_dict(content)

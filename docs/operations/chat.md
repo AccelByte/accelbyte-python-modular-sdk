@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Chat Service Index (0.4.42)
+# AccelByte Gaming Services Chat Service Index (0.4.45)
 
 
 ## Operations
@@ -30,6 +30,7 @@
 | /chat/v1/admin/inbox/namespaces/{namespace}/messages | GET | adminGetInboxMessages | `false` | [AdminGetInboxMessages](../../src/services/chat/accelbyte_py_sdk/api/chat/operations/inbox/admin_get_inbox_messages.py) | [admin_get_inbox_messages](../../src/services/chat/accelbyte_py_sdk/api/chat/wrappers/_inbox.py) | [accelbyte_py_sdk_cli chat-admin-get-inbox-messages](../../samples/cli/accelbyte_py_sdk_cli/chat/_admin_get_inbox_messages.py) |
 | /chat/v1/admin/inbox/namespaces/{namespace}/stats | GET | adminGetInboxStats | `false` | [AdminGetInboxStats](../../src/services/chat/accelbyte_py_sdk/api/chat/operations/inbox/admin_get_inbox_stats.py) | [admin_get_inbox_stats](../../src/services/chat/accelbyte_py_sdk/api/chat/wrappers/_inbox.py) | [accelbyte_py_sdk_cli chat-admin-get-inbox-stats](../../samples/cli/accelbyte_py_sdk_cli/chat/_admin_get_inbox_stats.py) |
 | /chat/v1/admin/inbox/namespaces/{namespace}/messages/{inbox}/users | GET | adminGetInboxUsers | `false` | [AdminGetInboxUsers](../../src/services/chat/accelbyte_py_sdk/api/chat/operations/inbox/admin_get_inbox_users.py) | [admin_get_inbox_users](../../src/services/chat/accelbyte_py_sdk/api/chat/wrappers/_inbox.py) | [accelbyte_py_sdk_cli chat-admin-get-inbox-users](../../samples/cli/accelbyte_py_sdk_cli/chat/_admin_get_inbox_users.py) |
+| /chat/v1/admin/inbox/namespaces/{namespace}/list/topic/kafka | GET | adminListKafkaTopic | `false` | [AdminListKafkaTopic](../../src/services/chat/accelbyte_py_sdk/api/chat/operations/inbox/admin_list_kafka_topic.py) | [admin_list_kafka_topic](../../src/services/chat/accelbyte_py_sdk/api/chat/wrappers/_inbox.py) | [accelbyte_py_sdk_cli chat-admin-list-kafka-topic](../../samples/cli/accelbyte_py_sdk_cli/chat/_admin_list_kafka_topic.py) |
 | /chat/v1/admin/inbox/namespaces/{namespace}/messages | POST | adminSaveInboxMessage | `false` | [AdminSaveInboxMessage](../../src/services/chat/accelbyte_py_sdk/api/chat/operations/inbox/admin_save_inbox_message.py) | [admin_save_inbox_message](../../src/services/chat/accelbyte_py_sdk/api/chat/wrappers/_inbox.py) | [accelbyte_py_sdk_cli chat-admin-save-inbox-message](../../samples/cli/accelbyte_py_sdk_cli/chat/_admin_save_inbox_message.py) |
 | /chat/v1/admin/inbox/namespaces/{namespace}/messages/{messageId}/send | POST | adminSendInboxMessage | `false` | [AdminSendInboxMessage](../../src/services/chat/accelbyte_py_sdk/api/chat/operations/inbox/admin_send_inbox_message.py) | [admin_send_inbox_message](../../src/services/chat/accelbyte_py_sdk/api/chat/wrappers/_inbox.py) | [accelbyte_py_sdk_cli chat-admin-send-inbox-message](../../samples/cli/accelbyte_py_sdk_cli/chat/_admin_send_inbox_message.py) |
 | /chat/v1/admin/inbox/namespaces/{namespace}/messages/{inbox}/unsend | POST | adminUnsendInboxMessage | `false` | [AdminUnsendInboxMessage](../../src/services/chat/accelbyte_py_sdk/api/chat/operations/inbox/admin_unsend_inbox_message.py) | [admin_unsend_inbox_message](../../src/services/chat/accelbyte_py_sdk/api/chat/wrappers/_inbox.py) | [accelbyte_py_sdk_cli chat-admin-unsend-inbox-message](../../samples/cli/accelbyte_py_sdk_cli/chat/_admin_unsend_inbox_message.py) |
@@ -144,6 +145,7 @@
 | models.GetInboxMessagesResponseData | [ModelsGetInboxMessagesResponseData](../../src/services/chat/accelbyte_py_sdk/api/chat/models/models_get_inbox_messages_response_data.py) |
 | models.GetInboxStatsResponse | [ModelsGetInboxStatsResponse](../../src/services/chat/accelbyte_py_sdk/api/chat/models/models_get_inbox_stats_response.py) |
 | models.GetInboxUsersResponse | [ModelsGetInboxUsersResponse](../../src/services/chat/accelbyte_py_sdk/api/chat/models/models_get_inbox_users_response.py) |
+| models.GetListTopicKafkaResponse | [ModelsGetListTopicKafkaResponse](../../src/services/chat/accelbyte_py_sdk/api/chat/models/models_get_list_topic_kafka_response.py) |
 | models.ImportConfigResponse | [ModelsImportConfigResponse](../../src/services/chat/accelbyte_py_sdk/api/chat/models/models_import_config_response.py) |
 | models.JSONSchemaType | [ModelsJSONSchemaType](../../src/services/chat/accelbyte_py_sdk/api/chat/models/models_json_schema_type.py) |
 | models.MessageRequest | [ModelsMessageRequest](../../src/services/chat/accelbyte_py_sdk/api/chat/models/models_message_request.py) |

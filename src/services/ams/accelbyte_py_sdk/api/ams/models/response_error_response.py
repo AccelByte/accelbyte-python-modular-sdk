@@ -84,8 +84,8 @@ class ResponseErrorResponse(Model):
 
     def translate_to_api_error(self) -> ApiError:
         return ApiError(
-            code=str(self.error_type) if self.error_type else "",
-            message=str(self.error_message) if self.error_message else "",
+            code=str(getattr(self, "error_type", "")) or "",
+            message=str(getattr(self, "error_message", "")) or "",
         )
 
     # endregion to methods

@@ -30,18 +30,18 @@ if [ "$BATCH" = true ] ; then
 
 $PYTHON -m $MODULE 'start-interactive-session' --continue_on_error '--writer=tap' << END
 dsartifact-list-nodes-ip-address --login_with_auth "Bearer foo"
-dsartifact-delete-node-by-id '2mh2rcOL' 'JwRGj4FH' --login_with_auth "Bearer foo"
-dsartifact-list-queue 'yVB54Nwj' --login_with_auth "Bearer foo"
-dsartifact-get-active-queue '7P9djmmR' --login_with_auth "Bearer foo"
-dsartifact-set-active-queue 'DSjv11GR' 'Sl6I1eO6' --login_with_auth "Bearer foo"
-dsartifact-delete-active-queue '7UDZfHOB' --login_with_auth "Bearer foo"
-dsartifact-report-failed-upload 'V0ccyFNe' 'Vh6sDPyL' --login_with_auth "Bearer foo"
-dsartifact-delete-queue 'V0xPEsho' 'w78vwUA9' --login_with_auth "Bearer foo"
+dsartifact-delete-node-by-id 'J2tL9AXI' 'qbucBUTn' --login_with_auth "Bearer foo"
+dsartifact-list-queue 'K6eSj3Z8' --login_with_auth "Bearer foo"
+dsartifact-get-active-queue 'u8MzBjyI' --login_with_auth "Bearer foo"
+dsartifact-set-active-queue 'fPekLxsg' 'aDyQpL9N' --login_with_auth "Bearer foo"
+dsartifact-delete-active-queue 'ESTDV0uy' --login_with_auth "Bearer foo"
+dsartifact-report-failed-upload 'QPnT2cCt' 'YV0iEdmY' --login_with_auth "Bearer foo"
+dsartifact-delete-queue '5xJVIm4G' 'DRayU5RU' --login_with_auth "Bearer foo"
 dsartifact-list-all-active-queue --login_with_auth "Bearer foo"
 dsartifact-list-all-queue --login_with_auth "Bearer foo"
 dsartifact-list-terminated-servers-with-namespace --login_with_auth "Bearer foo"
-dsartifact-download-server-artifacts '4fnmFqJD' --login_with_auth "Bearer foo"
-dsartifact-check-server-artifact '7vanAbeW' --login_with_auth "Bearer foo"
+dsartifact-download-server-artifacts '92UJBD87' --login_with_auth "Bearer foo"
+dsartifact-check-server-artifact 'zZi24qGd' --login_with_auth "Bearer foo"
 dsartifact-list-terminated-servers --login_with_auth "Bearer foo"
 dsartifact-public-get-messages --login_with_auth "Bearer foo"
 exit()
@@ -80,53 +80,53 @@ eval_tap $? 2 'ListNodesIPAddress' test.out
 
 #- 3 DeleteNodeByID
 $PYTHON -m $MODULE 'dsartifact-delete-node-by-id' \
-    'lx3wmhpZ' \
-    'J8QcZchd' \
+    'LKpvIRjc' \
+    'XkfUsb80' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 3 'DeleteNodeByID' test.out
 
 #- 4 ListQueue
 $PYTHON -m $MODULE 'dsartifact-list-queue' \
-    '2I7utEID' \
+    '6GiRqH8W' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 4 'ListQueue' test.out
 
 #- 5 GetActiveQueue
 $PYTHON -m $MODULE 'dsartifact-get-active-queue' \
-    'MQJ8lgJY' \
+    'VIeWEr3B' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 5 'GetActiveQueue' test.out
 
 #- 6 SetActiveQueue
 $PYTHON -m $MODULE 'dsartifact-set-active-queue' \
-    'oJW9yrwQ' \
-    'DSyWqrxP' \
+    '8nQn8293' \
+    'RvufXZp9' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 6 'SetActiveQueue' test.out
 
 #- 7 DeleteActiveQueue
 $PYTHON -m $MODULE 'dsartifact-delete-active-queue' \
-    '2r7S4rkq' \
+    'jzWUx6bi' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 7 'DeleteActiveQueue' test.out
 
 #- 8 ReportFailedUpload
 $PYTHON -m $MODULE 'dsartifact-report-failed-upload' \
-    'i2sohfKb' \
-    'UqbRvDqt' \
+    'QJfYJQOe' \
+    'TjksIsdZ' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 8 'ReportFailedUpload' test.out
 
 #- 9 DeleteQueue
 $PYTHON -m $MODULE 'dsartifact-delete-queue' \
-    '4fHTZFhk' \
-    'ctMLgmEi' \
+    'ZjBp841j' \
+    'F1gFo5GD' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 9 'DeleteQueue' test.out
@@ -151,14 +151,14 @@ eval_tap $? 12 'ListTerminatedServersWithNamespace' test.out
 
 #- 13 DownloadServerArtifacts
 $PYTHON -m $MODULE 'dsartifact-download-server-artifacts' \
-    'wBACGYS8' \
+    'gI1iIAFx' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 13 'DownloadServerArtifacts' test.out
 
 #- 14 CheckServerArtifact
 $PYTHON -m $MODULE 'dsartifact-check-server-artifact' \
-    'gnlIvmpZ' \
+    'gJ6ZAxqU' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 14 'CheckServerArtifact' test.out

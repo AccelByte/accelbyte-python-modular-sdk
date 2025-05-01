@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# Custom Service Manager Index (1.22.0)
+# Custom Service Manager Index (1.23.1)
 
 
 ## Operations
@@ -142,6 +142,7 @@
 | apimodel.ReplicaResponse | [ApimodelReplicaResponse](../../src/services/csm/accelbyte_py_sdk/api/csm/models/apimodel_replica_response.py) |
 | apimodel.SaveConfigurationV2Request | [ApimodelSaveConfigurationV2Request](../../src/services/csm/accelbyte_py_sdk/api/csm/models/apimodel_save_configuration_v2_request.py) |
 | apimodel.SaveConfigurationV2Response | [ApimodelSaveConfigurationV2Response](../../src/services/csm/accelbyte_py_sdk/api/csm/models/apimodel_save_configuration_v2_response.py) |
+| apimodel.SaveSecretConfigurationV2Request | [ApimodelSaveSecretConfigurationV2Request](../../src/services/csm/accelbyte_py_sdk/api/csm/models/apimodel_save_secret_configuration_v2_request.py) |
 | apimodel.SelfSubscribeNotificationRequest | [ApimodelSelfSubscribeNotificationRequest](../../src/services/csm/accelbyte_py_sdk/api/csm/models/apimodel_self_subscribe_notification_request.py) |
 | apimodel.SubscribeNotificationRequest | [ApimodelSubscribeNotificationRequest](../../src/services/csm/accelbyte_py_sdk/api/csm/models/apimodel_subscribe_notification_request.py) |
 | apimodel.SubscribeNotificationResponse | [ApimodelSubscribeNotificationResponse](../../src/services/csm/accelbyte_py_sdk/api/csm/models/apimodel_subscribe_notification_response.py) |
@@ -151,6 +152,7 @@
 | apimodel.UpdateAppV2Request | [ApimodelUpdateAppV2Request](../../src/services/csm/accelbyte_py_sdk/api/csm/models/apimodel_update_app_v2_request.py) |
 | apimodel.UpdateConfigurationV2Request | [ApimodelUpdateConfigurationV2Request](../../src/services/csm/accelbyte_py_sdk/api/csm/models/apimodel_update_configuration_v2_request.py) |
 | apimodel.UpdateConfigurationV2Response | [ApimodelUpdateConfigurationV2Response](../../src/services/csm/accelbyte_py_sdk/api/csm/models/apimodel_update_configuration_v2_response.py) |
+| apimodel.UpdateSecretConfigurationV2Request | [ApimodelUpdateSecretConfigurationV2Request](../../src/services/csm/accelbyte_py_sdk/api/csm/models/apimodel_update_secret_configuration_v2_request.py) |
 | generated.CreateAppV1Request | [GeneratedCreateAppV1Request](../../src/services/csm/accelbyte_py_sdk/api/csm/models/generated_create_app_v1_request.py) |
 | generated.CreateAppV1Response | [GeneratedCreateAppV1Response](../../src/services/csm/accelbyte_py_sdk/api/csm/models/generated_create_app_v1_response.py) |
 | generated.CreateDeploymentV1Request | [GeneratedCreateDeploymentV1Request](../../src/services/csm/accelbyte_py_sdk/api/csm/models/generated_create_deployment_v1_request.py) |

@@ -108,8 +108,8 @@ class RestapiErrorResponseV2(Model):
 
     def translate_to_api_error(self) -> ApiError:
         return ApiError(
-            code=str(self.error_code) if self.error_code else "",
-            message=str(self.error_message) if self.error_message else "",
+            code=str(getattr(self, "error_code", "")) or "",
+            message=str(getattr(self, "error_message", "")) or "",
         )
 
     # endregion to methods

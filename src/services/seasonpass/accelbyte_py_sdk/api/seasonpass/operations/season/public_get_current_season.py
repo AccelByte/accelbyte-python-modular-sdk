@@ -57,7 +57,6 @@ class PublicGetCurrentSeason(Operation):
 
         securities: [BEARER_AUTH]
 
-
         namespace: (namespace) REQUIRED str in path
 
         language: (language) OPTIONAL str in query
@@ -66,6 +65,8 @@ class PublicGetCurrentSeason(Operation):
         200: OK - LocalizedSeasonInfo (successful operation)
 
         400: Bad Request - ErrorEntity (20026: publisher namespace not allowed)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
 
         404: Not Found - ErrorEntity (49147: Published season does not exist)
     """
@@ -187,11 +188,17 @@ class PublicGetCurrentSeason(Operation):
     class Response(ApiResponse):
         data_200: Optional[LocalizedSeasonInfo] = None
         error_400: Optional[ErrorEntity] = None
+        error_401: Optional[ErrorEntity] = None
         error_404: Optional[ErrorEntity] = None
 
         def ok(self) -> PublicGetCurrentSeason.Response:
             if self.error_400 is not None:
                 err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_401 is not None:
+                err = self.error_401.translate_to_api_error()
                 exc = err.to_exception()
                 if exc is not None:
                     raise exc  # pylint: disable=raising-bad-type
@@ -209,6 +216,9 @@ class PublicGetCurrentSeason(Operation):
             elif self.error_400 is not None:
                 yield None
                 yield self.error_400
+            elif self.error_401 is not None:
+                yield None
+                yield self.error_401
             elif self.error_404 is not None:
                 yield None
                 yield self.error_404
@@ -223,6 +233,8 @@ class PublicGetCurrentSeason(Operation):
         200: OK - LocalizedSeasonInfo (successful operation)
 
         400: Bad Request - ErrorEntity (20026: publisher namespace not allowed)
+
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
 
         404: Not Found - ErrorEntity (49147: Published season does not exist)
 
@@ -249,6 +261,9 @@ class PublicGetCurrentSeason(Operation):
             elif code == 400:
                 result.error_400 = ErrorEntity.create_from_dict(content)
                 result.error = result.error_400.translate_to_api_error()
+            elif code == 401:
+                result.error_401 = ErrorEntity.create_from_dict(content)
+                result.error = result.error_401.translate_to_api_error()
             elif code == 404:
                 result.error_404 = ErrorEntity.create_from_dict(content)
                 result.error = result.error_404.translate_to_api_error()
@@ -280,6 +295,8 @@ class PublicGetCurrentSeason(Operation):
 
         400: Bad Request - ErrorEntity (20026: publisher namespace not allowed)
 
+        401: Unauthorized - ErrorEntity (20001: Unauthorized)
+
         404: Not Found - ErrorEntity (49147: Published season does not exist)
 
         ---: HttpResponse (Undocumented Response)
@@ -298,6 +315,8 @@ class PublicGetCurrentSeason(Operation):
         if code == 200:
             return LocalizedSeasonInfo.create_from_dict(content), None
         if code == 400:
+            return None, ErrorEntity.create_from_dict(content)
+        if code == 401:
             return None, ErrorEntity.create_from_dict(content)
         if code == 404:
             return None, ErrorEntity.create_from_dict(content)

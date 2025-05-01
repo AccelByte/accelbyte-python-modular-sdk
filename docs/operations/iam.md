@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Iam Service Index (7.28.0)
+# AccelByte Gaming Services Iam Service Index (7.31.0)
 
 
 ## Operations
@@ -66,6 +66,7 @@
 |---|---|---|---|---|---|---|
 | /iam/v3/admin/namespaces/{namespace}/config/{configKey} | GET | AdminGetConfigValueV3 | `false` | [AdminGetConfigValueV3](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/config/admin_get_config_value_v3.py) | [admin_get_config_value_v3](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_config.py) | [accelbyte_py_sdk_cli iam-admin-get-config-value-v3](../../samples/cli/accelbyte_py_sdk_cli/iam/_admin_get_config_value_v3.py) |
 | /iam/v3/public/namespaces/{namespace}/config/{configKey} | GET | PublicGetConfigValueV3 | `false` | [PublicGetConfigValueV3](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/config/public_get_config_value_v3.py) | [public_get_config_value_v3](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_config.py) | [accelbyte_py_sdk_cli iam-public-get-config-value-v3](../../samples/cli/accelbyte_py_sdk_cli/iam/_public_get_config_value_v3.py) |
+| /iam/v3/config/public | GET | PublicGetSystemConfigV3 | `false` | [PublicGetSystemConfigV3](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/config/public_get_system_config_v3.py) | [public_get_system_config_v3](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_config.py) | [accelbyte_py_sdk_cli iam-public-get-system-config-v3](../../samples/cli/accelbyte_py_sdk_cli/iam/_public_get_system_config_v3.py) |
 
 ### Country
 | Endpoint | Method | ID | Deprecated | Class | Wrapper | Example |
@@ -286,6 +287,7 @@
 | /iam/v3/admin/namespaces/{namespace}/users | PUT | AdminBulkUpdateUsersV3 | `false` | [AdminBulkUpdateUsersV3](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/users/admin_bulk_update_users_v3.py) | [admin_bulk_update_users_v3](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_users.py) | [accelbyte_py_sdk_cli iam-admin-bulk-update-users-v3](../../samples/cli/accelbyte_py_sdk_cli/iam/_admin_bulk_update_users_v3.py) |
 | /iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/justice/{targetNamespace} | POST | AdminCreateJusticeUser | `false` | [AdminCreateJusticeUser](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/users/admin_create_justice_user.py) | [admin_create_justice_user](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_users.py) | [accelbyte_py_sdk_cli iam-admin-create-justice-user](../../samples/cli/accelbyte_py_sdk_cli/iam/_admin_create_justice_user.py) |
 | /iam/v2/admin/namespaces/{namespace}/users/{userId}/roles | POST | AdminCreateUserRolesV2 | `true` | [AdminCreateUserRolesV2](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/users/admin_create_user_roles_v2.py) | [admin_create_user_roles_v2](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_users.py) | [accelbyte_py_sdk_cli iam-admin-create-user-roles-v2](../../samples/cli/accelbyte_py_sdk_cli/iam/_admin_create_user_roles_v2.py) |
+| /iam/v3/admin/namespaces/{namespace}/users/cursor | POST | AdminCursorGetUserV3 | `false` | [AdminCursorGetUserV3](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/users/admin_cursor_get_user_v3.py) | [admin_cursor_get_user_v3](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_users.py) | [accelbyte_py_sdk_cli iam-admin-cursor-get-user-v3](../../samples/cli/accelbyte_py_sdk_cli/iam/_admin_cursor_get_user_v3.py) |
 | /iam/v2/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId}/link | DELETE | AdminDeletePlatformLinkV2 | `true` | [AdminDeletePlatformLinkV2](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/users/admin_delete_platform_link_v2.py) | [admin_delete_platform_link_v2](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_users.py) | [accelbyte_py_sdk_cli iam-admin-delete-platform-link-v2](../../samples/cli/accelbyte_py_sdk_cli/iam/_admin_delete_platform_link_v2.py) |
 | /iam/v3/admin/namespaces/{namespace}/users/{userId}/information | DELETE | AdminDeleteUserInformationV3 | `false` | [AdminDeleteUserInformationV3](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/users/admin_delete_user_infor_aae072.py) | [admin_delete_user_information_v3](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_users.py) | [accelbyte_py_sdk_cli iam-admin-delete-user-information-v3](../../samples/cli/accelbyte_py_sdk_cli/iam/_admin_delete_user_information_v3.py) |
 | /iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId}/link/histories | DELETE | AdminDeleteUserLinkingHistoryByPlatformIDV3 | `true` | [AdminDeleteUserLinkingHistoryByPlatformIDV3](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/users/admin_delete_user_linki_405f1b.py) | [admin_delete_user_linking_history_by_platform_idv3](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_users.py) | [accelbyte_py_sdk_cli iam-admin-delete-user-linking-history-by-platform-idv3](../../samples/cli/accelbyte_py_sdk_cli/iam/_admin_delete_user_linking_history_by_platform_idv3.py) |
@@ -393,6 +395,7 @@
 | /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/force | POST | PublicForcePlatformLinkV3 | `false` | [PublicForcePlatformLinkV3](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/users/public_force_platform_link_v3.py) | [public_force_platform_link_v3](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_users.py) | [accelbyte_py_sdk_cli iam-public-force-platform-link-v3](../../samples/cli/accelbyte_py_sdk_cli/iam/_public_force_platform_link_v3.py) |
 | /iam/v2/public/namespaces/{namespace}/users/forgotPassword | POST | PublicForgotPasswordV2 | `true` | [PublicForgotPasswordV2](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/users/public_forgot_password_v2.py) | [public_forgot_password_v2](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_users.py) | [accelbyte_py_sdk_cli iam-public-forgot-password-v2](../../samples/cli/accelbyte_py_sdk_cli/iam/_public_forgot_password_v2.py) |
 | /iam/v3/public/namespaces/{namespace}/users/forgot | POST | PublicForgotPasswordV3 | `false` | [PublicForgotPasswordV3](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/users/public_forgot_password_v3.py) | [public_forgot_password_v3](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_users.py) | [accelbyte_py_sdk_cli iam-public-forgot-password-v3](../../samples/cli/accelbyte_py_sdk_cli/iam/_public_forgot_password_v3.py) |
+| /iam/v3/public/users/forgot | POST | PublicForgotPasswordWithoutNamespaceV3 | `false` | [PublicForgotPasswordWithoutNamespaceV3](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/users/public_forgot_password__76e553.py) | [public_forgot_password_without_namespace_v3](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_users.py) | [accelbyte_py_sdk_cli iam-public-forgot-password-without-namespace-v3](../../samples/cli/accelbyte_py_sdk_cli/iam/_public_forgot_password_without_namespace_v3.py) |
 | /iam/v3/public/namespaces/{namespace}/requests/{requestId}/async/status | GET | PublicGetAsyncStatus | `false` | [PublicGetAsyncStatus](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/users/public_get_async_status.py) | [public_get_async_status](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_users.py) | [accelbyte_py_sdk_cli iam-public-get-async-status](../../samples/cli/accelbyte_py_sdk_cli/iam/_public_get_async_status.py) |
 | /iam/v2/public/namespaces/{namespace}/countries/{countryCode}/agerestrictions | GET | PublicGetCountryAgeRestriction | `true` | [PublicGetCountryAgeRestriction](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/users/public_get_country_age__7cfd03.py) | [public_get_country_age_restriction](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_users.py) | [accelbyte_py_sdk_cli iam-public-get-country-age-restriction](../../samples/cli/accelbyte_py_sdk_cli/iam/_public_get_country_age_restriction.py) |
 | /iam/v3/public/namespaces/{namespace}/agerestrictions/countries/{countryCode} | GET | PublicGetCountryAgeRestrictionV3 | `false` | [PublicGetCountryAgeRestrictionV3](../../src/services/iam/accelbyte_py_sdk/api/iam/operations/users/public_get_country_age__e3af67.py) | [public_get_country_age_restriction_v3](../../src/services/iam/accelbyte_py_sdk/api/iam/wrappers/_users.py) | [accelbyte_py_sdk_cli iam-public-get-country-age-restriction-v3](../../samples/cli/accelbyte_py_sdk_cli/iam/_public_get_country_age_restriction_v3.py) |
@@ -589,6 +592,7 @@
 | accountcommon.PlatformLinkingHistory | [AccountcommonPlatformLinkingHistory](../../src/services/iam/accelbyte_py_sdk/api/iam/models/accountcommon_platform_linking_history.py) |
 | accountcommon.PlatformUserInformationV3 | [AccountcommonPlatformUserInformationV3](../../src/services/iam/accelbyte_py_sdk/api/iam/models/accountcommon_platform_user_information_v3.py) |
 | accountcommon.ProfileUpdateConfig | [AccountcommonProfileUpdateConfig](../../src/services/iam/accelbyte_py_sdk/api/iam/models/accountcommon_profile_update_config.py) |
+| accountcommon.QueryCursor | [AccountcommonQueryCursor](../../src/services/iam/accelbyte_py_sdk/api/iam/models/accountcommon_query_cursor.py) |
 | accountcommon.RegisteredDomain | [AccountcommonRegisteredDomain](../../src/services/iam/accelbyte_py_sdk/api/iam/models/accountcommon_registered_domain.py) |
 | accountcommon.ReplaceRolePermission | [AccountcommonReplaceRolePermission](../../src/services/iam/accelbyte_py_sdk/api/iam/models/accountcommon_replace_role_permission.py) |
 | accountcommon.Role | [AccountcommonRole](../../src/services/iam/accelbyte_py_sdk/api/iam/models/accountcommon_role.py) |
@@ -635,6 +639,7 @@
 | legal.AcceptedPoliciesRequest | [LegalAcceptedPoliciesRequest](../../src/services/iam/accelbyte_py_sdk/api/iam/models/legal_accepted_policies_request.py) |
 | model.AccountProgressionInfo | [ModelAccountProgressionInfo](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_account_progression_info.py) |
 | model.AddUserRoleV4Request | [ModelAddUserRoleV4Request](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_add_user_role_v4_request.py) |
+| model.AdminBulkUserRequest | [ModelAdminBulkUserRequest](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_admin_bulk_user_request.py) |
 | model.AgeRestrictionRequest | [ModelAgeRestrictionRequest](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_age_restriction_request.py) |
 | model.AgeRestrictionRequestV3 | [ModelAgeRestrictionRequestV3](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_age_restriction_request_v3.py) |
 | model.AgeRestrictionResponse | [ModelAgeRestrictionResponse](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_age_restriction_response.py) |
@@ -659,6 +664,9 @@
 | model.CountryResponse | [ModelCountryResponse](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_country_response.py) |
 | model.CountryV3Response | [ModelCountryV3Response](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_country_v3_response.py) |
 | model.CreateJusticeUserResponse | [ModelCreateJusticeUserResponse](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_create_justice_user_response.py) |
+| model.CursorGetUserRequest | [ModelCursorGetUserRequest](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_cursor_get_user_request.py) |
+| model.CursorGetUserResponse | [ModelCursorGetUserResponse](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_cursor_get_user_response.py) |
+| model.CursorGetUserResponse.data | [ModelCursorGetUserResponseData](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_cursor_get_user_response_data.py) |
 | model.DeviceBannedResponseV4 | [ModelDeviceBannedResponseV4](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_device_banned_response_v4.py) |
 | model.DeviceBanRequestV4 | [ModelDeviceBanRequestV4](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_device_ban_request_v4.py) |
 | model.DeviceBanResponseV4 | [ModelDeviceBanResponseV4](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_device_ban_response_v4.py) |
@@ -678,6 +686,8 @@
 | model.FailedBanUnbanUserV3 | [ModelFailedBanUnbanUserV3](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_failed_ban_unban_user_v3.py) |
 | model.FieldUpdateAllowStatus | [ModelFieldUpdateAllowStatus](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_field_update_allow_status.py) |
 | model.ForgotPasswordRequestV3 | [ModelForgotPasswordRequestV3](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_forgot_password_request_v3.py) |
+| model.ForgotPasswordResponseV3 | [ModelForgotPasswordResponseV3](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_forgot_password_response_v3.py) |
+| model.ForgotPasswordWithoutNamespaceRequestV3 | [ModelForgotPasswordWithoutNamespaceRequestV3](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_forgot_password_without_namespace_request_v3.py) |
 | model.GetAdminUsersResponse | [ModelGetAdminUsersResponse](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_get_admin_users_response.py) |
 | model.GetBulkUserBansRequest | [ModelGetBulkUserBansRequest](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_get_bulk_user_bans_request.py) |
 | model.GetLinkHeadlessAccountConflictResponse | [ModelGetLinkHeadlessAccountConflictResponse](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_get_link_headless_account_conflict_response.py) |
@@ -695,6 +705,7 @@
 | model.InputValidationsPublicResponse | [ModelInputValidationsPublicResponse](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_input_validations_public_response.py) |
 | model.InputValidationsResponse | [ModelInputValidationsResponse](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_input_validations_response.py) |
 | model.InputValidationUpdatePayload | [ModelInputValidationUpdatePayload](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_input_validation_update_payload.py) |
+| model.InternalConfigResponseV3 | [ModelInternalConfigResponseV3](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_internal_config_response_v3.py) |
 | model.InvitationHistoryResponse | [ModelInvitationHistoryResponse](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_invitation_history_response.py) |
 | model.InviteUserRequestV3 | [ModelInviteUserRequestV3](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_invite_user_request_v3.py) |
 | model.InviteUserRequestV4 | [ModelInviteUserRequestV4](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_invite_user_request_v4.py) |
@@ -782,6 +793,7 @@
 | model.SSOPlatformCredentialRequest | [ModelSSOPlatformCredentialRequest](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_sso_platform_credential_request.py) |
 | model.SSOPlatformCredentialResponse | [ModelSSOPlatformCredentialResponse](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_sso_platform_credential_response.py) |
 | model.TagCreateRequestV3 | [ModelTagCreateRequestV3](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_tag_create_request_v3.py) |
+| model.TagDetail | [ModelTagDetail](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_tag_detail.py) |
 | model.TagUpdateRequestV3 | [ModelTagUpdateRequestV3](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_tag_update_request_v3.py) |
 | model.ThirdPartyLoginPlatformCredentialRequest | [ModelThirdPartyLoginPlatformCredentialRequest](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_third_party_login_platform_credential_request.py) |
 | model.ThirdPartyLoginPlatformCredentialResponse | [ModelThirdPartyLoginPlatformCredentialResponse](../../src/services/iam/accelbyte_py_sdk/api/iam/models/model_third_party_login_platform_credential_response.py) |

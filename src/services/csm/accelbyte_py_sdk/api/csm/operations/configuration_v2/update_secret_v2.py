@@ -31,8 +31,8 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 from accelbyte_py_sdk.core import deprecated
 
-from ...models import ApimodelUpdateConfigurationV2Request
 from ...models import ApimodelUpdateConfigurationV2Response
+from ...models import ApimodelUpdateSecretConfigurationV2Request
 from ...models import ResponseErrorResponse
 
 
@@ -42,10 +42,10 @@ class UpdateSecretV2(Operation):
     Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:SECRET [UPDATE]`
 
     Update an environment secret.
+    Secret will always be masked.
     Request body:
     - value : configuration value - Required.
     - description : description of the configuration - Optional.
-    - applyMask : mask the value in the Helm manifest for sensitive information (true or false) - Optional.
 
     Properties:
         url: /csm/v2/admin/namespaces/{namespace}/apps/{app}/secrets/{configId}
@@ -60,7 +60,7 @@ class UpdateSecretV2(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ApimodelUpdateConfigurationV2Request in body
+        body: (body) REQUIRED ApimodelUpdateSecretConfigurationV2Request in body
 
         app: (app) REQUIRED str in path
 
@@ -93,7 +93,7 @@ class UpdateSecretV2(Operation):
 
     service_name: Optional[str] = "csm"
 
-    body: ApimodelUpdateConfigurationV2Request  # REQUIRED in [body]
+    body: ApimodelUpdateSecretConfigurationV2Request  # REQUIRED in [body]
     app: str  # REQUIRED in [path]
     config_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
@@ -171,7 +171,9 @@ class UpdateSecretV2(Operation):
 
     # region with_x methods
 
-    def with_body(self, value: ApimodelUpdateConfigurationV2Request) -> UpdateSecretV2:
+    def with_body(
+        self, value: ApimodelUpdateSecretConfigurationV2Request
+    ) -> UpdateSecretV2:
         self.body = value
         return self
 
@@ -196,7 +198,7 @@ class UpdateSecretV2(Operation):
         if hasattr(self, "body") and self.body:
             result["body"] = self.body.to_dict(include_empty=include_empty)
         elif include_empty:
-            result["body"] = ApimodelUpdateConfigurationV2Request()
+            result["body"] = ApimodelUpdateSecretConfigurationV2Request()
         if hasattr(self, "app") and self.app:
             result["app"] = str(self.app)
         elif include_empty:
@@ -383,7 +385,7 @@ class UpdateSecretV2(Operation):
     @classmethod
     def create(
         cls,
-        body: ApimodelUpdateConfigurationV2Request,
+        body: ApimodelUpdateSecretConfigurationV2Request,
         app: str,
         config_id: str,
         namespace: str,
@@ -404,11 +406,11 @@ class UpdateSecretV2(Operation):
     ) -> UpdateSecretV2:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = ApimodelUpdateConfigurationV2Request.create_from_dict(
+            instance.body = ApimodelUpdateSecretConfigurationV2Request.create_from_dict(
                 dict_["body"], include_empty=include_empty
             )
         elif include_empty:
-            instance.body = ApimodelUpdateConfigurationV2Request()
+            instance.body = ApimodelUpdateSecretConfigurationV2Request()
         if "app" in dict_ and dict_["app"] is not None:
             instance.app = str(dict_["app"])
         elif include_empty:

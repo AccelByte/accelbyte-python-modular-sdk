@@ -216,8 +216,8 @@ class OauthmodelErrorResponse(Model):
 
     def translate_to_api_error(self) -> ApiError:
         return ApiError(
-            code=str(self.error) if self.error else "",
-            message=str(self.error_description) if self.error_description else "",
+            code=str(getattr(self, "error", "")) or "",
+            message=str(getattr(self, "error_description", "")) or "",
         )
 
     # endregion to methods

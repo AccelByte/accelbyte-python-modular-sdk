@@ -61,6 +61,10 @@ class QueryXrayTimelineByUserID(Operation):
 
         offset: (offset) OPTIONAL int in query
 
+        order: (order) OPTIONAL str in query
+
+        order_by: (orderBy) OPTIONAL str in query
+
         end_date: (endDate) REQUIRED str in query
 
         start_date: (startDate) REQUIRED str in query
@@ -100,6 +104,8 @@ class QueryXrayTimelineByUserID(Operation):
     user_id: str  # REQUIRED in [path]
     limit: int  # OPTIONAL in [query]
     offset: int  # OPTIONAL in [query]
+    order: str  # OPTIONAL in [query]
+    order_by: str  # OPTIONAL in [query]
     end_date: str  # REQUIRED in [query]
     start_date: str  # REQUIRED in [query]
 
@@ -167,6 +173,10 @@ class QueryXrayTimelineByUserID(Operation):
             result["limit"] = self.limit
         if hasattr(self, "offset"):
             result["offset"] = self.offset
+        if hasattr(self, "order"):
+            result["order"] = self.order
+        if hasattr(self, "order_by"):
+            result["orderBy"] = self.order_by
         if hasattr(self, "end_date"):
             result["endDate"] = self.end_date
         if hasattr(self, "start_date"):
@@ -195,6 +205,14 @@ class QueryXrayTimelineByUserID(Operation):
 
     def with_offset(self, value: int) -> QueryXrayTimelineByUserID:
         self.offset = value
+        return self
+
+    def with_order(self, value: str) -> QueryXrayTimelineByUserID:
+        self.order = value
+        return self
+
+    def with_order_by(self, value: str) -> QueryXrayTimelineByUserID:
+        self.order_by = value
         return self
 
     def with_end_date(self, value: str) -> QueryXrayTimelineByUserID:
@@ -227,6 +245,14 @@ class QueryXrayTimelineByUserID(Operation):
             result["offset"] = int(self.offset)
         elif include_empty:
             result["offset"] = 0
+        if hasattr(self, "order") and self.order:
+            result["order"] = str(self.order)
+        elif include_empty:
+            result["order"] = ""
+        if hasattr(self, "order_by") and self.order_by:
+            result["orderBy"] = str(self.order_by)
+        elif include_empty:
+            result["orderBy"] = ""
         if hasattr(self, "end_date") and self.end_date:
             result["endDate"] = str(self.end_date)
         elif include_empty:
@@ -433,6 +459,8 @@ class QueryXrayTimelineByUserID(Operation):
         start_date: str,
         limit: Optional[int] = None,
         offset: Optional[int] = None,
+        order: Optional[str] = None,
+        order_by: Optional[str] = None,
         **kwargs,
     ) -> QueryXrayTimelineByUserID:
         instance = cls()
@@ -444,6 +472,10 @@ class QueryXrayTimelineByUserID(Operation):
             instance.limit = limit
         if offset is not None:
             instance.offset = offset
+        if order is not None:
+            instance.order = order
+        if order_by is not None:
+            instance.order_by = order_by
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -469,6 +501,14 @@ class QueryXrayTimelineByUserID(Operation):
             instance.offset = int(dict_["offset"])
         elif include_empty:
             instance.offset = 0
+        if "order" in dict_ and dict_["order"] is not None:
+            instance.order = str(dict_["order"])
+        elif include_empty:
+            instance.order = ""
+        if "orderBy" in dict_ and dict_["orderBy"] is not None:
+            instance.order_by = str(dict_["orderBy"])
+        elif include_empty:
+            instance.order_by = ""
         if "endDate" in dict_ and dict_["endDate"] is not None:
             instance.end_date = str(dict_["endDate"])
         elif include_empty:
@@ -486,6 +526,8 @@ class QueryXrayTimelineByUserID(Operation):
             "userId": "user_id",
             "limit": "limit",
             "offset": "offset",
+            "order": "order",
+            "orderBy": "order_by",
             "endDate": "end_date",
             "startDate": "start_date",
         }
@@ -497,6 +539,8 @@ class QueryXrayTimelineByUserID(Operation):
             "userId": True,
             "limit": False,
             "offset": False,
+            "order": False,
+            "orderBy": False,
             "endDate": True,
             "startDate": True,
         }

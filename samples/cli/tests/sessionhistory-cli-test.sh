@@ -32,41 +32,41 @@ $PYTHON -m $MODULE 'start-interactive-session' --continue_on_error '--writer=tap
 sessionhistory-get-healthcheck-info --login_with_auth "Bearer foo"
 sessionhistory-get-healthcheck-info-v1 --login_with_auth "Bearer foo"
 sessionhistory-admin-get-env-config --login_with_auth "Bearer foo"
-sessionhistory-admin-patch-update-env-config '{"SESSION_DELETION_GRACE_PERIOD": 5}' --login_with_auth "Bearer foo"
+sessionhistory-admin-patch-update-env-config '{"SESSION_DELETION_GRACE_PERIOD": 10}' --login_with_auth "Bearer foo"
 sessionhistory-admin-get-log-config --login_with_auth "Bearer foo"
-sessionhistory-admin-patch-update-log-config '{"logLevel": "trace"}' --login_with_auth "Bearer foo"
+sessionhistory-admin-patch-update-log-config '{"logLevel": "fatal"}' --login_with_auth "Bearer foo"
 sessionhistory-admin-query-game-session-detail --login_with_auth "Bearer foo"
-sessionhistory-get-game-session-detail 'Hq7ikaO9' --login_with_auth "Bearer foo"
+sessionhistory-get-game-session-detail 'UDUxJRq4' --login_with_auth "Bearer foo"
 sessionhistory-admin-query-matchmaking-detail --login_with_auth "Bearer foo"
-sessionhistory-admin-get-matchmaking-detail-by-session-id 'Sv9Lfdaa' --login_with_auth "Bearer foo"
-sessionhistory-admin-get-matchmaking-detail-by-ticket-id 'MkQAWN3L' --login_with_auth "Bearer foo"
+sessionhistory-admin-get-matchmaking-detail-by-session-id 'N0Lp8O3Y' --login_with_auth "Bearer foo"
+sessionhistory-admin-get-matchmaking-detail-by-ticket-id 'GqkJLJ0i' --login_with_auth "Bearer foo"
 sessionhistory-admin-query-party-detail --login_with_auth "Bearer foo"
-sessionhistory-get-party-detail 'ivfuAU3X' --login_with_auth "Bearer foo"
+sessionhistory-get-party-detail 'BCP0NvNw' --login_with_auth "Bearer foo"
 sessionhistory-admin-query-ticket-detail --login_with_auth "Bearer foo"
-sessionhistory-admin-ticket-detail-get-by-ticket-id 'NH5chaZw' --login_with_auth "Bearer foo"
+sessionhistory-admin-ticket-detail-get-by-ticket-id 'pdoqMAki' --login_with_auth "Bearer foo"
 sessionhistory-public-query-game-session-me --login_with_auth "Bearer foo"
-sessionhistory-query-xray-match-pool '["F9ErMAIx", "TmDt3pbg", "ZPjgyDK8"]' 'G7yF6ybQ' 'DnfTIRoZ' --login_with_auth "Bearer foo"
-sessionhistory-query-detail-tick-match-pool '7tIHJMaR' 'x2OS6ZYV' 'hBUz2wVY' 'kDPWB18T' --login_with_auth "Bearer foo"
-sessionhistory-query-detail-tick-match-pool-matches 'RG1u92by' 'GqxuerBb' 'tpFvVlvC' --login_with_auth "Bearer foo"
-sessionhistory-query-detail-tick-match-pool-ticket 'nhacJ5x2' 'R9zJZL7S' 'n4c3MAiB' --login_with_auth "Bearer foo"
-sessionhistory-query-match-histories 'Stl3SQFc' --login_with_auth "Bearer foo"
-sessionhistory-query-match-ticket-histories 'wDSktaEi' --login_with_auth "Bearer foo"
-sessionhistory-query-xray-match 'MigR8afj' --login_with_auth "Bearer foo"
-sessionhistory-query-acquiring-ds 'fm36MjjX' 'qIIg4zhz' --login_with_auth "Bearer foo"
-sessionhistory-query-acquiring-ds-wait-time-avg 'lIyeDTor' 'PEwnW0zu' --login_with_auth "Bearer foo"
-sessionhistory-query-match-length-durationp-avg 'dj1RPuJo' 'YNcXwUIX' --login_with_auth "Bearer foo"
-sessionhistory-query-match-length-durationp99 '7q8KR0Dm' '6USFekVD' --login_with_auth "Bearer foo"
-sessionhistory-query-total-active-session 'KuCdL984' 'ln8dDKWX' --login_with_auth "Bearer foo"
-sessionhistory-query-total-matchmaking-match 'gEQxunKj' '7p8iZaZE' --login_with_auth "Bearer foo"
-sessionhistory-query-total-player-persession '7CgVZxSg' 'eqfHFj8N' --login_with_auth "Bearer foo"
-sessionhistory-query-total-matchmaking-canceled 'ISbqeDM0' 'KPMH2KSm' --login_with_auth "Bearer foo"
-sessionhistory-query-total-matchmaking-created 'O8nUMNGo' 's07Rwa2O' --login_with_auth "Bearer foo"
-sessionhistory-query-total-matchmaking-expired 'PrAlUZrW' 'm9R0ZVfg' --login_with_auth "Bearer foo"
-sessionhistory-query-total-matchmaking-match-ticket 'b9uyXov6' 'PXUcPLpS' --login_with_auth "Bearer foo"
-sessionhistory-create-xray-ticket-observability '{"action": "QynUaap3", "activeAllianceRule": {"max_number": 88, "min_number": 1, "player_max_number": 69, "player_min_number": 97}, "activeMatchingRule": [{"attribute": "rCiza54Y", "criteria": "WNgePauw", "reference": 0.39021867865885174}, {"attribute": "PXhPaPgG", "criteria": "AbQRXiQA", "reference": 0.8505640831093526}, {"attribute": "v3ie8dE0", "criteria": "c7KR3kjT", "reference": 0.33822323288670053}], "function": "a2wekmEt", "gameMode": "rvSNNKAc", "isBackfillMatch": false, "isRuleSetFlexed": false, "iteration": 55, "matchID": "ekk12e1g", "namespace": "N4TB74Al", "remainingPlayersPerTicket": [96, 77, 77], "remainingTickets": 88, "sessionTickID": "to6WlIcj", "tickID": 20, "ticketID": "qw7GosG0", "timeToMatchSec": 0.2796159611874367, "timestamp": "1986-06-13T00:00:00Z", "unbackfillReason": "VOxR3GOF", "unmatchReason": "EHh6nFPu"}' --login_with_auth "Bearer foo"
-sessionhistory-create-xray-bulk-ticket-observability '{"ticketObservabilities": [{"action": "ONpvGC3M", "activeAllianceRule": {"max_number": 51, "min_number": 3, "player_max_number": 8, "player_min_number": 65}, "activeMatchingRule": [{"attribute": "Q21yBE9f", "criteria": "OncZtL8b", "reference": 0.1416433544896848}, {"attribute": "QqfwAmtR", "criteria": "SF2qyD3s", "reference": 0.058028397005952526}, {"attribute": "a7wc9MMD", "criteria": "yEizFUN6", "reference": 0.012054389966829726}], "function": "tRYPovG6", "gameMode": "jIXrN1ba", "isBackfillMatch": false, "isRuleSetFlexed": false, "iteration": 85, "matchID": "1TsOUpJT", "namespace": "svAcNBgd", "remainingPlayersPerTicket": [98, 21, 43], "remainingTickets": 98, "sessionTickID": "2MwMU9Gb", "tickID": 49, "ticketID": "MyaIqkr0", "timeToMatchSec": 0.12975541949163372, "timestamp": "1991-02-13T00:00:00Z", "unbackfillReason": "f1YuTigb", "unmatchReason": "qQYLvU6s"}, {"action": "stGac0F8", "activeAllianceRule": {"max_number": 58, "min_number": 20, "player_max_number": 58, "player_min_number": 24}, "activeMatchingRule": [{"attribute": "Xx4YlI4L", "criteria": "LPPcWJYf", "reference": 0.06655073103238718}, {"attribute": "Pq0DbVZr", "criteria": "TFmuhpBL", "reference": 0.8395141672258338}, {"attribute": "7KzbOqin", "criteria": "mIEy2V0f", "reference": 0.5846586686113135}], "function": "MwEgxmvu", "gameMode": "vlVrX0Yq", "isBackfillMatch": true, "isRuleSetFlexed": true, "iteration": 52, "matchID": "NOFQUQNE", "namespace": "MAS9tVFF", "remainingPlayersPerTicket": [8, 63, 11], "remainingTickets": 56, "sessionTickID": "QGS7mC2C", "tickID": 66, "ticketID": "sXDDKuxJ", "timeToMatchSec": 0.9148322923044393, "timestamp": "1985-09-12T00:00:00Z", "unbackfillReason": "mR2Fz75y", "unmatchReason": "Rx5pGhvY"}, {"action": "LJeYGA06", "activeAllianceRule": {"max_number": 23, "min_number": 83, "player_max_number": 73, "player_min_number": 65}, "activeMatchingRule": [{"attribute": "bpfD1KII", "criteria": "UomrEvwt", "reference": 0.6886792840309995}, {"attribute": "iazqgDwv", "criteria": "LnCt0U3b", "reference": 0.9159108158878819}, {"attribute": "AYOHRlXw", "criteria": "9Mgt5IxR", "reference": 0.36860596058243533}], "function": "7eVcdKs1", "gameMode": "SxZXtjR9", "isBackfillMatch": true, "isRuleSetFlexed": true, "iteration": 47, "matchID": "bjGMZD3Z", "namespace": "Nw2B4hKy", "remainingPlayersPerTicket": [53, 2, 53], "remainingTickets": 66, "sessionTickID": "PKgXKa3p", "tickID": 5, "ticketID": "uztYcqSz", "timeToMatchSec": 0.5176456444439393, "timestamp": "1984-05-09T00:00:00Z", "unbackfillReason": "jbEOp2Wc", "unmatchReason": "Xg8fDzh2"}]}' --login_with_auth "Bearer foo"
-sessionhistory-query-xray-timeline-by-ticket-id 'TSGEuFIa' 'HLrcp5EB' 'Q0CaANds' --login_with_auth "Bearer foo"
-sessionhistory-query-xray-timeline-by-user-id 'SCUvw0W4' 'OrLNAyxj' 'bprINfS5' --login_with_auth "Bearer foo"
+sessionhistory-query-xray-match-pool '["EoL5ZO2y", "Ong9wrlL", "c7wWR5sO"]' 'jEze4okm' 'jIx8M7Bv' --login_with_auth "Bearer foo"
+sessionhistory-query-detail-tick-match-pool 'enZFxmJT' 'X3yJDOQi' '3O3AJONP' 'JK0ihadX' --login_with_auth "Bearer foo"
+sessionhistory-query-detail-tick-match-pool-matches '1BXCnMis' 'e5LMxKEv' 'neMZc9pt' --login_with_auth "Bearer foo"
+sessionhistory-query-detail-tick-match-pool-ticket 'CMBDMEFs' '2vrD6YD1' 'iAf6I96k' --login_with_auth "Bearer foo"
+sessionhistory-query-match-histories 'RIqBiKTS' --login_with_auth "Bearer foo"
+sessionhistory-query-match-ticket-histories 'HkDwBs5z' --login_with_auth "Bearer foo"
+sessionhistory-query-xray-match 'mGqW4m3F' --login_with_auth "Bearer foo"
+sessionhistory-query-acquiring-ds 'DxWWrTOd' 'FyvmhF8O' --login_with_auth "Bearer foo"
+sessionhistory-query-acquiring-ds-wait-time-avg 'ky1bChhd' 'XOmOG9Hl' --login_with_auth "Bearer foo"
+sessionhistory-query-match-length-durationp-avg 'u6frQSo5' 'Q42iYx8c' --login_with_auth "Bearer foo"
+sessionhistory-query-match-length-durationp99 'I4iZccWs' 'sMpoLm2U' --login_with_auth "Bearer foo"
+sessionhistory-query-total-active-session '3Io7DQnH' 'OVwG1IBL' --login_with_auth "Bearer foo"
+sessionhistory-query-total-matchmaking-match 'Jvx437Bd' '1rtK2UYt' --login_with_auth "Bearer foo"
+sessionhistory-query-total-player-persession 'LLoCThGW' 'yhQrpuvE' --login_with_auth "Bearer foo"
+sessionhistory-query-total-matchmaking-canceled 'fdTmQj41' '4uhHQyfo' --login_with_auth "Bearer foo"
+sessionhistory-query-total-matchmaking-created 'inV7M4k8' 'z72YeB2t' --login_with_auth "Bearer foo"
+sessionhistory-query-total-matchmaking-expired 'BShky4Dq' 'oaVtzOf4' --login_with_auth "Bearer foo"
+sessionhistory-query-total-matchmaking-match-ticket '3VYPOm4Z' 'QQYogaIy' --login_with_auth "Bearer foo"
+sessionhistory-create-xray-ticket-observability '{"action": "wPVOm0zf", "activeAllianceRule": {"max_number": 93, "min_number": 41, "player_max_number": 31, "player_min_number": 14}, "activeMatchingRule": [{"attribute": "0fHQy8Qx", "criteria": "PKyYi6eU", "reference": 0.7846853171884998}, {"attribute": "XCv0bfzF", "criteria": "WRNhnDeb", "reference": 0.03529813398871451}, {"attribute": "QVwyfok8", "criteria": "jaRLIKR3", "reference": 0.4855719560261412}], "function": "uFNpX81d", "gameMode": "32UVaYkF", "isBackfillMatch": false, "isRuleSetFlexed": false, "iteration": 58, "matchID": "hcxrf39v", "namespace": "l2SU3bA8", "remainingPlayersPerTicket": [40, 94, 72], "remainingTickets": 56, "sessionTickID": "XVctsDdp", "tickID": 39, "ticketID": "4UGbYPmj", "timeToMatchSec": 0.8876163551255031, "timestamp": "1998-09-19T00:00:00Z", "unbackfillReason": "Nr0xpMd7", "unmatchReason": "WbEy3g6w"}' --login_with_auth "Bearer foo"
+sessionhistory-create-xray-bulk-ticket-observability '{"ticketObservabilities": [{"action": "RZoZDjtF", "activeAllianceRule": {"max_number": 58, "min_number": 2, "player_max_number": 40, "player_min_number": 78}, "activeMatchingRule": [{"attribute": "wQqkuQq6", "criteria": "AEFQ6pSn", "reference": 0.0794782750503028}, {"attribute": "rnDD9Jfm", "criteria": "TDKeqs90", "reference": 0.5549952851164182}, {"attribute": "0GggeMmq", "criteria": "71gTBBTN", "reference": 0.39219010664224696}], "function": "7XMUq09t", "gameMode": "6083rFaK", "isBackfillMatch": false, "isRuleSetFlexed": true, "iteration": 28, "matchID": "NEwIlFiQ", "namespace": "l23t4bfh", "remainingPlayersPerTicket": [93, 90, 29], "remainingTickets": 72, "sessionTickID": "bPqU5Wbb", "tickID": 34, "ticketID": "DfyMDCpa", "timeToMatchSec": 0.6895510050882714, "timestamp": "1989-08-25T00:00:00Z", "unbackfillReason": "MidZEZqj", "unmatchReason": "mfyWLdqz"}, {"action": "5LrrCuIn", "activeAllianceRule": {"max_number": 66, "min_number": 81, "player_max_number": 65, "player_min_number": 2}, "activeMatchingRule": [{"attribute": "j3VqgXOW", "criteria": "UY9sIIVK", "reference": 0.17224860395664243}, {"attribute": "oHLFA499", "criteria": "Da1BPq0o", "reference": 0.9746166850471939}, {"attribute": "6g3cipss", "criteria": "Snl7W2LV", "reference": 0.3386920907702019}], "function": "iQn553Q9", "gameMode": "5NvwQKie", "isBackfillMatch": true, "isRuleSetFlexed": true, "iteration": 43, "matchID": "AIPAuD4F", "namespace": "izs45BGr", "remainingPlayersPerTicket": [34, 53, 78], "remainingTickets": 67, "sessionTickID": "vdOOpxj8", "tickID": 34, "ticketID": "XyJGxVcs", "timeToMatchSec": 0.9280593248171355, "timestamp": "1996-09-10T00:00:00Z", "unbackfillReason": "5U7N5LEZ", "unmatchReason": "n3JJeBpJ"}, {"action": "9jpcB2mx", "activeAllianceRule": {"max_number": 91, "min_number": 12, "player_max_number": 4, "player_min_number": 99}, "activeMatchingRule": [{"attribute": "WxiwoRzA", "criteria": "s1BXaXyX", "reference": 0.02953121032392947}, {"attribute": "N2VF6tGr", "criteria": "S06QJvRI", "reference": 0.955333395380738}, {"attribute": "L0KXxLsm", "criteria": "W4KZLQeO", "reference": 0.7587672327669495}], "function": "tmvoRA3S", "gameMode": "fz8d57Mg", "isBackfillMatch": false, "isRuleSetFlexed": false, "iteration": 62, "matchID": "hxYE42mq", "namespace": "STueG0WB", "remainingPlayersPerTicket": [53, 44, 65], "remainingTickets": 15, "sessionTickID": "XgMMqod5", "tickID": 38, "ticketID": "lslyUHZv", "timeToMatchSec": 0.4036314991719757, "timestamp": "1993-10-10T00:00:00Z", "unbackfillReason": "6xI6ggMQ", "unmatchReason": "rThs16sp"}]}' --login_with_auth "Bearer foo"
+sessionhistory-query-xray-timeline-by-ticket-id 'YaA1TwLZ' 'Pc87DYUX' 'aEBqJTx1' --login_with_auth "Bearer foo"
+sessionhistory-query-xray-timeline-by-user-id 'UBP1wEmf' 'f4p4bvuT' 'kYITf3ek' --login_with_auth "Bearer foo"
 exit()
 END
 
@@ -115,7 +115,7 @@ eval_tap $? 4 'AdminGetEnvConfig' test.out
 
 #- 5 AdminPatchUpdateEnvConfig
 $PYTHON -m $MODULE 'sessionhistory-admin-patch-update-env-config' \
-    '{"SESSION_DELETION_GRACE_PERIOD": 69}' \
+    '{"SESSION_DELETION_GRACE_PERIOD": 93}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 5 'AdminPatchUpdateEnvConfig' test.out
@@ -128,7 +128,7 @@ eval_tap $? 6 'AdminGetLogConfig' test.out
 
 #- 7 AdminPatchUpdateLogConfig
 $PYTHON -m $MODULE 'sessionhistory-admin-patch-update-log-config' \
-    '{"logLevel": "trace"}' \
+    '{"logLevel": "error"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 7 'AdminPatchUpdateLogConfig' test.out
@@ -141,7 +141,7 @@ eval_tap $? 8 'AdminQueryGameSessionDetail' test.out
 
 #- 9 GetGameSessionDetail
 $PYTHON -m $MODULE 'sessionhistory-get-game-session-detail' \
-    'MsbXmTUM' \
+    'n3Qw5yG5' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 9 'GetGameSessionDetail' test.out
@@ -154,14 +154,14 @@ eval_tap $? 10 'AdminQueryMatchmakingDetail' test.out
 
 #- 11 AdminGetMatchmakingDetailBySessionID
 $PYTHON -m $MODULE 'sessionhistory-admin-get-matchmaking-detail-by-session-id' \
-    'ORVAYlgT' \
+    'nug1uUaQ' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 11 'AdminGetMatchmakingDetailBySessionID' test.out
 
 #- 12 AdminGetMatchmakingDetailByTicketID
 $PYTHON -m $MODULE 'sessionhistory-admin-get-matchmaking-detail-by-ticket-id' \
-    'OTyIF4hZ' \
+    'ZHAEWKr6' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 12 'AdminGetMatchmakingDetailByTicketID' test.out
@@ -174,7 +174,7 @@ eval_tap $? 13 'AdminQueryPartyDetail' test.out
 
 #- 14 GetPartyDetail
 $PYTHON -m $MODULE 'sessionhistory-get-party-detail' \
-    'fvWQAuug' \
+    'ugVoDmdP' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 14 'GetPartyDetail' test.out
@@ -187,7 +187,7 @@ eval_tap $? 15 'AdminQueryTicketDetail' test.out
 
 #- 16 AdminTicketDetailGetByTicketID
 $PYTHON -m $MODULE 'sessionhistory-admin-ticket-detail-get-by-ticket-id' \
-    'WZiLJoVT' \
+    '2SbCw0xn' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 16 'AdminTicketDetailGetByTicketID' test.out
@@ -200,178 +200,178 @@ eval_tap $? 17 'PublicQueryGameSessionMe' test.out
 
 #- 18 QueryXrayMatchPool
 $PYTHON -m $MODULE 'sessionhistory-query-xray-match-pool' \
-    '["swwhx73i", "ncHojB1X", "nH0woT5T"]' \
-    'UU2kcAaW' \
-    '6V2d5gk6' \
+    '["aC24sxRp", "SOEw6k0q", "IE8oBKhF"]' \
+    '5m9fXdvC' \
+    'AuFB3YBq' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 18 'QueryXrayMatchPool' test.out
 
 #- 19 QueryDetailTickMatchPool
 $PYTHON -m $MODULE 'sessionhistory-query-detail-tick-match-pool' \
-    'RUhS6f3F' \
-    'm475wKxt' \
-    '6xz0YUVT' \
-    'fmyT64xg' \
+    'rQAUOLUS' \
+    '7nq8ZiJH' \
+    'Vf7yZzM3' \
+    'BezOW71k' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 19 'QueryDetailTickMatchPool' test.out
 
 #- 20 QueryDetailTickMatchPoolMatches
 $PYTHON -m $MODULE 'sessionhistory-query-detail-tick-match-pool-matches' \
-    '3fkGOUN8' \
-    'oVhy5Aj2' \
-    'Zqgsmt34' \
+    'q2q2mcAD' \
+    'UEoGtjd3' \
+    '0R6EMry3' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 20 'QueryDetailTickMatchPoolMatches' test.out
 
 #- 21 QueryDetailTickMatchPoolTicket
 $PYTHON -m $MODULE 'sessionhistory-query-detail-tick-match-pool-ticket' \
-    '2LwkWuQk' \
-    'Nd8vWCA0' \
-    'ptyKrQH6' \
+    'JES2CpX2' \
+    'r7GG1exZ' \
+    'ng4mpwDn' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 21 'QueryDetailTickMatchPoolTicket' test.out
 
 #- 22 QueryMatchHistories
 $PYTHON -m $MODULE 'sessionhistory-query-match-histories' \
-    'iGGHAyxQ' \
+    'N4meE4Fr' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 22 'QueryMatchHistories' test.out
 
 #- 23 QueryMatchTicketHistories
 $PYTHON -m $MODULE 'sessionhistory-query-match-ticket-histories' \
-    '6iX6uklz' \
+    'wuZtcQPg' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 23 'QueryMatchTicketHistories' test.out
 
 #- 24 QueryXrayMatch
 $PYTHON -m $MODULE 'sessionhistory-query-xray-match' \
-    'TxTTXu5a' \
+    'fhLAXikF' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 24 'QueryXrayMatch' test.out
 
 #- 25 QueryAcquiringDS
 $PYTHON -m $MODULE 'sessionhistory-query-acquiring-ds' \
-    'h7pAzCbe' \
-    'ImorrgRD' \
+    'HSwkFkp4' \
+    'HTg4zl72' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 25 'QueryAcquiringDS' test.out
 
 #- 26 QueryAcquiringDSWaitTimeAvg
 $PYTHON -m $MODULE 'sessionhistory-query-acquiring-ds-wait-time-avg' \
-    'UxmUMYn7' \
-    '4Jpm0RkN' \
+    'pg7N8EDH' \
+    'xsTQKxLC' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 26 'QueryAcquiringDSWaitTimeAvg' test.out
 
 #- 27 QueryMatchLengthDurationpAvg
 $PYTHON -m $MODULE 'sessionhistory-query-match-length-durationp-avg' \
-    '9NQNlTHa' \
-    'PLlPEkl3' \
+    'WfFTx5Kk' \
+    'AU137frO' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 27 'QueryMatchLengthDurationpAvg' test.out
 
 #- 28 QueryMatchLengthDurationp99
 $PYTHON -m $MODULE 'sessionhistory-query-match-length-durationp99' \
-    'wfdAX5Ce' \
-    'TwcRhLyg' \
+    'zYV7sraP' \
+    'zyqtRX4a' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 28 'QueryMatchLengthDurationp99' test.out
 
 #- 29 QueryTotalActiveSession
 $PYTHON -m $MODULE 'sessionhistory-query-total-active-session' \
-    'cDHcQ6HF' \
-    'nxRRivvP' \
+    'YpkjsJN9' \
+    'ft3Vn8by' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 29 'QueryTotalActiveSession' test.out
 
 #- 30 QueryTotalMatchmakingMatch
 $PYTHON -m $MODULE 'sessionhistory-query-total-matchmaking-match' \
-    'YWBJGTAF' \
-    '7jfVJegu' \
+    'xlfUdkMD' \
+    'Grpohk3D' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 30 'QueryTotalMatchmakingMatch' test.out
 
 #- 31 QueryTotalPlayerPersession
 $PYTHON -m $MODULE 'sessionhistory-query-total-player-persession' \
-    'iWDJU7x8' \
-    'B3TSuH8N' \
+    'OknA73h7' \
+    'YGHTNBtw' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 31 'QueryTotalPlayerPersession' test.out
 
 #- 32 QueryTotalMatchmakingCanceled
 $PYTHON -m $MODULE 'sessionhistory-query-total-matchmaking-canceled' \
-    'fIMsIBdh' \
-    'qgWicOXy' \
+    'orn8Btgz' \
+    'mr4SvMjT' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 32 'QueryTotalMatchmakingCanceled' test.out
 
 #- 33 QueryTotalMatchmakingCreated
 $PYTHON -m $MODULE 'sessionhistory-query-total-matchmaking-created' \
-    'EEUH9kxb' \
-    'rxdusJks' \
+    'zh3OK2BO' \
+    'ccX8tizU' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 33 'QueryTotalMatchmakingCreated' test.out
 
 #- 34 QueryTotalMatchmakingExpired
 $PYTHON -m $MODULE 'sessionhistory-query-total-matchmaking-expired' \
-    'NPzokuTo' \
-    'HEh879gk' \
+    'XsTF9fNA' \
+    '6m6QbpWR' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 34 'QueryTotalMatchmakingExpired' test.out
 
 #- 35 QueryTotalMatchmakingMatchTicket
 $PYTHON -m $MODULE 'sessionhistory-query-total-matchmaking-match-ticket' \
-    'Xtm1IPJQ' \
-    '62hqXsIU' \
+    '3R4p91hP' \
+    'v8pdOS7V' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 35 'QueryTotalMatchmakingMatchTicket' test.out
 
 #- 36 CreateXrayTicketObservability
 $PYTHON -m $MODULE 'sessionhistory-create-xray-ticket-observability' \
-    '{"action": "zsMLU8O5", "activeAllianceRule": {"max_number": 63, "min_number": 38, "player_max_number": 16, "player_min_number": 20}, "activeMatchingRule": [{"attribute": "7sylYoeh", "criteria": "w5wFov7e", "reference": 0.12498781916290203}, {"attribute": "FDRIc7QA", "criteria": "Ck79H6aQ", "reference": 0.16238765141657108}, {"attribute": "6d0FRVg9", "criteria": "d4wgit8w", "reference": 0.13914696591382658}], "function": "p8bkoif7", "gameMode": "6quwsl3O", "isBackfillMatch": false, "isRuleSetFlexed": true, "iteration": 85, "matchID": "DXKLCOef", "namespace": "dSpBZJRt", "remainingPlayersPerTicket": [41, 64, 49], "remainingTickets": 44, "sessionTickID": "bjLsjbsy", "tickID": 64, "ticketID": "FIqKWXca", "timeToMatchSec": 0.2252525187435327, "timestamp": "1984-10-26T00:00:00Z", "unbackfillReason": "e6X9Vl8F", "unmatchReason": "3k7nrbNn"}' \
+    '{"action": "upSzBIKO", "activeAllianceRule": {"max_number": 25, "min_number": 42, "player_max_number": 74, "player_min_number": 94}, "activeMatchingRule": [{"attribute": "ygPEbebV", "criteria": "NIZdx1te", "reference": 0.6232601176216207}, {"attribute": "GYifcLAT", "criteria": "DKtKp8dP", "reference": 0.8839876643958277}, {"attribute": "tE87zyIX", "criteria": "qcVb62yE", "reference": 0.9607889539279384}], "function": "cWVLx8en", "gameMode": "4ZsvxxNO", "isBackfillMatch": true, "isRuleSetFlexed": true, "iteration": 16, "matchID": "ZsbvqoJ2", "namespace": "H8aZvNLc", "remainingPlayersPerTicket": [57, 79, 36], "remainingTickets": 91, "sessionTickID": "L90Gkmlu", "tickID": 88, "ticketID": "ZFXfMcP2", "timeToMatchSec": 0.4040565708767848, "timestamp": "1972-07-24T00:00:00Z", "unbackfillReason": "W4dQX5eu", "unmatchReason": "xvPcrWzw"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 36 'CreateXrayTicketObservability' test.out
 
 #- 37 CreateXrayBulkTicketObservability
 $PYTHON -m $MODULE 'sessionhistory-create-xray-bulk-ticket-observability' \
-    '{"ticketObservabilities": [{"action": "VhzOQKt7", "activeAllianceRule": {"max_number": 56, "min_number": 58, "player_max_number": 70, "player_min_number": 21}, "activeMatchingRule": [{"attribute": "ejjl7d4N", "criteria": "9JENINz6", "reference": 0.16717024675753744}, {"attribute": "Nb7QFzZn", "criteria": "L8Tjb6D1", "reference": 0.39033464497102766}, {"attribute": "LyjWrAwW", "criteria": "0EW1NeG0", "reference": 0.03570813929779992}], "function": "i0ZELU1e", "gameMode": "7Bg7vnFh", "isBackfillMatch": true, "isRuleSetFlexed": false, "iteration": 14, "matchID": "N2nBPnTF", "namespace": "LfepPQ70", "remainingPlayersPerTicket": [15, 86, 4], "remainingTickets": 28, "sessionTickID": "yBc8Jgy5", "tickID": 67, "ticketID": "56O9A1Nt", "timeToMatchSec": 0.7826572808875114, "timestamp": "1999-03-01T00:00:00Z", "unbackfillReason": "FicMg7nw", "unmatchReason": "HO0FTTZW"}, {"action": "v79VcqAH", "activeAllianceRule": {"max_number": 59, "min_number": 6, "player_max_number": 68, "player_min_number": 60}, "activeMatchingRule": [{"attribute": "Sy4Enhky", "criteria": "LF1EANSh", "reference": 0.1738082613101949}, {"attribute": "aNuGcTKp", "criteria": "n8jPf5lH", "reference": 0.015526429536100173}, {"attribute": "4tGNFZZV", "criteria": "n72h4T8J", "reference": 0.45320841399282696}], "function": "ZS2elGia", "gameMode": "EhZcviYD", "isBackfillMatch": false, "isRuleSetFlexed": true, "iteration": 43, "matchID": "CWp4o7V9", "namespace": "Mx39QxnD", "remainingPlayersPerTicket": [68, 17, 98], "remainingTickets": 56, "sessionTickID": "9hNy80UQ", "tickID": 15, "ticketID": "Qeb7f3U6", "timeToMatchSec": 0.40729496767956874, "timestamp": "1991-09-01T00:00:00Z", "unbackfillReason": "nbUdrEtI", "unmatchReason": "jrZq1HbJ"}, {"action": "BhCS8B9w", "activeAllianceRule": {"max_number": 97, "min_number": 91, "player_max_number": 77, "player_min_number": 74}, "activeMatchingRule": [{"attribute": "DLj5BSNb", "criteria": "aUSuP1nV", "reference": 0.5632862139714709}, {"attribute": "yvb1IeAx", "criteria": "To1iKVwf", "reference": 0.8801763741515177}, {"attribute": "5pKD1mpe", "criteria": "1WWQxS1n", "reference": 0.3478113051341334}], "function": "v7JdMZ9q", "gameMode": "hDXeAjVO", "isBackfillMatch": false, "isRuleSetFlexed": true, "iteration": 97, "matchID": "XxTJmzaY", "namespace": "tak9Ti0o", "remainingPlayersPerTicket": [50, 74, 18], "remainingTickets": 73, "sessionTickID": "IkgSrWnA", "tickID": 10, "ticketID": "7q4iXqYv", "timeToMatchSec": 0.6067421908241174, "timestamp": "1987-11-10T00:00:00Z", "unbackfillReason": "j8cEUDQR", "unmatchReason": "tY9SjfBu"}]}' \
+    '{"ticketObservabilities": [{"action": "jCZJrwlm", "activeAllianceRule": {"max_number": 98, "min_number": 34, "player_max_number": 59, "player_min_number": 60}, "activeMatchingRule": [{"attribute": "xWj6bIu6", "criteria": "xk2uCReU", "reference": 0.8023841660607386}, {"attribute": "LZ9oPw15", "criteria": "X2mGj4wI", "reference": 0.8647720817985423}, {"attribute": "NBpRuZ2w", "criteria": "YxoDlpyx", "reference": 0.09901133768396497}], "function": "FrITyond", "gameMode": "BEGm12GZ", "isBackfillMatch": false, "isRuleSetFlexed": true, "iteration": 96, "matchID": "LpjRlbyr", "namespace": "NLYqh2yj", "remainingPlayersPerTicket": [98, 6, 93], "remainingTickets": 56, "sessionTickID": "VlEIVnt8", "tickID": 66, "ticketID": "hkxkk2mf", "timeToMatchSec": 0.9504423546622442, "timestamp": "1996-01-04T00:00:00Z", "unbackfillReason": "YFeLHNR0", "unmatchReason": "URCnGoki"}, {"action": "aP7YtnpE", "activeAllianceRule": {"max_number": 34, "min_number": 91, "player_max_number": 51, "player_min_number": 98}, "activeMatchingRule": [{"attribute": "kP3sV2Ce", "criteria": "HRKywBvJ", "reference": 0.6622144901364144}, {"attribute": "tUPSFzO0", "criteria": "Hzvu6Kmg", "reference": 0.2909257007032515}, {"attribute": "EEvsCbAc", "criteria": "yNtbEKBC", "reference": 0.3306542261449168}], "function": "C0mfTA3K", "gameMode": "r84ELQYf", "isBackfillMatch": false, "isRuleSetFlexed": false, "iteration": 30, "matchID": "T6B4Wumg", "namespace": "TSwr6K12", "remainingPlayersPerTicket": [31, 47, 88], "remainingTickets": 48, "sessionTickID": "Mx98esQW", "tickID": 13, "ticketID": "wpvx7Rl6", "timeToMatchSec": 0.46221265037000125, "timestamp": "1973-09-18T00:00:00Z", "unbackfillReason": "2xQzNDTR", "unmatchReason": "ALtSguqC"}, {"action": "OSF2akhA", "activeAllianceRule": {"max_number": 37, "min_number": 39, "player_max_number": 25, "player_min_number": 32}, "activeMatchingRule": [{"attribute": "H7Dzw5TF", "criteria": "79AtLEAn", "reference": 0.5689146309564188}, {"attribute": "vkOIqeRU", "criteria": "heVsrS5a", "reference": 0.06508693077429617}, {"attribute": "TywKj8MY", "criteria": "OJOIlO1i", "reference": 0.14098474869492428}], "function": "4coHGQNP", "gameMode": "ZtyJEB3h", "isBackfillMatch": true, "isRuleSetFlexed": true, "iteration": 62, "matchID": "bmLe76ot", "namespace": "bMn641ET", "remainingPlayersPerTicket": [83, 18, 27], "remainingTickets": 64, "sessionTickID": "Qufw1812", "tickID": 37, "ticketID": "LFnP7LF7", "timeToMatchSec": 0.14763248697535125, "timestamp": "1982-06-25T00:00:00Z", "unbackfillReason": "lh372itP", "unmatchReason": "zMpVXHg0"}]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 37 'CreateXrayBulkTicketObservability' test.out
 
 #- 38 QueryXrayTimelineByTicketID
 $PYTHON -m $MODULE 'sessionhistory-query-xray-timeline-by-ticket-id' \
-    'weRTvb30' \
-    'alc6lDNQ' \
-    'QMLVHiPJ' \
+    'kEbo199R' \
+    '1meF2JnG' \
+    'IuAvIOa4' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 38 'QueryXrayTimelineByTicketID' test.out
 
 #- 39 QueryXrayTimelineByUserID
 $PYTHON -m $MODULE 'sessionhistory-query-xray-timeline-by-user-id' \
-    'XwSV4LK5' \
-    'OOSXlbzs' \
-    'thtCuQYg' \
+    'w5xovbfr' \
+    'lPOpDSZW' \
+    'enKMWTqT' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 39 'QueryXrayTimelineByUserID' test.out
