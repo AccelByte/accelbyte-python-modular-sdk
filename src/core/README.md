@@ -34,13 +34,11 @@ pip install accelbyte-py-sdk-service-leaderboard
 pip install accelbyte-py-sdk-service-legal
 pip install accelbyte-py-sdk-service-lobby
 pip install accelbyte-py-sdk-service-match2
-pip install accelbyte-py-sdk-service-matchmaking
 pip install accelbyte-py-sdk-service-platform
 pip install accelbyte-py-sdk-service-qosm
 pip install accelbyte-py-sdk-service-reporting
 pip install accelbyte-py-sdk-service-seasonpass
 pip install accelbyte-py-sdk-service-session
-pip install accelbyte-py-sdk-service-sessionbrowser
 pip install accelbyte-py-sdk-service-social
 pip install accelbyte-py-sdk-service-ugc
 ```

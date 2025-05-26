@@ -27,14 +27,11 @@ src/services/legal
 src/services/lobby
 src/services/loginqueue
 src/services/match2
-src/services/matchmaking
 src/services/platform
 src/services/qosm
 src/services/reporting
 src/services/seasonpass
 src/services/session
-src/services/sessionbrowser
-src/services/sessionhistory
 src/services/social
 src/services/ugc
 

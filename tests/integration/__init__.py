@@ -27,7 +27,6 @@ from .api.platformx import PlatformTestCase
 from .api.reporting import ReportingTestCase
 from .api.seasonpass import SeasonPassTestCase
 from .api.session import SessionTestCase
-from .api.sessionhistory import SessionHistoryTestCase
 from .api.social import SocialTestCase
 from .api.ugc import UGCTestCase
 
