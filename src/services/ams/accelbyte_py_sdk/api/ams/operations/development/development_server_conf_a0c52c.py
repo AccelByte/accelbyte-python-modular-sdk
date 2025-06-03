@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service
+# Fleet Commander
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -31,22 +31,21 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 from accelbyte_py_sdk.core import deprecated
 
-from ...models import AccountcommonTagResponse
-from ...models import ModelTagUpdateRequestV3
-from ...models import RestErrorResponse
+from ...models import ApiDevelopmentServerConfigurationUpdateRequest
+from ...models import ResponseErrorResponse
 
 
-class AdminUpdateTagV3(Operation):
-    """Update Account Identifier Tag (AdminUpdateTagV3)
+class DevelopmentServerConfigurationPatch(Operation):
+    """patch a development server configuration (DevelopmentServerConfigurationPatch)
 
-    Update an existing Account Identifier Tag. This endpoint allows administrators to update the details of a tag that is used to identify and categorize user accounts.
+    Required Permission: ADMIN:NAMESPACE:{namespace}:ARMADA:FLEET [UPDATE]
 
     Properties:
-        url: /iam/v3/admin/namespaces/{namespace}/tags/{tagId}
+        url: /ams/v1/admin/namespaces/{namespace}/development/server-configurations/{developmentServerConfigID}
 
-        method: PUT
+        method: PATCH
 
-        tags: ["Account Idenfifier Tag"]
+        tags: ["Development"]
 
         consumes: ["application/json"]
 
@@ -54,40 +53,40 @@ class AdminUpdateTagV3(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ModelTagUpdateRequestV3 in body
+        body: (body) REQUIRED ApiDevelopmentServerConfigurationUpdateRequest in body
+
+        development_server_config_id: (developmentServerConfigID) REQUIRED str in path
 
         namespace: (namespace) REQUIRED str in path
 
-        tag_id: (tagId) REQUIRED str in path
-
     Responses:
-        200: OK - AccountcommonTagResponse (OK)
+        204: No Content - (development server configuration updated)
 
-        400: Bad Request - RestErrorResponse (20019: unable to parse request body | 20002: validation error)
+        401: Unauthorized - ResponseErrorResponse (no authorization provided)
 
-        404: Not Found - RestErrorResponse
+        403: Forbidden - ResponseErrorResponse (insufficient permissions)
 
-        409: Conflict - RestErrorResponse
+        404: Not Found - ResponseErrorResponse (development server configuration not found)
 
-        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+        500: Internal Server Error - ResponseErrorResponse (internal server error)
     """
 
     # region fields
 
-    _url: str = "/iam/v3/admin/namespaces/{namespace}/tags/{tagId}"
-    _path: str = "/iam/v3/admin/namespaces/{namespace}/tags/{tagId}"
+    _url: str = "/ams/v1/admin/namespaces/{namespace}/development/server-configurations/{developmentServerConfigID}"
+    _path: str = "/ams/v1/admin/namespaces/{namespace}/development/server-configurations/{developmentServerConfigID}"
     _base_path: str = ""
-    _method: str = "PUT"
+    _method: str = "PATCH"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
-    service_name: Optional[str] = "iam"
+    service_name: Optional[str] = "ams"
 
-    body: ModelTagUpdateRequestV3  # REQUIRED in [body]
+    body: ApiDevelopmentServerConfigurationUpdateRequest  # REQUIRED in [body]
+    development_server_config_id: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
-    tag_id: str  # REQUIRED in [path]
 
     # endregion fields
 
@@ -146,10 +145,10 @@ class AdminUpdateTagV3(Operation):
 
     def get_path_params(self) -> dict:
         result = {}
+        if hasattr(self, "development_server_config_id"):
+            result["developmentServerConfigID"] = self.development_server_config_id
         if hasattr(self, "namespace"):
             result["namespace"] = self.namespace
-        if hasattr(self, "tag_id"):
-            result["tagId"] = self.tag_id
         return result
 
     # endregion get_x_params methods
@@ -160,16 +159,20 @@ class AdminUpdateTagV3(Operation):
 
     # region with_x methods
 
-    def with_body(self, value: ModelTagUpdateRequestV3) -> AdminUpdateTagV3:
+    def with_body(
+        self, value: ApiDevelopmentServerConfigurationUpdateRequest
+    ) -> DevelopmentServerConfigurationPatch:
         self.body = value
         return self
 
-    def with_namespace(self, value: str) -> AdminUpdateTagV3:
-        self.namespace = value
+    def with_development_server_config_id(
+        self, value: str
+    ) -> DevelopmentServerConfigurationPatch:
+        self.development_server_config_id = value
         return self
 
-    def with_tag_id(self, value: str) -> AdminUpdateTagV3:
-        self.tag_id = value
+    def with_namespace(self, value: str) -> DevelopmentServerConfigurationPatch:
+        self.namespace = value
         return self
 
     # endregion with_x methods
@@ -181,15 +184,18 @@ class AdminUpdateTagV3(Operation):
         if hasattr(self, "body") and self.body:
             result["body"] = self.body.to_dict(include_empty=include_empty)
         elif include_empty:
-            result["body"] = ModelTagUpdateRequestV3()
+            result["body"] = ApiDevelopmentServerConfigurationUpdateRequest()
+        if (
+            hasattr(self, "development_server_config_id")
+            and self.development_server_config_id
+        ):
+            result["developmentServerConfigID"] = str(self.development_server_config_id)
+        elif include_empty:
+            result["developmentServerConfigID"] = ""
         if hasattr(self, "namespace") and self.namespace:
             result["namespace"] = str(self.namespace)
         elif include_empty:
             result["namespace"] = ""
-        if hasattr(self, "tag_id") and self.tag_id:
-            result["tagId"] = str(self.tag_id)
-        elif include_empty:
-            result["tagId"] = ""
         return result
 
     # endregion to methods
@@ -197,25 +203,25 @@ class AdminUpdateTagV3(Operation):
     # region response methods
 
     class Response(ApiResponse):
-        data_200: Optional[AccountcommonTagResponse] = None
-        error_400: Optional[RestErrorResponse] = None
-        error_404: Optional[RestErrorResponse] = None
-        error_409: Optional[RestErrorResponse] = None
-        error_500: Optional[RestErrorResponse] = None
+        data_204: Optional[HttpResponse] = None
+        error_401: Optional[ResponseErrorResponse] = None
+        error_403: Optional[ResponseErrorResponse] = None
+        error_404: Optional[ResponseErrorResponse] = None
+        error_500: Optional[ResponseErrorResponse] = None
 
-        def ok(self) -> AdminUpdateTagV3.Response:
-            if self.error_400 is not None:
-                err = self.error_400.translate_to_api_error()
+        def ok(self) -> DevelopmentServerConfigurationPatch.Response:
+            if self.error_401 is not None:
+                err = self.error_401.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_403 is not None:
+                err = self.error_403.translate_to_api_error()
                 exc = err.to_exception()
                 if exc is not None:
                     raise exc  # pylint: disable=raising-bad-type
             if self.error_404 is not None:
                 err = self.error_404.translate_to_api_error()
-                exc = err.to_exception()
-                if exc is not None:
-                    raise exc  # pylint: disable=raising-bad-type
-            if self.error_409 is not None:
-                err = self.error_409.translate_to_api_error()
                 exc = err.to_exception()
                 if exc is not None:
                     raise exc  # pylint: disable=raising-bad-type
@@ -227,18 +233,18 @@ class AdminUpdateTagV3(Operation):
             return self
 
         def __iter__(self):
-            if self.data_200 is not None:
-                yield self.data_200
+            if self.data_204 is not None:
+                yield self.data_204
                 yield None
-            elif self.error_400 is not None:
+            elif self.error_401 is not None:
                 yield None
-                yield self.error_400
+                yield self.error_401
+            elif self.error_403 is not None:
+                yield None
+                yield self.error_403
             elif self.error_404 is not None:
                 yield None
                 yield self.error_404
-            elif self.error_409 is not None:
-                yield None
-                yield self.error_409
             elif self.error_500 is not None:
                 yield None
                 yield self.error_500
@@ -250,15 +256,15 @@ class AdminUpdateTagV3(Operation):
     def parse_response(self, code: int, content_type: str, content: Any) -> Response:
         """Parse the given response.
 
-        200: OK - AccountcommonTagResponse (OK)
+        204: No Content - (development server configuration updated)
 
-        400: Bad Request - RestErrorResponse (20019: unable to parse request body | 20002: validation error)
+        401: Unauthorized - ResponseErrorResponse (no authorization provided)
 
-        404: Not Found - RestErrorResponse
+        403: Forbidden - ResponseErrorResponse (insufficient permissions)
 
-        409: Conflict - RestErrorResponse
+        404: Not Found - ResponseErrorResponse (development server configuration not found)
 
-        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+        500: Internal Server Error - ResponseErrorResponse (internal server error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -266,7 +272,7 @@ class AdminUpdateTagV3(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        result = AdminUpdateTagV3.Response()
+        result = DevelopmentServerConfigurationPatch.Response()
 
         pre_processed_response, error = self.pre_process_response(
             code=code, content_type=content_type, content=content
@@ -278,19 +284,19 @@ class AdminUpdateTagV3(Operation):
         else:
             code, content_type, content = pre_processed_response
 
-            if code == 200:
-                result.data_200 = AccountcommonTagResponse.create_from_dict(content)
-            elif code == 400:
-                result.error_400 = RestErrorResponse.create_from_dict(content)
-                result.error = result.error_400.translate_to_api_error()
+            if code == 204:
+                result.data_204 = None
+            elif code == 401:
+                result.error_401 = ResponseErrorResponse.create_from_dict(content)
+                result.error = result.error_401.translate_to_api_error()
+            elif code == 403:
+                result.error_403 = ResponseErrorResponse.create_from_dict(content)
+                result.error = result.error_403.translate_to_api_error()
             elif code == 404:
-                result.error_404 = RestErrorResponse.create_from_dict(content)
+                result.error_404 = ResponseErrorResponse.create_from_dict(content)
                 result.error = result.error_404.translate_to_api_error()
-            elif code == 409:
-                result.error_409 = RestErrorResponse.create_from_dict(content)
-                result.error = result.error_409.translate_to_api_error()
             elif code == 500:
-                result.error_500 = RestErrorResponse.create_from_dict(content)
+                result.error_500 = ResponseErrorResponse.create_from_dict(content)
                 result.error = result.error_500.translate_to_api_error()
             else:
                 result.error = ApiError.create_from_http_response(
@@ -311,21 +317,18 @@ class AdminUpdateTagV3(Operation):
     @deprecated
     def parse_response_x(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[
-        Union[None, AccountcommonTagResponse],
-        Union[None, HttpResponse, RestErrorResponse],
-    ]:
+    ) -> Tuple[None, Union[None, HttpResponse, ResponseErrorResponse]]:
         """Parse the given response.
 
-        200: OK - AccountcommonTagResponse (OK)
+        204: No Content - (development server configuration updated)
 
-        400: Bad Request - RestErrorResponse (20019: unable to parse request body | 20002: validation error)
+        401: Unauthorized - ResponseErrorResponse (no authorization provided)
 
-        404: Not Found - RestErrorResponse
+        403: Forbidden - ResponseErrorResponse (insufficient permissions)
 
-        409: Conflict - RestErrorResponse
+        404: Not Found - ResponseErrorResponse (development server configuration not found)
 
-        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+        500: Internal Server Error - ResponseErrorResponse (internal server error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -340,16 +343,16 @@ class AdminUpdateTagV3(Operation):
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
-        if code == 200:
-            return AccountcommonTagResponse.create_from_dict(content), None
-        if code == 400:
-            return None, RestErrorResponse.create_from_dict(content)
+        if code == 204:
+            return None, None
+        if code == 401:
+            return None, ResponseErrorResponse.create_from_dict(content)
+        if code == 403:
+            return None, ResponseErrorResponse.create_from_dict(content)
         if code == 404:
-            return None, RestErrorResponse.create_from_dict(content)
-        if code == 409:
-            return None, RestErrorResponse.create_from_dict(content)
+            return None, ResponseErrorResponse.create_from_dict(content)
         if code == 500:
-            return None, RestErrorResponse.create_from_dict(content)
+            return None, ResponseErrorResponse.create_from_dict(content)
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content
@@ -361,12 +364,16 @@ class AdminUpdateTagV3(Operation):
 
     @classmethod
     def create(
-        cls, body: ModelTagUpdateRequestV3, namespace: str, tag_id: str, **kwargs
-    ) -> AdminUpdateTagV3:
+        cls,
+        body: ApiDevelopmentServerConfigurationUpdateRequest,
+        development_server_config_id: str,
+        namespace: str,
+        **kwargs,
+    ) -> DevelopmentServerConfigurationPatch:
         instance = cls()
         instance.body = body
+        instance.development_server_config_id = development_server_config_id
         instance.namespace = namespace
-        instance.tag_id = tag_id
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -374,38 +381,45 @@ class AdminUpdateTagV3(Operation):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> AdminUpdateTagV3:
+    ) -> DevelopmentServerConfigurationPatch:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = ModelTagUpdateRequestV3.create_from_dict(
-                dict_["body"], include_empty=include_empty
+            instance.body = (
+                ApiDevelopmentServerConfigurationUpdateRequest.create_from_dict(
+                    dict_["body"], include_empty=include_empty
+                )
             )
         elif include_empty:
-            instance.body = ModelTagUpdateRequestV3()
+            instance.body = ApiDevelopmentServerConfigurationUpdateRequest()
+        if (
+            "developmentServerConfigID" in dict_
+            and dict_["developmentServerConfigID"] is not None
+        ):
+            instance.development_server_config_id = str(
+                dict_["developmentServerConfigID"]
+            )
+        elif include_empty:
+            instance.development_server_config_id = ""
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
             instance.namespace = ""
-        if "tagId" in dict_ and dict_["tagId"] is not None:
-            instance.tag_id = str(dict_["tagId"])
-        elif include_empty:
-            instance.tag_id = ""
         return instance
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
             "body": "body",
+            "developmentServerConfigID": "development_server_config_id",
             "namespace": "namespace",
-            "tagId": "tag_id",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
             "body": True,
+            "developmentServerConfigID": True,
             "namespace": True,
-            "tagId": True,
         }
 
     # endregion static methods

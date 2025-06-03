@@ -35,10 +35,10 @@ from ..models import ModelTagCreateRequestV3
 from ..models import ModelTagUpdateRequestV3
 from ..models import RestErrorResponse
 
-from ..operations.account_idenfifier_tag import AdminCreateTagV3
-from ..operations.account_idenfifier_tag import AdminDeleteTagV3
-from ..operations.account_idenfifier_tag import AdminQueryTagV3
-from ..operations.account_idenfifier_tag import AdminUpdateTagV3
+from ..operations.account_identifier_tag import AdminCreateTagV3
+from ..operations.account_identifier_tag import AdminDeleteTagV3
+from ..operations.account_identifier_tag import AdminQueryTagV3
+from ..operations.account_identifier_tag import AdminUpdateTagV3
 
 
 @same_doc_as(AdminCreateTagV3)
@@ -57,7 +57,7 @@ def admin_create_tag_v3(
 
         method: POST
 
-        tags: ["Account Idenfifier Tag"]
+        tags: ["Account Identifier Tag"]
 
         consumes: ["application/json"]
 
@@ -105,7 +105,7 @@ async def admin_create_tag_v3_async(
 
         method: POST
 
-        tags: ["Account Idenfifier Tag"]
+        tags: ["Account Identifier Tag"]
 
         consumes: ["application/json"]
 
@@ -155,7 +155,7 @@ def admin_delete_tag_v3(
 
         method: DELETE
 
-        tags: ["Account Idenfifier Tag"]
+        tags: ["Account Identifier Tag"]
 
         consumes: []
 
@@ -201,7 +201,7 @@ async def admin_delete_tag_v3_async(
 
         method: DELETE
 
-        tags: ["Account Idenfifier Tag"]
+        tags: ["Account Identifier Tag"]
 
         consumes: []
 
@@ -252,7 +252,7 @@ def admin_query_tag_v3(
 
         method: GET
 
-        tags: ["Account Idenfifier Tag"]
+        tags: ["Account Identifier Tag"]
 
         consumes: []
 
@@ -305,7 +305,7 @@ async def admin_query_tag_v3_async(
 
         method: GET
 
-        tags: ["Account Idenfifier Tag"]
+        tags: ["Account Identifier Tag"]
 
         consumes: []
 
@@ -358,7 +358,7 @@ def admin_update_tag_v3(
 
         method: PUT
 
-        tags: ["Account Idenfifier Tag"]
+        tags: ["Account Identifier Tag"]
 
         consumes: ["application/json"]
 
@@ -412,7 +412,7 @@ async def admin_update_tag_v3_async(
 
         method: PUT
 
-        tags: ["Account Idenfifier Tag"]
+        tags: ["Account Identifier Tag"]
 
         consumes: ["application/json"]
 

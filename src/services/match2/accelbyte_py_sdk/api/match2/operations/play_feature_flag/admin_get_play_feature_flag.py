@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service
+# AccelByte Gaming Services Match Service V2
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -31,22 +31,23 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 from accelbyte_py_sdk.core import deprecated
 
-from ...models import RestErrorResponse
+from ...models import ModelsPlayFeatureFlag
+from ...models import ResponseError
 
 
-class AdminDeleteTagV3(Operation):
-    """Delete Account Identifier Tag (AdminDeleteTagV3)
+class AdminGetPlayFeatureFlag(Operation):
+    """admin Play Feature Flag (adminGetPlayFeatureFlag)
 
-    Delete an Account Identifier Tag. This endpoint allows administrators to delete a tag that is used to identify and categorize user accounts.
+    Get matchmaking Play Feature Flag.
 
     Properties:
-        url: /iam/v3/admin/namespaces/{namespace}/tags/{tagId}
+        url: /match2/v1/admin/namespaces/{namespace}/playfeatureflag
 
-        method: DELETE
+        method: GET
 
-        tags: ["Account Idenfifier Tag"]
+        tags: ["PlayFeatureFlag", "admin"]
 
-        consumes: []
+        consumes: ["application/json"]
 
         produces: ["application/json"]
 
@@ -54,31 +55,30 @@ class AdminDeleteTagV3(Operation):
 
         namespace: (namespace) REQUIRED str in path
 
-        tag_id: (tagId) REQUIRED str in path
-
     Responses:
-        204: No Content - (No Content)
+        200: OK - ModelsPlayFeatureFlag (OK)
 
-        404: Not Found - RestErrorResponse
+        401: Unauthorized - ResponseError (Unauthorized)
 
-        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+        403: Forbidden - ResponseError (Forbidden)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
     """
 
     # region fields
 
-    _url: str = "/iam/v3/admin/namespaces/{namespace}/tags/{tagId}"
-    _path: str = "/iam/v3/admin/namespaces/{namespace}/tags/{tagId}"
+    _url: str = "/match2/v1/admin/namespaces/{namespace}/playfeatureflag"
+    _path: str = "/match2/v1/admin/namespaces/{namespace}/playfeatureflag"
     _base_path: str = ""
-    _method: str = "DELETE"
-    _consumes: List[str] = []
+    _method: str = "GET"
+    _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
-    service_name: Optional[str] = "iam"
+    service_name: Optional[str] = "match2"
 
     namespace: str  # REQUIRED in [path]
-    tag_id: str  # REQUIRED in [path]
 
     # endregion fields
 
@@ -133,8 +133,6 @@ class AdminDeleteTagV3(Operation):
         result = {}
         if hasattr(self, "namespace"):
             result["namespace"] = self.namespace
-        if hasattr(self, "tag_id"):
-            result["tagId"] = self.tag_id
         return result
 
     # endregion get_x_params methods
@@ -145,12 +143,8 @@ class AdminDeleteTagV3(Operation):
 
     # region with_x methods
 
-    def with_namespace(self, value: str) -> AdminDeleteTagV3:
+    def with_namespace(self, value: str) -> AdminGetPlayFeatureFlag:
         self.namespace = value
-        return self
-
-    def with_tag_id(self, value: str) -> AdminDeleteTagV3:
-        self.tag_id = value
         return self
 
     # endregion with_x methods
@@ -163,10 +157,6 @@ class AdminDeleteTagV3(Operation):
             result["namespace"] = str(self.namespace)
         elif include_empty:
             result["namespace"] = ""
-        if hasattr(self, "tag_id") and self.tag_id:
-            result["tagId"] = str(self.tag_id)
-        elif include_empty:
-            result["tagId"] = ""
         return result
 
     # endregion to methods
@@ -174,13 +164,19 @@ class AdminDeleteTagV3(Operation):
     # region response methods
 
     class Response(ApiResponse):
-        data_204: Optional[HttpResponse] = None
-        error_404: Optional[RestErrorResponse] = None
-        error_500: Optional[RestErrorResponse] = None
+        data_200: Optional[ModelsPlayFeatureFlag] = None
+        error_401: Optional[ResponseError] = None
+        error_403: Optional[ResponseError] = None
+        error_500: Optional[ResponseError] = None
 
-        def ok(self) -> AdminDeleteTagV3.Response:
-            if self.error_404 is not None:
-                err = self.error_404.translate_to_api_error()
+        def ok(self) -> AdminGetPlayFeatureFlag.Response:
+            if self.error_401 is not None:
+                err = self.error_401.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_403 is not None:
+                err = self.error_403.translate_to_api_error()
                 exc = err.to_exception()
                 if exc is not None:
                     raise exc  # pylint: disable=raising-bad-type
@@ -192,12 +188,15 @@ class AdminDeleteTagV3(Operation):
             return self
 
         def __iter__(self):
-            if self.data_204 is not None:
-                yield self.data_204
+            if self.data_200 is not None:
+                yield self.data_200
                 yield None
-            elif self.error_404 is not None:
+            elif self.error_401 is not None:
                 yield None
-                yield self.error_404
+                yield self.error_401
+            elif self.error_403 is not None:
+                yield None
+                yield self.error_403
             elif self.error_500 is not None:
                 yield None
                 yield self.error_500
@@ -209,11 +208,13 @@ class AdminDeleteTagV3(Operation):
     def parse_response(self, code: int, content_type: str, content: Any) -> Response:
         """Parse the given response.
 
-        204: No Content - (No Content)
+        200: OK - ModelsPlayFeatureFlag (OK)
 
-        404: Not Found - RestErrorResponse
+        401: Unauthorized - ResponseError (Unauthorized)
 
-        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+        403: Forbidden - ResponseError (Forbidden)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -221,7 +222,7 @@ class AdminDeleteTagV3(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        result = AdminDeleteTagV3.Response()
+        result = AdminGetPlayFeatureFlag.Response()
 
         pre_processed_response, error = self.pre_process_response(
             code=code, content_type=content_type, content=content
@@ -233,13 +234,16 @@ class AdminDeleteTagV3(Operation):
         else:
             code, content_type, content = pre_processed_response
 
-            if code == 204:
-                result.data_204 = None
-            elif code == 404:
-                result.error_404 = RestErrorResponse.create_from_dict(content)
-                result.error = result.error_404.translate_to_api_error()
+            if code == 200:
+                result.data_200 = ModelsPlayFeatureFlag.create_from_dict(content)
+            elif code == 401:
+                result.error_401 = ResponseError.create_from_dict(content)
+                result.error = result.error_401.translate_to_api_error()
+            elif code == 403:
+                result.error_403 = ResponseError.create_from_dict(content)
+                result.error = result.error_403.translate_to_api_error()
             elif code == 500:
-                result.error_500 = RestErrorResponse.create_from_dict(content)
+                result.error_500 = ResponseError.create_from_dict(content)
                 result.error = result.error_500.translate_to_api_error()
             else:
                 result.error = ApiError.create_from_http_response(
@@ -260,14 +264,18 @@ class AdminDeleteTagV3(Operation):
     @deprecated
     def parse_response_x(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[None, Union[None, HttpResponse, RestErrorResponse]]:
+    ) -> Tuple[
+        Union[None, ModelsPlayFeatureFlag], Union[None, HttpResponse, ResponseError]
+    ]:
         """Parse the given response.
 
-        204: No Content - (No Content)
+        200: OK - ModelsPlayFeatureFlag (OK)
 
-        404: Not Found - RestErrorResponse
+        401: Unauthorized - ResponseError (Unauthorized)
 
-        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+        403: Forbidden - ResponseError (Forbidden)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -282,12 +290,14 @@ class AdminDeleteTagV3(Operation):
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
-        if code == 204:
-            return None, None
-        if code == 404:
-            return None, RestErrorResponse.create_from_dict(content)
+        if code == 200:
+            return ModelsPlayFeatureFlag.create_from_dict(content), None
+        if code == 401:
+            return None, ResponseError.create_from_dict(content)
+        if code == 403:
+            return None, ResponseError.create_from_dict(content)
         if code == 500:
-            return None, RestErrorResponse.create_from_dict(content)
+            return None, ResponseError.create_from_dict(content)
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content
@@ -298,10 +308,9 @@ class AdminDeleteTagV3(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, namespace: str, tag_id: str, **kwargs) -> AdminDeleteTagV3:
+    def create(cls, namespace: str, **kwargs) -> AdminGetPlayFeatureFlag:
         instance = cls()
         instance.namespace = namespace
-        instance.tag_id = tag_id
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -309,30 +318,24 @@ class AdminDeleteTagV3(Operation):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> AdminDeleteTagV3:
+    ) -> AdminGetPlayFeatureFlag:
         instance = cls()
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
             instance.namespace = ""
-        if "tagId" in dict_ and dict_["tagId"] is not None:
-            instance.tag_id = str(dict_["tagId"])
-        elif include_empty:
-            instance.tag_id = ""
         return instance
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
             "namespace": "namespace",
-            "tagId": "tag_id",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
             "namespace": True,
-            "tagId": True,
         }
 
     # endregion static methods

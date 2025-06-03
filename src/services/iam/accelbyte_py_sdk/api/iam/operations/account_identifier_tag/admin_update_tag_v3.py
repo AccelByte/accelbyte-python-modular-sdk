@@ -31,60 +31,63 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 from accelbyte_py_sdk.core import deprecated
 
-from ...models import AccountcommonTagsGetResponseV3
+from ...models import AccountcommonTagResponse
+from ...models import ModelTagUpdateRequestV3
 from ...models import RestErrorResponse
 
 
-class AdminQueryTagV3(Operation):
-    """Query Account Identifier Tag (AdminQueryTagV3)
+class AdminUpdateTagV3(Operation):
+    """Update Account Identifier Tag (AdminUpdateTagV3)
 
-    Retrieve Account Identifier Tags. This endpoint allows administrators to retrieve tags that are used to identify and categorize user accounts.
-    Tag Name can be used for partial content search.
+    Update an existing Account Identifier Tag. This endpoint allows administrators to update the details of a tag that is used to identify and categorize user accounts.
 
     Properties:
-        url: /iam/v3/admin/namespaces/{namespace}/tags
+        url: /iam/v3/admin/namespaces/{namespace}/tags/{tagId}
 
-        method: GET
+        method: PUT
 
-        tags: ["Account Idenfifier Tag"]
+        tags: ["Account Identifier Tag"]
 
-        consumes: []
+        consumes: ["application/json"]
 
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
 
+        body: (body) REQUIRED ModelTagUpdateRequestV3 in body
+
         namespace: (namespace) REQUIRED str in path
 
-        limit: (limit) OPTIONAL int in query
-
-        offset: (offset) OPTIONAL int in query
-
-        tag_name: (tagName) OPTIONAL str in query
+        tag_id: (tagId) REQUIRED str in path
 
     Responses:
-        200: OK - AccountcommonTagsGetResponseV3 (OK)
+        200: OK - AccountcommonTagResponse (OK)
+
+        400: Bad Request - RestErrorResponse (20019: unable to parse request body | 20002: validation error)
+
+        404: Not Found - RestErrorResponse
+
+        409: Conflict - RestErrorResponse
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
 
     # region fields
 
-    _url: str = "/iam/v3/admin/namespaces/{namespace}/tags"
-    _path: str = "/iam/v3/admin/namespaces/{namespace}/tags"
+    _url: str = "/iam/v3/admin/namespaces/{namespace}/tags/{tagId}"
+    _path: str = "/iam/v3/admin/namespaces/{namespace}/tags/{tagId}"
     _base_path: str = ""
-    _method: str = "GET"
-    _consumes: List[str] = []
+    _method: str = "PUT"
+    _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
     service_name: Optional[str] = "iam"
 
+    body: ModelTagUpdateRequestV3  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
-    limit: int  # OPTIONAL in [query]
-    offset: int  # OPTIONAL in [query]
-    tag_name: str  # OPTIONAL in [query]
+    tag_id: str  # REQUIRED in [path]
 
     # endregion fields
 
@@ -132,24 +135,21 @@ class AdminQueryTagV3(Operation):
 
     def get_all_params(self) -> dict:
         return {
+            "body": self.get_body_params(),
             "path": self.get_path_params(),
-            "query": self.get_query_params(),
         }
+
+    def get_body_params(self) -> Any:
+        if not hasattr(self, "body") or self.body is None:
+            return None
+        return self.body.to_dict()
 
     def get_path_params(self) -> dict:
         result = {}
         if hasattr(self, "namespace"):
             result["namespace"] = self.namespace
-        return result
-
-    def get_query_params(self) -> dict:
-        result = {}
-        if hasattr(self, "limit"):
-            result["limit"] = self.limit
-        if hasattr(self, "offset"):
-            result["offset"] = self.offset
-        if hasattr(self, "tag_name"):
-            result["tagName"] = self.tag_name
+        if hasattr(self, "tag_id"):
+            result["tagId"] = self.tag_id
         return result
 
     # endregion get_x_params methods
@@ -160,20 +160,16 @@ class AdminQueryTagV3(Operation):
 
     # region with_x methods
 
-    def with_namespace(self, value: str) -> AdminQueryTagV3:
+    def with_body(self, value: ModelTagUpdateRequestV3) -> AdminUpdateTagV3:
+        self.body = value
+        return self
+
+    def with_namespace(self, value: str) -> AdminUpdateTagV3:
         self.namespace = value
         return self
 
-    def with_limit(self, value: int) -> AdminQueryTagV3:
-        self.limit = value
-        return self
-
-    def with_offset(self, value: int) -> AdminQueryTagV3:
-        self.offset = value
-        return self
-
-    def with_tag_name(self, value: str) -> AdminQueryTagV3:
-        self.tag_name = value
+    def with_tag_id(self, value: str) -> AdminUpdateTagV3:
+        self.tag_id = value
         return self
 
     # endregion with_x methods
@@ -182,22 +178,18 @@ class AdminQueryTagV3(Operation):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
+        if hasattr(self, "body") and self.body:
+            result["body"] = self.body.to_dict(include_empty=include_empty)
+        elif include_empty:
+            result["body"] = ModelTagUpdateRequestV3()
         if hasattr(self, "namespace") and self.namespace:
             result["namespace"] = str(self.namespace)
         elif include_empty:
             result["namespace"] = ""
-        if hasattr(self, "limit") and self.limit:
-            result["limit"] = int(self.limit)
+        if hasattr(self, "tag_id") and self.tag_id:
+            result["tagId"] = str(self.tag_id)
         elif include_empty:
-            result["limit"] = 0
-        if hasattr(self, "offset") and self.offset:
-            result["offset"] = int(self.offset)
-        elif include_empty:
-            result["offset"] = 0
-        if hasattr(self, "tag_name") and self.tag_name:
-            result["tagName"] = str(self.tag_name)
-        elif include_empty:
-            result["tagName"] = ""
+            result["tagId"] = ""
         return result
 
     # endregion to methods
@@ -205,10 +197,28 @@ class AdminQueryTagV3(Operation):
     # region response methods
 
     class Response(ApiResponse):
-        data_200: Optional[AccountcommonTagsGetResponseV3] = None
+        data_200: Optional[AccountcommonTagResponse] = None
+        error_400: Optional[RestErrorResponse] = None
+        error_404: Optional[RestErrorResponse] = None
+        error_409: Optional[RestErrorResponse] = None
         error_500: Optional[RestErrorResponse] = None
 
-        def ok(self) -> AdminQueryTagV3.Response:
+        def ok(self) -> AdminUpdateTagV3.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_404 is not None:
+                err = self.error_404.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_409 is not None:
+                err = self.error_409.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
             if self.error_500 is not None:
                 err = self.error_500.translate_to_api_error()
                 exc = err.to_exception()
@@ -220,6 +230,15 @@ class AdminQueryTagV3(Operation):
             if self.data_200 is not None:
                 yield self.data_200
                 yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
+            elif self.error_404 is not None:
+                yield None
+                yield self.error_404
+            elif self.error_409 is not None:
+                yield None
+                yield self.error_409
             elif self.error_500 is not None:
                 yield None
                 yield self.error_500
@@ -231,7 +250,13 @@ class AdminQueryTagV3(Operation):
     def parse_response(self, code: int, content_type: str, content: Any) -> Response:
         """Parse the given response.
 
-        200: OK - AccountcommonTagsGetResponseV3 (OK)
+        200: OK - AccountcommonTagResponse (OK)
+
+        400: Bad Request - RestErrorResponse (20019: unable to parse request body | 20002: validation error)
+
+        404: Not Found - RestErrorResponse
+
+        409: Conflict - RestErrorResponse
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
 
@@ -241,7 +266,7 @@ class AdminQueryTagV3(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        result = AdminQueryTagV3.Response()
+        result = AdminUpdateTagV3.Response()
 
         pre_processed_response, error = self.pre_process_response(
             code=code, content_type=content_type, content=content
@@ -254,9 +279,16 @@ class AdminQueryTagV3(Operation):
             code, content_type, content = pre_processed_response
 
             if code == 200:
-                result.data_200 = AccountcommonTagsGetResponseV3.create_from_dict(
-                    content
-                )
+                result.data_200 = AccountcommonTagResponse.create_from_dict(content)
+            elif code == 400:
+                result.error_400 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
+            elif code == 404:
+                result.error_404 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_404.translate_to_api_error()
+            elif code == 409:
+                result.error_409 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_409.translate_to_api_error()
             elif code == 500:
                 result.error_500 = RestErrorResponse.create_from_dict(content)
                 result.error = result.error_500.translate_to_api_error()
@@ -280,12 +312,18 @@ class AdminQueryTagV3(Operation):
     def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
-        Union[None, AccountcommonTagsGetResponseV3],
+        Union[None, AccountcommonTagResponse],
         Union[None, HttpResponse, RestErrorResponse],
     ]:
         """Parse the given response.
 
-        200: OK - AccountcommonTagsGetResponseV3 (OK)
+        200: OK - AccountcommonTagResponse (OK)
+
+        400: Bad Request - RestErrorResponse (20019: unable to parse request body | 20002: validation error)
+
+        404: Not Found - RestErrorResponse
+
+        409: Conflict - RestErrorResponse
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
 
@@ -303,7 +341,13 @@ class AdminQueryTagV3(Operation):
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return AccountcommonTagsGetResponseV3.create_from_dict(content), None
+            return AccountcommonTagResponse.create_from_dict(content), None
+        if code == 400:
+            return None, RestErrorResponse.create_from_dict(content)
+        if code == 404:
+            return None, RestErrorResponse.create_from_dict(content)
+        if code == 409:
+            return None, RestErrorResponse.create_from_dict(content)
         if code == 500:
             return None, RestErrorResponse.create_from_dict(content)
 
@@ -317,21 +361,12 @@ class AdminQueryTagV3(Operation):
 
     @classmethod
     def create(
-        cls,
-        namespace: str,
-        limit: Optional[int] = None,
-        offset: Optional[int] = None,
-        tag_name: Optional[str] = None,
-        **kwargs,
-    ) -> AdminQueryTagV3:
+        cls, body: ModelTagUpdateRequestV3, namespace: str, tag_id: str, **kwargs
+    ) -> AdminUpdateTagV3:
         instance = cls()
+        instance.body = body
         instance.namespace = namespace
-        if limit is not None:
-            instance.limit = limit
-        if offset is not None:
-            instance.offset = offset
-        if tag_name is not None:
-            instance.tag_name = tag_name
+        instance.tag_id = tag_id
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -339,42 +374,38 @@ class AdminQueryTagV3(Operation):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> AdminQueryTagV3:
+    ) -> AdminUpdateTagV3:
         instance = cls()
+        if "body" in dict_ and dict_["body"] is not None:
+            instance.body = ModelTagUpdateRequestV3.create_from_dict(
+                dict_["body"], include_empty=include_empty
+            )
+        elif include_empty:
+            instance.body = ModelTagUpdateRequestV3()
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
             instance.namespace = ""
-        if "limit" in dict_ and dict_["limit"] is not None:
-            instance.limit = int(dict_["limit"])
+        if "tagId" in dict_ and dict_["tagId"] is not None:
+            instance.tag_id = str(dict_["tagId"])
         elif include_empty:
-            instance.limit = 0
-        if "offset" in dict_ and dict_["offset"] is not None:
-            instance.offset = int(dict_["offset"])
-        elif include_empty:
-            instance.offset = 0
-        if "tagName" in dict_ and dict_["tagName"] is not None:
-            instance.tag_name = str(dict_["tagName"])
-        elif include_empty:
-            instance.tag_name = ""
+            instance.tag_id = ""
         return instance
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
+            "body": "body",
             "namespace": "namespace",
-            "limit": "limit",
-            "offset": "offset",
-            "tagName": "tag_name",
+            "tagId": "tag_id",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
+            "body": True,
             "namespace": True,
-            "limit": False,
-            "offset": False,
-            "tagName": False,
+            "tagId": True,
         }
 
     # endregion static methods

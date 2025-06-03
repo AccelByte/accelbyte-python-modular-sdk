@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Iam Service
+# AccelByte Gaming Services Match Service V2
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -31,22 +31,21 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 from accelbyte_py_sdk.core import deprecated
 
-from ...models import AccountcommonTagResponse
-from ...models import ModelTagCreateRequestV3
-from ...models import RestErrorResponse
+from ...models import ModelsPlayFeatureFlag
+from ...models import ResponseError
 
 
-class AdminCreateTagV3(Operation):
-    """Create Account Identifier Tag (AdminCreateTagV3)
+class AdminUpsertPlayFeatureFlag(Operation):
+    """admin Upsert Play Feature Flag (adminUpsertPlayFeatureFlag)
 
-    Create a new Account Identifier Tag for users. This endpoint allows administrators to create tags that can be used to identify and categorize user accounts.
+    Upsert matchmaking Play Feature Flag.
 
     Properties:
-        url: /iam/v3/admin/namespaces/{namespace}/tags
+        url: /match2/v1/admin/namespaces/{namespace}/playfeatureflag
 
         method: POST
 
-        tags: ["Account Idenfifier Tag"]
+        tags: ["PlayFeatureFlag", "admin"]
 
         consumes: ["application/json"]
 
@@ -54,24 +53,26 @@ class AdminCreateTagV3(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ModelTagCreateRequestV3 in body
+        body: (body) REQUIRED ModelsPlayFeatureFlag in body
 
         namespace: (namespace) REQUIRED str in path
 
     Responses:
-        201: Created - AccountcommonTagResponse (Created)
+        200: OK - ModelsPlayFeatureFlag (OK)
 
-        400: Bad Request - RestErrorResponse (20019: unable to parse request body | 20002: validation error)
+        400: Bad Request - ResponseError (Bad Request)
 
-        409: Conflict - RestErrorResponse
+        401: Unauthorized - ResponseError (Unauthorized)
 
-        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+        403: Forbidden - ResponseError (Forbidden)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
     """
 
     # region fields
 
-    _url: str = "/iam/v3/admin/namespaces/{namespace}/tags"
-    _path: str = "/iam/v3/admin/namespaces/{namespace}/tags"
+    _url: str = "/match2/v1/admin/namespaces/{namespace}/playfeatureflag"
+    _path: str = "/match2/v1/admin/namespaces/{namespace}/playfeatureflag"
     _base_path: str = ""
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
@@ -79,9 +80,9 @@ class AdminCreateTagV3(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
-    service_name: Optional[str] = "iam"
+    service_name: Optional[str] = "match2"
 
-    body: ModelTagCreateRequestV3  # REQUIRED in [body]
+    body: ModelsPlayFeatureFlag  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
 
     # endregion fields
@@ -153,11 +154,11 @@ class AdminCreateTagV3(Operation):
 
     # region with_x methods
 
-    def with_body(self, value: ModelTagCreateRequestV3) -> AdminCreateTagV3:
+    def with_body(self, value: ModelsPlayFeatureFlag) -> AdminUpsertPlayFeatureFlag:
         self.body = value
         return self
 
-    def with_namespace(self, value: str) -> AdminCreateTagV3:
+    def with_namespace(self, value: str) -> AdminUpsertPlayFeatureFlag:
         self.namespace = value
         return self
 
@@ -170,7 +171,7 @@ class AdminCreateTagV3(Operation):
         if hasattr(self, "body") and self.body:
             result["body"] = self.body.to_dict(include_empty=include_empty)
         elif include_empty:
-            result["body"] = ModelTagCreateRequestV3()
+            result["body"] = ModelsPlayFeatureFlag()
         if hasattr(self, "namespace") and self.namespace:
             result["namespace"] = str(self.namespace)
         elif include_empty:
@@ -182,19 +183,25 @@ class AdminCreateTagV3(Operation):
     # region response methods
 
     class Response(ApiResponse):
-        data_201: Optional[AccountcommonTagResponse] = None
-        error_400: Optional[RestErrorResponse] = None
-        error_409: Optional[RestErrorResponse] = None
-        error_500: Optional[RestErrorResponse] = None
+        data_200: Optional[ModelsPlayFeatureFlag] = None
+        error_400: Optional[ResponseError] = None
+        error_401: Optional[ResponseError] = None
+        error_403: Optional[ResponseError] = None
+        error_500: Optional[ResponseError] = None
 
-        def ok(self) -> AdminCreateTagV3.Response:
+        def ok(self) -> AdminUpsertPlayFeatureFlag.Response:
             if self.error_400 is not None:
                 err = self.error_400.translate_to_api_error()
                 exc = err.to_exception()
                 if exc is not None:
                     raise exc  # pylint: disable=raising-bad-type
-            if self.error_409 is not None:
-                err = self.error_409.translate_to_api_error()
+            if self.error_401 is not None:
+                err = self.error_401.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_403 is not None:
+                err = self.error_403.translate_to_api_error()
                 exc = err.to_exception()
                 if exc is not None:
                     raise exc  # pylint: disable=raising-bad-type
@@ -206,15 +213,18 @@ class AdminCreateTagV3(Operation):
             return self
 
         def __iter__(self):
-            if self.data_201 is not None:
-                yield self.data_201
+            if self.data_200 is not None:
+                yield self.data_200
                 yield None
             elif self.error_400 is not None:
                 yield None
                 yield self.error_400
-            elif self.error_409 is not None:
+            elif self.error_401 is not None:
                 yield None
-                yield self.error_409
+                yield self.error_401
+            elif self.error_403 is not None:
+                yield None
+                yield self.error_403
             elif self.error_500 is not None:
                 yield None
                 yield self.error_500
@@ -226,13 +236,15 @@ class AdminCreateTagV3(Operation):
     def parse_response(self, code: int, content_type: str, content: Any) -> Response:
         """Parse the given response.
 
-        201: Created - AccountcommonTagResponse (Created)
+        200: OK - ModelsPlayFeatureFlag (OK)
 
-        400: Bad Request - RestErrorResponse (20019: unable to parse request body | 20002: validation error)
+        400: Bad Request - ResponseError (Bad Request)
 
-        409: Conflict - RestErrorResponse
+        401: Unauthorized - ResponseError (Unauthorized)
 
-        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+        403: Forbidden - ResponseError (Forbidden)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -240,7 +252,7 @@ class AdminCreateTagV3(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        result = AdminCreateTagV3.Response()
+        result = AdminUpsertPlayFeatureFlag.Response()
 
         pre_processed_response, error = self.pre_process_response(
             code=code, content_type=content_type, content=content
@@ -252,16 +264,19 @@ class AdminCreateTagV3(Operation):
         else:
             code, content_type, content = pre_processed_response
 
-            if code == 201:
-                result.data_201 = AccountcommonTagResponse.create_from_dict(content)
+            if code == 200:
+                result.data_200 = ModelsPlayFeatureFlag.create_from_dict(content)
             elif code == 400:
-                result.error_400 = RestErrorResponse.create_from_dict(content)
+                result.error_400 = ResponseError.create_from_dict(content)
                 result.error = result.error_400.translate_to_api_error()
-            elif code == 409:
-                result.error_409 = RestErrorResponse.create_from_dict(content)
-                result.error = result.error_409.translate_to_api_error()
+            elif code == 401:
+                result.error_401 = ResponseError.create_from_dict(content)
+                result.error = result.error_401.translate_to_api_error()
+            elif code == 403:
+                result.error_403 = ResponseError.create_from_dict(content)
+                result.error = result.error_403.translate_to_api_error()
             elif code == 500:
-                result.error_500 = RestErrorResponse.create_from_dict(content)
+                result.error_500 = ResponseError.create_from_dict(content)
                 result.error = result.error_500.translate_to_api_error()
             else:
                 result.error = ApiError.create_from_http_response(
@@ -283,18 +298,19 @@ class AdminCreateTagV3(Operation):
     def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
-        Union[None, AccountcommonTagResponse],
-        Union[None, HttpResponse, RestErrorResponse],
+        Union[None, ModelsPlayFeatureFlag], Union[None, HttpResponse, ResponseError]
     ]:
         """Parse the given response.
 
-        201: Created - AccountcommonTagResponse (Created)
+        200: OK - ModelsPlayFeatureFlag (OK)
 
-        400: Bad Request - RestErrorResponse (20019: unable to parse request body | 20002: validation error)
+        400: Bad Request - ResponseError (Bad Request)
 
-        409: Conflict - RestErrorResponse
+        401: Unauthorized - ResponseError (Unauthorized)
 
-        500: Internal Server Error - RestErrorResponse (20000: internal server error)
+        403: Forbidden - ResponseError (Forbidden)
+
+        500: Internal Server Error - ResponseError (Internal Server Error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -309,14 +325,16 @@ class AdminCreateTagV3(Operation):
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
-        if code == 201:
-            return AccountcommonTagResponse.create_from_dict(content), None
+        if code == 200:
+            return ModelsPlayFeatureFlag.create_from_dict(content), None
         if code == 400:
-            return None, RestErrorResponse.create_from_dict(content)
-        if code == 409:
-            return None, RestErrorResponse.create_from_dict(content)
+            return None, ResponseError.create_from_dict(content)
+        if code == 401:
+            return None, ResponseError.create_from_dict(content)
+        if code == 403:
+            return None, ResponseError.create_from_dict(content)
         if code == 500:
-            return None, RestErrorResponse.create_from_dict(content)
+            return None, ResponseError.create_from_dict(content)
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content
@@ -328,8 +346,8 @@ class AdminCreateTagV3(Operation):
 
     @classmethod
     def create(
-        cls, body: ModelTagCreateRequestV3, namespace: str, **kwargs
-    ) -> AdminCreateTagV3:
+        cls, body: ModelsPlayFeatureFlag, namespace: str, **kwargs
+    ) -> AdminUpsertPlayFeatureFlag:
         instance = cls()
         instance.body = body
         instance.namespace = namespace
@@ -340,14 +358,14 @@ class AdminCreateTagV3(Operation):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> AdminCreateTagV3:
+    ) -> AdminUpsertPlayFeatureFlag:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = ModelTagCreateRequestV3.create_from_dict(
+            instance.body = ModelsPlayFeatureFlag.create_from_dict(
                 dict_["body"], include_empty=include_empty
             )
         elif include_empty:
-            instance.body = ModelTagCreateRequestV3()
+            instance.body = ModelsPlayFeatureFlag()
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
         elif include_empty:

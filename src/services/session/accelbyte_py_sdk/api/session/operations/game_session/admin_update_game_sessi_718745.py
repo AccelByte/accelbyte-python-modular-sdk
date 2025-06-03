@@ -47,7 +47,7 @@ class AdminUpdateGameSessionMember(Operation):
 
         tags: ["Game Session"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -81,7 +81,7 @@ class AdminUpdateGameSessionMember(Operation):
     _path: str = "/session/v1/admin/namespaces/{namespace}/gamesessions/{sessionId}/members/{memberId}/status/{statusType}"
     _base_path: str = ""
     _method: str = "PUT"
-    _consumes: List[str] = ["application/json"]
+    _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None

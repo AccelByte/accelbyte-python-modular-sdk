@@ -27,7 +27,6 @@ click
 ../../src/services/lobby
 ../../src/services/loginqueue
 ../../src/services/match2
-../../src/services/matchmaking
 ../../src/services/platform
 ../../src/services/qosm
 ../../src/services/reporting

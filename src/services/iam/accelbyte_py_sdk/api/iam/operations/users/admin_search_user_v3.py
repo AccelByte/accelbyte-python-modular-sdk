@@ -50,6 +50,12 @@ class AdminSearchUserV3(Operation):
     - If platformBy parameter is defined and by parameter is using thirdparty, endpoint will search users based on the platformUserId or platformDisplayName they have linked to, example value: platformUserId or platformDisplayName.
     - If limit is not defined, The default limit is 100.
 
+    GraphQL-Like Querying:
+    - By default, the API only returns the minimum fields -> [displayName, authType, createdAt, uniqueDisplayName, deletionStatus, enabled, emailAddress, skipLoginQueue, testAccount]
+    - To include additional fields in the response, specify them in the request params.
+    - Supported fields: [country, emailVerified, avatarUrl, enabled]
+    - Note: If a value is not in the allowed list, the API will ignore it.
+
     In Multi Tenant mode :
 
     - If super admin search in super admin namespace, the result will be all game admin user
@@ -92,6 +98,8 @@ class AdminSearchUserV3(Operation):
         query: (query) OPTIONAL str in query
 
         role_ids: (roleIds) OPTIONAL str in query
+
+        selected_fields: (selectedFields) OPTIONAL str in query
 
         skip_login_queue: (skipLoginQueue) OPTIONAL bool in query
 
@@ -136,6 +144,7 @@ class AdminSearchUserV3(Operation):
     platform_id: str  # OPTIONAL in [query]
     query: str  # OPTIONAL in [query]
     role_ids: str  # OPTIONAL in [query]
+    selected_fields: str  # OPTIONAL in [query]
     skip_login_queue: bool  # OPTIONAL in [query]
     start_date: str  # OPTIONAL in [query]
     tag_ids: str  # OPTIONAL in [query]
@@ -217,6 +226,8 @@ class AdminSearchUserV3(Operation):
             result["query"] = self.query
         if hasattr(self, "role_ids"):
             result["roleIds"] = self.role_ids
+        if hasattr(self, "selected_fields"):
+            result["selectedFields"] = self.selected_fields
         if hasattr(self, "skip_login_queue"):
             result["skipLoginQueue"] = self.skip_login_queue
         if hasattr(self, "start_date"):
@@ -273,6 +284,10 @@ class AdminSearchUserV3(Operation):
 
     def with_role_ids(self, value: str) -> AdminSearchUserV3:
         self.role_ids = value
+        return self
+
+    def with_selected_fields(self, value: str) -> AdminSearchUserV3:
+        self.selected_fields = value
         return self
 
     def with_skip_login_queue(self, value: bool) -> AdminSearchUserV3:
@@ -337,6 +352,10 @@ class AdminSearchUserV3(Operation):
             result["roleIds"] = str(self.role_ids)
         elif include_empty:
             result["roleIds"] = ""
+        if hasattr(self, "selected_fields") and self.selected_fields:
+            result["selectedFields"] = str(self.selected_fields)
+        elif include_empty:
+            result["selectedFields"] = ""
         if hasattr(self, "skip_login_queue") and self.skip_login_queue:
             result["skipLoginQueue"] = bool(self.skip_login_queue)
         elif include_empty:
@@ -540,6 +559,7 @@ class AdminSearchUserV3(Operation):
         platform_id: Optional[str] = None,
         query: Optional[str] = None,
         role_ids: Optional[str] = None,
+        selected_fields: Optional[str] = None,
         skip_login_queue: Optional[bool] = None,
         start_date: Optional[str] = None,
         tag_ids: Optional[str] = None,
@@ -566,6 +586,8 @@ class AdminSearchUserV3(Operation):
             instance.query = query
         if role_ids is not None:
             instance.role_ids = role_ids
+        if selected_fields is not None:
+            instance.selected_fields = selected_fields
         if skip_login_queue is not None:
             instance.skip_login_queue = skip_login_queue
         if start_date is not None:
@@ -623,6 +645,10 @@ class AdminSearchUserV3(Operation):
             instance.role_ids = str(dict_["roleIds"])
         elif include_empty:
             instance.role_ids = ""
+        if "selectedFields" in dict_ and dict_["selectedFields"] is not None:
+            instance.selected_fields = str(dict_["selectedFields"])
+        elif include_empty:
+            instance.selected_fields = ""
         if "skipLoginQueue" in dict_ and dict_["skipLoginQueue"] is not None:
             instance.skip_login_queue = bool(dict_["skipLoginQueue"])
         elif include_empty:
@@ -654,6 +680,7 @@ class AdminSearchUserV3(Operation):
             "platformId": "platform_id",
             "query": "query",
             "roleIds": "role_ids",
+            "selectedFields": "selected_fields",
             "skipLoginQueue": "skip_login_queue",
             "startDate": "start_date",
             "tagIds": "tag_ids",
@@ -673,6 +700,7 @@ class AdminSearchUserV3(Operation):
             "platformId": False,
             "query": False,
             "roleIds": False,
+            "selectedFields": False,
             "skipLoginQueue": False,
             "startDate": False,
             "tagIds": False,
