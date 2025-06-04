@@ -60,7 +60,7 @@ or install everything
 
 ```sh
 pip install accelbyte-py-sdk-all
-```
+   ```
 
 ### Environment Variables
 
@@ -190,13 +190,13 @@ if __name__ == "__main__":
 
 ```python
 # set the refresh rate for 'login_client'
-# 0.5 means refresh when we 50% of the expiration duration has passed
-res, err = login_client(client_id, client_secret, auto_refresh=True, refresh_rate=0.5)
+# 0.8 means refresh when we 80% of the expiration duration has passed
+res, err = login_client(client_id, client_secret, auto_refresh=True, refresh_rate=0.8)
 ```
 ```python
 # set the refresh rate for 'login_user'
-# 0.5 means refresh when we 50% of the expiration duration has passed
-res, err = login_user(username, password, auto_refresh=True, refresh_rate=0.5)
+# 0.8 means refresh when we 80% of the expiration duration has passed
+res, err = login_user(username, password, auto_refresh=True, refresh_rate=0.8)
 ```
 
 The auto refresh is only triggered when another request is fired. If you want to the refresh run automatically in the background. Use any of the `LoginXTimer` classes.
@@ -1089,7 +1089,7 @@ same with the models there are also a number of utility functions generated with
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: operation.j2
@@ -1173,8 +1173,8 @@ class PublicGetUserProfileInfo(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
 
-    namespace: str  # REQUIRED in [path]
-    user_id: str  # REQUIRED in [path]
+    namespace: str                                                                                 # REQUIRED in [path]
+    user_id: str                                                                                   # REQUIRED in [path]
 
     # endregion fields
 
