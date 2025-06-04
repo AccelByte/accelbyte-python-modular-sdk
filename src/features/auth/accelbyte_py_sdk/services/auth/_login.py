@@ -7,40 +7,14 @@ from __future__ import annotations
 import threading
 
 from abc import ABC, abstractmethod
+from logging import Logger, getLogger
 from typing import Dict, List, Optional, Tuple, Union
 
-from accelbyte_py_sdk.core import SDK
 
-from accelbyte_py_sdk.core import create_basic_authentication
-from accelbyte_py_sdk.core import create_pkce_verifier_and_challenge_s256
-from accelbyte_py_sdk.core import get_access_token
-from accelbyte_py_sdk.core import get_client_auth
-from accelbyte_py_sdk.core import get_client_id
-from accelbyte_py_sdk.core import remove_token
-from accelbyte_py_sdk.core import set_token
-from accelbyte_py_sdk.core import get_token_repository
 
-from accelbyte_py_sdk.core import AccelByteSDK
-from accelbyte_py_sdk.core import HttpResponse
-from accelbyte_py_sdk.core import NoHttpBackoffPolicy, NoHttpRetryPolicy
-from accelbyte_py_sdk.core import Operation
-from accelbyte_py_sdk.core import Timer, TimerStatus
-from accelbyte_py_sdk.core import TokenRepository
 
-from accelbyte_py_sdk.api.iam import authorize_v3
-from accelbyte_py_sdk.api.iam import platform_token_grant_v3
-from accelbyte_py_sdk.api.iam import token_grant_v3
-from accelbyte_py_sdk.api.iam import token_revocation_v3
-from accelbyte_py_sdk.api.iam import user_authentication_v3
 
-from accelbyte_py_sdk.api.iam import authorize_v3_async
-from accelbyte_py_sdk.api.iam import platform_token_grant_v3_async
-from accelbyte_py_sdk.api.iam import token_grant_v3_async
-from accelbyte_py_sdk.api.iam import token_revocation_v3_async
-from accelbyte_py_sdk.api.iam import user_authentication_v3_async
 
-from accelbyte_py_sdk.api.iam.operations.o_auth2_0 import AuthorizeV3ResponseTypeEnum
-from accelbyte_py_sdk.api.iam.operations.o_auth2_0 import TokenGrantV3GrantTypeEnum
 
 
 # region constants
@@ -48,6 +22,10 @@ from accelbyte_py_sdk.api.iam.operations.o_auth2_0 import TokenGrantV3GrantTypeE
 DEFAULT_AUTO_REFRESH: bool = False
 DEFAULT_REFRESH_RATE: float = 0.8
 DEFAULT_SCOPE: str = "commerce account social publishing analytics"
+
+MODULE_NAME = "accelbyte_py_sdk"
+
+AUTH_SERVICE_LOGGER: Logger = getLogger(f"{MODULE_NAME}.services.auth")
 
 # endregion constants
 
@@ -663,6 +641,8 @@ class LoginClientTimer(LoginTimerBase):
         repeat_on_exception: bool = True,
         **kwargs,
     ) -> None:
+        logger = kwargs.get("logger", AUTH_SERVICE_LOGGER)
+
         self.refresh_rate = refresh_rate
         self.sdk = kwargs.get("sdk", None)
         self.kwargs = {
@@ -672,6 +652,7 @@ class LoginClientTimer(LoginTimerBase):
             **kwargs,
             **TIMER_KWARGS,
         }
+
         super().__init__(
             interval,
             self.run,
@@ -679,6 +660,7 @@ class LoginClientTimer(LoginTimerBase):
             repeats=repeats,
             autostart=autostart,
             repeat_on_exception=repeat_on_exception,
+            logger=logger,
         )
 
     def run(self):
@@ -723,6 +705,8 @@ class LoginPlatformTimer(LoginTimerBase):
         repeat_on_exception: bool = True,
         **kwargs,
     ) -> None:
+        logger = kwargs.get("logger", AUTH_SERVICE_LOGGER)
+
         self.refresh_rate = refresh_rate
         self.sdk = kwargs.get("sdk", None)
         self.kwargs = {
@@ -732,6 +716,7 @@ class LoginPlatformTimer(LoginTimerBase):
             **kwargs,
             **TIMER_KWARGS,
         }
+
         super().__init__(
             interval,
             self.run,
@@ -739,6 +724,7 @@ class LoginPlatformTimer(LoginTimerBase):
             repeats=repeats,
             autostart=autostart,
             repeat_on_exception=repeat_on_exception,
+            logger=logger,
         )
 
     def run(self):
@@ -784,6 +770,8 @@ class LoginUserTimer(LoginTimerBase):
         repeat_on_exception: bool = True,
         **kwargs,
     ) -> None:
+        logger = kwargs.get("logger", AUTH_SERVICE_LOGGER)
+
         self.refresh_rate = refresh_rate
         self.sdk = kwargs.get("sdk", None)
         self.kwargs = {
@@ -794,6 +782,7 @@ class LoginUserTimer(LoginTimerBase):
             **kwargs,
             **TIMER_KWARGS,
         }
+
         super().__init__(
             interval,
             self.run,
@@ -801,6 +790,7 @@ class LoginUserTimer(LoginTimerBase):
             repeats=repeats,
             autostart=autostart,
             repeat_on_exception=repeat_on_exception,
+            logger=logger,
         )
 
     def run(self):
@@ -844,6 +834,8 @@ class RefreshLoginTimer(LoginTimerBase):
         repeat_on_exception: bool = True,
         **kwargs,
     ) -> None:
+        logger = kwargs.get("logger", AUTH_SERVICE_LOGGER)
+
         self.refresh_rate = refresh_rate
         self.sdk = kwargs.get("sdk", None)
         self.kwargs = {
@@ -852,6 +844,7 @@ class RefreshLoginTimer(LoginTimerBase):
             **kwargs,
             **TIMER_KWARGS,
         }
+
         super().__init__(
             interval,
             self.run,
@@ -859,6 +852,7 @@ class RefreshLoginTimer(LoginTimerBase):
             repeats=repeats,
             autostart=autostart,
             repeat_on_exception=repeat_on_exception,
+            logger=logger,
         )
 
     def run(self):
