@@ -6,6 +6,7 @@
 - **core:** fix token expiry calculation
 ### chore
 - **core:** add uid for Timer instances
+- **!:** remove matchmaking, session browser and history services (breaking)
 ### refactor
 - **core!:** remove Timer results and exceptions caching
 ### test
