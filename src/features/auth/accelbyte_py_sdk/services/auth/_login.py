@@ -660,7 +660,7 @@ class LoginClientTimer(LoginTimerBase):
         refresh_rate: Optional[float] = None,
         repeats: Optional[int] = None,
         autostart: bool = False,
-        repeat_on_exception: bool = False,
+        repeat_on_exception: bool = True,
         **kwargs,
     ) -> None:
         self.refresh_rate = refresh_rate
@@ -720,7 +720,7 @@ class LoginPlatformTimer(LoginTimerBase):
         refresh_rate: Optional[float] = None,
         repeats: Optional[int] = None,
         autostart: bool = False,
-        repeat_on_exception: bool = False,
+        repeat_on_exception: bool = True,
         **kwargs,
     ) -> None:
         self.refresh_rate = refresh_rate
@@ -781,7 +781,7 @@ class LoginUserTimer(LoginTimerBase):
         refresh_rate: Optional[float] = None,
         repeats: Optional[int] = None,
         autostart: bool = False,
-        repeat_on_exception: bool = False,
+        repeat_on_exception: bool = True,
         **kwargs,
     ) -> None:
         self.refresh_rate = refresh_rate
@@ -841,7 +841,7 @@ class RefreshLoginTimer(LoginTimerBase):
         refresh_rate: Optional[float] = None,
         repeats: Optional[int] = None,
         autostart: bool = False,
-        repeat_on_exception: bool = False,
+        repeat_on_exception: bool = True,
         **kwargs,
     ) -> None:
         self.refresh_rate = refresh_rate
