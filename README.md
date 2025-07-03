@@ -31,8 +31,6 @@ pip install accelbyte-py-sdk-service-achievement
 pip install accelbyte-py-sdk-service-ams
 pip install accelbyte-py-sdk-service-basic
 pip install accelbyte-py-sdk-service-cloudsave
-pip install accelbyte-py-sdk-service-dslogmanager
-pip install accelbyte-py-sdk-service-dsmc
 pip install accelbyte-py-sdk-service-gametelemetry
 pip install accelbyte-py-sdk-service-gdpr
 pip install accelbyte-py-sdk-service-iam
@@ -41,7 +39,6 @@ pip install accelbyte-py-sdk-service-legal
 pip install accelbyte-py-sdk-service-lobby
 pip install accelbyte-py-sdk-service-match2
 pip install accelbyte-py-sdk-service-platform
-pip install accelbyte-py-sdk-service-qosm
 pip install accelbyte-py-sdk-service-reporting
 pip install accelbyte-py-sdk-service-seasonpass
 pip install accelbyte-py-sdk-service-session

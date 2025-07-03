@@ -14,9 +14,6 @@ src/services/challenge
 src/services/chat
 src/services/cloudsave
 src/services/csm
-src/services/dsartifact
-src/services/dslogmanager
-src/services/dsmc
 src/services/gametelemetry
 src/services/gdpr
 src/services/group
@@ -28,7 +25,6 @@ src/services/lobby
 src/services/loginqueue
 src/services/match2
 src/services/platform
-src/services/qosm
 src/services/reporting
 src/services/seasonpass
 src/services/session
