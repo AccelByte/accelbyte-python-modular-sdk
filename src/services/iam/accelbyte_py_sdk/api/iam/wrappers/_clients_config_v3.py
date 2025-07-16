@@ -46,7 +46,7 @@ def admin_delete_config_permissions_by_group(
     body: ClientmodelPermissionSetDeleteGroupRequest,
     force_delete: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Client config permissions by module and group (AdminDeleteConfigPermissionsByGroup)
 
@@ -88,7 +88,7 @@ async def admin_delete_config_permissions_by_group_async(
     body: ClientmodelPermissionSetDeleteGroupRequest,
     force_delete: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Client config permissions by module and group (AdminDeleteConfigPermissionsByGroup)
 
@@ -131,7 +131,7 @@ async def admin_delete_config_permissions_by_group_async(
 def admin_list_client_available_permissions(
     exclude_permissions: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List Client available permissions (AdminListClientAvailablePermissions)
 
@@ -169,7 +169,7 @@ def admin_list_client_available_permissions(
 async def admin_list_client_available_permissions_async(
     exclude_permissions: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List Client available permissions (AdminListClientAvailablePermissions)
 
@@ -276,7 +276,7 @@ def admin_update_available_permissions_by_module(
     body: ClientmodelListUpsertModulesRequest,
     force_delete: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update or create Client permissions module (AdminUpdateAvailablePermissionsByModule)
 
@@ -318,7 +318,7 @@ async def admin_update_available_permissions_by_module_async(
     body: ClientmodelListUpsertModulesRequest,
     force_delete: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update or create Client permissions module (AdminUpdateAvailablePermissionsByModule)
 

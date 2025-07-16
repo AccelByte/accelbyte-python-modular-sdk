@@ -84,7 +84,7 @@ def admin_add_inbox_category(
     body: ModelsAddInboxCategoryRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """add inbox category (adminAddInboxCategory)
 
@@ -134,7 +134,7 @@ async def admin_add_inbox_category_async(
     body: ModelsAddInboxCategoryRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """add inbox category (adminAddInboxCategory)
 
@@ -186,7 +186,7 @@ def admin_delete_inbox_category(
     category: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin delete inbox category (adminDeleteInboxCategory)
 
@@ -236,7 +236,7 @@ async def admin_delete_inbox_category_async(
     category: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin delete inbox category (adminDeleteInboxCategory)
 
@@ -289,7 +289,7 @@ def admin_delete_inbox_message(
     force: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin delete inbox message (adminDeleteInboxMessage)
 
@@ -343,7 +343,7 @@ async def admin_delete_inbox_message_async(
     force: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin delete inbox message (adminDeleteInboxMessage)
 
@@ -398,7 +398,7 @@ def admin_get_category_schema(
     category: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get category schema (adminGetCategorySchema)
 
@@ -450,7 +450,7 @@ async def admin_get_category_schema_async(
     category: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get category schema (adminGetCategorySchema)
 
@@ -503,7 +503,7 @@ async def admin_get_category_schema_async(
 def admin_get_inbox_categories(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get inbox categories (adminGetInboxCategories)
 
@@ -549,7 +549,7 @@ def admin_get_inbox_categories(
 async def admin_get_inbox_categories_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get inbox categories (adminGetInboxCategories)
 
@@ -607,7 +607,7 @@ def admin_get_inbox_messages(
     transient: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get inbox messages (adminGetInboxMessages)
 
@@ -693,7 +693,7 @@ async def admin_get_inbox_messages_async(
     transient: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get inbox messages (adminGetInboxMessages)
 
@@ -772,7 +772,7 @@ def admin_get_inbox_stats(
     message_id: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get inbox stats (adminGetInboxStats)
 
@@ -822,7 +822,7 @@ async def admin_get_inbox_stats_async(
     message_id: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get inbox stats (adminGetInboxStats)
 
@@ -878,7 +878,7 @@ def admin_get_inbox_users(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get inbox users (adminGetInboxUsers)
 
@@ -944,7 +944,7 @@ async def admin_get_inbox_users_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get inbox users (adminGetInboxUsers)
 
@@ -1007,7 +1007,7 @@ async def admin_get_inbox_users_async(
 def admin_list_kafka_topic(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get list kafka topic (adminListKafkaTopic)
 
@@ -1051,7 +1051,7 @@ def admin_list_kafka_topic(
 async def admin_list_kafka_topic_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get list kafka topic (adminListKafkaTopic)
 
@@ -1098,7 +1098,7 @@ def admin_save_inbox_message(
     body: ModelsSaveInboxMessageRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin save inbox message (adminSaveInboxMessage)
 
@@ -1148,7 +1148,7 @@ async def admin_save_inbox_message_async(
     body: ModelsSaveInboxMessageRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin save inbox message (adminSaveInboxMessage)
 
@@ -1201,7 +1201,7 @@ def admin_send_inbox_message(
     message_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin send inbox message (adminSendInboxMessage)
 
@@ -1255,7 +1255,7 @@ async def admin_send_inbox_message_async(
     message_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin send inbox message (adminSendInboxMessage)
 
@@ -1311,7 +1311,7 @@ def admin_unsend_inbox_message(
     inbox: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin unsend inbox message (adminUnsendInboxMessage)
 
@@ -1365,7 +1365,7 @@ async def admin_unsend_inbox_message_async(
     inbox: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin unsend inbox message (adminUnsendInboxMessage)
 
@@ -1421,7 +1421,7 @@ def admin_update_inbox_category(
     category: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin update inbox category (adminUpdateInboxCategory)
 
@@ -1475,7 +1475,7 @@ async def admin_update_inbox_category_async(
     category: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin update inbox category (adminUpdateInboxCategory)
 
@@ -1531,7 +1531,7 @@ def admin_update_inbox_message(
     message_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin update inbox message (adminUpdateInboxMessage)
 
@@ -1585,7 +1585,7 @@ async def admin_update_inbox_message_async(
     message_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin update inbox message (adminUpdateInboxMessage)
 

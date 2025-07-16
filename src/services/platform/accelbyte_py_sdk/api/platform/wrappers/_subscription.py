@@ -93,7 +93,7 @@ def cancel_subscription(
     force: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel a subscription (cancelSubscription)
 
@@ -155,7 +155,7 @@ async def cancel_subscription_async(
     force: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel a subscription (cancelSubscription)
 
@@ -217,7 +217,7 @@ def check_user_subscription_subscribable_by_item_id(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check user subscription subscribable (checkUserSubscriptionSubscribableByItemId)
 
@@ -266,7 +266,7 @@ async def check_user_subscription_subscribable_by_item_id_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check user subscription subscribable (checkUserSubscriptionSubscribableByItemId)
 
@@ -317,7 +317,7 @@ def delete_user_subscription(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete user subscription (deleteUserSubscription)
 
@@ -363,7 +363,7 @@ async def delete_user_subscription_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete user subscription (deleteUserSubscription)
 
@@ -411,7 +411,7 @@ def get_user_subscription(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user subscription (getUserSubscription)
 
@@ -461,7 +461,7 @@ async def get_user_subscription_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user subscription (getUserSubscription)
 
@@ -516,7 +516,7 @@ def get_user_subscription_activities(
     subscription_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user subscription activity (getUserSubscriptionActivities)
 
@@ -576,7 +576,7 @@ async def get_user_subscription_activities_async(
     subscription_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user subscription activity (getUserSubscriptionActivities)
 
@@ -638,7 +638,7 @@ def get_user_subscription_billing_histories(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user subscription billing histories (getUserSubscriptionBillingHistories)
 
@@ -698,7 +698,7 @@ async def get_user_subscription_billing_histories_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user subscription billing histories (getUserSubscriptionBillingHistories)
 
@@ -758,7 +758,7 @@ def grant_days_to_subscription(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Grant days to a subscription (grantDaysToSubscription)
 
@@ -813,7 +813,7 @@ async def grant_days_to_subscription_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Grant days to a subscription (grantDaysToSubscription)
 
@@ -869,7 +869,7 @@ def platform_subscribe_subscription(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Free subscribe by platform (platformSubscribeSubscription)
 
@@ -925,7 +925,7 @@ async def platform_subscribe_subscription_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Free subscribe by platform (platformSubscribeSubscription)
 
@@ -984,7 +984,7 @@ def process_user_subscription_notification(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Web hook for payment notification (processUserSubscriptionNotification)
 
@@ -1038,7 +1038,7 @@ async def process_user_subscription_notification_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Web hook for payment notification (processUserSubscriptionNotification)
 
@@ -1094,7 +1094,7 @@ def public_cancel_subscription(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel a subscription (publicCancelSubscription)
 
@@ -1151,7 +1151,7 @@ async def public_cancel_subscription_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel a subscription (publicCancelSubscription)
 
@@ -1209,7 +1209,7 @@ def public_change_subscription_billing_account(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Request to change a subscription billing account (publicChangeSubscriptionBillingAccount)
 
@@ -1264,7 +1264,7 @@ async def public_change_subscription_billing_account_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Request to change a subscription billing account (publicChangeSubscriptionBillingAccount)
 
@@ -1321,7 +1321,7 @@ def public_check_user_subscription_subscribable_by_item_id(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check user subscription subscribable (publicCheckUserSubscriptionSubscribableByItemId)
 
@@ -1370,7 +1370,7 @@ async def public_check_user_subscription_subscribable_by_item_id_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check user subscription subscribable (publicCheckUserSubscriptionSubscribableByItemId)
 
@@ -1421,7 +1421,7 @@ def public_get_user_subscription(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user subscription (publicGetUserSubscription)
 
@@ -1471,7 +1471,7 @@ async def public_get_user_subscription_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user subscription (publicGetUserSubscription)
 
@@ -1526,7 +1526,7 @@ def public_get_user_subscription_billing_histories(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user subscription billing histories (publicGetUserSubscriptionBillingHistories)
 
@@ -1586,7 +1586,7 @@ async def public_get_user_subscription_billing_histories_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user subscription billing histories (publicGetUserSubscriptionBillingHistories)
 
@@ -1655,7 +1655,7 @@ def public_query_user_subscriptions(
     ] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user subscriptions (publicQueryUserSubscriptions)
 
@@ -1731,7 +1731,7 @@ async def public_query_user_subscriptions_async(
     ] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user subscriptions (publicQueryUserSubscriptions)
 
@@ -1799,7 +1799,7 @@ def public_subscribe_subscription(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Subscribe a subscription (publicSubscribeSubscription)
 
@@ -1862,7 +1862,7 @@ async def public_subscribe_subscription_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Subscribe a subscription (publicSubscribeSubscription)
 
@@ -1933,7 +1933,7 @@ def query_subscriptions(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query subscriptions (querySubscriptions)
 
@@ -2005,7 +2005,7 @@ async def query_subscriptions_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query subscriptions (querySubscriptions)
 
@@ -2079,7 +2079,7 @@ def query_user_subscriptions(
     subscribed_by: Optional[Union[str, QueryUserSubscriptionsSubscribedByEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user subscriptions (queryUserSubscriptions)
 
@@ -2151,7 +2151,7 @@ async def query_user_subscriptions_async(
     subscribed_by: Optional[Union[str, QueryUserSubscriptionsSubscribedByEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user subscriptions (queryUserSubscriptions)
 
@@ -2218,7 +2218,7 @@ def recurring_charge_subscription(
     subscription_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Recurring charge subscription (recurringChargeSubscription)
 
@@ -2262,7 +2262,7 @@ async def recurring_charge_subscription_async(
     subscription_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Recurring charge subscription (recurringChargeSubscription)
 

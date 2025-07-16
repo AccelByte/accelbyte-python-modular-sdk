@@ -50,9 +50,21 @@ from ..operations.configuration_template import AdminGetDSMCConfiguration
 from ..operations.configuration_template import AdminSyncDSMCConfiguration
 from ..operations.configuration_template import AdminUpdateConfigurationAlertV1
 from ..operations.configuration_template import AdminUpdateConfigurationTemplateV1
-from ..models import ApimodelsConfigurationTemplateResponseTextChatModeEnum
-from ..models import ApimodelsCreateConfigurationTemplateRequestTextChatModeEnum
-from ..models import ApimodelsUpdateConfigurationTemplateRequestTextChatModeEnum
+from ..models import (
+    ApimodelsConfigurationTemplateResponseJoinabilityEnum,
+    ApimodelsConfigurationTemplateResponseTextChatModeEnum,
+    ApimodelsConfigurationTemplateResponseTypeEnum,
+)
+from ..models import (
+    ApimodelsCreateConfigurationTemplateRequestJoinabilityEnum,
+    ApimodelsCreateConfigurationTemplateRequestTextChatModeEnum,
+    ApimodelsCreateConfigurationTemplateRequestTypeEnum,
+)
+from ..models import (
+    ApimodelsUpdateConfigurationTemplateRequestJoinabilityEnum,
+    ApimodelsUpdateConfigurationTemplateRequestTextChatModeEnum,
+    ApimodelsUpdateConfigurationTemplateRequestTypeEnum,
+)
 
 
 @same_doc_as(AdminCreateConfigurationAlertV1)
@@ -60,7 +72,7 @@ def admin_create_configuration_alert_v1(
     body: ApimodelsConfigAlertRequestCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create configuration alert. (adminCreateConfigurationAlertV1)
 
@@ -117,7 +129,7 @@ async def admin_create_configuration_alert_v1_async(
     body: ApimodelsConfigAlertRequestCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create configuration alert. (adminCreateConfigurationAlertV1)
 
@@ -176,7 +188,7 @@ def admin_create_configuration_template_v1(
     body: ApimodelsCreateConfigurationTemplateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create configuration template. (adminCreateConfigurationTemplateV1)
 
@@ -287,7 +299,7 @@ async def admin_create_configuration_template_v1_async(
     body: ApimodelsCreateConfigurationTemplateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create configuration template. (adminCreateConfigurationTemplateV1)
 
@@ -399,7 +411,7 @@ async def admin_create_configuration_template_v1_async(
 def admin_delete_configuration_alert_v1(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete configuration alert. (adminDeleteConfigurationAlertV1)
 
@@ -445,7 +457,7 @@ def admin_delete_configuration_alert_v1(
 async def admin_delete_configuration_alert_v1_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete configuration alert. (adminDeleteConfigurationAlertV1)
 
@@ -494,7 +506,7 @@ def admin_delete_configuration_template_v1(
     name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete configuration template. (adminDeleteConfigurationTemplateV1)
 
@@ -544,7 +556,7 @@ async def admin_delete_configuration_template_v1_async(
     name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete configuration template. (adminDeleteConfigurationTemplateV1)
 
@@ -600,7 +612,7 @@ def admin_get_all_configuration_templates_v1(
     order_by: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get configuration templates. (adminGetAllConfigurationTemplatesV1)
 
@@ -666,7 +678,7 @@ async def admin_get_all_configuration_templates_v1_async(
     order_by: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get configuration templates. (adminGetAllConfigurationTemplatesV1)
 
@@ -729,7 +741,7 @@ async def admin_get_all_configuration_templates_v1_async(
 def admin_get_configuration_alert_v1(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get configuration alert. (adminGetConfigurationAlertV1)
 
@@ -777,7 +789,7 @@ def admin_get_configuration_alert_v1(
 async def admin_get_configuration_alert_v1_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get configuration alert. (adminGetConfigurationAlertV1)
 
@@ -828,7 +840,7 @@ def admin_get_configuration_template_v1(
     name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get configuration template. (adminGetConfigurationTemplateV1)
 
@@ -880,7 +892,7 @@ async def admin_get_configuration_template_v1_async(
     name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get configuration template. (adminGetConfigurationTemplateV1)
 
@@ -934,7 +946,7 @@ async def admin_get_configuration_template_v1_async(
 def admin_get_dsmc_configuration(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get dsmc configuration . (adminGetDSMCConfiguration)
 
@@ -983,7 +995,7 @@ def admin_get_dsmc_configuration(
 async def admin_get_dsmc_configuration_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get dsmc configuration . (adminGetDSMCConfiguration)
 
@@ -1034,7 +1046,7 @@ async def admin_get_dsmc_configuration_async(
 def admin_sync_dsmc_configuration(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """sync dsmc configuration. (adminSyncDSMCConfiguration)
 
@@ -1083,7 +1095,7 @@ def admin_sync_dsmc_configuration(
 async def admin_sync_dsmc_configuration_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """sync dsmc configuration. (adminSyncDSMCConfiguration)
 
@@ -1134,7 +1146,7 @@ def admin_update_configuration_alert_v1(
     body: ApimodelsConfigAlertRequestCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update configuration alert. (adminUpdateConfigurationAlertV1)
 
@@ -1189,7 +1201,7 @@ async def admin_update_configuration_alert_v1_async(
     body: ApimodelsConfigAlertRequestCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update configuration alert. (adminUpdateConfigurationAlertV1)
 
@@ -1247,7 +1259,7 @@ def admin_update_configuration_template_v1(
     name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update configuration template. (adminUpdateConfigurationTemplateV1)
 
@@ -1361,7 +1373,7 @@ async def admin_update_configuration_template_v1_async(
     name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update configuration template. (adminUpdateConfigurationTemplateV1)
 

@@ -48,7 +48,7 @@ def admin_submit_report(
     body: RestapiSubmitReportRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Submit a report by admin (adminSubmitReport)
 
@@ -103,7 +103,7 @@ async def admin_submit_report_async(
     body: RestapiSubmitReportRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Submit a report by admin (adminSubmitReport)
 
@@ -164,7 +164,7 @@ def list_reports(
     sort_by: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List reports (listReports)
 
@@ -227,7 +227,7 @@ async def list_reports_async(
     sort_by: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List reports (listReports)
 

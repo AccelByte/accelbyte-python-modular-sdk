@@ -55,7 +55,7 @@ def admin_delete_game_binary_record_v1(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete game binary record (adminDeleteGameBinaryRecordV1)
 
@@ -107,7 +107,7 @@ async def admin_delete_game_binary_record_v1_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete game binary record (adminDeleteGameBinaryRecordV1)
 
@@ -161,7 +161,7 @@ def admin_get_game_binary_record_v1(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get game binary record (adminGetGameBinaryRecordV1)
 
@@ -211,7 +211,7 @@ async def admin_get_game_binary_record_v1_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get game binary record (adminGetGameBinaryRecordV1)
 
@@ -266,7 +266,7 @@ def admin_list_game_binary_records_v1(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query game binary records (adminListGameBinaryRecordsV1)
 
@@ -328,7 +328,7 @@ async def admin_list_game_binary_records_v1_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query game binary records (adminListGameBinaryRecordsV1)
 
@@ -390,7 +390,7 @@ def admin_post_game_binary_presigned_urlv1(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Request presigned URL for upload game binary records (adminPostGameBinaryPresignedURLV1)
 
@@ -450,7 +450,7 @@ async def admin_post_game_binary_presigned_urlv1_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Request presigned URL for upload game binary records (adminPostGameBinaryPresignedURLV1)
 
@@ -511,7 +511,7 @@ def admin_post_game_binary_record_v1(
     body: ModelsGameBinaryRecordCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create game binary record (adminPostGameBinaryRecordV1)
 
@@ -574,7 +574,7 @@ async def admin_post_game_binary_record_v1_async(
     body: ModelsGameBinaryRecordCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create game binary record (adminPostGameBinaryRecordV1)
 
@@ -640,7 +640,7 @@ def admin_put_game_binary_record_v1(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update game binary record file (adminPutGameBinaryRecordV1)
 
@@ -696,7 +696,7 @@ async def admin_put_game_binary_record_v1_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update game binary record file (adminPutGameBinaryRecordV1)
 
@@ -754,7 +754,7 @@ def admin_put_game_binary_recor_metadata_v1(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update game binary record metadata (adminPutGameBinaryRecorMetadataV1)
 
@@ -810,7 +810,7 @@ async def admin_put_game_binary_recor_metadata_v1_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update game binary record metadata (adminPutGameBinaryRecorMetadataV1)
 

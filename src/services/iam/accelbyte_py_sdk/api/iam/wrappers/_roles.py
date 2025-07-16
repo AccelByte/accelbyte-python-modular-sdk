@@ -119,7 +119,7 @@ def add_role_managers(
     body: ModelRoleManagersRequest,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add Role Managers (AddRoleManagers)
 
@@ -170,7 +170,7 @@ async def add_role_managers_async(
     body: ModelRoleManagersRequest,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add Role Managers (AddRoleManagers)
 
@@ -223,7 +223,7 @@ def add_role_members(
     body: ModelRoleMembersRequest,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add Role Members (AddRoleMembers)
 
@@ -276,7 +276,7 @@ async def add_role_members_async(
     body: ModelRoleMembersRequest,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add Role Members (AddRoleMembers)
 
@@ -333,7 +333,7 @@ def add_role_permission(
     resource: str,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add Role Permission (AddRolePermission)
 
@@ -417,7 +417,7 @@ async def add_role_permission_async(
     resource: str,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add Role Permission (AddRolePermission)
 
@@ -500,7 +500,7 @@ def admin_add_role_managers_v3(
     body: ModelRoleManagersRequestV3,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add Role Managers (AdminAddRoleManagersV3)
 
@@ -549,7 +549,7 @@ async def admin_add_role_managers_v3_async(
     body: ModelRoleManagersRequestV3,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add Role Managers (AdminAddRoleManagersV3)
 
@@ -600,7 +600,7 @@ def admin_add_role_members_v3(
     body: ModelRoleMembersRequestV3,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add Role Members (AdminAddRoleMembersV3)
 
@@ -652,7 +652,7 @@ async def admin_add_role_members_v3_async(
     body: ModelRoleMembersRequestV3,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add Role Members (AdminAddRoleMembersV3)
 
@@ -706,7 +706,7 @@ def admin_add_role_permissions_v3(
     body: AccountcommonPermissionsV3,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add Role Permissions (AdminAddRolePermissionsV3)
 
@@ -777,7 +777,7 @@ async def admin_add_role_permissions_v3_async(
     body: AccountcommonPermissionsV3,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add Role Permissions (AdminAddRolePermissionsV3)
 
@@ -850,7 +850,7 @@ def admin_add_role_permissions_v4(
     body: AccountcommonPermissionsV3,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add Role Permissions V4 (AdminAddRolePermissionsV4)
 
@@ -920,7 +920,7 @@ async def admin_add_role_permissions_v4_async(
     body: AccountcommonPermissionsV3,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add Role Permissions V4 (AdminAddRolePermissionsV4)
 
@@ -992,7 +992,7 @@ def admin_assign_user_to_role_v4(
     body: ModelAssignUserV4Request,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Assign User to Role (AdminAssignUserToRoleV4)
 
@@ -1047,7 +1047,7 @@ async def admin_assign_user_to_role_v4_async(
     body: ModelAssignUserV4Request,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Assign User to Role (AdminAssignUserToRoleV4)
 
@@ -1103,7 +1103,7 @@ async def admin_assign_user_to_role_v4_async(
 def admin_create_role_v3(
     body: ModelRoleCreateV3Request,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Role (AdminCreateRoleV3)
 
@@ -1154,7 +1154,7 @@ def admin_create_role_v3(
 async def admin_create_role_v3_async(
     body: ModelRoleCreateV3Request,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Role (AdminCreateRoleV3)
 
@@ -1207,7 +1207,7 @@ async def admin_create_role_v3_async(
 def admin_create_role_v4(
     body: ModelRoleV4Request,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Role (AdminCreateRoleV4)
 
@@ -1255,7 +1255,7 @@ def admin_create_role_v4(
 async def admin_create_role_v4_async(
     body: ModelRoleV4Request,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Role (AdminCreateRoleV4)
 
@@ -1306,7 +1306,7 @@ def admin_delete_role_permissions_v3(
     body: List[str],
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Role (AdminDeleteRolePermissionsV3)
 
@@ -1349,7 +1349,7 @@ async def admin_delete_role_permissions_v3_async(
     body: List[str],
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Role (AdminDeleteRolePermissionsV3)
 
@@ -1394,7 +1394,7 @@ def admin_delete_role_permissions_v4(
     body: List[str],
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Role Permission V4 (AdminDeleteRolePermissionsV4)
 
@@ -1437,7 +1437,7 @@ async def admin_delete_role_permissions_v4_async(
     body: List[str],
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Role Permission V4 (AdminDeleteRolePermissionsV4)
 
@@ -1483,7 +1483,7 @@ def admin_delete_role_permission_v3(
     resource: str,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Role Permission (AdminDeleteRolePermissionV3)
 
@@ -1535,7 +1535,7 @@ async def admin_delete_role_permission_v3_async(
     resource: str,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Role Permission (AdminDeleteRolePermissionV3)
 
@@ -1856,7 +1856,7 @@ def admin_get_role_managers_v3(
     before: Optional[str] = None,
     limit: Optional[int] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Role Managers (AdminGetRoleManagersV3)
 
@@ -1913,7 +1913,7 @@ async def admin_get_role_managers_v3_async(
     before: Optional[str] = None,
     limit: Optional[int] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Role Managers (AdminGetRoleManagersV3)
 
@@ -1972,7 +1972,7 @@ def admin_get_role_members_v3(
     before: Optional[str] = None,
     limit: Optional[int] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Role Members (AdminGetRoleMembersV3)
 
@@ -2029,7 +2029,7 @@ async def admin_get_role_members_v3_async(
     before: Optional[str] = None,
     limit: Optional[int] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Role Members (AdminGetRoleMembersV3)
 
@@ -2088,7 +2088,7 @@ def admin_get_roles_v3(
     is_wildcard: Optional[bool] = None,
     limit: Optional[int] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Roles (AdminGetRolesV3)
 
@@ -2142,7 +2142,7 @@ async def admin_get_roles_v3_async(
     is_wildcard: Optional[bool] = None,
     limit: Optional[int] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Roles (AdminGetRolesV3)
 
@@ -2198,7 +2198,7 @@ def admin_get_roles_v4(
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Roles (AdminGetRolesV4)
 
@@ -2252,7 +2252,7 @@ async def admin_get_roles_v4_async(
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Roles (AdminGetRolesV4)
 
@@ -2480,7 +2480,7 @@ def admin_list_assigned_users_v4(
     before: Optional[str] = None,
     limit: Optional[int] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Role's Assigned Users (AdminListAssignedUsersV4)
 
@@ -2535,7 +2535,7 @@ async def admin_list_assigned_users_v4_async(
     before: Optional[str] = None,
     limit: Optional[int] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Role's Assigned Users (AdminListAssignedUsersV4)
 
@@ -2676,7 +2676,7 @@ def admin_remove_role_managers_v3(
     body: ModelRoleManagersRequestV3,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Remove Role Managers (AdminRemoveRoleManagersV3)
 
@@ -2725,7 +2725,7 @@ async def admin_remove_role_managers_v3_async(
     body: ModelRoleManagersRequestV3,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Remove Role Managers (AdminRemoveRoleManagersV3)
 
@@ -2777,7 +2777,7 @@ def admin_remove_role_members_v3(
     body: ModelRoleMembersRequestV3,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Remove Role Members (AdminRemoveRoleMembersV3)
 
@@ -2829,7 +2829,7 @@ async def admin_remove_role_members_v3_async(
     body: ModelRoleMembersRequestV3,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Remove Role Members (AdminRemoveRoleMembersV3)
 
@@ -2882,7 +2882,7 @@ def admin_revoke_user_from_role_v4(
     body: ModelRevokeUserV4Request,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke User from Role (AdminRevokeUserFromRoleV4)
 
@@ -2934,7 +2934,7 @@ async def admin_revoke_user_from_role_v4_async(
     body: ModelRevokeUserV4Request,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke User from Role (AdminRevokeUserFromRoleV4)
 
@@ -3078,7 +3078,7 @@ def admin_update_role_permissions_v3(
     body: AccountcommonPermissionsV3,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Role Permissions (AdminUpdateRolePermissionsV3)
 
@@ -3149,7 +3149,7 @@ async def admin_update_role_permissions_v3_async(
     body: AccountcommonPermissionsV3,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Role Permissions (AdminUpdateRolePermissionsV3)
 
@@ -3222,7 +3222,7 @@ def admin_update_role_permissions_v4(
     body: AccountcommonPermissionsV3,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Role Permissions (AdminUpdateRolePermissionsV4)
 
@@ -3291,7 +3291,7 @@ async def admin_update_role_permissions_v4_async(
     body: AccountcommonPermissionsV3,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Role Permissions (AdminUpdateRolePermissionsV4)
 
@@ -3362,7 +3362,7 @@ def admin_update_role_v3(
     body: ModelRoleUpdateRequestV3,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Role (AdminUpdateRoleV3)
 
@@ -3415,7 +3415,7 @@ async def admin_update_role_v3_async(
     body: ModelRoleUpdateRequestV3,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Role (AdminUpdateRoleV3)
 
@@ -3470,7 +3470,7 @@ def admin_update_role_v4(
     body: ModelRoleV4Request,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Role (AdminUpdateRoleV4)
 
@@ -3522,7 +3522,7 @@ async def admin_update_role_v4_async(
     body: ModelRoleV4Request,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Role (AdminUpdateRoleV4)
 
@@ -3576,7 +3576,7 @@ async def admin_update_role_v4_async(
 def create_role(
     body: ModelRoleCreateRequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Role (CreateRole)
 
@@ -3624,7 +3624,7 @@ def create_role(
 async def create_role_async(
     body: ModelRoleCreateRequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Role (CreateRole)
 
@@ -3760,7 +3760,7 @@ def delete_role_permission(
     resource: str,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Role Permission (DeleteRolePermission)
 
@@ -3814,7 +3814,7 @@ async def delete_role_permission_async(
     resource: str,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Role Permission (DeleteRolePermission)
 
@@ -4224,7 +4224,7 @@ async def get_role_members_async(
 def get_roles(
     is_wildcard: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Roles (GetRoles)
 
@@ -4265,7 +4265,7 @@ def get_roles(
 async def get_roles_async(
     is_wildcard: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Roles (GetRoles)
 
@@ -4310,7 +4310,7 @@ def public_get_roles_v3(
     is_wildcard: Optional[bool] = None,
     limit: Optional[int] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Roles (PublicGetRolesV3)
 
@@ -4359,7 +4359,7 @@ async def public_get_roles_v3_async(
     is_wildcard: Optional[bool] = None,
     limit: Optional[int] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Roles (PublicGetRolesV3)
 
@@ -4573,7 +4573,7 @@ def remove_role_managers(
     body: ModelRoleManagersRequest,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Remove Role Managers (RemoveRoleManagers)
 
@@ -4622,7 +4622,7 @@ async def remove_role_managers_async(
     body: ModelRoleManagersRequest,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Remove Role Managers (RemoveRoleManagers)
 
@@ -4673,7 +4673,7 @@ def remove_role_members(
     body: ModelRoleMembersRequest,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Remove Role Members (RemoveRoleMembers)
 
@@ -4722,7 +4722,7 @@ async def remove_role_members_async(
     body: ModelRoleMembersRequest,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Remove Role Members (RemoveRoleMembers)
 
@@ -4869,7 +4869,7 @@ def update_role(
     body: ModelRoleUpdateRequest,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Role (UpdateRole)
 
@@ -4918,7 +4918,7 @@ async def update_role_async(
     body: ModelRoleUpdateRequest,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Role (UpdateRole)
 
@@ -4969,7 +4969,7 @@ def update_role_permissions(
     body: AccountcommonPermissions,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Role Permissions (UpdateRolePermissions)
 
@@ -5044,7 +5044,7 @@ async def update_role_permissions_async(
     body: AccountcommonPermissions,
     role_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Role Permissions (UpdateRolePermissions)
 

@@ -71,7 +71,7 @@ def accept_group_invitation_public_v1(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Accept Group Invitation (acceptGroupInvitationPublicV1)
 
@@ -137,7 +137,7 @@ async def accept_group_invitation_public_v1_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Accept Group Invitation (acceptGroupInvitationPublicV1)
 
@@ -205,7 +205,7 @@ def accept_group_invitation_public_v2(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Accept Group Invitation (acceptGroupInvitationPublicV2)
 
@@ -271,7 +271,7 @@ async def accept_group_invitation_public_v2_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Accept Group Invitation (acceptGroupInvitationPublicV2)
 
@@ -339,7 +339,7 @@ def accept_group_join_request_public_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Accept Group Join Request (acceptGroupJoinRequestPublicV1)
 
@@ -403,7 +403,7 @@ async def accept_group_join_request_public_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Accept Group Join Request (acceptGroupJoinRequestPublicV1)
 
@@ -470,7 +470,7 @@ def accept_group_join_request_public_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Accept Group Join Request (acceptGroupJoinRequestPublicV2)
 
@@ -538,7 +538,7 @@ async def accept_group_join_request_public_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Accept Group Join Request (acceptGroupJoinRequestPublicV2)
 
@@ -608,7 +608,7 @@ def admin_get_user_group_status_information_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """User Group Status Information (AdminGetUserGroupStatusInformationV2)
 
@@ -662,7 +662,7 @@ async def admin_get_user_group_status_information_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """User Group Status Information (AdminGetUserGroupStatusInformationV2)
 
@@ -717,7 +717,7 @@ def cancel_group_join_request_v1(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel request to join group (CancelGroupJoinRequestV1)
 
@@ -773,7 +773,7 @@ async def cancel_group_join_request_v1_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel request to join group (CancelGroupJoinRequestV1)
 
@@ -832,7 +832,7 @@ def cancel_invitation_group_member_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel Invitation Group Member (CancelInvitationGroupMemberV2)
 
@@ -896,7 +896,7 @@ async def cancel_invitation_group_member_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel Invitation Group Member (CancelInvitationGroupMemberV2)
 
@@ -964,7 +964,7 @@ def get_group_members_list_admin_v1(
     order: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of group members (getGroupMembersListAdminV1)
 
@@ -1030,7 +1030,7 @@ async def get_group_members_list_admin_v1_async(
     order: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of group members (getGroupMembersListAdminV1)
 
@@ -1098,7 +1098,7 @@ def get_group_members_list_public_v1(
     order: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of group members (getGroupMembersListPublicV1)
 
@@ -1166,7 +1166,7 @@ async def get_group_members_list_public_v1_async(
     order: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of group members (getGroupMembersListPublicV1)
 
@@ -1233,7 +1233,7 @@ def get_user_group_information_public_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User Group Information (getUserGroupInformationPublicV1)
 
@@ -1297,7 +1297,7 @@ async def get_user_group_information_public_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User Group Information (getUserGroupInformationPublicV1)
 
@@ -1364,7 +1364,7 @@ def get_user_group_information_public_v2(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User Joined Group Information (getUserGroupInformationPublicV2)
 
@@ -1430,7 +1430,7 @@ async def get_user_group_information_public_v2_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User Joined Group Information (getUserGroupInformationPublicV2)
 
@@ -1498,7 +1498,7 @@ def get_user_group_status_information_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """User Group Status Information (GetUserGroupStatusInformationV2)
 
@@ -1560,7 +1560,7 @@ async def get_user_group_status_information_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """User Group Status Information (GetUserGroupStatusInformationV2)
 
@@ -1625,7 +1625,7 @@ def get_user_joined_group_information_public_v2(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User Joined Group Information (getUserJoinedGroupInformationPublicV2)
 
@@ -1693,7 +1693,7 @@ async def get_user_joined_group_information_public_v2_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User Joined Group Information (getUserJoinedGroupInformationPublicV2)
 
@@ -1761,7 +1761,7 @@ def invite_group_public_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Invite user to group (inviteGroupPublicV1)
 
@@ -1835,7 +1835,7 @@ async def invite_group_public_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Invite user to group (inviteGroupPublicV1)
 
@@ -1912,7 +1912,7 @@ def invite_group_public_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Invite user to group (inviteGroupPublicV2)
 
@@ -1990,7 +1990,7 @@ async def invite_group_public_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Invite user to group (inviteGroupPublicV2)
 
@@ -2069,7 +2069,7 @@ def join_group_v1(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Join to group (JoinGroupV1)
 
@@ -2135,7 +2135,7 @@ async def join_group_v1_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Join to group (JoinGroupV1)
 
@@ -2203,7 +2203,7 @@ def join_group_v2(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Join to group (JoinGroupV2)
 
@@ -2269,7 +2269,7 @@ async def join_group_v2_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Join to group (JoinGroupV2)
 
@@ -2337,7 +2337,7 @@ def kick_group_member_public_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Kick Group Member (kickGroupMemberPublicV1)
 
@@ -2397,7 +2397,7 @@ async def kick_group_member_public_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Kick Group Member (kickGroupMemberPublicV1)
 
@@ -2460,7 +2460,7 @@ def kick_group_member_public_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Kick Group Member (kickGroupMemberPublicV2)
 
@@ -2524,7 +2524,7 @@ async def kick_group_member_public_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Kick Group Member (kickGroupMemberPublicV2)
 
@@ -2588,7 +2588,7 @@ async def kick_group_member_public_v2_async(
 def leave_group_public_v1(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Leave group (leaveGroupPublicV1)
 
@@ -2642,7 +2642,7 @@ def leave_group_public_v1(
 async def leave_group_public_v1_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Leave group (leaveGroupPublicV1)
 
@@ -2699,7 +2699,7 @@ def leave_group_public_v2(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Leave group (leaveGroupPublicV2)
 
@@ -2757,7 +2757,7 @@ async def leave_group_public_v2_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Leave group (leaveGroupPublicV2)
 
@@ -2817,7 +2817,7 @@ def reject_group_invitation_public_v1(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reject Group Invitation (rejectGroupInvitationPublicV1)
 
@@ -2877,7 +2877,7 @@ async def reject_group_invitation_public_v1_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reject Group Invitation (rejectGroupInvitationPublicV1)
 
@@ -2939,7 +2939,7 @@ def reject_group_invitation_public_v2(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reject Group Invitation (rejectGroupInvitationPublicV2)
 
@@ -2999,7 +2999,7 @@ async def reject_group_invitation_public_v2_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reject Group Invitation (rejectGroupInvitationPublicV2)
 
@@ -3061,7 +3061,7 @@ def reject_group_join_request_public_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reject Group Join Request (rejectGroupJoinRequestPublicV1)
 
@@ -3125,7 +3125,7 @@ async def reject_group_join_request_public_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reject Group Join Request (rejectGroupJoinRequestPublicV1)
 
@@ -3192,7 +3192,7 @@ def reject_group_join_request_public_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reject Group Join Request (rejectGroupJoinRequestPublicV2)
 
@@ -3260,7 +3260,7 @@ async def reject_group_join_request_public_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reject Group Join Request (rejectGroupJoinRequestPublicV2)
 

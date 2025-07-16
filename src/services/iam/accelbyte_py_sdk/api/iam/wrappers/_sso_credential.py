@@ -46,7 +46,7 @@ def add_sso_login_platform_credential(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add SSO Platform Credential (AddSSOLoginPlatformCredential)
 
@@ -107,7 +107,7 @@ async def add_sso_login_platform_credential_async(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add SSO Platform Credential (AddSSOLoginPlatformCredential)
 
@@ -169,7 +169,7 @@ def delete_sso_login_platform_credential_v3(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete SSO Platform Credential (DeleteSSOLoginPlatformCredentialV3)
 
@@ -221,7 +221,7 @@ async def delete_sso_login_platform_credential_v3_async(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete SSO Platform Credential (DeleteSSOLoginPlatformCredentialV3)
 
@@ -276,7 +276,7 @@ def retrieve_all_sso_login_platform_credential_v3(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get All SSO Platform Credential (RetrieveAllSSOLoginPlatformCredentialV3)
 
@@ -330,7 +330,7 @@ async def retrieve_all_sso_login_platform_credential_v3_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get All SSO Platform Credential (RetrieveAllSSOLoginPlatformCredentialV3)
 
@@ -385,7 +385,7 @@ def retrieve_sso_login_platform_credential(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve SSO Platform Credential (RetrieveSSOLoginPlatformCredential)
 
@@ -437,7 +437,7 @@ async def retrieve_sso_login_platform_credential_async(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve SSO Platform Credential (RetrieveSSOLoginPlatformCredential)
 
@@ -492,7 +492,7 @@ def update_sso_platform_credential(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update SSO Platform Credential (UpdateSSOPlatformCredential)
 
@@ -548,7 +548,7 @@ async def update_sso_platform_credential_async(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update SSO Platform Credential (UpdateSSOPlatformCredential)
 

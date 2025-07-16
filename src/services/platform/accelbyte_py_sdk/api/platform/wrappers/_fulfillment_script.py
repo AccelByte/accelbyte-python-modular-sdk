@@ -46,7 +46,7 @@ def create_fulfillment_script(
     id_: str,
     body: Optional[FulfillmentScriptCreate] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create fulfillment script (createFulfillmentScript)
 
@@ -92,7 +92,7 @@ async def create_fulfillment_script_async(
     id_: str,
     body: Optional[FulfillmentScriptCreate] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create fulfillment script (createFulfillmentScript)
 
@@ -340,7 +340,7 @@ def update_fulfillment_script(
     id_: str,
     body: Optional[FulfillmentScriptUpdate] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update fulfillment script (updateFulfillmentScript)
 
@@ -380,7 +380,7 @@ async def update_fulfillment_script_async(
     id_: str,
     body: Optional[FulfillmentScriptUpdate] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update fulfillment script (updateFulfillmentScript)
 

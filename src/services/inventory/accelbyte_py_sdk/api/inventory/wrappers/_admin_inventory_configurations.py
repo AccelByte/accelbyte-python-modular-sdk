@@ -57,7 +57,7 @@ def admin_create_inventory_configuration(
     body: ApimodelsCreateInventoryConfigurationReq,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To create inventory configuration (AdminCreateInventoryConfiguration)
 
@@ -108,7 +108,7 @@ async def admin_create_inventory_configuration_async(
     body: ApimodelsCreateInventoryConfigurationReq,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To create inventory configuration (AdminCreateInventoryConfiguration)
 
@@ -161,7 +161,7 @@ def admin_delete_inventory_configuration(
     inventory_configuration_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To delete inventory configuration (AdminDeleteInventoryConfiguration)
 
@@ -212,7 +212,7 @@ async def admin_delete_inventory_configuration_async(
     inventory_configuration_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To delete inventory configuration (AdminDeleteInventoryConfiguration)
 
@@ -265,7 +265,7 @@ def admin_get_inventory_configuration(
     inventory_configuration_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To get inventory configuration (AdminGetInventoryConfiguration)
 
@@ -315,7 +315,7 @@ async def admin_get_inventory_configuration_async(
     inventory_configuration_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To get inventory configuration (AdminGetInventoryConfiguration)
 
@@ -370,7 +370,7 @@ def admin_list_inventory_configurations(
     sort_by: Optional[Union[str, AdminListInventoryConfigurationsSortByEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To list inventory configurations (AdminListInventoryConfigurations)
 
@@ -431,7 +431,7 @@ async def admin_list_inventory_configurations_async(
     sort_by: Optional[Union[str, AdminListInventoryConfigurationsSortByEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To list inventory configurations (AdminListInventoryConfigurations)
 
@@ -492,7 +492,7 @@ def admin_update_inventory_configuration(
     inventory_configuration_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To update inventory configuration (AdminUpdateInventoryConfiguration)
 
@@ -549,7 +549,7 @@ async def admin_update_inventory_configuration_async(
     inventory_configuration_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To update inventory configuration (AdminUpdateInventoryConfiguration)
 

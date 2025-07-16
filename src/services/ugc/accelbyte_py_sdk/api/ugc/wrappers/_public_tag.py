@@ -41,7 +41,7 @@ def get_tag(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get tags (GetTag)
 
@@ -93,7 +93,7 @@ async def get_tag_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get tags (GetTag)
 

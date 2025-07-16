@@ -56,7 +56,7 @@ def public_bulk_remove_my_items(
     inventory_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To bulk remove items (PublicBulkRemoveMyItems)
 
@@ -108,7 +108,7 @@ async def public_bulk_remove_my_items_async(
     inventory_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To bulk remove items (PublicBulkRemoveMyItems)
 
@@ -162,7 +162,7 @@ def public_bulk_update_my_items(
     inventory_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To bulk update items (PublicBulkUpdateMyItems)
 
@@ -214,7 +214,7 @@ async def public_bulk_update_my_items_async(
     inventory_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To bulk update items (PublicBulkUpdateMyItems)
 
@@ -268,7 +268,7 @@ def public_consume_my_item(
     inventory_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To consume item (PublicConsumeMyItem)
 
@@ -321,7 +321,7 @@ async def public_consume_my_item_async(
     inventory_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To consume item (PublicConsumeMyItem)
 
@@ -377,7 +377,7 @@ def public_get_item(
     source_item_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To get an item (PublicGetItem)
 
@@ -433,7 +433,7 @@ async def public_get_item_async(
     source_item_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To get an item (PublicGetItem)
 
@@ -494,7 +494,7 @@ def public_list_items(
     tags: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To list all items (PublicListItems)
 
@@ -561,7 +561,7 @@ async def public_list_items_async(
     tags: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To list all items (PublicListItems)
 
@@ -626,7 +626,7 @@ def public_move_my_items(
     inventory_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To move items between my inventories (PublicMoveMyItems)
 
@@ -678,7 +678,7 @@ async def public_move_my_items_async(
     inventory_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To move items between my inventories (PublicMoveMyItems)
 

@@ -47,7 +47,7 @@ def admin_create_assignment_plugin(
     body: ModelPluginAssignmentRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create assignment plugin (adminCreateAssignmentPlugin)
 
@@ -97,7 +97,7 @@ async def admin_create_assignment_plugin_async(
     body: ModelPluginAssignmentRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create assignment plugin (adminCreateAssignmentPlugin)
 
@@ -148,7 +148,7 @@ async def admin_create_assignment_plugin_async(
 def admin_delete_assignment_plugin(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete assignment plugin (adminDeleteAssignmentPlugin)
 
@@ -196,7 +196,7 @@ def admin_delete_assignment_plugin(
 async def admin_delete_assignment_plugin_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete assignment plugin (adminDeleteAssignmentPlugin)
 
@@ -246,7 +246,7 @@ async def admin_delete_assignment_plugin_async(
 def admin_get_assignment_plugin(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get assignment plugin (adminGetAssignmentPlugin)
 
@@ -294,7 +294,7 @@ def admin_get_assignment_plugin(
 async def admin_get_assignment_plugin_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get assignment plugin (adminGetAssignmentPlugin)
 
@@ -345,7 +345,7 @@ def admin_update_assignment_plugin(
     body: ModelPluginAssignmentRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update assignment plugin (adminUpdateAssignmentPlugin)
 
@@ -397,7 +397,7 @@ async def admin_update_assignment_plugin_async(
     body: ModelPluginAssignmentRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update assignment plugin (adminUpdateAssignmentPlugin)
 

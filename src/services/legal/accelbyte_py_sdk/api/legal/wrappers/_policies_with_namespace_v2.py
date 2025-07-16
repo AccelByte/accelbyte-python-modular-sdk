@@ -42,7 +42,7 @@ def retrieve_latest_policies_by_namespace_and_country_public_1(
     country_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve Latest Policies by Namespace and Country (retrieveLatestPoliciesByNamespaceAndCountryPublic_1)
 
@@ -109,7 +109,7 @@ async def retrieve_latest_policies_by_namespace_and_country_public_1_async(
     country_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve Latest Policies by Namespace and Country (retrieveLatestPoliciesByNamespaceAndCountryPublic_1)
 

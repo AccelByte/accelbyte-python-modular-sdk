@@ -49,7 +49,7 @@ def get_user_stat_cycle_items(
     stat_codes: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List user's statCycleItems by statCycle (getUserStatCycleItems)
 
@@ -127,7 +127,7 @@ async def get_user_stat_cycle_items_async(
     stat_codes: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List user's statCycleItems by statCycle (getUserStatCycleItems)
 
@@ -206,7 +206,7 @@ def get_user_stat_cycle_items_1(
     stat_codes: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List user's statCycleItems by statCycle (getUserStatCycleItems_1)
 
@@ -280,7 +280,7 @@ async def get_user_stat_cycle_items_1_async(
     stat_codes: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List user's statCycleItems by statCycle (getUserStatCycleItems_1)
 
@@ -355,7 +355,7 @@ def public_list_my_stat_cycle_items(
     stat_codes: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List user's statCycleItems by statCycle (publicListMyStatCycleItems)
 
@@ -425,7 +425,7 @@ async def public_list_my_stat_cycle_items_async(
     stat_codes: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List user's statCycleItems by statCycle (publicListMyStatCycleItems)
 

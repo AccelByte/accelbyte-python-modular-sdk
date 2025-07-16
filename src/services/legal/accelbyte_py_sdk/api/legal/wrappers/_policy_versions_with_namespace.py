@@ -50,7 +50,7 @@ def create_policy_version_1(
     body: Optional[CreatePolicyVersionRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a Version from Country-Specific Policy (createPolicyVersion_1)
 
@@ -98,7 +98,7 @@ async def create_policy_version_1_async(
     body: Optional[CreatePolicyVersionRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a Version from Country-Specific Policy (createPolicyVersion_1)
 
@@ -147,7 +147,7 @@ def delete_policy_version(
     policy_version_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a Version of Policy (deletePolicyVersion)
 
@@ -195,7 +195,7 @@ async def delete_policy_version_async(
     policy_version_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a Version of Policy (deletePolicyVersion)
 
@@ -246,7 +246,7 @@ def publish_policy_version_1(
     should_notify: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Manually Publish a Version from Country-Specific Policy (publishPolicyVersion_1)
 
@@ -296,7 +296,7 @@ async def publish_policy_version_1_async(
     should_notify: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Manually Publish a Version from Country-Specific Policy (publishPolicyVersion_1)
 
@@ -348,7 +348,7 @@ def retrieve_single_policy_version_1(
     version_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve a Version from Country-Specific Policy (retrieveSinglePolicyVersion_1)
 
@@ -396,7 +396,7 @@ async def retrieve_single_policy_version_1_async(
     version_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve a Version from Country-Specific Policy (retrieveSinglePolicyVersion_1)
 
@@ -445,7 +445,7 @@ def unpublish_policy_version(
     policy_version_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Un-publish Version from Policy (unpublishPolicyVersion)
 
@@ -492,7 +492,7 @@ async def unpublish_policy_version_async(
     policy_version_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Un-publish Version from Policy (unpublishPolicyVersion)
 
@@ -542,7 +542,7 @@ def update_policy_version_1(
     body: Optional[UpdatePolicyVersionRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a Version of Policy (updatePolicyVersion_1)
 
@@ -592,7 +592,7 @@ async def update_policy_version_1_async(
     body: Optional[UpdatePolicyVersionRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a Version of Policy (updatePolicyVersion_1)
 

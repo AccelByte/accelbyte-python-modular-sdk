@@ -44,7 +44,7 @@ def admin_get_recent_player(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query recent player with given user id. (adminGetRecentPlayer)
 
@@ -104,7 +104,7 @@ async def admin_get_recent_player_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query recent player with given user id. (adminGetRecentPlayer)
 
@@ -166,7 +166,7 @@ def admin_get_recent_team_player(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query recent player who were on the same team with given user id. (adminGetRecentTeamPlayer)
 
@@ -226,7 +226,7 @@ async def admin_get_recent_team_player_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query recent player who were on the same team with given user id. (adminGetRecentTeamPlayer)
 
@@ -287,7 +287,7 @@ def public_get_recent_player(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user's recent player (publicGetRecentPlayer)
 
@@ -339,7 +339,7 @@ async def public_get_recent_player_async(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user's recent player (publicGetRecentPlayer)
 
@@ -393,7 +393,7 @@ def public_get_recent_team_player(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user's recent player who were on the same team. (publicGetRecentTeamPlayer)
 
@@ -445,7 +445,7 @@ async def public_get_recent_team_player_async(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user's recent player who were on the same team. (publicGetRecentTeamPlayer)
 

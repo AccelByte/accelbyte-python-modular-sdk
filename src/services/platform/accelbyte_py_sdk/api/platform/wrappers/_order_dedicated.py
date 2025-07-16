@@ -40,7 +40,7 @@ def sync_orders(
     start: str,
     next_evaluated_key: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync orders (syncOrders)
 
@@ -84,7 +84,7 @@ async def sync_orders_async(
     start: str,
     next_evaluated_key: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync orders (syncOrders)
 

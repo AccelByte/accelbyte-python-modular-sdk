@@ -134,7 +134,7 @@ async def admin_get_all_config_v1_async(
 def admin_get_config_v1(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get namespace config (adminGetConfigV1)
 
@@ -182,7 +182,7 @@ def admin_get_config_v1(
 async def admin_get_config_v1_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get namespace config (adminGetConfigV1)
 
@@ -300,7 +300,7 @@ async def admin_get_log_config_async(
 def admin_patch_update_log_config(
     body: LogconfigConfiguration,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Patch Update Log Configuration (adminPatchUpdateLogConfig)
 
@@ -339,7 +339,7 @@ def admin_patch_update_log_config(
 async def admin_patch_update_log_config_async(
     body: LogconfigConfiguration,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Patch Update Log Configuration (adminPatchUpdateLogConfig)
 
@@ -381,7 +381,7 @@ def admin_update_config_v1(
     body: ModelsConfigResponse,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin update namespace config (adminUpdateConfigV1)
 
@@ -435,7 +435,7 @@ async def admin_update_config_v1_async(
     body: ModelsConfigResponse,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin update namespace config (adminUpdateConfigV1)
 
@@ -490,7 +490,7 @@ async def admin_update_config_v1_async(
 def export_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Export chat config to a json file. (ExportConfig)
 
@@ -534,7 +534,7 @@ def export_config(
 async def export_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Export chat config to a json file. (ExportConfig)
 
@@ -581,7 +581,7 @@ def import_config(
     file: Optional[Any] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Import chat config from a json file. (ImportConfig)
 
@@ -630,7 +630,7 @@ async def import_config_async(
     file: Optional[Any] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Import chat config from a json file. (ImportConfig)
 
@@ -680,7 +680,7 @@ async def import_config_async(
 def public_get_config_v1(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """public get namespace config (publicGetConfigV1)
 
@@ -728,7 +728,7 @@ def public_get_config_v1(
 async def public_get_config_v1_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """public get namespace config (publicGetConfigV1)
 

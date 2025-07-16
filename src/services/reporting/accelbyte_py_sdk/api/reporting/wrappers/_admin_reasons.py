@@ -58,7 +58,7 @@ from ..operations.admin_reasons import UpdateReasonGroup
 def admin_get_all_reasons(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get all reasons (adminGetAllReasons)
 
@@ -98,7 +98,7 @@ def admin_get_all_reasons(
 async def admin_get_all_reasons_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get all reasons (adminGetAllReasons)
 
@@ -141,7 +141,7 @@ def admin_get_reason(
     reason_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a single reason (adminGetReason)
 
@@ -187,7 +187,7 @@ async def admin_get_reason_async(
     reason_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a single reason (adminGetReason)
 
@@ -238,7 +238,7 @@ def admin_get_reasons(
     title: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of reasons (adminGetReasons)
 
@@ -296,7 +296,7 @@ async def admin_get_reasons_async(
     title: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of reasons (adminGetReasons)
 
@@ -354,7 +354,7 @@ def admin_get_unused_reasons(
     extension_category: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of reasons that not used by moderation rules (adminGetUnusedReasons)
 
@@ -404,7 +404,7 @@ async def admin_get_unused_reasons_async(
     extension_category: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of reasons that not used by moderation rules (adminGetUnusedReasons)
 
@@ -456,7 +456,7 @@ def admin_list_reason_groups(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List reason groups under a namespace (adminListReasonGroups)
 
@@ -505,7 +505,7 @@ async def admin_list_reason_groups_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List reason groups under a namespace (adminListReasonGroups)
 
@@ -555,7 +555,7 @@ def create_reason(
     body: RestapiCreateReasonRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a report reason (createReason)
 
@@ -603,7 +603,7 @@ async def create_reason_async(
     body: RestapiCreateReasonRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a report reason (createReason)
 
@@ -653,7 +653,7 @@ def create_reason_group(
     body: RestapiCreateReasonGroupRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a reason group (createReasonGroup)
 
@@ -703,7 +703,7 @@ async def create_reason_group_async(
     body: RestapiCreateReasonGroupRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a reason group (createReasonGroup)
 
@@ -755,7 +755,7 @@ def delete_reason(
     reason_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a report reason (deleteReason)
 
@@ -799,7 +799,7 @@ async def delete_reason_async(
     reason_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a report reason (deleteReason)
 
@@ -845,7 +845,7 @@ def delete_reason_group(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a reason group (deleteReasonGroup)
 
@@ -889,7 +889,7 @@ async def delete_reason_group_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a reason group (deleteReasonGroup)
 
@@ -935,7 +935,7 @@ def get_reason_group(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get reason group (getReasonGroup)
 
@@ -980,7 +980,7 @@ async def get_reason_group_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get reason group (getReasonGroup)
 
@@ -1028,7 +1028,7 @@ def update_reason(
     reason_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a report reason (updateReason)
 
@@ -1080,7 +1080,7 @@ async def update_reason_async(
     reason_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a report reason (updateReason)
 
@@ -1134,7 +1134,7 @@ def update_reason_group(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a reason group (updateReasonGroup)
 
@@ -1187,7 +1187,7 @@ async def update_reason_group_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a reason group (updateReasonGroup)
 

@@ -45,7 +45,7 @@ def get_group_invitation_request_public_v1(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Group Invitation Request List (getGroupInvitationRequestPublicV1)
 
@@ -105,7 +105,7 @@ async def get_group_invitation_request_public_v1_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Group Invitation Request List (getGroupInvitationRequestPublicV1)
 
@@ -168,7 +168,7 @@ def get_group_invite_request_public_v2(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Group Invite Request List (getGroupInviteRequestPublicV2)
 
@@ -234,7 +234,7 @@ async def get_group_invite_request_public_v2_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Group Invite Request List (getGroupInviteRequestPublicV2)
 
@@ -302,7 +302,7 @@ def get_group_join_request_public_v1(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Group Join Request List (getGroupJoinRequestPublicV1)
 
@@ -368,7 +368,7 @@ async def get_group_join_request_public_v1_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Group Join Request List (getGroupJoinRequestPublicV1)
 
@@ -436,7 +436,7 @@ def get_group_join_request_public_v2(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Group Join Request List (getGroupJoinRequestPublicV2)
 
@@ -502,7 +502,7 @@ async def get_group_join_request_public_v2_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Group Join Request List (getGroupJoinRequestPublicV2)
 
@@ -569,7 +569,7 @@ def get_my_group_join_request_v2(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get My Join Request To The Groups (GetMyGroupJoinRequestV2)
 
@@ -629,7 +629,7 @@ async def get_my_group_join_request_v2_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get My Join Request To The Groups (GetMyGroupJoinRequestV2)
 

@@ -46,7 +46,7 @@ def get_xbl_user_achievements(
     xbox_user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get xbox live user achievements. (getXblUserAchievements)
 
@@ -94,7 +94,7 @@ async def get_xbl_user_achievements_async(
     xbox_user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get xbox live user achievements. (getXblUserAchievements)
 
@@ -144,7 +144,7 @@ def unlock_steam_user_achievement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Unlock steam achievement. (unlockSteamUserAchievement)
 
@@ -194,7 +194,7 @@ async def unlock_steam_user_achievement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Unlock steam achievement. (unlockSteamUserAchievement)
 
@@ -246,7 +246,7 @@ def update_xbl_user_achievement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update xbox live achievements. (updateXblUserAchievement)
 
@@ -294,7 +294,7 @@ async def update_xbl_user_achievement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update xbox live achievements. (updateXblUserAchievement)
 

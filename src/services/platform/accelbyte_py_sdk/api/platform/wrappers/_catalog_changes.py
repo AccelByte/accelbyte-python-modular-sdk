@@ -73,7 +73,7 @@ def get_statistic(
     updated_at_start: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get catalog changes statistics (getStatistic)
 
@@ -142,7 +142,7 @@ async def get_statistic_async(
     updated_at_start: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get catalog changes statistics (getStatistic)
 
@@ -207,7 +207,7 @@ def publish_all(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Publish all unpublished changes (publishAll)
 
@@ -256,7 +256,7 @@ async def publish_all_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Publish all unpublished changes (publishAll)
 
@@ -307,7 +307,7 @@ def publish_selected(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Publish selected unpublished changes (publishSelected)
 
@@ -358,7 +358,7 @@ async def publish_selected_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Publish selected unpublished changes (publishSelected)
 
@@ -423,7 +423,7 @@ def query_changes(
     with_total: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query catalog changes (queryChanges)
 
@@ -516,7 +516,7 @@ async def query_changes_async(
     with_total: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query catalog changes (queryChanges)
 
@@ -599,7 +599,7 @@ def select_all_records(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Select all changes (selectAllRecords)
 
@@ -643,7 +643,7 @@ async def select_all_records_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Select all changes (selectAllRecords)
 
@@ -696,7 +696,7 @@ def select_all_records_by_criteria(
     updated_at_start: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Select all changes by criteria (selectAllRecordsByCriteria)
 
@@ -768,7 +768,7 @@ async def select_all_records_by_criteria_async(
     updated_at_start: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Select all changes by criteria (selectAllRecordsByCriteria)
 
@@ -836,7 +836,7 @@ def select_record(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Select a change (selectRecord)
 
@@ -884,7 +884,7 @@ async def select_record_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Select a change (selectRecord)
 
@@ -933,7 +933,7 @@ def unselect_all_records(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Unselect all changes (unselectAllRecords)
 
@@ -977,7 +977,7 @@ async def unselect_all_records_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Unselect all changes (unselectAllRecords)
 
@@ -1024,7 +1024,7 @@ def unselect_record(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Unselect a change (unselectRecord)
 
@@ -1074,7 +1074,7 @@ async def unselect_record_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Unselect a change (unselectRecord)
 

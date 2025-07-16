@@ -40,7 +40,7 @@ def anonymize_user_profile(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """anonymize user profile (anonymizeUserProfile)
 
@@ -91,7 +91,7 @@ async def anonymize_user_profile_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """anonymize user profile (anonymizeUserProfile)
 

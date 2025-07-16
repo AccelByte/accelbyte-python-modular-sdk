@@ -60,7 +60,7 @@ def admin_ban_device_v4(
     body: ModelDeviceBanRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Ban a device (AdminBanDeviceV4)
 
@@ -112,7 +112,7 @@ async def admin_ban_device_v4_async(
     body: ModelDeviceBanRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Ban a device (AdminBanDeviceV4)
 
@@ -167,7 +167,7 @@ def admin_decrypt_device_v4(
     device_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin decrypt device id (AdminDecryptDeviceV4)
 
@@ -218,7 +218,7 @@ async def admin_decrypt_device_v4_async(
     device_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin decrypt device id (AdminDecryptDeviceV4)
 
@@ -272,7 +272,7 @@ def admin_generate_report_v4(
     start_date: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin generate device report (AdminGenerateReportV4)
 
@@ -332,7 +332,7 @@ async def admin_generate_report_v4_async(
     start_date: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin generate device report (AdminGenerateReportV4)
 
@@ -396,7 +396,7 @@ def admin_get_banned_devices_v4(
     start_date: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get banned devices (AdminGetBannedDevicesV4)
 
@@ -460,7 +460,7 @@ async def admin_get_banned_devices_v4_async(
     start_date: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get banned devices (AdminGetBannedDevicesV4)
 
@@ -522,7 +522,7 @@ def admin_get_device_bans_v4(
     device_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get device ban list (AdminGetDeviceBansV4)
 
@@ -572,7 +572,7 @@ async def admin_get_device_bans_v4_async(
     device_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get device ban list (AdminGetDeviceBansV4)
 
@@ -624,7 +624,7 @@ def admin_get_device_ban_v4(
     ban_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get device ban config (AdminGetDeviceBanV4)
 
@@ -676,7 +676,7 @@ async def admin_get_device_ban_v4_async(
     ban_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get device ban config (AdminGetDeviceBanV4)
 
@@ -730,7 +730,7 @@ def admin_get_devices_by_user_v4(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get devices by user id (AdminGetDevicesByUserV4)
 
@@ -782,7 +782,7 @@ async def admin_get_devices_by_user_v4_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get devices by user id (AdminGetDevicesByUserV4)
 
@@ -835,7 +835,7 @@ async def admin_get_devices_by_user_v4_async(
 def admin_get_device_types_v4(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get device types (AdminGetDeviceTypesV4)
 
@@ -879,7 +879,7 @@ def admin_get_device_types_v4(
 async def admin_get_device_types_v4_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get device types (AdminGetDeviceTypesV4)
 
@@ -926,7 +926,7 @@ def admin_get_user_device_bans_v4(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get device bans of user (AdminGetUserDeviceBansV4)
 
@@ -976,7 +976,7 @@ async def admin_get_user_device_bans_v4_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get device bans of user (AdminGetUserDeviceBansV4)
 
@@ -1028,7 +1028,7 @@ def admin_get_users_by_device_v4(
     device_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get users by device id (AdminGetUsersByDeviceV4)
 
@@ -1078,7 +1078,7 @@ async def admin_get_users_by_device_v4_async(
     device_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get users by device id (AdminGetUsersByDeviceV4)
 
@@ -1130,7 +1130,7 @@ def admin_unban_device_v4(
     device_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin unban device (AdminUnbanDeviceV4)
 
@@ -1180,7 +1180,7 @@ async def admin_unban_device_v4_async(
     device_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin unban device (AdminUnbanDeviceV4)
 
@@ -1233,7 +1233,7 @@ def admin_update_device_ban_v4(
     body: ModelDeviceBanUpdateRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin update device ban config (AdminUpdateDeviceBanV4)
 
@@ -1291,7 +1291,7 @@ async def admin_update_device_ban_v4_async(
     body: ModelDeviceBanUpdateRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin update device ban config (AdminUpdateDeviceBanV4)
 

@@ -108,7 +108,7 @@ from ..models import (
 def create_payment_provider_config(
     body: PaymentProviderConfigEdit,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create payment provider config (createPaymentProviderConfig)
 
@@ -168,7 +168,7 @@ def create_payment_provider_config(
 async def create_payment_provider_config_async(
     body: PaymentProviderConfigEdit,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create payment provider config (createPaymentProviderConfig)
 
@@ -231,7 +231,7 @@ def debug_matched_payment_merchant_config(
     namespace: Optional[str] = None,
     region: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Debug matched payment merchant config(internal) (debugMatchedPaymentMerchantConfig)
 
@@ -273,7 +273,7 @@ async def debug_matched_payment_merchant_config_async(
     namespace: Optional[str] = None,
     region: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Debug matched payment merchant config(internal) (debugMatchedPaymentMerchantConfig)
 
@@ -317,7 +317,7 @@ def debug_matched_payment_provider_config(
     namespace: Optional[str] = None,
     region: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Debug matched payment provider config(internal) (debugMatchedPaymentProviderConfig)
 
@@ -359,7 +359,7 @@ async def debug_matched_payment_provider_config_async(
     namespace: Optional[str] = None,
     region: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Debug matched payment provider config(internal) (debugMatchedPaymentProviderConfig)
 
@@ -538,7 +538,7 @@ async def get_aggregate_payment_providers_async(
 def get_payment_merchant_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get payment domain whitelist config (getPaymentMerchantConfig)
 
@@ -578,7 +578,7 @@ def get_payment_merchant_config(
 async def get_payment_merchant_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get payment domain whitelist config (getPaymentMerchantConfig)
 
@@ -821,7 +821,7 @@ def query_payment_provider_config(
     offset: Optional[int] = None,
     region: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query payment provider config (queryPaymentProviderConfig)
 
@@ -869,7 +869,7 @@ async def query_payment_provider_config_async(
     offset: Optional[int] = None,
     region: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query payment provider config (queryPaymentProviderConfig)
 
@@ -917,7 +917,7 @@ def test_adyen_config(
     body: AdyenConfig,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test adyen configuration (testAdyenConfig)
 
@@ -972,7 +972,7 @@ async def test_adyen_config_async(
     body: AdyenConfig,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test adyen configuration (testAdyenConfig)
 
@@ -1029,7 +1029,7 @@ def test_adyen_config_by_id(
     id_: str,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test adyen configuration by id (testAdyenConfigById)
 
@@ -1070,7 +1070,7 @@ async def test_adyen_config_by_id_async(
     id_: str,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test adyen configuration by id (testAdyenConfigById)
 
@@ -1113,7 +1113,7 @@ def test_ali_pay_config(
     body: AliPayConfig,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test Alipay configuration (testAliPayConfig)
 
@@ -1153,7 +1153,7 @@ async def test_ali_pay_config_async(
     body: AliPayConfig,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test Alipay configuration (testAliPayConfig)
 
@@ -1195,7 +1195,7 @@ def test_ali_pay_config_by_id(
     id_: str,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test Alipay configuration by id (testAliPayConfigById)
 
@@ -1237,7 +1237,7 @@ async def test_ali_pay_config_by_id_async(
     id_: str,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test Alipay configuration by id (testAliPayConfigById)
 
@@ -1281,7 +1281,7 @@ def test_checkout_config(
     body: CheckoutConfig,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test checkout.com configuration (testCheckoutConfig)
 
@@ -1326,7 +1326,7 @@ async def test_checkout_config_async(
     body: CheckoutConfig,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test checkout.com configuration (testCheckoutConfig)
 
@@ -1373,7 +1373,7 @@ def test_checkout_config_by_id(
     id_: str,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test checkout.com configuration by id (testCheckoutConfigById)
 
@@ -1414,7 +1414,7 @@ async def test_checkout_config_by_id_async(
     id_: str,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test checkout.com configuration by id (testCheckoutConfigById)
 
@@ -1457,7 +1457,7 @@ def test_neon_pay_config(
     body: NeonPayConfig,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test Neon Pay configuration (testNeonPayConfig)
 
@@ -1502,7 +1502,7 @@ async def test_neon_pay_config_async(
     body: NeonPayConfig,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test Neon Pay configuration (testNeonPayConfig)
 
@@ -1549,7 +1549,7 @@ def test_neon_pay_config_by_id(
     id_: str,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test Neon Pay configuration by id (testNeonPayConfigById)
 
@@ -1590,7 +1590,7 @@ async def test_neon_pay_config_by_id_async(
     id_: str,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test Neon Pay configuration by id (testNeonPayConfigById)
 
@@ -1633,7 +1633,7 @@ def test_pay_pal_config(
     body: PayPalConfig,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test PayPal configuration (testPayPalConfig)
 
@@ -1682,7 +1682,7 @@ async def test_pay_pal_config_async(
     body: PayPalConfig,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test PayPal configuration (testPayPalConfig)
 
@@ -1733,7 +1733,7 @@ def test_pay_pal_config_by_id(
     id_: str,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test PayPal configuration by id (testPayPalConfigById)
 
@@ -1774,7 +1774,7 @@ async def test_pay_pal_config_by_id_async(
     id_: str,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test PayPal configuration by id (testPayPalConfigById)
 
@@ -1817,7 +1817,7 @@ def test_stripe_config(
     body: StripeConfig,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test stripe configuration (testStripeConfig)
 
@@ -1867,7 +1867,7 @@ async def test_stripe_config_async(
     body: StripeConfig,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test stripe configuration (testStripeConfig)
 
@@ -1919,7 +1919,7 @@ def test_stripe_config_by_id(
     id_: str,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test stripe configuration by id (testStripeConfigById)
 
@@ -1960,7 +1960,7 @@ async def test_stripe_config_by_id_async(
     id_: str,
     sandbox: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test stripe configuration by id (testStripeConfigById)
 
@@ -2002,7 +2002,7 @@ async def test_stripe_config_by_id_async(
 def test_wx_pay_config(
     body: WxPayConfigRequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test wxPay configuration (testWxPayConfig)
 
@@ -2038,7 +2038,7 @@ def test_wx_pay_config(
 async def test_wx_pay_config_async(
     body: WxPayConfigRequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Test wxPay configuration (testWxPayConfig)
 
@@ -2317,7 +2317,7 @@ def update_adyen_config(
     sandbox: Optional[bool] = None,
     validate: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update adyen config (updateAdyenConfig)
 
@@ -2367,7 +2367,7 @@ async def update_adyen_config_async(
     sandbox: Optional[bool] = None,
     validate: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update adyen config (updateAdyenConfig)
 
@@ -2419,7 +2419,7 @@ def update_ali_pay_config(
     sandbox: Optional[bool] = None,
     validate: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update alipay configuration (updateAliPayConfig)
 
@@ -2469,7 +2469,7 @@ async def update_ali_pay_config_async(
     sandbox: Optional[bool] = None,
     validate: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update alipay configuration (updateAliPayConfig)
 
@@ -2521,7 +2521,7 @@ def update_checkout_config(
     sandbox: Optional[bool] = None,
     validate: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update checkout.com config (updateCheckoutConfig)
 
@@ -2571,7 +2571,7 @@ async def update_checkout_config_async(
     sandbox: Optional[bool] = None,
     validate: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update checkout.com config (updateCheckoutConfig)
 
@@ -2623,7 +2623,7 @@ def update_neon_pay_config(
     sandbox: Optional[bool] = None,
     validate: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Neon Pay config (updateNeonPayConfig)
 
@@ -2673,7 +2673,7 @@ async def update_neon_pay_config_async(
     sandbox: Optional[bool] = None,
     validate: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Neon Pay config (updateNeonPayConfig)
 
@@ -2723,7 +2723,7 @@ def update_payment_domain_whitelist_config(
     body: PaymentDomainWhitelistConfigEdit,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update payment domain whitelist config (updatePaymentDomainWhitelistConfig)
 
@@ -2780,7 +2780,7 @@ async def update_payment_domain_whitelist_config_async(
     body: PaymentDomainWhitelistConfigEdit,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update payment domain whitelist config (updatePaymentDomainWhitelistConfig)
 
@@ -2839,7 +2839,7 @@ def update_payment_provider_config(
     body: PaymentProviderConfigEdit,
     id_: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update payment provider config (updatePaymentProviderConfig)
 
@@ -2905,7 +2905,7 @@ async def update_payment_provider_config_async(
     body: PaymentProviderConfigEdit,
     id_: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update payment provider config (updatePaymentProviderConfig)
 
@@ -2972,7 +2972,7 @@ async def update_payment_provider_config_async(
 def update_payment_tax_config(
     body: PaymentTaxConfigEdit,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update payment global tax config (updatePaymentTaxConfig)
 
@@ -3025,7 +3025,7 @@ def update_payment_tax_config(
 async def update_payment_tax_config_async(
     body: PaymentTaxConfigEdit,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update payment global tax config (updatePaymentTaxConfig)
 
@@ -3083,7 +3083,7 @@ def update_pay_pal_config(
     sandbox: Optional[bool] = None,
     validate: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update PayPal config (updatePayPalConfig)
 
@@ -3133,7 +3133,7 @@ async def update_pay_pal_config_async(
     sandbox: Optional[bool] = None,
     validate: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update PayPal config (updatePayPalConfig)
 
@@ -3185,7 +3185,7 @@ def update_stripe_config(
     sandbox: Optional[bool] = None,
     validate: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update stripe config (updateStripeConfig)
 
@@ -3235,7 +3235,7 @@ async def update_stripe_config_async(
     sandbox: Optional[bool] = None,
     validate: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update stripe config (updateStripeConfig)
 
@@ -3286,7 +3286,7 @@ def update_wx_pay_config(
     id_: str,
     validate: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update wxpay configuration (updateWxPayConfig)
 
@@ -3332,7 +3332,7 @@ async def update_wx_pay_config_async(
     id_: str,
     validate: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update wxpay configuration (updateWxPayConfig)
 
@@ -3379,7 +3379,7 @@ def update_wx_pay_config_cert(
     id_: str,
     file: Optional[Any] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload wxpay cert file (updateWxPayConfigCert)
 
@@ -3421,7 +3421,7 @@ async def update_wx_pay_config_cert_async(
     id_: str,
     file: Optional[Any] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload wxpay cert file (updateWxPayConfigCert)
 
@@ -3466,7 +3466,7 @@ def update_xsolla_config(
     id_: str,
     validate: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update xsolla configuration (updateXsollaConfig)
 
@@ -3512,7 +3512,7 @@ async def update_xsolla_config_async(
     id_: str,
     validate: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update xsolla configuration (updateXsollaConfig)
 
@@ -3559,7 +3559,7 @@ def update_xsolla_ui_config(
     body: XsollaPaywallConfigRequest,
     id_: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update xsolla UI configuration (updateXsollaUIConfig)
 
@@ -3601,7 +3601,7 @@ async def update_xsolla_ui_config_async(
     body: XsollaPaywallConfigRequest,
     id_: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update xsolla UI configuration (updateXsollaUIConfig)
 

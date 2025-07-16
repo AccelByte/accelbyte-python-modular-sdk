@@ -52,7 +52,7 @@ def admin_create_goal(
     challenge_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create New Goal (adminCreateGoal)
 
@@ -144,7 +144,7 @@ async def admin_create_goal_async(
     challenge_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create New Goal (adminCreateGoal)
 
@@ -238,7 +238,7 @@ def admin_delete_goal(
     code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Goal (adminDeleteGoal)
 
@@ -290,7 +290,7 @@ async def admin_delete_goal_async(
     code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Goal (adminDeleteGoal)
 
@@ -344,7 +344,7 @@ def admin_get_goal(
     code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Goal (adminGetGoal)
 
@@ -398,7 +398,7 @@ async def admin_get_goal_async(
     code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Goal (adminGetGoal)
 
@@ -457,7 +457,7 @@ def admin_get_goals(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List Goals of a Challenge (adminGetGoals)
 
@@ -523,7 +523,7 @@ async def admin_get_goals_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List Goals of a Challenge (adminGetGoals)
 
@@ -589,7 +589,7 @@ def admin_update_goals(
     code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Goal (adminUpdateGoals)
 
@@ -675,7 +675,7 @@ async def admin_update_goals_async(
     code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Goal (adminUpdateGoals)
 

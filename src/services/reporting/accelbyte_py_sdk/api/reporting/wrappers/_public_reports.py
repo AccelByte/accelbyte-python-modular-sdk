@@ -46,7 +46,7 @@ def submit_report(
     body: RestapiSubmitReportRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Submit a report (submitReport)
 
@@ -104,7 +104,7 @@ async def submit_report_async(
     body: RestapiSubmitReportRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Submit a report (submitReport)
 

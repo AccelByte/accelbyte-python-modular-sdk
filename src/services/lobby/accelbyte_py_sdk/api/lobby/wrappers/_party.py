@@ -48,7 +48,7 @@ def admin_get_party_data_v1(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get party data (adminGetPartyDataV1)
 
@@ -101,7 +101,7 @@ async def admin_get_party_data_v1_async(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get party data (adminGetPartyDataV1)
 
@@ -156,7 +156,7 @@ def admin_get_user_party_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get user party data (adminGetUserPartyV1)
 
@@ -209,7 +209,7 @@ async def admin_get_user_party_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get user party data (adminGetUserPartyV1)
 
@@ -264,7 +264,7 @@ def public_get_party_data_v1(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get party data by party id (publicGetPartyDataV1)
 
@@ -322,7 +322,7 @@ async def public_get_party_data_v1_async(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get party data by party id (publicGetPartyDataV1)
 
@@ -383,7 +383,7 @@ def public_set_party_limit_v1(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """set party limit (publicSetPartyLimitV1)
 
@@ -443,7 +443,7 @@ async def public_set_party_limit_v1_async(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """set party limit (publicSetPartyLimitV1)
 
@@ -505,7 +505,7 @@ def public_update_party_attributes_v1(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update party attributes (publicUpdatePartyAttributesV1)
 
@@ -567,7 +567,7 @@ async def public_update_party_attributes_v1_async(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update party attributes (publicUpdatePartyAttributesV1)
 

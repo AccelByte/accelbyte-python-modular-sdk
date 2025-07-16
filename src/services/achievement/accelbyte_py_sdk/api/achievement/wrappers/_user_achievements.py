@@ -55,7 +55,7 @@ def admin_bulk_unlock_achievement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk unlock achievements (AdminBulkUnlockAchievement)
 
@@ -112,7 +112,7 @@ async def admin_bulk_unlock_achievement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk unlock achievements (AdminBulkUnlockAchievement)
 
@@ -175,7 +175,7 @@ def admin_list_user_achievements(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user achievements [include achieved and in-progress] (AdminListUserAchievements)
 
@@ -261,7 +261,7 @@ async def admin_list_user_achievements_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user achievements [include achieved and in-progress] (AdminListUserAchievements)
 
@@ -345,7 +345,7 @@ def admin_reset_achievement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reset an achievement (AdminResetAchievement)
 
@@ -405,7 +405,7 @@ async def admin_reset_achievement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reset an achievement (AdminResetAchievement)
 
@@ -467,7 +467,7 @@ def admin_unlock_achievement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Unlock an achievement (AdminUnlockAchievement)
 
@@ -524,7 +524,7 @@ async def admin_unlock_achievement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Unlock an achievement (AdminUnlockAchievement)
 
@@ -583,7 +583,7 @@ def public_bulk_unlock_achievement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk Unlock achievements (PublicBulkUnlockAchievement)
 
@@ -640,7 +640,7 @@ async def public_bulk_unlock_achievement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk Unlock achievements (PublicBulkUnlockAchievement)
 
@@ -703,7 +703,7 @@ def public_list_user_achievements(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user achievements [include achieved and in-progress] (PublicListUserAchievements)
 
@@ -789,7 +789,7 @@ async def public_list_user_achievements_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user achievements [include achieved and in-progress] (PublicListUserAchievements)
 
@@ -873,7 +873,7 @@ def public_unlock_achievement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Unlock an achievement (PublicUnlockAchievement)
 
@@ -930,7 +930,7 @@ async def public_unlock_achievement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Unlock an achievement (PublicUnlockAchievement)
 

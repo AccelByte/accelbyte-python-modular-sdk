@@ -47,7 +47,7 @@ def delete_channel(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Channel (DeleteChannel)
 
@@ -99,7 +99,7 @@ async def delete_channel_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Channel (DeleteChannel)
 
@@ -155,7 +155,7 @@ def get_channels(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Channels (GetChannels)
 
@@ -215,7 +215,7 @@ async def get_channels_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Channels (GetChannels)
 
@@ -275,7 +275,7 @@ def public_create_channel(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Channel (PublicCreateChannel)
 
@@ -327,7 +327,7 @@ async def public_create_channel_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Channel (PublicCreateChannel)
 
@@ -382,7 +382,7 @@ def update_channel(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Channel (UpdateChannel)
 
@@ -440,7 +440,7 @@ async def update_channel_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Channel (UpdateChannel)
 

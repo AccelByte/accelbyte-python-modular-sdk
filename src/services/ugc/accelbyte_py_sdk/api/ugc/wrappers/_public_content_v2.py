@@ -76,7 +76,7 @@ def delete_content_screenshot_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete screenshots content (DeleteContentScreenshotV2)
 
@@ -136,7 +136,7 @@ async def delete_content_screenshot_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete screenshots content (DeleteContentScreenshotV2)
 
@@ -196,7 +196,7 @@ def public_bulk_get_content_by_idv2(
     body: ModelsPublicGetContentBulkRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get contents by content Ids  (PublicBulkGetContentByIDV2)
 
@@ -245,7 +245,7 @@ async def public_bulk_get_content_by_idv2_async(
     body: ModelsPublicGetContentBulkRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get contents by content Ids  (PublicBulkGetContentByIDV2)
 
@@ -298,7 +298,7 @@ def public_create_content_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a content (PublicCreateContentV2)
 
@@ -356,7 +356,7 @@ async def public_create_content_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a content (PublicCreateContentV2)
 
@@ -416,7 +416,7 @@ def public_delete_content_by_share_code_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete content by share code (PublicDeleteContentByShareCodeV2)
 
@@ -472,7 +472,7 @@ async def public_delete_content_by_share_code_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete content by share code (PublicDeleteContentByShareCodeV2)
 
@@ -530,7 +530,7 @@ def public_delete_content_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete content (PublicDeleteContentV2)
 
@@ -586,7 +586,7 @@ async def public_delete_content_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete content (PublicDeleteContentV2)
 
@@ -645,7 +645,7 @@ def public_generate_content_upload_urlv2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate content upload URL (PublicGenerateContentUploadURLV2)
 
@@ -709,7 +709,7 @@ async def public_generate_content_upload_urlv2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate content upload URL (PublicGenerateContentUploadURLV2)
 
@@ -772,7 +772,7 @@ def public_get_content_bulk_by_share_codes_v2(
     body: ModelsGetContentBulkByShareCodesRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get content by content sharecodes (PublicGetContentBulkByShareCodesV2)
 
@@ -823,7 +823,7 @@ async def public_get_content_bulk_by_share_codes_v2_async(
     body: ModelsGetContentBulkByShareCodesRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get content by content sharecodes (PublicGetContentBulkByShareCodesV2)
 
@@ -880,7 +880,7 @@ def public_get_content_by_channel_idv2(
     sort_by: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List contents specific to a channel (PublicGetContentByChannelIDV2)
 
@@ -944,7 +944,7 @@ async def public_get_content_by_channel_idv2_async(
     sort_by: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List contents specific to a channel (PublicGetContentByChannelIDV2)
 
@@ -1006,7 +1006,7 @@ def public_get_content_by_idv2(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get content by content ID (PublicGetContentByIDV2)
 
@@ -1054,7 +1054,7 @@ async def public_get_content_by_idv2_async(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get content by content ID (PublicGetContentByIDV2)
 
@@ -1104,7 +1104,7 @@ def public_get_content_by_share_code_v2(
     share_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get content by sharecode (PublicGetContentByShareCodeV2)
 
@@ -1152,7 +1152,7 @@ async def public_get_content_by_share_code_v2_async(
     share_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get content by sharecode (PublicGetContentByShareCodeV2)
 
@@ -1205,7 +1205,7 @@ def public_get_content_by_user_idv2(
     sort_by: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get content by user ID (PublicGetContentByUserIDV2)
 
@@ -1265,7 +1265,7 @@ async def public_get_content_by_user_idv2_async(
     sort_by: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get content by user ID (PublicGetContentByUserIDV2)
 
@@ -1331,7 +1331,7 @@ def public_list_content_v2(
     type_: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List contents (PublicListContentV2)
 
@@ -1423,7 +1423,7 @@ async def public_list_content_v2_async(
     type_: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List contents (PublicListContentV2)
 
@@ -1513,7 +1513,7 @@ def public_update_content_by_share_code_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update content to S3 bucket by share code (PublicUpdateContentByShareCodeV2)
 
@@ -1579,7 +1579,7 @@ async def public_update_content_by_share_code_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update content to S3 bucket by share code (PublicUpdateContentByShareCodeV2)
 
@@ -1647,7 +1647,7 @@ def public_update_content_file_location(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update content file location (PublicUpdateContentFileLocation)
 
@@ -1711,7 +1711,7 @@ async def public_update_content_file_location_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update content file location (PublicUpdateContentFileLocation)
 
@@ -1777,7 +1777,7 @@ def public_update_content_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update content (PublicUpdateContentV2)
 
@@ -1841,7 +1841,7 @@ async def public_update_content_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update content (PublicUpdateContentV2)
 
@@ -1907,7 +1907,7 @@ def update_content_share_code_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update content share code (UpdateContentShareCodeV2)
 
@@ -1977,7 +1977,7 @@ async def update_content_share_code_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update content share code (UpdateContentShareCodeV2)
 
@@ -2048,7 +2048,7 @@ def update_screenshots_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update screenshot of content (UpdateScreenshotsV2)
 
@@ -2108,7 +2108,7 @@ async def update_screenshots_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update screenshot of content (UpdateScreenshotsV2)
 
@@ -2170,7 +2170,7 @@ def upload_content_screenshot_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload screenshots for content (UploadContentScreenshotV2)
 
@@ -2231,7 +2231,7 @@ async def upload_content_screenshot_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload screenshots for content (UploadContentScreenshotV2)
 

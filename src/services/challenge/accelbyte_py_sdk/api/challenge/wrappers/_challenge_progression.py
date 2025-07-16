@@ -46,7 +46,7 @@ def admin_evaluate_progress(
     body: ModelEvaluatePlayerProgressionRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Evaluate User's Progressions (adminEvaluateProgress)
 
@@ -99,7 +99,7 @@ async def admin_evaluate_progress_async(
     body: ModelEvaluatePlayerProgressionRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Evaluate User's Progressions (adminEvaluateProgress)
 
@@ -160,7 +160,7 @@ def admin_get_user_progression(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List User's Progressions (adminGetUserProgression)
 
@@ -238,7 +238,7 @@ async def admin_get_user_progression_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List User's Progressions (adminGetUserProgression)
 
@@ -311,7 +311,7 @@ async def admin_get_user_progression_async(
 def evaluate_my_progress(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Evaluate User's Challenge Progressions (EvaluateMyProgress)
 
@@ -355,7 +355,7 @@ def evaluate_my_progress(
 async def evaluate_my_progress_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Evaluate User's Challenge Progressions (EvaluateMyProgress)
 
@@ -407,7 +407,7 @@ def public_get_past_user_progression(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List User's Progressions in the previous rotation. (publicGetPastUserProgression)
 
@@ -479,7 +479,7 @@ async def public_get_past_user_progression_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List User's Progressions in the previous rotation. (publicGetPastUserProgression)
 
@@ -553,7 +553,7 @@ def public_get_user_progression(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List User's Progressions (publicGetUserProgression)
 
@@ -627,7 +627,7 @@ async def public_get_user_progression_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List User's Progressions (publicGetUserProgression)
 

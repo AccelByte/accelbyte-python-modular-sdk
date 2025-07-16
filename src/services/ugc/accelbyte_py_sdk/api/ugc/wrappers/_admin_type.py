@@ -45,7 +45,7 @@ def admin_create_type(
     body: ModelsCreateTypeRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create types (AdminCreateType)
 
@@ -95,7 +95,7 @@ async def admin_create_type_async(
     body: ModelsCreateTypeRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create types (AdminCreateType)
 
@@ -147,7 +147,7 @@ def admin_delete_type(
     type_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete type (AdminDeleteType)
 
@@ -195,7 +195,7 @@ async def admin_delete_type_async(
     type_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete type (AdminDeleteType)
 
@@ -246,7 +246,7 @@ def admin_get_type(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get types (AdminGetType)
 
@@ -298,7 +298,7 @@ async def admin_get_type_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get types (AdminGetType)
 
@@ -352,7 +352,7 @@ def admin_update_type(
     type_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update types (AdminUpdateType)
 
@@ -408,7 +408,7 @@ async def admin_update_type_async(
     type_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update types (AdminUpdateType)
 

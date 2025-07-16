@@ -59,7 +59,7 @@ def admin_create_integration_configuration(
     body: ApimodelsCreateIntegrationConfigurationReq,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To create integration configuration (AdminCreateIntegrationConfiguration)
 
@@ -110,7 +110,7 @@ async def admin_create_integration_configuration_async(
     body: ApimodelsCreateIntegrationConfigurationReq,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To create integration configuration (AdminCreateIntegrationConfiguration)
 
@@ -165,7 +165,7 @@ def admin_list_integration_configurations(
     sort_by: Optional[Union[str, AdminListIntegrationConfigurationsSortByEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To list integration configurations (AdminListIntegrationConfigurations)
 
@@ -222,7 +222,7 @@ async def admin_list_integration_configurations_async(
     sort_by: Optional[Union[str, AdminListIntegrationConfigurationsSortByEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To list integration configurations (AdminListIntegrationConfigurations)
 
@@ -280,7 +280,7 @@ def admin_update_integration_configuration(
     integration_configuration_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To update integration configuration (AdminUpdateIntegrationConfiguration)
 
@@ -337,7 +337,7 @@ async def admin_update_integration_configuration_async(
     integration_configuration_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To update integration configuration (AdminUpdateIntegrationConfiguration)
 
@@ -396,7 +396,7 @@ def admin_update_status_integration_configuration(
     integration_configuration_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To update status integration configuration to be active / not active  (AdminUpdateStatusIntegrationConfiguration)
 
@@ -453,7 +453,7 @@ async def admin_update_status_integration_configuration_async(
     integration_configuration_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To update status integration configuration to be active / not active  (AdminUpdateStatusIntegrationConfiguration)
 

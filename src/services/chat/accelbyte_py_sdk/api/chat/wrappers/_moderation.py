@@ -42,7 +42,7 @@ def admin_delete_chat_snapshot(
     chat_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin delete chat snapshot (adminDeleteChatSnapshot)
 
@@ -94,7 +94,7 @@ async def admin_delete_chat_snapshot_async(
     chat_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin delete chat snapshot (adminDeleteChatSnapshot)
 
@@ -148,7 +148,7 @@ def admin_get_chat_snapshot(
     chat_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get chat snapshot (adminGetChatSnapshot)
 
@@ -200,7 +200,7 @@ async def admin_get_chat_snapshot_async(
     chat_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get chat snapshot (adminGetChatSnapshot)
 
@@ -255,7 +255,7 @@ def public_get_chat_snapshot(
     topic: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """public get chat snapshot (publicGetChatSnapshot)
 
@@ -311,7 +311,7 @@ async def public_get_chat_snapshot_async(
     topic: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """public get chat snapshot (publicGetChatSnapshot)
 

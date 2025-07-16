@@ -59,7 +59,7 @@ from ..operations.admin_extension_categories_and_auto_moderation_actions import 
 def admin_create_extension_category(
     body: RestapiExtensionCategoryApiRequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Extension Category (adminCreateExtensionCategory)
 
@@ -97,7 +97,7 @@ def admin_create_extension_category(
 async def admin_create_extension_category_async(
     body: RestapiExtensionCategoryApiRequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Extension Category (adminCreateExtensionCategory)
 
@@ -137,7 +137,7 @@ async def admin_create_extension_category_async(
 def admin_create_mod_action(
     body: RestapiActionApiRequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Auto Moderation Action data (adminCreateModAction)
 
@@ -175,7 +175,7 @@ def admin_create_mod_action(
 async def admin_create_mod_action_async(
     body: RestapiActionApiRequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Auto Moderation Action data (adminCreateModAction)
 
@@ -282,7 +282,7 @@ def admin_find_extension_category_list(
     order: Optional[Union[str, AdminFindExtensionCategoryListOrderEnum]] = None,
     sort_by: Optional[Union[str, AdminFindExtensionCategoryListSortByEnum]] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Find Extension Category List (adminFindExtensionCategoryList)
 
@@ -324,7 +324,7 @@ async def admin_find_extension_category_list_async(
     order: Optional[Union[str, AdminFindExtensionCategoryListOrderEnum]] = None,
     sort_by: Optional[Union[str, AdminFindExtensionCategoryListSortByEnum]] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Find Extension Category List (adminFindExtensionCategoryList)
 

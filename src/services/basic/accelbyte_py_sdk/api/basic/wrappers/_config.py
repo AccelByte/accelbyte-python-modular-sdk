@@ -47,7 +47,7 @@ def create_config(
     body: Optional[ConfigCreate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a config (createConfig)
 
@@ -100,7 +100,7 @@ async def create_config_async(
     body: Optional[ConfigCreate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a config (createConfig)
 
@@ -155,7 +155,7 @@ def delete_config(
     config_key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a config (deleteConfig)
 
@@ -208,7 +208,7 @@ async def delete_config_async(
     config_key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a config (deleteConfig)
 
@@ -263,7 +263,7 @@ def get_config(
     config_key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a config (getConfig)
 
@@ -316,7 +316,7 @@ async def get_config_async(
     config_key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a config (getConfig)
 
@@ -371,7 +371,7 @@ def get_publisher_config(
     config_key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a publisher config (getPublisherConfig)
 
@@ -425,7 +425,7 @@ async def get_publisher_config_async(
     config_key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a publisher config (getPublisherConfig)
 
@@ -482,7 +482,7 @@ def update_config(
     body: Optional[ConfigUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a config (updateConfig)
 
@@ -539,7 +539,7 @@ async def update_config_async(
     body: Optional[ConfigUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a config (updateConfig)
 

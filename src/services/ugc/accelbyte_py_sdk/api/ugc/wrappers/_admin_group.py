@@ -56,7 +56,7 @@ def admin_create_group(
     body: ModelsCreateGroupRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create groups (AdminCreateGroup)
 
@@ -104,7 +104,7 @@ async def admin_create_group_async(
     body: ModelsCreateGroupRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create groups (AdminCreateGroup)
 
@@ -155,7 +155,7 @@ def admin_delete_group(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete group (AdminDeleteGroup)
 
@@ -207,7 +207,7 @@ async def admin_delete_group_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete group (AdminDeleteGroup)
 
@@ -262,7 +262,7 @@ def admin_get_all_groups(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get all user groups (AdminGetAllGroups)
 
@@ -318,7 +318,7 @@ async def admin_get_all_groups_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get all user groups (AdminGetAllGroups)
 
@@ -375,7 +375,7 @@ def admin_get_group(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get specific user group (AdminGetGroup)
 
@@ -427,7 +427,7 @@ async def admin_get_group_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get specific user group (AdminGetGroup)
 
@@ -483,7 +483,7 @@ def admin_get_group_contents(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """(Legacy) Get contents belong to a group (AdminGetGroupContents)
 
@@ -545,7 +545,7 @@ async def admin_get_group_contents_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """(Legacy) Get contents belong to a group (AdminGetGroupContents)
 
@@ -608,7 +608,7 @@ def admin_get_official_group_contents_v2(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get contents belong to a group (AdminGetOfficialGroupContentsV2)
 
@@ -666,7 +666,7 @@ async def admin_get_official_group_contents_v2_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get contents belong to a group (AdminGetOfficialGroupContentsV2)
 
@@ -727,7 +727,7 @@ def admin_get_user_group_contents_v2(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get contents belong to a group (AdminGetUserGroupContentsV2)
 
@@ -789,7 +789,7 @@ async def admin_get_user_group_contents_v2_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get contents belong to a group (AdminGetUserGroupContentsV2)
 
@@ -852,7 +852,7 @@ def admin_update_group(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update group (AdminUpdateGroup)
 
@@ -910,7 +910,7 @@ async def admin_update_group_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update group (AdminUpdateGroup)
 
@@ -968,7 +968,7 @@ def single_admin_delete_group(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete group (SingleAdminDeleteGroup)
 
@@ -1016,7 +1016,7 @@ async def single_admin_delete_group_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete group (SingleAdminDeleteGroup)
 
@@ -1067,7 +1067,7 @@ def single_admin_get_all_groups(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get all user groups (SingleAdminGetAllGroups)
 
@@ -1119,7 +1119,7 @@ async def single_admin_get_all_groups_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get all user groups (SingleAdminGetAllGroups)
 
@@ -1172,7 +1172,7 @@ def single_admin_get_group(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get specific user group (SingleAdminGetGroup)
 
@@ -1220,7 +1220,7 @@ async def single_admin_get_group_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get specific user group (SingleAdminGetGroup)
 
@@ -1272,7 +1272,7 @@ def single_admin_get_group_contents(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """(Legacy) Get contents belong to a group (SingleAdminGetGroupContents)
 
@@ -1330,7 +1330,7 @@ async def single_admin_get_group_contents_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """(Legacy) Get contents belong to a group (SingleAdminGetGroupContents)
 
@@ -1389,7 +1389,7 @@ def single_admin_update_group(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update group (SingleAdminUpdateGroup)
 
@@ -1443,7 +1443,7 @@ async def single_admin_update_group_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update group (SingleAdminUpdateGroup)
 

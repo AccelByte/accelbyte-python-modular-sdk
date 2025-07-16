@@ -77,7 +77,7 @@ def add_friends_without_confirmation(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add friends without confirmation (addFriendsWithoutConfirmation)
 
@@ -131,7 +131,7 @@ async def add_friends_without_confirmation_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add friends without confirmation (addFriendsWithoutConfirmation)
 
@@ -190,7 +190,7 @@ def admin_list_friends_of_friends(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Load list friends of friends (adminListFriendsOfFriends)
 
@@ -256,7 +256,7 @@ async def admin_list_friends_of_friends_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Load list friends of friends (adminListFriendsOfFriends)
 
@@ -321,7 +321,7 @@ def bulk_delete_friends(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete friends, and incoming/outgoing friend requests (bulkDeleteFriends)
 
@@ -375,7 +375,7 @@ async def bulk_delete_friends_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete friends, and incoming/outgoing friend requests (bulkDeleteFriends)
 
@@ -433,7 +433,7 @@ def get_incoming_friend_requests(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get incoming friend requests (get incoming friend requests)
 
@@ -495,7 +495,7 @@ async def get_incoming_friend_requests_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get incoming friend requests (get incoming friend requests)
 
@@ -560,7 +560,7 @@ def get_list_of_friends(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of friends (get list of friends)
 
@@ -626,7 +626,7 @@ async def get_list_of_friends_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of friends (get list of friends)
 
@@ -692,7 +692,7 @@ def get_outgoing_friend_requests(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of outgoing friend requests (get outgoing friend requests)
 
@@ -750,7 +750,7 @@ async def get_outgoing_friend_requests_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of outgoing friend requests (get outgoing friend requests)
 
@@ -809,7 +809,7 @@ def get_user_friends_updated(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of friends (getUserFriendsUpdated)
 
@@ -865,7 +865,7 @@ async def get_user_friends_updated_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of friends (getUserFriendsUpdated)
 
@@ -923,7 +923,7 @@ def get_user_friends_with_platform(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of friends with platform data (getUserFriendsWithPlatform)
 
@@ -979,7 +979,7 @@ async def get_user_friends_with_platform_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of friends with platform data (getUserFriendsWithPlatform)
 
@@ -1037,7 +1037,7 @@ def get_user_incoming_friends(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of incoming friends (getUserIncomingFriends)
 
@@ -1093,7 +1093,7 @@ async def get_user_incoming_friends_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of incoming friends (getUserIncomingFriends)
 
@@ -1151,7 +1151,7 @@ def get_user_incoming_friends_with_time(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of incoming friends with requested time info (getUserIncomingFriendsWithTime)
 
@@ -1207,7 +1207,7 @@ async def get_user_incoming_friends_with_time_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of incoming friends with requested time info (getUserIncomingFriendsWithTime)
 
@@ -1265,7 +1265,7 @@ def get_user_outgoing_friends(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of outgoing friends (getUserOutgoingFriends)
 
@@ -1321,7 +1321,7 @@ async def get_user_outgoing_friends_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of outgoing friends (getUserOutgoingFriends)
 
@@ -1379,7 +1379,7 @@ def get_user_outgoing_friends_with_time(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of outgoing friends with requested time info (getUserOutgoingFriendsWithTime)
 
@@ -1435,7 +1435,7 @@ async def get_user_outgoing_friends_with_time_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of outgoing friends with requested time info (getUserOutgoingFriendsWithTime)
 
@@ -1492,7 +1492,7 @@ def sync_native_friends(
     body: List[ModelNativeFriendRequest],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """sync friends using server to server call to native first party server. (syncNativeFriends)
 
@@ -1549,7 +1549,7 @@ async def sync_native_friends_async(
     body: List[ModelNativeFriendRequest],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """sync friends using server to server call to native first party server. (syncNativeFriends)
 
@@ -1608,7 +1608,7 @@ def user_accept_friend_request(
     body: ModelUserAcceptFriendRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """user accept friend (userAcceptFriendRequest)
 
@@ -1660,7 +1660,7 @@ async def user_accept_friend_request_async(
     body: ModelUserAcceptFriendRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """user accept friend (userAcceptFriendRequest)
 
@@ -1714,7 +1714,7 @@ def user_cancel_friend_request(
     body: ModelUserCancelFriendRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """user cancel a friend request (userCancelFriendRequest)
 
@@ -1766,7 +1766,7 @@ async def user_cancel_friend_request_async(
     body: ModelUserCancelFriendRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """user cancel a friend request (userCancelFriendRequest)
 
@@ -1820,7 +1820,7 @@ def user_get_friendship_status(
     friend_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """user get friendship status (userGetFriendshipStatus)
 
@@ -1874,7 +1874,7 @@ async def user_get_friendship_status_async(
     friend_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """user get friendship status (userGetFriendshipStatus)
 
@@ -1930,7 +1930,7 @@ def user_reject_friend_request(
     body: ModelUserRejectFriendRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """user reject a friend request (userRejectFriendRequest)
 
@@ -1982,7 +1982,7 @@ async def user_reject_friend_request_async(
     body: ModelUserRejectFriendRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """user reject a friend request (userRejectFriendRequest)
 
@@ -2036,7 +2036,7 @@ def user_request_friend(
     body: ModelUserRequestFriendRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """user add friend (userRequestFriend)
 
@@ -2092,7 +2092,7 @@ async def user_request_friend_async(
     body: ModelUserRequestFriendRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """user add friend (userRequestFriend)
 
@@ -2150,7 +2150,7 @@ def user_unfriend_request(
     body: ModelUserUnfriendRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """user unfriend a friend (userUnfriendRequest)
 
@@ -2202,7 +2202,7 @@ async def user_unfriend_request_async(
     body: ModelUserUnfriendRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """user unfriend a friend (userUnfriendRequest)
 

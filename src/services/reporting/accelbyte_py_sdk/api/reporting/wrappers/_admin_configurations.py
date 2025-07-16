@@ -45,7 +45,7 @@ def get(
     category: Optional[Union[str, GetCategoryEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get configuration (Get)
 
@@ -90,7 +90,7 @@ async def get_async(
     category: Optional[Union[str, GetCategoryEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get configuration (Get)
 
@@ -137,7 +137,7 @@ def upsert(
     body: RestapiReportingLimit,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create/Update configuration (Upsert)
 
@@ -185,7 +185,7 @@ async def upsert_async(
     body: RestapiReportingLimit,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create/Update configuration (Upsert)
 

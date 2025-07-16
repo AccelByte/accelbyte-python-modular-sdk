@@ -46,7 +46,7 @@ def create_match_ticket(
     body: ApiMatchTicketRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a matchmaking ticket (CreateMatchTicket)
 
@@ -137,7 +137,7 @@ async def create_match_ticket_async(
     body: ApiMatchTicketRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a matchmaking ticket (CreateMatchTicket)
 
@@ -230,7 +230,7 @@ def delete_match_ticket(
     ticketid: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a match ticket (DeleteMatchTicket)
 
@@ -282,7 +282,7 @@ async def delete_match_ticket_async(
     ticketid: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a match ticket (DeleteMatchTicket)
 
@@ -338,7 +338,7 @@ def get_my_match_tickets(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get my match tickets (GetMyMatchTickets)
 
@@ -394,7 +394,7 @@ async def get_my_match_tickets_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get my match tickets (GetMyMatchTickets)
 
@@ -450,7 +450,7 @@ def match_ticket_details(
     ticketid: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get details for a specific match ticket (MatchTicketDetails)
 
@@ -500,7 +500,7 @@ async def match_ticket_details_async(
     ticketid: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get details for a specific match ticket (MatchTicketDetails)
 

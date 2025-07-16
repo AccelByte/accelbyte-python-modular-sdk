@@ -40,7 +40,7 @@ def get_item_references(
     item_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get season pass ecommerce item references (getItemReferences)
 
@@ -88,7 +88,7 @@ async def get_item_references_async(
     item_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get season pass ecommerce item references (getItemReferences)
 

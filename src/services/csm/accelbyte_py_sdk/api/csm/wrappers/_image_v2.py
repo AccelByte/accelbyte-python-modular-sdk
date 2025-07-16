@@ -43,7 +43,7 @@ def delete_app_images_v2(
     body: GeneratedDeleteAppImagesV1Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete app images (DeleteAppImagesV2)
 
@@ -99,7 +99,7 @@ async def delete_app_images_v2_async(
     body: GeneratedDeleteAppImagesV1Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete app images (DeleteAppImagesV2)
 
@@ -157,7 +157,7 @@ def get_app_image_list_v2(
     cached: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a list of container images (GetAppImageListV2)
 
@@ -215,7 +215,7 @@ async def get_app_image_list_v2_async(
     cached: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a list of container images (GetAppImageListV2)
 

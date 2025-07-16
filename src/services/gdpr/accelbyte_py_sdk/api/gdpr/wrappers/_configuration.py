@@ -55,7 +55,7 @@ from ..operations.configuration import UpdateAdminEmailConfiguration
 def admin_get_platform_account_closure_services_configuration(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Registered Platform Account Closure Services Configuration (AdminGetPlatformAccountClosureServicesConfiguration)
 
@@ -100,7 +100,7 @@ def admin_get_platform_account_closure_services_configuration(
 async def admin_get_platform_account_closure_services_configuration_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Registered Platform Account Closure Services Configuration (AdminGetPlatformAccountClosureServicesConfiguration)
 
@@ -147,7 +147,7 @@ async def admin_get_platform_account_closure_services_configuration_async(
 def admin_get_services_configuration(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Registered Services Configuration (AdminGetServicesConfiguration)
 
@@ -192,7 +192,7 @@ def admin_get_services_configuration(
 async def admin_get_services_configuration_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Registered Services Configuration (AdminGetServicesConfiguration)
 
@@ -239,7 +239,7 @@ async def admin_get_services_configuration_async(
 def admin_reset_platform_account_closure_services_configuration(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reset Registered Platform Account Closure Services Configuration (AdminResetPlatformAccountClosureServicesConfiguration)
 
@@ -283,7 +283,7 @@ def admin_reset_platform_account_closure_services_configuration(
 async def admin_reset_platform_account_closure_services_configuration_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reset Registered Platform Account Closure Services Configuration (AdminResetPlatformAccountClosureServicesConfiguration)
 
@@ -329,7 +329,7 @@ async def admin_reset_platform_account_closure_services_configuration_async(
 def admin_reset_services_configuration(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reset Registered Services Configuration (AdminResetServicesConfiguration)
 
@@ -373,7 +373,7 @@ def admin_reset_services_configuration(
 async def admin_reset_services_configuration_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reset Registered Services Configuration (AdminResetServicesConfiguration)
 
@@ -420,7 +420,7 @@ def admin_update_platform_account_closure_services_configuration(
     body: DtoServiceConfigurationUpdateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Registered Platform Account Closure Services Configuration (AdminUpdatePlatformAccountClosureServicesConfiguration)
 
@@ -469,7 +469,7 @@ async def admin_update_platform_account_closure_services_configuration_async(
     body: DtoServiceConfigurationUpdateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Registered Platform Account Closure Services Configuration (AdminUpdatePlatformAccountClosureServicesConfiguration)
 
@@ -520,7 +520,7 @@ def admin_update_services_configuration(
     body: DtoServiceConfigurationUpdateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Registered Services Configuration (AdminUpdateServicesConfiguration)
 
@@ -569,7 +569,7 @@ async def admin_update_services_configuration_async(
     body: DtoServiceConfigurationUpdateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Registered Services Configuration (AdminUpdateServicesConfiguration)
 
@@ -620,7 +620,7 @@ def delete_admin_email_configuration(
     emails: List[str],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete admin emails configurations (DeleteAdminEmailConfiguration)
 
@@ -673,7 +673,7 @@ async def delete_admin_email_configuration_async(
     emails: List[str],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete admin emails configurations (DeleteAdminEmailConfiguration)
 
@@ -727,7 +727,7 @@ async def delete_admin_email_configuration_async(
 def get_admin_email_configuration(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get admin email addresses configuration (GetAdminEmailConfiguration)
 
@@ -770,7 +770,7 @@ def get_admin_email_configuration(
 async def get_admin_email_configuration_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get admin email addresses configuration (GetAdminEmailConfiguration)
 
@@ -816,7 +816,7 @@ def save_admin_email_configuration(
     body: List[str],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add admin email address configuration (SaveAdminEmailConfiguration)
 
@@ -865,7 +865,7 @@ async def save_admin_email_configuration_async(
     body: List[str],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add admin email address configuration (SaveAdminEmailConfiguration)
 
@@ -916,7 +916,7 @@ def update_admin_email_configuration(
     body: List[str],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update admin email address configuration (UpdateAdminEmailConfiguration)
 
@@ -965,7 +965,7 @@ async def update_admin_email_configuration_async(
     body: List[str],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update admin email address configuration (UpdateAdminEmailConfiguration)
 

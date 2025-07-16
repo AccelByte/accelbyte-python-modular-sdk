@@ -51,7 +51,7 @@ def create_pass(
     body: Optional[PassCreate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a pass (createPass)
 
@@ -109,7 +109,7 @@ async def create_pass_async(
     body: Optional[PassCreate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a pass (createPass)
 
@@ -169,7 +169,7 @@ def delete_pass(
     season_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a pass (deletePass)
 
@@ -221,7 +221,7 @@ async def delete_pass_async(
     season_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a pass (deletePass)
 
@@ -275,7 +275,7 @@ def get_pass(
     season_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a pass (getPass)
 
@@ -329,7 +329,7 @@ async def get_pass_async(
     season_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a pass (getPass)
 
@@ -385,7 +385,7 @@ def grant_user_pass(
     body: Optional[UserPassGrant] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Grant pass to user (grantUserPass)
 
@@ -437,7 +437,7 @@ async def grant_user_pass_async(
     body: Optional[UserPassGrant] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Grant pass to user (grantUserPass)
 
@@ -490,7 +490,7 @@ def query_passes(
     season_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query all passes for a season (queryPasses)
 
@@ -540,7 +540,7 @@ async def query_passes_async(
     season_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query all passes for a season (queryPasses)
 
@@ -594,7 +594,7 @@ def update_pass(
     body: Optional[PassUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a pass (updatePass)
 
@@ -656,7 +656,7 @@ async def update_pass_async(
     body: Optional[PassUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a pass (updatePass)
 

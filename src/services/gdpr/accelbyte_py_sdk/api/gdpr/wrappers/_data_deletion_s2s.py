@@ -43,7 +43,7 @@ def s2s_get_list_finished_account_deletion_request(
     start: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of finished account deletion requests (S2SGetListFinishedAccountDeletionRequest)
 
@@ -107,7 +107,7 @@ async def s2s_get_list_finished_account_deletion_request_async(
     start: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of finished account deletion requests (S2SGetListFinishedAccountDeletionRequest)
 
@@ -172,7 +172,7 @@ def s2s_submit_user_account_deletion_request(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Submit user's account deletion request (S2SSubmitUserAccountDeletionRequest)
 
@@ -236,7 +236,7 @@ async def s2s_submit_user_account_deletion_request_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Submit user's account deletion request (S2SSubmitUserAccountDeletionRequest)
 

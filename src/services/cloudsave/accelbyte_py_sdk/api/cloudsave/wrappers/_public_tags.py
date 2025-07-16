@@ -41,7 +41,7 @@ def public_list_tags_handler_v1(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List tags (publicListTagsHandlerV1)
 
@@ -97,7 +97,7 @@ async def public_list_tags_handler_v1_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List tags (publicListTagsHandlerV1)
 

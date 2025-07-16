@@ -42,7 +42,7 @@ def delete_policy(
     policy_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Policy (deletePolicy)
 
@@ -90,7 +90,7 @@ async def delete_policy_async(
     policy_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Policy (deletePolicy)
 
@@ -140,7 +140,7 @@ def set_default_policy_3(
     policy_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Set Default Policy (setDefaultPolicy_3)
 
@@ -184,7 +184,7 @@ async def set_default_policy_3_async(
     policy_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Set Default Policy (setDefaultPolicy_3)
 
@@ -231,7 +231,7 @@ def update_policy_1(
     body: Optional[UpdatePolicyRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Country-Specific Policy (updatePolicy_1)
 
@@ -279,7 +279,7 @@ async def update_policy_1_async(
     body: Optional[UpdatePolicyRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Country-Specific Policy (updatePolicy_1)
 

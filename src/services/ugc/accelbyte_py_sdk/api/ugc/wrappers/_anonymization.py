@@ -46,7 +46,7 @@ def admin_delete_all_user_channels(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete all user channel (AdminDeleteAllUserChannels)
 
@@ -94,7 +94,7 @@ async def admin_delete_all_user_channels_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete all user channel (AdminDeleteAllUserChannels)
 
@@ -144,7 +144,7 @@ def admin_delete_all_user_contents(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete all user content (AdminDeleteAllUserContents)
 
@@ -192,7 +192,7 @@ async def admin_delete_all_user_contents_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete all user content (AdminDeleteAllUserContents)
 
@@ -242,7 +242,7 @@ def admin_delete_all_user_group(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete all user group (AdminDeleteAllUserGroup)
 
@@ -290,7 +290,7 @@ async def admin_delete_all_user_group_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete all user group (AdminDeleteAllUserGroup)
 
@@ -340,7 +340,7 @@ def admin_delete_all_user_states(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Remove all user related state: likes, downloads, followers, following (AdminDeleteAllUserStates)
 
@@ -388,7 +388,7 @@ async def admin_delete_all_user_states_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Remove all user related state: likes, downloads, followers, following (AdminDeleteAllUserStates)
 
@@ -438,7 +438,7 @@ def delete_all_user_channel(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete all user channel (DeleteAllUserChannel)
 
@@ -486,7 +486,7 @@ async def delete_all_user_channel_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete all user channel (DeleteAllUserChannel)
 
@@ -536,7 +536,7 @@ def delete_all_user_contents(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete all user content (DeleteAllUserContents)
 
@@ -584,7 +584,7 @@ async def delete_all_user_contents_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete all user content (DeleteAllUserContents)
 
@@ -634,7 +634,7 @@ def delete_all_user_group(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete all user group (DeleteAllUserGroup)
 
@@ -682,7 +682,7 @@ async def delete_all_user_group_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete all user group (DeleteAllUserGroup)
 
@@ -732,7 +732,7 @@ def delete_all_user_states(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Remove all user related state: likes, downloads, followers, following (DeleteAllUserStates)
 
@@ -780,7 +780,7 @@ async def delete_all_user_states_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Remove all user related state: likes, downloads, followers, following (DeleteAllUserStates)
 

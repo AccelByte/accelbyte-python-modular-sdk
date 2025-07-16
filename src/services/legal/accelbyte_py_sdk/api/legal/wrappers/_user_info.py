@@ -41,7 +41,7 @@ from ..operations.user_info import SyncUserInfo
 def get_user_info_status(
     namespaces: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user info cache status (getUserInfoStatus)
 
@@ -77,7 +77,7 @@ def get_user_info_status(
 async def get_user_info_status_async(
     namespaces: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user info cache status (getUserInfoStatus)
 
@@ -116,7 +116,7 @@ async def get_user_info_status_async(
 def invalidate_user_info_cache(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Invalidate user info cache (invalidateUserInfoCache)
 
@@ -151,7 +151,7 @@ def invalidate_user_info_cache(
 async def invalidate_user_info_cache_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Invalidate user info cache (invalidateUserInfoCache)
 
@@ -188,7 +188,7 @@ async def invalidate_user_info_cache_async(
 def sync_user_info(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync user info with iam service  (syncUserInfo)
 
@@ -227,7 +227,7 @@ def sync_user_info(
 async def sync_user_info_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync user info with iam service  (syncUserInfo)
 

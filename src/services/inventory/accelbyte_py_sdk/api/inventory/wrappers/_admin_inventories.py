@@ -54,7 +54,7 @@ def admin_create_inventory(
     body: ApimodelsCreateInventoryReq,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To create inventory (AdminCreateInventory)
 
@@ -105,7 +105,7 @@ async def admin_create_inventory_async(
     body: ApimodelsCreateInventoryReq,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To create inventory (AdminCreateInventory)
 
@@ -158,7 +158,7 @@ def admin_get_inventory(
     inventory_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To get an inventory (AdminGetInventory)
 
@@ -208,7 +208,7 @@ async def admin_get_inventory_async(
     inventory_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To get an inventory (AdminGetInventory)
 
@@ -264,7 +264,7 @@ def admin_list_inventories(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To list all inventories (AdminListInventories)
 
@@ -329,7 +329,7 @@ async def admin_list_inventories_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To list all inventories (AdminListInventories)
 
@@ -393,7 +393,7 @@ def admin_purchasable(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To validate user inventory capacity when purchase ecommerce item (AdminPurchasable)
 
@@ -449,7 +449,7 @@ async def admin_purchasable_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To validate user inventory capacity when purchase ecommerce item (AdminPurchasable)
 
@@ -507,7 +507,7 @@ def admin_update_inventory(
     inventory_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To update inventory (AdminUpdateInventory)
 
@@ -564,7 +564,7 @@ async def admin_update_inventory_async(
     inventory_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To update inventory (AdminUpdateInventory)
 
@@ -624,7 +624,7 @@ def admin_update_user_inventories_by_inventory_code(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To update user inventories by inventory code (AdminUpdateUserInventoriesByInventoryCode)
 
@@ -689,7 +689,7 @@ async def admin_update_user_inventories_by_inventory_code_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To update user inventories by inventory code (AdminUpdateUserInventoriesByInventoryCode)
 
@@ -755,7 +755,7 @@ def delete_inventory(
     inventory_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To delete inventory (deleteInventory)
 
@@ -810,7 +810,7 @@ async def delete_inventory_async(
     inventory_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To delete inventory (deleteInventory)
 

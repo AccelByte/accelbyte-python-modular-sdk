@@ -60,7 +60,7 @@ def create_currency(
     body: CurrencyCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a currency (createCurrency)
 
@@ -109,7 +109,7 @@ async def create_currency_async(
     body: CurrencyCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a currency (createCurrency)
 
@@ -160,7 +160,7 @@ def delete_currency(
     currency_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a currency (deleteCurrency)
 
@@ -207,7 +207,7 @@ async def delete_currency_async(
     currency_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a currency (deleteCurrency)
 
@@ -256,7 +256,7 @@ def get_currency_config(
     currency_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get currency config (getCurrencyConfig)
 
@@ -303,7 +303,7 @@ async def get_currency_config_async(
     currency_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get currency config (getCurrencyConfig)
 
@@ -352,7 +352,7 @@ def get_currency_summary(
     currency_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get currency summary (getCurrencySummary)
 
@@ -399,7 +399,7 @@ async def get_currency_summary_async(
     currency_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get currency summary (getCurrencySummary)
 
@@ -448,7 +448,7 @@ def list_currencies(
     currency_type: Optional[Union[str, ListCurrenciesCurrencyTypeEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List currencies (listCurrencies)
 
@@ -493,7 +493,7 @@ async def list_currencies_async(
     currency_type: Optional[Union[str, ListCurrenciesCurrencyTypeEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List currencies (listCurrencies)
 
@@ -540,7 +540,7 @@ def public_list_currencies(
     currency_type: Optional[Union[str, PublicListCurrenciesCurrencyTypeEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """list currencies (publicListCurrencies)
 
@@ -586,7 +586,7 @@ async def public_list_currencies_async(
     currency_type: Optional[Union[str, PublicListCurrenciesCurrencyTypeEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """list currencies (publicListCurrencies)
 
@@ -635,7 +635,7 @@ def update_currency(
     currency_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a currency (updateCurrency)
 
@@ -688,7 +688,7 @@ async def update_currency_async(
     currency_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a currency (updateCurrency)
 

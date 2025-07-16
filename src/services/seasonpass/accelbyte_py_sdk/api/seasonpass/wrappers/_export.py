@@ -38,7 +38,7 @@ from ..operations.export import ExportSeason
 def export_season(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """export season service data (exportSeason)
 
@@ -78,7 +78,7 @@ def export_season(
 async def export_season_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """export season service data (exportSeason)
 

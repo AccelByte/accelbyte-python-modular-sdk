@@ -49,7 +49,7 @@ def admin_create_third_party_config(
     body: ModelsCreateConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Third Party Steam Config (adminCreateThirdPartyConfig)
 
@@ -102,7 +102,7 @@ async def admin_create_third_party_config_async(
     body: ModelsCreateConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Third Party Steam Config (adminCreateThirdPartyConfig)
 
@@ -156,7 +156,7 @@ async def admin_create_third_party_config_async(
 def admin_delete_third_party_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Third Party Steam Config (adminDeleteThirdPartyConfig)
 
@@ -205,7 +205,7 @@ def admin_delete_third_party_config(
 async def admin_delete_third_party_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Third Party Steam Config (adminDeleteThirdPartyConfig)
 
@@ -256,7 +256,7 @@ async def admin_delete_third_party_config_async(
 def admin_get_third_party_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Third Party Steam Config (adminGetThirdPartyConfig)
 
@@ -303,7 +303,7 @@ def admin_get_third_party_config(
 async def admin_get_third_party_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Third Party Steam Config (adminGetThirdPartyConfig)
 
@@ -353,7 +353,7 @@ def admin_update_third_party_config(
     body: ModelsUpdateConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Third Party Steam Config (adminUpdateThirdPartyConfig)
 
@@ -404,7 +404,7 @@ async def admin_update_third_party_config_async(
     body: ModelsUpdateConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Third Party Steam Config (adminUpdateThirdPartyConfig)
 

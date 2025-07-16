@@ -44,7 +44,7 @@ def indirect_bulk_accept_versioned_policy(
     publisher_user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin bulk accept Policy Versions (indirectBulkAcceptVersionedPolicy)
 
@@ -102,7 +102,7 @@ async def indirect_bulk_accept_versioned_policy_async(
     publisher_user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin bulk accept Policy Versions (indirectBulkAcceptVersionedPolicy)
 

@@ -48,7 +48,7 @@ def s2s_generate_personal_data_url(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate personal data download url (S2SGeneratePersonalDataURL)
 
@@ -109,7 +109,7 @@ async def s2s_generate_personal_data_url_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate personal data download url (S2SGeneratePersonalDataURL)
 
@@ -171,7 +171,7 @@ def s2s_get_data_request_by_request_id(
     request_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Personal Data Request by Request Id (S2SGetDataRequestByRequestID)
 
@@ -225,7 +225,7 @@ async def s2s_get_data_request_by_request_id_async(
     request_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Personal Data Request by Request Id (S2SGetDataRequestByRequestID)
 
@@ -282,7 +282,7 @@ def s2s_get_list_finished_personal_data_request(
     start: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of finished personal data requests (S2SGetListFinishedPersonalDataRequest)
 
@@ -346,7 +346,7 @@ async def s2s_get_list_finished_personal_data_request_async(
     start: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of finished personal data requests (S2SGetListFinishedPersonalDataRequest)
 
@@ -411,7 +411,7 @@ def s2s_request_data_retrieval(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Submit user personal data retrieval request (S2SRequestDataRetrieval)
 
@@ -472,7 +472,7 @@ async def s2s_request_data_retrieval_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Submit user personal data retrieval request (S2SRequestDataRetrieval)
 

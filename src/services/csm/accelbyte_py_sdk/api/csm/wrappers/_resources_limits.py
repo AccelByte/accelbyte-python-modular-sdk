@@ -39,7 +39,7 @@ from ..operations.resources_limits import GetResourcesLimits
 def get_resources_limits(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Extend Apps Configurable Limits e.g. any kind of limits for front end validation use (GetResourcesLimits)
 
@@ -90,7 +90,7 @@ def get_resources_limits(
 async def get_resources_limits_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Extend Apps Configurable Limits e.g. any kind of limits for front end validation use (GetResourcesLimits)
 

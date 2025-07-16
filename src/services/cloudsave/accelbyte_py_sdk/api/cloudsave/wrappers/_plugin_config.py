@@ -46,7 +46,7 @@ def create_plugin_config(
     body: ModelsPluginRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create plugin configuration (createPluginConfig)
 
@@ -100,7 +100,7 @@ async def create_plugin_config_async(
     body: ModelsPluginRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create plugin configuration (createPluginConfig)
 
@@ -155,7 +155,7 @@ async def create_plugin_config_async(
 def delete_plugin_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete plugin configuration (deletePluginConfig)
 
@@ -203,7 +203,7 @@ def delete_plugin_config(
 async def delete_plugin_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete plugin configuration (deletePluginConfig)
 
@@ -253,7 +253,7 @@ async def delete_plugin_config_async(
 def get_plugin_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get plugin configuration (getPluginConfig)
 
@@ -301,7 +301,7 @@ def get_plugin_config(
 async def get_plugin_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get plugin configuration (getPluginConfig)
 
@@ -352,7 +352,7 @@ def update_plugin_config(
     body: ModelsPluginRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update plugin configuration (updatePluginConfig)
 
@@ -406,7 +406,7 @@ async def update_plugin_config_async(
     body: ModelsPluginRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update plugin configuration (updatePluginConfig)
 

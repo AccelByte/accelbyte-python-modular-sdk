@@ -47,7 +47,7 @@ from ..operations.slot_config import UpdateUserSlotConfig
 def delete_namespace_slot_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Deletes a namespace slot configuration (deleteNamespaceSlotConfig)
 
@@ -90,7 +90,7 @@ def delete_namespace_slot_config(
 async def delete_namespace_slot_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Deletes a namespace slot configuration (deleteNamespaceSlotConfig)
 
@@ -136,7 +136,7 @@ def delete_user_slot_config(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Deletes a user slot configuration (deleteUserSlotConfig)
 
@@ -183,7 +183,7 @@ async def delete_user_slot_config_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Deletes a user slot configuration (deleteUserSlotConfig)
 
@@ -231,7 +231,7 @@ async def delete_user_slot_config_async(
 def get_namespace_slot_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns a namespace slot configuration (getNamespaceSlotConfig)
 
@@ -275,7 +275,7 @@ def get_namespace_slot_config(
 async def get_namespace_slot_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns a namespace slot configuration (getNamespaceSlotConfig)
 
@@ -322,7 +322,7 @@ def get_user_slot_config(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns a user slot configuration (getUserSlotConfig)
 
@@ -370,7 +370,7 @@ async def get_user_slot_config_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns a user slot configuration (getUserSlotConfig)
 
@@ -420,7 +420,7 @@ def update_namespace_slot_config(
     body: Optional[SlotConfigUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a namespace slot configuration (updateNamespaceSlotConfig)
 
@@ -468,7 +468,7 @@ async def update_namespace_slot_config_async(
     body: Optional[SlotConfigUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a namespace slot configuration (updateNamespaceSlotConfig)
 
@@ -519,7 +519,7 @@ def update_user_slot_config(
     body: Optional[SlotConfigUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a user slot configuration (updateUserSlotConfig)
 
@@ -571,7 +571,7 @@ async def update_user_slot_config_async(
     body: Optional[SlotConfigUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a user slot configuration (updateUserSlotConfig)
 

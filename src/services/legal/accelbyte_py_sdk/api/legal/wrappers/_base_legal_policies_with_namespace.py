@@ -66,7 +66,7 @@ def create_policy_1(
     body: Optional[CreateBasePolicyRequestV2] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a Base Legal Policy (createPolicy_1)
 
@@ -122,7 +122,7 @@ async def create_policy_1_async(
     body: Optional[CreateBasePolicyRequestV2] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a Base Legal Policy (createPolicy_1)
 
@@ -181,7 +181,7 @@ def create_policy_under_base_policy(
     body: Optional[CreatePolicyRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create policy under base policy (createPolicyUnderBasePolicy)
 
@@ -237,7 +237,7 @@ async def create_policy_under_base_policy_async(
     body: Optional[CreatePolicyRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create policy under base policy (createPolicyUnderBasePolicy)
 
@@ -294,7 +294,7 @@ def delete_base_policy(
     base_policy_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Base Legal Policy (deleteBasePolicy)
 
@@ -342,7 +342,7 @@ async def delete_base_policy_async(
     base_policy_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Base Legal Policy (deleteBasePolicy)
 
@@ -393,7 +393,7 @@ def partial_update_policy_1(
     body: Optional[UpdateBasePolicyRequestV2] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Base Legal Policy (partialUpdatePolicy_1)
 
@@ -449,7 +449,7 @@ async def partial_update_policy_1_async(
     body: Optional[UpdateBasePolicyRequestV2] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Base Legal Policy (partialUpdatePolicy_1)
 
@@ -506,7 +506,7 @@ def retrieve_all_legal_policies_by_namespace(
     visible_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve All Base Legal Policy in the namespace (retrieveAllLegalPoliciesByNamespace)
 
@@ -548,7 +548,7 @@ async def retrieve_all_legal_policies_by_namespace_async(
     visible_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve All Base Legal Policy in the namespace (retrieveAllLegalPoliciesByNamespace)
 
@@ -592,7 +592,7 @@ def retrieve_all_policies_from_base_policy(
     base_policy_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve all policies from Base Legal Policy (retrieveAllPoliciesFromBasePolicy)
 
@@ -636,7 +636,7 @@ async def retrieve_all_policies_from_base_policy_async(
     base_policy_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve all policies from Base Legal Policy (retrieveAllPoliciesFromBasePolicy)
 
@@ -683,7 +683,7 @@ def retrieve_all_policy_types_1(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve All Policy Type (retrieveAllPolicyTypes_1)
 
@@ -729,7 +729,7 @@ async def retrieve_all_policy_types_1_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve All Policy Type (retrieveAllPolicyTypes_1)
 
@@ -777,7 +777,7 @@ def retrieve_policy_country_1(
     country_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve a Base Legal Policy based on a Particular Country (retrievePolicyCountry_1)
 
@@ -825,7 +825,7 @@ async def retrieve_policy_country_1_async(
     country_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve a Base Legal Policy based on a Particular Country (retrievePolicyCountry_1)
 
@@ -874,7 +874,7 @@ def retrieve_single_policy_1(
     base_policy_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve a Base Legal Policy (retrieveSinglePolicy_1)
 
@@ -918,7 +918,7 @@ async def retrieve_single_policy_1_async(
     base_policy_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve a Base Legal Policy (retrieveSinglePolicy_1)
 

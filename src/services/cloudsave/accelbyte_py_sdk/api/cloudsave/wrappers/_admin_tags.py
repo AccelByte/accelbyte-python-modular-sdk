@@ -43,7 +43,7 @@ def admin_delete_tag_handler_v1(
     tag: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a tag (adminDeleteTagHandlerV1)
 
@@ -95,7 +95,7 @@ async def admin_delete_tag_handler_v1_async(
     tag: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a tag (adminDeleteTagHandlerV1)
 
@@ -150,7 +150,7 @@ def admin_list_tags_handler_v1(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List tags (adminListTagsHandlerV1)
 
@@ -206,7 +206,7 @@ async def admin_list_tags_handler_v1_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List tags (adminListTagsHandlerV1)
 
@@ -263,7 +263,7 @@ def admin_post_tag_handler_v1(
     body: ModelsTagRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a tag (adminPostTagHandlerV1)
 
@@ -317,7 +317,7 @@ async def admin_post_tag_handler_v1_async(
     body: ModelsTagRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a tag (adminPostTagHandlerV1)
 

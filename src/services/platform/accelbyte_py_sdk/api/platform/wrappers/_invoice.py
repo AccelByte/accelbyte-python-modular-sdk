@@ -51,7 +51,7 @@ def download_invoice_details(
     start_time: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Download invoice details (downloadInvoiceDetails)
 
@@ -111,7 +111,7 @@ async def download_invoice_details_async(
     start_time: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Download invoice details (downloadInvoiceDetails)
 
@@ -173,7 +173,7 @@ def generate_invoice_summary(
     start_time: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate invoice summary (generateInvoiceSummary)
 
@@ -235,7 +235,7 @@ async def generate_invoice_summary_async(
     start_time: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate invoice summary (generateInvoiceSummary)
 

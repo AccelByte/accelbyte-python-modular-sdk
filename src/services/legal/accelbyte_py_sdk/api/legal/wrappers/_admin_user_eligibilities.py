@@ -43,7 +43,7 @@ def admin_retrieve_eligibilities(
     publisher_user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check User Legal Eligibility (adminRetrieveEligibilities)
 
@@ -100,7 +100,7 @@ async def admin_retrieve_eligibilities_async(
     publisher_user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check User Legal Eligibility (adminRetrieveEligibilities)
 

@@ -115,7 +115,7 @@ def bulk_credit(
     body: List[BulkCreditRequest],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Credit different users' wallets (bulkCredit)
 
@@ -161,7 +161,7 @@ async def bulk_credit_async(
     body: List[BulkCreditRequest],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Credit different users' wallets (bulkCredit)
 
@@ -209,7 +209,7 @@ def bulk_debit(
     body: List[BulkDebitRequest],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Debit different users' wallets (bulkDebit)
 
@@ -255,7 +255,7 @@ async def bulk_debit_async(
     body: List[BulkDebitRequest],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Debit different users' wallets (bulkDebit)
 
@@ -305,7 +305,7 @@ def check_balance(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check if a user has enough balance (checkBalance)
 
@@ -359,7 +359,7 @@ async def check_balance_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check if a user has enough balance (checkBalance)
 
@@ -416,7 +416,7 @@ def check_wallet(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check wallet by balance origin and currency code (checkWallet)
 
@@ -473,7 +473,7 @@ async def check_wallet_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check wallet by balance origin and currency code (checkWallet)
 
@@ -531,7 +531,7 @@ def credit_user_wallet(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Credit a user wallet by currency code and balance origin (creditUserWallet)
 
@@ -586,7 +586,7 @@ async def credit_user_wallet_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Credit a user wallet by currency code and balance origin (creditUserWallet)
 
@@ -643,7 +643,7 @@ def debit_by_wallet_platform(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Debit user wallet by currency code and client platform (debitByWalletPlatform)
 
@@ -712,7 +712,7 @@ async def debit_by_wallet_platform_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Debit user wallet by currency code and client platform (debitByWalletPlatform)
 
@@ -784,7 +784,7 @@ def debit_user_wallet(
     wallet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Debit a user wallet (debitUserWallet)
 
@@ -843,7 +843,7 @@ async def debit_user_wallet_async(
     wallet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Debit a user wallet (debitUserWallet)
 
@@ -903,7 +903,7 @@ def debit_user_wallet_by_currency_code(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Debit a user wallet by currency code (debitUserWalletByCurrencyCode)
 
@@ -959,7 +959,7 @@ async def debit_user_wallet_by_currency_code_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Debit a user wallet by currency code (debitUserWalletByCurrencyCode)
 
@@ -1017,7 +1017,7 @@ def disable_user_wallet(
     wallet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable a user wallet (disableUserWallet)
 
@@ -1068,7 +1068,7 @@ async def disable_user_wallet_async(
     wallet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable a user wallet (disableUserWallet)
 
@@ -1121,7 +1121,7 @@ def enable_user_wallet(
     wallet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable a user wallet (enableUserWallet)
 
@@ -1172,7 +1172,7 @@ async def enable_user_wallet_async(
     wallet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable a user wallet (enableUserWallet)
 
@@ -1223,7 +1223,7 @@ def get_platform_wallet_config(
     platform: Union[str, GetPlatformWalletConfigPlatformEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get platform wallet config list (getPlatformWalletConfig)
 
@@ -1267,7 +1267,7 @@ async def get_platform_wallet_config_async(
     platform: Union[str, GetPlatformWalletConfigPlatformEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get platform wallet config list (getPlatformWalletConfig)
 
@@ -1315,7 +1315,7 @@ def get_user_wallet(
     wallet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a user wallet (getUserWallet)
 
@@ -1366,7 +1366,7 @@ async def get_user_wallet_async(
     wallet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a user wallet (getUserWallet)
 
@@ -1418,7 +1418,7 @@ def get_wallet(
     wallet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a wallet by wallet id (getWallet)
 
@@ -1465,7 +1465,7 @@ async def get_wallet_async(
     wallet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a wallet by wallet id (getWallet)
 
@@ -1512,7 +1512,7 @@ async def get_wallet_async(
 def get_wallet_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get wallet config of a namespace (getWalletConfig)
 
@@ -1550,7 +1550,7 @@ def get_wallet_config(
 async def get_wallet_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get wallet config of a namespace (getWalletConfig)
 
@@ -1594,7 +1594,7 @@ def list_user_currency_transactions(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List user currency transactions (listUserCurrencyTransactions)
 
@@ -1652,7 +1652,7 @@ async def list_user_currency_transactions_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List user currency transactions (listUserCurrencyTransactions)
 
@@ -1713,7 +1713,7 @@ def list_user_wallet_transactions(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List user wallet transactions (listUserWalletTransactions)
 
@@ -1772,7 +1772,7 @@ async def list_user_wallet_transactions_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List user wallet transactions (listUserWalletTransactions)
 
@@ -1831,7 +1831,7 @@ def pay_with_user_wallet(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Pay with user wallet by currency code and client platform (payWithUserWallet)
 
@@ -1885,7 +1885,7 @@ async def pay_with_user_wallet_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Pay with user wallet by currency code and client platform (payWithUserWallet)
 
@@ -1939,7 +1939,7 @@ def public_get_my_wallet(
     currency_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get my wallet by currency code and namespace (publicGetMyWallet)
 
@@ -1986,7 +1986,7 @@ async def public_get_my_wallet_async(
     currency_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get my wallet by currency code and namespace (publicGetMyWallet)
 
@@ -2036,7 +2036,7 @@ def public_get_wallet(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a wallet by currency code (publicGetWallet)
 
@@ -2084,7 +2084,7 @@ async def public_get_wallet_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a wallet by currency code (publicGetWallet)
 
@@ -2136,7 +2136,7 @@ def public_list_user_wallet_transactions(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List wallet transactions by currency code (publicListUserWalletTransactions)
 
@@ -2192,7 +2192,7 @@ async def public_list_user_wallet_transactions_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List wallet transactions by currency code (publicListUserWalletTransactions)
 
@@ -2247,7 +2247,7 @@ def query_user_currency_wallets(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user currency wallet summary (queryUserCurrencyWallets)
 
@@ -2291,7 +2291,7 @@ async def query_user_currency_wallets_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user currency wallet summary (queryUserCurrencyWallets)
 
@@ -2342,7 +2342,7 @@ def query_wallets(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query wallets (queryWallets)
 
@@ -2403,7 +2403,7 @@ async def query_wallets_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query wallets (queryWallets)
 
@@ -2461,7 +2461,7 @@ def reset_platform_wallet_config(
     platform: Union[str, ResetPlatformWalletConfigPlatformEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reset platform wallet config (resetPlatformWalletConfig)
 
@@ -2505,7 +2505,7 @@ async def reset_platform_wallet_config_async(
     platform: Union[str, ResetPlatformWalletConfigPlatformEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reset platform wallet config (resetPlatformWalletConfig)
 
@@ -2552,7 +2552,7 @@ def update_platform_wallet_config(
     platform: Union[str, UpdatePlatformWalletConfigPlatformEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update platform wallet config (updatePlatformWalletConfig)
 
@@ -2600,7 +2600,7 @@ async def update_platform_wallet_config_async(
     platform: Union[str, UpdatePlatformWalletConfigPlatformEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update platform wallet config (updatePlatformWalletConfig)
 
@@ -2649,7 +2649,7 @@ def update_wallet_config(
     body: WalletConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update wallet config (updateWalletConfig)
 
@@ -2691,7 +2691,7 @@ async def update_wallet_config_async(
     body: WalletConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update wallet config (updateWalletConfig)
 

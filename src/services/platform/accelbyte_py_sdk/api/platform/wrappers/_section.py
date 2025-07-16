@@ -55,7 +55,7 @@ def create_section(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a section (createSection)
 
@@ -126,7 +126,7 @@ async def create_section_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a section (createSection)
 
@@ -199,7 +199,7 @@ def delete_section(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a section (deleteSection)
 
@@ -249,7 +249,7 @@ async def delete_section_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a section (deleteSection)
 
@@ -301,7 +301,7 @@ def get_section(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a section (getSection)
 
@@ -352,7 +352,7 @@ async def get_section_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a section (getSection)
 
@@ -409,7 +409,7 @@ def public_list_active_sections(
     view_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List active section contents (publicListActiveSections)
 
@@ -478,7 +478,7 @@ async def public_list_active_sections_async(
     view_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List active section contents (publicListActiveSections)
 
@@ -544,7 +544,7 @@ def purge_expired_section(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """purge expired section (purgeExpiredSection)
 
@@ -588,7 +588,7 @@ async def purge_expired_section_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """purge expired section (purgeExpiredSection)
 
@@ -639,7 +639,7 @@ def query_sections(
     view_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List sections (querySections)
 
@@ -708,7 +708,7 @@ async def query_sections_async(
     view_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List sections (querySections)
 
@@ -776,7 +776,7 @@ def update_section(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update s section (updateSection)
 
@@ -851,7 +851,7 @@ async def update_section_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update s section (updateSection)
 

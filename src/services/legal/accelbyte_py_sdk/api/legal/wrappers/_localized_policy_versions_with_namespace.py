@@ -65,7 +65,7 @@ def create_localized_policy_version_1(
     body: Optional[CreateLocalizedPolicyVersionRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a Localized Version from Country-Specific Policy (createLocalizedPolicyVersion_1)
 
@@ -115,7 +115,7 @@ async def create_localized_policy_version_1_async(
     body: Optional[CreateLocalizedPolicyVersionRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a Localized Version from Country-Specific Policy (createLocalizedPolicyVersion_1)
 
@@ -166,7 +166,7 @@ def delete_localized_policy(
     localized_policy_version_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Localized Policy (deleteLocalizedPolicy)
 
@@ -215,7 +215,7 @@ async def delete_localized_policy_async(
     localized_policy_version_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Localized Policy (deleteLocalizedPolicy)
 
@@ -267,7 +267,7 @@ def request_presigned_url_1(
     body: Optional[UploadPolicyVersionAttachmentRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Request Presigned URL for Upload Document (requestPresignedURL_1)
 
@@ -315,7 +315,7 @@ async def request_presigned_url_1_async(
     body: Optional[UploadPolicyVersionAttachmentRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Request Presigned URL for Upload Document (requestPresignedURL_1)
 
@@ -364,7 +364,7 @@ def retrieve_localized_policy_versions_1(
     policy_version_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve Versions from Country-Specific Policy (retrieveLocalizedPolicyVersions_1)
 
@@ -406,7 +406,7 @@ async def retrieve_localized_policy_versions_1_async(
     policy_version_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve Versions from Country-Specific Policy (retrieveLocalizedPolicyVersions_1)
 
@@ -450,7 +450,7 @@ def retrieve_single_localized_policy_version_1(
     localized_policy_version_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve a Localized Version from Country-Specific Policy (retrieveSingleLocalizedPolicyVersion_1)
 
@@ -494,7 +494,7 @@ async def retrieve_single_localized_policy_version_1_async(
     localized_policy_version_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve a Localized Version from Country-Specific Policy (retrieveSingleLocalizedPolicyVersion_1)
 
@@ -540,7 +540,7 @@ def retrieve_single_localized_policy_version_3(
     localized_policy_version_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve a Localized Version (retrieveSingleLocalizedPolicyVersion_3)
 
@@ -588,7 +588,7 @@ async def retrieve_single_localized_policy_version_3_async(
     localized_policy_version_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve a Localized Version (retrieveSingleLocalizedPolicyVersion_3)
 
@@ -638,7 +638,7 @@ def set_default_policy_1(
     localized_policy_version_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Set Default Localized Policy (setDefaultPolicy_1)
 
@@ -680,7 +680,7 @@ async def set_default_policy_1_async(
     localized_policy_version_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Set Default Localized Policy (setDefaultPolicy_1)
 
@@ -725,7 +725,7 @@ def update_localized_policy_version_1(
     body: Optional[UpdateLocalizedPolicyVersionRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a Localized Version from Country-Specific Policy (updateLocalizedPolicyVersion_1)
 
@@ -773,7 +773,7 @@ async def update_localized_policy_version_1_async(
     body: Optional[UpdateLocalizedPolicyVersionRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a Localized Version from Country-Specific Policy (updateLocalizedPolicyVersion_1)
 

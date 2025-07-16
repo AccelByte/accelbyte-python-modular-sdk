@@ -42,7 +42,7 @@ def admin_get_list_native_session(
     order: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List of native sessions. (adminGetListNativeSession)
 
@@ -96,7 +96,7 @@ async def admin_get_list_native_session_async(
     order: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List of native sessions. (adminGetListNativeSession)
 

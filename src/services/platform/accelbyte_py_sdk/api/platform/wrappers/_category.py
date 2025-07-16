@@ -59,7 +59,7 @@ def create_category(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create category (createCategory)
 
@@ -128,7 +128,7 @@ async def create_category_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create category (createCategory)
 
@@ -199,7 +199,7 @@ def delete_category(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete category (deleteCategory)
 
@@ -253,7 +253,7 @@ async def delete_category_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete category (deleteCategory)
 
@@ -309,7 +309,7 @@ def download_categories(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Download store's structured categories (downloadCategories)
 
@@ -364,7 +364,7 @@ async def download_categories_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Download store's structured categories (downloadCategories)
 
@@ -421,7 +421,7 @@ def get_category(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get category (getCategory)
 
@@ -473,7 +473,7 @@ async def get_category_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get category (getCategory)
 
@@ -527,7 +527,7 @@ def get_child_categories(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get child categories (getChildCategories)
 
@@ -577,7 +577,7 @@ async def get_child_categories_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get child categories (getChildCategories)
 
@@ -629,7 +629,7 @@ def get_descendant_categories(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get descendant categories (getDescendantCategories)
 
@@ -679,7 +679,7 @@ async def get_descendant_categories_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get descendant categories (getDescendantCategories)
 
@@ -730,7 +730,7 @@ def get_root_categories(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get root categories (getRootCategories)
 
@@ -776,7 +776,7 @@ async def get_root_categories_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get root categories (getRootCategories)
 
@@ -824,7 +824,7 @@ def list_categories_basic(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List categories' basic info (listCategoriesBasic)
 
@@ -870,7 +870,7 @@ async def list_categories_basic_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List categories' basic info (listCategoriesBasic)
 
@@ -920,7 +920,7 @@ def public_get_category(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Category (publicGetCategory)
 
@@ -979,7 +979,7 @@ async def public_get_category_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Category (publicGetCategory)
 
@@ -1040,7 +1040,7 @@ def public_get_child_categories(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Child Categories (publicGetChildCategories)
 
@@ -1097,7 +1097,7 @@ async def public_get_child_categories_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Child Categories (publicGetChildCategories)
 
@@ -1156,7 +1156,7 @@ def public_get_descendant_categories(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Descendant Categories (publicGetDescendantCategories)
 
@@ -1213,7 +1213,7 @@ async def public_get_descendant_categories_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Descendant Categories (publicGetDescendantCategories)
 
@@ -1271,7 +1271,7 @@ def public_get_root_categories(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Root Categories (publicGetRootCategories)
 
@@ -1324,7 +1324,7 @@ async def public_get_root_categories_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Root Categories (publicGetRootCategories)
 
@@ -1380,7 +1380,7 @@ def update_category(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update category (updateCategory)
 
@@ -1453,7 +1453,7 @@ async def update_category_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update category (updateCategory)
 

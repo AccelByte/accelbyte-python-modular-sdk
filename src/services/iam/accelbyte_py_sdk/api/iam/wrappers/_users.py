@@ -330,7 +330,7 @@ def add_user_permission(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add User Permission (AddUserPermission)
 
@@ -420,7 +420,7 @@ async def add_user_permission_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add User Permission (AddUserPermission)
 
@@ -510,7 +510,7 @@ def add_user_role(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add User Role (AddUserRole)
 
@@ -569,7 +569,7 @@ async def add_user_role_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add User Role (AddUserRole)
 
@@ -629,7 +629,7 @@ def admin_add_user_permissions_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add User Permissions (AdminAddUserPermissionsV3)
 
@@ -705,7 +705,7 @@ async def admin_add_user_permissions_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add User Permissions (AdminAddUserPermissionsV3)
 
@@ -783,7 +783,7 @@ def admin_add_user_role_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add User Role (AdminAddUserRoleV3)
 
@@ -841,7 +841,7 @@ async def admin_add_user_role_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add User Role (AdminAddUserRoleV3)
 
@@ -902,7 +902,7 @@ def admin_ban_user_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Ban a single user (AdminBanUserV2)
 
@@ -961,7 +961,7 @@ async def admin_ban_user_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Ban a single user (AdminBanUserV2)
 
@@ -1021,7 +1021,7 @@ def admin_ban_user_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Ban a single user (AdminBanUserV3)
 
@@ -1078,7 +1078,7 @@ async def admin_ban_user_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Ban a single user (AdminBanUserV3)
 
@@ -1136,7 +1136,7 @@ def admin_bulk_get_users_platform(
     body: ModelUserIDsRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin bulk get users' platform info by user Ids (AdminBulkGetUsersPlatform)
 
@@ -1184,7 +1184,7 @@ async def admin_bulk_get_users_platform_async(
     body: ModelUserIDsRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin bulk get users' platform info by user Ids (AdminBulkGetUsersPlatform)
 
@@ -1234,7 +1234,7 @@ def admin_bulk_update_users_v3(
     body: ModelUsersUpdateRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Users (AdminBulkUpdateUsersV3)
 
@@ -1289,7 +1289,7 @@ async def admin_bulk_update_users_v3_async(
     body: ModelUsersUpdateRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Users (AdminBulkUpdateUsersV3)
 
@@ -1347,7 +1347,7 @@ def admin_create_justice_user(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Justice User from Publisher User (AdminCreateJusticeUser)
 
@@ -1403,7 +1403,7 @@ async def admin_create_justice_user_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Justice User from Publisher User (AdminCreateJusticeUser)
 
@@ -1462,7 +1462,7 @@ def admin_create_user_roles_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Save User Roles (AdminCreateUserRolesV2)
 
@@ -1521,7 +1521,7 @@ async def admin_create_user_roles_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Save User Roles (AdminCreateUserRolesV2)
 
@@ -1580,7 +1580,7 @@ def admin_cursor_get_user_v3(
     body: ModelCursorGetUserRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Cursor-Based User Retrieval (AdminCursorGetUserV3)
 
@@ -1648,7 +1648,7 @@ async def admin_cursor_get_user_v3_async(
     body: ModelCursorGetUserRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Cursor-Based User Retrieval (AdminCursorGetUserV3)
 
@@ -1721,7 +1721,7 @@ def admin_delete_platform_link_v2(
     platform_namespace: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete the link of user's account with platform (AdminDeletePlatformLinkV2)
 
@@ -1799,7 +1799,7 @@ async def admin_delete_platform_link_v2_async(
     platform_namespace: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete the link of user's account with platform (AdminDeletePlatformLinkV2)
 
@@ -1876,7 +1876,7 @@ def admin_delete_user_information_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete user's information (AdminDeleteUserInformationV3)
 
@@ -1924,7 +1924,7 @@ async def admin_delete_user_information_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete user's information (AdminDeleteUserInformationV3)
 
@@ -1976,7 +1976,7 @@ def admin_delete_user_linking_history_by_platform_idv3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin remove user's platform linking history. (AdminDeleteUserLinkingHistoryByPlatformIDV3)
 
@@ -2072,7 +2072,7 @@ async def admin_delete_user_linking_history_by_platform_idv3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin remove user's platform linking history. (AdminDeleteUserLinkingHistoryByPlatformIDV3)
 
@@ -2169,7 +2169,7 @@ def admin_delete_user_linking_restriction_by_platform_idv3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin remove user's platform linking restriction. (AdminDeleteUserLinkingRestrictionByPlatformIDV3)
 
@@ -2261,7 +2261,7 @@ async def admin_delete_user_linking_restriction_by_platform_idv3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin remove user's platform linking restriction. (AdminDeleteUserLinkingRestrictionByPlatformIDV3)
 
@@ -2355,7 +2355,7 @@ def admin_delete_user_permission_bulk_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete User Permission (AdminDeleteUserPermissionBulkV3)
 
@@ -2409,7 +2409,7 @@ async def admin_delete_user_permission_bulk_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete User Permission (AdminDeleteUserPermissionBulkV3)
 
@@ -2466,7 +2466,7 @@ def admin_delete_user_permission_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete User Permission (AdminDeleteUserPermissionV3)
 
@@ -2524,7 +2524,7 @@ async def admin_delete_user_permission_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete User Permission (AdminDeleteUserPermissionV3)
 
@@ -2583,7 +2583,7 @@ def admin_delete_user_roles_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete User Roles (AdminDeleteUserRolesV3)
 
@@ -2637,7 +2637,7 @@ async def admin_delete_user_roles_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete User Roles (AdminDeleteUserRolesV3)
 
@@ -2693,7 +2693,7 @@ def admin_delete_user_role_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete User Role (AdminDeleteUserRoleV3)
 
@@ -2750,7 +2750,7 @@ async def admin_delete_user_role_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete User Role (AdminDeleteUserRoleV3)
 
@@ -2810,7 +2810,7 @@ def admin_disable_user_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable a user (AdminDisableUserV2)
 
@@ -2873,7 +2873,7 @@ async def admin_disable_user_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable a user (AdminDisableUserV2)
 
@@ -2937,7 +2937,7 @@ def admin_enable_user_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable a user (AdminEnableUserV2)
 
@@ -2990,7 +2990,7 @@ async def admin_enable_user_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable a user (AdminEnableUserV2)
 
@@ -3044,7 +3044,7 @@ async def admin_enable_user_v2_async(
 def admin_get_age_restriction_status_v2(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get age restriction status (AdminGetAgeRestrictionStatusV2)
 
@@ -3093,7 +3093,7 @@ def admin_get_age_restriction_status_v2(
 async def admin_get_age_restriction_status_v2_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get age restriction status (AdminGetAgeRestrictionStatusV2)
 
@@ -3143,7 +3143,7 @@ async def admin_get_age_restriction_status_v2_async(
 def admin_get_age_restriction_status_v3(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get age restriction status (AdminGetAgeRestrictionStatusV3)
 
@@ -3191,7 +3191,7 @@ def admin_get_age_restriction_status_v3(
 async def admin_get_age_restriction_status_v3_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get age restriction status (AdminGetAgeRestrictionStatusV3)
 
@@ -3244,7 +3244,7 @@ def admin_get_bulk_user_ban_v3(
     ban_type: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get bulk user bans (AdminGetBulkUserBanV3)
 
@@ -3305,7 +3305,7 @@ async def admin_get_bulk_user_ban_v3_async(
     ban_type: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get bulk user bans (AdminGetBulkUserBanV3)
 
@@ -3366,7 +3366,7 @@ def admin_get_bulk_user_by_email_address_v3(
     body: ModelListEmailAddressRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Bulk User By Email Address (AdminGetBulkUserByEmailAddressV3)
 
@@ -3419,7 +3419,7 @@ async def admin_get_bulk_user_by_email_address_v3_async(
     body: ModelListEmailAddressRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Bulk User By Email Address (AdminGetBulkUserByEmailAddressV3)
 
@@ -3473,7 +3473,7 @@ async def admin_get_bulk_user_by_email_address_v3_async(
 def admin_get_list_country_age_restriction_v3(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get List Country age restriction (AdminGetListCountryAgeRestrictionV3)
 
@@ -3519,7 +3519,7 @@ def admin_get_list_country_age_restriction_v3(
 async def admin_get_list_country_age_restriction_v3_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get List Country age restriction (AdminGetListCountryAgeRestrictionV3)
 
@@ -3568,7 +3568,7 @@ def admin_get_list_justice_platform_accounts(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User Justice Platform Accounts (AdminGetListJusticePlatformAccounts)
 
@@ -3620,7 +3620,7 @@ async def admin_get_list_justice_platform_accounts_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User Justice Platform Accounts (AdminGetListJusticePlatformAccounts)
 
@@ -3744,7 +3744,7 @@ def admin_get_third_party_platform_token_link_status_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get the link status of the third party platform token with user id. (AdminGetThirdPartyPlatformTokenLinkStatusV3)
 
@@ -3831,7 +3831,7 @@ async def admin_get_third_party_platform_token_link_status_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get the link status of the third party platform token with user id. (AdminGetThirdPartyPlatformTokenLinkStatusV3)
 
@@ -3918,7 +3918,7 @@ def admin_get_user_ban_summary_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's bans summary (AdminGetUserBanSummaryV3)
 
@@ -3970,7 +3970,7 @@ async def admin_get_user_ban_summary_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's bans summary (AdminGetUserBanSummaryV3)
 
@@ -4026,7 +4026,7 @@ def admin_get_user_ban_v2(
     active_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's bans (AdminGetUserBanV2)
 
@@ -4081,7 +4081,7 @@ async def admin_get_user_ban_v2_async(
     active_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's bans (AdminGetUserBanV2)
 
@@ -4140,7 +4140,7 @@ def admin_get_user_ban_v3(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's bans (AdminGetUserBanV3)
 
@@ -4209,7 +4209,7 @@ async def admin_get_user_ban_v3_async(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's bans (AdminGetUserBanV3)
 
@@ -4276,7 +4276,7 @@ def admin_get_user_by_email_address_v3(
     email_address: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User By Email Address (AdminGetUserByEmailAddressV3)
 
@@ -4329,7 +4329,7 @@ async def admin_get_user_by_email_address_v3_async(
     email_address: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User By Email Address (AdminGetUserByEmailAddressV3)
 
@@ -4386,7 +4386,7 @@ def admin_get_user_by_platform_user_idv3(
     pid_type: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Get User By Platform User ID (AdminGetUserByPlatformUserIDV3)
 
@@ -4484,7 +4484,7 @@ async def admin_get_user_by_platform_user_idv3_async(
     pid_type: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Get User By Platform User ID (AdminGetUserByPlatformUserIDV3)
 
@@ -4583,7 +4583,7 @@ def admin_get_user_by_user_id_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User By User Id (AdminGetUserByUserIdV2)
 
@@ -4632,7 +4632,7 @@ async def admin_get_user_by_user_id_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User By User Id (AdminGetUserByUserIdV2)
 
@@ -4682,7 +4682,7 @@ def admin_get_user_by_user_id_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Get User By User Id (AdminGetUserByUserIdV3)
 
@@ -4734,7 +4734,7 @@ async def admin_get_user_by_user_id_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Get User By User Id (AdminGetUserByUserIdV3)
 
@@ -4788,7 +4788,7 @@ def admin_get_user_deletion_status_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User Deletion Status (AdminGetUserDeletionStatusV3)
 
@@ -4838,7 +4838,7 @@ async def admin_get_user_deletion_status_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User Deletion Status (AdminGetUserDeletionStatusV3)
 
@@ -4891,7 +4891,7 @@ def admin_get_user_link_histories_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get user's platform link histories. (AdminGetUserLinkHistoriesV3)
 
@@ -4981,7 +4981,7 @@ async def admin_get_user_link_histories_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get user's platform link histories. (AdminGetUserLinkHistoriesV3)
 
@@ -5075,7 +5075,7 @@ def admin_get_user_login_histories_v3(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User's Login Histories (AdminGetUserLoginHistoriesV3)
 
@@ -5139,7 +5139,7 @@ async def admin_get_user_login_histories_v3_async(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User's Login Histories (AdminGetUserLoginHistoriesV3)
 
@@ -5201,9 +5201,10 @@ async def admin_get_user_login_histories_v3_async(
 def admin_get_user_mapping(
     target_namespace: str,
     user_id: str,
+    create_if_not_found: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user mapping (AdminGetUserMapping)
 
@@ -5230,6 +5231,8 @@ def admin_get_user_mapping(
 
         user_id: (userId) REQUIRED str in path
 
+        create_if_not_found: (createIfNotFound) OPTIONAL bool in query
+
     Responses:
         200: OK - ModelGetUserMappingV3 (OK)
 
@@ -5248,6 +5251,7 @@ def admin_get_user_mapping(
     request = AdminGetUserMapping.create(
         target_namespace=target_namespace,
         user_id=user_id,
+        create_if_not_found=create_if_not_found,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -5257,9 +5261,10 @@ def admin_get_user_mapping(
 async def admin_get_user_mapping_async(
     target_namespace: str,
     user_id: str,
+    create_if_not_found: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user mapping (AdminGetUserMapping)
 
@@ -5286,6 +5291,8 @@ async def admin_get_user_mapping_async(
 
         user_id: (userId) REQUIRED str in path
 
+        create_if_not_found: (createIfNotFound) OPTIONAL bool in query
+
     Responses:
         200: OK - ModelGetUserMappingV3 (OK)
 
@@ -5304,6 +5311,7 @@ async def admin_get_user_mapping_async(
     request = AdminGetUserMapping.create(
         target_namespace=target_namespace,
         user_id=user_id,
+        create_if_not_found=create_if_not_found,
         namespace=namespace,
     )
     return await run_request_async(
@@ -5321,7 +5329,7 @@ def admin_get_user_platform_accounts_v3(
     target_namespace: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get platform accounts linked to the user (AdminGetUserPlatformAccountsV3)
 
@@ -5434,7 +5442,7 @@ async def admin_get_user_platform_accounts_v3_async(
     target_namespace: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get platform accounts linked to the user (AdminGetUserPlatformAccountsV3)
 
@@ -5546,7 +5554,7 @@ def admin_get_user_single_platform_account(
     cross_namespace: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get user single platform account metadata (AdminGetUserSinglePlatformAccount)
 
@@ -5643,7 +5651,7 @@ async def admin_get_user_single_platform_account_async(
     cross_namespace: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get user single platform account metadata (AdminGetUserSinglePlatformAccount)
 
@@ -5740,7 +5748,7 @@ def admin_get_user_state_by_user_id_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Get User State By User Id (AdminGetUserStateByUserIdV3)
 
@@ -5792,7 +5800,7 @@ async def admin_get_user_state_by_user_id_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Get User State By User Id (AdminGetUserStateByUserIdV3)
 
@@ -5846,7 +5854,7 @@ def admin_invite_user_v3(
     body: ModelInviteUserRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Invite User (AdminInviteUserV3)
 
@@ -5907,7 +5915,7 @@ async def admin_invite_user_v3_async(
     body: ModelInviteUserRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Invite User (AdminInviteUserV3)
 
@@ -5972,7 +5980,7 @@ def admin_link_platform_account(
     skip_conflict: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Link a Platform User Account to User Account (AdminLinkPlatformAccount)
 
@@ -6035,7 +6043,7 @@ async def admin_link_platform_account_async(
     skip_conflict: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Link a Platform User Account to User Account (AdminLinkPlatformAccount)
 
@@ -6099,7 +6107,7 @@ def admin_list_all_distinct_platform_accounts_v3(
     status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get distinct platforms linked to the user (AdminListAllDistinctPlatformAccountsV3)
 
@@ -6162,7 +6170,7 @@ async def admin_list_all_distinct_platform_accounts_v3_async(
     status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get distinct platforms linked to the user (AdminListAllDistinctPlatformAccountsV3)
 
@@ -6226,7 +6234,7 @@ def admin_list_user_all_platform_accounts_distinct_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get distinct platform accounts linked to the user (AdminListUserAllPlatformAccountsDistinctV3)
 
@@ -6279,7 +6287,7 @@ async def admin_list_user_all_platform_accounts_distinct_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get distinct platform accounts linked to the user (AdminListUserAllPlatformAccountsDistinctV3)
 
@@ -6337,7 +6345,7 @@ def admin_list_user_id_by_platform_user_i_ds_v3(
     raw_puid: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin List User ID By Platform User ID (AdminListUserIDByPlatformUserIDsV3)
 
@@ -6431,7 +6439,7 @@ async def admin_list_user_id_by_platform_user_i_ds_v3_async(
     raw_puid: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin List User ID By Platform User ID (AdminListUserIDByPlatformUserIDsV3)
 
@@ -6524,7 +6532,7 @@ def admin_list_user_id_by_user_i_ds_v3(
     body: ModelAdminBulkUserRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List User By User ID (AdminListUserIDByUserIDsV3)
 
@@ -6575,7 +6583,7 @@ async def admin_list_user_id_by_user_i_ds_v3_async(
     body: ModelAdminBulkUserRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List User By User ID (AdminListUserIDByUserIDsV3)
 
@@ -6629,7 +6637,7 @@ def admin_list_users_v3(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin List Users V3 (AdminListUsersV3)
 
@@ -6685,7 +6693,7 @@ async def admin_list_users_v3_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin List Users V3 (AdminListUsersV3)
 
@@ -6744,7 +6752,7 @@ def admin_platform_link_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Link user's account with platform (AdminPlatformLinkV3)
 
@@ -6822,7 +6830,7 @@ async def admin_platform_link_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Link user's account with platform (AdminPlatformLinkV3)
 
@@ -6901,7 +6909,7 @@ def admin_platform_unlink_all_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin unlink user's account from specific platform for all namespaces (AdminPlatformUnlinkAllV3)
 
@@ -6998,7 +7006,7 @@ async def admin_platform_unlink_all_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin unlink user's account from specific platform for all namespaces (AdminPlatformUnlinkAllV3)
 
@@ -7099,7 +7107,7 @@ def admin_platform_unlink_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin unlink user's account from specific platform (AdminPlatformUnlinkV3)
 
@@ -7182,7 +7190,7 @@ async def admin_platform_unlink_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin unlink user's account from specific platform (AdminPlatformUnlinkV3)
 
@@ -7266,7 +7274,7 @@ def admin_put_user_roles_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User Roles, will replace all the existing roles (AdminPutUserRolesV2)
 
@@ -7323,7 +7331,7 @@ async def admin_put_user_roles_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User Roles, will replace all the existing roles (AdminPutUserRolesV2)
 
@@ -7383,7 +7391,7 @@ def admin_query_third_platform_link_history_v3(
     platform_user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Search linking history of the query platform with platform user id (AdminQueryThirdPlatformLinkHistoryV3)
 
@@ -7445,7 +7453,7 @@ async def admin_query_third_platform_link_history_v3_async(
     platform_user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Search linking history of the query platform with platform user id (AdminQueryThirdPlatformLinkHistoryV3)
 
@@ -7508,7 +7516,7 @@ def admin_reset_password_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User Password (AdminResetPasswordV2)
 
@@ -7567,7 +7575,7 @@ async def admin_reset_password_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User Password (AdminResetPasswordV2)
 
@@ -7627,7 +7635,7 @@ def admin_reset_password_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User Password (AdminResetPasswordV3)
 
@@ -7683,7 +7691,7 @@ async def admin_reset_password_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User Password (AdminResetPasswordV3)
 
@@ -7741,7 +7749,7 @@ def admin_save_user_role_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Save User Role V3 (AdminSaveUserRoleV3)
 
@@ -7800,7 +7808,7 @@ async def admin_save_user_role_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Save User Role V3 (AdminSaveUserRoleV3)
 
@@ -7869,7 +7877,7 @@ def admin_search_users_v2(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Search Users (AdminSearchUsersV2)
 
@@ -7952,7 +7960,7 @@ async def admin_search_users_v2_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Search Users (AdminSearchUsersV2)
 
@@ -8041,7 +8049,7 @@ def admin_search_user_v3(
     test_account: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Search User (AdminSearchUserV3)
 
@@ -8169,7 +8177,7 @@ async def admin_search_user_v3_async(
     test_account: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Search User (AdminSearchUserV3)
 
@@ -8287,7 +8295,7 @@ def admin_send_verification_code_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Send verification code to user (AdminSendVerificationCodeV3)
 
@@ -8358,7 +8366,7 @@ async def admin_send_verification_code_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Send verification code to user (AdminSendVerificationCodeV3)
 
@@ -8431,7 +8439,7 @@ def admin_trustly_update_user_identity(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User Identity (AdminTrustlyUpdateUserIdentity)
 
@@ -8497,7 +8505,7 @@ async def admin_trustly_update_user_identity_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User Identity (AdminTrustlyUpdateUserIdentity)
 
@@ -8565,7 +8573,7 @@ def admin_update_age_restriction_config_v2(
     body: ModelAgeRestrictionRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update age restriction config value (AdminUpdateAgeRestrictionConfigV2)
 
@@ -8618,7 +8626,7 @@ async def admin_update_age_restriction_config_v2_async(
     body: ModelAgeRestrictionRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update age restriction config value (AdminUpdateAgeRestrictionConfigV2)
 
@@ -8672,7 +8680,7 @@ def admin_update_age_restriction_config_v3(
     body: ModelAgeRestrictionRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update age restriction config value (AdminUpdateAgeRestrictionConfigV3)
 
@@ -8722,7 +8730,7 @@ async def admin_update_age_restriction_config_v3_async(
     body: ModelAgeRestrictionRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update age restriction config value (AdminUpdateAgeRestrictionConfigV3)
 
@@ -8775,7 +8783,7 @@ def admin_update_country_age_restriction_v3(
     country_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update country's age restriction (AdminUpdateCountryAgeRestrictionV3)
 
@@ -8831,7 +8839,7 @@ async def admin_update_country_age_restriction_v3_async(
     country_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update country's age restriction (AdminUpdateCountryAgeRestrictionV3)
 
@@ -8890,7 +8898,7 @@ def admin_update_user_ban_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable or disable ban for a single user (AdminUpdateUserBanV3)
 
@@ -8953,7 +8961,7 @@ async def admin_update_user_ban_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable or disable ban for a single user (AdminUpdateUserBanV3)
 
@@ -9017,7 +9025,7 @@ def admin_update_user_deletion_status_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User Deletion Status (AdminUpdateUserDeletionStatusV3)
 
@@ -9073,7 +9081,7 @@ async def admin_update_user_deletion_status_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User Deletion Status (AdminUpdateUserDeletionStatusV3)
 
@@ -9131,7 +9139,7 @@ def admin_update_user_permission_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User Permissions (AdminUpdateUserPermissionV3)
 
@@ -9207,7 +9215,7 @@ async def admin_update_user_permission_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User Permissions (AdminUpdateUserPermissionV3)
 
@@ -9285,7 +9293,7 @@ def admin_update_user_status_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update user status (AdminUpdateUserStatusV3)
 
@@ -9346,7 +9354,7 @@ async def admin_update_user_status_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update user status (AdminUpdateUserStatusV3)
 
@@ -9410,7 +9418,7 @@ def admin_update_user_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User (AdminUpdateUserV2)
 
@@ -9478,7 +9486,7 @@ async def admin_update_user_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User (AdminUpdateUserV2)
 
@@ -9547,7 +9555,7 @@ def admin_update_user_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User (AdminUpdateUserV3)
 
@@ -9618,7 +9626,7 @@ async def admin_update_user_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User (AdminUpdateUserV3)
 
@@ -9691,7 +9699,7 @@ def admin_upgrade_headless_account_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Verify or consume verification code.  (AdminUpgradeHeadlessAccountV3)
 
@@ -9760,7 +9768,7 @@ async def admin_upgrade_headless_account_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Verify or consume verification code.  (AdminUpgradeHeadlessAccountV3)
 
@@ -9831,7 +9839,7 @@ def admin_verify_account_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Verify or consume verification code sent to user (AdminVerifyAccountV3)
 
@@ -9889,7 +9897,7 @@ async def admin_verify_account_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Verify or consume verification code sent to user (AdminVerifyAccountV3)
 
@@ -9948,7 +9956,7 @@ def admin_verify_user_without_verification_code_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Verify user without verification code (AdminVerifyUserWithoutVerificationCodeV3)
 
@@ -10006,7 +10014,7 @@ async def admin_verify_user_without_verification_code_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Verify user without verification code (AdminVerifyUserWithoutVerificationCodeV3)
 
@@ -10068,7 +10076,7 @@ def ban_user(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Ban a single user (BanUser)
 
@@ -10127,7 +10135,7 @@ async def ban_user_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Ban a single user (BanUser)
 
@@ -10187,7 +10195,7 @@ def check_user_availability(
     query: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check user's account availability (CheckUserAvailability)
 
@@ -10250,7 +10258,7 @@ async def check_user_availability_async(
     query: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check user's account availability (CheckUserAvailability)
 
@@ -10315,7 +10323,7 @@ def create_user(
     body: ModelUserCreateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create User (CreateUser)
 
@@ -10378,7 +10386,7 @@ async def create_user_async(
     body: ModelUserCreateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create User (CreateUser)
 
@@ -10443,7 +10451,7 @@ def create_user_from_invitation_v3(
     invitation_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create User From Invitation (CreateUserFromInvitationV3)
 
@@ -10508,7 +10516,7 @@ async def create_user_from_invitation_v3_async(
     invitation_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create User From Invitation (CreateUserFromInvitationV3)
 
@@ -10575,7 +10583,7 @@ def delete_user(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete User (DeleteUser)
 
@@ -10626,7 +10634,7 @@ async def delete_user_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete User (DeleteUser)
 
@@ -10679,7 +10687,7 @@ def delete_user_information(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete user's information (DeleteUserInformation)
 
@@ -10730,7 +10738,7 @@ async def delete_user_information_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete user's information (DeleteUserInformation)
 
@@ -10785,7 +10793,7 @@ def delete_user_permission(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete User Permission (DeleteUserPermission)
 
@@ -10846,7 +10854,7 @@ async def delete_user_permission_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete User Permission (DeleteUserPermission)
 
@@ -10908,7 +10916,7 @@ def delete_user_role(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete User Role (DeleteUserRole)
 
@@ -10965,7 +10973,7 @@ async def delete_user_role_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete User Role (DeleteUserRole)
 
@@ -11024,7 +11032,7 @@ def disable_user(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable a user (DisableUser)
 
@@ -11087,7 +11095,7 @@ async def disable_user_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable a user (DisableUser)
 
@@ -11152,7 +11160,7 @@ def disable_user_ban(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable ban for a single user. (DisableUserBan)
 
@@ -11217,7 +11225,7 @@ async def disable_user_ban_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable ban for a single user. (DisableUserBan)
 
@@ -11283,7 +11291,7 @@ def enable_user(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable a user (EnableUser)
 
@@ -11336,7 +11344,7 @@ async def enable_user_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable a user (EnableUser)
 
@@ -11392,7 +11400,7 @@ def enable_user_ban(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable ban for a single user (EnableUserBan)
 
@@ -11449,7 +11457,7 @@ async def enable_user_ban_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable ban for a single user (EnableUserBan)
 
@@ -11507,7 +11515,7 @@ def forgot_password(
     body: ModelSendVerificationCodeRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Request Password Reset Code (ForgotPassword)
 
@@ -11564,7 +11572,7 @@ async def forgot_password_async(
     body: ModelSendVerificationCodeRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Request Password Reset Code (ForgotPassword)
 
@@ -11622,7 +11630,7 @@ def get_admin_invitation_v3(
     invitation_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User Invitation (GetAdminInvitationV3)
 
@@ -11668,7 +11676,7 @@ async def get_admin_invitation_v3_async(
     invitation_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User Invitation (GetAdminInvitationV3)
 
@@ -11720,7 +11728,7 @@ def get_admin_users_by_role_id(
     role_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Admin Users By RoleId (GetAdminUsersByRoleID)
 
@@ -11794,7 +11802,7 @@ async def get_admin_users_by_role_id_async(
     role_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Admin Users By RoleId (GetAdminUsersByRoleID)
 
@@ -11869,7 +11877,7 @@ def get_admin_users_by_role_id_v3(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Admin Users By RoleId (GetAdminUsersByRoleIdV3)
 
@@ -11937,7 +11945,7 @@ async def get_admin_users_by_role_id_v3_async(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Admin Users By RoleId (GetAdminUsersByRoleIdV3)
 
@@ -12004,7 +12012,7 @@ async def get_admin_users_by_role_id_v3_async(
 def get_list_country_age_restriction(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get List Country age restriction (GetListCountryAgeRestriction)
 
@@ -12051,7 +12059,7 @@ def get_list_country_age_restriction(
 async def get_list_country_age_restriction_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get List Country age restriction (GetListCountryAgeRestriction)
 
@@ -12101,7 +12109,7 @@ def get_list_justice_platform_accounts(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User Justice Platform Accounts (GetListJusticePlatformAccounts)
 
@@ -12152,7 +12160,7 @@ async def get_list_justice_platform_accounts_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User Justice Platform Accounts (GetListJusticePlatformAccounts)
 
@@ -12205,7 +12213,7 @@ def get_publisher_user(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Publisher User (GetPublisherUser)
 
@@ -12261,7 +12269,7 @@ async def get_publisher_user_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Publisher User (GetPublisherUser)
 
@@ -12319,7 +12327,7 @@ def get_user_ban_history(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's bans history (GetUserBanHistory)
 
@@ -12370,7 +12378,7 @@ async def get_user_ban_history_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's bans history (GetUserBanHistory)
 
@@ -12423,7 +12431,7 @@ def get_user_by_login_id(
     login_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User By Login Id (GetUserByLoginID)
 
@@ -12474,7 +12482,7 @@ async def get_user_by_login_id_async(
     login_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User By Login Id (GetUserByLoginID)
 
@@ -12528,7 +12536,7 @@ def get_user_by_platform_user_id(
     platform_user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User By Platform User ID (GetUserByPlatformUserID)
 
@@ -12588,7 +12596,7 @@ async def get_user_by_platform_user_id_async(
     platform_user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User By Platform User ID (GetUserByPlatformUserID)
 
@@ -12649,7 +12657,7 @@ def get_user_by_user_id(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User By User Id (GetUserByUserID)
 
@@ -12701,7 +12709,7 @@ async def get_user_by_user_id_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User By User Id (GetUserByUserID)
 
@@ -12755,7 +12763,7 @@ def get_user_information(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's information (GetUserInformation)
 
@@ -12806,7 +12814,7 @@ async def get_user_information_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's information (GetUserInformation)
 
@@ -12860,7 +12868,7 @@ def get_user_justice_platform_account(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get the Justice linked accounts on the designated namespace (GetUserJusticePlatformAccount)
 
@@ -12923,7 +12931,7 @@ async def get_user_justice_platform_account_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get the Justice linked accounts on the designated namespace (GetUserJusticePlatformAccount)
 
@@ -12990,7 +12998,7 @@ def get_user_login_histories(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User's Login Histories (GetUserLoginHistories)
 
@@ -13060,7 +13068,7 @@ async def get_user_login_histories_async(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User's Login Histories (GetUserLoginHistories)
 
@@ -13130,7 +13138,7 @@ def get_user_mapping(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user mapping (GetUserMapping)
 
@@ -13192,7 +13200,7 @@ async def get_user_mapping_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user mapping (GetUserMapping)
 
@@ -13255,7 +13263,7 @@ def get_user_platform_accounts(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get platform accounts linked to the user (GetUserPlatformAccounts)
 
@@ -13310,7 +13318,7 @@ async def get_user_platform_accounts_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get platform accounts linked to the user (GetUserPlatformAccounts)
 
@@ -13367,7 +13375,7 @@ def get_users_by_login_ids(
     login_ids: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a List of Users By Their Login Id (GetUsersByLoginIds)
 
@@ -13419,7 +13427,7 @@ async def get_users_by_login_ids_async(
     login_ids: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a List of Users By Their Login Id (GetUsersByLoginIds)
 
@@ -13472,7 +13480,7 @@ def get_user_verification_code(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get verification code sent to user (getUserVerificationCode)
 
@@ -13533,7 +13541,7 @@ async def get_user_verification_code_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get verification code sent to user (getUserVerificationCode)
 
@@ -13595,7 +13603,7 @@ async def get_user_verification_code_async(
 def link_headless_account_to_my_account_v3(
     body: ModelLinkHeadlessAccountRequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Link headless account to current full account (LinkHeadlessAccountToMyAccountV3)
 
@@ -13639,7 +13647,7 @@ def link_headless_account_to_my_account_v3(
 async def link_headless_account_to_my_account_v3_async(
     body: ModelLinkHeadlessAccountRequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Link headless account to current full account (LinkHeadlessAccountToMyAccountV3)
 
@@ -13692,7 +13700,7 @@ def list_admins_v3(
     start_date: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List User Admins (ListAdminsV3)
 
@@ -13778,7 +13786,7 @@ async def list_admins_v3_async(
     start_date: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List User Admins (ListAdminsV3)
 
@@ -13863,7 +13871,7 @@ def list_cross_namespace_account_link(
     platform_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Links existing account with another account in different namespace.  (ListCrossNamespaceAccountLink)
 
@@ -13928,7 +13936,7 @@ async def list_cross_namespace_account_link_async(
     platform_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Links existing account with another account in different namespace.  (ListCrossNamespaceAccountLink)
 
@@ -13995,7 +14003,7 @@ def platform_link(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Link user's account with platform (PlatformLink)
 
@@ -14075,7 +14083,7 @@ async def platform_link_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Link user's account with platform (PlatformLink)
 
@@ -14157,7 +14165,7 @@ def platform_unlink(
     platform_namespace: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Unlink user's account with platform (PlatformUnlink)
 
@@ -14235,7 +14243,7 @@ async def platform_unlink_async(
     platform_namespace: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Unlink user's account with platform (PlatformUnlink)
 
@@ -14313,7 +14321,7 @@ def public_bulk_get_users(
     body: ModelUserIDsRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get users' basic info by user Id (PublicBulkGetUsers)
 
@@ -14364,7 +14372,7 @@ async def public_bulk_get_users_async(
     body: ModelUserIDsRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get users' basic info by user Id (PublicBulkGetUsers)
 
@@ -14416,7 +14424,7 @@ def public_create_justice_user(
     target_namespace: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Justice User from Publisher User (PublicCreateJusticeUser)
 
@@ -14468,7 +14476,7 @@ async def public_create_justice_user_async(
     target_namespace: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Justice User from Publisher User (PublicCreateJusticeUser)
 
@@ -14523,7 +14531,7 @@ def public_create_user_v2(
     body: ModelUserCreateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create User (PublicCreateUserV2)
 
@@ -14584,7 +14592,7 @@ async def public_create_user_v2_async(
     body: ModelUserCreateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create User (PublicCreateUserV2)
 
@@ -14646,7 +14654,7 @@ def public_create_user_v3(
     body: ModelUserCreateRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create User (PublicCreateUserV3)
 
@@ -14709,7 +14717,7 @@ async def public_create_user_v3_async(
     body: ModelUserCreateRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create User (PublicCreateUserV3)
 
@@ -14777,7 +14785,7 @@ def public_delete_platform_link_v2(
     platform_namespace: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete the link of user's account with platform (PublicDeletePlatformLinkV2)
 
@@ -14856,7 +14864,7 @@ async def public_delete_platform_link_v2_async(
     platform_namespace: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete the link of user's account with platform (PublicDeletePlatformLinkV2)
 
@@ -14935,7 +14943,7 @@ def public_force_link_platform_with_progression(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Force link 3rd platform account and transfer progression (PublicForceLinkPlatformWithProgression)
 
@@ -14995,7 +15003,7 @@ async def public_force_link_platform_with_progression_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Force link 3rd platform account and transfer progression (PublicForceLinkPlatformWithProgression)
 
@@ -15057,7 +15065,7 @@ def public_force_platform_link_v3(
     ticket: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Force linking user's account with platform (PublicForcePlatformLinkV3)
 
@@ -15139,7 +15147,7 @@ async def public_force_platform_link_v3_async(
     ticket: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Force linking user's account with platform (PublicForcePlatformLinkV3)
 
@@ -15223,7 +15231,7 @@ def public_forgot_password_v2(
     body: ModelSendVerificationCodeRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Request Password Reset Code (PublicForgotPasswordV2)
 
@@ -15279,7 +15287,7 @@ async def public_forgot_password_v2_async(
     body: ModelSendVerificationCodeRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Request Password Reset Code (PublicForgotPasswordV2)
 
@@ -15336,7 +15344,7 @@ def public_forgot_password_v3(
     body: ModelForgotPasswordRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Request Password Reset Code (PublicForgotPasswordV3)
 
@@ -15388,7 +15396,7 @@ async def public_forgot_password_v3_async(
     body: ModelForgotPasswordRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Request Password Reset Code (PublicForgotPasswordV3)
 
@@ -15441,7 +15449,7 @@ async def public_forgot_password_v3_async(
 def public_forgot_password_without_namespace_v3(
     body: ModelForgotPasswordWithoutNamespaceRequestV3,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Request Password Reset Code (PublicForgotPasswordWithoutNamespaceV3)
 
@@ -15488,7 +15496,7 @@ def public_forgot_password_without_namespace_v3(
 async def public_forgot_password_without_namespace_v3_async(
     body: ModelForgotPasswordWithoutNamespaceRequestV3,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Request Password Reset Code (PublicForgotPasswordWithoutNamespaceV3)
 
@@ -15538,7 +15546,7 @@ def public_get_async_status(
     request_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Linking Progress Status (PublicGetAsyncStatus)
 
@@ -15587,7 +15595,7 @@ async def public_get_async_status_async(
     request_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Linking Progress Status (PublicGetAsyncStatus)
 
@@ -15639,7 +15647,7 @@ def public_get_country_age_restriction(
     country_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public get age restriction by country code (PublicGetCountryAgeRestriction)
 
@@ -15688,7 +15696,7 @@ async def public_get_country_age_restriction_async(
     country_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public get age restriction by country code (PublicGetCountryAgeRestriction)
 
@@ -15738,7 +15746,7 @@ def public_get_country_age_restriction_v3(
     country_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public get age restriction by country code (PublicGetCountryAgeRestrictionV3)
 
@@ -15784,7 +15792,7 @@ async def public_get_country_age_restriction_v3_async(
     country_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public get age restriction by country code (PublicGetCountryAgeRestrictionV3)
 
@@ -15831,7 +15839,7 @@ async def public_get_country_age_restriction_v3_async(
 def public_get_link_headless_account_to_my_account_conflict_v3(
     one_time_link_code: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get conflict result when link headless account to current full account by one time code (PublicGetLinkHeadlessAccountToMyAccountConflictV3)
 
@@ -15877,7 +15885,7 @@ def public_get_link_headless_account_to_my_account_conflict_v3(
 async def public_get_link_headless_account_to_my_account_conflict_v3_async(
     one_time_link_code: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get conflict result when link headless account to current full account by one time code (PublicGetLinkHeadlessAccountToMyAccountConflictV3)
 
@@ -16001,7 +16009,7 @@ async def public_get_my_profile_allow_update_status_v3_async(
 def public_get_my_redirection_after_link_v3(
     one_time_link_code: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get My Forward URI Link (PublicGetMyRedirectionAfterLinkV3)
 
@@ -16041,7 +16049,7 @@ def public_get_my_redirection_after_link_v3(
 async def public_get_my_redirection_after_link_v3_async(
     one_time_link_code: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get My Forward URI Link (PublicGetMyRedirectionAfterLinkV3)
 
@@ -16083,7 +16091,7 @@ async def public_get_my_redirection_after_link_v3_async(
 def public_get_my_user_v3(
     include_all_platforms: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get My User (PublicGetMyUserV3)
 
@@ -16140,7 +16148,7 @@ def public_get_my_user_v3(
 async def public_get_my_user_v3_async(
     include_all_platforms: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get My User (PublicGetMyUserV3)
 
@@ -16266,7 +16274,7 @@ def public_get_publisher_user_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Publisher User (PublicGetPublisherUserV3)
 
@@ -16317,7 +16325,7 @@ async def public_get_publisher_user_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Publisher User (PublicGetPublisherUserV3)
 
@@ -16372,7 +16380,7 @@ def public_get_user_ban(
     active_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's bans (PublicGetUserBan)
 
@@ -16427,7 +16435,7 @@ async def public_get_user_ban_async(
     active_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's bans (PublicGetUserBan)
 
@@ -16486,7 +16494,7 @@ def public_get_user_ban_history_v3(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's bans (PublicGetUserBanHistoryV3)
 
@@ -16560,7 +16568,7 @@ async def public_get_user_ban_history_v3_async(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's bans (PublicGetUserBanHistoryV3)
 
@@ -16634,7 +16642,7 @@ def public_get_user_by_platform_user_idv3(
     platform_user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User By Platform User ID (PublicGetUserByPlatformUserIDV3)
 
@@ -16730,7 +16738,7 @@ async def public_get_user_by_platform_user_idv3_async(
     platform_user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User By Platform User ID (PublicGetUserByPlatformUserIDV3)
 
@@ -16827,7 +16835,7 @@ def public_get_user_by_user_idv2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User By User ID (PublicGetUserByUserIDV2)
 
@@ -16879,7 +16887,7 @@ async def public_get_user_by_user_idv2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User By User ID (PublicGetUserByUserIDV2)
 
@@ -16933,7 +16941,7 @@ def public_get_user_by_user_id_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User By User ID (PublicGetUserByUserIdV3)
 
@@ -16983,7 +16991,7 @@ async def public_get_user_by_user_id_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User By User ID (PublicGetUserByUserIdV3)
 
@@ -17034,7 +17042,7 @@ def public_get_user_information_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's information v3 (PublicGetUserInformationV3)
 
@@ -17088,7 +17096,7 @@ async def public_get_user_information_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's information v3 (PublicGetUserInformationV3)
 
@@ -17147,7 +17155,7 @@ def public_get_user_login_histories_v3(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User's Login Histories (PublicGetUserLoginHistoriesV3)
 
@@ -17215,7 +17223,7 @@ async def public_get_user_login_histories_v3_async(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User's Login Histories (PublicGetUserLoginHistoriesV3)
 
@@ -17286,7 +17294,7 @@ def public_get_user_platform_accounts_v3(
     platform_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get platform accounts linked to the user (PublicGetUserPlatformAccountsV3)
 
@@ -17397,7 +17405,7 @@ async def public_get_user_platform_accounts_v3_async(
     platform_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get platform accounts linked to the user (PublicGetUserPlatformAccountsV3)
 
@@ -17506,7 +17514,7 @@ def public_get_users_platform_infos_v3(
     body: ModelUsersPlatformInfosRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's basic info and public info of 3rd party account (PublicGetUsersPlatformInfosV3)
 
@@ -17574,7 +17582,7 @@ async def public_get_users_platform_infos_v3_async(
     body: ModelUsersPlatformInfosRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's basic info and public info of 3rd party account (PublicGetUsersPlatformInfosV3)
 
@@ -17645,7 +17653,7 @@ def public_link_platform_account(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Link a Platform User Account to User Account (PublicLinkPlatformAccount)
 
@@ -17707,7 +17715,7 @@ async def public_link_platform_account_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Link a Platform User Account to User Account (PublicLinkPlatformAccount)
 
@@ -17770,7 +17778,7 @@ def public_list_justice_platform_accounts_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User Justice Platform Accounts (PublicListJusticePlatformAccountsV3)
 
@@ -17826,7 +17834,7 @@ async def public_list_justice_platform_accounts_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User Justice Platform Accounts (PublicListJusticePlatformAccountsV3)
 
@@ -17884,7 +17892,7 @@ def public_list_user_all_platform_accounts_distinct_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get distinct platform accounts linked to the user (PublicListUserAllPlatformAccountsDistinctV3)
 
@@ -17941,7 +17949,7 @@ async def public_list_user_all_platform_accounts_distinct_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get distinct platform accounts linked to the user (PublicListUserAllPlatformAccountsDistinctV3)
 
@@ -18004,7 +18012,7 @@ def public_list_user_id_by_platform_user_i_ds_v3(
     raw_puid: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List User ID By Platform User ID (PublicListUserIDByPlatformUserIDsV3)
 
@@ -18097,7 +18105,7 @@ async def public_list_user_id_by_platform_user_i_ds_v3_async(
     raw_puid: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List User ID By Platform User ID (PublicListUserIDByPlatformUserIDsV3)
 
@@ -18188,7 +18196,7 @@ def public_partial_update_user_v3(
     body: ModelPublicUserUpdateRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User (PublicPartialUpdateUserV3)
 
@@ -18249,7 +18257,7 @@ async def public_partial_update_user_v3_async(
     body: ModelPublicUserUpdateRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User (PublicPartialUpdateUserV3)
 
@@ -18315,7 +18323,7 @@ def public_platform_link_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Link user's account with platform (PublicPlatformLinkV2)
 
@@ -18395,7 +18403,7 @@ async def public_platform_link_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Link user's account with platform (PublicPlatformLinkV2)
 
@@ -18476,7 +18484,7 @@ def public_platform_link_v3(
     redirect_uri: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Link user's account with platform (PublicPlatformLinkV3)
 
@@ -18562,7 +18570,7 @@ async def public_platform_link_v3_async(
     redirect_uri: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Link user's account with platform (PublicPlatformLinkV3)
 
@@ -18648,7 +18656,7 @@ def public_platform_unlink_all_v3(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public unlink user's account from specific platform for all namespaces (PublicPlatformUnlinkAllV3)
 
@@ -18741,7 +18749,7 @@ async def public_platform_unlink_all_v3_async(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public unlink user's account from specific platform for all namespaces (PublicPlatformUnlinkAllV3)
 
@@ -18838,7 +18846,7 @@ def public_platform_unlink_v3(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public unlink user's account from specific platform (PublicPlatformUnlinkV3)
 
@@ -18914,7 +18922,7 @@ async def public_platform_unlink_v3_async(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public unlink user's account from specific platform (PublicPlatformUnlinkV3)
 
@@ -18992,7 +19000,7 @@ def public_process_web_link_platform_v3(
     code: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Process Link Progress  (PublicProcessWebLinkPlatformV3)
 
@@ -19058,7 +19066,7 @@ async def public_process_web_link_platform_v3_async(
     code: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Process Link Progress  (PublicProcessWebLinkPlatformV3)
 
@@ -19125,7 +19133,7 @@ def public_reset_password_v2(
     body: ModelResetPasswordRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reset User Password (PublicResetPasswordV2)
 
@@ -19178,7 +19186,7 @@ async def public_reset_password_v2_async(
     body: ModelResetPasswordRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reset User Password (PublicResetPasswordV2)
 
@@ -19237,7 +19245,7 @@ def public_search_user_v3(
     query: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Search User (PublicSearchUserV3)
 
@@ -19366,7 +19374,7 @@ async def public_search_user_v3_async(
     query: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Search User (PublicSearchUserV3)
 
@@ -19491,7 +19499,7 @@ async def public_search_user_v3_async(
 def public_send_code_forward_v3(
     body: ModelSendVerificationCodeRequestV3,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Send verification code to user (PublicSendCodeForwardV3)
 
@@ -19529,7 +19537,7 @@ def public_send_code_forward_v3(
 async def public_send_code_forward_v3_async(
     body: ModelSendVerificationCodeRequestV3,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Send verification code to user (PublicSendCodeForwardV3)
 
@@ -19570,7 +19578,7 @@ def public_send_registration_code(
     body: ModelSendRegisterVerificationCodeRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Send verification code to new unregistered account's email address (PublicSendRegistrationCode)
 
@@ -19621,7 +19629,7 @@ async def public_send_registration_code_async(
     body: ModelSendRegisterVerificationCodeRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Send verification code to new unregistered account's email address (PublicSendRegistrationCode)
 
@@ -19674,7 +19682,7 @@ def public_send_verification_code_v3(
     body: ModelSendVerificationCodeRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Send verification code to user (PublicSendVerificationCodeV3)
 
@@ -19739,7 +19747,7 @@ async def public_send_verification_code_v3_async(
     body: ModelSendVerificationCodeRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Send verification code to user (PublicSendVerificationCodeV3)
 
@@ -19805,7 +19813,7 @@ async def public_send_verification_code_v3_async(
 def public_send_verification_link_v3(
     body: ModelSendVerificationLinkRequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Send verification link to user, this link will point to '/iam/v3/public/users/verify_link/verify' (PublicSendVerificationLinkV3)
 
@@ -19848,7 +19856,7 @@ def public_send_verification_link_v3(
 async def public_send_verification_link_v3_async(
     body: ModelSendVerificationLinkRequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Send verification link to user, this link will point to '/iam/v3/public/users/verify_link/verify' (PublicSendVerificationLinkV3)
 
@@ -19896,7 +19904,7 @@ def public_update_password_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User Password (PublicUpdatePasswordV2)
 
@@ -19955,7 +19963,7 @@ async def public_update_password_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User Password (PublicUpdatePasswordV2)
 
@@ -20014,7 +20022,7 @@ def public_update_password_v3(
     body: ModelUserPasswordUpdateV3Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User Password (PublicUpdatePasswordV3)
 
@@ -20064,7 +20072,7 @@ async def public_update_password_v3_async(
     body: ModelUserPasswordUpdateV3Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User Password (PublicUpdatePasswordV3)
 
@@ -20118,7 +20126,7 @@ def public_update_user_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User (PublicUpdateUserV2)
 
@@ -20185,7 +20193,7 @@ async def public_update_user_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User (PublicUpdateUserV2)
 
@@ -20252,7 +20260,7 @@ def public_upgrade_headless_account_v3(
     body: ModelUpgradeHeadlessAccountWithVerificationCodeRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Verify or consume verification code. (PublicUpgradeHeadlessAccountV3)
 
@@ -20317,7 +20325,7 @@ async def public_upgrade_headless_account_v3_async(
     body: ModelUpgradeHeadlessAccountWithVerificationCodeRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Verify or consume verification code. (PublicUpgradeHeadlessAccountV3)
 
@@ -20384,7 +20392,7 @@ def public_user_verification_v3(
     body: ModelUserVerificationRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Validate or consume verification code sent to user (PublicUserVerificationV3)
 
@@ -20437,7 +20445,7 @@ async def public_user_verification_v3_async(
     body: ModelUserVerificationRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Validate or consume verification code sent to user (PublicUserVerificationV3)
 
@@ -20493,7 +20501,7 @@ def public_validate_user_by_user_id_and_password_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Validate user password by user ID and password (PublicValidateUserByUserIDAndPasswordV3)
 
@@ -20554,7 +20562,7 @@ async def public_validate_user_by_user_id_and_password_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Validate user password by user ID and password (PublicValidateUserByUserIDAndPasswordV3)
 
@@ -20616,7 +20624,7 @@ def public_validate_user_input(
     body: ModelUserInputValidationRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Validate user's input. (PublicValidateUserInput)
 
@@ -20664,7 +20672,7 @@ async def public_validate_user_input_async(
     body: ModelUserInputValidationRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Validate user's input. (PublicValidateUserInput)
 
@@ -20715,7 +20723,7 @@ def public_verify_headless_account_v3(
     need_verification_code: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upgrade user headless account to full account (with email) (PublicVerifyHeadlessAccountV3)
 
@@ -20774,7 +20782,7 @@ async def public_verify_headless_account_v3_async(
     need_verification_code: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upgrade user headless account to full account (with email) (PublicVerifyHeadlessAccountV3)
 
@@ -20834,7 +20842,7 @@ def public_verify_registration_code(
     body: ModelVerifyRegistrationCode,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Verify the registration code (PublicVerifyRegistrationCode)
 
@@ -20878,7 +20886,7 @@ async def public_verify_registration_code_async(
     body: ModelVerifyRegistrationCode,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Verify the registration code (PublicVerifyRegistrationCode)
 
@@ -20923,7 +20931,7 @@ async def public_verify_registration_code_async(
 def public_verify_user_by_link_v3(
     code: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Verify user email by the verification link code (PublicVerifyUserByLinkV3)
 
@@ -20956,7 +20964,7 @@ def public_verify_user_by_link_v3(
 async def public_verify_user_by_link_v3_async(
     code: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Verify user email by the verification link code (PublicVerifyUserByLinkV3)
 
@@ -20994,7 +21002,7 @@ def public_web_link_platform(
     redirect_uri: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Public Web Linking (PublicWebLinkPlatform)
 
@@ -21063,7 +21071,7 @@ async def public_web_link_platform_async(
     redirect_uri: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Public Web Linking (PublicWebLinkPlatform)
 
@@ -21134,7 +21142,7 @@ def public_web_link_platform_establish(
     code: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Establish Link Progress  (PublicWebLinkPlatformEstablish)
 
@@ -21199,7 +21207,7 @@ async def public_web_link_platform_establish_async(
     code: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Establish Link Progress  (PublicWebLinkPlatformEstablish)
 
@@ -21265,7 +21273,7 @@ def reset_password(
     body: ModelResetPasswordRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reset User Password (ResetPassword)
 
@@ -21318,7 +21326,7 @@ async def reset_password_async(
     body: ModelResetPasswordRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reset User Password (ResetPassword)
 
@@ -21372,7 +21380,7 @@ def reset_password_v3(
     body: ModelResetPasswordRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reset User Password (ResetPasswordV3)
 
@@ -21420,7 +21428,7 @@ async def reset_password_v3_async(
     body: ModelResetPasswordRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reset User Password (ResetPasswordV3)
 
@@ -21472,7 +21480,7 @@ def save_user_permission(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Save User Permissions (SaveUserPermission)
 
@@ -21554,7 +21562,7 @@ async def save_user_permission_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Save User Permissions (SaveUserPermission)
 
@@ -21638,7 +21646,7 @@ def save_user_roles(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Save User Roles (SaveUserRoles)
 
@@ -21697,7 +21705,7 @@ async def save_user_roles_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Save User Roles (SaveUserRoles)
 
@@ -21757,7 +21765,7 @@ def search_user(
     query: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Search users (SearchUser)
 
@@ -21810,7 +21818,7 @@ async def search_user_async(
     query: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Search users (SearchUser)
 
@@ -21866,7 +21874,7 @@ def send_verification_code(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Send verification code to user (SendVerificationCode)
 
@@ -21938,7 +21946,7 @@ async def send_verification_code_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Send verification code to user (SendVerificationCode)
 
@@ -22012,7 +22020,7 @@ def update_country_age_restriction(
     country_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update country's age restriction (UpdateCountryAgeRestriction)
 
@@ -22069,7 +22077,7 @@ async def update_country_age_restriction_async(
     country_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update country's age restriction (UpdateCountryAgeRestriction)
 
@@ -22128,7 +22136,7 @@ def update_password(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User Password (UpdatePassword)
 
@@ -22187,7 +22195,7 @@ async def update_password_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User Password (UpdatePassword)
 
@@ -22248,7 +22256,7 @@ def update_user(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User (UpdateUser)
 
@@ -22321,7 +22329,7 @@ async def update_user_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User (UpdateUser)
 
@@ -22394,7 +22402,7 @@ def update_user_v3(
     body: ModelPublicUserUpdateRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User (UpdateUserV3)
 
@@ -22459,7 +22467,7 @@ async def update_user_v3_async(
     body: ModelPublicUserUpdateRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User (UpdateUserV3)
 
@@ -22528,7 +22536,7 @@ def upgrade_headless_account(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upgrade user account to full account (with email) (upgradeHeadlessAccount)
 
@@ -22584,7 +22592,7 @@ async def upgrade_headless_account_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upgrade user account to full account (with email) (upgradeHeadlessAccount)
 
@@ -22642,7 +22650,7 @@ def upgrade_headless_account_with_verification_code(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upgrade headless account and automatically verified the email address if it is succeeded (UpgradeHeadlessAccountWithVerificationCode)
 
@@ -22702,7 +22710,7 @@ async def upgrade_headless_account_with_verification_code_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upgrade headless account and automatically verified the email address if it is succeeded (UpgradeHeadlessAccountWithVerificationCode)
 
@@ -22764,7 +22772,7 @@ def user_verification(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Redeem verification code sent to user (UserVerification)
 
@@ -22826,7 +22834,7 @@ async def user_verification_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Redeem verification code sent to user (UserVerification)
 

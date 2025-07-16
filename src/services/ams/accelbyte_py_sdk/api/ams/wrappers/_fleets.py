@@ -63,7 +63,7 @@ def fleet_claim_by_id(
     fleet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """claim a dedicated server from a fleet (FleetClaimByID)
 
@@ -119,7 +119,7 @@ async def fleet_claim_by_id_async(
     fleet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """claim a dedicated server from a fleet (FleetClaimByID)
 
@@ -176,7 +176,7 @@ def fleet_claim_by_keys(
     body: ApiFleetClaimByKeysReq,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """claim a dedicated server (FleetClaimByKeys)
 
@@ -232,7 +232,7 @@ async def fleet_claim_by_keys_async(
     body: ApiFleetClaimByKeysReq,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """claim a dedicated server (FleetClaimByKeys)
 
@@ -290,7 +290,7 @@ def fleet_create(
     body: ApiFleetParameters,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create a fleet (FleetCreate)
 
@@ -342,7 +342,7 @@ async def fleet_create_async(
     body: ApiFleetParameters,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create a fleet (FleetCreate)
 
@@ -396,7 +396,7 @@ def fleet_delete(
     fleet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete a fleet (FleetDelete)
 
@@ -448,7 +448,7 @@ async def fleet_delete_async(
     fleet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete a fleet (FleetDelete)
 
@@ -502,7 +502,7 @@ def fleet_get(
     fleet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get a fleet (FleetGet)
 
@@ -554,7 +554,7 @@ async def fleet_get_async(
     fleet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get a fleet (FleetGet)
 
@@ -614,7 +614,7 @@ def fleet_list(
     sort_direction: Optional[Union[str, FleetListSortDirectionEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """list all fleets in a namespace (FleetList)
 
@@ -682,7 +682,7 @@ async def fleet_list_async(
     sort_direction: Optional[Union[str, FleetListSortDirectionEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """list all fleets in a namespace (FleetList)
 
@@ -753,7 +753,7 @@ def fleet_servers(
     status: Optional[Union[str, FleetServersStatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get server details & counts for a fleet (FleetServers)
 
@@ -833,7 +833,7 @@ async def fleet_servers_async(
     status: Optional[Union[str, FleetServersStatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get server details & counts for a fleet (FleetServers)
 
@@ -909,7 +909,7 @@ def fleet_update(
     fleet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update a fleet -– overrides current data (FleetUpdate)
 
@@ -967,7 +967,7 @@ async def fleet_update_async(
     fleet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update a fleet -– overrides current data (FleetUpdate)
 

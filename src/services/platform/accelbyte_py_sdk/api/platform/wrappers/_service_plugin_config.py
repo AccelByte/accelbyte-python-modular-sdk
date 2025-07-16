@@ -70,7 +70,7 @@ from ..models import SectionPluginConfigUpdateExtendTypeEnum
 def delete_loot_box_plugin_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete lootbox plugin config (deleteLootBoxPluginConfig)
 
@@ -108,7 +108,7 @@ def delete_loot_box_plugin_config(
 async def delete_loot_box_plugin_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete lootbox plugin config (deleteLootBoxPluginConfig)
 
@@ -148,7 +148,7 @@ async def delete_loot_box_plugin_config_async(
 def delete_revocation_plugin_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete revocation plugin config (deleteRevocationPluginConfig)
 
@@ -186,7 +186,7 @@ def delete_revocation_plugin_config(
 async def delete_revocation_plugin_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete revocation plugin config (deleteRevocationPluginConfig)
 
@@ -226,7 +226,7 @@ async def delete_revocation_plugin_config_async(
 def delete_section_plugin_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete section plugin config (deleteSectionPluginConfig)
 
@@ -264,7 +264,7 @@ def delete_section_plugin_config(
 async def delete_section_plugin_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete section plugin config (deleteSectionPluginConfig)
 
@@ -305,7 +305,7 @@ async def delete_section_plugin_config_async(
 def delete_service_plugin_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete service plugin config (deleteServicePluginConfig)
 
@@ -344,7 +344,7 @@ def delete_service_plugin_config(
 async def delete_service_plugin_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete service plugin config (deleteServicePluginConfig)
 
@@ -385,7 +385,7 @@ def get_loot_box_grpc_info(
     force: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get lootbox plugin gRPC info (getLootBoxGrpcInfo)
 
@@ -427,7 +427,7 @@ async def get_loot_box_grpc_info_async(
     force: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get lootbox plugin gRPC info (getLootBoxGrpcInfo)
 
@@ -470,7 +470,7 @@ async def get_loot_box_grpc_info_async(
 def get_loot_box_plugin_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get lootbox plugin config (getLootBoxPluginConfig)
 
@@ -508,7 +508,7 @@ def get_loot_box_plugin_config(
 async def get_loot_box_plugin_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get lootbox plugin config (getLootBoxPluginConfig)
 
@@ -548,7 +548,7 @@ async def get_loot_box_plugin_config_async(
 def get_revocation_plugin_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get revocation plugin config (getRevocationPluginConfig)
 
@@ -586,7 +586,7 @@ def get_revocation_plugin_config(
 async def get_revocation_plugin_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get revocation plugin config (getRevocationPluginConfig)
 
@@ -626,7 +626,7 @@ async def get_revocation_plugin_config_async(
 def get_section_plugin_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get section plugin config (getSectionPluginConfig)
 
@@ -664,7 +664,7 @@ def get_section_plugin_config(
 async def get_section_plugin_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get section plugin config (getSectionPluginConfig)
 
@@ -705,7 +705,7 @@ async def get_section_plugin_config_async(
 def get_service_plugin_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get service plugin config (getServicePluginConfig)
 
@@ -744,7 +744,7 @@ def get_service_plugin_config(
 async def get_service_plugin_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get service plugin config (getServicePluginConfig)
 
@@ -785,7 +785,7 @@ def update_loot_box_plugin_config(
     body: LootBoxPluginConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update lootbox plugin config (updateLootBoxPluginConfig)
 
@@ -830,7 +830,7 @@ async def update_loot_box_plugin_config_async(
     body: LootBoxPluginConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update lootbox plugin config (updateLootBoxPluginConfig)
 
@@ -877,7 +877,7 @@ def update_revocation_plugin_config(
     body: RevocationPluginConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update revocation plugin config (updateRevocationPluginConfig)
 
@@ -922,7 +922,7 @@ async def update_revocation_plugin_config_async(
     body: RevocationPluginConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update revocation plugin config (updateRevocationPluginConfig)
 
@@ -969,7 +969,7 @@ def update_section_plugin_config(
     body: SectionPluginConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update section plugin config (updateSectionPluginConfig)
 
@@ -1014,7 +1014,7 @@ async def update_section_plugin_config_async(
     body: SectionPluginConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update section plugin config (updateSectionPluginConfig)
 
@@ -1062,7 +1062,7 @@ def update_service_plugin_config(
     body: ServicePluginConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update service plugin config service (updateServicePluginConfig)
 
@@ -1108,7 +1108,7 @@ async def update_service_plugin_config_async(
     body: ServicePluginConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update service plugin config service (updateServicePluginConfig)
 
@@ -1155,7 +1155,7 @@ def upload_revocation_plugin_config_cert(
     file: Optional[Any] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload revocation plugin custom config tls cert (uploadRevocationPluginConfigCert)
 
@@ -1200,7 +1200,7 @@ async def upload_revocation_plugin_config_cert_async(
     file: Optional[Any] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload revocation plugin custom config tls cert (uploadRevocationPluginConfigCert)
 
@@ -1247,7 +1247,7 @@ def upload_section_plugin_config_cert(
     file: Optional[Any] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload section plugin custom config tls cert (uploadSectionPluginConfigCert)
 
@@ -1292,7 +1292,7 @@ async def upload_section_plugin_config_cert_async(
     file: Optional[Any] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload section plugin custom config tls cert (uploadSectionPluginConfigCert)
 
@@ -1339,7 +1339,7 @@ def uplod_loot_box_plugin_config_cert(
     file: Optional[Any] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload lootbox plugin custom config tls cert (uplodLootBoxPluginConfigCert)
 
@@ -1384,7 +1384,7 @@ async def uplod_loot_box_plugin_config_cert_async(
     file: Optional[Any] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload lootbox plugin custom config tls cert (uplodLootBoxPluginConfigCert)
 

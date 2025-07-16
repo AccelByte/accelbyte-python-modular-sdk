@@ -50,7 +50,7 @@ def admin_list_tags(
     sort_by: Optional[Union[str, AdminListTagsSortByEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query tags (AdminListTags)
 
@@ -113,7 +113,7 @@ async def admin_list_tags_async(
     sort_by: Optional[Union[str, AdminListTagsSortByEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query tags (AdminListTags)
 
@@ -178,7 +178,7 @@ def public_list_tags(
     sort_by: Optional[Union[str, PublicListTagsSortByEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query tags (PublicListTags)
 
@@ -241,7 +241,7 @@ async def public_list_tags_async(
     sort_by: Optional[Union[str, PublicListTagsSortByEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query tags (PublicListTags)
 

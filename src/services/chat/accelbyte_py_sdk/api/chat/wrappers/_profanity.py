@@ -57,7 +57,7 @@ def admin_profanity_create(
     body: ModelsDictionaryInsertRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin insert new profanity words (adminProfanityCreate)
 
@@ -109,7 +109,7 @@ async def admin_profanity_create_async(
     body: ModelsDictionaryInsertRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin insert new profanity words (adminProfanityCreate)
 
@@ -163,7 +163,7 @@ def admin_profanity_create_bulk(
     body: ModelsDictionaryInsertBulkRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin bulk insert new profanity words (adminProfanityCreateBulk)
 
@@ -215,7 +215,7 @@ async def admin_profanity_create_bulk_async(
     body: ModelsDictionaryInsertBulkRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin bulk insert new profanity words (adminProfanityCreateBulk)
 
@@ -269,7 +269,7 @@ def admin_profanity_delete(
     id_: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin delete profanity words (adminProfanityDelete)
 
@@ -321,7 +321,7 @@ async def admin_profanity_delete_async(
     id_: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin delete profanity words (adminProfanityDelete)
 
@@ -374,7 +374,7 @@ async def admin_profanity_delete_async(
 def admin_profanity_export(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin export profanity words (adminProfanityExport)
 
@@ -420,7 +420,7 @@ def admin_profanity_export(
 async def admin_profanity_export_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin export profanity words (adminProfanityExport)
 
@@ -470,7 +470,7 @@ def admin_profanity_group(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get profanity words group (adminProfanityGroup)
 
@@ -524,7 +524,7 @@ async def admin_profanity_group_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get profanity words group (adminProfanityGroup)
 
@@ -581,7 +581,7 @@ def admin_profanity_import(
     show_result: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin import profanity words (adminProfanityImport)
 
@@ -641,7 +641,7 @@ async def admin_profanity_import_async(
     show_result: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin import profanity words (adminProfanityImport)
 
@@ -707,7 +707,7 @@ def admin_profanity_query(
     word_type: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin query profanity words (adminProfanityQuery)
 
@@ -783,7 +783,7 @@ async def admin_profanity_query_async(
     word_type: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin query profanity words (adminProfanityQuery)
 
@@ -856,7 +856,7 @@ def admin_profanity_update(
     id_: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin update profanity word (adminProfanityUpdate)
 
@@ -912,7 +912,7 @@ async def admin_profanity_update_async(
     id_: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin update profanity word (adminProfanityUpdate)
 

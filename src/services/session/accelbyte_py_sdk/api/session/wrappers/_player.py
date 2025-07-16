@@ -48,7 +48,7 @@ def admin_get_player_attributes(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get player attributes. (adminGetPlayerAttributes)
 
@@ -109,7 +109,7 @@ async def admin_get_player_attributes_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get player attributes. (adminGetPlayerAttributes)
 
@@ -172,7 +172,7 @@ def admin_query_player_attributes(
     users: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query player attributes. (adminQueryPlayerAttributes)
 
@@ -233,7 +233,7 @@ async def admin_query_player_attributes_async(
     users: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query player attributes. (adminQueryPlayerAttributes)
 
@@ -295,7 +295,7 @@ async def admin_query_player_attributes_async(
 def public_delete_player_attributes(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Remove player attributes. (publicDeletePlayerAttributes)
 
@@ -341,7 +341,7 @@ def public_delete_player_attributes(
 async def public_delete_player_attributes_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Remove player attributes. (publicDeletePlayerAttributes)
 
@@ -390,7 +390,7 @@ def public_get_bulk_player_current_platform(
     body: ApimodelsPlayersCurrentPlatformRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get player current platform in bulk. (publicGetBulkPlayerCurrentPlatform)
 
@@ -440,7 +440,7 @@ async def public_get_bulk_player_current_platform_async(
     body: ApimodelsPlayersCurrentPlatformRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get player current platform in bulk. (publicGetBulkPlayerCurrentPlatform)
 
@@ -491,7 +491,7 @@ async def public_get_bulk_player_current_platform_async(
 def public_get_player_attributes(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get player attributes. (publicGetPlayerAttributes)
 
@@ -548,7 +548,7 @@ def public_get_player_attributes(
 async def public_get_player_attributes_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get player attributes. (publicGetPlayerAttributes)
 
@@ -608,7 +608,7 @@ def public_store_player_attributes(
     body: ApimodelsPlayerAttributesRequestBody,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Store player attributes. (publicStorePlayerAttributes)
 
@@ -667,7 +667,7 @@ async def public_store_player_attributes_async(
     body: ApimodelsPlayerAttributesRequestBody,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Store player attributes. (publicStorePlayerAttributes)
 

@@ -62,7 +62,7 @@ def change_namespace_status(
     body: Optional[NamespaceStatusUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Change namespace status (changeNamespaceStatus)
 
@@ -118,7 +118,7 @@ async def change_namespace_status_async(
     body: Optional[NamespaceStatusUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Change namespace status (changeNamespaceStatus)
 
@@ -175,7 +175,7 @@ async def change_namespace_status_async(
 def create_namespace(
     body: Optional[NamespaceCreate] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a namespace (createNamespace)
 
@@ -232,7 +232,7 @@ def create_namespace(
 async def create_namespace_async(
     body: Optional[NamespaceCreate] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a namespace (createNamespace)
 
@@ -291,7 +291,7 @@ async def create_namespace_async(
 def delete_namespace(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a namespace (deleteNamespace)
 
@@ -343,7 +343,7 @@ def delete_namespace(
 async def delete_namespace_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a namespace (deleteNamespace)
 
@@ -398,7 +398,7 @@ def get_child_namespaces(
     active_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get child namespaces (getChildNamespaces)
 
@@ -449,7 +449,7 @@ async def get_child_namespaces_async(
     active_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get child namespaces (getChildNamespaces)
 
@@ -502,7 +502,7 @@ def get_game_namespaces(
     active_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get game namespaces (getGameNamespaces)
 
@@ -553,7 +553,7 @@ async def get_game_namespaces_async(
     active_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get game namespaces (getGameNamespaces)
 
@@ -606,7 +606,7 @@ def get_namespace(
     active_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a namespace (getNamespace)
 
@@ -661,7 +661,7 @@ async def get_namespace_async(
     active_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a namespace (getNamespace)
 
@@ -717,7 +717,7 @@ async def get_namespace_async(
 def get_namespace_1(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a namespace info (getNamespace_1)
 
@@ -761,7 +761,7 @@ def get_namespace_1(
 async def get_namespace_1_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a namespace info (getNamespace_1)
 
@@ -805,9 +805,10 @@ async def get_namespace_1_async(
 
 @same_doc_as(GetNamespaceContext)
 def get_namespace_context(
+    refresh_on_cache_miss: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get context of namespace (getNamespaceContext)
 
@@ -831,6 +832,8 @@ def get_namespace_context(
 
         namespace: (namespace) REQUIRED str in path
 
+        refresh_on_cache_miss: (refreshOnCacheMiss) OPTIONAL bool in query
+
     Responses:
         200: OK - NamespaceContext (Successful operation)
 
@@ -843,6 +846,7 @@ def get_namespace_context(
         if error:
             return None, error
     request = GetNamespaceContext.create(
+        refresh_on_cache_miss=refresh_on_cache_miss,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -850,9 +854,10 @@ def get_namespace_context(
 
 @same_doc_as(GetNamespaceContext)
 async def get_namespace_context_async(
+    refresh_on_cache_miss: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get context of namespace (getNamespaceContext)
 
@@ -876,6 +881,8 @@ async def get_namespace_context_async(
 
         namespace: (namespace) REQUIRED str in path
 
+        refresh_on_cache_miss: (refreshOnCacheMiss) OPTIONAL bool in query
+
     Responses:
         200: OK - NamespaceContext (Successful operation)
 
@@ -888,6 +895,7 @@ async def get_namespace_context_async(
         if error:
             return None, error
     request = GetNamespaceContext.create(
+        refresh_on_cache_miss=refresh_on_cache_miss,
         namespace=namespace,
     )
     return await run_request_async(
@@ -899,7 +907,7 @@ async def get_namespace_context_async(
 def get_namespace_publisher(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get namespace info related publisher namespace (getNamespacePublisher)
 
@@ -949,7 +957,7 @@ def get_namespace_publisher(
 async def get_namespace_publisher_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get namespace info related publisher namespace (getNamespacePublisher)
 
@@ -1001,7 +1009,7 @@ async def get_namespace_publisher_async(
 def get_namespaces(
     active_only: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get all namespaces (getNamespaces)
 
@@ -1043,7 +1051,7 @@ def get_namespaces(
 async def get_namespaces_async(
     active_only: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get all namespaces (getNamespaces)
 
@@ -1087,7 +1095,7 @@ async def get_namespaces_async(
 def public_get_namespace_publisher(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get namespace info related publisher namespace (publicGetNamespacePublisher)
 
@@ -1137,7 +1145,7 @@ def public_get_namespace_publisher(
 async def public_get_namespace_publisher_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get namespace info related publisher namespace (publicGetNamespacePublisher)
 
@@ -1189,7 +1197,7 @@ async def public_get_namespace_publisher_async(
 def public_get_namespaces(
     active_only: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get all namespaces (publicGetNamespaces)
 
@@ -1229,7 +1237,7 @@ def public_get_namespaces(
 async def public_get_namespaces_async(
     active_only: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get all namespaces (publicGetNamespaces)
 
@@ -1272,7 +1280,7 @@ def update_namespace(
     body: Optional[NamespaceUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update namespace basic info (updateNamespace)
 
@@ -1337,7 +1345,7 @@ async def update_namespace_async(
     body: Optional[NamespaceUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update namespace basic info (updateNamespace)
 

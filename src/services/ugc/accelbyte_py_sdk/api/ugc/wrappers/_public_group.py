@@ -51,7 +51,7 @@ def create_group(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create groups (CreateGroup)
 
@@ -103,7 +103,7 @@ async def create_group_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create groups (CreateGroup)
 
@@ -157,7 +157,7 @@ def delete_group(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete group (DeleteGroup)
 
@@ -209,7 +209,7 @@ async def delete_group_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete group (DeleteGroup)
 
@@ -263,7 +263,7 @@ def get_group(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's groups (GetGroup)
 
@@ -315,7 +315,7 @@ async def get_group_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's groups (GetGroup)
 
@@ -371,7 +371,7 @@ def get_group_content(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """(Legacy) Get contents belong to a group (GetGroupContent)
 
@@ -433,7 +433,7 @@ async def get_group_content_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """(Legacy) Get contents belong to a group (GetGroupContent)
 
@@ -496,7 +496,7 @@ def get_groups(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get all user groups (GetGroups)
 
@@ -552,7 +552,7 @@ async def get_groups_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get all user groups (GetGroups)
 
@@ -611,7 +611,7 @@ def public_get_group_contents_v2(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get contents belong to a group (PublicGetGroupContentsV2)
 
@@ -673,7 +673,7 @@ async def public_get_group_contents_v2_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get contents belong to a group (PublicGetGroupContentsV2)
 
@@ -736,7 +736,7 @@ def update_group(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update group (UpdateGroup)
 
@@ -794,7 +794,7 @@ async def update_group_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update group (UpdateGroup)
 

@@ -42,7 +42,7 @@ def public_get_creator(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get creator stats: number of total like by other user, number of total following and follower user (PublicGetCreator)
 
@@ -90,7 +90,7 @@ async def public_get_creator_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get creator stats: number of total like by other user, number of total following and follower user (PublicGetCreator)
 
@@ -143,7 +143,7 @@ def public_search_creator(
     sortby: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Search creator (PublicSearchCreator)
 
@@ -203,7 +203,7 @@ async def public_search_creator_async(
     sortby: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Search creator (PublicSearchCreator)
 

@@ -46,7 +46,7 @@ def admin_create_tag_v3(
     body: ModelTagCreateRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Account Identifier Tag (AdminCreateTagV3)
 
@@ -94,7 +94,7 @@ async def admin_create_tag_v3_async(
     body: ModelTagCreateRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Account Identifier Tag (AdminCreateTagV3)
 
@@ -144,7 +144,7 @@ def admin_delete_tag_v3(
     tag_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Account Identifier Tag (AdminDeleteTagV3)
 
@@ -190,7 +190,7 @@ async def admin_delete_tag_v3_async(
     tag_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Account Identifier Tag (AdminDeleteTagV3)
 
@@ -240,7 +240,7 @@ def admin_query_tag_v3(
     tag_name: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query Account Identifier Tag (AdminQueryTagV3)
 
@@ -293,7 +293,7 @@ async def admin_query_tag_v3_async(
     tag_name: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query Account Identifier Tag (AdminQueryTagV3)
 
@@ -347,7 +347,7 @@ def admin_update_tag_v3(
     tag_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Account Identifier Tag (AdminUpdateTagV3)
 
@@ -401,7 +401,7 @@ async def admin_update_tag_v3_async(
     tag_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Account Identifier Tag (AdminUpdateTagV3)
 

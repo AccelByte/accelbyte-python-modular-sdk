@@ -80,7 +80,7 @@ def charge_payment_order(
     payment_order_no: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Charge payment order without payment flow (chargePaymentOrder)
 
@@ -134,7 +134,7 @@ async def charge_payment_order_async(
     payment_order_no: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Charge payment order without payment flow (chargePaymentOrder)
 
@@ -190,7 +190,7 @@ def create_user_payment_order(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create payment order (createUserPaymentOrder)
 
@@ -263,7 +263,7 @@ async def create_user_payment_order_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create payment order (createUserPaymentOrder)
 
@@ -337,7 +337,7 @@ def get_payment_order(
     payment_order_no: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get payment order (getPaymentOrder)
 
@@ -383,7 +383,7 @@ async def get_payment_order_async(
     payment_order_no: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get payment order (getPaymentOrder)
 
@@ -431,7 +431,7 @@ def get_payment_order_charge_status(
     payment_order_no: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get payment order charge status (getPaymentOrderChargeStatus)
 
@@ -477,7 +477,7 @@ async def get_payment_order_charge_status_async(
     payment_order_no: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get payment order charge status (getPaymentOrderChargeStatus)
 
@@ -525,7 +525,7 @@ def list_ext_order_no_by_ext_tx_id(
     ext_tx_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List external order No by external transaction id (listExtOrderNoByExtTxId)
 
@@ -569,7 +569,7 @@ async def list_ext_order_no_by_ext_tx_id_async(
     ext_tx_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List external order No by external transaction id (listExtOrderNoByExtTxId)
 
@@ -625,7 +625,7 @@ def query_payment_notifications(
     status: Optional[Union[str, QueryPaymentNotificationsStatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query payment notifications (queryPaymentNotifications)
 
@@ -703,7 +703,7 @@ async def query_payment_notifications_async(
     status: Optional[Union[str, QueryPaymentNotificationsStatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query payment notifications (queryPaymentNotifications)
 
@@ -777,7 +777,7 @@ def query_payment_orders(
     status: Optional[Union[str, QueryPaymentOrdersStatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query payment orders (queryPaymentOrders)
 
@@ -837,7 +837,7 @@ async def query_payment_orders_async(
     status: Optional[Union[str, QueryPaymentOrdersStatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query payment orders (queryPaymentOrders)
 
@@ -897,7 +897,7 @@ def refund_user_payment_order(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Refund payment order (refundUserPaymentOrder)
 
@@ -953,7 +953,7 @@ async def refund_user_payment_order_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Refund payment order (refundUserPaymentOrder)
 
@@ -1010,7 +1010,7 @@ def simulate_payment_order_notification(
     payment_order_no: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Simulate payment notification (simulatePaymentOrderNotification)
 
@@ -1062,7 +1062,7 @@ async def simulate_payment_order_notification_async(
     payment_order_no: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Simulate payment notification (simulatePaymentOrderNotification)
 

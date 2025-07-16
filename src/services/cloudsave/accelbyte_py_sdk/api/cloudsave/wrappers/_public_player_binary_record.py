@@ -65,7 +65,7 @@ def bulk_get_my_binary_record_v1(
     body: ModelsBulkGetPlayerRecordsRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get player records bulk (bulkGetMyBinaryRecordV1)
 
@@ -116,7 +116,7 @@ async def bulk_get_my_binary_record_v1_async(
     body: ModelsBulkGetPlayerRecordsRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get player records bulk (bulkGetMyBinaryRecordV1)
 
@@ -170,7 +170,7 @@ def bulk_get_other_player_public_binary_records_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get other player public binary record (bulkGetOtherPlayerPublicBinaryRecordsV1)
 
@@ -225,7 +225,7 @@ async def bulk_get_other_player_public_binary_records_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get other player public binary record (bulkGetOtherPlayerPublicBinaryRecordsV1)
 
@@ -282,7 +282,7 @@ def bulk_get_player_public_binary_records_v1(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get player public records (bulkGetPlayerPublicBinaryRecordsV1)
 
@@ -337,7 +337,7 @@ async def bulk_get_player_public_binary_records_v1_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get player public records (bulkGetPlayerPublicBinaryRecordsV1)
 
@@ -394,7 +394,7 @@ def delete_player_binary_record_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete player binary record (deletePlayerBinaryRecordV1)
 
@@ -450,7 +450,7 @@ async def delete_player_binary_record_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete player binary record (deletePlayerBinaryRecordV1)
 
@@ -508,7 +508,7 @@ def get_player_binary_record_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get player binary record (getPlayerBinaryRecordV1)
 
@@ -563,7 +563,7 @@ async def get_player_binary_record_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get player binary record (getPlayerBinaryRecordV1)
 
@@ -620,7 +620,7 @@ def get_player_public_binary_records_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get player public binary record (getPlayerPublicBinaryRecordsV1)
 
@@ -675,7 +675,7 @@ async def get_player_public_binary_records_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get player public binary record (getPlayerPublicBinaryRecordsV1)
 
@@ -734,7 +734,7 @@ def list_my_binary_records_v1(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query my binary records (listMyBinaryRecordsV1)
 
@@ -796,7 +796,7 @@ async def list_my_binary_records_v1_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query my binary records (listMyBinaryRecordsV1)
 
@@ -860,7 +860,7 @@ def list_other_player_public_binary_records_v1(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query other player public binary record (listOtherPlayerPublicBinaryRecordsV1)
 
@@ -922,7 +922,7 @@ async def list_other_player_public_binary_records_v1_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query other player public binary record (listOtherPlayerPublicBinaryRecordsV1)
 
@@ -985,7 +985,7 @@ def post_player_binary_presigned_urlv1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Request presigned URL for upload player binary records (postPlayerBinaryPresignedURLV1)
 
@@ -1049,7 +1049,7 @@ async def post_player_binary_presigned_urlv1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Request presigned URL for upload player binary records (postPlayerBinaryPresignedURLV1)
 
@@ -1114,7 +1114,7 @@ def post_player_binary_record_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create player binary record (postPlayerBinaryRecordV1)
 
@@ -1181,7 +1181,7 @@ async def post_player_binary_record_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create player binary record (postPlayerBinaryRecordV1)
 
@@ -1251,7 +1251,7 @@ def put_player_binary_record_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update player binary record file (putPlayerBinaryRecordV1)
 
@@ -1311,7 +1311,7 @@ async def put_player_binary_record_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update player binary record file (putPlayerBinaryRecordV1)
 
@@ -1373,7 +1373,7 @@ def put_player_binary_recor_metadata_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update player binary record metadata (putPlayerBinaryRecorMetadataV1)
 
@@ -1433,7 +1433,7 @@ async def put_player_binary_recor_metadata_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update player binary record metadata (putPlayerBinaryRecorMetadataV1)
 

@@ -50,7 +50,7 @@ def query_third_party_notifications(
     type_: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query third party notifications (queryThirdPartyNotifications)
 
@@ -122,7 +122,7 @@ async def query_third_party_notifications_async(
     type_: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query third party notifications (queryThirdPartyNotifications)
 

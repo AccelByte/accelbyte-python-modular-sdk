@@ -39,7 +39,7 @@ def admin_anonymize_user_leaderboard_admin_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Anonymize user's leaderboard (adminAnonymizeUserLeaderboardAdminV1)
 
@@ -87,7 +87,7 @@ async def admin_anonymize_user_leaderboard_admin_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Anonymize user's leaderboard (adminAnonymizeUserLeaderboardAdminV1)
 

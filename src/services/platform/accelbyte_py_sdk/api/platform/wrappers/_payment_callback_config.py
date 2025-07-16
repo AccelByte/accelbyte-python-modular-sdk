@@ -43,7 +43,7 @@ from ..operations.payment_callback_config import UpdatePaymentCallbackConfig
 def get_payment_callback_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get payment callback configuration (getPaymentCallbackConfig)
 
@@ -88,7 +88,7 @@ def get_payment_callback_config(
 async def get_payment_callback_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get payment callback configuration (getPaymentCallbackConfig)
 
@@ -136,7 +136,7 @@ def update_payment_callback_config(
     body: PaymentCallbackConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update payment callback configuration (updatePaymentCallbackConfig)
 
@@ -183,7 +183,7 @@ async def update_payment_callback_config_async(
     body: PaymentCallbackConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update payment callback configuration (updatePaymentCallbackConfig)
 

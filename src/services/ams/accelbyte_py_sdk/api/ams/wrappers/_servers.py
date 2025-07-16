@@ -46,7 +46,7 @@ def fleet_server_connection_info(
     server_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get connection info for a dedicated server (FleetServerConnectionInfo)
 
@@ -96,7 +96,7 @@ async def fleet_server_connection_info_async(
     server_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get connection info for a dedicated server (FleetServerConnectionInfo)
 
@@ -155,7 +155,7 @@ def fleet_server_history(
     status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get history records of a dedicated server in a fleet (FleetServerHistory)
 
@@ -233,7 +233,7 @@ async def fleet_server_history_async(
     status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get history records of a dedicated server in a fleet (FleetServerHistory)
 
@@ -306,7 +306,7 @@ def fleet_server_info(
     server_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get information about a dedicated server (FleetServerInfo)
 
@@ -356,7 +356,7 @@ async def fleet_server_info_async(
     server_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get information about a dedicated server (FleetServerInfo)
 
@@ -408,7 +408,7 @@ def server_history(
     server_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get history records of a dedicated server (ServerHistory)
 
@@ -458,7 +458,7 @@ async def server_history_async(
     server_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get history records of a dedicated server (ServerHistory)
 

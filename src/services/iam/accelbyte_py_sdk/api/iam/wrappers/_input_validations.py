@@ -192,7 +192,7 @@ async def admin_reset_input_validations_async(
 def admin_update_input_validations(
     body: List[ModelInputValidationUpdatePayload],
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Update Input Validations (AdminUpdateInputValidations)
 
@@ -257,7 +257,7 @@ def admin_update_input_validations(
 async def admin_update_input_validations_async(
     body: List[ModelInputValidationUpdatePayload],
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Update Input Validations (AdminUpdateInputValidations)
 
@@ -399,7 +399,7 @@ def public_get_input_validations(
     default_on_empty: Optional[bool] = None,
     language_code: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public Get Input Validations (PublicGetInputValidations)
 
@@ -444,7 +444,7 @@ async def public_get_input_validations_async(
     default_on_empty: Optional[bool] = None,
     language_code: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public Get Input Validations (PublicGetInputValidations)
 

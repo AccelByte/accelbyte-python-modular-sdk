@@ -46,7 +46,7 @@ def public_delete_payment_account(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete payment account (publicDeletePaymentAccount)
 
@@ -98,7 +98,7 @@ async def public_delete_payment_account_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete payment account (publicDeletePaymentAccount)
 
@@ -150,7 +150,7 @@ def public_get_payment_accounts(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get payment accounts (publicGetPaymentAccounts)
 
@@ -194,7 +194,7 @@ async def public_get_payment_accounts_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get payment accounts (publicGetPaymentAccounts)
 

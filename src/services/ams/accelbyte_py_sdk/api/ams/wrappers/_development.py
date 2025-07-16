@@ -48,7 +48,7 @@ def development_server_configuration_create(
     body: ApiDevelopmentServerConfigurationCreateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create a new development server configuration (DevelopmentServerConfigurationCreate)
 
@@ -100,7 +100,7 @@ async def development_server_configuration_create_async(
     body: ApiDevelopmentServerConfigurationCreateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create a new development server configuration (DevelopmentServerConfigurationCreate)
 
@@ -154,7 +154,7 @@ def development_server_configuration_delete(
     development_server_config_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete a development server configuration (DevelopmentServerConfigurationDelete)
 
@@ -204,7 +204,7 @@ async def development_server_configuration_delete_async(
     development_server_config_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete a development server configuration (DevelopmentServerConfigurationDelete)
 
@@ -256,7 +256,7 @@ def development_server_configuration_get(
     development_server_config_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get a development server configuration (DevelopmentServerConfigurationGet)
 
@@ -306,7 +306,7 @@ async def development_server_configuration_get_async(
     development_server_config_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get a development server configuration (DevelopmentServerConfigurationGet)
 
@@ -359,7 +359,7 @@ def development_server_configuration_list(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """lists development server configurations with pagination (DevelopmentServerConfigurationList)
 
@@ -411,7 +411,7 @@ async def development_server_configuration_list_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """lists development server configurations with pagination (DevelopmentServerConfigurationList)
 
@@ -465,7 +465,7 @@ def development_server_configuration_patch(
     development_server_config_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """patch a development server configuration (DevelopmentServerConfigurationPatch)
 
@@ -519,7 +519,7 @@ async def development_server_configuration_patch_async(
     development_server_config_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """patch a development server configuration (DevelopmentServerConfigurationPatch)
 

@@ -49,7 +49,7 @@ def admin_create_tag(
     body: ApimodelsCreateTagReq,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To create a tag (AdminCreateTag)
 
@@ -101,7 +101,7 @@ async def admin_create_tag_async(
     body: ApimodelsCreateTagReq,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To create a tag (AdminCreateTag)
 
@@ -155,7 +155,7 @@ def admin_delete_tag(
     tag_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To delete a tag (AdminDeleteTag)
 
@@ -204,7 +204,7 @@ async def admin_delete_tag_async(
     tag_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To delete a tag (AdminDeleteTag)
 
@@ -258,7 +258,7 @@ def admin_list_tags(
     sort_by: Optional[Union[str, AdminListTagsSortByEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To list tags (AdminListTags)
 
@@ -319,7 +319,7 @@ async def admin_list_tags_async(
     sort_by: Optional[Union[str, AdminListTagsSortByEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To list tags (AdminListTags)
 

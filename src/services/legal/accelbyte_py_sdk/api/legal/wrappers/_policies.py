@@ -120,7 +120,7 @@ def retrieve_latest_policies(
     tags: Optional[str] = None,
     visible_only: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve Latest Policies by Country (retrieveLatestPolicies)
 
@@ -176,7 +176,7 @@ async def retrieve_latest_policies_async(
     tags: Optional[str] = None,
     visible_only: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve Latest Policies by Country (retrieveLatestPolicies)
 
@@ -238,7 +238,7 @@ def retrieve_latest_policies_by_namespace_and_country_public(
     visible_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve Latest Policies by Namespace and Country (retrieveLatestPoliciesByNamespaceAndCountryPublic)
 
@@ -315,7 +315,7 @@ async def retrieve_latest_policies_by_namespace_and_country_public_async(
     visible_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve Latest Policies by Namespace and Country (retrieveLatestPoliciesByNamespaceAndCountryPublic)
 
@@ -393,7 +393,7 @@ def retrieve_latest_policies_public(
     visible_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve Latest Policies by Namespace and Country (retrieveLatestPoliciesPublic)
 
@@ -466,7 +466,7 @@ async def retrieve_latest_policies_public_async(
     visible_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve Latest Policies by Namespace and Country (retrieveLatestPoliciesPublic)
 
@@ -671,7 +671,7 @@ def update_policy(
     policy_id: str,
     body: Optional[UpdatePolicyRequest] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Country-Specific Policy (updatePolicy)
 
@@ -711,7 +711,7 @@ async def update_policy_async(
     policy_id: str,
     body: Optional[UpdatePolicyRequest] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Country-Specific Policy (updatePolicy)
 

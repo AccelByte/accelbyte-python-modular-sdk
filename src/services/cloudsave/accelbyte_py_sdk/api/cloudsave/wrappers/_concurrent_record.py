@@ -44,7 +44,7 @@ def put_game_record_concurrent_handler_v1(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace game record (putGameRecordConcurrentHandlerV1)
 
@@ -144,7 +144,7 @@ async def put_game_record_concurrent_handler_v1_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace game record (putGameRecordConcurrentHandlerV1)
 
@@ -248,7 +248,7 @@ def put_player_public_record_concurrent_handler_v1(
     response_body: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace player public record (putPlayerPublicRecordConcurrentHandlerV1)
 
@@ -358,7 +358,7 @@ async def put_player_public_record_concurrent_handler_v1_async(
     response_body: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace player public record (putPlayerPublicRecordConcurrentHandlerV1)
 
@@ -470,7 +470,7 @@ def put_player_record_concurrent_handler_v1(
     response_body: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace player private record (putPlayerRecordConcurrentHandlerV1)
 
@@ -580,7 +580,7 @@ async def put_player_record_concurrent_handler_v1_async(
     response_body: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace player private record (putPlayerRecordConcurrentHandlerV1)
 

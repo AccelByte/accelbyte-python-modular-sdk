@@ -55,7 +55,7 @@ def create_reward(
     body: Optional[RewardCreate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a reward (createReward)
 
@@ -113,7 +113,7 @@ async def create_reward_async(
     body: Optional[RewardCreate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a reward (createReward)
 
@@ -173,7 +173,7 @@ def delete_reward(
     season_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a reward (deleteReward)
 
@@ -227,7 +227,7 @@ async def delete_reward_async(
     season_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a reward (deleteReward)
 
@@ -283,7 +283,7 @@ def get_reward(
     season_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a reward (getReward)
 
@@ -337,7 +337,7 @@ async def get_reward_async(
     season_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a reward (getReward)
 
@@ -392,7 +392,7 @@ def public_bulk_claim_user_rewards(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk claim all remained rewards (publicBulkClaimUserRewards)
 
@@ -442,7 +442,7 @@ async def public_bulk_claim_user_rewards_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk claim all remained rewards (publicBulkClaimUserRewards)
 
@@ -495,7 +495,7 @@ def public_claim_user_reward(
     body: Optional[UserRewardClaim] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Claim tier reward (publicClaimUserReward)
 
@@ -551,7 +551,7 @@ async def public_claim_user_reward_async(
     body: Optional[UserRewardClaim] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Claim tier reward (publicClaimUserReward)
 
@@ -609,7 +609,7 @@ def query_rewards(
     q: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query all rewards for a season (queryRewards)
 
@@ -663,7 +663,7 @@ async def query_rewards_async(
     q: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query all rewards for a season (queryRewards)
 
@@ -720,7 +720,7 @@ def update_reward(
     body: Optional[RewardUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a reward (updateReward)
 
@@ -782,7 +782,7 @@ async def update_reward_async(
     body: Optional[RewardUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a reward (updateReward)
 

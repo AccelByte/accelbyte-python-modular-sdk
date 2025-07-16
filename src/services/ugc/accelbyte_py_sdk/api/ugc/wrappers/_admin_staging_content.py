@@ -47,7 +47,7 @@ def admin_approve_staging_content(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Approve or reject content (AdminApproveStagingContent)
 
@@ -103,7 +103,7 @@ async def admin_approve_staging_content_async(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Approve or reject content (AdminApproveStagingContent)
 
@@ -160,7 +160,7 @@ def admin_get_staging_content_by_id(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get staging content by id (AdminGetStagingContentByID)
 
@@ -210,7 +210,7 @@ async def admin_get_staging_content_by_id_async(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get staging content by id (AdminGetStagingContentByID)
 
@@ -265,7 +265,7 @@ def admin_list_staging_contents(
     status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List staging contents (AdminListStagingContents)
 
@@ -327,7 +327,7 @@ async def admin_list_staging_contents_async(
     status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List staging contents (AdminListStagingContents)
 
@@ -392,7 +392,7 @@ def admin_list_user_staging_contents(
     status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List user staging contents (AdminListUserStagingContents)
 
@@ -458,7 +458,7 @@ async def admin_list_user_staging_contents_async(
     status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List user staging contents (AdminListUserStagingContents)
 

@@ -61,7 +61,7 @@ def create_key_group(
     body: KeyGroupCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create key group (createKeyGroup)
 
@@ -109,7 +109,7 @@ async def create_key_group_async(
     body: KeyGroupCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create key group (createKeyGroup)
 
@@ -159,7 +159,7 @@ def get_key_group(
     key_group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get key group (getKeyGroup)
 
@@ -205,7 +205,7 @@ async def get_key_group_async(
     key_group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get key group (getKeyGroup)
 
@@ -254,7 +254,7 @@ def get_key_group_by_booth_name(
     booth_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get key group by booth name (getKeyGroupByBoothName)
 
@@ -301,7 +301,7 @@ async def get_key_group_by_booth_name_async(
     booth_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get key group by booth name (getKeyGroupByBoothName)
 
@@ -349,7 +349,7 @@ def get_key_group_dynamic(
     key_group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get key group dynamic (getKeyGroupDynamic)
 
@@ -395,7 +395,7 @@ async def get_key_group_dynamic_async(
     key_group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get key group dynamic (getKeyGroupDynamic)
 
@@ -446,7 +446,7 @@ def list_keys(
     status: Optional[Union[str, ListKeysStatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List keys of a key group (listKeys)
 
@@ -502,7 +502,7 @@ async def list_keys_async(
     status: Optional[Union[str, ListKeysStatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List keys of a key group (listKeys)
 
@@ -560,7 +560,7 @@ def query_key_groups(
     tag: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query key groups (queryKeyGroups)
 
@@ -616,7 +616,7 @@ async def query_key_groups_async(
     tag: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query key groups (queryKeyGroups)
 
@@ -672,7 +672,7 @@ def update_key_group(
     key_group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update key group (updateKeyGroup)
 
@@ -726,7 +726,7 @@ async def update_key_group_async(
     key_group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update key group (updateKeyGroup)
 
@@ -782,7 +782,7 @@ def upload_keys(
     file: Optional[Any] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload keys to key group (uploadKeys)
 
@@ -835,7 +835,7 @@ async def upload_keys_async(
     file: Optional[Any] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload keys to key group (uploadKeys)
 

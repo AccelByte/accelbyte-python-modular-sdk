@@ -48,7 +48,7 @@ from ..operations.account import AdminAccountLinkTokenGet
 def account_get(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get the account associated with the namespace (AccountGet)
 
@@ -94,7 +94,7 @@ def account_get(
 async def account_get_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get the account associated with the namespace (AccountGet)
 
@@ -143,7 +143,7 @@ def admin_account_create(
     body: ApiAccountCreateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create a new AMS account (AdminAccountCreate)
 
@@ -191,7 +191,7 @@ async def admin_account_create_async(
     body: ApiAccountCreateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create a new AMS account (AdminAccountCreate)
 
@@ -240,7 +240,7 @@ async def admin_account_create_async(
 def admin_account_get(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get the account associated with the namespace (AdminAccountGet)
 
@@ -286,7 +286,7 @@ def admin_account_get(
 async def admin_account_get_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get the account associated with the namespace (AdminAccountGet)
 
@@ -335,7 +335,7 @@ def admin_account_link(
     body: ApiAccountLinkRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """link an account to a namespace (AdminAccountLink)
 
@@ -385,7 +385,7 @@ async def admin_account_link_async(
     body: ApiAccountLinkRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """link an account to a namespace (AdminAccountLink)
 
@@ -436,7 +436,7 @@ async def admin_account_link_async(
 def admin_account_link_token_get(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get a link to account token (AdminAccountLinkTokenGet)
 
@@ -484,7 +484,7 @@ def admin_account_link_token_get(
 async def admin_account_link_token_get_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get a link to account token (AdminAccountLinkTokenGet)
 

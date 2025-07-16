@@ -53,7 +53,7 @@ def admin_get_profile_update_strategy_v3(
     field: Optional[Union[str, AdminGetProfileUpdateStrategyV3FieldEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get profile update strategy by namespace and field. (AdminGetProfileUpdateStrategyV3)
 
@@ -104,7 +104,7 @@ async def admin_get_profile_update_strategy_v3_async(
     field: Optional[Union[str, AdminGetProfileUpdateStrategyV3FieldEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get profile update strategy by namespace and field. (AdminGetProfileUpdateStrategyV3)
 
@@ -158,7 +158,7 @@ def admin_update_profile_update_strategy_v3(
     field: Union[str, AdminUpdateProfileUpdateStrategyV3FieldEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin update profile update strategy by namespace and field. (AdminUpdateProfileUpdateStrategyV3)
 
@@ -214,7 +214,7 @@ async def admin_update_profile_update_strategy_v3_async(
     field: Union[str, AdminUpdateProfileUpdateStrategyV3FieldEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin update profile update strategy by namespace and field. (AdminUpdateProfileUpdateStrategyV3)
 
@@ -271,7 +271,7 @@ def public_get_profile_update_strategy_v3(
     field: Optional[Union[str, PublicGetProfileUpdateStrategyV3FieldEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public get profile update strategy by namespace and field. (PublicGetProfileUpdateStrategyV3)
 
@@ -322,7 +322,7 @@ async def public_get_profile_update_strategy_v3_async(
     field: Optional[Union[str, PublicGetProfileUpdateStrategyV3FieldEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public get profile update strategy by namespace and field. (PublicGetProfileUpdateStrategyV3)
 

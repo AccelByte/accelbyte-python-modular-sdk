@@ -61,7 +61,7 @@ def admin_change_role_override_config_status_v3(
     identity: Union[str, AdminChangeRoleOverrideConfigStatusV3IdentityEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Change role override config active status (AdminChangeRoleOverrideConfigStatusV3)
 
@@ -115,7 +115,7 @@ async def admin_change_role_override_config_status_v3_async(
     identity: Union[str, AdminChangeRoleOverrideConfigStatusV3IdentityEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Change role override config active status (AdminChangeRoleOverrideConfigStatusV3)
 
@@ -170,7 +170,7 @@ def admin_get_role_namespace_permission_v3(
     role_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get role namespace permission (AdminGetRoleNamespacePermissionV3)
 
@@ -220,7 +220,7 @@ async def admin_get_role_namespace_permission_v3_async(
     role_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get role namespace permission (AdminGetRoleNamespacePermissionV3)
 
@@ -272,7 +272,7 @@ def admin_get_role_override_config_v3(
     identity: Union[str, AdminGetRoleOverrideConfigV3IdentityEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get role override config (AdminGetRoleOverrideConfigV3)
 
@@ -323,7 +323,7 @@ async def admin_get_role_override_config_v3_async(
     identity: Union[str, AdminGetRoleOverrideConfigV3IdentityEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get role override config (AdminGetRoleOverrideConfigV3)
 
@@ -376,7 +376,7 @@ def admin_get_role_source_v3(
     identity: Union[str, AdminGetRoleSourceV3IdentityEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get role source permission set (AdminGetRoleSourceV3)
 
@@ -428,7 +428,7 @@ async def admin_get_role_source_v3_async(
     identity: Union[str, AdminGetRoleSourceV3IdentityEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get role source permission set (AdminGetRoleSourceV3)
 
@@ -483,7 +483,7 @@ def admin_update_role_override_config_v3(
     identity: Union[str, AdminUpdateRoleOverrideConfigV3IdentityEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update role override config (AdminUpdateRoleOverrideConfigV3)
 
@@ -539,7 +539,7 @@ async def admin_update_role_override_config_v3_async(
     identity: Union[str, AdminUpdateRoleOverrideConfigV3IdentityEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update role override config (AdminUpdateRoleOverrideConfigV3)
 

@@ -54,7 +54,7 @@ def delete_secret_v1(
     config_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete an environment secret (DeleteSecretV1)
 
@@ -111,7 +111,7 @@ async def delete_secret_v1_async(
     config_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete an environment secret (DeleteSecretV1)
 
@@ -170,7 +170,7 @@ def delete_variable_v1(
     config_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete an environment variable (DeleteVariableV1)
 
@@ -227,7 +227,7 @@ async def delete_variable_v1_async(
     config_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete an environment variable (DeleteVariableV1)
 
@@ -287,7 +287,7 @@ def get_list_of_secrets_v1(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of environment secrets (GetListOfSecretsV1)
 
@@ -353,7 +353,7 @@ async def get_list_of_secrets_v1_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of environment secrets (GetListOfSecretsV1)
 
@@ -421,7 +421,7 @@ def get_list_of_variables_v1(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of environment variables (GetListOfVariablesV1)
 
@@ -487,7 +487,7 @@ async def get_list_of_variables_v1_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of environment variables (GetListOfVariablesV1)
 
@@ -554,7 +554,7 @@ def save_secret_v1(
     body: GeneratedSaveConfigurationV1Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Save an environment secret (SaveSecretV1)
 
@@ -617,7 +617,7 @@ async def save_secret_v1_async(
     body: GeneratedSaveConfigurationV1Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Save an environment secret (SaveSecretV1)
 
@@ -682,7 +682,7 @@ def save_variable_v1(
     body: GeneratedSaveConfigurationV1Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Save an environment variable (SaveVariableV1)
 
@@ -745,7 +745,7 @@ async def save_variable_v1_async(
     body: GeneratedSaveConfigurationV1Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Save an environment variable (SaveVariableV1)
 
@@ -811,7 +811,7 @@ def update_secret_v1(
     config_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update an environment secret (UpdateSecretV1)
 
@@ -876,7 +876,7 @@ async def update_secret_v1_async(
     config_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update an environment secret (UpdateSecretV1)
 
@@ -943,7 +943,7 @@ def update_variable_v1(
     config_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update an environment variable (UpdateVariableV1)
 
@@ -1008,7 +1008,7 @@ async def update_variable_v1_async(
     config_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update an environment variable (UpdateVariableV1)
 

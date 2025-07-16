@@ -40,7 +40,7 @@ def platform_authenticate_samlv3_handler(
     code: Optional[str] = None,
     error: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """SAML platform Authentication API (platformAuthenticateSAMLV3Handler)
 
@@ -93,7 +93,7 @@ async def platform_authenticate_samlv3_handler_async(
     code: Optional[str] = None,
     error: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """SAML platform Authentication API (platformAuthenticateSAMLV3Handler)
 

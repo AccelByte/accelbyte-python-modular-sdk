@@ -73,7 +73,7 @@ def create_new_group_public_v1(
     body: ModelsPublicCreateNewGroupRequestV1,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create new group (createNewGroupPublicV1)
 
@@ -142,7 +142,7 @@ async def create_new_group_public_v1_async(
     body: ModelsPublicCreateNewGroupRequestV1,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create new group (createNewGroupPublicV1)
 
@@ -213,7 +213,7 @@ def create_new_group_public_v2(
     body: ModelsPublicCreateNewGroupRequestV1,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create new group (createNewGroupPublicV2)
 
@@ -282,7 +282,7 @@ async def create_new_group_public_v2_async(
     body: ModelsPublicCreateNewGroupRequestV1,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create new group (createNewGroupPublicV2)
 
@@ -353,7 +353,7 @@ def delete_group_admin_v1(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete existing group (deleteGroupAdminV1)
 
@@ -407,7 +407,7 @@ async def delete_group_admin_v1_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete existing group (deleteGroupAdminV1)
 
@@ -464,7 +464,7 @@ def delete_group_predefined_rule_public_v1(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete group predefined rule (deleteGroupPredefinedRulePublicV1)
 
@@ -526,7 +526,7 @@ async def delete_group_predefined_rule_public_v1_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete group predefined rule (deleteGroupPredefinedRulePublicV1)
 
@@ -590,7 +590,7 @@ def delete_group_predefined_rule_public_v2(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete group predefined rule (deleteGroupPredefinedRulePublicV2)
 
@@ -652,7 +652,7 @@ async def delete_group_predefined_rule_public_v2_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete group predefined rule (deleteGroupPredefinedRulePublicV2)
 
@@ -715,7 +715,7 @@ def delete_group_public_v1(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete existing group (deleteGroupPublicV1)
 
@@ -773,7 +773,7 @@ async def delete_group_public_v1_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete existing group (deleteGroupPublicV1)
 
@@ -833,7 +833,7 @@ def delete_group_public_v2(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete existing group (deleteGroupPublicV2)
 
@@ -891,7 +891,7 @@ async def delete_group_public_v2_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete existing group (deleteGroupPublicV2)
 
@@ -955,7 +955,7 @@ def get_group_list_admin_v1(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of groups (getGroupListAdminV1)
 
@@ -1023,7 +1023,7 @@ async def get_group_list_admin_v1_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of groups (getGroupListAdminV1)
 
@@ -1092,7 +1092,7 @@ def get_group_list_public_v1(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of groups (getGroupListPublicV1)
 
@@ -1158,7 +1158,7 @@ async def get_group_list_public_v1_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of groups (getGroupListPublicV1)
 
@@ -1223,7 +1223,7 @@ def get_list_group_by_i_ds_admin_v2(
     body: ModelsGetGroupListRequestV2,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of groups by group Ids (getListGroupByIDsAdminV2)
 
@@ -1277,7 +1277,7 @@ async def get_list_group_by_i_ds_admin_v2_async(
     body: ModelsGetGroupListRequestV2,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of groups by group Ids (getListGroupByIDsAdminV2)
 
@@ -1333,7 +1333,7 @@ def get_list_group_by_i_ds_v2(
     body: ModelsGetGroupListRequestV2,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of groups by group Ids (getListGroupByIDsV2)
 
@@ -1387,7 +1387,7 @@ async def get_list_group_by_i_ds_v2_async(
     body: ModelsGetGroupListRequestV2,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get list of groups by group Ids (getListGroupByIDsV2)
 
@@ -1443,7 +1443,7 @@ def get_single_group_admin_v1(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get single group (getSingleGroupAdminV1)
 
@@ -1497,7 +1497,7 @@ async def get_single_group_admin_v1_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get single group (getSingleGroupAdminV1)
 
@@ -1553,7 +1553,7 @@ def get_single_group_public_v1(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get single group (getSingleGroupPublicV1)
 
@@ -1609,7 +1609,7 @@ async def get_single_group_public_v1_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get single group (getSingleGroupPublicV1)
 
@@ -1668,7 +1668,7 @@ def update_group_custom_attributes_public_v1(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update group custom attributes (updateGroupCustomAttributesPublicV1)
 
@@ -1730,7 +1730,7 @@ async def update_group_custom_attributes_public_v1_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update group custom attributes (updateGroupCustomAttributesPublicV1)
 
@@ -1794,7 +1794,7 @@ def update_group_custom_attributes_public_v2(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update group custom attributes (updateGroupCustomAttributesPublicV2)
 
@@ -1856,7 +1856,7 @@ async def update_group_custom_attributes_public_v2_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update group custom attributes (updateGroupCustomAttributesPublicV2)
 
@@ -1920,7 +1920,7 @@ def update_group_custom_rule_public_v1(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update group custom rule (updateGroupCustomRulePublicV1)
 
@@ -1980,7 +1980,7 @@ async def update_group_custom_rule_public_v1_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update group custom rule (updateGroupCustomRulePublicV1)
 
@@ -2042,7 +2042,7 @@ def update_group_custom_rule_public_v2(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update group custom rule (updateGroupCustomRulePublicV2)
 
@@ -2102,7 +2102,7 @@ async def update_group_custom_rule_public_v2_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update group custom rule (updateGroupCustomRulePublicV2)
 
@@ -2165,7 +2165,7 @@ def update_group_predefined_rule_public_v1(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update predefined group rule (updateGroupPredefinedRulePublicV1)
 
@@ -2233,7 +2233,7 @@ async def update_group_predefined_rule_public_v1_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update predefined group rule (updateGroupPredefinedRulePublicV1)
 
@@ -2303,7 +2303,7 @@ def update_group_predefined_rule_public_v2(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update predefined group rule (updateGroupPredefinedRulePublicV2)
 
@@ -2371,7 +2371,7 @@ async def update_group_predefined_rule_public_v2_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update predefined group rule (updateGroupPredefinedRulePublicV2)
 
@@ -2440,7 +2440,7 @@ def update_patch_single_group_public_v1(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update existing group (updatePatchSingleGroupPublicV1)
 
@@ -2502,7 +2502,7 @@ async def update_patch_single_group_public_v1_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update existing group (updatePatchSingleGroupPublicV1)
 
@@ -2566,7 +2566,7 @@ def update_patch_single_group_public_v2(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update existing group (updatePatchSingleGroupPublicV2)
 
@@ -2628,7 +2628,7 @@ async def update_patch_single_group_public_v2_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update existing group (updatePatchSingleGroupPublicV2)
 
@@ -2692,7 +2692,7 @@ def update_put_single_group_public_v2(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update existing group (updatePutSingleGroupPublicV2)
 
@@ -2754,7 +2754,7 @@ async def update_put_single_group_public_v2_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update existing group (updatePutSingleGroupPublicV2)
 
@@ -2818,7 +2818,7 @@ def update_single_group_v1(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update existing group (updateSingleGroupV1)
 
@@ -2880,7 +2880,7 @@ async def update_single_group_v1_async(
     group_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update existing group (updateSingleGroupV1)
 

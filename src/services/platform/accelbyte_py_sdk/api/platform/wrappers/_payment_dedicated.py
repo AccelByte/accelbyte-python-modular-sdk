@@ -50,7 +50,7 @@ def create_payment_order_by_dedicated(
     body: ExternalPaymentOrderCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create payment order by dedicated server (createPaymentOrderByDedicated)
 
@@ -262,7 +262,7 @@ async def create_payment_order_by_dedicated_async(
     body: ExternalPaymentOrderCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create payment order by dedicated server (createPaymentOrderByDedicated)
 
@@ -477,7 +477,7 @@ def refund_payment_order_by_dedicated(
     payment_order_no: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Refund payment order by dedicated server (refundPaymentOrderByDedicated)
 
@@ -664,7 +664,7 @@ async def refund_payment_order_by_dedicated_async(
     payment_order_no: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Refund payment order by dedicated server (refundPaymentOrderByDedicated)
 
@@ -853,7 +853,7 @@ def sync_payment_orders(
     start: str,
     next_evaluated_key: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync payment orders (syncPaymentOrders)
 
@@ -897,7 +897,7 @@ async def sync_payment_orders_async(
     start: str,
     next_evaluated_key: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync payment orders (syncPaymentOrders)
 

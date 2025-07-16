@@ -239,7 +239,7 @@ def consume_user_entitlement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Consume user entitlement (consumeUserEntitlement)
 
@@ -298,7 +298,7 @@ async def consume_user_entitlement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Consume user entitlement (consumeUserEntitlement)
 
@@ -358,7 +358,7 @@ def disable_user_entitlement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable user entitlement (disableUserEntitlement)
 
@@ -412,7 +412,7 @@ async def disable_user_entitlement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable user entitlement (disableUserEntitlement)
 
@@ -466,7 +466,7 @@ async def disable_user_entitlement_async(
 def enable_entitlement_origin_feature(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable entitlement origin feature (enableEntitlementOriginFeature)
 
@@ -507,7 +507,7 @@ def enable_entitlement_origin_feature(
 async def enable_entitlement_origin_feature_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable entitlement origin feature (enableEntitlementOriginFeature)
 
@@ -552,7 +552,7 @@ def enable_user_entitlement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable user entitlement (enableUserEntitlement)
 
@@ -605,7 +605,7 @@ async def enable_user_entitlement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable user entitlement (enableUserEntitlement)
 
@@ -663,7 +663,7 @@ def exists_any_user_active_entitlement(
     skus: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Exists any user active entitlement (existsAnyUserActiveEntitlement)
 
@@ -721,7 +721,7 @@ async def exists_any_user_active_entitlement_async(
     skus: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Exists any user active entitlement (existsAnyUserActiveEntitlement)
 
@@ -779,7 +779,7 @@ def exists_any_user_active_entitlement_by_item_ids(
     platform: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Exists any user active entitlement (existsAnyUserActiveEntitlementByItemIds)
 
@@ -829,7 +829,7 @@ async def exists_any_user_active_entitlement_by_item_ids_async(
     platform: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Exists any user active entitlement (existsAnyUserActiveEntitlementByItemIds)
 
@@ -879,7 +879,7 @@ def get_entitlement(
     entitlement_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get entitlement (getEntitlement)
 
@@ -927,7 +927,7 @@ async def get_entitlement_async(
     entitlement_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get entitlement (getEntitlement)
 
@@ -977,7 +977,7 @@ def get_entitlement_config_info(
     without_cache: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get entitlement config info (getEntitlementConfigInfo)
 
@@ -1022,7 +1022,7 @@ async def get_entitlement_config_info_async(
     without_cache: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get entitlement config info (getEntitlementConfigInfo)
 
@@ -1069,7 +1069,7 @@ def get_platform_entitlement_config(
     platform: Union[str, GetPlatformEntitlementConfigPlatformEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get platform entitlement config list (getPlatformEntitlementConfig)
 
@@ -1114,7 +1114,7 @@ async def get_platform_entitlement_config_async(
     platform: Union[str, GetPlatformEntitlementConfigPlatformEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get platform entitlement config list (getPlatformEntitlementConfig)
 
@@ -1163,7 +1163,7 @@ def get_user_active_entitlements_by_item_ids(
     platform: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlements by itemIds (getUserActiveEntitlementsByItemIds)
 
@@ -1213,7 +1213,7 @@ async def get_user_active_entitlements_by_item_ids_async(
     platform: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlements by itemIds (getUserActiveEntitlementsByItemIds)
 
@@ -1265,7 +1265,7 @@ def get_user_app_entitlement_by_app_id(
     active_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user app entitlement by appId (getUserAppEntitlementByAppId)
 
@@ -1317,7 +1317,7 @@ async def get_user_app_entitlement_by_app_id_async(
     active_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user app entitlement by appId (getUserAppEntitlementByAppId)
 
@@ -1370,7 +1370,7 @@ def get_user_app_entitlement_ownership_by_app_id(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user app entitlement ownership by appId (getUserAppEntitlementOwnershipByAppId)
 
@@ -1416,7 +1416,7 @@ async def get_user_app_entitlement_ownership_by_app_id_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user app entitlement ownership by appId (getUserAppEntitlementOwnershipByAppId)
 
@@ -1464,7 +1464,7 @@ def get_user_entitlement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement (getUserEntitlement)
 
@@ -1516,7 +1516,7 @@ async def get_user_entitlement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement (getUserEntitlement)
 
@@ -1575,7 +1575,7 @@ def get_user_entitlement_by_item_id(
     platform: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement by itemId (getUserEntitlementByItemId)
 
@@ -1637,7 +1637,7 @@ async def get_user_entitlement_by_item_id_async(
     platform: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement by itemId (getUserEntitlementByItemId)
 
@@ -1701,7 +1701,7 @@ def get_user_entitlement_by_sku(
     platform: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement by sku (getUserEntitlementBySku)
 
@@ -1763,7 +1763,7 @@ async def get_user_entitlement_by_sku_async(
     platform: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement by sku (getUserEntitlementBySku)
 
@@ -1822,7 +1822,7 @@ def get_user_entitlement_histories(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement history (getUserEntitlementHistories)
 
@@ -1872,7 +1872,7 @@ async def get_user_entitlement_histories_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement history (getUserEntitlementHistories)
 
@@ -1928,7 +1928,7 @@ def get_user_entitlement_ownership_by_item_id(
     platform: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement ownership by itemId (getUserEntitlementOwnershipByItemId)
 
@@ -1984,7 +1984,7 @@ async def get_user_entitlement_ownership_by_item_id_async(
     platform: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement ownership by itemId (getUserEntitlementOwnershipByItemId)
 
@@ -2039,7 +2039,7 @@ def get_user_entitlement_ownership_by_item_ids(
     platform: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement ownership by itemIds (getUserEntitlementOwnershipByItemIds)
 
@@ -2089,7 +2089,7 @@ async def get_user_entitlement_ownership_by_item_ids_async(
     platform: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement ownership by itemIds (getUserEntitlementOwnershipByItemIds)
 
@@ -2144,7 +2144,7 @@ def get_user_entitlement_ownership_by_sku(
     platform: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement ownership by sku (getUserEntitlementOwnershipBySku)
 
@@ -2200,7 +2200,7 @@ async def get_user_entitlement_ownership_by_sku_async(
     platform: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement ownership by sku (getUserEntitlementOwnershipBySku)
 
@@ -2254,7 +2254,7 @@ def get_user_entitlements_by_ids(
     ids: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlements by ids. (getUserEntitlementsByIds)
 
@@ -2304,7 +2304,7 @@ async def get_user_entitlements_by_ids_async(
     ids: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlements by ids. (getUserEntitlementsByIds)
 
@@ -2355,7 +2355,7 @@ def grant_entitlements(
     body: BulkEntitlementGrantRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Grant entitlements to different users (grantEntitlements)
 
@@ -2414,7 +2414,7 @@ async def grant_entitlements_async(
     body: BulkEntitlementGrantRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Grant entitlements to different users (grantEntitlements)
 
@@ -2476,7 +2476,7 @@ def grant_user_entitlement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Grant user entitlement (grantUserEntitlement)
 
@@ -2543,7 +2543,7 @@ async def grant_user_entitlement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Grant user entitlement (grantUserEntitlement)
 
@@ -2613,7 +2613,7 @@ def pre_check_revoke_user_entitlement_by_use_count(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check if specified count of user entitlement can be revoked (preCheckRevokeUserEntitlementByUseCount)
 
@@ -2668,7 +2668,7 @@ async def pre_check_revoke_user_entitlement_by_use_count_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check if specified count of user entitlement can be revoked (preCheckRevokeUserEntitlementByUseCount)
 
@@ -2725,7 +2725,7 @@ def public_consume_user_entitlement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Consume user entitlement (publicConsumeUserEntitlement)
 
@@ -2784,7 +2784,7 @@ async def public_consume_user_entitlement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Consume user entitlement (publicConsumeUserEntitlement)
 
@@ -2845,7 +2845,7 @@ def public_exists_any_my_active_entitlement(
     skus: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Exists any my active entitlement (publicExistsAnyMyActiveEntitlement)
 
@@ -2895,7 +2895,7 @@ async def public_exists_any_my_active_entitlement_async(
     skus: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Exists any my active entitlement (publicExistsAnyMyActiveEntitlement)
 
@@ -2948,7 +2948,7 @@ def public_exists_any_user_active_entitlement(
     skus: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Exists any user active entitlement (publicExistsAnyUserActiveEntitlement)
 
@@ -3002,7 +3002,7 @@ async def public_exists_any_user_active_entitlement_async(
     skus: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Exists any user active entitlement (publicExistsAnyUserActiveEntitlement)
 
@@ -3057,7 +3057,7 @@ def public_get_entitlement_ownership_token(
     skus: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Gets an entitlement ownership token (publicGetEntitlementOwnershipToken)
 
@@ -3181,7 +3181,7 @@ async def public_get_entitlement_ownership_token_async(
     skus: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Gets an entitlement ownership token (publicGetEntitlementOwnershipToken)
 
@@ -3305,7 +3305,7 @@ def public_get_my_app_entitlement_ownership_by_app_id(
     app_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get my app entitlement ownership by appId (publicGetMyAppEntitlementOwnershipByAppId)
 
@@ -3352,7 +3352,7 @@ async def public_get_my_app_entitlement_ownership_by_app_id_async(
     app_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get my app entitlement ownership by appId (publicGetMyAppEntitlementOwnershipByAppId)
 
@@ -3404,7 +3404,7 @@ def public_get_my_entitlement_ownership_by_item_id(
     ] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get my entitlement ownership by itemId (publicGetMyEntitlementOwnershipByItemId)
 
@@ -3458,7 +3458,7 @@ async def public_get_my_entitlement_ownership_by_item_id_async(
     ] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get my entitlement ownership by itemId (publicGetMyEntitlementOwnershipByItemId)
 
@@ -3514,7 +3514,7 @@ def public_get_my_entitlement_ownership_by_sku(
     ] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get my entitlement ownership by sku (publicGetMyEntitlementOwnershipBySku)
 
@@ -3568,7 +3568,7 @@ async def public_get_my_entitlement_ownership_by_sku_async(
     ] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get my entitlement ownership by sku (publicGetMyEntitlementOwnershipBySku)
 
@@ -3622,7 +3622,7 @@ def public_get_user_app_entitlement_by_app_id(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user app entitlement by appId (publicGetUserAppEntitlementByAppId)
 
@@ -3670,7 +3670,7 @@ async def public_get_user_app_entitlement_by_app_id_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user app entitlement by appId (publicGetUserAppEntitlementByAppId)
 
@@ -3720,7 +3720,7 @@ def public_get_user_app_entitlement_ownership_by_app_id(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user app entitlement ownership by appId (publicGetUserAppEntitlementOwnershipByAppId)
 
@@ -3766,7 +3766,7 @@ async def public_get_user_app_entitlement_ownership_by_app_id_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user app entitlement ownership by appId (publicGetUserAppEntitlementOwnershipByAppId)
 
@@ -3814,7 +3814,7 @@ def public_get_user_entitlement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement (publicGetUserEntitlement)
 
@@ -3866,7 +3866,7 @@ async def public_get_user_entitlement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement (publicGetUserEntitlement)
 
@@ -3924,7 +3924,7 @@ def public_get_user_entitlement_by_item_id(
     ] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement by itemId (publicGetUserEntitlementByItemId)
 
@@ -3979,7 +3979,7 @@ async def public_get_user_entitlement_by_item_id_async(
     ] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement by itemId (publicGetUserEntitlementByItemId)
 
@@ -4036,7 +4036,7 @@ def public_get_user_entitlement_by_sku(
     ] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement by sku (publicGetUserEntitlementBySku)
 
@@ -4091,7 +4091,7 @@ async def public_get_user_entitlement_by_sku_async(
     ] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement by sku (publicGetUserEntitlementBySku)
 
@@ -4147,7 +4147,7 @@ def public_get_user_entitlement_ownership_by_item_id(
     ] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement ownership by itemId (publicGetUserEntitlementOwnershipByItemId)
 
@@ -4199,7 +4199,7 @@ async def public_get_user_entitlement_ownership_by_item_id_async(
     ] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement ownership by itemId (publicGetUserEntitlementOwnershipByItemId)
 
@@ -4250,7 +4250,7 @@ def public_get_user_entitlement_ownership_by_item_ids(
     ids: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement ownership by itemIds (publicGetUserEntitlementOwnershipByItemIds)
 
@@ -4296,7 +4296,7 @@ async def public_get_user_entitlement_ownership_by_item_ids_async(
     ids: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement ownership by itemIds (publicGetUserEntitlementOwnershipByItemIds)
 
@@ -4347,7 +4347,7 @@ def public_get_user_entitlement_ownership_by_sku(
     ] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement ownership by sku (publicGetUserEntitlementOwnershipBySku)
 
@@ -4399,7 +4399,7 @@ async def public_get_user_entitlement_ownership_by_sku_async(
     ] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlement ownership by sku (publicGetUserEntitlementOwnershipBySku)
 
@@ -4451,7 +4451,7 @@ def public_get_user_entitlements_by_ids(
     ids: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlements by ids. (publicGetUserEntitlementsByIds)
 
@@ -4505,7 +4505,7 @@ async def public_get_user_entitlements_by_ids_async(
     ids: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlements by ids. (publicGetUserEntitlementsByIds)
 
@@ -4568,7 +4568,7 @@ def public_query_user_entitlements(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user entitlements (publicQueryUserEntitlements)
 
@@ -4644,7 +4644,7 @@ async def public_query_user_entitlements_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user entitlements (publicQueryUserEntitlements)
 
@@ -4716,7 +4716,7 @@ def public_query_user_entitlements_by_app_type(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query app entitlements by appType (publicQueryUserEntitlementsByAppType)
 
@@ -4774,7 +4774,7 @@ async def public_query_user_entitlements_by_app_type_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query app entitlements by appType (publicQueryUserEntitlementsByAppType)
 
@@ -4833,7 +4833,7 @@ def public_sell_user_entitlement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sell user entitlement (publicSellUserEntitlement)
 
@@ -4888,7 +4888,7 @@ async def public_sell_user_entitlement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sell user entitlement (publicSellUserEntitlement)
 
@@ -4945,7 +4945,7 @@ def public_split_user_entitlement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Split user entitlement (publicSplitUserEntitlement)
 
@@ -5000,7 +5000,7 @@ async def public_split_user_entitlement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Split user entitlement (publicSplitUserEntitlement)
 
@@ -5057,7 +5057,7 @@ def public_transfer_user_entitlement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Transfer user entitlement (publicTransferUserEntitlement)
 
@@ -5112,7 +5112,7 @@ async def public_transfer_user_entitlement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Transfer user entitlement (publicTransferUserEntitlement)
 
@@ -5174,7 +5174,7 @@ def public_user_entitlement_history(
     start_date: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlements histories. (publicUserEntitlementHistory)
 
@@ -5242,7 +5242,7 @@ async def public_user_entitlement_history_async(
     start_date: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user entitlements histories. (publicUserEntitlementHistory)
 
@@ -5308,7 +5308,7 @@ def query_entitlements(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query entitlements by Item Ids (queryEntitlements)
 
@@ -5366,7 +5366,7 @@ async def query_entitlements_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query entitlements by Item Ids (queryEntitlements)
 
@@ -5433,7 +5433,7 @@ def query_entitlements_1(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query entitlements (queryEntitlements_1)
 
@@ -5513,7 +5513,7 @@ async def query_entitlements_1_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query entitlements (queryEntitlements_1)
 
@@ -5599,7 +5599,7 @@ def query_user_entitlements(
     origin: Optional[Union[str, QueryUserEntitlementsOriginEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user entitlements (queryUserEntitlements)
 
@@ -5695,7 +5695,7 @@ async def query_user_entitlements_async(
     origin: Optional[Union[str, QueryUserEntitlementsOriginEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user entitlements (queryUserEntitlements)
 
@@ -5783,7 +5783,7 @@ def query_user_entitlements_by_app_type(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query app entitlements by appType (queryUserEntitlementsByAppType)
 
@@ -5845,7 +5845,7 @@ async def query_user_entitlements_by_app_type_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query app entitlements by appType (queryUserEntitlementsByAppType)
 
@@ -5905,7 +5905,7 @@ def revoke_all_entitlements(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke all entitlements of a user (This API is for testing purpose only) (revokeAllEntitlements)
 
@@ -5950,7 +5950,7 @@ async def revoke_all_entitlements_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke all entitlements of a user (This API is for testing purpose only) (revokeAllEntitlements)
 
@@ -5997,7 +5997,7 @@ def revoke_entitlements(
     body: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke entitlements by Ids (revokeEntitlements)
 
@@ -6044,7 +6044,7 @@ async def revoke_entitlements_async(
     body: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke entitlements by Ids (revokeEntitlements)
 
@@ -6096,7 +6096,7 @@ def revoke_use_count(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke specified use count of user entitlement (revokeUseCount)
 
@@ -6152,7 +6152,7 @@ async def revoke_use_count_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke specified use count of user entitlement (revokeUseCount)
 
@@ -6209,7 +6209,7 @@ def revoke_user_entitlement(
     body: Optional[EntitlementRevokeRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke user entitlement (revokeUserEntitlement)
 
@@ -6264,7 +6264,7 @@ async def revoke_user_entitlement_async(
     body: Optional[EntitlementRevokeRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke user entitlement (revokeUserEntitlement)
 
@@ -6321,7 +6321,7 @@ def revoke_user_entitlement_by_use_count(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke specified count of user entitlement. (revokeUserEntitlementByUseCount)
 
@@ -6376,7 +6376,7 @@ async def revoke_user_entitlement_by_use_count_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke specified count of user entitlement. (revokeUserEntitlementByUseCount)
 
@@ -6432,7 +6432,7 @@ def revoke_user_entitlements(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke user's entitlements by ids (revokeUserEntitlements)
 
@@ -6481,7 +6481,7 @@ async def revoke_user_entitlements_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke user's entitlements by ids (revokeUserEntitlements)
 
@@ -6533,7 +6533,7 @@ def sell_user_entitlement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sell user entitlement (sellUserEntitlement)
 
@@ -6588,7 +6588,7 @@ async def sell_user_entitlement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sell user entitlement (sellUserEntitlement)
 
@@ -6644,7 +6644,7 @@ def update_platform_entitlement_config(
     platform: Union[str, UpdatePlatformEntitlementConfigPlatformEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update platform entitlement config (updatePlatformEntitlementConfig)
 
@@ -6695,7 +6695,7 @@ async def update_platform_entitlement_config_async(
     platform: Union[str, UpdatePlatformEntitlementConfigPlatformEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update platform entitlement config (updatePlatformEntitlementConfig)
 
@@ -6749,7 +6749,7 @@ def update_user_entitlement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update user entitlement (updateUserEntitlement)
 
@@ -6808,7 +6808,7 @@ async def update_user_entitlement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update user entitlement (updateUserEntitlement)
 

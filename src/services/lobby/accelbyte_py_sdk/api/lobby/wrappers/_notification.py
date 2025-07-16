@@ -40,6 +40,7 @@ from ..models import ModelGetAllNotificationTemplateSlugResp
 from ..models import ModelGetAllNotificationTopicsResponse
 from ..models import ModelLocalization
 from ..models import ModelNotificationResponse
+from ..models import ModelNotificationsResponse
 from ..models import ModelNotificationTemplateResponse
 from ..models import ModelNotificationTopicResponse
 from ..models import ModelNotificationTopicResponseV1
@@ -62,6 +63,7 @@ from ..operations.notification import FreeFormNotificationByUserID
 from ..operations.notification import GetAllNotificationTemplatesV1Admin
 from ..operations.notification import GetAllNotificationTopicsV1Admin
 from ..operations.notification import GetMyNotifications
+from ..operations.notification import GetMyOfflineNotifications
 from ..operations.notification import GetNotificationTopicV1Admin
 from ..operations.notification import GetSingleTemplateLocalizationV1Admin
 from ..operations.notification import GetTemplateSlugLocalizationsTemplateV1Admin
@@ -86,7 +88,7 @@ def create_notification_template_v1_admin(
     body: ModelCreateTemplateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create new notification template (createNotificationTemplateV1Admin)
 
@@ -144,7 +146,7 @@ async def create_notification_template_v1_admin_async(
     body: ModelCreateTemplateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create new notification template (createNotificationTemplateV1Admin)
 
@@ -204,7 +206,7 @@ def create_notification_topic_v1_admin(
     body: ModelCreateTopicRequestV1,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create new notification topic (createNotificationTopicV1Admin)
 
@@ -257,7 +259,7 @@ async def create_notification_topic_v1_admin_async(
     body: ModelCreateTopicRequestV1,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create new notification topic (createNotificationTopicV1Admin)
 
@@ -312,7 +314,7 @@ def create_topic(
     body: ModelCreateTopicRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create new notification topic (createTopic)
 
@@ -365,7 +367,7 @@ async def create_topic_async(
     body: ModelCreateTopicRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create new notification topic (createTopic)
 
@@ -420,7 +422,7 @@ def delete_notification_template_slug_v1_admin(
     template_slug: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete template slug in notification template (deleteNotificationTemplateSlugV1Admin)
 
@@ -472,7 +474,7 @@ async def delete_notification_template_slug_v1_admin_async(
     template_slug: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete template slug in notification template (deleteNotificationTemplateSlugV1Admin)
 
@@ -526,7 +528,7 @@ def delete_notification_topic_v1_admin(
     topic_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete topic information by topic name (deleteNotificationTopicV1Admin)
 
@@ -581,7 +583,7 @@ async def delete_notification_topic_v1_admin_async(
     topic_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete topic information by topic name (deleteNotificationTopicV1Admin)
 
@@ -639,7 +641,7 @@ def delete_template_localization_v1_admin(
     template_slug: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete template localization (deleteTemplateLocalizationV1Admin)
 
@@ -695,7 +697,7 @@ async def delete_template_localization_v1_admin_async(
     template_slug: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete template localization (deleteTemplateLocalizationV1Admin)
 
@@ -752,7 +754,7 @@ def delete_topic_by_topic_name(
     topic: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete topic information by topic name (deleteTopicByTopicName)
 
@@ -805,7 +807,7 @@ async def delete_topic_by_topic_name_async(
     topic: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete topic information by topic name (deleteTopicByTopicName)
 
@@ -861,7 +863,7 @@ def free_form_notification_by_user_id(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send freeform notification to a user (freeFormNotificationByUserID)
 
@@ -915,7 +917,7 @@ async def free_form_notification_by_user_id_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send freeform notification to a user (freeFormNotificationByUserID)
 
@@ -969,7 +971,7 @@ async def free_form_notification_by_user_id_async(
 def get_all_notification_templates_v1_admin(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get all notification template in a namespace (getAllNotificationTemplatesV1Admin)
 
@@ -1019,7 +1021,7 @@ def get_all_notification_templates_v1_admin(
 async def get_all_notification_templates_v1_admin_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get all notification template in a namespace (getAllNotificationTemplatesV1Admin)
 
@@ -1074,7 +1076,7 @@ def get_all_notification_topics_v1_admin(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get topic by namespace (getAllNotificationTopicsV1Admin)
 
@@ -1134,7 +1136,7 @@ async def get_all_notification_topics_v1_admin_async(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get topic by namespace (getAllNotificationTopicsV1Admin)
 
@@ -1197,7 +1199,7 @@ def get_my_notifications(
     start_time: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of notifications (getMyNotifications)
 
@@ -1263,7 +1265,7 @@ async def get_my_notifications_async(
     start_time: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of notifications (getMyNotifications)
 
@@ -1323,12 +1325,142 @@ async def get_my_notifications_async(
     )
 
 
+@same_doc_as(GetMyOfflineNotifications)
+def get_my_offline_notifications(
+    end_time: Optional[int] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    start_time: Optional[int] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs,
+):
+    """Get list of offline notifications (getMyOfflineNotifications)
+
+    Get list of user's offline notifications in a namespace.
+
+    Properties:
+        url: /notification/namespaces/{namespace}/notification/offline/me
+
+        method: GET
+
+        tags: ["notification", "public"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        end_time: (endTime) OPTIONAL int in query
+
+        limit: (limit) OPTIONAL int in query
+
+        offset: (offset) OPTIONAL int in query
+
+        start_time: (startTime) OPTIONAL int in query
+
+    Responses:
+        200: OK - ModelNotificationsResponse (OK)
+
+        400: Bad Request - RestapiErrorResponseV1 (Bad Request)
+
+        401: Unauthorized - RestapiErrorResponseV1 (Unauthorized)
+
+        403: Forbidden - RestapiErrorResponseV1 (Forbidden)
+
+        404: Not Found - RestapiErrorResponseV1 (Not Found)
+
+        500: Internal Server Error - RestapiErrorResponseV1 (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
+        if error:
+            return None, error
+    request = GetMyOfflineNotifications.create(
+        end_time=end_time,
+        limit=limit,
+        offset=offset,
+        start_time=start_time,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(GetMyOfflineNotifications)
+async def get_my_offline_notifications_async(
+    end_time: Optional[int] = None,
+    limit: Optional[int] = None,
+    offset: Optional[int] = None,
+    start_time: Optional[int] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs,
+):
+    """Get list of offline notifications (getMyOfflineNotifications)
+
+    Get list of user's offline notifications in a namespace.
+
+    Properties:
+        url: /notification/namespaces/{namespace}/notification/offline/me
+
+        method: GET
+
+        tags: ["notification", "public"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        namespace: (namespace) REQUIRED str in path
+
+        end_time: (endTime) OPTIONAL int in query
+
+        limit: (limit) OPTIONAL int in query
+
+        offset: (offset) OPTIONAL int in query
+
+        start_time: (startTime) OPTIONAL int in query
+
+    Responses:
+        200: OK - ModelNotificationsResponse (OK)
+
+        400: Bad Request - RestapiErrorResponseV1 (Bad Request)
+
+        401: Unauthorized - RestapiErrorResponseV1 (Unauthorized)
+
+        403: Forbidden - RestapiErrorResponseV1 (Forbidden)
+
+        404: Not Found - RestapiErrorResponseV1 (Not Found)
+
+        500: Internal Server Error - RestapiErrorResponseV1 (Internal Server Error)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
+        if error:
+            return None, error
+    request = GetMyOfflineNotifications.create(
+        end_time=end_time,
+        limit=limit,
+        offset=offset,
+        start_time=start_time,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
 @same_doc_as(GetNotificationTopicV1Admin)
 def get_notification_topic_v1_admin(
     topic_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get topic information by topic name (getNotificationTopicV1Admin)
 
@@ -1380,7 +1512,7 @@ async def get_notification_topic_v1_admin_async(
     topic_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get topic information by topic name (getNotificationTopicV1Admin)
 
@@ -1435,7 +1567,7 @@ def get_single_template_localization_v1_admin(
     template_slug: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get a template localization (getSingleTemplateLocalizationV1Admin)
 
@@ -1491,7 +1623,7 @@ async def get_single_template_localization_v1_admin_async(
     template_slug: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get a template localization (getSingleTemplateLocalizationV1Admin)
 
@@ -1551,7 +1683,7 @@ def get_template_slug_localizations_template_v1_admin(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get all notification template localization in a slug (getTemplateSlugLocalizationsTemplateV1Admin)
 
@@ -1615,7 +1747,7 @@ async def get_template_slug_localizations_template_v1_admin_async(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get all notification template localization in a slug (getTemplateSlugLocalizationsTemplateV1Admin)
 
@@ -1680,7 +1812,7 @@ def get_topic_by_namespace(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get topic by namespace (getTopicByNamespace)
 
@@ -1738,7 +1870,7 @@ async def get_topic_by_namespace_async(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get topic by namespace (getTopicByNamespace)
 
@@ -1796,7 +1928,7 @@ def get_topic_by_topic_name(
     topic: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get topic information by topic name (getTopicByTopicName)
 
@@ -1846,7 +1978,7 @@ async def get_topic_by_topic_name_async(
     topic: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get topic information by topic name (getTopicByTopicName)
 
@@ -1899,7 +2031,7 @@ def notification_with_template_by_user_id(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send notification to a user with template (notificationWithTemplateByUserID)
 
@@ -1958,7 +2090,7 @@ async def notification_with_template_by_user_id_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send notification to a user with template (notificationWithTemplateByUserID)
 
@@ -2019,7 +2151,7 @@ def publish_template_localization_v1_admin(
     template_slug: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """publish template localization draft (publishTemplateLocalizationV1Admin)
 
@@ -2075,7 +2207,7 @@ async def publish_template_localization_v1_admin_async(
     template_slug: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """publish template localization draft (publishTemplateLocalizationV1Admin)
 
@@ -2132,7 +2264,7 @@ def send_multiple_users_freeform_notification_v1_admin(
     body: ModelBulkUsersFreeFormNotificationRequestV1,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send freeform notification to multiple users (sendMultipleUsersFreeformNotificationV1Admin)
 
@@ -2181,7 +2313,7 @@ async def send_multiple_users_freeform_notification_v1_admin_async(
     body: ModelBulkUsersFreeFormNotificationRequestV1,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send freeform notification to multiple users (sendMultipleUsersFreeformNotificationV1Admin)
 
@@ -2234,7 +2366,7 @@ def send_party_freeform_notification_v1_admin(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send freeform notification to a party (sendPartyFreeformNotificationV1Admin)
 
@@ -2289,7 +2421,7 @@ async def send_party_freeform_notification_v1_admin_async(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send freeform notification to a party (sendPartyFreeformNotificationV1Admin)
 
@@ -2346,7 +2478,7 @@ def send_party_templated_notification_v1_admin(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send templated notification to a party (sendPartyTemplatedNotificationV1Admin)
 
@@ -2406,7 +2538,7 @@ async def send_party_templated_notification_v1_admin_async(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send templated notification to a party (sendPartyTemplatedNotificationV1Admin)
 
@@ -2467,7 +2599,7 @@ def send_specific_user_freeform_notification_v1_admin(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send freeform notification to a user (sendSpecificUserFreeformNotificationV1Admin)
 
@@ -2522,7 +2654,7 @@ async def send_specific_user_freeform_notification_v1_admin_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send freeform notification to a user (sendSpecificUserFreeformNotificationV1Admin)
 
@@ -2579,7 +2711,7 @@ def send_specific_user_templated_notification_v1_admin(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send templated notification to specific user (sendSpecificUserTemplatedNotificationV1Admin)
 
@@ -2640,7 +2772,7 @@ async def send_specific_user_templated_notification_v1_admin_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send templated notification to specific user (sendSpecificUserTemplatedNotificationV1Admin)
 
@@ -2702,7 +2834,7 @@ def send_users_freeform_notification_v1_admin(
     body: ModelFreeFormNotificationRequestV1,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send freeform notification to connected users (sendUsersFreeformNotificationV1Admin)
 
@@ -2754,7 +2886,7 @@ async def send_users_freeform_notification_v1_admin_async(
     body: ModelFreeFormNotificationRequestV1,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send freeform notification to connected users (sendUsersFreeformNotificationV1Admin)
 
@@ -2808,7 +2940,7 @@ def send_users_templated_notification_v1_admin(
     body: ModelNotificationWithTemplateRequestV1,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send notification to connected users with template (sendUsersTemplatedNotificationV1Admin)
 
@@ -2865,7 +2997,7 @@ async def send_users_templated_notification_v1_admin_async(
     body: ModelNotificationWithTemplateRequestV1,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send notification to connected users with template (sendUsersTemplatedNotificationV1Admin)
 
@@ -2925,7 +3057,7 @@ def update_notification_topic_v1_admin(
     topic_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update topic information by topic name (updateNotificationTopicV1Admin)
 
@@ -2986,7 +3118,7 @@ async def update_notification_topic_v1_admin_async(
     topic_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update topic information by topic name (updateNotificationTopicV1Admin)
 
@@ -3050,7 +3182,7 @@ def update_template_localization_v1_admin(
     template_slug: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update template localization (updateTemplateLocalizationV1Admin)
 
@@ -3112,7 +3244,7 @@ async def update_template_localization_v1_admin_async(
     template_slug: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update template localization (updateTemplateLocalizationV1Admin)
 
@@ -3175,7 +3307,7 @@ def update_topic_by_topic_name(
     topic: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update topic information by topic name (updateTopicByTopicName)
 
@@ -3232,7 +3364,7 @@ async def update_topic_by_topic_name_async(
     topic: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update topic information by topic name (updateTopicByTopicName)
 

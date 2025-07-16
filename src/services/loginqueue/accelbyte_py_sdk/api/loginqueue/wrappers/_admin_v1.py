@@ -43,7 +43,7 @@ from ..operations.admin_v1 import AdminUpdateConfiguration
 def admin_get_configuration(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Configuration (adminGetConfiguration)
 
@@ -88,7 +88,7 @@ def admin_get_configuration(
 async def admin_get_configuration_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Configuration (adminGetConfiguration)
 
@@ -135,7 +135,7 @@ async def admin_get_configuration_async(
 def admin_get_status(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get login queue status (adminGetStatus)
 
@@ -179,7 +179,7 @@ def admin_get_status(
 async def admin_get_status_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get login queue status (adminGetStatus)
 
@@ -226,7 +226,7 @@ def admin_update_configuration(
     body: ApimodelsConfigurationRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Configuration (adminUpdateConfiguration)
 
@@ -295,7 +295,7 @@ async def admin_update_configuration_async(
     body: ApimodelsConfigurationRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Configuration (adminUpdateConfiguration)
 

@@ -52,7 +52,7 @@ def admin_cancel_user_account_deletion_request(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel user's account deletion request (AdminCancelUserAccountDeletionRequest)
 
@@ -105,7 +105,7 @@ async def admin_cancel_user_account_deletion_request_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel user's account deletion request (AdminCancelUserAccountDeletionRequest)
 
@@ -164,7 +164,7 @@ def admin_get_list_deletion_data_request(
     request_date: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve all user's account deletion requests in specified date (AdminGetListDeletionDataRequest)
 
@@ -233,7 +233,7 @@ async def admin_get_list_deletion_data_request_async(
     request_date: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve all user's account deletion requests in specified date (AdminGetListDeletionDataRequest)
 
@@ -300,7 +300,7 @@ def admin_get_user_account_deletion_request(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve specific user's account deletion request (AdminGetUserAccountDeletionRequest)
 
@@ -351,7 +351,7 @@ async def admin_get_user_account_deletion_request_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve specific user's account deletion request (AdminGetUserAccountDeletionRequest)
 
@@ -404,7 +404,7 @@ def admin_submit_user_account_deletion_request(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Submit user's account deletion request (AdminSubmitUserAccountDeletionRequest)
 
@@ -457,7 +457,7 @@ async def admin_submit_user_account_deletion_request_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Submit user's account deletion request (AdminSubmitUserAccountDeletionRequest)
 
@@ -588,7 +588,7 @@ def public_cancel_user_account_deletion_request(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel user's account deletion request (PublicCancelUserAccountDeletionRequest)
 
@@ -640,7 +640,7 @@ async def public_cancel_user_account_deletion_request_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel user's account deletion request (PublicCancelUserAccountDeletionRequest)
 
@@ -766,7 +766,7 @@ def public_get_user_account_deletion_status(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve specific user's account deletion status (PublicGetUserAccountDeletionStatus)
 
@@ -816,7 +816,7 @@ async def public_get_user_account_deletion_status_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve specific user's account deletion status (PublicGetUserAccountDeletionStatus)
 
@@ -868,7 +868,7 @@ def public_submit_my_account_deletion_request(
     platform_id: str,
     platform_token: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Submit my account deletion requests. (PublicSubmitMyAccountDeletionRequest)
 
@@ -923,7 +923,7 @@ async def public_submit_my_account_deletion_request_async(
     platform_id: str,
     platform_token: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Submit my account deletion requests. (PublicSubmitMyAccountDeletionRequest)
 
@@ -982,7 +982,7 @@ def public_submit_user_account_deletion_request(
     language_tag: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Submit user's account deletion request (PublicSubmitUserAccountDeletionRequest)
 
@@ -1049,7 +1049,7 @@ async def public_submit_user_account_deletion_request_async(
     language_tag: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Submit user's account deletion request (PublicSubmitUserAccountDeletionRequest)
 

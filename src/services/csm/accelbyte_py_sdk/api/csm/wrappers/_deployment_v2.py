@@ -48,7 +48,7 @@ def create_deployment_v2(
     body: ApimodelCreateDeploymentV2Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Creates Deployment (CreateDeploymentV2)
 
@@ -114,7 +114,7 @@ async def create_deployment_v2_async(
     body: ApimodelCreateDeploymentV2Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Creates Deployment (CreateDeploymentV2)
 
@@ -181,7 +181,7 @@ def delete_deployment_v2(
     deployment_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Deployment by Deployment ID (DeleteDeploymentV2)
 
@@ -237,7 +237,7 @@ async def delete_deployment_v2_async(
     deployment_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Deployment by Deployment ID (DeleteDeploymentV2)
 
@@ -295,7 +295,7 @@ def get_deployment_v2(
     deployment_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Deployment by Deployment ID (GetDeploymentV2)
 
@@ -351,7 +351,7 @@ async def get_deployment_v2_async(
     deployment_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Deployment by Deployment ID (GetDeploymentV2)
 
@@ -411,7 +411,7 @@ def get_list_of_deployment_v2(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Fetches the List of Deployments (GetListOfDeploymentV2)
 
@@ -483,7 +483,7 @@ async def get_list_of_deployment_v2_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Fetches the List of Deployments (GetListOfDeploymentV2)
 

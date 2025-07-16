@@ -61,7 +61,7 @@ def create_app_v1(
     body: GeneratedCreateAppV1Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Creates new App for AB-Extend Customers (CreateAppV1)
 
@@ -70,9 +70,9 @@ def create_app_v1(
     Creates new App for AB-Extend Customers
 
     Available scenario:
+    - scenario 2: `service-extension`
     - scenario 3: `event-handler`
     - scenario 1: `function-override`
-    - scenario 2: `service-extension`
 
     Default: `function-override`
 
@@ -129,7 +129,7 @@ async def create_app_v1_async(
     body: GeneratedCreateAppV1Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Creates new App for AB-Extend Customers (CreateAppV1)
 
@@ -138,9 +138,9 @@ async def create_app_v1_async(
     Creates new App for AB-Extend Customers
 
     Available scenario:
+    - scenario 2: `service-extension`
     - scenario 3: `event-handler`
     - scenario 1: `function-override`
-    - scenario 2: `service-extension`
 
     Default: `function-override`
 
@@ -199,7 +199,7 @@ def delete_app_v1(
     forced: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete App by Åpp Name (DeleteAppV1)
 
@@ -263,7 +263,7 @@ async def delete_app_v1_async(
     forced: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete App by Åpp Name (DeleteAppV1)
 
@@ -330,7 +330,7 @@ def get_app_list_v1(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Gets the List of Apps for AB-Extend Customer (GetAppListV1)
 
@@ -339,9 +339,9 @@ def get_app_list_v1(
     Gets the List of Apps for AB-Extend Customer
 
     Available scenario:
+    - scenario 3: `event-handler`
     - scenario 1: `function-override`
     - scenario 2: `service-extension`
-    - scenario 3: `event-handler`
 
     Properties:
         url: /csm/v1/admin/namespaces/{namespace}/apps
@@ -398,7 +398,7 @@ async def get_app_list_v1_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Gets the List of Apps for AB-Extend Customer (GetAppListV1)
 
@@ -407,9 +407,9 @@ async def get_app_list_v1_async(
     Gets the List of Apps for AB-Extend Customer
 
     Available scenario:
+    - scenario 3: `event-handler`
     - scenario 1: `function-override`
     - scenario 2: `service-extension`
-    - scenario 3: `event-handler`
 
     Properties:
         url: /csm/v1/admin/namespaces/{namespace}/apps
@@ -465,7 +465,7 @@ def get_app_release_v1(
     app: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Gets the Latest Release Version info of this App (GetAppReleaseV1)
 
@@ -517,7 +517,7 @@ async def get_app_release_v1_async(
     app: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Gets the Latest Release Version info of this App (GetAppReleaseV1)
 
@@ -572,7 +572,7 @@ def get_app_v1(
     app: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Gets the App By Name (GetAppV1)
 
@@ -625,7 +625,7 @@ async def get_app_v1_async(
     app: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Gets the App By Name (GetAppV1)
 
@@ -681,7 +681,7 @@ def start_app_v1(
     body: GeneratedStartAppV1Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Starts the Application (StartAppV1)
 
@@ -740,7 +740,7 @@ async def start_app_v1_async(
     body: GeneratedStartAppV1Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Starts the Application (StartAppV1)
 
@@ -801,7 +801,7 @@ def stop_app_v1(
     body: GeneratedStopAppV1Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Stops the Application (StopAppV1)
 
@@ -860,7 +860,7 @@ async def stop_app_v1_async(
     body: GeneratedStopAppV1Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Stops the Application (StopAppV1)
 
@@ -921,7 +921,7 @@ def update_app_v1(
     body: GeneratedUpdateAppV1Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update App Partially (UpdateAppV1)
 
@@ -980,7 +980,7 @@ async def update_app_v1_async(
     body: GeneratedUpdateAppV1Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update App Partially (UpdateAppV1)
 

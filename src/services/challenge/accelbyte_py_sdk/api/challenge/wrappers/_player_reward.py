@@ -62,7 +62,7 @@ def admin_claim_user_rewards(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Claim rewards of a single user (adminClaimUserRewards)
 
@@ -118,7 +118,7 @@ async def admin_claim_user_rewards_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Claim rewards of a single user (adminClaimUserRewards)
 
@@ -177,7 +177,7 @@ def admin_claim_user_rewards_by_goal_code(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Claim rewards of a single user by goal code (adminClaimUserRewardsByGoalCode)
 
@@ -239,7 +239,7 @@ async def admin_claim_user_rewards_by_goal_code_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Claim rewards of a single user by goal code (adminClaimUserRewardsByGoalCode)
 
@@ -301,7 +301,7 @@ def admin_claim_users_rewards(
     body: List[ModelClaimUsersRewardsRequest],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Claim  rewards of multiple users (adminClaimUsersRewards)
 
@@ -353,7 +353,7 @@ async def admin_claim_users_rewards_async(
     body: List[ModelClaimUsersRewardsRequest],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Claim  rewards of multiple users (adminClaimUsersRewards)
 
@@ -413,7 +413,7 @@ def admin_get_user_rewards(
     status: Optional[Union[str, AdminGetUserRewardsStatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List User's Rewards (adminGetUserRewards)
 
@@ -485,7 +485,7 @@ async def admin_get_user_rewards_async(
     status: Optional[Union[str, AdminGetUserRewardsStatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List User's Rewards (adminGetUserRewards)
 
@@ -553,7 +553,7 @@ def public_claim_user_rewards(
     body: ModelClaimUserRewardsReq,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Claim User's Rewards (publicClaimUserRewards)
 
@@ -605,7 +605,7 @@ async def public_claim_user_rewards_async(
     body: ModelClaimUserRewardsReq,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Claim User's Rewards (publicClaimUserRewards)
 
@@ -660,7 +660,7 @@ def public_claim_user_rewards_by_goal_code(
     challenge_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Claim User's Rewards by Goal Code (publicClaimUserRewardsByGoalCode)
 
@@ -718,7 +718,7 @@ async def public_claim_user_rewards_by_goal_code_async(
     challenge_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Claim User's Rewards by Goal Code (publicClaimUserRewardsByGoalCode)
 
@@ -782,7 +782,7 @@ def public_get_user_rewards(
     status: Optional[Union[str, PublicGetUserRewardsStatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List User's Rewards (publicGetUserRewards)
 
@@ -850,7 +850,7 @@ async def public_get_user_rewards_async(
     status: Optional[Union[str, PublicGetUserRewardsStatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List User's Rewards (publicGetUserRewards)
 

@@ -56,7 +56,7 @@ def bulk_get_users_ranking_public_v3(
     previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get users ranking (bulkGetUsersRankingPublicV3)
 
@@ -116,7 +116,7 @@ async def bulk_get_users_ranking_public_v3_async(
     previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get users ranking (bulkGetUsersRankingPublicV3)
 
@@ -177,7 +177,7 @@ def delete_all_user_ranking_by_cycle_id_admin_v3(
     leaderboard_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete all user ranking by cycle id (deleteAllUserRankingByCycleIdAdminV3)
 
@@ -236,7 +236,7 @@ async def delete_all_user_ranking_by_cycle_id_admin_v3_async(
     leaderboard_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete all user ranking by cycle id (deleteAllUserRankingByCycleIdAdminV3)
 
@@ -297,7 +297,7 @@ def delete_user_ranking_admin_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete user ranking (deleteUserRankingAdminV3)
 
@@ -355,7 +355,7 @@ async def delete_user_ranking_admin_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete user ranking (deleteUserRankingAdminV3)
 
@@ -416,7 +416,7 @@ def delete_user_ranking_by_cycle_id_admin_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete user ranking by cycle id (deleteUserRankingByCycleIdAdminV3)
 
@@ -478,7 +478,7 @@ async def delete_user_ranking_by_cycle_id_admin_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete user ranking by cycle id (deleteUserRankingByCycleIdAdminV3)
 
@@ -540,7 +540,7 @@ def delete_user_ranking_by_leaderboard_code_admin_v3(
     leaderboard_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete all user ranking by leaderboard code (deleteUserRankingByLeaderboardCodeAdminV3)
 
@@ -595,7 +595,7 @@ async def delete_user_ranking_by_leaderboard_code_admin_v3_async(
     leaderboard_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete all user ranking by leaderboard code (deleteUserRankingByLeaderboardCodeAdminV3)
 
@@ -653,7 +653,7 @@ def delete_user_rankings_admin_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete user ranking across leaderboard(s) (deleteUserRankingsAdminV3)
 
@@ -707,7 +707,7 @@ async def delete_user_rankings_admin_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete user ranking across leaderboard(s) (deleteUserRankingsAdminV3)
 
@@ -764,7 +764,7 @@ def get_all_time_leaderboard_ranking_admin_v3(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get all time leaderboard ranking data (GetAllTimeLeaderboardRankingAdminV3)
 
@@ -824,7 +824,7 @@ async def get_all_time_leaderboard_ranking_admin_v3_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get all time leaderboard ranking data (GetAllTimeLeaderboardRankingAdminV3)
 
@@ -886,7 +886,7 @@ def get_all_time_leaderboard_ranking_public_v3(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get all time leaderboard ranking data (GetAllTimeLeaderboardRankingPublicV3)
 
@@ -942,7 +942,7 @@ async def get_all_time_leaderboard_ranking_public_v3_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get all time leaderboard ranking data (GetAllTimeLeaderboardRankingPublicV3)
 
@@ -1002,7 +1002,7 @@ def get_current_cycle_leaderboard_ranking_admin_v3(
     previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get cycle leaderboard ranking data (GetCurrentCycleLeaderboardRankingAdminV3)
 
@@ -1070,7 +1070,7 @@ async def get_current_cycle_leaderboard_ranking_admin_v3_async(
     previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get cycle leaderboard ranking data (GetCurrentCycleLeaderboardRankingAdminV3)
 
@@ -1140,7 +1140,7 @@ def get_current_cycle_leaderboard_ranking_public_v3(
     previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get cycle leaderboard ranking data (GetCurrentCycleLeaderboardRankingPublicV3)
 
@@ -1204,7 +1204,7 @@ async def get_current_cycle_leaderboard_ranking_public_v3_async(
     previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get cycle leaderboard ranking data (GetCurrentCycleLeaderboardRankingPublicV3)
 
@@ -1268,7 +1268,7 @@ def get_user_ranking_admin_v3(
     previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user ranking (getUserRankingAdminV3)
 
@@ -1328,7 +1328,7 @@ async def get_user_ranking_admin_v3_async(
     previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user ranking (getUserRankingAdminV3)
 
@@ -1390,7 +1390,7 @@ def get_user_ranking_public_v3(
     previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user ranking (getUserRankingPublicV3)
 
@@ -1450,7 +1450,7 @@ async def get_user_ranking_public_v3_async(
     previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user ranking (getUserRankingPublicV3)
 

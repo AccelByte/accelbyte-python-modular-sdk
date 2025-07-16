@@ -46,7 +46,7 @@ def anonymize_campaign(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Anonymize campaign (anonymizeCampaign)
 
@@ -88,7 +88,7 @@ async def anonymize_campaign_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Anonymize campaign (anonymizeCampaign)
 
@@ -132,7 +132,7 @@ def anonymize_entitlement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """anonymize entitlement (anonymizeEntitlement)
 
@@ -174,7 +174,7 @@ async def anonymize_entitlement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """anonymize entitlement (anonymizeEntitlement)
 
@@ -218,7 +218,7 @@ def anonymize_fulfillment(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """anonymize fulfillment (anonymizeFulfillment)
 
@@ -260,7 +260,7 @@ async def anonymize_fulfillment_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """anonymize fulfillment (anonymizeFulfillment)
 
@@ -304,7 +304,7 @@ def anonymize_integration(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """anonymize integrations (anonymizeIntegration)
 
@@ -346,7 +346,7 @@ async def anonymize_integration_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """anonymize integrations (anonymizeIntegration)
 
@@ -390,7 +390,7 @@ def anonymize_order(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """anonymize order (anonymizeOrder)
 
@@ -432,7 +432,7 @@ async def anonymize_order_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """anonymize order (anonymizeOrder)
 
@@ -476,7 +476,7 @@ def anonymize_payment(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """anonymize payment (anonymizePayment)
 
@@ -518,7 +518,7 @@ async def anonymize_payment_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """anonymize payment (anonymizePayment)
 
@@ -562,7 +562,7 @@ def anonymize_revocation(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """anonymize revocation (anonymizeRevocation)
 
@@ -604,7 +604,7 @@ async def anonymize_revocation_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """anonymize revocation (anonymizeRevocation)
 
@@ -648,7 +648,7 @@ def anonymize_subscription(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """anonymize subscription (anonymizeSubscription)
 
@@ -690,7 +690,7 @@ async def anonymize_subscription_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """anonymize subscription (anonymizeSubscription)
 
@@ -734,7 +734,7 @@ def anonymize_wallet(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """anonymize wallet (anonymizeWallet)
 
@@ -776,7 +776,7 @@ async def anonymize_wallet_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """anonymize wallet (anonymizeWallet)
 

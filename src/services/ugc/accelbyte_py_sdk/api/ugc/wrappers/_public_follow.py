@@ -48,7 +48,7 @@ def get_followed_content(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get contents from followed creators (GetFollowedContent)
 
@@ -100,7 +100,7 @@ async def get_followed_content_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get contents from followed creators (GetFollowedContent)
 
@@ -154,7 +154,7 @@ def get_followed_users(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get followed creators (GetFollowedUsers)
 
@@ -206,7 +206,7 @@ async def get_followed_users_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get followed creators (GetFollowedUsers)
 
@@ -261,7 +261,7 @@ def get_public_followers(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of followers (GetPublicFollowers)
 
@@ -316,7 +316,7 @@ async def get_public_followers_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of followers (GetPublicFollowers)
 
@@ -373,7 +373,7 @@ def get_public_following(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of following (GetPublicFollowing)
 
@@ -428,7 +428,7 @@ async def get_public_following_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of following (GetPublicFollowing)
 
@@ -484,7 +484,7 @@ def update_user_follow_status(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update follow/unfollow status to a user (UpdateUserFollowStatus)
 
@@ -536,7 +536,7 @@ async def update_user_follow_status_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update follow/unfollow status to a user (UpdateUserFollowStatus)
 

@@ -51,7 +51,7 @@ def create_view(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a view (createView)
 
@@ -122,7 +122,7 @@ async def create_view_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a view (createView)
 
@@ -195,7 +195,7 @@ def delete_view(
     view_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a view (deleteView)
 
@@ -245,7 +245,7 @@ async def delete_view_async(
     view_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a view (deleteView)
 
@@ -297,7 +297,7 @@ def get_view(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a view (getView)
 
@@ -348,7 +348,7 @@ async def get_view_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a view (getView)
 
@@ -400,7 +400,7 @@ def list_views(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List all views (listViews)
 
@@ -449,7 +449,7 @@ async def list_views_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List all views (listViews)
 
@@ -502,7 +502,7 @@ def public_list_views(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get all views (publicListViews)
 
@@ -557,7 +557,7 @@ async def public_list_views_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get all views (publicListViews)
 
@@ -614,7 +614,7 @@ def update_view(
     view_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a view (updateView)
 
@@ -689,7 +689,7 @@ async def update_view_async(
     view_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a view (updateView)
 

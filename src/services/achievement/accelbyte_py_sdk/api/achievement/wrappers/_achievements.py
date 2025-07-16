@@ -62,7 +62,7 @@ def admin_create_new_achievement(
     body: ModelsAchievementRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create new achievement (AdminCreateNewAchievement)
 
@@ -127,7 +127,7 @@ async def admin_create_new_achievement_async(
     body: ModelsAchievementRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create new achievement (AdminCreateNewAchievement)
 
@@ -194,7 +194,7 @@ def admin_delete_achievement(
     achievement_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete an achievement (AdminDeleteAchievement)
 
@@ -245,7 +245,7 @@ async def admin_delete_achievement_async(
     achievement_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete an achievement (AdminDeleteAchievement)
 
@@ -298,7 +298,7 @@ def admin_get_achievement(
     achievement_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get an achievement (AdminGetAchievement)
 
@@ -349,7 +349,7 @@ async def admin_get_achievement_async(
     achievement_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get an achievement (AdminGetAchievement)
 
@@ -406,7 +406,7 @@ def admin_list_achievements(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query achievements (AdminListAchievements)
 
@@ -473,7 +473,7 @@ async def admin_list_achievements_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query achievements (AdminListAchievements)
 
@@ -539,7 +539,7 @@ def admin_update_achievement(
     body: ModelsAchievementUpdateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update an achievement (AdminUpdateAchievement)
 
@@ -594,7 +594,7 @@ async def admin_update_achievement_async(
     body: ModelsAchievementUpdateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update an achievement (AdminUpdateAchievement)
 
@@ -651,7 +651,7 @@ def admin_update_achievement_list_order(
     body: ModelsAchievementOrderUpdateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update achievements listOrder (AdminUpdateAchievementListOrder)
 
@@ -706,7 +706,7 @@ async def admin_update_achievement_list_order_async(
     body: ModelsAchievementOrderUpdateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update achievements listOrder (AdminUpdateAchievementListOrder)
 
@@ -762,7 +762,7 @@ def export_achievements(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Export achievements configuration into a json file (ExportAchievements)
 
@@ -814,7 +814,7 @@ async def export_achievements_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Export achievements configuration into a json file (ExportAchievements)
 
@@ -869,7 +869,7 @@ def import_achievements(
     strategy: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Import achievements from file (ImportAchievements)
 
@@ -930,7 +930,7 @@ async def import_achievements_async(
     strategy: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Import achievements from file (ImportAchievements)
 
@@ -993,7 +993,7 @@ def public_get_achievement(
     language: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get an achievement (PublicGetAchievement)
 
@@ -1048,7 +1048,7 @@ async def public_get_achievement_async(
     language: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get an achievement (PublicGetAchievement)
 
@@ -1109,7 +1109,7 @@ def public_list_achievements(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query achievements (PublicListAchievements)
 
@@ -1180,7 +1180,7 @@ async def public_list_achievements_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query achievements (PublicListAchievements)
 

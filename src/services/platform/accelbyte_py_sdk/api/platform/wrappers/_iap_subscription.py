@@ -88,7 +88,7 @@ def get_subscription_history(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User Subscription Transaction Update History (getSubscriptionHistory)
 
@@ -142,7 +142,7 @@ async def get_subscription_history_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User Subscription Transaction Update History (getSubscriptionHistory)
 
@@ -199,7 +199,7 @@ def get_third_party_platform_subscription_ownership_by_group_id(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user third party platform subscription ownership by subscription group id (getThirdPartyPlatformSubscriptionOwnershipByGroupId)
 
@@ -251,7 +251,7 @@ async def get_third_party_platform_subscription_ownership_by_group_id_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user third party platform subscription ownership by subscription group id (getThirdPartyPlatformSubscriptionOwnershipByGroupId)
 
@@ -305,7 +305,7 @@ def get_third_party_platform_subscription_ownership_by_product_id(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user third party platform subscription ownership by subscription product id (getThirdPartyPlatformSubscriptionOwnershipByProductId)
 
@@ -357,7 +357,7 @@ async def get_third_party_platform_subscription_ownership_by_product_id_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user third party platform subscription ownership by subscription product id (getThirdPartyPlatformSubscriptionOwnershipByProductId)
 
@@ -408,7 +408,7 @@ def get_third_party_subscription_details(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get user subscription transaction details. (getThirdPartySubscriptionDetails)
 
@@ -457,7 +457,7 @@ async def get_third_party_subscription_details_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get user subscription transaction details. (getThirdPartySubscriptionDetails)
 
@@ -508,7 +508,7 @@ def get_third_party_user_subscription_details(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get user subscription details. (getThirdPartyUserSubscriptionDetails)
 
@@ -557,7 +557,7 @@ async def get_third_party_user_subscription_details_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get user subscription details. (getThirdPartyUserSubscriptionDetails)
 
@@ -613,7 +613,7 @@ def public_query_user_third_party_subscription(
     product_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user subscription. (publicQueryUserThirdPartySubscription)
 
@@ -680,7 +680,7 @@ async def public_query_user_third_party_subscription_async(
     product_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user subscription. (publicQueryUserThirdPartySubscription)
 
@@ -749,7 +749,7 @@ def query_third_party_subscription(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query subscriptions. (queryThirdPartySubscription)
 
@@ -816,7 +816,7 @@ async def query_third_party_subscription_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query subscriptions. (queryThirdPartySubscription)
 
@@ -885,7 +885,7 @@ def query_user_third_party_subscription(
     product_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user subscription. (queryUserThirdPartySubscription)
 
@@ -952,7 +952,7 @@ async def query_user_third_party_subscription_async(
     product_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user subscription. (queryUserThirdPartySubscription)
 
@@ -1023,7 +1023,7 @@ def query_user_third_party_subscription_transactions(
     product_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin query user subscription transactions. (queryUserThirdPartySubscriptionTransactions)
 
@@ -1092,7 +1092,7 @@ async def query_user_third_party_subscription_transactions_async(
     product_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin query user subscription transactions. (queryUserThirdPartySubscriptionTransactions)
 
@@ -1156,7 +1156,7 @@ def sync_subscription(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync Subscription Status (syncSubscription)
 
@@ -1206,7 +1206,7 @@ async def sync_subscription_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync Subscription Status (syncSubscription)
 
@@ -1258,7 +1258,7 @@ def sync_subscription_transaction(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync Subscription transaction (syncSubscriptionTransaction)
 
@@ -1308,7 +1308,7 @@ async def sync_subscription_transaction_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync Subscription transaction (syncSubscriptionTransaction)
 

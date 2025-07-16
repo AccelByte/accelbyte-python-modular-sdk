@@ -77,7 +77,7 @@ def admin_create_challenge(
     body: ModelCreateChallengeRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create New Challenge (adminCreateChallenge)
 
@@ -152,7 +152,7 @@ async def admin_create_challenge_async(
     body: ModelCreateChallengeRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create New Challenge (adminCreateChallenge)
 
@@ -229,7 +229,7 @@ def admin_delete_challenge(
     challenge_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a Challenge (adminDeleteChallenge)
 
@@ -281,7 +281,7 @@ async def admin_delete_challenge_async(
     challenge_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a Challenge (adminDeleteChallenge)
 
@@ -335,7 +335,7 @@ def admin_delete_tied_challenge(
     challenge_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Tied Challenge (adminDeleteTiedChallenge)
 
@@ -388,7 +388,7 @@ async def admin_delete_tied_challenge_async(
     challenge_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Tied Challenge (adminDeleteTiedChallenge)
 
@@ -445,7 +445,7 @@ def admin_get_active_challenges(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List User's Active Challenges (adminGetActiveChallenges)
 
@@ -502,7 +502,7 @@ async def admin_get_active_challenges_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List User's Active Challenges (adminGetActiveChallenges)
 
@@ -559,7 +559,7 @@ def admin_get_challenge(
     challenge_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a Challenge (adminGetChallenge)
 
@@ -609,7 +609,7 @@ async def admin_get_challenge_async(
     challenge_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a Challenge (adminGetChallenge)
 
@@ -666,7 +666,7 @@ def admin_get_challenges(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List Challenges (adminGetChallenges)
 
@@ -736,7 +736,7 @@ async def admin_get_challenges_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List Challenges (adminGetChallenges)
 
@@ -805,7 +805,7 @@ def admin_get_periods(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Challenge's Periods (adminGetPeriods)
 
@@ -863,7 +863,7 @@ async def admin_get_periods_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Challenge's Periods (adminGetPeriods)
 
@@ -921,7 +921,7 @@ def admin_randomize_challenge(
     challenge_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Randomize Goals of a Challenge (adminRandomizeChallenge)
 
@@ -974,7 +974,7 @@ async def admin_randomize_challenge_async(
     challenge_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Randomize Goals of a Challenge (adminRandomizeChallenge)
 
@@ -1030,7 +1030,7 @@ def admin_update_challenge(
     challenge_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a Challenge (adminUpdateChallenge)
 
@@ -1107,7 +1107,7 @@ async def admin_update_challenge_async(
     challenge_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a Challenge (adminUpdateChallenge)
 
@@ -1186,7 +1186,7 @@ def admin_update_tied_challenge_schedule(
     challenge_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Tied Challenge Schedule (adminUpdateTiedChallengeSchedule)
 
@@ -1247,7 +1247,7 @@ async def admin_update_tied_challenge_schedule_async(
     challenge_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Tied Challenge Schedule (adminUpdateTiedChallengeSchedule)
 

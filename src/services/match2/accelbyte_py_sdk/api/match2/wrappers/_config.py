@@ -117,7 +117,7 @@ async def admin_get_all_config_v1_async(
 def admin_get_config_v1(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get namespace config (adminGetConfigV1)
 
@@ -161,7 +161,7 @@ def admin_get_config_v1(
 async def admin_get_config_v1_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get namespace config (adminGetConfigV1)
 
@@ -266,7 +266,7 @@ def admin_patch_config_v1(
     body: ApiPatchNamespaceConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin patch update namespace config (adminPatchConfigV1)
 
@@ -314,7 +314,7 @@ async def admin_patch_config_v1_async(
     body: ApiPatchNamespaceConfigRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin patch update namespace config (adminPatchConfigV1)
 
@@ -363,7 +363,7 @@ async def admin_patch_config_v1_async(
 def admin_patch_update_log_config(
     body: LogconfigConfiguration,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Patch Update Log Configuration (adminPatchUpdateLogConfig)
 
@@ -397,7 +397,7 @@ def admin_patch_update_log_config(
 async def admin_patch_update_log_config_async(
     body: LogconfigConfiguration,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Patch Update Log Configuration (adminPatchUpdateLogConfig)
 

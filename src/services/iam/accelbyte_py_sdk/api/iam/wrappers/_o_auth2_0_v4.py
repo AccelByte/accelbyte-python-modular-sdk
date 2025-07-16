@@ -63,7 +63,7 @@ def authentication_with_platform_link_v4(
     username: str,
     extend_exp: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Authentication with platform link (AuthenticationWithPlatformLinkV4)
 
@@ -130,7 +130,7 @@ async def authentication_with_platform_link_v4_async(
     username: str,
     extend_exp: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Authentication with platform link (AuthenticationWithPlatformLinkV4)
 
@@ -197,7 +197,7 @@ def generate_token_by_new_headless_account_v4(
     additional_data: Optional[str] = None,
     extend_exp: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create headless account and response token (GenerateTokenByNewHeadlessAccountV4)
 
@@ -249,7 +249,7 @@ async def generate_token_by_new_headless_account_v4_async(
     additional_data: Optional[str] = None,
     extend_exp: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create headless account and response token (GenerateTokenByNewHeadlessAccountV4)
 
@@ -313,7 +313,7 @@ def platform_token_grant_v4(
     service_label: Optional[float] = None,
     skip_set_cookie: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """OAuth2 access token generation specific to platform (PlatformTokenGrantV4)
 
@@ -471,7 +471,7 @@ async def platform_token_grant_v4_async(
     service_label: Optional[float] = None,
     skip_set_cookie: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """OAuth2 access token generation specific to platform (PlatformTokenGrantV4)
 
@@ -620,7 +620,7 @@ def request_target_token_response_v4(
     code: str,
     additional_data: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate target token by code (RequestTargetTokenResponseV4)
 
@@ -662,7 +662,7 @@ async def request_target_token_response_v4_async(
     code: str,
     additional_data: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate target token by code (RequestTargetTokenResponseV4)
 
@@ -712,7 +712,7 @@ def simultaneous_login_v4(
     simultaneous_platform: Optional[str] = None,
     simultaneous_ticket: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Simultaneous login (SimultaneousLoginV4)
 
@@ -803,7 +803,7 @@ async def simultaneous_login_v4_async(
     simultaneous_platform: Optional[str] = None,
     simultaneous_ticket: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Simultaneous login (SimultaneousLoginV4)
 
@@ -908,7 +908,7 @@ def token_grant_v4(
     scope: Optional[str] = None,
     username: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """OAuth2 access token generation endpoint V4 (TokenGrantV4)
 
@@ -1077,7 +1077,7 @@ async def token_grant_v4_async(
     scope: Optional[str] = None,
     username: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """OAuth2 access token generation endpoint V4 (TokenGrantV4)
 
@@ -1232,7 +1232,7 @@ def verify2fa_code_v4(
     mfa_token: str,
     remember_device: bool,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Verify 2FA code (Verify2FACodeV4)
 
@@ -1285,7 +1285,7 @@ async def verify2fa_code_v4_async(
     mfa_token: str,
     remember_device: bool,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Verify 2FA code (Verify2FACodeV4)
 

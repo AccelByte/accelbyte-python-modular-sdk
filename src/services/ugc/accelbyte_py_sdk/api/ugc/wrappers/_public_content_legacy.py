@@ -76,7 +76,7 @@ def create_content_direct(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload content to a channel (CreateContentDirect)
 
@@ -137,7 +137,7 @@ async def create_content_direct_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload content to a channel (CreateContentDirect)
 
@@ -199,7 +199,7 @@ def create_content_s3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload content to S3 bucket (CreateContentS3)
 
@@ -265,7 +265,7 @@ async def create_content_s3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload content to S3 bucket (CreateContentS3)
 
@@ -333,7 +333,7 @@ def delete_content(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete content (DeleteContent)
 
@@ -389,7 +389,7 @@ async def delete_content_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete content (DeleteContent)
 
@@ -447,7 +447,7 @@ def delete_content_screenshot(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete content's screenshot (DeleteContentScreenshot)
 
@@ -507,7 +507,7 @@ async def delete_content_screenshot_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete content's screenshot (DeleteContentScreenshot)
 
@@ -569,7 +569,7 @@ def public_delete_content_by_share_code(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete content by share code (PublicDeleteContentByShareCode)
 
@@ -625,7 +625,7 @@ async def public_delete_content_by_share_code_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete content by share code (PublicDeleteContentByShareCode)
 
@@ -681,7 +681,7 @@ def public_download_content_by_content_id(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user specific content (PublicDownloadContentByContentID)
 
@@ -729,7 +729,7 @@ async def public_download_content_by_content_id_async(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user specific content (PublicDownloadContentByContentID)
 
@@ -779,7 +779,7 @@ def public_download_content_by_share_code(
     share_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get content by sharecode (PublicDownloadContentByShareCode)
 
@@ -827,7 +827,7 @@ async def public_download_content_by_share_code_async(
     share_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get content by sharecode (PublicDownloadContentByShareCode)
 
@@ -877,7 +877,7 @@ def public_download_content_preview(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get content preview (PublicDownloadContentPreview)
 
@@ -927,7 +927,7 @@ async def public_download_content_preview_async(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get content preview (PublicDownloadContentPreview)
 
@@ -979,7 +979,7 @@ def public_get_content_bulk(
     body: ModelsPublicGetContentBulkRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get contents by content Ids  (PublicGetContentBulk)
 
@@ -1028,7 +1028,7 @@ async def public_get_content_bulk_async(
     body: ModelsPublicGetContentBulkRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get contents by content Ids  (PublicGetContentBulk)
 
@@ -1079,7 +1079,7 @@ def public_get_content_bulk_by_share_codes(
     body: ModelsGetContentBulkByShareCodesRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get content by content sharecodes (PublicGetContentBulkByShareCodes)
 
@@ -1130,7 +1130,7 @@ async def public_get_content_bulk_by_share_codes_async(
     body: ModelsGetContentBulkByShareCodesRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get content by content sharecodes (PublicGetContentBulkByShareCodes)
 
@@ -1185,7 +1185,7 @@ def public_get_user_content(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's generated contents (PublicGetUserContent)
 
@@ -1241,7 +1241,7 @@ async def public_get_user_content_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's generated contents (PublicGetUserContent)
 
@@ -1308,7 +1308,7 @@ def public_search_content(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Search contents (PublicSearchContent)
 
@@ -1420,7 +1420,7 @@ async def public_search_content_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Search contents (PublicSearchContent)
 
@@ -1526,7 +1526,7 @@ def public_update_content_by_share_code(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update content to S3 bucket by share code (PublicUpdateContentByShareCode)
 
@@ -1605,7 +1605,7 @@ async def public_update_content_by_share_code_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update content to S3 bucket by share code (PublicUpdateContentByShareCode)
 
@@ -1695,7 +1695,7 @@ def search_channel_specific_content(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Search contents specific to a channel (SearchChannelSpecificContent)
 
@@ -1811,7 +1811,7 @@ async def search_channel_specific_content_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Search contents specific to a channel (SearchChannelSpecificContent)
 
@@ -1921,7 +1921,7 @@ def update_content_direct(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update content to a channel (UpdateContentDirect)
 
@@ -1988,7 +1988,7 @@ async def update_content_direct_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update content to a channel (UpdateContentDirect)
 
@@ -2056,7 +2056,7 @@ def update_content_s3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update content to S3 bucket (UpdateContentS3)
 
@@ -2128,7 +2128,7 @@ async def update_content_s3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update content to S3 bucket (UpdateContentS3)
 
@@ -2202,7 +2202,7 @@ def update_content_share_code(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update content sharecode (UpdateContentShareCode)
 
@@ -2274,7 +2274,7 @@ async def update_content_share_code_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update content sharecode (UpdateContentShareCode)
 
@@ -2347,7 +2347,7 @@ def update_screenshots(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update screenshot of content (UpdateScreenshots)
 
@@ -2407,7 +2407,7 @@ async def update_screenshots_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update screenshot of content (UpdateScreenshots)
 
@@ -2469,7 +2469,7 @@ def upload_content_screenshot(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload screenshots for content (UploadContentScreenshot)
 
@@ -2533,7 +2533,7 @@ async def upload_content_screenshot_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload screenshots for content (UploadContentScreenshot)
 

@@ -57,7 +57,7 @@ def get_profile(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns profile for a user (getProfile)
 
@@ -117,7 +117,7 @@ async def get_profile_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns profile for a user (getProfile)
 
@@ -178,7 +178,7 @@ def get_user_profiles(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns all profiles' header for a user (getUserProfiles)
 
@@ -232,7 +232,7 @@ async def get_user_profiles_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns all profiles' header for a user (getUserProfiles)
 
@@ -289,7 +289,7 @@ def public_create_profile(
     body: Optional[GameProfileRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a new profile for user (publicCreateProfile)
 
@@ -352,7 +352,7 @@ async def public_create_profile_async(
     body: Optional[GameProfileRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a new profile for user (publicCreateProfile)
 
@@ -417,7 +417,7 @@ def public_delete_profile(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Deletes game profile (publicDeleteProfile)
 
@@ -475,7 +475,7 @@ async def public_delete_profile_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Deletes game profile (publicDeleteProfile)
 
@@ -535,7 +535,7 @@ def public_get_profile(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns profile for a user (publicGetProfile)
 
@@ -595,7 +595,7 @@ async def public_get_profile_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns profile for a user (publicGetProfile)
 
@@ -658,7 +658,7 @@ def public_get_profile_attribute(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns game profile attribute (publicGetProfileAttribute)
 
@@ -722,7 +722,7 @@ async def public_get_profile_attribute_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns game profile attribute (publicGetProfileAttribute)
 
@@ -786,7 +786,7 @@ def public_get_user_game_profiles(
     user_ids: List[str],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns all profiles for specified users (publicGetUserGameProfiles)
 
@@ -842,7 +842,7 @@ async def public_get_user_game_profiles_async(
     user_ids: List[str],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns all profiles for specified users (publicGetUserGameProfiles)
 
@@ -900,7 +900,7 @@ def public_get_user_profiles(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns all profiles' header for a user (publicGetUserProfiles)
 
@@ -954,7 +954,7 @@ async def public_get_user_profiles_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns all profiles' header for a user (publicGetUserProfiles)
 
@@ -1013,7 +1013,7 @@ def public_update_attribute(
     body: Optional[Attribute] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Updates game profile attribute (publicUpdateAttribute)
 
@@ -1085,7 +1085,7 @@ async def public_update_attribute_async(
     body: Optional[Attribute] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Updates game profile attribute (publicUpdateAttribute)
 
@@ -1158,7 +1158,7 @@ def public_update_profile(
     body: Optional[GameProfileRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Updates user game profile (publicUpdateProfile)
 
@@ -1226,7 +1226,7 @@ async def public_update_profile_async(
     body: Optional[GameProfileRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Updates user game profile (publicUpdateProfile)
 

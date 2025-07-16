@@ -90,7 +90,7 @@ from ..models import (
 def delete_dlc_item_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete a DLC item config (deleteDLCItemConfig)
 
@@ -128,7 +128,7 @@ def delete_dlc_item_config(
 async def delete_dlc_item_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete a DLC item config (deleteDLCItemConfig)
 
@@ -168,7 +168,7 @@ async def delete_dlc_item_config_async(
 def delete_platform_dlc_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete a Platform DLC config (deletePlatformDLCConfig)
 
@@ -206,7 +206,7 @@ def delete_platform_dlc_config(
 async def delete_platform_dlc_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete a Platform DLC config (deletePlatformDLCConfig)
 
@@ -247,7 +247,7 @@ def ge_dlc_durable_reward_short_map(
     dlc_type: Union[str, GeDLCDurableRewardShortMapDlcTypeEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get dlc durable reward simple map (geDLCDurableRewardShortMap)
 
@@ -291,7 +291,7 @@ async def ge_dlc_durable_reward_short_map_async(
     dlc_type: Union[str, GeDLCDurableRewardShortMapDlcTypeEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get dlc durable reward simple map (geDLCDurableRewardShortMap)
 
@@ -336,7 +336,7 @@ async def ge_dlc_durable_reward_short_map_async(
 def get_dlc_item_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get DLC item config (getDLCItemConfig)
 
@@ -376,7 +376,7 @@ def get_dlc_item_config(
 async def get_dlc_item_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get DLC item config (getDLCItemConfig)
 
@@ -419,7 +419,7 @@ def get_dlc_item_config_history(
     dlc_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get DLC item config history (getDLCItemConfigHistory)
 
@@ -463,7 +463,7 @@ async def get_dlc_item_config_history_async(
     dlc_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get DLC item config history (getDLCItemConfigHistory)
 
@@ -508,7 +508,7 @@ async def get_dlc_item_config_history_async(
 def get_platform_dlc_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Platform DLC config (getPlatformDLCConfig)
 
@@ -548,7 +548,7 @@ def get_platform_dlc_config(
 async def get_platform_dlc_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Platform DLC config (getPlatformDLCConfig)
 
@@ -594,7 +594,7 @@ def get_user_dlc(
     type_: Optional[Union[str, GetUserDLCTypeEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user dlc records (getUserDLC)
 
@@ -652,7 +652,7 @@ async def get_user_dlc_async(
     type_: Optional[Union[str, GetUserDLCTypeEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user dlc records (getUserDLC)
 
@@ -710,7 +710,7 @@ def get_user_dlc_by_platform(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user dlc by platform (getUserDLCByPlatform)
 
@@ -759,7 +759,7 @@ async def get_user_dlc_by_platform_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user dlc by platform (getUserDLCByPlatform)
 
@@ -809,7 +809,7 @@ def public_get_my_dlc_content(
     type_: Union[str, PublicGetMyDLCContentTypeEnum],
     include_all_namespaces: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user dlc reward contents (publicGetMyDLCContent)
 
@@ -850,7 +850,7 @@ async def public_get_my_dlc_content_async(
     type_: Union[str, PublicGetMyDLCContentTypeEnum],
     include_all_namespaces: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user dlc reward contents (publicGetMyDLCContent)
 
@@ -894,7 +894,7 @@ def public_sync_psn_dlc_inventory(
     body: Optional[PlayStationDLCSyncRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Synchronize with dlc entitlements in PSN Store. (publicSyncPsnDlcInventory)
 
@@ -945,7 +945,7 @@ async def public_sync_psn_dlc_inventory_async(
     body: Optional[PlayStationDLCSyncRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Synchronize with dlc entitlements in PSN Store. (publicSyncPsnDlcInventory)
 
@@ -998,7 +998,7 @@ def public_sync_psn_dlc_inventory_with_multiple_service_labels(
     body: Optional[PlayStationDLCSyncMultiServiceLabelsRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Synchronize with dlc entitlements in PSN Store with multiple service labels. (publicSyncPsnDlcInventoryWithMultipleServiceLabels)
 
@@ -1049,7 +1049,7 @@ async def public_sync_psn_dlc_inventory_with_multiple_service_labels_async(
     body: Optional[PlayStationDLCSyncMultiServiceLabelsRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Synchronize with dlc entitlements in PSN Store with multiple service labels. (publicSyncPsnDlcInventoryWithMultipleServiceLabels)
 
@@ -1101,7 +1101,7 @@ def restore_dlc_item_config_history(
     id_: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Restore DLC item config history (restoreDLCItemConfigHistory)
 
@@ -1145,7 +1145,7 @@ async def restore_dlc_item_config_history_async(
     id_: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Restore DLC item config history (restoreDLCItemConfigHistory)
 
@@ -1192,7 +1192,7 @@ def sync_epic_game_dlc(
     body: Optional[EpicGamesDLCSyncRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync epic games dlc items (syncEpicGameDLC)
 
@@ -1242,7 +1242,7 @@ async def sync_epic_game_dlc_async(
     body: Optional[EpicGamesDLCSyncRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync epic games dlc items (syncEpicGameDLC)
 
@@ -1293,7 +1293,7 @@ def sync_oculus_dlc(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync oculus dlc. (syncOculusDLC)
 
@@ -1339,7 +1339,7 @@ async def sync_oculus_dlc_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync oculus dlc. (syncOculusDLC)
 
@@ -1388,7 +1388,7 @@ def sync_steam_dlc(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync steam dlc. (syncSteamDLC)
 
@@ -1438,7 +1438,7 @@ async def sync_steam_dlc_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync steam dlc. (syncSteamDLC)
 
@@ -1490,7 +1490,7 @@ def sync_xbox_dlc(
     body: Optional[XblDLCSyncRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync Xbox dlc items. (syncXboxDLC)
 
@@ -1540,7 +1540,7 @@ async def sync_xbox_dlc_async(
     body: Optional[XblDLCSyncRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync Xbox dlc items. (syncXboxDLC)
 
@@ -1591,7 +1591,7 @@ def update_dlc_item_config(
     body: DLCItemConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update DLC item config (updateDLCItemConfig)
 
@@ -1642,7 +1642,7 @@ async def update_dlc_item_config_async(
     body: DLCItemConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update DLC item config (updateDLCItemConfig)
 
@@ -1695,7 +1695,7 @@ def update_platform_dlc_config(
     body: PlatformDLCConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Platform DLC config (updatePlatformDLCConfig)
 
@@ -1758,7 +1758,7 @@ async def update_platform_dlc_config_async(
     body: PlatformDLCConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Platform DLC config (updatePlatformDLCConfig)
 

@@ -84,7 +84,7 @@ def admin_bulk_get_content_by_i_ds_v2(
     body: ModelsAdminGetContentBulkRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get content by content IDs (AdminBulkGetContentByIDsV2)
 
@@ -134,7 +134,7 @@ async def admin_bulk_get_content_by_i_ds_v2_async(
     body: ModelsAdminGetContentBulkRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get content by content IDs (AdminBulkGetContentByIDsV2)
 
@@ -188,7 +188,7 @@ def admin_copy_content(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Copy contents from a channel to another (AdminCopyContent)
 
@@ -248,7 +248,7 @@ async def admin_copy_content_async(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Copy contents from a channel to another (AdminCopyContent)
 
@@ -309,7 +309,7 @@ def admin_create_content_v2(
     channel_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a content (AdminCreateContentV2)
 
@@ -365,7 +365,7 @@ async def admin_create_content_v2_async(
     channel_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a content (AdminCreateContentV2)
 
@@ -424,7 +424,7 @@ def admin_delete_content_by_share_code_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete content by share code (AdminDeleteContentByShareCodeV2)
 
@@ -480,7 +480,7 @@ async def admin_delete_content_by_share_code_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete content by share code (AdminDeleteContentByShareCodeV2)
 
@@ -537,7 +537,7 @@ def admin_delete_content_screenshot_v2(
     screenshot_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete screenshots content (AdminDeleteContentScreenshotV2)
 
@@ -593,7 +593,7 @@ async def admin_delete_content_screenshot_v2_async(
     screenshot_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete screenshots content (AdminDeleteContentScreenshotV2)
 
@@ -651,7 +651,7 @@ def admin_delete_official_content_v2(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete official content (AdminDeleteOfficialContentV2)
 
@@ -703,7 +703,7 @@ async def admin_delete_official_content_v2_async(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete official content (AdminDeleteOfficialContentV2)
 
@@ -758,7 +758,7 @@ def admin_delete_user_content_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete user content (AdminDeleteUserContentV2)
 
@@ -814,7 +814,7 @@ async def admin_delete_user_content_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete user content (AdminDeleteUserContentV2)
 
@@ -872,7 +872,7 @@ def admin_generate_official_content_upload_urlv2(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate official content upload URL (AdminGenerateOfficialContentUploadURLV2)
 
@@ -930,7 +930,7 @@ async def admin_generate_official_content_upload_urlv2_async(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate official content upload URL (AdminGenerateOfficialContentUploadURLV2)
 
@@ -991,7 +991,7 @@ def admin_generate_user_content_upload_urlv2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate user content upload URL (AdminGenerateUserContentUploadURLV2)
 
@@ -1053,7 +1053,7 @@ async def admin_generate_user_content_upload_urlv2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate user content upload URL (AdminGenerateUserContentUploadURLV2)
 
@@ -1114,7 +1114,7 @@ def admin_get_content_bulk_by_share_codes_v2(
     body: ModelsGetContentBulkByShareCodesRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get content by content sharecodes (AdminGetContentBulkByShareCodesV2)
 
@@ -1164,7 +1164,7 @@ async def admin_get_content_bulk_by_share_codes_v2_async(
     body: ModelsGetContentBulkByShareCodesRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get content by content sharecodes (AdminGetContentBulkByShareCodesV2)
 
@@ -1220,7 +1220,7 @@ def admin_get_content_by_channel_idv2(
     sort_by: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List contents specific to a channel (AdminGetContentByChannelIDV2)
 
@@ -1284,7 +1284,7 @@ async def admin_get_content_by_channel_idv2_async(
     sort_by: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List contents specific to a channel (AdminGetContentByChannelIDV2)
 
@@ -1346,7 +1346,7 @@ def admin_get_content_by_content_idv2(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get content by content ID (AdminGetContentByContentIDV2)
 
@@ -1394,7 +1394,7 @@ async def admin_get_content_by_content_idv2_async(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get content by content ID (AdminGetContentByContentIDV2)
 
@@ -1444,7 +1444,7 @@ def admin_get_content_by_share_code_v2(
     share_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get content by sharecode (AdminGetContentByShareCodeV2)
 
@@ -1492,7 +1492,7 @@ async def admin_get_content_by_share_code_v2_async(
     share_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get content by sharecode (AdminGetContentByShareCodeV2)
 
@@ -1545,7 +1545,7 @@ def admin_get_content_by_user_idv2(
     sort_by: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's generated contents (AdminGetContentByUserIDV2)
 
@@ -1605,7 +1605,7 @@ async def admin_get_content_by_user_idv2_async(
     sort_by: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's generated contents (AdminGetContentByUserIDV2)
 
@@ -1671,7 +1671,7 @@ def admin_list_content_v2(
     type_: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List contents (AdminListContentV2)
 
@@ -1763,7 +1763,7 @@ async def admin_list_content_v2_async(
     type_: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List contents (AdminListContentV2)
 
@@ -1853,7 +1853,7 @@ def admin_update_content_by_share_code_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update content to S3 bucket by share code (AdminUpdateContentByShareCodeV2)
 
@@ -1922,7 +1922,7 @@ async def admin_update_content_by_share_code_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update content to S3 bucket by share code (AdminUpdateContentByShareCodeV2)
 
@@ -1992,7 +1992,7 @@ def admin_update_content_hide_status_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Hide/Unhide user's generated contents (AdminUpdateContentHideStatusV2)
 
@@ -2052,7 +2052,7 @@ async def admin_update_content_hide_status_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Hide/Unhide user's generated contents (AdminUpdateContentHideStatusV2)
 
@@ -2114,7 +2114,7 @@ def admin_update_official_content_file_location(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update content file location (AdminUpdateOfficialContentFileLocation)
 
@@ -2174,7 +2174,7 @@ async def admin_update_official_content_file_location_async(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update content file location (AdminUpdateOfficialContentFileLocation)
 
@@ -2236,7 +2236,7 @@ def admin_update_official_content_v2(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update official content (AdminUpdateOfficialContentV2)
 
@@ -2296,7 +2296,7 @@ async def admin_update_official_content_v2_async(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update official content (AdminUpdateOfficialContentV2)
 
@@ -2357,7 +2357,7 @@ def admin_update_screenshots_v2(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update screenshot of content (AdminUpdateScreenshotsV2)
 
@@ -2413,7 +2413,7 @@ async def admin_update_screenshots_v2_async(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update screenshot of content (AdminUpdateScreenshotsV2)
 
@@ -2473,7 +2473,7 @@ def admin_update_user_content_file_location(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update user content file location (AdminUpdateUserContentFileLocation)
 
@@ -2537,7 +2537,7 @@ async def admin_update_user_content_file_location_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update user content file location (AdminUpdateUserContentFileLocation)
 
@@ -2603,7 +2603,7 @@ def admin_update_user_content_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update user content (AdminUpdateUserContentV2)
 
@@ -2667,7 +2667,7 @@ async def admin_update_user_content_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update user content (AdminUpdateUserContentV2)
 
@@ -2731,7 +2731,7 @@ def admin_upload_content_screenshot_v2(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload screenshots for content (AdminUploadContentScreenshotV2)
 
@@ -2790,7 +2790,7 @@ async def admin_upload_content_screenshot_v2_async(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload screenshots for content (AdminUploadContentScreenshotV2)
 
@@ -2850,7 +2850,7 @@ def list_content_versions_v2(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List content's payload versions (ListContentVersionsV2)
 
@@ -2898,7 +2898,7 @@ async def list_content_versions_v2_async(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List content's payload versions (ListContentVersionsV2)
 
@@ -2949,7 +2949,7 @@ def rollback_content_version_v2(
     version_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Rollback content's payload version (RollbackContentVersionV2)
 
@@ -3003,7 +3003,7 @@ async def rollback_content_version_v2_async(
     version_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Rollback content's payload version (RollbackContentVersionV2)
 

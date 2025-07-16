@@ -47,7 +47,7 @@ def admin_join_party_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin join a player into a party (adminJoinPartyV1)
 
@@ -106,7 +106,7 @@ async def admin_join_party_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin join a player into a party (adminJoinPartyV1)
 
@@ -167,7 +167,7 @@ def admin_update_party_attributes_v1(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin update party attributes (adminUpdatePartyAttributesV1)
 
@@ -226,7 +226,7 @@ async def admin_update_party_attributes_v1_async(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin update party attributes (adminUpdatePartyAttributesV1)
 

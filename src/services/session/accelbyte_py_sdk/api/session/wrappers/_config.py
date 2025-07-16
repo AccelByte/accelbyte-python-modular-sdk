@@ -107,7 +107,7 @@ async def admin_get_log_config_async(
 def admin_patch_update_log_config(
     body: LogconfigConfiguration,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Patch Update Log Configuration (adminPatchUpdateLogConfig)
 
@@ -145,7 +145,7 @@ def admin_patch_update_log_config(
 async def admin_patch_update_log_config_async(
     body: LogconfigConfiguration,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Patch Update Log Configuration (adminPatchUpdateLogConfig)
 

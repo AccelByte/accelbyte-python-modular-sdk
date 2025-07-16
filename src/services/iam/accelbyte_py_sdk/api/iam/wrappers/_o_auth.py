@@ -63,7 +63,7 @@ def authorization(
     scope: Optional[str] = None,
     state: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """OAuth2 authorize API (Authorization)
 
@@ -146,7 +146,7 @@ async def authorization_async(
     scope: Optional[str] = None,
     state: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """OAuth2 authorize API (Authorization)
 
@@ -387,7 +387,7 @@ def platform_token_request_handler(
     platform_token: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """OAuth2 access token generation specific to platform (PlatformTokenRequestHandler)
 
@@ -457,7 +457,7 @@ async def platform_token_request_handler_async(
     platform_token: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """OAuth2 access token generation specific to platform (PlatformTokenRequestHandler)
 
@@ -700,7 +700,7 @@ def revoke_user(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revokes user's tokens' (RevokeUser)
 
@@ -750,7 +750,7 @@ async def revoke_user_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revokes user's tokens' (RevokeUser)
 
@@ -809,7 +809,7 @@ def token_grant(
     refresh_token: Optional[str] = None,
     username: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """OAuth2 access token generation endpoint (TokenGrant)
 
@@ -953,7 +953,7 @@ async def token_grant_async(
     refresh_token: Optional[str] = None,
     username: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """OAuth2 access token generation endpoint (TokenGrant)
 

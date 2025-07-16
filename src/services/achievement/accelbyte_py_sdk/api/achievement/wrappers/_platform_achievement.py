@@ -41,7 +41,7 @@ def bulk_create_psn_event(
     body: ModelsBulkCreatePSNEvents,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create PSN UDS events (BulkCreatePSNEvent)
 
@@ -89,7 +89,7 @@ async def bulk_create_psn_event_async(
     body: ModelsBulkCreatePSNEvents,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create PSN UDS events (BulkCreatePSNEvent)
 

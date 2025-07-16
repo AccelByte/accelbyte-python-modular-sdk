@@ -41,7 +41,7 @@ def delete_admin_game_record_ttl_config(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete admin game record TTL config (deleteAdminGameRecordTTLConfig)
 
@@ -95,7 +95,7 @@ async def delete_admin_game_record_ttl_config_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete admin game record TTL config (deleteAdminGameRecordTTLConfig)
 
@@ -151,7 +151,7 @@ def delete_game_binary_record_ttl_config(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete game binary record TTL config (deleteGameBinaryRecordTTLConfig)
 
@@ -205,7 +205,7 @@ async def delete_game_binary_record_ttl_config_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete game binary record TTL config (deleteGameBinaryRecordTTLConfig)
 
@@ -261,7 +261,7 @@ def delete_game_record_ttl_config(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete game record TTL config (deleteGameRecordTTLConfig)
 
@@ -315,7 +315,7 @@ async def delete_game_record_ttl_config_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete game record TTL config (deleteGameRecordTTLConfig)
 

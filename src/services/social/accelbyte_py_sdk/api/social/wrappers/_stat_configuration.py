@@ -66,7 +66,7 @@ def create_stat(
     body: StatCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create stat (createStat)
 
@@ -127,7 +127,7 @@ async def create_stat_async(
     body: StatCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create stat (createStat)
 
@@ -190,7 +190,7 @@ def create_stat_1(
     body: StatCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create stat (createStat_1)
 
@@ -251,7 +251,7 @@ async def create_stat_1_async(
     body: StatCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create stat (createStat_1)
 
@@ -314,7 +314,7 @@ def delete_stat(
     stat_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Deletes stat (deleteStat)
 
@@ -364,7 +364,7 @@ async def delete_stat_async(
     stat_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Deletes stat (deleteStat)
 
@@ -416,7 +416,7 @@ def delete_tied_stat(
     stat_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Deletes tied stat (deleteTiedStat)
 
@@ -468,7 +468,7 @@ async def delete_tied_stat_async(
     stat_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Deletes tied stat (deleteTiedStat)
 
@@ -521,7 +521,7 @@ async def delete_tied_stat_async(
 def export_stats(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Export all stat configurations (exportStats)
 
@@ -565,7 +565,7 @@ def export_stats(
 async def export_stats_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Export all stat configurations (exportStats)
 
@@ -612,7 +612,7 @@ def get_stat(
     stat_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get stat by statCode (getStat)
 
@@ -664,7 +664,7 @@ async def get_stat_async(
     stat_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get stat by statCode (getStat)
 
@@ -722,7 +722,7 @@ def get_stats(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List stats (getStats)
 
@@ -788,7 +788,7 @@ async def get_stats_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List stats (getStats)
 
@@ -853,7 +853,7 @@ def import_stats(
     replace_existing: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Import stat configurations (importStats)
 
@@ -907,7 +907,7 @@ async def import_stats_async(
     replace_existing: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Import stat configurations (importStats)
 
@@ -966,7 +966,7 @@ def query_stats(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query stats by keyword (queryStats)
 
@@ -1032,7 +1032,7 @@ async def query_stats_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query stats by keyword (queryStats)
 
@@ -1097,7 +1097,7 @@ def update_stat(
     stat_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update stat (updateStat)
 
@@ -1160,7 +1160,7 @@ async def update_stat_async(
     stat_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update stat (updateStat)
 

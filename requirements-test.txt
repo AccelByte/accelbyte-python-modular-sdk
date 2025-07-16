@@ -28,6 +28,7 @@ src/services/platform
 src/services/reporting
 src/services/seasonpass
 src/services/session
+src/services/sessionhistory
 src/services/social
 src/services/ugc
 

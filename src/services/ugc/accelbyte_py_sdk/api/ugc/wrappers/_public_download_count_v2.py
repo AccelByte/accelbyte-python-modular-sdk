@@ -42,7 +42,7 @@ def public_add_download_count_v2(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add unique download count to a content (PublicAddDownloadCountV2)
 
@@ -92,7 +92,7 @@ async def public_add_download_count_v2_async(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add unique download count to a content (PublicAddDownloadCountV2)
 
@@ -148,7 +148,7 @@ def public_list_content_downloader_v2(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List content downloader (PublicListContentDownloaderV2)
 
@@ -212,7 +212,7 @@ async def public_list_content_downloader_v2_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List content downloader (PublicListContentDownloaderV2)
 

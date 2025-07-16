@@ -47,7 +47,7 @@ def create_policy_version(
     policy_id: str,
     body: Optional[CreatePolicyVersionRequest] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a Version from Country-Specific Policy (createPolicyVersion)
 
@@ -87,7 +87,7 @@ async def create_policy_version_async(
     policy_id: str,
     body: Optional[CreatePolicyVersionRequest] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a Version from Country-Specific Policy (createPolicyVersion)
 
@@ -129,7 +129,7 @@ def publish_policy_version(
     policy_version_id: str,
     should_notify: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Manually Publish a Version from Country-Specific Policy (publishPolicyVersion)
 
@@ -171,7 +171,7 @@ async def publish_policy_version_async(
     policy_version_id: str,
     should_notify: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Manually Publish a Version from Country-Specific Policy (publishPolicyVersion)
 
@@ -215,7 +215,7 @@ def retrieve_single_policy_version(
     policy_id: str,
     version_id: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve a Version from Country-Specific Policy (retrieveSinglePolicyVersion)
 
@@ -255,7 +255,7 @@ async def retrieve_single_policy_version_async(
     policy_id: str,
     version_id: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve a Version from Country-Specific Policy (retrieveSinglePolicyVersion)
 
@@ -297,7 +297,7 @@ def update_policy_version(
     policy_version_id: str,
     body: Optional[UpdatePolicyVersionRequest] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a Version of Policy (updatePolicyVersion)
 
@@ -339,7 +339,7 @@ async def update_policy_version_async(
     policy_version_id: str,
     body: Optional[UpdatePolicyVersionRequest] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a Version of Policy (updatePolicyVersion)
 

@@ -41,7 +41,7 @@ def sync_native_blocked_user(
     body: List[ModelNativeUserBlockRequest],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """sync blocked user using server to server call to native first party server. (syncNativeBlockedUser)
 
@@ -94,7 +94,7 @@ async def sync_native_blocked_user_async(
     body: List[ModelNativeUserBlockRequest],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """sync blocked user using server to server call to native first party server. (syncNativeBlockedUser)
 

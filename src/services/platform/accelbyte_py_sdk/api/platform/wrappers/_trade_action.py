@@ -47,7 +47,7 @@ def commit(
     body: TradeChainedActionCommitRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """commit a chain of actions or operations (commit)
 
@@ -107,7 +107,7 @@ async def commit_async(
     body: TradeChainedActionCommitRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """commit a chain of actions or operations (commit)
 
@@ -173,7 +173,7 @@ def get_trade_history_by_criteria(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve trade history by criteria (getTradeHistoryByCriteria)
 
@@ -234,7 +234,7 @@ async def get_trade_history_by_criteria_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve trade history by criteria (getTradeHistoryByCriteria)
 
@@ -293,7 +293,7 @@ def get_trade_history_by_transaction_id(
     transaction_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve trade history by transaction ID (getTradeHistoryByTransactionId)
 
@@ -338,7 +338,7 @@ async def get_trade_history_by_transaction_id_async(
     transaction_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve trade history by transaction ID (getTradeHistoryByTransactionId)
 

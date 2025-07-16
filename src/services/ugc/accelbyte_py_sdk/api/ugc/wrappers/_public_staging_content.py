@@ -47,7 +47,7 @@ def delete_user_staging_content_by_id(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete user staging content by id (DeleteUserStagingContentByID)
 
@@ -101,7 +101,7 @@ async def delete_user_staging_content_by_id_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete user staging content by id (DeleteUserStagingContentByID)
 
@@ -157,7 +157,7 @@ def get_user_staging_content_by_id(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user staging content by id (GetUserStagingContentByID)
 
@@ -211,7 +211,7 @@ async def get_user_staging_content_by_id_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user staging content by id (GetUserStagingContentByID)
 
@@ -270,7 +270,7 @@ def list_user_staging_contents(
     status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List user staging contents (ListUserStagingContents)
 
@@ -336,7 +336,7 @@ async def list_user_staging_contents_async(
     status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List user staging contents (ListUserStagingContents)
 
@@ -402,7 +402,7 @@ def update_staging_content(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update staging content (UpdateStagingContent)
 
@@ -462,7 +462,7 @@ async def update_staging_content_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update staging content (UpdateStagingContent)
 

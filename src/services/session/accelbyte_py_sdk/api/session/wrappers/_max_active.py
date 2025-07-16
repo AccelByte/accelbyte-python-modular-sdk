@@ -43,7 +43,7 @@ def admin_get_member_active_session(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Member Active Session. (adminGetMemberActiveSession)
 
@@ -95,7 +95,7 @@ async def admin_get_member_active_session_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Member Active Session. (adminGetMemberActiveSession)
 
@@ -149,7 +149,7 @@ def admin_reconcile_max_active_session(
     name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reconcile Max Active Session. (adminReconcileMaxActiveSession)
 
@@ -201,7 +201,7 @@ async def admin_reconcile_max_active_session_async(
     name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reconcile Max Active Session. (adminReconcileMaxActiveSession)
 

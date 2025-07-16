@@ -44,6 +44,10 @@ from ..models import ResponseError
 
 from ..operations.party import AdminDeleteBulkParties
 from ..operations.party import AdminQueryParties
+from ..operations.party import (
+    AdminQueryPartiesJoinabilityEnum,
+    AdminQueryPartiesMemberStatusEnum,
+)
 from ..operations.party import AdminSyncNativeSession
 from ..operations.party import PublicCreateParty
 from ..operations.party import PublicGeneratePartyCode
@@ -60,6 +64,14 @@ from ..operations.party import PublicPromotePartyLeader
 from ..operations.party import PublicQueryMyParties
 from ..operations.party import PublicRevokePartyCode
 from ..operations.party import PublicUpdateParty
+from ..models import (
+    ApimodelsCreatePartyRequestJoinabilityEnum,
+    ApimodelsCreatePartyRequestTypeEnum,
+)
+from ..models import (
+    ApimodelsUpdatePartyRequestJoinabilityEnum,
+    ApimodelsUpdatePartyRequestTypeEnum,
+)
 
 
 @same_doc_as(AdminDeleteBulkParties)
@@ -67,7 +79,7 @@ def admin_delete_bulk_parties(
     body: ApimodelsDeleteBulkPartySessionRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete bulk parties. (adminDeleteBulkParties)
 
@@ -117,7 +129,7 @@ async def admin_delete_bulk_parties_async(
     body: ApimodelsDeleteBulkPartySessionRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete bulk parties. (adminDeleteBulkParties)
 
@@ -166,14 +178,15 @@ async def admin_delete_bulk_parties_async(
 
 @same_doc_as(AdminQueryParties)
 def admin_query_parties(
+    configuration_name: Optional[str] = None,
     from_time: Optional[str] = None,
     is_soft_deleted: Optional[str] = None,
-    joinability: Optional[str] = None,
+    joinability: Optional[Union[str, AdminQueryPartiesJoinabilityEnum]] = None,
     key: Optional[str] = None,
     leader_id: Optional[str] = None,
     limit: Optional[int] = None,
     member_id: Optional[str] = None,
-    member_status: Optional[str] = None,
+    member_status: Optional[Union[str, AdminQueryPartiesMemberStatusEnum]] = None,
     offset: Optional[int] = None,
     order: Optional[str] = None,
     order_by: Optional[str] = None,
@@ -182,7 +195,7 @@ def admin_query_parties(
     value: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query parties. (adminQueryParties)
 
@@ -203,11 +216,13 @@ def admin_query_parties(
 
         namespace: (namespace) REQUIRED str in path
 
+        configuration_name: (configurationName) OPTIONAL str in query
+
         from_time: (fromTime) OPTIONAL str in query
 
         is_soft_deleted: (isSoftDeleted) OPTIONAL str in query
 
-        joinability: (joinability) OPTIONAL str in query
+        joinability: (joinability) OPTIONAL Union[str, JoinabilityEnum] in query
 
         key: (key) OPTIONAL str in query
 
@@ -217,7 +232,7 @@ def admin_query_parties(
 
         member_id: (memberID) OPTIONAL str in query
 
-        member_status: (memberStatus) OPTIONAL str in query
+        member_status: (memberStatus) OPTIONAL Union[str, MemberStatusEnum] in query
 
         offset: (offset) OPTIONAL int in query
 
@@ -245,6 +260,7 @@ def admin_query_parties(
         if error:
             return None, error
     request = AdminQueryParties.create(
+        configuration_name=configuration_name,
         from_time=from_time,
         is_soft_deleted=is_soft_deleted,
         joinability=joinability,
@@ -266,14 +282,15 @@ def admin_query_parties(
 
 @same_doc_as(AdminQueryParties)
 async def admin_query_parties_async(
+    configuration_name: Optional[str] = None,
     from_time: Optional[str] = None,
     is_soft_deleted: Optional[str] = None,
-    joinability: Optional[str] = None,
+    joinability: Optional[Union[str, AdminQueryPartiesJoinabilityEnum]] = None,
     key: Optional[str] = None,
     leader_id: Optional[str] = None,
     limit: Optional[int] = None,
     member_id: Optional[str] = None,
-    member_status: Optional[str] = None,
+    member_status: Optional[Union[str, AdminQueryPartiesMemberStatusEnum]] = None,
     offset: Optional[int] = None,
     order: Optional[str] = None,
     order_by: Optional[str] = None,
@@ -282,7 +299,7 @@ async def admin_query_parties_async(
     value: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query parties. (adminQueryParties)
 
@@ -303,11 +320,13 @@ async def admin_query_parties_async(
 
         namespace: (namespace) REQUIRED str in path
 
+        configuration_name: (configurationName) OPTIONAL str in query
+
         from_time: (fromTime) OPTIONAL str in query
 
         is_soft_deleted: (isSoftDeleted) OPTIONAL str in query
 
-        joinability: (joinability) OPTIONAL str in query
+        joinability: (joinability) OPTIONAL Union[str, JoinabilityEnum] in query
 
         key: (key) OPTIONAL str in query
 
@@ -317,7 +336,7 @@ async def admin_query_parties_async(
 
         member_id: (memberID) OPTIONAL str in query
 
-        member_status: (memberStatus) OPTIONAL str in query
+        member_status: (memberStatus) OPTIONAL Union[str, MemberStatusEnum] in query
 
         offset: (offset) OPTIONAL int in query
 
@@ -345,6 +364,7 @@ async def admin_query_parties_async(
         if error:
             return None, error
     request = AdminQueryParties.create(
+        configuration_name=configuration_name,
         from_time=from_time,
         is_soft_deleted=is_soft_deleted,
         joinability=joinability,
@@ -371,7 +391,7 @@ def admin_sync_native_session(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Trigger user's active party session to native platform. (adminSyncNativeSession)
 
@@ -421,7 +441,7 @@ async def admin_sync_native_session_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Trigger user's active party session to native platform. (adminSyncNativeSession)
 
@@ -473,7 +493,7 @@ def public_create_party(
     body: ApimodelsCreatePartyRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a party. (publicCreateParty)
 
@@ -583,7 +603,7 @@ async def public_create_party_async(
     body: ApimodelsCreatePartyRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a party. (publicCreateParty)
 
@@ -695,7 +715,7 @@ def public_generate_party_code(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate party code. (publicGeneratePartyCode)
 
@@ -747,7 +767,7 @@ async def public_generate_party_code_async(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate party code. (publicGeneratePartyCode)
 
@@ -801,7 +821,7 @@ def public_get_party(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get party details. (publicGetParty)
 
@@ -849,7 +869,7 @@ async def public_get_party_async(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get party details. (publicGetParty)
 
@@ -900,7 +920,7 @@ def public_party_cancel(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel a party invitation. (publicPartyCancel)
 
@@ -956,7 +976,7 @@ async def public_party_cancel_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel a party invitation. (publicPartyCancel)
 
@@ -1014,7 +1034,7 @@ def public_party_invite(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Invite a user to a party. (publicPartyInvite)
 
@@ -1076,7 +1096,7 @@ async def public_party_invite_async(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Invite a user to a party. (publicPartyInvite)
 
@@ -1139,7 +1159,7 @@ def public_party_join(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Join a party. (publicPartyJoin)
 
@@ -1191,7 +1211,7 @@ async def public_party_join_async(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Join a party. (publicPartyJoin)
 
@@ -1245,7 +1265,7 @@ def public_party_join_code(
     body: ApimodelsJoinByCodeRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Join a party by code. (publicPartyJoinCode)
 
@@ -1297,7 +1317,7 @@ async def public_party_join_code_async(
     body: ApimodelsJoinByCodeRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Join a party by code. (publicPartyJoinCode)
 
@@ -1352,7 +1372,7 @@ def public_party_kick(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Kick a player from a party. (publicPartyKick)
 
@@ -1408,7 +1428,7 @@ async def public_party_kick_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Kick a player from a party. (publicPartyKick)
 
@@ -1465,7 +1485,7 @@ def public_party_leave(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Leave a party. (publicPartyLeave)
 
@@ -1513,7 +1533,7 @@ async def public_party_leave_async(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Leave a party. (publicPartyLeave)
 
@@ -1563,7 +1583,7 @@ def public_party_reject(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reject a party invitation. (publicPartyReject)
 
@@ -1615,7 +1635,7 @@ async def public_party_reject_async(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reject a party invitation. (publicPartyReject)
 
@@ -1670,7 +1690,7 @@ def public_patch_update_party(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Patch update a party. (publicPatchUpdateParty)
 
@@ -1733,7 +1753,7 @@ async def public_patch_update_party_async(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Patch update a party. (publicPatchUpdateParty)
 
@@ -1798,7 +1818,7 @@ def public_promote_party_leader(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Promote new party leader. (publicPromotePartyLeader)
 
@@ -1854,7 +1874,7 @@ async def public_promote_party_leader_async(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Promote new party leader. (publicPromotePartyLeader)
 
@@ -1913,7 +1933,7 @@ def public_query_my_parties(
     status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query my parties. Require valid JWT. (publicQueryMyParties)
 
@@ -1969,7 +1989,7 @@ async def public_query_my_parties_async(
     status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query my parties. Require valid JWT. (publicQueryMyParties)
 
@@ -2025,7 +2045,7 @@ def public_revoke_party_code(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke party code. (publicRevokePartyCode)
 
@@ -2077,7 +2097,7 @@ async def public_revoke_party_code_async(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke party code. (publicRevokePartyCode)
 
@@ -2132,7 +2152,7 @@ def public_update_party(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a party. (publicUpdateParty)
 
@@ -2201,7 +2221,7 @@ async def public_update_party_async(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a party. (publicUpdateParty)
 

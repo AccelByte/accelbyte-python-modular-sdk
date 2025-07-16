@@ -39,7 +39,7 @@ def local_watchdog_connect(
     watchdog_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """connect a local watchdog (LocalWatchdogConnect)
 
@@ -83,7 +83,7 @@ async def local_watchdog_connect_async(
     watchdog_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """connect a local watchdog (LocalWatchdogConnect)
 
@@ -129,7 +129,7 @@ def watchdog_connect(
     watchdog_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """connect a watchdog (WatchdogConnect)
 
@@ -171,7 +171,7 @@ async def watchdog_connect_async(
     watchdog_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """connect a watchdog (WatchdogConnect)
 

@@ -75,7 +75,7 @@ def add_third_party_login_platform_credential_v3(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add Third Party Platform Credential (AddThirdPartyLoginPlatformCredentialV3)
 
@@ -150,7 +150,7 @@ async def add_third_party_login_platform_credential_v3_async(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add Third Party Platform Credential (AddThirdPartyLoginPlatformCredentialV3)
 
@@ -316,7 +316,7 @@ def delete_third_party_login_platform_credential_v3(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Third Party Platform Credential (DeleteThirdPartyLoginPlatformCredentialV3)
 
@@ -366,7 +366,7 @@ async def delete_third_party_login_platform_credential_v3_async(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Third Party Platform Credential (DeleteThirdPartyLoginPlatformCredentialV3)
 
@@ -419,7 +419,7 @@ def delete_third_party_login_platform_domain_v3(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Unregister Third Party Platform Credential's domain (DeleteThirdPartyLoginPlatformDomainV3)
 
@@ -476,7 +476,7 @@ async def delete_third_party_login_platform_domain_v3_async(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Unregister Third Party Platform Credential's domain (DeleteThirdPartyLoginPlatformDomainV3)
 
@@ -535,7 +535,7 @@ def partial_update_third_party_login_platform_domain_v3(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Partial update third Party Platform Credential's domain (PartialUpdateThirdPartyLoginPlatformDomainV3)
 
@@ -592,7 +592,7 @@ async def partial_update_third_party_login_platform_domain_v3_async(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Partial update third Party Platform Credential's domain (PartialUpdateThirdPartyLoginPlatformDomainV3)
 
@@ -650,7 +650,7 @@ def retrieve_active_oidc_clients_public_v3(
     client_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Active OIDC Platform Credential By Client ID (RetrieveActiveOIDCClientsPublicV3)
 
@@ -696,7 +696,7 @@ async def retrieve_active_oidc_clients_public_v3_async(
     client_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Active OIDC Platform Credential By Client ID (RetrieveActiveOIDCClientsPublicV3)
 
@@ -743,7 +743,7 @@ async def retrieve_active_oidc_clients_public_v3_async(
 def retrieve_all_active_third_party_login_platform_credential_public_v3(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get All Active Third Party Platform Active Credential for Public Usage (RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3)
 
@@ -789,7 +789,7 @@ def retrieve_all_active_third_party_login_platform_credential_public_v3(
 async def retrieve_all_active_third_party_login_platform_credential_public_v3_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get All Active Third Party Platform Active Credential for Public Usage (RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3)
 
@@ -837,7 +837,7 @@ async def retrieve_all_active_third_party_login_platform_credential_public_v3_as
 def retrieve_all_active_third_party_login_platform_credential_v3(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get All Active Third Party Platform Active Credential (RetrieveAllActiveThirdPartyLoginPlatformCredentialV3)
 
@@ -883,7 +883,7 @@ def retrieve_all_active_third_party_login_platform_credential_v3(
 async def retrieve_all_active_third_party_login_platform_credential_v3_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get All Active Third Party Platform Active Credential (RetrieveAllActiveThirdPartyLoginPlatformCredentialV3)
 
@@ -931,7 +931,7 @@ async def retrieve_all_active_third_party_login_platform_credential_v3_async(
 def retrieve_all_third_party_login_platform_credential_v3(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get All Third Party Platform Credential (RetrieveAllThirdPartyLoginPlatformCredentialV3)
 
@@ -977,7 +977,7 @@ def retrieve_all_third_party_login_platform_credential_v3(
 async def retrieve_all_third_party_login_platform_credential_v3_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get All Third Party Platform Credential (RetrieveAllThirdPartyLoginPlatformCredentialV3)
 
@@ -1026,7 +1026,7 @@ def retrieve_third_party_login_platform_credential_v3(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve Third Party Platform Credential (RetrieveThirdPartyLoginPlatformCredentialV3)
 
@@ -1076,7 +1076,7 @@ async def retrieve_third_party_login_platform_credential_v3_async(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve Third Party Platform Credential (RetrieveThirdPartyLoginPlatformCredentialV3)
 
@@ -1129,7 +1129,7 @@ def update_third_party_login_platform_credential_v3(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Third Party Platform Credential (UpdateThirdPartyLoginPlatformCredentialV3)
 
@@ -1206,7 +1206,7 @@ async def update_third_party_login_platform_credential_v3_async(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Third Party Platform Credential (UpdateThirdPartyLoginPlatformCredentialV3)
 
@@ -1285,7 +1285,7 @@ def update_third_party_login_platform_domain_v3(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Set Third Party Platform Credential's domain (UpdateThirdPartyLoginPlatformDomainV3)
 
@@ -1342,7 +1342,7 @@ async def update_third_party_login_platform_domain_v3_async(
     platform_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Set Third Party Platform Credential's domain (UpdateThirdPartyLoginPlatformDomainV3)
 

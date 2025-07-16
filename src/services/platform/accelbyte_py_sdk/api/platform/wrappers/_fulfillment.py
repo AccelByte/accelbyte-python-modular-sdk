@@ -84,7 +84,7 @@ def fulfill_item(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Fulfill item (fulfillItem)
 
@@ -139,7 +139,7 @@ async def fulfill_item_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Fulfill item (fulfillItem)
 
@@ -198,7 +198,7 @@ def fulfill_items(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Fulfill items by transactionId (fulfillItems)
 
@@ -266,7 +266,7 @@ async def fulfill_items_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Fulfill items by transactionId (fulfillItems)
 
@@ -335,7 +335,7 @@ def fulfill_items_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Fulfill items by transactionId (fulfillItemsV3)
 
@@ -392,7 +392,7 @@ async def fulfill_items_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Fulfill items by transactionId (fulfillItemsV3)
 
@@ -450,7 +450,7 @@ def fulfill_rewards(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Fulfill rewards without content (fulfillRewards)
 
@@ -504,7 +504,7 @@ async def fulfill_rewards_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Fulfill rewards without content (fulfillRewards)
 
@@ -560,7 +560,7 @@ def fulfill_rewards_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Fulfill rewards (fulfillRewardsV2)
 
@@ -615,7 +615,7 @@ async def fulfill_rewards_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Fulfill rewards (fulfillRewardsV2)
 
@@ -672,7 +672,7 @@ def pre_check_fulfill_item(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Pre check fulfillment items (preCheckFulfillItem)
 
@@ -724,7 +724,7 @@ async def pre_check_fulfill_item_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Pre check fulfillment items (preCheckFulfillItem)
 
@@ -778,7 +778,7 @@ def public_redeem_code(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Redeem campaign code (publicRedeemCode)
 
@@ -834,7 +834,7 @@ async def public_redeem_code_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Redeem campaign code (publicRedeemCode)
 
@@ -894,7 +894,7 @@ def query_fulfillment_histories(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query fulfillment histories (queryFulfillmentHistories)
 
@@ -950,7 +950,7 @@ async def query_fulfillment_histories_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query fulfillment histories (queryFulfillmentHistories)
 
@@ -1011,7 +1011,7 @@ def query_fulfillments(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query fulfillments (queryFulfillments)
 
@@ -1081,7 +1081,7 @@ async def query_fulfillments_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query fulfillments (queryFulfillments)
 
@@ -1148,7 +1148,7 @@ def redeem_code(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Redeem campaign code (redeemCode)
 
@@ -1202,7 +1202,7 @@ async def redeem_code_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Redeem campaign code (redeemCode)
 
@@ -1259,7 +1259,7 @@ def retry_fulfill_items(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retry fulfill items by transactionId (retryFulfillItems)
 
@@ -1318,7 +1318,7 @@ async def retry_fulfill_items_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retry fulfill items by transactionId (retryFulfillItems)
 
@@ -1378,7 +1378,7 @@ def retry_fulfill_items_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retry fulfill items by transactionId (retryFulfillItemsV3)
 
@@ -1428,7 +1428,7 @@ async def retry_fulfill_items_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retry fulfill items by transactionId (retryFulfillItemsV3)
 
@@ -1481,7 +1481,7 @@ def revoke_items(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke items by transactionId (revokeItems)
 
@@ -1540,7 +1540,7 @@ async def revoke_items_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke items by transactionId (revokeItems)
 
@@ -1600,7 +1600,7 @@ def revoke_items_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke items by transactionId (revokeItemsV3)
 
@@ -1650,7 +1650,7 @@ async def revoke_items_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke items by transactionId (revokeItemsV3)
 

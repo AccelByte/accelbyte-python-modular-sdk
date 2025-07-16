@@ -54,7 +54,7 @@ def acquire_user_ticket(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Acquire ticket (acquireUserTicket)
 
@@ -112,7 +112,7 @@ async def acquire_user_ticket_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Acquire ticket (acquireUserTicket)
 
@@ -171,7 +171,7 @@ def decrease_ticket_sale(
     booth_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Decrease ticket sale (decreaseTicketSale)
 
@@ -221,7 +221,7 @@ async def decrease_ticket_sale_async(
     booth_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Decrease ticket sale (decreaseTicketSale)
 
@@ -272,7 +272,7 @@ def get_ticket_booth_id(
     booth_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get ticket booth ID (getTicketBoothID)
 
@@ -318,7 +318,7 @@ async def get_ticket_booth_id_async(
     booth_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get ticket booth ID (getTicketBoothID)
 
@@ -366,7 +366,7 @@ def get_ticket_dynamic(
     booth_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get ticket dynamic (getTicketDynamic)
 
@@ -412,7 +412,7 @@ async def get_ticket_dynamic_async(
     booth_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get ticket dynamic (getTicketDynamic)
 
@@ -461,7 +461,7 @@ def increase_ticket_sale(
     booth_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Increase ticket sale (increaseTicketSale)
 
@@ -513,7 +513,7 @@ async def increase_ticket_sale_async(
     booth_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Increase ticket sale (increaseTicketSale)
 

@@ -46,7 +46,7 @@ def admin_delete_user_session_storage(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Session Storage. (adminDeleteUserSessionStorage)
 
@@ -97,7 +97,7 @@ async def admin_delete_user_session_storage_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Session Storage. (adminDeleteUserSessionStorage)
 
@@ -150,7 +150,7 @@ def admin_read_party_session_storage(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Read Party Session Storage. (adminReadPartySessionStorage)
 
@@ -210,7 +210,7 @@ async def admin_read_party_session_storage_async(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Read Party Session Storage. (adminReadPartySessionStorage)
 
@@ -272,7 +272,7 @@ def admin_read_session_storage(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Read Session Storage. (adminReadSessionStorage)
 
@@ -323,7 +323,7 @@ async def admin_read_session_storage_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Read Session Storage. (adminReadSessionStorage)
 
@@ -377,7 +377,7 @@ def admin_read_user_session_storage(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Read Session Storage User. (adminReadUserSessionStorage)
 
@@ -432,7 +432,7 @@ async def admin_read_user_session_storage_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Read Session Storage User. (adminReadUserSessionStorage)
 
@@ -488,7 +488,7 @@ def public_read_party_session_storage(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Read Party Session Storage. (publicReadPartySessionStorage)
 
@@ -548,7 +548,7 @@ async def public_read_party_session_storage_async(
     party_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Read Party Session Storage. (publicReadPartySessionStorage)
 
@@ -612,7 +612,7 @@ def public_update_insert_party_session_storage_reserved(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Insert Party Session Storage User. (publicUpdateInsertPartySessionStorageReserved)
 
@@ -692,7 +692,7 @@ async def public_update_insert_party_session_storage_reserved_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Insert Party Session Storage User. (publicUpdateInsertPartySessionStorageReserved)
 
@@ -774,7 +774,7 @@ def public_update_insert_session_storage(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Insert Session Storage User. (publicUpdateInsertSessionStorage)
 
@@ -844,7 +844,7 @@ async def public_update_insert_session_storage_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Insert Session Storage User. (publicUpdateInsertSessionStorage)
 
@@ -915,7 +915,7 @@ def public_update_insert_session_storage_leader(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Insert Session Storage Leader. (publicUpdateInsertSessionStorageLeader)
 
@@ -981,7 +981,7 @@ async def public_update_insert_session_storage_leader_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Insert Session Storage Leader. (publicUpdateInsertSessionStorageLeader)
 

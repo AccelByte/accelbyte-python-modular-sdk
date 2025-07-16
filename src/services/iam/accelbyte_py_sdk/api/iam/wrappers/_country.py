@@ -45,7 +45,7 @@ def admin_add_country_blacklist_v3(
     body: ModelCountryBlacklistRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Country Blacklist (AdminAddCountryBlacklistV3)
 
@@ -95,7 +95,7 @@ async def admin_add_country_blacklist_v3_async(
     body: ModelCountryBlacklistRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Country Blacklist (AdminAddCountryBlacklistV3)
 
@@ -146,7 +146,7 @@ async def admin_add_country_blacklist_v3_async(
 def admin_get_country_blacklist_v3(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Country Blacklist (AdminGetCountryBlacklistV3)
 
@@ -190,7 +190,7 @@ def admin_get_country_blacklist_v3(
 async def admin_get_country_blacklist_v3_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Country Blacklist (AdminGetCountryBlacklistV3)
 
@@ -237,7 +237,7 @@ def admin_get_country_list_v3(
     filter_blacklist: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Country List (AdminGetCountryListV3)
 
@@ -285,7 +285,7 @@ async def admin_get_country_list_v3_async(
     filter_blacklist: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Country List (AdminGetCountryListV3)
 
@@ -334,7 +334,7 @@ async def admin_get_country_list_v3_async(
 def public_get_country_list_v3(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Country List (PublicGetCountryListV3)
 
@@ -374,7 +374,7 @@ def public_get_country_list_v3(
 async def public_get_country_list_v3_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Country List (PublicGetCountryListV3)
 

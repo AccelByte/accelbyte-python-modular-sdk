@@ -42,7 +42,7 @@ from ..operations.ams_info import UploadURLGet
 def info_regions(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get a list of the available AMS regions (InfoRegions)
 
@@ -86,7 +86,7 @@ def info_regions(
 async def info_regions_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get a list of the available AMS regions (InfoRegions)
 
@@ -132,7 +132,7 @@ async def info_regions_async(
 def info_supported_instances(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get a list of available instance types for the current account (InfoSupportedInstances)
 
@@ -176,7 +176,7 @@ def info_supported_instances(
 async def info_supported_instances_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get a list of available instance types for the current account (InfoSupportedInstances)
 

@@ -41,7 +41,7 @@ from ..operations.login_allowlist import AdminUpdateLoginAllowlistV3
 def admin_get_login_allowlist_v3(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get login allowlist (AdminGetLoginAllowlistV3)
 
@@ -85,7 +85,7 @@ def admin_get_login_allowlist_v3(
 async def admin_get_login_allowlist_v3_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get login allowlist (AdminGetLoginAllowlistV3)
 
@@ -132,7 +132,7 @@ def admin_update_login_allowlist_v3(
     body: ModelLoginAllowlistRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin update login allowlist (AdminUpdateLoginAllowlistV3)
 
@@ -184,7 +184,7 @@ async def admin_update_login_allowlist_v3_async(
     body: ModelLoginAllowlistRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin update login allowlist (AdminUpdateLoginAllowlistV3)
 

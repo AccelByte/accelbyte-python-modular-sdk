@@ -49,7 +49,7 @@ def protected_get_playtime_game_telemetry_v1_protected_steam_ids_steam_id_playti
     steam_id: str,
     cookie: Optional[Union[str, HeaderStr]] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Protected Get Playtime (protected_get_playtime_game_telemetry_v1_protected_steamIds__steamId__playtime_get)
 
@@ -100,7 +100,7 @@ async def protected_get_playtime_game_telemetry_v1_protected_steam_ids_steam_id_
     steam_id: str,
     cookie: Optional[Union[str, HeaderStr]] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Protected Get Playtime (protected_get_playtime_game_telemetry_v1_protected_steamIds__steamId__playtime_get)
 
@@ -153,7 +153,7 @@ def protected_save_events_game_telemetry_v1_protected_events_post(
     body: List[TelemetryBody],
     cookie: Optional[Union[str, HeaderStr]] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Protected Save Events (protected_save_events_game_telemetry_v1_protected_events_post)
 
@@ -248,7 +248,7 @@ async def protected_save_events_game_telemetry_v1_protected_events_post_async(
     body: List[TelemetryBody],
     cookie: Optional[Union[str, HeaderStr]] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Protected Save Events (protected_save_events_game_telemetry_v1_protected_events_post)
 
@@ -348,7 +348,7 @@ def protected_update_playtime_game_telemetry_v1_protected_steam_ids_steam_id_pla
     steam_id: str,
     cookie: Optional[Union[str, HeaderStr]] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Protected Update Playtime (protected_update_playtime_game_telemetry_v1_protected_steamIds__steamId__playtime__playtime__put)
 
@@ -401,7 +401,7 @@ async def protected_update_playtime_game_telemetry_v1_protected_steam_ids_steam_
     steam_id: str,
     cookie: Optional[Union[str, HeaderStr]] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Protected Update Playtime (protected_update_playtime_game_telemetry_v1_protected_steamIds__steamId__playtime__playtime__put)
 

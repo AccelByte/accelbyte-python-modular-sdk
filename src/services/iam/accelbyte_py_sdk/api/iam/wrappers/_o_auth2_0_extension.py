@@ -65,7 +65,7 @@ def authenticate_and_link_forward_v3(
     username: str,
     extend_exp: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Authentication with platform link, the response will be a forward (AuthenticateAndLinkForwardV3)
 
@@ -122,7 +122,7 @@ async def authenticate_and_link_forward_v3_async(
     username: str,
     extend_exp: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Authentication with platform link, the response will be a forward (AuthenticateAndLinkForwardV3)
 
@@ -181,7 +181,7 @@ def authentication_with_platform_link_v3(
     username: str,
     extend_exp: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Authentication with platform link (AuthenticationWithPlatformLinkV3)
 
@@ -246,7 +246,7 @@ async def authentication_with_platform_link_v3_async(
     username: str,
     extend_exp: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Authentication with platform link (AuthenticationWithPlatformLinkV3)
 
@@ -311,7 +311,7 @@ def generate_token_by_new_headless_account_v3(
     additional_data: Optional[str] = None,
     extend_exp: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create headless account and response token (GenerateTokenByNewHeadlessAccountV3)
 
@@ -361,7 +361,7 @@ async def generate_token_by_new_headless_account_v3_async(
     additional_data: Optional[str] = None,
     extend_exp: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create headless account and response token (GenerateTokenByNewHeadlessAccountV3)
 
@@ -536,7 +536,7 @@ def platform_authentication_v3(
     openid_sig: Optional[str] = None,
     openid_signed: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Platform Authentication API (PlatformAuthenticationV3)
 
@@ -649,7 +649,7 @@ async def platform_authentication_v3_async(
     openid_sig: Optional[str] = None,
     openid_signed: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Platform Authentication API (PlatformAuthenticationV3)
 
@@ -752,7 +752,7 @@ def platform_token_refresh_v3(
     platform_id: str,
     platform_token: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Platform Token Validation (PlatformTokenRefreshV3)
 
@@ -811,7 +811,7 @@ async def platform_token_refresh_v3_async(
     platform_id: str,
     platform_token: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Platform Token Validation (PlatformTokenRefreshV3)
 
@@ -873,7 +873,7 @@ def request_one_time_linking_code_v3(
     redirect_uri: Optional[str] = None,
     state: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate one time linking code (RequestOneTimeLinkingCodeV3)
 
@@ -940,7 +940,7 @@ async def request_one_time_linking_code_v3_async(
     redirect_uri: Optional[str] = None,
     state: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate one time linking code (RequestOneTimeLinkingCodeV3)
 
@@ -1008,7 +1008,7 @@ def request_target_token_response_v3(
     code: str,
     additional_data: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate target token by code (RequestTargetTokenResponseV3)
 
@@ -1048,7 +1048,7 @@ async def request_target_token_response_v3_async(
     code: str,
     additional_data: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate target token by code (RequestTargetTokenResponseV3)
 
@@ -1092,7 +1092,7 @@ def request_token_by_one_time_link_code_response_v3(
     additional_data: Optional[str] = None,
     is_transient: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate token by headless account's one time link code (RequestTokenByOneTimeLinkCodeResponseV3)
 
@@ -1144,7 +1144,7 @@ async def request_token_by_one_time_link_code_response_v3_async(
     additional_data: Optional[str] = None,
     is_transient: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate token by headless account's one time link code (RequestTokenByOneTimeLinkCodeResponseV3)
 
@@ -1200,7 +1200,7 @@ def request_token_exchange_code_v3(
     ] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Request code to get a new token (RequestTokenExchangeCodeV3)
 
@@ -1257,7 +1257,7 @@ async def request_token_exchange_code_v3_async(
     ] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Request code to get a new token (RequestTokenExchangeCodeV3)
 
@@ -1312,7 +1312,7 @@ def upgrade_and_authenticate_forward_v3(
     client_id: str,
     upgrade_success_token: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Handle the forward for account upgrade (UpgradeAndAuthenticateForwardV3)
 
@@ -1350,7 +1350,7 @@ async def upgrade_and_authenticate_forward_v3_async(
     client_id: str,
     upgrade_success_token: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Handle the forward for account upgrade (UpgradeAndAuthenticateForwardV3)
 
@@ -1394,7 +1394,7 @@ def user_authentication_v3(
     extend_exp: Optional[bool] = None,
     redirect_uri: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Authentication API (UserAuthenticationV3)
 
@@ -1460,7 +1460,7 @@ async def user_authentication_v3_async(
     extend_exp: Optional[bool] = None,
     redirect_uri: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Authentication API (UserAuthenticationV3)
 
@@ -1523,7 +1523,7 @@ async def user_authentication_v3_async(
 def validate_one_time_linking_code_v3(
     one_time_link_code: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Validate one time linking code (ValidateOneTimeLinkingCodeV3)
 
@@ -1558,7 +1558,7 @@ def validate_one_time_linking_code_v3(
 async def validate_one_time_linking_code_v3_async(
     one_time_link_code: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Validate one time linking code (ValidateOneTimeLinkingCodeV3)
 

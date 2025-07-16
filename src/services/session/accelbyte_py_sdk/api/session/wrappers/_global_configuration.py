@@ -174,7 +174,7 @@ async def admin_list_global_configuration_async(
 def admin_update_global_configuration(
     body: ApimodelsPutGlobalConfigurationRequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upsert global configuration data. (adminUpdateGlobalConfiguration)
 
@@ -212,7 +212,7 @@ def admin_update_global_configuration(
 async def admin_update_global_configuration_async(
     body: ApimodelsPutGlobalConfigurationRequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upsert global configuration data. (adminUpdateGlobalConfiguration)
 

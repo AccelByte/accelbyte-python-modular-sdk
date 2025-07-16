@@ -45,7 +45,7 @@ def admin_create_tag(
     body: ModelsCreateTagRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create tags (AdminCreateTag)
 
@@ -95,7 +95,7 @@ async def admin_create_tag_async(
     body: ModelsCreateTagRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create tags (AdminCreateTag)
 
@@ -147,7 +147,7 @@ def admin_delete_tag(
     tag_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete tags (AdminDeleteTag)
 
@@ -195,7 +195,7 @@ async def admin_delete_tag_async(
     tag_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete tags (AdminDeleteTag)
 
@@ -246,7 +246,7 @@ def admin_get_tag(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get tags (AdminGetTag)
 
@@ -298,7 +298,7 @@ async def admin_get_tag_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get tags (AdminGetTag)
 
@@ -352,7 +352,7 @@ def admin_update_tag(
     tag_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update tag (AdminUpdateTag)
 
@@ -408,7 +408,7 @@ async def admin_update_tag_async(
     tag_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update tag (AdminUpdateTag)
 

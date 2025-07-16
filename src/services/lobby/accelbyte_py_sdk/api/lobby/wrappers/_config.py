@@ -53,7 +53,7 @@ from ..models import (
 def admin_export_config_v1(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Export lobby config to a json file. (adminExportConfigV1)
 
@@ -320,7 +320,7 @@ def admin_export_config_v1(
 async def admin_export_config_v1_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Export lobby config to a json file. (adminExportConfigV1)
 
@@ -669,7 +669,7 @@ async def admin_get_all_config_v1_async(
 def admin_get_config_v1(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get namespace config (adminGetConfigV1)
 
@@ -718,7 +718,7 @@ def admin_get_config_v1(
 async def admin_get_config_v1_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get namespace config (adminGetConfigV1)
 
@@ -836,7 +836,7 @@ def admin_import_config_v1(
     file: Optional[Any] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Import lobby config from a json file. (adminImportConfigV1)
 
@@ -887,7 +887,7 @@ async def admin_import_config_v1_async(
     file: Optional[Any] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Import lobby config from a json file. (adminImportConfigV1)
 
@@ -939,7 +939,7 @@ async def admin_import_config_v1_async(
 def admin_patch_update_log_config(
     body: LogconfigConfiguration,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Patch Update Log Configuration (adminPatchUpdateLogConfig)
 
@@ -977,7 +977,7 @@ def admin_patch_update_log_config(
 async def admin_patch_update_log_config_async(
     body: LogconfigConfiguration,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Patch Update Log Configuration (adminPatchUpdateLogConfig)
 
@@ -1018,7 +1018,7 @@ def admin_update_config_v1(
     body: ModelsConfigReq,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin update namespace config (adminUpdateConfigV1)
 
@@ -1073,7 +1073,7 @@ async def admin_update_config_v1_async(
     body: ModelsConfigReq,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin update namespace config (adminUpdateConfigV1)
 

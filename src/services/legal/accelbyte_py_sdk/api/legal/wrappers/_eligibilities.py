@@ -41,7 +41,7 @@ from ..operations.eligibilities import RetrieveEligibilitiesPublicIndirect
 def retrieve_eligibilities_public(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check User Legal Eligibility (retrieveEligibilitiesPublic)
 
@@ -84,7 +84,7 @@ def retrieve_eligibilities_public(
 async def retrieve_eligibilities_public_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check User Legal Eligibility (retrieveEligibilitiesPublic)
 
@@ -132,7 +132,7 @@ def retrieve_eligibilities_public_indirect(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check User Legal Eligibility (retrieveEligibilitiesPublicIndirect)
 
@@ -185,7 +185,7 @@ async def retrieve_eligibilities_public_indirect_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check User Legal Eligibility (retrieveEligibilitiesPublicIndirect)
 

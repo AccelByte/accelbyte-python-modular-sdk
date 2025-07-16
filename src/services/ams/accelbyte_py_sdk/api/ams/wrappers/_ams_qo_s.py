@@ -42,7 +42,7 @@ def qo_s_regions_get(
     status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get a list of available AMS QoS regions (QoSRegionsGet)
 
@@ -109,7 +109,7 @@ async def qo_s_regions_get_async(
     status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get a list of available AMS QoS regions (QoSRegionsGet)
 
@@ -179,7 +179,7 @@ def qo_s_regions_update(
     region: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update the status of a QoS region (QoSRegionsUpdate)
 
@@ -238,7 +238,7 @@ async def qo_s_regions_update_async(
     region: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update the status of a QoS region (QoSRegionsUpdate)
 

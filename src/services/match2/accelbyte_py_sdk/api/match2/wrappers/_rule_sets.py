@@ -45,7 +45,7 @@ def create_rule_set(
     body: ApiRuleSetPayload,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a match rule set (CreateRuleSet)
 
@@ -104,7 +104,7 @@ async def create_rule_set_async(
     body: ApiRuleSetPayload,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a match rule set (CreateRuleSet)
 
@@ -165,7 +165,7 @@ def delete_rule_set(
     ruleset: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a rule set (DeleteRuleSet)
 
@@ -215,7 +215,7 @@ async def delete_rule_set_async(
     ruleset: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a rule set (DeleteRuleSet)
 
@@ -267,7 +267,7 @@ def rule_set_details(
     ruleset: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get details for a specific rule set (RuleSetDetails)
 
@@ -315,7 +315,7 @@ async def rule_set_details_async(
     ruleset: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get details for a specific rule set (RuleSetDetails)
 
@@ -367,7 +367,7 @@ def rule_set_list(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List existing rule sets (RuleSetList)
 
@@ -423,7 +423,7 @@ async def rule_set_list_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List existing rule sets (RuleSetList)
 
@@ -480,7 +480,7 @@ def update_rule_set(
     ruleset: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a match rule set (UpdateRuleSet)
 
@@ -540,7 +540,7 @@ async def update_rule_set_async(
     ruleset: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a match rule set (UpdateRuleSet)
 

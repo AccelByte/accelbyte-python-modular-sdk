@@ -45,7 +45,7 @@ def admin_upload_x_box_certificate(
     description: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload certificates for XBox. (adminUploadXBoxCertificate)
 
@@ -110,7 +110,7 @@ async def admin_upload_x_box_certificate_async(
     description: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upload certificates for XBox. (adminUploadXBoxCertificate)
 

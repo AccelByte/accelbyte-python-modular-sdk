@@ -45,7 +45,7 @@ def public_list_item_types(
     sort_by: Optional[Union[str, PublicListItemTypesSortByEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To list item types (PublicListItemTypes)
 
@@ -100,7 +100,7 @@ async def public_list_item_types_async(
     sort_by: Optional[Union[str, PublicListItemTypesSortByEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To list item types (PublicListItemTypes)
 

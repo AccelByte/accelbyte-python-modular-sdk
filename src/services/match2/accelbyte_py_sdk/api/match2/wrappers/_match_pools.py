@@ -58,7 +58,7 @@ def admin_get_match_pool_tickets(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get tickets in queue for a specific match pool (adminGetMatchPoolTickets)
 
@@ -118,7 +118,7 @@ async def admin_get_match_pool_tickets_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get tickets in queue for a specific match pool (adminGetMatchPoolTickets)
 
@@ -178,7 +178,7 @@ def create_match_pool(
     body: ApiMatchPool,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a match pool (CreateMatchPool)
 
@@ -248,7 +248,7 @@ async def create_match_pool_async(
     body: ApiMatchPool,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a match pool (CreateMatchPool)
 
@@ -320,7 +320,7 @@ def delete_match_pool(
     pool: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a match pool (DeleteMatchPool)
 
@@ -370,7 +370,7 @@ async def delete_match_pool_async(
     pool: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a match pool (DeleteMatchPool)
 
@@ -422,7 +422,7 @@ def get_player_metric(
     pool: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get metrics player for a specific match pool (GetPlayerMetric)
 
@@ -472,7 +472,7 @@ async def get_player_metric_async(
     pool: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get metrics player for a specific match pool (GetPlayerMetric)
 
@@ -524,7 +524,7 @@ def match_pool_details(
     pool: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get details for a specific match pool (MatchPoolDetails)
 
@@ -574,7 +574,7 @@ async def match_pool_details_async(
     pool: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get details for a specific match pool (MatchPoolDetails)
 
@@ -628,7 +628,7 @@ def match_pool_list(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List match pools (MatchPoolList)
 
@@ -684,7 +684,7 @@ async def match_pool_list_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List match pools (MatchPoolList)
 
@@ -740,7 +740,7 @@ def match_pool_metric(
     pool: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get metrics for a specific match pool (MatchPoolMetric)
 
@@ -792,7 +792,7 @@ async def match_pool_metric_async(
     pool: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get metrics for a specific match pool (MatchPoolMetric)
 
@@ -847,7 +847,7 @@ def post_match_error_metric(
     pool: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Post metrics for external flow failure in a specific match pool (PostMatchErrorMetric)
 
@@ -903,7 +903,7 @@ async def post_match_error_metric_async(
     pool: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Post metrics for external flow failure in a specific match pool (PostMatchErrorMetric)
 
@@ -960,7 +960,7 @@ def public_get_player_metric(
     pool: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get metrics player for a specific match pool (PublicGetPlayerMetric)
 
@@ -1010,7 +1010,7 @@ async def public_get_player_metric_async(
     pool: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get metrics player for a specific match pool (PublicGetPlayerMetric)
 
@@ -1063,7 +1063,7 @@ def update_match_pool(
     pool: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a match pool (UpdateMatchPool)
 
@@ -1134,7 +1134,7 @@ async def update_match_pool_async(
     pool: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a match pool (UpdateMatchPool)
 

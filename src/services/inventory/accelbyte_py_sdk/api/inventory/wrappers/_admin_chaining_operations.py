@@ -40,7 +40,7 @@ def admin_create_chaining_operations(
     body: ApimodelsChainingOperationReq,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To Create Chaining Operation (AdminCreateChainingOperations)
 
@@ -106,7 +106,7 @@ async def admin_create_chaining_operations_async(
     body: ApimodelsChainingOperationReq,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To Create Chaining Operation (AdminCreateChainingOperations)
 

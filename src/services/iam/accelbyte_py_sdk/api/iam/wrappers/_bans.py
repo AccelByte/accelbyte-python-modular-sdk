@@ -55,7 +55,7 @@ def admin_ban_user_bulk_v3(
     body: ModelBulkBanCreateRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk ban user (AdminBanUserBulkV3)
 
@@ -108,7 +108,7 @@ async def admin_ban_user_bulk_v3_async(
     body: ModelBulkBanCreateRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk ban user (AdminBanUserBulkV3)
 
@@ -166,7 +166,7 @@ def admin_get_banned_users_v3(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of user filtered by ban types (AdminGetBannedUsersV3)
 
@@ -228,7 +228,7 @@ async def admin_get_banned_users_v3_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of user filtered by ban types (AdminGetBannedUsersV3)
 
@@ -362,7 +362,7 @@ async def admin_get_bans_type_v3_async(
 def admin_get_bans_type_with_namespace_v3(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of ban types (AdminGetBansTypeWithNamespaceV3)
 
@@ -408,7 +408,7 @@ def admin_get_bans_type_with_namespace_v3(
 async def admin_get_bans_type_with_namespace_v3_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of ban types (AdminGetBansTypeWithNamespaceV3)
 
@@ -529,7 +529,7 @@ def admin_unban_user_bulk_v3(
     body: ModelBulkUnbanCreateRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk unban user (AdminUnbanUserBulkV3)
 
@@ -582,7 +582,7 @@ async def admin_unban_user_bulk_v3_async(
     body: ModelBulkUnbanCreateRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk unban user (AdminUnbanUserBulkV3)
 

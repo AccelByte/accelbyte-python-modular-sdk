@@ -54,7 +54,7 @@ def get_events_game_telemetry_v1_admin_namespaces_namespace_events_get(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Events (get_events_game_telemetry_v1_admin_namespaces__namespace__events_get)
 
@@ -137,7 +137,7 @@ async def get_events_game_telemetry_v1_admin_namespaces_namespace_events_get_asy
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Events (get_events_game_telemetry_v1_admin_namespaces__namespace__events_get)
 

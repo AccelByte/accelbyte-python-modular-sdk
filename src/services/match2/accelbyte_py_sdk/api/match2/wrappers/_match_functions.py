@@ -46,7 +46,7 @@ def create_match_function(
     body: ApiMatchFunctionRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a match function (CreateMatchFunction)
 
@@ -98,7 +98,7 @@ async def create_match_function_async(
     body: ApiMatchFunctionRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a match function (CreateMatchFunction)
 
@@ -152,7 +152,7 @@ def delete_match_function(
     name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a match function (DeleteMatchFunction)
 
@@ -202,7 +202,7 @@ async def delete_match_function_async(
     name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a match function (DeleteMatchFunction)
 
@@ -254,7 +254,7 @@ def match_function_get(
     name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get custom match function by name (MatchFunctionGet)
 
@@ -304,7 +304,7 @@ async def match_function_get_async(
     name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get custom match function by name (MatchFunctionGet)
 
@@ -357,7 +357,7 @@ def match_function_list(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List existing match functions (MatchFunctionList)
 
@@ -409,7 +409,7 @@ async def match_function_list_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List existing match functions (MatchFunctionList)
 
@@ -463,7 +463,7 @@ def update_match_function(
     name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a match function (UpdateMatchFunction)
 
@@ -519,7 +519,7 @@ async def update_match_function_async(
     name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a match function (UpdateMatchFunction)
 

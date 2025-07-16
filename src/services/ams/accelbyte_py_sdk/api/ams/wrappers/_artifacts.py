@@ -54,7 +54,7 @@ def artifact_bulk_delete(
     uploaded_before: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete artifacts that match criteria in bulk. all artifacts matching any one criteria will be deleted. at least 1 parameter is required. (ArtifactBulkDelete)
 
@@ -112,7 +112,7 @@ async def artifact_bulk_delete_async(
     uploaded_before: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete artifacts that match criteria in bulk. all artifacts matching any one criteria will be deleted. at least 1 parameter is required. (ArtifactBulkDelete)
 
@@ -170,7 +170,7 @@ def artifact_delete(
     artifact_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete a specified artifact (ArtifactDelete)
 
@@ -222,7 +222,7 @@ async def artifact_delete_async(
     artifact_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete a specified artifact (ArtifactDelete)
 
@@ -289,7 +289,7 @@ def artifact_get(
     status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get all artifacts matching the provided criteria (ArtifactGet)
 
@@ -393,7 +393,7 @@ async def artifact_get_async(
     status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get all artifacts matching the provided criteria (ArtifactGet)
 
@@ -486,7 +486,7 @@ def artifact_get_url(
     artifact_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get a signed URL for a specific artifact (ArtifactGetURL)
 
@@ -538,7 +538,7 @@ async def artifact_get_url_async(
     artifact_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get a signed URL for a specific artifact (ArtifactGetURL)
 
@@ -591,7 +591,7 @@ async def artifact_get_url_async(
 def artifact_usage_get(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """retrieve artifact storage usage for the namespace (ArtifactUsageGet)
 
@@ -635,7 +635,7 @@ def artifact_usage_get(
 async def artifact_usage_get_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """retrieve artifact storage usage for the namespace (ArtifactUsageGet)
 
@@ -682,7 +682,7 @@ def fleet_artifact_sampling_rules_get(
     fleet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get the sampling rules for a fleet (FleetArtifactSamplingRulesGet)
 
@@ -734,7 +734,7 @@ async def fleet_artifact_sampling_rules_get_async(
     fleet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get the sampling rules for a fleet (FleetArtifactSamplingRulesGet)
 
@@ -789,7 +789,7 @@ def fleet_artifact_sampling_rules_set(
     fleet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """set sampling rules for a fleet (FleetArtifactSamplingRulesSet)
 
@@ -845,7 +845,7 @@ async def fleet_artifact_sampling_rules_set_async(
     fleet_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """set sampling rules for a fleet (FleetArtifactSamplingRulesSet)
 

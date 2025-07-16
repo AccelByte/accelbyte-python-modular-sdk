@@ -107,7 +107,7 @@ def admin_list_users_stat_items(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """(Legacy) Admin list user's statItems (AdminListUsersStatItems)
 
@@ -178,7 +178,7 @@ async def admin_list_users_stat_items_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """(Legacy) Admin list user's statItems (AdminListUsersStatItems)
 
@@ -249,7 +249,7 @@ def bulk_create_user_stat_items(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk create user's statItems (bulkCreateUserStatItems)
 
@@ -307,7 +307,7 @@ async def bulk_create_user_stat_items_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk create user's statItems (bulkCreateUserStatItems)
 
@@ -367,7 +367,7 @@ def bulk_fetch_or_default_stat_items(
     user_ids: List[str],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk fetch user stat item values (bulkFetchOrDefaultStatItems)
 
@@ -425,7 +425,7 @@ async def bulk_fetch_or_default_stat_items_async(
     user_ids: List[str],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk fetch user stat item values (bulkFetchOrDefaultStatItems)
 
@@ -486,7 +486,7 @@ def bulk_fetch_or_default_stat_items_1(
     additional_key: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk fetch user stat item values (bulkFetchOrDefaultStatItems_1)
 
@@ -548,7 +548,7 @@ async def bulk_fetch_or_default_stat_items_1_async(
     additional_key: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk fetch user stat item values (bulkFetchOrDefaultStatItems_1)
 
@@ -611,7 +611,7 @@ def bulk_fetch_stat_items(
     user_ids: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk fetch statitems value (bulkFetchStatItems)
 
@@ -667,7 +667,7 @@ async def bulk_fetch_stat_items_async(
     user_ids: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk fetch statitems value (bulkFetchStatItems)
 
@@ -725,7 +725,7 @@ def bulk_fetch_stat_items_1(
     user_ids: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public bulk fetch statitems value (bulkFetchStatItems_1)
 
@@ -781,7 +781,7 @@ async def bulk_fetch_stat_items_1_async(
     user_ids: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public bulk fetch statitems value (bulkFetchStatItems_1)
 
@@ -840,7 +840,7 @@ def bulk_get_or_default_by_user_id(
     additional_key: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get user's statitems value by user id and multiple stat codes (bulkGetOrDefaultByUserId)
 
@@ -903,7 +903,7 @@ async def bulk_get_or_default_by_user_id_async(
     additional_key: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get user's statitems value by user id and multiple stat codes (bulkGetOrDefaultByUserId)
 
@@ -966,7 +966,7 @@ def bulk_inc_user_stat_item(
     body: List[BulkUserStatItemInc],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk update multiple user's statitems value (bulkIncUserStatItem)
 
@@ -1020,7 +1020,7 @@ async def bulk_inc_user_stat_item_async(
     body: List[BulkUserStatItemInc],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk update multiple user's statitems value (bulkIncUserStatItem)
 
@@ -1077,7 +1077,7 @@ def bulk_inc_user_stat_item_1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk update user's statitems value (bulkIncUserStatItem_1)
 
@@ -1135,7 +1135,7 @@ async def bulk_inc_user_stat_item_1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk update user's statitems value (bulkIncUserStatItem_1)
 
@@ -1194,7 +1194,7 @@ def bulk_inc_user_stat_item_value(
     body: List[BulkUserStatItemInc],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk update multiple user's statitems value (bulkIncUserStatItemValue)
 
@@ -1246,7 +1246,7 @@ async def bulk_inc_user_stat_item_value_async(
     body: List[BulkUserStatItemInc],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk update multiple user's statitems value (bulkIncUserStatItemValue)
 
@@ -1301,7 +1301,7 @@ def bulk_inc_user_stat_item_value_1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk update user's statitems value (bulkIncUserStatItemValue_1)
 
@@ -1359,7 +1359,7 @@ async def bulk_inc_user_stat_item_value_1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk update user's statitems value (bulkIncUserStatItemValue_1)
 
@@ -1419,7 +1419,7 @@ def bulk_inc_user_stat_item_value_2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public bulk update user's statitems value (bulkIncUserStatItemValue_2)
 
@@ -1477,7 +1477,7 @@ async def bulk_inc_user_stat_item_value_2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public bulk update user's statitems value (bulkIncUserStatItemValue_2)
 
@@ -1536,7 +1536,7 @@ def bulk_reset_user_stat_item(
     body: List[BulkUserStatItemReset],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk reset multiple user's statitems value (bulkResetUserStatItem)
 
@@ -1592,7 +1592,7 @@ async def bulk_reset_user_stat_item_async(
     body: List[BulkUserStatItemReset],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk reset multiple user's statitems value (bulkResetUserStatItem)
 
@@ -1651,7 +1651,7 @@ def bulk_reset_user_stat_item_1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk reset user's statitems value (bulkResetUserStatItem_1)
 
@@ -1709,7 +1709,7 @@ async def bulk_reset_user_stat_item_1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk reset user's statitems value (bulkResetUserStatItem_1)
 
@@ -1768,7 +1768,7 @@ def bulk_reset_user_stat_item_2(
     body: List[BulkUserStatItemReset],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public bulk reset multiple user's statitems value (bulkResetUserStatItem_2)
 
@@ -1824,7 +1824,7 @@ async def bulk_reset_user_stat_item_2_async(
     body: List[BulkUserStatItemReset],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public bulk reset multiple user's statitems value (bulkResetUserStatItem_2)
 
@@ -1883,7 +1883,7 @@ def bulk_reset_user_stat_item_3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public bulk reset user's statitems value (bulkResetUserStatItem_3)
 
@@ -1941,7 +1941,7 @@ async def bulk_reset_user_stat_item_3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public bulk reset user's statitems value (bulkResetUserStatItem_3)
 
@@ -2002,7 +2002,7 @@ def bulk_reset_user_stat_item_values(
     additional_key: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk reset user's statitem values (bulkResetUserStatItemValues)
 
@@ -2064,7 +2064,7 @@ async def bulk_reset_user_stat_item_values_async(
     additional_key: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk reset user's statitem values (bulkResetUserStatItemValues)
 
@@ -2128,7 +2128,7 @@ def bulk_update_user_stat_item(
     additional_key: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk update user's statitems value (bulkUpdateUserStatItem)
 
@@ -2144,6 +2144,68 @@ def bulk_update_user_stat_item(
 
     Other detail info:
     + *Returns*: bulk updated result
+
+
+
+
+
+
+    ### â ï¸ Important Note on Bulk Update Behavior
+
+
+
+
+
+    To ensure data integrity and avoid inconsistencies or race conditions, it is crucial to make each stat update unique per request.
+    We strongly advise against including multiple updates for the same `statCode` with the same `updateStrategy` in a single request,
+    as bulk operations are processed concurrently.
+
+
+
+
+
+
+    Avoid including multiple entries with the same`statCode` but different `updateStrategy` values.
+
+
+
+
+
+
+    To apply multiple operations on the same stat, please batch or sequence them in separate requests , according to your business logic.
+
+
+
+
+    â Incorrect Example:
+
+    [
+    {
+    "statCode": "exp",
+    "updateStrategy": "OVERRIDE",
+    "value": 10
+    },
+    {
+    "statCode": "exp",
+    "updateStrategy": "INCREMENT",
+    "value": 50
+    }
+    ]
+
+    â Correct Example:
+
+    [
+    {
+    "statCode": "exp",
+    "updateStrategy": "OVERRIDE",
+    "value": 10
+    }.
+    {
+    "statCode": "headshot",
+    "updateStrategy": "INCREMENT",
+    "value": 10
+    }
+    ]
 
     Properties:
         url: /social/v2/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk
@@ -2199,7 +2261,7 @@ async def bulk_update_user_stat_item_async(
     additional_key: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk update user's statitems value (bulkUpdateUserStatItem)
 
@@ -2215,6 +2277,68 @@ async def bulk_update_user_stat_item_async(
 
     Other detail info:
     + *Returns*: bulk updated result
+
+
+
+
+
+
+    ### â ï¸ Important Note on Bulk Update Behavior
+
+
+
+
+
+    To ensure data integrity and avoid inconsistencies or race conditions, it is crucial to make each stat update unique per request.
+    We strongly advise against including multiple updates for the same `statCode` with the same `updateStrategy` in a single request,
+    as bulk operations are processed concurrently.
+
+
+
+
+
+
+    Avoid including multiple entries with the same`statCode` but different `updateStrategy` values.
+
+
+
+
+
+
+    To apply multiple operations on the same stat, please batch or sequence them in separate requests , according to your business logic.
+
+
+
+
+    â Incorrect Example:
+
+    [
+    {
+    "statCode": "exp",
+    "updateStrategy": "OVERRIDE",
+    "value": 10
+    },
+    {
+    "statCode": "exp",
+    "updateStrategy": "INCREMENT",
+    "value": 50
+    }
+    ]
+
+    â Correct Example:
+
+    [
+    {
+    "statCode": "exp",
+    "updateStrategy": "OVERRIDE",
+    "value": 10
+    }.
+    {
+    "statCode": "headshot",
+    "updateStrategy": "INCREMENT",
+    "value": 10
+    }
+    ]
 
     Properties:
         url: /social/v2/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk
@@ -2270,7 +2394,7 @@ def bulk_update_user_stat_item_1(
     body: List[BulkUserStatItemUpdate],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public bulk update multiple user's statitems value (bulkUpdateUserStatItem_1)
 
@@ -2283,6 +2407,66 @@ def bulk_update_user_stat_item_1(
 
     Other detail info:
     + *Returns*: bulk updated result
+
+
+
+
+
+
+    ### â ï¸ Important Note on Bulk Update Behavior
+
+
+
+
+
+    To ensure data integrity and avoid inconsistencies or race conditions, it is crucial to make each user/update pair unique per request.
+    We strongly advise against including multiple updates for the same `userId` with the same `statCode` and/or `updateStrategy` in a single request,
+    as bulk operations are processed concurrently.
+
+
+
+
+
+
+    Avoid including multiple entries with the same`userId` and `statCode` but different `updateStrategy` values.
+
+
+
+
+
+
+    To apply multiple operations on the same stat, please batch or sequence them in separate requests , according to your business logic.
+
+
+
+
+    â Incorrect Example:
+
+    [
+    {
+    "userId": "315a070e48a74dae903d559974e6513d",
+    "statCode": "exp",
+    "updateStrategy": "OVERRIDE",
+    "value": 10
+    },
+    {
+    "userId": "315a070e48a74dae903d559974e6513d",
+    "statCode": "exp",
+    "updateStrategy": "INCREMENT",
+    "value": 50
+    }
+    ]
+
+    â Correct Example:
+
+    [
+    {
+    "userId": "315a070e48a74dae903d559974e6513d",
+    "statCode": "exp",
+    "updateStrategy": "INCREMENT",
+    "value": 60
+    }
+    ]
 
     Properties:
         url: /social/v2/public/namespaces/{namespace}/statitems/value/bulk
@@ -2330,7 +2514,7 @@ async def bulk_update_user_stat_item_1_async(
     body: List[BulkUserStatItemUpdate],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public bulk update multiple user's statitems value (bulkUpdateUserStatItem_1)
 
@@ -2343,6 +2527,66 @@ async def bulk_update_user_stat_item_1_async(
 
     Other detail info:
     + *Returns*: bulk updated result
+
+
+
+
+
+
+    ### â ï¸ Important Note on Bulk Update Behavior
+
+
+
+
+
+    To ensure data integrity and avoid inconsistencies or race conditions, it is crucial to make each user/update pair unique per request.
+    We strongly advise against including multiple updates for the same `userId` with the same `statCode` and/or `updateStrategy` in a single request,
+    as bulk operations are processed concurrently.
+
+
+
+
+
+
+    Avoid including multiple entries with the same`userId` and `statCode` but different `updateStrategy` values.
+
+
+
+
+
+
+    To apply multiple operations on the same stat, please batch or sequence them in separate requests , according to your business logic.
+
+
+
+
+    â Incorrect Example:
+
+    [
+    {
+    "userId": "315a070e48a74dae903d559974e6513d",
+    "statCode": "exp",
+    "updateStrategy": "OVERRIDE",
+    "value": 10
+    },
+    {
+    "userId": "315a070e48a74dae903d559974e6513d",
+    "statCode": "exp",
+    "updateStrategy": "INCREMENT",
+    "value": 50
+    }
+    ]
+
+    â Correct Example:
+
+    [
+    {
+    "userId": "315a070e48a74dae903d559974e6513d",
+    "statCode": "exp",
+    "updateStrategy": "INCREMENT",
+    "value": 60
+    }
+    ]
 
     Properties:
         url: /social/v2/public/namespaces/{namespace}/statitems/value/bulk
@@ -2394,7 +2638,7 @@ def bulk_update_user_stat_item_2(
     additional_key: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public bulk update user's statitems value (bulkUpdateUserStatItem_2)
 
@@ -2410,6 +2654,68 @@ def bulk_update_user_stat_item_2(
 
     Other detail info:
     + *Returns*: bulk updated result
+
+
+
+
+
+
+    ### â ï¸ Important Note on Bulk Update Behavior
+
+
+
+
+
+    To ensure data integrity and avoid inconsistencies or race conditions, it is crucial to make each stat update unique per request.
+    We strongly advise against including multiple updates for the same `statCode` with the same `updateStrategy` in a single request,
+    as bulk operations are processed concurrently.
+
+
+
+
+
+
+    Avoid including multiple entries with the same`statCode` but different `updateStrategy` values.
+
+
+
+
+
+
+    To apply multiple operations on the same stat, please batch or sequence them in separate requests , according to your business logic.
+
+
+
+
+    â Incorrect Example:
+
+    [
+    {
+    "statCode": "exp",
+    "updateStrategy": "OVERRIDE",
+    "value": 10
+    },
+    {
+    "statCode": "exp",
+    "updateStrategy": "INCREMENT",
+    "value": 50
+    }
+    ]
+
+    â Correct Example:
+
+    [
+    {
+    "statCode": "exp",
+    "updateStrategy": "OVERRIDE",
+    "value": 10
+    }.
+    {
+    "statCode": "headshot",
+    "updateStrategy": "INCREMENT",
+    "value": 10
+    }
+    ]
 
     Properties:
         url: /social/v2/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk
@@ -2465,7 +2771,7 @@ async def bulk_update_user_stat_item_2_async(
     additional_key: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public bulk update user's statitems value (bulkUpdateUserStatItem_2)
 
@@ -2481,6 +2787,68 @@ async def bulk_update_user_stat_item_2_async(
 
     Other detail info:
     + *Returns*: bulk updated result
+
+
+
+
+
+
+    ### â ï¸ Important Note on Bulk Update Behavior
+
+
+
+
+
+    To ensure data integrity and avoid inconsistencies or race conditions, it is crucial to make each stat update unique per request.
+    We strongly advise against including multiple updates for the same `statCode` with the same `updateStrategy` in a single request,
+    as bulk operations are processed concurrently.
+
+
+
+
+
+
+    Avoid including multiple entries with the same`statCode` but different `updateStrategy` values.
+
+
+
+
+
+
+    To apply multiple operations on the same stat, please batch or sequence them in separate requests , according to your business logic.
+
+
+
+
+    â Incorrect Example:
+
+    [
+    {
+    "statCode": "exp",
+    "updateStrategy": "OVERRIDE",
+    "value": 10
+    },
+    {
+    "statCode": "exp",
+    "updateStrategy": "INCREMENT",
+    "value": 50
+    }
+    ]
+
+    â Correct Example:
+
+    [
+    {
+    "statCode": "exp",
+    "updateStrategy": "OVERRIDE",
+    "value": 10
+    }.
+    {
+    "statCode": "headshot",
+    "updateStrategy": "INCREMENT",
+    "value": 10
+    }
+    ]
 
     Properties:
         url: /social/v2/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk
@@ -2536,7 +2904,7 @@ def bulk_update_user_stat_item_v2(
     body: List[BulkUserStatItemUpdate],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk update multiple user's statitems value (bulkUpdateUserStatItemV2)
 
@@ -2549,6 +2917,66 @@ def bulk_update_user_stat_item_v2(
 
     Other detail info:
     + *Returns*: bulk updated result
+
+
+
+
+
+
+    ### â ï¸ Important Note on Bulk Update Behavior
+
+
+
+
+
+    To ensure data integrity and avoid inconsistencies or race conditions, it is crucial to make each user/update pair unique per request.
+    We strongly advise against including multiple updates for the same `userId` with the same `statCode` and/or `updateStrategy` in a single request,
+    as bulk operations are processed concurrently.
+
+
+
+
+
+
+    Avoid including multiple entries with the same`userId` and `statCode` but different `updateStrategy` values.
+
+
+
+
+
+
+    To apply multiple operations on the same stat, please batch or sequence them in separate requests , according to your business logic.
+
+
+
+
+    â Incorrect Example:
+
+    [
+    {
+    "userId": "315a070e48a74dae903d559974e6513d",
+    "statCode": "exp",
+    "updateStrategy": "OVERRIDE",
+    "value": 10
+    },
+    {
+    "userId": "315a070e48a74dae903d559974e6513d",
+    "statCode": "exp",
+    "updateStrategy": "INCREMENT",
+    "value": 50
+    }
+    ]
+
+    â Correct Example:
+
+    [
+    {
+    "userId": "315a070e48a74dae903d559974e6513d",
+    "statCode": "exp",
+    "updateStrategy": "INCREMENT",
+    "value": 60
+    }
+    ]
 
     Properties:
         url: /social/v2/admin/namespaces/{namespace}/statitems/value/bulk
@@ -2596,7 +3024,7 @@ async def bulk_update_user_stat_item_v2_async(
     body: List[BulkUserStatItemUpdate],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk update multiple user's statitems value (bulkUpdateUserStatItemV2)
 
@@ -2609,6 +3037,66 @@ async def bulk_update_user_stat_item_v2_async(
 
     Other detail info:
     + *Returns*: bulk updated result
+
+
+
+
+
+
+    ### â ï¸ Important Note on Bulk Update Behavior
+
+
+
+
+
+    To ensure data integrity and avoid inconsistencies or race conditions, it is crucial to make each user/update pair unique per request.
+    We strongly advise against including multiple updates for the same `userId` with the same `statCode` and/or `updateStrategy` in a single request,
+    as bulk operations are processed concurrently.
+
+
+
+
+
+
+    Avoid including multiple entries with the same`userId` and `statCode` but different `updateStrategy` values.
+
+
+
+
+
+
+    To apply multiple operations on the same stat, please batch or sequence them in separate requests , according to your business logic.
+
+
+
+
+    â Incorrect Example:
+
+    [
+    {
+    "userId": "315a070e48a74dae903d559974e6513d",
+    "statCode": "exp",
+    "updateStrategy": "OVERRIDE",
+    "value": 10
+    },
+    {
+    "userId": "315a070e48a74dae903d559974e6513d",
+    "statCode": "exp",
+    "updateStrategy": "INCREMENT",
+    "value": 50
+    }
+    ]
+
+    â Correct Example:
+
+    [
+    {
+    "userId": "315a070e48a74dae903d559974e6513d",
+    "statCode": "exp",
+    "updateStrategy": "INCREMENT",
+    "value": 60
+    }
+    ]
 
     Properties:
         url: /social/v2/admin/namespaces/{namespace}/statitems/value/bulk
@@ -2659,7 +3147,7 @@ def create_user_stat_item(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create user's statItem (createUserStatItem)
 
@@ -2719,7 +3207,7 @@ async def create_user_stat_item_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create user's statItem (createUserStatItem)
 
@@ -2781,7 +3269,7 @@ def delete_user_stat_items(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete User's statItems (deleteUserStatItems)
 
@@ -2840,7 +3328,7 @@ async def delete_user_stat_items_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete User's statItems (deleteUserStatItems)
 
@@ -2901,7 +3389,7 @@ def delete_user_stat_items_1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete User's statItems (deleteUserStatItems_1)
 
@@ -2959,7 +3447,7 @@ async def delete_user_stat_items_1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete User's statItems (deleteUserStatItems_1)
 
@@ -3020,7 +3508,7 @@ def delete_user_stat_items_2(
     additional_key: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete User's statItems (deleteUserStatItems_2)
 
@@ -3086,7 +3574,7 @@ async def delete_user_stat_items_2_async(
     additional_key: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete User's statItems (deleteUserStatItems_2)
 
@@ -3155,7 +3643,7 @@ def get_stat_items(
     sort_by: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get users' stat item values by stat code (getStatItems)
 
@@ -3217,7 +3705,7 @@ async def get_stat_items_async(
     sort_by: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get users' stat item values by stat code (getStatItems)
 
@@ -3284,7 +3772,7 @@ def get_user_stat_items(
     tags: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List user's statItems (getUserStatItems)
 
@@ -3360,7 +3848,7 @@ async def get_user_stat_items_async(
     tags: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List user's statItems (getUserStatItems)
 
@@ -3434,7 +3922,7 @@ def inc_user_stat_item_value(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update user's statitem value (incUserStatItemValue)
 
@@ -3500,7 +3988,7 @@ async def inc_user_stat_item_value_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update user's statitem value (incUserStatItemValue)
 
@@ -3567,7 +4055,7 @@ def public_bulk_create_user_stat_items(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk create user's statItems (publicBulkCreateUserStatItems)
 
@@ -3625,7 +4113,7 @@ async def public_bulk_create_user_stat_items_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk create user's statItems (publicBulkCreateUserStatItems)
 
@@ -3684,7 +4172,7 @@ def public_bulk_inc_user_stat_item(
     body: List[BulkUserStatItemInc],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public bulk update multiple user's statitems value (publicBulkIncUserStatItem)
 
@@ -3738,7 +4226,7 @@ async def public_bulk_inc_user_stat_item_async(
     body: List[BulkUserStatItemInc],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public bulk update multiple user's statitems value (publicBulkIncUserStatItem)
 
@@ -3795,7 +4283,7 @@ def public_bulk_inc_user_stat_item_1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public bulk update user's statitems value (publicBulkIncUserStatItem_1)
 
@@ -3853,7 +4341,7 @@ async def public_bulk_inc_user_stat_item_1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public bulk update user's statitems value (publicBulkIncUserStatItem_1)
 
@@ -3912,7 +4400,7 @@ def public_bulk_inc_user_stat_item_value(
     body: List[BulkUserStatItemInc],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public bulk update multiple user's statitems value (publicBulkIncUserStatItemValue)
 
@@ -3966,7 +4454,7 @@ async def public_bulk_inc_user_stat_item_value_async(
     body: List[BulkUserStatItemInc],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public bulk update multiple user's statitems value (publicBulkIncUserStatItemValue)
 
@@ -4023,7 +4511,7 @@ def public_create_user_stat_item(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create user's statItem (publicCreateUserStatItem)
 
@@ -4083,7 +4571,7 @@ async def public_create_user_stat_item_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create user's statItem (publicCreateUserStatItem)
 
@@ -4146,7 +4634,7 @@ def public_inc_user_stat_item(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public update user's statitem value (publicIncUserStatItem)
 
@@ -4212,7 +4700,7 @@ async def public_inc_user_stat_item_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public update user's statitem value (publicIncUserStatItem)
 
@@ -4280,7 +4768,7 @@ def public_inc_user_stat_item_value(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public update user's statitem value (publicIncUserStatItemValue)
 
@@ -4346,7 +4834,7 @@ async def public_inc_user_stat_item_value_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public update user's statitem value (publicIncUserStatItemValue)
 
@@ -4414,7 +4902,7 @@ def public_list_all_my_stat_items(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public list user's statItems (publicListAllMyStatItems)
 
@@ -4477,7 +4965,7 @@ async def public_list_all_my_stat_items_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public list user's statItems (publicListAllMyStatItems)
 
@@ -4544,7 +5032,7 @@ def public_list_my_stat_items(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public list user's statItems (publicListMyStatItems)
 
@@ -4612,7 +5100,7 @@ async def public_list_my_stat_items_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public list user's statItems (publicListMyStatItems)
 
@@ -4681,7 +5169,7 @@ def public_query_user_stat_items(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public list user's statItems (publicQueryUserStatItems)
 
@@ -4752,7 +5240,7 @@ async def public_query_user_stat_items_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public list user's statItems (publicQueryUserStatItems)
 
@@ -4827,7 +5315,7 @@ def public_query_user_stat_items_1(
     tags: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public list user's statItems (publicQueryUserStatItems_1)
 
@@ -4899,7 +5387,7 @@ async def public_query_user_stat_items_1_async(
     tags: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public list user's statItems (publicQueryUserStatItems_1)
 
@@ -4971,7 +5459,7 @@ def public_query_user_stat_items_2(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public list user's statItems (publicQueryUserStatItems_2)
 
@@ -5042,7 +5530,7 @@ async def public_query_user_stat_items_2_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public list user's statItems (publicQueryUserStatItems_2)
 
@@ -5115,7 +5603,7 @@ def reset_user_stat_item_value(
     additional_key: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reset user's statitem value (resetUserStatItemValue)
 
@@ -5185,7 +5673,7 @@ async def reset_user_stat_item_value_async(
     additional_key: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reset user's statitem value (resetUserStatItemValue)
 
@@ -5255,7 +5743,7 @@ def reset_user_stat_item_value_1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public reset user's statitem value (resetUserStatItemValue_1)
 
@@ -5317,7 +5805,7 @@ async def reset_user_stat_item_value_1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public reset user's statitem value (resetUserStatItemValue_1)
 
@@ -5383,7 +5871,7 @@ def update_user_stat_item_value(
     additional_key: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update user's statitem value (updateUserStatItemValue)
 
@@ -5462,7 +5950,7 @@ async def update_user_stat_item_value_async(
     additional_key: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update user's statitem value (updateUserStatItemValue)
 
@@ -5543,7 +6031,7 @@ def update_user_stat_item_value_1(
     additional_key: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public update user's statitem value (updateUserStatItemValue_1)
 
@@ -5622,7 +6110,7 @@ async def update_user_stat_item_value_1_async(
     additional_key: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public update user's statitem value (updateUserStatItemValue_1)
 

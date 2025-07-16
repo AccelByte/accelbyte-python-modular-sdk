@@ -54,7 +54,7 @@ def accept_backfill(
     body: ApiBackFillAcceptRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Accept a backfill proposal (AcceptBackfill)
 
@@ -112,7 +112,7 @@ async def accept_backfill_async(
     body: ApiBackFillAcceptRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Accept a backfill proposal (AcceptBackfill)
 
@@ -179,7 +179,7 @@ def admin_query_backfill(
     to_time: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Query backfill ticket  (AdminQueryBackfill)
 
@@ -263,7 +263,7 @@ async def admin_query_backfill_async(
     to_time: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Query backfill ticket  (AdminQueryBackfill)
 
@@ -341,7 +341,7 @@ def create_backfill(
     body: ApiBackFillCreateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a backfill ticket (CreateBackfill)
 
@@ -395,7 +395,7 @@ async def create_backfill_async(
     body: ApiBackFillCreateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a backfill ticket (CreateBackfill)
 
@@ -451,7 +451,7 @@ def delete_backfill(
     backfill_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a backfill ticket (DeleteBackfill)
 
@@ -501,7 +501,7 @@ async def delete_backfill_async(
     backfill_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a backfill ticket (DeleteBackfill)
 
@@ -553,7 +553,7 @@ def get_backfill(
     backfill_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a backfill ticket (GetBackfill)
 
@@ -605,7 +605,7 @@ async def get_backfill_async(
     backfill_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a backfill ticket (GetBackfill)
 
@@ -659,7 +659,7 @@ def get_backfill_proposal(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get backfill proposal (GetBackfillProposal)
 
@@ -711,7 +711,7 @@ async def get_backfill_proposal_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get backfill proposal (GetBackfillProposal)
 
@@ -766,7 +766,7 @@ def reject_backfill(
     body: ApiBackFillRejectRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reject a backfill proposal (RejectBackfill)
 
@@ -822,7 +822,7 @@ async def reject_backfill_async(
     body: ApiBackFillRejectRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reject a backfill proposal (RejectBackfill)
 

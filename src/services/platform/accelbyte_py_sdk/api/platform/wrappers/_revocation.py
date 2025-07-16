@@ -53,7 +53,7 @@ from ..models import RevocationResultStatusEnum
 def delete_revocation_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete revocation config (deleteRevocationConfig)
 
@@ -91,7 +91,7 @@ def delete_revocation_config(
 async def delete_revocation_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete revocation config (deleteRevocationConfig)
 
@@ -133,7 +133,7 @@ def do_revocation(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Do revocation. (doRevocation)
 
@@ -183,7 +183,7 @@ async def do_revocation_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Do revocation. (doRevocation)
 
@@ -233,7 +233,7 @@ async def do_revocation_async(
 def get_revocation_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get revocation configuration (getRevocationConfig)
 
@@ -275,7 +275,7 @@ def get_revocation_config(
 async def get_revocation_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get revocation configuration (getRevocationConfig)
 
@@ -327,7 +327,7 @@ def query_revocation_histories(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query revocation histories (queryRevocationHistories)
 
@@ -399,7 +399,7 @@ async def query_revocation_histories_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query revocation histories (queryRevocationHistories)
 
@@ -466,7 +466,7 @@ def update_revocation_config(
     body: RevocationConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update revocation configuration (updateRevocationConfig)
 
@@ -510,7 +510,7 @@ async def update_revocation_config_async(
     body: RevocationConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update revocation configuration (updateRevocationConfig)
 

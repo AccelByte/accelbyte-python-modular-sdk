@@ -93,7 +93,7 @@ def admin_create_user_order(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Create an order (adminCreateUserOrder)
 
@@ -168,7 +168,7 @@ async def admin_create_user_order_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Create an order (adminCreateUserOrder)
 
@@ -245,7 +245,7 @@ def count_of_purchased_item(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get the count of purchased item (countOfPurchasedItem)
 
@@ -293,7 +293,7 @@ async def count_of_purchased_item_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get the count of purchased item (countOfPurchasedItem)
 
@@ -343,7 +343,7 @@ def download_user_order_receipt(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Download user order receipt (downloadUserOrderReceipt)
 
@@ -395,7 +395,7 @@ async def download_user_order_receipt_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Download user order receipt (downloadUserOrderReceipt)
 
@@ -449,7 +449,7 @@ def fulfill_user_order(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Fulfill an order (fulfillUserOrder)
 
@@ -503,7 +503,7 @@ async def fulfill_user_order_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Fulfill an order (fulfillUserOrder)
 
@@ -558,7 +558,7 @@ def get_order(
     order_no: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get order (getOrder)
 
@@ -604,7 +604,7 @@ async def get_order_async(
     order_no: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get order (getOrder)
 
@@ -651,7 +651,7 @@ async def get_order_async(
 def get_order_statistics(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Order Statistics (getOrderStatistics)
 
@@ -691,7 +691,7 @@ def get_order_statistics(
 async def get_order_statistics_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Order Statistics (getOrderStatistics)
 
@@ -735,7 +735,7 @@ def get_user_order(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get an order (getUserOrder)
 
@@ -785,7 +785,7 @@ async def get_user_order_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get an order (getUserOrder)
 
@@ -838,7 +838,7 @@ def get_user_order_grant(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user order grant (getUserOrderGrant)
 
@@ -887,7 +887,7 @@ async def get_user_order_grant_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user order grant (getUserOrderGrant)
 
@@ -937,7 +937,7 @@ def get_user_order_histories(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user order histories (getUserOrderHistories)
 
@@ -985,7 +985,7 @@ async def get_user_order_histories_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user order histories (getUserOrderHistories)
 
@@ -1036,7 +1036,7 @@ def process_user_order_notification(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Web hook for payment notification (processUserOrderNotification)
 
@@ -1090,7 +1090,7 @@ async def process_user_order_notification_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Web hook for payment notification (processUserOrderNotification)
 
@@ -1145,7 +1145,7 @@ def public_cancel_user_order(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel user order (publicCancelUserOrder)
 
@@ -1197,7 +1197,7 @@ async def public_cancel_user_order_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel user order (publicCancelUserOrder)
 
@@ -1251,7 +1251,7 @@ def public_create_user_order(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create an order (publicCreateUserOrder)
 
@@ -1325,7 +1325,7 @@ async def public_create_user_order_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create an order (publicCreateUserOrder)
 
@@ -1401,7 +1401,7 @@ def public_download_user_order_receipt(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Download user order receipt (publicDownloadUserOrderReceipt)
 
@@ -1453,7 +1453,7 @@ async def public_download_user_order_receipt_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Download user order receipt (publicDownloadUserOrderReceipt)
 
@@ -1507,7 +1507,7 @@ def public_get_user_order(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user order (publicGetUserOrder)
 
@@ -1557,7 +1557,7 @@ async def public_get_user_order_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user order (publicGetUserOrder)
 
@@ -1609,7 +1609,7 @@ def public_get_user_order_histories(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user order histories (publicGetUserOrderHistories)
 
@@ -1657,7 +1657,7 @@ async def public_get_user_order_histories_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user order histories (publicGetUserOrderHistories)
 
@@ -1707,7 +1707,7 @@ def public_preview_order_price(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Preview order price with discount code. (publicPreviewOrderPrice)
 
@@ -1764,7 +1764,7 @@ async def public_preview_order_price_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Preview order price with discount code. (publicPreviewOrderPrice)
 
@@ -1827,7 +1827,7 @@ def public_query_user_orders(
     status: Optional[Union[str, PublicQueryUserOrdersStatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user orders (publicQueryUserOrders)
 
@@ -1891,7 +1891,7 @@ async def public_query_user_orders_async(
     status: Optional[Union[str, PublicQueryUserOrdersStatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user orders (publicQueryUserOrders)
 
@@ -1959,7 +1959,7 @@ def query_orders(
     with_total: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query orders (queryOrders)
 
@@ -2033,7 +2033,7 @@ async def query_orders_async(
     with_total: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query orders (queryOrders)
 
@@ -2107,7 +2107,7 @@ def query_user_orders(
     status: Optional[Union[str, QueryUserOrdersStatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user orders (queryUserOrders)
 
@@ -2171,7 +2171,7 @@ async def query_user_orders_async(
     status: Optional[Union[str, QueryUserOrdersStatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user orders (queryUserOrders)
 
@@ -2233,7 +2233,7 @@ def refund_order(
     order_no: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Refund order (refundOrder)
 
@@ -2285,7 +2285,7 @@ async def refund_order_async(
     order_no: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Refund order (refundOrder)
 
@@ -2340,7 +2340,7 @@ def update_user_order_status(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update order status (updateUserOrderStatus)
 
@@ -2398,7 +2398,7 @@ async def update_user_order_status_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update order status (updateUserOrderStatus)
 

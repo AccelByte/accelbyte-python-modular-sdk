@@ -55,7 +55,7 @@ def get_challenges(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List Challenges (GetChallenges)
 
@@ -125,7 +125,7 @@ async def get_challenges_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List Challenges (GetChallenges)
 
@@ -196,7 +196,7 @@ def public_get_scheduled_goals(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List Goals of a Challenge (publicGetScheduledGoals)
 
@@ -262,7 +262,7 @@ async def public_get_scheduled_goals_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List Goals of a Challenge (publicGetScheduledGoals)
 

@@ -58,7 +58,7 @@ def create_member_role_admin_v1(
     body: ModelsCreateMemberRoleRequestV1,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create new member role (createMemberRoleAdminV1)
 
@@ -120,7 +120,7 @@ async def create_member_role_admin_v1_async(
     body: ModelsCreateMemberRoleRequestV1,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create new member role (createMemberRoleAdminV1)
 
@@ -184,7 +184,7 @@ def delete_member_role_admin_v1(
     member_role_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete member role (deleteMemberRoleAdminV1)
 
@@ -238,7 +238,7 @@ async def delete_member_role_admin_v1_async(
     member_role_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete member role (deleteMemberRoleAdminV1)
 
@@ -295,7 +295,7 @@ def delete_member_role_public_v1(
     member_role_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Remove role from group member (deleteMemberRolePublicV1)
 
@@ -357,7 +357,7 @@ async def delete_member_role_public_v1_async(
     member_role_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Remove role from group member (deleteMemberRolePublicV1)
 
@@ -422,7 +422,7 @@ def delete_member_role_public_v2(
     member_role_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Remove role from group member (deleteMemberRolePublicV2)
 
@@ -488,7 +488,7 @@ async def delete_member_role_public_v2_async(
     member_role_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Remove role from group member (deleteMemberRolePublicV2)
 
@@ -555,7 +555,7 @@ def get_member_roles_list_admin_v1(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get all list of member roles (getMemberRolesListAdminV1)
 
@@ -611,7 +611,7 @@ async def get_member_roles_list_admin_v1_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get all list of member roles (getMemberRolesListAdminV1)
 
@@ -669,7 +669,7 @@ def get_member_roles_list_public_v1(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get all list of member roles (getMemberRolesListPublicV1)
 
@@ -727,7 +727,7 @@ async def get_member_roles_list_public_v1_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get all list of member roles (getMemberRolesListPublicV1)
 
@@ -787,7 +787,7 @@ def get_member_roles_list_public_v2(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get all list of member roles (getMemberRolesListPublicV2)
 
@@ -843,7 +843,7 @@ async def get_member_roles_list_public_v2_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get all list of member roles (getMemberRolesListPublicV2)
 
@@ -900,7 +900,7 @@ def get_single_member_role_admin_v1(
     member_role_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get member role (getSingleMemberRoleAdminV1)
 
@@ -954,7 +954,7 @@ async def get_single_member_role_admin_v1_async(
     member_role_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get member role (getSingleMemberRoleAdminV1)
 
@@ -1011,7 +1011,7 @@ def update_member_role_admin_v1(
     member_role_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update member role (updateMemberRoleAdminV1)
 
@@ -1069,7 +1069,7 @@ async def update_member_role_admin_v1_async(
     member_role_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update member role (updateMemberRoleAdminV1)
 
@@ -1129,7 +1129,7 @@ def update_member_role_permission_admin_v1(
     member_role_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update member role permission (updateMemberRolePermissionAdminV1)
 
@@ -1197,7 +1197,7 @@ async def update_member_role_permission_admin_v1_async(
     member_role_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update member role permission (updateMemberRolePermissionAdminV1)
 
@@ -1267,7 +1267,7 @@ def update_member_role_public_v1(
     member_role_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Assign role to group member (updateMemberRolePublicV1)
 
@@ -1327,7 +1327,7 @@ async def update_member_role_public_v1_async(
     member_role_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Assign role to group member (updateMemberRolePublicV1)
 
@@ -1390,7 +1390,7 @@ def update_member_role_public_v2(
     member_role_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Assign role to group member (updateMemberRolePublicV2)
 
@@ -1454,7 +1454,7 @@ async def update_member_role_public_v2_async(
     member_role_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Assign role to group member (updateMemberRolePublicV2)
 

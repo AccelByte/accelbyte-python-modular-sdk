@@ -58,6 +58,8 @@ class GetNamespaceContext(Operation):
 
         namespace: (namespace) REQUIRED str in path
 
+        refresh_on_cache_miss: (refreshOnCacheMiss) OPTIONAL bool in query
+
     Responses:
         200: OK - NamespaceContext (Successful operation)
 
@@ -80,6 +82,7 @@ class GetNamespaceContext(Operation):
     service_name: Optional[str] = "basic"
 
     namespace: str  # REQUIRED in [path]
+    refresh_on_cache_miss: bool  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -128,12 +131,19 @@ class GetNamespaceContext(Operation):
     def get_all_params(self) -> dict:
         return {
             "path": self.get_path_params(),
+            "query": self.get_query_params(),
         }
 
     def get_path_params(self) -> dict:
         result = {}
         if hasattr(self, "namespace"):
             result["namespace"] = self.namespace
+        return result
+
+    def get_query_params(self) -> dict:
+        result = {}
+        if hasattr(self, "refresh_on_cache_miss"):
+            result["refreshOnCacheMiss"] = self.refresh_on_cache_miss
         return result
 
     # endregion get_x_params methods
@@ -148,6 +158,10 @@ class GetNamespaceContext(Operation):
         self.namespace = value
         return self
 
+    def with_refresh_on_cache_miss(self, value: bool) -> GetNamespaceContext:
+        self.refresh_on_cache_miss = value
+        return self
+
     # endregion with_x methods
 
     # region to methods
@@ -158,6 +172,10 @@ class GetNamespaceContext(Operation):
             result["namespace"] = str(self.namespace)
         elif include_empty:
             result["namespace"] = ""
+        if hasattr(self, "refresh_on_cache_miss") and self.refresh_on_cache_miss:
+            result["refreshOnCacheMiss"] = bool(self.refresh_on_cache_miss)
+        elif include_empty:
+            result["refreshOnCacheMiss"] = False
         return result
 
     # endregion to methods
@@ -289,9 +307,13 @@ class GetNamespaceContext(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, namespace: str, **kwargs) -> GetNamespaceContext:
+    def create(
+        cls, namespace: str, refresh_on_cache_miss: Optional[bool] = None, **kwargs
+    ) -> GetNamespaceContext:
         instance = cls()
         instance.namespace = namespace
+        if refresh_on_cache_miss is not None:
+            instance.refresh_on_cache_miss = refresh_on_cache_miss
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -305,18 +327,24 @@ class GetNamespaceContext(Operation):
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
             instance.namespace = ""
+        if "refreshOnCacheMiss" in dict_ and dict_["refreshOnCacheMiss"] is not None:
+            instance.refresh_on_cache_miss = bool(dict_["refreshOnCacheMiss"])
+        elif include_empty:
+            instance.refresh_on_cache_miss = False
         return instance
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
             "namespace": "namespace",
+            "refreshOnCacheMiss": "refresh_on_cache_miss",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
             "namespace": True,
+            "refreshOnCacheMiss": False,
         }
 
     # endregion static methods

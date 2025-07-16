@@ -43,7 +43,7 @@ def get_user_leaderboard_rankings_admin_v1(
     previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user rankings (getUserLeaderboardRankingsAdminV1)
 
@@ -103,7 +103,7 @@ async def get_user_leaderboard_rankings_admin_v1_async(
     previous_version: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user rankings (getUserLeaderboardRankingsAdminV1)
 

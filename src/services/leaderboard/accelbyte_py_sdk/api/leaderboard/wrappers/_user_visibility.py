@@ -47,7 +47,7 @@ def get_hidden_users_v2(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get hidden users on a leaderboard (GetHiddenUsersV2)
 
@@ -105,7 +105,7 @@ async def get_hidden_users_v2_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get hidden users on a leaderboard (GetHiddenUsersV2)
 
@@ -164,7 +164,7 @@ def get_user_visibility_status_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user visibility status (GetUserVisibilityStatusV2)
 
@@ -218,7 +218,7 @@ async def get_user_visibility_status_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user visibility status (GetUserVisibilityStatusV2)
 
@@ -275,7 +275,7 @@ def set_user_leaderboard_visibility_status_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Set user visibility status on a specific leaderboard code (SetUserLeaderboardVisibilityStatusV2)
 
@@ -333,7 +333,7 @@ async def set_user_leaderboard_visibility_status_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Set user visibility status on a specific leaderboard code (SetUserLeaderboardVisibilityStatusV2)
 
@@ -392,7 +392,7 @@ def set_user_visibility_status_v2(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Set user visibility status on a all current leaderboard (SetUserVisibilityStatusV2)
 
@@ -446,7 +446,7 @@ async def set_user_visibility_status_v2_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Set user visibility status on a all current leaderboard (SetUserVisibilityStatusV2)
 

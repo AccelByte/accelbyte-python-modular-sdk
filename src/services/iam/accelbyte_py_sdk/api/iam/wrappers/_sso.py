@@ -40,7 +40,7 @@ def login_sso_client(
     platform_id: str,
     payload: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Login to SSO client with provided platformId (LoginSSOClient)
 
@@ -77,7 +77,7 @@ async def login_sso_client_async(
     platform_id: str,
     payload: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Login to SSO client with provided platformId (LoginSSOClient)
 

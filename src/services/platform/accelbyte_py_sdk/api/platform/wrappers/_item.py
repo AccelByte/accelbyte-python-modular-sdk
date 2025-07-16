@@ -220,7 +220,7 @@ def acquire_item(
     item_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Acquire item (acquireItem)
 
@@ -271,7 +271,7 @@ async def acquire_item_async(
     item_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Acquire item (acquireItem)
 
@@ -327,7 +327,7 @@ def bulk_get_locale_items(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get locale items (bulkGetLocaleItems)
 
@@ -391,7 +391,7 @@ async def bulk_get_locale_items_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get locale items (bulkGetLocaleItems)
 
@@ -454,7 +454,7 @@ def bulk_update_region_data(
     body: Optional[BulkRegionDataChangeRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update item's region data in bulk (bulkUpdateRegionData)
 
@@ -508,7 +508,7 @@ async def bulk_update_region_data_async(
     body: Optional[BulkRegionDataChangeRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update item's region data in bulk (bulkUpdateRegionData)
 
@@ -564,7 +564,7 @@ def create_item(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create an Item (createItem)
 
@@ -853,7 +853,7 @@ async def create_item_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create an Item (createItem)
 
@@ -1142,7 +1142,7 @@ async def create_item_async(
 def create_item_type_config(
     body: ItemTypeConfigCreate,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create an Item Type Config (createItemTypeConfig)
 
@@ -1184,7 +1184,7 @@ def create_item_type_config(
 async def create_item_type_config_async(
     body: ItemTypeConfigCreate,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create an Item Type Config (createItemTypeConfig)
 
@@ -1231,7 +1231,7 @@ def defeature_item(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Defeature an item (defeatureItem)
 
@@ -1288,7 +1288,7 @@ async def defeature_item_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Defeature an item (defeatureItem)
 
@@ -1350,7 +1350,7 @@ def delete_item(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete an item (deleteItem)
 
@@ -1414,7 +1414,7 @@ async def delete_item_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete an item (deleteItem)
 
@@ -1547,7 +1547,7 @@ def disable_item(
     body: Optional[ChangeStatusItemRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable an item (disableItem)
 
@@ -1604,7 +1604,7 @@ async def disable_item_async(
     body: Optional[ChangeStatusItemRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable an item (disableItem)
 
@@ -1662,7 +1662,7 @@ def enable_item(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable an item (enableItem)
 
@@ -1715,7 +1715,7 @@ async def enable_item_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable an item (enableItem)
 
@@ -1771,7 +1771,7 @@ def feature_item(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Feature an item (featureItem)
 
@@ -1828,7 +1828,7 @@ async def feature_item_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Feature an item (featureItem)
 
@@ -1887,7 +1887,7 @@ def get_app(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get an app info (getApp)
 
@@ -1941,7 +1941,7 @@ async def get_app_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get an app info (getApp)
 
@@ -1994,7 +1994,7 @@ async def get_app_async(
 def get_available_predicate_types(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get available predicate types (getAvailablePredicateTypes)
 
@@ -2037,7 +2037,7 @@ def get_available_predicate_types(
 async def get_available_predicate_types_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get available predicate types (getAvailablePredicateTypes)
 
@@ -2084,7 +2084,7 @@ def get_bulk_item_id_by_skus(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get multiple itemId by sku (getBulkItemIdBySkus)
 
@@ -2134,7 +2134,7 @@ async def get_bulk_item_id_by_skus_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get multiple itemId by sku (getBulkItemIdBySkus)
 
@@ -2189,7 +2189,7 @@ def get_estimated_price(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get estimated price (getEstimatedPrice)
 
@@ -2249,7 +2249,7 @@ async def get_estimated_price_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get estimated price (getEstimatedPrice)
 
@@ -2309,7 +2309,7 @@ def get_item(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get an item (getItem)
 
@@ -2365,7 +2365,7 @@ async def get_item_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get an item (getItem)
 
@@ -2423,7 +2423,7 @@ def get_item_by_app_id(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get item by appId (getItemByAppId)
 
@@ -2479,7 +2479,7 @@ async def get_item_by_app_id_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get item by appId (getItemByAppId)
 
@@ -2537,7 +2537,7 @@ def get_item_by_sku(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get item by sku (getItemBySku)
 
@@ -2593,7 +2593,7 @@ async def get_item_by_sku_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get item by sku (getItemBySku)
 
@@ -2649,7 +2649,7 @@ def get_item_dynamic_data(
     item_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get item dynamic data (getItemDynamicData)
 
@@ -2696,7 +2696,7 @@ async def get_item_dynamic_data_async(
     item_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get item dynamic data (getItemDynamicData)
 
@@ -2747,7 +2747,7 @@ def get_item_id_by_sku(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get itemId by sku (getItemIdBySku)
 
@@ -2803,7 +2803,7 @@ async def get_item_id_by_sku_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get itemId by sku (getItemIdBySku)
 
@@ -2861,7 +2861,7 @@ def get_items(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get items (getItems)
 
@@ -2917,7 +2917,7 @@ async def get_items_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get items (getItems)
 
@@ -3056,7 +3056,7 @@ def get_locale_item(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get an item in locale (getLocaleItem)
 
@@ -3124,7 +3124,7 @@ async def get_locale_item_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get an item in locale (getLocaleItem)
 
@@ -3194,7 +3194,7 @@ def get_locale_item_by_sku(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get an item by sku in locale (getLocaleItemBySku)
 
@@ -3262,7 +3262,7 @@ async def get_locale_item_by_sku_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get an item by sku in locale (getLocaleItemBySku)
 
@@ -3328,7 +3328,7 @@ def list_basic_items_by_features(
     features: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List basic items by features (listBasicItemsByFeatures)
 
@@ -3378,7 +3378,7 @@ async def list_basic_items_by_features_async(
     features: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List basic items by features (listBasicItemsByFeatures)
 
@@ -3499,7 +3499,7 @@ def public_bulk_get_items(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get locale items (publicBulkGetItems)
 
@@ -3565,7 +3565,7 @@ async def public_bulk_get_items_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get locale items (publicBulkGetItems)
 
@@ -3632,7 +3632,7 @@ def public_get_app(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get an app in locale (publicGetApp)
 
@@ -3695,7 +3695,7 @@ async def public_get_app_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get an app in locale (publicGetApp)
 
@@ -3759,7 +3759,7 @@ def public_get_estimated_price(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get estimated price (publicGetEstimatedPrice)
 
@@ -3811,7 +3811,7 @@ async def public_get_estimated_price_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get estimated price (publicGetEstimatedPrice)
 
@@ -3868,7 +3868,7 @@ def public_get_item(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get an item in locale (publicGetItem)
 
@@ -3938,7 +3938,7 @@ async def public_get_item_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get an item in locale (publicGetItem)
 
@@ -4008,7 +4008,7 @@ def public_get_item_by_app_id(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get item by appId (publicGetItemByAppId)
 
@@ -4070,7 +4070,7 @@ async def public_get_item_by_app_id_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get item by appId (publicGetItemByAppId)
 
@@ -4135,7 +4135,7 @@ def public_get_item_by_sku(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get item by sku (publicGetItemBySku)
 
@@ -4201,7 +4201,7 @@ async def public_get_item_by_sku_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get item by sku (publicGetItemBySku)
 
@@ -4265,7 +4265,7 @@ def public_get_item_dynamic_data(
     item_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get item dynamic data (publicGetItemDynamicData)
 
@@ -4312,7 +4312,7 @@ async def public_get_item_dynamic_data_async(
     item_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get item dynamic data (publicGetItemDynamicData)
 
@@ -4374,7 +4374,7 @@ def public_query_items(
     tags: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query items by criteria (publicQueryItems)
 
@@ -4478,7 +4478,7 @@ async def public_query_items_async(
     tags: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query items by criteria (publicQueryItems)
 
@@ -4578,7 +4578,7 @@ def public_search_items(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Search items by keyword (publicSearchItems)
 
@@ -4656,7 +4656,7 @@ async def public_search_items_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Search items by keyword (publicSearchItems)
 
@@ -4729,7 +4729,7 @@ def public_validate_item_purchase_condition(
     body: ItemPurchaseConditionValidateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Validate user item purchase condition (publicValidateItemPurchaseCondition)
 
@@ -4773,7 +4773,7 @@ async def public_validate_item_purchase_condition_async(
     body: ItemPurchaseConditionValidateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Validate user item purchase condition (publicValidateItemPurchaseCondition)
 
@@ -4823,7 +4823,7 @@ def query_item_references(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get item references (queryItemReferences)
 
@@ -4877,7 +4877,7 @@ async def query_item_references_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get item references (queryItemReferences)
 
@@ -4943,7 +4943,7 @@ def query_items(
     target_namespace: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query items by criteria (queryItems)
 
@@ -5049,7 +5049,7 @@ async def query_items_async(
     target_namespace: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query items by criteria (queryItems)
 
@@ -5160,7 +5160,7 @@ def query_items_v2(
     with_total: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query items by criteria (queryItemsV2)
 
@@ -5282,7 +5282,7 @@ async def query_items_v2_async(
     with_total: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query items by criteria (queryItemsV2)
 
@@ -5393,7 +5393,7 @@ def query_uncategorized_items(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query uncategorized items (queryUncategorizedItems)
 
@@ -5459,7 +5459,7 @@ async def query_uncategorized_items_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query uncategorized items (queryUncategorizedItems)
 
@@ -5524,7 +5524,7 @@ def return_item(
     item_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Return item (returnItem)
 
@@ -5574,7 +5574,7 @@ async def return_item_async(
     item_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Return item (returnItem)
 
@@ -5632,7 +5632,7 @@ def search_items(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Search items by keyword (searchItems)
 
@@ -5708,7 +5708,7 @@ async def search_items_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Search items by keyword (searchItems)
 
@@ -5779,7 +5779,7 @@ def search_item_type_config(
     item_type: Union[str, SearchItemTypeConfigItemTypeEnum],
     clazz: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get an item type config (searchItemTypeConfig)
 
@@ -5823,7 +5823,7 @@ async def search_item_type_config_async(
     item_type: Union[str, SearchItemTypeConfigItemTypeEnum],
     clazz: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get an item type config (searchItemTypeConfig)
 
@@ -5870,7 +5870,7 @@ def sync_in_game_item(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync an in game item (syncInGameItem)
 
@@ -5930,7 +5930,7 @@ async def sync_in_game_item_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync an in game item (syncInGameItem)
 
@@ -5993,7 +5993,7 @@ def update_app(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update an app (updateApp)
 
@@ -6140,7 +6140,7 @@ async def update_app_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update an app (updateApp)
 
@@ -6289,7 +6289,7 @@ def update_item(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update an item (updateItem)
 
@@ -6584,7 +6584,7 @@ async def update_item_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update an item (updateItem)
 
@@ -6881,7 +6881,7 @@ def update_item_purchase_condition(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update item purchase condition (updateItemPurchaseCondition)
 
@@ -6939,7 +6939,7 @@ async def update_item_purchase_condition_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update item purchase condition (updateItemPurchaseCondition)
 
@@ -6997,7 +6997,7 @@ def update_item_type_config(
     body: ItemTypeConfigUpdate,
     id_: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update an Item Type Config (updateItemTypeConfig)
 
@@ -7043,7 +7043,7 @@ async def update_item_type_config_async(
     body: ItemTypeConfigUpdate,
     id_: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update an Item Type Config (updateItemTypeConfig)
 
@@ -7093,7 +7093,7 @@ def validate_item_purchase_condition(
     platform: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Validate user purchase condition (validateItemPurchaseCondition)
 
@@ -7145,7 +7145,7 @@ async def validate_item_purchase_condition_async(
     platform: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Validate user purchase condition (validateItemPurchaseCondition)
 

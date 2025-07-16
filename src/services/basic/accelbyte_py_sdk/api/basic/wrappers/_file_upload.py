@@ -45,7 +45,7 @@ def generated_upload_url(
     folder: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate Upload URL (generatedUploadUrl)
 
@@ -103,7 +103,7 @@ async def generated_upload_url_async(
     folder: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate Upload URL (generatedUploadUrl)
 
@@ -164,7 +164,7 @@ def generated_user_upload_content_url(
     category: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate Upload URL For User Content (generatedUserUploadContentUrl)
 
@@ -228,7 +228,7 @@ async def generated_user_upload_content_url_async(
     category: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate Upload URL For User Content (generatedUserUploadContentUrl)
 
@@ -293,7 +293,7 @@ def public_generated_upload_url(
     folder: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate Upload URL (publicGeneratedUploadUrl)
 
@@ -351,7 +351,7 @@ async def public_generated_upload_url_async(
     folder: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate Upload URL (publicGeneratedUploadUrl)
 
@@ -412,7 +412,7 @@ def public_generated_user_upload_content_url(
     category: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate Upload URL For User Content (publicGeneratedUserUploadContentUrl)
 
@@ -487,7 +487,7 @@ async def public_generated_user_upload_content_url_async(
     category: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate Upload URL For User Content (publicGeneratedUserUploadContentUrl)
 

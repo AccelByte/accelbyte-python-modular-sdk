@@ -51,7 +51,7 @@ from ..operations.agreement import RetrieveAllUsersByPolicyVersion
 def accept_versioned_policy(
     localized_policy_version_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Accept a Policy Version (acceptVersionedPolicy)
 
@@ -87,7 +87,7 @@ def accept_versioned_policy(
 async def accept_versioned_policy_async(
     localized_policy_version_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Accept a Policy Version (acceptVersionedPolicy)
 
@@ -125,7 +125,7 @@ async def accept_versioned_policy_async(
 def bulk_accept_versioned_policy(
     body: Optional[List[AcceptAgreementRequest]] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk Accept Policy Versions (bulkAcceptVersionedPolicy)
 
@@ -161,7 +161,7 @@ def bulk_accept_versioned_policy(
 async def bulk_accept_versioned_policy_async(
     body: Optional[List[AcceptAgreementRequest]] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk Accept Policy Versions (bulkAcceptVersionedPolicy)
 
@@ -201,7 +201,7 @@ def change_preference_consent(
     body: Optional[List[AcceptAgreementRequest]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Change Preference Consent (changePreferenceConsent)
 
@@ -249,7 +249,7 @@ async def change_preference_consent_async(
     body: Optional[List[AcceptAgreementRequest]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Change Preference Consent (changePreferenceConsent)
 
@@ -297,7 +297,7 @@ async def change_preference_consent_async(
 def change_preference_consent_1(
     body: Optional[List[AcceptAgreementRequest]] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Accept/Revoke Marketing Preference Consent (changePreferenceConsent_1)
 
@@ -333,7 +333,7 @@ def change_preference_consent_1(
 async def change_preference_consent_1_async(
     body: Optional[List[AcceptAgreementRequest]] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Accept/Revoke Marketing Preference Consent (changePreferenceConsent_1)
 
@@ -373,7 +373,7 @@ def indirect_bulk_accept_versioned_policy_1(
     user_id: str,
     body: Optional[List[AcceptAgreementRequest]] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk Accept Policy Versions (Indirect) (indirectBulkAcceptVersionedPolicy_1)
 
@@ -414,7 +414,7 @@ async def indirect_bulk_accept_versioned_policy_1_async(
     user_id: str,
     body: Optional[List[AcceptAgreementRequest]] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk Accept Policy Versions (Indirect) (indirectBulkAcceptVersionedPolicy_1)
 
@@ -460,7 +460,7 @@ def indirect_bulk_accept_versioned_policy_v2(
     body: Optional[List[AcceptAgreementRequest]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk Accept Policy Versions (Indirect) (indirectBulkAcceptVersionedPolicyV2)
 
@@ -515,7 +515,7 @@ async def indirect_bulk_accept_versioned_policy_v2_async(
     body: Optional[List[AcceptAgreementRequest]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk Accept Policy Versions (Indirect) (indirectBulkAcceptVersionedPolicyV2)
 
@@ -698,7 +698,7 @@ def retrieve_all_users_by_policy_version(
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve Users Accepting Legal Agreements (retrieveAllUsersByPolicyVersion)
 
@@ -746,7 +746,7 @@ async def retrieve_all_users_by_policy_version_async(
     limit: Optional[int] = None,
     offset: Optional[int] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve Users Accepting Legal Agreements (retrieveAllUsersByPolicyVersion)
 

@@ -44,7 +44,7 @@ def get_psn_entitlement_ownership(
     entitlement_label: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user psn entitlement ownership by entitlement label (getPsnEntitlementOwnership)
 
@@ -90,7 +90,7 @@ async def get_psn_entitlement_ownership_async(
     entitlement_label: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user psn entitlement ownership by entitlement label (getPsnEntitlementOwnership)
 
@@ -138,7 +138,7 @@ def get_xbox_entitlement_ownership(
     product_sku: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Xbox entitlement ownership by product sku. (getXboxEntitlementOwnership)
 
@@ -184,7 +184,7 @@ async def get_xbox_entitlement_ownership_async(
     product_sku: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Xbox entitlement ownership by product sku. (getXboxEntitlementOwnership)
 

@@ -50,6 +50,11 @@ from ..models import ResponseError
 from ..operations.game_session import AdminDeleteBulkGameSessions
 from ..operations.game_session import AdminKickGameSessionMember
 from ..operations.game_session import AdminQueryGameSessions
+from ..operations.game_session import (
+    AdminQueryGameSessionsJoinabilityEnum,
+    AdminQueryGameSessionsStatusEnum,
+    AdminQueryGameSessionsStatusV2Enum,
+)
 from ..operations.game_session import AdminQueryGameSessionsByAttributes
 from ..operations.game_session import AdminSetDSReady
 from ..operations.game_session import AdminUpdateDSInformation
@@ -75,7 +80,15 @@ from ..operations.game_session import PublicRevokeGameSessionCode
 from ..operations.game_session import PublicSessionJoinCode
 from ..operations.game_session import UpdateGameSession
 from ..operations.game_session import UpdateGameSessionBackfillTicketID
-from ..models import ApimodelsCreateGameSessionRequestTextChatModeEnum
+from ..models import (
+    ApimodelsCreateGameSessionRequestJoinabilityEnum,
+    ApimodelsCreateGameSessionRequestTextChatModeEnum,
+    ApimodelsCreateGameSessionRequestTypeEnum,
+)
+from ..models import (
+    ApimodelsUpdateGameSessionRequestJoinabilityEnum,
+    ApimodelsUpdateGameSessionRequestTypeEnum,
+)
 
 
 @same_doc_as(AdminDeleteBulkGameSessions)
@@ -83,7 +96,7 @@ def admin_delete_bulk_game_sessions(
     body: ApimodelsDeleteBulkGameSessionRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete bulk game sessions. (adminDeleteBulkGameSessions)
 
@@ -133,7 +146,7 @@ async def admin_delete_bulk_game_sessions_async(
     body: ApimodelsDeleteBulkGameSessionRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete bulk game sessions. (adminDeleteBulkGameSessions)
 
@@ -186,7 +199,7 @@ def admin_kick_game_session_member(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Kick member from a game session. (adminKickGameSessionMember)
 
@@ -242,7 +255,7 @@ async def admin_kick_game_session_member_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Kick member from a game session. (adminKickGameSessionMember)
 
@@ -302,7 +315,7 @@ def admin_query_game_sessions(
     game_mode: Optional[str] = None,
     is_persistent: Optional[str] = None,
     is_soft_deleted: Optional[str] = None,
-    joinability: Optional[str] = None,
+    joinability: Optional[Union[str, AdminQueryGameSessionsJoinabilityEnum]] = None,
     limit: Optional[int] = None,
     match_pool: Optional[str] = None,
     member_id: Optional[str] = None,
@@ -310,12 +323,12 @@ def admin_query_game_sessions(
     order: Optional[str] = None,
     order_by: Optional[str] = None,
     session_id: Optional[str] = None,
-    status: Optional[str] = None,
-    status_v2: Optional[str] = None,
+    status: Optional[Union[str, AdminQueryGameSessionsStatusEnum]] = None,
+    status_v2: Optional[Union[str, AdminQueryGameSessionsStatusV2Enum]] = None,
     to_time: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get all game sessions. (adminQueryGameSessions)
 
@@ -348,7 +361,7 @@ def admin_query_game_sessions(
 
         is_soft_deleted: (isSoftDeleted) OPTIONAL str in query
 
-        joinability: (joinability) OPTIONAL str in query
+        joinability: (joinability) OPTIONAL Union[str, JoinabilityEnum] in query
 
         limit: (limit) OPTIONAL int in query
 
@@ -364,9 +377,9 @@ def admin_query_game_sessions(
 
         session_id: (sessionID) OPTIONAL str in query
 
-        status: (status) OPTIONAL str in query
+        status: (status) OPTIONAL Union[str, StatusEnum] in query
 
-        status_v2: (statusV2) OPTIONAL str in query
+        status_v2: (statusV2) OPTIONAL Union[str, StatusV2Enum] in query
 
         to_time: (toTime) OPTIONAL str in query
 
@@ -416,7 +429,7 @@ async def admin_query_game_sessions_async(
     game_mode: Optional[str] = None,
     is_persistent: Optional[str] = None,
     is_soft_deleted: Optional[str] = None,
-    joinability: Optional[str] = None,
+    joinability: Optional[Union[str, AdminQueryGameSessionsJoinabilityEnum]] = None,
     limit: Optional[int] = None,
     match_pool: Optional[str] = None,
     member_id: Optional[str] = None,
@@ -424,12 +437,12 @@ async def admin_query_game_sessions_async(
     order: Optional[str] = None,
     order_by: Optional[str] = None,
     session_id: Optional[str] = None,
-    status: Optional[str] = None,
-    status_v2: Optional[str] = None,
+    status: Optional[Union[str, AdminQueryGameSessionsStatusEnum]] = None,
+    status_v2: Optional[Union[str, AdminQueryGameSessionsStatusV2Enum]] = None,
     to_time: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get all game sessions. (adminQueryGameSessions)
 
@@ -462,7 +475,7 @@ async def admin_query_game_sessions_async(
 
         is_soft_deleted: (isSoftDeleted) OPTIONAL str in query
 
-        joinability: (joinability) OPTIONAL str in query
+        joinability: (joinability) OPTIONAL Union[str, JoinabilityEnum] in query
 
         limit: (limit) OPTIONAL int in query
 
@@ -478,9 +491,9 @@ async def admin_query_game_sessions_async(
 
         session_id: (sessionID) OPTIONAL str in query
 
-        status: (status) OPTIONAL str in query
+        status: (status) OPTIONAL Union[str, StatusEnum] in query
 
-        status_v2: (statusV2) OPTIONAL str in query
+        status_v2: (statusV2) OPTIONAL Union[str, StatusV2Enum] in query
 
         to_time: (toTime) OPTIONAL str in query
 
@@ -529,7 +542,7 @@ def admin_query_game_sessions_by_attributes(
     body: Dict[str, Any],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query game sessions by admin (adminQueryGameSessionsByAttributes)
 
@@ -598,7 +611,7 @@ async def admin_query_game_sessions_by_attributes_async(
     body: Dict[str, Any],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query game sessions by admin (adminQueryGameSessionsByAttributes)
 
@@ -670,7 +683,7 @@ def admin_set_ds_ready(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin set the DS ready to accept connection (adminSetDSReady)
 
@@ -724,7 +737,7 @@ async def admin_set_ds_ready_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin set the DS ready to accept connection (adminSetDSReady)
 
@@ -780,7 +793,7 @@ def admin_update_ds_information(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Game Session DS Information for Asynchronous Process. (adminUpdateDSInformation)
 
@@ -836,7 +849,7 @@ async def admin_update_ds_information_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Game Session DS Information for Asynchronous Process. (adminUpdateDSInformation)
 
@@ -895,7 +908,7 @@ def admin_update_game_session_member(
     status_type: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update status of a game session member. (adminUpdateGameSessionMember)
 
@@ -955,7 +968,7 @@ async def admin_update_game_session_member_async(
     status_type: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update status of a game session member. (adminUpdateGameSessionMember)
 
@@ -1017,7 +1030,7 @@ def append_team_game_session(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Append new member or team to session. Please use patchUpdateGameSession instead (appendTeamGameSession)
 
@@ -1072,7 +1085,7 @@ async def append_team_game_session_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Append new member or team to session. Please use patchUpdateGameSession instead (appendTeamGameSession)
 
@@ -1128,7 +1141,7 @@ def create_game_session(
     resolve_max_active_session: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a game session. (createGameSession)
 
@@ -1253,7 +1266,7 @@ async def create_game_session_async(
     resolve_max_active_session: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a game session. (createGameSession)
 
@@ -1379,7 +1392,7 @@ def delete_game_session(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a game session. (deleteGameSession)
 
@@ -1427,7 +1440,7 @@ async def delete_game_session_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a game session. (deleteGameSession)
 
@@ -1477,7 +1490,7 @@ def game_session_generate_code(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate a game session code. (gameSessionGenerateCode)
 
@@ -1529,7 +1542,7 @@ async def game_session_generate_code_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate a game session code. (gameSessionGenerateCode)
 
@@ -1583,7 +1596,7 @@ def get_game_session(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get game session detail. (getGameSession)
 
@@ -1648,7 +1661,7 @@ async def get_game_session_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get game session detail. (getGameSession)
 
@@ -1715,7 +1728,7 @@ def get_game_session_by_pod_name(
     pod_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get game session detail. (getGameSessionByPodName)
 
@@ -1779,7 +1792,7 @@ async def get_game_session_by_pod_name_async(
     pod_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get game session detail. (getGameSessionByPodName)
 
@@ -1845,7 +1858,7 @@ def get_session_server_secret(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Server Secret. (getSessionServerSecret)
 
@@ -1914,7 +1927,7 @@ async def get_session_server_secret_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Server Secret. (getSessionServerSecret)
 
@@ -1985,7 +1998,7 @@ def join_game_session(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Join a game session. (joinGameSession)
 
@@ -2037,7 +2050,7 @@ async def join_game_session_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Join a game session. (joinGameSession)
 
@@ -2091,7 +2104,7 @@ def leave_game_session(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Leave a game session. (leaveGameSession)
 
@@ -2143,7 +2156,7 @@ async def leave_game_session_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Leave a game session. (leaveGameSession)
 
@@ -2198,7 +2211,7 @@ def patch_update_game_session(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Patch update a game session. (patchUpdateGameSession)
 
@@ -2256,7 +2269,7 @@ async def patch_update_game_session_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Patch update a game session. (patchUpdateGameSession)
 
@@ -2316,7 +2329,7 @@ def public_game_session_cancel(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """cancel a game session invitation. (publicGameSessionCancel)
 
@@ -2372,7 +2385,7 @@ async def public_game_session_cancel_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """cancel a game session invitation. (publicGameSessionCancel)
 
@@ -2430,7 +2443,7 @@ def public_game_session_invite(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Invite a user to a game session. (publicGameSessionInvite)
 
@@ -2492,7 +2505,7 @@ async def public_game_session_invite_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Invite a user to a game session. (publicGameSessionInvite)
 
@@ -2555,7 +2568,7 @@ def public_game_session_reject(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reject a game session invitation. (publicGameSessionReject)
 
@@ -2607,7 +2620,7 @@ async def public_game_session_reject_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reject a game session invitation. (publicGameSessionReject)
 
@@ -2662,7 +2675,7 @@ def public_kick_game_session_member(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Kick member from a game session, only leader can kick member. (publicKickGameSessionMember)
 
@@ -2718,7 +2731,7 @@ async def public_kick_game_session_member_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Kick member from a game session, only leader can kick member. (publicKickGameSessionMember)
 
@@ -2776,7 +2789,7 @@ def public_promote_game_session_leader(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Promote new game session leader. (publicPromoteGameSessionLeader)
 
@@ -2844,7 +2857,7 @@ async def public_promote_game_session_leader_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Promote new game session leader. (publicPromoteGameSessionLeader)
 
@@ -2913,7 +2926,7 @@ def public_query_game_sessions_by_attributes(
     body: Dict[str, Any],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query game sessions (publicQueryGameSessionsByAttributes)
 
@@ -2982,7 +2995,7 @@ async def public_query_game_sessions_by_attributes_async(
     body: Dict[str, Any],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query game sessions (publicQueryGameSessionsByAttributes)
 
@@ -3055,7 +3068,7 @@ def public_query_my_game_sessions(
     status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user's game sessions (publicQueryMyGameSessions)
 
@@ -3125,7 +3138,7 @@ async def public_query_my_game_sessions_async(
     status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user's game sessions (publicQueryMyGameSessions)
 
@@ -3195,7 +3208,7 @@ def public_revoke_game_session_code(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke game session code. (publicRevokeGameSessionCode)
 
@@ -3247,7 +3260,7 @@ async def public_revoke_game_session_code_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revoke game session code. (publicRevokeGameSessionCode)
 
@@ -3301,7 +3314,7 @@ def public_session_join_code(
     body: ApimodelsJoinByCodeRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Join a session by code. (publicSessionJoinCode)
 
@@ -3353,7 +3366,7 @@ async def public_session_join_code_async(
     body: ApimodelsJoinByCodeRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Join a session by code. (publicSessionJoinCode)
 
@@ -3408,7 +3421,7 @@ def update_game_session(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a game session. (updateGameSession)
 
@@ -3471,7 +3484,7 @@ async def update_game_session_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a game session. (updateGameSession)
 
@@ -3536,7 +3549,7 @@ def update_game_session_backfill_ticket_id(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update game session backfill ticket id . (updateGameSessionBackfillTicketID)
 
@@ -3590,7 +3603,7 @@ async def update_game_session_backfill_ticket_id_async(
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update game session backfill ticket id . (updateGameSessionBackfillTicketID)
 

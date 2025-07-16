@@ -51,7 +51,7 @@ from ..operations.platform_credential import AdminUpdatePlatformCredentials
 def admin_delete_platform_credentials(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete platform credentials. (adminDeletePlatformCredentials)
 
@@ -99,7 +99,7 @@ def admin_delete_platform_credentials(
 async def admin_delete_platform_credentials_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete platform credentials. (adminDeletePlatformCredentials)
 
@@ -150,7 +150,7 @@ def admin_delete_platform_credentials_by_platform_id(
     platform_id: Union[str, AdminDeletePlatformCredentialsByPlatformIdPlatformIdEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete platform credentials by platformId (adminDeletePlatformCredentialsByPlatformId)
 
@@ -202,7 +202,7 @@ async def admin_delete_platform_credentials_by_platform_id_async(
     platform_id: Union[str, AdminDeletePlatformCredentialsByPlatformIdPlatformIdEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete platform credentials by platformId (adminDeletePlatformCredentialsByPlatformId)
 
@@ -255,7 +255,7 @@ async def admin_delete_platform_credentials_by_platform_id_async(
 def admin_get_platform_credentials(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get platform credentials. These are used to sync PSN sessions. (adminGetPlatformCredentials)
 
@@ -315,7 +315,7 @@ def admin_get_platform_credentials(
 async def admin_get_platform_credentials_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get platform credentials. These are used to sync PSN sessions. (adminGetPlatformCredentials)
 
@@ -378,7 +378,7 @@ def admin_sync_platform_credentials(
     platform_id: Union[str, AdminSyncPlatformCredentialsPlatformIdEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync Platform Credentials. (adminSyncPlatformCredentials)
 
@@ -439,7 +439,7 @@ async def admin_sync_platform_credentials_async(
     platform_id: Union[str, AdminSyncPlatformCredentialsPlatformIdEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Sync Platform Credentials. (adminSyncPlatformCredentials)
 
@@ -502,7 +502,7 @@ def admin_update_platform_credentials(
     body: ApimodelsPutPlatformCredentialsRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update platform credentials. Currently only used to sync PSN sessions. (adminUpdatePlatformCredentials)
 
@@ -559,7 +559,7 @@ async def admin_update_platform_credentials_async(
     body: ApimodelsPutPlatformCredentialsRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update platform credentials. Currently only used to sync PSN sessions. (adminUpdatePlatformCredentials)
 

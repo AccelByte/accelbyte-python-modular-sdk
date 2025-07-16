@@ -65,7 +65,7 @@ def admin_bulk_block_players_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin bulk blocks player by list user id (adminBulkBlockPlayersV1)
 
@@ -119,7 +119,7 @@ async def admin_bulk_block_players_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin bulk blocks player by list user id (adminBulkBlockPlayersV1)
 
@@ -175,7 +175,7 @@ def admin_bulk_unblock_players_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin bulk unblock players by list user id (adminBulkUnblockPlayersV1)
 
@@ -229,7 +229,7 @@ async def admin_bulk_unblock_players_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin bulk unblock players by list user id (adminBulkUnblockPlayersV1)
 
@@ -285,7 +285,7 @@ def admin_get_all_player_session_attribute(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get all player's session attribute (adminGetAllPlayerSessionAttribute)
 
@@ -334,7 +334,7 @@ async def admin_get_all_player_session_attribute_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get all player's session attribute (adminGetAllPlayerSessionAttribute)
 
@@ -384,7 +384,7 @@ def admin_get_bulk_player_blocked_players_v1(
     body: ModelsGetBulkAllPlayerBlockedUsersRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get blocked players by bulk user ids (adminGetBulkPlayerBlockedPlayersV1)
 
@@ -436,7 +436,7 @@ async def admin_get_bulk_player_blocked_players_v1_async(
     body: ModelsGetBulkAllPlayerBlockedUsersRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get blocked players by bulk user ids (adminGetBulkPlayerBlockedPlayersV1)
 
@@ -489,7 +489,7 @@ async def admin_get_bulk_player_blocked_players_v1_async(
 def admin_get_lobby_ccu(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get number of players currently connected to the lobby. (adminGetLobbyCCU)
 
@@ -537,7 +537,7 @@ def admin_get_lobby_ccu(
 async def admin_get_lobby_ccu_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get number of players currently connected to the lobby. (adminGetLobbyCCU)
 
@@ -588,7 +588,7 @@ def admin_get_player_blocked_by_players_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get players who blocked this player by user id (adminGetPlayerBlockedByPlayersV1)
 
@@ -640,7 +640,7 @@ async def admin_get_player_blocked_by_players_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get players who blocked this player by user id (adminGetPlayerBlockedByPlayersV1)
 
@@ -694,7 +694,7 @@ def admin_get_player_blocked_players_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get blocked players by user id (adminGetPlayerBlockedPlayersV1)
 
@@ -746,7 +746,7 @@ async def admin_get_player_blocked_players_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get blocked players by user id (adminGetPlayerBlockedPlayersV1)
 
@@ -802,7 +802,7 @@ def admin_get_player_session_attribute(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get player's session attribute (adminGetPlayerSessionAttribute)
 
@@ -859,7 +859,7 @@ async def admin_get_player_session_attribute_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin get player's session attribute (adminGetPlayerSessionAttribute)
 
@@ -918,7 +918,7 @@ def admin_set_player_session_attribute(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin set player's session attribute (adminSetPlayerSessionAttribute)
 
@@ -975,7 +975,7 @@ async def admin_set_player_session_attribute_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin set player's session attribute (adminSetPlayerSessionAttribute)
 
@@ -1031,7 +1031,7 @@ async def admin_set_player_session_attribute_async(
 def public_get_player_blocked_by_players_v1(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get players who blocked this player by user id (publicGetPlayerBlockedByPlayersV1)
 
@@ -1084,7 +1084,7 @@ def public_get_player_blocked_by_players_v1(
 async def public_get_player_blocked_by_players_v1_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get players who blocked this player by user id (publicGetPlayerBlockedByPlayersV1)
 
@@ -1139,7 +1139,7 @@ async def public_get_player_blocked_by_players_v1_async(
 def public_get_player_blocked_players_v1(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get blocked players by user id (publicGetPlayerBlockedPlayersV1)
 
@@ -1192,7 +1192,7 @@ def public_get_player_blocked_players_v1(
 async def public_get_player_blocked_players_v1_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get blocked players by user id (publicGetPlayerBlockedPlayersV1)
 
@@ -1248,7 +1248,7 @@ def public_player_block_players_v1(
     body: ModelsBlockPlayerRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """block player by user id (publicPlayerBlockPlayersV1)
 
@@ -1303,7 +1303,7 @@ async def public_player_block_players_v1_async(
     body: ModelsBlockPlayerRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """block player by user id (publicPlayerBlockPlayersV1)
 
@@ -1360,7 +1360,7 @@ def public_unblock_player_v1(
     body: ModelsUnblockPlayerRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """unblock player by user id (publicUnblockPlayerV1)
 
@@ -1414,7 +1414,7 @@ async def public_unblock_player_v1_async(
     body: ModelsUnblockPlayerRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """unblock player by user id (publicUnblockPlayerV1)
 

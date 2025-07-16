@@ -39,7 +39,7 @@ def admin_anonymize_user_achievement(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Anonymize user's achievement (AdminAnonymizeUserAchievement)
 
@@ -91,7 +91,7 @@ async def admin_anonymize_user_achievement_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Anonymize user's achievement (AdminAnonymizeUserAchievement)
 

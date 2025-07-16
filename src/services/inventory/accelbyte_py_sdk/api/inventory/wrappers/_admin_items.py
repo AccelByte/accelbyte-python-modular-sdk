@@ -64,7 +64,7 @@ def admin_bulk_remove_items(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To bulk remove items (AdminBulkRemoveItems)
 
@@ -122,7 +122,7 @@ async def admin_bulk_remove_items_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To bulk remove items (AdminBulkRemoveItems)
 
@@ -181,7 +181,7 @@ def admin_bulk_save_item(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk save items to inventory (AdminBulkSaveItem)
 
@@ -257,7 +257,7 @@ async def admin_bulk_save_item_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk save items to inventory (AdminBulkSaveItem)
 
@@ -336,7 +336,7 @@ def admin_bulk_save_item_to_inventory(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk save items to specific inventory (AdminBulkSaveItemToInventory)
 
@@ -409,7 +409,7 @@ async def admin_bulk_save_item_to_inventory_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk save items to specific inventory (AdminBulkSaveItemToInventory)
 
@@ -484,7 +484,7 @@ def admin_bulk_update_my_items(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To bulk update items (AdminBulkUpdateMyItems)
 
@@ -543,7 +543,7 @@ async def admin_bulk_update_my_items_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To bulk update items (AdminBulkUpdateMyItems)
 
@@ -605,7 +605,7 @@ def admin_consume_user_item(
     date_range_validation: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To consume item (AdminConsumeUserItem)
 
@@ -667,7 +667,7 @@ async def admin_consume_user_item_async(
     date_range_validation: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To consume item (AdminConsumeUserItem)
 
@@ -730,7 +730,7 @@ def admin_get_inventory_item(
     source_item_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To get an item (AdminGetInventoryItem)
 
@@ -788,7 +788,7 @@ async def admin_get_inventory_item_async(
     source_item_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To get an item (AdminGetInventoryItem)
 
@@ -851,7 +851,7 @@ def admin_list_items(
     tags: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To list all items (AdminListItems)
 
@@ -920,7 +920,7 @@ async def admin_list_items_async(
     tags: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To list all items (AdminListItems)
 
@@ -987,7 +987,7 @@ def admin_save_item(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To save item (AdminSaveItem)
 
@@ -1049,7 +1049,7 @@ async def admin_save_item_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To save item (AdminSaveItem)
 
@@ -1114,7 +1114,7 @@ def admin_save_item_to_inventory(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To save item to specific inventory (AdminSaveItemToInventory)
 
@@ -1184,7 +1184,7 @@ async def admin_save_item_to_inventory_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To save item to specific inventory (AdminSaveItemToInventory)
 
@@ -1254,7 +1254,7 @@ def admin_sync_user_entitlements(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To sync user's entitlements to e-commerce (AdminSyncUserEntitlements)
 
@@ -1308,7 +1308,7 @@ async def admin_sync_user_entitlements_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To sync user's entitlements to e-commerce (AdminSyncUserEntitlements)
 

@@ -58,7 +58,7 @@ def add_country_group(
     body: Optional[AddCountryGroupRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add a country group (addCountryGroup)
 
@@ -113,7 +113,7 @@ async def add_country_group_async(
     body: Optional[AddCountryGroupRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add a country group (addCountryGroup)
 
@@ -170,7 +170,7 @@ def delete_country_group(
     country_group_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a country group (deleteCountryGroup)
 
@@ -220,7 +220,7 @@ async def delete_country_group_async(
     country_group_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a country group (deleteCountryGroup)
 
@@ -273,7 +273,7 @@ def get_countries(
     lang: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List countries (getCountries)
 
@@ -324,7 +324,7 @@ async def get_countries_async(
     lang: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List countries (getCountries)
 
@@ -376,7 +376,7 @@ def get_country_groups(
     group_code: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List country groups (getCountryGroups)
 
@@ -430,7 +430,7 @@ async def get_country_groups_async(
     group_code: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List country groups (getCountryGroups)
 
@@ -485,7 +485,7 @@ async def get_country_groups_async(
 def get_languages(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List languages. (getLanguages)
 
@@ -531,7 +531,7 @@ def get_languages(
 async def get_languages_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List languages. (getLanguages)
 
@@ -579,7 +579,7 @@ async def get_languages_async(
 def get_time_zones(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List time zones (getTimeZones)
 
@@ -625,7 +625,7 @@ def get_time_zones(
 async def get_time_zones_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List time zones (getTimeZones)
 
@@ -675,7 +675,7 @@ def public_get_countries(
     lang: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List countries (publicGetCountries)
 
@@ -724,7 +724,7 @@ async def public_get_countries_async(
     lang: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List countries (publicGetCountries)
 
@@ -773,7 +773,7 @@ async def public_get_countries_async(
 def public_get_languages(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List languages. (publicGetLanguages)
 
@@ -817,7 +817,7 @@ def public_get_languages(
 async def public_get_languages_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List languages. (publicGetLanguages)
 
@@ -921,7 +921,7 @@ async def public_get_time_async(
 def public_get_time_zones(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List time zones (publicGetTimeZones)
 
@@ -965,7 +965,7 @@ def public_get_time_zones(
 async def public_get_time_zones_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List time zones (publicGetTimeZones)
 
@@ -1013,7 +1013,7 @@ def update_country_group(
     body: Optional[UpdateCountryGroupRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a country group (updateCountryGroup)
 
@@ -1074,7 +1074,7 @@ async def update_country_group_async(
     body: Optional[UpdateCountryGroupRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a country group (updateCountryGroup)
 

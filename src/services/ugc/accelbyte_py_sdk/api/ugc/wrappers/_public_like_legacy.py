@@ -51,7 +51,7 @@ def get_liked_content(
     type_: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get liked contents (GetLikedContent)
 
@@ -147,7 +147,7 @@ async def get_liked_content_async(
     type_: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get liked contents (GetLikedContent)
 
@@ -238,7 +238,7 @@ def update_content_like_status(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update like/unlike status to a content (UpdateContentLikeStatus)
 
@@ -292,7 +292,7 @@ async def update_content_like_status_async(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update like/unlike status to a content (UpdateContentLikeStatus)
 

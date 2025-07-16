@@ -67,7 +67,7 @@ def admin_add_profanity_filter_into_list(
     list_: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """add a single filter into the list (adminAddProfanityFilterIntoList)
 
@@ -124,7 +124,7 @@ async def admin_add_profanity_filter_into_list_async(
     list_: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """add a single filter into the list (adminAddProfanityFilterIntoList)
 
@@ -183,7 +183,7 @@ def admin_add_profanity_filters(
     list_: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """add multiple filters into the list (adminAddProfanityFilters)
 
@@ -240,7 +240,7 @@ async def admin_add_profanity_filters_async(
     list_: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """add multiple filters into the list (adminAddProfanityFilters)
 
@@ -298,7 +298,7 @@ def admin_create_profanity_list(
     body: ModelsAdminCreateProfanityListRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create a new list (adminCreateProfanityList)
 
@@ -351,7 +351,7 @@ async def admin_create_profanity_list_async(
     body: ModelsAdminCreateProfanityListRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create a new list (adminCreateProfanityList)
 
@@ -406,7 +406,7 @@ def admin_debug_profanity_filters(
     body: ModelsDebugProfanityFilterRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get the list of filters that would modify the phrase (adminDebugProfanityFilters)
 
@@ -459,7 +459,7 @@ async def admin_debug_profanity_filters_async(
     body: ModelsDebugProfanityFilterRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get the list of filters that would modify the phrase (adminDebugProfanityFilters)
 
@@ -515,7 +515,7 @@ def admin_delete_profanity_filter(
     list_: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete the filter from the list (adminDeleteProfanityFilter)
 
@@ -572,7 +572,7 @@ async def admin_delete_profanity_filter_async(
     list_: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete the filter from the list (adminDeleteProfanityFilter)
 
@@ -630,7 +630,7 @@ def admin_delete_profanity_list(
     list_: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete a list include all filters inside of it (adminDeleteProfanityList)
 
@@ -683,7 +683,7 @@ async def admin_delete_profanity_list_async(
     list_: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete a list include all filters inside of it (adminDeleteProfanityList)
 
@@ -738,7 +738,7 @@ def admin_get_profanity_list_filters_v1(
     list_: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get the list of filters inside the list (adminGetProfanityListFiltersV1)
 
@@ -791,7 +791,7 @@ async def admin_get_profanity_list_filters_v1_async(
     list_: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get the list of filters inside the list (adminGetProfanityListFiltersV1)
 
@@ -845,7 +845,7 @@ async def admin_get_profanity_list_filters_v1_async(
 def admin_get_profanity_lists(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get lists (adminGetProfanityLists)
 
@@ -894,7 +894,7 @@ def admin_get_profanity_lists(
 async def admin_get_profanity_lists_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get lists (adminGetProfanityLists)
 
@@ -945,7 +945,7 @@ async def admin_get_profanity_lists_async(
 def admin_get_profanity_rule(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get current profanity rule (adminGetProfanityRule)
 
@@ -994,7 +994,7 @@ def admin_get_profanity_rule(
 async def admin_get_profanity_rule_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get current profanity rule (adminGetProfanityRule)
 
@@ -1047,7 +1047,7 @@ def admin_import_profanity_filters_from_file(
     list_: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """import a file with filters (adminImportProfanityFiltersFromFile)
 
@@ -1104,7 +1104,7 @@ async def admin_import_profanity_filters_from_file_async(
     list_: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """import a file with filters (adminImportProfanityFiltersFromFile)
 
@@ -1162,7 +1162,7 @@ def admin_set_profanity_rule_for_namespace(
     body: ModelsAdminSetProfanityRuleForNamespaceRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """set current profanity rule (adminSetProfanityRuleForNamespace)
 
@@ -1215,7 +1215,7 @@ async def admin_set_profanity_rule_for_namespace_async(
     body: ModelsAdminSetProfanityRuleForNamespaceRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """set current profanity rule (adminSetProfanityRuleForNamespace)
 
@@ -1271,7 +1271,7 @@ def admin_update_profanity_list(
     list_: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update the list (adminUpdateProfanityList)
 
@@ -1328,7 +1328,7 @@ async def admin_update_profanity_list_async(
     list_: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update the list (adminUpdateProfanityList)
 
@@ -1386,7 +1386,7 @@ def admin_verify_message_profanity_response(
     body: ModelsAdminVerifyMessageProfanityRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """verify a message directly from the UI or other services (adminVerifyMessageProfanityResponse)
 
@@ -1439,7 +1439,7 @@ async def admin_verify_message_profanity_response_async(
     body: ModelsAdminVerifyMessageProfanityRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """verify a message directly from the UI or other services (adminVerifyMessageProfanityResponse)
 

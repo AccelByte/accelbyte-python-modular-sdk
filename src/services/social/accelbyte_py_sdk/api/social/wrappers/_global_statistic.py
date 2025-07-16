@@ -45,7 +45,7 @@ def get_global_stat_item_by_stat_code(
     stat_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get global statItem by stat code (getGlobalStatItemByStatCode)
 
@@ -97,7 +97,7 @@ async def get_global_stat_item_by_stat_code_async(
     stat_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get global statItem by stat code (getGlobalStatItemByStatCode)
 
@@ -151,7 +151,7 @@ def get_global_stat_item_by_stat_code_1(
     stat_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get global statItem by stat code (getGlobalStatItemByStatCode_1)
 
@@ -203,7 +203,7 @@ async def get_global_stat_item_by_stat_code_1_async(
     stat_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get global statItem by stat code (getGlobalStatItemByStatCode_1)
 
@@ -259,7 +259,7 @@ def get_global_stat_items(
     stat_codes: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List global statItems (getGlobalStatItems)
 
@@ -315,7 +315,7 @@ async def get_global_stat_items_async(
     stat_codes: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List global statItems (getGlobalStatItems)
 
@@ -373,7 +373,7 @@ def get_global_stat_items_1(
     stat_codes: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List global statItems (getGlobalStatItems_1)
 
@@ -431,7 +431,7 @@ async def get_global_stat_items_1_async(
     stat_codes: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List global statItems (getGlobalStatItems_1)
 

@@ -51,7 +51,7 @@ def delete_ticket(
     ticket_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete single ticket (deleteTicket)
 
@@ -97,7 +97,7 @@ async def delete_ticket_async(
     ticket_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete single ticket (deleteTicket)
 
@@ -147,7 +147,7 @@ def get_reports_by_ticket(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get reports by ticket ID (getReportsByTicket)
 
@@ -199,7 +199,7 @@ async def get_reports_by_ticket_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get reports by ticket ID (getReportsByTicket)
 
@@ -251,7 +251,7 @@ def get_ticket_detail(
     ticket_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get single ticket (getTicketDetail)
 
@@ -297,7 +297,7 @@ async def get_ticket_detail_async(
     ticket_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get single ticket (getTicketDetail)
 
@@ -352,7 +352,7 @@ def list_tickets(
     status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List report tickets (listTickets)
 
@@ -427,7 +427,7 @@ async def list_tickets_async(
     status: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List report tickets (listTickets)
 
@@ -498,7 +498,7 @@ def ticket_statistic(
     extension_category: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Ticket statistic (ticketStatistic)
 
@@ -548,7 +548,7 @@ async def ticket_statistic_async(
     extension_category: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Ticket statistic (ticketStatistic)
 
@@ -600,7 +600,7 @@ def update_ticket_resolutions(
     ticket_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update ticket resolution to a given status (updateTicketResolutions)
 
@@ -648,7 +648,7 @@ async def update_ticket_resolutions_async(
     ticket_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update ticket resolution to a given status (updateTicketResolutions)
 

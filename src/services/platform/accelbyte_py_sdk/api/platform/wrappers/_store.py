@@ -81,7 +81,7 @@ def clone_store(
     target_store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Clone a store (cloneStore)
 
@@ -135,7 +135,7 @@ async def clone_store_async(
     target_store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Clone a store (cloneStore)
 
@@ -190,7 +190,7 @@ def create_store(
     body: StoreCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a store (createStore)
 
@@ -240,7 +240,7 @@ async def create_store_async(
     body: StoreCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a store (createStore)
 
@@ -291,7 +291,7 @@ async def create_store_async(
 def delete_published_store(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete published store (deletePublishedStore)
 
@@ -333,7 +333,7 @@ def delete_published_store(
 async def delete_published_store_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete published store (deletePublishedStore)
 
@@ -378,7 +378,7 @@ def delete_store(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a store (deleteStore)
 
@@ -427,7 +427,7 @@ async def delete_store_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a store (deleteStore)
 
@@ -477,7 +477,7 @@ async def delete_store_async(
 def download_csv_templates(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Download store csv templates (downloadCSVTemplates)
 
@@ -515,7 +515,7 @@ def download_csv_templates(
 async def download_csv_templates_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Download store csv templates (downloadCSVTemplates)
 
@@ -557,7 +557,7 @@ def export_store(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Export a store (exportStore)
 
@@ -604,7 +604,7 @@ async def export_store_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Export a store (exportStore)
 
@@ -653,7 +653,7 @@ def export_store_1(
     body: Optional[ExportStoreRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Export a store (exportStore_1)
 
@@ -701,7 +701,7 @@ async def export_store_1_async(
     body: Optional[ExportStoreRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Export a store (exportStore_1)
 
@@ -750,7 +750,7 @@ def export_store_by_csv(
     body: ExportStoreToCSVRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Export a store to CSV format (exportStoreByCSV)
 
@@ -798,7 +798,7 @@ async def export_store_by_csv_async(
     body: ExportStoreToCSVRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Export a store to CSV format (exportStoreByCSV)
 
@@ -847,7 +847,7 @@ async def export_store_by_csv_async(
 def get_catalog_config(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get catalog config (getCatalogConfig)
 
@@ -885,7 +885,7 @@ def get_catalog_config(
 async def get_catalog_config_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get catalog config (getCatalogConfig)
 
@@ -926,7 +926,7 @@ def get_catalog_definition(
     catalog_type: Union[str, GetCatalogDefinitionCatalogTypeEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get catalog definition (getCatalogDefinition)
 
@@ -972,7 +972,7 @@ async def get_catalog_definition_async(
     catalog_type: Union[str, GetCatalogDefinitionCatalogTypeEnum],
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get catalog definition (getCatalogDefinition)
 
@@ -1019,7 +1019,7 @@ async def get_catalog_definition_async(
 def get_published_store(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get published store (getPublishedStore)
 
@@ -1063,7 +1063,7 @@ def get_published_store(
 async def get_published_store_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get published store (getPublishedStore)
 
@@ -1109,7 +1109,7 @@ async def get_published_store_async(
 def get_published_store_backup(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a published store's backup (getPublishedStoreBackup)
 
@@ -1153,7 +1153,7 @@ def get_published_store_backup(
 async def get_published_store_backup_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a published store's backup (getPublishedStoreBackup)
 
@@ -1200,7 +1200,7 @@ def get_store(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a store (getStore)
 
@@ -1248,7 +1248,7 @@ async def get_store_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a store (getStore)
 
@@ -1300,7 +1300,7 @@ def import_store(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Import a store (importStore)
 
@@ -1353,7 +1353,7 @@ async def import_store_async(
     store_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Import a store (importStore)
 
@@ -1408,7 +1408,7 @@ def import_store_1(
     strict_mode: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Import a store (importStore_1)
 
@@ -1462,7 +1462,7 @@ async def import_store_1_async(
     strict_mode: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Import a store (importStore_1)
 
@@ -1513,19 +1513,19 @@ async def import_store_1_async(
 
 @same_doc_as(ImportStoreByCSV)
 def import_store_by_csv(
-    category: Any,
-    display: Any,
-    item: Any,
-    notes: str,
-    section: Any,
     store_id: str,
+    category: Optional[Any] = None,
+    display: Optional[Any] = None,
+    item: Optional[Any] = None,
+    notes: Optional[str] = None,
+    section: Optional[Any] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Import store using CSV format (importStoreByCSV)
 
-    This API is used to import a store by CSV format.
+    This API is used to import a store by CSV format, You must select at least one of item/section/display/category for uploading
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}/importByCSV
@@ -1540,15 +1540,15 @@ def import_store_by_csv(
 
         securities: [BEARER_AUTH]
 
-        category: (category) REQUIRED Any in form_data
+        category: (category) OPTIONAL Any in form_data
 
-        display: (display) REQUIRED Any in form_data
+        display: (display) OPTIONAL Any in form_data
 
-        item: (item) REQUIRED Any in form_data
+        item: (item) OPTIONAL Any in form_data
 
-        notes: (notes) REQUIRED str in form_data
+        notes: (notes) OPTIONAL str in form_data
 
-        section: (section) REQUIRED Any in form_data
+        section: (section) OPTIONAL Any in form_data
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1568,12 +1568,12 @@ def import_store_by_csv(
         if error:
             return None, error
     request = ImportStoreByCSV.create(
+        store_id=store_id,
         category=category,
         display=display,
         item=item,
         notes=notes,
         section=section,
-        store_id=store_id,
         namespace=namespace,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
@@ -1581,19 +1581,19 @@ def import_store_by_csv(
 
 @same_doc_as(ImportStoreByCSV)
 async def import_store_by_csv_async(
-    category: Any,
-    display: Any,
-    item: Any,
-    notes: str,
-    section: Any,
     store_id: str,
+    category: Optional[Any] = None,
+    display: Optional[Any] = None,
+    item: Optional[Any] = None,
+    notes: Optional[str] = None,
+    section: Optional[Any] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Import store using CSV format (importStoreByCSV)
 
-    This API is used to import a store by CSV format.
+    This API is used to import a store by CSV format, You must select at least one of item/section/display/category for uploading
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/stores/{storeId}/importByCSV
@@ -1608,15 +1608,15 @@ async def import_store_by_csv_async(
 
         securities: [BEARER_AUTH]
 
-        category: (category) REQUIRED Any in form_data
+        category: (category) OPTIONAL Any in form_data
 
-        display: (display) REQUIRED Any in form_data
+        display: (display) OPTIONAL Any in form_data
 
-        item: (item) REQUIRED Any in form_data
+        item: (item) OPTIONAL Any in form_data
 
-        notes: (notes) REQUIRED str in form_data
+        notes: (notes) OPTIONAL str in form_data
 
-        section: (section) REQUIRED Any in form_data
+        section: (section) OPTIONAL Any in form_data
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1636,12 +1636,12 @@ async def import_store_by_csv_async(
         if error:
             return None, error
     request = ImportStoreByCSV.create(
+        store_id=store_id,
         category=category,
         display=display,
         item=item,
         notes=notes,
         section=section,
-        store_id=store_id,
         namespace=namespace,
     )
     return await run_request_async(
@@ -1653,7 +1653,7 @@ async def import_store_by_csv_async(
 def list_stores(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List stores (listStores)
 
@@ -1695,7 +1695,7 @@ def list_stores(
 async def list_stores_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List stores (listStores)
 
@@ -1739,7 +1739,7 @@ async def list_stores_async(
 def public_list_stores(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List all stores (publicListStores)
 
@@ -1784,7 +1784,7 @@ def public_list_stores(
 async def public_list_stores_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List all stores (publicListStores)
 
@@ -1838,7 +1838,7 @@ def query_import_history(
     success: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query import store history (queryImportHistory)
 
@@ -1906,7 +1906,7 @@ async def query_import_history_async(
     success: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query import store history (queryImportHistory)
 
@@ -1969,7 +1969,7 @@ async def query_import_history_async(
 def rollback_published_store(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Rollback a published store (rollbackPublishedStore)
 
@@ -2013,7 +2013,7 @@ def rollback_published_store(
 async def rollback_published_store_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Rollback a published store (rollbackPublishedStore)
 
@@ -2060,7 +2060,7 @@ def update_catalog_config(
     body: CatalogConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update catalog config (updateCatalogConfig)
 
@@ -2105,7 +2105,7 @@ async def update_catalog_config_async(
     body: CatalogConfigUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update catalog config (updateCatalogConfig)
 
@@ -2153,7 +2153,7 @@ def update_store(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a store (updateStore)
 
@@ -2209,7 +2209,7 @@ async def update_store_async(
     store_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a store (updateStore)
 

@@ -47,7 +47,7 @@ def admin_create_item_type(
     body: ApimodelsCreateItemTypeReq,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To create an itemtype (AdminCreateItemType)
 
@@ -99,7 +99,7 @@ async def admin_create_item_type_async(
     body: ApimodelsCreateItemTypeReq,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To create an itemtype (AdminCreateItemType)
 
@@ -153,7 +153,7 @@ def admin_delete_item_type(
     item_type_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To delete an item type (AdminDeleteItemType)
 
@@ -202,7 +202,7 @@ async def admin_delete_item_type_async(
     item_type_name: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To delete an item type (AdminDeleteItemType)
 
@@ -255,7 +255,7 @@ def admin_list_item_types(
     sort_by: Optional[Union[str, AdminListItemTypesSortByEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To list itemtypes (AdminListItemTypes)
 
@@ -312,7 +312,7 @@ async def admin_list_item_types_async(
     sort_by: Optional[Union[str, AdminListItemTypesSortByEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To list itemtypes (AdminListItemTypes)
 

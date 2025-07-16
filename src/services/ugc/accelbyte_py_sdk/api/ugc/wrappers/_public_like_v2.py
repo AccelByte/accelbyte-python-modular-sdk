@@ -46,7 +46,7 @@ def public_list_content_like_v2(
     sort_by: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve list of user that like specified content. (PublicListContentLikeV2)
 
@@ -106,7 +106,7 @@ async def public_list_content_like_v2_async(
     sort_by: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve list of user that like specified content. (PublicListContentLikeV2)
 
@@ -166,7 +166,7 @@ def update_content_like_status_v2(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update like/unlike status to a content (UpdateContentLikeStatusV2)
 
@@ -222,7 +222,7 @@ async def update_content_like_status_v2_async(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update like/unlike status to a content (UpdateContentLikeStatusV2)
 

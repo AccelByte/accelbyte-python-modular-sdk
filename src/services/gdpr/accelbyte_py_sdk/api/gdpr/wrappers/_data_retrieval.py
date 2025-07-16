@@ -52,7 +52,7 @@ def admin_cancel_user_personal_data_request(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel user's personal data requests (AdminCancelUserPersonalDataRequest)
 
@@ -107,7 +107,7 @@ async def admin_cancel_user_personal_data_request_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel user's personal data requests (AdminCancelUserPersonalDataRequest)
 
@@ -165,7 +165,7 @@ def admin_generate_personal_data_url(
     password: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate personal data download url (AdminGeneratePersonalDataURL)
 
@@ -228,7 +228,7 @@ async def admin_generate_personal_data_url_async(
     password: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate personal data download url (AdminGeneratePersonalDataURL)
 
@@ -293,7 +293,7 @@ def admin_get_list_personal_data_request(
     request_date: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list personal data requests (AdminGetListPersonalDataRequest)
 
@@ -354,7 +354,7 @@ async def admin_get_list_personal_data_request_async(
     request_date: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list personal data requests (AdminGetListPersonalDataRequest)
 
@@ -417,7 +417,7 @@ def admin_get_user_personal_data_requests(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's personal data requests (AdminGetUserPersonalDataRequests)
 
@@ -474,7 +474,7 @@ async def admin_get_user_personal_data_requests_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's personal data requests (AdminGetUserPersonalDataRequests)
 
@@ -532,7 +532,7 @@ def admin_request_data_retrieval(
     password: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Submit user personal data retrieval request (AdminRequestDataRetrieval)
 
@@ -592,7 +592,7 @@ async def admin_request_data_retrieval_async(
     password: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Submit user personal data retrieval request (AdminRequestDataRetrieval)
 
@@ -654,7 +654,7 @@ def public_cancel_user_personal_data_request(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel user's personal data requests (PublicCancelUserPersonalDataRequest)
 
@@ -710,7 +710,7 @@ async def public_cancel_user_personal_data_request_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel user's personal data requests (PublicCancelUserPersonalDataRequest)
 
@@ -769,7 +769,7 @@ def public_generate_personal_data_url(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate personal data download url (PublicGeneratePersonalDataURL)
 
@@ -832,7 +832,7 @@ async def public_generate_personal_data_url_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate personal data download url (PublicGeneratePersonalDataURL)
 
@@ -897,7 +897,7 @@ def public_get_user_personal_data_requests(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's personal data requests (PublicGetUserPersonalDataRequests)
 
@@ -955,7 +955,7 @@ async def public_get_user_personal_data_requests_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user's personal data requests (PublicGetUserPersonalDataRequests)
 
@@ -1015,7 +1015,7 @@ def public_request_data_retrieval(
     language_tag: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Submit personal data retrieval request (PublicRequestDataRetrieval)
 
@@ -1077,7 +1077,7 @@ async def public_request_data_retrieval_async(
     language_tag: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Submit personal data retrieval request (PublicRequestDataRetrieval)
 

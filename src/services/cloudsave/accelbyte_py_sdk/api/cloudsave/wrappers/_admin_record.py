@@ -62,7 +62,7 @@ def admin_bulk_get_admin_game_record_v1(
     body: ModelsBulkGetAdminGameRecordRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get admin game records (adminBulkGetAdminGameRecordV1)
 
@@ -114,7 +114,7 @@ async def admin_bulk_get_admin_game_record_v1_async(
     body: ModelsBulkGetAdminGameRecordRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get admin game records (adminBulkGetAdminGameRecordV1)
 
@@ -169,7 +169,7 @@ def admin_bulk_get_admin_player_record_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get admin player records (adminBulkGetAdminPlayerRecordV1)
 
@@ -225,7 +225,7 @@ async def admin_bulk_get_admin_player_record_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get admin player records (adminBulkGetAdminPlayerRecordV1)
 
@@ -282,7 +282,7 @@ def admin_delete_admin_game_record_v1(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete admin game record (adminDeleteAdminGameRecordV1)
 
@@ -332,7 +332,7 @@ async def admin_delete_admin_game_record_v1_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete admin game record (adminDeleteAdminGameRecordV1)
 
@@ -385,7 +385,7 @@ def admin_delete_admin_player_record_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete admin player record (adminDeleteAdminPlayerRecordV1)
 
@@ -439,7 +439,7 @@ async def admin_delete_admin_player_record_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete admin player record (adminDeleteAdminPlayerRecordV1)
 
@@ -494,7 +494,7 @@ def admin_get_admin_game_record_v1(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get admin game record (adminGetAdminGameRecordV1)
 
@@ -544,7 +544,7 @@ async def admin_get_admin_game_record_v1_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get admin game record (adminGetAdminGameRecordV1)
 
@@ -597,7 +597,7 @@ def admin_get_admin_player_record_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get admin player record (adminGetAdminPlayerRecordV1)
 
@@ -651,7 +651,7 @@ async def admin_get_admin_player_record_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get admin player record (adminGetAdminPlayerRecordV1)
 
@@ -709,7 +709,7 @@ def admin_list_admin_game_record_v1(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List key of admin game record (adminListAdminGameRecordV1)
 
@@ -771,7 +771,7 @@ async def admin_list_admin_game_record_v1_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List key of admin game record (adminListAdminGameRecordV1)
 
@@ -836,7 +836,7 @@ def admin_list_admin_user_records_v1(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List key of admin player record (adminListAdminUserRecordsV1)
 
@@ -902,7 +902,7 @@ async def admin_list_admin_user_records_v1_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List key of admin player record (adminListAdminUserRecordsV1)
 
@@ -967,7 +967,7 @@ def admin_post_admin_game_record_v1(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or append admin game record (adminPostAdminGameRecordV1)
 
@@ -1090,7 +1090,7 @@ async def admin_post_admin_game_record_v1_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or append admin game record (adminPostAdminGameRecordV1)
 
@@ -1216,7 +1216,7 @@ def admin_post_player_admin_record_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or append admin player record (adminPostPlayerAdminRecordV1)
 
@@ -1343,7 +1343,7 @@ async def admin_post_player_admin_record_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or append admin player record (adminPostPlayerAdminRecordV1)
 
@@ -1471,7 +1471,7 @@ def admin_put_admin_game_record_v1(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace admin game record (adminPutAdminGameRecordV1)
 
@@ -1581,7 +1581,7 @@ async def admin_put_admin_game_record_v1_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace admin game record (adminPutAdminGameRecordV1)
 
@@ -1694,7 +1694,7 @@ def admin_put_admin_player_record_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace admin player record (adminPutAdminPlayerRecordV1)
 
@@ -1809,7 +1809,7 @@ async def admin_put_admin_player_record_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace admin player record (adminPutAdminPlayerRecordV1)
 
@@ -1925,7 +1925,7 @@ def bulk_get_admin_player_record_by_user_ids_v1(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get admin player record by multiple user ID (bulkGetAdminPlayerRecordByUserIdsV1)
 
@@ -1981,7 +1981,7 @@ async def bulk_get_admin_player_record_by_user_ids_v1_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get admin player record by multiple user ID (bulkGetAdminPlayerRecordByUserIdsV1)
 

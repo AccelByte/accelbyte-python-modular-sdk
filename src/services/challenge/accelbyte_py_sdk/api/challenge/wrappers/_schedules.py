@@ -49,7 +49,7 @@ def admin_list_schedules(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Challenge's schedules (adminListSchedules)
 
@@ -119,7 +119,7 @@ async def admin_list_schedules_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Challenge's schedules (adminListSchedules)
 
@@ -191,7 +191,7 @@ def admin_list_schedules_by_goal(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get goal's schedules (adminListSchedulesByGoal)
 
@@ -261,7 +261,7 @@ async def admin_list_schedules_by_goal_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get goal's schedules (adminListSchedulesByGoal)
 
@@ -332,7 +332,7 @@ def public_list_schedules(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Challenge's schedules (publicListSchedules)
 
@@ -398,7 +398,7 @@ async def public_list_schedules_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Challenge's schedules (publicListSchedules)
 
@@ -466,7 +466,7 @@ def public_list_schedules_by_goal(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get goal's schedules (publicListSchedulesByGoal)
 
@@ -532,7 +532,7 @@ async def public_list_schedules_by_goal_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get goal's schedules (publicListSchedulesByGoal)
 

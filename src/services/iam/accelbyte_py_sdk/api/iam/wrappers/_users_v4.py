@@ -145,7 +145,7 @@ def admin_add_user_role_v4(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Add User's Role V4 (AdminAddUserRoleV4)
 
@@ -204,7 +204,7 @@ async def admin_add_user_role_v4_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Add User's Role V4 (AdminAddUserRoleV4)
 
@@ -264,7 +264,7 @@ def admin_bulk_check_valid_user_idv4(
     body: ModelCheckValidUserIDRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Check Valid User ID (AdminBulkCheckValidUserIDV4)
 
@@ -315,7 +315,7 @@ async def admin_bulk_check_valid_user_idv4_async(
     body: ModelCheckValidUserIDRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Check Valid User ID (AdminBulkCheckValidUserIDV4)
 
@@ -368,7 +368,7 @@ def admin_bulk_update_user_account_type_v4(
     body: ModelBulkAccountTypeUpdateRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Bulk Update User Account Type V4 (AdminBulkUpdateUserAccountTypeV4)
 
@@ -422,7 +422,7 @@ async def admin_bulk_update_user_account_type_v4_async(
     body: ModelBulkAccountTypeUpdateRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Bulk Update User Account Type V4 (AdminBulkUpdateUserAccountTypeV4)
 
@@ -478,7 +478,7 @@ def admin_challenge_my_mfav4(
     code: Optional[str] = None,
     factor: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Challenge User MFA (AdminChallengeMyMFAV4)
 
@@ -528,7 +528,7 @@ async def admin_challenge_my_mfav4_async(
     code: Optional[str] = None,
     factor: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Challenge User MFA (AdminChallengeMyMFAV4)
 
@@ -580,7 +580,7 @@ def admin_create_test_users_v4(
     body: AccountCreateTestUsersRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """[TEST FACILITY ONLY]Create test Users (AdminCreateTestUsersV4)
 
@@ -632,7 +632,7 @@ async def admin_create_test_users_v4_async(
     body: AccountCreateTestUsersRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """[TEST FACILITY ONLY]Create test Users (AdminCreateTestUsersV4)
 
@@ -686,7 +686,7 @@ def admin_create_user_v4(
     body: AccountCreateUserRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Create User (AdminCreateUserV4)
 
@@ -752,7 +752,7 @@ async def admin_create_user_v4_async(
     body: AccountCreateUserRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Create User (AdminCreateUserV4)
 
@@ -819,7 +819,7 @@ async def admin_create_user_v4_async(
 def admin_disable_my_authenticator_v4(
     body: ModelDisableMFARequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable 2FA authenticator (AdminDisableMyAuthenticatorV4)
 
@@ -868,7 +868,7 @@ def admin_disable_my_authenticator_v4(
 async def admin_disable_my_authenticator_v4_async(
     body: ModelDisableMFARequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable 2FA authenticator (AdminDisableMyAuthenticatorV4)
 
@@ -919,7 +919,7 @@ async def admin_disable_my_authenticator_v4_async(
 def admin_disable_my_backup_codes_v4(
     body: ModelDisableMFARequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable 2FA backup codes (AdminDisableMyBackupCodesV4)
 
@@ -968,7 +968,7 @@ def admin_disable_my_backup_codes_v4(
 async def admin_disable_my_backup_codes_v4_async(
     body: ModelDisableMFARequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable 2FA backup codes (AdminDisableMyBackupCodesV4)
 
@@ -1019,7 +1019,7 @@ async def admin_disable_my_backup_codes_v4_async(
 def admin_disable_my_email_v4(
     body: ModelDisableMFARequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable 2FA email (AdminDisableMyEmailV4)
 
@@ -1068,7 +1068,7 @@ def admin_disable_my_email_v4(
 async def admin_disable_my_email_v4_async(
     body: ModelDisableMFARequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable 2FA email (AdminDisableMyEmailV4)
 
@@ -1121,7 +1121,7 @@ def admin_disable_user_mfav4(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable User 2FA (AdminDisableUserMFAV4)
 
@@ -1179,7 +1179,7 @@ async def admin_disable_user_mfav4_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable User 2FA (AdminDisableUserMFAV4)
 
@@ -1317,7 +1317,7 @@ async def admin_download_my_backup_codes_v4_async(
 def admin_enable_backup_codes_v4(
     language_tag: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable 2FA backup codes (AdminEnableBackupCodesV4)
 
@@ -1363,7 +1363,7 @@ def admin_enable_backup_codes_v4(
 async def admin_enable_backup_codes_v4_async(
     language_tag: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable 2FA backup codes (AdminEnableBackupCodesV4)
 
@@ -1685,7 +1685,7 @@ async def admin_enable_my_email_v4_async(
 def admin_generate_backup_codes_v4(
     language_tag: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate backup codes (AdminGenerateBackupCodesV4)
 
@@ -1730,7 +1730,7 @@ def admin_generate_backup_codes_v4(
 async def admin_generate_backup_codes_v4_async(
     language_tag: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate backup codes (AdminGenerateBackupCodesV4)
 
@@ -1939,7 +1939,7 @@ async def admin_generate_my_backup_codes_v4_async(
 def admin_get_backup_codes_v4(
     language_tag: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get backup codes and send to email (AdminGetBackupCodesV4)
 
@@ -1984,7 +1984,7 @@ def admin_get_backup_codes_v4(
 async def admin_get_backup_codes_v4_async(
     language_tag: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get backup codes and send to email (AdminGetBackupCodesV4)
 
@@ -2345,7 +2345,7 @@ async def admin_get_my_own_mfa_status_v4_async(
 def admin_get_namespace_invitation_history_v4(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Get Invitation History for specific namespace V4 (AdminGetNamespaceInvitationHistoryV4)
 
@@ -2394,7 +2394,7 @@ def admin_get_namespace_invitation_history_v4(
 async def admin_get_namespace_invitation_history_v4_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Get Invitation History for specific namespace V4 (AdminGetNamespaceInvitationHistoryV4)
 
@@ -2447,7 +2447,7 @@ def admin_get_namespace_user_invitation_history_v4(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Get Users Invitation History for specific namespace V4 (AdminGetNamespaceUserInvitationHistoryV4)
 
@@ -2507,7 +2507,7 @@ async def admin_get_namespace_user_invitation_history_v4_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Get Users Invitation History for specific namespace V4 (AdminGetNamespaceUserInvitationHistoryV4)
 
@@ -2568,7 +2568,7 @@ def admin_get_user_mfa_status_v4(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User 2FA Status (AdminGetUserMFAStatusV4)
 
@@ -2618,7 +2618,7 @@ async def admin_get_user_mfa_status_v4_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User 2FA Status (AdminGetUserMFAStatusV4)
 
@@ -2669,7 +2669,7 @@ async def admin_get_user_mfa_status_v4_async(
 def admin_invite_user_new_v4(
     body: ModelInviteUserRequestV4,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin invite User v4 (AdminInviteUserNewV4)
 
@@ -2729,7 +2729,7 @@ def admin_invite_user_new_v4(
 async def admin_invite_user_new_v4_async(
     body: ModelInviteUserRequestV4,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin invite User v4 (AdminInviteUserNewV4)
 
@@ -2792,7 +2792,7 @@ async def admin_invite_user_new_v4_async(
 def admin_invite_user_v4(
     body: ModelInviteUserRequestV4,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin invite User v4 (AdminInviteUserV4)
 
@@ -2855,7 +2855,7 @@ def admin_invite_user_v4(
 async def admin_invite_user_v4_async(
     body: ModelInviteUserRequestV4,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin invite User v4 (AdminInviteUserV4)
 
@@ -2921,7 +2921,7 @@ def admin_list_invitation_histories_v4(
     namespace: Optional[str] = None,
     offset: Optional[int] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin List Invitation Histories V4 (AdminListInvitationHistoriesV4)
 
@@ -2978,7 +2978,7 @@ async def admin_list_invitation_histories_v4_async(
     namespace: Optional[str] = None,
     offset: Optional[int] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin List Invitation Histories V4 (AdminListInvitationHistoriesV4)
 
@@ -3036,7 +3036,7 @@ def admin_list_user_roles_v4(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin List User's Roles V4 (AdminListUserRolesV4)
 
@@ -3086,7 +3086,7 @@ async def admin_list_user_roles_v4_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin List User's Roles V4 (AdminListUserRolesV4)
 
@@ -3225,7 +3225,7 @@ def admin_remove_user_role_v4(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Remove User Role v4 (AdminRemoveUserRoleV4)
 
@@ -3283,7 +3283,7 @@ async def admin_remove_user_role_v4_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Remove User Role v4 (AdminRemoveUserRoleV4)
 
@@ -3342,7 +3342,7 @@ def admin_send_my_mfa_email_code_v4(
     action: Optional[str] = None,
     language_tag: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Send code for MFA email (AdminSendMyMFAEmailCodeV4)
 
@@ -3396,7 +3396,7 @@ async def admin_send_my_mfa_email_code_v4_async(
     action: Optional[str] = None,
     language_tag: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Send code for MFA email (AdminSendMyMFAEmailCodeV4)
 
@@ -3451,7 +3451,7 @@ async def admin_send_my_mfa_email_code_v4_async(
 def admin_update_my_user_v4(
     body: ModelUserUpdateRequestV3,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Update My User (AdminUpdateMyUserV4)
 
@@ -3498,7 +3498,7 @@ def admin_update_my_user_v4(
 async def admin_update_my_user_v4_async(
     body: ModelUserUpdateRequestV3,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Update My User (AdminUpdateMyUserV4)
 
@@ -3549,7 +3549,7 @@ def admin_update_user_email_address_v4(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a User Email Address (AdminUpdateUserEmailAddressV4)
 
@@ -3606,7 +3606,7 @@ async def admin_update_user_email_address_v4_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a User Email Address (AdminUpdateUserEmailAddressV4)
 
@@ -3665,7 +3665,7 @@ def admin_update_user_role_v4(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Update User's Role V4 (AdminUpdateUserRoleV4)
 
@@ -3724,7 +3724,7 @@ async def admin_update_user_role_v4_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Update User's Role V4 (AdminUpdateUserRoleV4)
 
@@ -3785,7 +3785,7 @@ def admin_update_user_v4(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User (AdminUpdateUserV4)
 
@@ -3853,7 +3853,7 @@ async def admin_update_user_v4_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User (AdminUpdateUserV4)
 
@@ -3923,7 +3923,7 @@ def create_user_from_invitation_v4(
     invitation_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create User From Invitation (CreateUserFromInvitationV4)
 
@@ -3998,7 +3998,7 @@ async def create_user_from_invitation_v4_async(
     invitation_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create User From Invitation (CreateUserFromInvitationV4)
 
@@ -4075,7 +4075,7 @@ def public_challenge_my_mfav4(
     factor: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Challenge User MFA (PublicChallengeMyMFAV4)
 
@@ -4133,7 +4133,7 @@ async def public_challenge_my_mfav4_async(
     factor: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Challenge User MFA (PublicChallengeMyMFAV4)
 
@@ -4192,7 +4192,7 @@ def public_create_test_user_v4(
     body: AccountCreateTestUserRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """[TEST FACILITY ONLY]Create test User (PublicCreateTestUserV4)
 
@@ -4255,7 +4255,7 @@ async def public_create_test_user_v4_async(
     body: AccountCreateTestUserRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """[TEST FACILITY ONLY]Create test User (PublicCreateTestUserV4)
 
@@ -4320,7 +4320,7 @@ def public_create_user_v4(
     body: AccountCreateUserRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create User (PublicCreateUserV4)
 
@@ -4387,7 +4387,7 @@ async def public_create_user_v4_async(
     body: AccountCreateUserRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create User (PublicCreateUserV4)
 
@@ -4456,7 +4456,7 @@ def public_disable_my_authenticator_v4(
     body: ModelDisableMFARequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable 2FA authenticator (PublicDisableMyAuthenticatorV4)
 
@@ -4513,7 +4513,7 @@ async def public_disable_my_authenticator_v4_async(
     body: ModelDisableMFARequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable 2FA authenticator (PublicDisableMyAuthenticatorV4)
 
@@ -4572,7 +4572,7 @@ def public_disable_my_backup_codes_v4(
     body: ModelDisableMFARequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable 2FA backup codes (PublicDisableMyBackupCodesV4)
 
@@ -4629,7 +4629,7 @@ async def public_disable_my_backup_codes_v4_async(
     body: ModelDisableMFARequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable 2FA backup codes (PublicDisableMyBackupCodesV4)
 
@@ -4688,7 +4688,7 @@ def public_disable_my_email_v4(
     body: ModelDisableMFARequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable 2FA email (PublicDisableMyEmailV4)
 
@@ -4745,7 +4745,7 @@ async def public_disable_my_email_v4_async(
     body: ModelDisableMFARequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable 2FA email (PublicDisableMyEmailV4)
 
@@ -4804,7 +4804,7 @@ async def public_disable_my_email_v4_async(
 def public_download_my_backup_codes_v4(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Download user backup codes (PublicDownloadMyBackupCodesV4)
 
@@ -4853,7 +4853,7 @@ def public_download_my_backup_codes_v4(
 async def public_download_my_backup_codes_v4_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Download user backup codes (PublicDownloadMyBackupCodesV4)
 
@@ -4904,7 +4904,7 @@ def public_enable_backup_codes_v4(
     language_tag: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable 2FA backup codes (PublicEnableBackupCodesV4)
 
@@ -4958,7 +4958,7 @@ async def public_enable_backup_codes_v4_async(
     language_tag: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable 2FA backup codes (PublicEnableBackupCodesV4)
 
@@ -5014,7 +5014,7 @@ def public_enable_my_authenticator_v4(
     code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable 2FA authenticator (PublicEnableMyAuthenticatorV4)
 
@@ -5073,7 +5073,7 @@ async def public_enable_my_authenticator_v4_async(
     code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable 2FA authenticator (PublicEnableMyAuthenticatorV4)
 
@@ -5134,7 +5134,7 @@ async def public_enable_my_authenticator_v4_async(
 def public_enable_my_backup_codes_v4(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable 2FA backup codes (PublicEnableMyBackupCodesV4)
 
@@ -5185,7 +5185,7 @@ def public_enable_my_backup_codes_v4(
 async def public_enable_my_backup_codes_v4_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable 2FA backup codes (PublicEnableMyBackupCodesV4)
 
@@ -5238,7 +5238,7 @@ def public_enable_my_email_v4(
     code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable 2FA email (PublicEnableMyEmailV4)
 
@@ -5292,7 +5292,7 @@ async def public_enable_my_email_v4_async(
     code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable 2FA email (PublicEnableMyEmailV4)
 
@@ -5348,7 +5348,7 @@ def public_generate_backup_codes_v4(
     language_tag: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate backup codes (PublicGenerateBackupCodesV4)
 
@@ -5402,7 +5402,7 @@ async def public_generate_backup_codes_v4_async(
     language_tag: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate backup codes (PublicGenerateBackupCodesV4)
 
@@ -5457,7 +5457,7 @@ async def public_generate_backup_codes_v4_async(
 def public_generate_my_authenticator_key_v4(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate secret key for 3rd-party authenticate app (PublicGenerateMyAuthenticatorKeyV4)
 
@@ -5506,7 +5506,7 @@ def public_generate_my_authenticator_key_v4(
 async def public_generate_my_authenticator_key_v4_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate secret key for 3rd-party authenticate app (PublicGenerateMyAuthenticatorKeyV4)
 
@@ -5558,7 +5558,7 @@ async def public_generate_my_authenticator_key_v4_async(
 def public_generate_my_backup_codes_v4(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate backup codes (PublicGenerateMyBackupCodesV4)
 
@@ -5608,7 +5608,7 @@ def public_generate_my_backup_codes_v4(
 async def public_generate_my_backup_codes_v4_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate backup codes (PublicGenerateMyBackupCodesV4)
 
@@ -5660,7 +5660,7 @@ def public_get_backup_codes_v4(
     language_tag: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get backup codes and send to email (PublicGetBackupCodesV4)
 
@@ -5714,7 +5714,7 @@ async def public_get_backup_codes_v4_async(
     language_tag: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get backup codes and send to email (PublicGetBackupCodesV4)
 
@@ -5770,7 +5770,7 @@ async def public_get_backup_codes_v4_async(
 def public_get_my_backup_codes_v4(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get backup codes (PublicGetMyBackupCodesV4)
 
@@ -5820,7 +5820,7 @@ def public_get_my_backup_codes_v4(
 async def public_get_my_backup_codes_v4_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get backup codes (PublicGetMyBackupCodesV4)
 
@@ -5871,7 +5871,7 @@ async def public_get_my_backup_codes_v4_async(
 def public_get_my_enabled_factors_v4(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user enabled factors (PublicGetMyEnabledFactorsV4)
 
@@ -5919,7 +5919,7 @@ def public_get_my_enabled_factors_v4(
 async def public_get_my_enabled_factors_v4_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user enabled factors (PublicGetMyEnabledFactorsV4)
 
@@ -5970,7 +5970,7 @@ async def public_get_my_enabled_factors_v4_async(
 def public_get_my_mfa_status_v4(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User MFA Status (PublicGetMyMFAStatusV4)
 
@@ -6019,7 +6019,7 @@ def public_get_my_mfa_status_v4(
 async def public_get_my_mfa_status_v4_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User MFA Status (PublicGetMyMFAStatusV4)
 
@@ -6069,7 +6069,7 @@ async def public_get_my_mfa_status_v4_async(
 def public_get_my_own_mfa_status_v4(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get My Own MFA Status (PublicGetMyOwnMFAStatusV4)
 
@@ -6115,7 +6115,7 @@ def public_get_my_own_mfa_status_v4(
 async def public_get_my_own_mfa_status_v4_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get My Own MFA Status (PublicGetMyOwnMFAStatusV4)
 
@@ -6165,7 +6165,7 @@ def public_get_user_by_platform_user_idv4(
     platform_user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User By Platform User ID (PublicGetUserByPlatformUserIDV4)
 
@@ -6260,7 +6260,7 @@ async def public_get_user_by_platform_user_idv4_async(
     platform_user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User By Platform User ID (PublicGetUserByPlatformUserIDV4)
 
@@ -6356,7 +6356,7 @@ def public_get_user_public_info_by_user_id_v4(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User Public Info By User ID (PublicGetUserPublicInfoByUserIdV4)
 
@@ -6405,7 +6405,7 @@ async def public_get_user_public_info_by_user_id_v4_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get User Public Info By User ID (PublicGetUserPublicInfoByUserIdV4)
 
@@ -6455,7 +6455,7 @@ async def public_get_user_public_info_by_user_id_v4_async(
 def public_invite_user_v4(
     body: ModelPublicInviteUserRequestV4,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public invite admin user v4 (PublicInviteUserV4)
 
@@ -6508,7 +6508,7 @@ def public_invite_user_v4(
 async def public_invite_user_v4_async(
     body: ModelPublicInviteUserRequestV4,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Public invite admin user v4 (PublicInviteUserV4)
 
@@ -6566,7 +6566,7 @@ def public_list_user_id_by_platform_user_i_ds_v4(
     raw_puid: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List User ID By Platform User ID (PublicListUserIDByPlatformUserIDsV4)
 
@@ -6657,7 +6657,7 @@ async def public_list_user_id_by_platform_user_i_ds_v4_async(
     raw_puid: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List User ID By Platform User ID (PublicListUserIDByPlatformUserIDsV4)
 
@@ -6748,7 +6748,7 @@ def public_make_factor_my_default_v4(
     factor: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Make 2FA factor default (PublicMakeFactorMyDefaultV4)
 
@@ -6800,7 +6800,7 @@ async def public_make_factor_my_default_v4_async(
     factor: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Make 2FA factor default (PublicMakeFactorMyDefaultV4)
 
@@ -6854,7 +6854,7 @@ def public_remove_trusted_device_v4(
     cookie: Optional[Union[str, HeaderStr]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Remove Trusted Device (PublicRemoveTrustedDeviceV4)
 
@@ -6907,7 +6907,7 @@ async def public_remove_trusted_device_v4_async(
     cookie: Optional[Union[str, HeaderStr]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Remove Trusted Device (PublicRemoveTrustedDeviceV4)
 
@@ -6963,7 +6963,7 @@ def public_send_my_mfa_email_code_v4(
     language_tag: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Send code for MFA email (PublicSendMyMFAEmailCodeV4)
 
@@ -7025,7 +7025,7 @@ async def public_send_my_mfa_email_code_v4_async(
     language_tag: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Send code for MFA email (PublicSendMyMFAEmailCodeV4)
 
@@ -7088,7 +7088,7 @@ def public_update_user_email_address_v4(
     body: ModelEmailUpdateRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update My Email Address (PublicUpdateUserEmailAddressV4)
 
@@ -7141,7 +7141,7 @@ async def public_update_user_email_address_v4_async(
     body: ModelEmailUpdateRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update My Email Address (PublicUpdateUserEmailAddressV4)
 
@@ -7196,7 +7196,7 @@ def public_update_user_v4(
     body: ModelPublicUserUpdateRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User (PublicUpdateUserV4)
 
@@ -7258,7 +7258,7 @@ async def public_update_user_v4_async(
     body: ModelPublicUserUpdateRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update User (PublicUpdateUserV4)
 
@@ -7322,7 +7322,7 @@ def public_upgrade_headless_account_v4(
     body: AccountUpgradeHeadlessAccountRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upgrade user account to full account (PublicUpgradeHeadlessAccountV4)
 
@@ -7375,7 +7375,7 @@ async def public_upgrade_headless_account_v4_async(
     body: AccountUpgradeHeadlessAccountRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upgrade user account to full account (PublicUpgradeHeadlessAccountV4)
 
@@ -7430,7 +7430,7 @@ def public_upgrade_headless_account_with_verification_code_v4(
     body: AccountUpgradeHeadlessAccountWithVerificationCodeRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upgrade headless account and automatically verified the email address if it is succeeded (PublicUpgradeHeadlessAccountWithVerificationCodeV4)
 
@@ -7496,7 +7496,7 @@ async def public_upgrade_headless_account_with_verification_code_v4_async(
     body: AccountUpgradeHeadlessAccountWithVerificationCodeRequestV4,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upgrade headless account and automatically verified the email address if it is succeeded (PublicUpgradeHeadlessAccountWithVerificationCodeV4)
 
@@ -7563,7 +7563,7 @@ async def public_upgrade_headless_account_with_verification_code_v4_async(
 def public_upgrade_headless_with_code_v4_forward(
     body: AccountUpgradeHeadlessAccountWithVerificationCodeForwardRequestV4,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upgrade the headless account and automatically verify the email address if the upgrade succeeds. (PublicUpgradeHeadlessWithCodeV4Forward)
 
@@ -7604,7 +7604,7 @@ def public_upgrade_headless_with_code_v4_forward(
 async def public_upgrade_headless_with_code_v4_forward_async(
     body: AccountUpgradeHeadlessAccountWithVerificationCodeForwardRequestV4,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upgrade the headless account and automatically verify the email address if the upgrade succeeds. (PublicUpgradeHeadlessWithCodeV4Forward)
 

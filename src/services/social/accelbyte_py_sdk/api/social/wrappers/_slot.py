@@ -51,7 +51,7 @@ def get_slot_data(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns slot data (getSlotData)
 
@@ -105,7 +105,7 @@ async def get_slot_data_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns slot data (getSlotData)
 
@@ -160,7 +160,7 @@ def get_user_namespace_slots(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns list of slots for given user (getUserNamespaceSlots)
 
@@ -208,7 +208,7 @@ async def get_user_namespace_slots_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns list of slots for given user (getUserNamespaceSlots)
 
@@ -263,7 +263,7 @@ def public_create_user_namespace_slot(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Creates a slot (publicCreateUserNamespaceSlot)
 
@@ -335,7 +335,7 @@ async def public_create_user_namespace_slot_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Creates a slot (publicCreateUserNamespaceSlot)
 
@@ -405,7 +405,7 @@ def public_delete_user_namespace_slot(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Deletes the slot (publicDeleteUserNamespaceSlot)
 
@@ -458,7 +458,7 @@ async def public_delete_user_namespace_slot_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Deletes the slot (publicDeleteUserNamespaceSlot)
 
@@ -513,7 +513,7 @@ def public_get_slot_data(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns slot data (publicGetSlotData)
 
@@ -567,7 +567,7 @@ async def public_get_slot_data_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns slot data (publicGetSlotData)
 
@@ -622,7 +622,7 @@ def public_get_user_namespace_slots(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns slots for given user (publicGetUserNamespaceSlots)
 
@@ -670,7 +670,7 @@ async def public_get_user_namespace_slots_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Returns slots for given user (publicGetUserNamespaceSlots)
 
@@ -726,7 +726,7 @@ def public_update_user_namespace_slot(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Updates a slot (publicUpdateUserNamespaceSlot)
 
@@ -802,7 +802,7 @@ async def public_update_user_namespace_slot_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Updates a slot (publicUpdateUserNamespaceSlot)
 
@@ -876,7 +876,7 @@ def public_update_user_namespace_slot_metadata(
     body: Optional[SlotMetadataUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Updates the slot metadata (publicUpdateUserNamespaceSlotMetadata)
 
@@ -934,7 +934,7 @@ async def public_update_user_namespace_slot_metadata_async(
     body: Optional[SlotMetadataUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Updates the slot metadata (publicUpdateUserNamespaceSlotMetadata)
 

@@ -43,7 +43,7 @@ def admin_get_configs(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get configs (AdminGetConfigs)
 
@@ -97,7 +97,7 @@ async def admin_get_configs_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get configs (AdminGetConfigs)
 
@@ -153,7 +153,7 @@ def admin_update_config(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update config (AdminUpdateConfig)
 
@@ -210,7 +210,7 @@ async def admin_update_config_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update config (AdminUpdateConfig)
 

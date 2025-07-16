@@ -48,7 +48,7 @@ def delete_game_record_handler_v1(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete game record (deleteGameRecordHandlerV1)
 
@@ -98,7 +98,7 @@ async def delete_game_record_handler_v1_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete game record (deleteGameRecordHandlerV1)
 
@@ -150,7 +150,7 @@ def get_game_record_handler_v1(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get game record (getGameRecordHandlerV1)
 
@@ -202,7 +202,7 @@ async def get_game_record_handler_v1_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get game record (getGameRecordHandlerV1)
 
@@ -256,7 +256,7 @@ def get_game_records_bulk(
     body: ModelsBulkGetGameRecordRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get game records (getGameRecordsBulk)
 
@@ -308,7 +308,7 @@ async def get_game_records_bulk_async(
     body: ModelsBulkGetGameRecordRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get game records (getGameRecordsBulk)
 
@@ -363,7 +363,7 @@ def post_game_record_handler_v1(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or append game record (postGameRecordHandlerV1)
 
@@ -464,7 +464,7 @@ async def post_game_record_handler_v1_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or append game record (postGameRecordHandlerV1)
 
@@ -567,7 +567,7 @@ def put_game_record_handler_v1(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace game record (putGameRecordHandlerV1)
 
@@ -657,7 +657,7 @@ async def put_game_record_handler_v1_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace game record (putGameRecordHandlerV1)
 

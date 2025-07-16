@@ -52,7 +52,7 @@ def create_moderation_rule(
     body: RestapiModerationRuleRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create auto moderation rule (createModerationRule)
 
@@ -110,7 +110,7 @@ async def create_moderation_rule_async(
     body: RestapiModerationRuleRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create auto moderation rule (createModerationRule)
 
@@ -170,7 +170,7 @@ def delete_moderation_rule(
     rule_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete auto moderation rule (deleteModerationRule)
 
@@ -216,7 +216,7 @@ async def delete_moderation_rule_async(
     rule_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete auto moderation rule (deleteModerationRule)
 
@@ -264,7 +264,7 @@ def get_moderation_rule_details(
     rule_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get auto moderation rule (getModerationRuleDetails)
 
@@ -310,7 +310,7 @@ async def get_moderation_rule_details_async(
     rule_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get auto moderation rule (getModerationRuleDetails)
 
@@ -361,7 +361,7 @@ def get_moderation_rules(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get auto moderation rules (getModerationRules)
 
@@ -421,7 +421,7 @@ async def get_moderation_rules_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get auto moderation rules (getModerationRules)
 
@@ -481,7 +481,7 @@ def update_moderation_rule(
     rule_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update auto moderation rule (updateModerationRule)
 
@@ -543,7 +543,7 @@ async def update_moderation_rule_async(
     rule_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update auto moderation rule (updateModerationRule)
 
@@ -607,7 +607,7 @@ def update_moderation_rule_status(
     rule_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable/Disable auto moderation rule (updateModerationRuleStatus)
 
@@ -659,7 +659,7 @@ async def update_moderation_rule_status_async(
     rule_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable/Disable auto moderation rule (updateModerationRuleStatus)
 

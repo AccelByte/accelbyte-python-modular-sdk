@@ -60,7 +60,7 @@ def admin_delete_platform_account_closure_client(
     platform: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Platform Account Closure Client (AdminDeletePlatformAccountClosureClient)
 
@@ -118,7 +118,7 @@ async def admin_delete_platform_account_closure_client_async(
     platform: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Platform Account Closure Client (AdminDeletePlatformAccountClosureClient)
 
@@ -178,7 +178,7 @@ def admin_get_platform_account_closure_client(
     platform: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Platform Account Closure Config (AdminGetPlatformAccountClosureClient)
 
@@ -237,7 +237,7 @@ async def admin_get_platform_account_closure_client_async(
     platform: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Platform Account Closure Config (AdminGetPlatformAccountClosureClient)
 
@@ -297,7 +297,7 @@ async def admin_get_platform_account_closure_client_async(
 def admin_get_platform_account_closure_clients(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Platform Account Closure Configs (AdminGetPlatformAccountClosureClients)
 
@@ -351,7 +351,7 @@ def admin_get_platform_account_closure_clients(
 async def admin_get_platform_account_closure_clients_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Platform Account Closure Configs (AdminGetPlatformAccountClosureClients)
 
@@ -409,7 +409,7 @@ def admin_mock_platform_account_closure_data(
     platform: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Mock Platform Account Closure Data (AdminMockPlatformAccountClosureData)
 
@@ -470,7 +470,7 @@ async def admin_mock_platform_account_closure_data_async(
     platform: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Mock Platform Account Closure Data (AdminMockPlatformAccountClosureData)
 
@@ -533,7 +533,7 @@ def admin_update_platform_account_closure_client(
     platform: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Platform Account Closure Client (AdminUpdatePlatformAccountClosureClient)
 
@@ -594,7 +594,7 @@ async def admin_update_platform_account_closure_client_async(
     platform: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Platform Account Closure Client (AdminUpdatePlatformAccountClosureClient)
 
@@ -656,7 +656,7 @@ def admin_validate_xbox_bp_cert_file(
     body: DtoXboxBPCertValidationRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Validate Xbox BP cert file (AdminValidateXboxBPCertFile)
 
@@ -708,7 +708,7 @@ async def admin_validate_xbox_bp_cert_file_async(
     body: DtoXboxBPCertValidationRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Validate Xbox BP cert file (AdminValidateXboxBPCertFile)
 

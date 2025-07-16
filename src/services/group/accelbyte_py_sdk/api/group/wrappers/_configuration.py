@@ -53,7 +53,7 @@ def create_group_configuration_admin_v1(
     body: ModelsCreateGroupConfigurationRequestV1,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create new configuration (createGroupConfigurationAdminV1)
 
@@ -115,7 +115,7 @@ async def create_group_configuration_admin_v1_async(
     body: ModelsCreateGroupConfigurationRequestV1,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create new configuration (createGroupConfigurationAdminV1)
 
@@ -180,7 +180,7 @@ def delete_group_configuration_global_rule_admin_v1(
     configuration_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete existing configuration global rule based on allowed action (deleteGroupConfigurationGlobalRuleAdminV1)
 
@@ -238,7 +238,7 @@ async def delete_group_configuration_global_rule_admin_v1_async(
     configuration_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete existing configuration global rule based on allowed action (deleteGroupConfigurationGlobalRuleAdminV1)
 
@@ -297,7 +297,7 @@ def delete_group_configuration_v1(
     configuration_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete group configuration (deleteGroupConfigurationV1)
 
@@ -351,7 +351,7 @@ async def delete_group_configuration_v1_async(
     configuration_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete group configuration (deleteGroupConfigurationV1)
 
@@ -407,7 +407,7 @@ def get_group_configuration_admin_v1(
     configuration_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get existing configuration (getGroupConfigurationAdminV1)
 
@@ -461,7 +461,7 @@ async def get_group_configuration_admin_v1_async(
     configuration_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get existing configuration (getGroupConfigurationAdminV1)
 
@@ -516,7 +516,7 @@ async def get_group_configuration_admin_v1_async(
 def initiate_group_configuration_admin_v1(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """initiate configuration (initiateGroupConfigurationAdminV1)
 
@@ -570,7 +570,7 @@ def initiate_group_configuration_admin_v1(
 async def initiate_group_configuration_admin_v1_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """initiate configuration (initiateGroupConfigurationAdminV1)
 
@@ -628,7 +628,7 @@ def list_group_configuration_admin_v1(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List Group Configuration (listGroupConfigurationAdminV1)
 
@@ -686,7 +686,7 @@ async def list_group_configuration_admin_v1_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List Group Configuration (listGroupConfigurationAdminV1)
 
@@ -746,7 +746,7 @@ def update_group_configuration_admin_v1(
     configuration_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update existing configuration (updateGroupConfigurationAdminV1)
 
@@ -804,7 +804,7 @@ async def update_group_configuration_admin_v1_async(
     configuration_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update existing configuration (updateGroupConfigurationAdminV1)
 
@@ -865,7 +865,7 @@ def update_group_configuration_global_rule_admin_v1(
     configuration_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update existing configuration global rule (updateGroupConfigurationGlobalRuleAdminV1)
 
@@ -927,7 +927,7 @@ async def update_group_configuration_global_rule_admin_v1_async(
     configuration_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update existing configuration global rule (updateGroupConfigurationGlobalRuleAdminV1)
 

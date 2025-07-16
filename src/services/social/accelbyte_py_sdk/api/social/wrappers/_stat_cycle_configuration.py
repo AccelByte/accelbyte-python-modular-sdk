@@ -73,7 +73,7 @@ def bulk_add_stats(
     cycle_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk add stat cycle to stats (bulkAddStats)
 
@@ -131,7 +131,7 @@ async def bulk_add_stats_async(
     cycle_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk add stat cycle to stats (bulkAddStats)
 
@@ -190,7 +190,7 @@ def bulk_get_stat_cycle(
     body: BulkStatCycleRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get stat cycle (bulkGetStatCycle)
 
@@ -244,7 +244,7 @@ async def bulk_get_stat_cycle_async(
     body: BulkStatCycleRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get stat cycle (bulkGetStatCycle)
 
@@ -300,7 +300,7 @@ def bulk_get_stat_cycle_1(
     body: BulkStatCycleRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get stat cycle (bulkGetStatCycle_1)
 
@@ -354,7 +354,7 @@ async def bulk_get_stat_cycle_1_async(
     body: BulkStatCycleRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get stat cycle (bulkGetStatCycle_1)
 
@@ -410,7 +410,7 @@ def create_stat_cycle(
     body: StatCycleCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create stat cycle (createStatCycle)
 
@@ -476,7 +476,7 @@ async def create_stat_cycle_async(
     body: StatCycleCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create stat cycle (createStatCycle)
 
@@ -544,7 +544,7 @@ def delete_stat_cycle(
     cycle_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Deletes stat cycle (deleteStatCycle)
 
@@ -594,7 +594,7 @@ async def delete_stat_cycle_async(
     cycle_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Deletes stat cycle (deleteStatCycle)
 
@@ -645,7 +645,7 @@ async def delete_stat_cycle_async(
 def export_stat_cycle(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Export all stat cycle configurations (exportStatCycle)
 
@@ -689,7 +689,7 @@ def export_stat_cycle(
 async def export_stat_cycle_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Export all stat cycle configurations (exportStatCycle)
 
@@ -736,7 +736,7 @@ def get_stat_cycle(
     cycle_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get stat cycle (getStatCycle)
 
@@ -788,7 +788,7 @@ async def get_stat_cycle_async(
     cycle_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get stat cycle (getStatCycle)
 
@@ -842,7 +842,7 @@ def get_stat_cycle_1(
     cycle_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get stat cycle (getStatCycle_1)
 
@@ -894,7 +894,7 @@ async def get_stat_cycle_1_async(
     cycle_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get stat cycle (getStatCycle_1)
 
@@ -953,7 +953,7 @@ def get_stat_cycles(
     status: Optional[Union[str, GetStatCyclesStatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List stat cycles (getStatCycles)
 
@@ -1023,7 +1023,7 @@ async def get_stat_cycles_async(
     status: Optional[Union[str, GetStatCyclesStatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List stat cycles (getStatCycles)
 
@@ -1095,7 +1095,7 @@ def get_stat_cycles_1(
     status: Optional[Union[str, GetStatCycles1StatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List stat cycles (getStatCycles_1)
 
@@ -1165,7 +1165,7 @@ async def get_stat_cycles_1_async(
     status: Optional[Union[str, GetStatCycles1StatusEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List stat cycles (getStatCycles_1)
 
@@ -1233,7 +1233,7 @@ def import_stat_cycle(
     replace_existing: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Import stat cycle configurations (importStatCycle)
 
@@ -1287,7 +1287,7 @@ async def import_stat_cycle_async(
     replace_existing: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Import stat cycle configurations (importStatCycle)
 
@@ -1342,7 +1342,7 @@ def stop_stat_cycle(
     cycle_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Stop stat cycle (stopStatCycle)
 
@@ -1396,7 +1396,7 @@ async def stop_stat_cycle_async(
     cycle_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Stop stat cycle (stopStatCycle)
 
@@ -1453,7 +1453,7 @@ def update_stat_cycle(
     cycle_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update stat cycle (updateStatCycle)
 
@@ -1515,7 +1515,7 @@ async def update_stat_cycle_async(
     cycle_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update stat cycle (updateStatCycle)
 

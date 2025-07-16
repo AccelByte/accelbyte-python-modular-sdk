@@ -75,7 +75,7 @@ def admin_retrieve_user_third_party_platform_token_v3(
     platform_user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Retrieve User Third Party Platform Token (AdminRetrieveUserThirdPartyPlatformTokenV3)
 
@@ -149,7 +149,7 @@ async def admin_retrieve_user_third_party_platform_token_v3_async(
     platform_user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin Retrieve User Third Party Platform Token (AdminRetrieveUserThirdPartyPlatformTokenV3)
 
@@ -225,7 +225,7 @@ def auth_code_request_v3(
     client_id: Optional[str] = None,
     redirect_uri: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate url to request auth code from third party platform. (AuthCodeRequestV3)
 
@@ -299,7 +299,7 @@ async def auth_code_request_v3_async(
     client_id: Optional[str] = None,
     redirect_uri: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Generate url to request auth code from third party platform. (AuthCodeRequestV3)
 
@@ -387,7 +387,7 @@ def authorize_v3(
     target_auth_page: Optional[str] = None,
     use_redirect_uri_as_login_url_when_locked: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """OAuth2 authorize API (AuthorizeV3)
 
@@ -504,7 +504,7 @@ async def authorize_v3_async(
     target_auth_page: Optional[str] = None,
     use_redirect_uri_as_login_url_when_locked: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """OAuth2 authorize API (AuthorizeV3)
 
@@ -609,7 +609,7 @@ def change2fa_method(
     factor: str,
     mfa_token: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Change 2FA method (Change2FAMethod)
 
@@ -658,7 +658,7 @@ async def change2fa_method_async(
     factor: str,
     mfa_token: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Change 2FA method (Change2FAMethod)
 
@@ -854,7 +854,7 @@ def platform_token_grant_v3(
     service_label: Optional[float] = None,
     skip_set_cookie: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """OAuth2 access token generation specific to platform (PlatformTokenGrantV3)
 
@@ -1000,7 +1000,7 @@ async def platform_token_grant_v3_async(
     service_label: Optional[float] = None,
     skip_set_cookie: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """OAuth2 access token generation specific to platform (PlatformTokenGrantV3)
 
@@ -1142,7 +1142,7 @@ def retrieve_user_third_party_platform_token_v3(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve User Third Party Platform Token (RetrieveUserThirdPartyPlatformTokenV3)
 
@@ -1214,7 +1214,7 @@ async def retrieve_user_third_party_platform_token_v3_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve User Third Party Platform Token (RetrieveUserThirdPartyPlatformTokenV3)
 
@@ -1288,7 +1288,7 @@ def revoke_user_v3(
     include_game_namespace: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revokes user's tokens' (RevokeUserV3)
 
@@ -1343,7 +1343,7 @@ async def revoke_user_v3_async(
     include_game_namespace: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Revokes user's tokens' (RevokeUserV3)
 
@@ -1400,7 +1400,7 @@ def send_mfa_authentication_code(
     factor: str,
     mfa_token: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Send 2FA code (SendMFAAuthenticationCode)
 
@@ -1453,7 +1453,7 @@ async def send_mfa_authentication_code_async(
     factor: str,
     mfa_token: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Send 2FA code (SendMFAAuthenticationCode)
 
@@ -1509,7 +1509,7 @@ def simultaneous_login_v3(
     simultaneous_platform: Optional[str] = None,
     simultaneous_ticket: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Simultaneous login (SimultaneousLoginV3)
 
@@ -1588,7 +1588,7 @@ async def simultaneous_login_v3_async(
     simultaneous_platform: Optional[str] = None,
     simultaneous_ticket: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Simultaneous login (SimultaneousLoginV3)
 
@@ -1680,7 +1680,7 @@ def token_grant_v3(
     scope: Optional[str] = None,
     username: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """OAuth2 access token generation endpoint (TokenGrantV3)
 
@@ -1831,7 +1831,7 @@ async def token_grant_v3_async(
     scope: Optional[str] = None,
     username: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """OAuth2 access token generation endpoint (TokenGrantV3)
 
@@ -2129,7 +2129,7 @@ def verify2fa_code(
     mfa_token: str,
     remember_device: bool,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Verify 2FA code (Verify2FACode)
 
@@ -2180,7 +2180,7 @@ async def verify2fa_code_async(
     mfa_token: str,
     remember_device: bool,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Verify 2FA code (Verify2FACode)
 
@@ -2236,7 +2236,7 @@ def verify2fa_code_forward(
     factors: Optional[str] = None,
     remember_device: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Verify 2FA code (Verify2FACodeForward)
 
@@ -2300,7 +2300,7 @@ async def verify2fa_code_forward_async(
     factors: Optional[str] = None,
     remember_device: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Verify 2FA code (Verify2FACodeForward)
 

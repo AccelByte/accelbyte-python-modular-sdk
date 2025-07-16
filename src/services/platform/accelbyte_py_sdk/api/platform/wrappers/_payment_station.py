@@ -80,7 +80,7 @@ def get_payment_customization(
     sandbox: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get payment provider customization (getPaymentCustomization)
 
@@ -134,7 +134,7 @@ async def get_payment_customization_async(
     sandbox: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get payment provider customization (getPaymentCustomization)
 
@@ -189,7 +189,7 @@ def get_payment_public_config(
     sandbox: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get payment provider public config (getPaymentPublicConfig)
 
@@ -242,7 +242,7 @@ async def get_payment_public_config_async(
     sandbox: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get payment provider public config (getPaymentPublicConfig)
 
@@ -297,7 +297,7 @@ def get_payment_tax_value(
     zip_code: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get tax result of a payment order (getPaymentTaxValue)
 
@@ -354,7 +354,7 @@ async def get_payment_tax_value_async(
     zip_code: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get tax result of a payment order (getPaymentTaxValue)
 
@@ -414,7 +414,7 @@ def pay(
     zip_code: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Do payment (pay)
 
@@ -477,7 +477,7 @@ async def pay_async(
     zip_code: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Do payment (pay)
 
@@ -539,7 +539,7 @@ def public_check_payment_order_paid_status(
     payment_order_no: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check payment order paid status (publicCheckPaymentOrderPaidStatus)
 
@@ -586,7 +586,7 @@ async def public_check_payment_order_paid_status_async(
     payment_order_no: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check payment order paid status (publicCheckPaymentOrderPaidStatus)
 
@@ -635,7 +635,7 @@ def public_get_payment_methods(
     payment_order_no: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get payment methods (publicGetPaymentMethods)
 
@@ -682,7 +682,7 @@ async def public_get_payment_methods_async(
     payment_order_no: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get payment methods (publicGetPaymentMethods)
 
@@ -731,7 +731,7 @@ def public_get_payment_url(
     body: PaymentUrlCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get payment url (publicGetPaymentUrl)
 
@@ -783,7 +783,7 @@ async def public_get_payment_url_async(
     body: PaymentUrlCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get payment url (publicGetPaymentUrl)
 
@@ -837,7 +837,7 @@ def public_get_qr_code(
     code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get qrcode (publicGetQRCode)
 
@@ -882,7 +882,7 @@ async def public_get_qr_code_async(
     code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get qrcode (publicGetQRCode)
 
@@ -929,7 +929,7 @@ def public_get_unpaid_payment_order(
     payment_order_no: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get payment order info (publicGetUnpaidPaymentOrder)
 
@@ -978,7 +978,7 @@ async def public_get_unpaid_payment_order_async(
     payment_order_no: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get payment order info (publicGetUnpaidPaymentOrder)
 
@@ -1043,7 +1043,7 @@ def public_normalize_payment_return_url(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Normalize payment return url (publicNormalizePaymentReturnUrl)
 
@@ -1161,7 +1161,7 @@ async def public_normalize_payment_return_url_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Normalize payment return url (publicNormalizePaymentReturnUrl)
 

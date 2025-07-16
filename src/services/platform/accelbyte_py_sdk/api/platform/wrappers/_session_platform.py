@@ -41,7 +41,7 @@ def register_xbl_sessions(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Register/Update a session (registerXblSessions)
 
@@ -89,7 +89,7 @@ async def register_xbl_sessions_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Register/Update a session (registerXblSessions)
 

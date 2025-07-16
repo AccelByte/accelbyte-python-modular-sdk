@@ -49,7 +49,7 @@ def mock_play_station_stream_event(
     body: Optional[StreamEvent] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Mock Sync PlayStation Clawback event. (mockPlayStationStreamEvent)
 
@@ -91,7 +91,7 @@ async def mock_play_station_stream_event_async(
     body: Optional[StreamEvent] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Mock Sync PlayStation Clawback event. (mockPlayStationStreamEvent)
 
@@ -135,7 +135,7 @@ def mock_xbl_clawback_event(
     body: Optional[XblClawbackEvent] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Mock Sync XBox Clawback event. (mockXblClawbackEvent)
 
@@ -177,7 +177,7 @@ async def mock_xbl_clawback_event_async(
     body: Optional[XblClawbackEvent] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Mock Sync XBox Clawback event. (mockXblClawbackEvent)
 
@@ -228,7 +228,7 @@ def query_iap_clawback_history(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query clawback history (queryIAPClawbackHistory)
 
@@ -300,7 +300,7 @@ async def query_iap_clawback_history_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query clawback history (queryIAPClawbackHistory)
 

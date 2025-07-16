@@ -43,7 +43,7 @@ def users_presence_handler_v1(
     count_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query users presence (UsersPresenceHandlerV1)
 
@@ -95,7 +95,7 @@ async def users_presence_handler_v1_async(
     count_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query users presence (UsersPresenceHandlerV1)
 
@@ -149,7 +149,7 @@ def users_presence_handler_v2(
     count_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query users presence (UsersPresenceHandlerV2)
 
@@ -201,7 +201,7 @@ async def users_presence_handler_v2_async(
     count_only: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query users presence (UsersPresenceHandlerV2)
 

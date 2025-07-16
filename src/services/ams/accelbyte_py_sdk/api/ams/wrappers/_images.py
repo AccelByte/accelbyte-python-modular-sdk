@@ -48,7 +48,7 @@ def image_get(
     image_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get image details. (ImageGet)
 
@@ -98,7 +98,7 @@ async def image_get_async(
     image_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get image details. (ImageGet)
 
@@ -158,7 +158,7 @@ def image_list(
     tag: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get a list of existing images (ImageList)
 
@@ -242,7 +242,7 @@ async def image_list_async(
     tag: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get a list of existing images (ImageList)
 
@@ -320,7 +320,7 @@ def image_mark_for_deletion(
     image_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """mark the image for deletion (ImageMarkForDeletion)
 
@@ -374,7 +374,7 @@ async def image_mark_for_deletion_async(
     image_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """mark the image for deletion (ImageMarkForDeletion)
 
@@ -431,7 +431,7 @@ def image_patch(
     image_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """edit the image (ImagePatch)
 
@@ -487,7 +487,7 @@ async def image_patch_async(
     image_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """edit the image (ImagePatch)
 
@@ -543,7 +543,7 @@ async def image_patch_async(
 def images_storage(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get current usage for images storage (ImagesStorage)
 
@@ -591,7 +591,7 @@ def images_storage(
 async def images_storage_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get current usage for images storage (ImagesStorage)
 
@@ -642,7 +642,7 @@ def image_unmark_for_deletion(
     image_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """unmarks the image for deletion (ImageUnmarkForDeletion)
 
@@ -696,7 +696,7 @@ async def image_unmark_for_deletion_async(
     image_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """unmarks the image for deletion (ImageUnmarkForDeletion)
 

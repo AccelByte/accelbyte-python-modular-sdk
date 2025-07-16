@@ -69,7 +69,7 @@ def create_leaderboard_configuration_admin_v3(
     body: ModelsLeaderboardConfigReqV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create new leaderboard (createLeaderboardConfigurationAdminV3)
 
@@ -147,7 +147,7 @@ async def create_leaderboard_configuration_admin_v3_async(
     body: ModelsLeaderboardConfigReqV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create new leaderboard (createLeaderboardConfigurationAdminV3)
 
@@ -227,7 +227,7 @@ def delete_bulk_leaderboard_configuration_admin_v3(
     body: ModelsDeleteBulkLeaderboardsReq,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete bulk leaderboards. response body will contains failed leaderboard with the reason why it's failed to delete (deleteBulkLeaderboardConfigurationAdminV3)
 
@@ -277,7 +277,7 @@ async def delete_bulk_leaderboard_configuration_admin_v3_async(
     body: ModelsDeleteBulkLeaderboardsReq,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete bulk leaderboards. response body will contains failed leaderboard with the reason why it's failed to delete (deleteBulkLeaderboardConfigurationAdminV3)
 
@@ -329,7 +329,7 @@ def delete_leaderboard_configuration_admin_v3(
     leaderboard_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete leaderboard by leaderboardCode (deleteLeaderboardConfigurationAdminV3)
 
@@ -381,7 +381,7 @@ async def delete_leaderboard_configuration_admin_v3_async(
     leaderboard_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete leaderboard by leaderboardCode (deleteLeaderboardConfigurationAdminV3)
 
@@ -435,7 +435,7 @@ def get_leaderboard_configuration_admin_v3(
     leaderboard_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get leaderboard by leaderboardCode (getLeaderboardConfigurationAdminV3)
 
@@ -487,7 +487,7 @@ async def get_leaderboard_configuration_admin_v3_async(
     leaderboard_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get leaderboard by leaderboardCode (getLeaderboardConfigurationAdminV3)
 
@@ -541,7 +541,7 @@ def get_leaderboard_configuration_public_v3(
     leaderboard_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get leaderboard by leaderboardCode (getLeaderboardConfigurationPublicV3)
 
@@ -593,7 +593,7 @@ async def get_leaderboard_configuration_public_v3_async(
     leaderboard_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get leaderboard by leaderboardCode (getLeaderboardConfigurationPublicV3)
 
@@ -649,7 +649,7 @@ def get_leaderboard_configurations_admin_v3(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """list all leaderboards by given namespace (getLeaderboardConfigurationsAdminV3)
 
@@ -707,7 +707,7 @@ async def get_leaderboard_configurations_admin_v3_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """list all leaderboards by given namespace (getLeaderboardConfigurationsAdminV3)
 
@@ -767,7 +767,7 @@ def get_leaderboard_configurations_public_v3(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """list all leaderboards by given namespace (getLeaderboardConfigurationsPublicV3)
 
@@ -825,7 +825,7 @@ async def get_leaderboard_configurations_public_v3_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """list all leaderboards by given namespace (getLeaderboardConfigurationsPublicV3)
 
@@ -883,7 +883,7 @@ def hard_delete_leaderboard_admin_v3(
     leaderboard_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """hard delete leaderboard config and data by leaderboard code (hardDeleteLeaderboardAdminV3)
 
@@ -950,7 +950,7 @@ async def hard_delete_leaderboard_admin_v3_async(
     leaderboard_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """hard delete leaderboard config and data by leaderboard code (hardDeleteLeaderboardAdminV3)
 
@@ -1020,7 +1020,7 @@ def update_leaderboard_configuration_admin_v3(
     leaderboard_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update leaderboard by leaderboardCode (updateLeaderboardConfigurationAdminV3)
 
@@ -1104,7 +1104,7 @@ async def update_leaderboard_configuration_admin_v3_async(
     leaderboard_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update leaderboard by leaderboardCode (updateLeaderboardConfigurationAdminV3)
 

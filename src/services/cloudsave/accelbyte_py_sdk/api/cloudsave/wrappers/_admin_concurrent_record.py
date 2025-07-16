@@ -55,7 +55,7 @@ def admin_put_admin_game_record_concurrent_handler_v1(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace admin game record (adminPutAdminGameRecordConcurrentHandlerV1)
 
@@ -170,7 +170,7 @@ async def admin_put_admin_game_record_concurrent_handler_v1_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace admin game record (adminPutAdminGameRecordConcurrentHandlerV1)
 
@@ -289,7 +289,7 @@ def admin_put_admin_player_record_concurrent_handler_v1(
     response_body: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace admin player record (adminPutAdminPlayerRecordConcurrentHandlerV1)
 
@@ -415,7 +415,7 @@ async def admin_put_admin_player_record_concurrent_handler_v1_async(
     response_body: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace admin player record (adminPutAdminPlayerRecordConcurrentHandlerV1)
 
@@ -541,7 +541,7 @@ def admin_put_game_record_concurrent_handler_v1(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace game record (adminPutGameRecordConcurrentHandlerV1)
 
@@ -661,7 +661,7 @@ async def admin_put_game_record_concurrent_handler_v1_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace game record (adminPutGameRecordConcurrentHandlerV1)
 
@@ -785,7 +785,7 @@ def admin_put_player_public_record_concurrent_handler_v1(
     response_body: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace player public record (adminPutPlayerPublicRecordConcurrentHandlerV1)
 
@@ -916,7 +916,7 @@ async def admin_put_player_public_record_concurrent_handler_v1_async(
     response_body: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace player public record (adminPutPlayerPublicRecordConcurrentHandlerV1)
 
@@ -1049,7 +1049,7 @@ def admin_put_player_record_concurrent_handler_v1(
     response_body: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace player private record (adminPutPlayerRecordConcurrentHandlerV1)
 
@@ -1180,7 +1180,7 @@ async def admin_put_player_record_concurrent_handler_v1_async(
     response_body: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace player private record (adminPutPlayerRecordConcurrentHandlerV1)
 

@@ -40,7 +40,7 @@ from ..operations.ticket_v1 import RefreshTicket
 def cancel_ticket(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel ticket (cancelTicket)
 
@@ -82,7 +82,7 @@ def cancel_ticket(
 async def cancel_ticket_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Cancel ticket (cancelTicket)
 
@@ -126,7 +126,7 @@ async def cancel_ticket_async(
 def refresh_ticket(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Refresh ticket (refreshTicket)
 
@@ -168,7 +168,7 @@ def refresh_ticket(
 async def refresh_ticket_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Refresh ticket (refreshTicket)
 

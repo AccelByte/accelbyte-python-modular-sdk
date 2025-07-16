@@ -84,7 +84,7 @@ def apply_user_redemption(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Redeem code (applyUserRedemption)
 
@@ -139,7 +139,7 @@ async def apply_user_redemption_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Redeem code (applyUserRedemption)
 
@@ -197,7 +197,7 @@ def bulk_disable_codes(
     batch_no: Optional[List[int]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk disable codes (bulkDisableCodes)
 
@@ -252,7 +252,7 @@ async def bulk_disable_codes_async(
     batch_no: Optional[List[int]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk disable codes (bulkDisableCodes)
 
@@ -309,7 +309,7 @@ def bulk_enable_codes(
     batch_no: Optional[List[int]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk enable codes (bulkEnableCodes)
 
@@ -362,7 +362,7 @@ async def bulk_enable_codes_async(
     batch_no: Optional[List[int]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk enable codes (bulkEnableCodes)
 
@@ -415,7 +415,7 @@ def create_campaign(
     body: CampaignCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create campaign (createCampaign)
 
@@ -466,7 +466,7 @@ async def create_campaign_async(
     body: CampaignCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create campaign (createCampaign)
 
@@ -520,7 +520,7 @@ def create_codes(
     campaign_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create campaign codes (createCodes)
 
@@ -575,7 +575,7 @@ async def create_codes_async(
     campaign_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create campaign codes (createCodes)
 
@@ -631,7 +631,7 @@ def disable_code(
     code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable code (disableCode)
 
@@ -680,7 +680,7 @@ async def disable_code_async(
     code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Disable code (disableCode)
 
@@ -734,7 +734,7 @@ def download(
     with_batch_name: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Download codes (download)
 
@@ -792,7 +792,7 @@ async def download_async(
     with_batch_name: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Download codes (download)
 
@@ -849,7 +849,7 @@ def enable_code(
     code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable code (enableCode)
 
@@ -896,7 +896,7 @@ async def enable_code_async(
     code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Enable code (enableCode)
 
@@ -945,7 +945,7 @@ def get_campaign(
     campaign_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get campaign (getCampaign)
 
@@ -992,7 +992,7 @@ async def get_campaign_async(
     campaign_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get campaign (getCampaign)
 
@@ -1041,7 +1041,7 @@ def get_campaign_dynamic(
     campaign_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get campaign dynamic (getCampaignDynamic)
 
@@ -1088,7 +1088,7 @@ async def get_campaign_dynamic_async(
     campaign_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get campaign dynamic (getCampaignDynamic)
 
@@ -1139,7 +1139,7 @@ def get_code(
     with_batch_name: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get code info (getCode)
 
@@ -1196,7 +1196,7 @@ async def get_code_async(
     with_batch_name: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get code info (getCode)
 
@@ -1255,7 +1255,7 @@ def query_campaign_batch_names(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query campaign batch names (queryCampaignBatchNames)
 
@@ -1308,7 +1308,7 @@ async def query_campaign_batch_names_async(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query campaign batch names (queryCampaignBatchNames)
 
@@ -1364,7 +1364,7 @@ def query_campaigns(
     tag: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query campaigns (queryCampaigns)
 
@@ -1421,7 +1421,7 @@ async def query_campaigns_async(
     tag: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query campaigns (queryCampaigns)
 
@@ -1484,7 +1484,7 @@ def query_codes(
     with_batch_name: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query codes (queryCodes)
 
@@ -1558,7 +1558,7 @@ async def query_codes_async(
     with_batch_name: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query codes (queryCodes)
 
@@ -1631,7 +1631,7 @@ def query_redeem_history(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query redeem history (queryRedeemHistory)
 
@@ -1692,7 +1692,7 @@ async def query_redeem_history_async(
     user_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query redeem history (queryRedeemHistory)
 
@@ -1752,7 +1752,7 @@ def rename_batch(
     campaign_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Rename batch (renameBatch)
 
@@ -1801,7 +1801,7 @@ async def rename_batch_async(
     campaign_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Rename batch (renameBatch)
 
@@ -1852,7 +1852,7 @@ def update_campaign(
     campaign_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update campaign (updateCampaign)
 
@@ -1907,7 +1907,7 @@ async def update_campaign_async(
     campaign_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update campaign (updateCampaign)
 

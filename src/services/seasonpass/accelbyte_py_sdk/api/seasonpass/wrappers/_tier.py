@@ -57,7 +57,7 @@ def create_tier(
     body: Optional[TierCreate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create tier (createTier)
 
@@ -111,7 +111,7 @@ async def create_tier_async(
     body: Optional[TierCreate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create tier (createTier)
 
@@ -167,7 +167,7 @@ def delete_tier(
     season_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a tier (deleteTier)
 
@@ -219,7 +219,7 @@ async def delete_tier_async(
     season_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a tier (deleteTier)
 
@@ -273,7 +273,7 @@ def grant_user_exp(
     body: Optional[UserExpGrant] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Grant exp to user (grantUserExp)
 
@@ -325,7 +325,7 @@ async def grant_user_exp_async(
     body: Optional[UserExpGrant] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Grant exp to user (grantUserExp)
 
@@ -379,7 +379,7 @@ def grant_user_tier(
     body: Optional[UserTierGrant] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Grant tier to user (grantUserTier)
 
@@ -433,7 +433,7 @@ async def grant_user_tier_async(
     body: Optional[UserTierGrant] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Grant tier to user (grantUserTier)
 
@@ -490,7 +490,7 @@ def query_tiers(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query paginated tiers for a season (queryTiers)
 
@@ -548,7 +548,7 @@ async def query_tiers_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query paginated tiers for a season (queryTiers)
 
@@ -608,7 +608,7 @@ def reorder_tier(
     body: Optional[TierReorder] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reorder a tier (reorderTier)
 
@@ -666,7 +666,7 @@ async def reorder_tier_async(
     body: Optional[TierReorder] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reorder a tier (reorderTier)
 
@@ -726,7 +726,7 @@ def update_tier(
     body: Optional[TierInput] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a tier (updateTier)
 
@@ -784,7 +784,7 @@ async def update_tier_async(
     body: Optional[TierInput] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a tier (updateTier)
 

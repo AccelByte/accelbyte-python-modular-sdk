@@ -81,7 +81,7 @@ def admin_get_user_profile_public_info_by_ids(
     body: Optional[UserProfileBulkRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get user profile public info by ids (adminGetUserProfilePublicInfoByIds)
 
@@ -130,7 +130,7 @@ async def admin_get_user_profile_public_info_by_ids_async(
     body: Optional[UserProfileBulkRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin get user profile public info by ids (adminGetUserProfilePublicInfoByIds)
 
@@ -181,7 +181,7 @@ def create_my_profile(
     body: Optional[UserProfilePrivateCreate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create my profile (createMyProfile)
 
@@ -244,7 +244,7 @@ async def create_my_profile_async(
     body: Optional[UserProfilePrivateCreate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create my profile (createMyProfile)
 
@@ -309,7 +309,7 @@ def delete_user_profile(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete user profile (deleteUserProfile)
 
@@ -363,7 +363,7 @@ async def delete_user_profile_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete user profile (deleteUserProfile)
 
@@ -419,7 +419,7 @@ def get_custom_attributes_info(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user custom attributes (getCustomAttributesInfo)
 
@@ -471,7 +471,7 @@ async def get_custom_attributes_info_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user custom attributes (getCustomAttributesInfo)
 
@@ -524,7 +524,7 @@ async def get_custom_attributes_info_async(
 def get_my_private_custom_attributes_info(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get my private custom attributes (getMyPrivateCustomAttributesInfo)
 
@@ -572,7 +572,7 @@ def get_my_private_custom_attributes_info(
 async def get_my_private_custom_attributes_info_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get my private custom attributes (getMyPrivateCustomAttributesInfo)
 
@@ -622,7 +622,7 @@ async def get_my_private_custom_attributes_info_async(
 def get_my_profile_info(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get my profile (getMyProfileInfo)
 
@@ -678,7 +678,7 @@ def get_my_profile_info(
 async def get_my_profile_info_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get my profile (getMyProfileInfo)
 
@@ -736,7 +736,7 @@ async def get_my_profile_info_async(
 def get_my_zip_code(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get my zip code (getMyZipCode)
 
@@ -782,7 +782,7 @@ def get_my_zip_code(
 async def get_my_zip_code_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get my zip code (getMyZipCode)
 
@@ -831,7 +831,7 @@ def get_private_custom_attributes_info(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user private custom attributes (getPrivateCustomAttributesInfo)
 
@@ -883,7 +883,7 @@ async def get_private_custom_attributes_info_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user private custom attributes (getPrivateCustomAttributesInfo)
 
@@ -937,7 +937,7 @@ def get_user_profile_info(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user profile (getUserProfileInfo)
 
@@ -991,7 +991,7 @@ async def get_user_profile_info_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user profile (getUserProfileInfo)
 
@@ -1047,7 +1047,7 @@ def get_user_profile_info_by_public_id(
     public_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user profile info by public id (getUserProfileInfoByPublicId)
 
@@ -1100,7 +1100,7 @@ async def get_user_profile_info_by_public_id_async(
     public_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user profile info by public id (getUserProfileInfoByPublicId)
 
@@ -1155,7 +1155,7 @@ def public_bulk_get_user_profile_public_info(
     body: Optional[UserProfileBulkRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get user profile public info by ids (publicBulkGetUserProfilePublicInfo)
 
@@ -1203,7 +1203,7 @@ async def public_bulk_get_user_profile_public_info_async(
     body: Optional[UserProfileBulkRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get user profile public info by ids (publicBulkGetUserProfilePublicInfo)
 
@@ -1254,7 +1254,7 @@ def public_create_user_profile(
     body: Optional[UserProfileCreate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create user profile (publicCreateUserProfile)
 
@@ -1314,7 +1314,7 @@ async def public_create_user_profile_async(
     body: Optional[UserProfileCreate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create user profile (publicCreateUserProfile)
 
@@ -1375,7 +1375,7 @@ def public_get_custom_attributes_info(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get custom attributes info (publicGetCustomAttributesInfo)
 
@@ -1424,7 +1424,7 @@ async def public_get_custom_attributes_info_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get custom attributes info (publicGetCustomAttributesInfo)
 
@@ -1475,7 +1475,7 @@ def public_get_user_profile_info(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user profile (publicGetUserProfileInfo)
 
@@ -1529,7 +1529,7 @@ async def public_get_user_profile_info_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user profile (publicGetUserProfileInfo)
 
@@ -1585,7 +1585,7 @@ def public_get_user_profile_info_by_public_id(
     public_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user profile public info by public id (publicGetUserProfileInfoByPublicId)
 
@@ -1635,7 +1635,7 @@ async def public_get_user_profile_info_by_public_id_async(
     public_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user profile public info by public id (publicGetUserProfileInfoByPublicId)
 
@@ -1687,7 +1687,7 @@ def public_get_user_profile_public_info(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user profile public info (publicGetUserProfilePublicInfo)
 
@@ -1738,7 +1738,7 @@ async def public_get_user_profile_public_info_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user profile public info (publicGetUserProfilePublicInfo)
 
@@ -1791,7 +1791,7 @@ def public_get_user_profile_public_info_by_ids(
     user_ids: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user profile public info by ids (publicGetUserProfilePublicInfoByIds)
 
@@ -1840,7 +1840,7 @@ async def public_get_user_profile_public_info_by_ids_async(
     user_ids: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user profile public info by ids (publicGetUserProfilePublicInfoByIds)
 
@@ -1892,7 +1892,7 @@ def public_update_custom_attributes_partially(
     body: Optional[Dict[str, Any]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update partially custom attributes tied to user id (publicUpdateCustomAttributesPartially)
 
@@ -1951,7 +1951,7 @@ async def public_update_custom_attributes_partially_async(
     body: Optional[Dict[str, Any]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update partially custom attributes tied to user id (publicUpdateCustomAttributesPartially)
 
@@ -2012,7 +2012,7 @@ def public_update_user_profile(
     body: Optional[UserProfileUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update user profile (publicUpdateUserProfile)
 
@@ -2072,7 +2072,7 @@ async def public_update_user_profile_async(
     body: Optional[UserProfileUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update user profile (publicUpdateUserProfile)
 
@@ -2134,7 +2134,7 @@ def public_update_user_profile_status(
     body: Optional[UserProfileStatusUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update user profile status (publicUpdateUserProfileStatus)
 
@@ -2192,7 +2192,7 @@ async def public_update_user_profile_status_async(
     body: Optional[UserProfileStatusUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update user profile status (publicUpdateUserProfileStatus)
 
@@ -2252,7 +2252,7 @@ def update_custom_attributes_partially(
     body: Optional[Dict[str, Any]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update partially custom attributes tied to the user id (updateCustomAttributesPartially)
 
@@ -2311,7 +2311,7 @@ async def update_custom_attributes_partially_async(
     body: Optional[Dict[str, Any]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update partially custom attributes tied to the user id (updateCustomAttributesPartially)
 
@@ -2371,7 +2371,7 @@ def update_my_private_custom_attributes_partially(
     body: Optional[Dict[str, Any]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update partially private custom attributes tied to me (updateMyPrivateCustomAttributesPartially)
 
@@ -2426,7 +2426,7 @@ async def update_my_private_custom_attributes_partially_async(
     body: Optional[Dict[str, Any]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update partially private custom attributes tied to me (updateMyPrivateCustomAttributesPartially)
 
@@ -2483,7 +2483,7 @@ def update_my_profile(
     body: Optional[UserProfileUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update my profile (updateMyProfile)
 
@@ -2543,7 +2543,7 @@ async def update_my_profile_async(
     body: Optional[UserProfileUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update my profile (updateMyProfile)
 
@@ -2605,7 +2605,7 @@ def update_my_zip_code(
     user_zip_code_update: UserZipCodeUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update my zip code (updateMyZipCode)
 
@@ -2657,7 +2657,7 @@ async def update_my_zip_code_async(
     user_zip_code_update: UserZipCodeUpdate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update my zip code (updateMyZipCode)
 
@@ -2712,7 +2712,7 @@ def update_private_custom_attributes_partially(
     body: Optional[Dict[str, Any]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update partially private custom attributes tied to the user id (updatePrivateCustomAttributesPartially)
 
@@ -2771,7 +2771,7 @@ async def update_private_custom_attributes_partially_async(
     body: Optional[Dict[str, Any]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update partially private custom attributes tied to the user id (updatePrivateCustomAttributesPartially)
 
@@ -2832,7 +2832,7 @@ def update_user_profile(
     body: Optional[UserProfileAdmin] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update user profile (updateUserProfile)
 
@@ -2890,7 +2890,7 @@ async def update_user_profile_async(
     body: Optional[UserProfileAdmin] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update user profile (updateUserProfile)
 
@@ -2950,7 +2950,7 @@ def update_user_profile_status(
     body: Optional[UserProfileStatusUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update user profile status (updateUserProfileStatus)
 
@@ -3008,7 +3008,7 @@ async def update_user_profile_status_async(
     body: Optional[UserProfileStatusUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update user profile status (updateUserProfileStatus)
 

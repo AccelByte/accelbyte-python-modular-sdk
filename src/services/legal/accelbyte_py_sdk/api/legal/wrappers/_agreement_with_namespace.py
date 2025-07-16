@@ -51,7 +51,7 @@ def download_exported_agreements_in_csv(
     export_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Download Exported Users Accepted Agreements in CSV (downloadExportedAgreementsInCSV)
 
@@ -96,7 +96,7 @@ async def download_exported_agreements_in_csv_async(
     export_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Download Exported Users Accepted Agreements in CSV (downloadExportedAgreementsInCSV)
 
@@ -145,7 +145,7 @@ def initiate_export_agreements_to_csv(
     end: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Initiate Export Users Accepted Agreements to CSV (initiateExportAgreementsToCSV)
 
@@ -204,7 +204,7 @@ async def initiate_export_agreements_to_csv_async(
     end: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Initiate Export Users Accepted Agreements to CSV (initiateExportAgreementsToCSV)
 
@@ -264,7 +264,7 @@ def retrieve_accepted_agreements_1(
     exclude_other_namespaces_policies: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve Accepted Legal Agreements (retrieveAcceptedAgreements_1)
 
@@ -310,7 +310,7 @@ async def retrieve_accepted_agreements_1_async(
     exclude_other_namespaces_policies: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve Accepted Legal Agreements (retrieveAcceptedAgreements_1)
 
@@ -357,7 +357,7 @@ def retrieve_accepted_agreements_for_multi_users(
     body: Optional[UsersAgreementsRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve Accepted Legal Agreements For Multi Users (retrieveAcceptedAgreementsForMultiUsers)
 
@@ -399,7 +399,7 @@ async def retrieve_accepted_agreements_for_multi_users_async(
     body: Optional[UsersAgreementsRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve Accepted Legal Agreements For Multi Users (retrieveAcceptedAgreementsForMultiUsers)
 
@@ -447,7 +447,7 @@ def retrieve_all_users_by_policy_version_1(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve Users Accepting Legal Agreements (retrieveAllUsersByPolicyVersion_1)
 
@@ -507,7 +507,7 @@ async def retrieve_all_users_by_policy_version_1_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve Users Accepting Legal Agreements (retrieveAllUsersByPolicyVersion_1)
 

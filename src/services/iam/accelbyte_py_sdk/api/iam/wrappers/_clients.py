@@ -76,7 +76,7 @@ def add_client_permission(
     client_id: str,
     resource: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add Client Permission (AddClientPermission)
 
@@ -129,7 +129,7 @@ async def add_client_permission_async(
     client_id: str,
     resource: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add Client Permission (AddClientPermission)
 
@@ -183,7 +183,7 @@ def admin_add_client_permissions_v3(
     client_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add Client Permissions (AdminAddClientPermissionsV3)
 
@@ -239,7 +239,7 @@ async def admin_add_client_permissions_v3_async(
     client_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add Client Permissions (AdminAddClientPermissionsV3)
 
@@ -296,7 +296,7 @@ def admin_bulk_update_clients_v3(
     body: ClientmodelClientsUpdateRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk Update Clients (AdminBulkUpdateClientsV3)
 
@@ -377,7 +377,7 @@ async def admin_bulk_update_clients_v3_async(
     body: ClientmodelClientsUpdateRequestV3,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk Update Clients (AdminBulkUpdateClientsV3)
 
@@ -460,7 +460,7 @@ def admin_create_client_v3(
     body: ClientmodelClientCreationV3Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Client (AdminCreateClientV3)
 
@@ -548,7 +548,7 @@ async def admin_create_client_v3_async(
     body: ClientmodelClientCreationV3Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Client (AdminCreateClientV3)
 
@@ -640,7 +640,7 @@ def admin_delete_client_permission_v3(
     resource: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Client Permission (AdminDeleteClientPermissionV3)
 
@@ -700,7 +700,7 @@ async def admin_delete_client_permission_v3_async(
     resource: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Client Permission (AdminDeleteClientPermissionV3)
 
@@ -760,7 +760,7 @@ def admin_delete_client_v3(
     client_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Client (AdminDeleteClientV3)
 
@@ -812,7 +812,7 @@ async def admin_delete_client_v3_async(
     client_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Client (AdminDeleteClientV3)
 
@@ -866,7 +866,7 @@ def admin_get_clientsby_namespaceby_idv3(
     client_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get clients by namespace and client id. Multi tenant mode allows admin portal client to be accessible regardless of namespace path. (AdminGetClientsbyNamespacebyIDV3)
 
@@ -916,7 +916,7 @@ async def admin_get_clientsby_namespaceby_idv3_async(
     client_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get clients by namespace and client id. Multi tenant mode allows admin portal client to be accessible regardless of namespace path. (AdminGetClientsbyNamespacebyIDV3)
 
@@ -973,7 +973,7 @@ def admin_get_clients_by_namespace_v3(
     skip_login_queue: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get clients by namespace (AdminGetClientsByNamespaceV3)
 
@@ -1041,7 +1041,7 @@ async def admin_get_clients_by_namespace_v3_async(
     skip_login_queue: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get clients by namespace (AdminGetClientsByNamespaceV3)
 
@@ -1107,7 +1107,7 @@ def admin_update_client_permission_v3(
     client_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Client Permissions (AdminUpdateClientPermissionV3)
 
@@ -1163,7 +1163,7 @@ async def admin_update_client_permission_v3_async(
     client_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Client Permissions (AdminUpdateClientPermissionV3)
 
@@ -1221,7 +1221,7 @@ def admin_update_client_secret_v3(
     client_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Client Secret (AdminUpdateClientSecretV3)
 
@@ -1275,7 +1275,7 @@ async def admin_update_client_secret_v3_async(
     client_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Client Secret (AdminUpdateClientSecretV3)
 
@@ -1331,7 +1331,7 @@ def admin_update_client_v3(
     client_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Client (AdminUpdateClientV3)
 
@@ -1416,7 +1416,7 @@ async def admin_update_client_v3_async(
     client_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Client (AdminUpdateClientV3)
 
@@ -1502,7 +1502,7 @@ async def admin_update_client_v3_async(
 def create_client(
     body: ClientmodelClientCreateRequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Client (CreateClient)
 
@@ -1547,7 +1547,7 @@ def create_client(
 async def create_client_async(
     body: ClientmodelClientCreateRequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Client (CreateClient)
 
@@ -1595,7 +1595,7 @@ def create_client_by_namespace(
     body: ClientmodelClientCreateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Client (CreateClientByNamespace)
 
@@ -1648,7 +1648,7 @@ async def create_client_by_namespace_async(
     body: ClientmodelClientCreateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create Client (CreateClientByNamespace)
 
@@ -1787,7 +1787,7 @@ def delete_client_by_namespace(
     client_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Client (DeleteClientByNamespace)
 
@@ -1838,7 +1838,7 @@ async def delete_client_by_namespace_async(
     client_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Client (DeleteClientByNamespace)
 
@@ -1892,7 +1892,7 @@ def delete_client_permission(
     client_id: str,
     resource: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Client Permission (DeleteClientPermission)
 
@@ -1945,7 +1945,7 @@ async def delete_client_permission_async(
     client_id: str,
     resource: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete Client Permission (DeleteClientPermission)
 
@@ -2152,7 +2152,7 @@ async def get_clients_async(
 def get_clientsby_namespace(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get clients by namespace (GetClientsbyNamespace)
 
@@ -2197,7 +2197,7 @@ def get_clientsby_namespace(
 async def get_clientsby_namespace_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get clients by namespace (GetClientsbyNamespace)
 
@@ -2245,7 +2245,7 @@ def update_client(
     body: ClientmodelClientUpdateRequest,
     client_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Client (UpdateClient)
 
@@ -2294,7 +2294,7 @@ async def update_client_async(
     body: ClientmodelClientUpdateRequest,
     client_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Client (UpdateClient)
 
@@ -2345,7 +2345,7 @@ def update_client_permission(
     body: AccountcommonClientPermissions,
     client_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Client Permissions (UpdateClientPermission)
 
@@ -2394,7 +2394,7 @@ async def update_client_permission_async(
     body: AccountcommonClientPermissions,
     client_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Client Permissions (UpdateClientPermission)
 
@@ -2445,7 +2445,7 @@ def update_client_secret(
     body: ClientmodelClientUpdateSecretRequest,
     client_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Client Secret (UpdateClientSecret)
 
@@ -2494,7 +2494,7 @@ async def update_client_secret_async(
     body: ClientmodelClientUpdateSecretRequest,
     client_id: str,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update Client Secret (UpdateClientSecret)
 

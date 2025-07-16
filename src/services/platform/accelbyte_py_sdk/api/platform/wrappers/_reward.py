@@ -65,7 +65,7 @@ def check_event_condition(
     body: Optional[EventPayload] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check if event payload match reward condition (checkEventCondition)
 
@@ -114,7 +114,7 @@ async def check_event_condition_async(
     body: Optional[EventPayload] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check if event payload match reward condition (checkEventCondition)
 
@@ -164,7 +164,7 @@ def create_reward(
     body: RewardCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a reward (createReward)
 
@@ -217,7 +217,7 @@ async def create_reward_async(
     body: RewardCreate,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a reward (createReward)
 
@@ -272,7 +272,7 @@ def delete_reward(
     reward_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a reward (deleteReward)
 
@@ -319,7 +319,7 @@ async def delete_reward_async(
     reward_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a reward (deleteReward)
 
@@ -369,7 +369,7 @@ def delete_reward_condition_record(
     reward_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a reward condition record (deleteRewardConditionRecord)
 
@@ -418,7 +418,7 @@ async def delete_reward_condition_record_async(
     reward_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a reward condition record (deleteRewardConditionRecord)
 
@@ -467,7 +467,7 @@ async def delete_reward_condition_record_async(
 def export_rewards(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Export all reward configurations (exportRewards)
 
@@ -505,7 +505,7 @@ def export_rewards(
 async def export_rewards_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Export all reward configurations (exportRewards)
 
@@ -546,7 +546,7 @@ def get_reward(
     reward_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a reward (getReward)
 
@@ -592,7 +592,7 @@ async def get_reward_async(
     reward_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a reward (getReward)
 
@@ -640,7 +640,7 @@ def get_reward_1(
     reward_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a reward (getReward_1)
 
@@ -686,7 +686,7 @@ async def get_reward_1_async(
     reward_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a reward (getReward_1)
 
@@ -734,7 +734,7 @@ def get_reward_by_code(
     reward_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a reward by code (getRewardByCode)
 
@@ -780,7 +780,7 @@ async def get_reward_by_code_async(
     reward_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a reward by code (getRewardByCode)
 
@@ -829,7 +829,7 @@ def import_rewards(
     file: Optional[Any] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Import reward configurations (importRewards)
 
@@ -879,7 +879,7 @@ async def import_rewards_async(
     file: Optional[Any] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Import reward configurations (importRewards)
 
@@ -933,7 +933,7 @@ def query_rewards(
     sort_by: Optional[Union[List[str], List[QueryRewardsSortByEnum]]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query rewards by criteria (queryRewards)
 
@@ -992,7 +992,7 @@ async def query_rewards_async(
     sort_by: Optional[Union[List[str], List[QueryRewardsSortByEnum]]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query rewards by criteria (queryRewards)
 
@@ -1053,7 +1053,7 @@ def query_rewards_1(
     sort_by: Optional[Union[List[str], List[QueryRewards1SortByEnum]]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query rewards by criteria (queryRewards_1)
 
@@ -1112,7 +1112,7 @@ async def query_rewards_1_async(
     sort_by: Optional[Union[List[str], List[QueryRewards1SortByEnum]]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query rewards by criteria (queryRewards_1)
 
@@ -1171,7 +1171,7 @@ def update_reward(
     reward_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a reward (updateReward)
 
@@ -1226,7 +1226,7 @@ async def update_reward_async(
     reward_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a reward (updateReward)
 

@@ -40,7 +40,7 @@ def add_download_count(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add unique download count to a content (AddDownloadCount)
 
@@ -88,7 +88,7 @@ async def add_download_count_async(
     content_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Add unique download count to a content (AddDownloadCount)
 

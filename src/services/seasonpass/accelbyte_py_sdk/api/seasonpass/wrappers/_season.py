@@ -87,7 +87,7 @@ def bulk_get_user_season_progression(
     body: Optional[BulkUserProgressionRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get user current season progression (bulkGetUserSeasonProgression)
 
@@ -137,7 +137,7 @@ async def bulk_get_user_season_progression_async(
     body: Optional[BulkUserProgressionRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get user current season progression (bulkGetUserSeasonProgression)
 
@@ -190,7 +190,7 @@ def check_season_purchasable(
     body: Optional[UserPurchasable] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check pass or tier purchasable (checkSeasonPurchasable)
 
@@ -242,7 +242,7 @@ async def check_season_purchasable_async(
     body: Optional[UserPurchasable] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Check pass or tier purchasable (checkSeasonPurchasable)
 
@@ -296,7 +296,7 @@ def clone_season(
     body: Optional[SeasonCloneRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Clone a season (cloneSeason)
 
@@ -352,7 +352,7 @@ async def clone_season_async(
     body: Optional[SeasonCloneRequest] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Clone a season (cloneSeason)
 
@@ -409,7 +409,7 @@ def create_season(
     body: Optional[SeasonCreate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a season (createSeason)
 
@@ -461,7 +461,7 @@ async def create_season_async(
     body: Optional[SeasonCreate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create a season (createSeason)
 
@@ -515,7 +515,7 @@ def delete_season(
     season_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a season (deleteSeason)
 
@@ -563,7 +563,7 @@ async def delete_season_async(
     season_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete a season (deleteSeason)
 
@@ -614,7 +614,7 @@ def exists_any_pass_by_pass_codes(
     pass_codes: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get ownership for any pass codes (existsAnyPassByPassCodes)
 
@@ -666,7 +666,7 @@ async def exists_any_pass_by_pass_codes_async(
     pass_codes: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get ownership for any pass codes (existsAnyPassByPassCodes)
 
@@ -718,7 +718,7 @@ async def exists_any_pass_by_pass_codes_async(
 def get_current_season(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get current published season summary (getCurrentSeason)
 
@@ -764,7 +764,7 @@ def get_current_season(
 async def get_current_season_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get current published season summary (getCurrentSeason)
 
@@ -813,7 +813,7 @@ def get_current_user_season_progression(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get current user season progression (getCurrentUserSeasonProgression)
 
@@ -863,7 +863,7 @@ async def get_current_user_season_progression_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get current user season progression (getCurrentUserSeasonProgression)
 
@@ -915,7 +915,7 @@ def get_full_season(
     season_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a season full content (getFullSeason)
 
@@ -965,7 +965,7 @@ async def get_full_season_async(
     season_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a season full content (getFullSeason)
 
@@ -1017,7 +1017,7 @@ def get_season(
     season_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a season (getSeason)
 
@@ -1067,7 +1067,7 @@ async def get_season_async(
     season_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get a season (getSeason)
 
@@ -1121,7 +1121,7 @@ def get_user_participated_seasons(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user participated season data (getUserParticipatedSeasons)
 
@@ -1177,7 +1177,7 @@ async def get_user_participated_seasons_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user participated season data (getUserParticipatedSeasons)
 
@@ -1234,7 +1234,7 @@ def get_user_season(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user season data (getUserSeason)
 
@@ -1288,7 +1288,7 @@ async def get_user_season_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user season data (getUserSeason)
 
@@ -1343,7 +1343,7 @@ def public_get_current_season(
     language: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get current published season (publicGetCurrentSeason)
 
@@ -1395,7 +1395,7 @@ async def public_get_current_season_async(
     language: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get current published season (publicGetCurrentSeason)
 
@@ -1449,7 +1449,7 @@ def public_get_current_user_season(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get current user season data (publicGetCurrentUserSeason)
 
@@ -1499,7 +1499,7 @@ async def public_get_current_user_season_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get current user season data (publicGetCurrentUserSeason)
 
@@ -1552,7 +1552,7 @@ def public_get_user_season(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user season data (publicGetUserSeason)
 
@@ -1606,7 +1606,7 @@ async def public_get_user_season_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user season data (publicGetUserSeason)
 
@@ -1661,7 +1661,7 @@ def publish_season(
     season_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Publish a season (publishSeason)
 
@@ -1713,7 +1713,7 @@ async def publish_season_async(
     season_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Publish a season (publishSeason)
 
@@ -1769,7 +1769,7 @@ def query_seasons(
     status: Optional[Union[List[str], List[QuerySeasonsStatusEnum]]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query seasons (querySeasons)
 
@@ -1825,7 +1825,7 @@ async def query_seasons_async(
     status: Optional[Union[List[str], List[QuerySeasonsStatusEnum]]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query seasons (querySeasons)
 
@@ -1888,7 +1888,7 @@ def query_user_exp_grant_history(
     to: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user season exp acquisition history (queryUserExpGrantHistory)
 
@@ -1965,7 +1965,7 @@ async def query_user_exp_grant_history_async(
     to: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user season exp acquisition history (queryUserExpGrantHistory)
 
@@ -2038,7 +2038,7 @@ def query_user_exp_grant_history_tag(
     season_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user season exp acquisition history's reason tag list (queryUserExpGrantHistoryTag)
 
@@ -2091,7 +2091,7 @@ async def query_user_exp_grant_history_tag_async(
     season_id: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query user season exp acquisition history's reason tag list (queryUserExpGrantHistoryTag)
 
@@ -2145,7 +2145,7 @@ def reset_user_season(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reset user data in current season (resetUserSeason)
 
@@ -2189,7 +2189,7 @@ async def reset_user_season_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reset user data in current season (resetUserSeason)
 
@@ -2236,7 +2236,7 @@ def retire_season(
     force: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retire a season (retireSeason)
 
@@ -2292,7 +2292,7 @@ async def retire_season_async(
     force: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retire a season (retireSeason)
 
@@ -2350,7 +2350,7 @@ def unpublish_season(
     force: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Unpublish a season (unpublishSeason)
 
@@ -2406,7 +2406,7 @@ async def unpublish_season_async(
     force: Optional[bool] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Unpublish a season (unpublishSeason)
 
@@ -2464,7 +2464,7 @@ def update_season(
     body: Optional[SeasonUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a season (updateSeason)
 
@@ -2522,7 +2522,7 @@ async def update_season_async(
     body: Optional[SeasonUpdate] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update a season (updateSeason)
 

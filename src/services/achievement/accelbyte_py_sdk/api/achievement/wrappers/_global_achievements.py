@@ -72,7 +72,7 @@ def admin_list_global_achievement_contributors(
     ] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin list contributors of global achievement (AdminListGlobalAchievementContributors)
 
@@ -135,7 +135,7 @@ async def admin_list_global_achievement_contributors_async(
     ] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin list contributors of global achievement (AdminListGlobalAchievementContributors)
 
@@ -200,7 +200,7 @@ def admin_list_global_achievements(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin query global achievements [include achieved and in-progress] (AdminListGlobalAchievements)
 
@@ -279,7 +279,7 @@ async def admin_list_global_achievements_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin query global achievements [include achieved and in-progress] (AdminListGlobalAchievements)
 
@@ -360,7 +360,7 @@ def admin_list_user_contributions(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin list of global achievements that has been contributed by the user (AdminListUserContributions)
 
@@ -429,7 +429,7 @@ async def admin_list_user_contributions_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Admin list of global achievements that has been contributed by the user (AdminListUserContributions)
 
@@ -496,7 +496,7 @@ def claim_global_achievement_reward(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Claim global achievement reward (ClaimGlobalAchievementReward)
 
@@ -559,7 +559,7 @@ async def claim_global_achievement_reward_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Claim global achievement reward (ClaimGlobalAchievementReward)
 
@@ -626,7 +626,7 @@ def list_global_achievement_contributors(
     sort_by: Optional[Union[str, ListGlobalAchievementContributorsSortByEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List contributors of global achievement (ListGlobalAchievementContributors)
 
@@ -687,7 +687,7 @@ async def list_global_achievement_contributors_async(
     sort_by: Optional[Union[str, ListGlobalAchievementContributorsSortByEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List contributors of global achievement (ListGlobalAchievementContributors)
 
@@ -752,7 +752,7 @@ def list_user_contributions(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List of global achievements that has been contributed by the user (ListUserContributions)
 
@@ -821,7 +821,7 @@ async def list_user_contributions_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List of global achievements that has been contributed by the user (ListUserContributions)
 
@@ -892,7 +892,7 @@ def public_list_global_achievements(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query global achievements [include achieved and in-progress] (PublicListGlobalAchievements)
 
@@ -971,7 +971,7 @@ async def public_list_global_achievements_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query global achievements [include achieved and in-progress] (PublicListGlobalAchievements)
 
@@ -1047,7 +1047,7 @@ def reset_global_achievement(
     achievement_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reset global achievement (ResetGlobalAchievement)
 
@@ -1101,7 +1101,7 @@ async def reset_global_achievement_async(
     achievement_code: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Reset global achievement (ResetGlobalAchievement)
 

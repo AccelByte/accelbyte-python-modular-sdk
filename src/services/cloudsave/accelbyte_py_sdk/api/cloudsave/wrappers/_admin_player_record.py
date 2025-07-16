@@ -71,7 +71,7 @@ def admin_bulk_get_player_records_by_user_i_ds_handler_v1(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get player records by multiple user ids (adminBulkGetPlayerRecordsByUserIDsHandlerV1)
 
@@ -126,7 +126,7 @@ async def admin_bulk_get_player_records_by_user_i_ds_handler_v1_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get player records by multiple user ids (adminBulkGetPlayerRecordsByUserIDsHandlerV1)
 
@@ -183,7 +183,7 @@ def admin_bulk_put_player_records_by_key_handler_v1(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk update player records by key (adminBulkPutPlayerRecordsByKeyHandlerV1)
 
@@ -248,7 +248,7 @@ async def admin_bulk_put_player_records_by_key_handler_v1_async(
     key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk update player records by key (adminBulkPutPlayerRecordsByKeyHandlerV1)
 
@@ -315,7 +315,7 @@ def admin_delete_player_public_record_handler_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete player public record (adminDeletePlayerPublicRecordHandlerV1)
 
@@ -381,7 +381,7 @@ async def admin_delete_player_public_record_handler_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete player public record (adminDeletePlayerPublicRecordHandlerV1)
 
@@ -449,7 +449,7 @@ def admin_delete_player_record_handler_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete player record (adminDeletePlayerRecordHandlerV1)
 
@@ -501,7 +501,7 @@ async def admin_delete_player_record_handler_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete player record (adminDeletePlayerRecordHandlerV1)
 
@@ -555,7 +555,7 @@ def admin_get_player_public_record_handler_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get player public record (adminGetPlayerPublicRecordHandlerV1)
 
@@ -609,7 +609,7 @@ async def admin_get_player_public_record_handler_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get player public record (adminGetPlayerPublicRecordHandlerV1)
 
@@ -665,7 +665,7 @@ def admin_get_player_record_handler_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get player record (adminGetPlayerRecordHandlerV1)
 
@@ -719,7 +719,7 @@ async def admin_get_player_record_handler_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get player record (adminGetPlayerRecordHandlerV1)
 
@@ -775,7 +775,7 @@ def admin_get_player_records_handler_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get player records by multiple record keys (adminGetPlayerRecordsHandlerV1)
 
@@ -832,7 +832,7 @@ async def admin_get_player_records_handler_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get player records by multiple record keys (adminGetPlayerRecordsHandlerV1)
 
@@ -891,7 +891,7 @@ def admin_get_player_record_size_handler_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get player record size (adminGetPlayerRecordSizeHandlerV1)
 
@@ -945,7 +945,7 @@ async def admin_get_player_record_size_handler_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get player record size (adminGetPlayerRecordSizeHandlerV1)
 
@@ -1002,7 +1002,7 @@ def admin_post_player_public_record_handler_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or append player public record (adminPostPlayerPublicRecordHandlerV1)
 
@@ -1101,7 +1101,7 @@ async def admin_post_player_public_record_handler_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or append player public record (adminPostPlayerPublicRecordHandlerV1)
 
@@ -1202,7 +1202,7 @@ def admin_post_player_record_handler_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or append player record (adminPostPlayerRecordHandlerV1)
 
@@ -1329,7 +1329,7 @@ async def admin_post_player_record_handler_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or append player record (adminPostPlayerRecordHandlerV1)
 
@@ -1458,7 +1458,7 @@ def admin_put_player_public_record_handler_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace player public record (adminPutPlayerPublicRecordHandlerV1)
 
@@ -1545,7 +1545,7 @@ async def admin_put_player_public_record_handler_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace player public record (adminPutPlayerPublicRecordHandlerV1)
 
@@ -1634,7 +1634,7 @@ def admin_put_player_record_handler_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace player record (adminPutPlayerRecordHandlerV1)
 
@@ -1749,7 +1749,7 @@ async def admin_put_player_record_handler_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create or replace player record (adminPutPlayerRecordHandlerV1)
 
@@ -1865,7 +1865,7 @@ def admin_put_player_records_handler_v1(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk update player records (adminPutPlayerRecordsHandlerV1)
 
@@ -1928,7 +1928,7 @@ async def admin_put_player_records_handler_v1_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk update player records (adminPutPlayerRecordsHandlerV1)
 
@@ -1996,7 +1996,7 @@ def admin_retrieve_player_records(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query player records (AdminRetrievePlayerRecords)
 
@@ -2062,7 +2062,7 @@ async def admin_retrieve_player_records_async(
     tags: Optional[List[str]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Query player records (AdminRetrievePlayerRecords)
 
@@ -2126,7 +2126,7 @@ def bulk_get_player_record_size_handler_v1(
     body: ModelsBulkUserKeyRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get player records size (bulkGetPlayerRecordSizeHandlerV1)
 
@@ -2177,7 +2177,7 @@ async def bulk_get_player_record_size_handler_v1_async(
     body: ModelsBulkUserKeyRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Bulk get player records size (bulkGetPlayerRecordSizeHandlerV1)
 
@@ -2233,7 +2233,7 @@ def list_player_record_handler_v1(
     query: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve list of public player records (listPlayerRecordHandlerV1)
 
@@ -2292,7 +2292,7 @@ async def list_player_record_handler_v1_async(
     query: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Retrieve list of public player records (listPlayerRecordHandlerV1)
 

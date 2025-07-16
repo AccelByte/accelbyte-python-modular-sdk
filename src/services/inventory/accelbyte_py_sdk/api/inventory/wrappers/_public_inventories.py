@@ -46,7 +46,7 @@ def public_list_inventories(
     sort_by: Optional[Union[str, PublicListInventoriesSortByEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To list all my inventories (PublicListInventories)
 
@@ -105,7 +105,7 @@ async def public_list_inventories_async(
     sort_by: Optional[Union[str, PublicListInventoriesSortByEnum]] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """To list all my inventories (PublicListInventories)
 

@@ -55,7 +55,7 @@ def create_app_v2(
     body: ApimodelCreateAppV2Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create new extend app (CreateAppV2)
 
@@ -139,7 +139,7 @@ async def create_app_v2_async(
     body: ApimodelCreateAppV2Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Create new extend app (CreateAppV2)
 
@@ -225,7 +225,7 @@ def delete_app_v2(
     forced: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete extend app by name (DeleteAppV2)
 
@@ -286,7 +286,7 @@ async def delete_app_v2_async(
     forced: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Delete extend app by name (DeleteAppV2)
 
@@ -350,7 +350,7 @@ def get_app_list_v2(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of extend apps on a given game namespace (GetAppListV2)
 
@@ -412,7 +412,7 @@ async def get_app_list_v2_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of extend apps on a given game namespace (GetAppListV2)
 
@@ -474,7 +474,7 @@ def get_app_v2(
     app: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get extend app by name (GetAppV2)
 
@@ -550,7 +550,7 @@ async def get_app_v2_async(
     app: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get extend app by name (GetAppV2)
 
@@ -628,7 +628,7 @@ def start_app_v2(
     app: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Starts the Application (StartAppV2)
 
@@ -682,7 +682,7 @@ async def start_app_v2_async(
     app: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Starts the Application (StartAppV2)
 
@@ -738,7 +738,7 @@ def stop_app_v2(
     app: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Stops the Application (StopAppV2)
 
@@ -792,7 +792,7 @@ async def stop_app_v2_async(
     app: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Stops the Application (StopAppV2)
 
@@ -849,7 +849,7 @@ def update_app_resources_resource_limit_form_v2(
     body: ApimodelIncreaseLimitFormRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Request Resource Limit to be increased (UpdateAppResourcesResourceLimitFormV2)
 
@@ -907,7 +907,7 @@ async def update_app_resources_resource_limit_form_v2_async(
     body: ApimodelIncreaseLimitFormRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Request Resource Limit to be increased (UpdateAppResourcesResourceLimitFormV2)
 
@@ -967,7 +967,7 @@ def update_app_resources_v2(
     body: ApimodelUpdateAppResourceRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update app info (UpdateAppResourcesV2)
 
@@ -1025,7 +1025,7 @@ async def update_app_resources_v2_async(
     body: ApimodelUpdateAppResourceRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update app info (UpdateAppResourcesV2)
 
@@ -1085,7 +1085,7 @@ def update_app_v2(
     body: ApimodelUpdateAppV2Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update app info (UpdateAppV2)
 
@@ -1143,7 +1143,7 @@ async def update_app_v2_async(
     body: ApimodelUpdateAppV2Request,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Update app info (UpdateAppV2)
 

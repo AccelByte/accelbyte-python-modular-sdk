@@ -41,7 +41,7 @@ from ..operations.play_feature_flag import AdminUpsertPlayFeatureFlag
 def admin_delete_play_feature_flag(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin Delete Play Feature Flag (adminDeletePlayFeatureFlag)
 
@@ -86,7 +86,7 @@ def admin_delete_play_feature_flag(
 async def admin_delete_play_feature_flag_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin Delete Play Feature Flag (adminDeletePlayFeatureFlag)
 
@@ -133,7 +133,7 @@ async def admin_delete_play_feature_flag_async(
 def admin_get_play_feature_flag(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin Play Feature Flag (adminGetPlayFeatureFlag)
 
@@ -177,7 +177,7 @@ def admin_get_play_feature_flag(
 async def admin_get_play_feature_flag_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin Play Feature Flag (adminGetPlayFeatureFlag)
 
@@ -224,7 +224,7 @@ def admin_upsert_play_feature_flag(
     body: ModelsPlayFeatureFlag,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin Upsert Play Feature Flag (adminUpsertPlayFeatureFlag)
 
@@ -274,7 +274,7 @@ async def admin_upsert_play_feature_flag_async(
     body: ModelsPlayFeatureFlag,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """admin Upsert Play Feature Flag (adminUpsertPlayFeatureFlag)
 

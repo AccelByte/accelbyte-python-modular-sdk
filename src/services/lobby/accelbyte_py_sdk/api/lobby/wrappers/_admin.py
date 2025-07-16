@@ -209,7 +209,7 @@ async def admin_get_global_config_async(
 def admin_update_global_config(
     body: ModelPutGlobalConfigurationRequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upsert global configuration data. (adminUpdateGlobalConfig)
 
@@ -248,7 +248,7 @@ def admin_update_global_config(
 async def admin_update_global_config_async(
     body: ModelPutGlobalConfigurationRequest,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Upsert global configuration data. (adminUpdateGlobalConfig)
 
@@ -289,7 +289,7 @@ def create_template(
     body: ModelCreateTemplateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create new notification template (createTemplate)
 
@@ -343,7 +343,7 @@ async def create_template_async(
     body: ModelCreateTemplateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """create new notification template (createTemplate)
 
@@ -400,7 +400,7 @@ def delete_template_localization(
     template_slug: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete template localization (deleteTemplateLocalization)
 
@@ -454,7 +454,7 @@ async def delete_template_localization_async(
     template_slug: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete template localization (deleteTemplateLocalization)
 
@@ -509,7 +509,7 @@ def delete_template_slug(
     template_slug: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete template localization (deleteTemplateSlug)
 
@@ -559,7 +559,7 @@ async def delete_template_slug_async(
     template_slug: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """delete template localization (deleteTemplateSlug)
 
@@ -611,7 +611,7 @@ def free_form_notification(
     body: ModelFreeFormNotificationRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send freeform notification to a user (freeFormNotification)
 
@@ -661,7 +661,7 @@ async def free_form_notification_async(
     body: ModelFreeFormNotificationRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send freeform notification to a user (freeFormNotification)
 
@@ -712,7 +712,7 @@ async def free_form_notification_async(
 def get_game_template(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get all notification template in a namespace (getGameTemplate)
 
@@ -758,7 +758,7 @@ def get_game_template(
 async def get_game_template_async(
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get all notification template in a namespace (getGameTemplate)
 
@@ -808,7 +808,7 @@ def get_localization_template(
     template_slug: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get a template localization (getLocalizationTemplate)
 
@@ -862,7 +862,7 @@ async def get_localization_template_async(
     template_slug: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get a template localization (getLocalizationTemplate)
 
@@ -920,7 +920,7 @@ def get_slug_template(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get all notification template in a slug (getSlugTemplate)
 
@@ -982,7 +982,7 @@ async def get_slug_template_async(
     limit: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """get all notification template in a slug (getSlugTemplate)
 
@@ -1043,7 +1043,7 @@ def notification_with_template(
     body: ModelNotificationWithTemplateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send notification to a user with template (notificationWithTemplate)
 
@@ -1098,7 +1098,7 @@ async def notification_with_template_async(
     body: ModelNotificationWithTemplateRequest,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """send notification to a user with template (notificationWithTemplate)
 
@@ -1156,7 +1156,7 @@ def publish_template(
     template_slug: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """publish draft template (publishTemplate)
 
@@ -1210,7 +1210,7 @@ async def publish_template_async(
     template_slug: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """publish draft template (publishTemplate)
 
@@ -1267,7 +1267,7 @@ def update_localization_template(
     template_slug: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update template draft (updateLocalizationTemplate)
 
@@ -1325,7 +1325,7 @@ async def update_localization_template_async(
     template_slug: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """update template draft (updateLocalizationTemplate)
 

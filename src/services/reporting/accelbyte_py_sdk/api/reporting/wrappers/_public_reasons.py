@@ -45,7 +45,7 @@ def public_get_reasons(
     title: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of reasons (publicGetReasons)
 
@@ -102,7 +102,7 @@ async def public_get_reasons_async(
     title: Optional[str] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get list of reasons (publicGetReasons)
 
@@ -159,7 +159,7 @@ def public_list_reason_groups(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List reason groups under a namespace (publicListReasonGroups)
 
@@ -207,7 +207,7 @@ async def public_list_reason_groups_async(
     offset: Optional[int] = None,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """List reason groups under a namespace (publicListReasonGroups)
 

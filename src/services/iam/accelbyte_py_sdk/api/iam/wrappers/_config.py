@@ -43,7 +43,7 @@ def admin_get_config_value_v3(
     config_key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Config Value (AdminGetConfigValueV3)
 
@@ -94,7 +94,7 @@ async def admin_get_config_value_v3_async(
     config_key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Config Value (AdminGetConfigValueV3)
 
@@ -147,7 +147,7 @@ def public_get_config_value_v3(
     config_key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Config Value (PublicGetConfigValueV3)
 
@@ -202,7 +202,7 @@ async def public_get_config_value_v3_async(
     config_key: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get Config Value (PublicGetConfigValueV3)
 

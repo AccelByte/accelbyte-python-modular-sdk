@@ -40,7 +40,7 @@ def get_user_platform_account_closure_histories(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user platform account closure history (getUserPlatformAccountClosureHistories)
 
@@ -82,7 +82,7 @@ async def get_user_platform_account_closure_histories_async(
     user_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs
+    **kwargs,
 ):
     """Get user platform account closure history (getUserPlatformAccountClosureHistories)
 
