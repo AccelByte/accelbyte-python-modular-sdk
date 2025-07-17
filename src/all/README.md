@@ -36,6 +36,7 @@ pip install accelbyte-py-sdk-service-platform
 pip install accelbyte-py-sdk-service-reporting
 pip install accelbyte-py-sdk-service-seasonpass
 pip install accelbyte-py-sdk-service-session
+pip install accelbyte-py-sdk-service-sessionhistory
 pip install accelbyte-py-sdk-service-social
 pip install accelbyte-py-sdk-service-ugc
 ```
