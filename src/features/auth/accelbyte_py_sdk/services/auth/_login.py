@@ -7,110 +7,61 @@ from __future__ import annotations
 import threading
 
 from abc import ABC, abstractmethod
-from logging import Logger, getLogger
 from typing import Dict, List, Optional, Tuple, Union
 
-from accelbyte_py_sdk.core import SDK
+from accelbyte_py_sdk.core import (
+    SDK,
+    AccelByteSDK,
+    HttpResponse,
+    Operation,
+    Timer,
+    TimerStatus,
+    TokenRepository,
+    deprecated,
+)
 
-from accelbyte_py_sdk.core import create_basic_authentication
-from accelbyte_py_sdk.core import create_pkce_verifier_and_challenge_s256
-from accelbyte_py_sdk.core import get_access_token
-from accelbyte_py_sdk.core import get_client_auth
-from accelbyte_py_sdk.core import get_client_id
-from accelbyte_py_sdk.core import remove_token
-from accelbyte_py_sdk.core import set_token
-from accelbyte_py_sdk.core import get_token_repository
-
-from accelbyte_py_sdk.core import AccelByteSDK
-from accelbyte_py_sdk.core import HttpResponse
-from accelbyte_py_sdk.core import NoHttpBackoffPolicy, NoHttpRetryPolicy
-from accelbyte_py_sdk.core import Operation
-from accelbyte_py_sdk.core import Timer, TimerStatus
-from accelbyte_py_sdk.core import TokenRepository
-
-from accelbyte_py_sdk.api.iam import authorize_v3
-from accelbyte_py_sdk.api.iam import platform_token_grant_v3
-from accelbyte_py_sdk.api.iam import token_grant_v3
-from accelbyte_py_sdk.api.iam import token_revocation_v3
-from accelbyte_py_sdk.api.iam import user_authentication_v3
-
-from accelbyte_py_sdk.api.iam import authorize_v3_async
-from accelbyte_py_sdk.api.iam import platform_token_grant_v3_async
-from accelbyte_py_sdk.api.iam import token_grant_v3_async
-from accelbyte_py_sdk.api.iam import token_revocation_v3_async
-from accelbyte_py_sdk.api.iam import user_authentication_v3_async
-
-from accelbyte_py_sdk.api.iam.operations.o_auth2_0 import AuthorizeV3ResponseTypeEnum
-from accelbyte_py_sdk.api.iam.operations.o_auth2_0 import TokenGrantV3GrantTypeEnum
-
-# region constants
-
-DEFAULT_AUTO_REFRESH: bool = False
-DEFAULT_REFRESH_RATE: float = 0.8
-DEFAULT_SCOPE: str = "commerce account social publishing analytics"
-DEFAULT_TIMER_INTERVAL: int = 60
-DEFAULT_TIMER_REFRESH_RATE: float = DEFAULT_REFRESH_RATE
-DEFAULT_TIMER_REPEAT_ON_EXCEPTION: bool = True
-
-MODULE_NAME = "accelbyte_py_sdk"
-
-AUTH_SERVICE_LOGGER: Logger = getLogger(f"{MODULE_NAME}.services.auth")
-
-# endregion constants
+from ._login_const import (
+    DEFAULT_REFRESH_RATE,
+    DEFAULT_AUTO_REFRESH,
+    DEFAULT_TIMER_INTERVAL,
+    DEFAULT_TIMER_REFRESH_RATE,
+    DEFAULT_TIMER_REPEAT_ON_EXCEPTION,
+    AUTH_SERVICE_LOGGER,
+    REFRESH_KWARGS,
+)
+from ._login_client import login_client_internal, login_client_async_internal
+from ._login_platform import login_platform_internal, login_platform_async_internal
+from ._login_user import login_user_internal, login_user_async_internal
+from ._login_refresh import (
+    login_refresh_internal,
+    login_refresh_async_internal,
+    try_refresh_login_internal,
+    try_refresh_login_async_internal,
+)
+from ._logout import logout_internal, logout_async_internal
 
 
-# region sync
+# region v1
 
 
+@deprecated(message="2025-08-15 - This method is obsolete.", replacement="accelbyte_py_sdk.services.auth.v2.login_client")
 def login_client(
     client_id: Optional[str] = None,
     client_secret: Optional[str] = None,
-    refresh_if_possible: bool = False,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs,
 ):
-    sdk = kwargs.get("sdk") or SDK
+    token, error = login_client_internal(
+        client_id=client_id,
+        client_secret=client_secret,
+        x_additional_headers=x_additional_headers,
+        **kwargs
+    )
+    if error:
+        return None, error
+
     auto_refresh = kwargs.pop("auto_refresh", DEFAULT_AUTO_REFRESH)
     refresh_rate = kwargs.pop("refresh_rate", DEFAULT_REFRESH_RATE)
-
-    if not client_id and client_secret:
-        return None, HttpResponse.create_error(400, "Invalid client ID.")
-
-    if not client_id:
-        client_auth, error = get_client_auth(sdk=sdk)
-        if error:
-            return None, error
-        client_id, config_client_secret = client_auth
-        if not client_secret:
-            client_secret = config_client_secret
-
-    if not client_secret:
-        sdk.logger.warning(
-            "The use of a Public OAuth Client is highly discouraged for this use case."
-        )
-
-    x_additional_headers = x_additional_headers or {}
-    x_additional_headers["Authorization"] = create_basic_authentication(
-        client_id, client_secret
-    )
-
-    token: Optional[str] = None
-    if refresh_if_possible:
-        token = try_refresh_login(x_additional_headers=x_additional_headers, **kwargs)
-
-    if not token:
-        token, error = token_grant_v3(
-            grant_type=TokenGrantV3GrantTypeEnum.CLIENT_CREDENTIALS,
-            x_additional_headers=x_additional_headers,
-            **kwargs,
-        )
-        if error:
-            return None, error
-
-        _, error = set_token(token=token, sdk=sdk)
-        if error:
-            return None, error
-
     if auto_refresh:
         set_on_demand_token_refresher(
             token_refresher=OnDemandTokenRefresher(
@@ -126,10 +77,46 @@ def login_client(
             **kwargs,
         )
 
-    assert token, "Token value missing!"
-    return token, None
+    return token, error
 
 
+@deprecated(message="2025-08-15 - This method is obsolete.", replacement="accelbyte_py_sdk.services.auth.v2.login_client_async")
+async def login_client_async(
+    client_id: Optional[str] = None,
+    client_secret: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs,
+):
+    token, error = await login_client_async_internal(
+        client_id=client_id,
+        client_secret=client_secret,
+        x_additional_headers=x_additional_headers,
+        **kwargs
+    )
+    if error:
+        return None, error
+
+    auto_refresh = kwargs.pop("auto_refresh", DEFAULT_AUTO_REFRESH)
+    refresh_rate = kwargs.pop("refresh_rate", DEFAULT_REFRESH_RATE)
+    if auto_refresh:
+        set_on_demand_token_refresher(
+            token_refresher=OnDemandTokenRefresher(
+                refresher=LoginClientTimer(
+                    0,
+                    client_id=client_id,
+                    client_secret=client_secret,
+                    x_additional_headers=x_additional_headers,
+                    **kwargs,
+                ),
+                refresh_rate=refresh_rate,
+            ),
+            **kwargs,
+        )
+
+    return token, error
+
+
+@deprecated(message="2025-08-15 - This method is obsolete.", replacement="accelbyte_py_sdk.services.auth.v2.login_platform")
 def login_platform(
     platform_id: str,
     platform_token: str,
@@ -137,27 +124,18 @@ def login_platform(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs,
 ):
+    token, error = login_platform_internal(
+        platform_id=platform_id,
+        platform_token=platform_token,
+        refresh_if_possible=refresh_if_possible,
+        x_additional_headers=x_additional_headers,
+        **kwargs,
+    )
+    if error:
+        return None, error
+
     auto_refresh = kwargs.pop("auto_refresh", DEFAULT_AUTO_REFRESH)
     refresh_rate = kwargs.pop("refresh_rate", DEFAULT_REFRESH_RATE)
-
-    token: Optional[str] = None
-    if refresh_if_possible:
-        token = try_refresh_login(x_additional_headers=x_additional_headers, **kwargs)
-
-    if not token:
-        token, error = platform_token_grant_v3(
-            platform_id=platform_id,
-            platform_token=platform_token,
-            x_additional_headers=x_additional_headers,
-            **kwargs,
-        )
-        if error:
-            return None, error
-
-        _, error = set_token(token=token, sdk=kwargs.get("sdk"))
-        if error:
-            return None, error
-
     if auto_refresh:
         set_on_demand_token_refresher(
             token_refresher=OnDemandTokenRefresher(
@@ -173,10 +151,48 @@ def login_platform(
             **kwargs,
         )
 
-    assert token, "Token value missing!"
     return token, None
 
 
+@deprecated(message="2025-08-15 - This method is obsolete.", replacement="accelbyte_py_sdk.services.auth.v2.login_platform_async")
+async def login_platform_async(
+    platform_id: str,
+    platform_token: str,
+    refresh_if_possible: bool = False,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs,
+):
+    token, error = await login_platform_async_internal(
+        platform_id=platform_id,
+        platform_token=platform_token,
+        refresh_if_possible=refresh_if_possible,
+        x_additional_headers=x_additional_headers,
+        **kwargs,
+    )
+    if error:
+        return None, error
+
+    auto_refresh = kwargs.pop("auto_refresh", DEFAULT_AUTO_REFRESH)
+    refresh_rate = kwargs.pop("refresh_rate", DEFAULT_REFRESH_RATE)
+    if auto_refresh:
+        set_on_demand_token_refresher(
+            token_refresher=OnDemandTokenRefresher(
+                refresher=LoginPlatformTimer(
+                    0,
+                    platform_id=platform_id,
+                    platform_token=platform_token,
+                    x_additional_headers=x_additional_headers,
+                    **kwargs,
+                ),
+                refresh_rate=refresh_rate,
+            ),
+            **kwargs,
+        )
+
+    return token, None
+
+
+@deprecated(message="2025-08-15 - This method is obsolete.", replacement="accelbyte_py_sdk.services.auth.v2.login_user")
 def login_user(
     username: str,
     password: str,
@@ -185,66 +201,19 @@ def login_user(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs,
 ):
+    token, error = login_user_internal(
+        username=username,
+        password=password,
+        scope=scope,
+        refresh_if_possible=refresh_if_possible,
+        x_additional_headers=x_additional_headers,
+        **kwargs
+    )
+    if error:
+        return None, error
+
     auto_refresh = kwargs.pop("auto_refresh", DEFAULT_AUTO_REFRESH)
     refresh_rate = kwargs.pop("refresh_rate", DEFAULT_REFRESH_RATE)
-
-    token: Optional[str] = None
-    if refresh_if_possible:
-        token = try_refresh_login(x_additional_headers=x_additional_headers, **kwargs)
-
-    if not token:
-        (
-            code_verifier,
-            code_challenge,
-            code_challenge_method,
-        ) = create_pkce_verifier_and_challenge_s256()
-
-        if scope is None:
-            scope = DEFAULT_SCOPE
-        if isinstance(scope, list):
-            scope = " ".join(scope)
-
-        client_id, error = get_client_id(sdk=kwargs.get("sdk"))
-        if error:
-            return None, error
-
-        request_id, error = authorize_v3(
-            client_id=client_id,
-            response_type=AuthorizeV3ResponseTypeEnum.CODE,
-            code_challenge=code_challenge,
-            code_challenge_method=code_challenge_method,
-            scope=scope,
-            x_additional_headers=x_additional_headers,
-            **kwargs,
-        )
-        if error:
-            return None, error
-
-        code, error = user_authentication_v3(
-            password=password,
-            request_id=request_id,
-            user_name=username,
-            client_id=client_id,
-            x_additional_headers=x_additional_headers,
-            **kwargs,
-        )
-        if error:
-            return None, error
-
-        token, error = token_grant_v3(
-            grant_type=TokenGrantV3GrantTypeEnum.AUTHORIZATION_CODE,
-            code=code,
-            code_verifier=code_verifier,
-            x_additional_headers=x_additional_headers,
-            **kwargs,
-        )
-        if error:
-            return None, error
-
-        _, error = set_token(token=token, sdk=kwargs.get("sdk"))
-        if error:
-            return None, error
-
     if auto_refresh:
         set_on_demand_token_refresher(
             token_refresher=OnDemandTokenRefresher(
@@ -261,215 +230,10 @@ def login_user(
             **kwargs,
         )
 
-    assert token, "Token value missing!"
     return token, None
 
 
-def logout(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
-    access_token, error = get_access_token(sdk=kwargs.get("sdk"))
-    if error:
-        return None, error
-
-    client_auth, error = get_client_auth(sdk=kwargs.get("sdk"))
-    if error:
-        return None, error
-
-    basic_auth = create_basic_authentication(*client_auth)
-    x_additional_headers = x_additional_headers or {}
-    x_additional_headers["Authorization"] = basic_auth
-
-    token_refresher = unset_on_demand_token_refresher(reset=False, **kwargs)
-
-    _, error = token_revocation_v3(
-        token=access_token, x_additional_headers=x_additional_headers, **kwargs
-    )
-    if error:
-        if token_refresher is not None:
-            set_on_demand_token_refresher(token_refresher=token_refresher, **kwargs)
-        return None, error
-
-    _, error = remove_token(sdk=kwargs.get("sdk"))
-    if error:
-        return None, error
-
-    if token_refresher is not None:
-        token_refresher.reset()
-
-    return None, None
-
-
-def refresh_login(
-    refresh_token, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-):
-    token, error = token_grant_v3(
-        grant_type=TokenGrantV3GrantTypeEnum.REFRESH_TOKEN,
-        refresh_token=refresh_token,
-        x_additional_headers=x_additional_headers,
-        **kwargs,
-    )
-    if error:
-        return None, error
-
-    _, error = set_token(token=token, sdk=kwargs.get("sdk"))
-    if error:
-        return None, error
-
-    return token, None
-
-
-def try_refresh_login(
-    x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
-) -> Optional[str]:
-    token_repo = get_token_repository(raise_when_none=False, sdk=kwargs.get("sdk"))
-    if token_repo is None:
-        return None
-
-    if token_repo.has_token_expired():
-        refresh_token = token_repo.get_refresh_token()
-        if not refresh_token:
-            return None
-
-        token, error = refresh_login(
-            refresh_token=refresh_token,
-            x_additional_headers=x_additional_headers,
-            **kwargs,
-        )
-        if error or not token:
-            return None
-    else:
-        token = token_repo.get_token()
-
-    return token
-
-
-login = login_user
-
-
-# endregion sync
-
-
-# region async
-
-
-async def login_client_async(
-    client_id: Optional[str] = None,
-    client_secret: Optional[str] = None,
-    refresh_if_possible: bool = False,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs,
-):
-    sdk = kwargs.get("sdk") or SDK
-    auto_refresh = kwargs.pop("auto_refresh", DEFAULT_AUTO_REFRESH)
-    refresh_rate = kwargs.pop("refresh_rate", DEFAULT_REFRESH_RATE)
-
-    if not client_id and client_secret:
-        return None, HttpResponse.create_error(400, "Invalid client ID.")
-
-    if not client_id:
-        client_auth, error = get_client_auth(sdk=sdk)
-        if error:
-            return None, error
-        client_id, config_client_secret = client_auth
-        if not client_secret:
-            client_secret = config_client_secret
-
-    if not client_secret:
-        sdk.logger.warning(
-            "The use of a Public OAuth Client is highly discouraged for this use case."
-        )
-
-    x_additional_headers = x_additional_headers or {}
-    x_additional_headers["Authorization"] = create_basic_authentication(
-        client_id, client_secret
-    )
-
-    token: Optional[str] = None
-    if refresh_if_possible:
-        token = await try_refresh_login_async(
-            x_additional_headers=x_additional_headers, **kwargs
-        )
-
-    if not token:
-        token, error = await token_grant_v3_async(
-            grant_type=TokenGrantV3GrantTypeEnum.CLIENT_CREDENTIALS,
-            x_additional_headers=x_additional_headers,
-            **kwargs,
-        )
-        if error:
-            return None, error
-
-        _, error = set_token(token=token, sdk=sdk)
-        if error:
-            return None, error
-
-    if auto_refresh:
-        set_on_demand_token_refresher(
-            token_refresher=OnDemandTokenRefresher(
-                refresher=LoginClientTimer(
-                    0,
-                    client_id=client_id,
-                    client_secret=client_secret,
-                    x_additional_headers=x_additional_headers,
-                    **kwargs,
-                ),
-                refresh_rate=refresh_rate,
-            ),
-            **kwargs,
-        )
-
-    assert token, "Token value missing!"
-    return token, None
-
-
-async def login_platform_async(
-    platform_id: str,
-    platform_token: str,
-    refresh_if_possible: bool = False,
-    x_additional_headers: Optional[Dict[str, str]] = None,
-    **kwargs,
-):
-    auto_refresh = kwargs.pop("auto_refresh", DEFAULT_AUTO_REFRESH)
-    refresh_rate = kwargs.pop("refresh_rate", DEFAULT_REFRESH_RATE)
-
-    token: Optional[str] = None
-    if refresh_if_possible:
-        token = await try_refresh_login_async(
-            x_additional_headers=x_additional_headers, **kwargs
-        )
-
-    if not token:
-        token, error = await platform_token_grant_v3_async(
-            platform_id=platform_id,
-            platform_token=platform_token,
-            x_additional_headers=x_additional_headers,
-            **kwargs,
-        )
-        if error:
-            return None, error
-
-        _, error = set_token(token=token, sdk=kwargs.get("sdk"))
-        if error:
-            return None, error
-
-    if auto_refresh:
-        set_on_demand_token_refresher(
-            token_refresher=OnDemandTokenRefresher(
-                refresher=LoginPlatformTimer(
-                    0,
-                    platform_id=platform_id,
-                    platform_token=platform_token,
-                    x_additional_headers=x_additional_headers,
-                    **kwargs,
-                ),
-                refresh_rate=refresh_rate,
-            ),
-            **kwargs,
-        )
-
-    assert token, "Token value missing!"
-    return token, None
-
-
+@deprecated(message="2025-08-15 - This method is obsolete.", replacement="accelbyte_py_sdk.services.auth.v2.login_user_async")
 async def login_user_async(
     username: str,
     password: str,
@@ -478,66 +242,19 @@ async def login_user_async(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs,
 ):
+    token, error = await login_user_async_internal(
+        username=username,
+        password=password,
+        scope=scope,
+        refresh_if_possible=refresh_if_possible,
+        x_additional_headers=x_additional_headers,
+        **kwargs
+    )
+    if error:
+        return None, error
+
     auto_refresh = kwargs.pop("auto_refresh", DEFAULT_AUTO_REFRESH)
     refresh_rate = kwargs.pop("refresh_rate", DEFAULT_REFRESH_RATE)
-
-    token: Optional[str] = None
-    if refresh_if_possible:
-        token = try_refresh_login(x_additional_headers=x_additional_headers, **kwargs)
-
-    if not token:
-        (
-            code_verifier,
-            code_challenge,
-            code_challenge_method,
-        ) = create_pkce_verifier_and_challenge_s256()
-
-        if scope is None:
-            scope = DEFAULT_SCOPE
-        if isinstance(scope, list):
-            scope = " ".join(scope)
-
-        client_id, error = get_client_id(sdk=kwargs.get("sdk"))
-        if error:
-            return None, error
-
-        request_id, error = await authorize_v3_async(
-            client_id=client_id,
-            response_type=AuthorizeV3ResponseTypeEnum.CODE,
-            code_challenge=code_challenge,
-            code_challenge_method=code_challenge_method,
-            scope=scope,
-            x_additional_headers=x_additional_headers,
-            **kwargs,
-        )
-        if error:
-            return None, error
-
-        code, error = await user_authentication_v3_async(
-            password=password,
-            request_id=request_id,
-            user_name=username,
-            client_id=client_id,
-            x_additional_headers=x_additional_headers,
-            **kwargs,
-        )
-        if error:
-            return None, error
-
-        token, error = await token_grant_v3_async(
-            grant_type=TokenGrantV3GrantTypeEnum.AUTHORIZATION_CODE,
-            code=code,
-            code_verifier=code_verifier,
-            x_additional_headers=x_additional_headers,
-            **kwargs,
-        )
-        if error:
-            return None, error
-
-        _, error = set_token(token=token, sdk=kwargs.get("sdk"))
-        if error:
-            return None, error
-
     if auto_refresh:
         set_on_demand_token_refresher(
             token_refresher=OnDemandTokenRefresher(
@@ -554,96 +271,80 @@ async def login_user_async(
             **kwargs,
         )
 
-    assert token, "Token value missing!"
     return token, None
 
 
-async def logout_async(x_additional_headers: Optional[Dict[str, str]] = None, **kwargs):
-    access_token, error = get_access_token(sdk=kwargs.get("sdk"))
-    if error:
-        return None, error
-
-    client_auth, error = get_client_auth(sdk=kwargs.get("sdk"))
-    if error:
-        return None, error
-
-    basic_auth = create_basic_authentication(*client_auth)
-    x_additional_headers = x_additional_headers or {}
-    x_additional_headers["Authorization"] = basic_auth
-
-    token_refresher = unset_on_demand_token_refresher(reset=False, **kwargs)
-
-    _, error = await token_revocation_v3_async(
-        token=access_token, x_additional_headers=x_additional_headers, **kwargs
-    )
-    if error:
-        if token_refresher is not None:
-            set_on_demand_token_refresher(token_refresher=token_refresher, **kwargs)
-        return None, error
-
-    _, error = remove_token(sdk=kwargs.get("sdk"))
-    if error:
-        return None, error
-
-    if token_refresher is not None:
-        token_refresher.reset()
-
-    return None, None
-
-
-async def refresh_login_async(
-    refresh_token, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+@deprecated(message="2025-08-15 - This method is obsolete.", replacement="accelbyte_py_sdk.services.auth.v2.logout")
+def logout(
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs,
 ):
-    token, error = await token_grant_v3_async(
-        grant_type=TokenGrantV3GrantTypeEnum.REFRESH_TOKEN,
-        refresh_token=refresh_token,
+    _, error = logout_internal(
         x_additional_headers=x_additional_headers,
         **kwargs,
     )
     if error:
         return None, error
 
-    _, error = set_token(token=token, sdk=kwargs.get("sdk"))
+    token_refresher = unset_on_demand_token_refresher(reset=True, **kwargs)
+
+    return None, None
+
+
+@deprecated(message="2025-08-15 - This method is obsolete.", replacement="accelbyte_py_sdk.services.auth.v2.logout_async")
+async def logout_async(
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs,
+):
+    _, error = await logout_async_internal(
+        x_additional_headers=x_additional_headers,
+        **kwargs,
+    )
     if error:
         return None, error
 
-    return token, None
+    token_refresher = unset_on_demand_token_refresher(reset=True, **kwargs)
+
+    return None, None
 
 
-async def try_refresh_login_async(
-    x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+@deprecated(message="2025-08-15 - This method is obsolete.", replacement="accelbyte_py_sdk.services.auth.v2.refresh_login")
+def refresh_login(
+    refresh_token: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
+    return login_refresh_internal(refresh_token=refresh_token, x_additional_headers=x_additional_headers, **kwargs)
+
+
+@deprecated(message="2025-08-15 - This method is obsolete.", replacement="accelbyte_py_sdk.services.auth.v2.refresh_login_async")
+async def refresh_login_async(
+    refresh_token: str, x_additional_headers: Optional[Dict[str, str]] = None, **kwargs
+):
+    return await login_refresh_async_internal(refresh_token=refresh_token, x_additional_headers=x_additional_headers, **kwargs)
+
+
+@deprecated(message="2025-08-15 - This method is obsolete.", replacement="accelbyte_py_sdk.services.auth.v2.try_refresh_login")
+def try_refresh_login(
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs,
 ) -> Optional[str]:
-    token_repo = get_token_repository(raise_when_none=False, sdk=kwargs.get("sdk"))
-    if token_repo is None:
-        return None
-
-    refresh_token = token_repo.get_refresh_token()
-    if not refresh_token:
-        return None
-
-    token, error = await refresh_login_async(
-        refresh_token=refresh_token, x_additional_headers=x_additional_headers, **kwargs
-    )
-    if error or not token:
-        return None
-
-    return token
+    return try_refresh_login_internal(x_additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated(message="2025-08-15 - This method is obsolete.", replacement="accelbyte_py_sdk.services.auth.v2.try_refresh_login_async")
+async def try_refresh_login_async(
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs,
+) -> Optional[str]:
+    return await try_refresh_login_async_internal(x_additional_headers=x_additional_headers, **kwargs)
+
+
+login = login_user
 login_async = login_user_async
 
-
-# endregion async
+# endregion v1
 
 
 # region repeating
-
-
-TIMER_KWARGS = {
-    "retry_policy": NoHttpRetryPolicy(),
-    "backoff_policy": NoHttpBackoffPolicy(),
-}
-
 
 class LoginTimerBase(ABC, Timer):
     @abstractmethod
@@ -679,7 +380,7 @@ class LoginClientTimer(LoginTimerBase):
             "client_secret": client_secret,
             "x_additional_headers": x_additional_headers,
             **kwargs,
-            **TIMER_KWARGS,
+            **REFRESH_KWARGS,
         }
 
         super().__init__(
@@ -698,7 +399,9 @@ class LoginClientTimer(LoginTimerBase):
             if sdk is not None:
                 token_repository = sdk.get_token_repository(raise_when_none=False)
                 if token_repository is not None:
-                    needs_refresh = token_repository.has_token_expired(multiplier=self.refresh_rate)
+                    needs_refresh = token_repository.has_token_expired(
+                        multiplier=self.refresh_rate
+                    )
                     if not needs_refresh:
                         token = token_repository.get_token()
                         return token, None
@@ -711,7 +414,9 @@ class LoginClientTimer(LoginTimerBase):
             if sdk is not None:
                 token_repository = sdk.get_token_repository(raise_when_none=False)
                 if token_repository is not None:
-                    needs_refresh = token_repository.has_token_expired(multiplier=self.refresh_rate)
+                    needs_refresh = token_repository.has_token_expired(
+                        multiplier=self.refresh_rate
+                    )
                     if not needs_refresh:
                         token = token_repository.get_token()
                         return token, None
@@ -743,7 +448,7 @@ class LoginPlatformTimer(LoginTimerBase):
             "platform_token": platform_token,
             "x_additional_headers": x_additional_headers,
             **kwargs,
-            **TIMER_KWARGS,
+            **REFRESH_KWARGS,
         }
 
         super().__init__(
@@ -762,7 +467,9 @@ class LoginPlatformTimer(LoginTimerBase):
             if sdk is not None:
                 token_repository = sdk.get_token_repository(raise_when_none=False)
                 if token_repository is not None:
-                    needs_refresh = token_repository.has_token_expired(multiplier=self.refresh_rate)
+                    needs_refresh = token_repository.has_token_expired(
+                        multiplier=self.refresh_rate
+                    )
                     if not needs_refresh:
                         token = token_repository.get_token()
                         return token, None
@@ -775,7 +482,9 @@ class LoginPlatformTimer(LoginTimerBase):
             if sdk is not None:
                 token_repository = sdk.get_token_repository(raise_when_none=False)
                 if token_repository is not None:
-                    needs_refresh = token_repository.has_token_expired(multiplier=self.refresh_rate)
+                    needs_refresh = token_repository.has_token_expired(
+                        multiplier=self.refresh_rate
+                    )
                     if not needs_refresh:
                         token = token_repository.get_token()
                         return token, None
@@ -809,7 +518,7 @@ class LoginUserTimer(LoginTimerBase):
             "scope": scope,
             "x_additional_headers": x_additional_headers,
             **kwargs,
-            **TIMER_KWARGS,
+            **REFRESH_KWARGS,
         }
 
         super().__init__(
@@ -828,7 +537,9 @@ class LoginUserTimer(LoginTimerBase):
             if sdk is not None:
                 token_repository = sdk.get_token_repository(raise_when_none=False)
                 if token_repository is not None:
-                    needs_refresh = token_repository.has_token_expired(multiplier=self.refresh_rate)
+                    needs_refresh = token_repository.has_token_expired(
+                        multiplier=self.refresh_rate
+                    )
                     if not needs_refresh:
                         token = token_repository.get_token()
                         return token, None
@@ -841,7 +552,9 @@ class LoginUserTimer(LoginTimerBase):
             if sdk is not None:
                 token_repository = sdk.get_token_repository(raise_when_none=False)
                 if token_repository is not None:
-                    needs_refresh = token_repository.has_token_expired(multiplier=self.refresh_rate)
+                    needs_refresh = token_repository.has_token_expired(
+                        multiplier=self.refresh_rate
+                    )
                     if not needs_refresh:
                         token = token_repository.get_token()
                         return token, None
@@ -871,7 +584,7 @@ class RefreshLoginTimer(LoginTimerBase):
             "refresh_token": refresh_token,
             "x_additional_headers": x_additional_headers,
             **kwargs,
-            **TIMER_KWARGS,
+            **REFRESH_KWARGS,
         }
 
         super().__init__(
@@ -890,7 +603,9 @@ class RefreshLoginTimer(LoginTimerBase):
             if sdk is not None:
                 token_repository = sdk.get_token_repository(raise_when_none=False)
                 if token_repository is not None:
-                    needs_refresh = token_repository.has_token_expired(multiplier=self.refresh_rate)
+                    needs_refresh = token_repository.has_token_expired(
+                        multiplier=self.refresh_rate
+                    )
                     if not needs_refresh:
                         token = token_repository.get_token()
                         return token, None
@@ -903,7 +618,9 @@ class RefreshLoginTimer(LoginTimerBase):
             if sdk is not None:
                 token_repository = sdk.get_token_repository(raise_when_none=False)
                 if token_repository is not None:
-                    needs_refresh = token_repository.has_token_expired(multiplier=self.refresh_rate)
+                    needs_refresh = token_repository.has_token_expired(
+                        multiplier=self.refresh_rate
+                    )
                     if not needs_refresh:
                         token = token_repository.get_token()
                         return token, None
@@ -932,7 +649,9 @@ def unset_on_demand_token_refresher(reset: bool = True, **kwargs):
 
 
 class OnDemandTokenRefresher:
-    def __init__(self, refresher: LoginTimerBase, refresh_rate: float = DEFAULT_REFRESH_RATE):
+    def __init__(
+        self, refresher: LoginTimerBase, refresh_rate: float = DEFAULT_REFRESH_RATE
+    ):
         self._refresher = refresher
         self._refresh_rate = refresh_rate
 
@@ -996,7 +715,9 @@ def enable_login_client_timer(
     refresh_rate: float = kwargs.pop("refresh_rate", DEFAULT_TIMER_REFRESH_RATE)
     repeats: int = kwargs.pop("repeats", -1)
     autostart: bool = kwargs.pop("autostart", True)
-    repeat_on_exception: bool = kwargs.pop("repeat_on_exception", DEFAULT_TIMER_REPEAT_ON_EXCEPTION)
+    repeat_on_exception: bool = kwargs.pop(
+        "repeat_on_exception", DEFAULT_TIMER_REPEAT_ON_EXCEPTION
+    )
 
     if existing_timer := getattr(sdk, "timer", None):
         if not cancel_existing:
@@ -1032,7 +753,9 @@ def enable_login_platform_timer(
     refresh_rate: float = kwargs.pop("refresh_rate", DEFAULT_TIMER_REFRESH_RATE)
     repeats: int = kwargs.pop("repeats", -1)
     autostart: bool = kwargs.pop("autostart", True)
-    repeat_on_exception: bool = kwargs.pop("repeat_on_exception", DEFAULT_TIMER_REPEAT_ON_EXCEPTION)
+    repeat_on_exception: bool = kwargs.pop(
+        "repeat_on_exception", DEFAULT_TIMER_REPEAT_ON_EXCEPTION
+    )
 
     if existing_timer := getattr(sdk, "timer", None):
         if not cancel_existing:
@@ -1069,7 +792,9 @@ def enable_login_user_timer(
     refresh_rate: float = kwargs.pop("refresh_rate", DEFAULT_TIMER_REFRESH_RATE)
     repeats: int = kwargs.pop("repeats", -1)
     autostart: bool = kwargs.pop("autostart", True)
-    repeat_on_exception: bool = kwargs.pop("repeat_on_exception", DEFAULT_TIMER_REPEAT_ON_EXCEPTION)
+    repeat_on_exception: bool = kwargs.pop(
+        "repeat_on_exception", DEFAULT_TIMER_REPEAT_ON_EXCEPTION
+    )
 
     if existing_timer := getattr(sdk, "timer", None):
         if not cancel_existing:
