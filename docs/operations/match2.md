@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Match Service V2 Index (2.35.0)
+# AccelByte Gaming Services Match Service V2 Index (2.35.2)
 
 
 ## Operations
@@ -86,6 +86,12 @@
 | /match2/v1/namespaces/{namespace}/rulesets | GET | RuleSetList | `false` | [RuleSetList](../../src/services/match2/accelbyte_py_sdk/api/match2/operations/rule_sets/rule_set_list.py) | [rule_set_list](../../src/services/match2/accelbyte_py_sdk/api/match2/wrappers/_rule_sets.py) | [accelbyte_py_sdk_cli match2-rule-set-list](../../samples/cli/accelbyte_py_sdk_cli/match2/_rule_set_list.py) |
 | /match2/v1/namespaces/{namespace}/rulesets/{ruleset} | PUT | UpdateRuleSet | `false` | [UpdateRuleSet](../../src/services/match2/accelbyte_py_sdk/api/match2/operations/rule_sets/update_rule_set.py) | [update_rule_set](../../src/services/match2/accelbyte_py_sdk/api/match2/wrappers/_rule_sets.py) | [accelbyte_py_sdk_cli match2-update-rule-set](../../samples/cli/accelbyte_py_sdk_cli/match2/_update_rule_set.py) |
 
+### XRay Config
+| Endpoint | Method | ID | Deprecated | Class | Wrapper | Example |
+|---|---|---|---|---|---|---|
+| /match2/v1/admin/namespaces/{namespace}/xray/config | GET | adminGetXRayConfig | `false` | [AdminGetXRayConfig](../../src/services/match2/accelbyte_py_sdk/api/match2/operations/x_ray_config/admin_get_x_ray_config.py) | [admin_get_x_ray_config](../../src/services/match2/accelbyte_py_sdk/api/match2/wrappers/_x_ray_config.py) | [accelbyte_py_sdk_cli match2-admin-get-x-ray-config](../../samples/cli/accelbyte_py_sdk_cli/match2/_admin_get_x_ray_config.py) |
+| /match2/v1/admin/namespaces/{namespace}/xray/config | POST | adminUpdateXRayConfig | `false` | [AdminUpdateXRayConfig](../../src/services/match2/accelbyte_py_sdk/api/match2/operations/x_ray_config/admin_update_x_ray_config.py) | [admin_update_x_ray_config](../../src/services/match2/accelbyte_py_sdk/api/match2/wrappers/_x_ray_config.py) | [accelbyte_py_sdk_cli match2-admin-update-x-ray-config](../../samples/cli/accelbyte_py_sdk_cli/match2/_admin_update_x_ray_config.py) |
+
 
 ## Models
 | Model | Class |
@@ -139,5 +145,7 @@
 | models.PlayFeatureFlag | [ModelsPlayFeatureFlag](../../src/services/match2/accelbyte_py_sdk/api/match2/models/models_play_feature_flag.py) |
 | models.Server | [ModelsServer](../../src/services/match2/accelbyte_py_sdk/api/match2/models/models_server.py) |
 | models.User | [ModelsUser](../../src/services/match2/accelbyte_py_sdk/api/match2/models/models_user.py) |
+| models.XRayConfigHttpResponse | [ModelsXRayConfigHttpResponse](../../src/services/match2/accelbyte_py_sdk/api/match2/models/models_x_ray_config_http_response.py) |
+| models.XRayConfigHttpUpdateRequest | [ModelsXRayConfigHttpUpdateRequest](../../src/services/match2/accelbyte_py_sdk/api/match2/models/models_x_ray_config_http_update_request.py) |
 | player.PlayerData | [PlayerPlayerData](../../src/services/match2/accelbyte_py_sdk/api/match2/models/player_player_data.py) |
 | response.Error | [ResponseError](../../src/services/match2/accelbyte_py_sdk/api/match2/models/response_error.py) |
