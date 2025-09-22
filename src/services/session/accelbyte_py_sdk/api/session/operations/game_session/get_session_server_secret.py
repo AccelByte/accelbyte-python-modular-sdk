@@ -56,6 +56,7 @@ class GetSessionServerSecret(Operation):
     If there is error:
     - 400 Invalid path parameters
     - 401 unauthorized
+    - 403 status forbidden, The User is not active in session
     - 404 StatusNotFound
     - 500 Internal server error
 
@@ -82,6 +83,8 @@ class GetSessionServerSecret(Operation):
         400: Bad Request - ResponseError (Bad Request)
 
         401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
 
         404: Not Found - ResponseError (Not Found)
 
@@ -205,6 +208,7 @@ class GetSessionServerSecret(Operation):
         data_200: Optional[ApimodelsServerSecret] = None
         error_400: Optional[ResponseError] = None
         error_401: Optional[ResponseError] = None
+        error_403: Optional[ResponseError] = None
         error_404: Optional[ResponseError] = None
         error_500: Optional[ResponseError] = None
 
@@ -216,6 +220,11 @@ class GetSessionServerSecret(Operation):
                     raise exc  # pylint: disable=raising-bad-type
             if self.error_401 is not None:
                 err = self.error_401.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_403 is not None:
+                err = self.error_403.translate_to_api_error()
                 exc = err.to_exception()
                 if exc is not None:
                     raise exc  # pylint: disable=raising-bad-type
@@ -241,6 +250,9 @@ class GetSessionServerSecret(Operation):
             elif self.error_401 is not None:
                 yield None
                 yield self.error_401
+            elif self.error_403 is not None:
+                yield None
+                yield self.error_403
             elif self.error_404 is not None:
                 yield None
                 yield self.error_404
@@ -260,6 +272,8 @@ class GetSessionServerSecret(Operation):
         400: Bad Request - ResponseError (Bad Request)
 
         401: Unauthorized - ResponseError (Unauthorized)
+
+        403: Forbidden - ResponseError (Forbidden)
 
         404: Not Found - ResponseError (Not Found)
 
@@ -291,6 +305,9 @@ class GetSessionServerSecret(Operation):
             elif code == 401:
                 result.error_401 = ResponseError.create_from_dict(content)
                 result.error = result.error_401.translate_to_api_error()
+            elif code == 403:
+                result.error_403 = ResponseError.create_from_dict(content)
+                result.error = result.error_403.translate_to_api_error()
             elif code == 404:
                 result.error_404 = ResponseError.create_from_dict(content)
                 result.error = result.error_404.translate_to_api_error()
@@ -327,6 +344,8 @@ class GetSessionServerSecret(Operation):
 
         401: Unauthorized - ResponseError (Unauthorized)
 
+        403: Forbidden - ResponseError (Forbidden)
+
         404: Not Found - ResponseError (Not Found)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
@@ -349,6 +368,8 @@ class GetSessionServerSecret(Operation):
         if code == 400:
             return None, ResponseError.create_from_dict(content)
         if code == 401:
+            return None, ResponseError.create_from_dict(content)
+        if code == 403:
             return None, ResponseError.create_from_dict(content)
         if code == 404:
             return None, ResponseError.create_from_dict(content)

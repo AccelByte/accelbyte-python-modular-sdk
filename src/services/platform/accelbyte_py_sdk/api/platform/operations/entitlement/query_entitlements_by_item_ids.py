@@ -29,54 +29,22 @@ from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
-from accelbyte_py_sdk.core import StrEnum
 from accelbyte_py_sdk.core import deprecated
 
 from ...models import EntitlementPagingSlicedResult
 
 
-class AppTypeEnum(StrEnum):
-    DEMO = "DEMO"
-    DLC = "DLC"
-    GAME = "GAME"
-    SOFTWARE = "SOFTWARE"
+class QueryEntitlementsByItemIds(Operation):
+    """Query entitlements by Item Ids (queryEntitlementsByItemIds)
 
-
-class EntitlementClazzEnum(StrEnum):
-    APP = "APP"
-    CODE = "CODE"
-    ENTITLEMENT = "ENTITLEMENT"
-    LOOTBOX = "LOOTBOX"
-    MEDIA = "MEDIA"
-    OPTIONBOX = "OPTIONBOX"
-    SUBSCRIPTION = "SUBSCRIPTION"
-
-
-class OriginEnum(StrEnum):
-    EPIC = "Epic"
-    GOOGLEPLAY = "GooglePlay"
-    IOS = "IOS"
-    NINTENDO = "Nintendo"
-    OCULUS = "Oculus"
-    OTHER = "Other"
-    PLAYSTATION = "Playstation"
-    STEAM = "Steam"
-    SYSTEM = "System"
-    TWITCH = "Twitch"
-    XBOX = "Xbox"
-
-
-class QueryEntitlements1(Operation):
-    """Query entitlements (queryEntitlements_1)
-
-    Query entitlements.
+    Query entitlements by Item Ids.
 
     Other detail info:
 
       * Returns : entitlement list
 
     Properties:
-        url: /platform/admin/namespaces/{namespace}/entitlements
+        url: /platform/admin/namespaces/{namespace}/entitlements/byItemIds
 
         method: GET
 
@@ -92,21 +60,11 @@ class QueryEntitlements1(Operation):
 
         active_only: (activeOnly) OPTIONAL bool in query
 
-        app_type: (appType) OPTIONAL Union[str, AppTypeEnum] in query
-
-        entitlement_clazz: (entitlementClazz) OPTIONAL Union[str, EntitlementClazzEnum] in query
-
-        entitlement_name: (entitlementName) OPTIONAL str in query
-
-        item_id: (itemId) OPTIONAL List[str] in query
+        item_ids: (itemIds) OPTIONAL List[str] in query
 
         limit: (limit) OPTIONAL int in query
 
         offset: (offset) OPTIONAL int in query
-
-        origin: (origin) OPTIONAL Union[str, OriginEnum] in query
-
-        user_id: (userId) OPTIONAL str in query
 
     Responses:
         200: OK - EntitlementPagingSlicedResult (successful operation)
@@ -114,8 +72,8 @@ class QueryEntitlements1(Operation):
 
     # region fields
 
-    _url: str = "/platform/admin/namespaces/{namespace}/entitlements"
-    _path: str = "/platform/admin/namespaces/{namespace}/entitlements"
+    _url: str = "/platform/admin/namespaces/{namespace}/entitlements/byItemIds"
+    _path: str = "/platform/admin/namespaces/{namespace}/entitlements/byItemIds"
     _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
@@ -127,14 +85,9 @@ class QueryEntitlements1(Operation):
 
     namespace: str  # REQUIRED in [path]
     active_only: bool  # OPTIONAL in [query]
-    app_type: Union[str, AppTypeEnum]  # OPTIONAL in [query]
-    entitlement_clazz: Union[str, EntitlementClazzEnum]  # OPTIONAL in [query]
-    entitlement_name: str  # OPTIONAL in [query]
-    item_id: List[str]  # OPTIONAL in [query]
+    item_ids: List[str]  # OPTIONAL in [query]
     limit: int  # OPTIONAL in [query]
     offset: int  # OPTIONAL in [query]
-    origin: Union[str, OriginEnum]  # OPTIONAL in [query]
-    user_id: str  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -196,22 +149,12 @@ class QueryEntitlements1(Operation):
         result = {}
         if hasattr(self, "active_only"):
             result["activeOnly"] = self.active_only
-        if hasattr(self, "app_type"):
-            result["appType"] = self.app_type
-        if hasattr(self, "entitlement_clazz"):
-            result["entitlementClazz"] = self.entitlement_clazz
-        if hasattr(self, "entitlement_name"):
-            result["entitlementName"] = self.entitlement_name
-        if hasattr(self, "item_id"):
-            result["itemId"] = self.item_id
+        if hasattr(self, "item_ids"):
+            result["itemIds"] = self.item_ids
         if hasattr(self, "limit"):
             result["limit"] = self.limit
         if hasattr(self, "offset"):
             result["offset"] = self.offset
-        if hasattr(self, "origin"):
-            result["origin"] = self.origin
-        if hasattr(self, "user_id"):
-            result["userId"] = self.user_id
         return result
 
     # endregion get_x_params methods
@@ -222,46 +165,24 @@ class QueryEntitlements1(Operation):
 
     # region with_x methods
 
-    def with_namespace(self, value: str) -> QueryEntitlements1:
+    def with_namespace(self, value: str) -> QueryEntitlementsByItemIds:
         self.namespace = value
         return self
 
-    def with_active_only(self, value: bool) -> QueryEntitlements1:
+    def with_active_only(self, value: bool) -> QueryEntitlementsByItemIds:
         self.active_only = value
         return self
 
-    def with_app_type(self, value: Union[str, AppTypeEnum]) -> QueryEntitlements1:
-        self.app_type = value
+    def with_item_ids(self, value: List[str]) -> QueryEntitlementsByItemIds:
+        self.item_ids = value
         return self
 
-    def with_entitlement_clazz(
-        self, value: Union[str, EntitlementClazzEnum]
-    ) -> QueryEntitlements1:
-        self.entitlement_clazz = value
-        return self
-
-    def with_entitlement_name(self, value: str) -> QueryEntitlements1:
-        self.entitlement_name = value
-        return self
-
-    def with_item_id(self, value: List[str]) -> QueryEntitlements1:
-        self.item_id = value
-        return self
-
-    def with_limit(self, value: int) -> QueryEntitlements1:
+    def with_limit(self, value: int) -> QueryEntitlementsByItemIds:
         self.limit = value
         return self
 
-    def with_offset(self, value: int) -> QueryEntitlements1:
+    def with_offset(self, value: int) -> QueryEntitlementsByItemIds:
         self.offset = value
-        return self
-
-    def with_origin(self, value: Union[str, OriginEnum]) -> QueryEntitlements1:
-        self.origin = value
-        return self
-
-    def with_user_id(self, value: str) -> QueryEntitlements1:
-        self.user_id = value
         return self
 
     # endregion with_x methods
@@ -278,22 +199,10 @@ class QueryEntitlements1(Operation):
             result["activeOnly"] = bool(self.active_only)
         elif include_empty:
             result["activeOnly"] = False
-        if hasattr(self, "app_type") and self.app_type:
-            result["appType"] = str(self.app_type)
+        if hasattr(self, "item_ids") and self.item_ids:
+            result["itemIds"] = [str(i0) for i0 in self.item_ids]
         elif include_empty:
-            result["appType"] = Union[str, AppTypeEnum]()
-        if hasattr(self, "entitlement_clazz") and self.entitlement_clazz:
-            result["entitlementClazz"] = str(self.entitlement_clazz)
-        elif include_empty:
-            result["entitlementClazz"] = Union[str, EntitlementClazzEnum]()
-        if hasattr(self, "entitlement_name") and self.entitlement_name:
-            result["entitlementName"] = str(self.entitlement_name)
-        elif include_empty:
-            result["entitlementName"] = ""
-        if hasattr(self, "item_id") and self.item_id:
-            result["itemId"] = [str(i0) for i0 in self.item_id]
-        elif include_empty:
-            result["itemId"] = []
+            result["itemIds"] = []
         if hasattr(self, "limit") and self.limit:
             result["limit"] = int(self.limit)
         elif include_empty:
@@ -302,14 +211,6 @@ class QueryEntitlements1(Operation):
             result["offset"] = int(self.offset)
         elif include_empty:
             result["offset"] = 0
-        if hasattr(self, "origin") and self.origin:
-            result["origin"] = str(self.origin)
-        elif include_empty:
-            result["origin"] = Union[str, OriginEnum]()
-        if hasattr(self, "user_id") and self.user_id:
-            result["userId"] = str(self.user_id)
-        elif include_empty:
-            result["userId"] = ""
         return result
 
     # endregion to methods
@@ -319,7 +220,7 @@ class QueryEntitlements1(Operation):
     class Response(ApiResponse):
         data_200: Optional[EntitlementPagingSlicedResult] = None
 
-        def ok(self) -> QueryEntitlements1.Response:
+        def ok(self) -> QueryEntitlementsByItemIds.Response:
             return self
 
         def __iter__(self):
@@ -342,7 +243,7 @@ class QueryEntitlements1(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        result = QueryEntitlements1.Response()
+        result = QueryEntitlementsByItemIds.Response()
 
         pre_processed_response, error = self.pre_process_response(
             code=code, content_type=content_type, content=content
@@ -411,36 +312,21 @@ class QueryEntitlements1(Operation):
         cls,
         namespace: str,
         active_only: Optional[bool] = None,
-        app_type: Optional[Union[str, AppTypeEnum]] = None,
-        entitlement_clazz: Optional[Union[str, EntitlementClazzEnum]] = None,
-        entitlement_name: Optional[str] = None,
-        item_id: Optional[List[str]] = None,
+        item_ids: Optional[List[str]] = None,
         limit: Optional[int] = None,
         offset: Optional[int] = None,
-        origin: Optional[Union[str, OriginEnum]] = None,
-        user_id: Optional[str] = None,
         **kwargs,
-    ) -> QueryEntitlements1:
+    ) -> QueryEntitlementsByItemIds:
         instance = cls()
         instance.namespace = namespace
         if active_only is not None:
             instance.active_only = active_only
-        if app_type is not None:
-            instance.app_type = app_type
-        if entitlement_clazz is not None:
-            instance.entitlement_clazz = entitlement_clazz
-        if entitlement_name is not None:
-            instance.entitlement_name = entitlement_name
-        if item_id is not None:
-            instance.item_id = item_id
+        if item_ids is not None:
+            instance.item_ids = item_ids
         if limit is not None:
             instance.limit = limit
         if offset is not None:
             instance.offset = offset
-        if origin is not None:
-            instance.origin = origin
-        if user_id is not None:
-            instance.user_id = user_id
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -448,7 +334,7 @@ class QueryEntitlements1(Operation):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> QueryEntitlements1:
+    ) -> QueryEntitlementsByItemIds:
         instance = cls()
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
@@ -458,22 +344,10 @@ class QueryEntitlements1(Operation):
             instance.active_only = bool(dict_["activeOnly"])
         elif include_empty:
             instance.active_only = False
-        if "appType" in dict_ and dict_["appType"] is not None:
-            instance.app_type = str(dict_["appType"])
+        if "itemIds" in dict_ and dict_["itemIds"] is not None:
+            instance.item_ids = [str(i0) for i0 in dict_["itemIds"]]
         elif include_empty:
-            instance.app_type = Union[str, AppTypeEnum]()
-        if "entitlementClazz" in dict_ and dict_["entitlementClazz"] is not None:
-            instance.entitlement_clazz = str(dict_["entitlementClazz"])
-        elif include_empty:
-            instance.entitlement_clazz = Union[str, EntitlementClazzEnum]()
-        if "entitlementName" in dict_ and dict_["entitlementName"] is not None:
-            instance.entitlement_name = str(dict_["entitlementName"])
-        elif include_empty:
-            instance.entitlement_name = ""
-        if "itemId" in dict_ and dict_["itemId"] is not None:
-            instance.item_id = [str(i0) for i0 in dict_["itemId"]]
-        elif include_empty:
-            instance.item_id = []
+            instance.item_ids = []
         if "limit" in dict_ and dict_["limit"] is not None:
             instance.limit = int(dict_["limit"])
         elif include_empty:
@@ -482,14 +356,6 @@ class QueryEntitlements1(Operation):
             instance.offset = int(dict_["offset"])
         elif include_empty:
             instance.offset = 0
-        if "origin" in dict_ and dict_["origin"] is not None:
-            instance.origin = str(dict_["origin"])
-        elif include_empty:
-            instance.origin = Union[str, OriginEnum]()
-        if "userId" in dict_ and dict_["userId"] is not None:
-            instance.user_id = str(dict_["userId"])
-        elif include_empty:
-            instance.user_id = ""
         return instance
 
     @staticmethod
@@ -497,14 +363,9 @@ class QueryEntitlements1(Operation):
         return {
             "namespace": "namespace",
             "activeOnly": "active_only",
-            "appType": "app_type",
-            "entitlementClazz": "entitlement_clazz",
-            "entitlementName": "entitlement_name",
-            "itemId": "item_id",
+            "itemIds": "item_ids",
             "limit": "limit",
             "offset": "offset",
-            "origin": "origin",
-            "userId": "user_id",
         }
 
     @staticmethod
@@ -512,48 +373,15 @@ class QueryEntitlements1(Operation):
         return {
             "namespace": True,
             "activeOnly": False,
-            "appType": False,
-            "entitlementClazz": False,
-            "entitlementName": False,
-            "itemId": False,
+            "itemIds": False,
             "limit": False,
             "offset": False,
-            "origin": False,
-            "userId": False,
         }
 
     @staticmethod
     def get_collection_format_map() -> Dict[str, Union[None, str]]:
         return {
-            "itemId": "multi",  # in query
-        }
-
-    @staticmethod
-    def get_enum_map() -> Dict[str, List[Any]]:
-        return {
-            "appType": ["DEMO", "DLC", "GAME", "SOFTWARE"],  # in query
-            "entitlementClazz": [
-                "APP",
-                "CODE",
-                "ENTITLEMENT",
-                "LOOTBOX",
-                "MEDIA",
-                "OPTIONBOX",
-                "SUBSCRIPTION",
-            ],  # in query
-            "origin": [
-                "Epic",
-                "GooglePlay",
-                "IOS",
-                "Nintendo",
-                "Oculus",
-                "Other",
-                "Playstation",
-                "Steam",
-                "System",
-                "Twitch",
-                "Xbox",
-            ],  # in query
+            "itemIds": "multi",  # in query
         }
 
     # endregion static methods

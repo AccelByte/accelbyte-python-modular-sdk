@@ -55,6 +55,8 @@ class EvaluateMyProgress(Operation):
 
         namespace: (namespace) REQUIRED str in path
 
+        challenge_code: (challengeCode) OPTIONAL List[str] in query
+
     Responses:
         204: No Content - (No Content)
 
@@ -81,6 +83,7 @@ class EvaluateMyProgress(Operation):
     service_name: Optional[str] = "challenge"
 
     namespace: str  # REQUIRED in [path]
+    challenge_code: List[str]  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -129,12 +132,19 @@ class EvaluateMyProgress(Operation):
     def get_all_params(self) -> dict:
         return {
             "path": self.get_path_params(),
+            "query": self.get_query_params(),
         }
 
     def get_path_params(self) -> dict:
         result = {}
         if hasattr(self, "namespace"):
             result["namespace"] = self.namespace
+        return result
+
+    def get_query_params(self) -> dict:
+        result = {}
+        if hasattr(self, "challenge_code"):
+            result["challengeCode"] = self.challenge_code
         return result
 
     # endregion get_x_params methods
@@ -149,6 +159,10 @@ class EvaluateMyProgress(Operation):
         self.namespace = value
         return self
 
+    def with_challenge_code(self, value: List[str]) -> EvaluateMyProgress:
+        self.challenge_code = value
+        return self
+
     # endregion with_x methods
 
     # region to methods
@@ -159,6 +173,10 @@ class EvaluateMyProgress(Operation):
             result["namespace"] = str(self.namespace)
         elif include_empty:
             result["namespace"] = ""
+        if hasattr(self, "challenge_code") and self.challenge_code:
+            result["challengeCode"] = [str(i0) for i0 in self.challenge_code]
+        elif include_empty:
+            result["challengeCode"] = []
         return result
 
     # endregion to methods
@@ -308,9 +326,13 @@ class EvaluateMyProgress(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, namespace: str, **kwargs) -> EvaluateMyProgress:
+    def create(
+        cls, namespace: str, challenge_code: Optional[List[str]] = None, **kwargs
+    ) -> EvaluateMyProgress:
         instance = cls()
         instance.namespace = namespace
+        if challenge_code is not None:
+            instance.challenge_code = challenge_code
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -324,18 +346,30 @@ class EvaluateMyProgress(Operation):
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
             instance.namespace = ""
+        if "challengeCode" in dict_ and dict_["challengeCode"] is not None:
+            instance.challenge_code = [str(i0) for i0 in dict_["challengeCode"]]
+        elif include_empty:
+            instance.challenge_code = []
         return instance
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
             "namespace": "namespace",
+            "challengeCode": "challenge_code",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
             "namespace": True,
+            "challengeCode": False,
+        }
+
+    @staticmethod
+    def get_collection_format_map() -> Dict[str, Union[None, str]]:
+        return {
+            "challengeCode": "csv",  # in query
         }
 
     # endregion static methods

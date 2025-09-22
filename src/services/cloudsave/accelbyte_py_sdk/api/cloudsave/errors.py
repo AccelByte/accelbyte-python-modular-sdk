@@ -195,6 +195,8 @@ ERROR_18356 = ApiError(
     code="18356",
     message="invalid request body: size of the request body must be less than [%d]MB",
 )
+ERROR_18361 = ApiError(code="18361", message="record not found")
+ERROR_18362 = ApiError(code="18362", message="unable to update record")
 ERROR_18401 = ApiError(code="18401", message="invalid request body")
 ERROR_18402 = ApiError(code="18402", message="plugins already configured")
 ERROR_18404 = ApiError(code="18404", message="plugins not found")
