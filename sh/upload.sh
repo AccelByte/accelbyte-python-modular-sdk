@@ -40,11 +40,11 @@ PKG_NAME=$(sed -n -r 's/name = "(.+)"/\1/p' "$PKG_TOML")
 
 REPO_HOST=$([ "$REPO" == "testpypi" ] && echo "test.pypi.org" || echo "pypi.org")
 
-REPO_URL=$"https://$REPO_HOST/project/$PKG_NAME/$VERSION/"
+REPO_URL=$"https://$REPO_HOST/pypi/$PKG_NAME/$VERSION/json"
 
 # - start -
 
-EXISTS=$(curl -L -s -o /dev/null -w "%{http_code}\n" "$REPO_URL")
+EXISTS=$(curl -s -o /dev/null -w "%{http_code}" "$REPO_URL")
 if [[ "$EXISTS" -eq 200 ]]; then
   echo "[upload] skipping $PKG_PATH ($VERSION) - it already exists"; exit 2
 fi
