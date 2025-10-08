@@ -26,7 +26,9 @@ fi
 
 # - start -
 
-CHANGES=$(git diff --name-only | { grep -c "$PKG_PATH" || test $? = 1; } | { grep -v grep || test $? = 1; })
+TARGET_PATH=$"$PKG_PATH/accelbyte_py_sdk"
+
+CHANGES=$(git diff --name-only | { grep -c "$TARGET_PATH" || test $? = 1; } | { grep -v grep || test $? = 1; })
 if [ "$CHANGES" -gt 0 ]; then
   # bump minor version only
   NEW_VERSION=$(echo "$VERSION" | awk -v part=2 -F . '{OFS="."; $part+=1; print $1 "." $2 ".0"}')
