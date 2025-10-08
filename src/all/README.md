@@ -1,10 +1,16 @@
-> This project is still under development.
-
 # AccelByte Modular Python SDK
 
-A software development kit (SDK) for interacting with AccelByte services written in Python.
+> :warning: **This [accelbyte-python-modular-sdk](https://github.com/AccelByte/accelbyte-python-modular-sdk) 
+> is not to be confused with [accelbyte-python-sdk](https://github.com/AccelByte/accelbyte-python-sdk):** 
+> * The former (modular SDK) is **experimental** and is planned to be the sucessor for the latter (monolithic SDK).
+> * The modular SDK allows developers to include only the required modules in projects.
+> * If you are starting a new project, you may try to use modular SDK.
+> * If you use monolithic SDK in an existing project, a migration path is available via compatibility layer in modular SDK.
+> * Both monolithic and modular SDK will be maintained for some time to give time for migration until monolithic SDK is deprecated in the future.
 
-This SDK was generated from OpenAPI specification documents included in the [spec](spec) directory.
+A software development kit (SDK) for interacting with AccelByte Gaming Services (AGS) written in Python.
+
+This SDK was generated from AGS OpenAPI spec files included in the [spec](spec) directory.
 
 ## Setup
 
@@ -52,7 +58,7 @@ or install everything
 
 ```sh
 pip install accelbyte-py-sdk-all
-```
+   ```
 
 ### Environment Variables
 
@@ -60,7 +66,7 @@ The following environment variables need to be set when using `EnvironmentConfig
 
 | Name             | Required                                                                               | Example                          |
 |------------------|----------------------------------------------------------------------------------------|----------------------------------|
-| AB_BASE_URL      | Yes                                                                                    | https://demo/accelbyte.io        |
+| AB_BASE_URL      | Yes                                                                                    | https://test.accelbyte.io        |
 | AB_CLIENT_ID     | Yes                                                                                    | abcdef0123456789abcdef0123456789 |
 | AB_CLIENT_SECRET | Yes, only if you use a private `AB_CLIENT_ID`                                          | ab#c,d)ef(ab#c,d)ef(ab#c,d)ef(ab |
 | AB_NAMESPACE     | Yes, the SDK will automatically fill up the `{namespace}` path parameter (overridable) | accelbyte                        |
@@ -126,7 +132,7 @@ if __name__ == "__main__":
 from os import environ
 
 import accelbyte_py_sdk
-from accelbyte_py_sdk.services.auth import login_user, logout
+from accelbyte_py_sdk.services.auth.v2 import login_user, logout
 
 
 if __name__ == "__main__":
@@ -158,7 +164,7 @@ login_user(username, password, scope="scopeA")
 ```python
 from os import environ
 import accelbyte_py_sdk
-from accelbyte_py_sdk.services.auth import login_client
+from accelbyte_py_sdk.services.auth.v2 import login_client
 
 
 if __name__ == "__main__":
@@ -178,17 +184,73 @@ if __name__ == "__main__":
 
 #### Refreshing Tokens
 
+##### Background Token Refresh
+
+To use background token refresh, use the `accelbyte_py_sdk.services.auth.v2.enable_background_refresh(...)`.
+
+```python
+from accelbyte_py_sdk import AccelByteSDK
+from accelbyte_py_sdk.services.auth.v2 import BackgroundOptions, enable_background_refresh 
+
+
+sdk = AccelByteSDK()
+
+enable_background_refresh(
+   sdk=sdk,
+   options=BackgroundOptions(enabled=True, max_retry=2, refresh_rate=0.8, interval=10),
+)
+```
+
+##### On-demand Token Refresh
+
+To use on-demand token refresh, use the `accelbyte_py_sdk.services.auth.v2.enable_on_demand_refresh(...)`.
+
+```python
+from accelbyte_py_sdk import AccelByteSDK
+from accelbyte_py_sdk.services.auth.v2 import OnDemandOptions, enable_on_demand_refresh 
+
+
+sdk = AccelByteSDK()
+
+enable_on_demand_refresh(
+   sdk=sdk,
+   options=OnDemandOptions(enabled=True, max_retry=2, refresh_rate=0.8),
+)
+```
+
+This configuration involves checking for the presence of an existing token, verifying its expiration status.
+If the token has expired, the SDK will then examine whether a refresh token exists.
+If a refresh token is available, it will be utilized to obtain a new token.
+
+##### Manual Token Refresh
+
+To manually refresh the token:
+
+```python
+from accelbyte_py_sdk.core import get_token_repository
+from accelbyte_py_sdk.services.auth.v2 import refresh_login
+
+token_repo = get_token_repository()
+refresh_token = token_repo.get_refresh_token()
+
+token, error = refresh_login(refresh_token)
+assert error is None
+```
+
+<details>
+<summary>v1 (deprecated)</summary>
+
 :bulb: Using `login_x(..., auto_refresh=True)` automatically refreshes the token once the expiration draws near.
 
 ```python
 # set the refresh rate for 'login_client'
-# 0.5 means refresh when we 50% of the expiration duration has passed
-res, err = login_client(client_id, client_secret, auto_refresh=True, refresh_rate=0.5)
+# 0.8 means refresh when we 80% of the expiration duration has passed
+res, err = login_client(client_id, client_secret, auto_refresh=True, refresh_rate=0.8)
 ```
 ```python
 # set the refresh rate for 'login_user'
-# 0.5 means refresh when we 50% of the expiration duration has passed
-res, err = login_user(username, password, auto_refresh=True, refresh_rate=0.5)
+# 0.8 means refresh when we 80% of the expiration duration has passed
+res, err = login_user(username, password, auto_refresh=True, refresh_rate=0.8)
 ```
 
 The auto refresh is only triggered when another request is fired. If you want to the refresh run automatically in the background. Use any of the `LoginXTimer` classes.
@@ -211,19 +273,6 @@ timer = LoginUserTimer(
 )
 ```
 
-To manually refresh the token:
-
-```python
-from accelbyte_py_sdk.core import get_token_repository
-from accelbyte_py_sdk.services.auth import refresh_login
-
-token_repo = get_token_repository()
-refresh_token = token_repo.get_refresh_token()
-
-token, error = refresh_login(refresh_token)
-assert error is None
-```
-
 To use on-demand token refresh, enable the `refresh_if_possible` option by setting it to True.
 This configuration involves checking for the presence of an existing token, verifying its expiration status.
 If the token has expired, the SDK will then examine whether a refresh token exists.
@@ -233,12 +282,14 @@ If a refresh token is available, it will be utilized to obtain a new token.
 res, error = login_user(username, password, refresh_if_possible=True)
 ```
 
+</details>
+
 ## Using multiple SDK instances
 
 The examples above demonstrates using just one instance of the Modular Python SDK (the default which is also global), but you could also instantiate multiple instances of the SDK and use them at the same time.
 
 ```python
-import accelbyte_py_sdk.services.auth as auth_service
+import accelbyte_py_sdk.services.auth.v2 as auth_service
 import accelbyte_py_sdk.api.iam as iam_service
 import accelbyte_py_sdk.api.iam.models as iam_models
 
@@ -312,6 +363,50 @@ client_sdk1.deintialize()
 client_sdk1.deintialize()
 ```
 
+### CLI
+
+You can also use the Python Extend SDK to get tokens.
+
+```shell
+python -m accelbyte_py_sdk login -h
+```
+
+```text
+usage: python -m accelbyte_py_sdk login [-h] [-b BASE_URL] [-n NAMESPACE] [-c CLIENT_ID] [-s CLIENT_SECRET] [-u USERNAME] [-p PASSWORD] {client,user}
+
+positional arguments:
+  {client,user}
+
+options:
+  -h, --help            show this help message and exit
+  -b BASE_URL, --base-url BASE_URL
+  -n NAMESPACE, --namespace NAMESPACE
+  -c CLIENT_ID, --client-id CLIENT_ID
+  -s CLIENT_SECRET, --client-secret CLIENT_SECRET
+  -u USERNAME, --username USERNAME
+  -p PASSWORD, --password PASSWORD
+```
+
+---
+
+```shell
+python -m accelbyte_py_sdk login client -b 'https://<environment>.accelbyte.io' -c **** -s ****  | jq -r .access_token
+```
+
+```text
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWNjZWwgSm9lIn0.VOnZ863KSLHhgJfupKzuKZq4ACcefUlcQwi1YvxdBlw
+```
+
+---
+
+```shell
+AB_BASE_URL='https://<environment>.accelbyte.io' AB_CLIENT_ID=**** AB_CLIENT_SECRET=**** python -m accelbyte_py_sdk login user -u **** -p ****  | jq -r .access_token
+```
+
+```text
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWNjZWwgSm9lIn0.VOnZ863KSLHhgJfupKzuKZq4ACcefUlcQwi1YvxdBlw
+```
+
 ## Interacting with a Service Endpoint
 
 ### Example A
@@ -322,7 +417,7 @@ In this example we will create a new user using the `POST` endpoint `/iam/v3/pub
 import json
 
 import accelbyte_py_sdk
-from accelbyte_py_sdk.services.auth import login_client
+from accelbyte_py_sdk.services.auth.v2 import login_client
 
 # Import the wrapper 'public_create_user_v3'
 # to know which wrapper to use open the docs/<service-name>-index.md and
@@ -444,7 +539,7 @@ import asyncio
 import json
 
 import accelbyte_py_sdk
-from accelbyte_py_sdk.services.auth import login_client
+from accelbyte_py_sdk.services.auth.v2 import login_client
 
 # Import the wrapper 'public_create_user_v3_async'
 # to know which wrapper to use open the docs/<service-name>-index.md and
@@ -504,6 +599,89 @@ async def main():
 if __name__ == "__main__":
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main())
+
+```
+
+### Working with ApiResponse
+
+:bulb: As of the release of `ags/v3.80.0` all operations and their wrapper functions now return an instance of subclass [ApiResponse](src/core/accelbyte_py_sdk/core/_api_response.py) specific to the operation.
+
+```python
+from accelbyte_py_sdk.api.iam import public_create_user_v3
+
+
+def main():
+    # The wrapper 'public_create_user_v3' wraps around
+    # the `PublicCreateUserV3` operation which returns
+    # an instance of `PublicCreateUserV3.Response` which is a
+    # subclass of `ApiResponse`.
+    # 
+    # The class `PublicCreateUserV3.Response` also implements the
+    # '__iter__' dunder method that allows it to be unpacked into
+    # `result, error` maintaining the previous syntax.
+    # 
+    # class PublicCreateUserV3(Operation):
+    #     class Response(ApiResponse):
+    #         def __iter__(self):
+    #             yield data
+    #             yield error
+    response = public_create_user_v3(...)
+    result, error = response
+    if error:
+       exit(1)
+ 
+
+if __name__ == "__main__":
+    main()
+
+```
+
+:bulb: You can also use the `ok()` method in the `ApiResponse` object to raise an `Exception` if the response is not successful.
+
+```python
+from accelbyte_py_sdk.api.iam import public_create_user_v3
+
+
+def main():
+    response = public_create_user_v3(...).ok()
+    # or
+    # result, error = public_create_user_v3(...).ok()
+
+if __name__ == "__main__":
+    main()
+
+```
+
+:bulb: You can also compare the error from the `ApiResponse` object against known errors in the service.
+
+```python
+from accelbyte_py_sdk.api.iam import public_create_user_v3
+from accelbyte_py_sdk.api.iam.errors import ERROR_10153, ERROR_10154  # known errors for the IAM service
+
+
+def main():
+    response = public_create_user_v3(...)
+    if response.error:
+        # get error code
+        error_code = response.error.code
+        
+        # get error message
+        error_message = response.error.message
+       
+        # handle errors depending on the code
+        # - ERROR_10153 = ApiError(code="10153", message="user exist")
+        # - ERROR_10154 = ApiError(code="10154", message="country not found")
+        if response.error.code == ERROR_10153.code:
+            do_something()
+        elif response.error.code == ERROR_10154.code:
+            do_something_else()
+            
+         # raise an exception
+        raise response.error.to_exception()
+
+
+if __name__ == "__main__":
+    main()
 
 ```
 
@@ -954,7 +1132,7 @@ same with the models there are also a number of utility functions generated with
 # Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
-#
+# 
 # Code generated. DO NOT EDIT!
 
 # template file: operation.j2
@@ -1038,8 +1216,8 @@ class PublicGetUserProfileInfo(Operation):
     _securities: List[List[str]] = [["BEARER_AUTH"], ["BEARER_AUTH"]]
     _location_query: str = None
 
-    namespace: str  # REQUIRED in [path]
-    user_id: str  # REQUIRED in [path]
+    namespace: str                                                                                 # REQUIRED in [path]
+    user_id: str                                                                                   # REQUIRED in [path]
 
     # endregion fields
 
