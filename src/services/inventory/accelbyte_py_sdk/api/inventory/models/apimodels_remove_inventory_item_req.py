@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Inventory Service
+# AccelByte Gaming Services Inventory Service Early Access
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long

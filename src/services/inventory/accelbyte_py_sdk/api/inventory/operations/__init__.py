@@ -6,8 +6,7 @@
 
 # template file: operations-init.j2
 
-"""Auto-generated package that contains models used by the AccelByte Gaming Services Inventory Service."""
+"""Auto-generated package that contains models used by the AccelByte Gaming Services Inventory Service Early Access."""
 
-__version__ = "0.2.17"
 __author__ = "AccelByte"
 __email__ = "dev@accelbyte.net"

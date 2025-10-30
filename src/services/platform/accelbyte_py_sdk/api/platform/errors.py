@@ -609,6 +609,14 @@ ERROR_39151 = ApiError(
     code="39151",
     message="IAP order no [{iapOrderNo}] not found in namespace [{namespace}].",
 )
+ERROR_39152 = ApiError(
+    code="39152",
+    message="Platform [{platform}] - Third-party subscription group [{sku}] not found in namespace [{namespace}]. It may have been deleted.",
+)
+ERROR_39154 = ApiError(
+    code="39154",
+    message="Meta Quest Subscription Sku [{sku}] not found in namespace [{namespace}] config, please config this Subscription sku in subscription group.",
+)
 ERROR_39171 = ApiError(
     code="39171",
     message="The bundle id in namespace [{namespace}] expect [{expected}] but was [{actual}]",
@@ -640,6 +648,14 @@ ERROR_39184 = ApiError(
 ERROR_39185 = ApiError(
     code="39185",
     message="This endpoint only works on sync mode [{workSyncMode}], but current steam iap config sync mode is [{currentSyncMode}] under namespace [{namespace}]",
+)
+ERROR_39187 = ApiError(
+    code="39187",
+    message="Duplicated group sku [{sku}] platform [{platform}] in namespace [{namespace}]",
+)
+ERROR_39188 = ApiError(
+    code="39188",
+    message="Third-party subscription group [{sku}] on platform [{platform}] in namespace [{namespace}] is already linked to the user's third-party subscription.",
 )
 ERROR_39221 = ApiError(
     code="39221",

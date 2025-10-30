@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Session History Service Index (1.14.3)
+# AccelByte Gaming Services Session History Service Index (1.14.4)
 
 
 ## Operations

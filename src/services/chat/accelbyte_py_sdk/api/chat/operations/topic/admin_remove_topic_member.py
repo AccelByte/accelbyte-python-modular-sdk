@@ -32,6 +32,7 @@ from accelbyte_py_sdk.core import HttpResponse
 from accelbyte_py_sdk.core import deprecated
 
 from ...models import MessageActionAddUserToTopicResult
+from ...models import RestapiErrorResponseBody
 
 
 class AdminRemoveTopicMember(Operation):
@@ -60,6 +61,14 @@ class AdminRemoveTopicMember(Operation):
 
     Responses:
         200: OK - MessageActionAddUserToTopicResult
+
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
+
+        404: Not Found - RestapiErrorResponseBody (Not Found)
+
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
 
     # region fields
@@ -184,14 +193,50 @@ class AdminRemoveTopicMember(Operation):
 
     class Response(ApiResponse):
         data_200: Optional[MessageActionAddUserToTopicResult] = None
+        error_401: Optional[RestapiErrorResponseBody] = None
+        error_403: Optional[RestapiErrorResponseBody] = None
+        error_404: Optional[RestapiErrorResponseBody] = None
+        error_500: Optional[RestapiErrorResponseBody] = None
 
         def ok(self) -> AdminRemoveTopicMember.Response:
+            if self.error_401 is not None:
+                err = self.error_401.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_403 is not None:
+                err = self.error_403.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_404 is not None:
+                err = self.error_404.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_500 is not None:
+                err = self.error_500.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
             return self
 
         def __iter__(self):
             if self.data_200 is not None:
                 yield self.data_200
                 yield None
+            elif self.error_401 is not None:
+                yield None
+                yield self.error_401
+            elif self.error_403 is not None:
+                yield None
+                yield self.error_403
+            elif self.error_404 is not None:
+                yield None
+                yield self.error_404
+            elif self.error_500 is not None:
+                yield None
+                yield self.error_500
             else:
                 yield None
                 yield self.error
@@ -201,6 +246,14 @@ class AdminRemoveTopicMember(Operation):
         """Parse the given response.
 
         200: OK - MessageActionAddUserToTopicResult
+
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
+
+        404: Not Found - RestapiErrorResponseBody (Not Found)
+
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -224,6 +277,18 @@ class AdminRemoveTopicMember(Operation):
                 result.data_200 = MessageActionAddUserToTopicResult.create_from_dict(
                     content
                 )
+            elif code == 401:
+                result.error_401 = RestapiErrorResponseBody.create_from_dict(content)
+                result.error = result.error_401.translate_to_api_error()
+            elif code == 403:
+                result.error_403 = RestapiErrorResponseBody.create_from_dict(content)
+                result.error = result.error_403.translate_to_api_error()
+            elif code == 404:
+                result.error_404 = RestapiErrorResponseBody.create_from_dict(content)
+                result.error = result.error_404.translate_to_api_error()
+            elif code == 500:
+                result.error_500 = RestapiErrorResponseBody.create_from_dict(content)
+                result.error = result.error_500.translate_to_api_error()
             else:
                 result.error = ApiError.create_from_http_response(
                     HttpResponse.create_undocumented_response(
@@ -244,11 +309,20 @@ class AdminRemoveTopicMember(Operation):
     def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
-        Union[None, MessageActionAddUserToTopicResult], Union[None, HttpResponse]
+        Union[None, MessageActionAddUserToTopicResult],
+        Union[None, HttpResponse, RestapiErrorResponseBody],
     ]:
         """Parse the given response.
 
         200: OK - MessageActionAddUserToTopicResult
+
+        401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
+
+        403: Forbidden - RestapiErrorResponseBody (Forbidden)
+
+        404: Not Found - RestapiErrorResponseBody (Not Found)
+
+        500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -265,6 +339,14 @@ class AdminRemoveTopicMember(Operation):
 
         if code == 200:
             return MessageActionAddUserToTopicResult.create_from_dict(content), None
+        if code == 401:
+            return None, RestapiErrorResponseBody.create_from_dict(content)
+        if code == 403:
+            return None, RestapiErrorResponseBody.create_from_dict(content)
+        if code == 404:
+            return None, RestapiErrorResponseBody.create_from_dict(content)
+        if code == 500:
+            return None, RestapiErrorResponseBody.create_from_dict(content)
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content

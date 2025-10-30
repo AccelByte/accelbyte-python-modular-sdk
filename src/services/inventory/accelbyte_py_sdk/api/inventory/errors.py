@@ -20,6 +20,6 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Inventory Service
+# AccelByte Gaming Services Inventory Service Early Access
 
 from accelbyte_py_sdk.core import ApiError

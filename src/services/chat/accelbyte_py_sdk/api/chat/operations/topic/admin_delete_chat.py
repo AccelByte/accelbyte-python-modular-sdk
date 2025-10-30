@@ -67,6 +67,8 @@ class AdminDeleteChat(Operation):
 
         403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
+        404: Not Found - RestapiErrorResponseBody (Not Found)
+
         500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
     """
 
@@ -195,6 +197,7 @@ class AdminDeleteChat(Operation):
         error_400: Optional[RestapiErrorResponseBody] = None
         error_401: Optional[RestapiErrorResponseBody] = None
         error_403: Optional[RestapiErrorResponseBody] = None
+        error_404: Optional[RestapiErrorResponseBody] = None
         error_500: Optional[RestapiErrorResponseBody] = None
 
         def ok(self) -> AdminDeleteChat.Response:
@@ -210,6 +213,11 @@ class AdminDeleteChat(Operation):
                     raise exc  # pylint: disable=raising-bad-type
             if self.error_403 is not None:
                 err = self.error_403.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_404 is not None:
+                err = self.error_404.translate_to_api_error()
                 exc = err.to_exception()
                 if exc is not None:
                     raise exc  # pylint: disable=raising-bad-type
@@ -233,6 +241,9 @@ class AdminDeleteChat(Operation):
             elif self.error_403 is not None:
                 yield None
                 yield self.error_403
+            elif self.error_404 is not None:
+                yield None
+                yield self.error_404
             elif self.error_500 is not None:
                 yield None
                 yield self.error_500
@@ -251,6 +262,8 @@ class AdminDeleteChat(Operation):
         401: Unauthorized - RestapiErrorResponseBody (Unauthorized)
 
         403: Forbidden - RestapiErrorResponseBody (Forbidden)
+
+        404: Not Found - RestapiErrorResponseBody (Not Found)
 
         500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
 
@@ -283,6 +296,9 @@ class AdminDeleteChat(Operation):
             elif code == 403:
                 result.error_403 = RestapiErrorResponseBody.create_from_dict(content)
                 result.error = result.error_403.translate_to_api_error()
+            elif code == 404:
+                result.error_404 = RestapiErrorResponseBody.create_from_dict(content)
+                result.error = result.error_404.translate_to_api_error()
             elif code == 500:
                 result.error_500 = RestapiErrorResponseBody.create_from_dict(content)
                 result.error = result.error_500.translate_to_api_error()
@@ -316,6 +332,8 @@ class AdminDeleteChat(Operation):
 
         403: Forbidden - RestapiErrorResponseBody (Forbidden)
 
+        404: Not Found - RestapiErrorResponseBody (Not Found)
+
         500: Internal Server Error - RestapiErrorResponseBody (Internal Server Error)
 
         ---: HttpResponse (Undocumented Response)
@@ -338,6 +356,8 @@ class AdminDeleteChat(Operation):
         if code == 401:
             return None, RestapiErrorResponseBody.create_from_dict(content)
         if code == 403:
+            return None, RestapiErrorResponseBody.create_from_dict(content)
+        if code == 404:
             return None, RestapiErrorResponseBody.create_from_dict(content)
         if code == 500:
             return None, RestapiErrorResponseBody.create_from_dict(content)

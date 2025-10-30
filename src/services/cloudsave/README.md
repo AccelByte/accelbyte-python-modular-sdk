@@ -6,7 +6,7 @@ This is a service module for the [AccelByte Modular Python SDK](https://github.c
 
 ```text
 AccelByte Gaming Services Cloudsave Service
-* Version: 3.28.0
+* Version: 3.29.0
 ```
 
 ## Setup

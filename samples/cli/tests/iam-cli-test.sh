@@ -32,313 +32,313 @@ $PYTHON -m $MODULE 'start-interactive-session' --continue_on_error '--writer=tap
 iam-admin-get-bans-type-v3 --login_with_auth "Bearer foo"
 iam-admin-get-list-ban-reason-v3 --login_with_auth "Bearer foo"
 iam-admin-list-client-available-permissions --login_with_auth "Bearer foo"
-iam-admin-update-available-permissions-by-module '{"modules": [{"docLink": "LvoAjWYm", "groups": [{"group": "xVPSW4cU", "groupId": "Q0deYsPw", "permissions": [{"allowedActions": [81, 91, 62], "resource": "QMXpULcP"}, {"allowedActions": [44, 35, 11], "resource": "amlfAR28"}, {"allowedActions": [51, 58, 91], "resource": "XFYw7s4n"}]}, {"group": "Fq2sLxCf", "groupId": "HMi7VZJz", "permissions": [{"allowedActions": [21, 6, 89], "resource": "a6EVDxBK"}, {"allowedActions": [15, 36, 19], "resource": "USDREJX3"}, {"allowedActions": [77, 6, 26], "resource": "y4cVbCR1"}]}, {"group": "1hY4YI9y", "groupId": "trJztvui", "permissions": [{"allowedActions": [95, 15, 27], "resource": "kVY6L2wg"}, {"allowedActions": [71, 88, 67], "resource": "XazJBz5e"}, {"allowedActions": [58, 20, 7], "resource": "pezdBq7D"}]}], "module": "iIwdRPdH", "moduleId": "Oz3oWQdm"}, {"docLink": "SAXamX7q", "groups": [{"group": "PjyYDT7c", "groupId": "2a0ZbD10", "permissions": [{"allowedActions": [88, 99, 94], "resource": "oznRzOrc"}, {"allowedActions": [98, 81, 38], "resource": "douqJXup"}, {"allowedActions": [27, 51, 96], "resource": "VKc386Jb"}]}, {"group": "CpcXzZBZ", "groupId": "rUElIZAl", "permissions": [{"allowedActions": [22, 45, 69], "resource": "uAqXDhg5"}, {"allowedActions": [6, 6, 40], "resource": "WDWANIRi"}, {"allowedActions": [37, 17, 50], "resource": "lpoIUbgB"}]}, {"group": "AlEt1S9g", "groupId": "govPMSyV", "permissions": [{"allowedActions": [37, 6, 8], "resource": "u9uxCi5H"}, {"allowedActions": [13, 26, 16], "resource": "byJFWrPU"}, {"allowedActions": [51, 15, 21], "resource": "T1CZXQ3q"}]}], "module": "x5K5OXoP", "moduleId": "9ZyOeMeJ"}, {"docLink": "EwnlBUXc", "groups": [{"group": "b2TbYUUD", "groupId": "kUwS1IMI", "permissions": [{"allowedActions": [45, 94, 6], "resource": "JTh6JBbs"}, {"allowedActions": [26, 72, 63], "resource": "Wyju79P9"}, {"allowedActions": [77, 20, 63], "resource": "LnewMf8c"}]}, {"group": "PsM6t2tX", "groupId": "Yl4oPXxT", "permissions": [{"allowedActions": [54, 94, 65], "resource": "lAvkPsIF"}, {"allowedActions": [40, 27, 79], "resource": "chGlLWsd"}, {"allowedActions": [11, 50, 70], "resource": "HdNdkV1Q"}]}, {"group": "xvv1lplN", "groupId": "11jZd2Ef", "permissions": [{"allowedActions": [88, 72, 49], "resource": "sZh5kIR0"}, {"allowedActions": [92, 29, 88], "resource": "uqeGcXrx"}, {"allowedActions": [39, 54, 50], "resource": "m7VP0sFu"}]}], "module": "W0Lz0sJE", "moduleId": "ZsteVH4h"}]}' --login_with_auth "Bearer foo"
-iam-admin-delete-config-permissions-by-group '{"groupId": "W8dK8inc", "moduleId": "FS5IdyGT"}' --login_with_auth "Bearer foo"
+iam-admin-update-available-permissions-by-module '{"modules": [{"docLink": "QfciqUsF", "groups": [{"group": "cXTJlrhZ", "groupId": "akkP5rkb", "permissions": [{"allowedActions": [48, 83, 69], "resource": "LOWnzTdy"}, {"allowedActions": [56, 78, 94], "resource": "zl95k0kg"}, {"allowedActions": [21, 97, 67], "resource": "408PAqdq"}]}, {"group": "E9F6uvhF", "groupId": "sqM6IWUn", "permissions": [{"allowedActions": [16, 17, 46], "resource": "fzoJCaHI"}, {"allowedActions": [40, 94, 47], "resource": "kQXvO1Vt"}, {"allowedActions": [67, 2, 52], "resource": "Z19wQzGF"}]}, {"group": "J5V35phR", "groupId": "tCBnZcja", "permissions": [{"allowedActions": [46, 81, 19], "resource": "5rXCBwp1"}, {"allowedActions": [13, 31, 78], "resource": "mm9UvEQ8"}, {"allowedActions": [73, 55, 18], "resource": "XC7vR53h"}]}], "module": "hISiXbTT", "moduleId": "V6OjzfyQ"}, {"docLink": "TljOCkYF", "groups": [{"group": "mhUfForG", "groupId": "OL5QcsNg", "permissions": [{"allowedActions": [20, 33, 15], "resource": "yRQzQj0h"}, {"allowedActions": [73, 86, 5], "resource": "LD2zEsAj"}, {"allowedActions": [39, 45, 83], "resource": "vkEbHnvA"}]}, {"group": "2Hc6Nhzi", "groupId": "PXZm5SzM", "permissions": [{"allowedActions": [33, 20, 68], "resource": "1fB0JfEc"}, {"allowedActions": [25, 72, 91], "resource": "nIVfJ67v"}, {"allowedActions": [12, 32, 17], "resource": "4bnTnUTD"}]}, {"group": "JMOkiHOt", "groupId": "J9DOGYAI", "permissions": [{"allowedActions": [65, 40, 36], "resource": "xRBcQjyJ"}, {"allowedActions": [73, 80, 84], "resource": "iBXoHD1B"}, {"allowedActions": [57, 8, 40], "resource": "DNmiMh7d"}]}], "module": "0KMsVaAP", "moduleId": "MXndDrbF"}, {"docLink": "cVsG8yTz", "groups": [{"group": "bvmjzQBp", "groupId": "mU2DtqxZ", "permissions": [{"allowedActions": [41, 69, 85], "resource": "HqDPx18I"}, {"allowedActions": [77, 94, 63], "resource": "XTKEOku2"}, {"allowedActions": [5, 19, 68], "resource": "qjTDAYf1"}]}, {"group": "OHFKA3p5", "groupId": "M4UQa0L7", "permissions": [{"allowedActions": [59, 59, 57], "resource": "Yr8QkzKN"}, {"allowedActions": [18, 75, 10], "resource": "y03w6DHS"}, {"allowedActions": [94, 33, 87], "resource": "f4lnf6Ye"}]}, {"group": "9MF2kWg9", "groupId": "R6na1tk5", "permissions": [{"allowedActions": [26, 67, 2], "resource": "6E8CRs8j"}, {"allowedActions": [54, 65, 68], "resource": "nFFDHZ9A"}, {"allowedActions": [50, 18, 75], "resource": "BQrFhtq7"}]}], "module": "GjZnsp4h", "moduleId": "4y0pjRT2"}]}' --login_with_auth "Bearer foo"
+iam-admin-delete-config-permissions-by-group '{"groupId": "vWd3RX5V", "moduleId": "QvkqY6hN"}' --login_with_auth "Bearer foo"
 iam-admin-list-client-templates --login_with_auth "Bearer foo"
 iam-admin-get-input-validations --login_with_auth "Bearer foo"
-iam-admin-update-input-validations '[{"field": "6cToo4wa", "validation": {"allowAllSpecialCharacters": true, "allowDigit": false, "allowLetter": true, "allowSpace": true, "allowUnicode": false, "avatarConfig": {"allowedPrefixes": ["0SN051W2", "66sDCgyc", "Fk07IhyN"], "preferRegex": false, "regex": "vdlyESx1"}, "blockedWord": ["kegQKJda", "Hi9HJXYT", "uwD3UpUa"], "description": [{"language": "EDniilDW", "message": ["qXTKOlYe", "WCtFboWC", "IAL4A5de"]}, {"language": "P8dxMheN", "message": ["VQ7XdDr1", "fgwVtyEp", "718aiuSr"]}, {"language": "qldYTzDd", "message": ["DuftQo2o", "z5DpxEWT", "oByeMxVq"]}], "isCustomRegex": false, "letterCase": "rKfQxBLr", "maxLength": 33, "maxRepeatingAlphaNum": 34, "maxRepeatingSpecialCharacter": 45, "minCharType": 55, "minLength": 59, "profanityFilter": "ipuwxbFL", "regex": "u0qtJF2h", "specialCharacterLocation": "8mjXdO00", "specialCharacters": ["aGbxqSRc", "EDkv150V", "bSiuyLFJ"]}}, {"field": "bgtaXDIM", "validation": {"allowAllSpecialCharacters": true, "allowDigit": true, "allowLetter": false, "allowSpace": false, "allowUnicode": true, "avatarConfig": {"allowedPrefixes": ["3OTZ337N", "wauA0tV5", "3K5HhbcZ"], "preferRegex": true, "regex": "OyFml98E"}, "blockedWord": ["Qw9iNMYV", "zuvPb4lS", "9Xa3Qd7Q"], "description": [{"language": "iB4cy6mY", "message": ["UkifY1Ou", "VrkNGgDV", "8QaM2VvX"]}, {"language": "QqIB7axN", "message": ["Jq9gOq1h", "V5cvm8Bn", "rBVXgHBh"]}, {"language": "R6Q9yh6l", "message": ["r3CTc41W", "2qFBtmxY", "aAVZJS5f"]}], "isCustomRegex": false, "letterCase": "zUb7DGYR", "maxLength": 77, "maxRepeatingAlphaNum": 9, "maxRepeatingSpecialCharacter": 36, "minCharType": 95, "minLength": 83, "profanityFilter": "JzM9KhkE", "regex": "Jl9QD5kl", "specialCharacterLocation": "Y8WQiGwZ", "specialCharacters": ["n6ZzxRoX", "QWiaPYKB", "KxiLWgf6"]}}, {"field": "dDtV5SRw", "validation": {"allowAllSpecialCharacters": true, "allowDigit": true, "allowLetter": true, "allowSpace": false, "allowUnicode": true, "avatarConfig": {"allowedPrefixes": ["VstR3WSu", "PCXOdCdL", "O1jWmrVn"], "preferRegex": true, "regex": "qSDn4rIX"}, "blockedWord": ["yMzbi1As", "Q2a9IgTx", "9KKjhjFC"], "description": [{"language": "BpwiK5sz", "message": ["McL5u4uW", "43jyNg18", "UOK9QGuA"]}, {"language": "ylWI0Wju", "message": ["PLvz4sIp", "9IRjkE6N", "NYxaolMP"]}, {"language": "guIxQt2p", "message": ["uEYcGUmV", "1jZFN4cr", "gCuH70wV"]}], "isCustomRegex": true, "letterCase": "cyk2BBAH", "maxLength": 90, "maxRepeatingAlphaNum": 74, "maxRepeatingSpecialCharacter": 87, "minCharType": 13, "minLength": 79, "profanityFilter": "8ZChI74N", "regex": "wMsfhNEd", "specialCharacterLocation": "tHIb5Uw0", "specialCharacters": ["6TODwTuj", "aHABGyzx", "6ofpDUDY"]}}]' --login_with_auth "Bearer foo"
-iam-admin-reset-input-validations 'k3lA0jw7' --login_with_auth "Bearer foo"
+iam-admin-update-input-validations '[{"field": "9tLVyO8S", "validation": {"allowAllSpecialCharacters": true, "allowDigit": false, "allowLetter": false, "allowSpace": true, "allowUnicode": true, "avatarConfig": {"allowedPrefixes": ["HKZtuMMh", "xLWBpeIh", "QwCgX6E4"], "preferRegex": true, "regex": "BcI41nRB"}, "blockedWord": ["MXvpxTIn", "BD0we5sT", "X00wk3RR"], "description": [{"language": "6y9LTaet", "message": ["BWqXpsRQ", "JgsCIMfz", "iu01SxVP"]}, {"language": "6VhCDdck", "message": ["aPxq06io", "YPMvpXkf", "m24nLEBD"]}, {"language": "6PRXwZWi", "message": ["0Wh9XGge", "dM0qJ9nl", "igM9iA7W"]}], "isCustomRegex": false, "letterCase": "gHvqumtc", "maxLength": 71, "maxRepeatingAlphaNum": 11, "maxRepeatingSpecialCharacter": 40, "minCharType": 46, "minLength": 39, "profanityFilter": "B0nmH6zI", "regex": "GRsl9yq6", "specialCharacterLocation": "QuxMtBEX", "specialCharacters": ["eqU0hYeM", "RSG8G5Xf", "BYljiSpO"]}}, {"field": "8LZsys4d", "validation": {"allowAllSpecialCharacters": false, "allowDigit": false, "allowLetter": true, "allowSpace": false, "allowUnicode": true, "avatarConfig": {"allowedPrefixes": ["ThxOKWGK", "kUQzKsth", "DA7wxw6y"], "preferRegex": true, "regex": "NfLJemPH"}, "blockedWord": ["gQVpw7W3", "G0gwuYXP", "TriQJNSB"], "description": [{"language": "CLNocpZ8", "message": ["vgFcGzKL", "ReVDQJii", "2JyP2K0S"]}, {"language": "EFZrzO5M", "message": ["uxCXzpz9", "827ZTAEM", "CuoDfPs1"]}, {"language": "BGdRb2nX", "message": ["jvvGpgb0", "rN311ndo", "1icFmnvA"]}], "isCustomRegex": false, "letterCase": "NReLMMqz", "maxLength": 87, "maxRepeatingAlphaNum": 57, "maxRepeatingSpecialCharacter": 44, "minCharType": 82, "minLength": 6, "profanityFilter": "N5YiuCKD", "regex": "gGRKGS4B", "specialCharacterLocation": "c2axWXpC", "specialCharacters": ["Jxa9GEht", "LlDGzVqj", "WLYkP1sX"]}}, {"field": "ggGTzXVZ", "validation": {"allowAllSpecialCharacters": false, "allowDigit": false, "allowLetter": false, "allowSpace": false, "allowUnicode": false, "avatarConfig": {"allowedPrefixes": ["TTPW6wHC", "HpvHlHZF", "xbPzatKB"], "preferRegex": true, "regex": "U1SczR8v"}, "blockedWord": ["pcuWk5qg", "k5GGx5Fi", "YmCyKnUC"], "description": [{"language": "DYJ23VHc", "message": ["yYWzawef", "bAY0aOpC", "amjretNj"]}, {"language": "7SJkmWTG", "message": ["nNZ0bcuO", "xcrZN1IC", "KdxTNaBi"]}, {"language": "Z4kPFhI3", "message": ["GJw9khxX", "FHwq6lO9", "x1OAFWdP"]}], "isCustomRegex": false, "letterCase": "37zBg5dv", "maxLength": 56, "maxRepeatingAlphaNum": 15, "maxRepeatingSpecialCharacter": 6, "minCharType": 40, "minLength": 29, "profanityFilter": "ECAicPeS", "regex": "FPJergXx", "specialCharacterLocation": "aNtRRcXw", "specialCharacters": ["misxmVW2", "NMUtSrtF", "MltXGiGn"]}}]' --login_with_auth "Bearer foo"
+iam-admin-reset-input-validations 'oQzyFrQg' --login_with_auth "Bearer foo"
 iam-list-admins-v3 --login_with_auth "Bearer foo"
 iam-admin-get-age-restriction-status-v3 --login_with_auth "Bearer foo"
-iam-admin-update-age-restriction-config-v3 '{"ageRestriction": 99, "enable": true}' --login_with_auth "Bearer foo"
+iam-admin-update-age-restriction-config-v3 '{"ageRestriction": 34, "enable": true}' --login_with_auth "Bearer foo"
 iam-admin-get-list-country-age-restriction-v3 --login_with_auth "Bearer foo"
-iam-admin-update-country-age-restriction-v3 '{"ageRestriction": 82}' 'grEJkrG5' --login_with_auth "Bearer foo"
+iam-admin-update-country-age-restriction-v3 '{"ageRestriction": 47}' 'f2laj5nP' --login_with_auth "Bearer foo"
 iam-admin-get-banned-users-v3 --login_with_auth "Bearer foo"
-iam-admin-ban-user-bulk-v3 '{"ban": "9o3nsF3U", "comment": "luG1Vugy", "endDate": "k0BmyBmc", "reason": "cmHl3GfU", "skipNotif": true, "userIds": ["TmXC3rYy", "Dp9awV03", "DQNvmYsA"]}' --login_with_auth "Bearer foo"
-iam-admin-unban-user-bulk-v3 '{"bans": [{"banId": "2MV032OA", "userId": "Djqjz0wS"}, {"banId": "AKsk3LQZ", "userId": "uLS0oLge"}, {"banId": "ph00g8zp", "userId": "RBhq23aq"}]}' --login_with_auth "Bearer foo"
+iam-admin-ban-user-bulk-v3 '{"ban": "fhtruFEL", "comment": "PTTTQLCZ", "endDate": "6xdFBsPn", "reason": "ws45rMp6", "skipNotif": true, "userIds": ["HIiUmV5M", "8gWWkIdv", "KYbGlDda"]}' --login_with_auth "Bearer foo"
+iam-admin-unban-user-bulk-v3 '{"bans": [{"banId": "BU1BQdlY", "userId": "XYMuXSKT"}, {"banId": "AzMdz37p", "userId": "RhlSF3Ff"}, {"banId": "1FXGtgzc", "userId": "tNqtKAxr"}]}' --login_with_auth "Bearer foo"
 iam-admin-get-bans-type-with-namespace-v3 --login_with_auth "Bearer foo"
 iam-admin-get-clients-by-namespace-v3 --login_with_auth "Bearer foo"
-iam-admin-bulk-update-clients-v3 '{"clientIds": ["cKbH8jtG", "RrhHA8bb", "uGq1eACN"], "clientUpdateRequest": {"audiences": ["TnID3HQN", "mbqOIeS3", "uc6JvLNn"], "baseUri": "SbLOwX9C", "clientName": "PjtybNfE", "clientPermissions": [{"action": 42, "resource": "cuOSjci5", "schedAction": 93, "schedCron": "aw8GHNF0", "schedRange": ["NkfP7Hel", "zy1QSa4b", "6R0yBIv3"]}, {"action": 99, "resource": "dMYrY3pO", "schedAction": 20, "schedCron": "MVjD95ya", "schedRange": ["k94PD092", "CfASQdDQ", "1NbjWh9T"]}, {"action": 90, "resource": "FA0DenZs", "schedAction": 26, "schedCron": "jL8sdWWF", "schedRange": ["BkoYAkqc", "Abohu4z0", "pXq3Fahm"]}], "clientPlatform": "4lBy5T0a", "deletable": true, "description": "9KSICtuU", "modulePermissions": [{"moduleId": "UwH5DwqJ", "selectedGroups": [{"groupId": "09A1nNnl", "selectedActions": [13, 12, 94]}, {"groupId": "Dc5eGNHN", "selectedActions": [42, 79, 3]}, {"groupId": "OT5ojP4O", "selectedActions": [83, 54, 12]}]}, {"moduleId": "fc9SufSY", "selectedGroups": [{"groupId": "jpht9xkB", "selectedActions": [94, 67, 68]}, {"groupId": "8goBSdAw", "selectedActions": [19, 18, 87]}, {"groupId": "DrGtgbQx", "selectedActions": [67, 15, 51]}]}, {"moduleId": "faRta1Wj", "selectedGroups": [{"groupId": "t3miqogw", "selectedActions": [59, 14, 39]}, {"groupId": "Si8qJq9L", "selectedActions": [96, 95, 60]}, {"groupId": "ppYpnoXi", "selectedActions": [85, 31, 81]}]}], "namespace": "6PxEZsz0", "oauthAccessTokenExpiration": 2, "oauthAccessTokenExpirationTimeUnit": "i52vbUEz", "oauthRefreshTokenExpiration": 75, "oauthRefreshTokenExpirationTimeUnit": "BvT7rQix", "redirectUri": "z60GXGLc", "scopes": ["RjpotPm5", "8Qncsre0", "N6bJan2A"], "skipLoginQueue": false, "twoFactorEnabled": false}}' --login_with_auth "Bearer foo"
-iam-admin-create-client-v3 '{"audiences": ["e8SzpIeT", "zyY0bmXg", "KmhB901N"], "baseUri": "kZiJs1dM", "clientId": "ik1sl718", "clientName": "SaXr2FMs", "clientPermissions": [{"action": 24, "resource": "UJznxXKk", "schedAction": 54, "schedCron": "tjHZOQGq", "schedRange": ["700fyMdn", "63fJOVfj", "1V3h0DE6"]}, {"action": 30, "resource": "CKNhrjwn", "schedAction": 3, "schedCron": "WdWfce2u", "schedRange": ["SPGff3ir", "uNmZzNfR", "xPWIR8lO"]}, {"action": 24, "resource": "40e2tiMZ", "schedAction": 59, "schedCron": "xm5zaJPH", "schedRange": ["STicNMUQ", "x34YWctO", "SulXl4ei"]}], "clientPlatform": "md2SmKaQ", "deletable": true, "description": "7wgUBxUg", "modulePermissions": [{"moduleId": "o2zN1M0U", "selectedGroups": [{"groupId": "wL2l6ioS", "selectedActions": [14, 51, 66]}, {"groupId": "hdwkiHvp", "selectedActions": [29, 71, 21]}, {"groupId": "RjlQdtb7", "selectedActions": [99, 73, 68]}]}, {"moduleId": "GakID0C2", "selectedGroups": [{"groupId": "b5ArB8YD", "selectedActions": [13, 11, 66]}, {"groupId": "ahzaibt3", "selectedActions": [81, 26, 40]}, {"groupId": "Zz0dtoZB", "selectedActions": [68, 53, 88]}]}, {"moduleId": "sfiiJIdD", "selectedGroups": [{"groupId": "E0dhu8eh", "selectedActions": [51, 81, 38]}, {"groupId": "3b5ARpTO", "selectedActions": [68, 22, 15]}, {"groupId": "rTtE3GEc", "selectedActions": [3, 32, 18]}]}], "namespace": "aUAQmrXr", "oauthAccessTokenExpiration": 51, "oauthAccessTokenExpirationTimeUnit": "rgsXl68C", "oauthClientType": "8gToIQ4v", "oauthRefreshTokenExpiration": 8, "oauthRefreshTokenExpirationTimeUnit": "X49VSqlU", "parentNamespace": "g2SEUCIk", "redirectUri": "cVGm8SPx", "scopes": ["PtCRnaTg", "MKDW3THF", "J31U8DYx"], "secret": "HnMEHEKA", "skipLoginQueue": true, "twoFactorEnabled": true}' --login_with_auth "Bearer foo"
-iam-admin-get-clientsby-namespaceby-idv3 'EVK7yu9E' --login_with_auth "Bearer foo"
-iam-admin-delete-client-v3 'kJKse0wi' --login_with_auth "Bearer foo"
-iam-admin-update-client-v3 '{"audiences": ["SSpEZR9X", "ZD7npDO2", "SW9zEAiv"], "baseUri": "NaZZBza1", "clientName": "DbaHWXUW", "clientPermissions": [{"action": 27, "resource": "4KQkSGh9", "schedAction": 23, "schedCron": "sbCgtnGn", "schedRange": ["oVvOV3zi", "NtEueU9t", "9ojt82J9"]}, {"action": 72, "resource": "D5ldlRXN", "schedAction": 63, "schedCron": "RlNx5RS6", "schedRange": ["iSjBC4mB", "OKSmTqWu", "SwLkf4E0"]}, {"action": 15, "resource": "6QTwEuZi", "schedAction": 13, "schedCron": "oBe5YUex", "schedRange": ["PLtLLkx8", "iup6Ars8", "NUd3c7wW"]}], "clientPlatform": "KRrOziHQ", "deletable": false, "description": "29dqdg3C", "modulePermissions": [{"moduleId": "BGGaDPVW", "selectedGroups": [{"groupId": "TZJaSpaL", "selectedActions": [34, 12, 27]}, {"groupId": "txUBOE1p", "selectedActions": [80, 82, 20]}, {"groupId": "lntjWwAT", "selectedActions": [75, 82, 77]}]}, {"moduleId": "BToT57dl", "selectedGroups": [{"groupId": "pJf6ssSj", "selectedActions": [55, 55, 65]}, {"groupId": "NwATHucK", "selectedActions": [88, 59, 87]}, {"groupId": "DvJFH8nM", "selectedActions": [70, 90, 92]}]}, {"moduleId": "9o9BJsSJ", "selectedGroups": [{"groupId": "FuvFEN4X", "selectedActions": [13, 90, 69]}, {"groupId": "5WEcoQr2", "selectedActions": [91, 32, 49]}, {"groupId": "rEncW6yd", "selectedActions": [60, 51, 68]}]}], "namespace": "doQY72me", "oauthAccessTokenExpiration": 22, "oauthAccessTokenExpirationTimeUnit": "iI2LxbqT", "oauthRefreshTokenExpiration": 47, "oauthRefreshTokenExpirationTimeUnit": "H0vNC29j", "redirectUri": "vyumsKpa", "scopes": ["wKb2Sqy4", "1ZynX1wm", "kQopqVvP"], "skipLoginQueue": true, "twoFactorEnabled": false}' 'eyodd5HO' --login_with_auth "Bearer foo"
-iam-admin-update-client-permission-v3 '{"permissions": [{"action": 95, "resource": "x5znRhhW"}, {"action": 35, "resource": "XeGvePC1"}, {"action": 64, "resource": "MHe5sUG5"}]}' 'sGz1W4Gd' --login_with_auth "Bearer foo"
-iam-admin-add-client-permissions-v3 '{"permissions": [{"action": 45, "resource": "PLU4siFN"}, {"action": 50, "resource": "bWWV334h"}, {"action": 39, "resource": "4wHgTjy8"}]}' 'K6fPAgzE' --login_with_auth "Bearer foo"
-iam-admin-delete-client-permission-v3 '13' 'FireRtxH' 'BdPDPlOf' --login_with_auth "Bearer foo"
-iam-admin-get-config-value-v3 'iua8VjP4' --login_with_auth "Bearer foo"
+iam-admin-bulk-update-clients-v3 '{"clientIds": ["ibCbYQ8N", "mYztBGJX", "QL1Otoh4"], "clientUpdateRequest": {"audiences": ["kbp7MbGy", "iM57mjAL", "ZPV5q3Aj"], "baseUri": "ygLKzaTq", "clientName": "mY69qZsE", "clientPermissions": [{"action": 68, "resource": "ohpeZwvR", "schedAction": 2, "schedCron": "xaa5VXut", "schedRange": ["XIzJ43UR", "2WPtYKrg", "EqHgkWnK"]}, {"action": 61, "resource": "sUzJFGJT", "schedAction": 41, "schedCron": "PYGIj6ca", "schedRange": ["5aKoNfYD", "hsZb2BvE", "85v1ELgN"]}, {"action": 20, "resource": "SqluE01S", "schedAction": 22, "schedCron": "HZGPcZD5", "schedRange": ["GWAXETL5", "AhkfwZDN", "lLm7X4uq"]}], "clientPlatform": "bC9sV5zF", "deletable": true, "description": "e4sWw443", "modulePermissions": [{"moduleId": "5Kxhe6Fa", "selectedGroups": [{"groupId": "ve4YyCi9", "selectedActions": [13, 55, 69]}, {"groupId": "e9kN1zOZ", "selectedActions": [30, 20, 49]}, {"groupId": "HGO58SsD", "selectedActions": [92, 53, 63]}]}, {"moduleId": "9Ws60eYF", "selectedGroups": [{"groupId": "yFxT2YwU", "selectedActions": [10, 40, 91]}, {"groupId": "ifv0Ss8C", "selectedActions": [9, 79, 5]}, {"groupId": "esLQC0iB", "selectedActions": [71, 59, 98]}]}, {"moduleId": "DvfQR9qN", "selectedGroups": [{"groupId": "rYrlE5zy", "selectedActions": [82, 11, 31]}, {"groupId": "3rOVItj6", "selectedActions": [30, 68, 96]}, {"groupId": "4JWzPWlD", "selectedActions": [92, 67, 77]}]}], "namespace": "QfGEQoT1", "oauthAccessTokenExpiration": 14, "oauthAccessTokenExpirationTimeUnit": "MnSQeHX9", "oauthRefreshTokenExpiration": 93, "oauthRefreshTokenExpirationTimeUnit": "9wAl4Tiz", "redirectUri": "693SAtSX", "scopes": ["qccWSnH6", "oQIJaXWu", "RrJhrXkR"], "skipLoginQueue": true, "twoFactorEnabled": false}}' --login_with_auth "Bearer foo"
+iam-admin-create-client-v3 '{"audiences": ["46rkqxpT", "D8iUuGv6", "D4GlfD6K"], "baseUri": "RkuXvObr", "clientId": "qV48NzJl", "clientName": "ysT68MpM", "clientPermissions": [{"action": 1, "resource": "S9Wez9M1", "schedAction": 79, "schedCron": "00ApakB6", "schedRange": ["56n0AQHF", "NDooWqKo", "L15Krc6K"]}, {"action": 91, "resource": "UDtukaSX", "schedAction": 57, "schedCron": "2jatdMuy", "schedRange": ["FgNw0fKf", "l5t6VHvi", "JMylECp2"]}, {"action": 81, "resource": "hovAl4Mz", "schedAction": 2, "schedCron": "rOCIRcfW", "schedRange": ["YEyRzSzS", "wbHqFyLY", "QVrDFV5r"]}], "clientPlatform": "ouKwKbph", "deletable": true, "description": "d4V8gOWH", "modulePermissions": [{"moduleId": "IZULeEec", "selectedGroups": [{"groupId": "P1JxxH4u", "selectedActions": [35, 96, 61]}, {"groupId": "Ui7EMKzU", "selectedActions": [92, 12, 49]}, {"groupId": "2mdJujZ4", "selectedActions": [46, 16, 94]}]}, {"moduleId": "HxzKjspI", "selectedGroups": [{"groupId": "N88ZDbVt", "selectedActions": [91, 95, 52]}, {"groupId": "LWGRw7zT", "selectedActions": [25, 5, 47]}, {"groupId": "P5wy0p34", "selectedActions": [75, 85, 68]}]}, {"moduleId": "mPeEfcvd", "selectedGroups": [{"groupId": "Ai8mNxNL", "selectedActions": [16, 83, 85]}, {"groupId": "dgNeKs4E", "selectedActions": [93, 73, 64]}, {"groupId": "49hie41D", "selectedActions": [24, 46, 89]}]}], "namespace": "GS4Elp27", "oauthAccessTokenExpiration": 12, "oauthAccessTokenExpirationTimeUnit": "9PuGy8uW", "oauthClientType": "9iIvCY62", "oauthRefreshTokenExpiration": 34, "oauthRefreshTokenExpirationTimeUnit": "0COD6wky", "parentNamespace": "lcmJsYCM", "redirectUri": "XBda173v", "scopes": ["HTY5WxPf", "gNngIfKT", "Abb6rHsi"], "secret": "Aau6eeXx", "skipLoginQueue": false, "twoFactorEnabled": false}' --login_with_auth "Bearer foo"
+iam-admin-get-clientsby-namespaceby-idv3 'TVBftwdF' --login_with_auth "Bearer foo"
+iam-admin-delete-client-v3 'stLuz0xY' --login_with_auth "Bearer foo"
+iam-admin-update-client-v3 '{"audiences": ["b6ICTxhd", "ZO6DqNs4", "N2Nh58su"], "baseUri": "Ltz0q4zv", "clientName": "bRTzjggy", "clientPermissions": [{"action": 39, "resource": "AFAhoXsD", "schedAction": 79, "schedCron": "4FxiqrbN", "schedRange": ["e6dYZRwc", "7Cnuf44A", "w1hJwVpd"]}, {"action": 24, "resource": "1FOErMEv", "schedAction": 61, "schedCron": "lHUAkrpi", "schedRange": ["F6f5GX1e", "C0v3H3q0", "eDG3VivT"]}, {"action": 56, "resource": "3wNqsO9c", "schedAction": 43, "schedCron": "5N4cHbWV", "schedRange": ["KEDccSlc", "CizNmOgO", "Szg8FZkX"]}], "clientPlatform": "fYWdnJ5k", "deletable": false, "description": "N9g7uSbO", "modulePermissions": [{"moduleId": "QjvbeT9n", "selectedGroups": [{"groupId": "8eNvf3SA", "selectedActions": [28, 81, 38]}, {"groupId": "9k6LusI8", "selectedActions": [77, 39, 25]}, {"groupId": "O2mFGGVG", "selectedActions": [95, 30, 74]}]}, {"moduleId": "HqqvE5C4", "selectedGroups": [{"groupId": "7IMmYF0S", "selectedActions": [96, 78, 30]}, {"groupId": "74Y6ICHP", "selectedActions": [59, 52, 55]}, {"groupId": "piz9Qk49", "selectedActions": [75, 22, 25]}]}, {"moduleId": "wrcoTAbH", "selectedGroups": [{"groupId": "GgxSgiq3", "selectedActions": [89, 19, 93]}, {"groupId": "yULQO3If", "selectedActions": [26, 43, 76]}, {"groupId": "H4VWF79I", "selectedActions": [41, 94, 36]}]}], "namespace": "2YLlOlMA", "oauthAccessTokenExpiration": 94, "oauthAccessTokenExpirationTimeUnit": "WdhxPF5q", "oauthRefreshTokenExpiration": 43, "oauthRefreshTokenExpirationTimeUnit": "i7WfsA5w", "redirectUri": "seH9prFr", "scopes": ["4XqZoTPl", "mY0bDt2x", "1BEEiwVL"], "skipLoginQueue": false, "twoFactorEnabled": false}' 'WzwYUjMU' --login_with_auth "Bearer foo"
+iam-admin-update-client-permission-v3 '{"permissions": [{"action": 56, "resource": "6oUf4Juj"}, {"action": 15, "resource": "xJJbB2vr"}, {"action": 67, "resource": "DICkvkbW"}]}' 'xsTkQsPk' --login_with_auth "Bearer foo"
+iam-admin-add-client-permissions-v3 '{"permissions": [{"action": 38, "resource": "RdkRuuuG"}, {"action": 54, "resource": "Pphn6cdI"}, {"action": 63, "resource": "EhuPWhnJ"}]}' 'V0D3cp5n' --login_with_auth "Bearer foo"
+iam-admin-delete-client-permission-v3 '5' 'Jvy8j1d8' 'YwWaIJo1' --login_with_auth "Bearer foo"
+iam-admin-get-config-value-v3 'tFQfDr3j' --login_with_auth "Bearer foo"
 iam-admin-get-country-list-v3 --login_with_auth "Bearer foo"
 iam-admin-get-country-blacklist-v3 --login_with_auth "Bearer foo"
-iam-admin-add-country-blacklist-v3 '{"blacklist": ["4XCvjSA2", "oVNAE2MQ", "CMKm3wgb"]}' --login_with_auth "Bearer foo"
+iam-admin-add-country-blacklist-v3 '{"blacklist": ["Cc1E4UaP", "DTZJTPtn", "vpBepKOS"]}' --login_with_auth "Bearer foo"
 iam-admin-get-login-allowlist-v3 --login_with_auth "Bearer foo"
-iam-admin-update-login-allowlist-v3 '{"active": false, "roleIds": ["521T5Ey0", "hGVa6dCX", "SKBkyHnV"]}' --login_with_auth "Bearer foo"
+iam-admin-update-login-allowlist-v3 '{"active": true, "roleIds": ["9CtAhpGg", "vnjsN5DN", "STFDrxke"]}' --login_with_auth "Bearer foo"
 iam-retrieve-all-third-party-login-platform-credential-v3 --login_with_auth "Bearer foo"
 iam-retrieve-all-active-third-party-login-platform-credential-v3 --login_with_auth "Bearer foo"
 iam-retrieve-all-sso-login-platform-credential-v3 --login_with_auth "Bearer foo"
-iam-retrieve-third-party-login-platform-credential-v3 '9jt9BjII' --login_with_auth "Bearer foo"
-iam-add-third-party-login-platform-credential-v3 '{"ACSURL": "b4nGqcbb", "AWSCognitoRegion": "vmPOSSMQ", "AWSCognitoUserPool": "vQLHNkS4", "AllowedClients": ["VDM6in1V", "geK9GJ0K", "7mwNJFQs"], "AppId": "WAoGG6GK", "AuthorizationEndpoint": "fQeoFbGb", "ClientId": "GzTdSWYo", "EmptyStrFieldList": ["jsDqAwWZ", "C4hpdNBi", "SvPwoVwH"], "EnableServerLicenseValidation": true, "Environment": "mjDCjJFm", "FederationMetadataURL": "VxYB2Ru7", "GenericOauthFlow": true, "IncludePUID": true, "IsActive": true, "Issuer": "xbHBs7Cn", "JWKSEndpoint": "Jby4keJo", "KeyID": "ncF5yEQn", "LogoURL": "QWi2FeLV", "NetflixCertificates": {"encryptedPrivateKey": "bQgtF8HD", "encryptedPrivateKeyName": "ciGqBzmi", "publicCertificate": "LHBjc6y9", "publicCertificateName": "rhxGMqSB", "rootCertificate": "somhW071", "rootCertificateName": "yZz0CpwR"}, "OrganizationId": "qO7Jsdse", "PlatformName": "NP4H9Ceo", "PrivateKey": "GKNGxfru", "RedirectUri": "LGE7M5A8", "RegisteredDomains": [{"affectedClientIDs": ["lTuoG2xh", "yUH3oWuj", "ErkFEDKS"], "domain": "UeDIkTg6", "namespaces": ["sPUVgzBe", "fiRRE1dD", "MxCrp8PG"], "roleId": "eYg7AgwW", "ssoCfg": {"googleKey": {"3XImK4xR": {}, "AIzvtfFE": {}, "4A8cwY2Y": {}}, "groupConfigs": [{"assignNamespaces": ["G5pvSeeV", "g3Gxqri5", "tJrDfZ5Y"], "group": "jfqBSHTS", "roleId": "Bbpj8rrL"}, {"assignNamespaces": ["Z31cxg8a", "s11WzXJ0", "GfJK31zf"], "group": "foDnYWf2", "roleId": "eMTk7hSm"}, {"assignNamespaces": ["lZDCLQKz", "69CIXwsh", "RxaR1Q8L"], "group": "Oh2bVXGw", "roleId": "4K31SqEn"}]}}, {"affectedClientIDs": ["OUBOEkA8", "dzbc1FAL", "Bnr1gQOg"], "domain": "EpNsFa7W", "namespaces": ["eFzqIBjx", "jl7VN8f1", "IeIaFqth"], "roleId": "7MgbhZW1", "ssoCfg": {"googleKey": {"JCCaTTSO": {}, "AoAcbzkq": {}, "OwpfTPjp": {}}, "groupConfigs": [{"assignNamespaces": ["Y3sp7UgR", "8JnixcDc", "g9PSVijh"], "group": "43SZxTe7", "roleId": "ZQxVv0NS"}, {"assignNamespaces": ["3bVDI6Pi", "5q7YrNv3", "5ItmTMif"], "group": "gFZoSX0U", "roleId": "wEEMcvaA"}, {"assignNamespaces": ["E08rXO4L", "Sv2XabCx", "d7JMMlO1"], "group": "qLFji6Pu", "roleId": "66MYj8fi"}]}}, {"affectedClientIDs": ["JrbK49Kb", "iW33Wj06", "xQUk86Me"], "domain": "jeyiVlna", "namespaces": ["94xC9ct2", "zBf0uu1z", "aUpV770u"], "roleId": "jlFG0wF4", "ssoCfg": {"googleKey": {"6dqeSNML": {}, "5HoZBNNe": {}, "6lCNEBWE": {}}, "groupConfigs": [{"assignNamespaces": ["dpfjWMSx", "qJI4RSMt", "wfszaCEf"], "group": "w1sFCxg4", "roleId": "DB45dNYW"}, {"assignNamespaces": ["lkUolw6w", "AHhxYPbn", "d68Bu4f8"], "group": "IPHs2ihH", "roleId": "6cXngXBC"}, {"assignNamespaces": ["D8vAXOYe", "OToGaq6p", "HDAifIaj"], "group": "f3TtLycU", "roleId": "n9AXXi5u"}]}}], "RelyingParty": "PkwM4jel", "SandboxId": "zoaJoGa7", "Secret": "6LouCOue", "TeamID": "xj9pDAXj", "TokenAuthenticationType": "LjviYoV7", "TokenClaimsMapping": {"m7sa3S6Z": "dZAtz7Fp", "eDtxlQFK": "ptDFxUEm", "BrnFWeM0": "tPbJjyGI"}, "TokenEndpoint": "vsIHeoLN", "UserInfoEndpoint": "zGb44HRF", "UserInfoHTTPMethod": "iQsnF6PP", "googleAdminConsoleKey": "ugBTBLmL", "scopes": ["YrgEPFew", "5CTZujBM", "h99QYcAA"]}' 'oTxXWclb' --login_with_auth "Bearer foo"
-iam-delete-third-party-login-platform-credential-v3 'NiThllYN' --login_with_auth "Bearer foo"
-iam-update-third-party-login-platform-credential-v3 '{"ACSURL": "FjKtWdDs", "AWSCognitoRegion": "OXTmPZue", "AWSCognitoUserPool": "PdH8xNqA", "AllowedClients": ["omsHz7nV", "OaV7SzZ7", "fAVbes2L"], "AppId": "2p1DG1Cb", "AuthorizationEndpoint": "zI07NZtE", "ClientId": "FsgF5Gwr", "EmptyStrFieldList": ["cVUzamQJ", "jQIUS7RX", "DnPjUr8g"], "EnableServerLicenseValidation": false, "Environment": "aSgtENdB", "FederationMetadataURL": "j8ceTTqO", "GenericOauthFlow": false, "IncludePUID": true, "IsActive": false, "Issuer": "FCOfPTCX", "JWKSEndpoint": "WcFYMGVA", "KeyID": "SqK4oKAj", "LogoURL": "4jjbmr6M", "NetflixCertificates": {"encryptedPrivateKey": "Fndi4Hdg", "encryptedPrivateKeyName": "uOpvgz4f", "publicCertificate": "UwnMmlRr", "publicCertificateName": "YZZyFokj", "rootCertificate": "1X6zj4v6", "rootCertificateName": "yGikb6ap"}, "OrganizationId": "tIrH6n78", "PlatformName": "qWB6bMaO", "PrivateKey": "fn82M2S1", "RedirectUri": "lTGWEjUE", "RegisteredDomains": [{"affectedClientIDs": ["U7hTR7Y3", "eOKzipex", "Q9ODZJV7"], "domain": "3mqdHqxw", "namespaces": ["Ce07Z5yt", "FlsFGz8K", "cOEcoybT"], "roleId": "nZBkXgyS", "ssoCfg": {"googleKey": {"9JVDVA25": {}, "U1SA4RzH": {}, "7iNWc4zW": {}}, "groupConfigs": [{"assignNamespaces": ["NHrbn7sY", "XqtxPyeB", "McQvhXlH"], "group": "Q5G8LBxc", "roleId": "wyiXh6pU"}, {"assignNamespaces": ["FuCF8cFY", "Op9hoLdk", "mrNkTSDs"], "group": "rDluTqJx", "roleId": "ONB1OxWQ"}, {"assignNamespaces": ["ColAgH9K", "YmJpa7Cm", "N5OLZHWA"], "group": "2LOE4qtQ", "roleId": "IenNCfio"}]}}, {"affectedClientIDs": ["HJLzzXqy", "ZLyEN24D", "wQx9PhPa"], "domain": "PlZ4bYPU", "namespaces": ["KgdzkkBN", "atcve3CC", "ECt7rBp4"], "roleId": "Fb7eShjn", "ssoCfg": {"googleKey": {"3fZWGBhT": {}, "B8tAcGMG": {}, "ndFw3L83": {}}, "groupConfigs": [{"assignNamespaces": ["ol0OroPN", "w8IQMxTV", "odsTSLXn"], "group": "SpeVZaHj", "roleId": "dQdgBYam"}, {"assignNamespaces": ["Arw98uHy", "blH9UEXh", "eUKZrZzY"], "group": "g5oVsPnY", "roleId": "9oZeeMxY"}, {"assignNamespaces": ["Q8JxVOVA", "SVCJCJwu", "hkRYagex"], "group": "TPZBO2OQ", "roleId": "ipFPylpN"}]}}, {"affectedClientIDs": ["7wQqBNyT", "5K5ZxEPj", "cBbgTU9u"], "domain": "XIiidhvM", "namespaces": ["p9LzZ9Pd", "yMaykm5Y", "eFKQOXPD"], "roleId": "VTpgOiFk", "ssoCfg": {"googleKey": {"BxKpfOSx": {}, "PRF8EEy8": {}, "qMBlfnLr": {}}, "groupConfigs": [{"assignNamespaces": ["TKW5CRaG", "Lzd368Wm", "YjMxcW1m"], "group": "xfnJfJbJ", "roleId": "1amzCWaE"}, {"assignNamespaces": ["NxNqZAgc", "ShtObiYv", "cx1DXa9I"], "group": "uQ43oWT7", "roleId": "uLSlIX4S"}, {"assignNamespaces": ["aTgvYEQd", "o6Uf830P", "gBP25eSf"], "group": "csWYnMHu", "roleId": "zr1t0yi9"}]}}], "RelyingParty": "yNaAvqyn", "SandboxId": "udL6AdW8", "Secret": "TC7Zxigj", "TeamID": "m9DxgBgU", "TokenAuthenticationType": "XC53BC3M", "TokenClaimsMapping": {"pa5IekFe": "ugTM9Ver", "PBEcX9zZ": "krKOq3Dq", "bvJJdzVV": "2s6ZDaqm"}, "TokenEndpoint": "ey2CkG5e", "UserInfoEndpoint": "rO9Nm20b", "UserInfoHTTPMethod": "6gr7nROy", "googleAdminConsoleKey": "7DMG5S7W", "scopes": ["tJWSezS2", "i2hLV6dd", "shGwUaaH"]}' 'DluEMH0N' --login_with_auth "Bearer foo"
-iam-update-third-party-login-platform-domain-v3 '{"affectedClientIDs": ["uQjhkPTH", "yvLDSPrM", "KgMgE15q"], "assignedNamespaces": ["2GUzyg0m", "xQmdDG1D", "0GjGYtsC"], "domain": "fiGuFYG4", "roleId": "GkBtT1fQ", "ssoCfg": {"googleKey": {"TBVYGvBW": {}, "XlRCck4h": {}, "KAFQ47Bm": {}}, "groupConfigs": [{"assignNamespaces": ["CQqHwYBu", "3Qyk4U7S", "vaPl7NXP"], "group": "SgxTMALP", "roleId": "JmbI429r"}, {"assignNamespaces": ["23jCJvK4", "YcG3C6pd", "W5fzCKor"], "group": "pQKzv3lP", "roleId": "raeNm9ZF"}, {"assignNamespaces": ["5Rezv88q", "SozJlQ3m", "5X4ML2Vb"], "group": "ravWYqrM", "roleId": "9CfOZOfo"}]}}' 'l3bJmUpc' --login_with_auth "Bearer foo"
-iam-delete-third-party-login-platform-domain-v3 '{"domain": "Uzskv3Qc", "ssoGroups": ["HYoaRz55", "hIulcl66", "SLsZMhNT"]}' 'D1gN6OYN' --login_with_auth "Bearer foo"
-iam-partial-update-third-party-login-platform-domain-v3 '{"affectedClientIDs": ["TpSoKzIv", "Bn3EJjR2", "CCY7QCIZ"], "assignedNamespaces": ["ZOHcxovP", "tBjzp3o9", "gE8TAXsA"], "domain": "IocLgbzq", "roleId": "vZ6pT2Yx", "ssoCfg": {"googleKey": {"O4NM8jRQ": {}, "pUXpQQDS": {}, "bbxotfD0": {}}, "groupConfigs": [{"assignNamespaces": ["B0fYBYhY", "XVujecGU", "huAF7qd8"], "group": "Llo1qPMs", "roleId": "iDhnpcIj"}, {"assignNamespaces": ["dOt9VirM", "3UfclZWs", "9CsHnHUJ"], "group": "DOG23GWv", "roleId": "l7UckJR2"}, {"assignNamespaces": ["ud6olSQb", "hAOUMrX4", "eMnUUZzu"], "group": "CjBnTIMa", "roleId": "v6OSyyqo"}]}}' 'i5COKP0f' --login_with_auth "Bearer foo"
-iam-retrieve-sso-login-platform-credential '744BVYyf' --login_with_auth "Bearer foo"
-iam-add-sso-login-platform-credential '{"acsUrl": "PfExbMug", "apiKey": "Tuozu9LK", "appId": "lNbExNM6", "federationMetadataUrl": "cZ8nnaVq", "isActive": true, "redirectUri": "VnWC0VO8", "secret": "vlFeKpxk", "ssoUrl": "iIseju6e"}' '2RcYnIOw' --login_with_auth "Bearer foo"
-iam-delete-sso-login-platform-credential-v3 'tdWll59o' --login_with_auth "Bearer foo"
-iam-update-sso-platform-credential '{"acsUrl": "sjCy3wOJ", "apiKey": "p4ZISRex", "appId": "C3a7fUIE", "federationMetadataUrl": "l8VoY7xe", "isActive": true, "redirectUri": "SloAEMH9", "secret": "Ik2F04Pz", "ssoUrl": "K46BIxYi"}' 'fosy4HRu' --login_with_auth "Bearer foo"
-iam-admin-list-user-id-by-platform-user-i-ds-v3 '{"platformUserIds": ["Cdrv5rDx", "5iIpYsh8", "dL2dJQes"]}' 'RBVdkSDT' --login_with_auth "Bearer foo"
-iam-admin-get-user-by-platform-user-idv3 'VRMd3Ezm' 'sXW2Hul7' --login_with_auth "Bearer foo"
+iam-retrieve-third-party-login-platform-credential-v3 'jkNOhXw1' --login_with_auth "Bearer foo"
+iam-add-third-party-login-platform-credential-v3 '{"ACSURL": "TrraHaKI", "AWSCognitoRegion": "alMDzv1I", "AWSCognitoUserPool": "SGdla2aG", "AllowedClients": ["Hbi4BI8s", "01slQHNq", "7KSX4L4s"], "AppId": "vbS8PQjk", "AuthorizationEndpoint": "UU3mekcR", "ClientId": "5lHL2hEk", "EmptyStrFieldList": ["VTHX3A4H", "333yUlUG", "8rNk9EaI"], "EnableServerLicenseValidation": false, "Environment": "jxkJlGzZ", "FederationMetadataURL": "z82Y3Mvd", "GenericOauthFlow": true, "IncludePUID": true, "IsActive": true, "Issuer": "WdRTd20G", "JWKSEndpoint": "cXM5bIZC", "KeyID": "Dzkb7NRK", "LogoURL": "Ks6ZWLd9", "NetflixCertificates": {"encryptedPrivateKey": "CFyBC5cO", "encryptedPrivateKeyName": "ixzZSUuN", "publicCertificate": "Cax8QIYT", "publicCertificateName": "x6beiiWg", "rootCertificate": "gc1JyqRq", "rootCertificateName": "eMaQq5A5"}, "OrganizationId": "8jzjokRs", "PlatformName": "BYmbY6Yo", "PrivateKey": "2d8FBmRg", "RedirectUri": "CoiEAVUi", "RegisteredDomains": [{"affectedClientIDs": ["sN2RDcLo", "je7q6YuS", "3wmcrvHw"], "domain": "FV9Kstpk", "namespaces": ["GzpvA0lm", "G5nXT5ZH", "FCfohdcJ"], "roleId": "9NhBHTuv", "ssoCfg": {"googleKey": {"ATjHFNgu": {}, "MhNxydsK": {}, "VlByp2Yy": {}}, "groupConfigs": [{"assignNamespaces": ["BxUN8rsw", "VkEytgpO", "Zl3Euwlz"], "group": "58KI1qCR", "roleId": "isnG23nT"}, {"assignNamespaces": ["NYsK0NpO", "Ti7D8Ng9", "as8N3yBK"], "group": "z8zup3l2", "roleId": "A6fwOuVA"}, {"assignNamespaces": ["CdB8sFvB", "83bKRvVZ", "KJ1D3IsK"], "group": "WwZLW0Zk", "roleId": "IVM3KzJs"}]}}, {"affectedClientIDs": ["wSmPjHYB", "Vew7mU4B", "3Kr2ZwCF"], "domain": "5dZPiWsn", "namespaces": ["gOi8MSGz", "LWHDD9UF", "OD792csl"], "roleId": "k6a7vDYt", "ssoCfg": {"googleKey": {"y1JswLGg": {}, "sbbgJRTh": {}, "dCLX4N5u": {}}, "groupConfigs": [{"assignNamespaces": ["Kp8jD9J9", "3T2Wd3Gx", "RRWW1lgb"], "group": "wBFOEVOv", "roleId": "8tonUPH8"}, {"assignNamespaces": ["nirOP5gI", "hETyuaHP", "YLk7sK6n"], "group": "jJjCCzyW", "roleId": "HsYjKmGd"}, {"assignNamespaces": ["6Fc5ZsVi", "m9NedApM", "iPsT72hn"], "group": "OzW3IG9p", "roleId": "LMTOMFt8"}]}}, {"affectedClientIDs": ["9Qt6jc6f", "MTuKH9CH", "KqBofY0z"], "domain": "aAzXqMTU", "namespaces": ["9JxC1v25", "n61wo0jA", "vnVnbqaw"], "roleId": "k4MipkFQ", "ssoCfg": {"googleKey": {"Ph7OnBvI": {}, "veRVtKFu": {}, "3KZOvDG0": {}}, "groupConfigs": [{"assignNamespaces": ["GlVwrZ7Z", "bSTg9W4C", "S6xtsnqp"], "group": "sRA4LMIa", "roleId": "jfS66CO4"}, {"assignNamespaces": ["lfgDP2Y8", "mM0uYDKg", "EnSSKRIA"], "group": "PRyL20TO", "roleId": "nNvhoKZu"}, {"assignNamespaces": ["C4EVf0nI", "JA4xq5M8", "0IDnHwqZ"], "group": "YSehYSDz", "roleId": "pJ0RFvQd"}]}}], "RelyingParty": "wQwVt4TB", "SandboxId": "WIl3TcYU", "Secret": "c5wDdAlA", "TeamID": "6DjVeD7u", "TokenAuthenticationType": "aCJ8PWFu", "TokenClaimsMapping": {"9vj1uvSV": "C1nYl1AV", "gq5E9yr2": "WDxBbr0l", "HZOJO7aL": "SQovjIyp"}, "TokenEndpoint": "U06XMrEK", "UserInfoEndpoint": "v3eYHozH", "UserInfoHTTPMethod": "sZkbnG2J", "googleAdminConsoleKey": "FUrswMBY", "scopes": ["Yaj3uzwt", "8ntvku9G", "z0W5l9IC"]}' 'l0NVYQ8a' --login_with_auth "Bearer foo"
+iam-delete-third-party-login-platform-credential-v3 'FDr2kyUP' --login_with_auth "Bearer foo"
+iam-update-third-party-login-platform-credential-v3 '{"ACSURL": "AtIbhWrg", "AWSCognitoRegion": "0JB68acb", "AWSCognitoUserPool": "7V7RQcNZ", "AllowedClients": ["p8JklOEV", "Mt7085RZ", "HPkdRxTG"], "AppId": "AoZxfHq0", "AuthorizationEndpoint": "KNSmB6jj", "ClientId": "7qP3zjwA", "EmptyStrFieldList": ["aHU7tXhG", "qfm2XqKN", "W3QbGAH0"], "EnableServerLicenseValidation": true, "Environment": "J473LFXo", "FederationMetadataURL": "mK5vjvUS", "GenericOauthFlow": true, "IncludePUID": true, "IsActive": false, "Issuer": "MX5vimDb", "JWKSEndpoint": "ee1ArsnW", "KeyID": "Bn8vcYnT", "LogoURL": "POxTTS5z", "NetflixCertificates": {"encryptedPrivateKey": "cwe2ePOS", "encryptedPrivateKeyName": "vcA9sP5Q", "publicCertificate": "TxI476Tp", "publicCertificateName": "pW8j0PBN", "rootCertificate": "HCGoQ9P5", "rootCertificateName": "KFGUIlvl"}, "OrganizationId": "tN5Q9UL4", "PlatformName": "qukGPeJb", "PrivateKey": "pV9qqBmx", "RedirectUri": "o0W6G0IU", "RegisteredDomains": [{"affectedClientIDs": ["zxX3Q6Iq", "Ol6an81B", "CidmpOS0"], "domain": "h2pqrWR6", "namespaces": ["i1J6IMs7", "KkgF2KGJ", "nPc3w3M0"], "roleId": "lNLyABEP", "ssoCfg": {"googleKey": {"8zb4fn4r": {}, "hctJDkM1": {}, "O0pwbDLU": {}}, "groupConfigs": [{"assignNamespaces": ["uJ8kT9xm", "wQhdnYHF", "a06LFMpQ"], "group": "s0C7diX6", "roleId": "OGthQR9R"}, {"assignNamespaces": ["7v6GApFj", "6WQZ3ygv", "K6LpTOqh"], "group": "dMCZ2JTv", "roleId": "9iGRhLeU"}, {"assignNamespaces": ["hfkUlwd8", "9uz0mQAa", "pDtQQK4u"], "group": "irwHZQau", "roleId": "FUJ2fw3h"}]}}, {"affectedClientIDs": ["OsMozelK", "XLpSZsd8", "8ddw4bUj"], "domain": "7E8tqkul", "namespaces": ["FsG8i35o", "yHQgnGX8", "NGrvhxss"], "roleId": "J0EYUYyo", "ssoCfg": {"googleKey": {"Ue4e6bW3": {}, "2jKyruWa": {}, "fMgoQUfY": {}}, "groupConfigs": [{"assignNamespaces": ["CE0DbAyG", "eCMWJWOy", "qm2DwO6j"], "group": "slGFaB5x", "roleId": "bL45CSt1"}, {"assignNamespaces": ["T4Y4Dtcv", "QM2OyrBc", "lA5XahUs"], "group": "IAK0J8rW", "roleId": "FgONRy38"}, {"assignNamespaces": ["bI5DOTh7", "MxA8TUUf", "z3E40R7F"], "group": "x7Sab7R3", "roleId": "IQrEubbj"}]}}, {"affectedClientIDs": ["khYIwcJw", "3z35kzDw", "JiLQJ8eI"], "domain": "COqAnFAy", "namespaces": ["2yhot3IO", "Fr2mplQG", "6m4B2CME"], "roleId": "spDum0bP", "ssoCfg": {"googleKey": {"G7kczxOR": {}, "jNaPPgL4": {}, "jBVE7HsB": {}}, "groupConfigs": [{"assignNamespaces": ["QxIk71Rj", "Xm8SCG8d", "lc66jhWC"], "group": "Lz1lV20U", "roleId": "wLmsdH5y"}, {"assignNamespaces": ["7ZojT6D4", "oDFi75nJ", "oVHigyZC"], "group": "WBqJeqIR", "roleId": "xHYEIHi0"}, {"assignNamespaces": ["rqCTavUk", "wFlMYUNP", "EtLeTwkY"], "group": "YrY6JkWR", "roleId": "LvYdOH8q"}]}}], "RelyingParty": "ZQZ1N9am", "SandboxId": "2o8saQhM", "Secret": "bs724wP6", "TeamID": "6yRaEZce", "TokenAuthenticationType": "YVGsa0hE", "TokenClaimsMapping": {"zha2h10L": "TUWJpn7s", "WTVwI0O0": "7fkcL2pn", "g4XF0Sf2": "Ly9iurWL"}, "TokenEndpoint": "gkHNILWV", "UserInfoEndpoint": "3GltizFE", "UserInfoHTTPMethod": "4lSDAk10", "googleAdminConsoleKey": "smbHr2bE", "scopes": ["6XzQJ6UD", "aQfGyTk4", "8np1XqvW"]}' '6knq2iIB' --login_with_auth "Bearer foo"
+iam-update-third-party-login-platform-domain-v3 '{"affectedClientIDs": ["tZRBvJZs", "lwe9g3HM", "9LXBHz1E"], "assignedNamespaces": ["LgkBBOyy", "7iszuF1k", "eOMwTjEi"], "domain": "v9pDAK1f", "roleId": "DQNfOFv8", "ssoCfg": {"googleKey": {"d6AKpBp7": {}, "yyZveoc4": {}, "Wfipou8T": {}}, "groupConfigs": [{"assignNamespaces": ["VIDXgZKl", "h34r8Rbi", "5NvN8y1Z"], "group": "EVkLCiQi", "roleId": "yQLD9IeB"}, {"assignNamespaces": ["grWUwNU9", "BIaGbuJV", "BXcMaYXd"], "group": "TesJgJut", "roleId": "D7c542Eg"}, {"assignNamespaces": ["1LYmyUdQ", "t77Ryggv", "hs2eJW34"], "group": "Doil0b52", "roleId": "BNyaEDHG"}]}}' '7dOfSNut' --login_with_auth "Bearer foo"
+iam-delete-third-party-login-platform-domain-v3 '{"domain": "BTiMwveK", "ssoGroups": ["ZZmmM7gq", "wHTUJjWs", "7AvLM78j"]}' 'TZjXwYpo' --login_with_auth "Bearer foo"
+iam-partial-update-third-party-login-platform-domain-v3 '{"affectedClientIDs": ["YNNnsmoU", "rtFVrWQI", "Rr7ogyd3"], "assignedNamespaces": ["e9wBcdW7", "afW3h60E", "r3ISZVnG"], "domain": "vSx4Osad", "roleId": "HWK99X4V", "ssoCfg": {"googleKey": {"kqTNjtYx": {}, "DE2N1LDb": {}, "OpM2Wlgr": {}}, "groupConfigs": [{"assignNamespaces": ["NxFs7ZvI", "WF7LrgGb", "eNwshvhs"], "group": "Gf1y6YvY", "roleId": "IDP6AxsK"}, {"assignNamespaces": ["nkvlLjqy", "XfA1s379", "xr6iVmZv"], "group": "OQhMm1mw", "roleId": "h8PtX2lf"}, {"assignNamespaces": ["GPfxZWiC", "ZoZhQvbw", "bKbyLMNJ"], "group": "aOVHt0V4", "roleId": "PxE8rwVl"}]}}' '6C4lR2Sq' --login_with_auth "Bearer foo"
+iam-retrieve-sso-login-platform-credential 'iOS4PELr' --login_with_auth "Bearer foo"
+iam-add-sso-login-platform-credential '{"acsUrl": "USREc728", "apiKey": "JiXTjo67", "appId": "7WPUG5zP", "federationMetadataUrl": "VAZJhPVm", "isActive": false, "redirectUri": "2L3wdwk4", "secret": "VI59ATgV", "ssoUrl": "Hp7tqk8l"}' 'c0818COG' --login_with_auth "Bearer foo"
+iam-delete-sso-login-platform-credential-v3 'kJuIwsZG' --login_with_auth "Bearer foo"
+iam-update-sso-platform-credential '{"acsUrl": "y4HI147R", "apiKey": "ytzgETLj", "appId": "ZI7Cw3RG", "federationMetadataUrl": "EioLf7eG", "isActive": false, "redirectUri": "VoLPNuPe", "secret": "74B901Sr", "ssoUrl": "VkFyO0x4"}' 'OxhMNdEW' --login_with_auth "Bearer foo"
+iam-admin-list-user-id-by-platform-user-i-ds-v3 '{"platformUserIds": ["aEBEXXsX", "uE7QhJcP", "IvxkogXK"]}' '7veHmzgc' --login_with_auth "Bearer foo"
+iam-admin-get-user-by-platform-user-idv3 'dpN8xRJU' 'Z9uM8Zsw' --login_with_auth "Bearer foo"
 iam-admin-get-profile-update-strategy-v3 --login_with_auth "Bearer foo"
-iam-admin-update-profile-update-strategy-v3 '{"config": {"minimumAllowedInterval": 34}, "type": "2B8bIBrJ"}' 'display_name' --login_with_auth "Bearer foo"
-iam-admin-get-role-override-config-v3 'VIEW_ONLY' --login_with_auth "Bearer foo"
-iam-admin-update-role-override-config-v3 '{"additions": [{"actions": [60, 53, 61], "resource": "qa2HpIXX"}, {"actions": [85, 38, 51], "resource": "fiZQCLDV"}, {"actions": [81, 10, 27], "resource": "G2tKFX1C"}], "exclusions": [{"actions": [97, 14, 89], "resource": "DWkdapv0"}, {"actions": [94, 47, 88], "resource": "8dLTwceS"}, {"actions": [21, 10, 36], "resource": "Gg99vQHD"}], "overrides": [{"actions": [89, 12, 62], "resource": "DHbOhVtL"}, {"actions": [81, 100, 51], "resource": "nJwQIaDI"}, {"actions": [63, 88, 3], "resource": "8bvyM20b"}], "replacements": [{"replacement": {"actions": [22, 28, 69], "resource": "NGiVkQny"}, "target": "WMS27h2p"}, {"replacement": {"actions": [77, 82, 6], "resource": "uLew5KTc"}, "target": "qo37ySLi"}, {"replacement": {"actions": [14, 57, 72], "resource": "2HeflqHa"}, "target": "4XbFbttE"}]}' 'USER' --login_with_auth "Bearer foo"
-iam-admin-get-role-source-v3 'VIEW_ONLY' --login_with_auth "Bearer foo"
-iam-admin-change-role-override-config-status-v3 '{"active": false}' 'VIEW_ONLY' --login_with_auth "Bearer foo"
-iam-admin-get-role-namespace-permission-v3 'p7tguGYH' --login_with_auth "Bearer foo"
-iam-get-admin-users-by-role-id-v3 'I5x7pXXv' --login_with_auth "Bearer foo"
+iam-admin-update-profile-update-strategy-v3 '{"config": {"minimumAllowedInterval": 57}, "type": "ZvJUNPK7"}' 'dob' --login_with_auth "Bearer foo"
+iam-admin-get-role-override-config-v3 'GAME_ADMIN' --login_with_auth "Bearer foo"
+iam-admin-update-role-override-config-v3 '{"additions": [{"actions": [57, 57, 20], "resource": "q0eOWoeH"}, {"actions": [91, 76, 62], "resource": "YDV8CbpF"}, {"actions": [40, 77, 65], "resource": "9KwbFUXq"}], "exclusions": [{"actions": [60, 80, 19], "resource": "Eg0fZY2S"}, {"actions": [42, 73, 29], "resource": "2b8r0K9o"}, {"actions": [72, 22, 40], "resource": "16RqCwzB"}], "overrides": [{"actions": [13, 80, 30], "resource": "o2Bto7eP"}, {"actions": [68, 33, 28], "resource": "rzuyqe8Y"}, {"actions": [21, 16, 88], "resource": "fXJGHPSA"}], "replacements": [{"replacement": {"actions": [14, 63, 88], "resource": "xn9WTMdx"}, "target": "AMVxMx9f"}, {"replacement": {"actions": [73, 93, 48], "resource": "sSrqPsdY"}, "target": "iln9CYJu"}, {"replacement": {"actions": [60, 43, 37], "resource": "NTXcPxTa"}, "target": "Sv8rUtVm"}]}' 'GAME_ADMIN' --login_with_auth "Bearer foo"
+iam-admin-get-role-source-v3 'GAME_ADMIN' --login_with_auth "Bearer foo"
+iam-admin-change-role-override-config-status-v3 '{"active": true}' 'VIEW_ONLY' --login_with_auth "Bearer foo"
+iam-admin-get-role-namespace-permission-v3 'iKDTRcqS' --login_with_auth "Bearer foo"
+iam-get-admin-users-by-role-id-v3 '5TYDOX0B' --login_with_auth "Bearer foo"
 iam-admin-query-tag-v3 --login_with_auth "Bearer foo"
-iam-admin-create-tag-v3 '{"tagName": "laK3LWqS"}' --login_with_auth "Bearer foo"
-iam-admin-update-tag-v3 '{"tagName": "qUtp7Amx"}' 'FuxPVrxy' --login_with_auth "Bearer foo"
-iam-admin-delete-tag-v3 '381Fj1wX' --login_with_auth "Bearer foo"
+iam-admin-create-tag-v3 '{"tagName": "V69kHojU"}' --login_with_auth "Bearer foo"
+iam-admin-update-tag-v3 '{"tagName": "QOmXaqxD"}' 'IP8flSA7' --login_with_auth "Bearer foo"
+iam-admin-delete-tag-v3 'AGiTTyki' --login_with_auth "Bearer foo"
 iam-admin-get-user-by-email-address-v3 --login_with_auth "Bearer foo"
-iam-admin-bulk-update-users-v3 '{"updateRequest": {"skipLoginQueue": false}, "userIds": ["FiACKrB1", "2z9q7NaI", "9VSF65Xt"]}' --login_with_auth "Bearer foo"
-iam-admin-get-bulk-user-ban-v3 '{"bulkUserId": ["6grniHlx", "W54SQc50", "GOW9F1Us"]}' --login_with_auth "Bearer foo"
-iam-admin-list-user-id-by-user-i-ds-v3 '{"findByPublisherNamespace": false, "userIds": ["SYhmQHzO", "bYC1nw6W", "TZdew32C"]}' --login_with_auth "Bearer foo"
-iam-admin-bulk-get-users-platform '{"userIds": ["04PuO8rQ", "Smhh34g2", "wWxquobg"]}' --login_with_auth "Bearer foo"
-iam-admin-cursor-get-user-v3 '{"cursor": {"cursorTime": "t0IeUhN9", "userId": "7vbcU4Ff"}, "fields": ["qkMDZNoX", "9IKC6qMP", "2jjdBFZS"], "limit": 9}' --login_with_auth "Bearer foo"
-iam-admin-invite-user-v3 '{"emailAddresses": ["SGN2CUjR", "yqhZjHpv", "dHRgSSH6"], "isAdmin": false, "languageTag": "UXS30BOM", "namespace": "xIarU0ha", "roles": ["OoSlBeAD", "PqXDD12z", "LhupcN4C"]}' --login_with_auth "Bearer foo"
-iam-admin-query-third-platform-link-history-v3 'jBytpZvW' --login_with_auth "Bearer foo"
+iam-admin-bulk-update-users-v3 '{"updateRequest": {"skipLoginQueue": false}, "userIds": ["jfnOn9OT", "0kxQ6791", "Lo3jCjpB"]}' --login_with_auth "Bearer foo"
+iam-admin-get-bulk-user-ban-v3 '{"bulkUserId": ["Qqg7ShFJ", "fM4QUSnV", "vLkCbmcx"]}' --login_with_auth "Bearer foo"
+iam-admin-list-user-id-by-user-i-ds-v3 '{"findByPublisherNamespace": false, "userIds": ["XXlgMOzd", "uTxDBi3I", "yNBrtrFb"]}' --login_with_auth "Bearer foo"
+iam-admin-bulk-get-users-platform '{"userIds": ["MV9vlIsh", "9e0C7irp", "2kEB1IGr"]}' --login_with_auth "Bearer foo"
+iam-admin-cursor-get-user-v3 '{"cursor": {"cursorTime": "px3A8rUb", "userId": "zA9w7vSs"}, "fields": ["NS1iTA0H", "eVSSyEfL", "acfKuAsG"], "limit": 30}' --login_with_auth "Bearer foo"
+iam-admin-invite-user-v3 '{"emailAddresses": ["UFeElMaW", "OGlz5zgh", "ez9ZcVS6"], "isAdmin": false, "languageTag": "oyh6Ony1", "namespace": "ZeQfrI1Z", "roles": ["Bsny5FXS", "NfvyJnoW", "w42H0F7e"]}' --login_with_auth "Bearer foo"
+iam-admin-query-third-platform-link-history-v3 '5zmUuUEJ' --login_with_auth "Bearer foo"
 iam-admin-list-users-v3 --login_with_auth "Bearer foo"
 iam-admin-search-user-v3 --login_with_auth "Bearer foo"
-iam-admin-get-bulk-user-by-email-address-v3 '{"listEmailAddressRequest": ["gOEzk7Y4", "1g9mnqOY", "mToWs8OT"]}' --login_with_auth "Bearer foo"
-iam-admin-get-user-by-user-id-v3 'VSnoar00' --login_with_auth "Bearer foo"
-iam-admin-update-user-v3 '{"avatarUrl": "wFT4ID8c", "country": "SFQl1ScC", "dateOfBirth": "wu3qt7qx", "displayName": "D7tndYe7", "languageTag": "GBveOqfd", "skipLoginQueue": true, "tags": ["yVuVhe0Y", "HunoVFzd", "9nuA2huf"], "uniqueDisplayName": "nZ3SAla6", "userName": "MVSzMDbr"}' 'H1QXiOVP' --login_with_auth "Bearer foo"
-iam-admin-get-user-ban-v3 'v9G11SlG' --login_with_auth "Bearer foo"
-iam-admin-ban-user-v3 '{"ban": "vC0kuZLZ", "comment": "s0ojVdgE", "endDate": "0OczYa2m", "reason": "FUGAOZTX", "skipNotif": false}' 'a2l3kdRj' --login_with_auth "Bearer foo"
-iam-admin-get-user-ban-summary-v3 'MIMFnAdh' --login_with_auth "Bearer foo"
-iam-admin-update-user-ban-v3 '{"enabled": false, "skipNotif": true}' 'pGkQ6UHG' '0tgME7eq' --login_with_auth "Bearer foo"
-iam-admin-send-verification-code-v3 '{"context": "oaZzR40X", "emailAddress": "m4m0K31B", "languageTag": "CLArCAIT", "upgradeToken": "5oqi35rX"}' 'Y953f26X' --login_with_auth "Bearer foo"
-iam-admin-verify-account-v3 '{"Code": "nOkyEsNs", "ContactType": "tugJsOxX", "LanguageTag": "UOzHnzin", "validateOnly": true}' 'VcbMk5xk' --login_with_auth "Bearer foo"
-iam-get-user-verification-code 'IJFVV0rv' --login_with_auth "Bearer foo"
-iam-admin-get-user-deletion-status-v3 'tLMXxdRf' --login_with_auth "Bearer foo"
-iam-admin-update-user-deletion-status-v3 '{"deletionDate": 75, "enabled": false}' 'KjGT1hKl' --login_with_auth "Bearer foo"
-iam-admin-list-user-all-platform-accounts-distinct-v3 '6mKAaFTo' --login_with_auth "Bearer foo"
-iam-admin-upgrade-headless-account-v3 '{"code": "xcxe63WY", "country": "Oywcpmlc", "dateOfBirth": "gMGeunik", "displayName": "SzSH8zto", "emailAddress": "VG7GhxGH", "password": "G37Q111v", "uniqueDisplayName": "DVWImVyh", "validateOnly": true}' 'q3cXEqsv' --login_with_auth "Bearer foo"
-iam-admin-delete-user-information-v3 'qCr0q1lx' --login_with_auth "Bearer foo"
-iam-admin-get-user-login-histories-v3 'X8RlRtIy' --login_with_auth "Bearer foo"
-iam-admin-reset-password-v3 '{"languageTag": "BDqtNAfg", "mfaToken": "oKJ9RPBn", "newPassword": "YghsOCEG", "oldPassword": "Q1YuXiz7"}' 'fj2vN20d' --login_with_auth "Bearer foo"
-iam-admin-update-user-permission-v3 '{"Permissions": [{"Action": 64, "Resource": "dDT3LBwQ", "SchedAction": 37, "SchedCron": "XAEhLj2f", "SchedRange": ["gTPLhDtv", "a4feyQaX", "mxGDVeGZ"]}, {"Action": 29, "Resource": "z9i517Aq", "SchedAction": 75, "SchedCron": "MxLEM0pd", "SchedRange": ["W0YINWjK", "RIhFeqwP", "3JtwxXHM"]}, {"Action": 5, "Resource": "GS4ODZZn", "SchedAction": 40, "SchedCron": "W9jYhblJ", "SchedRange": ["SW8p3xhT", "Dw9UOycU", "M0I9XjzV"]}]}' '0R3x4fqv' --login_with_auth "Bearer foo"
-iam-admin-add-user-permissions-v3 '{"Permissions": [{"Action": 21, "Resource": "PU9kk6hi", "SchedAction": 43, "SchedCron": "QsXX6EUf", "SchedRange": ["TXU33HdT", "0OaK9vwy", "PQi70R2t"]}, {"Action": 47, "Resource": "hbrn6FRj", "SchedAction": 66, "SchedCron": "Er5X0zGU", "SchedRange": ["6g7BGUtW", "MJftB8i8", "C7Jbo6lM"]}, {"Action": 48, "Resource": "b13V5jgg", "SchedAction": 93, "SchedCron": "Lgzusm5X", "SchedRange": ["y7lLmApr", "u6nc6KjI", "iDgWKtWF"]}]}' 'eHHB7pcs' --login_with_auth "Bearer foo"
-iam-admin-delete-user-permission-bulk-v3 '[{"Action": 69, "Resource": "XLDnfJOE"}, {"Action": 72, "Resource": "asaOPoip"}, {"Action": 28, "Resource": "rBFI9Yw9"}]' 'McRlEA4u' --login_with_auth "Bearer foo"
-iam-admin-delete-user-permission-v3 '50' 'Af7kuv37' 'dsJjzTd6' --login_with_auth "Bearer foo"
-iam-admin-get-user-platform-accounts-v3 'bF1L2jqM' --login_with_auth "Bearer foo"
-iam-admin-list-all-distinct-platform-accounts-v3 'rkamr1By' --login_with_auth "Bearer foo"
-iam-admin-get-list-justice-platform-accounts 'Y0f01dQ8' --login_with_auth "Bearer foo"
-iam-admin-get-user-mapping 'Kq2zvycm' '2GCzAXCy' --login_with_auth "Bearer foo"
-iam-admin-create-justice-user 'jDgRH2lY' 'enI27VlY' --login_with_auth "Bearer foo"
-iam-admin-link-platform-account '{"platformId": "rfH9yIdL", "platformUserId": "DPh6ObBw"}' 'Rj38uKKx' --login_with_auth "Bearer foo"
-iam-admin-get-user-link-histories-v3 'h86peHAp' 'Y3gxLI2N' --login_with_auth "Bearer foo"
-iam-admin-platform-unlink-all-v3 'doxtltfJ' '7gipFc0k' --login_with_auth "Bearer foo"
-iam-admin-platform-link-v3 'AKgdLBts' '62iNh7ZK' 'Zlst79rc' --login_with_auth "Bearer foo"
-iam-admin-delete-user-linking-restriction-by-platform-idv3 'jo4MPSXE' 'g34Y2nAE' --login_with_auth "Bearer foo"
-iam-admin-get-third-party-platform-token-link-status-v3 'EylCSwhO' 'SEoLd73V' 'MMuWcxzn' --login_with_auth "Bearer foo"
-iam-admin-get-user-single-platform-account 'Yzosnjdq' 'eGh0ylbN' --login_with_auth "Bearer foo"
-iam-admin-delete-user-roles-v3 '["KZnxE0kS", "EbCtr0Db", "6DJQ6721"]' 'z9nD9TXu' --login_with_auth "Bearer foo"
-iam-admin-save-user-role-v3 '[{"namespace": "LmKSt6dq", "roleId": "J3zvX5T1"}, {"namespace": "JJw5Wqb2", "roleId": "OK3wVEFA"}, {"namespace": "k2j4gPKP", "roleId": "lFSwEjas"}]' 'EgJ82lvb' --login_with_auth "Bearer foo"
-iam-admin-add-user-role-v3 'K5t7BWQP' '1WhtAar0' --login_with_auth "Bearer foo"
-iam-admin-delete-user-role-v3 'G8bdEpL3' 'wqLOukie' --login_with_auth "Bearer foo"
-iam-admin-get-user-state-by-user-id-v3 'UPCI2mN8' --login_with_auth "Bearer foo"
-iam-admin-update-user-status-v3 '{"enabled": true, "reason": "9otTNOj8"}' 'iJ7DCn2I' --login_with_auth "Bearer foo"
-iam-admin-trustly-update-user-identity '{"emailAddress": "8vMG1XG9", "password": "Z4wOpls6"}' '60WRfY5I' --login_with_auth "Bearer foo"
-iam-admin-verify-user-without-verification-code-v3 '10Mk5V6o' --login_with_auth "Bearer foo"
-iam-admin-update-client-secret-v3 '{"newSecret": "GlbnEdqd"}' 'GgR1dc99' --login_with_auth "Bearer foo"
-iam-admin-check-third-party-login-platform-availability-v3 'ViKjF1M2' --login_with_auth "Bearer foo"
+iam-admin-get-bulk-user-by-email-address-v3 '{"listEmailAddressRequest": ["w7ih075D", "nuML0Qv3", "wgc0eQMA"]}' --login_with_auth "Bearer foo"
+iam-admin-get-user-by-user-id-v3 'HGI2OQMf' --login_with_auth "Bearer foo"
+iam-admin-update-user-v3 '{"avatarUrl": "nN5lH7VA", "country": "inNBbX8H", "dateOfBirth": "xTXtCOll", "displayName": "mu0XA0Nf", "languageTag": "5r7dQjW3", "skipLoginQueue": true, "tags": ["PBgzM8Sp", "IvBKpTYo", "6b9qFizx"], "uniqueDisplayName": "sQXy0QYZ", "userName": "HAfdhvR0"}' '6IhWPDI3' --login_with_auth "Bearer foo"
+iam-admin-get-user-ban-v3 'CowrHunN' --login_with_auth "Bearer foo"
+iam-admin-ban-user-v3 '{"ban": "iAcx4lbJ", "comment": "KryrpMDo", "endDate": "HHBpqDJE", "reason": "vtRPzIrB", "skipNotif": true}' '3aNqCc4W' --login_with_auth "Bearer foo"
+iam-admin-get-user-ban-summary-v3 'd7KwXCkW' --login_with_auth "Bearer foo"
+iam-admin-update-user-ban-v3 '{"enabled": true, "skipNotif": false}' 'BfXoqSc5' '2ZQSQe8g' --login_with_auth "Bearer foo"
+iam-admin-send-verification-code-v3 '{"context": "O9wwYCO1", "emailAddress": "OXeB04zN", "languageTag": "OxZwCPhD", "upgradeToken": "DFlMfX8g"}' 'k51H8ZNc' --login_with_auth "Bearer foo"
+iam-admin-verify-account-v3 '{"Code": "zVT0DJmP", "ContactType": "llg89KKA", "LanguageTag": "er6oe3dP", "validateOnly": true}' 'tepZ7KsW' --login_with_auth "Bearer foo"
+iam-get-user-verification-code 'N9v1QmoL' --login_with_auth "Bearer foo"
+iam-admin-get-user-deletion-status-v3 'ZAuylaAg' --login_with_auth "Bearer foo"
+iam-admin-update-user-deletion-status-v3 '{"deletionDate": 87, "enabled": false}' 'Ey8tovEO' --login_with_auth "Bearer foo"
+iam-admin-list-user-all-platform-accounts-distinct-v3 'P6omHDBk' --login_with_auth "Bearer foo"
+iam-admin-upgrade-headless-account-v3 '{"code": "ovCHKNfq", "country": "eqzktbzi", "dateOfBirth": "bRwksewE", "displayName": "KrfgK7fN", "emailAddress": "i1XAE0lQ", "password": "DoYBsMF1", "uniqueDisplayName": "H029GqVq", "validateOnly": false}' 'BuihKRQ7' --login_with_auth "Bearer foo"
+iam-admin-delete-user-information-v3 'iE8LCJ26' --login_with_auth "Bearer foo"
+iam-admin-get-user-login-histories-v3 'SwzOWaUZ' --login_with_auth "Bearer foo"
+iam-admin-reset-password-v3 '{"languageTag": "Ud1cfZRB", "mfaToken": "3xRJhE7Q", "newPassword": "JCnc8JMi", "oldPassword": "fPvNPQbM"}' '0f2AsWDh' --login_with_auth "Bearer foo"
+iam-admin-update-user-permission-v3 '{"Permissions": [{"Action": 61, "Resource": "pFPvov9j", "SchedAction": 16, "SchedCron": "dbOmkcRq", "SchedRange": ["egy3ToJH", "e26ELa89", "rAuBH3ux"]}, {"Action": 55, "Resource": "WS1YPWHc", "SchedAction": 29, "SchedCron": "NWh26aea", "SchedRange": ["ujg3BWBv", "F9xHOMJN", "hT0Sr3Vd"]}, {"Action": 33, "Resource": "0OViFld8", "SchedAction": 7, "SchedCron": "7Rp17VKC", "SchedRange": ["xykS1vNC", "FujIQOUq", "VDlcbPor"]}]}' 'AuJnX02H' --login_with_auth "Bearer foo"
+iam-admin-add-user-permissions-v3 '{"Permissions": [{"Action": 67, "Resource": "CxnrWByR", "SchedAction": 93, "SchedCron": "1ol4NPxF", "SchedRange": ["rvO6rrtL", "R2qOrFe3", "tQeAM06Y"]}, {"Action": 43, "Resource": "BrbkDwoz", "SchedAction": 10, "SchedCron": "P6kusgck", "SchedRange": ["SAWtqoxO", "2ZpyQtLU", "4OKWjOM6"]}, {"Action": 99, "Resource": "Nu9NLKpd", "SchedAction": 13, "SchedCron": "1tOq4mII", "SchedRange": ["v06Agt6q", "QGLNiezr", "b7evYsan"]}]}' 'xxxhcnyh' --login_with_auth "Bearer foo"
+iam-admin-delete-user-permission-bulk-v3 '[{"Action": 5, "Resource": "Y9u0hq7y"}, {"Action": 12, "Resource": "53eJlIl1"}, {"Action": 44, "Resource": "JACtvOGV"}]' 'Ied9YHh4' --login_with_auth "Bearer foo"
+iam-admin-delete-user-permission-v3 '69' 'CPdzqQBB' 'Leic59Pi' --login_with_auth "Bearer foo"
+iam-admin-get-user-platform-accounts-v3 'fslR8QAu' --login_with_auth "Bearer foo"
+iam-admin-list-all-distinct-platform-accounts-v3 'oEo14Llx' --login_with_auth "Bearer foo"
+iam-admin-get-list-justice-platform-accounts 'f6DoM5KT' --login_with_auth "Bearer foo"
+iam-admin-get-user-mapping 'HbQNamGl' 'H2YeAhVc' --login_with_auth "Bearer foo"
+iam-admin-create-justice-user 'e5YxOjUY' 'LssT3cWV' --login_with_auth "Bearer foo"
+iam-admin-link-platform-account '{"platformId": "k3KCHBXm", "platformUserId": "zJGMI9Go"}' 'AuOwR2Wl' --login_with_auth "Bearer foo"
+iam-admin-get-user-link-histories-v3 'xEAX9aDE' 'xxpyuJtW' --login_with_auth "Bearer foo"
+iam-admin-platform-unlink-all-v3 'uXYZdl5T' '1bFFeq7H' --login_with_auth "Bearer foo"
+iam-admin-platform-link-v3 'kTZfWqvX' 'LPfhKRBb' 'wdvWZuSq' --login_with_auth "Bearer foo"
+iam-admin-delete-user-linking-restriction-by-platform-idv3 'zrTB6wCN' 'mZku8aDp' --login_with_auth "Bearer foo"
+iam-admin-get-third-party-platform-token-link-status-v3 'YgJiCccR' 'jWfjR7g8' 'l297jL4e' --login_with_auth "Bearer foo"
+iam-admin-get-user-single-platform-account 'AlFFvbA7' '7dH4SIgQ' --login_with_auth "Bearer foo"
+iam-admin-delete-user-roles-v3 '["uNj1tJNu", "R99jiVbU", "8luY02gZ"]' 'YbNJJAMZ' --login_with_auth "Bearer foo"
+iam-admin-save-user-role-v3 '[{"namespace": "ZWTG1E3O", "roleId": "RdcJQvSe"}, {"namespace": "Ul2FxTQU", "roleId": "Es2O4Pu8"}, {"namespace": "wlwmMgKU", "roleId": "PMyn4AIt"}]' 'E5r5wK0a' --login_with_auth "Bearer foo"
+iam-admin-add-user-role-v3 'jVjVQ9gA' 'W6mj2XaP' --login_with_auth "Bearer foo"
+iam-admin-delete-user-role-v3 'NiHUo4Tc' 'AaunTNeX' --login_with_auth "Bearer foo"
+iam-admin-get-user-state-by-user-id-v3 'EncmWs77' --login_with_auth "Bearer foo"
+iam-admin-update-user-status-v3 '{"enabled": false, "reason": "Y32wBttf"}' 'fuULTcsG' --login_with_auth "Bearer foo"
+iam-admin-trustly-update-user-identity '{"emailAddress": "ArzzHy4U", "password": "qRAkCUGs"}' 'RbSHqWwX' --login_with_auth "Bearer foo"
+iam-admin-verify-user-without-verification-code-v3 '2YeMkdDn' --login_with_auth "Bearer foo"
+iam-admin-update-client-secret-v3 '{"newSecret": "92Gkbr3x"}' '4c27nD5W' --login_with_auth "Bearer foo"
+iam-admin-check-third-party-login-platform-availability-v3 'bglgHjBw' --login_with_auth "Bearer foo"
 iam-admin-get-roles-v3 --login_with_auth "Bearer foo"
-iam-admin-create-role-v3 '{"adminRole": true, "deletable": false, "isWildcard": true, "managers": [{"displayName": "tAKZJ86M", "namespace": "0YgFIwF2", "userId": "hHWIBi3Y"}, {"displayName": "XNcPuNEV", "namespace": "ftuIBQrQ", "userId": "l552k41e"}, {"displayName": "7is92obE", "namespace": "Em5Cmlnj", "userId": "ArECUkbV"}], "members": [{"displayName": "SqcwlFss", "namespace": "O3G4HZ4V", "userId": "8mvgWZ1I"}, {"displayName": "9AOw2kER", "namespace": "uGJ2uijD", "userId": "DgKMV7Tm"}, {"displayName": "96XW8mEP", "namespace": "ibwI1gRw", "userId": "xuWcI48R"}], "permissions": [{"action": 83, "resource": "1jLEn43v", "schedAction": 47, "schedCron": "vdDgsfV0", "schedRange": ["xBAliIHT", "EcFc3UE1", "PdSIAyfc"]}, {"action": 26, "resource": "1iBuz6QA", "schedAction": 23, "schedCron": "P6gvqjwB", "schedRange": ["EGqBIHHf", "wmWYBMKI", "Q7v2Y3po"]}, {"action": 22, "resource": "trmwlFGT", "schedAction": 13, "schedCron": "QVn3Y3R0", "schedRange": ["x4oPDidE", "L645HxpI", "WbBck3no"]}], "roleName": "kZtH7nBE"}' --login_with_auth "Bearer foo"
-iam-admin-get-role-v3 'tc8qiQtQ' --login_with_auth "Bearer foo"
-iam-admin-delete-role-v3 'ETwir7wo' --login_with_auth "Bearer foo"
-iam-admin-update-role-v3 '{"deletable": true, "isWildcard": true, "roleName": "FJpBuNKk"}' 'cVohskde' --login_with_auth "Bearer foo"
-iam-admin-get-role-admin-status-v3 'GV8Vl4Jo' --login_with_auth "Bearer foo"
-iam-admin-update-admin-role-status-v3 '97ALlIuk' --login_with_auth "Bearer foo"
-iam-admin-remove-role-admin-v3 'XMLadIqJ' --login_with_auth "Bearer foo"
-iam-admin-get-role-managers-v3 'HrTcGmDa' --login_with_auth "Bearer foo"
-iam-admin-add-role-managers-v3 '{"managers": [{"displayName": "Wx6DsWXI", "namespace": "zvJkxREz", "userId": "OGzAzHY7"}, {"displayName": "ftVRSiHP", "namespace": "N5VMoivi", "userId": "ddHAaEZX"}, {"displayName": "EItvwc2P", "namespace": "rfhrnzJb", "userId": "O2cDYvkB"}]}' 'mIn58itm' --login_with_auth "Bearer foo"
-iam-admin-remove-role-managers-v3 '{"managers": [{"displayName": "hHStlAij", "namespace": "1OO0KHiF", "userId": "ASzvQ06o"}, {"displayName": "Apn6X0jZ", "namespace": "mZni0qY8", "userId": "xXeahPGZ"}, {"displayName": "no1fX3Tj", "namespace": "2IUkoAmk", "userId": "zKnQQNp3"}]}' 'kM0nUzif' --login_with_auth "Bearer foo"
-iam-admin-get-role-members-v3 'zQX4ghmh' --login_with_auth "Bearer foo"
-iam-admin-add-role-members-v3 '{"members": [{"displayName": "imIsHoec", "namespace": "WryOya6e", "userId": "qC1Zj9M7"}, {"displayName": "BXBPtJHj", "namespace": "N9Ft293Z", "userId": "Xgj2hVpq"}, {"displayName": "8qpZmVgH", "namespace": "gY7CKCHG", "userId": "wbYikPkf"}]}' 'TefVw4gU' --login_with_auth "Bearer foo"
-iam-admin-update-role-permissions-v3 '{"permissions": [{"action": 83, "resource": "w2btRKlN", "schedAction": 20, "schedCron": "poAfILHu", "schedRange": ["M47kAC1x", "10qCldEy", "puuJlAqm"]}, {"action": 79, "resource": "GuHZou4w", "schedAction": 39, "schedCron": "Y2iWxfjN", "schedRange": ["0SqhIfOK", "WzG1QSqr", "v1aL4JHy"]}, {"action": 12, "resource": "09bGrJrF", "schedAction": 44, "schedCron": "MCfJWVLx", "schedRange": ["Vgu4eMs3", "l4XaMKuH", "2OOS2WFZ"]}]}' 'XyxZ4Uum' --login_with_auth "Bearer foo"
-iam-admin-add-role-permissions-v3 '{"permissions": [{"action": 39, "resource": "OtPjeBsK", "schedAction": 40, "schedCron": "DlV7C7FN", "schedRange": ["4xAXEUEa", "GWhaGqTT", "33fhmVOP"]}, {"action": 76, "resource": "uv4RdnJi", "schedAction": 25, "schedCron": "FQcawbMR", "schedRange": ["muaKKaWT", "6T8Bsakz", "N1QZD6FM"]}, {"action": 28, "resource": "VGomduH6", "schedAction": 70, "schedCron": "Hl26RgkL", "schedRange": ["rjyJLTcA", "avFvCR1C", "Vk7667Uu"]}]}' '5JfsZEna' --login_with_auth "Bearer foo"
-iam-admin-delete-role-permissions-v3 '["UJFNxiLW", "fH4rEAy2", "K4DJ4ZB0"]' 'Av1ViGmg' --login_with_auth "Bearer foo"
-iam-admin-delete-role-permission-v3 '94' 'hvZRjth4' 'HqCvl4CF' --login_with_auth "Bearer foo"
+iam-admin-create-role-v3 '{"adminRole": false, "deletable": false, "isWildcard": true, "managers": [{"displayName": "OxUtC5BS", "namespace": "CRT1E2gG", "userId": "mHu9nvJh"}, {"displayName": "tP2wsI38", "namespace": "hUIUDzsu", "userId": "4gPdAb86"}, {"displayName": "7zKBZg2z", "namespace": "JUNkxBJo", "userId": "lKs6Pbta"}], "members": [{"displayName": "9w5PlFVG", "namespace": "GKXJMwf6", "userId": "jZQUp5RH"}, {"displayName": "zFNPqDnv", "namespace": "2iInePqS", "userId": "dlMB4KtB"}, {"displayName": "2pfX5PUF", "namespace": "uejxxKCM", "userId": "uBMG1dO0"}], "permissions": [{"action": 81, "resource": "u62VFvSS", "schedAction": 38, "schedCron": "21z7hbZX", "schedRange": ["I3lahKY9", "eEapUBvW", "STdRTWJD"]}, {"action": 78, "resource": "dIpMpz5e", "schedAction": 57, "schedCron": "H6z8Liat", "schedRange": ["CcBVqCC9", "KIJSMMvV", "zi4G3txR"]}, {"action": 94, "resource": "EZl4ivYu", "schedAction": 10, "schedCron": "Dv6CabZ9", "schedRange": ["tUsB9NRP", "aHZnnQhO", "C9j6FTWd"]}], "roleName": "LCxS9ZUS"}' --login_with_auth "Bearer foo"
+iam-admin-get-role-v3 'O2r17AVv' --login_with_auth "Bearer foo"
+iam-admin-delete-role-v3 '9KwRD3BR' --login_with_auth "Bearer foo"
+iam-admin-update-role-v3 '{"deletable": true, "isWildcard": true, "roleName": "fQqz96uu"}' 'wW24dXod' --login_with_auth "Bearer foo"
+iam-admin-get-role-admin-status-v3 '1oDPdWqo' --login_with_auth "Bearer foo"
+iam-admin-update-admin-role-status-v3 'z7OgFjor' --login_with_auth "Bearer foo"
+iam-admin-remove-role-admin-v3 'FzpkN1xk' --login_with_auth "Bearer foo"
+iam-admin-get-role-managers-v3 'TYBfcXWx' --login_with_auth "Bearer foo"
+iam-admin-add-role-managers-v3 '{"managers": [{"displayName": "9phVKNBg", "namespace": "zCarTnIA", "userId": "6yLJPKY4"}, {"displayName": "AMfK03jg", "namespace": "mPNnaxPp", "userId": "Ys9v3147"}, {"displayName": "VAs0XEJS", "namespace": "XAcMbz5I", "userId": "FIPvlSmP"}]}' 'i209VXkH' --login_with_auth "Bearer foo"
+iam-admin-remove-role-managers-v3 '{"managers": [{"displayName": "Z5zwKijJ", "namespace": "L8wIrwSL", "userId": "F19U2IVn"}, {"displayName": "DufxLxby", "namespace": "oqQVTxP3", "userId": "Caf5zfmB"}, {"displayName": "yjQGiRgj", "namespace": "29FY7r7L", "userId": "jrMdNdwp"}]}' '2YNNCGQl' --login_with_auth "Bearer foo"
+iam-admin-get-role-members-v3 'UyQl5zUd' --login_with_auth "Bearer foo"
+iam-admin-add-role-members-v3 '{"members": [{"displayName": "xunBRGNz", "namespace": "RZ55ypMn", "userId": "pVnXcPBi"}, {"displayName": "Uw3m8w4n", "namespace": "vJau7x6q", "userId": "zneouEML"}, {"displayName": "TqgX5Gck", "namespace": "YnS4CYhW", "userId": "3iQUyqwd"}]}' '7QFa0pYG' --login_with_auth "Bearer foo"
+iam-admin-update-role-permissions-v3 '{"permissions": [{"action": 84, "resource": "hVrV9T7T", "schedAction": 36, "schedCron": "VSfQDASY", "schedRange": ["8MGEUKAk", "icHnsuQQ", "h3RrGOsh"]}, {"action": 93, "resource": "QbkVtPcM", "schedAction": 72, "schedCron": "lZz3N0Dx", "schedRange": ["6zJsu5dj", "U8lLdOhZ", "ljOQd9BM"]}, {"action": 83, "resource": "6OZbbWT5", "schedAction": 35, "schedCron": "zFcQLhgZ", "schedRange": ["wpntfQfD", "IsPPzvQl", "pl9Qwk8T"]}]}' 'fvxU5ITF' --login_with_auth "Bearer foo"
+iam-admin-add-role-permissions-v3 '{"permissions": [{"action": 67, "resource": "bpHaoCz4", "schedAction": 31, "schedCron": "qIpnXRJh", "schedRange": ["osFSuGOe", "yQo7ESyD", "Gi0H8H6n"]}, {"action": 4, "resource": "XLjNg9jb", "schedAction": 8, "schedCron": "sMzI3v79", "schedRange": ["VfFw47IN", "8RXBUsbN", "I93ypoac"]}, {"action": 46, "resource": "nYy2Ulyf", "schedAction": 50, "schedCron": "tBRHZybv", "schedRange": ["ToWK5qIu", "Rm9BWVFR", "I6X4rh33"]}]}' 'I5vTjNKQ' --login_with_auth "Bearer foo"
+iam-admin-delete-role-permissions-v3 '["pCDqrDMj", "66BwL1CA", "OBU3kSIK"]' 'McTa1kHC' --login_with_auth "Bearer foo"
+iam-admin-delete-role-permission-v3 '99' 'oQ4OKcZS' '2z0CINtA' --login_with_auth "Bearer foo"
 iam-admin-get-my-user-v3 --login_with_auth "Bearer foo"
-iam-user-authentication-v3 'i1aa1Aqk' 'rQHm8EeA' 'UNzXFH4R' --login_with_auth "Basic YWRtaW46YWRtaW4="
-iam-authentication-with-platform-link-v3 'DFjPH4ih' 'ndQT5WHU' 'sT7uPkyl' '24vWkvZD' --login_with_auth "Bearer foo"
-iam-authenticate-and-link-forward-v3 '4zl4ovkQ' 'iUPth9A8' 'rjtKZi6J' 'tdxVBspw' --login_with_auth "Bearer foo"
+iam-user-authentication-v3 'x95z8BbM' 'iDo8LQj1' 'wRpj1tkV' --login_with_auth "Basic YWRtaW46YWRtaW4="
+iam-authentication-with-platform-link-v3 '2nV0FuTG' 'hmKodMqT' 'OT71f4oR' 'Pll2O1mz' --login_with_auth "Bearer foo"
+iam-authenticate-and-link-forward-v3 'DSJ2tPt4' 'RmpMLSc4' 'QNhH6lV3' 'xY2m3Utt' --login_with_auth "Bearer foo"
 iam-public-get-system-config-v3 --login_with_auth "Bearer foo"
-iam-generate-token-by-new-headless-account-v3 'vQkFwtBi' --login_with_auth "Basic YWRtaW46YWRtaW4="
-iam-request-one-time-linking-code-v3 'kVpIeFly' --login_with_auth "Bearer foo"
-iam-validate-one-time-linking-code-v3 'a0VmNa95' --login_with_auth "Bearer foo"
-iam-request-token-by-one-time-link-code-response-v3 'qC6CsXD3' 'cjONllr5' --login_with_auth "Bearer foo"
+iam-generate-token-by-new-headless-account-v3 'Hf1BI5oH' --login_with_auth "Basic YWRtaW46YWRtaW4="
+iam-request-one-time-linking-code-v3 '3HRnEEkM' --login_with_auth "Bearer foo"
+iam-validate-one-time-linking-code-v3 'eZkhoK9B' --login_with_auth "Bearer foo"
+iam-request-token-by-one-time-link-code-response-v3 'jm3G4rja' '7j13dZLW' --login_with_auth "Bearer foo"
 iam-get-country-location-v3 --login_with_auth "Bearer foo"
 iam-logout --login_with_auth "Bearer foo"
-iam-request-token-exchange-code-v3 'S1lH3bEF' --login_with_auth "Bearer foo"
-iam-admin-retrieve-user-third-party-platform-token-v3 'tp6a2Goo' 'm667cv3H' --login_with_auth "Bearer foo"
-iam-revoke-user-v3 'kZlAZ86J' --login_with_auth "Bearer foo"
-iam-authorize-v3 'N4OI5zmA' 'code' --login_with_auth "Basic YWRtaW46YWRtaW4="
-iam-token-introspection-v3 'nSrB0Cx9' --login_with_auth "Basic YWRtaW46YWRtaW4="
+iam-request-token-exchange-code-v3 'bH56049W' --login_with_auth "Bearer foo"
+iam-admin-retrieve-user-third-party-platform-token-v3 'VIDxFmPB' 'kHdsKQjd' --login_with_auth "Bearer foo"
+iam-revoke-user-v3 'y4MRjqPb' --login_with_auth "Bearer foo"
+iam-authorize-v3 'fxVuWwof' 'code' --login_with_auth "Basic YWRtaW46YWRtaW4="
+iam-token-introspection-v3 '5AvymyNc' --login_with_auth "Basic YWRtaW46YWRtaW4="
 iam-get-jwksv3 --login_with_auth "Bearer foo"
-iam-send-mfa-authentication-code '1Uva5DrJ' 'uFtCtVKe' 'SBS08upf' --login_with_auth "Bearer foo"
-iam-change2fa-method 'Zr9tpL5Z' 'AwgoGB4F' --login_with_auth "Bearer foo"
-iam-verify2fa-code 'o1VSJKNv' 'odn56uXS' 'h030On7a' 'false' --login_with_auth "Bearer foo"
-iam-verify2fa-code-forward 'WXqviigy' 'GxI5g9OL' 'QkcOotFX' 'BHhPpGJE' --login_with_auth "Bearer foo"
-iam-retrieve-user-third-party-platform-token-v3 'UH6FVO34' 'Bi28GSht' --login_with_auth "Bearer foo"
-iam-auth-code-request-v3 '5R3BNHhV' 'sz7CxuGM' --login_with_auth "Bearer foo"
-iam-platform-token-grant-v3 '4jmKnGl9' --login_with_auth "Basic YWRtaW46YWRtaW4="
+iam-send-mfa-authentication-code 'oopNStCu' 'iHv3DWuV' 'ttygYJ57' --login_with_auth "Bearer foo"
+iam-change2fa-method 'ABLM8OH9' 'fMCZILF1' --login_with_auth "Bearer foo"
+iam-verify2fa-code 'LXdcImFt' 'mUPYRDOv' 'Z9QeNfoK' 'true' --login_with_auth "Bearer foo"
+iam-verify2fa-code-forward 'zdNaZBbq' 'KDGHnAQ8' 'KFiQX1mJ' 'yQjyzfUf' --login_with_auth "Bearer foo"
+iam-retrieve-user-third-party-platform-token-v3 'QNTlEhum' 'Sy90KwwR' --login_with_auth "Bearer foo"
+iam-auth-code-request-v3 'HGxM4Vts' 'DydqBVjQ' --login_with_auth "Bearer foo"
+iam-platform-token-grant-v3 'WMlXHOss' --login_with_auth "Basic YWRtaW46YWRtaW4="
 iam-get-revocation-list-v3 --login_with_auth "Basic YWRtaW46YWRtaW4="
-iam-token-revocation-v3 'pjeMGB1r' --login_with_auth "Basic YWRtaW46YWRtaW4="
-iam-simultaneous-login-v3 'steam' 'tjZxhdKL' --login_with_auth "Bearer foo"
-iam-token-grant-v3 'urn:ietf:params:oauth:grant-type:extend_client_credentials' --login_with_auth "Basic YWRtaW46YWRtaW4="
-iam-verify-token-v3 'FsOx4D44' --login_with_auth "Basic YWRtaW46YWRtaW4="
-iam-platform-authentication-v3 'AS2bsKgK' 'bVFTnV3R' --login_with_auth "Bearer foo"
-iam-platform-token-refresh-v3 'mfaBFP98' '3RRMmDMi' --login_with_auth "Bearer foo"
+iam-token-revocation-v3 'mDkDCuGN' --login_with_auth "Basic YWRtaW46YWRtaW4="
+iam-simultaneous-login-v3 'epicgames' 'JDW2U2cN' --login_with_auth "Bearer foo"
+iam-token-grant-v3 'password' --login_with_auth "Basic YWRtaW46YWRtaW4="
+iam-verify-token-v3 'OtaTdp1H' --login_with_auth "Basic YWRtaW46YWRtaW4="
+iam-platform-authentication-v3 'A5ZOkgHI' 'XzkeXCSt' --login_with_auth "Bearer foo"
+iam-platform-token-refresh-v3 'kB5f3Ghs' 'Yi0hcGpa' --login_with_auth "Bearer foo"
 iam-public-get-input-validations --login_with_auth "Bearer foo"
-iam-public-get-input-validation-by-field 'jSzdazVj' --login_with_auth "Bearer foo"
-iam-public-get-country-age-restriction-v3 'hzyYlAvX' --login_with_auth "Bearer foo"
-iam-public-get-config-value-v3 '48iYuhzT' --login_with_auth "Bearer foo"
+iam-public-get-input-validation-by-field 'S4K01vPL' --login_with_auth "Bearer foo"
+iam-public-get-country-age-restriction-v3 'S7HM64NO' --login_with_auth "Bearer foo"
+iam-public-get-config-value-v3 '1AHjaZNe' --login_with_auth "Bearer foo"
 iam-public-get-country-list-v3 --login_with_auth "Bearer foo"
 iam-retrieve-all-active-third-party-login-platform-credential-public-v3 --login_with_auth "Bearer foo"
-iam-retrieve-active-oidc-clients-public-v3 'XZqq8Rkr' --login_with_auth "Bearer foo"
+iam-retrieve-active-oidc-clients-public-v3 'rBm1JOkl' --login_with_auth "Bearer foo"
 iam-public-get-profile-update-strategy-v3 --login_with_auth "Bearer foo"
-iam-public-get-async-status 'UgLd5aNB' --login_with_auth "Bearer foo"
+iam-public-get-async-status 'QqTDJKvd' --login_with_auth "Bearer foo"
 iam-public-search-user-v3 --login_with_auth "Bearer foo"
-iam-public-create-user-v3 '{"PasswordMD5Sum": "eF76srue", "acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "dwRWR23c", "policyId": "iD91QEju", "policyVersionId": "lRjDK5Gk"}, {"isAccepted": true, "localizedPolicyVersionId": "NmzB59Jn", "policyId": "fEIWrEob", "policyVersionId": "ReHtBIcE"}, {"isAccepted": false, "localizedPolicyVersionId": "NEksOOq3", "policyId": "Gu38cGtv", "policyVersionId": "CfNfPflQ"}], "authType": "IVpbYpUR", "code": "HCRnNFaC", "country": "C0KXXyoW", "dateOfBirth": "Eu3CI2fb", "displayName": "KyIzZvjQ", "emailAddress": "Dk8grAl0", "password": "kgGp3EGq", "reachMinimumAge": true, "uniqueDisplayName": "a8q5eGvn"}' --login_with_auth "Bearer foo"
-iam-check-user-availability 'JLYSto0z' 'GueAPbAM' --login_with_auth "Bearer foo"
-iam-public-send-registration-code '{"emailAddress": "8VGQLdrF", "languageTag": "LOuc1Sc5"}' --login_with_auth "Bearer foo"
-iam-public-verify-registration-code '{"code": "q1IHYLJ3", "emailAddress": "f78hCQaY"}' --login_with_auth "Bearer foo"
-iam-public-forgot-password-v3 '{"emailAddress": "zeLqcqta", "languageTag": "sp68ibcJ"}' --login_with_auth "Bearer foo"
-iam-public-validate-user-input '{"displayName": "B07x8VBl", "password": "yuRDI5E2", "uniqueDisplayName": "RShaXCGh", "username": "c3SqyZgw"}' --login_with_auth "Bearer foo"
-iam-get-admin-invitation-v3 'mQhfgnzb' --login_with_auth "Bearer foo"
-iam-create-user-from-invitation-v3 '{"PasswordMD5Sum": "Xy3IEVTs", "acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "mTnM6fZz", "policyId": "wVZMsk35", "policyVersionId": "uNrC3Tmf"}, {"isAccepted": false, "localizedPolicyVersionId": "uXaKvAo3", "policyId": "fzyqlbTR", "policyVersionId": "DGQ35S0x"}, {"isAccepted": false, "localizedPolicyVersionId": "A5znR8ly", "policyId": "HHbI18n2", "policyVersionId": "76Em00VX"}], "authType": "ub9bEvSt", "code": "GtIcGDgq", "country": "fzMDBTm6", "dateOfBirth": "13UFDuy0", "displayName": "4jDMRbMi", "emailAddress": "FQr39Ybc", "password": "9sfArZrg", "reachMinimumAge": false, "uniqueDisplayName": "NVu1p0Pf"}' 'rp1vjg4m' --login_with_auth "Bearer foo"
-iam-update-user-v3 '{"avatarUrl": "K213hYPl", "country": "wjHTY8Bh", "dateOfBirth": "1zEcscTQ", "displayName": "ZeotLTxD", "languageTag": "mtUAvNbD", "uniqueDisplayName": "z725nfAS", "userName": "X6VwyPzq"}' --login_with_auth "Bearer foo"
-iam-public-partial-update-user-v3 '{"avatarUrl": "sGdAgEqE", "country": "mImmiH7J", "dateOfBirth": "5r67LQNa", "displayName": "uCSDQTcC", "languageTag": "kzOPBB40", "uniqueDisplayName": "ovBlZWFp", "userName": "sDii2KJm"}' --login_with_auth "Bearer foo"
-iam-public-send-verification-code-v3 '{"context": "onF6KpYf", "emailAddress": "kYALxVt8", "languageTag": "SPd9h9p8", "upgradeToken": "OoCYLmyd"}' --login_with_auth "Bearer foo"
-iam-public-user-verification-v3 '{"code": "PPon2oN3", "contactType": "tFskqMqw", "languageTag": "LltbtkpN", "validateOnly": true}' --login_with_auth "Bearer foo"
-iam-public-upgrade-headless-account-v3 '{"code": "IX0AuZSH", "country": "wdYO6zxt", "dateOfBirth": "9vTXn8ZD", "displayName": "60CwRFA6", "emailAddress": "R0E7GEgD", "password": "BVUchNNA", "uniqueDisplayName": "H72pEOr7", "validateOnly": false}' --login_with_auth "Bearer foo"
-iam-public-verify-headless-account-v3 '{"emailAddress": "RYNIQfX9", "password": "BzVq61N0"}' --login_with_auth "Bearer foo"
-iam-public-update-password-v3 '{"languageTag": "zN0LOfTN", "mfaToken": "eBqb1WNF", "newPassword": "99y6dORV", "oldPassword": "lMjj3LUV"}' --login_with_auth "Bearer foo"
-iam-public-create-justice-user 'gTZK1UN2' --login_with_auth "Bearer foo"
-iam-public-platform-link-v3 'MKJ5rzy1' 'iwMmvv4J' --login_with_auth "Bearer foo"
-iam-public-platform-unlink-all-v3 'uVBwOsDx' --login_with_auth "Bearer foo"
-iam-public-force-platform-link-v3 'gcRUejeE' 'Zp5doY9Z' --login_with_auth "Bearer foo"
-iam-public-web-link-platform 'pj8LkEQl' --login_with_auth "Bearer foo"
-iam-public-web-link-platform-establish '79UqmmZE' 'WARRzpVR' --login_with_auth "Bearer foo"
-iam-public-process-web-link-platform-v3 'nsRIuhEA' 'trgeWk5H' --login_with_auth "Bearer foo"
-iam-public-get-users-platform-infos-v3 '{"platformId": "6LHGPyQN", "userIds": ["ZHUPn7So", "BrZT0mUy", "V86dcOPg"]}' --login_with_auth "Bearer foo"
-iam-reset-password-v3 '{"clientId": "AaJqmY4i", "code": "2lrRs00p", "emailAddress": "O991LHG6", "languageTag": "7DIpDeGd", "newPassword": "LpNaRzeM"}' --login_with_auth "Bearer foo"
-iam-public-get-user-ban-history-v3 'rD1fQqzS' --login_with_auth "Bearer foo"
-iam-public-list-user-all-platform-accounts-distinct-v3 'TJBLoN48' --login_with_auth "Bearer foo"
-iam-public-get-user-information-v3 'wko9jzWe' --login_with_auth "Bearer foo"
-iam-public-get-user-login-histories-v3 '6CcWamTz' --login_with_auth "Bearer foo"
-iam-public-get-user-platform-accounts-v3 '5p8YpnrJ' --login_with_auth "Bearer foo"
-iam-public-list-justice-platform-accounts-v3 'IVLboNUz' --login_with_auth "Bearer foo"
-iam-public-link-platform-account '{"platformId": "XEgA53ty", "platformUserId": "Gaht0wUY"}' 'atrpyWe3' --login_with_auth "Bearer foo"
-iam-public-force-link-platform-with-progression '{"chosenNamespaces": ["qtjlnZ8S", "RsHzIacY", "jn3uHq4A"], "requestId": "wLpRiSP3"}' 'BIVzoYTl' --login_with_auth "Bearer foo"
-iam-public-get-publisher-user-v3 'qbKyE8d5' --login_with_auth "Bearer foo"
-iam-public-validate-user-by-user-id-and-password-v3 'ccl18ZtQ' '4C6woxlL' --login_with_auth "Bearer foo"
+iam-public-create-user-v3 '{"PasswordMD5Sum": "WG0VzOVA", "acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "xxMrSok0", "policyId": "k25OzUbc", "policyVersionId": "vFtN3K3Y"}, {"isAccepted": false, "localizedPolicyVersionId": "uZvuUVLU", "policyId": "O7CLYEdx", "policyVersionId": "RUEhQMuc"}, {"isAccepted": true, "localizedPolicyVersionId": "qVE0kPrk", "policyId": "DrKx4cMJ", "policyVersionId": "NfojeNyr"}], "authType": "39vnHHyV", "code": "M4xie567", "country": "Q291EHIC", "dateOfBirth": "EgLkc9Bg", "displayName": "gpY5HkFq", "emailAddress": "ysKxKe0t", "password": "eKy3obL2", "reachMinimumAge": true, "uniqueDisplayName": "7LR4bkAg"}' --login_with_auth "Bearer foo"
+iam-check-user-availability 'uSQjAQy6' 'G8QSoZB7' --login_with_auth "Bearer foo"
+iam-public-send-registration-code '{"emailAddress": "9OIyEYwd", "languageTag": "dBQd7xFQ"}' --login_with_auth "Bearer foo"
+iam-public-verify-registration-code '{"code": "u8kdOp7o", "emailAddress": "xuy16Vri"}' --login_with_auth "Bearer foo"
+iam-public-forgot-password-v3 '{"emailAddress": "7Grgn6z1", "languageTag": "eOuxrccg"}' --login_with_auth "Bearer foo"
+iam-public-validate-user-input '{"displayName": "9300aSeZ", "password": "eKLSDpT5", "uniqueDisplayName": "pPQHvkpV", "username": "ElpJISn8"}' --login_with_auth "Bearer foo"
+iam-get-admin-invitation-v3 'BO4Wkukp' --login_with_auth "Bearer foo"
+iam-create-user-from-invitation-v3 '{"PasswordMD5Sum": "KjIjW9sg", "acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "V29YhCaE", "policyId": "cPj6RcQU", "policyVersionId": "RNgkzN6b"}, {"isAccepted": false, "localizedPolicyVersionId": "cqA7zBGE", "policyId": "kRD8cQ5p", "policyVersionId": "fYxroaKU"}, {"isAccepted": true, "localizedPolicyVersionId": "dMEFSjFn", "policyId": "h7N4gLtx", "policyVersionId": "fZMPuGpY"}], "authType": "sviUCPvV", "code": "Q2nJKqnn", "country": "zL69GbDi", "dateOfBirth": "EPkuhoJK", "displayName": "XXcED6hJ", "emailAddress": "62mjoeCK", "password": "TRLZUfT4", "reachMinimumAge": true, "uniqueDisplayName": "7D5TtrHj"}' 'SHPuAcA9' --login_with_auth "Bearer foo"
+iam-update-user-v3 '{"avatarUrl": "kRiiEmpe", "country": "djx7wdjW", "dateOfBirth": "jujAmTzA", "displayName": "Y3nee3TS", "languageTag": "InfZL4mv", "uniqueDisplayName": "mMYs776J", "userName": "d7gIh2fU"}' --login_with_auth "Bearer foo"
+iam-public-partial-update-user-v3 '{"avatarUrl": "wrnfiFwQ", "country": "DcnnD28k", "dateOfBirth": "ttfhudLK", "displayName": "ezPHNsIz", "languageTag": "h7A8LJ4x", "uniqueDisplayName": "0fEs5EGK", "userName": "aGO2WmND"}' --login_with_auth "Bearer foo"
+iam-public-send-verification-code-v3 '{"context": "cwrztwhG", "emailAddress": "Q9QRWdj0", "languageTag": "1esYUTrC", "upgradeToken": "Nxtk9LPn"}' --login_with_auth "Bearer foo"
+iam-public-user-verification-v3 '{"code": "C06sY2qi", "contactType": "yrWiI2wS", "languageTag": "BNqw1BNA", "validateOnly": true}' --login_with_auth "Bearer foo"
+iam-public-upgrade-headless-account-v3 '{"code": "t015YuZz", "country": "mzTEvoE1", "dateOfBirth": "dVjKg2mD", "displayName": "0eHKCjGJ", "emailAddress": "sXw6czOB", "password": "IOdB0qPd", "uniqueDisplayName": "BmOeNSHy", "validateOnly": true}' --login_with_auth "Bearer foo"
+iam-public-verify-headless-account-v3 '{"emailAddress": "D1XdYOxu", "password": "zjootJrO"}' --login_with_auth "Bearer foo"
+iam-public-update-password-v3 '{"languageTag": "7v3uhch0", "mfaToken": "PqhMyR85", "newPassword": "YDNo0Y3O", "oldPassword": "uqzCBYM1"}' --login_with_auth "Bearer foo"
+iam-public-create-justice-user 'dQ30mWPI' --login_with_auth "Bearer foo"
+iam-public-platform-link-v3 'pgbE9SNf' 'AbG9HKjk' --login_with_auth "Bearer foo"
+iam-public-platform-unlink-all-v3 'lDoegxh2' --login_with_auth "Bearer foo"
+iam-public-force-platform-link-v3 't3SVEsVg' 'tCV9bVxG' --login_with_auth "Bearer foo"
+iam-public-web-link-platform '0LM4z6hZ' --login_with_auth "Bearer foo"
+iam-public-web-link-platform-establish 'Fckrp0lq' 'xv4ICLBF' --login_with_auth "Bearer foo"
+iam-public-process-web-link-platform-v3 'uqPnKv4w' 'DX7rjkpL' --login_with_auth "Bearer foo"
+iam-public-get-users-platform-infos-v3 '{"platformId": "kMhn5Tad", "userIds": ["B3AFawZd", "Uya4yDOV", "B03pJLXF"]}' --login_with_auth "Bearer foo"
+iam-reset-password-v3 '{"clientId": "dbdjBRl9", "code": "TMkHSbKV", "emailAddress": "5XcdvG7V", "languageTag": "SS9v4cpP", "newPassword": "ip81Hvu4"}' --login_with_auth "Bearer foo"
+iam-public-get-user-ban-history-v3 'B4m4ulrf' --login_with_auth "Bearer foo"
+iam-public-list-user-all-platform-accounts-distinct-v3 'YOJuGch8' --login_with_auth "Bearer foo"
+iam-public-get-user-information-v3 'fs5iQdD7' --login_with_auth "Bearer foo"
+iam-public-get-user-login-histories-v3 'tZvH4IiX' --login_with_auth "Bearer foo"
+iam-public-get-user-platform-accounts-v3 '75Yt99XJ' --login_with_auth "Bearer foo"
+iam-public-list-justice-platform-accounts-v3 'yjcWmFgs' --login_with_auth "Bearer foo"
+iam-public-link-platform-account '{"platformId": "9lLvZKyO", "platformUserId": "ONdOHKlh"}' '1reSx8dh' --login_with_auth "Bearer foo"
+iam-public-force-link-platform-with-progression '{"chosenNamespaces": ["z5Omqx3i", "ELB64XhQ", "o71dvV5A"], "requestId": "PZNodpLN"}' '3KOBOnsF' --login_with_auth "Bearer foo"
+iam-public-get-publisher-user-v3 'uIFXFck7' --login_with_auth "Bearer foo"
+iam-public-validate-user-by-user-id-and-password-v3 'NcURMSwc' 'SqKxVlWp' --login_with_auth "Bearer foo"
 iam-public-get-roles-v3 --login_with_auth "Bearer foo"
-iam-public-get-role-v3 'dSJG8QVn' --login_with_auth "Bearer foo"
-iam-public-forgot-password-without-namespace-v3 '{"clientId": "K7TmFAmW", "emailAddress": "YdLyKdjH", "languageTag": "gRXGSAQR"}' --login_with_auth "Bearer foo"
+iam-public-get-role-v3 'aFpQqIvG' --login_with_auth "Bearer foo"
+iam-public-forgot-password-without-namespace-v3 '{"clientId": "4iHQc7o2", "emailAddress": "jVhdu5bM", "languageTag": "XEiW6Wjg"}' --login_with_auth "Bearer foo"
 iam-public-get-my-user-v3 --login_with_auth "Bearer foo"
-iam-public-send-code-forward-v3 '{"context": "vnjg9s0e", "emailAddress": "95Gikos1", "languageTag": "GtkGno1S", "upgradeToken": "qm8JHlBn"}' --login_with_auth "Bearer foo"
-iam-public-get-link-headless-account-to-my-account-conflict-v3 'XQkd4Ssp' --login_with_auth "Bearer foo"
-iam-link-headless-account-to-my-account-v3 '{"chosenNamespaces": ["EDIgKpas", "bWXoHZKb", "DaCSZ36Y"], "oneTimeLinkCode": "llGCjlFg"}' --login_with_auth "Bearer foo"
-iam-public-get-my-redirection-after-link-v3 '7hKQLm1U' --login_with_auth "Bearer foo"
+iam-public-send-code-forward-v3 '{"context": "FlTARrqD", "emailAddress": "o3mFn8io", "languageTag": "Da0UDTcF", "upgradeToken": "dZc5RsIX"}' --login_with_auth "Bearer foo"
+iam-public-get-link-headless-account-to-my-account-conflict-v3 'GCr7nhxu' --login_with_auth "Bearer foo"
+iam-link-headless-account-to-my-account-v3 '{"chosenNamespaces": ["ReF2941B", "YOoLdVYT", "ontNJRdx"], "oneTimeLinkCode": "81zn5qIz"}' --login_with_auth "Bearer foo"
+iam-public-get-my-redirection-after-link-v3 'gIjziMxF' --login_with_auth "Bearer foo"
 iam-public-get-my-profile-allow-update-status-v3 --login_with_auth "Bearer foo"
-iam-public-send-verification-link-v3 '{"languageTag": "Q9ciazHq"}' --login_with_auth "Bearer foo"
+iam-public-send-verification-link-v3 '{"languageTag": "biKbVMM7"}' --login_with_auth "Bearer foo"
 iam-public-get-openid-user-info-v3 --login_with_auth "Bearer foo"
 iam-public-verify-user-by-link-v3 --login_with_auth "Bearer foo"
-iam-platform-authenticate-samlv3-handler '6iB6MEDc' 'p2AJsVwI' --login_with_auth "Bearer foo"
-iam-login-sso-client 'JSB2jy7b' --login_with_auth "Bearer foo"
-iam-logout-sso-client 'GsqdYdwN' --login_with_auth "Bearer foo"
-iam-request-target-token-response-v3 'tjfP8o6h' --login_with_auth "Basic YWRtaW46YWRtaW4="
-iam-upgrade-and-authenticate-forward-v3 'mRRdFAAm' 'RNcxsZh3' --login_with_auth "Bearer foo"
+iam-platform-authenticate-samlv3-handler 'BfBl6EqO' 'unDMAmCv' --login_with_auth "Bearer foo"
+iam-login-sso-client 'JLZhEsaO' --login_with_auth "Bearer foo"
+iam-logout-sso-client 'hKFBeFpk' --login_with_auth "Bearer foo"
+iam-request-target-token-response-v3 'uzd4gD7L' --login_with_auth "Basic YWRtaW46YWRtaW4="
+iam-upgrade-and-authenticate-forward-v3 '6uqTuZHV' 'ozR2jLuY' --login_with_auth "Bearer foo"
 iam-admin-list-invitation-histories-v4 --login_with_auth "Bearer foo"
 iam-admin-get-devices-by-user-v4 --login_with_auth "Bearer foo"
 iam-admin-get-banned-devices-v4 --login_with_auth "Bearer foo"
-iam-admin-get-user-device-bans-v4 'jRwYbPMJ' --login_with_auth "Bearer foo"
-iam-admin-ban-device-v4 '{"comment": "7s9OvfOW", "deviceId": "HgwOXylx", "deviceType": "ENObKNKx", "enabled": false, "endDate": "oFn1oIzL", "ext": {"hQMAOroP": {}, "6HpF9sXB": {}, "5q6U9jAb": {}}, "reason": "RENGu6z3"}' --login_with_auth "Bearer foo"
-iam-admin-get-device-ban-v4 'ffZ3Va6c' --login_with_auth "Bearer foo"
-iam-admin-update-device-ban-v4 '{"enabled": true}' 'NMA0VKbe' --login_with_auth "Bearer foo"
-iam-admin-generate-report-v4 'D6eL9foE' --login_with_auth "Bearer foo"
+iam-admin-get-user-device-bans-v4 'sBlbcQe3' --login_with_auth "Bearer foo"
+iam-admin-ban-device-v4 '{"comment": "GKikQuDc", "deviceId": "osZlgmXV", "deviceType": "AtKzRIDz", "enabled": false, "endDate": "shQwzUtB", "ext": {"YVvPDoyU": {}, "00LCwnPe": {}, "0dntcefp": {}}, "reason": "YTx1Aryj"}' --login_with_auth "Bearer foo"
+iam-admin-get-device-ban-v4 'bm11h9G5' --login_with_auth "Bearer foo"
+iam-admin-update-device-ban-v4 '{"enabled": false}' 'eRBr3NKk' --login_with_auth "Bearer foo"
+iam-admin-generate-report-v4 'h48I2haz' --login_with_auth "Bearer foo"
 iam-admin-get-device-types-v4 --login_with_auth "Bearer foo"
-iam-admin-get-device-bans-v4 'NeDDIEZI' --login_with_auth "Bearer foo"
-iam-admin-unban-device-v4 'IJyRr4CL' --login_with_auth "Bearer foo"
-iam-admin-get-users-by-device-v4 '3SUE7K6D' --login_with_auth "Bearer foo"
+iam-admin-get-device-bans-v4 'MaN8Uq2O' --login_with_auth "Bearer foo"
+iam-admin-unban-device-v4 'H2UGBvFG' --login_with_auth "Bearer foo"
+iam-admin-get-users-by-device-v4 '1nK2ywpa' --login_with_auth "Bearer foo"
 iam-admin-get-namespace-invitation-history-v4 --login_with_auth "Bearer foo"
 iam-admin-get-namespace-user-invitation-history-v4 --login_with_auth "Bearer foo"
-iam-admin-create-test-users-v4 '{"acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "nDJuT8of", "policyId": "lb8dhsMJ", "policyVersionId": "AZaliiQz"}, {"isAccepted": false, "localizedPolicyVersionId": "PXx2aS70", "policyId": "xXojhuhJ", "policyVersionId": "0rk5smw9"}, {"isAccepted": false, "localizedPolicyVersionId": "gEBoKeJ5", "policyId": "uJvEZ5Lp", "policyVersionId": "KbBarMzi"}], "count": 90, "userInfo": {"country": "J7Sw0eon"}}' --login_with_auth "Bearer foo"
-iam-admin-create-user-v4 '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "hIpcyVLo", "policyId": "HfAhaBpp", "policyVersionId": "1Hxi8WfP"}, {"isAccepted": false, "localizedPolicyVersionId": "69FzrPdl", "policyId": "7ghftwfo", "policyVersionId": "Br1X3nqb"}, {"isAccepted": true, "localizedPolicyVersionId": "UlNkIEf6", "policyId": "O0NtgxhD", "policyVersionId": "vwwqM6o8"}], "authType": "EMAILPASSWD", "code": "yMS1VhOv", "country": "jwgQcMOF", "dateOfBirth": "wHh3RyIY", "displayName": "WCL9QSv8", "emailAddress": "TFxqPJzI", "password": "zjn1WwNR", "passwordMD5Sum": "cUihJY6X", "reachMinimumAge": true, "uniqueDisplayName": "XjRIGcdt", "username": "SZZuuKEx"}' --login_with_auth "Bearer foo"
-iam-admin-bulk-update-user-account-type-v4 '{"testAccount": false, "userIds": ["7PJBJjDZ", "HTQxGdCS", "NdKhXOaT"]}' --login_with_auth "Bearer foo"
-iam-admin-bulk-check-valid-user-idv4 '{"userIds": ["WzKeYyQp", "rS6YLagl", "9Vqliyab"]}' --login_with_auth "Bearer foo"
-iam-admin-update-user-v4 '{"avatarUrl": "3EFkYUe9", "country": "X50eRFGc", "dateOfBirth": "Fvp0ctsV", "displayName": "UAw7ouqT", "languageTag": "oknJN1tf", "skipLoginQueue": true, "tags": ["NqCcUBIG", "sHU0r5ya", "qr65V7xg"], "uniqueDisplayName": "gmkVIIRF", "userName": "P9c0nwUG"}' 'PQgWW0vX' --login_with_auth "Bearer foo"
-iam-admin-update-user-email-address-v4 '{"code": "eg1I8gyJ", "emailAddress": "aaK0cmDA"}' 'KLO1FoJw' --login_with_auth "Bearer foo"
-iam-admin-disable-user-mfav4 '{"factor": "sdjwCVhh", "mfaToken": "wUUltLLF"}' 'vLGWzKcP' --login_with_auth "Bearer foo"
-iam-admin-get-user-mfa-status-v4 'y6y1G4y2' --login_with_auth "Bearer foo"
-iam-admin-list-user-roles-v4 '1HOz5Qc3' --login_with_auth "Bearer foo"
-iam-admin-update-user-role-v4 '{"assignedNamespaces": ["ASHTfwyW", "dSiUKUtM", "h4IDY1ox"], "roleId": "HLf9v02R"}' 'iQrzZhZA' --login_with_auth "Bearer foo"
-iam-admin-add-user-role-v4 '{"assignedNamespaces": ["cxT5RN23", "C4RUM7WQ", "kJh4eFMG"], "roleId": "PrbugWDd"}' 'Qv3SzzE6' --login_with_auth "Bearer foo"
-iam-admin-remove-user-role-v4 '{"assignedNamespaces": ["wlLcATrn", "fx7r94Kt", "xzIRMhBa"], "roleId": "yyKrR8e3"}' 'D7U4hJAs' --login_with_auth "Bearer foo"
+iam-admin-create-test-users-v4 '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "s0voQbEr", "policyId": "4sTryA9E", "policyVersionId": "2c79fV9E"}, {"isAccepted": true, "localizedPolicyVersionId": "tVdmKZst", "policyId": "kIuoVjIO", "policyVersionId": "BU4ha6aj"}, {"isAccepted": true, "localizedPolicyVersionId": "TRAWLsM4", "policyId": "JqR8d9iy", "policyVersionId": "akAeJVx0"}], "count": 77, "userInfo": {"country": "LIMdQyzi"}}' --login_with_auth "Bearer foo"
+iam-admin-create-user-v4 '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "8QgveIHP", "policyId": "PQOTvGqt", "policyVersionId": "B40JEqgQ"}, {"isAccepted": true, "localizedPolicyVersionId": "u0JrhFzU", "policyId": "7ZwMIf1E", "policyVersionId": "bHGLE6KQ"}, {"isAccepted": true, "localizedPolicyVersionId": "iHe5ZZFi", "policyId": "6zswUXRV", "policyVersionId": "iZUexKmg"}], "authType": "EMAILPASSWD", "code": "GLLU1GLN", "country": "LuAuiXgy", "dateOfBirth": "OAxYjRBU", "displayName": "WGgaxc9X", "emailAddress": "MHVJudwe", "password": "a9ToPcv5", "passwordMD5Sum": "NPLgWhxi", "reachMinimumAge": false, "uniqueDisplayName": "bgPr8lMQ", "username": "kA87szgF"}' --login_with_auth "Bearer foo"
+iam-admin-bulk-update-user-account-type-v4 '{"testAccount": false, "userIds": ["uqkj4cvw", "3054qIux", "HZQvYhhL"]}' --login_with_auth "Bearer foo"
+iam-admin-bulk-check-valid-user-idv4 '{"userIds": ["wXlp84Xh", "hBlJELuS", "yxQF3WR8"]}' --login_with_auth "Bearer foo"
+iam-admin-update-user-v4 '{"avatarUrl": "bGYHDuk3", "country": "5Dse6ZOX", "dateOfBirth": "d4WlcD0V", "displayName": "s7wpVYLO", "languageTag": "toQ0XPEj", "skipLoginQueue": false, "tags": ["MFrSLVwl", "eSfDEeKy", "xzeE0mpR"], "uniqueDisplayName": "cz92ExOW", "userName": "F10UUEnh"}' 'dkbMT9Cc' --login_with_auth "Bearer foo"
+iam-admin-update-user-email-address-v4 '{"code": "WNaq3Mdb", "emailAddress": "lkaTsgsP"}' 'mGhL6qRz' --login_with_auth "Bearer foo"
+iam-admin-disable-user-mfav4 '{"factor": "0K0DCCED", "mfaToken": "6ZLwTWVt"}' 'ageEdIOK' --login_with_auth "Bearer foo"
+iam-admin-get-user-mfa-status-v4 'IHvmfT4A' --login_with_auth "Bearer foo"
+iam-admin-list-user-roles-v4 'lYenbJ9z' --login_with_auth "Bearer foo"
+iam-admin-update-user-role-v4 '{"assignedNamespaces": ["a2HHAA1b", "LAmumdSn", "HnMgdVWY"], "roleId": "wvozpn0H"}' 'K3whRsmx' --login_with_auth "Bearer foo"
+iam-admin-add-user-role-v4 '{"assignedNamespaces": ["CB7XENkB", "Q5eDPkst", "o0CsxnDd"], "roleId": "z3zSMAd1"}' 'qH9PFj5S' --login_with_auth "Bearer foo"
+iam-admin-remove-user-role-v4 '{"assignedNamespaces": ["FPDlg62V", "JNu4JDrF", "FuJhrzGy"], "roleId": "FDGvmypF"}' 'D0MHsNsv' --login_with_auth "Bearer foo"
 iam-admin-get-roles-v4 --login_with_auth "Bearer foo"
-iam-admin-create-role-v4 '{"adminRole": false, "deletable": true, "isWildcard": false, "roleName": "6AeYiINn"}' --login_with_auth "Bearer foo"
-iam-admin-get-role-v4 'hn372BB5' --login_with_auth "Bearer foo"
-iam-admin-delete-role-v4 'kxoWlGz0' --login_with_auth "Bearer foo"
-iam-admin-update-role-v4 '{"adminRole": true, "deletable": false, "isWildcard": false, "roleName": "DeVY9A57"}' '2aKVfSib' --login_with_auth "Bearer foo"
-iam-admin-update-role-permissions-v4 '{"permissions": [{"action": 59, "resource": "2CIlUeqL", "schedAction": 54, "schedCron": "ZYmsJgBQ", "schedRange": ["D5nH3Ckn", "UOPfK4Ne", "Xxq3Upmg"]}, {"action": 87, "resource": "5hGKkTKc", "schedAction": 49, "schedCron": "GlULYVmK", "schedRange": ["0TGuFvbz", "A1RP2HUO", "4K7pwBZ5"]}, {"action": 12, "resource": "jDNamcnq", "schedAction": 76, "schedCron": "DFsW8qQ4", "schedRange": ["GCq6FeaN", "2qgl8Po8", "uJh1TrZ3"]}]}' '33ECPlP4' --login_with_auth "Bearer foo"
-iam-admin-add-role-permissions-v4 '{"permissions": [{"action": 38, "resource": "45QOmTgE", "schedAction": 32, "schedCron": "0MtsU3in", "schedRange": ["ruL7P84o", "uze9fcqO", "MXe0mSuv"]}, {"action": 17, "resource": "a0O7UzHN", "schedAction": 99, "schedCron": "oHG2VMuj", "schedRange": ["OUkGydEM", "gRMQAU6R", "2vZ7xibt"]}, {"action": 85, "resource": "I4ZdKCHr", "schedAction": 53, "schedCron": "OikkJlk9", "schedRange": ["b6hHcuP4", "YjYhxorL", "vn0bLVht"]}]}' 'nlEJeSrw' --login_with_auth "Bearer foo"
-iam-admin-delete-role-permissions-v4 '["HdlrrSKh", "ZrIxQp0j", "OioLzVsQ"]' '7bouVNgm' --login_with_auth "Bearer foo"
-iam-admin-list-assigned-users-v4 '772wZXxD' --login_with_auth "Bearer foo"
-iam-admin-assign-user-to-role-v4 '{"assignedNamespaces": ["K60v3AZf", "BH9Zu7Uh", "vD36awbI"], "namespace": "iIOswyrV", "userId": "PEpAGmZ4"}' 'uq54AMUg' --login_with_auth "Bearer foo"
-iam-admin-revoke-user-from-role-v4 '{"namespace": "lfjmuEIq", "userId": "8tJqKWqA"}' '5oYjJJLu' --login_with_auth "Bearer foo"
-iam-admin-invite-user-new-v4 '{"assignedNamespaces": ["VqeoaHNs", "SbbN2xRs", "nlzpMzQ4"], "emailAddresses": ["SuNIKLzm", "mgai54em", "JfISxu4P"], "isAdmin": true, "isNewStudio": true, "languageTag": "keobJtyK", "namespace": "tZz09Voe", "roleId": "iIMSk5rA"}' --login_with_auth "Bearer foo"
-iam-admin-update-my-user-v4 '{"avatarUrl": "ESf7gqtB", "country": "eymGmHLZ", "dateOfBirth": "bXrFlgjJ", "displayName": "IQEbq2VW", "languageTag": "ntIGxcs4", "skipLoginQueue": false, "tags": ["7gkCX9MG", "QEptcUxD", "JMjucA1c"], "uniqueDisplayName": "p4dfQuzG", "userName": "nPMFPNqJ"}' --login_with_auth "Bearer foo"
-iam-admin-disable-my-authenticator-v4 '{"factor": "MLtFRUxh", "mfaToken": "MiNIc039"}' --login_with_auth "Bearer foo"
-iam-admin-enable-my-authenticator-v4 'cV12Uqsy' --login_with_auth "Bearer foo"
+iam-admin-create-role-v4 '{"adminRole": false, "deletable": true, "isWildcard": true, "roleName": "PZSbZehp"}' --login_with_auth "Bearer foo"
+iam-admin-get-role-v4 'qjaEu8Ji' --login_with_auth "Bearer foo"
+iam-admin-delete-role-v4 'uz4brXVm' --login_with_auth "Bearer foo"
+iam-admin-update-role-v4 '{"adminRole": true, "deletable": false, "isWildcard": true, "roleName": "IGbXtLG9"}' 'qA5uFxXX' --login_with_auth "Bearer foo"
+iam-admin-update-role-permissions-v4 '{"permissions": [{"action": 36, "resource": "3oPz6Uy6", "schedAction": 30, "schedCron": "3imUSfRn", "schedRange": ["V62UiW5Q", "9MKFTPOH", "IUisKVnA"]}, {"action": 0, "resource": "OPLmlXrR", "schedAction": 76, "schedCron": "qfoCbEml", "schedRange": ["wvaPL4tq", "GBHRuH7W", "RGQbHtOU"]}, {"action": 29, "resource": "K1zydfnR", "schedAction": 42, "schedCron": "I6NqDlv8", "schedRange": ["ropssV8R", "d7Hv804H", "4WUlUBWv"]}]}' 'jOdfySO6' --login_with_auth "Bearer foo"
+iam-admin-add-role-permissions-v4 '{"permissions": [{"action": 40, "resource": "xiSTITjJ", "schedAction": 33, "schedCron": "Mm6KEwyM", "schedRange": ["6LiLxcez", "0eN4vbxX", "cufjHmC1"]}, {"action": 73, "resource": "nuvEIF8i", "schedAction": 1, "schedCron": "xuZi9DSx", "schedRange": ["riMPiTvW", "i1zdYH2E", "2Zwh2TRu"]}, {"action": 46, "resource": "a2uTpR7N", "schedAction": 68, "schedCron": "QjKDgtEH", "schedRange": ["i4j8QNSB", "m6U90HuF", "uiVJuxWv"]}]}' 'R9YP6I6E' --login_with_auth "Bearer foo"
+iam-admin-delete-role-permissions-v4 '["NrsZzUDa", "U9ZwZopq", "4FVjQF5t"]' 'BX7Kh0Q0' --login_with_auth "Bearer foo"
+iam-admin-list-assigned-users-v4 'iUvx91gK' --login_with_auth "Bearer foo"
+iam-admin-assign-user-to-role-v4 '{"assignedNamespaces": ["uINUJjro", "iC9k0AzJ", "CEcwhQmh"], "namespace": "j3CGXaaT", "userId": "YAm0ujZo"}' 'cE7FYuc6' --login_with_auth "Bearer foo"
+iam-admin-revoke-user-from-role-v4 '{"namespace": "ZO77k5cl", "userId": "cfomtYOB"}' 'JnFr5bW5' --login_with_auth "Bearer foo"
+iam-admin-invite-user-new-v4 '{"assignedNamespaces": ["Cybip5cX", "fdDAXBQ2", "t4nhqy2N"], "emailAddresses": ["3XvQhIXG", "PrJjvVr2", "PF7dqxrS"], "isAdmin": true, "isNewStudio": true, "languageTag": "WeOvMC9T", "namespace": "hjXzPOXX", "roleId": "hkVJ0IdW"}' --login_with_auth "Bearer foo"
+iam-admin-update-my-user-v4 '{"avatarUrl": "LXDE7Ecf", "country": "sDZJGHJX", "dateOfBirth": "gvzvwauj", "displayName": "JlFcxSNi", "languageTag": "u70oJCX3", "skipLoginQueue": false, "tags": ["lT3FMsPf", "BQZQ7C0i", "1BDw0pWn"], "uniqueDisplayName": "1fK9XdTK", "userName": "1vhQ5gcs"}' --login_with_auth "Bearer foo"
+iam-admin-disable-my-authenticator-v4 '{"factor": "kNeHO3cC", "mfaToken": "2A8bUs8X"}' --login_with_auth "Bearer foo"
+iam-admin-enable-my-authenticator-v4 'V53VaznT' --login_with_auth "Bearer foo"
 iam-admin-generate-my-authenticator-key-v4 --login_with_auth "Bearer foo"
-iam-admin-disable-my-backup-codes-v4 '{"factor": "t4OYuiKO", "mfaToken": "55W00x0B"}' --login_with_auth "Bearer foo"
+iam-admin-disable-my-backup-codes-v4 '{"factor": "C3STxBvh", "mfaToken": "MbvakwHA"}' --login_with_auth "Bearer foo"
 iam-admin-get-backup-codes-v4 --login_with_auth "Bearer foo"
 iam-admin-generate-backup-codes-v4 --login_with_auth "Bearer foo"
 iam-admin-enable-backup-codes-v4 --login_with_auth "Bearer foo"
 iam-admin-challenge-my-mfav4 --login_with_auth "Bearer foo"
 iam-admin-send-my-mfa-email-code-v4 --login_with_auth "Bearer foo"
-iam-admin-disable-my-email-v4 '{"factor": "BLjsKCRZ", "mfaToken": "NY1f1xag"}' --login_with_auth "Bearer foo"
-iam-admin-enable-my-email-v4 'Q1MczZ3r' --login_with_auth "Bearer foo"
+iam-admin-disable-my-email-v4 '{"factor": "13KPCRh8", "mfaToken": "UpJYZmFs"}' --login_with_auth "Bearer foo"
+iam-admin-enable-my-email-v4 'OcUuMWrV' --login_with_auth "Bearer foo"
 iam-admin-get-my-enabled-factors-v4 --login_with_auth "Bearer foo"
-iam-admin-make-factor-my-default-v4 'Y2rkq9L1' --login_with_auth "Bearer foo"
+iam-admin-make-factor-my-default-v4 'llIWxcue' --login_with_auth "Bearer foo"
 iam-admin-get-my-own-mfa-status-v4 --login_with_auth "Bearer foo"
-iam-authentication-with-platform-link-v4 'NntVzmEf' 'ffhSjvII' 'ntLYaOCv' 'cJ1EYFDc' --login_with_auth "Bearer foo"
-iam-generate-token-by-new-headless-account-v4 'GZvBXVlr' --login_with_auth "Bearer foo"
-iam-verify2fa-code-v4 '9jYRtLus' 'nj0CG12j' 'ryGfdksv' 'false' --login_with_auth "Bearer foo"
-iam-platform-token-grant-v4 'nmx8gDBv' --login_with_auth "Basic YWRtaW46YWRtaW4="
-iam-simultaneous-login-v4 'steam' 'Xe9AlOsW' --login_with_auth "Bearer foo"
-iam-token-grant-v4 'authorization_code' --login_with_auth "Basic YWRtaW46YWRtaW4="
-iam-request-target-token-response-v4 'QTgKsGSO' --login_with_auth "Bearer foo"
-iam-public-list-user-id-by-platform-user-i-ds-v4 '{"pidType": "oUZtKbVU", "platformUserIds": ["CZKo7ByQ", "3iZ7iJBO", "PwnMMVDc"]}' 'oKaOas4r' --login_with_auth "Bearer foo"
-iam-public-get-user-by-platform-user-idv4 'cuNMuDnP' 'UeLFahla' --login_with_auth "Bearer foo"
-iam-public-create-test-user-v4 '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "sQ8elaGg", "policyId": "2ApcSb6J", "policyVersionId": "R6iXTSnf"}, {"isAccepted": true, "localizedPolicyVersionId": "7OiNFyJm", "policyId": "0ToaegEI", "policyVersionId": "CO2LepPN"}, {"isAccepted": false, "localizedPolicyVersionId": "m5Lffn6P", "policyId": "h7IzIIiq", "policyVersionId": "eTWLvB3L"}], "authType": "EMAILPASSWD", "country": "ysUB2QVR", "dateOfBirth": "mBREBwCY", "displayName": "cr7hHVLA", "emailAddress": "p7TeJ5tN", "password": "2kHiPmG6", "passwordMD5Sum": "W2egfHEv", "uniqueDisplayName": "24mGhO13", "username": "Wtiwn5qz", "verified": false}' --login_with_auth "Bearer foo"
-iam-public-create-user-v4 '{"acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "3JZfgvYS", "policyId": "u8FKeXG9", "policyVersionId": "AyM7sN3X"}, {"isAccepted": true, "localizedPolicyVersionId": "F4bdKxYk", "policyId": "G7LLaBQB", "policyVersionId": "YGX4lwck"}, {"isAccepted": true, "localizedPolicyVersionId": "o6f8iGJ5", "policyId": "3NGNjFlX", "policyVersionId": "Ie8BXeVN"}], "authType": "EMAILPASSWD", "code": "xwN62nvG", "country": "tjviGE3q", "dateOfBirth": "Mb7AblCJ", "displayName": "uLlPMEBa", "emailAddress": "jefSsc6r", "password": "50uPjpB3", "passwordMD5Sum": "GYOXa9fH", "reachMinimumAge": false, "uniqueDisplayName": "t9UJa6tZ", "username": "4y996kdb"}' --login_with_auth "Bearer foo"
-iam-create-user-from-invitation-v4 '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "zag9gBoT", "policyId": "WIkuKHAp", "policyVersionId": "n1GEMefj"}, {"isAccepted": false, "localizedPolicyVersionId": "XvhEj3Wg", "policyId": "pdg7APfK", "policyVersionId": "jna3xxGZ"}, {"isAccepted": true, "localizedPolicyVersionId": "1QY5YN9E", "policyId": "CtrXdhf4", "policyVersionId": "czDXwl0G"}], "authType": "EMAILPASSWD", "code": "U5okqUxm", "country": "9sHNGtCF", "dateOfBirth": "0lmDtiQc", "displayName": "w9P874md", "emailAddress": "lstuDElX", "password": "dvDpohE1", "passwordMD5Sum": "GRGpUowA", "reachMinimumAge": false, "uniqueDisplayName": "IseqG56n", "username": "geu3tKki"}' 'ZRuSxYVj' --login_with_auth "Bearer foo"
-iam-public-update-user-v4 '{"avatarUrl": "sFamkZTF", "country": "YeGVJUPh", "dateOfBirth": "PEESlWyW", "displayName": "QKc8bs8J", "languageTag": "hWpHEQXO", "uniqueDisplayName": "Ug3S3sxo", "userName": "FtVVlnEb"}' --login_with_auth "Bearer foo"
-iam-public-update-user-email-address-v4 '{"code": "PwMPP9Pa", "emailAddress": "6PaGIh6a"}' --login_with_auth "Bearer foo"
-iam-public-upgrade-headless-account-with-verification-code-v4 '{"code": "Froh8lZ6", "country": "2RIfiSJS", "dateOfBirth": "yZ6Yq8NL", "displayName": "RdBkqzFO", "emailAddress": "avwjX6zd", "password": "Uben3dya", "reachMinimumAge": false, "uniqueDisplayName": "JOi3MGm7", "username": "od7qHMSr", "validateOnly": true}' --login_with_auth "Bearer foo"
-iam-public-upgrade-headless-account-v4 '{"dateOfBirth": "dmeNrIvi", "displayName": "5afHF7aw", "emailAddress": "fjYzmHCA", "password": "YpJLjHzp", "uniqueDisplayName": "woar7Zp9", "username": "IGJoVzqn"}' --login_with_auth "Bearer foo"
-iam-public-disable-my-authenticator-v4 '{"factor": "UAZrURNA", "mfaToken": "sCxAmRkT"}' --login_with_auth "Bearer foo"
-iam-public-enable-my-authenticator-v4 'iurkvjDH' --login_with_auth "Bearer foo"
+iam-authentication-with-platform-link-v4 'Gxaa2DvB' 'TNugSMDP' 'dDoC8KkW' 'FU8Wuuff' --login_with_auth "Bearer foo"
+iam-generate-token-by-new-headless-account-v4 '004gByuA' --login_with_auth "Bearer foo"
+iam-verify2fa-code-v4 'prNs3DKD' '2XMeoogL' 'PmRMwUhX' 'false' --login_with_auth "Bearer foo"
+iam-platform-token-grant-v4 'WTBCwmXY' --login_with_auth "Basic YWRtaW46YWRtaW4="
+iam-simultaneous-login-v4 'epicgames' 'HNLi8sKu' --login_with_auth "Bearer foo"
+iam-token-grant-v4 'password' --login_with_auth "Basic YWRtaW46YWRtaW4="
+iam-request-target-token-response-v4 '0XS4FA05' --login_with_auth "Bearer foo"
+iam-public-list-user-id-by-platform-user-i-ds-v4 '{"pidType": "tv0nAmKT", "platformUserIds": ["l3pxpJkz", "C85XCntm", "1mIrrj1d"]}' 'OcTnErIV' --login_with_auth "Bearer foo"
+iam-public-get-user-by-platform-user-idv4 'FQKQGNsj' 'zSOsDOng' --login_with_auth "Bearer foo"
+iam-public-create-test-user-v4 '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "WypiVxUg", "policyId": "A1Mrj9I1", "policyVersionId": "HhZxLm5V"}, {"isAccepted": false, "localizedPolicyVersionId": "Xpxb2Bxd", "policyId": "3Fct9eNO", "policyVersionId": "iA1FxtH5"}, {"isAccepted": true, "localizedPolicyVersionId": "jxpLYwKK", "policyId": "dFnQ95hW", "policyVersionId": "u81cqAUR"}], "authType": "EMAILPASSWD", "country": "jll6Mz5W", "dateOfBirth": "8nWR0M78", "displayName": "DeCilAK5", "emailAddress": "hgaQZmq2", "password": "LVbZBoZa", "passwordMD5Sum": "709yXaGK", "uniqueDisplayName": "rEQghRFi", "username": "241ARUHy", "verified": false}' --login_with_auth "Bearer foo"
+iam-public-create-user-v4 '{"acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "5aGS4fUv", "policyId": "0ck3PLjO", "policyVersionId": "GPQf6b38"}, {"isAccepted": true, "localizedPolicyVersionId": "47ANl5mq", "policyId": "jy9grNS0", "policyVersionId": "Rd6qTIIH"}, {"isAccepted": true, "localizedPolicyVersionId": "GqczkuTM", "policyId": "CcBylMrt", "policyVersionId": "BatwSTD4"}], "authType": "EMAILPASSWD", "code": "jqwhsOoR", "country": "lpYKisrd", "dateOfBirth": "ZAkBICN2", "displayName": "lRwAD40m", "emailAddress": "m0UyLnpq", "password": "FzbYxv6y", "passwordMD5Sum": "0Vtwvoff", "reachMinimumAge": false, "uniqueDisplayName": "BsSeVXDl", "username": "AzM2VSiJ"}' --login_with_auth "Bearer foo"
+iam-create-user-from-invitation-v4 '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "6RciMaEc", "policyId": "IlRQcb7j", "policyVersionId": "RhHav3CL"}, {"isAccepted": true, "localizedPolicyVersionId": "9qVM7ELv", "policyId": "mJuUEV07", "policyVersionId": "JR6crfmV"}, {"isAccepted": false, "localizedPolicyVersionId": "259S3dvt", "policyId": "WesezSqv", "policyVersionId": "I1x7xWpg"}], "authType": "EMAILPASSWD", "code": "NY0tFQH1", "country": "pe3XPXnR", "dateOfBirth": "aHTOLLU7", "displayName": "YsQGaius", "emailAddress": "X7plkyVj", "password": "LjIj5D9L", "passwordMD5Sum": "mP17mrKa", "reachMinimumAge": true, "uniqueDisplayName": "0vLcLgIr", "username": "szTSDlc9"}' 'O2KGE5jK' --login_with_auth "Bearer foo"
+iam-public-update-user-v4 '{"avatarUrl": "44AMeX7Q", "country": "AOdB9UJD", "dateOfBirth": "Nxkt1LkP", "displayName": "t0fNHESH", "languageTag": "nO1I9VSt", "uniqueDisplayName": "xeaSYfHO", "userName": "SoFfTBPU"}' --login_with_auth "Bearer foo"
+iam-public-update-user-email-address-v4 '{"code": "M5RWXVO5", "emailAddress": "t2H50gAa"}' --login_with_auth "Bearer foo"
+iam-public-upgrade-headless-account-with-verification-code-v4 '{"code": "1jbNFvBW", "country": "mVkcftHW", "dateOfBirth": "a0zmfEdb", "displayName": "VMZNX5pL", "emailAddress": "I6NCwT2B", "password": "7MWJBc7n", "reachMinimumAge": true, "uniqueDisplayName": "MxCqJZLp", "username": "WRWZHHGu", "validateOnly": false}' --login_with_auth "Bearer foo"
+iam-public-upgrade-headless-account-v4 '{"dateOfBirth": "yw1fxCa9", "displayName": "Cd9w5twE", "emailAddress": "zflWddjE", "password": "wU3YW7PL", "uniqueDisplayName": "S7JXVcfS", "username": "Ft7cHk3q"}' --login_with_auth "Bearer foo"
+iam-public-disable-my-authenticator-v4 '{"factor": "vQQKfqsS", "mfaToken": "l2X5V7zs"}' --login_with_auth "Bearer foo"
+iam-public-enable-my-authenticator-v4 'sRTgj16X' --login_with_auth "Bearer foo"
 iam-public-generate-my-authenticator-key-v4 --login_with_auth "Bearer foo"
-iam-public-disable-my-backup-codes-v4 '{"factor": "DX35h2nF", "mfaToken": "OxfSTbIw"}' --login_with_auth "Bearer foo"
+iam-public-disable-my-backup-codes-v4 '{"factor": "E4dUI12g", "mfaToken": "3zgqkMBf"}' --login_with_auth "Bearer foo"
 iam-public-get-backup-codes-v4 --login_with_auth "Bearer foo"
 iam-public-generate-backup-codes-v4 --login_with_auth "Bearer foo"
 iam-public-enable-backup-codes-v4 --login_with_auth "Bearer foo"
 iam-public-challenge-my-mfav4 --login_with_auth "Bearer foo"
 iam-public-remove-trusted-device-v4 --login_with_auth "Bearer foo"
 iam-public-send-my-mfa-email-code-v4 --login_with_auth "Bearer foo"
-iam-public-disable-my-email-v4 '{"factor": "kWOVY0tk", "mfaToken": "NN31oA2E"}' --login_with_auth "Bearer foo"
-iam-public-enable-my-email-v4 'JgfXBiGY' --login_with_auth "Bearer foo"
+iam-public-disable-my-email-v4 '{"factor": "aHhjIZxB", "mfaToken": "LvQ2Tkjn"}' --login_with_auth "Bearer foo"
+iam-public-enable-my-email-v4 '11Q098uI' --login_with_auth "Bearer foo"
 iam-public-get-my-enabled-factors-v4 --login_with_auth "Bearer foo"
-iam-public-make-factor-my-default-v4 'NeUIcAHt' --login_with_auth "Bearer foo"
+iam-public-make-factor-my-default-v4 'o0yqnn5T' --login_with_auth "Bearer foo"
 iam-public-get-my-own-mfa-status-v4 --login_with_auth "Bearer foo"
-iam-public-get-user-public-info-by-user-id-v4 'I2VE9qUN' --login_with_auth "Bearer foo"
-iam-public-invite-user-v4 '{"additionalData": "2lAISrT3", "emailAddress": "cvhZY6cZ", "languageTag": "UrlFQdIG", "namespace": "cftYBw65", "namespaceDisplayName": "HEJwYiDz"}' --login_with_auth "Bearer foo"
-iam-public-upgrade-headless-with-code-v4-forward '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "hN695LXe", "policyId": "c5xfxjHE", "policyVersionId": "ewB5GRI5"}, {"isAccepted": false, "localizedPolicyVersionId": "IGVKiwRa", "policyId": "XpGX7GWw", "policyVersionId": "Wx1sID7G"}, {"isAccepted": false, "localizedPolicyVersionId": "7nl21Qcb", "policyId": "WGHiehp3", "policyVersionId": "e2NJGPRP"}], "code": "bkjNHYWW", "country": "axkhTJMW", "dateOfBirth": "bySRZFPF", "displayName": "9Y75xL1L", "emailAddress": "fzuNr5t4", "password": "gQSZMqtX", "reachMinimumAge": true, "uniqueDisplayName": "ou5VIpnE", "username": "8K49Guoe", "validateOnly": false}' --login_with_auth "Bearer foo"
+iam-public-get-user-public-info-by-user-id-v4 'QJIu3aFw' --login_with_auth "Bearer foo"
+iam-public-invite-user-v4 '{"additionalData": "6X4SisX1", "emailAddress": "LALxRnvM", "languageTag": "sXcGdZGq", "namespace": "4CHBcsIi", "namespaceDisplayName": "7oHBcMo1"}' --login_with_auth "Bearer foo"
+iam-public-upgrade-headless-with-code-v4-forward '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "GPTVV1a0", "policyId": "tQn0OsQ3", "policyVersionId": "5NzxibHh"}, {"isAccepted": true, "localizedPolicyVersionId": "QiQkO4PK", "policyId": "uckI2lCR", "policyVersionId": "fps1nFTD"}, {"isAccepted": true, "localizedPolicyVersionId": "D4kHl8AN", "policyId": "eKD031JP", "policyVersionId": "WW8NXUsl"}], "code": "UtcfcQU1", "country": "s8QUjHTD", "dateOfBirth": "GDprtDvg", "displayName": "jBhAJNIl", "emailAddress": "xFts7Q6D", "password": "IWeeWDbg", "reachMinimumAge": true, "uniqueDisplayName": "hx3KU6ai", "username": "u4txil2b", "validateOnly": true}' --login_with_auth "Bearer foo"
 exit()
 END
 
@@ -699,14 +699,14 @@ eval_tap $? 108 'AdminListClientAvailablePermissions' test.out
 
 #- 109 AdminUpdateAvailablePermissionsByModule
 $PYTHON -m $MODULE 'iam-admin-update-available-permissions-by-module' \
-    '{"modules": [{"docLink": "OqnnZreM", "groups": [{"group": "bFZ6Ni4b", "groupId": "YUcLM8p0", "permissions": [{"allowedActions": [89, 37, 37], "resource": "NiDO5Shi"}, {"allowedActions": [4, 51, 93], "resource": "8zANORfN"}, {"allowedActions": [73, 37, 85], "resource": "vR7pm5Eo"}]}, {"group": "3q5pCdQy", "groupId": "n3QBb8w5", "permissions": [{"allowedActions": [32, 14, 7], "resource": "dxHHdlNg"}, {"allowedActions": [93, 47, 20], "resource": "JviqqmDk"}, {"allowedActions": [44, 24, 19], "resource": "zO8PupvV"}]}, {"group": "I7dG6aFv", "groupId": "r1Scwl8C", "permissions": [{"allowedActions": [0, 46, 23], "resource": "wOfXqr9N"}, {"allowedActions": [82, 11, 73], "resource": "FKlrKYb5"}, {"allowedActions": [50, 16, 71], "resource": "qFtiJwUs"}]}], "module": "0h9s1j0y", "moduleId": "6xmXKpgA"}, {"docLink": "AXQjvA9t", "groups": [{"group": "dllHp2Wn", "groupId": "LWeXSr5J", "permissions": [{"allowedActions": [71, 86, 24], "resource": "ToPl1TL5"}, {"allowedActions": [64, 100, 29], "resource": "mK9rPRkJ"}, {"allowedActions": [1, 91, 37], "resource": "CRvTfbyk"}]}, {"group": "gjlVAWbj", "groupId": "yZ1ojd88", "permissions": [{"allowedActions": [45, 27, 39], "resource": "Jo03XuQ9"}, {"allowedActions": [25, 70, 84], "resource": "e3aqkKiT"}, {"allowedActions": [35, 71, 62], "resource": "TnaF2p5a"}]}, {"group": "VQ7AkKE4", "groupId": "S2kTMW1K", "permissions": [{"allowedActions": [65, 39, 70], "resource": "q0w9ZXus"}, {"allowedActions": [21, 67, 85], "resource": "eR2lDPL9"}, {"allowedActions": [85, 16, 33], "resource": "6BP7MTEz"}]}], "module": "FwyymPSI", "moduleId": "lifMnuyE"}, {"docLink": "xrlvDkUt", "groups": [{"group": "hF5swzl9", "groupId": "GBZoT4du", "permissions": [{"allowedActions": [62, 24, 98], "resource": "1toQP5cO"}, {"allowedActions": [23, 29, 58], "resource": "fP4jOaKX"}, {"allowedActions": [99, 87, 87], "resource": "4VE4mBue"}]}, {"group": "4Wy4Eh8Q", "groupId": "ASlXmtGi", "permissions": [{"allowedActions": [32, 29, 72], "resource": "1pDkTImD"}, {"allowedActions": [22, 38, 15], "resource": "BIW1fnTh"}, {"allowedActions": [52, 1, 47], "resource": "KJfL1LqP"}]}, {"group": "sO8EB5kD", "groupId": "A1HYhi3y", "permissions": [{"allowedActions": [73, 81, 85], "resource": "4JU1TexZ"}, {"allowedActions": [57, 68, 22], "resource": "pNG7DTLU"}, {"allowedActions": [58, 76, 69], "resource": "HRP28DRT"}]}], "module": "9iuZQ2wu", "moduleId": "qdUkfli5"}]}' \
+    '{"modules": [{"docLink": "GgOgnd5b", "groups": [{"group": "mfUn5DSD", "groupId": "s912gIhV", "permissions": [{"allowedActions": [36, 58, 5], "resource": "0xB4lE9W"}, {"allowedActions": [7, 18, 57], "resource": "YiVEY5xF"}, {"allowedActions": [99, 76, 28], "resource": "cB7DDoHZ"}]}, {"group": "zkHdnm0k", "groupId": "92XKNH1N", "permissions": [{"allowedActions": [92, 20, 9], "resource": "hBn17EBG"}, {"allowedActions": [17, 32, 86], "resource": "kCqSLmdt"}, {"allowedActions": [75, 96, 88], "resource": "LWJJdlar"}]}, {"group": "7CPjdGbX", "groupId": "b5c1GQKx", "permissions": [{"allowedActions": [41, 1, 64], "resource": "1HGyOFlV"}, {"allowedActions": [82, 56, 50], "resource": "V7hoj9Ng"}, {"allowedActions": [50, 6, 76], "resource": "v833ilwK"}]}], "module": "Z8N4jepv", "moduleId": "DbSVHg3U"}, {"docLink": "lI8bDvHa", "groups": [{"group": "Wg7meMXn", "groupId": "PKb7r3H4", "permissions": [{"allowedActions": [57, 60, 50], "resource": "X5kbsSg8"}, {"allowedActions": [3, 19, 67], "resource": "PtxdfD0C"}, {"allowedActions": [20, 44, 24], "resource": "qYpXpcIh"}]}, {"group": "toij79eM", "groupId": "PDr9AE3v", "permissions": [{"allowedActions": [41, 33, 14], "resource": "yMwHLiNp"}, {"allowedActions": [20, 56, 17], "resource": "kwBOhHPH"}, {"allowedActions": [87, 57, 96], "resource": "utFKUb4q"}]}, {"group": "45VA1mNI", "groupId": "Kmp3EJeJ", "permissions": [{"allowedActions": [61, 93, 46], "resource": "dpwNXvap"}, {"allowedActions": [34, 94, 3], "resource": "sutCSuSK"}, {"allowedActions": [21, 91, 15], "resource": "1mhnn5ca"}]}], "module": "A4bGTPY6", "moduleId": "qt3EJXkO"}, {"docLink": "wq8DWohd", "groups": [{"group": "CTzJC14w", "groupId": "kCTV1GIi", "permissions": [{"allowedActions": [21, 76, 97], "resource": "D49iCWb5"}, {"allowedActions": [98, 93, 69], "resource": "Mkc0Nlos"}, {"allowedActions": [63, 7, 96], "resource": "ONoYo9JL"}]}, {"group": "eHk1yX7s", "groupId": "oGQnbQtV", "permissions": [{"allowedActions": [60, 7, 2], "resource": "mjmY8MU4"}, {"allowedActions": [67, 81, 24], "resource": "qGMci5vT"}, {"allowedActions": [87, 97, 11], "resource": "unMp2fJc"}]}, {"group": "1hQf6EUJ", "groupId": "HHsCxveJ", "permissions": [{"allowedActions": [6, 76, 2], "resource": "HLThVhTy"}, {"allowedActions": [99, 12, 56], "resource": "KGOrMi1Q"}, {"allowedActions": [88, 81, 26], "resource": "R03EMZYn"}]}], "module": "bdB1YgZk", "moduleId": "Kerc3qnA"}]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 109 'AdminUpdateAvailablePermissionsByModule' test.out
 
 #- 110 AdminDeleteConfigPermissionsByGroup
 $PYTHON -m $MODULE 'iam-admin-delete-config-permissions-by-group' \
-    '{"groupId": "ySKAqVbi", "moduleId": "T1FRSOvI"}' \
+    '{"groupId": "XitUdJ5x", "moduleId": "tfYYgTV9"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 110 'AdminDeleteConfigPermissionsByGroup' test.out
@@ -725,14 +725,14 @@ eval_tap $? 112 'AdminGetInputValidations' test.out
 
 #- 113 AdminUpdateInputValidations
 $PYTHON -m $MODULE 'iam-admin-update-input-validations' \
-    '[{"field": "j14CHSej", "validation": {"allowAllSpecialCharacters": false, "allowDigit": false, "allowLetter": false, "allowSpace": true, "allowUnicode": false, "avatarConfig": {"allowedPrefixes": ["JbCLAY6n", "dUFTNbxF", "80N9BLS7"], "preferRegex": false, "regex": "BcgIf3P3"}, "blockedWord": ["V2adGAXL", "Zh2mUwqw", "OQqlB4PJ"], "description": [{"language": "kkQlp2jT", "message": ["yDfQTmno", "8kyr2IUh", "SqdyfCAS"]}, {"language": "sjb2YhNa", "message": ["u8C6mr76", "29rAioGZ", "rCbm55P8"]}, {"language": "vz4PAmPO", "message": ["nr8YZ88z", "CDRMzPT6", "JyrNmGkO"]}], "isCustomRegex": true, "letterCase": "r0U6Glms", "maxLength": 48, "maxRepeatingAlphaNum": 58, "maxRepeatingSpecialCharacter": 59, "minCharType": 90, "minLength": 77, "profanityFilter": "j0ggj7w7", "regex": "0FiYgeWb", "specialCharacterLocation": "mKUr2Q0A", "specialCharacters": ["jXbBEire", "kuo7ZGPq", "nAQhqLF7"]}}, {"field": "qtFLYtGz", "validation": {"allowAllSpecialCharacters": true, "allowDigit": true, "allowLetter": true, "allowSpace": false, "allowUnicode": false, "avatarConfig": {"allowedPrefixes": ["Xrcpbv3E", "PuUAn9AD", "bvEeywmE"], "preferRegex": true, "regex": "PNPbLDwo"}, "blockedWord": ["SWPl82KB", "gYPPsZgI", "hM1L3RJM"], "description": [{"language": "agYtHF0I", "message": ["WpWcLPL6", "ZfS8vVS0", "hkl26rnY"]}, {"language": "WLiJu0Ss", "message": ["OKfcPYfx", "pJSCCBY1", "VilWMIyN"]}, {"language": "TNKrO3hm", "message": ["4THc65en", "KQg4op3x", "nEB70Dsa"]}], "isCustomRegex": true, "letterCase": "j43TEqTb", "maxLength": 20, "maxRepeatingAlphaNum": 70, "maxRepeatingSpecialCharacter": 14, "minCharType": 33, "minLength": 53, "profanityFilter": "muZynwpp", "regex": "oOqJokQu", "specialCharacterLocation": "3HbU1aiB", "specialCharacters": ["OtMsbIGm", "Pk4Au6Nh", "8OtzGiRB"]}}, {"field": "TULyXjBw", "validation": {"allowAllSpecialCharacters": true, "allowDigit": false, "allowLetter": true, "allowSpace": false, "allowUnicode": false, "avatarConfig": {"allowedPrefixes": ["pLceZwAF", "xPp0sJCX", "p8qVEY1u"], "preferRegex": false, "regex": "41UfuXWV"}, "blockedWord": ["RhmCmnvG", "OiPiuE2t", "RpDVZH2V"], "description": [{"language": "anuEWwQZ", "message": ["gizChsM2", "tfNNH99C", "mqWZkHhk"]}, {"language": "ZBe7G8Jm", "message": ["qDgUbm9N", "hCre13xX", "DfVQSm2T"]}, {"language": "vh9ypXaB", "message": ["AoTQcibD", "nyz29ExI", "gJHsZ38v"]}], "isCustomRegex": true, "letterCase": "VLpcWv5q", "maxLength": 19, "maxRepeatingAlphaNum": 45, "maxRepeatingSpecialCharacter": 18, "minCharType": 23, "minLength": 3, "profanityFilter": "4kJlTSQm", "regex": "zvbiYGTI", "specialCharacterLocation": "LVrwsBBC", "specialCharacters": ["G9WfRyF1", "Fk9YzCQ7", "r7hLrMyG"]}}]' \
+    '[{"field": "lQoJtGpU", "validation": {"allowAllSpecialCharacters": true, "allowDigit": false, "allowLetter": true, "allowSpace": false, "allowUnicode": false, "avatarConfig": {"allowedPrefixes": ["6Ewe01qU", "l4zjiryg", "Pe5ULzME"], "preferRegex": true, "regex": "IQTV6PcF"}, "blockedWord": ["GfJfWT6f", "1tOorpwR", "L5pcmcRE"], "description": [{"language": "EJK4EKEg", "message": ["yiqIezxd", "Mm1JKI9W", "PPL2xq12"]}, {"language": "l7mqRAPp", "message": ["yNVg4iVb", "bNKUokyV", "oBpt5KMt"]}, {"language": "1dnvBU3X", "message": ["PbUpb2V1", "cTCM4xGD", "B9NHbEbc"]}], "isCustomRegex": false, "letterCase": "OaN2PDdN", "maxLength": 14, "maxRepeatingAlphaNum": 1, "maxRepeatingSpecialCharacter": 19, "minCharType": 86, "minLength": 93, "profanityFilter": "qirs6UYp", "regex": "UB97yFkr", "specialCharacterLocation": "9YuvLIn3", "specialCharacters": ["V4dEVZd1", "pcV7LKo9", "TeJBzjIT"]}}, {"field": "FYFa4fTQ", "validation": {"allowAllSpecialCharacters": false, "allowDigit": true, "allowLetter": false, "allowSpace": false, "allowUnicode": true, "avatarConfig": {"allowedPrefixes": ["4UqNaMgG", "OBKp9lQ1", "oT3aqVQf"], "preferRegex": false, "regex": "Nv64SRyu"}, "blockedWord": ["m9UBapLB", "aVBEJVIx", "gXfvca9W"], "description": [{"language": "WXz2dpPO", "message": ["OeUaX3t6", "jtHHhUG8", "GOzF0QFZ"]}, {"language": "sCltEfZE", "message": ["1WtGOLqz", "CT2zUP2d", "rt4kv9bw"]}, {"language": "VY7QzSQx", "message": ["i82MaAu9", "z8OU8V5q", "zmlxrEmc"]}], "isCustomRegex": false, "letterCase": "dqjJiUAI", "maxLength": 64, "maxRepeatingAlphaNum": 69, "maxRepeatingSpecialCharacter": 53, "minCharType": 55, "minLength": 94, "profanityFilter": "rrbJea6I", "regex": "Ggy9x1IW", "specialCharacterLocation": "aveFgpkZ", "specialCharacters": ["ATibZxyc", "A5k012MS", "7sMQZCzU"]}}, {"field": "aGdfvNKN", "validation": {"allowAllSpecialCharacters": true, "allowDigit": false, "allowLetter": false, "allowSpace": true, "allowUnicode": false, "avatarConfig": {"allowedPrefixes": ["toAOApMC", "x9b1E1WI", "ipXkX4gT"], "preferRegex": false, "regex": "X6FSMldk"}, "blockedWord": ["9vyFZNiP", "nUXDWFJO", "W0x1JSHZ"], "description": [{"language": "ZEV56EpD", "message": ["OIU1HWC1", "TbvCLwxl", "P2gWyJ8u"]}, {"language": "P7kAgokt", "message": ["QGehjrKT", "rK5iwgix", "zNiaDR5d"]}, {"language": "1g6I9suk", "message": ["Y9GoGaBw", "DugbU82S", "8vdHuhue"]}], "isCustomRegex": false, "letterCase": "H8lYqC3j", "maxLength": 10, "maxRepeatingAlphaNum": 13, "maxRepeatingSpecialCharacter": 56, "minCharType": 93, "minLength": 55, "profanityFilter": "MB47LRkE", "regex": "S0gOzY1q", "specialCharacterLocation": "FGDcCchZ", "specialCharacters": ["ZfRXkX0B", "eYbkfxNX", "YHNtv1jT"]}}]' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 113 'AdminUpdateInputValidations' test.out
 
 #- 114 AdminResetInputValidations
 $PYTHON -m $MODULE 'iam-admin-reset-input-validations' \
-    'WPVNNqQL' \
+    'vDd3MTIS' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 114 'AdminResetInputValidations' test.out
@@ -751,7 +751,7 @@ eval_tap $? 116 'AdminGetAgeRestrictionStatusV3' test.out
 
 #- 117 AdminUpdateAgeRestrictionConfigV3
 $PYTHON -m $MODULE 'iam-admin-update-age-restriction-config-v3' \
-    '{"ageRestriction": 61, "enable": true}' \
+    '{"ageRestriction": 54, "enable": false}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 117 'AdminUpdateAgeRestrictionConfigV3' test.out
@@ -764,8 +764,8 @@ eval_tap $? 118 'AdminGetListCountryAgeRestrictionV3' test.out
 
 #- 119 AdminUpdateCountryAgeRestrictionV3
 $PYTHON -m $MODULE 'iam-admin-update-country-age-restriction-v3' \
-    '{"ageRestriction": 78}' \
-    'eHxxzcfc' \
+    '{"ageRestriction": 71}' \
+    'anmXZw1v' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 119 'AdminUpdateCountryAgeRestrictionV3' test.out
@@ -778,14 +778,14 @@ eval_tap $? 120 'AdminGetBannedUsersV3' test.out
 
 #- 121 AdminBanUserBulkV3
 $PYTHON -m $MODULE 'iam-admin-ban-user-bulk-v3' \
-    '{"ban": "gz64d6Cp", "comment": "Zl1RIkj8", "endDate": "xqLMeRos", "reason": "jVPT6Oul", "skipNotif": true, "userIds": ["E2NMna6Y", "ucS5QqG5", "P87yWZmg"]}' \
+    '{"ban": "ReAzLpUd", "comment": "44zK6Vlh", "endDate": "kVkTciGN", "reason": "afV0oCoz", "skipNotif": false, "userIds": ["O3vRbr7n", "TkyqhWtA", "hhtioRcw"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 121 'AdminBanUserBulkV3' test.out
 
 #- 122 AdminUnbanUserBulkV3
 $PYTHON -m $MODULE 'iam-admin-unban-user-bulk-v3' \
-    '{"bans": [{"banId": "ngrGnd4p", "userId": "FoauUXc7"}, {"banId": "jzuo24hx", "userId": "yka6S3PC"}, {"banId": "i6pDWy6i", "userId": "4ebSbYHg"}]}' \
+    '{"bans": [{"banId": "MXqAE9aS", "userId": "GWYB1PO2"}, {"banId": "rFbjCpAj", "userId": "OUybeHBB"}, {"banId": "hOMiQ6Vy", "userId": "iQfvHfpl"}]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 122 'AdminUnbanUserBulkV3' test.out
@@ -804,68 +804,68 @@ eval_tap $? 124 'AdminGetClientsByNamespaceV3' test.out
 
 #- 125 AdminBulkUpdateClientsV3
 $PYTHON -m $MODULE 'iam-admin-bulk-update-clients-v3' \
-    '{"clientIds": ["eAS37ort", "erVBmE7G", "AMNgS1Tx"], "clientUpdateRequest": {"audiences": ["4zYUi8RO", "S3NaHDhT", "XWl8gh8B"], "baseUri": "Dr96U9YC", "clientName": "pulQhq3C", "clientPermissions": [{"action": 97, "resource": "UqoJjHtL", "schedAction": 61, "schedCron": "dWHf01yA", "schedRange": ["gsRRrXWm", "OkvWSnV4", "Zr5TaoXF"]}, {"action": 8, "resource": "ddtKiGSc", "schedAction": 58, "schedCron": "YbmkFvso", "schedRange": ["UhqWGmrO", "Uej6S1oD", "21hIx4p4"]}, {"action": 5, "resource": "FJtPYpNN", "schedAction": 22, "schedCron": "oFYwjyHo", "schedRange": ["AKZA3fUh", "fT5JSeZU", "kp5xAFVN"]}], "clientPlatform": "7jEQ9gP6", "deletable": true, "description": "dETj4dHJ", "modulePermissions": [{"moduleId": "OhaMkx8h", "selectedGroups": [{"groupId": "CRnmzz7c", "selectedActions": [87, 83, 58]}, {"groupId": "TbPaprxV", "selectedActions": [35, 31, 96]}, {"groupId": "q0r38Ks9", "selectedActions": [63, 42, 11]}]}, {"moduleId": "xQIb5kgV", "selectedGroups": [{"groupId": "eDT791Em", "selectedActions": [53, 9, 86]}, {"groupId": "4YKDbL3t", "selectedActions": [49, 28, 6]}, {"groupId": "KhoAOlTe", "selectedActions": [97, 1, 59]}]}, {"moduleId": "yAiASVwW", "selectedGroups": [{"groupId": "vXjiaizN", "selectedActions": [62, 73, 24]}, {"groupId": "nxDkE2NF", "selectedActions": [87, 8, 47]}, {"groupId": "GmqEguu3", "selectedActions": [59, 35, 96]}]}], "namespace": "mJdyki5A", "oauthAccessTokenExpiration": 21, "oauthAccessTokenExpirationTimeUnit": "zLv9XxoZ", "oauthRefreshTokenExpiration": 86, "oauthRefreshTokenExpirationTimeUnit": "cZgaVxPN", "redirectUri": "mAYGUhCI", "scopes": ["DfaDQ6UT", "WeyYCEwM", "XavsembE"], "skipLoginQueue": true, "twoFactorEnabled": true}}' \
+    '{"clientIds": ["4Yz1IfOU", "w3AiqeUR", "2FcWiHwq"], "clientUpdateRequest": {"audiences": ["fZQqCzuX", "2Mbeqvwq", "Dv3Fbcog"], "baseUri": "5eZMCzyk", "clientName": "cWK3Du9H", "clientPermissions": [{"action": 32, "resource": "S8ywbLhV", "schedAction": 73, "schedCron": "vWIYVHz4", "schedRange": ["EeAgXJLc", "7UHMgAUa", "yplyQgoK"]}, {"action": 10, "resource": "pFQMUTij", "schedAction": 40, "schedCron": "nQx1KeXN", "schedRange": ["8Sm4BCuj", "MtcfiH6J", "rUnswK0w"]}, {"action": 2, "resource": "hm59GymR", "schedAction": 87, "schedCron": "mS98AnUa", "schedRange": ["6KUCKfEx", "ChODhPZe", "lPgaBMSU"]}], "clientPlatform": "bPQQHZRX", "deletable": false, "description": "cTPM9jBM", "modulePermissions": [{"moduleId": "h8s9LS5y", "selectedGroups": [{"groupId": "ONMwVYsT", "selectedActions": [37, 36, 42]}, {"groupId": "AhjmREf3", "selectedActions": [5, 45, 20]}, {"groupId": "YuXlsiTb", "selectedActions": [80, 22, 20]}]}, {"moduleId": "04UUoliH", "selectedGroups": [{"groupId": "CaiYFzP3", "selectedActions": [27, 90, 46]}, {"groupId": "ATau0QPi", "selectedActions": [48, 90, 85]}, {"groupId": "dwYhajZ5", "selectedActions": [93, 97, 17]}]}, {"moduleId": "mDMuzLK3", "selectedGroups": [{"groupId": "vBBry4Pa", "selectedActions": [36, 44, 24]}, {"groupId": "v0UZke0b", "selectedActions": [52, 96, 56]}, {"groupId": "3gdq1jUC", "selectedActions": [39, 60, 29]}]}], "namespace": "FlZmdACv", "oauthAccessTokenExpiration": 16, "oauthAccessTokenExpirationTimeUnit": "gh4HG1ab", "oauthRefreshTokenExpiration": 69, "oauthRefreshTokenExpirationTimeUnit": "FTwz0Jqs", "redirectUri": "NxTT7mo8", "scopes": ["JTKhQgCi", "JtMiCm1C", "UMgPjs6I"], "skipLoginQueue": false, "twoFactorEnabled": true}}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 125 'AdminBulkUpdateClientsV3' test.out
 
 #- 126 AdminCreateClientV3
 $PYTHON -m $MODULE 'iam-admin-create-client-v3' \
-    '{"audiences": ["FM0cLPK8", "HrTtk0Qb", "mkgEwriv"], "baseUri": "xSO6Nh8c", "clientId": "EKj1OsOc", "clientName": "MP8ub3Kt", "clientPermissions": [{"action": 12, "resource": "ualrbst5", "schedAction": 83, "schedCron": "vLAwFecW", "schedRange": ["IbSLF1I7", "i4AR3AsJ", "KYKohCDA"]}, {"action": 83, "resource": "SXtVg70n", "schedAction": 93, "schedCron": "6k8nuUQa", "schedRange": ["bf4FVNhp", "ESUxD2yr", "NNawG72j"]}, {"action": 29, "resource": "LhZDdkps", "schedAction": 23, "schedCron": "UWWkDrSu", "schedRange": ["5j0sA6gP", "wg7XUDeL", "pVnf01u7"]}], "clientPlatform": "MTzqq9zD", "deletable": true, "description": "1fxf4rxV", "modulePermissions": [{"moduleId": "DLRi90KW", "selectedGroups": [{"groupId": "OUYK8nQc", "selectedActions": [88, 95, 85]}, {"groupId": "MOHHIVpw", "selectedActions": [80, 94, 0]}, {"groupId": "Sh30Tnc3", "selectedActions": [37, 86, 50]}]}, {"moduleId": "0s5my3Dt", "selectedGroups": [{"groupId": "GgY2LqS5", "selectedActions": [31, 27, 50]}, {"groupId": "Hp3RSiwy", "selectedActions": [8, 48, 75]}, {"groupId": "ncws4Lah", "selectedActions": [86, 30, 81]}]}, {"moduleId": "oE7oZxXR", "selectedGroups": [{"groupId": "gc9SVaXG", "selectedActions": [49, 55, 87]}, {"groupId": "4EyeakQg", "selectedActions": [64, 22, 48]}, {"groupId": "JcZhjSRz", "selectedActions": [44, 71, 59]}]}], "namespace": "Ee0xtkFg", "oauthAccessTokenExpiration": 34, "oauthAccessTokenExpirationTimeUnit": "EfNzlm3d", "oauthClientType": "V9Q3n9e7", "oauthRefreshTokenExpiration": 85, "oauthRefreshTokenExpirationTimeUnit": "ZkQpdpfk", "parentNamespace": "Bc6Yt8Vh", "redirectUri": "yZVdXUko", "scopes": ["gayhFIDw", "l9ojYYtL", "bP4ixYG2"], "secret": "whNS5JvX", "skipLoginQueue": false, "twoFactorEnabled": true}' \
+    '{"audiences": ["ExtuRZ2I", "6mWg3TVO", "2kP7ehu0"], "baseUri": "eMY6qcvK", "clientId": "YOMrIQZZ", "clientName": "i6i7BXHB", "clientPermissions": [{"action": 39, "resource": "s5HUlDMx", "schedAction": 34, "schedCron": "PMhPWDcc", "schedRange": ["MoJ5Df9K", "lzJS0Q4z", "0F17moeO"]}, {"action": 100, "resource": "WMXhu5f6", "schedAction": 94, "schedCron": "CBfljdzF", "schedRange": ["zJWC27hj", "Drl8OQmS", "7QpOsrVU"]}, {"action": 48, "resource": "gZ9kxPtS", "schedAction": 51, "schedCron": "NqM2fivk", "schedRange": ["vztoy2se", "O19mTQbv", "FTwb59x1"]}], "clientPlatform": "pXUVayeF", "deletable": true, "description": "optAmojd", "modulePermissions": [{"moduleId": "k2lF3LvD", "selectedGroups": [{"groupId": "uqdaU7UV", "selectedActions": [78, 42, 73]}, {"groupId": "kDm91eOj", "selectedActions": [92, 44, 91]}, {"groupId": "x8LbVNfL", "selectedActions": [54, 42, 99]}]}, {"moduleId": "qhq5F4sg", "selectedGroups": [{"groupId": "AJiZt0wS", "selectedActions": [55, 21, 27]}, {"groupId": "qXUtXlaz", "selectedActions": [9, 5, 78]}, {"groupId": "WO45lVGq", "selectedActions": [88, 4, 94]}]}, {"moduleId": "vLOJ7qKy", "selectedGroups": [{"groupId": "OIgwJv8e", "selectedActions": [6, 18, 58]}, {"groupId": "ThgtTJZW", "selectedActions": [58, 71, 58]}, {"groupId": "b0hrwpC2", "selectedActions": [55, 64, 4]}]}], "namespace": "MRvplgZ0", "oauthAccessTokenExpiration": 21, "oauthAccessTokenExpirationTimeUnit": "4B8COua8", "oauthClientType": "RqE6t1Ux", "oauthRefreshTokenExpiration": 94, "oauthRefreshTokenExpirationTimeUnit": "fT3IsA6M", "parentNamespace": "Ddu51rgB", "redirectUri": "RrNNHFrM", "scopes": ["MyEOQjFO", "l2HojxKY", "YBkiKaFw"], "secret": "Qo1Bdoav", "skipLoginQueue": false, "twoFactorEnabled": false}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 126 'AdminCreateClientV3' test.out
 
 #- 127 AdminGetClientsbyNamespacebyIDV3
 $PYTHON -m $MODULE 'iam-admin-get-clientsby-namespaceby-idv3' \
-    'fKcUsa6S' \
+    '2ePFMTFm' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 127 'AdminGetClientsbyNamespacebyIDV3' test.out
 
 #- 128 AdminDeleteClientV3
 $PYTHON -m $MODULE 'iam-admin-delete-client-v3' \
-    'zuhkY08a' \
+    'dOECzXxY' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 128 'AdminDeleteClientV3' test.out
 
 #- 129 AdminUpdateClientV3
 $PYTHON -m $MODULE 'iam-admin-update-client-v3' \
-    '{"audiences": ["y5OHZavZ", "Jcdr2l8m", "izFTxTTy"], "baseUri": "9Olk6eU3", "clientName": "IdcWpeev", "clientPermissions": [{"action": 27, "resource": "SDzhH5eK", "schedAction": 98, "schedCron": "RwnhtWPw", "schedRange": ["KdUbHxTy", "5z3llIhm", "f9Jhi7zw"]}, {"action": 78, "resource": "OqcdedIu", "schedAction": 73, "schedCron": "QcQiVwkL", "schedRange": ["3i2wgA4y", "HoByYKIv", "dP88U9lp"]}, {"action": 98, "resource": "RWaAygdH", "schedAction": 76, "schedCron": "XZhzNUKs", "schedRange": ["3rdluFPa", "zqu3pAn0", "soAhBGwa"]}], "clientPlatform": "jtl3Xf0Q", "deletable": false, "description": "7lpFwRdL", "modulePermissions": [{"moduleId": "uAPj1dbr", "selectedGroups": [{"groupId": "meyDMoia", "selectedActions": [79, 1, 69]}, {"groupId": "UMi41sMd", "selectedActions": [55, 47, 29]}, {"groupId": "CQ2ZYGbS", "selectedActions": [56, 80, 2]}]}, {"moduleId": "m7JDRHNK", "selectedGroups": [{"groupId": "vALtAE1z", "selectedActions": [80, 36, 88]}, {"groupId": "pVTkW7eL", "selectedActions": [80, 24, 92]}, {"groupId": "IJlMUFtr", "selectedActions": [81, 37, 21]}]}, {"moduleId": "bwufFGAK", "selectedGroups": [{"groupId": "88LKeFUu", "selectedActions": [26, 76, 50]}, {"groupId": "k9pcUbCd", "selectedActions": [4, 15, 84]}, {"groupId": "ZicJh2CM", "selectedActions": [23, 97, 50]}]}], "namespace": "JuJWghat", "oauthAccessTokenExpiration": 80, "oauthAccessTokenExpirationTimeUnit": "47K3XbfZ", "oauthRefreshTokenExpiration": 99, "oauthRefreshTokenExpirationTimeUnit": "wlMnSWeE", "redirectUri": "f36bCBzF", "scopes": ["NsM0I5Du", "zMsPGulY", "8JUtEQxb"], "skipLoginQueue": false, "twoFactorEnabled": false}' \
-    'VzazR6Sr' \
+    '{"audiences": ["6ONdP6b2", "iRmJPjAf", "Hzkg5umT"], "baseUri": "SVUjCTMe", "clientName": "nLqpDiqE", "clientPermissions": [{"action": 55, "resource": "tsKMbiTv", "schedAction": 15, "schedCron": "6dlg9wYx", "schedRange": ["CQLU9HLf", "dnesUNi4", "QsYv9Ehk"]}, {"action": 76, "resource": "Oug4eIpU", "schedAction": 75, "schedCron": "NGLZYscI", "schedRange": ["IKpiEnil", "LFandEDt", "TYtr63YW"]}, {"action": 46, "resource": "mbRmUvxn", "schedAction": 77, "schedCron": "0wiWfV4c", "schedRange": ["X5oX7Ah8", "YX060JZD", "WqdadUxE"]}], "clientPlatform": "HbY0g8rv", "deletable": false, "description": "8QNhMZif", "modulePermissions": [{"moduleId": "Qyau5yq6", "selectedGroups": [{"groupId": "uX0d7LQO", "selectedActions": [17, 94, 62]}, {"groupId": "5NKB411a", "selectedActions": [75, 74, 59]}, {"groupId": "TKTPNuMh", "selectedActions": [54, 87, 8]}]}, {"moduleId": "s0lvekzn", "selectedGroups": [{"groupId": "2KS2LCcY", "selectedActions": [80, 11, 24]}, {"groupId": "GG6smyAi", "selectedActions": [12, 84, 30]}, {"groupId": "1FAGYY7e", "selectedActions": [47, 22, 27]}]}, {"moduleId": "0rCOtkWG", "selectedGroups": [{"groupId": "krbdQjnR", "selectedActions": [37, 30, 22]}, {"groupId": "ytwBUIli", "selectedActions": [54, 92, 9]}, {"groupId": "9qqJupFz", "selectedActions": [72, 86, 69]}]}], "namespace": "9WZoOCLM", "oauthAccessTokenExpiration": 68, "oauthAccessTokenExpirationTimeUnit": "JwxDzkkF", "oauthRefreshTokenExpiration": 63, "oauthRefreshTokenExpirationTimeUnit": "UEFcu7qF", "redirectUri": "KoF3Dal3", "scopes": ["Xnq2OfZE", "3WYBVkwg", "Xd3n1pQC"], "skipLoginQueue": true, "twoFactorEnabled": false}' \
+    'aKMqpqgd' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 129 'AdminUpdateClientV3' test.out
 
 #- 130 AdminUpdateClientPermissionV3
 $PYTHON -m $MODULE 'iam-admin-update-client-permission-v3' \
-    '{"permissions": [{"action": 39, "resource": "lXRCrOwA"}, {"action": 32, "resource": "04AojYz3"}, {"action": 16, "resource": "cSgpBCXh"}]}' \
-    '8XqgkoH4' \
+    '{"permissions": [{"action": 100, "resource": "l1xyxTXg"}, {"action": 50, "resource": "s91RXptM"}, {"action": 4, "resource": "xaLZhvFM"}]}' \
+    'iKPWOys6' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 130 'AdminUpdateClientPermissionV3' test.out
 
 #- 131 AdminAddClientPermissionsV3
 $PYTHON -m $MODULE 'iam-admin-add-client-permissions-v3' \
-    '{"permissions": [{"action": 63, "resource": "l1PqxL35"}, {"action": 62, "resource": "GFCP5m4t"}, {"action": 72, "resource": "fwfhcGXQ"}]}' \
-    'JBzFtS6y' \
+    '{"permissions": [{"action": 60, "resource": "174nPeuL"}, {"action": 62, "resource": "dKZJiZ6X"}, {"action": 1, "resource": "LKP3KaEJ"}]}' \
+    '79ptcQqp' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 131 'AdminAddClientPermissionsV3' test.out
 
 #- 132 AdminDeleteClientPermissionV3
 $PYTHON -m $MODULE 'iam-admin-delete-client-permission-v3' \
-    '62' \
-    'obVd3Ue6' \
-    'tNr02bqs' \
+    '24' \
+    'AOHApXfP' \
+    'RVPICD9n' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 132 'AdminDeleteClientPermissionV3' test.out
 
 #- 133 AdminGetConfigValueV3
 $PYTHON -m $MODULE 'iam-admin-get-config-value-v3' \
-    'N5hjr4an' \
+    'V6fi1wte' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 133 'AdminGetConfigValueV3' test.out
@@ -884,7 +884,7 @@ eval_tap $? 135 'AdminGetCountryBlacklistV3' test.out
 
 #- 136 AdminAddCountryBlacklistV3
 $PYTHON -m $MODULE 'iam-admin-add-country-blacklist-v3' \
-    '{"blacklist": ["0S9Kgz1l", "IrzytDLt", "sUbb0rfm"]}' \
+    '{"blacklist": ["3lvBuyqR", "hsr2jHhi", "GytOlajE"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 136 'AdminAddCountryBlacklistV3' test.out
@@ -897,7 +897,7 @@ eval_tap $? 137 'AdminGetLoginAllowlistV3' test.out
 
 #- 138 AdminUpdateLoginAllowlistV3
 $PYTHON -m $MODULE 'iam-admin-update-login-allowlist-v3' \
-    '{"active": false, "roleIds": ["QxFeBbjP", "2atRgQKl", "hTu0FDOU"]}' \
+    '{"active": true, "roleIds": ["GLvJJUnM", "1Lc2T2Ir", "ZqqavhLz"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 138 'AdminUpdateLoginAllowlistV3' test.out
@@ -922,100 +922,100 @@ eval_tap $? 141 'RetrieveAllSSOLoginPlatformCredentialV3' test.out
 
 #- 142 RetrieveThirdPartyLoginPlatformCredentialV3
 $PYTHON -m $MODULE 'iam-retrieve-third-party-login-platform-credential-v3' \
-    'FWR33f4j' \
+    'fBjgJZgZ' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 142 'RetrieveThirdPartyLoginPlatformCredentialV3' test.out
 
 #- 143 AddThirdPartyLoginPlatformCredentialV3
 $PYTHON -m $MODULE 'iam-add-third-party-login-platform-credential-v3' \
-    '{"ACSURL": "zN7wlxYM", "AWSCognitoRegion": "0Ei1vpxR", "AWSCognitoUserPool": "oHTkv0Ar", "AllowedClients": ["sNSyxmVS", "FEvmsFHB", "vQg08EN0"], "AppId": "9VW1a6hq", "AuthorizationEndpoint": "ZE8Hwd73", "ClientId": "HTfkZQ47", "EmptyStrFieldList": ["5EiuBS04", "xrTEm2MC", "HMFDRy5j"], "EnableServerLicenseValidation": false, "Environment": "OcWjV9SE", "FederationMetadataURL": "YQ2AjKtU", "GenericOauthFlow": false, "IncludePUID": false, "IsActive": true, "Issuer": "LUGnrvUe", "JWKSEndpoint": "XV43nF7q", "KeyID": "MH1qRFrl", "LogoURL": "8S7rjXK1", "NetflixCertificates": {"encryptedPrivateKey": "LzT3ybnE", "encryptedPrivateKeyName": "4VtCpiOk", "publicCertificate": "miUlKnXC", "publicCertificateName": "sgSfNpyj", "rootCertificate": "TDYTsZwT", "rootCertificateName": "SPZ83KE8"}, "OrganizationId": "KKKp0jpR", "PlatformName": "c57XWEeH", "PrivateKey": "S6z7NBKL", "RedirectUri": "eXLxOkW3", "RegisteredDomains": [{"affectedClientIDs": ["vcOFcsrB", "u8BykhJu", "L7VfrLdV"], "domain": "RukCnLM8", "namespaces": ["Axs2BDVQ", "5upoDRLg", "7pw11Dyi"], "roleId": "Ng7mG9wa", "ssoCfg": {"googleKey": {"lDs0QthI": {}, "tx8nvFVW": {}, "uyEuEoad": {}}, "groupConfigs": [{"assignNamespaces": ["cntIIDma", "zxXiA2Mn", "KgWBqgqc"], "group": "XfmRUeqV", "roleId": "FhF8jT4Q"}, {"assignNamespaces": ["3F8tABIz", "O6XEAhSQ", "466CpHLA"], "group": "QVu2zREx", "roleId": "3Kf6VeyG"}, {"assignNamespaces": ["hIikKmkM", "jaN6KGyu", "HA6eHZnh"], "group": "EjSXfV1d", "roleId": "m9YSzzCc"}]}}, {"affectedClientIDs": ["8oCN20H7", "9EA494bM", "Wax44Dwh"], "domain": "lwQBP2uz", "namespaces": ["7FVkEcOO", "pdNEB5Iu", "WkUhRHW9"], "roleId": "kjKqeWq9", "ssoCfg": {"googleKey": {"aIDH3DGf": {}, "RfwVKeBv": {}, "XUoEbH76": {}}, "groupConfigs": [{"assignNamespaces": ["b8c4LSHy", "cLhsTRnA", "hD2izhJF"], "group": "u0T6VtTX", "roleId": "w5nK3g7J"}, {"assignNamespaces": ["kywyb4rf", "gvjg1cSZ", "FPOM62uP"], "group": "6iqoK6zs", "roleId": "LjrxU5sA"}, {"assignNamespaces": ["RqnQsT6g", "GhPjIi6o", "Ke0LLblm"], "group": "JHv3O0uR", "roleId": "ENbpmZrx"}]}}, {"affectedClientIDs": ["g9Aa41tw", "0ZJNbt5x", "LUPXAv1U"], "domain": "75QVN1lC", "namespaces": ["FvcNDGuy", "BPyAkSIN", "8hszySUh"], "roleId": "Y3bS4vEE", "ssoCfg": {"googleKey": {"F0WZS6NB": {}, "78yTVwtZ": {}, "0ys063Nj": {}}, "groupConfigs": [{"assignNamespaces": ["T65za8PM", "raMX1BCY", "vE3jjIOd"], "group": "ARl57bMh", "roleId": "9hLXnkA9"}, {"assignNamespaces": ["FhoxaA8q", "9yYI6OeI", "M6VqfCwg"], "group": "s8MWh5ur", "roleId": "YFqLjvNt"}, {"assignNamespaces": ["C7DmnUOz", "lo319Zkx", "olbn46rs"], "group": "WxEWQrGl", "roleId": "GJe3yhzN"}]}}], "RelyingParty": "sDyKkAmU", "SandboxId": "gVr9wGsM", "Secret": "iIyLgggM", "TeamID": "M2pFg0J9", "TokenAuthenticationType": "6C04oPd4", "TokenClaimsMapping": {"zpID2dz1": "w10ouMQg", "PMMBDP9B": "RiYIJYrS", "8N54dy9j": "bjpkZs6x"}, "TokenEndpoint": "cgymlWKw", "UserInfoEndpoint": "DGgbyzXv", "UserInfoHTTPMethod": "ziBiqgIN", "googleAdminConsoleKey": "NFjN0fze", "scopes": ["Rnrt82b0", "U7yZkGL2", "MhSCAdPY"]}' \
-    'xoV1dBXP' \
+    '{"ACSURL": "D5UKxX5L", "AWSCognitoRegion": "LFgunXUb", "AWSCognitoUserPool": "K7YGYXBj", "AllowedClients": ["KsIOX4dB", "SH8zh4le", "3oqtJQfG"], "AppId": "tUSz6iip", "AuthorizationEndpoint": "zxrBVp0K", "ClientId": "rxUEKskn", "EmptyStrFieldList": ["rjTj4NI2", "0rnHT2GT", "0CoT71Vm"], "EnableServerLicenseValidation": false, "Environment": "yA3GcvCr", "FederationMetadataURL": "hbxs1yb1", "GenericOauthFlow": true, "IncludePUID": true, "IsActive": false, "Issuer": "BF3Dfjny", "JWKSEndpoint": "h3cfctIp", "KeyID": "nsSLU7DC", "LogoURL": "t1pL2oT8", "NetflixCertificates": {"encryptedPrivateKey": "h2f8Vr64", "encryptedPrivateKeyName": "kDF0r8wJ", "publicCertificate": "QPPUPXtB", "publicCertificateName": "d0FW90g7", "rootCertificate": "it8zRj0R", "rootCertificateName": "DtSMpHwe"}, "OrganizationId": "zSIMchun", "PlatformName": "VrWiHjXw", "PrivateKey": "BsmW9cBn", "RedirectUri": "g7ccCMfL", "RegisteredDomains": [{"affectedClientIDs": ["lY2cWWBn", "jNMcP08E", "nk7ejHhU"], "domain": "T3Er9dkZ", "namespaces": ["Jh3IztTO", "Vf52MbkQ", "QyGvXz91"], "roleId": "7zz2PQLN", "ssoCfg": {"googleKey": {"8rN2pRCo": {}, "4tGUBMe5": {}, "l4fc7MhQ": {}}, "groupConfigs": [{"assignNamespaces": ["xvhYU5lV", "gUVBbEh5", "bejuNYCy"], "group": "J2aZTO9M", "roleId": "XdVnp3DM"}, {"assignNamespaces": ["yyhwxsV1", "WpZVtEDE", "JwfzX2Ee"], "group": "EbFC0aSM", "roleId": "hSD50Oex"}, {"assignNamespaces": ["x07gq1yB", "TQwU4Dp8", "zKbiT1fV"], "group": "th57HHrn", "roleId": "jHIBXeIt"}]}}, {"affectedClientIDs": ["J67lm0IE", "t7C4eFcg", "1769Za5p"], "domain": "lMMkWlRV", "namespaces": ["rf0GPeC1", "Xxe1dR5e", "DGqzzv8g"], "roleId": "QtySz7ZI", "ssoCfg": {"googleKey": {"LYAq3egX": {}, "WJ4kLZha": {}, "yKKGHR2M": {}}, "groupConfigs": [{"assignNamespaces": ["MxTP63lb", "PQEEWoa0", "0S2vOb6E"], "group": "9lcQTwG7", "roleId": "g9FQpOsU"}, {"assignNamespaces": ["w4GT3Tb4", "LWJ9PxCK", "7AjDayAO"], "group": "wKInAoJZ", "roleId": "CqbkJohM"}, {"assignNamespaces": ["UKmKjydQ", "PBJ7Z9Hj", "RkR9cofk"], "group": "IDsKarFh", "roleId": "O6V4KFaP"}]}}, {"affectedClientIDs": ["Rr40woUR", "aG7xYGwv", "pOxxf8yK"], "domain": "z0vATZ7x", "namespaces": ["rRiIJ3em", "4LWPFCl6", "Ot6X1K9b"], "roleId": "CbQlV8p2", "ssoCfg": {"googleKey": {"EsoFddfm": {}, "HMLmyqk1": {}, "gpTxWRSL": {}}, "groupConfigs": [{"assignNamespaces": ["f7lJR6VE", "uT9GFUd3", "X5C01Wn5"], "group": "ZQkW3Sbe", "roleId": "2ptyzY89"}, {"assignNamespaces": ["dC2hBV5G", "ztdS0xPb", "UgPcOCbv"], "group": "mS0tQYCb", "roleId": "BrgsImca"}, {"assignNamespaces": ["GIfh9ngu", "fS40ij4J", "xdNLiTyE"], "group": "2glOkk1k", "roleId": "0LHh1frg"}]}}], "RelyingParty": "Gs3rCCQQ", "SandboxId": "DwGUmLWZ", "Secret": "icdySTf8", "TeamID": "lszRYCnN", "TokenAuthenticationType": "LosQxiaT", "TokenClaimsMapping": {"JkGMZT2y": "io9bZXkk", "XxHtmXsJ": "tYPvJi7v", "YpRum3WB": "OA85ozED"}, "TokenEndpoint": "gdFRxzEf", "UserInfoEndpoint": "jVCYklbP", "UserInfoHTTPMethod": "GkuTEVZx", "googleAdminConsoleKey": "rGyI2XR3", "scopes": ["POvsjSm2", "pb0CjynL", "oKirhsL6"]}' \
+    'mlVRc9RD' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 143 'AddThirdPartyLoginPlatformCredentialV3' test.out
 
 #- 144 DeleteThirdPartyLoginPlatformCredentialV3
 $PYTHON -m $MODULE 'iam-delete-third-party-login-platform-credential-v3' \
-    'ZO3fzeb9' \
+    'FJTmXrRa' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 144 'DeleteThirdPartyLoginPlatformCredentialV3' test.out
 
 #- 145 UpdateThirdPartyLoginPlatformCredentialV3
 $PYTHON -m $MODULE 'iam-update-third-party-login-platform-credential-v3' \
-    '{"ACSURL": "Dnu7q3ds", "AWSCognitoRegion": "V24nYHOn", "AWSCognitoUserPool": "zXUxfb3f", "AllowedClients": ["GjU24zm6", "vaslBrOh", "xF8TedXj"], "AppId": "LHIz9FYl", "AuthorizationEndpoint": "THwJUDLT", "ClientId": "pIzDnKjw", "EmptyStrFieldList": ["7M7HG1l6", "xSIWS1nH", "fZ4xAm46"], "EnableServerLicenseValidation": false, "Environment": "lEqkiOTI", "FederationMetadataURL": "tsE0iL3u", "GenericOauthFlow": false, "IncludePUID": false, "IsActive": true, "Issuer": "YyW4fPBq", "JWKSEndpoint": "r3XaqnUy", "KeyID": "1IJ1Gbrc", "LogoURL": "gSjPH9SS", "NetflixCertificates": {"encryptedPrivateKey": "50iegqm4", "encryptedPrivateKeyName": "rXNKlJr3", "publicCertificate": "PryXu4Rg", "publicCertificateName": "sphbNbal", "rootCertificate": "6A4BBE3Y", "rootCertificateName": "oUkbKscF"}, "OrganizationId": "oLIO5m9a", "PlatformName": "lTcVbP5k", "PrivateKey": "ii7IIjK7", "RedirectUri": "8LS9YQ36", "RegisteredDomains": [{"affectedClientIDs": ["7rV76kwW", "RBVjTNMA", "xqgFw2pg"], "domain": "KaoqcKSD", "namespaces": ["f9U41YMJ", "OvmVQCm1", "nRQWoaUc"], "roleId": "JUNAQ9RP", "ssoCfg": {"googleKey": {"QT8tzBK3": {}, "EGLO6guM": {}, "YzZ2tYgZ": {}}, "groupConfigs": [{"assignNamespaces": ["2OtGDeSG", "KkCKCmYm", "A4v0WeqM"], "group": "0QR3Lwut", "roleId": "RtrVE1Oz"}, {"assignNamespaces": ["TCWd6HVD", "4DC10evx", "FGwm12Xf"], "group": "1l9zqPUF", "roleId": "NAj3fa8n"}, {"assignNamespaces": ["sPUgNfO8", "0g4YSFab", "8GhnBpT4"], "group": "zQKOvNC1", "roleId": "D9qu0Oz3"}]}}, {"affectedClientIDs": ["3uVrdVdk", "QAvx5Myh", "9nSywDJ7"], "domain": "VlwKi4LN", "namespaces": ["H7kXk6ce", "9XkIU1AM", "EeK34oPA"], "roleId": "cN6ju3bK", "ssoCfg": {"googleKey": {"OJtJEKkV": {}, "mxLo8TvN": {}, "HxMdxBkn": {}}, "groupConfigs": [{"assignNamespaces": ["gbdHYcOb", "RxOAQm0b", "jPkyZcEi"], "group": "bDy1tNC2", "roleId": "s11ZYjYz"}, {"assignNamespaces": ["Kc0Zoh3j", "LIUwsa5t", "HhFhoXmQ"], "group": "xtOWa8O7", "roleId": "oyTFptov"}, {"assignNamespaces": ["TMVIEA4W", "8cTyptjZ", "UVMhS9l3"], "group": "0rTgzPzq", "roleId": "OdzxtlXn"}]}}, {"affectedClientIDs": ["1HcNmzFb", "aUfhD99m", "mfKgnY8K"], "domain": "oRe53JKc", "namespaces": ["1DtGBBYD", "TAbiZPQ5", "HM7hLSr9"], "roleId": "c6R5pnRW", "ssoCfg": {"googleKey": {"1uAWPzoT": {}, "aHk8xtBw": {}, "FZpjoaUE": {}}, "groupConfigs": [{"assignNamespaces": ["2EKolZEO", "Ad3A6mK0", "SJJ5e930"], "group": "yFPCRe4K", "roleId": "w61VjdLA"}, {"assignNamespaces": ["qOLnRbeo", "HY6D2nAx", "KxewFFkF"], "group": "NBI1YZf6", "roleId": "EaXdHICs"}, {"assignNamespaces": ["jgtZmtsh", "cvxyOAiE", "1XsySoIa"], "group": "josGABGa", "roleId": "fyHS1IKE"}]}}], "RelyingParty": "9f2OaNpX", "SandboxId": "mohRffC7", "Secret": "JAtfZt1m", "TeamID": "GryF0EQe", "TokenAuthenticationType": "7SupnSg8", "TokenClaimsMapping": {"lWBQbB59": "0tMfG6ov", "fyqjdzpq": "I4bFJ4vx", "43glvzeo": "ECCfRynJ"}, "TokenEndpoint": "WQlzWoj3", "UserInfoEndpoint": "5MYqZIX0", "UserInfoHTTPMethod": "bGtuSRwd", "googleAdminConsoleKey": "B4BFiKTa", "scopes": ["s6Rr4i8m", "gcwnAyff", "Tjn7RwQ9"]}' \
-    '76yRei5m' \
+    '{"ACSURL": "5l1WEHoD", "AWSCognitoRegion": "4eMWjPNG", "AWSCognitoUserPool": "sRmC6g8b", "AllowedClients": ["AzfLWGGW", "UjKvacJh", "jOargbx6"], "AppId": "klODj8zj", "AuthorizationEndpoint": "fyKat0uJ", "ClientId": "lgCZOGwk", "EmptyStrFieldList": ["hTCUt7Gd", "tCXnUOgP", "J4fgh3GL"], "EnableServerLicenseValidation": true, "Environment": "auz2MDpp", "FederationMetadataURL": "rgpbdvkY", "GenericOauthFlow": true, "IncludePUID": false, "IsActive": false, "Issuer": "3WMMCqaF", "JWKSEndpoint": "gaKJtFLe", "KeyID": "01z8YTaU", "LogoURL": "UWDATmmr", "NetflixCertificates": {"encryptedPrivateKey": "d1oAZL7H", "encryptedPrivateKeyName": "RbaSV2Kv", "publicCertificate": "PHFOQzyZ", "publicCertificateName": "o189UEuR", "rootCertificate": "AxOiNcfA", "rootCertificateName": "2Ts41EMo"}, "OrganizationId": "B0KNoz0e", "PlatformName": "yEEI45Zn", "PrivateKey": "f9uYqVXM", "RedirectUri": "JeYrgUNf", "RegisteredDomains": [{"affectedClientIDs": ["zJ9OfLWf", "Buce0q77", "lOhRGXSw"], "domain": "qRwMGUW0", "namespaces": ["b1by1ZIV", "kRmgsQdd", "zNhhcT4C"], "roleId": "gHcjxOwh", "ssoCfg": {"googleKey": {"5fZOMDO9": {}, "nm5dfsmm": {}, "77DAwjWD": {}}, "groupConfigs": [{"assignNamespaces": ["qaUvsQZM", "LVLm1DTL", "5H52jNPn"], "group": "ulCGArxq", "roleId": "3EmAXqCr"}, {"assignNamespaces": ["3gZCgU0u", "X8pz1xdO", "0p1p2IRD"], "group": "dZpgW62J", "roleId": "iETklWzD"}, {"assignNamespaces": ["OdjMiYsY", "4sWGR1WE", "uxYWURGi"], "group": "7MymwTri", "roleId": "aK3ZuwCI"}]}}, {"affectedClientIDs": ["AgJsHC45", "C4ZeXTx7", "fG9saIq0"], "domain": "xHI3Fspz", "namespaces": ["ZIQIEa7d", "ufRIYLwD", "UEqVQSSc"], "roleId": "HBu1Pg6L", "ssoCfg": {"googleKey": {"EhE3dCdL": {}, "19QMhyBc": {}, "cnPIU3Vb": {}}, "groupConfigs": [{"assignNamespaces": ["AGsOEmpv", "7ahs2DJ7", "IdQiLzd1"], "group": "xlpTFKfo", "roleId": "ZnnSP17C"}, {"assignNamespaces": ["SOqf8djw", "XEOGppma", "rRvC6Yct"], "group": "7PSzWvNE", "roleId": "sXRWIEIM"}, {"assignNamespaces": ["6ZT0S94V", "d96PrIMe", "XXbXNvgW"], "group": "yRMpv6Yj", "roleId": "RXv1WhKz"}]}}, {"affectedClientIDs": ["EANQwiRW", "hOXijqXq", "4zrJol7g"], "domain": "Ec6gpqd8", "namespaces": ["Edo39y3i", "hPaWXcQ4", "LNum4Uym"], "roleId": "ZFQDWgoJ", "ssoCfg": {"googleKey": {"jiMR82hV": {}, "bgO3SM3V": {}, "MCImtyhU": {}}, "groupConfigs": [{"assignNamespaces": ["bKmp0w0N", "SnhXyTNe", "6LU6RfEl"], "group": "ZQwwe1oE", "roleId": "rjaKgx70"}, {"assignNamespaces": ["qgvM4iS2", "b8tG1Edj", "eEQIrbdT"], "group": "nWLXhw4b", "roleId": "pYfdAtZM"}, {"assignNamespaces": ["tBE70y7M", "qibTclNV", "1YHb9rbF"], "group": "AGtrtnRw", "roleId": "5wdwXUMx"}]}}], "RelyingParty": "vMeqYpn7", "SandboxId": "vikM5Jkq", "Secret": "4IbLfzd3", "TeamID": "UzCCAwma", "TokenAuthenticationType": "nyHmYkp5", "TokenClaimsMapping": {"apKTCxkE": "jZ7Trj2J", "ntPXfjDm": "ahe6j5qx", "g5WpW7Sd": "tgMU9SS9"}, "TokenEndpoint": "ijxxvo2O", "UserInfoEndpoint": "jlqz26Z2", "UserInfoHTTPMethod": "v7G5bMAV", "googleAdminConsoleKey": "lumPCLJT", "scopes": ["yUZMNELe", "UoFtMGZN", "fsuFFH6J"]}' \
+    'Pgwq4jzo' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 145 'UpdateThirdPartyLoginPlatformCredentialV3' test.out
 
 #- 146 UpdateThirdPartyLoginPlatformDomainV3
 $PYTHON -m $MODULE 'iam-update-third-party-login-platform-domain-v3' \
-    '{"affectedClientIDs": ["nS0dMLYd", "wfmafWwi", "LFGZocn5"], "assignedNamespaces": ["KQEeeGqX", "z4AQ9hgU", "23f0Ts0Y"], "domain": "Wh668Bc7", "roleId": "wqIkjT95", "ssoCfg": {"googleKey": {"41KlBRY5": {}, "4gZn7MHJ": {}, "rM0yuOpf": {}}, "groupConfigs": [{"assignNamespaces": ["qbVkrUIO", "qI1sKUqd", "0EsPlpZa"], "group": "h9du1siO", "roleId": "D9inmQAT"}, {"assignNamespaces": ["RFI5YpuH", "JyDCdnsg", "6PAqXrOP"], "group": "yzNSC4SP", "roleId": "LDzBD50B"}, {"assignNamespaces": ["NvoFMH2o", "rizLbA4G", "vxnds2sc"], "group": "oFijbC8O", "roleId": "1fcm7l6U"}]}}' \
-    'kBmzpY3m' \
+    '{"affectedClientIDs": ["lwY9hQnl", "6qsDVggH", "5BaUlEzT"], "assignedNamespaces": ["KdIEln9K", "nnDufTei", "YpFYpkTZ"], "domain": "u2KIPmxY", "roleId": "hR2Jk9Qw", "ssoCfg": {"googleKey": {"gKsTcd9Q": {}, "N0wfmN6N": {}, "kR3DWmUr": {}}, "groupConfigs": [{"assignNamespaces": ["bm4kNs81", "7ryjGFhv", "2Qrg84ed"], "group": "ALkoSQos", "roleId": "lviOmrxv"}, {"assignNamespaces": ["exMLdIO7", "63mu96k1", "1FF0d7X9"], "group": "pOX1TAPW", "roleId": "670RKvu1"}, {"assignNamespaces": ["KSy2Ie0J", "EcNysvNX", "GwGf8o2Z"], "group": "KP73Og2D", "roleId": "dfMGPhhb"}]}}' \
+    'nNmHRtIk' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 146 'UpdateThirdPartyLoginPlatformDomainV3' test.out
 
 #- 147 DeleteThirdPartyLoginPlatformDomainV3
 $PYTHON -m $MODULE 'iam-delete-third-party-login-platform-domain-v3' \
-    '{"domain": "16luevDE", "ssoGroups": ["hnWpKJvb", "sYilWT8U", "tjCMMqTY"]}' \
-    'iIzbgeb4' \
+    '{"domain": "BlonPPig", "ssoGroups": ["0i1y5xPp", "cSYKpOmk", "pnWG3ulV"]}' \
+    'sASqJ4zw' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 147 'DeleteThirdPartyLoginPlatformDomainV3' test.out
 
 #- 148 PartialUpdateThirdPartyLoginPlatformDomainV3
 $PYTHON -m $MODULE 'iam-partial-update-third-party-login-platform-domain-v3' \
-    '{"affectedClientIDs": ["niYQtCSl", "HKwjk2pb", "kC5MXYd6"], "assignedNamespaces": ["WzSRmJCD", "9qdOK6cs", "CtJAVNH7"], "domain": "J7964SKf", "roleId": "nDupIZb0", "ssoCfg": {"googleKey": {"bb0s4A2Y": {}, "5EYj8NOb": {}, "Eba5tUtt": {}}, "groupConfigs": [{"assignNamespaces": ["sZzrs7c9", "MCyUOwXZ", "YZh22aaN"], "group": "5q8ZAmyh", "roleId": "rlRCNgXa"}, {"assignNamespaces": ["m20BfH8e", "xYgs43S3", "9mChOW0Y"], "group": "RU7HoYc0", "roleId": "BuRsB5Bq"}, {"assignNamespaces": ["tthtgbUm", "wxmkLw6x", "FZ6yUwJG"], "group": "eY8huRdg", "roleId": "aSFr5z5J"}]}}' \
-    'KoFb5r6C' \
+    '{"affectedClientIDs": ["xcuKhNHC", "ZUx9fFi6", "R9tVPtsw"], "assignedNamespaces": ["a28CWMyq", "ZyIPYLfH", "PtFtZh5Z"], "domain": "8le3lqBn", "roleId": "jAT0DLpM", "ssoCfg": {"googleKey": {"RkqQWYpV": {}, "HnymXSte": {}, "liPAu1l8": {}}, "groupConfigs": [{"assignNamespaces": ["1A0xHMPg", "04AqHIfu", "wzIB5ySA"], "group": "T8tkaH4z", "roleId": "jHJI9SKf"}, {"assignNamespaces": ["l09AgZs8", "qtneqdPd", "mG16Kg2j"], "group": "tlYhMYcB", "roleId": "f6mYy89y"}, {"assignNamespaces": ["kIMEpcWw", "bvSZR3zZ", "wLWVVaB1"], "group": "vbOhm8fP", "roleId": "PHupxZTY"}]}}' \
+    'Eo9NJSTe' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 148 'PartialUpdateThirdPartyLoginPlatformDomainV3' test.out
 
 #- 149 RetrieveSSOLoginPlatformCredential
 $PYTHON -m $MODULE 'iam-retrieve-sso-login-platform-credential' \
-    'vNzfX8Ns' \
+    'hbViizXo' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 149 'RetrieveSSOLoginPlatformCredential' test.out
 
 #- 150 AddSSOLoginPlatformCredential
 $PYTHON -m $MODULE 'iam-add-sso-login-platform-credential' \
-    '{"acsUrl": "XY0w09Qb", "apiKey": "P2kQ9WE8", "appId": "kvahDWem", "federationMetadataUrl": "3dxskRkS", "isActive": false, "redirectUri": "RiiteLek", "secret": "Eu4Jfk6f", "ssoUrl": "Cjyf5Aq4"}' \
-    'QMNADcc3' \
+    '{"acsUrl": "7NurDr18", "apiKey": "i3WFAOzo", "appId": "MjcIqcR0", "federationMetadataUrl": "KVJkXQaz", "isActive": false, "redirectUri": "2Nso6oNI", "secret": "7Za6R59p", "ssoUrl": "4OwMkJFJ"}' \
+    'jZq79dnz' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 150 'AddSSOLoginPlatformCredential' test.out
 
 #- 151 DeleteSSOLoginPlatformCredentialV3
 $PYTHON -m $MODULE 'iam-delete-sso-login-platform-credential-v3' \
-    'FKxjKnBU' \
+    'L4FTXwim' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 151 'DeleteSSOLoginPlatformCredentialV3' test.out
 
 #- 152 UpdateSSOPlatformCredential
 $PYTHON -m $MODULE 'iam-update-sso-platform-credential' \
-    '{"acsUrl": "DmBO9HcJ", "apiKey": "2JaDU9sr", "appId": "YZzWmTWS", "federationMetadataUrl": "3ScgPc3d", "isActive": true, "redirectUri": "ltgT3TnR", "secret": "bilTrpAV", "ssoUrl": "zyF1w1vG"}' \
-    'PCBCtCIR' \
+    '{"acsUrl": "IqVs6N1X", "apiKey": "U50G9nEg", "appId": "XFVIdSLo", "federationMetadataUrl": "5jLGXcpC", "isActive": false, "redirectUri": "pdICTewo", "secret": "W23CUcBi", "ssoUrl": "Fp7JsIMU"}' \
+    'yo8qhjBT' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 152 'UpdateSSOPlatformCredential' test.out
 
 #- 153 AdminListUserIDByPlatformUserIDsV3
 $PYTHON -m $MODULE 'iam-admin-list-user-id-by-platform-user-i-ds-v3' \
-    '{"platformUserIds": ["AfmjX0Ov", "fVKjduuv", "OTGXu0eG"]}' \
-    'fd4KzoHe' \
+    '{"platformUserIds": ["ixegxF5T", "JjlXvuh0", "GrBX7vji"]}' \
+    'G3eBAGgU' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 153 'AdminListUserIDByPlatformUserIDsV3' test.out
 
 #- 154 AdminGetUserByPlatformUserIDV3
 $PYTHON -m $MODULE 'iam-admin-get-user-by-platform-user-idv3' \
-    'FNzSWBBj' \
-    'uZwHZs6q' \
+    'A9HgJP56' \
+    'hOmhkdCr' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 154 'AdminGetUserByPlatformUserIDV3' test.out
@@ -1028,7 +1028,7 @@ eval_tap $? 155 'AdminGetProfileUpdateStrategyV3' test.out
 
 #- 156 AdminUpdateProfileUpdateStrategyV3
 $PYTHON -m $MODULE 'iam-admin-update-profile-update-strategy-v3' \
-    '{"config": {"minimumAllowedInterval": 22}, "type": "ip3umIdH"}' \
+    '{"config": {"minimumAllowedInterval": 37}, "type": "f7C83ofQ"}' \
     'dob' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
@@ -1036,14 +1036,14 @@ eval_tap $? 156 'AdminUpdateProfileUpdateStrategyV3' test.out
 
 #- 157 AdminGetRoleOverrideConfigV3
 $PYTHON -m $MODULE 'iam-admin-get-role-override-config-v3' \
-    'GAME_ADMIN' \
+    'USER' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 157 'AdminGetRoleOverrideConfigV3' test.out
 
 #- 158 AdminUpdateRoleOverrideConfigV3
 $PYTHON -m $MODULE 'iam-admin-update-role-override-config-v3' \
-    '{"additions": [{"actions": [25, 93, 22], "resource": "pDmWMnRd"}, {"actions": [92, 9, 12], "resource": "lQphSHQo"}, {"actions": [82, 28, 82], "resource": "jeSY3UTh"}], "exclusions": [{"actions": [62, 11, 93], "resource": "W6N0nYrp"}, {"actions": [76, 51, 56], "resource": "PlZFaEtM"}, {"actions": [1, 0, 88], "resource": "13T6Ctup"}], "overrides": [{"actions": [73, 47, 33], "resource": "tfmMzNS2"}, {"actions": [1, 68, 58], "resource": "lQaFXoqL"}, {"actions": [5, 0, 15], "resource": "LLhLb68r"}], "replacements": [{"replacement": {"actions": [11, 89, 56], "resource": "bVpTBZVH"}, "target": "xfHh29fw"}, {"replacement": {"actions": [56, 17, 32], "resource": "aZqauvuK"}, "target": "749clmyF"}, {"replacement": {"actions": [50, 90, 6], "resource": "iRkEAoHJ"}, "target": "F1k9zwu8"}]}' \
+    '{"additions": [{"actions": [50, 10, 25], "resource": "CPMee3Rt"}, {"actions": [48, 83, 43], "resource": "rxVf2Lkx"}, {"actions": [92, 14, 17], "resource": "KCCgfPea"}], "exclusions": [{"actions": [37, 10, 60], "resource": "U12xpt1C"}, {"actions": [96, 44, 60], "resource": "UePx037T"}, {"actions": [16, 35, 68], "resource": "ZT0AAAiw"}], "overrides": [{"actions": [20, 81, 98], "resource": "xnI11GqU"}, {"actions": [15, 86, 53], "resource": "QeOj5k3Y"}, {"actions": [17, 2, 23], "resource": "XgLi2G3s"}], "replacements": [{"replacement": {"actions": [5, 5, 44], "resource": "eWGPZMIG"}, "target": "hTdELqGw"}, {"replacement": {"actions": [34, 89, 91], "resource": "mhA1WMy1"}, "target": "NeJtYhZV"}, {"replacement": {"actions": [85, 44, 61], "resource": "8JLStS3I"}, "target": "vloaUjer"}]}' \
     'USER' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
@@ -1059,21 +1059,21 @@ eval_tap $? 159 'AdminGetRoleSourceV3' test.out
 #- 160 AdminChangeRoleOverrideConfigStatusV3
 $PYTHON -m $MODULE 'iam-admin-change-role-override-config-status-v3' \
     '{"active": false}' \
-    'VIEW_ONLY' \
+    'USER' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 160 'AdminChangeRoleOverrideConfigStatusV3' test.out
 
 #- 161 AdminGetRoleNamespacePermissionV3
 $PYTHON -m $MODULE 'iam-admin-get-role-namespace-permission-v3' \
-    'CmroFsR3' \
+    'wyMPK1GN' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 161 'AdminGetRoleNamespacePermissionV3' test.out
 
 #- 162 GetAdminUsersByRoleIdV3
 $PYTHON -m $MODULE 'iam-get-admin-users-by-role-id-v3' \
-    'URUdAS9x' \
+    'a4Iew0J6' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 162 'GetAdminUsersByRoleIdV3' test.out
@@ -1086,22 +1086,22 @@ eval_tap $? 163 'AdminQueryTagV3' test.out
 
 #- 164 AdminCreateTagV3
 $PYTHON -m $MODULE 'iam-admin-create-tag-v3' \
-    '{"tagName": "wyWeOYow"}' \
+    '{"tagName": "lxqKyWEG"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 164 'AdminCreateTagV3' test.out
 
 #- 165 AdminUpdateTagV3
 $PYTHON -m $MODULE 'iam-admin-update-tag-v3' \
-    '{"tagName": "88OsWPyi"}' \
-    'Czty4ONj' \
+    '{"tagName": "hjuYtvO6"}' \
+    'm7uUdwJD' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 165 'AdminUpdateTagV3' test.out
 
 #- 166 AdminDeleteTagV3
 $PYTHON -m $MODULE 'iam-admin-delete-tag-v3' \
-    'I5LG0uB2' \
+    'NKe8CqQR' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 166 'AdminDeleteTagV3' test.out
@@ -1114,49 +1114,49 @@ eval_tap $? 167 'AdminGetUserByEmailAddressV3' test.out
 
 #- 168 AdminBulkUpdateUsersV3
 $PYTHON -m $MODULE 'iam-admin-bulk-update-users-v3' \
-    '{"updateRequest": {"skipLoginQueue": true}, "userIds": ["5tEj7Pwc", "UHQmbWVh", "7JIBljRH"]}' \
+    '{"updateRequest": {"skipLoginQueue": true}, "userIds": ["76ZFr9QN", "cK4Wu9Bl", "SuEzk3HR"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 168 'AdminBulkUpdateUsersV3' test.out
 
 #- 169 AdminGetBulkUserBanV3
 $PYTHON -m $MODULE 'iam-admin-get-bulk-user-ban-v3' \
-    '{"bulkUserId": ["2VuK45ia", "iapyHqno", "GUjSqJbw"]}' \
+    '{"bulkUserId": ["gEwmu0hJ", "a5DybQHd", "s28d9MwZ"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 169 'AdminGetBulkUserBanV3' test.out
 
 #- 170 AdminListUserIDByUserIDsV3
 $PYTHON -m $MODULE 'iam-admin-list-user-id-by-user-i-ds-v3' \
-    '{"findByPublisherNamespace": false, "userIds": ["8U6zTQGs", "EwarhpmW", "D8Lm5sK3"]}' \
+    '{"findByPublisherNamespace": true, "userIds": ["pc9VRQaj", "KTmUKMm2", "E7isAKm5"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 170 'AdminListUserIDByUserIDsV3' test.out
 
 #- 171 AdminBulkGetUsersPlatform
 $PYTHON -m $MODULE 'iam-admin-bulk-get-users-platform' \
-    '{"userIds": ["qQ3jlMyC", "1u87PmtZ", "08Xzf0h0"]}' \
+    '{"userIds": ["gAQqH7HK", "cXbh5Z4O", "8GojTn0L"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 171 'AdminBulkGetUsersPlatform' test.out
 
 #- 172 AdminCursorGetUserV3
 $PYTHON -m $MODULE 'iam-admin-cursor-get-user-v3' \
-    '{"cursor": {"cursorTime": "gv8f3XL1", "userId": "r60yTdMV"}, "fields": ["9umxDrO4", "Km1BMR3F", "w8QO9Ml0"], "limit": 76}' \
+    '{"cursor": {"cursorTime": "0N1Djok6", "userId": "mig4u8wu"}, "fields": ["HroNyXFV", "xWQfEGM9", "t4a9fxt0"], "limit": 38}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 172 'AdminCursorGetUserV3' test.out
 
 #- 173 AdminInviteUserV3
 $PYTHON -m $MODULE 'iam-admin-invite-user-v3' \
-    '{"emailAddresses": ["DEpmufdS", "wkgoqnUE", "gJFdwj1h"], "isAdmin": true, "languageTag": "fYWzx5QU", "namespace": "hNZPoUcm", "roles": ["sHeACdk9", "9ogWqNWt", "64jMbIRw"]}' \
+    '{"emailAddresses": ["gGGP1iZ4", "3G7BEelr", "c3HTZSDv"], "isAdmin": true, "languageTag": "mkstDbDI", "namespace": "lc380744", "roles": ["jeS2egWp", "YLvOlzJH", "u9HNAolH"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 173 'AdminInviteUserV3' test.out
 
 #- 174 AdminQueryThirdPlatformLinkHistoryV3
 $PYTHON -m $MODULE 'iam-admin-query-third-platform-link-history-v3' \
-    'crCMEvtp' \
+    '5KYqiWKd' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 174 'AdminQueryThirdPlatformLinkHistoryV3' test.out
@@ -1175,44 +1175,44 @@ eval_tap $? 176 'AdminSearchUserV3' test.out
 
 #- 177 AdminGetBulkUserByEmailAddressV3
 $PYTHON -m $MODULE 'iam-admin-get-bulk-user-by-email-address-v3' \
-    '{"listEmailAddressRequest": ["Il4RHq1T", "vjUSlrYJ", "V0wclopj"]}' \
+    '{"listEmailAddressRequest": ["7LymwAXx", "E1BLWWOs", "S1rBUUbM"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 177 'AdminGetBulkUserByEmailAddressV3' test.out
 
 #- 178 AdminGetUserByUserIdV3
 $PYTHON -m $MODULE 'iam-admin-get-user-by-user-id-v3' \
-    'VMjSizRE' \
+    'oY3zXSXt' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 178 'AdminGetUserByUserIdV3' test.out
 
 #- 179 AdminUpdateUserV3
 $PYTHON -m $MODULE 'iam-admin-update-user-v3' \
-    '{"avatarUrl": "lsiBb0Lk", "country": "Cvsv5tqm", "dateOfBirth": "AqjQWB2S", "displayName": "CHnCU6ed", "languageTag": "bPBDbxs7", "skipLoginQueue": true, "tags": ["MpvTvX3d", "jcyaQhqn", "3Ifecaxc"], "uniqueDisplayName": "POrOnGAv", "userName": "a8rPf3Xj"}' \
-    'QXOQyWzL' \
+    '{"avatarUrl": "jajSZsG4", "country": "XL7LR2G8", "dateOfBirth": "CMGQlaCI", "displayName": "eA5DdfrX", "languageTag": "SeK7hq5r", "skipLoginQueue": false, "tags": ["L4Oal3oV", "2SLxaInH", "kwu1sgLq"], "uniqueDisplayName": "9CsSUH2o", "userName": "rf9Er2qL"}' \
+    'sQm2HRXx' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 179 'AdminUpdateUserV3' test.out
 
 #- 180 AdminGetUserBanV3
 $PYTHON -m $MODULE 'iam-admin-get-user-ban-v3' \
-    'DkMIPAOo' \
+    'OtXSovpA' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 180 'AdminGetUserBanV3' test.out
 
 #- 181 AdminBanUserV3
 $PYTHON -m $MODULE 'iam-admin-ban-user-v3' \
-    '{"ban": "zayR8suy", "comment": "xUcjMbY1", "endDate": "9SrF4KLb", "reason": "nP1RPO3F", "skipNotif": true}' \
-    'd9RzKpAZ' \
+    '{"ban": "ReamDbiJ", "comment": "KlrqMR2u", "endDate": "NnsW9Kr3", "reason": "5j9thxs0", "skipNotif": false}' \
+    'FqHB3wTL' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 181 'AdminBanUserV3' test.out
 
 #- 182 AdminGetUserBanSummaryV3
 $PYTHON -m $MODULE 'iam-admin-get-user-ban-summary-v3' \
-    'nT3Y1m98' \
+    'R0DClItJ' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 182 'AdminGetUserBanSummaryV3' test.out
@@ -1220,169 +1220,169 @@ eval_tap $? 182 'AdminGetUserBanSummaryV3' test.out
 #- 183 AdminUpdateUserBanV3
 $PYTHON -m $MODULE 'iam-admin-update-user-ban-v3' \
     '{"enabled": true, "skipNotif": false}' \
-    '0QS4tshf' \
-    'B1xVGZhL' \
+    '16sk4eAf' \
+    'CnLqWTel' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 183 'AdminUpdateUserBanV3' test.out
 
 #- 184 AdminSendVerificationCodeV3
 $PYTHON -m $MODULE 'iam-admin-send-verification-code-v3' \
-    '{"context": "0rOpYryw", "emailAddress": "GNy7OSx8", "languageTag": "ikc28yVv", "upgradeToken": "QLpScnuy"}' \
-    '5qZQf8NR' \
+    '{"context": "xFMZgaRi", "emailAddress": "CRgnK0E1", "languageTag": "6yNPFaBW", "upgradeToken": "ZXti3EOd"}' \
+    'D0KZpxSB' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 184 'AdminSendVerificationCodeV3' test.out
 
 #- 185 AdminVerifyAccountV3
 $PYTHON -m $MODULE 'iam-admin-verify-account-v3' \
-    '{"Code": "bPgo3Bnm", "ContactType": "OSsBhSis", "LanguageTag": "N1NxPsex", "validateOnly": true}' \
-    'pOBXe4z0' \
+    '{"Code": "HUHFeQyW", "ContactType": "7KMrUKCY", "LanguageTag": "CFNjKZ6c", "validateOnly": true}' \
+    '1pIjUqVP' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 185 'AdminVerifyAccountV3' test.out
 
 #- 186 GetUserVerificationCode
 $PYTHON -m $MODULE 'iam-get-user-verification-code' \
-    'fh5zPuDL' \
+    'ZRKlGRw6' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 186 'GetUserVerificationCode' test.out
 
 #- 187 AdminGetUserDeletionStatusV3
 $PYTHON -m $MODULE 'iam-admin-get-user-deletion-status-v3' \
-    'SLiE3six' \
+    'uoSeHZNU' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 187 'AdminGetUserDeletionStatusV3' test.out
 
 #- 188 AdminUpdateUserDeletionStatusV3
 $PYTHON -m $MODULE 'iam-admin-update-user-deletion-status-v3' \
-    '{"deletionDate": 1, "enabled": false}' \
-    'MkcFrJm3' \
+    '{"deletionDate": 15, "enabled": true}' \
+    'GI1tg0eT' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 188 'AdminUpdateUserDeletionStatusV3' test.out
 
 #- 189 AdminListUserAllPlatformAccountsDistinctV3
 $PYTHON -m $MODULE 'iam-admin-list-user-all-platform-accounts-distinct-v3' \
-    'cIGEF20x' \
+    'Mh3gN1w7' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 189 'AdminListUserAllPlatformAccountsDistinctV3' test.out
 
 #- 190 AdminUpgradeHeadlessAccountV3
 $PYTHON -m $MODULE 'iam-admin-upgrade-headless-account-v3' \
-    '{"code": "zltKrXXT", "country": "TYeptqhW", "dateOfBirth": "ubdmppZn", "displayName": "yegDewwS", "emailAddress": "743G9lvp", "password": "8sK2jpwd", "uniqueDisplayName": "LHA64AkB", "validateOnly": true}' \
-    'XJFlHDDM' \
+    '{"code": "oHA1tQsH", "country": "m8B2lrpF", "dateOfBirth": "o33OAZTk", "displayName": "iYOpbL1m", "emailAddress": "ao3d5LDY", "password": "860QjcEw", "uniqueDisplayName": "vl0zprL3", "validateOnly": true}' \
+    'c4h9LQaz' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 190 'AdminUpgradeHeadlessAccountV3' test.out
 
 #- 191 AdminDeleteUserInformationV3
 $PYTHON -m $MODULE 'iam-admin-delete-user-information-v3' \
-    'XDulhjTc' \
+    '4v5iRNVz' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 191 'AdminDeleteUserInformationV3' test.out
 
 #- 192 AdminGetUserLoginHistoriesV3
 $PYTHON -m $MODULE 'iam-admin-get-user-login-histories-v3' \
-    'agKelET8' \
+    'C1slaGuK' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 192 'AdminGetUserLoginHistoriesV3' test.out
 
 #- 193 AdminResetPasswordV3
 $PYTHON -m $MODULE 'iam-admin-reset-password-v3' \
-    '{"languageTag": "gviHRiHj", "mfaToken": "QMvhp7cO", "newPassword": "9PaXRqPl", "oldPassword": "mw0FM6IQ"}' \
-    'AS6uiGGU' \
+    '{"languageTag": "lDq0B9wo", "mfaToken": "zkxqA0Gm", "newPassword": "WOLFoe7r", "oldPassword": "GkQQlln6"}' \
+    'r6dcq9ss' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 193 'AdminResetPasswordV3' test.out
 
 #- 194 AdminUpdateUserPermissionV3
 $PYTHON -m $MODULE 'iam-admin-update-user-permission-v3' \
-    '{"Permissions": [{"Action": 46, "Resource": "HabqUnPC", "SchedAction": 53, "SchedCron": "DdQsN2Cy", "SchedRange": ["9kTEoJS6", "4VGyKofI", "MPx1wyx8"]}, {"Action": 37, "Resource": "uyxmSrCe", "SchedAction": 52, "SchedCron": "YGOHss3Y", "SchedRange": ["b8lq161n", "rGzAtpxs", "lhxbDn3K"]}, {"Action": 63, "Resource": "hBzUJpr0", "SchedAction": 51, "SchedCron": "HhFoW9Nq", "SchedRange": ["l5kx2PJu", "XjOqfwZy", "RNVIRisx"]}]}' \
-    'L4mhWp5q' \
+    '{"Permissions": [{"Action": 35, "Resource": "10zso7to", "SchedAction": 85, "SchedCron": "2Nm36RLN", "SchedRange": ["YwrhBYVj", "w8DL1Xob", "nFXWkj94"]}, {"Action": 98, "Resource": "yrx6SiuV", "SchedAction": 22, "SchedCron": "4DXsx5my", "SchedRange": ["WiuPxy56", "amDIwTAc", "7FqS1Lu2"]}, {"Action": 43, "Resource": "S2plRcbB", "SchedAction": 56, "SchedCron": "uFKAyuBj", "SchedRange": ["ml6Qvd11", "8NL7ybGA", "MowOLWe2"]}]}' \
+    'TFxBdBSL' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 194 'AdminUpdateUserPermissionV3' test.out
 
 #- 195 AdminAddUserPermissionsV3
 $PYTHON -m $MODULE 'iam-admin-add-user-permissions-v3' \
-    '{"Permissions": [{"Action": 28, "Resource": "DYwpp9PC", "SchedAction": 53, "SchedCron": "pXHNSlwG", "SchedRange": ["5kVoyerh", "xcVzoipU", "l4EG9R8C"]}, {"Action": 92, "Resource": "pQVoUE9M", "SchedAction": 77, "SchedCron": "VT14adnL", "SchedRange": ["B2FMpVnn", "0SSZB1US", "zt2kq9ej"]}, {"Action": 13, "Resource": "EbHgMvuK", "SchedAction": 22, "SchedCron": "ovZcWIDk", "SchedRange": ["EHGzKyEO", "7ttfd1ki", "aJa15ea3"]}]}' \
-    '9udoaIcx' \
+    '{"Permissions": [{"Action": 28, "Resource": "6wID7PzS", "SchedAction": 79, "SchedCron": "TNAHuJaZ", "SchedRange": ["mM3PvoKn", "KE5Mvfw1", "63FcwXbd"]}, {"Action": 48, "Resource": "zKqsdqUo", "SchedAction": 77, "SchedCron": "JHT53xLO", "SchedRange": ["zkRPums6", "PI2BGyNi", "oOx4IUau"]}, {"Action": 59, "Resource": "umKbds8u", "SchedAction": 91, "SchedCron": "nE2AIS4e", "SchedRange": ["7lILm2e6", "GdSIUEWq", "EEXE9WzX"]}]}' \
+    'klxODMRW' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 195 'AdminAddUserPermissionsV3' test.out
 
 #- 196 AdminDeleteUserPermissionBulkV3
 $PYTHON -m $MODULE 'iam-admin-delete-user-permission-bulk-v3' \
-    '[{"Action": 76, "Resource": "sbrq0234"}, {"Action": 11, "Resource": "4x4zieFN"}, {"Action": 95, "Resource": "8DjEkQXi"}]' \
-    '5SQ3Jt2T' \
+    '[{"Action": 6, "Resource": "q9w8cYTq"}, {"Action": 20, "Resource": "bnv0FNiY"}, {"Action": 93, "Resource": "9an5jgNG"}]' \
+    'c0Jd3Nuu' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 196 'AdminDeleteUserPermissionBulkV3' test.out
 
 #- 197 AdminDeleteUserPermissionV3
 $PYTHON -m $MODULE 'iam-admin-delete-user-permission-v3' \
-    '76' \
-    'sRFufZIp' \
-    'nmwjaWrW' \
+    '47' \
+    '3hW3y8l8' \
+    'nllGbcx9' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 197 'AdminDeleteUserPermissionV3' test.out
 
 #- 198 AdminGetUserPlatformAccountsV3
 $PYTHON -m $MODULE 'iam-admin-get-user-platform-accounts-v3' \
-    'gNqSFN95' \
+    '1RRpYjyq' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 198 'AdminGetUserPlatformAccountsV3' test.out
 
 #- 199 AdminListAllDistinctPlatformAccountsV3
 $PYTHON -m $MODULE 'iam-admin-list-all-distinct-platform-accounts-v3' \
-    'Ynk5yajE' \
+    '9GfQUDpt' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 199 'AdminListAllDistinctPlatformAccountsV3' test.out
 
 #- 200 AdminGetListJusticePlatformAccounts
 $PYTHON -m $MODULE 'iam-admin-get-list-justice-platform-accounts' \
-    '8trpLz1g' \
+    'f043psMS' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 200 'AdminGetListJusticePlatformAccounts' test.out
 
 #- 201 AdminGetUserMapping
 $PYTHON -m $MODULE 'iam-admin-get-user-mapping' \
-    '7tW7ROd6' \
-    'ERLFZOnx' \
+    'V2b8u8VO' \
+    'ajVhnYD3' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 201 'AdminGetUserMapping' test.out
 
 #- 202 AdminCreateJusticeUser
 $PYTHON -m $MODULE 'iam-admin-create-justice-user' \
-    'oKFXsVHc' \
-    'Z7wixhvL' \
+    'TFgS32Xj' \
+    'E6yWpnKX' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 202 'AdminCreateJusticeUser' test.out
 
 #- 203 AdminLinkPlatformAccount
 $PYTHON -m $MODULE 'iam-admin-link-platform-account' \
-    '{"platformId": "nXfMbcNj", "platformUserId": "Bbv4uAP0"}' \
-    '7ua2M3nz' \
+    '{"platformId": "uPnPCxa7", "platformUserId": "R985u4b4"}' \
+    'wMdpeiH2' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 203 'AdminLinkPlatformAccount' test.out
 
 #- 204 AdminGetUserLinkHistoriesV3
 $PYTHON -m $MODULE 'iam-admin-get-user-link-histories-v3' \
-    'AMPDG4Bw' \
-    'hWzTSVEA' \
+    'fI983syp' \
+    'CevRFJws' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 204 'AdminGetUserLinkHistoriesV3' test.out
@@ -1392,17 +1392,17 @@ eval_tap 0 205 'AdminPlatformUnlinkV3 # SKIP deprecated' test.out
 
 #- 206 AdminPlatformUnlinkAllV3
 $PYTHON -m $MODULE 'iam-admin-platform-unlink-all-v3' \
-    'KyYKRjDV' \
-    'uir5No0d' \
+    'hlACWCNe' \
+    'QYhBuVtB' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 206 'AdminPlatformUnlinkAllV3' test.out
 
 #- 207 AdminPlatformLinkV3
 $PYTHON -m $MODULE 'iam-admin-platform-link-v3' \
-    'YS34yXDP' \
-    'rWwZjm9X' \
-    'OtnvDw9x' \
+    'BlALw7Hm' \
+    'XiiqQHpV' \
+    'HMr6ylWu' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 207 'AdminPlatformLinkV3' test.out
@@ -1412,102 +1412,102 @@ eval_tap 0 208 'AdminDeleteUserLinkingHistoryByPlatformIDV3 # SKIP deprecated' t
 
 #- 209 AdminDeleteUserLinkingRestrictionByPlatformIDV3
 $PYTHON -m $MODULE 'iam-admin-delete-user-linking-restriction-by-platform-idv3' \
-    'gpsan89C' \
-    '4uhQTydO' \
+    '6m5fsjlr' \
+    'mHh4vXP5' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 209 'AdminDeleteUserLinkingRestrictionByPlatformIDV3' test.out
 
 #- 210 AdminGetThirdPartyPlatformTokenLinkStatusV3
 $PYTHON -m $MODULE 'iam-admin-get-third-party-platform-token-link-status-v3' \
-    'BznoXZJD' \
-    'u7qhICZd' \
-    'mUXVeRI0' \
+    '5ldvHFa3' \
+    'pcM37ugJ' \
+    'CI800763' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 210 'AdminGetThirdPartyPlatformTokenLinkStatusV3' test.out
 
 #- 211 AdminGetUserSinglePlatformAccount
 $PYTHON -m $MODULE 'iam-admin-get-user-single-platform-account' \
-    'ZmVfRn4v' \
-    'qxdZNfge' \
+    'mwZ1r1u0' \
+    '8WuMUZu3' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 211 'AdminGetUserSinglePlatformAccount' test.out
 
 #- 212 AdminDeleteUserRolesV3
 $PYTHON -m $MODULE 'iam-admin-delete-user-roles-v3' \
-    '["CtFk72M1", "LqmePqcj", "OyZk4kgz"]' \
-    'pzGRXjLx' \
+    '["i6bs0HMJ", "j6dihsXb", "U97U19Sl"]' \
+    'gvBbrgsf' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 212 'AdminDeleteUserRolesV3' test.out
 
 #- 213 AdminSaveUserRoleV3
 $PYTHON -m $MODULE 'iam-admin-save-user-role-v3' \
-    '[{"namespace": "Pcxus5L8", "roleId": "6S6R8Uiy"}, {"namespace": "S80XPuNL", "roleId": "21b7xnht"}, {"namespace": "LGBXKQIl", "roleId": "ITmV2hcj"}]' \
-    'a9qGfmm8' \
+    '[{"namespace": "yda6D1kU", "roleId": "Bd4dlpjp"}, {"namespace": "6unApRWu", "roleId": "u7VGPz9G"}, {"namespace": "zbvo706j", "roleId": "w6AaFUp1"}]' \
+    'T2jjItid' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 213 'AdminSaveUserRoleV3' test.out
 
 #- 214 AdminAddUserRoleV3
 $PYTHON -m $MODULE 'iam-admin-add-user-role-v3' \
-    '6Muwt4P2' \
-    'hF0gw1WY' \
+    'nJj9ABau' \
+    'dmbCfeEH' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 214 'AdminAddUserRoleV3' test.out
 
 #- 215 AdminDeleteUserRoleV3
 $PYTHON -m $MODULE 'iam-admin-delete-user-role-v3' \
-    'CO78XSTt' \
-    'ugwhOYz5' \
+    'rLmYYHbt' \
+    '96a1sfH5' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 215 'AdminDeleteUserRoleV3' test.out
 
 #- 216 AdminGetUserStateByUserIdV3
 $PYTHON -m $MODULE 'iam-admin-get-user-state-by-user-id-v3' \
-    '4M8W0RQa' \
+    'wgMzKV5B' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 216 'AdminGetUserStateByUserIdV3' test.out
 
 #- 217 AdminUpdateUserStatusV3
 $PYTHON -m $MODULE 'iam-admin-update-user-status-v3' \
-    '{"enabled": true, "reason": "Bs5CsRRo"}' \
-    'mvjWHEFA' \
+    '{"enabled": true, "reason": "z6Z4y6EB"}' \
+    'UEOzG0VA' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 217 'AdminUpdateUserStatusV3' test.out
 
 #- 218 AdminTrustlyUpdateUserIdentity
 $PYTHON -m $MODULE 'iam-admin-trustly-update-user-identity' \
-    '{"emailAddress": "E9nG4tJC", "password": "30b1tgp2"}' \
-    'yAg1RCkK' \
+    '{"emailAddress": "CbsV6pQC", "password": "BBGeqGB2"}' \
+    'WOQTSlkx' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 218 'AdminTrustlyUpdateUserIdentity' test.out
 
 #- 219 AdminVerifyUserWithoutVerificationCodeV3
 $PYTHON -m $MODULE 'iam-admin-verify-user-without-verification-code-v3' \
-    'noPmD5Xv' \
+    'cThTtKmy' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 219 'AdminVerifyUserWithoutVerificationCodeV3' test.out
 
 #- 220 AdminUpdateClientSecretV3
 $PYTHON -m $MODULE 'iam-admin-update-client-secret-v3' \
-    '{"newSecret": "724zZk57"}' \
-    'vJaOAzth' \
+    '{"newSecret": "obiHO6IT"}' \
+    '4xSDHrU1' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 220 'AdminUpdateClientSecretV3' test.out
 
 #- 221 AdminCheckThirdPartyLoginPlatformAvailabilityV3
 $PYTHON -m $MODULE 'iam-admin-check-third-party-login-platform-availability-v3' \
-    'v5YXDPyS' \
+    'h8xn82Wn' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 221 'AdminCheckThirdPartyLoginPlatformAvailabilityV3' test.out
@@ -1520,88 +1520,88 @@ eval_tap $? 222 'AdminGetRolesV3' test.out
 
 #- 223 AdminCreateRoleV3
 $PYTHON -m $MODULE 'iam-admin-create-role-v3' \
-    '{"adminRole": true, "deletable": true, "isWildcard": true, "managers": [{"displayName": "zmNjHhcu", "namespace": "TfHf9F2j", "userId": "lJwl7oZH"}, {"displayName": "RBDeIED2", "namespace": "lU9qdvad", "userId": "jjgCmZrZ"}, {"displayName": "4x0EtsiW", "namespace": "x6w7bQ9I", "userId": "wutPdrax"}], "members": [{"displayName": "NK8Q2gPy", "namespace": "C035eEUL", "userId": "FTsqYT5x"}, {"displayName": "uOFpPGKv", "namespace": "ioIMWsuq", "userId": "86UfxrwE"}, {"displayName": "40vpLxdk", "namespace": "fluuBFO7", "userId": "r0iX8gqt"}], "permissions": [{"action": 27, "resource": "PuywoIzr", "schedAction": 22, "schedCron": "xdAPeMdg", "schedRange": ["TbM9JXF3", "Ek1Ae821", "KjStgY5v"]}, {"action": 69, "resource": "qPqLgS42", "schedAction": 6, "schedCron": "6ohgCwDE", "schedRange": ["sDIB9XPc", "Y4EGsGjS", "2ms5U3G3"]}, {"action": 33, "resource": "z4tm0u72", "schedAction": 80, "schedCron": "zUjfGr6w", "schedRange": ["Y61sXee1", "ZxEtrfJi", "PZYaZ6FK"]}], "roleName": "CebmDb83"}' \
+    '{"adminRole": true, "deletable": false, "isWildcard": true, "managers": [{"displayName": "CFWwymuo", "namespace": "FXx4Fl1I", "userId": "mubbztYS"}, {"displayName": "sgym0FGe", "namespace": "79lYA4Aw", "userId": "pFNo8sxi"}, {"displayName": "3JiVAgDT", "namespace": "iaahP75S", "userId": "qK50HLEy"}], "members": [{"displayName": "mycxV4FF", "namespace": "n4sIMZd1", "userId": "vqdWwNvE"}, {"displayName": "B0Wqi1g2", "namespace": "5SIQbLPm", "userId": "ntMwAQar"}, {"displayName": "QTNopHAC", "namespace": "zS7Ir73O", "userId": "zEvsyshB"}], "permissions": [{"action": 9, "resource": "YdVi12qg", "schedAction": 11, "schedCron": "GryLxL3Q", "schedRange": ["FpHJdWVm", "1CD8GoTq", "DHrTTvPd"]}, {"action": 14, "resource": "Zvmtt6ke", "schedAction": 5, "schedCron": "HtLySYrG", "schedRange": ["AJDObi0K", "rv2faaVX", "3OyjELMg"]}, {"action": 8, "resource": "34I0weSa", "schedAction": 17, "schedCron": "4g1UG0xC", "schedRange": ["WlfXeMw4", "VnqEepT8", "WlwxFhpk"]}], "roleName": "YsNy0X9Q"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 223 'AdminCreateRoleV3' test.out
 
 #- 224 AdminGetRoleV3
 $PYTHON -m $MODULE 'iam-admin-get-role-v3' \
-    'dbDSawuh' \
+    '7ixGEaiH' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 224 'AdminGetRoleV3' test.out
 
 #- 225 AdminDeleteRoleV3
 $PYTHON -m $MODULE 'iam-admin-delete-role-v3' \
-    '8nrDQKug' \
+    '3OSslVE7' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 225 'AdminDeleteRoleV3' test.out
 
 #- 226 AdminUpdateRoleV3
 $PYTHON -m $MODULE 'iam-admin-update-role-v3' \
-    '{"deletable": false, "isWildcard": false, "roleName": "xeaXZNvM"}' \
-    '49AuKNQZ' \
+    '{"deletable": false, "isWildcard": false, "roleName": "os4CvDV9"}' \
+    'MAcmZGLW' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 226 'AdminUpdateRoleV3' test.out
 
 #- 227 AdminGetRoleAdminStatusV3
 $PYTHON -m $MODULE 'iam-admin-get-role-admin-status-v3' \
-    'O5tDM3e3' \
+    'enf8wKHb' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 227 'AdminGetRoleAdminStatusV3' test.out
 
 #- 228 AdminUpdateAdminRoleStatusV3
 $PYTHON -m $MODULE 'iam-admin-update-admin-role-status-v3' \
-    'ct6BqoWP' \
+    'lNWMWoWo' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 228 'AdminUpdateAdminRoleStatusV3' test.out
 
 #- 229 AdminRemoveRoleAdminV3
 $PYTHON -m $MODULE 'iam-admin-remove-role-admin-v3' \
-    'WsApWQVo' \
+    '0kPDSTqN' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 229 'AdminRemoveRoleAdminV3' test.out
 
 #- 230 AdminGetRoleManagersV3
 $PYTHON -m $MODULE 'iam-admin-get-role-managers-v3' \
-    'j3sqblfA' \
+    '44fZAhdN' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 230 'AdminGetRoleManagersV3' test.out
 
 #- 231 AdminAddRoleManagersV3
 $PYTHON -m $MODULE 'iam-admin-add-role-managers-v3' \
-    '{"managers": [{"displayName": "WyKQ5z4L", "namespace": "un95KIUB", "userId": "FE9wbMj5"}, {"displayName": "rcSbxFMQ", "namespace": "J9yHEveK", "userId": "uy3cDYk1"}, {"displayName": "z3qQuO1c", "namespace": "lOmg8jXU", "userId": "UaI5eG7L"}]}' \
-    'qEhpjEM8' \
+    '{"managers": [{"displayName": "sIjLUVVZ", "namespace": "svZ7yc9x", "userId": "or4xq0Bf"}, {"displayName": "II41azYf", "namespace": "OkmsT4Gn", "userId": "O1aeTvlH"}, {"displayName": "O2nmRtKQ", "namespace": "VopLpR2v", "userId": "SMugHIm3"}]}' \
+    'cUFzLgTN' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 231 'AdminAddRoleManagersV3' test.out
 
 #- 232 AdminRemoveRoleManagersV3
 $PYTHON -m $MODULE 'iam-admin-remove-role-managers-v3' \
-    '{"managers": [{"displayName": "8E2N47rU", "namespace": "xRmuih28", "userId": "qIbfzjkh"}, {"displayName": "6JvpO8wi", "namespace": "eQQRFSV6", "userId": "LleT4yWW"}, {"displayName": "WVC78mQa", "namespace": "siR8U1LT", "userId": "9bmsvIkk"}]}' \
-    '8sElrUtu' \
+    '{"managers": [{"displayName": "XZlAJfEF", "namespace": "dXnKy2Xg", "userId": "XbXSn9KG"}, {"displayName": "UsbJXk0g", "namespace": "a7jg0YYm", "userId": "1sqjR5o1"}, {"displayName": "X4PILGtL", "namespace": "KQlLrK9N", "userId": "fXhmltq2"}]}' \
+    'DqjWi0sG' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 232 'AdminRemoveRoleManagersV3' test.out
 
 #- 233 AdminGetRoleMembersV3
 $PYTHON -m $MODULE 'iam-admin-get-role-members-v3' \
-    '9eaYFxdc' \
+    'PUUXILxh' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 233 'AdminGetRoleMembersV3' test.out
 
 #- 234 AdminAddRoleMembersV3
 $PYTHON -m $MODULE 'iam-admin-add-role-members-v3' \
-    '{"members": [{"displayName": "gzJwjW8K", "namespace": "qV3nKH5A", "userId": "saaZrrZI"}, {"displayName": "T9G29cod", "namespace": "iGrzhUiZ", "userId": "x8StE3TF"}, {"displayName": "BC6QSM8Q", "namespace": "jEJykVVd", "userId": "eOsLXgFI"}]}' \
-    'sFDGJ6va' \
+    '{"members": [{"displayName": "KdDyDRmF", "namespace": "5bCie7ic", "userId": "TVeto3k4"}, {"displayName": "ZLMrjkr8", "namespace": "9m9LFvrF", "userId": "lrC20xr4"}, {"displayName": "L6oECWaB", "namespace": "L6rp3p1Z", "userId": "y06rHqo6"}]}' \
+    'XpIftmSI' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 234 'AdminAddRoleMembersV3' test.out
@@ -1611,33 +1611,33 @@ eval_tap 0 235 'AdminRemoveRoleMembersV3 # SKIP deprecated' test.out
 
 #- 236 AdminUpdateRolePermissionsV3
 $PYTHON -m $MODULE 'iam-admin-update-role-permissions-v3' \
-    '{"permissions": [{"action": 15, "resource": "TOedw8Zt", "schedAction": 25, "schedCron": "fXB23XOZ", "schedRange": ["XcRfSvPr", "wDW7c4wJ", "vgUDeaOc"]}, {"action": 86, "resource": "bIWm9Yu0", "schedAction": 88, "schedCron": "hTlPyN2h", "schedRange": ["mkymAiok", "XFaqRc9W", "sjdZAJzT"]}, {"action": 18, "resource": "uDtmrJ6w", "schedAction": 27, "schedCron": "PzwYwrUn", "schedRange": ["8RmjNoaX", "sj6YlkBe", "yNOns0D1"]}]}' \
-    '19xhHpvv' \
+    '{"permissions": [{"action": 42, "resource": "VFMLuNvB", "schedAction": 39, "schedCron": "9UXgZGAJ", "schedRange": ["F22Xnbh0", "BADiiwxF", "bviiGECF"]}, {"action": 45, "resource": "E9ARUSFz", "schedAction": 11, "schedCron": "8KsrV1jf", "schedRange": ["9pmR91KD", "kLwPxwTJ", "9od2IZqf"]}, {"action": 88, "resource": "XJQolPBK", "schedAction": 69, "schedCron": "ljryHWKk", "schedRange": ["MkdhP8AY", "0AMeQGWu", "lBuEnbHD"]}]}' \
+    'NGUULQkQ' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 236 'AdminUpdateRolePermissionsV3' test.out
 
 #- 237 AdminAddRolePermissionsV3
 $PYTHON -m $MODULE 'iam-admin-add-role-permissions-v3' \
-    '{"permissions": [{"action": 44, "resource": "JZy0duWI", "schedAction": 67, "schedCron": "4QvxfMTK", "schedRange": ["C0mkfku9", "sitJHibb", "m99m8jZt"]}, {"action": 92, "resource": "sc22oq5R", "schedAction": 40, "schedCron": "PwFjqp4U", "schedRange": ["C8vjzEvC", "1XS62IZk", "PtVlXK99"]}, {"action": 23, "resource": "5Z876aDI", "schedAction": 97, "schedCron": "xXmohNwT", "schedRange": ["0biKEWEx", "aLtPC27y", "ZbW2Q1HJ"]}]}' \
-    'kmzqFEJG' \
+    '{"permissions": [{"action": 89, "resource": "tugdiRiF", "schedAction": 16, "schedCron": "e3pWDXWF", "schedRange": ["3DUvASOF", "HNaJWOkC", "Gt11xwO3"]}, {"action": 50, "resource": "9gSVDRyL", "schedAction": 64, "schedCron": "6ePMEsOu", "schedRange": ["KBMqeLWI", "BUTzJ8Kp", "XQZjagsj"]}, {"action": 28, "resource": "sHwrIsbF", "schedAction": 83, "schedCron": "6gWjOYx3", "schedRange": ["NramY9wx", "xROFnY0o", "LC4tX6Yt"]}]}' \
+    'OES7zumX' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 237 'AdminAddRolePermissionsV3' test.out
 
 #- 238 AdminDeleteRolePermissionsV3
 $PYTHON -m $MODULE 'iam-admin-delete-role-permissions-v3' \
-    '["0AiI6qr2", "o3KcgDXk", "XSWW3Ntz"]' \
-    'DmXfyv6A' \
+    '["qOJsQtpi", "0atFmV7P", "ub8Zc2S3"]' \
+    'uzil12Mg' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 238 'AdminDeleteRolePermissionsV3' test.out
 
 #- 239 AdminDeleteRolePermissionV3
 $PYTHON -m $MODULE 'iam-admin-delete-role-permission-v3' \
-    '83' \
-    'g4XoZaCt' \
-    '7EIpBXDz' \
+    '4' \
+    'dDVr1lmr' \
+    'K0jkEbBG' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 239 'AdminDeleteRolePermissionV3' test.out
@@ -1650,29 +1650,29 @@ eval_tap $? 240 'AdminGetMyUserV3' test.out
 
 #- 241 UserAuthenticationV3
 $PYTHON -m $MODULE 'iam-user-authentication-v3' \
-    'zNPXrHyc' \
-    'qUwP8kEk' \
-    'oQUIMrq0' \
+    'QFa1odUC' \
+    'gddxEcjt' \
+    'PwYmYh9c' \
     --login_with_auth "Basic YWRtaW46YWRtaW4=" \
     > test.out 2>&1
 eval_tap $? 241 'UserAuthenticationV3' test.out
 
 #- 242 AuthenticationWithPlatformLinkV3
 $PYTHON -m $MODULE 'iam-authentication-with-platform-link-v3' \
-    'ql6d0seK' \
-    'Ck3iLGUn' \
-    'aDGV7Tam' \
-    'hREx33X1' \
+    'oZIAuQzm' \
+    'WEK3xc0h' \
+    'lYIgq8Yv' \
+    '5PidHeH7' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 242 'AuthenticationWithPlatformLinkV3' test.out
 
 #- 243 AuthenticateAndLinkForwardV3
 $PYTHON -m $MODULE 'iam-authenticate-and-link-forward-v3' \
-    '7hUy3x7l' \
-    '7cqfMTIy' \
-    'ZN9OU31y' \
-    'LShxl87z' \
+    'IkgYnsEh' \
+    'qwWg0OPc' \
+    'NltBqoG2' \
+    'dJees0i6' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 243 'AuthenticateAndLinkForwardV3' test.out
@@ -1685,29 +1685,29 @@ eval_tap $? 244 'PublicGetSystemConfigV3' test.out
 
 #- 245 GenerateTokenByNewHeadlessAccountV3
 $PYTHON -m $MODULE 'iam-generate-token-by-new-headless-account-v3' \
-    'bRfK9t95' \
+    'Q8HFaMaB' \
     --login_with_auth "Basic YWRtaW46YWRtaW4=" \
     > test.out 2>&1
 eval_tap $? 245 'GenerateTokenByNewHeadlessAccountV3' test.out
 
 #- 246 RequestOneTimeLinkingCodeV3
 $PYTHON -m $MODULE 'iam-request-one-time-linking-code-v3' \
-    'iV5XZCOV' \
+    'pDSWqAAr' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 246 'RequestOneTimeLinkingCodeV3' test.out
 
 #- 247 ValidateOneTimeLinkingCodeV3
 $PYTHON -m $MODULE 'iam-validate-one-time-linking-code-v3' \
-    'JimEOK8i' \
+    'sQk7eobE' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 247 'ValidateOneTimeLinkingCodeV3' test.out
 
 #- 248 RequestTokenByOneTimeLinkCodeResponseV3
 $PYTHON -m $MODULE 'iam-request-token-by-one-time-link-code-response-v3' \
-    '9CjZzO6d' \
-    'Sn2nVURm' \
+    'heo5oJOl' \
+    'qEsp8DgG' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 248 'RequestTokenByOneTimeLinkCodeResponseV3' test.out
@@ -1726,29 +1726,29 @@ eval_tap $? 250 'Logout' test.out
 
 #- 251 RequestTokenExchangeCodeV3
 $PYTHON -m $MODULE 'iam-request-token-exchange-code-v3' \
-    'JiH83YVL' \
+    'mPA9HUNr' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 251 'RequestTokenExchangeCodeV3' test.out
 
 #- 252 AdminRetrieveUserThirdPartyPlatformTokenV3
 $PYTHON -m $MODULE 'iam-admin-retrieve-user-third-party-platform-token-v3' \
-    'AIk8WAyj' \
-    'sTFQkkR5' \
+    'fMLWrGsy' \
+    'HUwlTxG0' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 252 'AdminRetrieveUserThirdPartyPlatformTokenV3' test.out
 
 #- 253 RevokeUserV3
 $PYTHON -m $MODULE 'iam-revoke-user-v3' \
-    '7BtnVhXM' \
+    'qkgLtiY1' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 253 'RevokeUserV3' test.out
 
 #- 254 AuthorizeV3
 $PYTHON -m $MODULE 'iam-authorize-v3' \
-    'meiKvzFD' \
+    'e4gSeI0G' \
     'code' \
     --login_with_auth "Basic YWRtaW46YWRtaW4=" \
     > test.out 2>&1
@@ -1756,7 +1756,7 @@ eval_tap $? 254 'AuthorizeV3' test.out
 
 #- 255 TokenIntrospectionV3
 $PYTHON -m $MODULE 'iam-token-introspection-v3' \
-    '5dJIwT8c' \
+    'UPA6RNZF' \
     --login_with_auth "Basic YWRtaW46YWRtaW4=" \
     > test.out 2>&1
 eval_tap $? 255 'TokenIntrospectionV3' test.out
@@ -1769,26 +1769,26 @@ eval_tap $? 256 'GetJWKSV3' test.out
 
 #- 257 SendMFAAuthenticationCode
 $PYTHON -m $MODULE 'iam-send-mfa-authentication-code' \
-    'ao6GmTNa' \
-    'zofYpOWV' \
-    'GyLaaLUJ' \
+    'jn0QyiDb' \
+    '9MnTKQyd' \
+    'l20tCbrs' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 257 'SendMFAAuthenticationCode' test.out
 
 #- 258 Change2faMethod
 $PYTHON -m $MODULE 'iam-change2fa-method' \
-    'yx4IheBx' \
-    'kYGuIX57' \
+    '1SDGpLTU' \
+    'VboesIwe' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 258 'Change2faMethod' test.out
 
 #- 259 Verify2faCode
 $PYTHON -m $MODULE 'iam-verify2fa-code' \
-    'Ae50eAMj' \
-    'pa2lG3QR' \
-    'Jz1TrHRW' \
+    'vefY09Fq' \
+    'l8y86hIg' \
+    'Kr9bETA6' \
     'true' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
@@ -1796,33 +1796,33 @@ eval_tap $? 259 'Verify2faCode' test.out
 
 #- 260 Verify2faCodeForward
 $PYTHON -m $MODULE 'iam-verify2fa-code-forward' \
-    'VTjshdvO' \
-    'OiDX8pcy' \
-    '7KjzLkU5' \
-    '0rwOH70l' \
+    'wMBwPTQp' \
+    'uy1Kbfvl' \
+    'C24cy7mw' \
+    '4AJFzGxQ' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 260 'Verify2faCodeForward' test.out
 
 #- 261 RetrieveUserThirdPartyPlatformTokenV3
 $PYTHON -m $MODULE 'iam-retrieve-user-third-party-platform-token-v3' \
-    '7x8dUsA8' \
-    'kutgV7ss' \
+    'brak4dxk' \
+    '8ahbmUeH' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 261 'RetrieveUserThirdPartyPlatformTokenV3' test.out
 
 #- 262 AuthCodeRequestV3
 $PYTHON -m $MODULE 'iam-auth-code-request-v3' \
-    'LXVgEz9n' \
-    'ujkvJgmD' \
+    'S6So0nxg' \
+    'TCeYeRBP' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 262 'AuthCodeRequestV3' test.out
 
 #- 263 PlatformTokenGrantV3
 $PYTHON -m $MODULE 'iam-platform-token-grant-v3' \
-    'bo8YJnSu' \
+    'T8CxygzN' \
     --login_with_auth "Basic YWRtaW46YWRtaW4=" \
     > test.out 2>&1
 eval_tap $? 263 'PlatformTokenGrantV3' test.out
@@ -1835,45 +1835,45 @@ eval_tap $? 264 'GetRevocationListV3' test.out
 
 #- 265 TokenRevocationV3
 $PYTHON -m $MODULE 'iam-token-revocation-v3' \
-    'kzqhUrg8' \
+    '2fTwP1Sc' \
     --login_with_auth "Basic YWRtaW46YWRtaW4=" \
     > test.out 2>&1
 eval_tap $? 265 'TokenRevocationV3' test.out
 
 #- 266 SimultaneousLoginV3
 $PYTHON -m $MODULE 'iam-simultaneous-login-v3' \
-    'epicgames' \
-    'qc1StZk0' \
+    'steam' \
+    '1Hl9SLHv' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 266 'SimultaneousLoginV3' test.out
 
 #- 267 TokenGrantV3
 $PYTHON -m $MODULE 'iam-token-grant-v3' \
-    'refresh_token' \
+    'authorization_code' \
     --login_with_auth "Basic YWRtaW46YWRtaW4=" \
     > test.out 2>&1
 eval_tap $? 267 'TokenGrantV3' test.out
 
 #- 268 VerifyTokenV3
 $PYTHON -m $MODULE 'iam-verify-token-v3' \
-    'rkd4GXLQ' \
+    '8lGxDAvK' \
     --login_with_auth "Basic YWRtaW46YWRtaW4=" \
     > test.out 2>&1
 eval_tap $? 268 'VerifyTokenV3' test.out
 
 #- 269 PlatformAuthenticationV3
 $PYTHON -m $MODULE 'iam-platform-authentication-v3' \
-    'IJCUvoLu' \
-    'Z39rDQGU' \
+    'pPxNSkoU' \
+    'dKmQoggO' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 269 'PlatformAuthenticationV3' test.out
 
 #- 270 PlatformTokenRefreshV3
 $PYTHON -m $MODULE 'iam-platform-token-refresh-v3' \
-    'OwAqXTtC' \
-    'yiAr1HjH' \
+    '1zOxJgQQ' \
+    'Dw85CHTc' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 270 'PlatformTokenRefreshV3' test.out
@@ -1886,21 +1886,21 @@ eval_tap $? 271 'PublicGetInputValidations' test.out
 
 #- 272 PublicGetInputValidationByField
 $PYTHON -m $MODULE 'iam-public-get-input-validation-by-field' \
-    'sHQJeBlb' \
+    'AKbZ2lCl' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 272 'PublicGetInputValidationByField' test.out
 
 #- 273 PublicGetCountryAgeRestrictionV3
 $PYTHON -m $MODULE 'iam-public-get-country-age-restriction-v3' \
-    'RVIVjH2n' \
+    'bT17hCtT' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 273 'PublicGetCountryAgeRestrictionV3' test.out
 
 #- 274 PublicGetConfigValueV3
 $PYTHON -m $MODULE 'iam-public-get-config-value-v3' \
-    'IyJx66dG' \
+    'wuOP8cin' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 274 'PublicGetConfigValueV3' test.out
@@ -1919,7 +1919,7 @@ eval_tap $? 276 'RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3' tes
 
 #- 277 RetrieveActiveOIDCClientsPublicV3
 $PYTHON -m $MODULE 'iam-retrieve-active-oidc-clients-public-v3' \
-    '16aPymrq' \
+    'f49FVtju' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 277 'RetrieveActiveOIDCClientsPublicV3' test.out
@@ -1938,7 +1938,7 @@ eval_tap $? 280 'PublicGetProfileUpdateStrategyV3' test.out
 
 #- 281 PublicGetAsyncStatus
 $PYTHON -m $MODULE 'iam-public-get-async-status' \
-    '7t19gJrG' \
+    'Qyu47UEL' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 281 'PublicGetAsyncStatus' test.out
@@ -1951,15 +1951,15 @@ eval_tap $? 282 'PublicSearchUserV3' test.out
 
 #- 283 PublicCreateUserV3
 $PYTHON -m $MODULE 'iam-public-create-user-v3' \
-    '{"PasswordMD5Sum": "52XsrFqb", "acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "JAkRP8YO", "policyId": "GRzCH9TP", "policyVersionId": "zi5xkQQ8"}, {"isAccepted": false, "localizedPolicyVersionId": "BaIQqsTT", "policyId": "PBG7ooNz", "policyVersionId": "HgJbZm4b"}, {"isAccepted": false, "localizedPolicyVersionId": "bv15AY7S", "policyId": "pvm4bj9a", "policyVersionId": "lwcn4xB2"}], "authType": "zffVYVG5", "code": "m3d6WiTl", "country": "6WwUgxYx", "dateOfBirth": "7SWYdAHw", "displayName": "CyzqFZ8n", "emailAddress": "YGhJn57o", "password": "SHm1G1B0", "reachMinimumAge": true, "uniqueDisplayName": "Myv8F580"}' \
+    '{"PasswordMD5Sum": "UfTnF6U6", "acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "Jn2hDo5G", "policyId": "MDKLJF2m", "policyVersionId": "6obDM5UJ"}, {"isAccepted": true, "localizedPolicyVersionId": "FU9PlhXK", "policyId": "muePmONV", "policyVersionId": "YCMTriW8"}, {"isAccepted": false, "localizedPolicyVersionId": "eRmhuzEG", "policyId": "Y2Vik0Yo", "policyVersionId": "37WOIoIB"}], "authType": "ZGldPUyc", "code": "oKLpDffm", "country": "lPkJFS6h", "dateOfBirth": "3A1z2g4X", "displayName": "V0DxFzAt", "emailAddress": "fPvPaReI", "password": "v9c8D6A9", "reachMinimumAge": false, "uniqueDisplayName": "FA4fzB15"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 283 'PublicCreateUserV3' test.out
 
 #- 284 CheckUserAvailability
 $PYTHON -m $MODULE 'iam-check-user-availability' \
-    '4Q3RHHlr' \
-    'wOhMfGvN' \
+    'BO1gEwK3' \
+    'UgTC47cv' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 284 'CheckUserAvailability' test.out
@@ -1969,107 +1969,107 @@ eval_tap 0 285 'PublicBulkGetUsers # SKIP deprecated' test.out
 
 #- 286 PublicSendRegistrationCode
 $PYTHON -m $MODULE 'iam-public-send-registration-code' \
-    '{"emailAddress": "zZ41Rotc", "languageTag": "ljsNlx8P"}' \
+    '{"emailAddress": "yMxhEkZc", "languageTag": "5GBX5I9u"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 286 'PublicSendRegistrationCode' test.out
 
 #- 287 PublicVerifyRegistrationCode
 $PYTHON -m $MODULE 'iam-public-verify-registration-code' \
-    '{"code": "dVT4ATra", "emailAddress": "MXvvSxWl"}' \
+    '{"code": "ovNyfSi7", "emailAddress": "zcZlagn0"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 287 'PublicVerifyRegistrationCode' test.out
 
 #- 288 PublicForgotPasswordV3
 $PYTHON -m $MODULE 'iam-public-forgot-password-v3' \
-    '{"emailAddress": "UCYT5Ui4", "languageTag": "3gjLd6km"}' \
+    '{"emailAddress": "saCHCJBi", "languageTag": "KVjDAF74"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 288 'PublicForgotPasswordV3' test.out
 
 #- 289 PublicValidateUserInput
 $PYTHON -m $MODULE 'iam-public-validate-user-input' \
-    '{"displayName": "CupgIp9R", "password": "u5yAL5Lq", "uniqueDisplayName": "hgLIkmgp", "username": "FJpYBQMq"}' \
+    '{"displayName": "k4HTrC1w", "password": "4lXaiJqV", "uniqueDisplayName": "FjYJ5WMR", "username": "uyBK2ofE"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 289 'PublicValidateUserInput' test.out
 
 #- 290 GetAdminInvitationV3
 $PYTHON -m $MODULE 'iam-get-admin-invitation-v3' \
-    'bQxqW5c6' \
+    '3LbXIkwA' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 290 'GetAdminInvitationV3' test.out
 
 #- 291 CreateUserFromInvitationV3
 $PYTHON -m $MODULE 'iam-create-user-from-invitation-v3' \
-    '{"PasswordMD5Sum": "Xvmx2SKh", "acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "RTgu4K3Z", "policyId": "CGsNWzWt", "policyVersionId": "g15oW4vy"}, {"isAccepted": false, "localizedPolicyVersionId": "JZlLSBGJ", "policyId": "BLgOexeW", "policyVersionId": "v9bzStzZ"}, {"isAccepted": true, "localizedPolicyVersionId": "VPE3Vs34", "policyId": "s6nxYY9y", "policyVersionId": "HcJyQmyz"}], "authType": "viW6AxXB", "code": "9E2PH5gZ", "country": "lYaeyEGK", "dateOfBirth": "3ll27kF5", "displayName": "EM7XjF3b", "emailAddress": "312CsOWb", "password": "PHBu22ak", "reachMinimumAge": true, "uniqueDisplayName": "8nHoCeBi"}' \
-    '1fgRmfkL' \
+    '{"PasswordMD5Sum": "Q9SqLsht", "acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "jNDtERFq", "policyId": "AaIGXQvu", "policyVersionId": "bmhDbxma"}, {"isAccepted": true, "localizedPolicyVersionId": "2cDx37SU", "policyId": "JrzLQmkM", "policyVersionId": "ZInPG6Eh"}, {"isAccepted": true, "localizedPolicyVersionId": "JJ9ebgB3", "policyId": "rC3FeQKF", "policyVersionId": "GgXPLCXn"}], "authType": "8ODxR8OP", "code": "2Of8ue3F", "country": "QC4nGxE5", "dateOfBirth": "hmxs9VJM", "displayName": "OCZvVPGk", "emailAddress": "1jhIA65V", "password": "i6hGH6Va", "reachMinimumAge": false, "uniqueDisplayName": "gWfgCuGy"}' \
+    'Qhy8qclo' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 291 'CreateUserFromInvitationV3' test.out
 
 #- 292 UpdateUserV3
 $PYTHON -m $MODULE 'iam-update-user-v3' \
-    '{"avatarUrl": "XS4wMOFt", "country": "DpdogQyU", "dateOfBirth": "75ibnuLg", "displayName": "lEP1g4uG", "languageTag": "M2EEiRcA", "uniqueDisplayName": "VtJQ2gDS", "userName": "CnMHR2y8"}' \
+    '{"avatarUrl": "lj4tP5Zb", "country": "NderxNI9", "dateOfBirth": "UHS5Jpze", "displayName": "UcxGLJMJ", "languageTag": "GyQ0jhpm", "uniqueDisplayName": "3njBE8EK", "userName": "KU95oBpl"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 292 'UpdateUserV3' test.out
 
 #- 293 PublicPartialUpdateUserV3
 $PYTHON -m $MODULE 'iam-public-partial-update-user-v3' \
-    '{"avatarUrl": "bE5SGauK", "country": "azN9AvTj", "dateOfBirth": "ns3kZ2bQ", "displayName": "xT4WTMfK", "languageTag": "YvF7Dxjk", "uniqueDisplayName": "U5Fjhnmz", "userName": "C2FThHL8"}' \
+    '{"avatarUrl": "Ov79AyCh", "country": "89sIrXl0", "dateOfBirth": "zQ8zcsvk", "displayName": "ONsTsT6f", "languageTag": "o2r1PmlP", "uniqueDisplayName": "kHIBjMA7", "userName": "e3sMGBck"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 293 'PublicPartialUpdateUserV3' test.out
 
 #- 294 PublicSendVerificationCodeV3
 $PYTHON -m $MODULE 'iam-public-send-verification-code-v3' \
-    '{"context": "GPLjoSlS", "emailAddress": "gn2d4cZi", "languageTag": "rHX3fspk", "upgradeToken": "945eNBIP"}' \
+    '{"context": "bQwfEjzv", "emailAddress": "AzN45FWZ", "languageTag": "gbyzKKdH", "upgradeToken": "Rtn7B9rE"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 294 'PublicSendVerificationCodeV3' test.out
 
 #- 295 PublicUserVerificationV3
 $PYTHON -m $MODULE 'iam-public-user-verification-v3' \
-    '{"code": "YqWLC8RB", "contactType": "LqNEVs68", "languageTag": "ir8hmobf", "validateOnly": false}' \
+    '{"code": "gzHqpdA0", "contactType": "blxPvNtb", "languageTag": "6hnaPXn3", "validateOnly": true}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 295 'PublicUserVerificationV3' test.out
 
 #- 296 PublicUpgradeHeadlessAccountV3
 $PYTHON -m $MODULE 'iam-public-upgrade-headless-account-v3' \
-    '{"code": "kbo91PVd", "country": "YCmUHM1p", "dateOfBirth": "BZrRzfYX", "displayName": "w8mFgbSG", "emailAddress": "o9uy25vl", "password": "ib0b1I4v", "uniqueDisplayName": "W10MEMxe", "validateOnly": true}' \
+    '{"code": "7O2sa6XJ", "country": "0xB1hyUO", "dateOfBirth": "bXL4aPjE", "displayName": "eTCBYLRY", "emailAddress": "ZQqCSaZh", "password": "TdkxAqDy", "uniqueDisplayName": "EXRjAwIS", "validateOnly": true}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 296 'PublicUpgradeHeadlessAccountV3' test.out
 
 #- 297 PublicVerifyHeadlessAccountV3
 $PYTHON -m $MODULE 'iam-public-verify-headless-account-v3' \
-    '{"emailAddress": "mF3tnkZG", "password": "ipVElq9a"}' \
+    '{"emailAddress": "VBfvTbEb", "password": "Pv8cOD70"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 297 'PublicVerifyHeadlessAccountV3' test.out
 
 #- 298 PublicUpdatePasswordV3
 $PYTHON -m $MODULE 'iam-public-update-password-v3' \
-    '{"languageTag": "pScdl0WY", "mfaToken": "qTmqnZAA", "newPassword": "MoVzYPlG", "oldPassword": "bLVbsXh3"}' \
+    '{"languageTag": "izqJmyL2", "mfaToken": "FPAd5haj", "newPassword": "UAZlUHR5", "oldPassword": "IBu6XxSO"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 298 'PublicUpdatePasswordV3' test.out
 
 #- 299 PublicCreateJusticeUser
 $PYTHON -m $MODULE 'iam-public-create-justice-user' \
-    'RfeflIox' \
+    '9TLUpENQ' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 299 'PublicCreateJusticeUser' test.out
 
 #- 300 PublicPlatformLinkV3
 $PYTHON -m $MODULE 'iam-public-platform-link-v3' \
-    '0ybusGn3' \
-    'XBE3NFQQ' \
+    'CDYYiVe5' \
+    'RzlFXoGr' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 300 'PublicPlatformLinkV3' test.out
@@ -2079,52 +2079,52 @@ eval_tap 0 301 'PublicPlatformUnlinkV3 # SKIP deprecated' test.out
 
 #- 302 PublicPlatformUnlinkAllV3
 $PYTHON -m $MODULE 'iam-public-platform-unlink-all-v3' \
-    'YwnMlMSB' \
+    'ZdwTTFJn' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 302 'PublicPlatformUnlinkAllV3' test.out
 
 #- 303 PublicForcePlatformLinkV3
 $PYTHON -m $MODULE 'iam-public-force-platform-link-v3' \
-    '23XLmOyv' \
-    'EhE8zPok' \
+    'GlgDkpi4' \
+    'bw95AQGe' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 303 'PublicForcePlatformLinkV3' test.out
 
 #- 304 PublicWebLinkPlatform
 $PYTHON -m $MODULE 'iam-public-web-link-platform' \
-    'S0wVGUlm' \
+    'mWrCUYul' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 304 'PublicWebLinkPlatform' test.out
 
 #- 305 PublicWebLinkPlatformEstablish
 $PYTHON -m $MODULE 'iam-public-web-link-platform-establish' \
-    'qc0Tb14F' \
-    'g7761R0T' \
+    'UOOdunj3' \
+    'X07oUsZv' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 305 'PublicWebLinkPlatformEstablish' test.out
 
 #- 306 PublicProcessWebLinkPlatformV3
 $PYTHON -m $MODULE 'iam-public-process-web-link-platform-v3' \
-    'zYYOFNOh' \
-    'aimtYDq9' \
+    'BckLFibL' \
+    'hW83eliw' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 306 'PublicProcessWebLinkPlatformV3' test.out
 
 #- 307 PublicGetUsersPlatformInfosV3
 $PYTHON -m $MODULE 'iam-public-get-users-platform-infos-v3' \
-    '{"platformId": "wEjkhs8i", "userIds": ["HfArrOZl", "34QiBIT9", "GlhxdAug"]}' \
+    '{"platformId": "cEs4pFF0", "userIds": ["nFzljRWL", "XRcYzAQV", "BdPujlNt"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 307 'PublicGetUsersPlatformInfosV3' test.out
 
 #- 308 ResetPasswordV3
 $PYTHON -m $MODULE 'iam-reset-password-v3' \
-    '{"clientId": "pgwaVtz1", "code": "FQYLchF1", "emailAddress": "m943gFTv", "languageTag": "JnwgqA5P", "newPassword": "Ls6Z6M5R"}' \
+    '{"clientId": "fLs3VVlu", "code": "0NK6EO4k", "emailAddress": "CXxECHyR", "languageTag": "DU05Tq8g", "newPassword": "yfGbqp2w"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 308 'ResetPasswordV3' test.out
@@ -2134,73 +2134,73 @@ eval_tap 0 309 'PublicGetUserByUserIdV3 # SKIP deprecated' test.out
 
 #- 310 PublicGetUserBanHistoryV3
 $PYTHON -m $MODULE 'iam-public-get-user-ban-history-v3' \
-    'LiJ8B5kw' \
+    'jLxCYt38' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 310 'PublicGetUserBanHistoryV3' test.out
 
 #- 311 PublicListUserAllPlatformAccountsDistinctV3
 $PYTHON -m $MODULE 'iam-public-list-user-all-platform-accounts-distinct-v3' \
-    'CivODo6u' \
+    '9BegEd9z' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 311 'PublicListUserAllPlatformAccountsDistinctV3' test.out
 
 #- 312 PublicGetUserInformationV3
 $PYTHON -m $MODULE 'iam-public-get-user-information-v3' \
-    'dXbqS8Fn' \
+    'W6sz7d6X' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 312 'PublicGetUserInformationV3' test.out
 
 #- 313 PublicGetUserLoginHistoriesV3
 $PYTHON -m $MODULE 'iam-public-get-user-login-histories-v3' \
-    'me4ZM5mm' \
+    'UZhpFuqF' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 313 'PublicGetUserLoginHistoriesV3' test.out
 
 #- 314 PublicGetUserPlatformAccountsV3
 $PYTHON -m $MODULE 'iam-public-get-user-platform-accounts-v3' \
-    'vfBGYwVu' \
+    'lDA8s8On' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 314 'PublicGetUserPlatformAccountsV3' test.out
 
 #- 315 PublicListJusticePlatformAccountsV3
 $PYTHON -m $MODULE 'iam-public-list-justice-platform-accounts-v3' \
-    'Y0TWk7oh' \
+    'QqH5MAgd' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 315 'PublicListJusticePlatformAccountsV3' test.out
 
 #- 316 PublicLinkPlatformAccount
 $PYTHON -m $MODULE 'iam-public-link-platform-account' \
-    '{"platformId": "pZZASVP5", "platformUserId": "ulJWOJBt"}' \
-    'p9CrrgrT' \
+    '{"platformId": "Cp3Nnw4V", "platformUserId": "o5qXRkbJ"}' \
+    'uhSycwaK' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 316 'PublicLinkPlatformAccount' test.out
 
 #- 317 PublicForceLinkPlatformWithProgression
 $PYTHON -m $MODULE 'iam-public-force-link-platform-with-progression' \
-    '{"chosenNamespaces": ["EMxT0S0l", "qBkEfT3A", "IyA9x8jY"], "requestId": "UhyYWNHr"}' \
-    'Zc8FbLvq' \
+    '{"chosenNamespaces": ["aLN9BgAA", "fyxwRbHU", "aMIu8pBv"], "requestId": "WBCRuLoH"}' \
+    'EVux34FK' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 317 'PublicForceLinkPlatformWithProgression' test.out
 
 #- 318 PublicGetPublisherUserV3
 $PYTHON -m $MODULE 'iam-public-get-publisher-user-v3' \
-    'hltXZVZe' \
+    'MT1Gifm7' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 318 'PublicGetPublisherUserV3' test.out
 
 #- 319 PublicValidateUserByUserIDAndPasswordV3
 $PYTHON -m $MODULE 'iam-public-validate-user-by-user-id-and-password-v3' \
-    'Psl6D4Zh' \
-    'Hoa21UhD' \
+    'syvq8YdH' \
+    'ZjS63cXJ' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 319 'PublicValidateUserByUserIDAndPasswordV3' test.out
@@ -2213,14 +2213,14 @@ eval_tap $? 320 'PublicGetRolesV3' test.out
 
 #- 321 PublicGetRoleV3
 $PYTHON -m $MODULE 'iam-public-get-role-v3' \
-    'hca0nuAz' \
+    '2tOtba8y' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 321 'PublicGetRoleV3' test.out
 
 #- 322 PublicForgotPasswordWithoutNamespaceV3
 $PYTHON -m $MODULE 'iam-public-forgot-password-without-namespace-v3' \
-    '{"clientId": "oWXY4AsS", "emailAddress": "GZi3tXgI", "languageTag": "BUzGtoD1"}' \
+    '{"clientId": "AT7BtDE8", "emailAddress": "eyaDQlAn", "languageTag": "t6xIbLNx"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 322 'PublicForgotPasswordWithoutNamespaceV3' test.out
@@ -2233,28 +2233,28 @@ eval_tap $? 323 'PublicGetMyUserV3' test.out
 
 #- 324 PublicSendCodeForwardV3
 $PYTHON -m $MODULE 'iam-public-send-code-forward-v3' \
-    '{"context": "p1Q3hHpv", "emailAddress": "83PTeZz2", "languageTag": "5TytS9Rl", "upgradeToken": "olN1aM26"}' \
+    '{"context": "VHCpB8Qo", "emailAddress": "wpEr16Ok", "languageTag": "E3WuZse3", "upgradeToken": "PR7Wr5wK"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 324 'PublicSendCodeForwardV3' test.out
 
 #- 325 PublicGetLinkHeadlessAccountToMyAccountConflictV3
 $PYTHON -m $MODULE 'iam-public-get-link-headless-account-to-my-account-conflict-v3' \
-    'U67KIxok' \
+    '8qGxJBgg' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 325 'PublicGetLinkHeadlessAccountToMyAccountConflictV3' test.out
 
 #- 326 LinkHeadlessAccountToMyAccountV3
 $PYTHON -m $MODULE 'iam-link-headless-account-to-my-account-v3' \
-    '{"chosenNamespaces": ["bHVQyhHK", "do3KnQYe", "c6R6bi9P"], "oneTimeLinkCode": "uzH5dUOE"}' \
+    '{"chosenNamespaces": ["Xyx6UgfD", "GeMtXRt0", "2k46kmDp"], "oneTimeLinkCode": "V8ZYKt3M"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 326 'LinkHeadlessAccountToMyAccountV3' test.out
 
 #- 327 PublicGetMyRedirectionAfterLinkV3
 $PYTHON -m $MODULE 'iam-public-get-my-redirection-after-link-v3' \
-    'yPFWL61I' \
+    'c31bb3bq' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 327 'PublicGetMyRedirectionAfterLinkV3' test.out
@@ -2267,7 +2267,7 @@ eval_tap $? 328 'PublicGetMyProfileAllowUpdateStatusV3' test.out
 
 #- 329 PublicSendVerificationLinkV3
 $PYTHON -m $MODULE 'iam-public-send-verification-link-v3' \
-    '{"languageTag": "h3f40rVi"}' \
+    '{"languageTag": "Xs6CXQMd"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 329 'PublicSendVerificationLinkV3' test.out
@@ -2286,37 +2286,37 @@ eval_tap $? 331 'PublicVerifyUserByLinkV3' test.out
 
 #- 332 PlatformAuthenticateSAMLV3Handler
 $PYTHON -m $MODULE 'iam-platform-authenticate-samlv3-handler' \
-    'jIOcyjwC' \
-    'IptXOi0s' \
+    'QM4Xb7D9' \
+    'KQfkl8Sc' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 332 'PlatformAuthenticateSAMLV3Handler' test.out
 
 #- 333 LoginSSOClient
 $PYTHON -m $MODULE 'iam-login-sso-client' \
-    'R0OmBA6S' \
+    'ciLi7Qvj' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 333 'LoginSSOClient' test.out
 
 #- 334 LogoutSSOClient
 $PYTHON -m $MODULE 'iam-logout-sso-client' \
-    'L682zxmG' \
+    '6gJR3E9x' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 334 'LogoutSSOClient' test.out
 
 #- 335 RequestTargetTokenResponseV3
 $PYTHON -m $MODULE 'iam-request-target-token-response-v3' \
-    'ioGKXgPZ' \
+    'W8D6kRMF' \
     --login_with_auth "Basic YWRtaW46YWRtaW4=" \
     > test.out 2>&1
 eval_tap $? 335 'RequestTargetTokenResponseV3' test.out
 
 #- 336 UpgradeAndAuthenticateForwardV3
 $PYTHON -m $MODULE 'iam-upgrade-and-authenticate-forward-v3' \
-    'HaKu3qKl' \
-    'uNyh9oKj' \
+    'WCPzlUsq' \
+    'l7HAkReX' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 336 'UpgradeAndAuthenticateForwardV3' test.out
@@ -2341,36 +2341,36 @@ eval_tap $? 339 'AdminGetBannedDevicesV4' test.out
 
 #- 340 AdminGetUserDeviceBansV4
 $PYTHON -m $MODULE 'iam-admin-get-user-device-bans-v4' \
-    'l5E9EPHw' \
+    'IXy2SYih' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 340 'AdminGetUserDeviceBansV4' test.out
 
 #- 341 AdminBanDeviceV4
 $PYTHON -m $MODULE 'iam-admin-ban-device-v4' \
-    '{"comment": "tIgE9pJj", "deviceId": "i40F3PP2", "deviceType": "dHzJbBsD", "enabled": true, "endDate": "nyElv2Kv", "ext": {"ZvixwVce": {}, "4eyTFSA3": {}, "aaqN8oMa": {}}, "reason": "Ha4ARAro"}' \
+    '{"comment": "xLm8qUmd", "deviceId": "eXy4xbE6", "deviceType": "oSDnzHe4", "enabled": true, "endDate": "u1uMI5XF", "ext": {"8WivDF5m": {}, "vv8urQWl": {}, "CWSB26jW": {}}, "reason": "JvfVFo7N"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 341 'AdminBanDeviceV4' test.out
 
 #- 342 AdminGetDeviceBanV4
 $PYTHON -m $MODULE 'iam-admin-get-device-ban-v4' \
-    'trbeZK8m' \
+    '2SrpCW7z' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 342 'AdminGetDeviceBanV4' test.out
 
 #- 343 AdminUpdateDeviceBanV4
 $PYTHON -m $MODULE 'iam-admin-update-device-ban-v4' \
-    '{"enabled": false}' \
-    '9CFhmTu7' \
+    '{"enabled": true}' \
+    'ZkQsx7FG' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 343 'AdminUpdateDeviceBanV4' test.out
 
 #- 344 AdminGenerateReportV4
 $PYTHON -m $MODULE 'iam-admin-generate-report-v4' \
-    'JLEsqLST' \
+    'ZDxA78KO' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 344 'AdminGenerateReportV4' test.out
@@ -2383,7 +2383,7 @@ eval_tap $? 345 'AdminGetDeviceTypesV4' test.out
 
 #- 346 AdminGetDeviceBansV4
 $PYTHON -m $MODULE 'iam-admin-get-device-bans-v4' \
-    'rO8lm9rG' \
+    'jXJIzyYQ' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 346 'AdminGetDeviceBansV4' test.out
@@ -2393,14 +2393,14 @@ eval_tap 0 347 'AdminDecryptDeviceV4 # SKIP deprecated' test.out
 
 #- 348 AdminUnbanDeviceV4
 $PYTHON -m $MODULE 'iam-admin-unban-device-v4' \
-    'ueGzC19o' \
+    'jyJqwdSr' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 348 'AdminUnbanDeviceV4' test.out
 
 #- 349 AdminGetUsersByDeviceV4
 $PYTHON -m $MODULE 'iam-admin-get-users-by-device-v4' \
-    '2VWCC2p5' \
+    'TNg04LDd' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 349 'AdminGetUsersByDeviceV4' test.out
@@ -2419,90 +2419,90 @@ eval_tap $? 351 'AdminGetNamespaceUserInvitationHistoryV4' test.out
 
 #- 352 AdminCreateTestUsersV4
 $PYTHON -m $MODULE 'iam-admin-create-test-users-v4' \
-    '{"acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "0404RPzz", "policyId": "NJgQoEs1", "policyVersionId": "OnM86nyL"}, {"isAccepted": true, "localizedPolicyVersionId": "UdroYYvp", "policyId": "3iBwfCbW", "policyVersionId": "2S4Zzmsv"}, {"isAccepted": false, "localizedPolicyVersionId": "p2tYJy0N", "policyId": "5cmdf6Kl", "policyVersionId": "bTCnGRuA"}], "count": 51, "userInfo": {"country": "jXROIdyV"}}' \
+    '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "FclUbTOr", "policyId": "nixrHap4", "policyVersionId": "YmUh4Gnq"}, {"isAccepted": false, "localizedPolicyVersionId": "rulghq0w", "policyId": "NIvZqyYP", "policyVersionId": "da0koz8U"}, {"isAccepted": false, "localizedPolicyVersionId": "Zks4OK5w", "policyId": "gsBe82FH", "policyVersionId": "pLha0tNe"}], "count": 23, "userInfo": {"country": "pOMQoivw"}}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 352 'AdminCreateTestUsersV4' test.out
 
 #- 353 AdminCreateUserV4
 $PYTHON -m $MODULE 'iam-admin-create-user-v4' \
-    '{"acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "Kr9Ivluo", "policyId": "6RAf2uWj", "policyVersionId": "VcY3Zenb"}, {"isAccepted": false, "localizedPolicyVersionId": "rfc3xkyX", "policyId": "KKu87yrn", "policyVersionId": "bBAVneP5"}, {"isAccepted": false, "localizedPolicyVersionId": "NDpFmM76", "policyId": "ujJP4zVt", "policyVersionId": "VbRKsSvP"}], "authType": "EMAILPASSWD", "code": "S9FfOKTj", "country": "Mm4WaAeL", "dateOfBirth": "uWCfNvhE", "displayName": "R8KC4aEV", "emailAddress": "mITwvw3S", "password": "7SVZlg5x", "passwordMD5Sum": "MGPoTVYi", "reachMinimumAge": true, "uniqueDisplayName": "gb0EBvvK", "username": "DxuPwOHC"}' \
+    '{"acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "NIVxa9eM", "policyId": "VkTgrMRF", "policyVersionId": "CmnocPfJ"}, {"isAccepted": true, "localizedPolicyVersionId": "8ZTJwMHH", "policyId": "xgnX5WKH", "policyVersionId": "DriikZjE"}, {"isAccepted": false, "localizedPolicyVersionId": "2MPGExRh", "policyId": "DNT19kfk", "policyVersionId": "zMYp6A58"}], "authType": "EMAILPASSWD", "code": "oRBPoXJm", "country": "r3Qqx2S8", "dateOfBirth": "9yoZc2Zw", "displayName": "LEcPpICu", "emailAddress": "WBFiUFFL", "password": "WL4VKLwx", "passwordMD5Sum": "bkN7KoHO", "reachMinimumAge": true, "uniqueDisplayName": "yBwKaIL3", "username": "9PyLq3Hh"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 353 'AdminCreateUserV4' test.out
 
 #- 354 AdminBulkUpdateUserAccountTypeV4
 $PYTHON -m $MODULE 'iam-admin-bulk-update-user-account-type-v4' \
-    '{"testAccount": true, "userIds": ["bWxpTBSP", "hoFVJ8XJ", "FpoN4TNU"]}' \
+    '{"testAccount": true, "userIds": ["WfmUFU0h", "u3o6Fpey", "bqOx8kZE"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 354 'AdminBulkUpdateUserAccountTypeV4' test.out
 
 #- 355 AdminBulkCheckValidUserIDV4
 $PYTHON -m $MODULE 'iam-admin-bulk-check-valid-user-idv4' \
-    '{"userIds": ["DZSD2W7e", "jq9fvwRt", "DPEqxEuy"]}' \
+    '{"userIds": ["olujq6Xi", "hgdnmweG", "NBcK0TmK"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 355 'AdminBulkCheckValidUserIDV4' test.out
 
 #- 356 AdminUpdateUserV4
 $PYTHON -m $MODULE 'iam-admin-update-user-v4' \
-    '{"avatarUrl": "QpllONZZ", "country": "HsLtkOsL", "dateOfBirth": "E8F0uWdq", "displayName": "EmQDc45C", "languageTag": "kDD731Vi", "skipLoginQueue": false, "tags": ["LFpw1NrW", "2c5YFw9c", "VROQvPLL"], "uniqueDisplayName": "p9ecMIyb", "userName": "ckqbu8Sf"}' \
-    'hPDmFVSA' \
+    '{"avatarUrl": "OKVjcd5f", "country": "BdlDIYSC", "dateOfBirth": "gLuvrldc", "displayName": "P63BGI2X", "languageTag": "A9bVvxZz", "skipLoginQueue": false, "tags": ["S4DPKJuE", "0d4Q1vS0", "NhjlDmeB"], "uniqueDisplayName": "MzJba45n", "userName": "vQB7fBoL"}' \
+    'K5CxoUkL' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 356 'AdminUpdateUserV4' test.out
 
 #- 357 AdminUpdateUserEmailAddressV4
 $PYTHON -m $MODULE 'iam-admin-update-user-email-address-v4' \
-    '{"code": "5efngypZ", "emailAddress": "B5LxMiSr"}' \
-    'dDryUWUv' \
+    '{"code": "eDPgW0qK", "emailAddress": "PMWDEMqy"}' \
+    '2j3IZsgA' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 357 'AdminUpdateUserEmailAddressV4' test.out
 
 #- 358 AdminDisableUserMFAV4
 $PYTHON -m $MODULE 'iam-admin-disable-user-mfav4' \
-    '{"factor": "XeDpAtEd", "mfaToken": "yHGT4pjg"}' \
-    'frABwDjl' \
+    '{"factor": "Y2DXnKcb", "mfaToken": "NeMvtvqF"}' \
+    'ixL0NEif' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 358 'AdminDisableUserMFAV4' test.out
 
 #- 359 AdminGetUserMFAStatusV4
 $PYTHON -m $MODULE 'iam-admin-get-user-mfa-status-v4' \
-    'DOrvVGkv' \
+    'QOxFpQtk' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 359 'AdminGetUserMFAStatusV4' test.out
 
 #- 360 AdminListUserRolesV4
 $PYTHON -m $MODULE 'iam-admin-list-user-roles-v4' \
-    'ZX3ErbGT' \
+    'cDh3f8Gg' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 360 'AdminListUserRolesV4' test.out
 
 #- 361 AdminUpdateUserRoleV4
 $PYTHON -m $MODULE 'iam-admin-update-user-role-v4' \
-    '{"assignedNamespaces": ["UEswU1Pq", "V3qoFF6c", "SksRtfnE"], "roleId": "w5ILVBcj"}' \
-    'asUUW5HV' \
+    '{"assignedNamespaces": ["Y0MWLfZF", "MQf1SbM2", "OYIPTACD"], "roleId": "Xx2QVtVu"}' \
+    'ls6pzXpJ' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 361 'AdminUpdateUserRoleV4' test.out
 
 #- 362 AdminAddUserRoleV4
 $PYTHON -m $MODULE 'iam-admin-add-user-role-v4' \
-    '{"assignedNamespaces": ["hisXOJ9B", "mlNzf0Qn", "QveSmZva"], "roleId": "XHaoCtJk"}' \
-    '5tpu50pi' \
+    '{"assignedNamespaces": ["vcRnnbOg", "RM5RuAl2", "2EeNZNN1"], "roleId": "46Wqxvqs"}' \
+    'QdpyPzzF' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 362 'AdminAddUserRoleV4' test.out
 
 #- 363 AdminRemoveUserRoleV4
 $PYTHON -m $MODULE 'iam-admin-remove-user-role-v4' \
-    '{"assignedNamespaces": ["uta93oaF", "BpJo6V9l", "guKTSmQu"], "roleId": "4JoT4Jnr"}' \
-    'X19AL86a' \
+    '{"assignedNamespaces": ["ACSMbyUK", "QEHTbJhA", "5JjxGpm1"], "roleId": "JagP2A0N"}' \
+    'Kz9baHsn' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 363 'AdminRemoveUserRoleV4' test.out
@@ -2515,104 +2515,104 @@ eval_tap $? 364 'AdminGetRolesV4' test.out
 
 #- 365 AdminCreateRoleV4
 $PYTHON -m $MODULE 'iam-admin-create-role-v4' \
-    '{"adminRole": false, "deletable": true, "isWildcard": false, "roleName": "WLqIgNgf"}' \
+    '{"adminRole": true, "deletable": false, "isWildcard": false, "roleName": "oDMbNpN9"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 365 'AdminCreateRoleV4' test.out
 
 #- 366 AdminGetRoleV4
 $PYTHON -m $MODULE 'iam-admin-get-role-v4' \
-    'KH1JGEBR' \
+    '5a8BVPrR' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 366 'AdminGetRoleV4' test.out
 
 #- 367 AdminDeleteRoleV4
 $PYTHON -m $MODULE 'iam-admin-delete-role-v4' \
-    '6LDpx9Ig' \
+    'P6OqmWvu' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 367 'AdminDeleteRoleV4' test.out
 
 #- 368 AdminUpdateRoleV4
 $PYTHON -m $MODULE 'iam-admin-update-role-v4' \
-    '{"adminRole": false, "deletable": false, "isWildcard": false, "roleName": "CrlALBGi"}' \
-    'nxKNTlhq' \
+    '{"adminRole": true, "deletable": false, "isWildcard": false, "roleName": "RUi1o6tW"}' \
+    'AmzvODV2' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 368 'AdminUpdateRoleV4' test.out
 
 #- 369 AdminUpdateRolePermissionsV4
 $PYTHON -m $MODULE 'iam-admin-update-role-permissions-v4' \
-    '{"permissions": [{"action": 97, "resource": "UoiXkKCY", "schedAction": 33, "schedCron": "csdD4FOU", "schedRange": ["IhMGzVvf", "7ZyCvwLq", "xhS6T9iS"]}, {"action": 60, "resource": "aBQ53TAc", "schedAction": 62, "schedCron": "ZovaJyqE", "schedRange": ["TrhgxiDM", "szWF6uFg", "98mZYaNJ"]}, {"action": 32, "resource": "lp1KjXzB", "schedAction": 38, "schedCron": "7kLHL8Bc", "schedRange": ["cV6x8Nz8", "2uRlfF6U", "d7qX5KxR"]}]}' \
-    'ScHOrZ5V' \
+    '{"permissions": [{"action": 2, "resource": "JrdWGM2a", "schedAction": 77, "schedCron": "6spCKpuy", "schedRange": ["whorax73", "J6WXh9Re", "dnm1Eawt"]}, {"action": 1, "resource": "kBKcItBC", "schedAction": 29, "schedCron": "bsEJKBFn", "schedRange": ["iDgBeYuf", "VPWCajIW", "e8wpsEAh"]}, {"action": 84, "resource": "kbCX7eMg", "schedAction": 75, "schedCron": "SeEifgM4", "schedRange": ["xLVannv0", "RUXLrqpj", "9mgjllCB"]}]}' \
+    'UmKIn1ZN' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 369 'AdminUpdateRolePermissionsV4' test.out
 
 #- 370 AdminAddRolePermissionsV4
 $PYTHON -m $MODULE 'iam-admin-add-role-permissions-v4' \
-    '{"permissions": [{"action": 26, "resource": "yRH3qral", "schedAction": 91, "schedCron": "lrke9yN3", "schedRange": ["AU1NdWUD", "hsLrR2lK", "csQHisrJ"]}, {"action": 89, "resource": "rpOgDCY0", "schedAction": 94, "schedCron": "AQjTqsfZ", "schedRange": ["MlieEewV", "aEypfaxm", "5rcnBtS0"]}, {"action": 76, "resource": "veAaR4O3", "schedAction": 99, "schedCron": "JLIQFCPR", "schedRange": ["VrBRdTCC", "fliNyT7n", "ayORMOZK"]}]}' \
-    'FmQIm1tq' \
+    '{"permissions": [{"action": 3, "resource": "AI8PYeRK", "schedAction": 52, "schedCron": "pCmwFkKz", "schedRange": ["6BoQjWtm", "cxXCKVuS", "kZcJ3vuT"]}, {"action": 2, "resource": "abbwdtgA", "schedAction": 48, "schedCron": "mYQlntDs", "schedRange": ["YI26xDui", "CsUQf6rC", "Qe2BqvJQ"]}, {"action": 17, "resource": "u1A4t7Bk", "schedAction": 30, "schedCron": "mYufZTwi", "schedRange": ["imhRmAHf", "CE1rUwXW", "xusiiklV"]}]}' \
+    'S6dqiVz2' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 370 'AdminAddRolePermissionsV4' test.out
 
 #- 371 AdminDeleteRolePermissionsV4
 $PYTHON -m $MODULE 'iam-admin-delete-role-permissions-v4' \
-    '["pvSO1m6t", "NgA7uEhR", "m38CrhBP"]' \
-    'qVIjNV96' \
+    '["7KvjSDJA", "GfXh69Gu", "Eh0rDtjD"]' \
+    'IRdChwxp' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 371 'AdminDeleteRolePermissionsV4' test.out
 
 #- 372 AdminListAssignedUsersV4
 $PYTHON -m $MODULE 'iam-admin-list-assigned-users-v4' \
-    'CpsFLRju' \
+    'KDc4egfF' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 372 'AdminListAssignedUsersV4' test.out
 
 #- 373 AdminAssignUserToRoleV4
 $PYTHON -m $MODULE 'iam-admin-assign-user-to-role-v4' \
-    '{"assignedNamespaces": ["63TQ2s5A", "fTA4o76z", "4xlbbwTv"], "namespace": "QEgfK25w", "userId": "x0ZHRONe"}' \
-    'w5ThPyQM' \
+    '{"assignedNamespaces": ["8Ky6p9KR", "3hmwoX7P", "EJnIH19e"], "namespace": "BXVKboBj", "userId": "0xhA1LOp"}' \
+    'GuxCxBZN' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 373 'AdminAssignUserToRoleV4' test.out
 
 #- 374 AdminRevokeUserFromRoleV4
 $PYTHON -m $MODULE 'iam-admin-revoke-user-from-role-v4' \
-    '{"namespace": "pBOmA1uU", "userId": "7XD9h5pf"}' \
-    'kqpLNDgH' \
+    '{"namespace": "JTdwkMuY", "userId": "hrzgBuYy"}' \
+    'A2wSbwa1' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 374 'AdminRevokeUserFromRoleV4' test.out
 
 #- 375 AdminInviteUserNewV4
 $PYTHON -m $MODULE 'iam-admin-invite-user-new-v4' \
-    '{"assignedNamespaces": ["m6I54gpJ", "k7J6H4te", "U7WRmjsp"], "emailAddresses": ["PrxyU9Lw", "SbJ9o7Qp", "FFSuYPqI"], "isAdmin": true, "isNewStudio": false, "languageTag": "8xedcq5y", "namespace": "e8cYIG6f", "roleId": "qkj8iflM"}' \
+    '{"assignedNamespaces": ["3eftcZOz", "THt9uOuE", "CDbH0nNl"], "emailAddresses": ["5M8AL4VW", "BTvzVgde", "5jgYBNio"], "isAdmin": true, "isNewStudio": false, "languageTag": "GRYdo5qn", "namespace": "kl3SzpoG", "roleId": "tNZtsT8o"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 375 'AdminInviteUserNewV4' test.out
 
 #- 376 AdminUpdateMyUserV4
 $PYTHON -m $MODULE 'iam-admin-update-my-user-v4' \
-    '{"avatarUrl": "WPVFrx2i", "country": "gvyymrSM", "dateOfBirth": "RukEZUxH", "displayName": "SF35mrqI", "languageTag": "JpTESKrY", "skipLoginQueue": true, "tags": ["PgXVHJOf", "lbcQNQ3Y", "Hj7qpP1n"], "uniqueDisplayName": "3lmAKsQ7", "userName": "jd1RU1VB"}' \
+    '{"avatarUrl": "cKdepJk3", "country": "HThF8Pop", "dateOfBirth": "609Lo0Gb", "displayName": "GwCyPkih", "languageTag": "tvqEOhVx", "skipLoginQueue": false, "tags": ["QW9MwAa9", "l9JYQIWK", "p0AeL6d7"], "uniqueDisplayName": "gzfnftME", "userName": "iuYa5rMI"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 376 'AdminUpdateMyUserV4' test.out
 
 #- 377 AdminDisableMyAuthenticatorV4
 $PYTHON -m $MODULE 'iam-admin-disable-my-authenticator-v4' \
-    '{"factor": "Tv2iwric", "mfaToken": "oJqD0xZK"}' \
+    '{"factor": "prLEPKkm", "mfaToken": "TlIdKnCw"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 377 'AdminDisableMyAuthenticatorV4' test.out
 
 #- 378 AdminEnableMyAuthenticatorV4
 $PYTHON -m $MODULE 'iam-admin-enable-my-authenticator-v4' \
-    'l2u5BBTn' \
+    'friqnKaa' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 378 'AdminEnableMyAuthenticatorV4' test.out
@@ -2631,7 +2631,7 @@ eval_tap 0 381 'AdminGenerateMyBackupCodesV4 # SKIP deprecated' test.out
 
 #- 382 AdminDisableMyBackupCodesV4
 $PYTHON -m $MODULE 'iam-admin-disable-my-backup-codes-v4' \
-    '{"factor": "sHMlBTDi", "mfaToken": "UVKUoHZq"}' \
+    '{"factor": "VhLeLZmS", "mfaToken": "8tO5Mx3F"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 382 'AdminDisableMyBackupCodesV4' test.out
@@ -2674,14 +2674,14 @@ eval_tap $? 389 'AdminSendMyMFAEmailCodeV4' test.out
 
 #- 390 AdminDisableMyEmailV4
 $PYTHON -m $MODULE 'iam-admin-disable-my-email-v4' \
-    '{"factor": "EummTbBR", "mfaToken": "MKQ4R9du"}' \
+    '{"factor": "lZS6NGVT", "mfaToken": "EdLVgEJ6"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 390 'AdminDisableMyEmailV4' test.out
 
 #- 391 AdminEnableMyEmailV4
 $PYTHON -m $MODULE 'iam-admin-enable-my-email-v4' \
-    'ikHD7iQd' \
+    'BLpYMoaO' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 391 'AdminEnableMyEmailV4' test.out
@@ -2694,7 +2694,7 @@ eval_tap $? 392 'AdminGetMyEnabledFactorsV4' test.out
 
 #- 393 AdminMakeFactorMyDefaultV4
 $PYTHON -m $MODULE 'iam-admin-make-factor-my-default-v4' \
-    'Q7HYixZs' \
+    'tzBzwn0W' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 393 'AdminMakeFactorMyDefaultV4' test.out
@@ -2713,26 +2713,26 @@ eval_tap 0 396 'AdminInviteUserV4 # SKIP deprecated' test.out
 
 #- 397 AuthenticationWithPlatformLinkV4
 $PYTHON -m $MODULE 'iam-authentication-with-platform-link-v4' \
-    'Dy6vJmjn' \
-    'xQ5wCLyo' \
-    'UDTZdzqb' \
-    'q90ROzj3' \
+    '83HRHNzc' \
+    'vGRiYuvp' \
+    'YH5GSnv4' \
+    'XMN5yMwj' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 397 'AuthenticationWithPlatformLinkV4' test.out
 
 #- 398 GenerateTokenByNewHeadlessAccountV4
 $PYTHON -m $MODULE 'iam-generate-token-by-new-headless-account-v4' \
-    'QbBG2Lbd' \
+    'xb9cJeio' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 398 'GenerateTokenByNewHeadlessAccountV4' test.out
 
 #- 399 Verify2faCodeV4
 $PYTHON -m $MODULE 'iam-verify2fa-code-v4' \
-    '0MNx7nMt' \
-    '7hYCEG5a' \
-    'ZlsFJ15T' \
+    'aS21WUCj' \
+    '5IaS2Psi' \
+    'bCoK9Lxm' \
     'false' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
@@ -2740,7 +2740,7 @@ eval_tap $? 399 'Verify2faCodeV4' test.out
 
 #- 400 PlatformTokenGrantV4
 $PYTHON -m $MODULE 'iam-platform-token-grant-v4' \
-    'hVhwgCK6' \
+    'YqJ4gYiG' \
     --login_with_auth "Basic YWRtaW46YWRtaW4=" \
     > test.out 2>&1
 eval_tap $? 400 'PlatformTokenGrantV4' test.out
@@ -2748,101 +2748,101 @@ eval_tap $? 400 'PlatformTokenGrantV4' test.out
 #- 401 SimultaneousLoginV4
 $PYTHON -m $MODULE 'iam-simultaneous-login-v4' \
     'epicgames' \
-    'bUoz7h3j' \
+    'tWfLi2Hn' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 401 'SimultaneousLoginV4' test.out
 
 #- 402 TokenGrantV4
 $PYTHON -m $MODULE 'iam-token-grant-v4' \
-    'password' \
+    'urn:ietf:params:oauth:grant-type:login_queue_ticket' \
     --login_with_auth "Basic YWRtaW46YWRtaW4=" \
     > test.out 2>&1
 eval_tap $? 402 'TokenGrantV4' test.out
 
 #- 403 RequestTargetTokenResponseV4
 $PYTHON -m $MODULE 'iam-request-target-token-response-v4' \
-    'a85OaCuK' \
+    '2XK87ZxV' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 403 'RequestTargetTokenResponseV4' test.out
 
 #- 404 PublicListUserIDByPlatformUserIDsV4
 $PYTHON -m $MODULE 'iam-public-list-user-id-by-platform-user-i-ds-v4' \
-    '{"pidType": "W9SDjcjZ", "platformUserIds": ["RosSTt8K", "23qDOAiq", "JHpGHQPA"]}' \
-    'vSlDYqIs' \
+    '{"pidType": "94XNiNbO", "platformUserIds": ["4dmb8jZV", "eCllRSiU", "LT98ZUkt"]}' \
+    'uQKtDMnd' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 404 'PublicListUserIDByPlatformUserIDsV4' test.out
 
 #- 405 PublicGetUserByPlatformUserIDV4
 $PYTHON -m $MODULE 'iam-public-get-user-by-platform-user-idv4' \
-    'lAttMKRD' \
-    'cSZoqWPq' \
+    'cLBTsDHW' \
+    'vfzqxO2V' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 405 'PublicGetUserByPlatformUserIDV4' test.out
 
 #- 406 PublicCreateTestUserV4
 $PYTHON -m $MODULE 'iam-public-create-test-user-v4' \
-    '{"acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "Gn3Uguo3", "policyId": "1POoVlJe", "policyVersionId": "iV9FrvJP"}, {"isAccepted": false, "localizedPolicyVersionId": "xw9OaDfv", "policyId": "VdaRUrvu", "policyVersionId": "5nAG1Rle"}, {"isAccepted": false, "localizedPolicyVersionId": "ubRhPrP4", "policyId": "EMRi2DN8", "policyVersionId": "fSin4rlD"}], "authType": "EMAILPASSWD", "country": "oc8J8u0g", "dateOfBirth": "gE7lSwYk", "displayName": "PRYYeqUL", "emailAddress": "kOtleRZD", "password": "wjs2cA7k", "passwordMD5Sum": "5KIm86fu", "uniqueDisplayName": "97AFCTl7", "username": "qp4fcx9U", "verified": true}' \
+    '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "dXFN7xwr", "policyId": "r3cQnsYs", "policyVersionId": "17oaCc7e"}, {"isAccepted": true, "localizedPolicyVersionId": "3J5lLOBl", "policyId": "EOIimD8j", "policyVersionId": "b2GS3WrT"}, {"isAccepted": true, "localizedPolicyVersionId": "SioJ6caa", "policyId": "4dJ2zqEH", "policyVersionId": "gLc3eCf3"}], "authType": "EMAILPASSWD", "country": "6e4J4ZFq", "dateOfBirth": "RtxrXRJh", "displayName": "fjPPCbwa", "emailAddress": "a5E1bQFC", "password": "QKn50WSF", "passwordMD5Sum": "Vb6xuekN", "uniqueDisplayName": "ylG8xXl7", "username": "F4axIUtS", "verified": true}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 406 'PublicCreateTestUserV4' test.out
 
 #- 407 PublicCreateUserV4
 $PYTHON -m $MODULE 'iam-public-create-user-v4' \
-    '{"acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "pJqEg4UG", "policyId": "YNBg39nd", "policyVersionId": "SKNNpvWT"}, {"isAccepted": true, "localizedPolicyVersionId": "jeaWNgb2", "policyId": "Nsos3AE1", "policyVersionId": "aiFxdjwJ"}, {"isAccepted": true, "localizedPolicyVersionId": "tyrxhFpk", "policyId": "nUmQhJrs", "policyVersionId": "MgjjD99r"}], "authType": "EMAILPASSWD", "code": "qYARqzvL", "country": "HkVFR179", "dateOfBirth": "QBT7pNwv", "displayName": "emaxPbU6", "emailAddress": "GXAtGld2", "password": "aEVYa0zS", "passwordMD5Sum": "p6pSgw0r", "reachMinimumAge": false, "uniqueDisplayName": "CZhB0hMm", "username": "dUhEWJPy"}' \
+    '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "OhhxMO7R", "policyId": "RTrxTBg5", "policyVersionId": "VzUpmi1X"}, {"isAccepted": false, "localizedPolicyVersionId": "8vSaFawp", "policyId": "GLSHJYhP", "policyVersionId": "VmSID1nG"}, {"isAccepted": false, "localizedPolicyVersionId": "8O49gExo", "policyId": "4vgYxhCi", "policyVersionId": "cmVSzw9m"}], "authType": "EMAILPASSWD", "code": "dq6waQn8", "country": "VzBURrdW", "dateOfBirth": "W8lBBoVi", "displayName": "cEQHVsz7", "emailAddress": "LhXVcpOH", "password": "8FNw8Wb9", "passwordMD5Sum": "tcUBZvRG", "reachMinimumAge": true, "uniqueDisplayName": "7ZCqyBIx", "username": "Zfc9NDfI"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 407 'PublicCreateUserV4' test.out
 
 #- 408 CreateUserFromInvitationV4
 $PYTHON -m $MODULE 'iam-create-user-from-invitation-v4' \
-    '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "3QTYLS8g", "policyId": "b9P1Y1aC", "policyVersionId": "2fDr9hpj"}, {"isAccepted": false, "localizedPolicyVersionId": "0gxxKKPY", "policyId": "g7xQeIzy", "policyVersionId": "ds4gAiun"}, {"isAccepted": true, "localizedPolicyVersionId": "dKqROpl9", "policyId": "97EsZkEh", "policyVersionId": "1JBz6KdS"}], "authType": "EMAILPASSWD", "code": "QltEtudr", "country": "qZVVtzcN", "dateOfBirth": "nL1uo7vY", "displayName": "6ulY1xSQ", "emailAddress": "E8bhmlMt", "password": "sL6xEndL", "passwordMD5Sum": "qK7HoeSH", "reachMinimumAge": false, "uniqueDisplayName": "xPiPWbye", "username": "VXhdfunt"}' \
-    '8YF0ztz9' \
+    '{"acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "U72EEDcS", "policyId": "5JUZIWxJ", "policyVersionId": "qQUUSBNY"}, {"isAccepted": false, "localizedPolicyVersionId": "t2HWxRA0", "policyId": "wnFFEmwm", "policyVersionId": "h0g1NseO"}, {"isAccepted": true, "localizedPolicyVersionId": "TePJ41jY", "policyId": "MorbDeEW", "policyVersionId": "wSHLHSTt"}], "authType": "EMAILPASSWD", "code": "o0NugoPV", "country": "2uR4phy6", "dateOfBirth": "CUwT8cAV", "displayName": "bploX8gL", "emailAddress": "p9VNllQ8", "password": "fnholJ72", "passwordMD5Sum": "QXqwgYl5", "reachMinimumAge": true, "uniqueDisplayName": "6TjdqpZ3", "username": "kf9oiWmE"}' \
+    'PMqvPr1B' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 408 'CreateUserFromInvitationV4' test.out
 
 #- 409 PublicUpdateUserV4
 $PYTHON -m $MODULE 'iam-public-update-user-v4' \
-    '{"avatarUrl": "6sc6CDb9", "country": "41fhB2mh", "dateOfBirth": "mf8C7Phb", "displayName": "Ulqg0F1A", "languageTag": "o6nkWoic", "uniqueDisplayName": "hoYW51it", "userName": "ilYDSQ0j"}' \
+    '{"avatarUrl": "986OnRjW", "country": "MnxH7RVa", "dateOfBirth": "Ex6M7s9Z", "displayName": "ygcQvFNn", "languageTag": "466IRV7s", "uniqueDisplayName": "dDmOqm7N", "userName": "gQh9JYcx"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 409 'PublicUpdateUserV4' test.out
 
 #- 410 PublicUpdateUserEmailAddressV4
 $PYTHON -m $MODULE 'iam-public-update-user-email-address-v4' \
-    '{"code": "GCvXlGnr", "emailAddress": "84AWFYLY"}' \
+    '{"code": "IFULRoga", "emailAddress": "fE51uicB"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 410 'PublicUpdateUserEmailAddressV4' test.out
 
 #- 411 PublicUpgradeHeadlessAccountWithVerificationCodeV4
 $PYTHON -m $MODULE 'iam-public-upgrade-headless-account-with-verification-code-v4' \
-    '{"code": "vwVrOhvx", "country": "2FUL9pNS", "dateOfBirth": "tu7F1oUh", "displayName": "I0GWnMTx", "emailAddress": "p1XyMgxK", "password": "mGVYOV1V", "reachMinimumAge": true, "uniqueDisplayName": "k15gegie", "username": "sGR11oY6", "validateOnly": false}' \
+    '{"code": "zxPrREgW", "country": "WTpfOg5l", "dateOfBirth": "YFSiwZ38", "displayName": "MXt6JAbO", "emailAddress": "wr61cYD3", "password": "UW9dNNe1", "reachMinimumAge": true, "uniqueDisplayName": "tvocQXvA", "username": "kXnuNYpn", "validateOnly": false}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 411 'PublicUpgradeHeadlessAccountWithVerificationCodeV4' test.out
 
 #- 412 PublicUpgradeHeadlessAccountV4
 $PYTHON -m $MODULE 'iam-public-upgrade-headless-account-v4' \
-    '{"dateOfBirth": "FpjkywLz", "displayName": "qhhuhs4D", "emailAddress": "OOSZbnyj", "password": "C1mIbZ4L", "uniqueDisplayName": "pVfbxu2e", "username": "ugtqC4uI"}' \
+    '{"dateOfBirth": "pOjA1fS5", "displayName": "lrq0NhXv", "emailAddress": "i8BmQHsO", "password": "2HYZQefF", "uniqueDisplayName": "mbkRMmeS", "username": "yePeKbZK"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 412 'PublicUpgradeHeadlessAccountV4' test.out
 
 #- 413 PublicDisableMyAuthenticatorV4
 $PYTHON -m $MODULE 'iam-public-disable-my-authenticator-v4' \
-    '{"factor": "oiDBqqSn", "mfaToken": "BGaZgidf"}' \
+    '{"factor": "6zjZQLSM", "mfaToken": "DdNmQj9P"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 413 'PublicDisableMyAuthenticatorV4' test.out
 
 #- 414 PublicEnableMyAuthenticatorV4
 $PYTHON -m $MODULE 'iam-public-enable-my-authenticator-v4' \
-    'xE9rUL9K' \
+    'ugufOkKW' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 414 'PublicEnableMyAuthenticatorV4' test.out
@@ -2861,7 +2861,7 @@ eval_tap 0 417 'PublicGenerateMyBackupCodesV4 # SKIP deprecated' test.out
 
 #- 418 PublicDisableMyBackupCodesV4
 $PYTHON -m $MODULE 'iam-public-disable-my-backup-codes-v4' \
-    '{"factor": "1qBQofqy", "mfaToken": "ZNp51SgK"}' \
+    '{"factor": "GY63VE11", "mfaToken": "EQbFbEHw"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 418 'PublicDisableMyBackupCodesV4' test.out
@@ -2910,14 +2910,14 @@ eval_tap $? 426 'PublicSendMyMFAEmailCodeV4' test.out
 
 #- 427 PublicDisableMyEmailV4
 $PYTHON -m $MODULE 'iam-public-disable-my-email-v4' \
-    '{"factor": "ZWpULAyU", "mfaToken": "NU2PAbbm"}' \
+    '{"factor": "O6wPkNZL", "mfaToken": "QI7dNDeq"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 427 'PublicDisableMyEmailV4' test.out
 
 #- 428 PublicEnableMyEmailV4
 $PYTHON -m $MODULE 'iam-public-enable-my-email-v4' \
-    'hPVBiaDP' \
+    '9Snyk6Ra' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 428 'PublicEnableMyEmailV4' test.out
@@ -2930,7 +2930,7 @@ eval_tap $? 429 'PublicGetMyEnabledFactorsV4' test.out
 
 #- 430 PublicMakeFactorMyDefaultV4
 $PYTHON -m $MODULE 'iam-public-make-factor-my-default-v4' \
-    'XVhLurLy' \
+    'CtQM5ui0' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 430 'PublicMakeFactorMyDefaultV4' test.out
@@ -2946,21 +2946,21 @@ eval_tap 0 432 'PublicGetMyMFAStatusV4 # SKIP deprecated' test.out
 
 #- 433 PublicGetUserPublicInfoByUserIdV4
 $PYTHON -m $MODULE 'iam-public-get-user-public-info-by-user-id-v4' \
-    'hFihc87Z' \
+    'vUz5VqRT' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 433 'PublicGetUserPublicInfoByUserIdV4' test.out
 
 #- 434 PublicInviteUserV4
 $PYTHON -m $MODULE 'iam-public-invite-user-v4' \
-    '{"additionalData": "u3p70LmD", "emailAddress": "Q4c4SeLZ", "languageTag": "JaPsCwTY", "namespace": "HP4iL9rS", "namespaceDisplayName": "9Dq4q2Au"}' \
+    '{"additionalData": "96UYrc6i", "emailAddress": "DMcCAqdL", "languageTag": "D2ZgUJjD", "namespace": "6srEJAIP", "namespaceDisplayName": "P126SWQC"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 434 'PublicInviteUserV4' test.out
 
 #- 435 PublicUpgradeHeadlessWithCodeV4Forward
 $PYTHON -m $MODULE 'iam-public-upgrade-headless-with-code-v4-forward' \
-    '{"acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "swvaZhpM", "policyId": "EBkzdsWn", "policyVersionId": "82jHrmT2"}, {"isAccepted": false, "localizedPolicyVersionId": "P1DJix1E", "policyId": "wk0PQzPC", "policyVersionId": "klOfadJq"}, {"isAccepted": false, "localizedPolicyVersionId": "xzBQwZeQ", "policyId": "oc4znNFK", "policyVersionId": "eUNY5E9D"}], "code": "ObsVfYdg", "country": "QDtb0xXR", "dateOfBirth": "CnJdqFTM", "displayName": "rfQmwCHr", "emailAddress": "WO25cx8v", "password": "ijyAbyUi", "reachMinimumAge": true, "uniqueDisplayName": "XmJXxMti", "username": "mDAnPMEy", "validateOnly": false}' \
+    '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "xiLiRVgy", "policyId": "YtTMhF1H", "policyVersionId": "NGp2nuOd"}, {"isAccepted": true, "localizedPolicyVersionId": "1c6XwF5c", "policyId": "O7nC1eMe", "policyVersionId": "iWfwfUnq"}, {"isAccepted": false, "localizedPolicyVersionId": "1CgJSIaK", "policyId": "ow0PjcmR", "policyVersionId": "ZVx1gt02"}], "code": "GmgnxyYe", "country": "fUlCelcl", "dateOfBirth": "e99LF4Jn", "displayName": "jIJ7pWvw", "emailAddress": "Sd1PO1WJ", "password": "mENYPU55", "reachMinimumAge": false, "uniqueDisplayName": "eOawSfKU", "username": "G8E1pFPO", "validateOnly": false}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 435 'PublicUpgradeHeadlessWithCodeV4Forward' test.out
