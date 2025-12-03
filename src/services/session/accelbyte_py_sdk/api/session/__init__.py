@@ -222,6 +222,8 @@ from .wrappers import admin_read_user_session_storage
 from .wrappers import admin_read_user_session_storage_async
 from .wrappers import public_read_party_session_storage
 from .wrappers import public_read_party_session_storage_async
+from .wrappers import public_update_insert_party_session_storage
+from .wrappers import public_update_insert_party_session_storage_async
 from .wrappers import public_update_insert_party_session_storage_reserved
 from .wrappers import public_update_insert_party_session_storage_reserved_async
 from .wrappers import public_update_insert_session_storage

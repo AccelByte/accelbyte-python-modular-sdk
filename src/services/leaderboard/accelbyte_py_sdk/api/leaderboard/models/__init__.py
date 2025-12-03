@@ -25,6 +25,9 @@ from .models_delete_bulk_leaderboard_failed_resp import (
 )
 from .models_delete_bulk_leaderboards_req import ModelsDeleteBulkLeaderboardsReq
 from .models_delete_bulk_leaderboards_resp import ModelsDeleteBulkLeaderboardsResp
+from .models_delete_bulk_leaderboard_success_resp import (
+    ModelsDeleteBulkLeaderboardSuccessResp,
+)
 from .models_get_all_leaderboard_configs_public_resp import (
     ModelsGetAllLeaderboardConfigsPublicResp,
 )

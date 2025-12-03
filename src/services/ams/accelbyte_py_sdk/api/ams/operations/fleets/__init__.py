@@ -13,6 +13,7 @@ __email__ = "dev@accelbyte.net"
 
 # pylint: disable=line-too-long
 
+from .bulk_fleet_delete import BulkFleetDelete
 from .fleet_claim_by_id import FleetClaimByID
 from .fleet_claim_by_keys import FleetClaimByKeys
 from .fleet_create import FleetCreate

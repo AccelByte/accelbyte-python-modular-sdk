@@ -49,6 +49,17 @@ from ._app_v2 import update_app_resources_v2_async
 from ._app_v2 import update_app_v2
 from ._app_v2 import update_app_v2_async
 
+from ._async_messaging import create_subscription_handler
+from ._async_messaging import create_subscription_handler_async
+from ._async_messaging import create_topic_handler
+from ._async_messaging import create_topic_handler_async
+from ._async_messaging import delete_topic_handler
+from ._async_messaging import delete_topic_handler_async
+from ._async_messaging import list_topics_handler
+from ._async_messaging import list_topics_handler_async
+from ._async_messaging import unsubscribe_topic_handler
+from ._async_messaging import unsubscribe_topic_handler_async
+
 from ._configuration import delete_secret_v1
 from ._configuration import delete_secret_v1_async
 from ._configuration import delete_variable_v1
@@ -127,6 +138,10 @@ from ._managed_resources import get_no_sql_cluster_v2
 from ._managed_resources import get_no_sql_cluster_v2_async
 from ._managed_resources import get_no_sql_database_v2
 from ._managed_resources import get_no_sql_database_v2_async
+from ._managed_resources import start_no_sql_cluster_v2
+from ._managed_resources import start_no_sql_cluster_v2_async
+from ._managed_resources import stop_no_sql_cluster_v2
+from ._managed_resources import stop_no_sql_cluster_v2_async
 from ._managed_resources import update_no_sql_cluster_v2
 from ._managed_resources import update_no_sql_cluster_v2_async
 

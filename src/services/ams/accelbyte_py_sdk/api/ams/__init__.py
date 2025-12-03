@@ -80,6 +80,8 @@ from .wrappers import portal_health_check
 from .wrappers import portal_health_check_async
 
 # fleets
+from .wrappers import bulk_fleet_delete
+from .wrappers import bulk_fleet_delete_async
 from .wrappers import fleet_claim_by_id
 from .wrappers import fleet_claim_by_id_async
 from .wrappers import fleet_claim_by_keys

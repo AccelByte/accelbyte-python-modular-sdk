@@ -18,6 +18,7 @@ from .admin_read_party_sessio_bd0f12 import AdminReadPartySessionStorage
 from .admin_read_session_storage import AdminReadSessionStorage
 from .admin_read_user_session_f101bc import AdminReadUserSessionStorage
 from .public_read_party_sessi_aa590f import PublicReadPartySessionStorage
+from .public_update_insert_pa_71696c import PublicUpdateInsertPartySessionStorage
 from .public_update_insert_pa_fe85ff import (
     PublicUpdateInsertPartySessionStorageReserved,
 )

@@ -30,7 +30,7 @@ if [ "$BATCH" = true ] ; then
 
 $PYTHON -m $MODULE 'start-interactive-session' --continue_on_error '--writer=tap' << END
 loginqueue-admin-get-configuration --login_with_auth "Bearer foo"
-loginqueue-admin-update-configuration '{"enabled": false, "maxConcurrency": 32, "maxLoginRate": 78, "minActivationPeriodInSecond": 36, "playerPollingTimeInSecond": 73, "playerReconnectGracePeriodInSecond": 41, "queueReconnectGracePeriodInSecond": 16, "safetyMarginPercentage": 39}' --login_with_auth "Bearer foo"
+loginqueue-admin-update-configuration '{"enabled": true, "maxConcurrency": 54, "maxLoginRate": 45, "minActivationPeriodInSecond": 14, "playerPollingTimeInSecond": 34, "playerReconnectGracePeriodInSecond": 76, "queueReconnectGracePeriodInSecond": 37, "safetyMarginPercentage": 12}' --login_with_auth "Bearer foo"
 loginqueue-admin-get-status --login_with_auth "Bearer foo"
 loginqueue-refresh-ticket --login_with_auth "Bearer foo"
 loginqueue-cancel-ticket --login_with_auth "Bearer foo"
@@ -70,7 +70,7 @@ eval_tap $? 2 'AdminGetConfiguration' test.out
 
 #- 3 AdminUpdateConfiguration
 $PYTHON -m $MODULE 'loginqueue-admin-update-configuration' \
-    '{"enabled": false, "maxConcurrency": 19, "maxLoginRate": 55, "minActivationPeriodInSecond": 69, "playerPollingTimeInSecond": 33, "playerReconnectGracePeriodInSecond": 96, "queueReconnectGracePeriodInSecond": 100, "safetyMarginPercentage": 71}' \
+    '{"enabled": false, "maxConcurrency": 40, "maxLoginRate": 44, "minActivationPeriodInSecond": 28, "playerPollingTimeInSecond": 96, "playerReconnectGracePeriodInSecond": 2, "queueReconnectGracePeriodInSecond": 8, "safetyMarginPercentage": 58}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 3 'AdminUpdateConfiguration' test.out
