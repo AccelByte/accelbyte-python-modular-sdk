@@ -24,3 +24,7 @@ from .admin_sync_platform_cre_f4389d import (
     PlatformIdEnum as AdminSyncPlatformCredentialsPlatformIdEnum,
 )
 from .admin_update_platform_c_5be87f import AdminUpdatePlatformCredentials
+from .admin_upload_platform_c_50325d import AdminUploadPlatformCredentials
+from .admin_upload_platform_c_50325d import (
+    PlatformIdEnum as AdminUploadPlatformCredentialsPlatformIdEnum,
+)

@@ -144,6 +144,8 @@ from .wrappers import delete_no_sql_database_v2
 from .wrappers import delete_no_sql_database_v2_async
 from .wrappers import get_no_sql_access_tunnel_v2
 from .wrappers import get_no_sql_access_tunnel_v2_async
+from .wrappers import get_no_sql_app_list_v2
+from .wrappers import get_no_sql_app_list_v2_async
 from .wrappers import get_no_sql_cluster_v2
 from .wrappers import get_no_sql_cluster_v2_async
 from .wrappers import get_no_sql_database_v2

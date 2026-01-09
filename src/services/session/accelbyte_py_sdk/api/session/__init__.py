@@ -186,6 +186,8 @@ from .wrappers import admin_sync_platform_credentials
 from .wrappers import admin_sync_platform_credentials_async
 from .wrappers import admin_update_platform_credentials
 from .wrappers import admin_update_platform_credentials_async
+from .wrappers import admin_upload_platform_credentials
+from .wrappers import admin_upload_platform_credentials_async
 
 # player
 from .wrappers import admin_get_player_attributes

@@ -29,57 +29,58 @@ touch "tmp.dat"
 if [ "$BATCH" = true ] ; then
 
 $PYTHON -m $MODULE 'start-interactive-session' --continue_on_error '--writer=tap' << END
-csm-get-app-release-v1 'GUeNxBPh' --login_with_auth "Bearer foo"
+csm-get-app-release-v1 'wVNsi9tW' --login_with_auth "Bearer foo"
 csm-public-get-messages --login_with_auth "Bearer foo"
-csm-get-app-list-v2 '{"appNames": ["BIzT3vjG", "qmIFwJ9k", "O4gJj7kt"], "appStatuses": ["3OjW7faT", "pkuZm4Xn", "fM0OpY6a"], "fuzzyAppName": "PyrkB3Jj", "scenario": "kNGKKyIj"}' --login_with_auth "Bearer foo"
-csm-get-app-v2 'bgqbuFvY' --login_with_auth "Bearer foo"
-csm-create-app-v2 '{"autoscaling": {"targetCPUUtilizationPercent": 95}, "cpu": {"requestCPU": 60}, "description": "sCQnynMD", "memory": {"requestMemory": 45}, "replica": {"maxReplica": 6, "minReplica": 92}, "scenario": "JkTYwD3c", "vmSharingConfiguration": "lzY5j6k5"}' 'nEOO0i24' --login_with_auth "Bearer foo"
-csm-delete-app-v2 'rnyjsWVZ' --login_with_auth "Bearer foo"
-csm-update-app-v2 '{"description": "BbDguAAd"}' 'uzt6zXFf' --login_with_auth "Bearer foo"
-csm-create-subscription-handler '{"topicNames": ["vBmfiLzX", "Id63G0SH", "rhpCwEmh"]}' '5jmuT6on' --login_with_auth "Bearer foo"
-csm-unsubscribe-topic-handler 'o8K7svYV' 'nKnR2yLS' --login_with_auth "Bearer foo"
-csm-create-deployment-v2 '{"imageTag": "Qqn9X83p"}' 'nYwnF0Ik' --login_with_auth "Bearer foo"
-csm-get-app-image-list-v2 'Yt9ptWPX' --login_with_auth "Bearer foo"
-csm-delete-app-images-v2 '{"imageTags": ["ps2g2v75", "yGoyFNn4", "kauq4ku9"]}' 'H1rvzu0z' --login_with_auth "Bearer foo"
-csm-create-no-sql-database-credential-v2 '{"password": "pROKnf7G", "username": "2ZBJvtdh"}' 'A4KqLSms' --login_with_auth "Bearer foo"
-csm-get-no-sql-database-v2 'nawkhrKl' --login_with_auth "Bearer foo"
-csm-create-no-sql-database-v2 '{"dbName": "FC3QBoX4", "password": "DdNpKitI", "username": "HokYxUcQ"}' 'KN1p2ddZ' --login_with_auth "Bearer foo"
-csm-delete-no-sql-database-v2 'atqmhZI0' --login_with_auth "Bearer foo"
-csm-update-app-resources-v2 '{"autoscaling": {"targetCPUUtilizationPercent": 88}, "cpu": {"requestCPU": 26}, "memory": {"requestMemory": 32}, "replica": {"maxReplica": 16, "minReplica": 24}, "vmSharingConfiguration": "B4E1Fe41"}' 'w4kcDg0U' --login_with_auth "Bearer foo"
-csm-update-app-resources-resource-limit-form-v2 '{"clientEmail": "OKwgdj9M", "preferredLimitReplica": 15, "requestReason": "daccblQh"}' 'wXAZez5n' --login_with_auth "Bearer foo"
-csm-get-list-of-secrets-v2 'ufxmGGjw' --login_with_auth "Bearer foo"
-csm-save-secret-v2 '{"configName": "rY4Ec8Pm", "description": "h7R6js48", "source": "BL0tlsSU", "value": "nJSdhPjW"}' '6iguxlEO' --login_with_auth "Bearer foo"
-csm-update-secret-v2 '{"description": "IIfTKmVD", "value": "Lo5yK54U"}' 'Yf9qX6by' 'u6Y0svKS' --login_with_auth "Bearer foo"
-csm-delete-secret-v2 'WKHu44CW' 'Or1D8iPC' --login_with_auth "Bearer foo"
-csm-start-app-v2 '8pT2mre5' --login_with_auth "Bearer foo"
-csm-stop-app-v2 'WOulf6xz' --login_with_auth "Bearer foo"
-csm-get-notification-subscriber-list-v2 'lYDTJ5XA' 'CSc5aKWF' --login_with_auth "Bearer foo"
-csm-bulk-save-subscription-app-notification-v2 '{"subscribers": [{"emailAddress": "9OZGFgF9", "notificationType": {"h13xXHXr": false, "iNvchuwz": false, "OrKybJFB": false}, "userId": "I4lQjaD9"}, {"emailAddress": "f4yFWZKs", "notificationType": {"4CXtUVC3": true, "TXdYNNrh": false, "qbUTdGbV": true}, "userId": "xwjVhHeI"}, {"emailAddress": "wKO57iWd", "notificationType": {"xxk0ezN6": true, "2hRWdCde": true, "CYV3Gi3H": false}, "userId": "cNnhKPgg"}]}' 's8gjTPRw' --login_with_auth "Bearer foo"
-csm-subscribe-app-notification-v2 '{"notificationType": "F89myShN", "subscribers": [{"emailAddress": "LT8rc5tP", "userId": "wCEXDAF5"}, {"emailAddress": "5yl9kr2h", "userId": "ghXe500q"}, {"emailAddress": "HtiC785P", "userId": "DwHFJwU2"}]}' 'WdUAIXVu' --login_with_auth "Bearer foo"
-csm-get-subscription-v2-handler 'PjTYWPzk' --login_with_auth "Bearer foo"
-csm-subscribe-v2-handler '{"notificationType": "veRQFg7j"}' '29ob16J2' --login_with_auth "Bearer foo"
-csm-unsubscribe-v2-handler 'Yl5frOyv' --login_with_auth "Bearer foo"
-csm-delete-subscription-app-notification-by-user-idv2 'krCOlBeW' 'Eytpmz8x' --login_with_auth "Bearer foo"
-csm-get-list-of-variables-v2 '4d1qQvqQ' --login_with_auth "Bearer foo"
-csm-save-variable-v2 '{"applyMask": false, "configName": "m7CYQmIO", "description": "rBAOBDs8", "source": "wDqcQ5dd", "value": "TALU9NGi"}' 'v7d0GskP' --login_with_auth "Bearer foo"
-csm-update-variable-v2 '{"applyMask": false, "description": "WQceFSaE", "value": "cg1sjJAf"}' 'rmXlcV0u' 'C1yxXwpU' --login_with_auth "Bearer foo"
-csm-delete-variable-v2 'v9AsfREK' 'IZLrnTyS' --login_with_auth "Bearer foo"
+csm-get-app-list-v2 '{"appNames": ["tmJMPOGn", "AndUZG6i", "OSyuQtVc"], "appStatuses": ["RG6ypmNR", "beikuY0S", "ixBK11VI"], "fuzzyAppName": "dvunHUPk", "scenario": "QUp3qusr"}' --login_with_auth "Bearer foo"
+csm-get-app-v2 'wkDm7Pek' --login_with_auth "Bearer foo"
+csm-create-app-v2 '{"autoscaling": {"targetCPUUtilizationPercent": 82}, "cpu": {"requestCPU": 53}, "description": "FkKnTtQW", "memory": {"requestMemory": 63}, "replica": {"maxReplica": 2, "minReplica": 98}, "scenario": "Bt6Fm9BU", "vmSharingConfiguration": "6QWwhBCv"}' 'GFlpQCZp' --login_with_auth "Bearer foo"
+csm-delete-app-v2 '1xBJmXMZ' --login_with_auth "Bearer foo"
+csm-update-app-v2 '{"description": "Yp5RjcTk"}' 'kkdwTiQQ' --login_with_auth "Bearer foo"
+csm-create-subscription-handler '{"topicNames": ["JgB37ODP", "U26R8xd5", "AmvVbAai"]}' 'cwfP0jJ5' --login_with_auth "Bearer foo"
+csm-unsubscribe-topic-handler 'wkvcZ3ue' '3lvkfeOe' --login_with_auth "Bearer foo"
+csm-create-deployment-v2 '{"imageTag": "bpBjErKo"}' 'A7zH3AUl' --login_with_auth "Bearer foo"
+csm-get-app-image-list-v2 'xcAynTF1' --login_with_auth "Bearer foo"
+csm-delete-app-images-v2 '{"imageTags": ["wWSywoDB", "l2wiBcZL", "6eTsUoeD"]}' 'OxGt9ZUA' --login_with_auth "Bearer foo"
+csm-create-no-sql-database-credential-v2 '{"password": "GlOH2hvA", "username": "XDsDmnSO"}' 'O05cJY4U' --login_with_auth "Bearer foo"
+csm-get-no-sql-database-v2 'QCrqtRK9' --login_with_auth "Bearer foo"
+csm-create-no-sql-database-v2 '{"dbName": "4srfhu48", "password": "cawKdLs6", "username": "lGY5n8ya"}' 'kxeRUupl' --login_with_auth "Bearer foo"
+csm-delete-no-sql-database-v2 'Xiuk7zZg' --login_with_auth "Bearer foo"
+csm-update-app-resources-v2 '{"autoscaling": {"targetCPUUtilizationPercent": 71}, "cpu": {"requestCPU": 100}, "memory": {"requestMemory": 98}, "replica": {"maxReplica": 56, "minReplica": 27}, "vmSharingConfiguration": "pgtPhOjK"}' 'jqxQ9Xvc' --login_with_auth "Bearer foo"
+csm-update-app-resources-resource-limit-form-v2 '{"clientEmail": "sdmPs91W", "preferredLimitReplica": 63, "requestReason": "Sj6GBkfo"}' '00C5bgHk' --login_with_auth "Bearer foo"
+csm-get-list-of-secrets-v2 'SM8AGDjs' --login_with_auth "Bearer foo"
+csm-save-secret-v2 '{"configName": "44idGFBM", "description": "Wm9Girdh", "source": "uwQRKGN4", "value": "7PghsdgK"}' 'GdrUe7YP' --login_with_auth "Bearer foo"
+csm-update-secret-v2 '{"description": "uZFNx6dJ", "value": "pbDiojvB"}' 'AdkySjDn' 'rDm8oU2y' --login_with_auth "Bearer foo"
+csm-delete-secret-v2 'BDzzrrjw' '3pieVyIO' --login_with_auth "Bearer foo"
+csm-start-app-v2 'OoENY4Q1' --login_with_auth "Bearer foo"
+csm-stop-app-v2 '3dG0geam' --login_with_auth "Bearer foo"
+csm-get-notification-subscriber-list-v2 '7RnSn6R4' 'vY38QYzW' --login_with_auth "Bearer foo"
+csm-bulk-save-subscription-app-notification-v2 '{"subscribers": [{"emailAddress": "AlaO5TSk", "notificationType": {"0TVaTkzY": false, "6CiOFhyw": false, "OUJ66t75": false}, "userId": "btp0AuRi"}, {"emailAddress": "6vjlgr9g", "notificationType": {"LuxdrNFA": false, "fGaFEZ3g": false, "IufMWgl0": true}, "userId": "MyhIKugC"}, {"emailAddress": "nB8LDtVo", "notificationType": {"Tgn4oo3V": true, "jv6lp9gJ": false, "CUg1i81I": true}, "userId": "vn3hFyn4"}]}' 'cAThbuGW' --login_with_auth "Bearer foo"
+csm-subscribe-app-notification-v2 '{"notificationType": "W7TbkjxU", "subscribers": [{"emailAddress": "UxbSCWQo", "userId": "VCkSpaPn"}, {"emailAddress": "mqhCnlt1", "userId": "rZ2lWPdi"}, {"emailAddress": "r4Tg5Cst", "userId": "FN3OG5t1"}]}' '4Xifd1pD' --login_with_auth "Bearer foo"
+csm-get-subscription-v2-handler 'cS0PL0EW' --login_with_auth "Bearer foo"
+csm-subscribe-v2-handler '{"notificationType": "YolvAXfN"}' 'YbmVikIr' --login_with_auth "Bearer foo"
+csm-unsubscribe-v2-handler 'Xh8IGHU5' --login_with_auth "Bearer foo"
+csm-delete-subscription-app-notification-by-user-idv2 'R1n4Vn6N' 'xv6I5yEs' --login_with_auth "Bearer foo"
+csm-get-list-of-variables-v2 'WRwERgNm' --login_with_auth "Bearer foo"
+csm-save-variable-v2 '{"applyMask": false, "configName": "taFdM3HM", "description": "ZwGvNvzN", "source": "cgLKiLoa", "value": "sxKXGJwB"}' 'J2hucvNh' --login_with_auth "Bearer foo"
+csm-update-variable-v2 '{"applyMask": true, "description": "mAgqcAmL", "value": "3ypXRehW"}' 'zaYPp4H9' 'PUi9jbxU' --login_with_auth "Bearer foo"
+csm-delete-variable-v2 'G8XYwjnt' '55Kxr4CD' --login_with_auth "Bearer foo"
 csm-list-topics-handler --login_with_auth "Bearer foo"
-csm-create-topic-handler '{"description": "gGrqEutc", "topicName": "M8ET3P13"}' --login_with_auth "Bearer foo"
-csm-delete-topic-handler 'FIkygp8O' --login_with_auth "Bearer foo"
-csm-get-list-of-deployment-v2 '{"appIds": ["lfw8mJOx", "tHcYNeN6", "JT5lKine"], "deploymentIds": ["GPzQScod", "VloIxQ3E", "9tMmhy1v"], "statuses": ["Gm6D3IZL", "EPH7Br2k", "u2uhFQOt"]}' --login_with_auth "Bearer foo"
-csm-get-deployment-v2 'vSyI6Ugu' --login_with_auth "Bearer foo"
-csm-delete-deployment-v2 '0gQqtbHM' --login_with_auth "Bearer foo"
+csm-create-topic-handler '{"description": "LwkSDNKf", "topicName": "MbjKKY7r"}' --login_with_auth "Bearer foo"
+csm-delete-topic-handler 'yCsVQtE7' --login_with_auth "Bearer foo"
+csm-get-list-of-deployment-v2 '{"appIds": ["FHn2krnm", "u80HBEvW", "lFvDmzMH"], "deploymentIds": ["JeUihshU", "2XtcdVdI", "vDYCAQxg"], "statuses": ["jsnNxwUz", "MBOFEkpp", "HNfoOOT8"]}' --login_with_auth "Bearer foo"
+csm-get-deployment-v2 'iCAdQzi7' --login_with_auth "Bearer foo"
+csm-delete-deployment-v2 'H8LMqena' --login_with_auth "Bearer foo"
 csm-get-no-sql-cluster-v2 --login_with_auth "Bearer foo"
-csm-update-no-sql-cluster-v2 '{"maxDCU": 0.48246159707331104, "minDCU": 0.5315815940101304, "profileName": "Efhw4cpz"}' --login_with_auth "Bearer foo"
-csm-create-no-sql-cluster-v2 '{"maxDCU": 0.6811461001656057, "minDCU": 0.7544270642951427, "profileName": "M8u41jss"}' --login_with_auth "Bearer foo"
+csm-update-no-sql-cluster-v2 '{"maxDCU": 0.8139922195731369, "minDCU": 0.5074221571021159, "profileName": "wxvtx0dG"}' --login_with_auth "Bearer foo"
+csm-create-no-sql-cluster-v2 '{"maxDCU": 0.8947270939672124, "minDCU": 0.8421936642464356, "profileName": "FHYGDvq1"}' --login_with_auth "Bearer foo"
 csm-delete-no-sql-cluster-v2 --login_with_auth "Bearer foo"
 csm-start-no-sql-cluster-v2 --login_with_auth "Bearer foo"
 csm-stop-no-sql-cluster-v2 --login_with_auth "Bearer foo"
 csm-get-no-sql-access-tunnel-v2 --login_with_auth "Bearer foo"
 csm-get-resources-limits --login_with_auth "Bearer foo"
-csm-get-notification-subscriber-list-v3 'YgzVBd4R' 'vuV2ZmFd' --login_with_auth "Bearer foo"
-csm-delete-subscription-app-notification-v3 'jrm3DetO' --login_with_auth "Bearer foo"
+csm-get-no-sql-app-list-v2 'T2gVwBsy' 'BZ7M869a' --login_with_auth "Bearer foo"
+csm-get-notification-subscriber-list-v3 'W3cRK51m' '108dNGDm' --login_with_auth "Bearer foo"
+csm-delete-subscription-app-notification-v3 'bXJebJSz' --login_with_auth "Bearer foo"
 exit()
 END
 
@@ -99,7 +100,7 @@ eval_tap() {
 }
 
 echo "TAP version 13"
-echo "1..74"
+echo "1..75"
 
 #- 1 Login
 eval_tap 0 1 'Login # SKIP not tested' test.out
@@ -134,7 +135,7 @@ eval_tap 0 9 'DeleteAppImagesV1 # SKIP deprecated' test.out
 
 #- 10 GetAppReleaseV1
 $PYTHON -m $MODULE 'csm-get-app-release-v1' \
-    '4a8qDjLU' \
+    'uoZ5xmJe' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 10 'GetAppReleaseV1' test.out
@@ -186,222 +187,222 @@ eval_tap $? 24 'PublicGetMessages' test.out
 
 #- 25 GetAppListV2
 $PYTHON -m $MODULE 'csm-get-app-list-v2' \
-    '{"appNames": ["1Ai9DeXj", "LbydrBuC", "KWreoN0p"], "appStatuses": ["s5ekb7oI", "rZhmRAMT", "bw3UAxlj"], "fuzzyAppName": "4coVoI7g", "scenario": "x6oZ01G6"}' \
+    '{"appNames": ["2XD6fzPK", "jR2cGaC2", "vqcuTJ2I"], "appStatuses": ["AEA8nHZV", "CSPqNAVX", "0OQyeiei"], "fuzzyAppName": "PzxBGABY", "scenario": "DHXcDsBt"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 25 'GetAppListV2' test.out
 
 #- 26 GetAppV2
 $PYTHON -m $MODULE 'csm-get-app-v2' \
-    'lpPrndik' \
+    '38IOrFNB' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 26 'GetAppV2' test.out
 
 #- 27 CreateAppV2
 $PYTHON -m $MODULE 'csm-create-app-v2' \
-    '{"autoscaling": {"targetCPUUtilizationPercent": 12}, "cpu": {"requestCPU": 2}, "description": "dTdWrhEG", "memory": {"requestMemory": 92}, "replica": {"maxReplica": 89, "minReplica": 10}, "scenario": "LcfTUfnZ", "vmSharingConfiguration": "3XA9wAzg"}' \
-    'rjTU9BG3' \
+    '{"autoscaling": {"targetCPUUtilizationPercent": 96}, "cpu": {"requestCPU": 73}, "description": "XM5onZew", "memory": {"requestMemory": 24}, "replica": {"maxReplica": 18, "minReplica": 4}, "scenario": "K96feA5Y", "vmSharingConfiguration": "keoPUakH"}' \
+    'CxpKeO00' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 27 'CreateAppV2' test.out
 
 #- 28 DeleteAppV2
 $PYTHON -m $MODULE 'csm-delete-app-v2' \
-    '0ZKF8s7c' \
+    'Vyrz2Bkr' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 28 'DeleteAppV2' test.out
 
 #- 29 UpdateAppV2
 $PYTHON -m $MODULE 'csm-update-app-v2' \
-    '{"description": "GXrezINy"}' \
-    'WhnDckCM' \
+    '{"description": "grdGVGL1"}' \
+    'PRkpOs3A' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 29 'UpdateAppV2' test.out
 
 #- 30 CreateSubscriptionHandler
 $PYTHON -m $MODULE 'csm-create-subscription-handler' \
-    '{"topicNames": ["CXSbNAjj", "gGSqZMKx", "d1IMLo1P"]}' \
-    'uOnMSkCI' \
+    '{"topicNames": ["WLORU2Od", "qKu4dDCP", "LO091DOf"]}' \
+    'vkchaIXi' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 30 'CreateSubscriptionHandler' test.out
 
 #- 31 UnsubscribeTopicHandler
 $PYTHON -m $MODULE 'csm-unsubscribe-topic-handler' \
-    'tbD0mh3p' \
-    'zTj8cb5C' \
+    'dEfRwxNL' \
+    'yLkxh2dw' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 31 'UnsubscribeTopicHandler' test.out
 
 #- 32 CreateDeploymentV2
 $PYTHON -m $MODULE 'csm-create-deployment-v2' \
-    '{"imageTag": "fMiUGvfR"}' \
-    'rjzxGfOf' \
+    '{"imageTag": "qKD16kza"}' \
+    'a5T1xclP' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 32 'CreateDeploymentV2' test.out
 
 #- 33 GetAppImageListV2
 $PYTHON -m $MODULE 'csm-get-app-image-list-v2' \
-    'dTBhuKyo' \
+    'DkQ6NmKP' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 33 'GetAppImageListV2' test.out
 
 #- 34 DeleteAppImagesV2
 $PYTHON -m $MODULE 'csm-delete-app-images-v2' \
-    '{"imageTags": ["kcr56AaP", "97GdJ8A7", "jtqrPmu3"]}' \
-    'WxOl3mOw' \
+    '{"imageTags": ["SP5IiNkU", "u5ZHxkdu", "gCz9cPx7"]}' \
+    'io0EBD17' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 34 'DeleteAppImagesV2' test.out
 
 #- 35 CreateNoSQLDatabaseCredentialV2
 $PYTHON -m $MODULE 'csm-create-no-sql-database-credential-v2' \
-    '{"password": "2wZ1b3Ei", "username": "fCAUzwWE"}' \
-    'SbQd1XEr' \
+    '{"password": "sluuulJx", "username": "yk4nxXcS"}' \
+    'EVgSFeE9' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 35 'CreateNoSQLDatabaseCredentialV2' test.out
 
 #- 36 GetNoSQLDatabaseV2
 $PYTHON -m $MODULE 'csm-get-no-sql-database-v2' \
-    'MATae76j' \
+    'Z5QAIEqb' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 36 'GetNoSQLDatabaseV2' test.out
 
 #- 37 CreateNoSQLDatabaseV2
 $PYTHON -m $MODULE 'csm-create-no-sql-database-v2' \
-    '{"dbName": "a6YRyYL6", "password": "QZkDXZjI", "username": "q1f2SIUp"}' \
-    'mEvDqx5K' \
+    '{"dbName": "NVtTxcfj", "password": "AzV3psXw", "username": "3FzLUW0L"}' \
+    'DcYJNBZk' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 37 'CreateNoSQLDatabaseV2' test.out
 
 #- 38 DeleteNoSQLDatabaseV2
 $PYTHON -m $MODULE 'csm-delete-no-sql-database-v2' \
-    'Hid6G8be' \
+    'vGKcVmGD' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 38 'DeleteNoSQLDatabaseV2' test.out
 
 #- 39 UpdateAppResourcesV2
 $PYTHON -m $MODULE 'csm-update-app-resources-v2' \
-    '{"autoscaling": {"targetCPUUtilizationPercent": 75}, "cpu": {"requestCPU": 85}, "memory": {"requestMemory": 49}, "replica": {"maxReplica": 18, "minReplica": 53}, "vmSharingConfiguration": "5lUmgq2X"}' \
-    'cuBlIr6h' \
+    '{"autoscaling": {"targetCPUUtilizationPercent": 35}, "cpu": {"requestCPU": 10}, "memory": {"requestMemory": 68}, "replica": {"maxReplica": 73, "minReplica": 48}, "vmSharingConfiguration": "hXZOKKTF"}' \
+    'zUwZ5aaH' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 39 'UpdateAppResourcesV2' test.out
 
 #- 40 UpdateAppResourcesResourceLimitFormV2
 $PYTHON -m $MODULE 'csm-update-app-resources-resource-limit-form-v2' \
-    '{"clientEmail": "7DTtnlgk", "preferredLimitReplica": 41, "requestReason": "AYuHZ7wT"}' \
-    'qEomkghX' \
+    '{"clientEmail": "Fo5bJbp0", "preferredLimitReplica": 91, "requestReason": "AMSWde7v"}' \
+    'L7nbHPlR' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 40 'UpdateAppResourcesResourceLimitFormV2' test.out
 
 #- 41 GetListOfSecretsV2
 $PYTHON -m $MODULE 'csm-get-list-of-secrets-v2' \
-    'D54IPl3j' \
+    'xYKXpBxw' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 41 'GetListOfSecretsV2' test.out
 
 #- 42 SaveSecretV2
 $PYTHON -m $MODULE 'csm-save-secret-v2' \
-    '{"configName": "UjwIeVKh", "description": "TVf4aAWG", "source": "j1Mlr740", "value": "1YaYSI4Q"}' \
-    '6aBq5QFH' \
+    '{"configName": "dC1WxF3i", "description": "Um0Pg2IN", "source": "bptRQ9b7", "value": "67mqAqES"}' \
+    'n3zLb2fc' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 42 'SaveSecretV2' test.out
 
 #- 43 UpdateSecretV2
 $PYTHON -m $MODULE 'csm-update-secret-v2' \
-    '{"description": "4BYI5nrk", "value": "sTbJViyd"}' \
-    'ALD9Glln' \
-    'YkRuwsJY' \
+    '{"description": "gQ6rvs2F", "value": "D2ub450B"}' \
+    'cp4S5yDu' \
+    '9k1n1k21' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 43 'UpdateSecretV2' test.out
 
 #- 44 DeleteSecretV2
 $PYTHON -m $MODULE 'csm-delete-secret-v2' \
-    'YuIwDNrb' \
-    'c3r2iex0' \
+    '3kh3r9Xu' \
+    'siEO1qa4' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 44 'DeleteSecretV2' test.out
 
 #- 45 StartAppV2
 $PYTHON -m $MODULE 'csm-start-app-v2' \
-    'cOX5OHRU' \
+    'x6eGwpJ4' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 45 'StartAppV2' test.out
 
 #- 46 StopAppV2
 $PYTHON -m $MODULE 'csm-stop-app-v2' \
-    '7vomkoPB' \
+    'FF5hfXod' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 46 'StopAppV2' test.out
 
 #- 47 GetNotificationSubscriberListV2
 $PYTHON -m $MODULE 'csm-get-notification-subscriber-list-v2' \
-    'odhH5FHc' \
-    'aJpHBv0G' \
+    'MTpp7JNp' \
+    'ubGXqx3T' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 47 'GetNotificationSubscriberListV2' test.out
 
 #- 48 BulkSaveSubscriptionAppNotificationV2
 $PYTHON -m $MODULE 'csm-bulk-save-subscription-app-notification-v2' \
-    '{"subscribers": [{"emailAddress": "44pGFfCQ", "notificationType": {"W4ZVkdM7": false, "PEZAAlmG": false, "dQvHywdt": false}, "userId": "LQQaxRrn"}, {"emailAddress": "TBvfekZ8", "notificationType": {"10ieXpNf": true, "1aUUelGt": false, "J3kXWIeY": false}, "userId": "FI04wEd2"}, {"emailAddress": "0uek3EoD", "notificationType": {"dP6x2Fi7": true, "LbgiOZ3C": false, "GwmSdGrS": true}, "userId": "r3AgVcIh"}]}' \
-    'bgul0srG' \
+    '{"subscribers": [{"emailAddress": "FzE0IEVA", "notificationType": {"2V097cjw": false, "t8PWuQy5": true, "p1PDNHrg": false}, "userId": "M4LbZUon"}, {"emailAddress": "j6QP5UWc", "notificationType": {"htxFLuxo": false, "qn4UjvEW": true, "VNLSb9MD": true}, "userId": "3hyCef2W"}, {"emailAddress": "nHz5engA", "notificationType": {"hP6fkLFS": false, "O3Or2nqT": false, "JOEet2Lx": false}, "userId": "nBX0f6Am"}]}' \
+    'GFSjGqKN' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 48 'BulkSaveSubscriptionAppNotificationV2' test.out
 
 #- 49 SubscribeAppNotificationV2
 $PYTHON -m $MODULE 'csm-subscribe-app-notification-v2' \
-    '{"notificationType": "ndlLqNas", "subscribers": [{"emailAddress": "ghdIt2BG", "userId": "WaW9FZ7L"}, {"emailAddress": "girebgnu", "userId": "bYXlM3Fk"}, {"emailAddress": "nsXBcfKT", "userId": "E7MnchJK"}]}' \
-    'kBxwYTX9' \
+    '{"notificationType": "RSycemXF", "subscribers": [{"emailAddress": "eL9L1Nrs", "userId": "1SOaiLYB"}, {"emailAddress": "eByHdAn8", "userId": "7skkUlxq"}, {"emailAddress": "F57krn22", "userId": "dZSR8SB0"}]}' \
+    'VWI0HlQG' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 49 'SubscribeAppNotificationV2' test.out
 
 #- 50 GetSubscriptionV2Handler
 $PYTHON -m $MODULE 'csm-get-subscription-v2-handler' \
-    'n2nN5X1L' \
+    'Fzf3xISA' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 50 'GetSubscriptionV2Handler' test.out
 
 #- 51 SubscribeV2Handler
 $PYTHON -m $MODULE 'csm-subscribe-v2-handler' \
-    '{"notificationType": "JVs3bd8a"}' \
-    'L7oBMa7g' \
+    '{"notificationType": "yDj2ZHg7"}' \
+    'mfp8bXdy' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 51 'SubscribeV2Handler' test.out
 
 #- 52 UnsubscribeV2Handler
 $PYTHON -m $MODULE 'csm-unsubscribe-v2-handler' \
-    'S9uQu0dr' \
+    'aKTViaIO' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 52 'UnsubscribeV2Handler' test.out
 
 #- 53 DeleteSubscriptionAppNotificationByUserIDV2
 $PYTHON -m $MODULE 'csm-delete-subscription-app-notification-by-user-idv2' \
-    'z9MzGsJ0' \
-    'YAYkBrW8' \
+    'BwsfyIlp' \
+    'U6cNjXAZ' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 53 'DeleteSubscriptionAppNotificationByUserIDV2' test.out
@@ -411,32 +412,32 @@ eval_tap 0 54 'DeleteSubscriptionAppNotificationV2 # SKIP deprecated' test.out
 
 #- 55 GetListOfVariablesV2
 $PYTHON -m $MODULE 'csm-get-list-of-variables-v2' \
-    'CvHhQsmW' \
+    'kqBCdDqH' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 55 'GetListOfVariablesV2' test.out
 
 #- 56 SaveVariableV2
 $PYTHON -m $MODULE 'csm-save-variable-v2' \
-    '{"applyMask": false, "configName": "ITL0yLND", "description": "PyTcj3G8", "source": "hhMwmv5U", "value": "forqAlZF"}' \
-    'KAHQ0VU8' \
+    '{"applyMask": true, "configName": "M4EkSul9", "description": "AK0NB58B", "source": "i6CiMwqB", "value": "CBh3LSko"}' \
+    'ROMHI2MX' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 56 'SaveVariableV2' test.out
 
 #- 57 UpdateVariableV2
 $PYTHON -m $MODULE 'csm-update-variable-v2' \
-    '{"applyMask": false, "description": "uWFyQ1bW", "value": "clnh16FV"}' \
-    'hNYpMVuV' \
-    'SvH3Md7B' \
+    '{"applyMask": true, "description": "GcxwLARo", "value": "HTbFdLCa"}' \
+    'mVmrSdoS' \
+    'uoJ7C5ok' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 57 'UpdateVariableV2' test.out
 
 #- 58 DeleteVariableV2
 $PYTHON -m $MODULE 'csm-delete-variable-v2' \
-    'UIGB5iWF' \
-    'Ztq02q0t' \
+    'l2ABEmf8' \
+    'TZtrYakr' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 58 'DeleteVariableV2' test.out
@@ -449,35 +450,35 @@ eval_tap $? 59 'ListTopicsHandler' test.out
 
 #- 60 CreateTopicHandler
 $PYTHON -m $MODULE 'csm-create-topic-handler' \
-    '{"description": "j3WGaixk", "topicName": "thfzT2Bd"}' \
+    '{"description": "Nwgr4O0u", "topicName": "8DyXbycy"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 60 'CreateTopicHandler' test.out
 
 #- 61 DeleteTopicHandler
 $PYTHON -m $MODULE 'csm-delete-topic-handler' \
-    'bN81D9Qo' \
+    'S2M62BIF' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 61 'DeleteTopicHandler' test.out
 
 #- 62 GetListOfDeploymentV2
 $PYTHON -m $MODULE 'csm-get-list-of-deployment-v2' \
-    '{"appIds": ["Io0b8dEZ", "NmYZleNm", "azgBOlxj"], "deploymentIds": ["frqvdvW5", "kM39Ht1S", "K8vmRvtL"], "statuses": ["yYJcZaZu", "rOPQhciB", "wybJj7hS"]}' \
+    '{"appIds": ["gOQtZwwa", "DacTkKBh", "rjCw5YJI"], "deploymentIds": ["Ubf2R4oo", "mX5B8Slv", "s2oIgPjS"], "statuses": ["axHrvnqF", "o2geA9sH", "NxpWrA4o"]}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 62 'GetListOfDeploymentV2' test.out
 
 #- 63 GetDeploymentV2
 $PYTHON -m $MODULE 'csm-get-deployment-v2' \
-    'ul5vLGid' \
+    'VlDJv0y8' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 63 'GetDeploymentV2' test.out
 
 #- 64 DeleteDeploymentV2
 $PYTHON -m $MODULE 'csm-delete-deployment-v2' \
-    '6iBibgTc' \
+    'X4tSuQEC' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 64 'DeleteDeploymentV2' test.out
@@ -490,14 +491,14 @@ eval_tap $? 65 'GetNoSQLClusterV2' test.out
 
 #- 66 UpdateNoSQLClusterV2
 $PYTHON -m $MODULE 'csm-update-no-sql-cluster-v2' \
-    '{"maxDCU": 0.36403041106493994, "minDCU": 0.11474376054263313, "profileName": "Q01FkFqy"}' \
+    '{"maxDCU": 0.7761885121651958, "minDCU": 0.8682962169163787, "profileName": "FSDpMrLb"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 66 'UpdateNoSQLClusterV2' test.out
 
 #- 67 CreateNoSQLClusterV2
 $PYTHON -m $MODULE 'csm-create-no-sql-cluster-v2' \
-    '{"maxDCU": 0.06000048282580672, "minDCU": 0.44113895679182025, "profileName": "MeQmdjF3"}' \
+    '{"maxDCU": 0.804354540939238, "minDCU": 0.3780752632629437, "profileName": "FO3rMf7y"}' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
 eval_tap $? 67 'CreateNoSQLClusterV2' test.out
@@ -532,20 +533,28 @@ $PYTHON -m $MODULE 'csm-get-resources-limits' \
     > test.out 2>&1
 eval_tap $? 72 'GetResourcesLimits' test.out
 
-#- 73 GetNotificationSubscriberListV3
-$PYTHON -m $MODULE 'csm-get-notification-subscriber-list-v3' \
-    '67LlotoB' \
-    'ha5NeLFF' \
+#- 73 GetNoSQLAppListV2
+$PYTHON -m $MODULE 'csm-get-no-sql-app-list-v2' \
+    'ZdidbKhu' \
+    'tMdJZi70' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 73 'GetNotificationSubscriberListV3' test.out
+eval_tap $? 73 'GetNoSQLAppListV2' test.out
 
-#- 74 DeleteSubscriptionAppNotificationV3
-$PYTHON -m $MODULE 'csm-delete-subscription-app-notification-v3' \
-    'n8PAwE9c' \
+#- 74 GetNotificationSubscriberListV3
+$PYTHON -m $MODULE 'csm-get-notification-subscriber-list-v3' \
+    '7sfzjB2x' \
+    'Lf14yKUh' \
     --login_with_auth "Bearer foo" \
     > test.out 2>&1
-eval_tap $? 74 'DeleteSubscriptionAppNotificationV3' test.out
+eval_tap $? 74 'GetNotificationSubscriberListV3' test.out
+
+#- 75 DeleteSubscriptionAppNotificationV3
+$PYTHON -m $MODULE 'csm-delete-subscription-app-notification-v3' \
+    'xMYUdapm' \
+    --login_with_auth "Bearer foo" \
+    > test.out 2>&1
+eval_tap $? 75 'DeleteSubscriptionAppNotificationV3' test.out
 
 
 fi

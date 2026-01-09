@@ -174,6 +174,8 @@ from ._platform_credential import admin_sync_platform_credentials
 from ._platform_credential import admin_sync_platform_credentials_async
 from ._platform_credential import admin_update_platform_credentials
 from ._platform_credential import admin_update_platform_credentials_async
+from ._platform_credential import admin_upload_platform_credentials
+from ._platform_credential import admin_upload_platform_credentials_async
 
 from ._player import admin_get_player_attributes
 from ._player import admin_get_player_attributes_async

@@ -90,6 +90,7 @@ from .stat_update import StatUpdate
 from .stat_update import (
     GlobalAggregationMethodEnum as StatUpdateGlobalAggregationMethodEnum,
 )
+from .stat_update import SetByEnum as StatUpdateSetByEnum
 from .stat_update import VisibilityEnum as StatUpdateVisibilityEnum
 from .user_game_profiles import UserGameProfiles
 from .user_slot_config_info import UserSlotConfigInfo

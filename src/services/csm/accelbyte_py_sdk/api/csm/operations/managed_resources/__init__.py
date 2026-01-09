@@ -19,6 +19,7 @@ from .create_no_sql_database_v2 import CreateNoSQLDatabaseV2
 from .delete_no_sql_cluster_v2 import DeleteNoSQLClusterV2
 from .delete_no_sql_database_v2 import DeleteNoSQLDatabaseV2
 from .get_no_sql_access_tunnel_v2 import GetNoSQLAccessTunnelV2
+from .get_no_sql_app_list_v2 import GetNoSQLAppListV2
 from .get_no_sql_cluster_v2 import GetNoSQLClusterV2
 from .get_no_sql_database_v2 import GetNoSQLDatabaseV2
 from .start_no_sql_cluster_v2 import StartNoSQLClusterV2
