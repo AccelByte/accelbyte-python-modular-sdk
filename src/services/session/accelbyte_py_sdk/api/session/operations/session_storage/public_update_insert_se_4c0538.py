@@ -31,7 +31,6 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 from accelbyte_py_sdk.core import deprecated
 
-from ...models import ApimodelsGenericObject
 from ...models import ResponseError
 
 
@@ -63,14 +62,14 @@ class PublicUpdateInsertSessionStorageLeader(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ApimodelsGenericObject in body
+        body: (body) REQUIRED Dict[str, Any] in body
 
         namespace: (namespace) REQUIRED str in path
 
         session_id: (sessionId) REQUIRED str in path
 
     Responses:
-        200: OK - ApimodelsGenericObject (OK)
+        200: OK - Dict[str, Any] (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -100,7 +99,7 @@ class PublicUpdateInsertSessionStorageLeader(Operation):
 
     service_name: Optional[str] = "session"
 
-    body: ApimodelsGenericObject  # REQUIRED in [body]
+    body: Dict[str, Any]  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
     session_id: str  # REQUIRED in [path]
 
@@ -157,7 +156,7 @@ class PublicUpdateInsertSessionStorageLeader(Operation):
     def get_body_params(self) -> Any:
         if not hasattr(self, "body") or self.body is None:
             return None
-        return self.body.to_dict()
+        return self.body
 
     def get_path_params(self) -> dict:
         result = {}
@@ -176,7 +175,7 @@ class PublicUpdateInsertSessionStorageLeader(Operation):
     # region with_x methods
 
     def with_body(
-        self, value: ApimodelsGenericObject
+        self, value: Dict[str, Any]
     ) -> PublicUpdateInsertSessionStorageLeader:
         self.body = value
         return self
@@ -196,9 +195,9 @@ class PublicUpdateInsertSessionStorageLeader(Operation):
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
         if hasattr(self, "body") and self.body:
-            result["body"] = self.body.to_dict(include_empty=include_empty)
+            result["body"] = {str(k0): v0 for k0, v0 in self.body.items()}
         elif include_empty:
-            result["body"] = ApimodelsGenericObject()
+            result["body"] = {}
         if hasattr(self, "namespace") and self.namespace:
             result["namespace"] = str(self.namespace)
         elif include_empty:
@@ -214,7 +213,7 @@ class PublicUpdateInsertSessionStorageLeader(Operation):
     # region response methods
 
     class Response(ApiResponse):
-        data_200: Optional[ApimodelsGenericObject] = None
+        data_200: Optional[Dict[str, Any]] = None
         error_400: Optional[ResponseError] = None
         error_401: Optional[ResponseError] = None
         error_403: Optional[ResponseError] = None
@@ -276,7 +275,7 @@ class PublicUpdateInsertSessionStorageLeader(Operation):
     def parse_response(self, code: int, content_type: str, content: Any) -> Response:
         """Parse the given response.
 
-        200: OK - ApimodelsGenericObject (OK)
+        200: OK - Dict[str, Any] (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -307,7 +306,7 @@ class PublicUpdateInsertSessionStorageLeader(Operation):
             code, content_type, content = pre_processed_response
 
             if code == 200:
-                result.data_200 = ApimodelsGenericObject.create_from_dict(content)
+                result.data_200 = {str(k): v for k, v in content.items()}
             elif code == 400:
                 result.error_400 = ResponseError.create_from_dict(content)
                 result.error = result.error_400.translate_to_api_error()
@@ -342,12 +341,10 @@ class PublicUpdateInsertSessionStorageLeader(Operation):
     @deprecated
     def parse_response_x(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[
-        Union[None, ApimodelsGenericObject], Union[None, HttpResponse, ResponseError]
-    ]:
+    ) -> Tuple[Union[None, Dict[str, Any]], Union[None, HttpResponse, ResponseError]]:
         """Parse the given response.
 
-        200: OK - ApimodelsGenericObject (OK)
+        200: OK - Dict[str, Any] (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -373,7 +370,7 @@ class PublicUpdateInsertSessionStorageLeader(Operation):
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return ApimodelsGenericObject.create_from_dict(content), None
+            return {str(k): v for k, v in content.items()}, None
         if code == 400:
             return None, ResponseError.create_from_dict(content)
         if code == 401:
@@ -395,7 +392,7 @@ class PublicUpdateInsertSessionStorageLeader(Operation):
 
     @classmethod
     def create(
-        cls, body: ApimodelsGenericObject, namespace: str, session_id: str, **kwargs
+        cls, body: Dict[str, Any], namespace: str, session_id: str, **kwargs
     ) -> PublicUpdateInsertSessionStorageLeader:
         instance = cls()
         instance.body = body
@@ -411,11 +408,9 @@ class PublicUpdateInsertSessionStorageLeader(Operation):
     ) -> PublicUpdateInsertSessionStorageLeader:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = ApimodelsGenericObject.create_from_dict(
-                dict_["body"], include_empty=include_empty
-            )
+            instance.body = {str(k0): v0 for k0, v0 in dict_["body"].items()}
         elif include_empty:
-            instance.body = ApimodelsGenericObject()
+            instance.body = {}
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
         elif include_empty:

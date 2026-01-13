@@ -183,7 +183,6 @@
 | apimodels.EnvironmentVariableResponse | [ApimodelsEnvironmentVariableResponse](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_environment_variable_response.py) |
 | apimodels.GameSessionQueryResponse | [ApimodelsGameSessionQueryResponse](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_game_session_query_response.py) |
 | apimodels.GameSessionResponse | [ApimodelsGameSessionResponse](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_game_session_response.py) |
-| apimodels.GenericObject | [ApimodelsGenericObject](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_generic_object.py) |
 | apimodels.GlobalConfigurationResponse | [ApimodelsGlobalConfigurationResponse](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_global_configuration_response.py) |
 | apimodels.JoinByCodeRequest | [ApimodelsJoinByCodeRequest](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_join_by_code_request.py) |
 | apimodels.KickResponse | [ApimodelsKickResponse](../../src/services/session/accelbyte_py_sdk/api/session/models/apimodels_kick_response.py) |

@@ -32,7 +32,6 @@ from accelbyte_py_sdk.core import HttpResponse
 from accelbyte_py_sdk.core import deprecated
 
 from ...models import ApimodelsGameSessionQueryResponse
-from ...models import ApimodelsGenericObject
 from ...models import ResponseError
 
 
@@ -68,7 +67,7 @@ class AdminQueryGameSessionsByAttributes(Operation):
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ApimodelsGenericObject in body
+        body: (body) REQUIRED Dict[str, Any] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -97,7 +96,7 @@ class AdminQueryGameSessionsByAttributes(Operation):
 
     service_name: Optional[str] = "session"
 
-    body: ApimodelsGenericObject  # REQUIRED in [body]
+    body: Dict[str, Any]  # REQUIRED in [body]
     namespace: str  # REQUIRED in [path]
 
     # endregion fields
@@ -153,7 +152,7 @@ class AdminQueryGameSessionsByAttributes(Operation):
     def get_body_params(self) -> Any:
         if not hasattr(self, "body") or self.body is None:
             return None
-        return self.body.to_dict()
+        return self.body
 
     def get_path_params(self) -> dict:
         result = {}
@@ -169,9 +168,7 @@ class AdminQueryGameSessionsByAttributes(Operation):
 
     # region with_x methods
 
-    def with_body(
-        self, value: ApimodelsGenericObject
-    ) -> AdminQueryGameSessionsByAttributes:
+    def with_body(self, value: Dict[str, Any]) -> AdminQueryGameSessionsByAttributes:
         self.body = value
         return self
 
@@ -186,9 +183,9 @@ class AdminQueryGameSessionsByAttributes(Operation):
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
         if hasattr(self, "body") and self.body:
-            result["body"] = self.body.to_dict(include_empty=include_empty)
+            result["body"] = {str(k0): v0 for k0, v0 in self.body.items()}
         elif include_empty:
-            result["body"] = ApimodelsGenericObject()
+            result["body"] = {}
         if hasattr(self, "namespace") and self.namespace:
             result["namespace"] = str(self.namespace)
         elif include_empty:
@@ -366,7 +363,7 @@ class AdminQueryGameSessionsByAttributes(Operation):
 
     @classmethod
     def create(
-        cls, body: ApimodelsGenericObject, namespace: str, **kwargs
+        cls, body: Dict[str, Any], namespace: str, **kwargs
     ) -> AdminQueryGameSessionsByAttributes:
         instance = cls()
         instance.body = body
@@ -381,11 +378,9 @@ class AdminQueryGameSessionsByAttributes(Operation):
     ) -> AdminQueryGameSessionsByAttributes:
         instance = cls()
         if "body" in dict_ and dict_["body"] is not None:
-            instance.body = ApimodelsGenericObject.create_from_dict(
-                dict_["body"], include_empty=include_empty
-            )
+            instance.body = {str(k0): v0 for k0, v0 in dict_["body"].items()}
         elif include_empty:
-            instance.body = ApimodelsGenericObject()
+            instance.body = {}
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
         elif include_empty:

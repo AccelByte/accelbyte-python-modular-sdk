@@ -29,7 +29,6 @@ from accelbyte_py_sdk.core import run_request
 from accelbyte_py_sdk.core import run_request_async
 from accelbyte_py_sdk.core import same_doc_as
 
-from ..models import ApimodelsGenericObject
 from ..models import ResponseError
 
 from ..operations.session_storage import AdminDeleteUserSessionStorage
@@ -186,7 +185,7 @@ def admin_read_party_session_storage(
         party_id: (partyId) REQUIRED str in path
 
     Responses:
-        200: OK - ApimodelsGenericObject (OK)
+        200: OK - Dict[str, Any] (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -246,7 +245,7 @@ async def admin_read_party_session_storage_async(
         party_id: (partyId) REQUIRED str in path
 
     Responses:
-        200: OK - ApimodelsGenericObject (OK)
+        200: OK - Dict[str, Any] (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -299,7 +298,7 @@ def admin_read_session_storage(
         session_id: (sessionId) REQUIRED str in path
 
     Responses:
-        200: OK - ApimodelsGenericObject (OK)
+        200: OK - Dict[str, Any] (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -350,7 +349,7 @@ async def admin_read_session_storage_async(
         session_id: (sessionId) REQUIRED str in path
 
     Responses:
-        200: OK - ApimodelsGenericObject (OK)
+        200: OK - Dict[str, Any] (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -406,7 +405,7 @@ def admin_read_user_session_storage(
         user_id: (userId) REQUIRED str in path
 
     Responses:
-        200: OK - ApimodelsGenericObject (OK)
+        200: OK - Dict[str, Any] (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -461,7 +460,7 @@ async def admin_read_user_session_storage_async(
         user_id: (userId) REQUIRED str in path
 
     Responses:
-        200: OK - ApimodelsGenericObject (OK)
+        200: OK - Dict[str, Any] (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -531,7 +530,7 @@ def public_read_party_session_storage(
         party_id: (partyId) REQUIRED str in path
 
     Responses:
-        200: OK - ApimodelsGenericObject (OK)
+        200: OK - Dict[str, Any] (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -598,7 +597,7 @@ async def public_read_party_session_storage_async(
         party_id: (partyId) REQUIRED str in path
 
     Responses:
-        200: OK - ApimodelsGenericObject (OK)
+        200: OK - Dict[str, Any] (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -623,7 +622,7 @@ async def public_read_party_session_storage_async(
 
 @same_doc_as(PublicUpdateInsertPartySessionStorage)
 def public_update_insert_party_session_storage(
-    body: ApimodelsGenericObject,
+    body: Dict[str, Any],
     party_id: str,
     user_id: str,
     namespace: Optional[str] = None,
@@ -666,7 +665,7 @@ def public_update_insert_party_session_storage(
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ApimodelsGenericObject in body
+        body: (body) REQUIRED Dict[str, Any] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -675,7 +674,7 @@ def public_update_insert_party_session_storage(
         user_id: (userId) REQUIRED str in path
 
     Responses:
-        200: OK - ApimodelsGenericObject (OK)
+        200: OK - Dict[str, Any] (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -702,7 +701,7 @@ def public_update_insert_party_session_storage(
 
 @same_doc_as(PublicUpdateInsertPartySessionStorage)
 async def public_update_insert_party_session_storage_async(
-    body: ApimodelsGenericObject,
+    body: Dict[str, Any],
     party_id: str,
     user_id: str,
     namespace: Optional[str] = None,
@@ -745,7 +744,7 @@ async def public_update_insert_party_session_storage_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ApimodelsGenericObject in body
+        body: (body) REQUIRED Dict[str, Any] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -754,7 +753,7 @@ async def public_update_insert_party_session_storage_async(
         user_id: (userId) REQUIRED str in path
 
     Responses:
-        200: OK - ApimodelsGenericObject (OK)
+        200: OK - Dict[str, Any] (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -783,7 +782,7 @@ async def public_update_insert_party_session_storage_async(
 
 @same_doc_as(PublicUpdateInsertPartySessionStorageReserved)
 def public_update_insert_party_session_storage_reserved(
-    body: ApimodelsGenericObject,
+    body: Dict[str, Any],
     party_id: str,
     user_id: str,
     namespace: Optional[str] = None,
@@ -827,7 +826,7 @@ def public_update_insert_party_session_storage_reserved(
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ApimodelsGenericObject in body
+        body: (body) REQUIRED Dict[str, Any] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -836,7 +835,7 @@ def public_update_insert_party_session_storage_reserved(
         user_id: (userId) REQUIRED str in path
 
     Responses:
-        200: OK - ApimodelsGenericObject (OK)
+        200: OK - Dict[str, Any] (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -863,7 +862,7 @@ def public_update_insert_party_session_storage_reserved(
 
 @same_doc_as(PublicUpdateInsertPartySessionStorageReserved)
 async def public_update_insert_party_session_storage_reserved_async(
-    body: ApimodelsGenericObject,
+    body: Dict[str, Any],
     party_id: str,
     user_id: str,
     namespace: Optional[str] = None,
@@ -907,7 +906,7 @@ async def public_update_insert_party_session_storage_reserved_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ApimodelsGenericObject in body
+        body: (body) REQUIRED Dict[str, Any] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -916,7 +915,7 @@ async def public_update_insert_party_session_storage_reserved_async(
         user_id: (userId) REQUIRED str in path
 
     Responses:
-        200: OK - ApimodelsGenericObject (OK)
+        200: OK - Dict[str, Any] (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -945,7 +944,7 @@ async def public_update_insert_party_session_storage_reserved_async(
 
 @same_doc_as(PublicUpdateInsertSessionStorage)
 def public_update_insert_session_storage(
-    body: ApimodelsGenericObject,
+    body: Dict[str, Any],
     session_id: str,
     user_id: str,
     namespace: Optional[str] = None,
@@ -979,7 +978,7 @@ def public_update_insert_session_storage(
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ApimodelsGenericObject in body
+        body: (body) REQUIRED Dict[str, Any] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -988,7 +987,7 @@ def public_update_insert_session_storage(
         user_id: (userId) REQUIRED str in path
 
     Responses:
-        200: OK - ApimodelsGenericObject (OK)
+        200: OK - Dict[str, Any] (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -1015,7 +1014,7 @@ def public_update_insert_session_storage(
 
 @same_doc_as(PublicUpdateInsertSessionStorage)
 async def public_update_insert_session_storage_async(
-    body: ApimodelsGenericObject,
+    body: Dict[str, Any],
     session_id: str,
     user_id: str,
     namespace: Optional[str] = None,
@@ -1049,7 +1048,7 @@ async def public_update_insert_session_storage_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ApimodelsGenericObject in body
+        body: (body) REQUIRED Dict[str, Any] in body
 
         namespace: (namespace) REQUIRED str in path
 
@@ -1058,7 +1057,7 @@ async def public_update_insert_session_storage_async(
         user_id: (userId) REQUIRED str in path
 
     Responses:
-        200: OK - ApimodelsGenericObject (OK)
+        200: OK - Dict[str, Any] (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -1087,7 +1086,7 @@ async def public_update_insert_session_storage_async(
 
 @same_doc_as(PublicUpdateInsertSessionStorageLeader)
 def public_update_insert_session_storage_leader(
-    body: ApimodelsGenericObject,
+    body: Dict[str, Any],
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
@@ -1120,14 +1119,14 @@ def public_update_insert_session_storage_leader(
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ApimodelsGenericObject in body
+        body: (body) REQUIRED Dict[str, Any] in body
 
         namespace: (namespace) REQUIRED str in path
 
         session_id: (sessionId) REQUIRED str in path
 
     Responses:
-        200: OK - ApimodelsGenericObject (OK)
+        200: OK - Dict[str, Any] (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
@@ -1153,7 +1152,7 @@ def public_update_insert_session_storage_leader(
 
 @same_doc_as(PublicUpdateInsertSessionStorageLeader)
 async def public_update_insert_session_storage_leader_async(
-    body: ApimodelsGenericObject,
+    body: Dict[str, Any],
     session_id: str,
     namespace: Optional[str] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
@@ -1186,14 +1185,14 @@ async def public_update_insert_session_storage_leader_async(
 
         securities: [BEARER_AUTH]
 
-        body: (body) REQUIRED ApimodelsGenericObject in body
+        body: (body) REQUIRED Dict[str, Any] in body
 
         namespace: (namespace) REQUIRED str in path
 
         session_id: (sessionId) REQUIRED str in path
 
     Responses:
-        200: OK - ApimodelsGenericObject (OK)
+        200: OK - Dict[str, Any] (OK)
 
         400: Bad Request - ResponseError (Bad Request)
 
