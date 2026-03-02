@@ -1,14 +1,13 @@
 # AccelByte Modular Python SDK
 
-> :warning: **This [accelbyte-python-modular-sdk](https://github.com/AccelByte/accelbyte-python-modular-sdk) 
-> is not to be confused with [accelbyte-python-sdk](https://github.com/AccelByte/accelbyte-python-sdk):** 
-> * The former (modular SDK) is **experimental** and is planned to be the sucessor for the latter (monolithic SDK).
-> * The modular SDK allows developers to include only the required modules in projects.
-> * If you are starting a new project, you may try to use modular SDK.
-> * If you use monolithic SDK in an existing project, a migration path is available via compatibility layer in modular SDK.
-> * Both monolithic and modular SDK will be maintained for some time to give time for migration until monolithic SDK is deprecated in the future.
-
 A software development kit (SDK) for interacting with AccelByte Gaming Services (AGS) written in Python.
+
+This is the **modular** AccelByte Python SDK ([accelbyte-python-modular-sdk](https://github.com/AccelByte/accelbyte-python-modular-sdk)), the successor to the legacy [accelbyte-python-sdk](https://github.com/AccelByte/accelbyte-python-sdk) (monolithic SDK).
+
+Key advantages over the monolithic SDK:
+
+- **Selective dependencies** — install only the service packages your project needs (e.g. `accelbyte-py-sdk-service-iam`) instead of the entire SDK.
+- **Compatibility layer** — migrate from the monolithic SDK incrementally without a full rewrite.
 
 This SDK was generated from AGS OpenAPI spec files included in the [spec](spec) directory.
 
