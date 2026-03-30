@@ -35,7 +35,7 @@ from ...models import ErrorEntity
 
 
 class DeleteOculusSubscriptionTier(Operation):
-    """Delete a AGS Meta Quest(Oculus) subscriptions tier (deleteOculusSubscriptionTier)
+    """Delete an AGS Meta Quest(Oculus) subscriptions tier (deleteOculusSubscriptionTier)
 
 
     Properties:

@@ -122,6 +122,8 @@ from .wrappers import get_stat_cycles_1
 from .wrappers import get_stat_cycles_1_async
 from .wrappers import import_stat_cycle
 from .wrappers import import_stat_cycle_async
+from .wrappers import reset_stat_cycle
+from .wrappers import reset_stat_cycle_async
 from .wrappers import stop_stat_cycle
 from .wrappers import stop_stat_cycle_async
 from .wrappers import update_stat_cycle

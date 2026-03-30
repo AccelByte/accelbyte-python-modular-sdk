@@ -36,9 +36,9 @@ from ...models import ValidationErrorEntity
 
 
 class UploadRevocationPluginConfigCert(Operation):
-    """Upload revocation plugin custom config tls cert (uploadRevocationPluginConfigCert)
+    """[DEPRECATED] [Deprecated]Upload revocation plugin custom config tls cert (uploadRevocationPluginConfigCert)
 
-    Upload revocation plugin custom config tls cert.Other detail info:
+    Upload revocation plugin custom config tls cert. This api has been deprecated, please use /admin/namespaces/{namespace}/revocation/plugins/revocation/customConfig/cert to update revocation certOther detail info:
       * Returns : updated service plugin config
 
     Properties:

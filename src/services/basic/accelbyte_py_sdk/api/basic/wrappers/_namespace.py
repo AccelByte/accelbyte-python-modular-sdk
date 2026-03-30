@@ -36,6 +36,7 @@ from ..models import NamespaceInfo
 from ..models import NamespacePublisherInfo
 from ..models import NamespaceSimpleInfo
 from ..models import NamespaceStatusUpdate
+from ..models import NamespaceTestingFlagUpdate
 from ..models import NamespaceUpdate
 from ..models import ValidationErrorEntity
 
@@ -52,6 +53,7 @@ from ..operations.namespace import GetNamespaces
 from ..operations.namespace import PublicGetNamespacePublisher
 from ..operations.namespace import PublicGetNamespaces
 from ..operations.namespace import UpdateNamespace
+from ..operations.namespace import UpdateTestingFlag
 from ..models import NamespaceContextTypeEnum
 from ..models import NamespaceInfoStatusEnum
 from ..models import NamespaceStatusUpdateStatusEnum
@@ -1008,6 +1010,7 @@ async def get_namespace_publisher_async(
 @same_doc_as(GetNamespaces)
 def get_namespaces(
     active_only: Optional[bool] = None,
+    is_testing: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs,
 ):
@@ -1034,6 +1037,8 @@ def get_namespaces(
 
         active_only: (activeOnly) OPTIONAL bool in query
 
+        is_testing: (isTesting) OPTIONAL bool in query
+
     Responses:
         200: OK - List[NamespaceInfo] (Successful operation)
 
@@ -1043,6 +1048,7 @@ def get_namespaces(
     """
     request = GetNamespaces.create(
         active_only=active_only,
+        is_testing=is_testing,
     )
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
@@ -1050,6 +1056,7 @@ def get_namespaces(
 @same_doc_as(GetNamespaces)
 async def get_namespaces_async(
     active_only: Optional[bool] = None,
+    is_testing: Optional[bool] = None,
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs,
 ):
@@ -1076,6 +1083,8 @@ async def get_namespaces_async(
 
         active_only: (activeOnly) OPTIONAL bool in query
 
+        is_testing: (isTesting) OPTIONAL bool in query
+
     Responses:
         200: OK - List[NamespaceInfo] (Successful operation)
 
@@ -1085,6 +1094,7 @@ async def get_namespaces_async(
     """
     request = GetNamespaces.create(
         active_only=active_only,
+        is_testing=is_testing,
     )
     return await run_request_async(
         request, additional_headers=x_additional_headers, **kwargs
@@ -1399,6 +1409,120 @@ async def update_namespace_async(
         if error:
             return None, error
     request = UpdateNamespace.create(
+        body=body,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(UpdateTestingFlag)
+def update_testing_flag(
+    body: Optional[NamespaceTestingFlagUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs,
+):
+    """Update namespace testing flag (updateTestingFlag)
+
+    Update namespace testing flag.
+    In multi-tenant mode, this is only applicable for studio namespaces, not game namespaces.
+    Other detail info:
+
+      * Returns : updated namespace
+
+    Properties:
+        url: /basic/v1/admin/namespaces/{namespace}/testingFlag
+
+        method: PATCH
+
+        tags: ["Namespace"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) OPTIONAL NamespaceTestingFlagUpdate in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - NamespaceInfo (Successful operation)
+
+        400: Bad Request - ValidationErrorEntity (20002: validation error | 20019: unable to parse request body)
+
+        401: Unauthorized - ErrorEntity (20001: unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        404: Not Found - ErrorEntity (11337: Unable to {action}: Namespace not found)
+
+        409: Conflict - ErrorEntity (20006: optimistic lock)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
+        if error:
+            return None, error
+    request = UpdateTestingFlag.create(
+        body=body,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(UpdateTestingFlag)
+async def update_testing_flag_async(
+    body: Optional[NamespaceTestingFlagUpdate] = None,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs,
+):
+    """Update namespace testing flag (updateTestingFlag)
+
+    Update namespace testing flag.
+    In multi-tenant mode, this is only applicable for studio namespaces, not game namespaces.
+    Other detail info:
+
+      * Returns : updated namespace
+
+    Properties:
+        url: /basic/v1/admin/namespaces/{namespace}/testingFlag
+
+        method: PATCH
+
+        tags: ["Namespace"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) OPTIONAL NamespaceTestingFlagUpdate in body
+
+        namespace: (namespace) REQUIRED str in path
+
+    Responses:
+        200: OK - NamespaceInfo (Successful operation)
+
+        400: Bad Request - ValidationErrorEntity (20002: validation error | 20019: unable to parse request body)
+
+        401: Unauthorized - ErrorEntity (20001: unauthorized)
+
+        403: Forbidden - ErrorEntity (20013: insufficient permission)
+
+        404: Not Found - ErrorEntity (11337: Unable to {action}: Namespace not found)
+
+        409: Conflict - ErrorEntity (20006: optimistic lock)
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
+        if error:
+            return None, error
+    request = UpdateTestingFlag.create(
         body=body,
         namespace=namespace,
     )

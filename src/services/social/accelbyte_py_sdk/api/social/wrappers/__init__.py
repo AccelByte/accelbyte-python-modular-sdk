@@ -116,6 +116,8 @@ from ._stat_cycle_configuration import get_stat_cycles_1
 from ._stat_cycle_configuration import get_stat_cycles_1_async
 from ._stat_cycle_configuration import import_stat_cycle
 from ._stat_cycle_configuration import import_stat_cycle_async
+from ._stat_cycle_configuration import reset_stat_cycle
+from ._stat_cycle_configuration import reset_stat_cycle_async
 from ._stat_cycle_configuration import stop_stat_cycle
 from ._stat_cycle_configuration import stop_stat_cycle_async
 from ._stat_cycle_configuration import update_stat_cycle

@@ -32,5 +32,6 @@ from .get_stat_cycles_1 import (
     StatusEnum as GetStatCycles1StatusEnum,
 )
 from .import_stat_cycle import ImportStatCycle
+from .reset_stat_cycle import ResetStatCycle
 from .stop_stat_cycle import StopStatCycle
 from .update_stat_cycle import UpdateStatCycle
