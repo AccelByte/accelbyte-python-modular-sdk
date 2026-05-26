@@ -33,12 +33,12 @@ from accelbyte_py_sdk.core import deprecated
 
 
 class RevokeUser(Operation):
-    """[DEPRECATED] Revokes user's tokens' (RevokeUser)
+    """[DEPRECATED] Revoke User's Tokens (RevokeUser)
 
-    ## The endpoint is going to be deprecated
-    This endpoint requires all requests to have authorization header set with bearer token.
+    **This endpoint is deprecated.**
+    Requires all requests to have authorization header set with bearer token.
 
-    The endpoint revokes all access tokens and refresh tokens a user has prior the revocation time. It is a convenient feature for the developer (or admin) who wanted to revokes all user's access tokens and refresh tokens generated before some period of time.
+    Revokes all access tokens and refresh tokens a user has prior the revocation time. It is a convenient feature for the developer (or admin) who wanted to revokes all user's access tokens and refresh tokens generated before some period of time.
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/oauth/admin/namespaces/{namespace}/users/{userId}/revoke [POST]_**
 

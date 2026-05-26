@@ -35,7 +35,7 @@ from ...models import RetrieveAcceptedAgreementResponse
 
 
 class OldRetrieveAcceptedAgreements(Operation):
-    """Retrieve Accepted Legal Agreements (oldRetrieveAcceptedAgreements)
+    """[DEPRECATED] Retrieve Accepted Legal Agreements (oldRetrieveAcceptedAgreements)
 
     This API will return all accepted Legal Agreements for specified user
 

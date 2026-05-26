@@ -38,7 +38,7 @@ from ...models import RestErrorResponse
 class DisableUser(Operation):
     """[DEPRECATED] Disable a user (DisableUser)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/namespaces/{namespace}/users/{userId}/status [PATCH]_**
 

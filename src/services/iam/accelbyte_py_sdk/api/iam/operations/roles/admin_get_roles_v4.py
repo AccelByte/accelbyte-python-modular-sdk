@@ -38,7 +38,7 @@ from ...models import RestErrorResponse
 class AdminGetRolesV4(Operation):
     """Get Roles (AdminGetRolesV4)
 
-    action code: 10414
+    Retrieves a paginated list of roles with optional filters.
 
     Properties:
         url: /iam/v4/admin/roles

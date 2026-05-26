@@ -39,7 +39,7 @@ from ...models import RestErrorResponse
 class CreateClientByNamespace(Operation):
     """[DEPRECATED] Create Client (CreateClientByNamespace)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     **Endpoint migration guide**
     - **Substitute endpoint: _/v3/admin/namespaces/{namespace}/clients [POST]_**
 

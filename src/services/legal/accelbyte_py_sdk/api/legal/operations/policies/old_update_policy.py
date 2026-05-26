@@ -36,7 +36,7 @@ from ...models import UpdatePolicyRequest
 
 
 class OldUpdatePolicy(Operation):
-    """Update Country-Specific Policy (oldUpdatePolicy)
+    """[DEPRECATED] Update Country-Specific Policy (oldUpdatePolicy)
 
     Update country-specific and country-group policy.
 

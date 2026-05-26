@@ -17,3 +17,4 @@ from .admin_delete_config_per_4d40c6 import AdminDeleteConfigPermissionsByGroup
 from .admin_list_client_avail_561e53 import AdminListClientAvailablePermissions
 from .admin_list_client_templates import AdminListClientTemplates
 from .admin_update_available__50a681 import AdminUpdateAvailablePermissionsByModule
+from .admin_update_module_package import AdminUpdateModulePackage

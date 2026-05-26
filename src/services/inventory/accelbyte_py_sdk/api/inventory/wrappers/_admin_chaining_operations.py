@@ -27,6 +27,7 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import get_namespace as get_services_namespace
 from accelbyte_py_sdk.core import run_request
 from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import deprecated
 from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import ApimodelsChainingOperationReq
@@ -35,6 +36,7 @@ from ..models import ApimodelsChainingOperationResp
 from ..operations.admin_chaining_operations import AdminCreateChainingOperations
 
 
+@deprecated
 @same_doc_as(AdminCreateChainingOperations)
 def admin_create_chaining_operations(
     body: ApimodelsChainingOperationReq,
@@ -44,6 +46,7 @@ def admin_create_chaining_operations(
 ):
     """To Create Chaining Operation (AdminCreateChainingOperations)
 
+    ## The endpoint is going to be deprecated
     Create chaining Operations.
     This process will run sequentially
     1. remove item process
@@ -101,6 +104,7 @@ def admin_create_chaining_operations(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(AdminCreateChainingOperations)
 async def admin_create_chaining_operations_async(
     body: ApimodelsChainingOperationReq,
@@ -110,6 +114,7 @@ async def admin_create_chaining_operations_async(
 ):
     """To Create Chaining Operation (AdminCreateChainingOperations)
 
+    ## The endpoint is going to be deprecated
     Create chaining Operations.
     This process will run sequentially
     1. remove item process

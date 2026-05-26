@@ -60,7 +60,7 @@ def acquire_user_ticket(
 
     [SERVICE COMMUNICATION ONLY] Acquire ticket(code/key) based on booth name.
     Other detail info:
-                * Returns : acquire result
+              * Returns : acquire result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/tickets/{boothName}
@@ -118,7 +118,7 @@ async def acquire_user_ticket_async(
 
     [SERVICE COMMUNICATION ONLY] Acquire ticket(code/key) based on booth name.
     Other detail info:
-                * Returns : acquire result
+              * Returns : acquire result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/tickets/{boothName}
@@ -278,7 +278,7 @@ def get_ticket_booth_id(
 
     Get ticket(code/key) booth ID.
     Other detail info:
-                * Returns : ticket booth id
+              * Returns : ticket booth id
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/tickets/{boothName}/id
@@ -324,7 +324,7 @@ async def get_ticket_booth_id_async(
 
     Get ticket(code/key) booth ID.
     Other detail info:
-                * Returns : ticket booth id
+              * Returns : ticket booth id
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/tickets/{boothName}/id
@@ -372,7 +372,7 @@ def get_ticket_dynamic(
 
     [SERVICE COMMUNICATION ONLY] Get ticket(code/key) dynamic based on booth name.
     Other detail info:
-                * Returns : ticket dynamic
+              * Returns : ticket dynamic
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/tickets/{boothName}
@@ -418,7 +418,7 @@ async def get_ticket_dynamic_async(
 
     [SERVICE COMMUNICATION ONLY] Get ticket(code/key) dynamic based on booth name.
     Other detail info:
-                * Returns : ticket dynamic
+              * Returns : ticket dynamic
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/tickets/{boothName}
@@ -467,7 +467,7 @@ def increase_ticket_sale(
 
     [SERVICE COMMUNICATION ONLY] increase ticket(code/key) sale.
     Other detail info:
-                * Returns : Ticket sale increment result
+              * Returns : Ticket sale increment result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/tickets/{boothName}/increment
@@ -519,7 +519,7 @@ async def increase_ticket_sale_async(
 
     [SERVICE COMMUNICATION ONLY] increase ticket(code/key) sale.
     Other detail info:
-                * Returns : Ticket sale increment result
+              * Returns : Ticket sale increment result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/tickets/{boothName}/increment

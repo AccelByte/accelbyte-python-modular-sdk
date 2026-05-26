@@ -39,7 +39,6 @@ class AdminGetRoleAdminStatusV3(Operation):
     """Get Role Admin Status (AdminGetRoleAdminStatusV3)
 
     Admin roles has its members listed in the role.
-    action code: 10420
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}/admin

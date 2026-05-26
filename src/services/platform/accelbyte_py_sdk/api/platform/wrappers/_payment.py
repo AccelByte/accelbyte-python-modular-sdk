@@ -86,7 +86,7 @@ def charge_payment_order(
 
     [Not supported yet in AGS Shared Cloud] [TEST FACILITY ONLY] Forbidden in live environment. Charge payment order without payment flow for unpaid payment order, usually for test usage to simulate real currency payment process.
     Other detail info:
-                * Returns : payment order instance
+              * Returns : payment order instance
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/orders/{paymentOrderNo}
@@ -140,7 +140,7 @@ async def charge_payment_order_async(
 
     [Not supported yet in AGS Shared Cloud] [TEST FACILITY ONLY] Forbidden in live environment. Charge payment order without payment flow for unpaid payment order, usually for test usage to simulate real currency payment process.
     Other detail info:
-                * Returns : payment order instance
+              * Returns : payment order instance
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/orders/{paymentOrderNo}
@@ -196,8 +196,8 @@ def create_user_payment_order(
 
     [Not supported yet in AGS Shared Cloud] [SERVICE COMMUNICATION ONLY] This API is used to create payment order from justice service. The result contains the payment station url.
     Other detail info:
-                * It will be forbidden while the user is banned: PAYMENT_INITIATE or ORDER_AND_PAYMENT
-                *  Returns : created order
+              * It will be forbidden while the user is banned: PAYMENT_INITIATE or ORDER_AND_PAYMENT
+              *  Returns : created order
 
     ## Restrictions for custom parameters and meta data
 
@@ -205,13 +205,13 @@ def create_user_payment_order(
     1. Cannot use "." as the key name
     -
 
-                                            { "data.2": "value" }
+                                    { "data.2": "value" }
 
 
     2. Cannot use "$" as the prefix in key names
     -
 
-                                            { "$data": "value" }
+                                    { "$data": "value" }
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/payment/orders
@@ -269,8 +269,8 @@ async def create_user_payment_order_async(
 
     [Not supported yet in AGS Shared Cloud] [SERVICE COMMUNICATION ONLY] This API is used to create payment order from justice service. The result contains the payment station url.
     Other detail info:
-                * It will be forbidden while the user is banned: PAYMENT_INITIATE or ORDER_AND_PAYMENT
-                *  Returns : created order
+              * It will be forbidden while the user is banned: PAYMENT_INITIATE or ORDER_AND_PAYMENT
+              *  Returns : created order
 
     ## Restrictions for custom parameters and meta data
 
@@ -278,13 +278,13 @@ async def create_user_payment_order_async(
     1. Cannot use "." as the key name
     -
 
-                                            { "data.2": "value" }
+                                    { "data.2": "value" }
 
 
     2. Cannot use "$" as the prefix in key names
     -
 
-                                            { "$data": "value" }
+                                    { "$data": "value" }
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/payment/orders
@@ -343,7 +343,7 @@ def get_payment_order(
 
     [Not supported yet in AGS Shared Cloud] Get payment order by paymentOrderNo.
     Other detail info:
-                * Returns : payment order instance
+              * Returns : payment order instance
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/orders/{paymentOrderNo}
@@ -389,7 +389,7 @@ async def get_payment_order_async(
 
     [Not supported yet in AGS Shared Cloud] Get payment order by paymentOrderNo.
     Other detail info:
-                * Returns : payment order instance
+              * Returns : payment order instance
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/orders/{paymentOrderNo}
@@ -437,7 +437,7 @@ def get_payment_order_charge_status(
 
     [Not supported yet in AGS Shared Cloud] Get payment order charge status.
     Other detail info:
-                * Returns : payment order charge status
+              * Returns : payment order charge status
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/orders/{paymentOrderNo}/status
@@ -483,7 +483,7 @@ async def get_payment_order_charge_status_async(
 
     [Not supported yet in AGS Shared Cloud] Get payment order charge status.
     Other detail info:
-                * Returns : payment order charge status
+              * Returns : payment order charge status
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/orders/{paymentOrderNo}/status
@@ -531,7 +531,7 @@ def list_ext_order_no_by_ext_tx_id(
 
     [Not supported yet in AGS Shared Cloud] List external order No by external transaction id.
     Other detail info:
-                * Returns : payment orders
+              * Returns : payment orders
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/orders/byExtTxId
@@ -575,7 +575,7 @@ async def list_ext_order_no_by_ext_tx_id_async(
 
     [Not supported yet in AGS Shared Cloud] List external order No by external transaction id.
     Other detail info:
-                * Returns : payment orders
+              * Returns : payment orders
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/orders/byExtTxId
@@ -631,7 +631,7 @@ def query_payment_notifications(
 
     [Not supported yet in AGS Shared Cloud] Query payment notifications.
     Other detail info:
-                * Returns : Payment notifications
+              * Returns : Payment notifications
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/notifications
@@ -709,7 +709,7 @@ async def query_payment_notifications_async(
 
     [Not supported yet in AGS Shared Cloud] Query payment notifications.
     Other detail info:
-                * Returns : Payment notifications
+              * Returns : Payment notifications
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/notifications
@@ -783,7 +783,7 @@ def query_payment_orders(
 
     [Not supported yet in AGS Shared Cloud] Query payment orders.
     Other detail info:
-                * Returns : query payment orders
+              * Returns : query payment orders
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/orders
@@ -843,7 +843,7 @@ async def query_payment_orders_async(
 
     [Not supported yet in AGS Shared Cloud] Query payment orders.
     Other detail info:
-                * Returns : query payment orders
+              * Returns : query payment orders
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/orders
@@ -1016,7 +1016,7 @@ def simulate_payment_order_notification(
 
     [Not supported yet in AGS Shared Cloud] [TEST FACILITY ONLY] Forbidden in live environment. Simulate payment notification on sandbox payment order, usually for test usage to simulate real currency payment notification.
     Other detail info:
-                * Returns : notification process result
+              * Returns : notification process result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/orders/{paymentOrderNo}/simulate-notification
@@ -1068,7 +1068,7 @@ async def simulate_payment_order_notification_async(
 
     [Not supported yet in AGS Shared Cloud] [TEST FACILITY ONLY] Forbidden in live environment. Simulate payment notification on sandbox payment order, usually for test usage to simulate real currency payment notification.
     Other detail info:
-                * Returns : notification process result
+              * Returns : notification process result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/orders/{paymentOrderNo}/simulate-notification

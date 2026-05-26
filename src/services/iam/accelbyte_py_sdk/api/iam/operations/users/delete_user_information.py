@@ -37,7 +37,7 @@ from ...models import RestErrorResponse
 class DeleteUserInformation(Operation):
     """[DEPRECATED] Delete user's information (DeleteUserInformation)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/namespaces/{namespace}/users/{userId}/information [DELETE]_**
 

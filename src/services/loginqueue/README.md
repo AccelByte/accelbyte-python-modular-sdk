@@ -6,7 +6,7 @@ This is a service module for the [AccelByte Modular Python SDK](https://github.c
 
 ```text
 AccelByte Gaming Services Login Queue Service
-* Version: 2.3.4
+* Version: 2.5.0
 ```
 
 ## Setup

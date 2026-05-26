@@ -35,6 +35,7 @@ from accelbyte_py_sdk.core import deprecated
 class LoginSSOClient(Operation):
     """Login to SSO client with provided platformId (LoginSSOClient)
 
+    Redirects the user to the SSO client's login page for the specified platform. An optional 'payload' query parameter can be passed with key-value data from the SSO client.
 
     Properties:
         url: /iam/v3/sso/{platformId}

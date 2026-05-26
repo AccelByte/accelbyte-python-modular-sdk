@@ -38,7 +38,7 @@ from ...models import RestErrorResponse
 class AdminSearchUsersV2(Operation):
     """[DEPRECATED] Search Users (AdminSearchUsersV2)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     **Endpoint migration guide**
     - **Substitute endpoint: _/iam/v3/admin/namespaces/{namespace}/users/search [GET]_**
 

@@ -34,6 +34,7 @@ from ..models import BulkCreditRequest
 from ..models import BulkCreditResult
 from ..models import BulkDebitRequest
 from ..models import BulkDebitResult
+from ..models import CheckBalanceResponse
 from ..models import CreditRequest
 from ..models import CurrencyWallet
 from ..models import DebitByCurrencyCodeRequest
@@ -121,7 +122,7 @@ def bulk_credit(
 
     Credit different users' wallets.
     Other detail info:
-                * Returns : bulk credit result
+              * Returns : bulk credit result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/wallets/credit
@@ -167,7 +168,7 @@ async def bulk_credit_async(
 
     Credit different users' wallets.
     Other detail info:
-                * Returns : bulk credit result
+              * Returns : bulk credit result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/wallets/credit
@@ -215,7 +216,7 @@ def bulk_debit(
 
     Debit different users' wallets.
     Other detail info:
-                * Returns : bulk credit result
+              * Returns : bulk credit result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/wallets/debit
@@ -261,7 +262,7 @@ async def bulk_debit_async(
 
     Debit different users' wallets.
     Other detail info:
-                * Returns : bulk credit result
+              * Returns : bulk credit result
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/wallets/debit
@@ -311,7 +312,7 @@ def check_balance(
 
     Checks if the user has enough balance based on the provided criteria.
     Other detail info:
-                * Returns : boolean value indicating if the user has enough balance
+              * Returns : boolean value indicating if the user has enough balance
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/balanceCheck
@@ -335,7 +336,7 @@ def check_balance(
         user_id: (userId) REQUIRED str in path
 
     Responses:
-        200: OK - (Successfully determined if user has enough balance.)
+        200: OK - CheckBalanceResponse (Successfully determined if user has enough balance.)
 
         400: Bad Request - ErrorEntity (35123: Wallet [{walletId}] is inactive | 35124: Wallet [{currencyCode}] has insufficient balance)
     """
@@ -365,7 +366,7 @@ async def check_balance_async(
 
     Checks if the user has enough balance based on the provided criteria.
     Other detail info:
-                * Returns : boolean value indicating if the user has enough balance
+              * Returns : boolean value indicating if the user has enough balance
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/balanceCheck
@@ -389,7 +390,7 @@ async def check_balance_async(
         user_id: (userId) REQUIRED str in path
 
     Responses:
-        200: OK - (Successfully determined if user has enough balance.)
+        200: OK - CheckBalanceResponse (Successfully determined if user has enough balance.)
 
         400: Bad Request - ErrorEntity (35123: Wallet [{walletId}] is inactive | 35124: Wallet [{currencyCode}] has insufficient balance)
     """
@@ -656,13 +657,13 @@ def debit_by_wallet_platform(
     1. Cannot use "." as the key name
     -
 
-                                            { "data.2": "value" }
+                                    { "data.2": "value" }
 
 
     2. Cannot use "$" as the prefix in key names
     -
 
-                                            { "$data": "value" }
+                                    { "$data": "value" }
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/debitByWalletPlatform
@@ -725,13 +726,13 @@ async def debit_by_wallet_platform_async(
     1. Cannot use "." as the key name
     -
 
-                                            { "data.2": "value" }
+                                    { "data.2": "value" }
 
 
     2. Cannot use "$" as the prefix in key names
     -
 
-                                            { "$data": "value" }
+                                    { "$data": "value" }
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/debitByWalletPlatform
@@ -1229,7 +1230,7 @@ def get_platform_wallet_config(
 
     Get platform wallet config list.
     Other detail info:
-                * Returns : wallet info
+              * Returns : wallet info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config
@@ -1273,7 +1274,7 @@ async def get_platform_wallet_config_async(
 
     Get platform wallet config list.
     Other detail info:
-                * Returns : wallet info
+              * Returns : wallet info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config
@@ -1321,7 +1322,7 @@ def get_user_wallet(
 
     get a user wallet.
     Other detail info:
-                * Returns : wallet info
+              * Returns : wallet info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}
@@ -1372,7 +1373,7 @@ async def get_user_wallet_async(
 
     get a user wallet.
     Other detail info:
-                * Returns : wallet info
+              * Returns : wallet info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}
@@ -1424,7 +1425,7 @@ def get_wallet(
 
     get a wallet by wallet id.
     Other detail info:
-                * Returns : wallet info
+              * Returns : wallet info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/wallets/{walletId}
@@ -1471,7 +1472,7 @@ async def get_wallet_async(
 
     get a wallet by wallet id.
     Other detail info:
-                * Returns : wallet info
+              * Returns : wallet info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/wallets/{walletId}
@@ -1600,7 +1601,7 @@ def list_user_currency_transactions(
 
     List user currency transactions ordered by create time desc.
     Other detail info:
-                * Returns : currency transaction info
+              * Returns : currency transaction info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/{currencyCode}/transactions
@@ -1658,7 +1659,7 @@ async def list_user_currency_transactions_async(
 
     List user currency transactions ordered by create time desc.
     Other detail info:
-                * Returns : currency transaction info
+              * Returns : currency transaction info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/{currencyCode}/transactions
@@ -1719,7 +1720,7 @@ def list_user_wallet_transactions(
 
     List user wallet transactions ordered by create time desc.
     Other detail info:
-                * Returns : wallet transaction info
+              * Returns : wallet transaction info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/transactions
@@ -1778,7 +1779,7 @@ async def list_user_wallet_transactions_async(
 
     List user wallet transactions ordered by create time desc.
     Other detail info:
-                * Returns : wallet transaction info
+              * Returns : wallet transaction info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/transactions
@@ -1945,10 +1946,10 @@ def public_get_my_wallet(
 
     get my wallet by currency code and namespace.
     Other detail info:
-                * Returns : wallet info
-                *  Path's namespace :
-                  * can be filled with publisher namespace in order to get publisher user wallet
-                  * can be filled with game namespace in order to get game user wallet
+              * Returns : wallet info
+              *  Path's namespace :
+                * can be filled with publisher namespace in order to get publisher user wallet
+                * can be filled with game namespace in order to get game user wallet
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/me/wallets/{currencyCode}
@@ -1992,10 +1993,10 @@ async def public_get_my_wallet_async(
 
     get my wallet by currency code and namespace.
     Other detail info:
-                * Returns : wallet info
-                *  Path's namespace :
-                  * can be filled with publisher namespace in order to get publisher user wallet
-                  * can be filled with game namespace in order to get game user wallet
+              * Returns : wallet info
+              *  Path's namespace :
+                * can be filled with publisher namespace in order to get publisher user wallet
+                * can be filled with game namespace in order to get game user wallet
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/me/wallets/{currencyCode}
@@ -2042,7 +2043,7 @@ def public_get_wallet(
 
     get a wallet by currency code.
     Other detail info:
-                * Returns : wallet info
+              * Returns : wallet info
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}
@@ -2090,7 +2091,7 @@ async def public_get_wallet_async(
 
     get a wallet by currency code.
     Other detail info:
-                * Returns : wallet info
+              * Returns : wallet info
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}
@@ -2142,7 +2143,7 @@ def public_list_user_wallet_transactions(
 
     List wallet transactions by currency code ordered by create time desc.
     Other detail info:
-                * Returns : currency transaction info
+              * Returns : currency transaction info
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/transactions
@@ -2198,7 +2199,7 @@ async def public_list_user_wallet_transactions_async(
 
     List wallet transactions by currency code ordered by create time desc.
     Other detail info:
-                * Returns : currency transaction info
+              * Returns : currency transaction info
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/transactions
@@ -2253,7 +2254,7 @@ def query_user_currency_wallets(
 
     Get user currency wallet summary.
     Other detail info: (READ)
-                *  Returns : currency wallet summary
+              *  Returns : currency wallet summary
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/summary
@@ -2297,7 +2298,7 @@ async def query_user_currency_wallets_async(
 
     Get user currency wallet summary.
     Other detail info: (READ)
-                *  Returns : currency wallet summary
+              *  Returns : currency wallet summary
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/summary
@@ -2348,7 +2349,7 @@ def query_wallets(
 
     Query wallets.
     Other detail info:
-                * Returns : paginated wallets info
+              * Returns : paginated wallets info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/wallets
@@ -2409,7 +2410,7 @@ async def query_wallets_async(
 
     Query wallets.
     Other detail info:
-                * Returns : paginated wallets info
+              * Returns : paginated wallets info
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/wallets
@@ -2467,7 +2468,7 @@ def reset_platform_wallet_config(
 
     Reset platform wallet config to default config.
     Other detail info:
-                * Returns : platform wallet config
+              * Returns : platform wallet config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config/reset
@@ -2511,7 +2512,7 @@ async def reset_platform_wallet_config_async(
 
     Reset platform wallet config to default config.
     Other detail info:
-                * Returns : platform wallet config
+              * Returns : platform wallet config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config/reset
@@ -2558,7 +2559,7 @@ def update_platform_wallet_config(
 
     Update platform wallet config.
     Other detail info:
-                * Returns : platform wallet config
+              * Returns : platform wallet config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config
@@ -2606,7 +2607,7 @@ async def update_platform_wallet_config_async(
 
     Update platform wallet config.
     Other detail info:
-                * Returns : platform wallet config
+              * Returns : platform wallet config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config

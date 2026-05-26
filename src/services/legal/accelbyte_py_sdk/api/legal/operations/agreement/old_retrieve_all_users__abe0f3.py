@@ -36,7 +36,7 @@ from ...models import PagedRetrieveUserAcceptedAgreementResponse
 
 
 class OldRetrieveAllUsersByPolicyVersion(Operation):
-    """Retrieve Users Accepting Legal Agreements (oldRetrieveAllUsersByPolicyVersion)
+    """[DEPRECATED] Retrieve Users Accepting Legal Agreements (oldRetrieveAllUsersByPolicyVersion)
 
     This API will return users who has accepted a specific policy version.
 

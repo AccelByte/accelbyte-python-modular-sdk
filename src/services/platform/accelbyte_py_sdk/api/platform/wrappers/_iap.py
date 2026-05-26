@@ -90,6 +90,7 @@ from ..operations.iap import AdminResetSteamJobTime
 from ..operations.iap import AdminSyncOculusSubscriptions
 from ..operations.iap import AdminSyncSteamAbnormalTransaction
 from ..operations.iap import AdminSyncSteamIAPByTransaction
+from ..operations.iap import AdminSyncTwitchDropsEntitlement
 from ..operations.iap import DeleteAppleIAPConfig
 from ..operations.iap import DeleteEpicGamesIAPConfig
 from ..operations.iap import DeleteGoogleIAPConfig
@@ -849,6 +850,108 @@ async def admin_sync_steam_iap_by_transaction_async(
         if error:
             return None, error
     request = AdminSyncSteamIAPByTransaction.create(
+        body=body,
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return await run_request_async(
+        request, additional_headers=x_additional_headers, **kwargs
+    )
+
+
+@same_doc_as(AdminSyncTwitchDropsEntitlement)
+def admin_sync_twitch_drops_entitlement(
+    body: TwitchSyncRequest,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs,
+):
+    """Sync twitch drops entitlements with App Token. (adminSyncTwitchDropsEntitlement)
+
+    Sync twitch drops entitlements. rate limit: 800 req/minutes.
+
+                *  Returns :
+
+    Properties:
+        url: /platform/admin/namespaces/{namespace}/users/{userId}/iap/twitch/sync
+
+        method: PUT
+
+        tags: ["IAP"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED TwitchSyncRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+    Responses:
+        204: No Content - (Sync Successful)
+
+        429: Too Many Requests - (Too Many Request (twitch rate limit exceeded))
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
+        if error:
+            return None, error
+    request = AdminSyncTwitchDropsEntitlement.create(
+        body=body,
+        user_id=user_id,
+        namespace=namespace,
+    )
+    return run_request(request, additional_headers=x_additional_headers, **kwargs)
+
+
+@same_doc_as(AdminSyncTwitchDropsEntitlement)
+async def admin_sync_twitch_drops_entitlement_async(
+    body: TwitchSyncRequest,
+    user_id: str,
+    namespace: Optional[str] = None,
+    x_additional_headers: Optional[Dict[str, str]] = None,
+    **kwargs,
+):
+    """Sync twitch drops entitlements with App Token. (adminSyncTwitchDropsEntitlement)
+
+    Sync twitch drops entitlements. rate limit: 800 req/minutes.
+
+                *  Returns :
+
+    Properties:
+        url: /platform/admin/namespaces/{namespace}/users/{userId}/iap/twitch/sync
+
+        method: PUT
+
+        tags: ["IAP"]
+
+        consumes: ["application/json"]
+
+        produces: ["application/json"]
+
+        securities: [BEARER_AUTH]
+
+        body: (body) REQUIRED TwitchSyncRequest in body
+
+        namespace: (namespace) REQUIRED str in path
+
+        user_id: (userId) REQUIRED str in path
+
+    Responses:
+        204: No Content - (Sync Successful)
+
+        429: Too Many Requests - (Too Many Request (twitch rate limit exceeded))
+    """
+    if namespace is None:
+        namespace, error = get_services_namespace(sdk=kwargs.get("sdk"))
+        if error:
+            return None, error
+    request = AdminSyncTwitchDropsEntitlement.create(
         body=body,
         user_id=user_id,
         namespace=namespace,
@@ -1652,7 +1755,7 @@ def get_apple_iap_config(
 
     Get apple iap config.
     Other detail info:
-                  * Returns : apple iap config
+                * Returns : apple iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/apple
@@ -1692,7 +1795,7 @@ async def get_apple_iap_config_async(
 
     Get apple iap config.
     Other detail info:
-                  * Returns : apple iap config
+                * Returns : apple iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/apple
@@ -1734,7 +1837,7 @@ def get_epic_games_iap_config(
 
     Get epic games iap config.
     Other detail info:
-                  * Returns : epic games iap config
+                * Returns : epic games iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/epicgames
@@ -1774,7 +1877,7 @@ async def get_epic_games_iap_config_async(
 
     Get epic games iap config.
     Other detail info:
-                  * Returns : epic games iap config
+                * Returns : epic games iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/epicgames
@@ -1816,7 +1919,7 @@ def get_google_iap_config(
 
     Get google iap config.
     Other detail info:
-                  * Returns : google iap config
+                * Returns : google iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/google
@@ -1856,7 +1959,7 @@ async def get_google_iap_config_async(
 
     Get google iap config.
     Other detail info:
-                  * Returns : google iap config
+                * Returns : google iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/google
@@ -2156,7 +2259,7 @@ def get_oculus_iap_config(
 
     Get oculus iap config.
     Other detail info:
-                  * Returns : steam iap config
+                * Returns : steam iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/oculus
@@ -2196,7 +2299,7 @@ async def get_oculus_iap_config_async(
 
     Get oculus iap config.
     Other detail info:
-                  * Returns : steam iap config
+                * Returns : steam iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/oculus
@@ -2238,7 +2341,7 @@ def get_play_station_iap_config(
 
     Get playstation iap config.
     Other detail info:
-                  * Returns : playstation iap config
+                * Returns : playstation iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/playstation
@@ -2278,7 +2381,7 @@ async def get_play_station_iap_config_async(
 
     Get playstation iap config.
     Other detail info:
-                  * Returns : playstation iap config
+                * Returns : playstation iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/playstation
@@ -2320,7 +2423,7 @@ def get_steam_iap_config(
 
     Get steam iap config.
     Other detail info:
-                  * Returns : steam iap config
+                * Returns : steam iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/steam
@@ -2360,7 +2463,7 @@ async def get_steam_iap_config_async(
 
     Get steam iap config.
     Other detail info:
-                  * Returns : steam iap config
+                * Returns : steam iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/steam
@@ -2402,7 +2505,7 @@ def get_twitch_iap_config(
 
     Get twitch iap config.
     Other detail info:
-                  * Returns : twitch iap config
+                * Returns : twitch iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/twitch
@@ -2442,7 +2545,7 @@ async def get_twitch_iap_config_async(
 
     Get twitch iap config.
     Other detail info:
-                  * Returns : twitch iap config
+                * Returns : twitch iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/twitch
@@ -2484,7 +2587,7 @@ def get_xbl_iap_config(
 
     Get xbox iap config.
     Other detail info:
-                  * Returns : xbox iap config
+                * Returns : xbox iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/xbl
@@ -2524,7 +2627,7 @@ async def get_xbl_iap_config_async(
 
     Get xbox iap config.
     Other detail info:
-                  * Returns : xbox iap config
+                * Returns : xbox iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/xbl
@@ -2567,7 +2670,7 @@ def mock_fulfill_iap_item(
     """Mock fulfill iap item. (mockFulfillIAPItem)
 
     [TEST FACILITY ONLY] Forbidden in live environment. Mock fulfill iap item without validate receipt.Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/iap/mock/receipt
@@ -2620,7 +2723,7 @@ async def mock_fulfill_iap_item_async(
     """Mock fulfill iap item. (mockFulfillIAPItem)
 
     [TEST FACILITY ONLY] Forbidden in live environment. Mock fulfill iap item without validate receipt.Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/iap/mock/receipt
@@ -2675,7 +2778,7 @@ def public_fulfill_apple_iap_item(
     """Fulfill apple iap item. (publicFulfillAppleIAPItem)
 
     Verify apple iap receipt and fulfill item. don't support subscriptionOther detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/apple/receipt
@@ -2728,7 +2831,7 @@ async def public_fulfill_apple_iap_item_async(
     """Fulfill apple iap item. (publicFulfillAppleIAPItem)
 
     Verify apple iap receipt and fulfill item. don't support subscriptionOther detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/apple/receipt
@@ -2783,7 +2886,7 @@ def public_fulfill_google_iap_item(
     """Fulfill google iap item. (publicFulfillGoogleIAPItem)
 
     Verify google iap receipt and fulfill item.Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/google/receipt
@@ -2836,7 +2939,7 @@ async def public_fulfill_google_iap_item_async(
     """Fulfill google iap item. (publicFulfillGoogleIAPItem)
 
     Verify google iap receipt and fulfill item.Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/google/receipt
@@ -2891,7 +2994,7 @@ def public_reconcile_play_station_store(
     """Synchronize with entitlements in PSN Store. (publicReconcilePlayStationStore)
 
     Synchronize with entitlements in PSN Store.Other detail info:
-                  * Returns : result of synchronization
+                * Returns : result of synchronization
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/psn/sync
@@ -2942,7 +3045,7 @@ async def public_reconcile_play_station_store_async(
     """Synchronize with entitlements in PSN Store. (publicReconcilePlayStationStore)
 
     Synchronize with entitlements in PSN Store.Other detail info:
-                  * Returns : result of synchronization
+                * Returns : result of synchronization
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/psn/sync
@@ -2995,7 +3098,7 @@ def public_reconcile_play_station_store_with_multiple_service_labels(
     """Synchronize with entitlements in PSN Store with multiple service labels. (publicReconcilePlayStationStoreWithMultipleServiceLabels)
 
     Synchronize with entitlements in PSN Store with multiple service labels.Other detail info:
-                  * Returns : result of synchronization
+                * Returns : result of synchronization
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/psn/sync/multiServiceLabels
@@ -3046,7 +3149,7 @@ async def public_reconcile_play_station_store_with_multiple_service_labels_async
     """Synchronize with entitlements in PSN Store with multiple service labels. (publicReconcilePlayStationStoreWithMultipleServiceLabels)
 
     Synchronize with entitlements in PSN Store with multiple service labels.Other detail info:
-                  * Returns : result of synchronization
+                * Returns : result of synchronization
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/psn/sync/multiServiceLabels
@@ -3207,7 +3310,7 @@ def query_all_user_iap_orders(
 
     Query all user IAP orders.
     Other detail info:
-                  * Returns : list of iap orders
+                * Returns : list of iap orders
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/iap/all
@@ -3251,7 +3354,7 @@ async def query_all_user_iap_orders_async(
 
     Query all user IAP orders.
     Other detail info:
-                  * Returns : list of iap orders
+                * Returns : list of iap orders
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/iap/all
@@ -3423,7 +3526,7 @@ def query_user_iap_consume_history(
 
     Query IAP consume history.
     Other detail info:
-                  * Returns : paginated iap consume history
+                * Returns : paginated iap consume history
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/iap/consume/history
@@ -3491,7 +3594,7 @@ async def query_user_iap_consume_history_async(
 
     Query IAP consume history.
     Other detail info:
-                  * Returns : paginated iap consume history
+                * Returns : paginated iap consume history
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/iap/consume/history
@@ -3562,7 +3665,7 @@ def query_user_iap_orders(
 
     Query IAP orders.
     Other detail info:
-                  * Returns : paginated iap orders
+                * Returns : paginated iap orders
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/iap
@@ -3634,7 +3737,7 @@ async def query_user_iap_orders_async(
 
     Query IAP orders.
     Other detail info:
-                  * Returns : paginated iap orders
+                * Returns : paginated iap orders
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/iap
@@ -3701,7 +3804,7 @@ def sync_epic_games_inventory(
     """Sync epic games inventory. (syncEpicGamesInventory)
 
     Sync epic games inventory's items.Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/epicgames/sync
@@ -3752,7 +3855,7 @@ async def sync_epic_games_inventory_async(
     """Sync epic games inventory. (syncEpicGamesInventory)
 
     Sync epic games inventory's items.Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/epicgames/sync
@@ -3804,7 +3907,7 @@ def sync_oculus_consumable_entitlements(
     """Sync Oculus entitlements. (syncOculusConsumableEntitlements)
 
     Sync Oculus entitlements.Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/oculus/sync
@@ -3851,7 +3954,7 @@ async def sync_oculus_consumable_entitlements_async(
     """Sync Oculus entitlements. (syncOculusConsumableEntitlements)
 
     Sync Oculus entitlements.Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/oculus/sync
@@ -4099,7 +4202,7 @@ def sync_steam_iap_by_transaction(
     """Sync steam in app purchase by transaction. (syncSteamIAPByTransaction)
 
     Sync steam in app purchase by transaction.Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/steam/syncByTransaction
@@ -4152,7 +4255,7 @@ async def sync_steam_iap_by_transaction_async(
     """Sync steam in app purchase by transaction. (syncSteamIAPByTransaction)
 
     Sync steam in app purchase by transaction.Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/steam/syncByTransaction
@@ -4207,7 +4310,7 @@ def sync_steam_inventory(
     """Sync steam inventory. (syncSteamInventory)
 
     Sync steam inventory's items.Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/steam/sync
@@ -4258,7 +4361,7 @@ async def sync_steam_inventory_async(
     """Sync steam inventory. (syncSteamInventory)
 
     Sync steam inventory's items.Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/steam/sync
@@ -4401,7 +4504,7 @@ def sync_twitch_drops_entitlement_1(
     """Sync twitch drops entitlements. (syncTwitchDropsEntitlement_1)
 
     Sync twitch drops entitlements.Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/twitch/sync
@@ -4450,7 +4553,7 @@ async def sync_twitch_drops_entitlement_1_async(
     """Sync twitch drops entitlements. (syncTwitchDropsEntitlement_1)
 
     Sync twitch drops entitlements.Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/twitch/sync
@@ -4501,7 +4604,7 @@ def sync_xbox_inventory(
     """Sync Xbox inventory. (syncXboxInventory)
 
     Sync Xbox inventory's items.Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/xbl/sync
@@ -4552,7 +4655,7 @@ async def sync_xbox_inventory_async(
     """Sync Xbox inventory. (syncXboxInventory)
 
     Sync Xbox inventory's items.Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/xbl/sync
@@ -4604,7 +4707,7 @@ def update_apple_iap_config(
     """Update apple iap config (updateAppleIAPConfig)
 
     Update apple iap config. Other detail info:
-                  * Returns : updated apple iap config
+                * Returns : updated apple iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/apple
@@ -4647,7 +4750,7 @@ async def update_apple_iap_config_async(
     """Update apple iap config (updateAppleIAPConfig)
 
     Update apple iap config. Other detail info:
-                  * Returns : updated apple iap config
+                * Returns : updated apple iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/apple
@@ -4693,7 +4796,7 @@ def update_apple_p8_file(
 
     Upload Apple Store p8 file.
     Other detail info:
-                  * Returns : updated apple iap config
+                * Returns : updated apple iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/apple/cert
@@ -4737,7 +4840,7 @@ async def update_apple_p8_file_async(
 
     Upload Apple Store p8 file.
     Other detail info:
-                  * Returns : updated apple iap config
+                * Returns : updated apple iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/apple/cert
@@ -4782,7 +4885,7 @@ def update_epic_games_iap_config(
     """Update epic games iap config (updateEpicGamesIAPConfig)
 
     Update epic games iap config. Other detail info:
-                  * Returns : updated epic games iap config
+                * Returns : updated epic games iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/epicgames
@@ -4825,7 +4928,7 @@ async def update_epic_games_iap_config_async(
     """Update epic games iap config (updateEpicGamesIAPConfig)
 
     Update epic games iap config. Other detail info:
-                  * Returns : updated epic games iap config
+                * Returns : updated epic games iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/epicgames
@@ -4870,7 +4973,7 @@ def update_google_iap_config(
     """Update google iap config (updateGoogleIAPConfig)
 
     Update google iap config. Other detail info:
-                  * Returns : updated google iap config
+                * Returns : updated google iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/google
@@ -4913,7 +5016,7 @@ async def update_google_iap_config_async(
     """Update google iap config (updateGoogleIAPConfig)
 
     Update google iap config. Other detail info:
-                  * Returns : updated google iap config
+                * Returns : updated google iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/google
@@ -4959,7 +5062,7 @@ def update_google_p12_file(
 
     Upload google play p12 file.
     Other detail info:
-                  * Returns : updated google iap config
+                * Returns : updated google iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/google/cert
@@ -5003,7 +5106,7 @@ async def update_google_p12_file_async(
 
     Upload google play p12 file.
     Other detail info:
-                  * Returns : updated google iap config
+                * Returns : updated google iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/google/cert
@@ -5048,7 +5151,7 @@ def update_iap_item_config(
     """Update iap item config (updateIAPItemConfig)
 
     Update iap item config. Other detail info:
-                  * Returns : updated iap item config
+                * Returns : updated iap item config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/item
@@ -5097,7 +5200,7 @@ async def update_iap_item_config_async(
     """Update iap item config (updateIAPItemConfig)
 
     Update iap item config. Other detail info:
-                  * Returns : updated iap item config
+                * Returns : updated iap item config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/item
@@ -5148,7 +5251,7 @@ def update_oculus_iap_config(
     """Update oculus iap config (updateOculusIAPConfig)
 
     Update oculus iap config. Other detail info:
-                  * Returns : updated steam iap config
+                * Returns : updated steam iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/oculus
@@ -5191,7 +5294,7 @@ async def update_oculus_iap_config_async(
     """Update oculus iap config (updateOculusIAPConfig)
 
     Update oculus iap config. Other detail info:
-                  * Returns : updated steam iap config
+                * Returns : updated steam iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/oculus
@@ -5236,7 +5339,7 @@ def update_playstation_iap_config(
     """Update playstation iap config (updatePlaystationIAPConfig)
 
     Update playstation iap config. Other detail info:
-                  * Returns : updated playstation iap config
+                * Returns : updated playstation iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/playstation
@@ -5281,7 +5384,7 @@ async def update_playstation_iap_config_async(
     """Update playstation iap config (updatePlaystationIAPConfig)
 
     Update playstation iap config. Other detail info:
-                  * Returns : updated playstation iap config
+                * Returns : updated playstation iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/playstation
@@ -5328,7 +5431,7 @@ def update_steam_iap_config(
     """Update steam iap config (updateSteamIAPConfig)
 
     Update steam iap config. Other detail info:
-                  * Returns : updated steam iap config
+                * Returns : updated steam iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/steam
@@ -5373,7 +5476,7 @@ async def update_steam_iap_config_async(
     """Update steam iap config (updateSteamIAPConfig)
 
     Update steam iap config. Other detail info:
-                  * Returns : updated steam iap config
+                * Returns : updated steam iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/steam
@@ -5420,7 +5523,7 @@ def update_twitch_iap_config(
     """Update twitch iap config (updateTwitchIAPConfig)
 
     Update twitch iap config. Other detail info:
-                  * Returns : updated twitch iap config
+                * Returns : updated twitch iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/twitch
@@ -5463,7 +5566,7 @@ async def update_twitch_iap_config_async(
     """Update twitch iap config (updateTwitchIAPConfig)
 
     Update twitch iap config. Other detail info:
-                  * Returns : updated twitch iap config
+                * Returns : updated twitch iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/twitch
@@ -5510,7 +5613,7 @@ def update_xbl_bp_cert_file(
 
     Upload xbl business partner cert file.
     Other detail info:
-                  * Returns : updated xbl iap config
+                * Returns : updated xbl iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/xbl/cert
@@ -5560,7 +5663,7 @@ async def update_xbl_bp_cert_file_async(
 
     Upload xbl business partner cert file.
     Other detail info:
-                  * Returns : updated xbl iap config
+                * Returns : updated xbl iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/xbl/cert
@@ -5610,7 +5713,7 @@ def update_xbl_iap_config(
     """Update xbl iap config (updateXblIAPConfig)
 
     Update xbl iap config. Other detail info:
-                  * Returns : updated xbl iap config
+                * Returns : updated xbl iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/xbl
@@ -5653,7 +5756,7 @@ async def update_xbl_iap_config_async(
     """Update xbl iap config (updateXblIAPConfig)
 
     Update xbl iap config. Other detail info:
-                  * Returns : updated xbl iap config
+                * Returns : updated xbl iap config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/xbl
@@ -5699,7 +5802,7 @@ def v2_public_fulfill_apple_iap_item(
     """Fulfill apple iap item V2. (V2PublicFulfillAppleIAPItem)
 
     Verify apple iap transaction and fulfill item, support subscriptionOther detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/v2/public/namespaces/{namespace}/users/{userId}/iap/apple/receipt
@@ -5752,7 +5855,7 @@ async def v2_public_fulfill_apple_iap_item_async(
     """Fulfill apple iap item V2. (V2PublicFulfillAppleIAPItem)
 
     Verify apple iap transaction and fulfill item, support subscriptionOther detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/v2/public/namespaces/{namespace}/users/{userId}/iap/apple/receipt
@@ -5805,7 +5908,7 @@ def validate_existed_playstation_iap_config(
     """Validate existed playstation iap config (validateExistedPlaystationIAPConfig)
 
     Validate playstation iap config. Other detail info:
-                  * Returns : Test Results
+                * Returns : Test Results
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/playstation/validate
@@ -5844,7 +5947,7 @@ async def validate_existed_playstation_iap_config_async(
     """Validate existed playstation iap config (validateExistedPlaystationIAPConfig)
 
     Validate playstation iap config. Other detail info:
-                  * Returns : Test Results
+                * Returns : Test Results
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/playstation/validate
@@ -5886,7 +5989,7 @@ def validate_playstation_iap_config(
     """Validate playstation iap config (validatePlaystationIAPConfig)
 
     Validate playstation iap config. Other detail info:
-                  * Returns : Test Results
+                * Returns : Test Results
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/playstation/validate
@@ -5929,7 +6032,7 @@ async def validate_playstation_iap_config_async(
     """Validate playstation iap config (validatePlaystationIAPConfig)
 
     Validate playstation iap config. Other detail info:
-                  * Returns : Test Results
+                * Returns : Test Results
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/config/playstation/validate

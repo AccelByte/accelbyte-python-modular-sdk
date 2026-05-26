@@ -35,7 +35,7 @@ from ...models import RetrievePolicyResponse
 
 
 class RetrievePolicies(Operation):
-    """Retrieve Policies by Country (retrievePolicies)
+    """[DEPRECATED] Retrieve Policies by Country (retrievePolicies)
 
     Retrieve all active policies based on a country.
 

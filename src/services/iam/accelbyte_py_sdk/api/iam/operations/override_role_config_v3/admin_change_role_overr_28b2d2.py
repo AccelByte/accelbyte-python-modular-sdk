@@ -72,6 +72,8 @@ class AdminChangeRoleOverrideConfigStatusV3(Operation):
     Responses:
         200: OK - ModelRoleOverrideResponse (OK)
 
+        400: Bad Request - RestErrorResponse (20019: unable to parse request body)
+
         401: Unauthorized - RestErrorResponse (20001: unauthorized access)
 
         403: Forbidden - RestErrorResponse (20013: insufficient permissions)
@@ -214,11 +216,17 @@ class AdminChangeRoleOverrideConfigStatusV3(Operation):
 
     class Response(ApiResponse):
         data_200: Optional[ModelRoleOverrideResponse] = None
+        error_400: Optional[RestErrorResponse] = None
         error_401: Optional[RestErrorResponse] = None
         error_403: Optional[RestErrorResponse] = None
         error_500: Optional[RestErrorResponse] = None
 
         def ok(self) -> AdminChangeRoleOverrideConfigStatusV3.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
             if self.error_401 is not None:
                 err = self.error_401.translate_to_api_error()
                 exc = err.to_exception()
@@ -240,6 +248,9 @@ class AdminChangeRoleOverrideConfigStatusV3(Operation):
             if self.data_200 is not None:
                 yield self.data_200
                 yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
             elif self.error_401 is not None:
                 yield None
                 yield self.error_401
@@ -258,6 +269,8 @@ class AdminChangeRoleOverrideConfigStatusV3(Operation):
         """Parse the given response.
 
         200: OK - ModelRoleOverrideResponse (OK)
+
+        400: Bad Request - RestErrorResponse (20019: unable to parse request body)
 
         401: Unauthorized - RestErrorResponse (20001: unauthorized access)
 
@@ -285,6 +298,9 @@ class AdminChangeRoleOverrideConfigStatusV3(Operation):
 
             if code == 200:
                 result.data_200 = ModelRoleOverrideResponse.create_from_dict(content)
+            elif code == 400:
+                result.error_400 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
             elif code == 401:
                 result.error_401 = RestErrorResponse.create_from_dict(content)
                 result.error = result.error_401.translate_to_api_error()
@@ -321,6 +337,8 @@ class AdminChangeRoleOverrideConfigStatusV3(Operation):
 
         200: OK - ModelRoleOverrideResponse (OK)
 
+        400: Bad Request - RestErrorResponse (20019: unable to parse request body)
+
         401: Unauthorized - RestErrorResponse (20001: unauthorized access)
 
         403: Forbidden - RestErrorResponse (20013: insufficient permissions)
@@ -342,6 +360,8 @@ class AdminChangeRoleOverrideConfigStatusV3(Operation):
 
         if code == 200:
             return ModelRoleOverrideResponse.create_from_dict(content), None
+        if code == 400:
+            return None, RestErrorResponse.create_from_dict(content)
         if code == 401:
             return None, RestErrorResponse.create_from_dict(content)
         if code == 403:

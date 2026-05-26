@@ -38,7 +38,7 @@ from ...models import ValidationErrorEntity
 
 
 class OldCreatePolicy(Operation):
-    """Create a Base Legal Policy (oldCreatePolicy)
+    """[DEPRECATED] Create a Base Legal Policy (oldCreatePolicy)
 
     Create a legal policy.
     Note:

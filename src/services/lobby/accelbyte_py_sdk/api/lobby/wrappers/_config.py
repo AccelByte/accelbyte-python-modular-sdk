@@ -167,6 +167,10 @@ def admin_export_config_v1(
     "unregisterDelay": {
     "type": "integer",
     "format": "int64"
+    },
+    "wsReadTimeout": {
+    "type": "integer",
+    "format": "int64"
     }
     }
     }
@@ -294,6 +298,10 @@ def admin_export_config_v1(
                "format": "int32"
               },
               "unregisterDelay": {
+               "type": "integer",
+               "format": "int64"
+              },
+              "wsReadTimeout": {
                "type": "integer",
                "format": "int64"
               }
@@ -434,6 +442,10 @@ async def admin_export_config_v1_async(
     "unregisterDelay": {
     "type": "integer",
     "format": "int64"
+    },
+    "wsReadTimeout": {
+    "type": "integer",
+    "format": "int64"
     }
     }
     }
@@ -561,6 +573,10 @@ async def admin_export_config_v1_async(
                "format": "int32"
               },
               "unregisterDelay": {
+               "type": "integer",
+               "format": "int64"
+              },
+              "wsReadTimeout": {
                "type": "integer",
                "format": "int64"
               }

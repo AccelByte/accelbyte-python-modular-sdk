@@ -789,7 +789,7 @@ def get_third_party_subscription_details(
     """Admin get user subscription transaction details. (getThirdPartySubscriptionDetails)
 
     Admin get user subscription details.Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/iap/subscriptions/transactions/{id}
@@ -838,7 +838,7 @@ async def get_third_party_subscription_details_async(
     """Admin get user subscription transaction details. (getThirdPartySubscriptionDetails)
 
     Admin get user subscription details.Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/iap/subscriptions/transactions/{id}
@@ -889,7 +889,7 @@ def get_third_party_user_subscription_details(
     """Admin get user subscription details. (getThirdPartyUserSubscriptionDetails)
 
     Admin get user subscription details.Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/iap/subscriptions/{id}
@@ -938,7 +938,7 @@ async def get_third_party_user_subscription_details_async(
     """Admin get user subscription details. (getThirdPartyUserSubscriptionDetails)
 
     Admin get user subscription details.Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/iap/subscriptions/{id}
@@ -1158,7 +1158,7 @@ def public_query_user_third_party_subscription(
     """Query user subscription. (publicQueryUserThirdPartySubscription)
 
     Query user subscription, default sort by updatedAtOther detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/subscriptions/platforms/{platform}
@@ -1225,7 +1225,7 @@ async def public_query_user_third_party_subscription_async(
     """Query user subscription. (publicQueryUserThirdPartySubscription)
 
     Query user subscription, default sort by updatedAtOther detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/iap/subscriptions/platforms/{platform}
@@ -1294,7 +1294,7 @@ def query_third_party_subscription(
     """Query subscriptions. (queryThirdPartySubscription)
 
     Query subscriptions, default sort by updatedAt Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/subscriptions
@@ -1361,7 +1361,7 @@ async def query_third_party_subscription_async(
     """Query subscriptions. (queryThirdPartySubscription)
 
     Query subscriptions, default sort by updatedAt Other detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/iap/subscriptions
@@ -1430,7 +1430,7 @@ def query_user_third_party_subscription(
     """Query user subscription. (queryUserThirdPartySubscription)
 
     Query user subscription, default sort by updatedAtOther detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/iap/subscriptions
@@ -1497,7 +1497,7 @@ async def query_user_third_party_subscription_async(
     """Query user subscription. (queryUserThirdPartySubscription)
 
     Query user subscription, default sort by updatedAtOther detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/iap/subscriptions
@@ -1568,7 +1568,7 @@ def query_user_third_party_subscription_transactions(
     """Admin query user subscription transactions. (queryUserThirdPartySubscriptionTransactions)
 
     Admin query user subscription transactions, default sort by startAt timeOther detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/iap/subscriptions/transactions
@@ -1637,7 +1637,7 @@ async def query_user_third_party_subscription_transactions_async(
     """Admin query user subscription transactions. (queryUserThirdPartySubscriptionTransactions)
 
     Admin query user subscription transactions, default sort by startAt timeOther detail info:
-                  * Returns :
+                * Returns :
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/users/{userId}/iap/subscriptions/transactions

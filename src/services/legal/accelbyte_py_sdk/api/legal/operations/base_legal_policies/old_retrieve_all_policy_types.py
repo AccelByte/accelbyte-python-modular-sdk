@@ -35,7 +35,7 @@ from ...models import RetrievePolicyTypeResponse
 
 
 class OldRetrieveAllPolicyTypes(Operation):
-    """Retrieve All Policy Type (oldRetrieveAllPolicyTypes)
+    """[DEPRECATED] Retrieve All Policy Type (oldRetrieveAllPolicyTypes)
 
     Retrieve all supported policy types.
 

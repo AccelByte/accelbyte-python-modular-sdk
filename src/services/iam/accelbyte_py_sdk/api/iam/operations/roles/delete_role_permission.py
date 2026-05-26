@@ -37,7 +37,7 @@ from ...models import RestErrorResponse
 class DeleteRolePermission(Operation):
     """[DEPRECATED] Delete Role Permission (DeleteRolePermission)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/roles/{roleId}/permissions/{resource}/{action} [DELETE]_**
     - **Substitute endpoint: _/iam/v4/admin/roles/{roleId}/permissions [DELETE]_**

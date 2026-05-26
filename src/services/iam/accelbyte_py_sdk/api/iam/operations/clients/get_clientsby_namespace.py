@@ -38,7 +38,7 @@ from ...models import RestErrorResponse
 class GetClientsbyNamespace(Operation):
     """[DEPRECATED] Get clients by namespace (GetClientsbyNamespace)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     **Endpoint migration guide**
     - **Substitute endpoint: _/iam/v3/admin/namespaces/{namespace}/clients [GET]_**
 

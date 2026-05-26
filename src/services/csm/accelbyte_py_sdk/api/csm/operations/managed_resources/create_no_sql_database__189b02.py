@@ -37,11 +37,13 @@ from ...models import ResponseErrorResponse
 
 
 class CreateNoSQLDatabaseCredentialV2(Operation):
-    """Creates a new database credential for the customer (CreateNoSQLDatabaseCredentialV2)
+    """[DEPRECATED] Creates a new database credential for the customer (CreateNoSQLDatabaseCredentialV2)
 
     Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:NOSQL:DATABASECREDENTIALS [CREATE]`
 
     Creates a new database credential for the customer. This will soft-delete the old credential and create a new one.
+
+    `acknowledgements.acceptNosqlSecureCredentialHandling` is optional when previously accepted during database creation. Otherwise, it MUST be set to true to proceed with credential creation, indicating the customer accepts the secure credential handling mechanism.
 
     Properties:
         url: /csm/v2/admin/namespaces/{namespace}/apps/{app}/nosql/crendentials

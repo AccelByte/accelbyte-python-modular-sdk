@@ -13,6 +13,7 @@ __email__ = "dev@accelbyte.net"
 
 # pylint: disable=line-too-long
 
+from .create_new_no_sql_datab_b22b67 import CreateNewNoSQLDatabaseCredentialV2
 from .create_no_sql_cluster_v2 import CreateNoSQLClusterV2
 from .create_no_sql_database__189b02 import CreateNoSQLDatabaseCredentialV2
 from .create_no_sql_database_v2 import CreateNoSQLDatabaseV2

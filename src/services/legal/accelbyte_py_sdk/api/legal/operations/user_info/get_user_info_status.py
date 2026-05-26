@@ -35,7 +35,7 @@ from ...models import RetrieveUserInfoCacheStatusResponse
 
 
 class GetUserInfoStatus(Operation):
-    """Get user info cache status (getUserInfoStatus)
+    """[DEPRECATED] Get user info cache status (getUserInfoStatus)
 
     Get user info cache last updated time per namespace.
     The query parameter namespaces can be a list of namespace separated by comma.

@@ -35,9 +35,10 @@ from ...models import RestErrorResponse
 
 
 class AdminResetInputValidations(Operation):
-    """Admin Reset Input Validations (AdminResetInputValidations)
+    """[DEPRECATED] Admin Reset Input Validations (AdminResetInputValidations)
 
-    This endpoint is used to reset input validation to the default input validation configurations
+    Resets input validation to the default input validation configurations.
+    **Substitute endpoint:** /iam/v3/admin/namespaces/{namespace}/inputValidations/{field}[DELETE]
 
     Properties:
         url: /iam/v3/admin/inputValidations/{field}

@@ -37,7 +37,7 @@ from ...models import UploadPolicyVersionAttachmentRequest
 
 
 class OldRequestPresignedURL(Operation):
-    """Request Presigned URL for Upload Document (oldRequestPresignedURL)
+    """[DEPRECATED] Request Presigned URL for Upload Document (oldRequestPresignedURL)
 
     Request presigned URL for upload attachment for a particular localized version of base policy.
 

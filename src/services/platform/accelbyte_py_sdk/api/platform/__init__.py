@@ -364,6 +364,8 @@ from .wrappers import admin_sync_steam_abnormal_transaction
 from .wrappers import admin_sync_steam_abnormal_transaction_async
 from .wrappers import admin_sync_steam_iap_by_transaction
 from .wrappers import admin_sync_steam_iap_by_transaction_async
+from .wrappers import admin_sync_twitch_drops_entitlement
+from .wrappers import admin_sync_twitch_drops_entitlement_async
 from .wrappers import delete_apple_iap_config
 from .wrappers import delete_apple_iap_config_async
 from .wrappers import delete_epic_games_iap_config

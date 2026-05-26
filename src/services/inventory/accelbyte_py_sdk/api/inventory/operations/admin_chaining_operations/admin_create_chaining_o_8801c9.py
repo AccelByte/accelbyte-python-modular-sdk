@@ -36,8 +36,9 @@ from ...models import ApimodelsChainingOperationResp
 
 
 class AdminCreateChainingOperations(Operation):
-    """To Create Chaining Operation (AdminCreateChainingOperations)
+    """[DEPRECATED] To Create Chaining Operation (AdminCreateChainingOperations)
 
+    ## The endpoint is going to be deprecated
     Create chaining Operations.
     This process will run sequentially
     1. remove item process

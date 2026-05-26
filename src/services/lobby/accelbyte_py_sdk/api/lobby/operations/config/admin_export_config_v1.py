@@ -147,6 +147,10 @@ class AdminExportConfigV1(Operation):
     "unregisterDelay": {
     "type": "integer",
     "format": "int64"
+    },
+    "wsReadTimeout": {
+    "type": "integer",
+    "format": "int64"
     }
     }
     }
@@ -274,6 +278,10 @@ class AdminExportConfigV1(Operation):
                "format": "int32"
               },
               "unregisterDelay": {
+               "type": "integer",
+               "format": "int64"
+              },
+              "wsReadTimeout": {
                "type": "integer",
                "format": "int64"
               }
@@ -539,6 +547,10 @@ class AdminExportConfigV1(Operation):
           "unregisterDelay": {
            "type": "integer",
            "format": "int64"
+          },
+          "wsReadTimeout": {
+           "type": "integer",
+           "format": "int64"
           }
          }
         })
@@ -707,6 +719,10 @@ class AdminExportConfigV1(Operation):
            "format": "int32"
           },
           "unregisterDelay": {
+           "type": "integer",
+           "format": "int64"
+          },
+          "wsReadTimeout": {
            "type": "integer",
            "format": "int64"
           }

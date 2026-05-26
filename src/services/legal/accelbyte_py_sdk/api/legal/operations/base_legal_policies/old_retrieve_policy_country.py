@@ -36,7 +36,7 @@ from ...models import RetrievePolicyResponse
 
 
 class OldRetrievePolicyCountry(Operation):
-    """Retrieve a Base Legal Policy based on a Particular Country (oldRetrievePolicyCountry)
+    """[DEPRECATED] Retrieve a Base Legal Policy based on a Particular Country (oldRetrievePolicyCountry)
 
     Retrieve a Base Legal Policy based on a Particular Country.
 

@@ -38,7 +38,7 @@ from ...models import RestErrorResponse
 class EnableUserBan(Operation):
     """[DEPRECATED] Enable ban for a single user (EnableUserBan)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/namespaces/{namespace}/users/{userId}/bans/{banId} [PATCH]_**
 

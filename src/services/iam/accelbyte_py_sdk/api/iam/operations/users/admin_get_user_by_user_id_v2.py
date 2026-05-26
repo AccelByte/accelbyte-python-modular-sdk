@@ -37,7 +37,7 @@ from ...models import ModelUserResponse
 class AdminGetUserByUserIdV2(Operation):
     """[DEPRECATED] Get User By User Id (AdminGetUserByUserIdV2)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     **Endpoint migration guide**
     - **Substitute endpoint: _/iam/v3/admin/namespaces/{namespace}/users/{userId} [GET]_**
 

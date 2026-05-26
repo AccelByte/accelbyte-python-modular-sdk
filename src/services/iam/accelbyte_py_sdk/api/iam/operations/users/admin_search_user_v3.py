@@ -38,16 +38,16 @@ from ...models import RestErrorResponse
 class AdminSearchUserV3(Operation):
     """Search User (AdminSearchUserV3)
 
-    Endpoint behavior :
-    - By default this endpoint searches all users on the specified namespace.
-    - If query parameter is defined, endpoint will search users whose email address, display name, username, or third party partially match with the query.
+    Behavior :
+    - By default, searches all users on the specified namespace.
+    - If query parameter is defined, searches users whose email address, display name, username, or third party partially match with the query.
     - The query parameter length must be between 3 and 30 characters. For email address queries (i.e., contains '@'), the allowed length is 3 to 40 characters. Otherwise, the database will not be queried.
-    - If startDate and endDate parameters is defined, endpoint will search users which created on the certain date range.
-    - If query, startDate and endDate parameters are defined, endpoint will search users whose email address and display name match and created on the certain date range.
-    - If startDate parameter is defined, endpoint will search users that created start from the defined date.
-    - If endDate parameter is defined, endpoint will search users that created until the defined date.
-    - If platformId parameter is defined and by parameter is using thirdparty, endpoint will search users based on the platformId they have linked to.
-    - If platformBy parameter is defined and by parameter is using thirdparty, endpoint will search users based on the platformUserId or platformDisplayName they have linked to, example value: platformUserId or platformDisplayName.
+    - If startDate and endDate parameters is defined, searches users which created on the certain date range.
+    - If query, startDate and endDate parameters are defined, searches users whose email address and display name match and created on the certain date range.
+    - If startDate parameter is defined, searches users that created start from the defined date.
+    - If endDate parameter is defined, searches users that created until the defined date.
+    - If platformId parameter is defined and by parameter is using thirdparty, searches users based on the platformId they have linked to.
+    - If platformBy parameter is defined and by parameter is using thirdparty, searches users based on the platformUserId or platformDisplayName they have linked to, example value: platformUserId or platformDisplayName.
     - If limit is not defined, The default limit is 100.
 
     GraphQL-Like Querying:
@@ -63,8 +63,7 @@ class AdminSearchUserV3(Operation):
     - If super admin search in game namespace, the result will be all game admin users and players under the game namespace
     - If game admin search in their game studio namespace, the result will be all game admin user in the studio namespace
     - If game admin search in their game namespace, the result will be all player in the game namespace
-
-    action code : 10133
+    - If IAM client token (from studio namespace or game namespace) with ADMIN:NAMESPACE:{namespace}:USER permission searches in a game namespace, the result will be all players in that game namespace
 
     Properties:
         url: /iam/v3/admin/namespaces/{namespace}/users/search
@@ -117,6 +116,8 @@ class AdminSearchUserV3(Operation):
         401: Unauthorized - RestErrorResponse (20001: unauthorized access)
 
         403: Forbidden - RestErrorResponse (20013: insufficient permissions)
+
+        429: Too Many Requests - RestErrorResponse (20007: too many requests)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
@@ -383,6 +384,7 @@ class AdminSearchUserV3(Operation):
         error_400: Optional[RestErrorResponse] = None
         error_401: Optional[RestErrorResponse] = None
         error_403: Optional[RestErrorResponse] = None
+        error_429: Optional[RestErrorResponse] = None
         error_500: Optional[RestErrorResponse] = None
 
         def ok(self) -> AdminSearchUserV3.Response:
@@ -398,6 +400,11 @@ class AdminSearchUserV3(Operation):
                     raise exc  # pylint: disable=raising-bad-type
             if self.error_403 is not None:
                 err = self.error_403.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_429 is not None:
+                err = self.error_429.translate_to_api_error()
                 exc = err.to_exception()
                 if exc is not None:
                     raise exc  # pylint: disable=raising-bad-type
@@ -421,6 +428,9 @@ class AdminSearchUserV3(Operation):
             elif self.error_403 is not None:
                 yield None
                 yield self.error_403
+            elif self.error_429 is not None:
+                yield None
+                yield self.error_429
             elif self.error_500 is not None:
                 yield None
                 yield self.error_500
@@ -439,6 +449,8 @@ class AdminSearchUserV3(Operation):
         401: Unauthorized - RestErrorResponse (20001: unauthorized access)
 
         403: Forbidden - RestErrorResponse (20013: insufficient permissions)
+
+        429: Too Many Requests - RestErrorResponse (20007: too many requests)
 
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
 
@@ -473,6 +485,9 @@ class AdminSearchUserV3(Operation):
             elif code == 403:
                 result.error_403 = RestErrorResponse.create_from_dict(content)
                 result.error = result.error_403.translate_to_api_error()
+            elif code == 429:
+                result.error_429 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_429.translate_to_api_error()
             elif code == 500:
                 result.error_500 = RestErrorResponse.create_from_dict(content)
                 result.error = result.error_500.translate_to_api_error()
@@ -509,6 +524,8 @@ class AdminSearchUserV3(Operation):
 
         403: Forbidden - RestErrorResponse (20013: insufficient permissions)
 
+        429: Too Many Requests - RestErrorResponse (20007: too many requests)
+
         500: Internal Server Error - RestErrorResponse (20000: internal server error)
 
         ---: HttpResponse (Undocumented Response)
@@ -534,6 +551,8 @@ class AdminSearchUserV3(Operation):
         if code == 401:
             return None, RestErrorResponse.create_from_dict(content)
         if code == 403:
+            return None, RestErrorResponse.create_from_dict(content)
+        if code == 429:
             return None, RestErrorResponse.create_from_dict(content)
         if code == 500:
             return None, RestErrorResponse.create_from_dict(content)

@@ -36,9 +36,12 @@ from ...models import RestErrorResponse
 
 
 class PublicLinkPlatformAccount(Operation):
-    """Link a Platform User Account to User Account (PublicLinkPlatformAccount)
+    """[DEPRECATED] Link a Platform User Account to User Account (PublicLinkPlatformAccount)
 
-    It is going to be **DEPRECATED**.
+    ## This API has been deprecated
+    **Endpoint migration guide**
+    - **Substitute endpoint: _/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/force [POST]_**
+
     Update Platform Account relation to current User Account.
 
     Note: Game progression data (statistics, reward, etc) associated with previous User Account will not be

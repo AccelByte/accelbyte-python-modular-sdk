@@ -67,14 +67,16 @@ def authentication_with_platform_link_v4(
 ):
     """Authentication with platform link (AuthenticationWithPlatformLinkV4)
 
-    This endpoint is being used to authenticate a user account and perform platform link.
-    It validates user's email / username and password.
-    If user already enable 2FA, then invoke _/mfa/verify_ using **mfa_token** from this endpoint response.
+    Authenticates a user account and performs platform link.
+    Validates user's email / username and password.
+    If user already enable 2FA, then invoke _/mfa/verify_ using **mfa_token** from this API response.
 
     ## Device Cookie Validation
-
     Device Cookie is used to protect the user account from brute force login attack, [more detail from OWASP](https://owasp.org/www-community/Slow_Down_Online_Guessing_Attacks_with_Device_Cookies).
-    This endpoint will read device cookie from cookie **auth-trust-id**. If device cookie not found, it will generate a new one and set it into cookie when successfully authenticate.
+    It will read the device cookie from cookie **auth-trust-id**. If device cookie not found, it will generate a new one and set it into cookie when successfully authenticate.
+
+    ## Login Queue
+    When the Login Queue is enabled and at capacity, this API returns a 202 Accepted response, with the queue ticket included in the response body.
 
     Properties:
         url: /iam/v4/oauth/authenticateWithLink
@@ -134,14 +136,16 @@ async def authentication_with_platform_link_v4_async(
 ):
     """Authentication with platform link (AuthenticationWithPlatformLinkV4)
 
-    This endpoint is being used to authenticate a user account and perform platform link.
-    It validates user's email / username and password.
-    If user already enable 2FA, then invoke _/mfa/verify_ using **mfa_token** from this endpoint response.
+    Authenticates a user account and performs platform link.
+    Validates user's email / username and password.
+    If user already enable 2FA, then invoke _/mfa/verify_ using **mfa_token** from this API response.
 
     ## Device Cookie Validation
-
     Device Cookie is used to protect the user account from brute force login attack, [more detail from OWASP](https://owasp.org/www-community/Slow_Down_Online_Guessing_Attacks_with_Device_Cookies).
-    This endpoint will read device cookie from cookie **auth-trust-id**. If device cookie not found, it will generate a new one and set it into cookie when successfully authenticate.
+    It will read the device cookie from cookie **auth-trust-id**. If device cookie not found, it will generate a new one and set it into cookie when successfully authenticate.
+
+    ## Login Queue
+    When the Login Queue is enabled and at capacity, this API returns a 202 Accepted response, with the queue ticket included in the response body.
 
     Properties:
         url: /iam/v4/oauth/authenticateWithLink
@@ -201,9 +205,11 @@ def generate_token_by_new_headless_account_v4(
 ):
     """Create headless account and response token (GenerateTokenByNewHeadlessAccountV4)
 
-    This endpoint is being used to create headless account after 3rd platform authenticated, and response token .
-    The 'linkingToken' in request body is received from "/platforms/{platformId}/token"
-    when 3rd platform account is not linked to justice account yet.
+    Creates headless account after 3rd platform authenticated, and returns token.
+    The 'linkingToken' in request body is received from "/platforms/{platformId}/token" when 3rd platform account is not linked to any account yet and createHeadless param is set to false.
+
+    ## Login Queue
+    When the Login Queue is enabled and at capacity, this API returns a 202 Accepted response, with the queue ticket included in the response body.
 
     Properties:
         url: /iam/v4/oauth/headless/token
@@ -253,9 +259,11 @@ async def generate_token_by_new_headless_account_v4_async(
 ):
     """Create headless account and response token (GenerateTokenByNewHeadlessAccountV4)
 
-    This endpoint is being used to create headless account after 3rd platform authenticated, and response token .
-    The 'linkingToken' in request body is received from "/platforms/{platformId}/token"
-    when 3rd platform account is not linked to justice account yet.
+    Creates headless account after 3rd platform authenticated, and returns token.
+    The 'linkingToken' in request body is received from "/platforms/{platformId}/token" when 3rd platform account is not linked to any account yet and createHeadless param is set to false.
+
+    ## Login Queue
+    When the Login Queue is enabled and at capacity, this API returns a 202 Accepted response, with the queue ticket included in the response body.
 
     Properties:
         url: /iam/v4/oauth/headless/token
@@ -317,14 +325,15 @@ def platform_token_grant_v4(
 ):
     """OAuth2 access token generation specific to platform (PlatformTokenGrantV4)
 
-    Platform token grant specifically used for performing token grant using platform, e.g. Steam, Justice, etc. The endpoint automatically create an account if the account associated with the platform is not exists yet.
-    This endpoint requires all requests to have Authorization header set with Basic access authentication
-    constructed from client id and client secret. For publisher-game namespace schema : Specify only either platform_token or device_id. Device token grant
-    should be requested along with device_id parameter against game namespace. Another 3rd party platform token grant should be requested
-    along with platform_token parameter against publisher namespace.
-    ## 2FA remember device
-    To remember device for 2FA, should provide cookie: device_token or header: Device-Token
-    ## Supported platforms:
+    Platform token grant specifically used for performing token grant using platform, e.g. Steam, Device, etc.
+    Automatically creates a headless account if the account associated with the platform does not exist yet, unless the createHeadless param is set to false.
+    Requires all requests to have Authorization header set with Basic access authentication constructed from client id and client secret (only if using Confidential Client type). For more details on client types, refer to the [documentation guide](https://docs.accelbyte.io/gaming-services/modules/foundations/identity-access/authorization/manage-access-control-for-applications/#iam-client-types)
+
+    ## Request Payload
+    Device token grant should be requested along with device_id parameter.
+    The other 3rd party platform token grant should be requested along with platform_token parameter.
+
+    ## Supported platforms
     - **steam**: The platform_tokenâs value is the binary ticket returned by Steam.
     If this ticket was generated by Steam GetAuthTicketForWebApi with version >= 1.57, then platform token should use this style: `{identity}:{ticket}`, the `{identity}` was the parameter to call GetAuthTicketForWebApi when the ticket was created. Note: Do not contain `:` in this `{identity}`.
     - **steamopenid**: Steam's user authentication method using OpenID 2.0. The platform_token's value is URL generated by Steam on web authentication
@@ -337,7 +346,7 @@ def platform_token_grant_v4(
     - **android**: The device_id is the Androidâs device ID
     - **ios**: The device_id is the iOSâs device ID.
     - **apple**: The platform_tokenâs value is the authorization code or idToken returned by Apple OAuth.(We will use this code to generate APP token)
-    - **device**: Every device that doesânt run Android and iOS is categorized as a device. The device_id is the deviceâs ID.
+    - **device**: Every device that doesn't run Android and iOS is categorized as a device. The device_id is the deviceâs ID.
     - **justice**: The platform_tokenâs value is the designated userâs access token.
     - **epicgames**: The platform_tokenâs value is an access-token or authorization code obtained from Epicgames EOS Account Service.
     - **ps4**: The platform_tokenâs value is the authorization code returned by Sony OAuth.
@@ -372,7 +381,7 @@ def platform_token_grant_v4(
     Following is the access tokenâs content:
     - **namespace**. It is the namespace the token was generated from.
     - **display_name**. The display name of the sub. It is empty if the token is generated from the client credential
-    - **roles**. The subâs roles. It is empty if the token is generated from the client credential
+    - **roles** (deprecated). The subâs roles. It is empty if the token is generated from the client credential
     - **namespace_roles**. The subâs roles scoped to namespace. Improvement from roles, which make the role scoped to specific namespace instead of global to publisher namespace
     - **permissions**. The sub or audâ permissions
     - **bans**. The subâs list of bans. It is used by the IAM client for validating the token.
@@ -389,7 +398,14 @@ def platform_token_grant_v4(
     ## Bans
     The JWT contains user's active bans with its expiry date. List of ban types can be obtained from /bans.
 
-    action code : 10704
+    ## 2FA remember device
+    To remember device for 2FA, the request should provide cookie: device_token or header: Device-Token
+
+    ## Login Queue
+    When the Login Queue is enabled and at capacity, this API returns a 202 Accepted response, with the queue ticket included in the response body.
+
+    ## Legal eligibility check
+    If user hasn't accepted required legal policy (if any), the field `is_comply` will be false in response and response token will have no permission.
 
     Properties:
         url: /iam/v4/oauth/platforms/{platformId}/token
@@ -475,14 +491,15 @@ async def platform_token_grant_v4_async(
 ):
     """OAuth2 access token generation specific to platform (PlatformTokenGrantV4)
 
-    Platform token grant specifically used for performing token grant using platform, e.g. Steam, Justice, etc. The endpoint automatically create an account if the account associated with the platform is not exists yet.
-    This endpoint requires all requests to have Authorization header set with Basic access authentication
-    constructed from client id and client secret. For publisher-game namespace schema : Specify only either platform_token or device_id. Device token grant
-    should be requested along with device_id parameter against game namespace. Another 3rd party platform token grant should be requested
-    along with platform_token parameter against publisher namespace.
-    ## 2FA remember device
-    To remember device for 2FA, should provide cookie: device_token or header: Device-Token
-    ## Supported platforms:
+    Platform token grant specifically used for performing token grant using platform, e.g. Steam, Device, etc.
+    Automatically creates a headless account if the account associated with the platform does not exist yet, unless the createHeadless param is set to false.
+    Requires all requests to have Authorization header set with Basic access authentication constructed from client id and client secret (only if using Confidential Client type). For more details on client types, refer to the [documentation guide](https://docs.accelbyte.io/gaming-services/modules/foundations/identity-access/authorization/manage-access-control-for-applications/#iam-client-types)
+
+    ## Request Payload
+    Device token grant should be requested along with device_id parameter.
+    The other 3rd party platform token grant should be requested along with platform_token parameter.
+
+    ## Supported platforms
     - **steam**: The platform_tokenâs value is the binary ticket returned by Steam.
     If this ticket was generated by Steam GetAuthTicketForWebApi with version >= 1.57, then platform token should use this style: `{identity}:{ticket}`, the `{identity}` was the parameter to call GetAuthTicketForWebApi when the ticket was created. Note: Do not contain `:` in this `{identity}`.
     - **steamopenid**: Steam's user authentication method using OpenID 2.0. The platform_token's value is URL generated by Steam on web authentication
@@ -495,7 +512,7 @@ async def platform_token_grant_v4_async(
     - **android**: The device_id is the Androidâs device ID
     - **ios**: The device_id is the iOSâs device ID.
     - **apple**: The platform_tokenâs value is the authorization code or idToken returned by Apple OAuth.(We will use this code to generate APP token)
-    - **device**: Every device that doesânt run Android and iOS is categorized as a device. The device_id is the deviceâs ID.
+    - **device**: Every device that doesn't run Android and iOS is categorized as a device. The device_id is the deviceâs ID.
     - **justice**: The platform_tokenâs value is the designated userâs access token.
     - **epicgames**: The platform_tokenâs value is an access-token or authorization code obtained from Epicgames EOS Account Service.
     - **ps4**: The platform_tokenâs value is the authorization code returned by Sony OAuth.
@@ -530,7 +547,7 @@ async def platform_token_grant_v4_async(
     Following is the access tokenâs content:
     - **namespace**. It is the namespace the token was generated from.
     - **display_name**. The display name of the sub. It is empty if the token is generated from the client credential
-    - **roles**. The subâs roles. It is empty if the token is generated from the client credential
+    - **roles** (deprecated). The subâs roles. It is empty if the token is generated from the client credential
     - **namespace_roles**. The subâs roles scoped to namespace. Improvement from roles, which make the role scoped to specific namespace instead of global to publisher namespace
     - **permissions**. The sub or audâ permissions
     - **bans**. The subâs list of bans. It is used by the IAM client for validating the token.
@@ -547,7 +564,14 @@ async def platform_token_grant_v4_async(
     ## Bans
     The JWT contains user's active bans with its expiry date. List of ban types can be obtained from /bans.
 
-    action code : 10704
+    ## 2FA remember device
+    To remember device for 2FA, the request should provide cookie: device_token or header: Device-Token
+
+    ## Login Queue
+    When the Login Queue is enabled and at capacity, this API returns a 202 Accepted response, with the queue ticket included in the response body.
+
+    ## Legal eligibility check
+    If user hasn't accepted required legal policy (if any), the field `is_comply` will be false in response and response token will have no permission.
 
     Properties:
         url: /iam/v4/oauth/platforms/{platformId}/token
@@ -624,9 +648,12 @@ def request_target_token_response_v4(
 ):
     """Generate target token by code (RequestTargetTokenResponseV4)
 
-    This endpoint is being used to generate target token.
-    It requires basic header with ClientID and Secret, it should match the ClientID when call `/iam/v3/namespace/{namespace}/token/request`
-    The code should be generated from `/iam/v3/namespace/{namespace}/token/request`.
+    Generates target token.
+    Requires basic header with ClientID and Secret, it should match the ClientID when call `/iam/v3/namespace/{namespace}/token/request [POST]`
+    The code should be generated from `/iam/v3/namespace/{namespace}/token/request [POST]`.
+
+    ## Login Queue
+    When the Login Queue is enabled and at capacity, this API returns a 202 Accepted response, with the queue ticket included in the response body.
 
     Properties:
         url: /iam/v4/oauth/token/exchange
@@ -666,9 +693,12 @@ async def request_target_token_response_v4_async(
 ):
     """Generate target token by code (RequestTargetTokenResponseV4)
 
-    This endpoint is being used to generate target token.
-    It requires basic header with ClientID and Secret, it should match the ClientID when call `/iam/v3/namespace/{namespace}/token/request`
-    The code should be generated from `/iam/v3/namespace/{namespace}/token/request`.
+    Generates target token.
+    Requires basic header with ClientID and Secret, it should match the ClientID when call `/iam/v3/namespace/{namespace}/token/request [POST]`
+    The code should be generated from `/iam/v3/namespace/{namespace}/token/request [POST]`.
+
+    ## Login Queue
+    When the Login Queue is enabled and at capacity, this API returns a 202 Accepted response, with the queue ticket included in the response body.
 
     Properties:
         url: /iam/v4/oauth/token/exchange
@@ -716,7 +746,7 @@ def simultaneous_login_v4(
 ):
     """Simultaneous login (SimultaneousLoginV4)
 
-    # This endpoint is in ALPHA, avoid using this endpoint fow now, reach out to AB support for inquiries
+    # In ALPHA â avoid using this API for now, reach out to AB support for inquiries
 
     Simultaneous login flow.
 
@@ -807,7 +837,7 @@ async def simultaneous_login_v4_async(
 ):
     """Simultaneous login (SimultaneousLoginV4)
 
-    # This endpoint is in ALPHA, avoid using this endpoint fow now, reach out to AB support for inquiries
+    # In ALPHA â avoid using this API for now, reach out to AB support for inquiries
 
     Simultaneous login flow.
 
@@ -912,7 +942,7 @@ def token_grant_v4(
 ):
     """OAuth2 access token generation endpoint V4 (TokenGrantV4)
 
-    This endpoint supports grant type:
+    Supports grant type:
     1. Grant Type == `authorization_code`:
     It generates the user token by given the authorization
     code which generated in "/iam/v3/authenticate" API response. It should also pass
@@ -939,7 +969,7 @@ def token_grant_v4(
     Following is the access tokenâs content:
     - **namespace**. It is the namespace the token was generated from.
     - **display_name**. The display name of the sub. It is empty if the token is generated from the client credential
-    - **roles**. The subâs roles. It is empty if the token is generated from the client credential
+    - **roles** (deprecated). The subâs roles. It is empty if the token is generated from the client credential
     - **namespace_roles**. The subâs roles scoped to namespace. Improvement from roles, which make the role scoped to specific namespace instead of global to publisher namespace
     - **permissions**. The sub or audâ permissions
     - **bans**. The subâs list of bans. It is used by the IAM client for validating the token.
@@ -956,18 +986,25 @@ def token_grant_v4(
 
     ## Bans
     The JWT contains user's active bans with its expiry date. List of ban types can be obtained from /bans.
+
     ## Device Cookie Validation
     _**For grant type "password" only**_
     Device Cookie is used to protect the user account from brute force login attack, [more detail from OWASP.
-    This endpoint will read device cookie from request header **Auth-Trust-Id**. If device cookie not found, it will generate a new one and set it into response body **auth_trust_id** when successfully login.
+    It will read the device cookie from cookie **Auth-Trust-Id**. If device cookie not found, it will generate a new one and set it into response body **auth_trust_id** when successfully login.
+
     ## Track Login History
-    This endpoint will track login history to detect suspicious login activity, please provide **Device-Id** (alphanumeric) in request header parameter otherwise it will set to "unknown".
+    It will track login history to detect suspicious login activity, please provide **Device-Id** (alphanumeric) in request header parameter otherwise it will set to "unknown".
     Align with General Data Protection Regulation in Europe, user login history will be kept within 28 days by default"
+
     ## 2FA remember device
-    To remember device for 2FA, should provide cookie: device_token or header: Device-Token
-    ## Response note
-    If it is a user token request and user hasn't accepted required legal policy, the field `is_comply` will be false in response and responsed token will have no permission.
-    action code: 10703
+    To remember device for 2FA, the request should provide cookie: device_token or header: Device-Token
+
+    ## Login Queue
+    _**For grant type "code" and "password" only**_
+    When the Login Queue is enabled and at capacity, this API returns a 202 Accepted response, with the queue ticket included in the response body.
+
+    ## Legal eligibility check
+    If it is a user token request and user hasn't accepted required legal policy (if any), the field `is_comply` will be false in response and response token will have no permission.
 
     Properties:
         url: /iam/v4/oauth/token
@@ -1081,7 +1118,7 @@ async def token_grant_v4_async(
 ):
     """OAuth2 access token generation endpoint V4 (TokenGrantV4)
 
-    This endpoint supports grant type:
+    Supports grant type:
     1. Grant Type == `authorization_code`:
     It generates the user token by given the authorization
     code which generated in "/iam/v3/authenticate" API response. It should also pass
@@ -1108,7 +1145,7 @@ async def token_grant_v4_async(
     Following is the access tokenâs content:
     - **namespace**. It is the namespace the token was generated from.
     - **display_name**. The display name of the sub. It is empty if the token is generated from the client credential
-    - **roles**. The subâs roles. It is empty if the token is generated from the client credential
+    - **roles** (deprecated). The subâs roles. It is empty if the token is generated from the client credential
     - **namespace_roles**. The subâs roles scoped to namespace. Improvement from roles, which make the role scoped to specific namespace instead of global to publisher namespace
     - **permissions**. The sub or audâ permissions
     - **bans**. The subâs list of bans. It is used by the IAM client for validating the token.
@@ -1125,18 +1162,25 @@ async def token_grant_v4_async(
 
     ## Bans
     The JWT contains user's active bans with its expiry date. List of ban types can be obtained from /bans.
+
     ## Device Cookie Validation
     _**For grant type "password" only**_
     Device Cookie is used to protect the user account from brute force login attack, [more detail from OWASP.
-    This endpoint will read device cookie from request header **Auth-Trust-Id**. If device cookie not found, it will generate a new one and set it into response body **auth_trust_id** when successfully login.
+    It will read the device cookie from cookie **Auth-Trust-Id**. If device cookie not found, it will generate a new one and set it into response body **auth_trust_id** when successfully login.
+
     ## Track Login History
-    This endpoint will track login history to detect suspicious login activity, please provide **Device-Id** (alphanumeric) in request header parameter otherwise it will set to "unknown".
+    It will track login history to detect suspicious login activity, please provide **Device-Id** (alphanumeric) in request header parameter otherwise it will set to "unknown".
     Align with General Data Protection Regulation in Europe, user login history will be kept within 28 days by default"
+
     ## 2FA remember device
-    To remember device for 2FA, should provide cookie: device_token or header: Device-Token
-    ## Response note
-    If it is a user token request and user hasn't accepted required legal policy, the field `is_comply` will be false in response and responsed token will have no permission.
-    action code: 10703
+    To remember device for 2FA, the request should provide cookie: device_token or header: Device-Token
+
+    ## Login Queue
+    _**For grant type "code" and "password" only**_
+    When the Login Queue is enabled and at capacity, this API returns a 202 Accepted response, with the queue ticket included in the response body.
+
+    ## Legal eligibility check
+    If it is a user token request and user hasn't accepted required legal policy (if any), the field `is_comply` will be false in response and response token will have no permission.
 
     Properties:
         url: /iam/v4/oauth/token
@@ -1236,10 +1280,13 @@ def verify2fa_code_v4(
 ):
     """Verify 2FA code (Verify2FACodeV4)
 
-    Verify 2FA code
-    This endpoint is used for verifying 2FA code.
+    Verifies 2FA code.
+
     ## 2FA remember device
-    To remember device for 2FA, should provide cookie: device_token or header: Device-Token
+    To remember device for 2FA, the request should provide cookie: device_token or header: Device-Token
+
+    ## Login Queue
+    When the Login Queue is enabled and at capacity, this API returns a 202 Accepted response, with the queue ticket included in the response body.
 
     Properties:
         url: /iam/v4/oauth/mfa/verify
@@ -1289,10 +1336,13 @@ async def verify2fa_code_v4_async(
 ):
     """Verify 2FA code (Verify2FACodeV4)
 
-    Verify 2FA code
-    This endpoint is used for verifying 2FA code.
+    Verifies 2FA code.
+
     ## 2FA remember device
-    To remember device for 2FA, should provide cookie: device_token or header: Device-Token
+    To remember device for 2FA, the request should provide cookie: device_token or header: Device-Token
+
+    ## Login Queue
+    When the Login Queue is enabled and at capacity, this API returns a 202 Accepted response, with the queue ticket included in the response body.
 
     Properties:
         url: /iam/v4/oauth/mfa/verify

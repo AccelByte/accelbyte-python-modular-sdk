@@ -35,9 +35,11 @@ from ...models import RestErrorResponse
 
 
 class AdminAddUserRoleV3(Operation):
-    """Add User Role (AdminAddUserRoleV3)
+    """[DEPRECATED] Add User Role (AdminAddUserRoleV3)
 
-    action code: 10109
+    **Deprecated.** Only assigns roles in the legacy roles entity.
+
+    **Substitute endpoint:** /iam/v4/admin/namespaces/{namespace}/users/{userId}/roles [POST]
 
     Properties:
         url: /iam/v3/admin/namespaces/{namespace}/users/{userId}/roles/{roleId}

@@ -38,7 +38,7 @@ from ...models import RestErrorResponse
 class AdminGetAgeRestrictionStatusV2(Operation):
     """[DEPRECATED] Get age restriction status (AdminGetAgeRestrictionStatusV2)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     **Endpoint migration guide**
     - **Substitute endpoint: _/iam/v3/admin/namespaces/{namespace}/agerestrictions [GET]_**
     - **Note:**

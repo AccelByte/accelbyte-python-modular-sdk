@@ -31,6 +31,7 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 from accelbyte_py_sdk.core import deprecated
 
+from ...models import CheckBalanceResponse
 from ...models import DebitByWalletPlatformRequest
 from ...models import ErrorEntity
 
@@ -65,7 +66,7 @@ class CheckBalance(Operation):
         user_id: (userId) REQUIRED str in path
 
     Responses:
-        200: OK - (Successfully determined if user has enough balance.)
+        200: OK - CheckBalanceResponse (Successfully determined if user has enough balance.)
 
         400: Bad Request - ErrorEntity (35123: Wallet [{walletId}] is inactive | 35124: Wallet [{currencyCode}] has insufficient balance)
     """
@@ -206,7 +207,7 @@ class CheckBalance(Operation):
     # region response methods
 
     class Response(ApiResponse):
-        data_200: Optional[HttpResponse] = None
+        data_200: Optional[CheckBalanceResponse] = None
         error_400: Optional[ErrorEntity] = None
 
         def ok(self) -> CheckBalance.Response:
@@ -232,7 +233,7 @@ class CheckBalance(Operation):
     def parse_response(self, code: int, content_type: str, content: Any) -> Response:
         """Parse the given response.
 
-        200: OK - (Successfully determined if user has enough balance.)
+        200: OK - CheckBalanceResponse (Successfully determined if user has enough balance.)
 
         400: Bad Request - ErrorEntity (35123: Wallet [{walletId}] is inactive | 35124: Wallet [{currencyCode}] has insufficient balance)
 
@@ -255,7 +256,7 @@ class CheckBalance(Operation):
             code, content_type, content = pre_processed_response
 
             if code == 200:
-                result.data_200 = HttpResponse.create(code, content)
+                result.data_200 = CheckBalanceResponse.create_from_dict(content)
             elif code == 400:
                 result.error_400 = ErrorEntity.create_from_dict(content)
                 result.error = result.error_400.translate_to_api_error()
@@ -278,10 +279,12 @@ class CheckBalance(Operation):
     @deprecated
     def parse_response_x(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[Union[None, HttpResponse], Union[None, ErrorEntity, HttpResponse]]:
+    ) -> Tuple[
+        Union[None, CheckBalanceResponse], Union[None, ErrorEntity, HttpResponse]
+    ]:
         """Parse the given response.
 
-        200: OK - (Successfully determined if user has enough balance.)
+        200: OK - CheckBalanceResponse (Successfully determined if user has enough balance.)
 
         400: Bad Request - ErrorEntity (35123: Wallet [{walletId}] is inactive | 35124: Wallet [{currencyCode}] has insufficient balance)
 
@@ -299,7 +302,7 @@ class CheckBalance(Operation):
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return HttpResponse.create(code, "OK"), None
+            return CheckBalanceResponse.create_from_dict(content), None
         if code == 400:
             return None, ErrorEntity.create_from_dict(content)
 

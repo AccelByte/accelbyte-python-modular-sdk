@@ -38,7 +38,7 @@ from ...models import RestErrorResponse
 class UpdateClientPermission(Operation):
     """[DEPRECATED] Update Client Permissions (UpdateClientPermission)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     **Endpoint migration guide**
     - **Substitute endpoint: _iam/v3/admin/namespaces/{namespace}/clients/{clientId}/permissions [PUT]_**
 

@@ -37,7 +37,7 @@ from ...models import ErrorEntity
 
 
 class OldCreatePolicyVersion(Operation):
-    """Create a Version from Country-Specific Policy (oldCreatePolicyVersion)
+    """[DEPRECATED] Create a Version from Country-Specific Policy (oldCreatePolicyVersion)
 
     Create a version of a particular country-specific policy.
 

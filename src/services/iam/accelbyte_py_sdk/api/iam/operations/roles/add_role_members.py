@@ -38,7 +38,7 @@ from ...models import RestErrorResponse
 class AddRoleMembers(Operation):
     """[DEPRECATED] Add Role Members (AddRoleMembers)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     Admin roles has its members listed in the role.
 
     Role can only be assigned to other users by the role's manager.

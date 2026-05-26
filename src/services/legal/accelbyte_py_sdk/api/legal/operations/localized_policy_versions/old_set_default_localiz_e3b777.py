@@ -35,7 +35,7 @@ from ...models import ErrorEntity
 
 
 class OldSetDefaultLocalizedPolicy(Operation):
-    """Set Default Localized Policy (oldSetDefaultLocalizedPolicy)
+    """[DEPRECATED] Set Default Localized Policy (oldSetDefaultLocalizedPolicy)
 
     Update a localized version policy to be the default.
 

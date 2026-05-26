@@ -39,7 +39,6 @@ class AdminGetRoleManagersV3(Operation):
     """Get Role Managers (AdminGetRoleManagersV3)
 
     Role can only be assigned to other users by the role's manager.
-    action code: 10415
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}/managers

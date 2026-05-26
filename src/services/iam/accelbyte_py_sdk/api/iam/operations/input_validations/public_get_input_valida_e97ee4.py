@@ -36,9 +36,10 @@ from ...models import RestErrorResponse
 
 
 class PublicGetInputValidationByField(Operation):
-    """Public Get Input Validation by field (PublicGetInputValidationByField)
+    """[DEPRECATED] Public Get Input Validation by field (PublicGetInputValidationByField)
 
-    This endpoint is to get input validation configuration by field.
+    Returns input validation configuration by field.
+    **Substitute endpoint:** /iam/v3/public/namespaces/{namespace}/inputValidations/{field}[GET]
 
     Properties:
         url: /iam/v3/public/inputValidations/{field}

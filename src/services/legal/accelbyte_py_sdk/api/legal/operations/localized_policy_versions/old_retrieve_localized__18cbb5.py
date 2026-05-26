@@ -35,7 +35,7 @@ from ...models import RetrieveLocalizedPolicyVersionResponse
 
 
 class OldRetrieveLocalizedPolicyVersions(Operation):
-    """Retrieve Versions from Country-Specific Policy (oldRetrieveLocalizedPolicyVersions)
+    """[DEPRECATED] Retrieve Versions from Country-Specific Policy (oldRetrieveLocalizedPolicyVersions)
 
     Retrieve versions of a particular country-specific policy.
 

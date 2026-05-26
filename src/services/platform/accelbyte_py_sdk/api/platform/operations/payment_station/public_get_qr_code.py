@@ -31,8 +31,6 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 from accelbyte_py_sdk.core import deprecated
 
-from ...models import BinarySchema
-
 
 class PublicGetQRCode(Operation):
     """Get qrcode (publicGetQRCode)
@@ -61,7 +59,7 @@ class PublicGetQRCode(Operation):
         code: (code) REQUIRED str in query
 
     Responses:
-        200: OK - BinarySchema (Successful operation)
+        200: OK - Any (Successful operation)
     """
 
     # region fields
@@ -179,7 +177,7 @@ class PublicGetQRCode(Operation):
     # region response methods
 
     class Response(ApiResponse):
-        data_200: Optional[BinarySchema] = None
+        data_200: Optional[Any] = None
 
         def ok(self) -> PublicGetQRCode.Response:
             return self
@@ -196,7 +194,7 @@ class PublicGetQRCode(Operation):
     def parse_response(self, code: int, content_type: str, content: Any) -> Response:
         """Parse the given response.
 
-        200: OK - BinarySchema (Successful operation)
+        200: OK - Any (Successful operation)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -217,7 +215,7 @@ class PublicGetQRCode(Operation):
             code, content_type, content = pre_processed_response
 
             if code == 200:
-                result.data_200 = BinarySchema.create_from_dict(content)
+                result.data_200 = content
             else:
                 result.error = ApiError.create_from_http_response(
                     HttpResponse.create_undocumented_response(
@@ -237,10 +235,10 @@ class PublicGetQRCode(Operation):
     @deprecated
     def parse_response_x(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[Union[None, BinarySchema], Union[None, HttpResponse]]:
+    ) -> Tuple[Union[None, Any], Union[None, HttpResponse]]:
         """Parse the given response.
 
-        200: OK - BinarySchema (Successful operation)
+        200: OK - Any (Successful operation)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -256,7 +254,7 @@ class PublicGetQRCode(Operation):
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return BinarySchema.create_from_dict(content), None
+            return content, None
 
         return self.handle_undocumented_response(
             code=code, content_type=content_type, content=content

@@ -57,7 +57,7 @@ def download_invoice_details(
 
     Download invoice details as a csv file.
     Other detail info:
-                  * Returns : invoice details csv file
+                * Returns : invoice details csv file
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/invoice/details.csv
@@ -117,7 +117,7 @@ async def download_invoice_details_async(
 
     Download invoice details as a csv file.
     Other detail info:
-                  * Returns : invoice details csv file
+                * Returns : invoice details csv file
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/invoice/details.csv
@@ -179,7 +179,7 @@ def generate_invoice_summary(
 
     Generate invoice summary.
     Other detail info:
-                  * Returns : query orders
+                * Returns : query orders
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/invoice/summary
@@ -241,7 +241,7 @@ async def generate_invoice_summary_async(
 
     Generate invoice summary.
     Other detail info:
-                  * Returns : query orders
+                * Returns : query orders
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/invoice/summary

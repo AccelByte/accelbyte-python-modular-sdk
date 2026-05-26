@@ -36,10 +36,11 @@ from ...models import RestErrorResponse
 
 
 class AdminGetInputValidations(Operation):
-    """Admin Get Input Validations (AdminGetInputValidations)
+    """[DEPRECATED] Admin Get Input Validations (AdminGetInputValidations)
 
-    This endpoint is to get list of input validation configuration.
+    Returns the list of input validation configuration.
     `regex` parameter will be returned if `isCustomRegex` is true. Otherwise, it will be empty.
+    **Substitute endpoint:** /iam/v3/admin/namespaces/{namespace}/inputValidations[GET]
 
     Properties:
         url: /iam/v3/admin/inputValidations

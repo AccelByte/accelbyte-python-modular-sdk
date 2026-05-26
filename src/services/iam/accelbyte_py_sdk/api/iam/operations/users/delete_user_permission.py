@@ -37,7 +37,7 @@ from ...models import RestErrorResponse
 class DeleteUserPermission(Operation):
     """[DEPRECATED] Delete User Permission (DeleteUserPermission)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/namespaces/{namespace}/users/{userId}/permissions/{resource}/{action} [DELETE]_**
 

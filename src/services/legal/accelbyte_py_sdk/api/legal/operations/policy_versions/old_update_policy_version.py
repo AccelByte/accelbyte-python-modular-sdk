@@ -37,7 +37,7 @@ from ...models import UpdatePolicyVersionResponse
 
 
 class OldUpdatePolicyVersion(Operation):
-    """Update a Version of Policy (oldUpdatePolicyVersion)
+    """[DEPRECATED] Update a Version of Policy (oldUpdatePolicyVersion)
 
     Update a particular policy version.
 

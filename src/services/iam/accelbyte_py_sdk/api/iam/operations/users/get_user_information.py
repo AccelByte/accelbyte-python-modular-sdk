@@ -38,7 +38,7 @@ from ...models import RestErrorResponse
 class GetUserInformation(Operation):
     """[DEPRECATED] Get user's information (GetUserInformation)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/public/namespaces/{namespace}/users/{userId}/information [GET]_**
 

@@ -27,6 +27,7 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import get_namespace as get_services_namespace
 from accelbyte_py_sdk.core import run_request
 from accelbyte_py_sdk.core import run_request_async
+from accelbyte_py_sdk.core import deprecated
 from accelbyte_py_sdk.core import same_doc_as
 
 from ..models import CreateLocalizedPolicyVersionRequest
@@ -52,6 +53,7 @@ from ..operations.localized_policy_versions import OldSetDefaultLocalizedPolicy
 from ..operations.localized_policy_versions import OldUpdateLocalizedPolicyVersion
 
 
+@deprecated
 @same_doc_as(OldCreateLocalizedPolicyVersion)
 def old_create_localized_policy_version(
     policy_version_id: str,
@@ -94,6 +96,7 @@ def old_create_localized_policy_version(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(OldCreateLocalizedPolicyVersion)
 async def old_create_localized_policy_version_async(
     policy_version_id: str,
@@ -220,6 +223,7 @@ async def old_public_retrieve_single_localized_policy_version_async(
     )
 
 
+@deprecated
 @same_doc_as(OldRequestPresignedURL)
 def old_request_presigned_url(
     localized_policy_version_id: str,
@@ -260,6 +264,7 @@ def old_request_presigned_url(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(OldRequestPresignedURL)
 async def old_request_presigned_url_async(
     localized_policy_version_id: str,
@@ -302,6 +307,7 @@ async def old_request_presigned_url_async(
     )
 
 
+@deprecated
 @same_doc_as(OldRetrieveLocalizedPolicyVersions)
 def old_retrieve_localized_policy_versions(
     policy_version_id: str,
@@ -336,6 +342,7 @@ def old_retrieve_localized_policy_versions(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(OldRetrieveLocalizedPolicyVersions)
 async def old_retrieve_localized_policy_versions_async(
     policy_version_id: str,
@@ -372,6 +379,7 @@ async def old_retrieve_localized_policy_versions_async(
     )
 
 
+@deprecated
 @same_doc_as(OldRetrieveSingleLocalizedPolicyVersion)
 def old_retrieve_single_localized_policy_version(
     localized_policy_version_id: str,
@@ -408,6 +416,7 @@ def old_retrieve_single_localized_policy_version(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(OldRetrieveSingleLocalizedPolicyVersion)
 async def old_retrieve_single_localized_policy_version_async(
     localized_policy_version_id: str,
@@ -446,6 +455,7 @@ async def old_retrieve_single_localized_policy_version_async(
     )
 
 
+@deprecated
 @same_doc_as(OldSetDefaultLocalizedPolicy)
 def old_set_default_localized_policy(
     localized_policy_version_id: str,
@@ -482,6 +492,7 @@ def old_set_default_localized_policy(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(OldSetDefaultLocalizedPolicy)
 async def old_set_default_localized_policy_async(
     localized_policy_version_id: str,
@@ -520,6 +531,7 @@ async def old_set_default_localized_policy_async(
     )
 
 
+@deprecated
 @same_doc_as(OldUpdateLocalizedPolicyVersion)
 def old_update_localized_policy_version(
     localized_policy_version_id: str,
@@ -560,6 +572,7 @@ def old_update_localized_policy_version(
     return run_request(request, additional_headers=x_additional_headers, **kwargs)
 
 
+@deprecated
 @same_doc_as(OldUpdateLocalizedPolicyVersion)
 async def old_update_localized_policy_version_async(
     localized_policy_version_id: str,

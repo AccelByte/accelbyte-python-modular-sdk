@@ -123,7 +123,7 @@ def add_role_managers(
 ):
     """Add Role Managers (AddRoleManagers)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     Role can only be assigned to other users by the role's manager.
 
     ### Endpoint migration guide
@@ -174,7 +174,7 @@ async def add_role_managers_async(
 ):
     """Add Role Managers (AddRoleManagers)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     Role can only be assigned to other users by the role's manager.
 
     ### Endpoint migration guide
@@ -227,7 +227,7 @@ def add_role_members(
 ):
     """Add Role Members (AddRoleMembers)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     Admin roles has its members listed in the role.
 
     Role can only be assigned to other users by the role's manager.
@@ -280,7 +280,7 @@ async def add_role_members_async(
 ):
     """Add Role Members (AddRoleMembers)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     Admin roles has its members listed in the role.
 
     Role can only be assigned to other users by the role's manager.
@@ -337,8 +337,8 @@ def add_role_permission(
 ):
     """Add Role Permission (AddRolePermission)
 
-    ## The endpoint is going to be deprecated
-    This endpoint will update existing permission (bitwise OR the action) if found one with same resource, otherwise it will append a new permission
+    **This endpoint is deprecated.**
+    Updates existing permission (bitwise OR the action) if found one with same resource, otherwise appends a new permission
 
     Schedule contains cron string or date range (both are UTC, also in cron syntax) to indicate when a permission and action are in effect.
     Both schedule types accepts quartz compatible cron syntax e.g. * * * * * * *.
@@ -421,8 +421,8 @@ async def add_role_permission_async(
 ):
     """Add Role Permission (AddRolePermission)
 
-    ## The endpoint is going to be deprecated
-    This endpoint will update existing permission (bitwise OR the action) if found one with same resource, otherwise it will append a new permission
+    **This endpoint is deprecated.**
+    Updates existing permission (bitwise OR the action) if found one with same resource, otherwise appends a new permission
 
     Schedule contains cron string or date range (both are UTC, also in cron syntax) to indicate when a permission and action are in effect.
     Both schedule types accepts quartz compatible cron syntax e.g. * * * * * * *.
@@ -505,7 +505,6 @@ def admin_add_role_managers_v3(
     """Add Role Managers (AdminAddRoleManagersV3)
 
     Role can only be assigned to other users by the role's manager.
-    action code: 10408
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}/managers
@@ -554,7 +553,6 @@ async def admin_add_role_managers_v3_async(
     """Add Role Managers (AdminAddRoleManagersV3)
 
     Role can only be assigned to other users by the role's manager.
-    action code: 10408
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}/managers
@@ -606,7 +604,6 @@ def admin_add_role_members_v3(
 
     Admin roles has its members listed in the role.
     Role can only be assigned to other users by the role's manager.
-    action code: 10410
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}/members
@@ -658,7 +655,6 @@ async def admin_add_role_members_v3_async(
 
     Admin roles has its members listed in the role.
     Role can only be assigned to other users by the role's manager.
-    action code: 10410
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}/members
@@ -710,8 +706,7 @@ def admin_add_role_permissions_v3(
 ):
     """Add Role Permissions (AdminAddRolePermissionsV3)
 
-    This endpoint will ATTACH permission(s) into the role
-    action code: 10404
+    Attaches permission(s) into the role.
     Schedule contains cron string or date range (both are UTC, also in cron syntax) to indicate when a permission and action are in effect.
     Both schedule types accepts quartz compatible cron syntax e.g. * * * * * * *.
     In ranged schedule, first element will be start date, and second one will be end date
@@ -781,8 +776,7 @@ async def admin_add_role_permissions_v3_async(
 ):
     """Add Role Permissions (AdminAddRolePermissionsV3)
 
-    This endpoint will ATTACH permission(s) into the role
-    action code: 10404
+    Attaches permission(s) into the role.
     Schedule contains cron string or date range (both are UTC, also in cron syntax) to indicate when a permission and action are in effect.
     Both schedule types accepts quartz compatible cron syntax e.g. * * * * * * *.
     In ranged schedule, first element will be start date, and second one will be end date
@@ -854,9 +848,7 @@ def admin_add_role_permissions_v4(
 ):
     """Add Role Permissions V4 (AdminAddRolePermissionsV4)
 
-    This endpoint will ATTACH permission(s) into the role
-    action code: 10404
-
+    Attaches permission(s) to the role.
     Schedule contains cron string or date range (both are UTC, also in cron syntax) to indicate when a permission and action are in effect.
     Both schedule types accepts quartz compatible cron syntax e.g. * * * * * * *.
     In ranged schedule, first element will be start date, and second one will be end date
@@ -924,9 +916,7 @@ async def admin_add_role_permissions_v4_async(
 ):
     """Add Role Permissions V4 (AdminAddRolePermissionsV4)
 
-    This endpoint will ATTACH permission(s) into the role
-    action code: 10404
-
+    Attaches permission(s) to the role.
     Schedule contains cron string or date range (both are UTC, also in cron syntax) to indicate when a permission and action are in effect.
     Both schedule types accepts quartz compatible cron syntax e.g. * * * * * * *.
     In ranged schedule, first element will be start date, and second one will be end date
@@ -996,12 +986,7 @@ def admin_assign_user_to_role_v4(
 ):
     """Assign User to Role (AdminAssignUserToRoleV4)
 
-    Parameters:
-    - **userId**: string (required)
-    - **namespace**: string (userâs namespace) (required)
-    - **assignedNamespaces**: array of string (namespaces to be assigned on role) (required)
-
-    action code: 10410
+    Assigns a user to a role with specified namespaces. See request body field descriptions for per-field details.
 
     Properties:
         url: /iam/v4/admin/roles/{roleId}/users
@@ -1051,12 +1036,7 @@ async def admin_assign_user_to_role_v4_async(
 ):
     """Assign User to Role (AdminAssignUserToRoleV4)
 
-    Parameters:
-    - **userId**: string (required)
-    - **namespace**: string (userâs namespace) (required)
-    - **assignedNamespaces**: array of string (namespaces to be assigned on role) (required)
-
-    action code: 10410
+    Assigns a user to a role with specified namespaces. See request body field descriptions for per-field details.
 
     Properties:
         url: /iam/v4/admin/roles/{roleId}/users
@@ -1107,16 +1087,7 @@ def admin_create_role_v3(
 ):
     """Create Role (AdminCreateRoleV3)
 
-    Create role request body:
-    - roleName: specify role name, alphanumeric, cannot have special character (required)
-    - permissions: specify the permission that this role have
-    - managers: specify list of user that will act as the managers of this role
-    - members: specify list of user that will act as the members of this role
-    - adminRole: specify if role is for admin user (default false)
-    - isWildcard: specify if role can be assigned to wildcard (*) namespace (default false)
-    - deletable: specify if role can be deleted or not (default true)
-
-    action code: 10401
+    Creates a new role.
 
     Properties:
         url: /iam/v3/admin/roles
@@ -1158,16 +1129,7 @@ async def admin_create_role_v3_async(
 ):
     """Create Role (AdminCreateRoleV3)
 
-    Create role request body:
-    - roleName: specify role name, alphanumeric, cannot have special character (required)
-    - permissions: specify the permission that this role have
-    - managers: specify list of user that will act as the managers of this role
-    - members: specify list of user that will act as the members of this role
-    - adminRole: specify if role is for admin user (default false)
-    - isWildcard: specify if role can be assigned to wildcard (*) namespace (default false)
-    - deletable: specify if role can be deleted or not (default true)
-
-    action code: 10401
+    Creates a new role.
 
     Properties:
         url: /iam/v3/admin/roles
@@ -1211,13 +1173,7 @@ def admin_create_role_v4(
 ):
     """Create Role (AdminCreateRoleV4)
 
-    Create role request body:
-    - roleName: specify role name, alphanumeric, cannot have special character (required)
-    - adminRole: specify if role is for admin user (default false)
-    - isWildcard: specify if role can be assigned to wildcard (*) namespace (default false)
-    - deletable: specify if role can be deleted (default true)
-
-    action code: 10401
+    Creates a new role. See request body field descriptions for per-field details.
 
     Properties:
         url: /iam/v4/admin/roles
@@ -1259,13 +1215,7 @@ async def admin_create_role_v4_async(
 ):
     """Create Role (AdminCreateRoleV4)
 
-    Create role request body:
-    - roleName: specify role name, alphanumeric, cannot have special character (required)
-    - adminRole: specify if role is for admin user (default false)
-    - isWildcard: specify if role can be assigned to wildcard (*) namespace (default false)
-    - deletable: specify if role can be deleted (default true)
-
-    action code: 10401
+    Creates a new role. See request body field descriptions for per-field details.
 
     Properties:
         url: /iam/v4/admin/roles
@@ -1308,7 +1258,7 @@ def admin_delete_role_permissions_v3(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs,
 ):
-    """Delete Role (AdminDeleteRolePermissionsV3)
+    """Delete Role Permissions (AdminDeleteRolePermissionsV3)
 
 
     Properties:
@@ -1351,7 +1301,7 @@ async def admin_delete_role_permissions_v3_async(
     x_additional_headers: Optional[Dict[str, str]] = None,
     **kwargs,
 ):
-    """Delete Role (AdminDeleteRolePermissionsV3)
+    """Delete Role Permissions (AdminDeleteRolePermissionsV3)
 
 
     Properties:
@@ -1487,7 +1437,7 @@ def admin_delete_role_permission_v3(
 ):
     """Delete Role Permission (AdminDeleteRolePermissionV3)
 
-    action code: 10406
+    Deletes a specific permission from a role.
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}/permissions/{resource}/{action}
@@ -1539,7 +1489,7 @@ async def admin_delete_role_permission_v3_async(
 ):
     """Delete Role Permission (AdminDeleteRolePermissionV3)
 
-    action code: 10406
+    Deletes a specific permission from a role.
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}/permissions/{resource}/{action}
@@ -1589,7 +1539,7 @@ def admin_delete_role_v3(
 ):
     """Delete Role (AdminDeleteRoleV3)
 
-    action code: 10403
+    Deletes a role by its ID. Removes the role from all assigned users first.
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}
@@ -1633,7 +1583,7 @@ async def admin_delete_role_v3_async(
 ):
     """Delete Role (AdminDeleteRoleV3)
 
-    action code: 10403
+    Deletes a role by its ID. Removes the role from all assigned users first.
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}
@@ -1679,8 +1629,7 @@ def admin_delete_role_v4(
 ):
     """Delete Role (AdminDeleteRoleV4)
 
-    Removes role ID from user's Roles and NamespaceRoles before deleting the role.
-    action code: 10403
+    Removes the role from all assigned users before deleting it.
 
     Properties:
         url: /iam/v4/admin/roles/{roleId}
@@ -1722,8 +1671,7 @@ async def admin_delete_role_v4_async(
 ):
     """Delete Role (AdminDeleteRoleV4)
 
-    Removes role ID from user's Roles and NamespaceRoles before deleting the role.
-    action code: 10403
+    Removes the role from all assigned users before deleting it.
 
     Properties:
         url: /iam/v4/admin/roles/{roleId}
@@ -1768,7 +1716,6 @@ def admin_get_role_admin_status_v3(
     """Get Role Admin Status (AdminGetRoleAdminStatusV3)
 
     Admin roles has its members listed in the role.
-    action code: 10420
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}/admin
@@ -1811,7 +1758,6 @@ async def admin_get_role_admin_status_v3_async(
     """Get Role Admin Status (AdminGetRoleAdminStatusV3)
 
     Admin roles has its members listed in the role.
-    action code: 10420
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}/admin
@@ -1861,7 +1807,6 @@ def admin_get_role_managers_v3(
     """Get Role Managers (AdminGetRoleManagersV3)
 
     Role can only be assigned to other users by the role's manager.
-    action code: 10415
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}/managers
@@ -1918,7 +1863,6 @@ async def admin_get_role_managers_v3_async(
     """Get Role Managers (AdminGetRoleManagersV3)
 
     Role can only be assigned to other users by the role's manager.
-    action code: 10415
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}/managers
@@ -1977,7 +1921,6 @@ def admin_get_role_members_v3(
     """Get Role Members (AdminGetRoleMembersV3)
 
     Admin roles has its members listed in the role.
-    action code: 10416
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}/members
@@ -2034,7 +1977,6 @@ async def admin_get_role_members_v3_async(
     """Get Role Members (AdminGetRoleMembersV3)
 
     Admin roles has its members listed in the role.
-    action code: 10416
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}/members
@@ -2092,7 +2034,7 @@ def admin_get_roles_v3(
 ):
     """Get Roles (AdminGetRolesV3)
 
-    action code: 10414
+    Retrieves a paginated list of roles.
 
     Properties:
         url: /iam/v3/admin/roles
@@ -2146,7 +2088,7 @@ async def admin_get_roles_v3_async(
 ):
     """Get Roles (AdminGetRolesV3)
 
-    action code: 10414
+    Retrieves a paginated list of roles.
 
     Properties:
         url: /iam/v3/admin/roles
@@ -2202,7 +2144,7 @@ def admin_get_roles_v4(
 ):
     """Get Roles (AdminGetRolesV4)
 
-    action code: 10414
+    Retrieves a paginated list of roles with optional filters.
 
     Properties:
         url: /iam/v4/admin/roles
@@ -2256,7 +2198,7 @@ async def admin_get_roles_v4_async(
 ):
     """Get Roles (AdminGetRolesV4)
 
-    action code: 10414
+    Retrieves a paginated list of roles with optional filters.
 
     Properties:
         url: /iam/v4/admin/roles
@@ -2307,7 +2249,7 @@ def admin_get_role_v3(
 ):
     """Get Role (AdminGetRoleV3)
 
-    action code: 10419
+    Retrieves a role by its ID.
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}
@@ -2349,7 +2291,7 @@ async def admin_get_role_v3_async(
 ):
     """Get Role (AdminGetRoleV3)
 
-    action code: 10419
+    Retrieves a role by its ID.
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}
@@ -2393,7 +2335,7 @@ def admin_get_role_v4(
 ):
     """Get Role (AdminGetRoleV4)
 
-    action code: 10419
+    Retrieves a role by its ID.
 
     Properties:
         url: /iam/v4/admin/roles/{roleId}
@@ -2435,7 +2377,7 @@ async def admin_get_role_v4_async(
 ):
     """Get Role (AdminGetRoleV4)
 
-    action code: 10419
+    Retrieves a role by its ID.
 
     Properties:
         url: /iam/v4/admin/roles/{roleId}
@@ -2485,7 +2427,6 @@ def admin_list_assigned_users_v4(
     """Get Role's Assigned Users (AdminListAssignedUsersV4)
 
     Query all users that has the specified role.
-    action code: 10416
 
     Properties:
         url: /iam/v4/admin/roles/{roleId}/users
@@ -2540,7 +2481,6 @@ async def admin_list_assigned_users_v4_async(
     """Get Role's Assigned Users (AdminListAssignedUsersV4)
 
     Query all users that has the specified role.
-    action code: 10416
 
     Properties:
         url: /iam/v4/admin/roles/{roleId}/users
@@ -2591,7 +2531,7 @@ def admin_remove_role_admin_v3(
 ):
     """Remove Role Admin Status (AdminRemoveRoleAdminV3)
 
-    code: 10413
+    Removes admin status from a role.
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}/admin
@@ -2633,7 +2573,7 @@ async def admin_remove_role_admin_v3_async(
 ):
     """Remove Role Admin Status (AdminRemoveRoleAdminV3)
 
-    code: 10413
+    Removes admin status from a role.
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}/admin
@@ -2681,7 +2621,6 @@ def admin_remove_role_managers_v3(
     """Remove Role Managers (AdminRemoveRoleManagersV3)
 
     Role can only be assigned to other users by the role's manager.
-    action code: 10409
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}/managers
@@ -2730,7 +2669,6 @@ async def admin_remove_role_managers_v3_async(
     """Remove Role Managers (AdminRemoveRoleManagersV3)
 
     Role can only be assigned to other users by the role's manager.
-    action code: 10409
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}/managers
@@ -2783,7 +2721,6 @@ def admin_remove_role_members_v3(
 
     Admin roles has its members listed in the role.
     Role can only be assigned to other users by the role's manager.
-    action code: 10411
     Deprecate: Suggest to use this: AdminRevokeUserFromRoleV4
 
     Properties:
@@ -2835,7 +2772,6 @@ async def admin_remove_role_members_v3_async(
 
     Admin roles has its members listed in the role.
     Role can only be assigned to other users by the role's manager.
-    action code: 10411
     Deprecate: Suggest to use this: AdminRevokeUserFromRoleV4
 
     Properties:
@@ -2886,13 +2822,7 @@ def admin_revoke_user_from_role_v4(
 ):
     """Revoke User from Role (AdminRevokeUserFromRoleV4)
 
-    Current implementation will revoke user from role in all assigned namespaces.
-
-    Parameters:
-    - userId: string (required)
-    - namespace: string (userâs namespace) (required)
-
-    action code: 10411
+    Current implementation will revoke user from role in all assigned namespaces. See request body field descriptions for per-field details.
 
     Properties:
         url: /iam/v4/admin/roles/{roleId}/users
@@ -2938,13 +2868,7 @@ async def admin_revoke_user_from_role_v4_async(
 ):
     """Revoke User from Role (AdminRevokeUserFromRoleV4)
 
-    Current implementation will revoke user from role in all assigned namespaces.
-
-    Parameters:
-    - userId: string (required)
-    - namespace: string (userâs namespace) (required)
-
-    action code: 10411
+    Current implementation will revoke user from role in all assigned namespaces. See request body field descriptions for per-field details.
 
     Properties:
         url: /iam/v4/admin/roles/{roleId}/users
@@ -2991,7 +2915,6 @@ def admin_update_admin_role_status_v3(
 
     Admin roles has its members listed in the role.
     Role can be set as admin role only when it has at least 1 manager.
-    action code: 10412
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}/admin
@@ -3035,7 +2958,6 @@ async def admin_update_admin_role_status_v3_async(
 
     Admin roles has its members listed in the role.
     Role can be set as admin role only when it has at least 1 manager.
-    action code: 10412
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}/admin
@@ -3082,8 +3004,7 @@ def admin_update_role_permissions_v3(
 ):
     """Update Role Permissions (AdminUpdateRolePermissionsV3)
 
-    This endpoint will REPLACE role's permissions with the ones defined in body
-    action code: 10405
+    Replaces role's permissions with the ones defined in body.
     Schedule contains cron string or date range (both are UTC, also in cron syntax) to indicate when a permission and action are in effect.
     Both schedule types accepts quartz compatible cron syntax e.g. * * * * * * *.
     In ranged schedule, first element will be start date, and second one will be end date
@@ -3153,8 +3074,7 @@ async def admin_update_role_permissions_v3_async(
 ):
     """Update Role Permissions (AdminUpdateRolePermissionsV3)
 
-    This endpoint will REPLACE role's permissions with the ones defined in body
-    action code: 10405
+    Replaces role's permissions with the ones defined in body.
     Schedule contains cron string or date range (both are UTC, also in cron syntax) to indicate when a permission and action are in effect.
     Both schedule types accepts quartz compatible cron syntax e.g. * * * * * * *.
     In ranged schedule, first element will be start date, and second one will be end date
@@ -3226,8 +3146,7 @@ def admin_update_role_permissions_v4(
 ):
     """Update Role Permissions (AdminUpdateRolePermissionsV4)
 
-    This endpoint will REPLACE role's permissions with the ones defined in body
-    action code: 10405
+    Replaces role's permissions with the ones defined in body.
     Schedule contains cron string or date range (both are UTC, also in cron syntax) to indicate when a permission and action are in effect.
     Both schedule types accepts quartz compatible cron syntax e.g. * * * * * * *.
     In ranged schedule, first element will be start date, and second one will be end date
@@ -3295,8 +3214,7 @@ async def admin_update_role_permissions_v4_async(
 ):
     """Update Role Permissions (AdminUpdateRolePermissionsV4)
 
-    This endpoint will REPLACE role's permissions with the ones defined in body
-    action code: 10405
+    Replaces role's permissions with the ones defined in body.
     Schedule contains cron string or date range (both are UTC, also in cron syntax) to indicate when a permission and action are in effect.
     Both schedule types accepts quartz compatible cron syntax e.g. * * * * * * *.
     In ranged schedule, first element will be start date, and second one will be end date
@@ -3366,12 +3284,7 @@ def admin_update_role_v3(
 ):
     """Update Role (AdminUpdateRoleV3)
 
-    Update role request body:
-    - roleName: specify role name, alphanumeric, cannot have special character (required)
-    - isWildcard: specify if role can be assigned to wildcard (*) namespace (default false)
-    - deletable: specify if role can be deleted or not (optional)
-
-    action code: 10402
+    Updates a role.
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}
@@ -3419,12 +3332,7 @@ async def admin_update_role_v3_async(
 ):
     """Update Role (AdminUpdateRoleV3)
 
-    Update role request body:
-    - roleName: specify role name, alphanumeric, cannot have special character (required)
-    - isWildcard: specify if role can be assigned to wildcard (*) namespace (default false)
-    - deletable: specify if role can be deleted or not (optional)
-
-    action code: 10402
+    Updates a role.
 
     Properties:
         url: /iam/v3/admin/roles/{roleId}
@@ -3474,13 +3382,7 @@ def admin_update_role_v4(
 ):
     """Update Role (AdminUpdateRoleV4)
 
-    Update role request body:
-    - roleName: specify role name, alphanumeric, cannot have special character (required)
-    - adminRole: specify if role is for admin user (default false)
-    - isWildcard: specify if role can be assigned to wildcard (*) namespace (default false)
-    - deletable: specify if role can be deleted (optional)
-
-    action code: 10402
+    Updates an existing role. See request body field descriptions for per-field details.
 
     Properties:
         url: /iam/v4/admin/roles/{roleId}
@@ -3526,13 +3428,7 @@ async def admin_update_role_v4_async(
 ):
     """Update Role (AdminUpdateRoleV4)
 
-    Update role request body:
-    - roleName: specify role name, alphanumeric, cannot have special character (required)
-    - adminRole: specify if role is for admin user (default false)
-    - isWildcard: specify if role can be assigned to wildcard (*) namespace (default false)
-    - deletable: specify if role can be deleted (optional)
-
-    action code: 10402
+    Updates an existing role. See request body field descriptions for per-field details.
 
     Properties:
         url: /iam/v4/admin/roles/{roleId}
@@ -3580,7 +3476,7 @@ def create_role(
 ):
     """Create Role (CreateRole)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     Role can only be assigned to other users by the role's manager.
 
     If role is an administrator role (i.e. AdminRole == true), it will list out the role's members.
@@ -3628,7 +3524,7 @@ async def create_role_async(
 ):
     """Create Role (CreateRole)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     Role can only be assigned to other users by the role's manager.
 
     If role is an administrator role (i.e. AdminRole == true), it will list out the role's members.
@@ -3676,7 +3572,7 @@ def delete_role(
 ):
     """Delete Role (DeleteRole)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/roles/{roleId} [DELETE]_**
 
@@ -3717,7 +3613,7 @@ async def delete_role_async(
 ):
     """Delete Role (DeleteRole)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/roles/{roleId} [DELETE]_**
 
@@ -3764,7 +3660,7 @@ def delete_role_permission(
 ):
     """Delete Role Permission (DeleteRolePermission)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/roles/{roleId}/permissions/{resource}/{action} [DELETE]_**
     - **Substitute endpoint: _/iam/v4/admin/roles/{roleId}/permissions [DELETE]_**
@@ -3818,7 +3714,7 @@ async def delete_role_permission_async(
 ):
     """Delete Role Permission (DeleteRolePermission)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/roles/{roleId}/permissions/{resource}/{action} [DELETE]_**
     - **Substitute endpoint: _/iam/v4/admin/roles/{roleId}/permissions [DELETE]_**
@@ -3870,7 +3766,7 @@ def get_role(
 ):
     """Get Role (GetRole)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/roles/{roleId} [GET]_**
 
@@ -3911,7 +3807,7 @@ async def get_role_async(
 ):
     """Get Role (GetRole)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/roles/{roleId} [GET]_**
 
@@ -3954,7 +3850,7 @@ def get_role_admin_status(
 ):
     """Get Role Admin Status (GetRoleAdminStatus)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     Admin roles has its members listed in the role.
 
     ### Endpoint migration guide
@@ -3999,7 +3895,7 @@ async def get_role_admin_status_async(
 ):
     """Get Role Admin Status (GetRoleAdminStatus)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     Admin roles has its members listed in the role.
 
     ### Endpoint migration guide
@@ -4046,7 +3942,7 @@ def get_role_managers(
 ):
     """Get Role Managers (GetRoleManagers)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     Role can only be assigned to other users by the role's manager.
 
     ### Endpoint migration guide
@@ -4091,7 +3987,7 @@ async def get_role_managers_async(
 ):
     """Get Role Managers (GetRoleManagers)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     Role can only be assigned to other users by the role's manager.
 
     ### Endpoint migration guide
@@ -4138,7 +4034,7 @@ def get_role_members(
 ):
     """Get Role Members (GetRoleMembers)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/roles/{roleId}/members [GET]_**
 
@@ -4181,7 +4077,7 @@ async def get_role_members_async(
 ):
     """Get Role Members (GetRoleMembers)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/roles/{roleId}/members [GET]_**
 
@@ -4228,7 +4124,7 @@ def get_roles(
 ):
     """Get Roles (GetRoles)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/roles [GET]_**
 
@@ -4269,7 +4165,7 @@ async def get_roles_async(
 ):
     """Get Roles (GetRoles)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/roles [GET]_**
 
@@ -4314,8 +4210,7 @@ def public_get_roles_v3(
 ):
     """Get Roles (PublicGetRolesV3)
 
-    This endpoint is used to get all non-admin role.
-    action code: 10418
+    Returns all non-admin roles.
 
     Properties:
         url: /iam/v3/public/roles
@@ -4363,8 +4258,7 @@ async def public_get_roles_v3_async(
 ):
     """Get Roles (PublicGetRolesV3)
 
-    This endpoint is used to get all non-admin role.
-    action code: 10418
+    Returns all non-admin roles.
 
     Properties:
         url: /iam/v3/public/roles
@@ -4409,8 +4303,7 @@ def public_get_role_v3(
 ):
     """Get Public Role (PublicGetRoleV3)
 
-    This endpoint is used to get non-admin role based on specify roleId.
-    action code : 10417
+    Returns a non-admin role based on the specified roleId.
 
     Properties:
         url: /iam/v3/public/roles/{roleId}
@@ -4446,8 +4339,7 @@ async def public_get_role_v3_async(
 ):
     """Get Public Role (PublicGetRoleV3)
 
-    This endpoint is used to get non-admin role based on specify roleId.
-    action code : 10417
+    Returns a non-admin role based on the specified roleId.
 
     Properties:
         url: /iam/v3/public/roles/{roleId}
@@ -4486,7 +4378,7 @@ def remove_role_admin(
 ):
     """Remove Role Admin Status (RemoveRoleAdmin)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/roles/{roleId}/admin [DELETE]_**
 
@@ -4529,7 +4421,7 @@ async def remove_role_admin_async(
 ):
     """Remove Role Admin Status (RemoveRoleAdmin)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/roles/{roleId}/admin [DELETE]_**
 
@@ -4577,7 +4469,7 @@ def remove_role_managers(
 ):
     """Remove Role Managers (RemoveRoleManagers)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/roles/{roleId}/managers [DELETE]_**
 
@@ -4626,7 +4518,7 @@ async def remove_role_managers_async(
 ):
     """Remove Role Managers (RemoveRoleManagers)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/roles/{roleId}/managers [DELETE]_**
 
@@ -4677,7 +4569,7 @@ def remove_role_members(
 ):
     """Remove Role Members (RemoveRoleMembers)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/roles/{roleId}/members [DELETE]_**
 
@@ -4726,7 +4618,7 @@ async def remove_role_members_async(
 ):
     """Remove Role Members (RemoveRoleMembers)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/roles/{roleId}/members [DELETE]_**
 
@@ -4774,7 +4666,7 @@ def set_role_as_admin(
 ):
     """Set Role as Admin Role (SetRoleAsAdmin)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     Admin roles has its members listed in the role.
 
     Role can be set as admin role only when it has at least 1 manager.
@@ -4821,7 +4713,7 @@ async def set_role_as_admin_async(
 ):
     """Set Role as Admin Role (SetRoleAsAdmin)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     Admin roles has its members listed in the role.
 
     Role can be set as admin role only when it has at least 1 manager.
@@ -4873,7 +4765,7 @@ def update_role(
 ):
     """Update Role (UpdateRole)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/roles/{roleId} [PATCH]_**
 
@@ -4922,7 +4814,7 @@ async def update_role_async(
 ):
     """Update Role (UpdateRole)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/admin/roles/{roleId} [PATCH]_**
 
@@ -4973,8 +4865,8 @@ def update_role_permissions(
 ):
     """Update Role Permissions (UpdateRolePermissions)
 
-    ## The endpoint is going to be deprecated
-    This endpoint will REPLACE role's permissions with the ones defined in body
+    **This endpoint is deprecated.**
+    Replaces role's permissions with the ones defined in body
 
     Schedule contains cron string or date range (both are UTC, also in cron syntax) to indicate when a permission and action are in effect.
     Both schedule types accepts quartz compatible cron syntax e.g. * * * * * * *.
@@ -5048,8 +4940,8 @@ async def update_role_permissions_async(
 ):
     """Update Role Permissions (UpdateRolePermissions)
 
-    ## The endpoint is going to be deprecated
-    This endpoint will REPLACE role's permissions with the ones defined in body
+    **This endpoint is deprecated.**
+    Replaces role's permissions with the ones defined in body
 
     Schedule contains cron string or date range (both are UTC, also in cron syntax) to indicate when a permission and action are in effect.
     Both schedule types accepts quartz compatible cron syntax e.g. * * * * * * *.

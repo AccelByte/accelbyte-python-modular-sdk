@@ -38,7 +38,7 @@ from ...models import RestErrorResponse
 class UpdatePassword(Operation):
     """[DEPRECATED] Update User Password (UpdatePassword)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/public/namespaces/{namespace}/users/me/password [PUT]_**
 

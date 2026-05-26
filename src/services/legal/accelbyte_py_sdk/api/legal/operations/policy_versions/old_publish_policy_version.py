@@ -35,7 +35,7 @@ from ...models import ErrorEntity
 
 
 class OldPublishPolicyVersion(Operation):
-    """Manually Publish a Version from Country-Specific Policy (oldPublishPolicyVersion)
+    """[DEPRECATED] Manually Publish a Version from Country-Specific Policy (oldPublishPolicyVersion)
 
     Manually publish a version of a particular country-specific policy.
 

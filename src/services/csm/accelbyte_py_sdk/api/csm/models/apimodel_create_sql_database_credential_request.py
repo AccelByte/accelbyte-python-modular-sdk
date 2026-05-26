@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# AccelByte Gaming Services Platform Service
+# Custom Service Manager
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -23,73 +23,87 @@
 # pylint: disable=unused-import
 
 from __future__ import annotations
-import copy
-from collections.abc import MutableMapping
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
 
 
-class BinarySchema(Model, MutableMapping):
-    """Binary schema (BinarySchema)
+class ApimodelCreateSQLDatabaseCredentialRequest(Model):
+    """Apimodel create SQL database credential request (apimodel.CreateSQLDatabaseCredentialRequest)
 
     Properties:
+        password: (password) REQUIRED str
+
+        username: (username) REQUIRED str
     """
 
-    # region mutable mapping
+    # region fields
 
-    def __init__(self):
-        self.store = {}
+    password: str  # REQUIRED
+    username: str  # REQUIRED
 
-    def __getitem__(self, key):
-        return self.store[self._keytransform(key)]
+    # endregion fields
 
-    def __setitem__(self, key, value):
-        self.store[self._keytransform(key)] = value
+    # region with_x methods
 
-    def __delitem__(self, key):
-        del self.store[self._keytransform(key)]
+    def with_password(self, value: str) -> ApimodelCreateSQLDatabaseCredentialRequest:
+        self.password = value
+        return self
 
-    def __iter__(self):
-        return iter(self.store)
+    def with_username(self, value: str) -> ApimodelCreateSQLDatabaseCredentialRequest:
+        self.username = value
+        return self
 
-    def __len__(self):
-        return len(self.store)
-
-    # noinspection PyMethodMayBeStatic
-    def _keytransform(self, key):
-        return key
-
-    # endregion mutable mapping
+    # endregion with_x methods
 
     # region to methods
 
     def to_dict(self, include_empty: bool = False) -> dict:
-        return copy.deepcopy(self.store)
+        result: dict = {}
+        if hasattr(self, "password"):
+            result["password"] = str(self.password)
+        elif include_empty:
+            result["password"] = ""
+        if hasattr(self, "username"):
+            result["username"] = str(self.username)
+        elif include_empty:
+            result["username"] = ""
+        return result
 
     # endregion to methods
 
     # region static methods
 
     @classmethod
-    def create(cls, dict_: Optional[dict] = None, **kwargs) -> BinarySchema:
+    def create(
+        cls, password: str, username: str, **kwargs
+    ) -> ApimodelCreateSQLDatabaseCredentialRequest:
         instance = cls()
-        if dict_ is not None:
-            instance.store = copy.deepcopy(dict_)
+        instance.password = password
+        instance.username = username
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> BinarySchema:
+    def create_from_dict(
+        cls, dict_: dict, include_empty: bool = False
+    ) -> ApimodelCreateSQLDatabaseCredentialRequest:
         instance = cls()
         if not dict_:
             return instance
-        instance.store = copy.deepcopy(dict_)
+        if "password" in dict_ and dict_["password"] is not None:
+            instance.password = str(dict_["password"])
+        elif include_empty:
+            instance.password = ""
+        if "username" in dict_ and dict_["username"] is not None:
+            instance.username = str(dict_["username"])
+        elif include_empty:
+            instance.username = ""
         return instance
 
     @classmethod
     def create_many_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, BinarySchema]:
+    ) -> Dict[str, ApimodelCreateSQLDatabaseCredentialRequest]:
         return (
             {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
             if dict_
@@ -99,7 +113,7 @@ class BinarySchema(Model, MutableMapping):
     @classmethod
     def create_many_from_list(
         cls, list_: list, include_empty: bool = False
-    ) -> List[BinarySchema]:
+    ) -> List[ApimodelCreateSQLDatabaseCredentialRequest]:
         return (
             [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
             if list_
@@ -109,7 +123,11 @@ class BinarySchema(Model, MutableMapping):
     @classmethod
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[BinarySchema, List[BinarySchema], Dict[Any, BinarySchema]]:
+    ) -> Union[
+        ApimodelCreateSQLDatabaseCredentialRequest,
+        List[ApimodelCreateSQLDatabaseCredentialRequest],
+        Dict[Any, ApimodelCreateSQLDatabaseCredentialRequest],
+    ]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)
@@ -122,10 +140,16 @@ class BinarySchema(Model, MutableMapping):
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
-        return {}
+        return {
+            "password": "password",
+            "username": "username",
+        }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
-        return {}
+        return {
+            "password": True,
+            "username": True,
+        }
 
     # endregion static methods

@@ -37,7 +37,7 @@ from ...models import UpdateBasePolicyResponse
 
 
 class OldPartialUpdatePolicy(Operation):
-    """Update Base Legal Policy (oldPartialUpdatePolicy)
+    """[DEPRECATED] Update Base Legal Policy (oldPartialUpdatePolicy)
 
     Update an existing base policy.
     Note:

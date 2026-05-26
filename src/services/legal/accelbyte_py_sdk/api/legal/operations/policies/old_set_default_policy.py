@@ -35,7 +35,7 @@ from ...models import ErrorEntity
 
 
 class OldSetDefaultPolicy(Operation):
-    """Set Default Policy (oldSetDefaultPolicy)
+    """[DEPRECATED] Set Default Policy (oldSetDefaultPolicy)
 
     Update a policy to be the default.
 

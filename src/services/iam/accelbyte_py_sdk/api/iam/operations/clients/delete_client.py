@@ -37,7 +37,7 @@ from ...models import RestErrorResponse
 class DeleteClient(Operation):
     """[DEPRECATED] Delete Client (DeleteClient)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     **Endpoint migration guide**
     - **Substitute endpoint: _/iam/v3/admin/namespaces/{namespace}/clients/{clientId} [DELETE]_**
 

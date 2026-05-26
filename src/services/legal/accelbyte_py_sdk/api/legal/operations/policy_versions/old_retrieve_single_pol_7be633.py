@@ -36,7 +36,7 @@ from ...models import RetrievePolicyVersionResponse
 
 
 class OldRetrieveSinglePolicyVersion(Operation):
-    """Retrieve a Version from Country-Specific Policy (oldRetrieveSinglePolicyVersion)
+    """[DEPRECATED] Retrieve a Version from Country-Specific Policy (oldRetrieveSinglePolicyVersion)
 
     Retrieve a version of a particular country specific policy. If version is not provided, the Legal Service will assume caller requesting all versions from country-specific policy.
 

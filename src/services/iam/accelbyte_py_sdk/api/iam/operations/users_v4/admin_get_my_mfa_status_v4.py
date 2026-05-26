@@ -38,7 +38,7 @@ from ...models import RestErrorResponse
 class AdminGetMyMFAStatusV4(Operation):
     """[DEPRECATED] Get User MFA Status (AdminGetMyMFAStatusV4)
 
-    This endpoint will get user's' MFA status.
+    Retrieves the user's MFA status.
     ------------
     **Substitute endpoint**: /iam/v4/admin/users/me/mfa/status [GET]
 

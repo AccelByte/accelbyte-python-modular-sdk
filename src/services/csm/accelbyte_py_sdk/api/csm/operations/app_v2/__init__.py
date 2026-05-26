@@ -13,6 +13,7 @@ __email__ = "dev@accelbyte.net"
 
 # pylint: disable=line-too-long
 
+from .apply_app_config_v2 import ApplyAppConfigV2
 from .create_app_v2 import CreateAppV2
 from .delete_app_v2 import DeleteAppV2
 from .get_app_list_v2 import GetAppListV2

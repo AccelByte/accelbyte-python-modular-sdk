@@ -62,6 +62,8 @@ from ._tags import admin_list_tags_async
 from ._tags import public_list_tags
 from ._tags import public_list_tags_async
 
+from ._user_achievements import admin_batch_query_user_achievements
+from ._user_achievements import admin_batch_query_user_achievements_async
 from ._user_achievements import admin_bulk_unlock_achievement
 from ._user_achievements import admin_bulk_unlock_achievement_async
 from ._user_achievements import admin_list_user_achievements

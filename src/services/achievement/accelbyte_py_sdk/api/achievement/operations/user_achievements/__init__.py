@@ -13,6 +13,7 @@ __email__ = "dev@accelbyte.net"
 
 # pylint: disable=line-too-long
 
+from .admin_batch_query_user__2f3d81 import AdminBatchQueryUserAchievements
 from .admin_bulk_unlock_achievement import AdminBulkUnlockAchievement
 from .admin_list_user_achievements import AdminListUserAchievements
 from .admin_list_user_achievements import (

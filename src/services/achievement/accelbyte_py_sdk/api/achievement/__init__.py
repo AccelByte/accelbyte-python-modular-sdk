@@ -68,6 +68,8 @@ from .wrappers import public_list_tags
 from .wrappers import public_list_tags_async
 
 # user_achievements
+from .wrappers import admin_batch_query_user_achievements
+from .wrappers import admin_batch_query_user_achievements_async
 from .wrappers import admin_bulk_unlock_achievement
 from .wrappers import admin_bulk_unlock_achievement_async
 from .wrappers import admin_list_user_achievements

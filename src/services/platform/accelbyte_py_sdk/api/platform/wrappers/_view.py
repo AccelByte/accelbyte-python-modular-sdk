@@ -58,7 +58,7 @@ def create_view(
     This API is used to create a view.
 
     Other detail info:
-                * Returns : created a view
+              * Returns : created a view
 
     ## Restrictions for localization extension
 
@@ -66,13 +66,13 @@ def create_view(
     1. Cannot use "." as the key name
     -
 
-                                            { "data.2": "value" }
+                                    { "data.2": "value" }
 
 
     2. Cannot use "$" as the prefix in key names
     -
 
-                                            { "$data": "value" }
+                                    { "$data": "value" }
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/views
@@ -129,7 +129,7 @@ async def create_view_async(
     This API is used to create a view.
 
     Other detail info:
-                * Returns : created a view
+              * Returns : created a view
 
     ## Restrictions for localization extension
 
@@ -137,13 +137,13 @@ async def create_view_async(
     1. Cannot use "." as the key name
     -
 
-                                            { "data.2": "value" }
+                                    { "data.2": "value" }
 
 
     2. Cannot use "$" as the prefix in key names
     -
 
-                                            { "$data": "value" }
+                                    { "$data": "value" }
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/views
@@ -304,7 +304,7 @@ def get_view(
     This API is used to get a view.
 
     Other detail info:
-                * Returns : view data
+              * Returns : view data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/views/{viewId}
@@ -355,7 +355,7 @@ async def get_view_async(
     This API is used to get a view.
 
     Other detail info:
-                * Returns : view data
+              * Returns : view data
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/views/{viewId}
@@ -407,7 +407,7 @@ def list_views(
     This API is used to list all views.
 
     Other detail info:
-                * Returns : the list of views
+              * Returns : the list of views
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/views
@@ -456,7 +456,7 @@ async def list_views_async(
     This API is used to list all views.
 
     Other detail info:
-                * Returns : the list of views
+              * Returns : the list of views
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/views
@@ -509,9 +509,9 @@ def public_list_views(
     This API is used to get all views.
 
     Other detail info:
-                * Optional permission : resource="PREVIEW", action=1(CREATE) (user with this permission can view draft store views)
-                *  Optional permission : resource="SANDBOX", action=1(CREATE) (user with this permission can view draft store views)
-                *  Returns : all views
+              * Optional permission : resource="PREVIEW", action=1(CREATE) (user with this permission can view draft store views)
+              *  Optional permission : resource="SANDBOX", action=1(CREATE) (user with this permission can view draft store views)
+              *  Returns : all views
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/views
@@ -564,9 +564,9 @@ async def public_list_views_async(
     This API is used to get all views.
 
     Other detail info:
-                * Optional permission : resource="PREVIEW", action=1(CREATE) (user with this permission can view draft store views)
-                *  Optional permission : resource="SANDBOX", action=1(CREATE) (user with this permission can view draft store views)
-                *  Returns : all views
+              * Optional permission : resource="PREVIEW", action=1(CREATE) (user with this permission can view draft store views)
+              *  Optional permission : resource="SANDBOX", action=1(CREATE) (user with this permission can view draft store views)
+              *  Returns : all views
 
     Properties:
         url: /platform/public/namespaces/{namespace}/users/{userId}/views
@@ -621,7 +621,7 @@ def update_view(
     This API is used to update a view.
 
     Other detail info:
-                * Returns : updated view data
+              * Returns : updated view data
 
     ## Restrictions for localization extension
 
@@ -629,13 +629,13 @@ def update_view(
     1. Cannot use "." as the key name
     -
 
-                                            { "data.2": "value" }
+                                    { "data.2": "value" }
 
 
     2. Cannot use "$" as the prefix in key names
     -
 
-                                            { "$data": "value" }
+                                    { "$data": "value" }
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/views/{viewId}
@@ -696,7 +696,7 @@ async def update_view_async(
     This API is used to update a view.
 
     Other detail info:
-                * Returns : updated view data
+              * Returns : updated view data
 
     ## Restrictions for localization extension
 
@@ -704,13 +704,13 @@ async def update_view_async(
     1. Cannot use "." as the key name
     -
 
-                                            { "data.2": "value" }
+                                    { "data.2": "value" }
 
 
     2. Cannot use "$" as the prefix in key names
     -
 
-                                            { "$data": "value" }
+                                    { "$data": "value" }
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/views/{viewId}

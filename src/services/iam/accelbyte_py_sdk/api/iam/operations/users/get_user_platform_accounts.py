@@ -38,7 +38,7 @@ from ...models import RestErrorResponse
 class GetUserPlatformAccounts(Operation):
     """[DEPRECATED] Get platform accounts linked to the user (GetUserPlatformAccounts)
 
-    ## The endpoint is going to be deprecated
+    **This endpoint is deprecated.**
     ### Endpoint migration guide
     - **Substitute endpoint: _/iam/v3/public/namespaces/{namespace}/users/{userId}/platforms [GET]_**
     - **Substitute endpoint: _/iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms [GET]_**

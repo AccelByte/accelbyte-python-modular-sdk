@@ -35,7 +35,7 @@ from ...models import RestErrorResponse
 
 
 class AdminDeleteRolePermissionsV3(Operation):
-    """Delete Role (AdminDeleteRolePermissionsV3)
+    """Delete Role Permissions (AdminDeleteRolePermissionsV3)
 
 
     Properties:

@@ -35,7 +35,7 @@ from ...models import RetrieveBasePolicyResponse
 
 
 class RetrieveAllLegalPolicies(Operation):
-    """Retrieve All Base Legal Policy (retrieveAllLegalPolicies)
+    """[DEPRECATED] Retrieve All Base Legal Policy (retrieveAllLegalPolicies)
 
     Retrieve all base policies.
 

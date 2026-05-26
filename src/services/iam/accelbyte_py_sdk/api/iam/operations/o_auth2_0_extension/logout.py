@@ -35,7 +35,7 @@ from accelbyte_py_sdk.core import deprecated
 class Logout(Operation):
     """Logout (Logout)
 
-    This endpoint is used to remove **access_token**, **refresh_token** from cookie.
+    Removes **access_token** and **refresh_token** from the cookie.
 
     Properties:
         url: /iam/v3/logout

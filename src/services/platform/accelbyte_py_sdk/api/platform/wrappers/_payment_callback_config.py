@@ -51,7 +51,7 @@ def get_payment_callback_config(
 
     [Not supported yet in AGS Shared Cloud] Get payment callback configuration.
     Other detail info:
-                  * Returns : Payment callback config
+                * Returns : Payment callback config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/config/callback
@@ -96,7 +96,7 @@ async def get_payment_callback_config_async(
 
     [Not supported yet in AGS Shared Cloud] Get payment callback configuration.
     Other detail info:
-                  * Returns : Payment callback config
+                * Returns : Payment callback config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/config/callback
@@ -144,7 +144,7 @@ def update_payment_callback_config(
 
     [Not supported yet in AGS Shared Cloud] Update payment callback configuration.
     Other detail info:
-                  * Returns : Payment callback config
+                * Returns : Payment callback config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/config/callback
@@ -191,7 +191,7 @@ async def update_payment_callback_config_async(
 
     [Not supported yet in AGS Shared Cloud] Update payment callback configuration.
     Other detail info:
-                  * Returns : Payment callback config
+                * Returns : Payment callback config
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/payment/config/callback

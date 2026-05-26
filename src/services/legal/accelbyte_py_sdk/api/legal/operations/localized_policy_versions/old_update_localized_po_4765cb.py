@@ -37,7 +37,7 @@ from ...models import UpdateLocalizedPolicyVersionResponse
 
 
 class OldUpdateLocalizedPolicyVersion(Operation):
-    """Update a Localized Version from Country-Specific Policy (oldUpdateLocalizedPolicyVersion)
+    """[DEPRECATED] Update a Localized Version from Country-Specific Policy (oldUpdateLocalizedPolicyVersion)
 
     Update a version of a particular country-specific policy.
 

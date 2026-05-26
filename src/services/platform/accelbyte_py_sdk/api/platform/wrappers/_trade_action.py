@@ -54,8 +54,8 @@ def commit(
     This API is used to create a chained operations
 
     Other detail info:
-                * Returns : chain action history
-                *  FULFILL_ITEM operation supported item type : INGAMEITEM,LOOTBOX,OPTIONBOX
+              * Returns : chain action history
+              *  FULFILL_ITEM operation supported item type : INGAMEITEM,LOOTBOX,OPTIONBOX
 
     ## Restrictions for metadata
 
@@ -63,13 +63,13 @@ def commit(
     1. Cannot use "." as the key name
     -
 
-                                            { "data.2": "value" }
+                                    { "data.2": "value" }
 
 
     2. Cannot use "$" as the prefix in key names
     -
 
-                                            { "$data": "value" }
+                                    { "$data": "value" }
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/trade/commit
@@ -114,8 +114,8 @@ async def commit_async(
     This API is used to create a chained operations
 
     Other detail info:
-                * Returns : chain action history
-                *  FULFILL_ITEM operation supported item type : INGAMEITEM,LOOTBOX,OPTIONBOX
+              * Returns : chain action history
+              *  FULFILL_ITEM operation supported item type : INGAMEITEM,LOOTBOX,OPTIONBOX
 
     ## Restrictions for metadata
 
@@ -123,13 +123,13 @@ async def commit_async(
     1. Cannot use "." as the key name
     -
 
-                                            { "data.2": "value" }
+                                    { "data.2": "value" }
 
 
     2. Cannot use "$" as the prefix in key names
     -
 
-                                            { "$data": "value" }
+                                    { "$data": "value" }
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/trade/commit
@@ -180,7 +180,7 @@ def get_trade_history_by_criteria(
     This API is used to fetch trade history based on the provided criteria
 
     Other detail info:
-                * Returns : trade history list based on criteria
+              * Returns : trade history list based on criteria
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/trade/history/byCriteria
@@ -241,7 +241,7 @@ async def get_trade_history_by_criteria_async(
     This API is used to fetch trade history based on the provided criteria
 
     Other detail info:
-                * Returns : trade history list based on criteria
+              * Returns : trade history list based on criteria
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/trade/history/byCriteria
@@ -300,7 +300,7 @@ def get_trade_history_by_transaction_id(
     This API is used to fetch a specific trade history using transaction ID
 
     Other detail info:
-                * Returns : trade history based on transaction ID
+              * Returns : trade history based on transaction ID
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/trade/{transactionId}
@@ -345,7 +345,7 @@ async def get_trade_history_by_transaction_id_async(
     This API is used to fetch a specific trade history using transaction ID
 
     Other detail info:
-                * Returns : trade history based on transaction ID
+              * Returns : trade history based on transaction ID
 
     Properties:
         url: /platform/admin/namespaces/{namespace}/trade/{transactionId}
