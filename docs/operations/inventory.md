@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Inventory Service Early Access Index (0.2.25)
+# AccelByte Gaming Services Inventory Service Early Access Index (0.2.27)
 
 
 ## Operations
@@ -119,6 +119,7 @@
 | apimodels.CreateTagResp | [ApimodelsCreateTagResp](../../src/services/inventory/accelbyte_py_sdk/api/inventory/models/apimodels_create_tag_resp.py) |
 | apimodels.DeleteInventoryReq | [ApimodelsDeleteInventoryReq](../../src/services/inventory/accelbyte_py_sdk/api/inventory/models/apimodels_delete_inventory_req.py) |
 | apimodels.ErrorResponse | [ApimodelsErrorResponse](../../src/services/inventory/accelbyte_py_sdk/api/inventory/models/apimodels_error_response.py) |
+| apimodels.IntegrationConfigurationReq | [ApimodelsIntegrationConfigurationReq](../../src/services/inventory/accelbyte_py_sdk/api/inventory/models/apimodels_integration_configuration_req.py) |
 | apimodels.IntegrationConfigurationResp | [ApimodelsIntegrationConfigurationResp](../../src/services/inventory/accelbyte_py_sdk/api/inventory/models/apimodels_integration_configuration_resp.py) |
 | apimodels.InventoryConfig | [ApimodelsInventoryConfig](../../src/services/inventory/accelbyte_py_sdk/api/inventory/models/apimodels_inventory_config.py) |
 | apimodels.InventoryConfigurationReq | [ApimodelsInventoryConfigurationReq](../../src/services/inventory/accelbyte_py_sdk/api/inventory/models/apimodels_inventory_configuration_req.py) |

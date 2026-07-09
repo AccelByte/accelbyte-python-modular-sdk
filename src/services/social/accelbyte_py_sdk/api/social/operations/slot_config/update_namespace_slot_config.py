@@ -70,8 +70,8 @@ class UpdateNamespaceSlotConfig(Operation):
     # region fields
 
     _url: str = "/social/admin/namespaces/{namespace}/config"
-    _path: str = "/social/admin/namespaces/{namespace}/config"
-    _base_path: str = ""
+    _path: str = "/admin/namespaces/{namespace}/config"
+    _base_path: str = "/social"
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]

@@ -36,9 +36,10 @@ from ...models import RestErrorResponse
 
 
 class PublicWebLinkPlatform(Operation):
-    """Create Public Web Linking (PublicWebLinkPlatform)
+    """Initiate Platform Web Linking (PublicWebLinkPlatform)
 
-    Generates a third party login page which will redirect to the establish API.
+    Generates a redirect to a third party login page for account linking authentication.
+
     Supported platforms:
     - ps4web
     - xblweb
@@ -52,6 +53,10 @@ class PublicWebLinkPlatform(Operation):
     - discord
     - amazon
     - oculusweb
+
+    ## New API version
+
+    This API remains fully functional, but `GET /users/me/platforms/{platformId}/web/reauth` is recommended for new integrations.
 
     Properties:
         url: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link
@@ -81,7 +86,9 @@ class PublicWebLinkPlatform(Operation):
 
         401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
 
-        404: Not Found - RestErrorResponse (10365: client not found | 20008: user not found)
+        404: Not Found - RestErrorResponse (10365: client not found | 10174: platform client not found | 20008: user not found)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
 
     # region fields
@@ -229,6 +236,7 @@ class PublicWebLinkPlatform(Operation):
         error_400: Optional[RestErrorResponse] = None
         error_401: Optional[RestErrorResponse] = None
         error_404: Optional[RestErrorResponse] = None
+        error_500: Optional[RestErrorResponse] = None
 
         def ok(self) -> PublicWebLinkPlatform.Response:
             if self.error_400 is not None:
@@ -243,6 +251,11 @@ class PublicWebLinkPlatform(Operation):
                     raise exc  # pylint: disable=raising-bad-type
             if self.error_404 is not None:
                 err = self.error_404.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_500 is not None:
+                err = self.error_500.translate_to_api_error()
                 exc = err.to_exception()
                 if exc is not None:
                     raise exc  # pylint: disable=raising-bad-type
@@ -261,6 +274,9 @@ class PublicWebLinkPlatform(Operation):
             elif self.error_404 is not None:
                 yield None
                 yield self.error_404
+            elif self.error_500 is not None:
+                yield None
+                yield self.error_500
             else:
                 yield None
                 yield self.error
@@ -275,7 +291,9 @@ class PublicWebLinkPlatform(Operation):
 
         401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
 
-        404: Not Found - RestErrorResponse (10365: client not found | 20008: user not found)
+        404: Not Found - RestErrorResponse (10365: client not found | 10174: platform client not found | 20008: user not found)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -306,6 +324,9 @@ class PublicWebLinkPlatform(Operation):
             elif code == 404:
                 result.error_404 = RestErrorResponse.create_from_dict(content)
                 result.error = result.error_404.translate_to_api_error()
+            elif code == 500:
+                result.error_500 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_500.translate_to_api_error()
             else:
                 result.error = ApiError.create_from_http_response(
                     HttpResponse.create_undocumented_response(
@@ -337,7 +358,9 @@ class PublicWebLinkPlatform(Operation):
 
         401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
 
-        404: Not Found - RestErrorResponse (10365: client not found | 20008: user not found)
+        404: Not Found - RestErrorResponse (10365: client not found | 10174: platform client not found | 20008: user not found)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -359,6 +382,8 @@ class PublicWebLinkPlatform(Operation):
         if code == 401:
             return None, RestErrorResponse.create_from_dict(content)
         if code == 404:
+            return None, RestErrorResponse.create_from_dict(content)
+        if code == 500:
             return None, RestErrorResponse.create_from_dict(content)
 
         return self.handle_undocumented_response(

@@ -6,7 +6,7 @@ This is a service module for the [AccelByte Modular Python SDK](https://github.c
 
 ```text
 AccelByte Gaming Services Session History Service
-* Version: 1.14.8
+* Version: 1.15.0
 ```
 
 ## Setup

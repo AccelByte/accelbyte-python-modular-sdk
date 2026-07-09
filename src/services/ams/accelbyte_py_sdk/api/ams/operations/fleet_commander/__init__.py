@@ -14,5 +14,5 @@ __email__ = "dev@accelbyte.net"
 # pylint: disable=line-too-long
 
 from .basic_health_check import BasicHealthCheck
-from .func1 import Func1
 from .portal_health_check import PortalHealthCheck
+from .version_info import VersionInfo

@@ -47,7 +47,7 @@ class PublicGetMessages(Operation):
 
         tags: ["Lobby Operations"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -65,7 +65,7 @@ class PublicGetMessages(Operation):
     _path: str = "/lobby/v1/messages"
     _base_path: str = ""
     _method: str = "GET"
-    _consumes: List[str] = ["application/json"]
+    _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None

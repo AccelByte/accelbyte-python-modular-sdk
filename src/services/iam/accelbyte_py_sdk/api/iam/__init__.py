@@ -178,8 +178,8 @@ from .wrappers import get_jwks
 from .wrappers import get_jwks_async
 from .wrappers import get_revocation_list
 from .wrappers import get_revocation_list_async
-from .wrappers import platform_token_request_handler
-from .wrappers import platform_token_request_handler_async
+from .wrappers import namespace_scoped_platform_token_grant
+from .wrappers import namespace_scoped_platform_token_grant_async
 from .wrappers import revoke_a_user
 from .wrappers import revoke_a_user_async
 from .wrappers import revoke_token
@@ -780,6 +780,12 @@ from .wrappers import public_web_link_platform
 from .wrappers import public_web_link_platform_async
 from .wrappers import public_web_link_platform_establish
 from .wrappers import public_web_link_platform_establish_async
+from .wrappers import public_web_reauth_platform
+from .wrappers import public_web_reauth_platform_async
+from .wrappers import public_web_reauth_platform_establish
+from .wrappers import public_web_reauth_platform_establish_async
+from .wrappers import public_web_reauth_platform_process
+from .wrappers import public_web_reauth_platform_process_async
 from .wrappers import reset_password
 from .wrappers import reset_password_async
 from .wrappers import reset_password_v3

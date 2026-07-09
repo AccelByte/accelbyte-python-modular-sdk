@@ -66,7 +66,7 @@ def admin_create_tag(
 
         tags: ["Admin Tags"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -118,7 +118,7 @@ async def admin_create_tag_async(
 
         tags: ["Admin Tags"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 

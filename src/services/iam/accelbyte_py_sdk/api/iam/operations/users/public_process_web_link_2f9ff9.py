@@ -31,15 +31,15 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 from accelbyte_py_sdk.core import deprecated
 
-from ...models import ModelLinkRequest
+from ...models import ModelReAuthRequest
 from ...models import RestErrorResponse
 
 
 class PublicProcessWebLinkPlatformV3(Operation):
-    """Process Link Progress  (PublicProcessWebLinkPlatformV3)
+    """Complete Platform Web Link (PublicProcessWebLinkPlatformV3)
 
-    Processes third party account link and returns the link status directly instead of redirecting to the original page.
-    The param **state** comes from the response of `/users/me/platforms/{platformId}/web/link`
+    Completes the third party account link and returns the link status directly instead of redirecting to the **redirectUri** defined when calling the `GET /users/me/platforms/{platformId}/web/link` endpoint.
+
     Supported platforms:
     - ps4web
     - xblweb
@@ -53,6 +53,10 @@ class PublicProcessWebLinkPlatformV3(Operation):
     - discord
     - amazon
     - oculusweb
+
+    ## New API version
+
+    This API remains fully functional, but `POST /users/me/platforms/{platformId}/web/reauth/process` is recommended for new integrations.
 
     Properties:
         url: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/process
@@ -76,9 +80,11 @@ class PublicProcessWebLinkPlatformV3(Operation):
         platform_id: (platformId) REQUIRED str in path
 
     Responses:
-        200: OK - ModelLinkRequest (OK)
+        200: OK - ModelReAuthRequest (OK)
 
-        400: Bad Request - RestErrorResponse (20000: internal server error | 20002: validation error)
+        400: Bad Request - RestErrorResponse (20002: validation error)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
     """
 
     # region fields
@@ -218,12 +224,18 @@ class PublicProcessWebLinkPlatformV3(Operation):
     # region response methods
 
     class Response(ApiResponse):
-        data_200: Optional[ModelLinkRequest] = None
+        data_200: Optional[ModelReAuthRequest] = None
         error_400: Optional[RestErrorResponse] = None
+        error_500: Optional[RestErrorResponse] = None
 
         def ok(self) -> PublicProcessWebLinkPlatformV3.Response:
             if self.error_400 is not None:
                 err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_500 is not None:
+                err = self.error_500.translate_to_api_error()
                 exc = err.to_exception()
                 if exc is not None:
                     raise exc  # pylint: disable=raising-bad-type
@@ -236,6 +248,9 @@ class PublicProcessWebLinkPlatformV3(Operation):
             elif self.error_400 is not None:
                 yield None
                 yield self.error_400
+            elif self.error_500 is not None:
+                yield None
+                yield self.error_500
             else:
                 yield None
                 yield self.error
@@ -244,9 +259,11 @@ class PublicProcessWebLinkPlatformV3(Operation):
     def parse_response(self, code: int, content_type: str, content: Any) -> Response:
         """Parse the given response.
 
-        200: OK - ModelLinkRequest (OK)
+        200: OK - ModelReAuthRequest (OK)
 
-        400: Bad Request - RestErrorResponse (20000: internal server error | 20002: validation error)
+        400: Bad Request - RestErrorResponse (20002: validation error)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -267,10 +284,13 @@ class PublicProcessWebLinkPlatformV3(Operation):
             code, content_type, content = pre_processed_response
 
             if code == 200:
-                result.data_200 = ModelLinkRequest.create_from_dict(content)
+                result.data_200 = ModelReAuthRequest.create_from_dict(content)
             elif code == 400:
                 result.error_400 = RestErrorResponse.create_from_dict(content)
                 result.error = result.error_400.translate_to_api_error()
+            elif code == 500:
+                result.error_500 = RestErrorResponse.create_from_dict(content)
+                result.error = result.error_500.translate_to_api_error()
             else:
                 result.error = ApiError.create_from_http_response(
                     HttpResponse.create_undocumented_response(
@@ -291,13 +311,15 @@ class PublicProcessWebLinkPlatformV3(Operation):
     def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
-        Union[None, ModelLinkRequest], Union[None, HttpResponse, RestErrorResponse]
+        Union[None, ModelReAuthRequest], Union[None, HttpResponse, RestErrorResponse]
     ]:
         """Parse the given response.
 
-        200: OK - ModelLinkRequest (OK)
+        200: OK - ModelReAuthRequest (OK)
 
-        400: Bad Request - RestErrorResponse (20000: internal server error | 20002: validation error)
+        400: Bad Request - RestErrorResponse (20002: validation error)
+
+        500: Internal Server Error - RestErrorResponse (20000: internal server error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -313,8 +335,10 @@ class PublicProcessWebLinkPlatformV3(Operation):
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return ModelLinkRequest.create_from_dict(content), None
+            return ModelReAuthRequest.create_from_dict(content), None
         if code == 400:
+            return None, RestErrorResponse.create_from_dict(content)
+        if code == 500:
             return None, RestErrorResponse.create_from_dict(content)
 
         return self.handle_undocumented_response(

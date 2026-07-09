@@ -69,6 +69,8 @@ class AdminGetUserPersonalDataRequests(Operation):
 
         401: Unauthorized - ResponseError (Unauthorized)
 
+        404: Not Found - ResponseError (Not Found)
+
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
 
@@ -212,6 +214,7 @@ class AdminGetUserPersonalDataRequests(Operation):
         data_200: Optional[ModelsUserPersonalDataResponse] = None
         error_400: Optional[ResponseError] = None
         error_401: Optional[ResponseError] = None
+        error_404: Optional[ResponseError] = None
         error_500: Optional[ResponseError] = None
 
         def ok(self) -> AdminGetUserPersonalDataRequests.Response:
@@ -222,6 +225,11 @@ class AdminGetUserPersonalDataRequests(Operation):
                     raise exc  # pylint: disable=raising-bad-type
             if self.error_401 is not None:
                 err = self.error_401.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_404 is not None:
+                err = self.error_404.translate_to_api_error()
                 exc = err.to_exception()
                 if exc is not None:
                     raise exc  # pylint: disable=raising-bad-type
@@ -242,6 +250,9 @@ class AdminGetUserPersonalDataRequests(Operation):
             elif self.error_401 is not None:
                 yield None
                 yield self.error_401
+            elif self.error_404 is not None:
+                yield None
+                yield self.error_404
             elif self.error_500 is not None:
                 yield None
                 yield self.error_500
@@ -258,6 +269,8 @@ class AdminGetUserPersonalDataRequests(Operation):
         400: Bad Request - ResponseError (Bad Request)
 
         401: Unauthorized - ResponseError (Unauthorized)
+
+        404: Not Found - ResponseError (Not Found)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
 
@@ -289,6 +302,9 @@ class AdminGetUserPersonalDataRequests(Operation):
             elif code == 401:
                 result.error_401 = ResponseError.create_from_dict(content)
                 result.error = result.error_401.translate_to_api_error()
+            elif code == 404:
+                result.error_404 = ResponseError.create_from_dict(content)
+                result.error = result.error_404.translate_to_api_error()
             elif code == 500:
                 result.error_500 = ResponseError.create_from_dict(content)
                 result.error = result.error_500.translate_to_api_error()
@@ -323,6 +339,8 @@ class AdminGetUserPersonalDataRequests(Operation):
 
         401: Unauthorized - ResponseError (Unauthorized)
 
+        404: Not Found - ResponseError (Not Found)
+
         500: Internal Server Error - ResponseError (Internal Server Error)
 
         ---: HttpResponse (Undocumented Response)
@@ -343,6 +361,8 @@ class AdminGetUserPersonalDataRequests(Operation):
         if code == 400:
             return None, ResponseError.create_from_dict(content)
         if code == 401:
+            return None, ResponseError.create_from_dict(content)
+        if code == 404:
             return None, ResponseError.create_from_dict(content)
         if code == 500:
             return None, ResponseError.create_from_dict(content)

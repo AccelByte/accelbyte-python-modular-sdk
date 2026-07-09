@@ -79,6 +79,8 @@ class AdminGetUserPlatformAccountClosureHistories(Operation):
 
         403: Forbidden - ResponseError (Forbidden)
 
+        404: Not Found - ResponseError (Not Found)
+
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
 
@@ -234,6 +236,7 @@ class AdminGetUserPlatformAccountClosureHistories(Operation):
         error_400: Optional[ResponseError] = None
         error_401: Optional[ResponseError] = None
         error_403: Optional[ResponseError] = None
+        error_404: Optional[ResponseError] = None
         error_500: Optional[ResponseError] = None
 
         def ok(self) -> AdminGetUserPlatformAccountClosureHistories.Response:
@@ -249,6 +252,11 @@ class AdminGetUserPlatformAccountClosureHistories(Operation):
                     raise exc  # pylint: disable=raising-bad-type
             if self.error_403 is not None:
                 err = self.error_403.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_404 is not None:
+                err = self.error_404.translate_to_api_error()
                 exc = err.to_exception()
                 if exc is not None:
                     raise exc  # pylint: disable=raising-bad-type
@@ -272,6 +280,9 @@ class AdminGetUserPlatformAccountClosureHistories(Operation):
             elif self.error_403 is not None:
                 yield None
                 yield self.error_403
+            elif self.error_404 is not None:
+                yield None
+                yield self.error_404
             elif self.error_500 is not None:
                 yield None
                 yield self.error_500
@@ -290,6 +301,8 @@ class AdminGetUserPlatformAccountClosureHistories(Operation):
         401: Unauthorized - ResponseError (Unauthorized)
 
         403: Forbidden - ResponseError (Forbidden)
+
+        404: Not Found - ResponseError (Not Found)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
 
@@ -326,6 +339,9 @@ class AdminGetUserPlatformAccountClosureHistories(Operation):
             elif code == 403:
                 result.error_403 = ResponseError.create_from_dict(content)
                 result.error = result.error_403.translate_to_api_error()
+            elif code == 404:
+                result.error_404 = ResponseError.create_from_dict(content)
+                result.error = result.error_404.translate_to_api_error()
             elif code == 500:
                 result.error_500 = ResponseError.create_from_dict(content)
                 result.error = result.error_500.translate_to_api_error()
@@ -362,6 +378,8 @@ class AdminGetUserPlatformAccountClosureHistories(Operation):
 
         403: Forbidden - ResponseError (Forbidden)
 
+        404: Not Found - ResponseError (Not Found)
+
         500: Internal Server Error - ResponseError (Internal Server Error)
 
         ---: HttpResponse (Undocumented Response)
@@ -389,6 +407,8 @@ class AdminGetUserPlatformAccountClosureHistories(Operation):
         if code == 401:
             return None, ResponseError.create_from_dict(content)
         if code == 403:
+            return None, ResponseError.create_from_dict(content)
+        if code == 404:
             return None, ResponseError.create_from_dict(content)
         if code == 500:
             return None, ResponseError.create_from_dict(content)

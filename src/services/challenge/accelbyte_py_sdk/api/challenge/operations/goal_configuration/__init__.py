@@ -15,9 +15,11 @@ __email__ = "dev@accelbyte.net"
 
 from .admin_create_goal import AdminCreateGoal
 from .admin_delete_goal import AdminDeleteGoal
+from .admin_get_challenge_slots import AdminGetChallengeSlots
 from .admin_get_goal import AdminGetGoal
 from .admin_get_goals import AdminGetGoals
 from .admin_get_goals import (
     SortByEnum as AdminGetGoalsSortByEnum,
 )
+from .admin_move_goal_to_slot import AdminMoveGoalToSlot
 from .admin_update_goals import AdminUpdateGoals

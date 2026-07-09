@@ -144,8 +144,8 @@ class BulkUpdateUserStatItem1(Operation):
     # region fields
 
     _url: str = "/social/v2/public/namespaces/{namespace}/statitems/value/bulk"
-    _path: str = "/social/v2/public/namespaces/{namespace}/statitems/value/bulk"
-    _base_path: str = ""
+    _path: str = "/v2/public/namespaces/{namespace}/statitems/value/bulk"
+    _base_path: str = "/social"
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]

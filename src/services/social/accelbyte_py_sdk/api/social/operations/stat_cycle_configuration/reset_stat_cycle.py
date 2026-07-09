@@ -75,8 +75,8 @@ class ResetStatCycle(Operation):
     # region fields
 
     _url: str = "/social/v1/admin/namespaces/{namespace}/statCycles/{cycleId}/reset"
-    _path: str = "/social/v1/admin/namespaces/{namespace}/statCycles/{cycleId}/reset"
-    _base_path: str = ""
+    _path: str = "/v1/admin/namespaces/{namespace}/statCycles/{cycleId}/reset"
+    _base_path: str = "/social"
     _method: str = "POST"
     _consumes: List[str] = []
     _produces: List[str] = []

@@ -65,8 +65,8 @@ class DeleteUserSlotConfig(Operation):
     # region fields
 
     _url: str = "/social/admin/namespaces/{namespace}/users/{userId}/config"
-    _path: str = "/social/admin/namespaces/{namespace}/users/{userId}/config"
-    _base_path: str = ""
+    _path: str = "/admin/namespaces/{namespace}/users/{userId}/config"
+    _base_path: str = "/social"
     _method: str = "DELETE"
     _consumes: List[str] = []
     _produces: List[str] = []

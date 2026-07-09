@@ -32,8 +32,8 @@ from ..models.rest_error_response_with_conflicted_user_platform_accounts import 
 )
 
 
-class ModelLinkRequest(Model):
-    """Model link request (model.LinkRequest)
+class ModelReAuthRequest(Model):
+    """Model re auth request (model.ReAuthRequest)
 
     Properties:
         client_id: (client_id) REQUIRED str
@@ -95,73 +95,73 @@ class ModelLinkRequest(Model):
 
     # region with_x methods
 
-    def with_client_id(self, value: str) -> ModelLinkRequest:
+    def with_client_id(self, value: str) -> ModelReAuthRequest:
         self.client_id = value
         return self
 
-    def with_namespace(self, value: str) -> ModelLinkRequest:
+    def with_namespace(self, value: str) -> ModelReAuthRequest:
         self.namespace = value
         return self
 
-    def with_operation_name(self, value: str) -> ModelLinkRequest:
+    def with_operation_name(self, value: str) -> ModelReAuthRequest:
         self.operation_name = value
         return self
 
-    def with_payload(self, value: Dict[str, Any]) -> ModelLinkRequest:
+    def with_payload(self, value: Dict[str, Any]) -> ModelReAuthRequest:
         self.payload = value
         return self
 
-    def with_redirect_uri(self, value: str) -> ModelLinkRequest:
+    def with_redirect_uri(self, value: str) -> ModelReAuthRequest:
         self.redirect_uri = value
         return self
 
-    def with_request_id(self, value: str) -> ModelLinkRequest:
+    def with_request_id(self, value: str) -> ModelReAuthRequest:
         self.request_id = value
         return self
 
-    def with_status(self, value: str) -> ModelLinkRequest:
+    def with_status(self, value: str) -> ModelReAuthRequest:
         self.status = value
         return self
 
-    def with_conflict_publisher_user_id(self, value: str) -> ModelLinkRequest:
+    def with_conflict_publisher_user_id(self, value: str) -> ModelReAuthRequest:
         self.conflict_publisher_user_id = value
         return self
 
-    def with_conflict_user_linked_games(self, value: List[str]) -> ModelLinkRequest:
+    def with_conflict_user_linked_games(self, value: List[str]) -> ModelReAuthRequest:
         self.conflict_user_linked_games = value
         return self
 
-    def with_current_user_linked_games(self, value: List[str]) -> ModelLinkRequest:
+    def with_current_user_linked_games(self, value: List[str]) -> ModelReAuthRequest:
         self.current_user_linked_games = value
         return self
 
     def with_error(
         self, value: RestErrorResponseWithConflictedUserPlatformAccounts
-    ) -> ModelLinkRequest:
+    ) -> ModelReAuthRequest:
         self.error = value
         return self
 
-    def with_expiration(self, value: int) -> ModelLinkRequest:
+    def with_expiration(self, value: int) -> ModelReAuthRequest:
         self.expiration = value
         return self
 
-    def with_platform_display_name(self, value: str) -> ModelLinkRequest:
+    def with_platform_display_name(self, value: str) -> ModelReAuthRequest:
         self.platform_display_name = value
         return self
 
-    def with_platform_id(self, value: str) -> ModelLinkRequest:
+    def with_platform_id(self, value: str) -> ModelReAuthRequest:
         self.platform_id = value
         return self
 
-    def with_platform_user_id(self, value: str) -> ModelLinkRequest:
+    def with_platform_user_id(self, value: str) -> ModelReAuthRequest:
         self.platform_user_id = value
         return self
 
-    def with_refresh_token(self, value: str) -> ModelLinkRequest:
+    def with_refresh_token(self, value: str) -> ModelReAuthRequest:
         self.refresh_token = value
         return self
 
-    def with_user_id(self, value: str) -> ModelLinkRequest:
+    def with_user_id(self, value: str) -> ModelReAuthRequest:
         self.user_id = value
         return self
 
@@ -270,7 +270,7 @@ class ModelLinkRequest(Model):
         refresh_token: Optional[str] = None,
         user_id: Optional[str] = None,
         **kwargs,
-    ) -> ModelLinkRequest:
+    ) -> ModelReAuthRequest:
         instance = cls()
         instance.client_id = client_id
         instance.namespace = namespace
@@ -304,7 +304,7 @@ class ModelLinkRequest(Model):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> ModelLinkRequest:
+    ) -> ModelReAuthRequest:
         instance = cls()
         if not dict_:
             return instance
@@ -400,7 +400,7 @@ class ModelLinkRequest(Model):
     @classmethod
     def create_many_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, ModelLinkRequest]:
+    ) -> Dict[str, ModelReAuthRequest]:
         return (
             {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
             if dict_
@@ -410,7 +410,7 @@ class ModelLinkRequest(Model):
     @classmethod
     def create_many_from_list(
         cls, list_: list, include_empty: bool = False
-    ) -> List[ModelLinkRequest]:
+    ) -> List[ModelReAuthRequest]:
         return (
             [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
             if list_
@@ -420,7 +420,9 @@ class ModelLinkRequest(Model):
     @classmethod
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
-    ) -> Union[ModelLinkRequest, List[ModelLinkRequest], Dict[Any, ModelLinkRequest]]:
+    ) -> Union[
+        ModelReAuthRequest, List[ModelReAuthRequest], Dict[Any, ModelReAuthRequest]
+    ]:
         if many:
             if isinstance(any_, dict):
                 return cls.create_many_from_dict(any_, include_empty=include_empty)

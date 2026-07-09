@@ -182,6 +182,12 @@ from .public_verify_registrat_4d06db import PublicVerifyRegistrationCode
 from .public_verify_user_by_link_v3 import PublicVerifyUserByLinkV3
 from .public_web_link_platform import PublicWebLinkPlatform
 from .public_web_link_platfor_667cbd import PublicWebLinkPlatformEstablish
+from .public_web_reauth_platform import PublicWebReauthPlatform
+from .public_web_reauth_platform import (
+    OperationEnum as PublicWebReauthPlatformOperationEnum,
+)
+from .public_web_reauth_platf_0ad092 import PublicWebReauthPlatformEstablish
+from .public_web_reauth_platf_e14b6f import PublicWebReauthPlatformProcess
 from .reset_password import ResetPassword
 from .reset_password_v3 import ResetPasswordV3
 from .save_user_permission import SaveUserPermission

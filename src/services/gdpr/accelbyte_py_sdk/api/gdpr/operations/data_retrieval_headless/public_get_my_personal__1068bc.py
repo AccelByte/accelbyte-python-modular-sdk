@@ -20,7 +20,7 @@
 # pylint: disable=too-many-statements
 # pylint: disable=unused-import
 
-# AccelByte Gaming Services Challenge Service
+# AccelByte Gaming Services Gdpr Service
 
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -31,62 +31,50 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 from accelbyte_py_sdk.core import deprecated
 
-from ...models import IamErrorResponse
+from ...models import ModelsUserPersonalDataResponse
 from ...models import ResponseError
 
 
-class EvaluateMyProgress(Operation):
-    """Evaluate User's Challenge Progressions (EvaluateMyProgress)
+class PublicGetMyPersonalDataRequests(Operation):
+    """Get my personal data requests (PublicGetMyPersonalDataRequests)
 
-    - Required permission: NAMESPACE:{namespace}:CHALLENGE:PROGRESSION [UPDATE]
+    List my personal data requests. Requires a valid access token.
 
     Properties:
-        url: /challenge/v1/public/namespaces/{namespace}/users/me/progress/evaluate
+        url: /gdpr/public/users/me/requests
 
-        method: POST
+        method: GET
 
-        tags: ["Challenge Progression"]
+        tags: ["Data Retrieval - Headless"]
 
-        consumes: []
+        consumes: ["application/json"]
 
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
 
-        namespace: (namespace) REQUIRED str in path
-
-        challenge_code: (challengeCode) OPTIONAL List[str] in query
-
-        include_one_time_event: (includeOneTimeEvent) OPTIONAL str in query
-
     Responses:
-        204: No Content - (No Content)
+        200: OK - ModelsUserPersonalDataResponse (OK)
 
-        401: Unauthorized - IamErrorResponse (20001: unauthorized access)
+        401: Unauthorized - ResponseError (Unauthorized)
 
-        403: Forbidden - IamErrorResponse (20013: insufficient permission)
+        403: Forbidden - ResponseError (Forbidden)
 
-        500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
+        500: Internal Server Error - ResponseError (Internal Server Error)
     """
 
     # region fields
 
-    _url: str = "/challenge/v1/public/namespaces/{namespace}/users/me/progress/evaluate"
-    _path: str = (
-        "/challenge/v1/public/namespaces/{namespace}/users/me/progress/evaluate"
-    )
+    _url: str = "/gdpr/public/users/me/requests"
+    _path: str = "/gdpr/public/users/me/requests"
     _base_path: str = ""
-    _method: str = "POST"
-    _consumes: List[str] = []
+    _method: str = "GET"
+    _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
 
-    service_name: Optional[str] = "challenge"
-
-    namespace: str  # REQUIRED in [path]
-    challenge_code: List[str]  # OPTIONAL in [query]
-    include_one_time_event: str  # OPTIONAL in [query]
+    service_name: Optional[str] = "gdpr"
 
     # endregion fields
 
@@ -133,24 +121,7 @@ class EvaluateMyProgress(Operation):
     # region get_x_params methods
 
     def get_all_params(self) -> dict:
-        return {
-            "path": self.get_path_params(),
-            "query": self.get_query_params(),
-        }
-
-    def get_path_params(self) -> dict:
-        result = {}
-        if hasattr(self, "namespace"):
-            result["namespace"] = self.namespace
-        return result
-
-    def get_query_params(self) -> dict:
-        result = {}
-        if hasattr(self, "challenge_code"):
-            result["challengeCode"] = self.challenge_code
-        if hasattr(self, "include_one_time_event"):
-            result["includeOneTimeEvent"] = self.include_one_time_event
-        return result
+        return {}
 
     # endregion get_x_params methods
 
@@ -160,36 +131,12 @@ class EvaluateMyProgress(Operation):
 
     # region with_x methods
 
-    def with_namespace(self, value: str) -> EvaluateMyProgress:
-        self.namespace = value
-        return self
-
-    def with_challenge_code(self, value: List[str]) -> EvaluateMyProgress:
-        self.challenge_code = value
-        return self
-
-    def with_include_one_time_event(self, value: str) -> EvaluateMyProgress:
-        self.include_one_time_event = value
-        return self
-
     # endregion with_x methods
 
     # region to methods
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "namespace") and self.namespace:
-            result["namespace"] = str(self.namespace)
-        elif include_empty:
-            result["namespace"] = ""
-        if hasattr(self, "challenge_code") and self.challenge_code:
-            result["challengeCode"] = [str(i0) for i0 in self.challenge_code]
-        elif include_empty:
-            result["challengeCode"] = []
-        if hasattr(self, "include_one_time_event") and self.include_one_time_event:
-            result["includeOneTimeEvent"] = str(self.include_one_time_event)
-        elif include_empty:
-            result["includeOneTimeEvent"] = ""
         return result
 
     # endregion to methods
@@ -197,12 +144,12 @@ class EvaluateMyProgress(Operation):
     # region response methods
 
     class Response(ApiResponse):
-        data_204: Optional[HttpResponse] = None
-        error_401: Optional[IamErrorResponse] = None
-        error_403: Optional[IamErrorResponse] = None
+        data_200: Optional[ModelsUserPersonalDataResponse] = None
+        error_401: Optional[ResponseError] = None
+        error_403: Optional[ResponseError] = None
         error_500: Optional[ResponseError] = None
 
-        def ok(self) -> EvaluateMyProgress.Response:
+        def ok(self) -> PublicGetMyPersonalDataRequests.Response:
             if self.error_401 is not None:
                 err = self.error_401.translate_to_api_error()
                 exc = err.to_exception()
@@ -221,8 +168,8 @@ class EvaluateMyProgress(Operation):
             return self
 
         def __iter__(self):
-            if self.data_204 is not None:
-                yield self.data_204
+            if self.data_200 is not None:
+                yield self.data_200
                 yield None
             elif self.error_401 is not None:
                 yield None
@@ -241,13 +188,13 @@ class EvaluateMyProgress(Operation):
     def parse_response(self, code: int, content_type: str, content: Any) -> Response:
         """Parse the given response.
 
-        204: No Content - (No Content)
+        200: OK - ModelsUserPersonalDataResponse (OK)
 
-        401: Unauthorized - IamErrorResponse (20001: unauthorized access)
+        401: Unauthorized - ResponseError (Unauthorized)
 
-        403: Forbidden - IamErrorResponse (20013: insufficient permission)
+        403: Forbidden - ResponseError (Forbidden)
 
-        500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
+        500: Internal Server Error - ResponseError (Internal Server Error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -255,7 +202,7 @@ class EvaluateMyProgress(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        result = EvaluateMyProgress.Response()
+        result = PublicGetMyPersonalDataRequests.Response()
 
         pre_processed_response, error = self.pre_process_response(
             code=code, content_type=content_type, content=content
@@ -267,13 +214,15 @@ class EvaluateMyProgress(Operation):
         else:
             code, content_type, content = pre_processed_response
 
-            if code == 204:
-                result.data_204 = None
+            if code == 200:
+                result.data_200 = ModelsUserPersonalDataResponse.create_from_dict(
+                    content
+                )
             elif code == 401:
-                result.error_401 = IamErrorResponse.create_from_dict(content)
+                result.error_401 = ResponseError.create_from_dict(content)
                 result.error = result.error_401.translate_to_api_error()
             elif code == 403:
-                result.error_403 = IamErrorResponse.create_from_dict(content)
+                result.error_403 = ResponseError.create_from_dict(content)
                 result.error = result.error_403.translate_to_api_error()
             elif code == 500:
                 result.error_500 = ResponseError.create_from_dict(content)
@@ -297,16 +246,19 @@ class EvaluateMyProgress(Operation):
     @deprecated
     def parse_response_x(
         self, code: int, content_type: str, content: Any
-    ) -> Tuple[None, Union[None, HttpResponse, IamErrorResponse, ResponseError]]:
+    ) -> Tuple[
+        Union[None, ModelsUserPersonalDataResponse],
+        Union[None, HttpResponse, ResponseError],
+    ]:
         """Parse the given response.
 
-        204: No Content - (No Content)
+        200: OK - ModelsUserPersonalDataResponse (OK)
 
-        401: Unauthorized - IamErrorResponse (20001: unauthorized access)
+        401: Unauthorized - ResponseError (Unauthorized)
 
-        403: Forbidden - IamErrorResponse (20013: insufficient permission)
+        403: Forbidden - ResponseError (Forbidden)
 
-        500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
+        500: Internal Server Error - ResponseError (Internal Server Error)
 
         ---: HttpResponse (Undocumented Response)
 
@@ -321,12 +273,12 @@ class EvaluateMyProgress(Operation):
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
-        if code == 204:
-            return None, None
+        if code == 200:
+            return ModelsUserPersonalDataResponse.create_from_dict(content), None
         if code == 401:
-            return None, IamErrorResponse.create_from_dict(content)
+            return None, ResponseError.create_from_dict(content)
         if code == 403:
-            return None, IamErrorResponse.create_from_dict(content)
+            return None, ResponseError.create_from_dict(content)
         if code == 500:
             return None, ResponseError.create_from_dict(content)
 
@@ -339,19 +291,8 @@ class EvaluateMyProgress(Operation):
     # region static methods
 
     @classmethod
-    def create(
-        cls,
-        namespace: str,
-        challenge_code: Optional[List[str]] = None,
-        include_one_time_event: Optional[str] = None,
-        **kwargs,
-    ) -> EvaluateMyProgress:
+    def create(cls, **kwargs) -> PublicGetMyPersonalDataRequests:
         instance = cls()
-        instance.namespace = namespace
-        if challenge_code is not None:
-            instance.challenge_code = challenge_code
-        if include_one_time_event is not None:
-            instance.include_one_time_event = include_one_time_event
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -359,42 +300,16 @@ class EvaluateMyProgress(Operation):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> EvaluateMyProgress:
+    ) -> PublicGetMyPersonalDataRequests:
         instance = cls()
-        if "namespace" in dict_ and dict_["namespace"] is not None:
-            instance.namespace = str(dict_["namespace"])
-        elif include_empty:
-            instance.namespace = ""
-        if "challengeCode" in dict_ and dict_["challengeCode"] is not None:
-            instance.challenge_code = [str(i0) for i0 in dict_["challengeCode"]]
-        elif include_empty:
-            instance.challenge_code = []
-        if "includeOneTimeEvent" in dict_ and dict_["includeOneTimeEvent"] is not None:
-            instance.include_one_time_event = str(dict_["includeOneTimeEvent"])
-        elif include_empty:
-            instance.include_one_time_event = ""
         return instance
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
-        return {
-            "namespace": "namespace",
-            "challengeCode": "challenge_code",
-            "includeOneTimeEvent": "include_one_time_event",
-        }
+        return {}
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
-        return {
-            "namespace": True,
-            "challengeCode": False,
-            "includeOneTimeEvent": False,
-        }
-
-    @staticmethod
-    def get_collection_format_map() -> Dict[str, Union[None, str]]:
-        return {
-            "challengeCode": "csv",  # in query
-        }
+        return {}
 
     # endregion static methods

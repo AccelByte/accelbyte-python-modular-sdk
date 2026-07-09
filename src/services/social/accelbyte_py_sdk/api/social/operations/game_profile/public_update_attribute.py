@@ -89,8 +89,8 @@ class PublicUpdateAttribute(Operation):
     # region fields
 
     _url: str = "/social/public/namespaces/{namespace}/users/{userId}/profiles/{profileId}/attributes/{attributeName}"
-    _path: str = "/social/public/namespaces/{namespace}/users/{userId}/profiles/{profileId}/attributes/{attributeName}"
-    _base_path: str = ""
+    _path: str = "/public/namespaces/{namespace}/users/{userId}/profiles/{profileId}/attributes/{attributeName}"
+    _base_path: str = "/social"
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]

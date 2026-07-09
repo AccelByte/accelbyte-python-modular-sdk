@@ -74,8 +74,8 @@ class ImportStatCycle(Operation):
     # region fields
 
     _url: str = "/social/v1/admin/namespaces/{namespace}/statCycles/import"
-    _path: str = "/social/v1/admin/namespaces/{namespace}/statCycles/import"
-    _base_path: str = ""
+    _path: str = "/v1/admin/namespaces/{namespace}/statCycles/import"
+    _base_path: str = "/social"
     _method: str = "POST"
     _consumes: List[str] = ["multipart/form-data"]
     _produces: List[str] = ["application/json"]

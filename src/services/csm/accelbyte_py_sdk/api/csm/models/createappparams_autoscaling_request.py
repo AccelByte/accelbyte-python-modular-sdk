@@ -27,35 +27,26 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
 
-from ..models.model_app_redeployment_detail import ModelAppRedeploymentDetail
 
-
-class ModelAppRedeploymentInfo(Model):
-    """Model app redeployment info (model.AppRedeploymentInfo)
+class CreateappparamsAutoscalingRequest(Model):
+    """Createappparams autoscaling request (createappparams.AutoscalingRequest)
 
     Properties:
-        should_redeploy: (shouldRedeploy) REQUIRED bool
-
-        details: (details) OPTIONAL List[ModelAppRedeploymentDetail]
+        target_cpu_utilization_percent: (targetCPUUtilizationPercent) REQUIRED int
     """
 
     # region fields
 
-    should_redeploy: bool  # REQUIRED
-    details: List[ModelAppRedeploymentDetail]  # OPTIONAL
+    target_cpu_utilization_percent: int  # REQUIRED
 
     # endregion fields
 
     # region with_x methods
 
-    def with_should_redeploy(self, value: bool) -> ModelAppRedeploymentInfo:
-        self.should_redeploy = value
-        return self
-
-    def with_details(
-        self, value: List[ModelAppRedeploymentDetail]
-    ) -> ModelAppRedeploymentInfo:
-        self.details = value
+    def with_target_cpu_utilization_percent(
+        self, value: int
+    ) -> CreateappparamsAutoscalingRequest:
+        self.target_cpu_utilization_percent = value
         return self
 
     # endregion with_x methods
@@ -64,16 +55,12 @@ class ModelAppRedeploymentInfo(Model):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "should_redeploy"):
-            result["shouldRedeploy"] = bool(self.should_redeploy)
+        if hasattr(self, "target_cpu_utilization_percent"):
+            result["targetCPUUtilizationPercent"] = int(
+                self.target_cpu_utilization_percent
+            )
         elif include_empty:
-            result["shouldRedeploy"] = False
-        if hasattr(self, "details"):
-            result["details"] = [
-                i0.to_dict(include_empty=include_empty) for i0 in self.details
-            ]
-        elif include_empty:
-            result["details"] = []
+            result["targetCPUUtilizationPercent"] = 0
         return result
 
     # endregion to methods
@@ -82,43 +69,34 @@ class ModelAppRedeploymentInfo(Model):
 
     @classmethod
     def create(
-        cls,
-        should_redeploy: bool,
-        details: Optional[List[ModelAppRedeploymentDetail]] = None,
-        **kwargs,
-    ) -> ModelAppRedeploymentInfo:
+        cls, target_cpu_utilization_percent: int, **kwargs
+    ) -> CreateappparamsAutoscalingRequest:
         instance = cls()
-        instance.should_redeploy = should_redeploy
-        if details is not None:
-            instance.details = details
+        instance.target_cpu_utilization_percent = target_cpu_utilization_percent
         return instance
 
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> ModelAppRedeploymentInfo:
+    ) -> CreateappparamsAutoscalingRequest:
         instance = cls()
         if not dict_:
             return instance
-        if "shouldRedeploy" in dict_ and dict_["shouldRedeploy"] is not None:
-            instance.should_redeploy = bool(dict_["shouldRedeploy"])
+        if (
+            "targetCPUUtilizationPercent" in dict_
+            and dict_["targetCPUUtilizationPercent"] is not None
+        ):
+            instance.target_cpu_utilization_percent = int(
+                dict_["targetCPUUtilizationPercent"]
+            )
         elif include_empty:
-            instance.should_redeploy = False
-        if "details" in dict_ and dict_["details"] is not None:
-            instance.details = [
-                ModelAppRedeploymentDetail.create_from_dict(
-                    i0, include_empty=include_empty
-                )
-                for i0 in dict_["details"]
-            ]
-        elif include_empty:
-            instance.details = []
+            instance.target_cpu_utilization_percent = 0
         return instance
 
     @classmethod
     def create_many_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, ModelAppRedeploymentInfo]:
+    ) -> Dict[str, CreateappparamsAutoscalingRequest]:
         return (
             {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
             if dict_
@@ -128,7 +106,7 @@ class ModelAppRedeploymentInfo(Model):
     @classmethod
     def create_many_from_list(
         cls, list_: list, include_empty: bool = False
-    ) -> List[ModelAppRedeploymentInfo]:
+    ) -> List[CreateappparamsAutoscalingRequest]:
         return (
             [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
             if list_
@@ -139,9 +117,9 @@ class ModelAppRedeploymentInfo(Model):
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
     ) -> Union[
-        ModelAppRedeploymentInfo,
-        List[ModelAppRedeploymentInfo],
-        Dict[Any, ModelAppRedeploymentInfo],
+        CreateappparamsAutoscalingRequest,
+        List[CreateappparamsAutoscalingRequest],
+        Dict[Any, CreateappparamsAutoscalingRequest],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -156,15 +134,13 @@ class ModelAppRedeploymentInfo(Model):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "shouldRedeploy": "should_redeploy",
-            "details": "details",
+            "targetCPUUtilizationPercent": "target_cpu_utilization_percent",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "shouldRedeploy": True,
-            "details": False,
+            "targetCPUUtilizationPercent": True,
         }
 
     # endregion static methods

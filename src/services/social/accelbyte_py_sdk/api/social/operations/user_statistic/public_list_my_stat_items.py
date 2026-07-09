@@ -83,8 +83,8 @@ class PublicListMyStatItems(Operation):
     # region fields
 
     _url: str = "/social/v1/public/namespaces/{namespace}/users/me/statitems"
-    _path: str = "/social/v1/public/namespaces/{namespace}/users/me/statitems"
-    _base_path: str = ""
+    _path: str = "/v1/public/namespaces/{namespace}/users/me/statitems"
+    _base_path: str = "/social"
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]

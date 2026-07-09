@@ -31,7 +31,7 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 from accelbyte_py_sdk.core import deprecated
 
-from ...models import ModelLinkRequest
+from ...models import ModelReAuthRequest
 from ...models import RestErrorResponse
 
 
@@ -58,7 +58,7 @@ class PublicGetAsyncStatus(Operation):
         request_id: (requestId) REQUIRED str in path
 
     Responses:
-        200: OK - ModelLinkRequest (OK)
+        200: OK - ModelReAuthRequest (OK)
 
         401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
 
@@ -181,7 +181,7 @@ class PublicGetAsyncStatus(Operation):
     # region response methods
 
     class Response(ApiResponse):
-        data_200: Optional[ModelLinkRequest] = None
+        data_200: Optional[ModelReAuthRequest] = None
         error_401: Optional[RestErrorResponse] = None
         error_403: Optional[RestErrorResponse] = None
         error_500: Optional[RestErrorResponse] = None
@@ -225,7 +225,7 @@ class PublicGetAsyncStatus(Operation):
     def parse_response(self, code: int, content_type: str, content: Any) -> Response:
         """Parse the given response.
 
-        200: OK - ModelLinkRequest (OK)
+        200: OK - ModelReAuthRequest (OK)
 
         401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
 
@@ -252,7 +252,7 @@ class PublicGetAsyncStatus(Operation):
             code, content_type, content = pre_processed_response
 
             if code == 200:
-                result.data_200 = ModelLinkRequest.create_from_dict(content)
+                result.data_200 = ModelReAuthRequest.create_from_dict(content)
             elif code == 401:
                 result.error_401 = RestErrorResponse.create_from_dict(content)
                 result.error = result.error_401.translate_to_api_error()
@@ -282,11 +282,11 @@ class PublicGetAsyncStatus(Operation):
     def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
-        Union[None, ModelLinkRequest], Union[None, HttpResponse, RestErrorResponse]
+        Union[None, ModelReAuthRequest], Union[None, HttpResponse, RestErrorResponse]
     ]:
         """Parse the given response.
 
-        200: OK - ModelLinkRequest (OK)
+        200: OK - ModelReAuthRequest (OK)
 
         401: Unauthorized - RestErrorResponse (20001: unauthorized access | 20022: token is not user token)
 
@@ -308,7 +308,7 @@ class PublicGetAsyncStatus(Operation):
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return ModelLinkRequest.create_from_dict(content), None
+            return ModelReAuthRequest.create_from_dict(content), None
         if code == 401:
             return None, RestErrorResponse.create_from_dict(content)
         if code == 403:

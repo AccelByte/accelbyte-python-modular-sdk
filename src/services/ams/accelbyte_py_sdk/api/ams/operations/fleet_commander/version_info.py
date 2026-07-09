@@ -32,8 +32,8 @@ from accelbyte_py_sdk.core import HttpResponse
 from accelbyte_py_sdk.core import deprecated
 
 
-class Func1(Operation):
-    """Version info (func1)
+class VersionInfo(Operation):
+    """Version info (VersionInfo)
 
 
     Properties:
@@ -136,7 +136,7 @@ class Func1(Operation):
     class Response(ApiResponse):
         data_200: Optional[HttpResponse] = None
 
-        def ok(self) -> Func1.Response:
+        def ok(self) -> VersionInfo.Response:
             return self
 
         def __iter__(self):
@@ -159,7 +159,7 @@ class Func1(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        result = Func1.Response()
+        result = VersionInfo.Response()
 
         pre_processed_response, error = self.pre_process_response(
             code=code, content_type=content_type, content=content
@@ -222,14 +222,14 @@ class Func1(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, **kwargs) -> Func1:
+    def create(cls, **kwargs) -> VersionInfo:
         instance = cls()
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
 
     @classmethod
-    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> Func1:
+    def create_from_dict(cls, dict_: dict, include_empty: bool = False) -> VersionInfo:
         instance = cls()
         return instance
 

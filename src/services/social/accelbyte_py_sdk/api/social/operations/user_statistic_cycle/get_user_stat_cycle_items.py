@@ -89,8 +89,8 @@ class GetUserStatCycleItems(Operation):
     # region fields
 
     _url: str = "/social/v1/admin/namespaces/{namespace}/users/{userId}/statCycles/{cycleId}/statCycleitems"
-    _path: str = "/social/v1/admin/namespaces/{namespace}/users/{userId}/statCycles/{cycleId}/statCycleitems"
-    _base_path: str = ""
+    _path: str = "/v1/admin/namespaces/{namespace}/users/{userId}/statCycles/{cycleId}/statCycleitems"
+    _base_path: str = "/social"
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]

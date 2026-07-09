@@ -37,8 +37,6 @@ from ...models import ResponseErrorResponse
 class StartAppV2(Operation):
     """Starts the Application (StartAppV2)
 
-    Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP [UPDATE]`
-
     Starts the Application
 
     Properties:

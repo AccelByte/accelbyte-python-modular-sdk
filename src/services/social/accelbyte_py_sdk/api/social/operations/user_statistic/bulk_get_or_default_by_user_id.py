@@ -83,8 +83,8 @@ class BulkGetOrDefaultByUserId(Operation):
     # region fields
 
     _url: str = "/social/v2/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk/getOrDefault"
-    _path: str = "/social/v2/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk/getOrDefault"
-    _base_path: str = ""
+    _path: str = "/v2/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk/getOrDefault"
+    _base_path: str = "/social"
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]

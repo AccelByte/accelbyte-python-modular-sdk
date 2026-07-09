@@ -31,6 +31,10 @@ from .wrappers import stop_app_v1_async
 from .wrappers import update_app_v1
 from .wrappers import update_app_v1_async
 
+# app_status_progress_v4
+from .wrappers import get_app_status_progress_v4
+from .wrappers import get_app_status_progress_v4_async
+
 # app_ui
 from .wrappers import create_app_ui
 from .wrappers import create_app_ui_async
@@ -62,6 +66,16 @@ from .wrappers import update_app_resources_v2
 from .wrappers import update_app_resources_v2_async
 from .wrappers import update_app_v2
 from .wrappers import update_app_v2_async
+
+# app_v4
+from .wrappers import get_app_debug_info_v4
+from .wrappers import get_app_debug_info_v4_async
+from .wrappers import update_app_debug_mode_v4
+from .wrappers import update_app_debug_mode_v4_async
+
+# app_v5
+from .wrappers import create_app_v5
+from .wrappers import create_app_v5_async
 
 # async_messaging
 from .wrappers import create_subscription_handler

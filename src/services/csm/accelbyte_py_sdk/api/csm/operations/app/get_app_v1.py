@@ -38,8 +38,6 @@ from ...models import ResponseErrorResponse
 class GetAppV1(Operation):
     """[DEPRECATED] Gets the App By Name (GetAppV1)
 
-    Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP [READ]`
-
     Gets the App By Name
 
     Properties:

@@ -34,18 +34,17 @@ from accelbyte_py_sdk.core import deprecated
 from ...models import ResponseError
 
 
-class PublicCancelMyAccountDeletionRequest(Operation):
-    """Cancel my account deletion request (PublicCancelMyAccountDeletionRequest)
+class PublicCancelMyPersonalDataRequest(Operation):
+    """Cancel my personal data request (PublicCancelMyPersonalDataRequest)
 
-    Cancel my account deletion request
-    Requires valid user access token
+    Cancel a pending Personal Data Request by its request date. Requires a valid access token.
 
     Properties:
-        url: /gdpr/public/users/me/deletions
+        url: /gdpr/public/users/me/requests/{requestDate}
 
         method: DELETE
 
-        tags: ["Data Deletion"]
+        tags: ["Data Retrieval - Headless"]
 
         consumes: ["application/json"]
 
@@ -53,8 +52,12 @@ class PublicCancelMyAccountDeletionRequest(Operation):
 
         securities: [BEARER_AUTH]
 
+        request_date: (requestDate) REQUIRED str in path
+
     Responses:
         204: No Content - (No Content)
+
+        400: Bad Request - ResponseError (Bad Request)
 
         401: Unauthorized - ResponseError (Unauthorized)
 
@@ -67,8 +70,8 @@ class PublicCancelMyAccountDeletionRequest(Operation):
 
     # region fields
 
-    _url: str = "/gdpr/public/users/me/deletions"
-    _path: str = "/gdpr/public/users/me/deletions"
+    _url: str = "/gdpr/public/users/me/requests/{requestDate}"
+    _path: str = "/gdpr/public/users/me/requests/{requestDate}"
     _base_path: str = ""
     _method: str = "DELETE"
     _consumes: List[str] = ["application/json"]
@@ -77,6 +80,8 @@ class PublicCancelMyAccountDeletionRequest(Operation):
     _location_query: str = None
 
     service_name: Optional[str] = "gdpr"
+
+    request_date: str  # REQUIRED in [path]
 
     # endregion fields
 
@@ -123,7 +128,15 @@ class PublicCancelMyAccountDeletionRequest(Operation):
     # region get_x_params methods
 
     def get_all_params(self) -> dict:
-        return {}
+        return {
+            "path": self.get_path_params(),
+        }
+
+    def get_path_params(self) -> dict:
+        result = {}
+        if hasattr(self, "request_date"):
+            result["requestDate"] = self.request_date
+        return result
 
     # endregion get_x_params methods
 
@@ -133,12 +146,20 @@ class PublicCancelMyAccountDeletionRequest(Operation):
 
     # region with_x methods
 
+    def with_request_date(self, value: str) -> PublicCancelMyPersonalDataRequest:
+        self.request_date = value
+        return self
+
     # endregion with_x methods
 
     # region to methods
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
+        if hasattr(self, "request_date") and self.request_date:
+            result["requestDate"] = str(self.request_date)
+        elif include_empty:
+            result["requestDate"] = ""
         return result
 
     # endregion to methods
@@ -147,12 +168,18 @@ class PublicCancelMyAccountDeletionRequest(Operation):
 
     class Response(ApiResponse):
         data_204: Optional[HttpResponse] = None
+        error_400: Optional[ResponseError] = None
         error_401: Optional[ResponseError] = None
         error_403: Optional[ResponseError] = None
         error_404: Optional[ResponseError] = None
         error_500: Optional[ResponseError] = None
 
-        def ok(self) -> PublicCancelMyAccountDeletionRequest.Response:
+        def ok(self) -> PublicCancelMyPersonalDataRequest.Response:
+            if self.error_400 is not None:
+                err = self.error_400.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
             if self.error_401 is not None:
                 err = self.error_401.translate_to_api_error()
                 exc = err.to_exception()
@@ -179,6 +206,9 @@ class PublicCancelMyAccountDeletionRequest(Operation):
             if self.data_204 is not None:
                 yield self.data_204
                 yield None
+            elif self.error_400 is not None:
+                yield None
+                yield self.error_400
             elif self.error_401 is not None:
                 yield None
                 yield self.error_401
@@ -201,6 +231,8 @@ class PublicCancelMyAccountDeletionRequest(Operation):
 
         204: No Content - (No Content)
 
+        400: Bad Request - ResponseError (Bad Request)
+
         401: Unauthorized - ResponseError (Unauthorized)
 
         403: Forbidden - ResponseError (Forbidden)
@@ -215,7 +247,7 @@ class PublicCancelMyAccountDeletionRequest(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        result = PublicCancelMyAccountDeletionRequest.Response()
+        result = PublicCancelMyPersonalDataRequest.Response()
 
         pre_processed_response, error = self.pre_process_response(
             code=code, content_type=content_type, content=content
@@ -229,6 +261,9 @@ class PublicCancelMyAccountDeletionRequest(Operation):
 
             if code == 204:
                 result.data_204 = None
+            elif code == 400:
+                result.error_400 = ResponseError.create_from_dict(content)
+                result.error = result.error_400.translate_to_api_error()
             elif code == 401:
                 result.error_401 = ResponseError.create_from_dict(content)
                 result.error = result.error_401.translate_to_api_error()
@@ -265,6 +300,8 @@ class PublicCancelMyAccountDeletionRequest(Operation):
 
         204: No Content - (No Content)
 
+        400: Bad Request - ResponseError (Bad Request)
+
         401: Unauthorized - ResponseError (Unauthorized)
 
         403: Forbidden - ResponseError (Forbidden)
@@ -288,6 +325,8 @@ class PublicCancelMyAccountDeletionRequest(Operation):
 
         if code == 204:
             return None, None
+        if code == 400:
+            return None, ResponseError.create_from_dict(content)
         if code == 401:
             return None, ResponseError.create_from_dict(content)
         if code == 403:
@@ -306,8 +345,9 @@ class PublicCancelMyAccountDeletionRequest(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, **kwargs) -> PublicCancelMyAccountDeletionRequest:
+    def create(cls, request_date: str, **kwargs) -> PublicCancelMyPersonalDataRequest:
         instance = cls()
+        instance.request_date = request_date
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -315,16 +355,24 @@ class PublicCancelMyAccountDeletionRequest(Operation):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> PublicCancelMyAccountDeletionRequest:
+    ) -> PublicCancelMyPersonalDataRequest:
         instance = cls()
+        if "requestDate" in dict_ and dict_["requestDate"] is not None:
+            instance.request_date = str(dict_["requestDate"])
+        elif include_empty:
+            instance.request_date = ""
         return instance
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
-        return {}
+        return {
+            "requestDate": "request_date",
+        }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
-        return {}
+        return {
+            "requestDate": True,
+        }
 
     # endregion static methods

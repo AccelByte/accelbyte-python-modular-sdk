@@ -83,10 +83,8 @@ class BulkFetchOrDefaultStatItems1(Operation):
     _url: str = (
         "/social/v2/admin/namespaces/{namespace}/statitems/value/bulk/getOrDefault"
     )
-    _path: str = (
-        "/social/v2/admin/namespaces/{namespace}/statitems/value/bulk/getOrDefault"
-    )
-    _base_path: str = ""
+    _path: str = "/v2/admin/namespaces/{namespace}/statitems/value/bulk/getOrDefault"
+    _base_path: str = "/social"
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]

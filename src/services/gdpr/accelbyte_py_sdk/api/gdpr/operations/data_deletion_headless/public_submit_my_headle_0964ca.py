@@ -31,46 +31,52 @@ from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
 from accelbyte_py_sdk.core import deprecated
 
-from ...models import ModelsDeletionStatus
+from ...models import ModelsRequestDeleteResponse
 from ...models import ResponseError
 
 
-class PublicGetMyAccountDeletionStatus(Operation):
-    """Retrieve my account deletion status (PublicGetMyAccountDeletionStatus)
+class PublicSubmitMyHeadlessDeletionRequest(Operation):
+    """Submit my headless account deletion request (PublicSubmitMyHeadlessDeletionRequest)
 
-    Retrieve my account deletion status
-    Requires valid user access token
+    Submit an Account Deletion Request for headless account scenario (without a password).
+    **Typically used by web portal** to invoke headless player GDPR using 3rd platform web authentication.
+    Requires a valid access token and a fresh **gdpr_token** cookie (max-age 10 seconds).
+    The gdpr_token is issued by the IAM service during 3rd platform web authentication.
+
+    If a full account is available, use `POST /gdpr/public/namespaces/{namespace}/users/{userId}/deletions` instead.
 
     Properties:
-        url: /gdpr/public/users/me/deletions/status
+        url: /gdpr/public/users/me/headless/deletions
 
-        method: GET
+        method: POST
 
-        tags: ["Data Deletion"]
+        tags: ["Data Deletion - Headless"]
 
-        consumes: ["application/json"]
+        consumes: ["*/*"]
 
         produces: ["application/json"]
 
         securities: [BEARER_AUTH]
 
     Responses:
-        200: OK - ModelsDeletionStatus (OK)
+        201: Created - ModelsRequestDeleteResponse (Created)
 
         401: Unauthorized - ResponseError (Unauthorized)
 
         403: Forbidden - ResponseError (Forbidden)
+
+        409: Conflict - ResponseError (Conflict)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
     """
 
     # region fields
 
-    _url: str = "/gdpr/public/users/me/deletions/status"
-    _path: str = "/gdpr/public/users/me/deletions/status"
+    _url: str = "/gdpr/public/users/me/headless/deletions"
+    _path: str = "/gdpr/public/users/me/headless/deletions"
     _base_path: str = ""
-    _method: str = "GET"
-    _consumes: List[str] = ["application/json"]
+    _method: str = "POST"
+    _consumes: List[str] = ["*/*"]
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None
@@ -145,12 +151,13 @@ class PublicGetMyAccountDeletionStatus(Operation):
     # region response methods
 
     class Response(ApiResponse):
-        data_200: Optional[ModelsDeletionStatus] = None
+        data_201: Optional[ModelsRequestDeleteResponse] = None
         error_401: Optional[ResponseError] = None
         error_403: Optional[ResponseError] = None
+        error_409: Optional[ResponseError] = None
         error_500: Optional[ResponseError] = None
 
-        def ok(self) -> PublicGetMyAccountDeletionStatus.Response:
+        def ok(self) -> PublicSubmitMyHeadlessDeletionRequest.Response:
             if self.error_401 is not None:
                 err = self.error_401.translate_to_api_error()
                 exc = err.to_exception()
@@ -158,6 +165,11 @@ class PublicGetMyAccountDeletionStatus(Operation):
                     raise exc  # pylint: disable=raising-bad-type
             if self.error_403 is not None:
                 err = self.error_403.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_409 is not None:
+                err = self.error_409.translate_to_api_error()
                 exc = err.to_exception()
                 if exc is not None:
                     raise exc  # pylint: disable=raising-bad-type
@@ -169,8 +181,8 @@ class PublicGetMyAccountDeletionStatus(Operation):
             return self
 
         def __iter__(self):
-            if self.data_200 is not None:
-                yield self.data_200
+            if self.data_201 is not None:
+                yield self.data_201
                 yield None
             elif self.error_401 is not None:
                 yield None
@@ -178,6 +190,9 @@ class PublicGetMyAccountDeletionStatus(Operation):
             elif self.error_403 is not None:
                 yield None
                 yield self.error_403
+            elif self.error_409 is not None:
+                yield None
+                yield self.error_409
             elif self.error_500 is not None:
                 yield None
                 yield self.error_500
@@ -189,11 +204,13 @@ class PublicGetMyAccountDeletionStatus(Operation):
     def parse_response(self, code: int, content_type: str, content: Any) -> Response:
         """Parse the given response.
 
-        200: OK - ModelsDeletionStatus (OK)
+        201: Created - ModelsRequestDeleteResponse (Created)
 
         401: Unauthorized - ResponseError (Unauthorized)
 
         403: Forbidden - ResponseError (Forbidden)
+
+        409: Conflict - ResponseError (Conflict)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
 
@@ -203,7 +220,7 @@ class PublicGetMyAccountDeletionStatus(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        result = PublicGetMyAccountDeletionStatus.Response()
+        result = PublicSubmitMyHeadlessDeletionRequest.Response()
 
         pre_processed_response, error = self.pre_process_response(
             code=code, content_type=content_type, content=content
@@ -215,14 +232,17 @@ class PublicGetMyAccountDeletionStatus(Operation):
         else:
             code, content_type, content = pre_processed_response
 
-            if code == 200:
-                result.data_200 = ModelsDeletionStatus.create_from_dict(content)
+            if code == 201:
+                result.data_201 = ModelsRequestDeleteResponse.create_from_dict(content)
             elif code == 401:
                 result.error_401 = ResponseError.create_from_dict(content)
                 result.error = result.error_401.translate_to_api_error()
             elif code == 403:
                 result.error_403 = ResponseError.create_from_dict(content)
                 result.error = result.error_403.translate_to_api_error()
+            elif code == 409:
+                result.error_409 = ResponseError.create_from_dict(content)
+                result.error = result.error_409.translate_to_api_error()
             elif code == 500:
                 result.error_500 = ResponseError.create_from_dict(content)
                 result.error = result.error_500.translate_to_api_error()
@@ -246,15 +266,18 @@ class PublicGetMyAccountDeletionStatus(Operation):
     def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
-        Union[None, ModelsDeletionStatus], Union[None, HttpResponse, ResponseError]
+        Union[None, ModelsRequestDeleteResponse],
+        Union[None, HttpResponse, ResponseError],
     ]:
         """Parse the given response.
 
-        200: OK - ModelsDeletionStatus (OK)
+        201: Created - ModelsRequestDeleteResponse (Created)
 
         401: Unauthorized - ResponseError (Unauthorized)
 
         403: Forbidden - ResponseError (Forbidden)
+
+        409: Conflict - ResponseError (Conflict)
 
         500: Internal Server Error - ResponseError (Internal Server Error)
 
@@ -271,11 +294,13 @@ class PublicGetMyAccountDeletionStatus(Operation):
             return None, None if error.is_no_content() else error
         code, content_type, content = pre_processed_response
 
-        if code == 200:
-            return ModelsDeletionStatus.create_from_dict(content), None
+        if code == 201:
+            return ModelsRequestDeleteResponse.create_from_dict(content), None
         if code == 401:
             return None, ResponseError.create_from_dict(content)
         if code == 403:
+            return None, ResponseError.create_from_dict(content)
+        if code == 409:
             return None, ResponseError.create_from_dict(content)
         if code == 500:
             return None, ResponseError.create_from_dict(content)
@@ -289,7 +314,7 @@ class PublicGetMyAccountDeletionStatus(Operation):
     # region static methods
 
     @classmethod
-    def create(cls, **kwargs) -> PublicGetMyAccountDeletionStatus:
+    def create(cls, **kwargs) -> PublicSubmitMyHeadlessDeletionRequest:
         instance = cls()
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
@@ -298,7 +323,7 @@ class PublicGetMyAccountDeletionStatus(Operation):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> PublicGetMyAccountDeletionStatus:
+    ) -> PublicSubmitMyHeadlessDeletionRequest:
         instance = cls()
         return instance
 

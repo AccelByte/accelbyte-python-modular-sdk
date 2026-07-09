@@ -67,8 +67,8 @@ class ExportStats(Operation):
     # region fields
 
     _url: str = "/social/v1/admin/namespaces/{namespace}/stats/export"
-    _path: str = "/social/v1/admin/namespaces/{namespace}/stats/export"
-    _base_path: str = ""
+    _path: str = "/v1/admin/namespaces/{namespace}/stats/export"
+    _base_path: str = "/social"
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
