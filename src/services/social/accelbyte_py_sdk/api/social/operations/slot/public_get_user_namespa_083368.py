@@ -68,8 +68,8 @@ class PublicGetUserNamespaceSlots(Operation):
     # region fields
 
     _url: str = "/social/public/namespaces/{namespace}/users/{userId}/slots"
-    _path: str = "/social/public/namespaces/{namespace}/users/{userId}/slots"
-    _base_path: str = ""
+    _path: str = "/public/namespaces/{namespace}/users/{userId}/slots"
+    _base_path: str = "/social"
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/json"]

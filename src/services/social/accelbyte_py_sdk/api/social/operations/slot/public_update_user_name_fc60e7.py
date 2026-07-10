@@ -78,10 +78,8 @@ class PublicUpdateUserNamespaceSlotMetadata(Operation):
     _url: str = (
         "/social/public/namespaces/{namespace}/users/{userId}/slots/{slotId}/metadata"
     )
-    _path: str = (
-        "/social/public/namespaces/{namespace}/users/{userId}/slots/{slotId}/metadata"
-    )
-    _base_path: str = ""
+    _path: str = "/public/namespaces/{namespace}/users/{userId}/slots/{slotId}/metadata"
+    _base_path: str = "/social"
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]

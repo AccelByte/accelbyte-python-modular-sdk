@@ -29,44 +29,30 @@ from accelbyte_py_sdk.core import ApiError, ApiResponse
 from accelbyte_py_sdk.core import Operation
 from accelbyte_py_sdk.core import HeaderStr
 from accelbyte_py_sdk.core import HttpResponse
-from accelbyte_py_sdk.core import StrEnum
 from accelbyte_py_sdk.core import deprecated
 
 from ...models import IamErrorResponse
-from ...models import ModelListChallengeResponse
+from ...models import ModelGetSlotsResponse
 from ...models import ResponseError
 
 
-class SortByEnum(StrEnum):
-    CODE_ASC = "code:asc"
-    CODE_DESC = "code:desc"
-    CREATEDAT = "createdAt"
-    CREATEDAT_ASC = "createdAt:asc"
-    CREATEDAT_DESC = "createdAt:desc"
-    NAME_ASC = "name:asc"
-    NAME_DESC = "name:desc"
-    UPDATEDAT = "updatedAt"
-    UPDATEDAT_ASC = "updatedAt:asc"
-    UPDATEDAT_DESC = "updatedAt:desc"
+class AdminGetChallengeSlots(Operation):
+    """Get Challenge Slots (adminGetChallengeSlots)
 
-
-class StatusEnum(StrEnum):
-    INIT = "INIT"
-    RETIRED = "RETIRED"
-    TIED = "TIED"
-
-
-class GetChallenges(Operation):
-    """List Challenges (GetChallenges)
-
-    - Required permission: NAMESPACE:{namespace}:CHALLENGE [READ]
+    - Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [READ]
+    Returns the slot configuration for a FIXED or RANDOMIZED (non-per-rotation) assignment challenge.
+    For repeating challenges (repeatAfter set), the response contains two separate fields:
+    - templateSlots: the authoritative future configuration from TemplateSlots (goals only, no timing).
+    - currentRound: the actual running state of the current (or nearest) round (goals + startTime/endTime from schedule documents).
+    These two may differ when a slot move was deferred because the target slot was active.
+    For non-repeating challenges, only currentRound is returned (templateSlots is absent).
 
     Properties:
-        url: /challenge/v1/public/namespaces/{namespace}/challenges
+        url: /challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/slots
 
         method: GET
 
-        tags: ["Challenge List"]
+        tags: ["Goal Configuration"]
 
         consumes: []
 
@@ -74,36 +60,32 @@ class GetChallenges(Operation):
 
         securities: [BEARER_AUTH]
 
+        challenge_code: (challengeCode) REQUIRED str in path
+
         namespace: (namespace) REQUIRED str in path
 
-        keyword: (keyword) OPTIONAL str in query
-
-        limit: (limit) OPTIONAL int in query
-
-        offset: (offset) OPTIONAL int in query
-
-        sort_by: (sortBy) OPTIONAL Union[str, SortByEnum] in query
-
-        status: (status) OPTIONAL Union[str, StatusEnum] in query
-
-        tags: (tags) OPTIONAL List[str] in query
-
     Responses:
-        200: OK - ModelListChallengeResponse (OK)
-
-        400: Bad Request - ResponseError (20018: bad request: {{message}})
+        200: OK - ModelGetSlotsResponse (OK)
 
         401: Unauthorized - IamErrorResponse (20001: unauthorized access)
 
         403: Forbidden - IamErrorResponse (20013: insufficient permission)
+
+        404: Not Found - ResponseError (20029: not found)
+
+        422: Unprocessable Entity - ResponseError (99004: unprocessable entity: {{message}})
 
         500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
     """
 
     # region fields
 
-    _url: str = "/challenge/v1/public/namespaces/{namespace}/challenges"
-    _path: str = "/challenge/v1/public/namespaces/{namespace}/challenges"
+    _url: str = (
+        "/challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/slots"
+    )
+    _path: str = (
+        "/challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/slots"
+    )
     _base_path: str = ""
     _method: str = "GET"
     _consumes: List[str] = []
@@ -113,13 +95,8 @@ class GetChallenges(Operation):
 
     service_name: Optional[str] = "challenge"
 
+    challenge_code: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
-    keyword: str  # OPTIONAL in [query]
-    limit: int  # OPTIONAL in [query]
-    offset: int  # OPTIONAL in [query]
-    sort_by: Union[str, SortByEnum]  # OPTIONAL in [query]
-    status: Union[str, StatusEnum]  # OPTIONAL in [query]
-    tags: List[str]  # OPTIONAL in [query]
 
     # endregion fields
 
@@ -168,29 +145,14 @@ class GetChallenges(Operation):
     def get_all_params(self) -> dict:
         return {
             "path": self.get_path_params(),
-            "query": self.get_query_params(),
         }
 
     def get_path_params(self) -> dict:
         result = {}
+        if hasattr(self, "challenge_code"):
+            result["challengeCode"] = self.challenge_code
         if hasattr(self, "namespace"):
             result["namespace"] = self.namespace
-        return result
-
-    def get_query_params(self) -> dict:
-        result = {}
-        if hasattr(self, "keyword"):
-            result["keyword"] = self.keyword
-        if hasattr(self, "limit"):
-            result["limit"] = self.limit
-        if hasattr(self, "offset"):
-            result["offset"] = self.offset
-        if hasattr(self, "sort_by"):
-            result["sortBy"] = self.sort_by
-        if hasattr(self, "status"):
-            result["status"] = self.status
-        if hasattr(self, "tags"):
-            result["tags"] = self.tags
         return result
 
     # endregion get_x_params methods
@@ -201,32 +163,12 @@ class GetChallenges(Operation):
 
     # region with_x methods
 
-    def with_namespace(self, value: str) -> GetChallenges:
+    def with_challenge_code(self, value: str) -> AdminGetChallengeSlots:
+        self.challenge_code = value
+        return self
+
+    def with_namespace(self, value: str) -> AdminGetChallengeSlots:
         self.namespace = value
-        return self
-
-    def with_keyword(self, value: str) -> GetChallenges:
-        self.keyword = value
-        return self
-
-    def with_limit(self, value: int) -> GetChallenges:
-        self.limit = value
-        return self
-
-    def with_offset(self, value: int) -> GetChallenges:
-        self.offset = value
-        return self
-
-    def with_sort_by(self, value: Union[str, SortByEnum]) -> GetChallenges:
-        self.sort_by = value
-        return self
-
-    def with_status(self, value: Union[str, StatusEnum]) -> GetChallenges:
-        self.status = value
-        return self
-
-    def with_tags(self, value: List[str]) -> GetChallenges:
-        self.tags = value
         return self
 
     # endregion with_x methods
@@ -235,34 +177,14 @@ class GetChallenges(Operation):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
+        if hasattr(self, "challenge_code") and self.challenge_code:
+            result["challengeCode"] = str(self.challenge_code)
+        elif include_empty:
+            result["challengeCode"] = ""
         if hasattr(self, "namespace") and self.namespace:
             result["namespace"] = str(self.namespace)
         elif include_empty:
             result["namespace"] = ""
-        if hasattr(self, "keyword") and self.keyword:
-            result["keyword"] = str(self.keyword)
-        elif include_empty:
-            result["keyword"] = ""
-        if hasattr(self, "limit") and self.limit:
-            result["limit"] = int(self.limit)
-        elif include_empty:
-            result["limit"] = 0
-        if hasattr(self, "offset") and self.offset:
-            result["offset"] = int(self.offset)
-        elif include_empty:
-            result["offset"] = 0
-        if hasattr(self, "sort_by") and self.sort_by:
-            result["sortBy"] = str(self.sort_by)
-        elif include_empty:
-            result["sortBy"] = Union[str, SortByEnum]()
-        if hasattr(self, "status") and self.status:
-            result["status"] = str(self.status)
-        elif include_empty:
-            result["status"] = Union[str, StatusEnum]()
-        if hasattr(self, "tags") and self.tags:
-            result["tags"] = [str(i0) for i0 in self.tags]
-        elif include_empty:
-            result["tags"] = []
         return result
 
     # endregion to methods
@@ -270,18 +192,14 @@ class GetChallenges(Operation):
     # region response methods
 
     class Response(ApiResponse):
-        data_200: Optional[ModelListChallengeResponse] = None
-        error_400: Optional[ResponseError] = None
+        data_200: Optional[ModelGetSlotsResponse] = None
         error_401: Optional[IamErrorResponse] = None
         error_403: Optional[IamErrorResponse] = None
+        error_404: Optional[ResponseError] = None
+        error_422: Optional[ResponseError] = None
         error_500: Optional[ResponseError] = None
 
-        def ok(self) -> GetChallenges.Response:
-            if self.error_400 is not None:
-                err = self.error_400.translate_to_api_error()
-                exc = err.to_exception()
-                if exc is not None:
-                    raise exc  # pylint: disable=raising-bad-type
+        def ok(self) -> AdminGetChallengeSlots.Response:
             if self.error_401 is not None:
                 err = self.error_401.translate_to_api_error()
                 exc = err.to_exception()
@@ -289,6 +207,16 @@ class GetChallenges(Operation):
                     raise exc  # pylint: disable=raising-bad-type
             if self.error_403 is not None:
                 err = self.error_403.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_404 is not None:
+                err = self.error_404.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_422 is not None:
+                err = self.error_422.translate_to_api_error()
                 exc = err.to_exception()
                 if exc is not None:
                     raise exc  # pylint: disable=raising-bad-type
@@ -303,15 +231,18 @@ class GetChallenges(Operation):
             if self.data_200 is not None:
                 yield self.data_200
                 yield None
-            elif self.error_400 is not None:
-                yield None
-                yield self.error_400
             elif self.error_401 is not None:
                 yield None
                 yield self.error_401
             elif self.error_403 is not None:
                 yield None
                 yield self.error_403
+            elif self.error_404 is not None:
+                yield None
+                yield self.error_404
+            elif self.error_422 is not None:
+                yield None
+                yield self.error_422
             elif self.error_500 is not None:
                 yield None
                 yield self.error_500
@@ -323,13 +254,15 @@ class GetChallenges(Operation):
     def parse_response(self, code: int, content_type: str, content: Any) -> Response:
         """Parse the given response.
 
-        200: OK - ModelListChallengeResponse (OK)
-
-        400: Bad Request - ResponseError (20018: bad request: {{message}})
+        200: OK - ModelGetSlotsResponse (OK)
 
         401: Unauthorized - IamErrorResponse (20001: unauthorized access)
 
         403: Forbidden - IamErrorResponse (20013: insufficient permission)
+
+        404: Not Found - ResponseError (20029: not found)
+
+        422: Unprocessable Entity - ResponseError (99004: unprocessable entity: {{message}})
 
         500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
 
@@ -339,7 +272,7 @@ class GetChallenges(Operation):
 
         ---: HttpResponse (Unhandled Error)
         """
-        result = GetChallenges.Response()
+        result = AdminGetChallengeSlots.Response()
 
         pre_processed_response, error = self.pre_process_response(
             code=code, content_type=content_type, content=content
@@ -352,16 +285,19 @@ class GetChallenges(Operation):
             code, content_type, content = pre_processed_response
 
             if code == 200:
-                result.data_200 = ModelListChallengeResponse.create_from_dict(content)
-            elif code == 400:
-                result.error_400 = ResponseError.create_from_dict(content)
-                result.error = result.error_400.translate_to_api_error()
+                result.data_200 = ModelGetSlotsResponse.create_from_dict(content)
             elif code == 401:
                 result.error_401 = IamErrorResponse.create_from_dict(content)
                 result.error = result.error_401.translate_to_api_error()
             elif code == 403:
                 result.error_403 = IamErrorResponse.create_from_dict(content)
                 result.error = result.error_403.translate_to_api_error()
+            elif code == 404:
+                result.error_404 = ResponseError.create_from_dict(content)
+                result.error = result.error_404.translate_to_api_error()
+            elif code == 422:
+                result.error_422 = ResponseError.create_from_dict(content)
+                result.error = result.error_422.translate_to_api_error()
             elif code == 500:
                 result.error_500 = ResponseError.create_from_dict(content)
                 result.error = result.error_500.translate_to_api_error()
@@ -385,18 +321,20 @@ class GetChallenges(Operation):
     def parse_response_x(
         self, code: int, content_type: str, content: Any
     ) -> Tuple[
-        Union[None, ModelListChallengeResponse],
+        Union[None, ModelGetSlotsResponse],
         Union[None, HttpResponse, IamErrorResponse, ResponseError],
     ]:
         """Parse the given response.
 
-        200: OK - ModelListChallengeResponse (OK)
-
-        400: Bad Request - ResponseError (20018: bad request: {{message}})
+        200: OK - ModelGetSlotsResponse (OK)
 
         401: Unauthorized - IamErrorResponse (20001: unauthorized access)
 
         403: Forbidden - IamErrorResponse (20013: insufficient permission)
+
+        404: Not Found - ResponseError (20029: not found)
+
+        422: Unprocessable Entity - ResponseError (99004: unprocessable entity: {{message}})
 
         500: Internal Server Error - ResponseError (20000: internal server error: {{message}})
 
@@ -414,13 +352,15 @@ class GetChallenges(Operation):
         code, content_type, content = pre_processed_response
 
         if code == 200:
-            return ModelListChallengeResponse.create_from_dict(content), None
-        if code == 400:
-            return None, ResponseError.create_from_dict(content)
+            return ModelGetSlotsResponse.create_from_dict(content), None
         if code == 401:
             return None, IamErrorResponse.create_from_dict(content)
         if code == 403:
             return None, IamErrorResponse.create_from_dict(content)
+        if code == 404:
+            return None, ResponseError.create_from_dict(content)
+        if code == 422:
+            return None, ResponseError.create_from_dict(content)
         if code == 500:
             return None, ResponseError.create_from_dict(content)
 
@@ -434,30 +374,11 @@ class GetChallenges(Operation):
 
     @classmethod
     def create(
-        cls,
-        namespace: str,
-        keyword: Optional[str] = None,
-        limit: Optional[int] = None,
-        offset: Optional[int] = None,
-        sort_by: Optional[Union[str, SortByEnum]] = None,
-        status: Optional[Union[str, StatusEnum]] = None,
-        tags: Optional[List[str]] = None,
-        **kwargs,
-    ) -> GetChallenges:
+        cls, challenge_code: str, namespace: str, **kwargs
+    ) -> AdminGetChallengeSlots:
         instance = cls()
+        instance.challenge_code = challenge_code
         instance.namespace = namespace
-        if keyword is not None:
-            instance.keyword = keyword
-        if limit is not None:
-            instance.limit = limit
-        if offset is not None:
-            instance.offset = offset
-        if sort_by is not None:
-            instance.sort_by = sort_by
-        if status is not None:
-            instance.status = status
-        if tags is not None:
-            instance.tags = tags
         if x_flight_id := kwargs.get("x_flight_id", None):
             instance.x_flight_id = x_flight_id
         return instance
@@ -465,84 +386,30 @@ class GetChallenges(Operation):
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> GetChallenges:
+    ) -> AdminGetChallengeSlots:
         instance = cls()
+        if "challengeCode" in dict_ and dict_["challengeCode"] is not None:
+            instance.challenge_code = str(dict_["challengeCode"])
+        elif include_empty:
+            instance.challenge_code = ""
         if "namespace" in dict_ and dict_["namespace"] is not None:
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
             instance.namespace = ""
-        if "keyword" in dict_ and dict_["keyword"] is not None:
-            instance.keyword = str(dict_["keyword"])
-        elif include_empty:
-            instance.keyword = ""
-        if "limit" in dict_ and dict_["limit"] is not None:
-            instance.limit = int(dict_["limit"])
-        elif include_empty:
-            instance.limit = 0
-        if "offset" in dict_ and dict_["offset"] is not None:
-            instance.offset = int(dict_["offset"])
-        elif include_empty:
-            instance.offset = 0
-        if "sortBy" in dict_ and dict_["sortBy"] is not None:
-            instance.sort_by = str(dict_["sortBy"])
-        elif include_empty:
-            instance.sort_by = Union[str, SortByEnum]()
-        if "status" in dict_ and dict_["status"] is not None:
-            instance.status = str(dict_["status"])
-        elif include_empty:
-            instance.status = Union[str, StatusEnum]()
-        if "tags" in dict_ and dict_["tags"] is not None:
-            instance.tags = [str(i0) for i0 in dict_["tags"]]
-        elif include_empty:
-            instance.tags = []
         return instance
 
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
+            "challengeCode": "challenge_code",
             "namespace": "namespace",
-            "keyword": "keyword",
-            "limit": "limit",
-            "offset": "offset",
-            "sortBy": "sort_by",
-            "status": "status",
-            "tags": "tags",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
+            "challengeCode": True,
             "namespace": True,
-            "keyword": False,
-            "limit": False,
-            "offset": False,
-            "sortBy": False,
-            "status": False,
-            "tags": False,
-        }
-
-    @staticmethod
-    def get_collection_format_map() -> Dict[str, Union[None, str]]:
-        return {
-            "tags": "csv",  # in query
-        }
-
-    @staticmethod
-    def get_enum_map() -> Dict[str, List[Any]]:
-        return {
-            "sortBy": [
-                "code:asc",
-                "code:desc",
-                "createdAt",
-                "createdAt:asc",
-                "createdAt:desc",
-                "name:asc",
-                "name:desc",
-                "updatedAt",
-                "updatedAt:asc",
-                "updatedAt:desc",
-            ],  # in query
-            "status": ["INIT", "RETIRED", "TIED"],  # in query
         }
 
     # endregion static methods

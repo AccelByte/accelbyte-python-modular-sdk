@@ -30,6 +30,9 @@ from ._app import stop_app_v1_async
 from ._app import update_app_v1
 from ._app import update_app_v1_async
 
+from ._app_status_progress_v4 import get_app_status_progress_v4
+from ._app_status_progress_v4 import get_app_status_progress_v4_async
+
 from ._app_ui import create_app_ui
 from ._app_ui import create_app_ui_async
 from ._app_ui import delete_app_ui
@@ -59,6 +62,14 @@ from ._app_v2 import update_app_resources_v2
 from ._app_v2 import update_app_resources_v2_async
 from ._app_v2 import update_app_v2
 from ._app_v2 import update_app_v2_async
+
+from ._app_v4 import get_app_debug_info_v4
+from ._app_v4 import get_app_debug_info_v4_async
+from ._app_v4 import update_app_debug_mode_v4
+from ._app_v4 import update_app_debug_mode_v4_async
+
+from ._app_v5 import create_app_v5
+from ._app_v5 import create_app_v5_async
 
 from ._async_messaging import create_subscription_handler
 from ._async_messaging import create_subscription_handler_async

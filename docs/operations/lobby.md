@@ -2,7 +2,7 @@
 
 [//]: # (<< template file: doc-index.j2)
 
-# AccelByte Gaming Services Lobby Server Index (3.42.0)
+# AccelByte Gaming Services Lobby Server Index (3.43.0)
 
 
 ## Operations

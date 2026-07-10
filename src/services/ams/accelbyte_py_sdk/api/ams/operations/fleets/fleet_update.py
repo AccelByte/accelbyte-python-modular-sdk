@@ -72,6 +72,8 @@ class FleetUpdate(Operation):
 
         404: Not Found - ResponseErrorResponse (fleet not found)
 
+        409: Conflict - ResponseErrorResponse (fleet name already exists in namespace)
+
         500: Internal Server Error - ResponseErrorResponse (internal server error)
     """
 
@@ -205,6 +207,7 @@ class FleetUpdate(Operation):
         error_401: Optional[ResponseErrorResponse] = None
         error_403: Optional[ResponseErrorResponse] = None
         error_404: Optional[ResponseErrorResponse] = None
+        error_409: Optional[ResponseErrorResponse] = None
         error_500: Optional[ResponseErrorResponse] = None
 
         def ok(self) -> FleetUpdate.Response:
@@ -225,6 +228,11 @@ class FleetUpdate(Operation):
                     raise exc  # pylint: disable=raising-bad-type
             if self.error_404 is not None:
                 err = self.error_404.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_409 is not None:
+                err = self.error_409.translate_to_api_error()
                 exc = err.to_exception()
                 if exc is not None:
                     raise exc  # pylint: disable=raising-bad-type
@@ -251,6 +259,9 @@ class FleetUpdate(Operation):
             elif self.error_404 is not None:
                 yield None
                 yield self.error_404
+            elif self.error_409 is not None:
+                yield None
+                yield self.error_409
             elif self.error_500 is not None:
                 yield None
                 yield self.error_500
@@ -271,6 +282,8 @@ class FleetUpdate(Operation):
         403: Forbidden - ResponseErrorResponse (insufficient permissions)
 
         404: Not Found - ResponseErrorResponse (fleet not found)
+
+        409: Conflict - ResponseErrorResponse (fleet name already exists in namespace)
 
         500: Internal Server Error - ResponseErrorResponse (internal server error)
 
@@ -306,6 +319,9 @@ class FleetUpdate(Operation):
             elif code == 404:
                 result.error_404 = ResponseErrorResponse.create_from_dict(content)
                 result.error = result.error_404.translate_to_api_error()
+            elif code == 409:
+                result.error_409 = ResponseErrorResponse.create_from_dict(content)
+                result.error = result.error_409.translate_to_api_error()
             elif code == 500:
                 result.error_500 = ResponseErrorResponse.create_from_dict(content)
                 result.error = result.error_500.translate_to_api_error()
@@ -341,6 +357,8 @@ class FleetUpdate(Operation):
 
         404: Not Found - ResponseErrorResponse (fleet not found)
 
+        409: Conflict - ResponseErrorResponse (fleet name already exists in namespace)
+
         500: Internal Server Error - ResponseErrorResponse (internal server error)
 
         ---: HttpResponse (Undocumented Response)
@@ -365,6 +383,8 @@ class FleetUpdate(Operation):
         if code == 403:
             return None, ResponseErrorResponse.create_from_dict(content)
         if code == 404:
+            return None, ResponseErrorResponse.create_from_dict(content)
+        if code == 409:
             return None, ResponseErrorResponse.create_from_dict(content)
         if code == 500:
             return None, ResponseErrorResponse.create_from_dict(content)

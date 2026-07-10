@@ -86,8 +86,8 @@ class IncUserStatItemValue(Operation):
     # region fields
 
     _url: str = "/social/v1/admin/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems/value"
-    _path: str = "/social/v1/admin/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems/value"
-    _base_path: str = ""
+    _path: str = "/v1/admin/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems/value"
+    _base_path: str = "/social"
     _method: str = "PATCH"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]

@@ -80,8 +80,8 @@ class BulkResetUserStatItem(Operation):
     # region fields
 
     _url: str = "/social/v1/admin/namespaces/{namespace}/statitems/value/reset/bulk"
-    _path: str = "/social/v1/admin/namespaces/{namespace}/statitems/value/reset/bulk"
-    _base_path: str = ""
+    _path: str = "/v1/admin/namespaces/{namespace}/statitems/value/reset/bulk"
+    _base_path: str = "/social"
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]

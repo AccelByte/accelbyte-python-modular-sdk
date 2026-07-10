@@ -82,10 +82,8 @@ class BulkAddStats(Operation):
     _url: str = (
         "/social/v1/admin/namespaces/{namespace}/statCycles/{cycleId}/stats/add/bulk"
     )
-    _path: str = (
-        "/social/v1/admin/namespaces/{namespace}/statCycles/{cycleId}/stats/add/bulk"
-    )
-    _base_path: str = ""
+    _path: str = "/v1/admin/namespaces/{namespace}/statCycles/{cycleId}/stats/add/bulk"
+    _base_path: str = "/social"
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]

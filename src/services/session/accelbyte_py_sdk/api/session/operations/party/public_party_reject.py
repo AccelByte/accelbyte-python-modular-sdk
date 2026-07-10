@@ -37,7 +37,7 @@ from ...models import ResponseError
 class PublicPartyReject(Operation):
     """Reject a party invitation. (publicPartyReject)
 
-    Reject a party invitation.
+    Rejects a pending party invitation. The caller must have INVITED status. Once rejected, the caller must be re-invited to rejoin.
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/parties/{partyId}/users/me/reject

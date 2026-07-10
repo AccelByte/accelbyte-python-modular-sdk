@@ -38,7 +38,7 @@ from ...models import ResponseError
 class AdminGetMemberActiveSession(Operation):
     """Get Member Active Session. (adminGetMemberActiveSession)
 
-    Get Member Active Session.
+    Returns the number of active sessions the specified user is participating in under the given configuration template.
 
     Properties:
         url: /session/v1/admin/namespaces/{namespace}/configurations/{name}/memberactivesession/{userId}

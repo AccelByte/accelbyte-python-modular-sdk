@@ -69,6 +69,8 @@ class FleetCreate(Operation):
 
         403: Forbidden - ResponseErrorResponse (exceeded quota)
 
+        409: Conflict - ResponseErrorResponse (fleet name already exists)
+
         500: Internal Server Error - ResponseErrorResponse (internal server error)
     """
 
@@ -190,6 +192,7 @@ class FleetCreate(Operation):
         error_400: Optional[ResponseErrorResponse] = None
         error_401: Optional[ResponseErrorResponse] = None
         error_403: Optional[ResponseErrorResponse] = None
+        error_409: Optional[ResponseErrorResponse] = None
         error_500: Optional[ResponseErrorResponse] = None
 
         def ok(self) -> FleetCreate.Response:
@@ -205,6 +208,11 @@ class FleetCreate(Operation):
                     raise exc  # pylint: disable=raising-bad-type
             if self.error_403 is not None:
                 err = self.error_403.translate_to_api_error()
+                exc = err.to_exception()
+                if exc is not None:
+                    raise exc  # pylint: disable=raising-bad-type
+            if self.error_409 is not None:
+                err = self.error_409.translate_to_api_error()
                 exc = err.to_exception()
                 if exc is not None:
                     raise exc  # pylint: disable=raising-bad-type
@@ -228,6 +236,9 @@ class FleetCreate(Operation):
             elif self.error_403 is not None:
                 yield None
                 yield self.error_403
+            elif self.error_409 is not None:
+                yield None
+                yield self.error_409
             elif self.error_500 is not None:
                 yield None
                 yield self.error_500
@@ -246,6 +257,8 @@ class FleetCreate(Operation):
         401: Unauthorized - ResponseErrorResponse (no authorization provided)
 
         403: Forbidden - ResponseErrorResponse (exceeded quota)
+
+        409: Conflict - ResponseErrorResponse (fleet name already exists)
 
         500: Internal Server Error - ResponseErrorResponse (internal server error)
 
@@ -278,6 +291,9 @@ class FleetCreate(Operation):
             elif code == 403:
                 result.error_403 = ResponseErrorResponse.create_from_dict(content)
                 result.error = result.error_403.translate_to_api_error()
+            elif code == 409:
+                result.error_409 = ResponseErrorResponse.create_from_dict(content)
+                result.error = result.error_409.translate_to_api_error()
             elif code == 500:
                 result.error_500 = ResponseErrorResponse.create_from_dict(content)
                 result.error = result.error_500.translate_to_api_error()
@@ -314,6 +330,8 @@ class FleetCreate(Operation):
 
         403: Forbidden - ResponseErrorResponse (exceeded quota)
 
+        409: Conflict - ResponseErrorResponse (fleet name already exists)
+
         500: Internal Server Error - ResponseErrorResponse (internal server error)
 
         ---: HttpResponse (Undocumented Response)
@@ -336,6 +354,8 @@ class FleetCreate(Operation):
         if code == 401:
             return None, ResponseErrorResponse.create_from_dict(content)
         if code == 403:
+            return None, ResponseErrorResponse.create_from_dict(content)
+        if code == 409:
             return None, ResponseErrorResponse.create_from_dict(content)
         if code == 500:
             return None, ResponseErrorResponse.create_from_dict(content)

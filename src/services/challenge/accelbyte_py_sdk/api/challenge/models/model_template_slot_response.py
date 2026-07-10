@@ -6,7 +6,7 @@
 
 # template file: model.j2
 
-# Custom Service Manager
+# AccelByte Gaming Services Challenge Service
 
 # pylint: disable=duplicate-code
 # pylint: disable=line-too-long
@@ -27,31 +27,35 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 
 from accelbyte_py_sdk.core import Model
 
+from ..models.model_goal_in_schedules_response import ModelGoalInSchedulesResponse
 
-class ModelAppRedeploymentDetail(Model):
-    """Model app redeployment detail (model.AppRedeploymentDetail)
+
+class ModelTemplateSlotResponse(Model):
+    """Model template slot response (model.TemplateSlotResponse)
 
     Properties:
-        reason_id: (reasonId) REQUIRED str
+        goals: (goals) REQUIRED List[ModelGoalInSchedulesResponse]
 
-        message: (message) OPTIONAL str
+        index: (index) REQUIRED int
     """
 
     # region fields
 
-    reason_id: str  # REQUIRED
-    message: str  # OPTIONAL
+    goals: List[ModelGoalInSchedulesResponse]  # REQUIRED
+    index: int  # REQUIRED
 
     # endregion fields
 
     # region with_x methods
 
-    def with_reason_id(self, value: str) -> ModelAppRedeploymentDetail:
-        self.reason_id = value
+    def with_goals(
+        self, value: List[ModelGoalInSchedulesResponse]
+    ) -> ModelTemplateSlotResponse:
+        self.goals = value
         return self
 
-    def with_message(self, value: str) -> ModelAppRedeploymentDetail:
-        self.message = value
+    def with_index(self, value: int) -> ModelTemplateSlotResponse:
+        self.index = value
         return self
 
     # endregion with_x methods
@@ -60,14 +64,16 @@ class ModelAppRedeploymentDetail(Model):
 
     def to_dict(self, include_empty: bool = False) -> dict:
         result: dict = {}
-        if hasattr(self, "reason_id"):
-            result["reasonId"] = str(self.reason_id)
+        if hasattr(self, "goals"):
+            result["goals"] = [
+                i0.to_dict(include_empty=include_empty) for i0 in self.goals
+            ]
         elif include_empty:
-            result["reasonId"] = ""
-        if hasattr(self, "message"):
-            result["message"] = str(self.message)
+            result["goals"] = []
+        if hasattr(self, "index"):
+            result["index"] = int(self.index)
         elif include_empty:
-            result["message"] = ""
+            result["index"] = 0
         return result
 
     # endregion to methods
@@ -76,35 +82,39 @@ class ModelAppRedeploymentDetail(Model):
 
     @classmethod
     def create(
-        cls, reason_id: str, message: Optional[str] = None, **kwargs
-    ) -> ModelAppRedeploymentDetail:
+        cls, goals: List[ModelGoalInSchedulesResponse], index: int, **kwargs
+    ) -> ModelTemplateSlotResponse:
         instance = cls()
-        instance.reason_id = reason_id
-        if message is not None:
-            instance.message = message
+        instance.goals = goals
+        instance.index = index
         return instance
 
     @classmethod
     def create_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> ModelAppRedeploymentDetail:
+    ) -> ModelTemplateSlotResponse:
         instance = cls()
         if not dict_:
             return instance
-        if "reasonId" in dict_ and dict_["reasonId"] is not None:
-            instance.reason_id = str(dict_["reasonId"])
+        if "goals" in dict_ and dict_["goals"] is not None:
+            instance.goals = [
+                ModelGoalInSchedulesResponse.create_from_dict(
+                    i0, include_empty=include_empty
+                )
+                for i0 in dict_["goals"]
+            ]
         elif include_empty:
-            instance.reason_id = ""
-        if "message" in dict_ and dict_["message"] is not None:
-            instance.message = str(dict_["message"])
+            instance.goals = []
+        if "index" in dict_ and dict_["index"] is not None:
+            instance.index = int(dict_["index"])
         elif include_empty:
-            instance.message = ""
+            instance.index = 0
         return instance
 
     @classmethod
     def create_many_from_dict(
         cls, dict_: dict, include_empty: bool = False
-    ) -> Dict[str, ModelAppRedeploymentDetail]:
+    ) -> Dict[str, ModelTemplateSlotResponse]:
         return (
             {k: cls.create_from_dict(v, include_empty=include_empty) for k, v in dict_}
             if dict_
@@ -114,7 +124,7 @@ class ModelAppRedeploymentDetail(Model):
     @classmethod
     def create_many_from_list(
         cls, list_: list, include_empty: bool = False
-    ) -> List[ModelAppRedeploymentDetail]:
+    ) -> List[ModelTemplateSlotResponse]:
         return (
             [cls.create_from_dict(i, include_empty=include_empty) for i in list_]
             if list_
@@ -125,9 +135,9 @@ class ModelAppRedeploymentDetail(Model):
     def create_from_any(
         cls, any_: any, include_empty: bool = False, many: bool = False
     ) -> Union[
-        ModelAppRedeploymentDetail,
-        List[ModelAppRedeploymentDetail],
-        Dict[Any, ModelAppRedeploymentDetail],
+        ModelTemplateSlotResponse,
+        List[ModelTemplateSlotResponse],
+        Dict[Any, ModelTemplateSlotResponse],
     ]:
         if many:
             if isinstance(any_, dict):
@@ -142,15 +152,15 @@ class ModelAppRedeploymentDetail(Model):
     @staticmethod
     def get_field_info() -> Dict[str, str]:
         return {
-            "reasonId": "reason_id",
-            "message": "message",
+            "goals": "goals",
+            "index": "index",
         }
 
     @staticmethod
     def get_required_map() -> Dict[str, bool]:
         return {
-            "reasonId": True,
-            "message": False,
+            "goals": True,
+            "index": True,
         }
 
     # endregion static methods

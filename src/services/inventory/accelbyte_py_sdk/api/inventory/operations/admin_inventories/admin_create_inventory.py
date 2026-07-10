@@ -53,7 +53,7 @@ class AdminCreateInventory(Operation):
 
         tags: ["Admin Inventories"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -77,7 +77,7 @@ class AdminCreateInventory(Operation):
     _path: str = "/inventory/v1/admin/namespaces/{namespace}/inventories"
     _base_path: str = ""
     _method: str = "POST"
-    _consumes: List[str] = ["application/json"]
+    _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None

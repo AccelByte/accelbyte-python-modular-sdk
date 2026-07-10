@@ -59,6 +59,8 @@ class GetCurrentCycleLeaderboardRankingAdminV3(Operation):
 
         namespace: (namespace) REQUIRED str in path
 
+        include_hidden_users: (includeHiddenUsers) OPTIONAL bool in query
+
         limit: (limit) OPTIONAL int in query
 
         offset: (offset) OPTIONAL int in query
@@ -95,6 +97,7 @@ class GetCurrentCycleLeaderboardRankingAdminV3(Operation):
     cycle_id: str  # REQUIRED in [path]
     leaderboard_code: str  # REQUIRED in [path]
     namespace: str  # REQUIRED in [path]
+    include_hidden_users: bool  # OPTIONAL in [query]
     limit: int  # OPTIONAL in [query]
     offset: int  # OPTIONAL in [query]
     previous_version: int  # OPTIONAL in [query]
@@ -161,6 +164,8 @@ class GetCurrentCycleLeaderboardRankingAdminV3(Operation):
 
     def get_query_params(self) -> dict:
         result = {}
+        if hasattr(self, "include_hidden_users"):
+            result["includeHiddenUsers"] = self.include_hidden_users
         if hasattr(self, "limit"):
             result["limit"] = self.limit
         if hasattr(self, "offset"):
@@ -189,6 +194,12 @@ class GetCurrentCycleLeaderboardRankingAdminV3(Operation):
 
     def with_namespace(self, value: str) -> GetCurrentCycleLeaderboardRankingAdminV3:
         self.namespace = value
+        return self
+
+    def with_include_hidden_users(
+        self, value: bool
+    ) -> GetCurrentCycleLeaderboardRankingAdminV3:
+        self.include_hidden_users = value
         return self
 
     def with_limit(self, value: int) -> GetCurrentCycleLeaderboardRankingAdminV3:
@@ -223,6 +234,10 @@ class GetCurrentCycleLeaderboardRankingAdminV3(Operation):
             result["namespace"] = str(self.namespace)
         elif include_empty:
             result["namespace"] = ""
+        if hasattr(self, "include_hidden_users") and self.include_hidden_users:
+            result["includeHiddenUsers"] = bool(self.include_hidden_users)
+        elif include_empty:
+            result["includeHiddenUsers"] = False
         if hasattr(self, "limit") and self.limit:
             result["limit"] = int(self.limit)
         elif include_empty:
@@ -430,6 +445,7 @@ class GetCurrentCycleLeaderboardRankingAdminV3(Operation):
         cycle_id: str,
         leaderboard_code: str,
         namespace: str,
+        include_hidden_users: Optional[bool] = None,
         limit: Optional[int] = None,
         offset: Optional[int] = None,
         previous_version: Optional[int] = None,
@@ -439,6 +455,8 @@ class GetCurrentCycleLeaderboardRankingAdminV3(Operation):
         instance.cycle_id = cycle_id
         instance.leaderboard_code = leaderboard_code
         instance.namespace = namespace
+        if include_hidden_users is not None:
+            instance.include_hidden_users = include_hidden_users
         if limit is not None:
             instance.limit = limit
         if offset is not None:
@@ -466,6 +484,10 @@ class GetCurrentCycleLeaderboardRankingAdminV3(Operation):
             instance.namespace = str(dict_["namespace"])
         elif include_empty:
             instance.namespace = ""
+        if "includeHiddenUsers" in dict_ and dict_["includeHiddenUsers"] is not None:
+            instance.include_hidden_users = bool(dict_["includeHiddenUsers"])
+        elif include_empty:
+            instance.include_hidden_users = False
         if "limit" in dict_ and dict_["limit"] is not None:
             instance.limit = int(dict_["limit"])
         elif include_empty:
@@ -486,6 +508,7 @@ class GetCurrentCycleLeaderboardRankingAdminV3(Operation):
             "cycleId": "cycle_id",
             "leaderboardCode": "leaderboard_code",
             "namespace": "namespace",
+            "includeHiddenUsers": "include_hidden_users",
             "limit": "limit",
             "offset": "offset",
             "previousVersion": "previous_version",
@@ -497,6 +520,7 @@ class GetCurrentCycleLeaderboardRankingAdminV3(Operation):
             "cycleId": True,
             "leaderboardCode": True,
             "namespace": True,
+            "includeHiddenUsers": False,
             "limit": False,
             "offset": False,
             "previousVersion": False,

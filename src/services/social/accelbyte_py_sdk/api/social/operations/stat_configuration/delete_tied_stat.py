@@ -73,8 +73,8 @@ class DeleteTiedStat(Operation):
     # region fields
 
     _url: str = "/social/v1/admin/namespaces/{namespace}/stats/{statCode}/tied"
-    _path: str = "/social/v1/admin/namespaces/{namespace}/stats/{statCode}/tied"
-    _base_path: str = ""
+    _path: str = "/v1/admin/namespaces/{namespace}/stats/{statCode}/tied"
+    _base_path: str = "/social"
     _method: str = "DELETE"
     _consumes: List[str] = []
     _produces: List[str] = []

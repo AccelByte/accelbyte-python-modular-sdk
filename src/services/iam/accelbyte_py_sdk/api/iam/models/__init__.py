@@ -262,7 +262,7 @@ from .model_link_platform_account_request import ModelLinkPlatformAccountRequest
 from .model_link_platform_account_with_progression_request import (
     ModelLinkPlatformAccountWithProgressionRequest,
 )
-from .model_link_request import ModelLinkRequest
+from .model_link_request_response import ModelLinkRequestResponse
 from .model_list_assigned_users_v4_response import ModelListAssignedUsersV4Response
 from .model_list_bulk_user_ban_response_v3 import ModelListBulkUserBanResponseV3
 from .model_list_bulk_user_platforms_response import ModelListBulkUserPlatformsResponse
@@ -307,6 +307,7 @@ from .model_public_user_response import ModelPublicUserResponse
 from .model_public_user_response_v3 import ModelPublicUserResponseV3
 from .model_public_users_response import ModelPublicUsersResponse
 from .model_public_user_update_request_v3 import ModelPublicUserUpdateRequestV3
+from .model_re_auth_request import ModelReAuthRequest
 from .model_remove_user_role_v4_request import ModelRemoveUserRoleV4Request
 from .model_reset_password_request import ModelResetPasswordRequest
 from .model_reset_password_request_v3 import ModelResetPasswordRequestV3
@@ -446,6 +447,7 @@ from .model_valid_user_id_response_v4 import ModelValidUserIDResponseV4
 from .model_verification_code_response import ModelVerificationCodeResponse
 from .model_verify_registration_code import ModelVerifyRegistrationCode
 from .model_web_linking_response import ModelWebLinkingResponse
+from .model_web_reauth_process_response import ModelWebReauthProcessResponse
 from .oauthapi_revocation_list import OauthapiRevocationList
 from .oauthcommon_as_metadata_response import OauthcommonASMetadataResponse
 from .oauthcommon_jwk_key import OauthcommonJWKKey

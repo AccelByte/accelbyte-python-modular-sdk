@@ -39,8 +39,6 @@ from ...models import ResponseErrorResponse
 class UpdateAppV1(Operation):
     """[DEPRECATED] Update App Partially (UpdateAppV1)
 
-    Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP [UPDATE]`
-
     Update App Partially
 
     Properties:

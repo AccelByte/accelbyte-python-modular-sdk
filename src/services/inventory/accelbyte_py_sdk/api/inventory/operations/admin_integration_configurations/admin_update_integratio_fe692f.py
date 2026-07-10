@@ -51,7 +51,7 @@ class AdminUpdateIntegrationConfiguration(Operation):
 
         tags: ["Admin Integration Configurations"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -81,7 +81,7 @@ class AdminUpdateIntegrationConfiguration(Operation):
     _path: str = "/inventory/v1/admin/namespaces/{namespace}/integrationConfigurations/{integrationConfigurationId}"
     _base_path: str = ""
     _method: str = "PUT"
-    _consumes: List[str] = ["application/json"]
+    _consumes: List[str] = []
     _produces: List[str] = ["application/json"]
     _securities: List[List[str]] = [["BEARER_AUTH"]]
     _location_query: str = None

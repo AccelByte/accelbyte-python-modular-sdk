@@ -38,7 +38,7 @@ from ...models import ResponseError
 class AdminSyncDSMCConfiguration(Operation):
     """[DEPRECATED] sync dsmc configuration. (adminSyncDSMCConfiguration)
 
-    sync dsmc configuration.
+    **Deprecated.** Synchronizes the dedicated server manager controller configuration from DSMC. The DSMC config is cached locally for use during session creation.
 
     Properties:
         url: /session/v1/admin/namespaces/{namespace}/dsconfigs/sync

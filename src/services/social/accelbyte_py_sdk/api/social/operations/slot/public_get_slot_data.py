@@ -72,8 +72,8 @@ class PublicGetSlotData(Operation):
     # region fields
 
     _url: str = "/social/public/namespaces/{namespace}/users/{userId}/slots/{slotId}"
-    _path: str = "/social/public/namespaces/{namespace}/users/{userId}/slots/{slotId}"
-    _base_path: str = ""
+    _path: str = "/public/namespaces/{namespace}/users/{userId}/slots/{slotId}"
+    _base_path: str = "/social"
     _method: str = "GET"
     _consumes: List[str] = []
     _produces: List[str] = ["application/octet-stream"]

@@ -47,7 +47,7 @@ def admin_get_member_active_session(
 ):
     """Get Member Active Session. (adminGetMemberActiveSession)
 
-    Get Member Active Session.
+    Returns the number of active sessions the specified user is participating in under the given configuration template.
 
     Properties:
         url: /session/v1/admin/namespaces/{namespace}/configurations/{name}/memberactivesession/{userId}
@@ -99,7 +99,7 @@ async def admin_get_member_active_session_async(
 ):
     """Get Member Active Session. (adminGetMemberActiveSession)
 
-    Get Member Active Session.
+    Returns the number of active sessions the specified user is participating in under the given configuration template.
 
     Properties:
         url: /session/v1/admin/namespaces/{namespace}/configurations/{name}/memberactivesession/{userId}
@@ -153,7 +153,7 @@ def admin_reconcile_max_active_session(
 ):
     """Reconcile Max Active Session. (adminReconcileMaxActiveSession)
 
-    Reconcile Max Active Session.
+    Reconciles the max active session count for the specified configuration template. Scans active sessions and updates the counter to reflect the actual count.
 
     Properties:
         url: /session/v1/admin/namespaces/{namespace}/configurations/{name}/reconcile
@@ -205,7 +205,7 @@ async def admin_reconcile_max_active_session_async(
 ):
     """Reconcile Max Active Session. (adminReconcileMaxActiveSession)
 
-    Reconcile Max Active Session.
+    Reconciles the max active session count for the specified configuration template. Scans active sessions and updates the counter to reflect the actual count.
 
     Properties:
         url: /session/v1/admin/namespaces/{namespace}/configurations/{name}/reconcile

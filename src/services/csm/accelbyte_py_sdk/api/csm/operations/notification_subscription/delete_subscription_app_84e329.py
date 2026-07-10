@@ -37,8 +37,6 @@ from ...models import ResponseErrorResponse
 class DeleteSubscriptionAppNotificationV2(Operation):
     """[DEPRECATED] Remove other person subscription (DeleteSubscriptionAppNotificationV2)
 
-    Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP:ALERT:SUBSCRIPTION [DELETE]`
-
     Remove a user from the notification subscription.
 
     Properties:

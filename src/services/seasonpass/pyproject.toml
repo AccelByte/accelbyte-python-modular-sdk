@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "accelbyte-py-sdk-service-seasonpass"
 readme = "README.md"
-version = "1.27.1"
+version = "1.27.3"
 description = "AccelByte Python SDK - AccelByte Gaming Services Seasonpass Service"
 requires-python = ">=3.9"
 dependencies = [

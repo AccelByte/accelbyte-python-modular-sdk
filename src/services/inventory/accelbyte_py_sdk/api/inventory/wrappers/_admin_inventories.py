@@ -72,7 +72,7 @@ def admin_create_inventory(
 
         tags: ["Admin Inventories"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -123,7 +123,7 @@ async def admin_create_inventory_async(
 
         tags: ["Admin Inventories"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -408,7 +408,7 @@ def admin_purchasable(
 
         tags: ["Admin Inventories"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -464,7 +464,7 @@ async def admin_purchasable_async(
 
         tags: ["Admin Inventories"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -525,7 +525,7 @@ def admin_update_inventory(
 
         tags: ["Admin Inventories"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -582,7 +582,7 @@ async def admin_update_inventory_async(
 
         tags: ["Admin Inventories"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -642,7 +642,7 @@ def admin_update_user_inventories_by_inventory_code(
 
         tags: ["Admin Inventories"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -707,7 +707,7 @@ async def admin_update_user_inventories_by_inventory_code_async(
 
         tags: ["Admin Inventories"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -771,7 +771,7 @@ def delete_inventory(
 
         tags: ["Admin Inventories"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -826,7 +826,7 @@ async def delete_inventory_async(
 
         tags: ["Admin Inventories"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 

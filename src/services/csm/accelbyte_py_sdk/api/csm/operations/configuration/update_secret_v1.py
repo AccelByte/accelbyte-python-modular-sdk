@@ -39,8 +39,6 @@ from ...models import ResponseErrorResponse
 class UpdateSecretV1(Operation):
     """[DEPRECATED] Update an environment secret (UpdateSecretV1)
 
-    Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:SECRET [UPDATE]`
-
     Update an environment secret.
     Request body:
     - value : configuration value - Required.

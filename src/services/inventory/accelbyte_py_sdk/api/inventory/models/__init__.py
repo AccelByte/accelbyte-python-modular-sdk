@@ -37,6 +37,9 @@ from .apimodels_create_tag_resp import ApimodelsCreateTagResp
 from .apimodels_create_tag_resp import OwnerEnum as ApimodelsCreateTagRespOwnerEnum
 from .apimodels_delete_inventory_req import ApimodelsDeleteInventoryReq
 from .apimodels_error_response import ApimodelsErrorResponse
+from .apimodels_integration_configuration_req import (
+    ApimodelsIntegrationConfigurationReq,
+)
 from .apimodels_integration_configuration_resp import (
     ApimodelsIntegrationConfigurationResp,
 )

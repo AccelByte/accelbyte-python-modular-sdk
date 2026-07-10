@@ -83,8 +83,8 @@ class PublicCreateProfile(Operation):
     # region fields
 
     _url: str = "/social/public/namespaces/{namespace}/users/{userId}/profiles"
-    _path: str = "/social/public/namespaces/{namespace}/users/{userId}/profiles"
-    _base_path: str = ""
+    _path: str = "/public/namespaces/{namespace}/users/{userId}/profiles"
+    _base_path: str = "/social"
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]

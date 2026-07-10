@@ -39,8 +39,6 @@ from ...models import ResponseErrorResponse
 class SaveSecretV1(Operation):
     """[DEPRECATED] Save an environment secret (SaveSecretV1)
 
-    Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:SECRET [CREATE]`
-
     Save an environment secret.
     Request body:
     - configName : environment secret name - Required.

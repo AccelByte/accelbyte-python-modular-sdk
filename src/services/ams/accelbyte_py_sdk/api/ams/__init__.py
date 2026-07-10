@@ -74,10 +74,10 @@ from .wrappers import development_server_configuration_patch_async
 # fleet_commander
 from .wrappers import basic_health_check
 from .wrappers import basic_health_check_async
-from .wrappers import func1
-from .wrappers import func1_async
 from .wrappers import portal_health_check
 from .wrappers import portal_health_check_async
+from .wrappers import version_info
+from .wrappers import version_info_async
 
 # fleets
 from .wrappers import bulk_fleet_delete

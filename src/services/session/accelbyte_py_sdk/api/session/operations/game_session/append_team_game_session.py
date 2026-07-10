@@ -39,7 +39,7 @@ from ...models import ResponseError
 class AppendTeamGameSession(Operation):
     """[DEPRECATED] Append new member or team to session. Please use patchUpdateGameSession instead (appendTeamGameSession)
 
-    Append new member or team to session. Please use patchUpdateGameSession instead
+    **Deprecated.** Appends new members or teams to a game session. Use PATCH updateGameSession instead, which supports partial updates and is more efficient.
 
     Properties:
         url: /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/teams

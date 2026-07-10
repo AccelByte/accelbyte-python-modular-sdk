@@ -70,7 +70,7 @@ def admin_create_chaining_operations(
 
         tags: ["Admin Chaining Operations"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 
@@ -138,7 +138,7 @@ async def admin_create_chaining_operations_async(
 
         tags: ["Admin Chaining Operations"]
 
-        consumes: ["application/json"]
+        consumes: []
 
         produces: ["application/json"]
 

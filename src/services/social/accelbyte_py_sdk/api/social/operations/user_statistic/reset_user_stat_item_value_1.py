@@ -83,8 +83,8 @@ class ResetUserStatItemValue1(Operation):
     # region fields
 
     _url: str = "/social/v1/public/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems/value/reset"
-    _path: str = "/social/v1/public/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems/value/reset"
-    _base_path: str = ""
+    _path: str = "/v1/public/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems/value/reset"
+    _base_path: str = "/social"
     _method: str = "PUT"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]

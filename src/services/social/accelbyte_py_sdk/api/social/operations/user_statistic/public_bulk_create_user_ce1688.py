@@ -80,10 +80,8 @@ class PublicBulkCreateUserStatItems(Operation):
     # region fields
 
     _url: str = "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems/bulk"
-    _path: str = (
-        "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems/bulk"
-    )
-    _base_path: str = ""
+    _path: str = "/v1/public/namespaces/{namespace}/users/{userId}/statitems/bulk"
+    _base_path: str = "/social"
     _method: str = "POST"
     _consumes: List[str] = ["application/json"]
     _produces: List[str] = ["application/json"]
